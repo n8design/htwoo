@@ -1,0 +1,70 @@
+{
+    "patterns": [
+        {
+            "title": "000-atom",
+            "name": "000-atom.hbs",
+            "file": "src/patterns/01-atoms/000-atom.hbs",
+            "category": "atoms"
+        },
+        {
+            "title": "a-500-chatbot-message",
+            "name": "a-500-chatbot-message.hbs",
+            "file": "src/patterns/01-atoms/a-500-chatbot-message.hbs",
+            "category": "atoms"
+        },
+        {
+            "title": "a-500-chatbot-message",
+            "name": "a-500-chatbot-message.hbs",
+            "file": "src/patterns/01-atoms/a-500-chatbot-message.hbs",
+            "category": "atoms"
+        },
+        {
+            "title": "000-molecule",
+            "name": "000-molecule.hbs",
+            "file": "src/patterns/02-molecules/000-molecule.hbs",
+            "category": "molecules"
+        },
+        {
+            "title": "m-500-chatbot-history",
+            "name": "m-500-chatbot-history.hbs",
+            "file": "src/patterns/02-molecules/m-500-chatbot-history.hbs",
+            "category": "molecules"
+        },
+        {
+            "title": "m-500-chatbot-input",
+            "name": "m-500-chatbot-input.hbs",
+            "file": "src/patterns/02-molecules/m-500-chatbot-input.hbs",
+            "category": "molecules"
+        },
+        {
+            "title": "m-500-chatbot-input",
+            "name": "m-500-chatbot-input.hbs",
+            "file": "src/patterns/02-molecules/m-500-chatbot-input.hbs",
+            "category": "molecules"
+        },
+        {
+            "title": "o-500-chatbot-ui-reversed",
+            "name": "o-500-chatbot-ui-reversed.hbs",
+            "file": "src/patterns/03-organism/o-500-chatbot-ui-reversed.hbs",
+            "category": "organism"
+        },
+        {
+            "title": "o-500-chatbot-ui",
+            "name": "o-500-chatbot-ui.hbs",
+            "file": "src/patterns/03-organism/o-500-chatbot-ui.hbs",
+            "category": "organism"
+        },
+        {
+            "title": "o-500-chatbot-ui",
+            "name": "o-500-chatbot-ui.hbs",
+            "file": "src/patterns/03-organism/o-500-chatbot-ui.hbs",
+            "category": "organism"
+        },
+        {
+            "title": "o-600-sponsor-portal",
+            "name": "o-600-sponsor-portal.hbs",
+            "file": "src/patterns/03-organism/o-600-sponsor-portal.hbs",
+            "category": "organism"
+        }
+    ]
+}
