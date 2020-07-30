@@ -1,0 +1,6 @@
+{
+    "tmpDir": "./.tmp/",
+    "patternDir": "./src/patterns/",
+    "stylesDir": "./src/styles/",
+    "scriptDir": "./src/scripts/"
+}
