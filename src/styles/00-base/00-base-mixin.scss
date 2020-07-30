@@ -20,17 +20,14 @@
 @mixin font-weight($fontweight) {
 
     @if $fontweight==regular {
-        @debug 400;
         font-weight: 400;
     }
 
-    @if $fontweight==bold {
-        @debug 600;
+    @if $fontweight==semibold {
         font-weight: 600;
     }
 
-    @if $fontweight==heavy {
-        @debug 700;
+    @if $fontweight==bold {
         font-weight: 700;
     }
 
