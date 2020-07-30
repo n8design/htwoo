@@ -1,4 +1,4 @@
-# Liquid
+# Liquid UI framework
 
 [![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ)
 
