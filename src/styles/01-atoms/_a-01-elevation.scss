@@ -1,0 +1,18 @@
+.depth-4{
+    @include elevation(4);
+}
+.depth-8{
+    @include elevation(8);
+}
+.depth-16{
+    @include elevation(16);
+}
+.depth-32{
+    @include elevation(32);
+}
+.depth-48{
+    @include elevation(48);
+}
+.depth-64{
+    @include elevation(64);
+}
