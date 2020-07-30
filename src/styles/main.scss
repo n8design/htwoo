@@ -1,10 +1,12 @@
 // 00 Base Imports
 @import '00-base/00-base-color';
+@import '00-base/00-base-fonts';
 @import '00-base/00-base-mixin.scss';
 @import '00-base/10-templates.scss';
 
 
 // Atoms
+@import '01-atoms/a-00-fonts';
 @import '01-atoms/a-01-elevation';
 
 // Molecules
