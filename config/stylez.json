@@ -43,6 +43,12 @@
             "category": "molecules"
         },
         {
+            "title": "000-organism",
+            "name": "000-organism.hbs",
+            "file": "src/patterns/03-organism/000-organism.hbs",
+            "category": "organism"
+        },
+        {
             "title": "o-500-chatbot-ui-reversed",
             "name": "o-500-chatbot-ui-reversed.hbs",
             "file": "src/patterns/03-organism/o-500-chatbot-ui-reversed.hbs",

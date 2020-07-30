@@ -104,5 +104,6 @@ dist
 .tern-port
 
 
-#
+# App Specific
 .DS_Store
+.tmp
