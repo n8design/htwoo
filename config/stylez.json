@@ -13,6 +13,12 @@
             "category": "atoms"
         },
         {
+            "title": "00-styles-fontsize",
+            "name": "00-styles-fontsize.hbs",
+            "file": "src/patterns/01-atoms/00-styles-fontsize.hbs",
+            "category": "atoms"
+        },
+        {
             "title": "00-styles-fontweight",
             "name": "00-styles-fontweight.hbs",
             "file": "src/patterns/01-atoms/00-styles-fontweight.hbs",
@@ -22,6 +28,18 @@
             "title": "00-styles-fontweight",
             "name": "00-styles-fontweight.hbs",
             "file": "src/patterns/01-atoms/00-styles-fontweight.hbs",
+            "category": "atoms"
+        },
+        {
+            "title": "00-styles-fontweight",
+            "name": "00-styles-fontweight.hbs",
+            "file": "src/patterns/01-atoms/00-styles-fontweight.hbs",
+            "category": "atoms"
+        },
+        {
+            "title": "01-styles-elevation",
+            "name": "01-styles-elevation.hbs",
+            "file": "src/patterns/01-atoms/01-styles-elevation.hbs",
             "category": "atoms"
         },
         {
