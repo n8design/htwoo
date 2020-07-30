@@ -1,0 +1,19 @@
+.util-flex{
+	display: flex;
+	flex-direction: row;
+
+	width: auto;
+
+	justify-content: space-between;
+}
+
+.utilbox{
+	display: flex;
+
+	width: 100px;
+	height: 75px;
+	margin: 3em;
+
+	align-items: center;
+	justify-content: center;
+}

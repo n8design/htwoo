@@ -1,0 +1,12 @@
+.fontweight-regular{
+	@include font-weight(regular);
+	@include font-size(16);
+}
+.fontweight-bold{
+	@include font-weight(semibold);
+	@include font-size(16);
+}
+.fontweight-heavy{
+	@include font-weight(bold);
+	@include font-size(16);
+}
