@@ -1,0 +1,57 @@
+{
+    "items": [
+        {
+            "name": "Neutral Dark",
+            "value": "#201f1e",
+            "comment": ""
+        },
+        {
+            "name": "Neutral Primary",
+            "value": "#323130",
+            "commment": ""
+        },
+        {
+            "name": "Neutral Primary Alt",
+            "value": "#3b3a39"
+        },
+        {
+            "name": "Neutral Secondary",
+            "value": "#605e5c"
+        },
+        {
+            "name": "Neutral Secondary Alt",
+            "value": "#8a8886"
+        },
+        {
+            "name": "Neutral Tertiary",
+            "value": "#a19f9d"
+        },
+        {
+            "name": "Neutral Tertiary Alt",
+            "value": "#c8c6c4"
+        },
+        {
+            "name": "Neutral Quaternary",
+            "value": "#d2d0ce"
+        },
+        {
+            "name": "Neutral Quaternary Alt",
+            "value": "#e1dfdd"
+        },
+        {
+            "name": "Neutral Light",
+            "value": "#edebe9"
+        },
+        {
+            "name": "Neutral Lighter",
+            "value": "#f3f2f1"
+        },
+        {
+            "name": "Neutral Lighter Alt",
+            "value": "#faf9f8"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "items": [
+        {
+            "name": "Theme Darker",
+            "value": "#014446",
+            "comment": ""
+        },
+        {
+            "name": "Theme Dark",
+            "value": "#025c5f",
+            "commment": ""
+        },
+        {
+            "name": "Theme Dark Alt",
+            "value": "#026d70"
+        },
+        {
+            "name": "Theme Dark Primary",
+            "value": "#03787c"
+        },
+        {
+            "name": "Theme Dark Secondary",
+            "value": "#13898d"
+        },
+        {
+            "name": "Theme Tertiary",
+            "value": "#49aeb1"
+        },
+        {
+            "name": "Theme Light",
+            "value": "#98d6d8"
+        },
+        {
+            "name": "Theme Lighter",
+            "value": "#c5e9ea"
+        },
+        {
+            "name": "Theme Lighter Alt",
+            "value": "#f0f9fa"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

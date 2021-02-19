@@ -1,0 +1,17 @@
+.sg-colors{
+    list-style: none;
+    font-family: sans-serif;
+    column-count: 3;
+}
+.sg-swatch{
+    display: flex;
+    flex-direction: row;
+    &box{
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        content: " ";
+    }
+}
