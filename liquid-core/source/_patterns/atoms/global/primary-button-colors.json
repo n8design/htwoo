@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "name": "primaryButtonBackground",
+            "value": "#03787c",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonBackgroundDisabled",
+            "value": "#f3f2f1",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonBackgroundHovered",
+            "value": "#026d70",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonBackgroundPressed",
+            "value": "#025c5f",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonBorder",
+            "value": "transparent",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonText",
+            "value": "#ffffff",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonTextDisabled",
+            "value": "#d2d0ce",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonTextHovered",
+            "value": "#ffffff",
+            "comment": ""
+        },
+        {
+            "name": "primaryButtonTextPressed",
+            "value": "#ffffff",
+            "comment": ""
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}
