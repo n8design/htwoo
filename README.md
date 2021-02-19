@@ -1,6 +1,6 @@
 # Liquid UI framework
 
-[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25%20DOM%20manipulation%20free-orange)
+[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
 Liquid UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite beeing ReactJS exclsive this project offer a style guide based on HTML and CSS to create implementations for other frameworks as well.
 
