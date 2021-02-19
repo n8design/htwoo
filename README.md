@@ -10,9 +10,9 @@ The first implementation of Liquid UI Framework implementation will be based on 
 
 It plays nicely together with applications such as Microsoft SharePoint and Microsot Teams.
 
-Maintainer: [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
+*Maintainer:* [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
-Contributor: You ❤️
+*Contributor:* You ❤️
 
 
  
