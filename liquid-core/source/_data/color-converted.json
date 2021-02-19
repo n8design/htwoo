@@ -1,1 +1,1622 @@
-[{"name":"accent","value":"#4f6bed","comment":""},{"name":"accentButtonBackground","value":"#4f6bed","comment":""},{"name":"accentButtonText","value":"#ffffff","comment":""},{"name":"AccentLines","value":"#13898d","comment":""},{"name":"AccentText","value":"#03787c","comment":""},{"name":"actionLink","value":"#323130","comment":""},{"name":"actionLinkHovered","value":"#201f1e","comment":""},{"name":"BackgroundOverlay","value":"rgba(255, 255, 255, 0.85)","comment":""},{"name":"backgroundOverlay","value":"rgba(255, 255, 255, 0.85)","comment":""},{"name":"black","value":"#000000","comment":""},{"name":"blackTranslucent40","value":"rgba(0,0,0,.4)","comment":""},{"name":"blockingBackground","value":"#FDE7E9","comment":""},{"name":"blockingIcon","value":"#FDE7E9","comment":""},{"name":"blue","value":"#0078d4","comment":""},{"name":"blueDark","value":"#002050","comment":""},{"name":"blueLight","value":"#00bcf2","comment":""},{"name":"blueMid","value":"#00188f","comment":""},{"name":"bodyBackground","value":"#ffffff","comment":""},{"name":"bodyBackgroundChecked","value":"#edebe9","comment":""},{"name":"bodyBackgroundHovered","value":"#f3f2f1","comment":""},{"name":"bodyDivider","value":"#edebe9","comment":""},{"name":"bodyFrameBackground","value":"#ffffff","comment":""},{"name":"bodyFrameDivider","value":"#edebe9","comment":""},{"name":"bodyStandoutBackground","value":"#faf9f8","comment":""},{"name":"bodySubtext","value":"#605e5c","comment":""},{"name":"bodyText","value":"#323130","comment":""},{"name":"BodyText","value":"#333333","comment":""},{"name":"bodyTextChecked","value":"#000000","comment":""},{"name":"ButtonBackground","value":"#f8f8f8","comment":""},{"name":"buttonBackground","value":"#ffffff","comment":""},{"name":"buttonBackgroundChecked","value":"#c8c6c4","comment":""},{"name":"buttonBackgroundCheckedHovered","value":"#edebe9","comment":""},{"name":"buttonBackgroundDisabled","value":"#f3f2f1","comment":""},{"name":"buttonBackgroundHovered","value":"#f3f2f1","comment":""},{"name":"buttonBackgroundPressed","value":"#edebe9","comment":""},{"name":"buttonBorder","value":"#8a8886","comment":""},{"name":"ButtonBorder","value":"#a6a6a6","comment":""},{"name":"buttonBorderDisabled","value":"#f3f2f1","comment":""},{"name":"ButtonDisabledBackground","value":"#f8f8f8","comment":""},{"name":"ButtonDisabledBorder","value":"#eaeaea","comment":""},{"name":"ButtonDisabledText","value":"#a6a6a6","comment":""},{"name":"ButtonGlyph","value":"#666666","comment":""},{"name":"ButtonGlyphActive","value":"#333333","comment":""},{"name":"ButtonGlyphDisabled","value":"#c8c8c8","comment":""},{"name":"ButtonHoverBackground","value":"#c5e9ea","comment":""},{"name":"ButtonHoverBorder","value":"#98d6d8","comment":""},{"name":"ButtonPressedBackground","value":"#98d6d8","comment":""},{"name":"ButtonPressedBorder","value":"#13898d","comment":""},{"name":"buttonText","value":"#323130","comment":""},{"name":"ButtonText","value":"#333333","comment":""},{"name":"buttonTextChecked","value":"#201f1e","comment":""},{"name":"buttonTextCheckedHovered","value":"#000000","comment":""},{"name":"buttonTextDisabled","value":"#a19f9d","comment":""},{"name":"buttonTextHovered","value":"#201f1e","comment":""},{"name":"buttonTextPressed","value":"#201f1e","comment":""},{"name":"cardShadow","value":"0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)","comment":""},{"name":"cardShadowHovered","value":"0 0 1px #a19f9d","comment":""},{"name":"cardStandoutBackground","value":"#ffffff","comment":""},{"name":"CommandLinks","value":"#666666","comment":""},{"name":"CommandLinksDisabled","value":"#a6a6a6","comment":""},{"name":"CommandLinksHover","value":"#03787c","comment":""},{"name":"CommandLinksPressed","value":"#014446","comment":""},{"name":"CommandLinksSecondary","value":"#212121","comment":""},{"name":"ContentAccent1","value":"#03787c","comment":""},{"name":"ContentAccent2","value":"#00485b","comment":""},{"name":"ContentAccent3","value":"#288054","comment":""},{"name":"ContentAccent4","value":"#767956","comment":""},{"name":"ContentAccent5","value":"#ed0033","comment":""},{"name":"ContentAccent6","value":"#682a7a","comment":""},{"name":"defaultStateBackground","value":"#faf9f8","comment":""},{"name":"DialogBorder","value":"#f4f4f4","comment":""},{"name":"dialogBorder","value":"#f4f4f4","comment":""},{"name":"disabledBackground","value":"#f3f2f1","comment":""},{"name":"DisabledBackground","value":"#f8f8f8","comment":""},{"name":"disabledBodySubtext","value":"#c8c6c4","comment":""},{"name":"disabledBodyText","value":"#a19f9d","comment":""},{"name":"disabledBorder","value":"#c8c6c4","comment":""},{"name":"DisabledLines","value":"#eaeaea","comment":""},{"name":"disabledSubtext","value":"#d2d0ce","comment":""},{"name":"disabledText","value":"#a19f9d","comment":""},{"name":"DisabledText","value":"#a6a6a6","comment":""},{"name":"elevation16","value":"0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108)","comment":""},{"name":"elevation4","value":"0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)","comment":""},{"name":"elevation64","value":"0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18)","comment":""},{"name":"elevation8","value":"0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)","comment":""},{"name":"EmphasisBackground","value":"#03787c","comment":""},{"name":"EmphasisBorder","value":"#025c5f","comment":""},{"name":"EmphasisHoverBackground","value":"#025c5f","comment":""},{"name":"EmphasisHoverBorder","value":"#014446","comment":""},{"name":"EmphasisText","value":"#ffffff","comment":""},{"name":"errorBackground","value":"#FDE7E9","comment":""},{"name":"errorIcon","value":"#A80000","comment":""},{"name":"errorText","value":"#a4262c","comment":""},{"name":"focusBorder","value":"#605e5c","comment":""},{"name":"FooterBackground","value":"rgba(255, 255, 255, 0.85)","comment":""},{"name":"green","value":"#107c10","comment":""},{"name":"greenDark","value":"#004b1c","comment":""},{"name":"greenLight","value":"#bad80a","comment":""},{"name":"HeaderAccentLines","value":"#13898d","comment":""},{"name":"HeaderBackground","value":"rgba(255, 255, 255, 0.85)","comment":""},{"name":"HeaderDisabledBackground","value":"#f8f8f8","comment":""},{"name":"HeaderDisabledLines","value":"#eaeaea","comment":""},{"name":"HeaderDisableText","value":"#a6a6a6","comment":""},{"name":"HeaderLines","value":"#a6a6a6","comment":""},{"name":"HeaderNavigationHoverText","value":"#03787c","comment":""},{"name":"HeaderNavigationPressedText","value":"#014446","comment":""},{"name":"HeaderNavigationSelectedText","value":"#03787c","comment":""},{"name":"HeaderNavigationText","value":"#666666","comment":""},{"name":"HeaderSiteTitle","value":"#212121","comment":""},{"name":"HeaderStrongLines","value":"#98d6d8","comment":""},{"name":"HeaderSubtleLines","value":"#c8c8c8","comment":""},{"name":"HeaderSubtleText","value":"#767676","comment":""},{"name":"HeaderText","value":"#333333","comment":""},{"name":"HoverBackground","value":"rgba(197, 233, 234, 0.50)","comment":""},{"name":"Hyperlink","value":"#03787c","comment":""},{"name":"HyperlinkActive","value":"#014446","comment":""},{"name":"Hyperlinkfollowed","value":"#014446","comment":""},{"name":"infoBackground","value":"#f3f2f1","comment":""},{"name":"infoIcon","value":"#605e5c","comment":""},{"name":"inputBackground","value":"#ffffff","comment":""},{"name":"inputBackgroundChecked","value":"#03787c","comment":""},{"name":"inputBackgroundCheckedHovered","value":"#025c5f","comment":""},{"name":"inputBorder","value":"#605e5c","comment":""},{"name":"inputBorderHovered","value":"#323130","comment":""},{"name":"inputFocusBorderAlt","value":"#03787c","comment":""},{"name":"inputForegroundChecked","value":"#ffffff","comment":""},{"name":"inputIcon","value":"#03787c","comment":""},{"name":"inputIconDisabled","value":"#a19f9d","comment":""},{"name":"inputIconHovered","value":"#025c5f","comment":""},{"name":"inputPlaceholderBackgroundChecked","value":"#c5e9ea","comment":""},{"name":"inputPlaceholderText","value":"#605e5c","comment":""},{"name":"inputText","value":"#323130","comment":""},{"name":"inputTextHovered","value":"#201f1e","comment":""},{"name":"largeFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"largeFontSize","value":"18px","comment":""},{"name":"largeFontWeight","value":400,"comment":""},{"name":"largeMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"largeWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"Lines","value":"#a6a6a6","comment":""},{"name":"link","value":"#03787c","comment":""},{"name":"linkHovered","value":"#014446","comment":""},{"name":"listBackground","value":"#ffffff","comment":""},{"name":"listHeaderBackgroundHovered","value":"#f3f2f1","comment":""},{"name":"listHeaderBackgroundPressed","value":"#edebe9","comment":""},{"name":"listItemBackgroundChecked","value":"#edebe9","comment":""},{"name":"listItemBackgroundCheckedHovered","value":"#e1dfdd","comment":""},{"name":"listItemBackgroundHovered","value":"#f3f2f1","comment":""},{"name":"listText","value":"#323130","comment":""},{"name":"listTextColor","value":"#323130","comment":""},{"name":"magenta","value":"#b4009e","comment":""},{"name":"magentaDark","value":"#5c005c","comment":""},{"name":"magentaLight","value":"#e3008c","comment":""},{"name":"mediumFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"mediumFontSize","value":"14px","comment":""},{"name":"mediumFontWeight","value":400,"comment":""},{"name":"mediumMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"mediumPlusFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"mediumPlusFontSize","value":"16px","comment":""},{"name":"mediumPlusFontWeight","value":400,"comment":""},{"name":"mediumPlusMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"mediumPlusWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"mediumWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"megaFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"megaFontSize","value":"68px","comment":""},{"name":"megaFontWeight","value":600,"comment":""},{"name":"megaMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"megaWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"menuBackground","value":"#ffffff","comment":""},{"name":"menuDivider","value":"#c8c6c4","comment":""},{"name":"menuHeader","value":"#03787c","comment":""},{"name":"menuIcon","value":"#03787c","comment":""},{"name":"menuItemBackgroundChecked","value":"#edebe9","comment":""},{"name":"menuItemBackgroundHovered","value":"#f3f2f1","comment":""},{"name":"menuItemBackgroundPressed","value":"#edebe9","comment":""},{"name":"menuItemText","value":"#323130","comment":""},{"name":"menuItemTextHovered","value":"#201f1e","comment":""},{"name":"messageLink","value":"#005A9E","comment":""},{"name":"messageLinkHovered","value":"#004578","comment":""},{"name":"messageText","value":"#323130","comment":""},{"name":"Navigation","value":"#666666","comment":""},{"name":"NavigationAccent","value":"#03787c","comment":""},{"name":"NavigationHover","value":"#03787c","comment":""},{"name":"NavigationHoverBackground","value":"rgba(197, 233, 234, 0.50)","comment":""},{"name":"NavigationPressed","value":"#014446","comment":""},{"name":"NavigationSelectedBackground","value":"rgba(234, 234, 234, 0.78)","comment":""},{"name":"neutralDark","value":"#201f1e","comment":""},{"name":"neutralLight","value":"#edebe9","comment":""},{"name":"neutralLighter","value":"#f3f2f1","comment":""},{"name":"neutralLighterAlt","value":"#faf9f8","comment":""},{"name":"neutralPrimary","value":"#323130","comment":""},{"name":"neutralPrimaryAlt","value":"#3b3a39","comment":""},{"name":"neutralQuaternary","value":"#d2d0ce","comment":""},{"name":"neutralQuaternaryAlt","value":"#e1dfdd","comment":""},{"name":"neutralSecondary","value":"#605e5c","comment":""},{"name":"neutralSecondaryAlt","value":"#8a8886","comment":""},{"name":"neutralTertiary","value":"#a19f9d","comment":""},{"name":"neutralTertiaryAlt","value":"#c8c6c4","comment":""},{"name":"orange","value":"#d83b01","comment":""},{"name":"orangeLight","value":"#ea4300","comment":""},{"name":"orangeLighter","value":"#ff8c00","comment":""},{"name":"PageBackground","value":"#ffffff","comment":""},{"name":"primaryBackground","value":"#ffffff","comment":""},{"name":"primaryButtonBackground","value":"#03787c","comment":""},{"name":"primaryButtonBackgroundDisabled","value":"#f3f2f1","comment":""},{"name":"primaryButtonBackgroundHovered","value":"#026d70","comment":""},{"name":"primaryButtonBackgroundPressed","value":"#025c5f","comment":""},{"name":"primaryButtonBorder","value":"transparent","comment":""},{"name":"primaryButtonText","value":"#ffffff","comment":""},{"name":"primaryButtonTextDisabled","value":"#d2d0ce","comment":""},{"name":"primaryButtonTextHovered","value":"#ffffff","comment":""},{"name":"primaryButtonTextPressed","value":"#ffffff","comment":""},{"name":"primaryText","value":"#333333","comment":""},{"name":"purple","value":"#5c2d91","comment":""},{"name":"purpleDark","value":"#32145a","comment":""},{"name":"purpleLight","value":"#b4a0ff","comment":""},{"name":"red","value":"#e81123","comment":""},{"name":"redDark","value":"#a80000","comment":""},{"name":"roundedCorner2","value":"2px","comment":""},{"name":"roundedCorner4","value":"4px","comment":""},{"name":"roundedCorner6","value":"6px","comment":""},{"name":"RowAccent","value":"#03787c","comment":""},{"name":"SelectionBackground","value":"rgba(152, 214, 216, 0.50)","comment":""},{"name":"severeWarningBackground","value":"#FED9CC","comment":""},{"name":"severeWarningIcon","value":"#D83B01","comment":""},{"name":"SiteTitle","value":"#212121","comment":""},{"name":"smallFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"smallFontSize","value":"12px","comment":""},{"name":"smallFontWeight","value":400,"comment":""},{"name":"smallInputBorder","value":"#605e5c","comment":""},{"name":"smallMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"smallPlusFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"smallPlusFontSize","value":"12px","comment":""},{"name":"smallPlusFontWeight","value":400,"comment":""},{"name":"smallPlusMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"smallPlusWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"smallWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"StrongBodyText","value":"#212121","comment":""},{"name":"StrongLines","value":"#98d6d8","comment":""},{"name":"SubtleBodyText","value":"#767676","comment":""},{"name":"SubtleEmphasisBackground","value":"#f4f4f4","comment":""},{"name":"SubtleEmphasisCommandLinks","value":"#212121","comment":""},{"name":"SubtleEmphasisText","value":"#666666","comment":""},{"name":"SubtleLines","value":"#c8c8c8","comment":""},{"name":"successBackground","value":"#DFF6DD","comment":""},{"name":"successIcon","value":"#107C10","comment":""},{"name":"successText","value":"#107C10","comment":""},{"name":"SuiteBarBackground","value":"#03787c","comment":""},{"name":"suiteBarBackground","value":"#03787c","comment":""},{"name":"SuiteBarDisabledText","value":"#eaeaea","comment":""},{"name":"suiteBarDisabledText","value":"#eaeaea","comment":""},{"name":"SuiteBarHoverBackground","value":"#49aeb1","comment":""},{"name":"SuiteBarHoverText","value":"#98d6d8","comment":""},{"name":"SuiteBarText","value":"#ffffff","comment":""},{"name":"suiteBarText","value":"#ffffff","comment":""},{"name":"superLargeFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"superLargeFontSize","value":"42px","comment":""},{"name":"superLargeFontWeight","value":600,"comment":""},{"name":"superLargeMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"superLargeWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"teal","value":"#008272","comment":""},{"name":"tealDark","value":"#004b50","comment":""},{"name":"tealLight","value":"#00b294","comment":""},{"name":"themeAccent","value":"#03787c","comment":""},{"name":"themeAccentTranslucent10","value":"rgba(3, 120, 124, 0.10)","comment":""},{"name":"themeDark","value":"#025c5f","comment":""},{"name":"themeDarkAlt","value":"#026d70","comment":""},{"name":"themeDarker","value":"#014446","comment":""},{"name":"themeLight","value":"#98d6d8","comment":""},{"name":"themeLighter","value":"#c5e9ea","comment":""},{"name":"themeLighterAlt","value":"#f0f9fa","comment":""},{"name":"themePrimary","value":"#03787c","comment":""},{"name":"themeSecondary","value":"#13898d","comment":""},{"name":"themeTertiary","value":"#49aeb1","comment":""},{"name":"TileBackgroundOverlay","value":"rgba(0, 0, 0, 0.50)","comment":""},{"name":"TileText","value":"#ffffff","comment":""},{"name":"tinyFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"tinyFontSize","value":"10px","comment":""},{"name":"tinyFontWeight","value":400,"comment":""},{"name":"tinyMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"tinyWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"TopBarBackground","value":"rgba(234, 234, 234, 0.78)","comment":""},{"name":"topBarBackground","value":"rgba(234, 234, 234, 0.78)","comment":""},{"name":"TopBarHoverText","value":"#333333","comment":""},{"name":"topBarHoverText","value":"#333333","comment":""},{"name":"TopBarPressedText","value":"#014446","comment":""},{"name":"TopBarText","value":"#666666","comment":""},{"name":"topBarText","value":"#666666","comment":""},{"name":"variantBorder","value":"#edebe9","comment":""},{"name":"variantBorderHovered","value":"#a19f9d","comment":""},{"name":"warningBackground","value":"#FFF4CE","comment":""},{"name":"warningHighlight","value":"#ffb900","comment":""},{"name":"warningIcon","value":"#797775","comment":""},{"name":"warningText","value":"#323130","comment":""},{"name":"WebPartHeading","value":"#333333","comment":""},{"name":"white","value":"#ffffff","comment":""},{"name":"whiteTranslucent40","value":"rgba(255, 255, 255, 0.40)","comment":""},{"name":"xLargeFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"xLargeFontSize","value":"20px","comment":""},{"name":"xLargeFontWeight","value":600,"comment":""},{"name":"xLargeMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"xLargePlusFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"xLargePlusFontSize","value":"24px","comment":""},{"name":"xLargePlusFontWeight","value":600,"comment":""},{"name":"xLargePlusMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"xLargePlusWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"xLargeWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"xSmallFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"xSmallFontSize","value":"10px","comment":""},{"name":"xSmallFontWeight","value":400,"comment":""},{"name":"xSmallMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"xSmallWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"xxLargeFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"xxLargeFontSize","value":"28px","comment":""},{"name":"xxLargeFontWeight","value":600,"comment":""},{"name":"xxLargeMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"xxLargePlusFontFamily","value":"'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif","comment":""},{"name":"xxLargePlusFontSize","value":"32px","comment":""},{"name":"xxLargePlusFontWeight","value":600,"comment":""},{"name":"xxLargePlusMozOsxFontSmoothing","value":"grayscale","comment":""},{"name":"xxLargePlusWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"xxLargeWebkitFontSmoothing","value":"antialiased","comment":""},{"name":"yellow","value":"#ffb900","comment":""},{"name":"yellowDark","value":"#d29200","comment":""},{"name":"yellowLight","value":"#fff100","comment":""}]
+[
+    {
+        "name": "accent",
+        "value": "#4f6bed",
+        "comment": ""
+    },
+    {
+        "name": "accentButtonBackground",
+        "value": "#4f6bed",
+        "comment": ""
+    },
+    {
+        "name": "accentButtonText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "AccentLines",
+        "value": "#13898d",
+        "comment": ""
+    },
+    {
+        "name": "AccentText",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "actionLink",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "actionLinkHovered",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "BackgroundOverlay",
+        "value": "rgba(255, 255, 255, 0.85)",
+        "comment": ""
+    },
+    {
+        "name": "backgroundOverlay",
+        "value": "rgba(255, 255, 255, 0.85)",
+        "comment": ""
+    },
+    {
+        "name": "black",
+        "value": "#000000",
+        "comment": ""
+    },
+    {
+        "name": "blackTranslucent40",
+        "value": "rgba(0,0,0,.4)",
+        "comment": ""
+    },
+    {
+        "name": "blockingBackground",
+        "value": "#FDE7E9",
+        "comment": ""
+    },
+    {
+        "name": "blockingIcon",
+        "value": "#FDE7E9",
+        "comment": ""
+    },
+    {
+        "name": "blue",
+        "value": "#0078d4",
+        "comment": ""
+    },
+    {
+        "name": "blueDark",
+        "value": "#002050",
+        "comment": ""
+    },
+    {
+        "name": "blueLight",
+        "value": "#00bcf2",
+        "comment": ""
+    },
+    {
+        "name": "blueMid",
+        "value": "#00188f",
+        "comment": ""
+    },
+    {
+        "name": "bodyBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "bodyBackgroundChecked",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "bodyBackgroundHovered",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "bodyDivider",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "bodyFrameBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "bodyFrameDivider",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "bodyStandoutBackground",
+        "value": "#faf9f8",
+        "comment": ""
+    },
+    {
+        "name": "bodySubtext",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "bodyText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "BodyText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "bodyTextChecked",
+        "value": "#000000",
+        "comment": ""
+    },
+    {
+        "name": "ButtonBackground",
+        "value": "#f8f8f8",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackgroundChecked",
+        "value": "#c8c6c4",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackgroundCheckedHovered",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackgroundDisabled",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackgroundHovered",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "buttonBackgroundPressed",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "buttonBorder",
+        "value": "#8a8886",
+        "comment": ""
+    },
+    {
+        "name": "ButtonBorder",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "buttonBorderDisabled",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "ButtonDisabledBackground",
+        "value": "#f8f8f8",
+        "comment": ""
+    },
+    {
+        "name": "ButtonDisabledBorder",
+        "value": "#eaeaea",
+        "comment": ""
+    },
+    {
+        "name": "ButtonDisabledText",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "ButtonGlyph",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "ButtonGlyphActive",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "ButtonGlyphDisabled",
+        "value": "#c8c8c8",
+        "comment": ""
+    },
+    {
+        "name": "ButtonHoverBackground",
+        "value": "#c5e9ea",
+        "comment": ""
+    },
+    {
+        "name": "ButtonHoverBorder",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "ButtonPressedBackground",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "ButtonPressedBorder",
+        "value": "#13898d",
+        "comment": ""
+    },
+    {
+        "name": "buttonText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "ButtonText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "buttonTextChecked",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "buttonTextCheckedHovered",
+        "value": "#000000",
+        "comment": ""
+    },
+    {
+        "name": "buttonTextDisabled",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "buttonTextHovered",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "buttonTextPressed",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "cardShadow",
+        "value": "0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)",
+        "comment": ""
+    },
+    {
+        "name": "cardShadowHovered",
+        "value": "0 0 1px #a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "cardStandoutBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "CommandLinks",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "CommandLinksDisabled",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "CommandLinksHover",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "CommandLinksPressed",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "CommandLinksSecondary",
+        "value": "#212121",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent1",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent2",
+        "value": "#00485b",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent3",
+        "value": "#288054",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent4",
+        "value": "#767956",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent5",
+        "value": "#ed0033",
+        "comment": ""
+    },
+    {
+        "name": "ContentAccent6",
+        "value": "#682a7a",
+        "comment": ""
+    },
+    {
+        "name": "defaultStateBackground",
+        "value": "#faf9f8",
+        "comment": ""
+    },
+    {
+        "name": "DialogBorder",
+        "value": "#f4f4f4",
+        "comment": ""
+    },
+    {
+        "name": "dialogBorder",
+        "value": "#f4f4f4",
+        "comment": ""
+    },
+    {
+        "name": "disabledBackground",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "DisabledBackground",
+        "value": "#f8f8f8",
+        "comment": ""
+    },
+    {
+        "name": "disabledBodySubtext",
+        "value": "#c8c6c4",
+        "comment": ""
+    },
+    {
+        "name": "disabledBodyText",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "disabledBorder",
+        "value": "#c8c6c4",
+        "comment": ""
+    },
+    {
+        "name": "DisabledLines",
+        "value": "#eaeaea",
+        "comment": ""
+    },
+    {
+        "name": "disabledSubtext",
+        "value": "#d2d0ce",
+        "comment": ""
+    },
+    {
+        "name": "disabledText",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "DisabledText",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "elevation16",
+        "value": "0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108)",
+        "comment": ""
+    },
+    {
+        "name": "elevation4",
+        "value": "0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)",
+        "comment": ""
+    },
+    {
+        "name": "elevation64",
+        "value": "0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18)",
+        "comment": ""
+    },
+    {
+        "name": "elevation8",
+        "value": "0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)",
+        "comment": ""
+    },
+    {
+        "name": "EmphasisBackground",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "EmphasisBorder",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "EmphasisHoverBackground",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "EmphasisHoverBorder",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "EmphasisText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "errorBackground",
+        "value": "#FDE7E9",
+        "comment": ""
+    },
+    {
+        "name": "errorIcon",
+        "value": "#A80000",
+        "comment": ""
+    },
+    {
+        "name": "errorText",
+        "value": "#a4262c",
+        "comment": ""
+    },
+    {
+        "name": "focusBorder",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "FooterBackground",
+        "value": "rgba(255, 255, 255, 0.85)",
+        "comment": ""
+    },
+    {
+        "name": "green",
+        "value": "#107c10",
+        "comment": ""
+    },
+    {
+        "name": "greenDark",
+        "value": "#004b1c",
+        "comment": ""
+    },
+    {
+        "name": "greenLight",
+        "value": "#bad80a",
+        "comment": ""
+    },
+    {
+        "name": "HeaderAccentLines",
+        "value": "#13898d",
+        "comment": ""
+    },
+    {
+        "name": "HeaderBackground",
+        "value": "rgba(255, 255, 255, 0.85)",
+        "comment": ""
+    },
+    {
+        "name": "HeaderDisabledBackground",
+        "value": "#f8f8f8",
+        "comment": ""
+    },
+    {
+        "name": "HeaderDisabledLines",
+        "value": "#eaeaea",
+        "comment": ""
+    },
+    {
+        "name": "HeaderDisableText",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "HeaderLines",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "HeaderNavigationHoverText",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "HeaderNavigationPressedText",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "HeaderNavigationSelectedText",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "HeaderNavigationText",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "HeaderSiteTitle",
+        "value": "#212121",
+        "comment": ""
+    },
+    {
+        "name": "HeaderStrongLines",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "HeaderSubtleLines",
+        "value": "#c8c8c8",
+        "comment": ""
+    },
+    {
+        "name": "HeaderSubtleText",
+        "value": "#767676",
+        "comment": ""
+    },
+    {
+        "name": "HeaderText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "HoverBackground",
+        "value": "rgba(197, 233, 234, 0.50)",
+        "comment": ""
+    },
+    {
+        "name": "Hyperlink",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "HyperlinkActive",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "Hyperlinkfollowed",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "infoBackground",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "infoIcon",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "inputBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "inputBackgroundChecked",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "inputBackgroundCheckedHovered",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "inputBorder",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "inputBorderHovered",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "inputFocusBorderAlt",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "inputForegroundChecked",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "inputIcon",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "inputIconDisabled",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "inputIconHovered",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "inputPlaceholderBackgroundChecked",
+        "value": "#c5e9ea",
+        "comment": ""
+    },
+    {
+        "name": "inputPlaceholderText",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "inputText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "inputTextHovered",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "largeFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "largeFontSize",
+        "value": "18px",
+        "comment": ""
+    },
+    {
+        "name": "largeFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "largeMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "largeWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "Lines",
+        "value": "#a6a6a6",
+        "comment": ""
+    },
+    {
+        "name": "link",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "linkHovered",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "listBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "listHeaderBackgroundHovered",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "listHeaderBackgroundPressed",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "listItemBackgroundChecked",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "listItemBackgroundCheckedHovered",
+        "value": "#e1dfdd",
+        "comment": ""
+    },
+    {
+        "name": "listItemBackgroundHovered",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "listText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "listTextColor",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "magenta",
+        "value": "#b4009e",
+        "comment": ""
+    },
+    {
+        "name": "magentaDark",
+        "value": "#5c005c",
+        "comment": ""
+    },
+    {
+        "name": "magentaLight",
+        "value": "#e3008c",
+        "comment": ""
+    },
+    {
+        "name": "mediumFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "mediumFontSize",
+        "value": "14px",
+        "comment": ""
+    },
+    {
+        "name": "mediumFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "mediumMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "mediumPlusFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "mediumPlusFontSize",
+        "value": "16px",
+        "comment": ""
+    },
+    {
+        "name": "mediumPlusFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "mediumPlusMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "mediumPlusWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "mediumWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "megaFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "megaFontSize",
+        "value": "68px",
+        "comment": ""
+    },
+    {
+        "name": "megaFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "megaMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "megaWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "menuBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "menuDivider",
+        "value": "#c8c6c4",
+        "comment": ""
+    },
+    {
+        "name": "menuHeader",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "menuIcon",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "menuItemBackgroundChecked",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "menuItemBackgroundHovered",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "menuItemBackgroundPressed",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "menuItemText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "menuItemTextHovered",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "messageLink",
+        "value": "#005A9E",
+        "comment": ""
+    },
+    {
+        "name": "messageLinkHovered",
+        "value": "#004578",
+        "comment": ""
+    },
+    {
+        "name": "messageText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "Navigation",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "NavigationAccent",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "NavigationHover",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "NavigationHoverBackground",
+        "value": "rgba(197, 233, 234, 0.50)",
+        "comment": ""
+    },
+    {
+        "name": "NavigationPressed",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "NavigationSelectedBackground",
+        "value": "rgba(234, 234, 234, 0.78)",
+        "comment": ""
+    },
+    {
+        "name": "neutralDark",
+        "value": "#201f1e",
+        "comment": ""
+    },
+    {
+        "name": "neutralLight",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "neutralLighter",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "neutralLighterAlt",
+        "value": "#faf9f8",
+        "comment": ""
+    },
+    {
+        "name": "neutralPrimary",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "neutralPrimaryAlt",
+        "value": "#3b3a39",
+        "comment": ""
+    },
+    {
+        "name": "neutralQuaternary",
+        "value": "#d2d0ce",
+        "comment": ""
+    },
+    {
+        "name": "neutralQuaternaryAlt",
+        "value": "#e1dfdd",
+        "comment": ""
+    },
+    {
+        "name": "neutralSecondary",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "neutralSecondaryAlt",
+        "value": "#8a8886",
+        "comment": ""
+    },
+    {
+        "name": "neutralTertiary",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "neutralTertiaryAlt",
+        "value": "#c8c6c4",
+        "comment": ""
+    },
+    {
+        "name": "orange",
+        "value": "#d83b01",
+        "comment": ""
+    },
+    {
+        "name": "orangeLight",
+        "value": "#ea4300",
+        "comment": ""
+    },
+    {
+        "name": "orangeLighter",
+        "value": "#ff8c00",
+        "comment": ""
+    },
+    {
+        "name": "PageBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "primaryBackground",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonBackground",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonBackgroundDisabled",
+        "value": "#f3f2f1",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonBackgroundHovered",
+        "value": "#026d70",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonBackgroundPressed",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonBorder",
+        "value": "transparent",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonTextDisabled",
+        "value": "#d2d0ce",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonTextHovered",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "primaryButtonTextPressed",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "primaryText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "purple",
+        "value": "#5c2d91",
+        "comment": ""
+    },
+    {
+        "name": "purpleDark",
+        "value": "#32145a",
+        "comment": ""
+    },
+    {
+        "name": "purpleLight",
+        "value": "#b4a0ff",
+        "comment": ""
+    },
+    {
+        "name": "red",
+        "value": "#e81123",
+        "comment": ""
+    },
+    {
+        "name": "redDark",
+        "value": "#a80000",
+        "comment": ""
+    },
+    {
+        "name": "roundedCorner2",
+        "value": "2px",
+        "comment": ""
+    },
+    {
+        "name": "roundedCorner4",
+        "value": "4px",
+        "comment": ""
+    },
+    {
+        "name": "roundedCorner6",
+        "value": "6px",
+        "comment": ""
+    },
+    {
+        "name": "RowAccent",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "SelectionBackground",
+        "value": "rgba(152, 214, 216, 0.50)",
+        "comment": ""
+    },
+    {
+        "name": "severeWarningBackground",
+        "value": "#FED9CC",
+        "comment": ""
+    },
+    {
+        "name": "severeWarningIcon",
+        "value": "#D83B01",
+        "comment": ""
+    },
+    {
+        "name": "SiteTitle",
+        "value": "#212121",
+        "comment": ""
+    },
+    {
+        "name": "smallFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "smallFontSize",
+        "value": "12px",
+        "comment": ""
+    },
+    {
+        "name": "smallFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "smallInputBorder",
+        "value": "#605e5c",
+        "comment": ""
+    },
+    {
+        "name": "smallMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "smallPlusFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "smallPlusFontSize",
+        "value": "12px",
+        "comment": ""
+    },
+    {
+        "name": "smallPlusFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "smallPlusMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "smallPlusWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "smallWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "StrongBodyText",
+        "value": "#212121",
+        "comment": ""
+    },
+    {
+        "name": "StrongLines",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "SubtleBodyText",
+        "value": "#767676",
+        "comment": ""
+    },
+    {
+        "name": "SubtleEmphasisBackground",
+        "value": "#f4f4f4",
+        "comment": ""
+    },
+    {
+        "name": "SubtleEmphasisCommandLinks",
+        "value": "#212121",
+        "comment": ""
+    },
+    {
+        "name": "SubtleEmphasisText",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "SubtleLines",
+        "value": "#c8c8c8",
+        "comment": ""
+    },
+    {
+        "name": "successBackground",
+        "value": "#DFF6DD",
+        "comment": ""
+    },
+    {
+        "name": "successIcon",
+        "value": "#107C10",
+        "comment": ""
+    },
+    {
+        "name": "successText",
+        "value": "#107C10",
+        "comment": ""
+    },
+    {
+        "name": "SuiteBarBackground",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "suiteBarBackground",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "SuiteBarDisabledText",
+        "value": "#eaeaea",
+        "comment": ""
+    },
+    {
+        "name": "suiteBarDisabledText",
+        "value": "#eaeaea",
+        "comment": ""
+    },
+    {
+        "name": "SuiteBarHoverBackground",
+        "value": "#49aeb1",
+        "comment": ""
+    },
+    {
+        "name": "SuiteBarHoverText",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "SuiteBarText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "suiteBarText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "superLargeFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "superLargeFontSize",
+        "value": "42px",
+        "comment": ""
+    },
+    {
+        "name": "superLargeFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "superLargeMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "superLargeWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "teal",
+        "value": "#008272",
+        "comment": ""
+    },
+    {
+        "name": "tealDark",
+        "value": "#004b50",
+        "comment": ""
+    },
+    {
+        "name": "tealLight",
+        "value": "#00b294",
+        "comment": ""
+    },
+    {
+        "name": "themeAccent",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "themeAccentTranslucent10",
+        "value": "rgba(3, 120, 124, 0.10)",
+        "comment": ""
+    },
+    {
+        "name": "themeDark",
+        "value": "#025c5f",
+        "comment": ""
+    },
+    {
+        "name": "themeDarkAlt",
+        "value": "#026d70",
+        "comment": ""
+    },
+    {
+        "name": "themeDarker",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "themeLight",
+        "value": "#98d6d8",
+        "comment": ""
+    },
+    {
+        "name": "themeLighter",
+        "value": "#c5e9ea",
+        "comment": ""
+    },
+    {
+        "name": "themeLighterAlt",
+        "value": "#f0f9fa",
+        "comment": ""
+    },
+    {
+        "name": "themePrimary",
+        "value": "#03787c",
+        "comment": ""
+    },
+    {
+        "name": "themeSecondary",
+        "value": "#13898d",
+        "comment": ""
+    },
+    {
+        "name": "themeTertiary",
+        "value": "#49aeb1",
+        "comment": ""
+    },
+    {
+        "name": "TileBackgroundOverlay",
+        "value": "rgba(0, 0, 0, 0.50)",
+        "comment": ""
+    },
+    {
+        "name": "TileText",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "tinyFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "tinyFontSize",
+        "value": "10px",
+        "comment": ""
+    },
+    {
+        "name": "tinyFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "tinyMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "tinyWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "TopBarBackground",
+        "value": "rgba(234, 234, 234, 0.78)",
+        "comment": ""
+    },
+    {
+        "name": "topBarBackground",
+        "value": "rgba(234, 234, 234, 0.78)",
+        "comment": ""
+    },
+    {
+        "name": "TopBarHoverText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "topBarHoverText",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "TopBarPressedText",
+        "value": "#014446",
+        "comment": ""
+    },
+    {
+        "name": "TopBarText",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "topBarText",
+        "value": "#666666",
+        "comment": ""
+    },
+    {
+        "name": "variantBorder",
+        "value": "#edebe9",
+        "comment": ""
+    },
+    {
+        "name": "variantBorderHovered",
+        "value": "#a19f9d",
+        "comment": ""
+    },
+    {
+        "name": "warningBackground",
+        "value": "#FFF4CE",
+        "comment": ""
+    },
+    {
+        "name": "warningHighlight",
+        "value": "#ffb900",
+        "comment": ""
+    },
+    {
+        "name": "warningIcon",
+        "value": "#797775",
+        "comment": ""
+    },
+    {
+        "name": "warningText",
+        "value": "#323130",
+        "comment": ""
+    },
+    {
+        "name": "WebPartHeading",
+        "value": "#333333",
+        "comment": ""
+    },
+    {
+        "name": "white",
+        "value": "#ffffff",
+        "comment": ""
+    },
+    {
+        "name": "whiteTranslucent40",
+        "value": "rgba(255, 255, 255, 0.40)",
+        "comment": ""
+    },
+    {
+        "name": "xLargeFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "xLargeFontSize",
+        "value": "20px",
+        "comment": ""
+    },
+    {
+        "name": "xLargeFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "xLargeMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "xLargePlusFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "xLargePlusFontSize",
+        "value": "24px",
+        "comment": ""
+    },
+    {
+        "name": "xLargePlusFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "xLargePlusMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "xLargePlusWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "xLargeWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "xSmallFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "xSmallFontSize",
+        "value": "10px",
+        "comment": ""
+    },
+    {
+        "name": "xSmallFontWeight",
+        "value": 400,
+        "comment": ""
+    },
+    {
+        "name": "xSmallMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "xSmallWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "xxLargeFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "xxLargeFontSize",
+        "value": "28px",
+        "comment": ""
+    },
+    {
+        "name": "xxLargeFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "xxLargeMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "xxLargePlusFontFamily",
+        "value": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+        "comment": ""
+    },
+    {
+        "name": "xxLargePlusFontSize",
+        "value": "32px",
+        "comment": ""
+    },
+    {
+        "name": "xxLargePlusFontWeight",
+        "value": 600,
+        "comment": ""
+    },
+    {
+        "name": "xxLargePlusMozOsxFontSmoothing",
+        "value": "grayscale",
+        "comment": ""
+    },
+    {
+        "name": "xxLargePlusWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "xxLargeWebkitFontSmoothing",
+        "value": "antialiased",
+        "comment": ""
+    },
+    {
+        "name": "yellow",
+        "value": "#ffb900",
+        "comment": ""
+    },
+    {
+        "name": "yellowDark",
+        "value": "#d29200",
+        "comment": ""
+    },
+    {
+        "name": "yellowLight",
+        "value": "#fff100",
+        "comment": ""
+    }
+]

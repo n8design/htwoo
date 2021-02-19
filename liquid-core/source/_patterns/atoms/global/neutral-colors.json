@@ -12,43 +12,53 @@
         },
         {
             "name": "Neutral Primary Alt",
-            "value": "#3b3a39"
+            "value": "#3b3a39",
+            "comment": ""
         },
         {
             "name": "Neutral Secondary",
-            "value": "#605e5c"
+            "value": "#605e5c",
+            "comment": ""
         },
         {
             "name": "Neutral Secondary Alt",
-            "value": "#8a8886"
+            "value": "#8a8886",
+            "comment": ""
         },
         {
             "name": "Neutral Tertiary",
-            "value": "#a19f9d"
+            "value": "#a19f9d",
+            "comment": ""
         },
         {
             "name": "Neutral Tertiary Alt",
-            "value": "#c8c6c4"
+            "value": "#c8c6c4",
+            "comment": ""
         },
         {
             "name": "Neutral Quaternary",
-            "value": "#d2d0ce"
+            "value": "#d2d0ce",
+            "comment": ""
         },
         {
             "name": "Neutral Quaternary Alt",
-            "value": "#e1dfdd"
+            "value": "#e1dfdd",
+            "comment": ""
         },
         {
             "name": "Neutral Light",
-            "value": "#edebe9"
+            "value": "#edebe9",
+            "comment": ""
         },
         {
             "name": "Neutral Lighter",
-            "value": "#f3f2f1"
+            "value": "#f3f2f1",
+            "comment": ""
         },
         {
             "name": "Neutral Lighter Alt",
-            "value": "#faf9f8"
+            "value": "#faf9f8",
+            "comment": ""
         }
     ],
     "meta": {

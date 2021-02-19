@@ -1,42 +1,139 @@
 {
     "items": [
         {
-            "name": "Theme Darker",
-            "value": "#014446",
+            "name": "black",
+            "value": "#000000",
             "comment": ""
         },
         {
-            "name": "Theme Dark",
-            "value": "#025c5f",
-            "commment": ""
+            "name": "blackTranslucent40",
+            "value": "rgba(0,0,0,.4)",
+            "comment": ""
         },
         {
-            "name": "Theme Dark Alt",
-            "value": "#026d70"
+            "name": "blue",
+            "value": "#0078d4",
+            "comment": ""
         },
         {
-            "name": "Theme Dark Primary",
-            "value": "#03787c"
+            "name": "blueDark",
+            "value": "#002050",
+            "comment": ""
         },
         {
-            "name": "Theme Dark Secondary",
-            "value": "#13898d"
+            "name": "blueLight",
+            "value": "#00bcf2",
+            "comment": ""
         },
         {
-            "name": "Theme Tertiary",
-            "value": "#49aeb1"
+            "name": "blueMid",
+            "value": "#00188f",
+            "comment": ""
         },
         {
-            "name": "Theme Light",
-            "value": "#98d6d8"
+            "name": "green",
+            "value": "#107c10",
+            "comment": ""
         },
         {
-            "name": "Theme Lighter",
-            "value": "#c5e9ea"
+            "name": "greenDark",
+            "value": "#004b1c",
+            "comment": ""
         },
         {
-            "name": "Theme Lighter Alt",
-            "value": "#f0f9fa"
+            "name": "greenLight",
+            "value": "#bad80a",
+            "comment": ""
+        },
+        {
+            "name": "magenta",
+            "value": "#b4009e",
+            "comment": ""
+        },
+        {
+            "name": "magentaDark",
+            "value": "#5c005c",
+            "comment": ""
+        },
+        {
+            "name": "magentaLight",
+            "value": "#e3008c",
+            "comment": ""
+        },
+        {
+            "name": "orange",
+            "value": "#d83b01",
+            "comment": ""
+        },
+        {
+            "name": "orangeLight",
+            "value": "#ea4300",
+            "comment": ""
+        },
+        {
+            "name": "orangeLighter",
+            "value": "#ff8c00",
+            "comment": ""
+        },
+        {
+            "name": "purple",
+            "value": "#5c2d91",
+            "comment": ""
+        },
+        {
+            "name": "purpleDark",
+            "value": "#32145a",
+            "comment": ""
+        },
+        {
+            "name": "purpleLight",
+            "value": "#b4a0ff",
+            "comment": ""
+        },
+        {
+            "name": "red",
+            "value": "#e81123",
+            "comment": ""
+        },
+        {
+            "name": "redDark",
+            "value": "#a80000",
+            "comment": ""
+        },
+        {
+            "name": "teal",
+            "value": "#008272",
+            "comment": ""
+        },
+        {
+            "name": "tealDark",
+            "value": "#004b50",
+            "comment": ""
+        },
+        {
+            "name": "tealLight",
+            "value": "#00b294",
+            "comment": ""
+        },
+        {
+            "name": "white",
+            "value": "#ffffff",
+            "comment": ""
+        },
+        {
+            "name": "yellow",
+            "value": "#ffb900",
+            "comment": ""
+        },
+        {
+            "name": "yellowDark",
+            "value": "#d29200",
+            "comment": ""
+        },
+        {
+            "name": "yellowLight",
+            "value": "#fff100",
+            "comment": ""
         }
     ],
     "meta": {
