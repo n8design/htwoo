@@ -1,17 +1,22 @@
 # Liquid UI framework
 
-[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ)
+[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) [![DOM manipulation free](https://img.shields.io/badge/100%25%20DOM%20manipulation%20free-orange)]
 
 Liquid UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite beeing ReactJS exclsive this project offer a style guide based on HTML and CSS to create implementations for other frameworks as well.
+
+![Be like water][logo]
 
 The first implementation of Liquid UI Framework implementation will be based on ReactJS, with option to support a wider range of frameworks in future.
 
 It plays nicely together with applications such as Microsoft SharePoint and Microsot Teams.
 
 Maintainer: [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
+
 Contributor: You ❤️
 
-![Be like water][logo]
+
+
+
 
 
 
