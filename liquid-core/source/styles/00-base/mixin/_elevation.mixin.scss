@@ -1,0 +1,16 @@
+// 01-mixin-elevation
+// Common fluent UI Elevations:
+// 4,8,16,64
+@mixin elevation($depth: 0) {
+
+    $d1: $depth / 2;
+    $d2: $depth * 1;
+
+    // ($depth*1px)
+
+    box-shadow: 0 $d1 * 1px $d2 * 1px 0 rgba(0, 0, 0, .132),
+    0 #{($depth*0.1px)} #{($depth*0.1*3px)} 0 rgba(0, 0, 0, .108);
+
+    // 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+
+}

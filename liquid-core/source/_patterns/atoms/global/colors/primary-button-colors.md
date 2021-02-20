@@ -1,5 +1,5 @@
 ---
-title: My Fancy New Color Buttons
+title: Button Colors Primary
 order: 5
 ---
 
