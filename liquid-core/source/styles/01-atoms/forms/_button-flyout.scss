@@ -1,0 +1,18 @@
+.lqd-buttonflyout{
+	@extend %listReset;
+
+	display: inline-block;
+
+	border: 1px $buttonBorder;
+	background-color: $bodyBackground;
+
+	@include elevation(4);
+}
+.lqd-buttonflyout-item{
+	display: block;
+
+	width: auto;
+}
+.lqd-buttonflyout-button{
+    
+}

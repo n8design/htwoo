@@ -1,0 +1,39 @@
+.lqd-buttoncontext{
+	display: flex;
+
+	width: 100%;
+	margin: 0;
+	padding: 0 px2rem(4px) 0 px2rem(8px) ;
+	padding-right: 3rem;
+
+	border: none;
+	background-color: $buttonBackground;
+
+	align-items: center;
+	&-icon{
+		line-height: px2rem(36px);
+
+		display: flex;
+		justify-content: center;
+
+		width: px2rem(24px);
+		height: px2rem(24px);
+
+		background-color: lime;
+
+		align-items: center;
+	}
+	&-label{
+		font-size: px2rem(14px);
+		line-height: px2rem(36px);
+
+		box-sizing: border-box;
+		padding: 0 px2rem(4px);
+	}
+	&:hover{
+		background-color: $buttonBackgroundHovered;
+	}
+	&:active{
+		color: $buttonTextPressed;
+	}
+}
