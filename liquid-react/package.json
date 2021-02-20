@@ -1,0 +1,48 @@
+{
+  "name": "liquid-react",
+  "description": "",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "build": "webpack",
+    "prepublish": "gulp build --ship"
+  },
+  "resolutions": {
+    "@types/react": "16.8.8"
+  },
+  "devDependencies": {
+    "@types/es6-promise": "0.0.33",
+    "@types/lodash": "^4.14.168",
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.3",
+    "@types/webpack": "^4.41.26",
+    "browser-sync": "^2.26.14",
+    "css-loader": "^3.6.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-tslint": "^8.1.4",
+    "gulp-typescript": "^5.0.1",
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^1.1.3",
+    "typescript": "^3.9.7",
+    "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-stream": "^6.1.2",
+    "style-loader": "^2.0.0"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "@pnp/logging": "^2.2.0",
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
+  }
+}
