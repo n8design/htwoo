@@ -4,6 +4,7 @@ import isEqual from "lodash/isEqual";
 
 export interface ILQDWebPartTitleProps {
   dataComponent?: string;
+  rootElementAttributes?: React.ButtonHTMLAttributes<HTMLDivElement>;
   editMode: boolean;
   title: string;
   updateTitle: (title: string) => void;
@@ -40,7 +41,7 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
   public render(): React.ReactElement<ILQDWebPartTitleProps> {
     try {
       return (
-        <div data-component={this.LOG_SOURCE}>
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes}>
           <h3 role="heading" data-component={this.LOG_SOURCE} className="lqd-webppartheader">
             <div
               contentEditable={this.props.editMode}
