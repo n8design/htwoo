@@ -2,10 +2,11 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from 'lodash/isEqual';
 
-export interface ILQDButtonProps {
+import { ILQDStandardProps } from "../Common.model";
+
+export interface ILQDButtonProps extends ILQDStandardProps {
+  rootElementAttributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   label?: string;
-  elementAttributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  dataComponent?: string;
 }
 
 export interface ILQDButtonState {
@@ -15,7 +16,7 @@ export class LQDButtonState implements ILQDButtonState {
   constructor() { }
 }
 
-export class LQDButton extends React.Component<ILQDButtonProps, ILQDButtonState> {
+export default class LQDButton extends React.Component<ILQDButtonProps, ILQDButtonState> {
   private LOG_SOURCE: string = "LQDButton";
 
   constructor(props) {
@@ -33,10 +34,10 @@ export class LQDButton extends React.Component<ILQDButtonProps, ILQDButtonState>
   private renderButton = (): any => {
     let element: any = null;
     try {
-      element = <button data-component={this.LOG_SOURCE} {...this.props.elementAttributes}>
+      const className = (this.props.rootElementAttributes.className) ? `lqd-button ${this.props.rootElementAttributes.className}` : "lqd-button";
+      element = <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
         {this.props.label || this.props.children}
       </button>;
-      element.props.className = (element.props.className) ? `lqd-button ${this.props.elementAttributes.className}` : "lqd-button";
     } catch (err) {
       Logger.write(`${err} - ${this.LOG_SOURCE} (renderButton)`, LogLevel.Error);
     }

@@ -1,4 +1,6 @@
-export * from './components/LQDButton';
-export * from './components/LQDWebPartTitle';
+import './LQDButton';
+import './LQDWebPartTitle';
+export * from './LQDButton';
+export * from './LQDWebPartTitle';
 
 //# sourceMappingURL=index.js.map

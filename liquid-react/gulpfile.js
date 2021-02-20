@@ -68,9 +68,7 @@ const version = (cb) => {
 /** TASK: TypeScript compile */
 const tsCompile = () => {
 
-  return src(tsSrc, {
-      since: lastRun(tsCompile)
-    })
+  return src(tsSrc)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(tsProject())

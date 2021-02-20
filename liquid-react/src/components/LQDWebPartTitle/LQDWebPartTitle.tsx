@@ -2,8 +2,9 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash/isEqual";
 
-export interface ILQDWebPartTitleProps {
-  dataComponent?: string;
+import { ILQDStandardProps } from "../Common.model";
+
+export interface ILQDWebPartTitleProps extends ILQDStandardProps {
   rootElementAttributes?: React.ButtonHTMLAttributes<HTMLDivElement>;
   editMode: boolean;
   title: string;
@@ -48,7 +49,9 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
               suppressContentEditableWarning={true}
               onBlur={this.saveTitle}
               dangerouslySetInnerHTML={{ __html: this.props.title }}
-            />
+            >
+              {this.props.children}
+            </div>
           </h3>
         </div>
       );

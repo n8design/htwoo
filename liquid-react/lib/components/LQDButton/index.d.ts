@@ -1,1 +1,2 @@
-export * from './LQDButton';
+import "./LQDButton";
+export * from "./LQDButton";
