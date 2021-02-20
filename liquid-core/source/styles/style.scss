@@ -1,27 +1,31 @@
 /**** REQURIED FOR STYLE GUIDE ****/
-@import '00-styleguide/00-styleguide';
+@import "00-styleguide/00-styleguide";
 
 /**** BASE VARS AND MIXIN's ****/
-@import '00-base/colors/color-vars-css-converted';
-@import '00-base/colors/typography.fixup';
+@import "00-base/colors/color-vars-css-converted";
+@import "00-base/colors/typography.fixup";
 
 
 /***** COlor converted to SCSS variables *****/
-@import '00-base/colors/colors';
+@import "00-base/colors/colors";
 
 
 /**** Core Mixing Definition ****/
-@import '00-base/mixin/core.mixin';
-@import '00-base/mixin/typography.mixin';
-@import '00-base/mixin/elevation.mixin';
+@import "00-base/mixin/core.mixin";
+@import "00-base/mixin/typography.mixin";
+@import "00-base/mixin/elevation.mixin";
+@import "00-base/mixin/grid.mixin";
 
 /**** ATOMS / Typography ****/
-@import '01-atoms/typography/headlines';
-@import '01-atoms/typography/paragraph';
-@import '01-atoms/typography/monospace';
-@import '01-atoms/typography/blockquote';
-@import '01-atoms/typography/font-size';
+@import "01-atoms/typography/headlines";
+@import "01-atoms/typography/paragraph";
+@import "01-atoms/typography/monospace";
+@import "01-atoms/typography/blockquote";
+@import "01-atoms/typography/font-size";
+
+/**** ATOMS / Grid ****/
+@import "01-atoms/grid/grid";
 
 
 /**** Elevation ****/
-@import '01-atoms/elevations/elevations';
+@import "01-atoms/elevations/elevations";
