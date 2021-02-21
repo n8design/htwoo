@@ -1,4 +1,4 @@
-.lqd-button{
+.lqd-button {
 	display: flex;
 	justify-content: center;
 
@@ -13,7 +13,7 @@
 	align-items: center;
 	flex-wrap: nowrap;
 
-	&-label{
+	&-label {
 		font-size: px2rem(14px);
 		font-weight: 600;
 		line-height: px2rem(20px);
@@ -28,12 +28,12 @@
 	}
 
 	&:active,
-	&:hover{
+	&:hover {
 		background-color: $buttonBackgroundCheckedHovered;
 	}
 
 	&[disabled],
-	&:disabled{
+	&:disabled {
 		pointer-events: none;
 
 		color: $buttonTextDisabled;
@@ -43,7 +43,7 @@
 }
 
 // Primary button don't get a disabled state because it don't make sense
-.lqd-button-primary{
+.lqd-button-primary {
 	@extend .lqd-button;
 
 	color: $primaryButtonText;
@@ -51,19 +51,19 @@
 	border-color: $primaryButtonBackground;
 	background-color: $primaryButtonBackground;
 
-	&:hover{
+	&:hover {
 		color: $primaryButtonTextHovered;
-        border-color: $primaryButtonBackgroundHovered;
+		border-color: $primaryButtonBackgroundHovered;
 		background-color: $primaryButtonBackgroundHovered;
 	}
 
-	&:active{
+	&:active {
 		border-color: $primaryButtonBackgroundPressed;
 		background-color: $primaryButtonBackgroundPressed;
 	}
 }
 
-.lqd-buttoncomp{
+.lqd-buttoncomp {
 	@extend .lqd-button;
 
 	flex-direction: column;
@@ -72,7 +72,7 @@
 
 	align-items: flex-start;
 
-	&-label{
+	&-label {
 		@extend .lqd-button-label;
 
 		line-height: 1em;
@@ -84,13 +84,13 @@
 		margin-bottom: px2rem(5px);
 	}
 
-	&-desc{
+	&-desc {
 		font-size: px2rem(10px);
 		font-weight: normal;
 	}
 }
 
-.lqd-buttoncomp-primary{
+.lqd-buttoncomp-primary {
 	@extend .lqd-button-primary;
 
 	flex-direction: column;
@@ -99,7 +99,7 @@
 
 	align-items: flex-start;
 
-	&-label{
+	&-label {
 		@extend .lqd-button-label;
 
 		line-height: 1em;
@@ -111,14 +111,13 @@
 		margin-bottom: px2rem(5px);
 	}
 
-	&-desc{
+	&-desc {
 		font-size: px2rem(10px);
 		font-weight: normal;
 	}
-
 }
 
-a.lqd-button{
+a.lqd-button {
 	@extend .lqd-button;
 
 	display: inline-flex;
@@ -131,16 +130,16 @@ a.lqd-button{
 	flex-grow: 0;
 	flex-shrink: 1;
 
-	*{
+	* {
 		width: auto;
 	}
 
-	&:hover{
+	&:hover {
 		color: $buttonText;
 	}
 }
 
-a.lqd-button-primary{
+a.lqd-button-primary {
 	@extend .lqd-button-primary;
 
 	display: inline-flex;
@@ -153,24 +152,142 @@ a.lqd-button-primary{
 	flex-grow: 0;
 	flex-shrink: 1;
 
-	&:hover{
+	&:hover {
 		color: $primaryButtonTextHovered;
-        border-color: $primaryButtonBackgroundHovered;
+		border-color: $primaryButtonBackgroundHovered;
 		background-color: $primaryButtonBackgroundHovered;
 	}
 
-	&:active{
+	&:active {
 		border-color: $primaryButtonBackgroundPressed;
 		background-color: $primaryButtonBackgroundPressed;
 	}
 }
 
-.lqd-buttonsplit{
 
-	&-left{
+/* Split Button Slideout Animation
+% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+0% {
+    transform: translate3d(0px, -10px, 0px);
+    pointer-events: none;
+}
+100% {
+    transform: translate3d(0px, 0px, 0px);
+    pointer-events: auto;
+}
+
+*/
+.lqd-buttonsplit {
+	position: relative;
+
+	display: flex;
+
+	&-standard {
 		@extend .lqd-button;
+
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		&[disabled],
+		&:disabled {
+			pointer-events: none;
+	
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
 	}
-	&-right{
+
+	&-carret {
 		@extend .lqd-button;
+
+		font-weight: 400;
+
+		margin: 0;
+		padding: 0;
+
+		color: $buttonText;
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		.lqd-button-label {
+			font-weight: inherit;
+			line-height: 1;
+
+			height: auto;
+			margin: 0;
+			padding: px2rem(2px) px2rem(12px);
+
+			color: inherit;
+			border-left: 1px currentColor solid;
+		}
+
+		&>* {
+			pointer-events: none;
+		}
+		&[disabled],
+		&:disabled {
+			pointer-events: none;
+	
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
+	}
+
+	@extend %flyoutDropDown;
+
+	
+
+	// JUST FOR QUICK TESTING
+	// LONG GOAL REMOVE
+	// &:hover{
+	// 	.lqd-buttonflyout{
+	// 		overflow: unset;
+
+	// 		height: 100%;
+	// 		max-height: auto;
+
+	// 		transition: max-height 3s ease-out 0;
+
+	// 		background: lime;
+
+	// 		flex: 0;
+	// 	}
+	// }
+}
+
+.lqd-buttonsplit-primary {
+	@extend .lqd-buttonsplit;
+
+	.lqd-buttonsplit-standard,
+	.lqd-buttonsplit-carret {
+		color: $primaryButtonText;
+		background-color: $primaryButtonBackground;
+		border-color: $primaryButtonBackground;
+
+		.lqd-button-label {
+			color: currentColor;
+		}
+		&[disabled],
+		&:disabled {
+			pointer-events: none;
+	
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
+	}
+	&.show-flyout {
+		.lqd-buttonsplit-carret{
+			background-color: $primaryButtonBackgroundPressed;
+			border-color: $primaryButtonBackgroundPressed;
+		}
 	}
 }

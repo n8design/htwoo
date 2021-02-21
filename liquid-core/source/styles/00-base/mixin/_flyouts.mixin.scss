@@ -1,0 +1,21 @@
+%flyoutDropDown{
+	.lqd-buttonflyout{
+		position: absolute;
+		z-index: 400;
+		top: 100%;
+        left: 0;
+
+		display: none; // intermediate SHOW/HIDE
+	}
+
+	// TODO: Add SLIDEOUT ANIMATION
+	&.show-flyout{
+		.lqd-buttonflyout{
+			display: block;
+		}
+
+		.lqd-buttonsplit-carret{
+			background-color: $buttonBackgroundCheckedHovered;
+		}
+	}
+}

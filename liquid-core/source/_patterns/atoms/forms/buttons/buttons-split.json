@@ -1,0 +1,12 @@
+{
+    "contextItems": [
+        {
+            "label": "Email message",
+            "icon": "a"
+        },
+        {
+            "label": "Callendar Event",
+            "icon": "b"
+        }
+    ]
+}

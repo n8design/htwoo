@@ -10,6 +10,7 @@
 	background-color: $buttonBackground;
 
 	align-items: center;
+	white-space: nowrap;
 	&-icon{
 		line-height: px2rem(36px);
 
@@ -29,6 +30,7 @@
 
 		box-sizing: border-box;
 		padding: 0 px2rem(4px);
+		white-space: nowrap;
 	}
 	&:hover{
 		background-color: $buttonBackgroundHovered;
