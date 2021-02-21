@@ -1,3 +1,1 @@
-import "./LQDButton";
-export * from "./LQDButton";
-//export * from "./LQDButton";
+export { default as LQDButton, ILQDButtonProps } from "./LQDButton";

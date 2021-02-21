@@ -1,4 +1,3 @@
-import "./LQDButton";
-export * from "./LQDButton";
+export { default as LQDButton } from "./LQDButton";
 
 //# sourceMappingURL=index.js.map
