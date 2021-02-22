@@ -1,4 +1,5 @@
 ---
-title: Button Commandbar
+title: Button Command
+order: 99
 ---
 

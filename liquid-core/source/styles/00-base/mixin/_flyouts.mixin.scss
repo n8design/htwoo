@@ -1,5 +1,5 @@
 %flyoutDropDown{
-	.lqd-buttonflyout{
+	.lqd-button-flyout{
 		position: absolute;
 		z-index: 400;
 		top: 100%;
@@ -10,7 +10,7 @@
 
 	// TODO: Add SLIDEOUT ANIMATION
 	&.show-flyout{
-		.lqd-buttonflyout{
+		.lqd-button-flyout{
 			display: block;
 		}
 

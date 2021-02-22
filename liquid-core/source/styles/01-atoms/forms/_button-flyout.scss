@@ -2,11 +2,28 @@
 	@extend %listReset;
 
 	display: inline-block;
+	flex-direction: column;
 
 	border: 1px $buttonBorder;
 	background-color: $bodyBackground;
 
 	@include elevation(4);
+	z-index: 400;
+	.lqd-buttonaction{
+		width: 100%;
+		height: auto;
+		min-height: px2rem(36px);
+		padding-right: 3rem;
+		&:hover{
+			background-color: $buttonBackgroundHovered;
+			.lqd-button-label{
+				color: $buttonText;
+			}
+		}
+		&:active{
+			color: $buttonTextPressed;
+		}
+	}
 }
 .lqd-buttonflyout-item{
 	display: block;
@@ -14,5 +31,4 @@
 	width: auto;
 }
 .lqd-buttonflyout-button{
-    
 }

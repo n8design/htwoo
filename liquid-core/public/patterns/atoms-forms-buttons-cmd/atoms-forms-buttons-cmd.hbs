@@ -1,14 +1,8 @@
-<div class="lqd-button-cmd">
-    <button class="lqd-button-cmd">
-        <div class="lqd-button-icon">a</div>
-        <div class="lqd-button-label">Standard</div>
+<div class="lqd-buttoncmd" aria-haspopup="true">
+    <button class="lqd-buttoncmd" aria-haspopup="true">
+        <span class="lqd-button-icon" aria-hidden="true"> {{> atoms-icon iconname=iconAction }} </span>
+        <span class="lqd-button-label"> {{label}} </span>
+        <span class="lqd-button-icon lqd-buttonchevron"> {{> atoms-icon iconname=iconDown }} </span>
     </button>
-    <button class="lqd-button-carret">b</button>
-    <ul class="lqd-buttonflyout">
-        {{# contextItems }}
-        {{!-- <li class="lqd-buttonflyout-item"> --}}
-            {{> atoms-buttons-context }}
-            {{!-- </li> --}}
-        {{/ contextItems }}
-    </ul>
+    {{> atoms-buttons-flyouts contextItems=ddItems }}
 </div>

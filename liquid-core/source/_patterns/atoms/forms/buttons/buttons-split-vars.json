@@ -1,0 +1,64 @@
+{
+    "items": [
+        {
+            "classname": "lqd-buttonsplit",
+            "label": "Standard",
+            "disabled": null,
+            "ddItems": [
+                {
+                    "label": "Email message",
+                    "icon": "icon-ninjacat"
+                },
+                {
+                    "label": "Callendar Event",
+                    "icon": "icon-plus"
+                }
+            ]
+        },
+        {
+            "classname": "lqd-buttonsplit-primary",
+            "label": "Primary",
+            "disabled": null,
+            "ddItems": [
+                {
+                    "label": "Email message",
+                    "icon": "icon-ninjacat"
+                },
+                {
+                    "label": "Callendar Event",
+                    "icon": "icon-plus"
+                }
+            ]
+        },
+        {
+            "classname": "lqd-buttonsplit",
+            "label": "Standard",
+            "disabled": true,
+            "ddItems": [
+                {
+                    "label": "Email message",
+                    "icon": "icon-ninjacat"
+                },
+                {
+                    "label": "Callendar Event",
+                    "icon": "icon-plus"
+                }
+            ]
+        },
+        {
+            "classname": "lqd-buttonsplit-primary",
+            "label": "Primary",
+            "disabled": true,
+            "ddItems": [
+                {
+                    "label": "Email message",
+                    "icon": "icon-ninjacat"
+                },
+                {
+                    "label": "Callendar Event",
+                    "icon": "icon-plus"
+                }
+            ]
+        }
+    ]
+}

@@ -1,10 +1,7 @@
-<br>
-<div>
-    <ul class="lqd-buttonflyout" role="menu">
-        {{# contextItems }}
-        <li class="lqd-buttonflyout-item">
-            {{> atoms-buttons-context }}
-        </li>
-        {{/ contextItems }}
-    </ul>
-</div>
+<ul class="lqd-buttonflyout" role="menu">
+    {{# contextItems }}
+    <li class="lqd-buttonflyout-item">
+        {{> atoms-buttons-action iconname=this.icon label=this.label }}
+    </li>
+    {{/ contextItems }}
+</ul>

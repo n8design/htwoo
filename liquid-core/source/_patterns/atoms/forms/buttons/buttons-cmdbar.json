@@ -1,4 +1,6 @@
 {
+    "icon": "icon-plus",
+    "label": "Click me",
     "contextItems": [
         {
             "label": "Email message",

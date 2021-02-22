@@ -1,68 +1,9 @@
-<div class="lqd-buttonsplit">
-    <button class="lqd-buttonsplit-standard">
+<div class="{{ classname }}">
+    <button class="lqd-buttonsplit-standard" {{#if disabled}}disabled="true" aria-disabled="true"{{/if}}>
         <div class="lqd-button-label">Standard</div>
     </button>
-    <button class="lqd-buttonsplit-carret">
-        <div class="lqd-button-label">IconDown</div>
+    <button class="lqd-buttonsplit-carret" {{#if disabled}}disabled="true" aria-disabled="true"{{/if}}>
+        <div class="lqd-button-label">{{> atoms-icon iconname="icon-arrow-down" }}</div>
     </button>
-    <ul class="lqd-buttonflyout">
-        {{# contextItems }}
-        <li class="lqd-buttonflyout-item">
-            {{> atoms-buttons-context }}
-        </li>
-        {{/ contextItems }}
-    </ul>
-
+    {{> atoms-buttons-flyouts contextItems=ddItems }}
 </div>
-<br>
-<div class="lqd-buttonsplit-primary">
-    <button class="lqd-buttonsplit-standard">
-        <div class="lqd-button-label">Standard</div>
-    </button>
-    <button class="lqd-buttonsplit-carret">
-        <div class="lqd-button-label">IconDown</div>
-    </button>
-    <ul class="lqd-buttonflyout">
-        {{# contextItems }}
-        <li class="lqd-buttonflyout-item">
-            {{> atoms-buttons-context }}
-        </li>
-        {{/ contextItems }}
-    </ul>
-
-</div>
-<br>
-<div class="lqd-buttonsplit" disabled="true" aria-disabled="true">
-    <button class="lqd-buttonsplit-standard" disabled="true" aria-disabled="true">
-        <div class="lqd-button-label">Standard</div>
-    </button>
-    <button class="lqd-buttonsplit-carret" disabled="true" aria-disabled="true">
-        <div class="lqd-button-label">IconDown</div>
-    </button>
-    <ul class="lqd-buttonflyout">
-        {{# contextItems }}
-        <li class="lqd-buttonflyout-item">
-            {{> atoms-buttons-context }}
-        </li>
-        {{/ contextItems }}
-    </ul>
-
-</div>
-<br>
-<div class="lqd-buttonsplit-primary" disabled="true" aria-disabled="true">
-    <button class="lqd-buttonsplit-standard" disabled="true" aria-disabled="true">
-        <div class="lqd-button-label">Standard</div>
-    </button>
-    <button class="lqd-buttonsplit-carret" disabled="true" aria-disabled="true">
-        <div class="lqd-button-label">IconDown</div>
-    </button>
-    <ul class="lqd-buttonflyout">
-        {{# contextItems }}
-        <li class="lqd-buttonflyout-item">
-            {{> atoms-buttons-context }}
-        </li>
-        {{/ contextItems }}
-    </ul>
-
-</div>
-<br>

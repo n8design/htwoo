@@ -1,21 +1,19 @@
-const splitButtonReg = (classSelector) => {
+const splitButtonReg = (classSelector, handleWith) => {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
 
     allSplitButtons.forEach(element => {
         console.log(element);
         element.addEventListener('click', (event) => {
-            splitButtonClick(event);
+            handleWith(event);
         });
     });
 
 }
 
-const splitButtonClick = (event) => {
+const _btnFlyOut = (curSplitButton, parentElement) => {
 
-    let curSplitButton = event.target;
-    let parentElement = curSplitButton.parentNode;
-
+    console.log(curSplitButton)
     // set aria values
     let ariaPressed = curSplitButton.getAttribute('aria-pressed');
     if (ariaPressed === undefined) {
@@ -28,14 +26,34 @@ const splitButtonClick = (event) => {
 
     console.debug(event, curSplitButton, parentElement);
 
+}
+
+const buttonClick = (event) => {
+
+
+    let curSplitButton = event.target;
+    let parentElement = curSplitButton;
+
+    _btnFlyOut(curSplitButton, parentElement);
+
+
+}
+
+const splitButtonClick = (event) => {
+
+    let curSplitButton = event.target;
+    let parentElement = curSplitButton.parentElement;
+
+    _btnFlyOut(curSplitButton, parentElement);
 
 }
 
 const afterLoaded = () => {
 
-    splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret');
-    splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret');
-    splitButtonReg('.lqd-button-cmd > .lqd-button-carret');
+    splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
+    splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret', splitButtonClick);
+
+    splitButtonReg('.lqd-buttoncmd', buttonClick);
 
 
 }

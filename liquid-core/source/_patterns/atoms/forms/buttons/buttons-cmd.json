@@ -1,12 +1,15 @@
 {
-    "contextItems": [
+    "iconAction": "icon-plus",
+    "iconDown": "icon-arrow-down",
+    "label": "New Item",
+    "ddItems": [
         {
             "label": "Email message",
-            "icon": "a"
+            "icon": "icon-ninjacat"
         },
         {
-            "label": "Callendar Event",
-            "icon": "b"
+            "label": "Calendar Event",
+            "icon": "icon-minus"
         }
     ]
 }

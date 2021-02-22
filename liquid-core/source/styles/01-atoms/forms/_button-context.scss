@@ -1,7 +1,6 @@
 .lqd-buttoncontext{
-	display: flex;
+	display: inline-flex;
 
-	width: 100%;
 	margin: 0;
 	padding: 0 px2rem(4px) 0 px2rem(8px) ;
 	padding-right: 3rem;
@@ -19,8 +18,6 @@
 
 		width: px2rem(24px);
 		height: px2rem(24px);
-
-		background-color: lime;
 
 		align-items: center;
 	}

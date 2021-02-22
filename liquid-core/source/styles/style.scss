@@ -27,13 +27,22 @@
 @import "01-atoms/typography/font-size";
 @import "01-atoms/typography/hyperlinks";
 
-/**** ATOMS / FORMS ****/
-@import "01-atoms/forms/buttons";
+/**** ATOMS / Typography ****/
+@import "01-atoms/icons/icon";
 
+/**** ATOMS / FORMS ****/
+@import "01-atoms/forms/button-general";
+@import "01-atoms/forms/buttons";
+@import "01-atoms/forms/button-action";
+@import "01-atoms/forms/button-command";
 @import "01-atoms/forms/button-flyout";
 @import "01-atoms/forms/button-context";
 @import "01-atoms/forms/button-icon";
+@import "01-atoms/forms/button-split";
 @import "01-atoms/forms/button-commandbar";
+
+/**** Tooltip ****/
+@import "01-atoms/tooltip/tooltip";
 
 /**** ATOMS / Grid ****/
 @import "01-atoms/grid/grid";
