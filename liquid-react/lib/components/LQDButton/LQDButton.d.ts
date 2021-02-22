@@ -1,15 +1,15 @@
 import * as React from "react";
-export interface ILQDButtonProps {
+import { ILQDStandardProps } from "../Common.model";
+export interface ILQDButtonProps extends ILQDStandardProps {
+    rootElementAttributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
     label?: string;
-    elementAttributes?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-    dataComponent?: string;
 }
 export interface ILQDButtonState {
 }
 export declare class LQDButtonState implements ILQDButtonState {
     constructor();
 }
-export declare class LQDButton extends React.Component<ILQDButtonProps, ILQDButtonState> {
+export default class LQDButton extends React.Component<ILQDButtonProps, ILQDButtonState> {
     private LOG_SOURCE;
     constructor(props: any);
     shouldComponentUpdate(nextProps: Readonly<ILQDButtonProps>, nextState: Readonly<ILQDButtonState>): boolean;

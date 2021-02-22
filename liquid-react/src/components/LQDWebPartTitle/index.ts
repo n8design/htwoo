@@ -1,0 +1,1 @@
+export { default as LQDWebPartTitle, ILQDWebPartTitleProps } from "./LQDWebPartTitle";

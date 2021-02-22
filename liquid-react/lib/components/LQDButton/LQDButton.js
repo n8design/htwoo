@@ -39,8 +39,8 @@ var LQDButton = (function (_super) {
         _this.renderButton = function () {
             var element = null;
             try {
-                element = React.createElement("button", __assign({ "data-component": _this.LOG_SOURCE }, _this.props.elementAttributes), _this.props.label || _this.props.children);
-                element.props.className = (element.props.className) ? "lqd-button " + _this.props.elementAttributes.className : "lqd-button";
+                var className = (_this.props.rootElementAttributes.className) ? "lqd-button " + _this.props.rootElementAttributes.className : "lqd-button";
+                element = React.createElement("button", __assign({ "data-component": _this.LOG_SOURCE }, _this.props.rootElementAttributes, { className: className }), _this.props.label || _this.props.children);
             }
             catch (err) {
                 Logger.write(err + " - " + _this.LOG_SOURCE + " (renderButton)", 3);
@@ -61,6 +61,6 @@ var LQDButton = (function (_super) {
     };
     return LQDButton;
 }(React.Component));
-export { LQDButton };
+export default LQDButton;
 
 //# sourceMappingURL=LQDButton.js.map

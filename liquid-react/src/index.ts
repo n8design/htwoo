@@ -1,1 +1,2 @@
-export * from './components/LQDButton/index';
+export * from './LQDButton';
+export * from './LQDWebPartTitle';
