@@ -6,11 +6,15 @@
 		.lqd-buttonchevron{
 			color: $buttonText;
 		}
+
+		& > *{
+			pointer-events: none;
+		}
+		&:focus{
+			outline: none;
+		}
 	}
 
-	& > *{
-		pointer-events: none;
-	}
 
 	.lqd-buttonflyout{
 		position: absolute;

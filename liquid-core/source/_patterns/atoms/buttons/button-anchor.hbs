@@ -1,0 +1,24 @@
+<div>
+    {{# items }}
+    <a href="?" class="{{ classname }}" role="button">
+        <div class="lqd-button-label">{{ label }}</div>
+    </a>
+    <br>
+    <a href="?" class="{{ classname }}" role="button" disabled="true" aria-disabled="true">
+        <div class="lqd-button-label">{{ label }}</div>
+    </a>
+    <br>
+    {{/ items }}
+    {{# items2 }}
+    <a href="?" class="{{ classname }}" role="button">
+        <div class="lqd-buttoncomp-label">{{ label }}</div>
+        <div class="lqd-buttoncomp-desc">{{ desc }}</div>
+    </a>
+    <br>
+    <a href="?" class="{{ classname }}" role="button" disabled="true" aria-disabled="true">
+        <div class="lqd-buttoncomp-label">{{ label }}</div>
+        <div class="lqd-buttoncomp-desc">{{ desc }}</div>
+    </a>
+    <br>
+    {{/ items2 }}
+</div>

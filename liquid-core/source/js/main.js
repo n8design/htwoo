@@ -13,7 +13,7 @@ const splitButtonReg = (classSelector, handleWith) => {
 
 const _btnFlyOut = (curSplitButton, parentElement) => {
 
-    console.log(curSplitButton)
+    // console.log(curSplitButton)
     // set aria values
     let ariaPressed = curSplitButton.getAttribute('aria-pressed');
     if (ariaPressed === undefined) {
@@ -22,9 +22,9 @@ const _btnFlyOut = (curSplitButton, parentElement) => {
         curSplitButton.setAttribute('aria-pressed', !ariaPressed);
     }
 
-    console.log(parentElement.classList.toggle('show-flyout'));
+    parentElement.classList.toggle('show-flyout');
 
-    console.debug(event, curSplitButton, parentElement);
+    // console.debug("_btnFlyout::", curSplitButton, parentElement);
 
 }
 
@@ -32,8 +32,11 @@ const buttonClick = (event) => {
 
 
     let curSplitButton = event.target;
-    let parentElement = curSplitButton;
+    let parentElement = curSplitButton.parentElement;
 
+    console.debug("Button Click::::", curSplitButton)
+    console.debug("PARENT ELEMENT::", parentElement);
+    console.debug("PARENT ELEMENT::", parentElement.parentElement);
     _btnFlyOut(curSplitButton, parentElement);
 
 
@@ -53,7 +56,10 @@ const afterLoaded = () => {
     splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
     splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret', splitButtonClick);
 
-    splitButtonReg('.lqd-buttoncmd', buttonClick);
+    splitButtonReg('button.lqd-buttoncmd', buttonClick);
+    splitButtonReg('button.lqd-buttoncmdbar', buttonClick);
+    splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
+    splitButtonReg('button.lqd-buttoncontext', buttonClick);
 
 
 }

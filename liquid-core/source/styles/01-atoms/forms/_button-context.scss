@@ -1,37 +1,68 @@
+div.lqd-buttoncontext-outer{
+	@extend %flyoutDropDown;
+
+	position: relative;
+}
+
 .lqd-buttoncontext{
 	display: inline-flex;
 
+	box-sizing: border-box;
+	height: px2rem(32px);
 	margin: 0;
-	padding: 0 px2rem(4px) 0 px2rem(8px) ;
-	padding-right: 3rem;
+	padding: 0 px2rem(16px);
+
+	white-space: nowrap;
 
 	border: none;
+	border: 1px $buttonBorder solid;
+	border-radius: 2px;
 	background-color: $buttonBackground;
 
 	align-items: center;
-	white-space: nowrap;
+	& > *{
+		pointer-events: none;
+	}
+
 	&-icon{
 		line-height: px2rem(36px);
 
 		display: flex;
 		justify-content: center;
 
+		box-sizing: border-box;
 		width: px2rem(24px);
-		height: px2rem(24px);
 
 		align-items: center;
+
+		svg{
+			padding: 0 px2rem(4px);
+		}
 	}
+
 	&-label{
 		font-size: px2rem(14px);
-		line-height: px2rem(36px);
+		line-height: px2rem(32px);
 
 		box-sizing: border-box;
 		padding: 0 px2rem(4px);
+
 		white-space: nowrap;
 	}
+
+	.lqd-buttonchevron{
+		padding: 0 px2rem(4px);
+
+		svg{
+			width: px2rem(12px);
+			height: px2rem(12px);
+		}
+	}
+
 	&:hover{
 		background-color: $buttonBackgroundHovered;
 	}
+
 	&:active{
 		color: $buttonTextPressed;
 	}

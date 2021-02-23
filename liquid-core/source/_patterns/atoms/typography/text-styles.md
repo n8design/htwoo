@@ -1,4 +1,4 @@
 ---
 title: Inline text styles
-order: 5
+order: 50
 ---

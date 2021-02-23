@@ -27,9 +27,12 @@
 		align-items: center;
 	}
 
-	&:active,
+	
 	&:hover {
 		background-color: $buttonBackgroundCheckedHovered;
+	}
+	&:active{
+		background-color: $buttonBackgroundPressed;
 	}
 
 	&[disabled],

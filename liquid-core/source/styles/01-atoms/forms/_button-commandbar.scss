@@ -1,67 +1,37 @@
-div{
-	&.lqd-button-cmd{
-		padding: 0 px2rem(4px);
-
-		background-color: $buttonBackground;
-		&:hover{
-			background-color: $buttonBackgroundHovered;
-		}
-		&.show-flyout{
-			background-color: $buttonBackgroundPressed;
-		}
-	}
-}
-
-.lqd-button-cmd{
-	@extend %flyoutDropDown;
-
-	position: relative;
+.lqd-buttoncmdbar {
+	@extend .lqd-buttoncmd;
 
 	display: inline-flex;
-	flex-direction: row;
 	justify-content: center;
 
 	height: px2rem(44px);
-	padding-left: 0;
 
-	border: 1px black solid;
-	border: 0;
-	background-color: transparent;
+	border: 1px transparent solid;
 
 	align-items: center;
 
-	.lqd-button-carret,
-	.lqd-button-icon{
-		font-size: 1rem;
+	button.lqd-buttoncmdbar {
+		box-sizing: border-box;
 
-		display: flex;
-		justify-content: center;
+		background-color: transparent;
 
-		width: 16px;
-		height: 16px;
+		&>* {
+			pointer-events: none;
+		}
 
-		color: $Hyperlink;
-
-		align-items: center;
-	}
-
-	.lqd-button-carret{
-		display: flex;
-
-		height: 100%;
-
-		color: rgb(96, 94, 92);
-		border: none;
-		background: transparent;
-
-		&:hover{
-			background: transparent;
+		&:active {
+			background-color: $buttonBackgroundChecked;
 		}
 	}
 
-	.lqd-button-label{
-		font-weight: 400;
-
-		padding: 0 0 0 px2rem(8px);
+	.lqd-button-label {
+		color: black;
 	}
+
+	&:hover,
+	.show-flyout {
+		border: 1px $buttonBackgroundCheckedHovered solid;
+		background-color: $buttonBackgroundCheckedHovered;
+	}
+
 }

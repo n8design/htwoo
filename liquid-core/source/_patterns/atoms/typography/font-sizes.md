@@ -1,4 +1,4 @@
 ---
 title: Font sizes
-order: 6
+order: 60
 ---
