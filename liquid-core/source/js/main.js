@@ -82,20 +82,26 @@ const animateDeleteAndSlide = (event) => {
 
 const animateAddAndSlide = (event) => {
 
+    let eventTarget = event.target;
 
-    let eventTarget = event.srcElement.clone(true);
+    console.log("EVENT FIRED :::: ");
+
     let animationClass = eventTarget.parentElement.dataset.animation;
 
     // Add class
     eventTarget.classList.add(animationClass);
 
-    let computedStyles = window.getComputedStyle(eventTarget);
+
+    let newDomElement = document.importNode(eventTarget, true);
+    newDomElement.classList.add(animationClass);
+
+    let computedStyles = window.getComputedStyle(newDomElement);
     let animationDuration = parseFloat(computedStyles.getPropertyValue('animation-duration')) * 1000;
 
-    let clonedElement = eventTarget.clone(true);
-    clonedElement.classList.add(animationClass);
 
-    event.target.parentElement.appendChild(clonedElement);
+    event.target.parentElement.appendChild(newDomElement);
+
+    newDomElement.addEventListener('click', animateAddAndSlide);
 
     console.log(
         computedStyles,
@@ -105,11 +111,17 @@ const animateAddAndSlide = (event) => {
         // parseInt("16s")
     );
 
+    setTimeout(
+        () => {
+            newDomElement.classList.remove('anim-add-slide');
+        }, animationDuration
+    )
+
 }
 
 const registerAnimation = (classname, handleWith) => {
 
-    let animAtionBlocks = document.querySelectorAll(classname + ' .sg-anim-block');
+    let animAtionBlocks = document.querySelectorAll(classname + ' > .sg-anim-block');
 
     animAtionBlocks.forEach(element => {
         element.addEventListener('click', handleWith);

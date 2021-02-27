@@ -81,6 +81,7 @@
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	will-change: content;
 }
 .sg-anim-block{
 	width: 75px;
@@ -90,4 +91,5 @@
 	content: "";
 
 	background-color: white;
+	will-change: opactiy;
 }

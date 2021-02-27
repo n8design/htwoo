@@ -11,7 +11,7 @@
  * ----------------------------------------
  */
 
-@keyframes slide-left{
+@keyframes deleteSlide{
 	0%{
 		opacity: 1;
 	}
@@ -29,8 +29,26 @@
 	}
 }
 
+@keyframes addSlide{
+	100%{
+		opacity: 1;
+	}
+	50%{
+		overflow: hidden;
+
+		max-width: 100%;
+
+		opacity: 0;
+	}
+	0%{
+		max-width: 0;
+
+		opacity: 0;
+	}
+}
+
 .anim-delete-slide{
-	animation-name: slide-left;
+	animation-name: deleteSlide;
 	animation-duration: 600ms;
 	animation-iteration-count: 1;
 
@@ -38,9 +56,9 @@
 }
 
 .anim-add-slide{
-	animation-name: slide-left;
+	animation-name: addSlide;
 	animation-duration: 600ms;
 	animation-iteration-count: 1;
 
-	animation-fill-mode: reverse;
+	animation-fill-mode: forwards;
 }
