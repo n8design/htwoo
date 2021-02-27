@@ -1,0 +1,5 @@
+.lqd-mdldialog{
+    @include elevation(16);
+    height: var(--mdlHeight);
+    width: var(--mdlWidth);
+}

@@ -3,10 +3,8 @@
     padding: px2rem(16px) px2rem(20px);
     display: flex;
     justify-content: space-between;
-    background-color: cyan;
 }
 .lqd-dlgheader-title{
-    background-color: yellow;
     font-size: px2rem(20px);
     h2{
         font-size: inherit;
@@ -15,5 +13,5 @@
     
 }
 .lqd-dlgheader-closer{
-    background-color: magenta;
+    // no special design adoptions needed;
 }
