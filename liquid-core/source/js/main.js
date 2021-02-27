@@ -51,6 +51,75 @@ const splitButtonClick = (event) => {
 
 }
 
+const animateDeleteAndSlide = (event) => {
+
+
+    let eventTarget = event.target;
+    let animationClass = eventTarget.parentElement.dataset.animation;
+
+    // Add class
+    eventTarget.classList.add(animationClass);
+
+    let computedStyles = window.getComputedStyle(eventTarget);
+    let animationDuration = parseFloat(computedStyles.getPropertyValue('animation-duration')) * 1000;
+
+
+    console.log(
+        computedStyles,
+        computedStyles.getPropertyValue('animation-duration'),
+        animationDuration
+        // parseFloat(computedStyles.getPropertyValue('animation-duration')),
+        // parseInt("16s")
+    );
+
+    setTimeout(
+        () => {
+            eventTarget.remove();
+        }, animationDuration
+    )
+
+}
+
+const animateAddAndSlide = (event) => {
+
+
+    let eventTarget = event.srcElement.clone(true);
+    let animationClass = eventTarget.parentElement.dataset.animation;
+
+    // Add class
+    eventTarget.classList.add(animationClass);
+
+    let computedStyles = window.getComputedStyle(eventTarget);
+    let animationDuration = parseFloat(computedStyles.getPropertyValue('animation-duration')) * 1000;
+
+    let clonedElement = eventTarget.clone(true);
+    clonedElement.classList.add(animationClass);
+
+    event.target.parentElement.appendChild(clonedElement);
+
+    console.log(
+        computedStyles,
+        computedStyles.getPropertyValue('animation-duration'),
+        animationDuration
+        // parseFloat(computedStyles.getPropertyValue('animation-duration')),
+        // parseInt("16s")
+    );
+
+}
+
+const registerAnimation = (classname, handleWith) => {
+
+    let animAtionBlocks = document.querySelectorAll(classname + ' .sg-anim-block');
+
+    animAtionBlocks.forEach(element => {
+        element.addEventListener('click', handleWith);
+    })
+
+
+
+}
+
+
 const afterLoaded = () => {
 
     splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
@@ -60,6 +129,9 @@ const afterLoaded = () => {
     splitButtonReg('button.lqd-buttoncmdbar', buttonClick);
     splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
     splitButtonReg('button.lqd-buttoncontext', buttonClick);
+
+    registerAnimation('.anim-deleteNslide', animateDeleteAndSlide)
+    registerAnimation('.anim-addNslide', animateAddAndSlide)
 
 
 }

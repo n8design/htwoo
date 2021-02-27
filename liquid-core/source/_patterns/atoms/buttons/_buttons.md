@@ -1,4 +1,4 @@
 ---
 title: Buttons
-order: 120
+order: 7
 ---

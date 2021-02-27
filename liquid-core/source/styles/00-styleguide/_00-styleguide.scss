@@ -71,3 +71,23 @@
 		page-break-inside: avoid;
 	}
 }
+
+.sg-anim-blocks{
+	display: flex;
+
+	height: 200px;
+
+	background-color: $buttonBackgroundCheckedHovered;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.sg-anim-block{
+	width: 75px;
+	height: 75px;
+	margin: 1rem;
+
+	content: "";
+
+	background-color: white;
+}

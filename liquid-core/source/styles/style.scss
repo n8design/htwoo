@@ -1,9 +1,8 @@
-/**** REQURIED FOR STYLE GUIDE ****/
-@import "00-styleguide/00-styleguide";
 /***** Color converted to SCSS variables *****/
 @import "00-base/colors/colors";
 @import "00-base/global.vars";
-
+/**** REQURIED FOR STYLE GUIDE ****/
+@import "00-styleguide/00-styleguide";
 
 /**** BASE VARS AND MIXIN's ****/
 @import "00-base/colors/color-vars-css-converted";
@@ -19,6 +18,7 @@
 @import "00-base/mixin/grid.mixin";
 @import "00-base/mixin/lists.mixin";
 @import "00-base/mixin/flyouts.mixin";
+@import "00-base/mixin/animations";
 
 /**** ATOMS / Typography ****/
 @import "01-atoms/typography/headlines";

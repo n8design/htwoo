@@ -1,4 +1,4 @@
 ---
 title: Typography
-order: 10
+order: 1
 ---
