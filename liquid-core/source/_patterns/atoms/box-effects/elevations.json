@@ -1,0 +1,27 @@
+{
+    "items": [
+        {
+            "name": "lqd-elevation4",
+            "value": "lqd-elevation4",
+            "comment": ""
+        },
+        {
+            "name": "lqd-elevation8",
+            "value": "lqd-elevation8",
+            "comment": ""
+        },
+        {
+            "name": "lqd-elevation16",
+            "value": "lqd-elevation16",
+            "comment": ""
+        },
+        {
+            "name": "lqd-elevation64",
+            "value": "lqd-elevation64",
+            "comment": ""
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}
