@@ -31,7 +31,7 @@
 /**** ATOMS / Typography ****/
 @import "01-atoms/icons/icon";
 
-/**** ATOMS / FORMS ****/
+/**** ATOMS / Buttons ****/
 @import "01-atoms/buttons/button-general";
 @import "01-atoms/buttons/buttons";
 @import "01-atoms/buttons/button-action";
@@ -42,6 +42,10 @@
 @import "01-atoms/buttons/button-split";
 @import "01-atoms/buttons/button-iconsplit";
 @import "01-atoms/buttons/button-commandbar";
+
+/**** ATOMS / Buttons ****/
+@import "01-atoms/input/label";
+@import "01-atoms/input/input";
 
 /**** Tooltip ****/
 @import "01-atoms/tooltip/tooltip";
