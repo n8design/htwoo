@@ -1,16 +1,18 @@
 %flyoutDropDown{
-	.lqd-button-flyout{
+	position: relative;
+	.lqd-buttonflyout{
 		position: absolute;
 		z-index: 400;
 		top: 100%;
-        left: 0;
+		left: 0;
 
 		display: none; // intermediate SHOW/HIDE
 	}
 
 	// TODO: Add SLIDEOUT ANIMATION
 	&.show-flyout{
-		.lqd-button-flyout{
+		background-color: inherit;
+		.lqd-buttonflyout{
 			display: block;
 		}
 

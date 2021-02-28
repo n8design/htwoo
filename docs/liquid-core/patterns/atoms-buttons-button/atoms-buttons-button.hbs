@@ -1,0 +1,16 @@
+{{# items }}
+<button class="{{ classname }}">
+    <div class="lqd-button-label">{{ label }}</div>
+</button>
+<br>
+{{/ items}}
+{{# items }}
+<button class="{{ classname }}" disabled="true" aria-disabled="true">
+    <div class="lqd-button-label">{{ label }}</div>
+</button>
+<br>
+{{/ items}}
+
+<br>
+Disabled state for primary and standard button was adjusted to the same result.
+<br>

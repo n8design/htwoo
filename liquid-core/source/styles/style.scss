@@ -1,8 +1,8 @@
-/**** REQURIED FOR STYLE GUIDE ****/
-@import "00-styleguide/00-styleguide";
 /***** Color converted to SCSS variables *****/
 @import "00-base/colors/colors";
-
+@import "00-base/global.vars";
+/**** REQURIED FOR STYLE GUIDE ****/
+@import "00-styleguide/00-styleguide";
 
 /**** BASE VARS AND MIXIN's ****/
 @import "00-base/colors/color-vars-css-converted";
@@ -18,6 +18,7 @@
 @import "00-base/mixin/grid.mixin";
 @import "00-base/mixin/lists.mixin";
 @import "00-base/mixin/flyouts.mixin";
+@import "00-base/mixin/animations";
 
 /**** ATOMS / Typography ****/
 @import "01-atoms/typography/headlines";
@@ -31,15 +32,16 @@
 @import "01-atoms/icons/icon";
 
 /**** ATOMS / FORMS ****/
-@import "01-atoms/forms/button-general";
-@import "01-atoms/forms/buttons";
-@import "01-atoms/forms/button-action";
-@import "01-atoms/forms/button-command";
-@import "01-atoms/forms/button-flyout";
-@import "01-atoms/forms/button-context";
-@import "01-atoms/forms/button-icon";
-@import "01-atoms/forms/button-split";
-@import "01-atoms/forms/button-commandbar";
+@import "01-atoms/buttons/button-general";
+@import "01-atoms/buttons/buttons";
+@import "01-atoms/buttons/button-action";
+@import "01-atoms/buttons/button-command";
+@import "01-atoms/buttons/button-flyout";
+@import "01-atoms/buttons/button-context";
+@import "01-atoms/buttons/button-icon";
+@import "01-atoms/buttons/button-split";
+@import "01-atoms/buttons/button-iconsplit";
+@import "01-atoms/buttons/button-commandbar";
 
 /**** Tooltip ****/
 @import "01-atoms/tooltip/tooltip";
@@ -50,3 +52,11 @@
 
 /**** Elevation ****/
 @import "01-atoms/elevations/elevations";
+
+/*** MOLECULES ***/
+@import '02-molecules/dialog-header';
+@import '02-molecules/dialog-content';
+
+/*** ORGANISM ***/
+@import '03-organism/dialog/modal-dialog';
+@import '03-organism/dialog/sidebar';

@@ -1,0 +1,18 @@
+%lqd-sidebar{
+	@extend .lqd-mdldialog;
+}
+
+.lqd-mdldialog-outer{
+	&.is-sidebar-left{
+		justify-content: flex-end;
+		.lqd-mdldialog{
+			height: 100vh;
+		}
+	}
+	&.is-sidebar-right{
+		justify-content: flex-start;
+		.lqd-mdldialog{
+			height: 100vh;
+		}
+	}
+}

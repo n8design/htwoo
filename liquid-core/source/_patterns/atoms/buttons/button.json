@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "classname": "lqd-button",
+            "label": "Standard"
+        },
+        {
+            "classname": "lqd-button-primary",
+            "label": "Primary"
+        }
+    ]
+}

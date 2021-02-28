@@ -1,0 +1,12 @@
+<div class="lqd-buttonicon-split" aria-haspopup="true">
+    <button class="lqd-buttonicon-split" aria-haspopup="true">
+        <span class="lqd-button-icon" aria-hidden="true"> {{> atoms-icon iconname=iconAction }} </span>
+        {{!-- When no drop down items are shown there is not need to show the dropdown --}}
+    </button>
+    <button class="lqd-buttonicon-split lqd-buttonicon-flyout" aria-haspopup="true">
+        {{!-- When no drop down items are shown there is not need to show the dropdown --}}
+        <span class="lqd-button-icon lqd-buttonchevron"> {{> atoms-icon iconname=iconDown }} </span>
+    </button>
+    {{!-- When no drop down items are shown there is not need to show the dropdown --}}
+    {{> atoms-menu-flyouts contextItems=ddItems }}
+</div>

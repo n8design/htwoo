@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "classname": "lqd-buttoncomp",
+            "label": "Standard Compound",
+            "desc": "Standard with description"
+        },
+        {
+            "classname": "lqd-buttoncomp-primary",
+            "label": "Primary Compound",
+            "desc": "Primary with description"
+        }
+    ] 
+}
