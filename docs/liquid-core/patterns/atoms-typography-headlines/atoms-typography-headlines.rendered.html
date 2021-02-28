@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/style.css?1614512406662" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1614512406662" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1614512406662" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="">
+<h1>Headline 1 or &lt;H1&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, possimus ducimus aperiam, aspernatur voluptas officiis voluptatum velit tenetur itaque distinctio iure ab architecto facere enim, ad praesentium explicabo molestiae corporis!</h1>
+<h2>Headline 2 or &lt;H2&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, animi corporis amet fugiat sunt suscipit odit provident rem atque, sint nobis ratione. Inventore itaque provident non quis ab consectetur praesentium!</h2>
+<h3>Headline 3 or &lt;H3&gt; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos doloremque adipisci quas ut laudantium sed eligendi temporibus eos cupiditate quo ducimus molestias, odio consequatur quia repudiandae est architecto numquam ipsum? Quae, unde.</h3>
+<h4>Headline 4 or &lt;H4&gt;This style is not defined in Fluent UI Framework <span style="font-size: 2em">🤷‍♂️</span></h4><!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"typography"},"patternExtension":"hbs","patternName":"Headlines","patternPartial":"atoms-headlines","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"typography"},"patternExtension":"hbs","patternName":"Headlines","patternPartial":"atoms-headlines","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1614512406662">
+  (function() {
+    if (self != top) {
+      var cb = '1614512406662';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1614512406662" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+
+<script src="../../js/main.js"></script>
+</body>
+
+</html>

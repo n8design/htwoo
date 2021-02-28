@@ -1,0 +1,9 @@
+<div class="{{ classname }}">
+    <button class="lqd-buttonsplit-standard" {{#if disabled}}disabled="true" aria-disabled="true"{{/if}} >
+        <div class="lqd-button-label">Standard</div>
+    </button>
+    <button class="lqd-buttonsplit-carret" {{#if disabled}}disabled="true" aria-disabled="true"{{/if}} >
+        <div class="lqd-button-label">{{> atoms-icon iconname="icon-arrow-down" }}</div>
+    </button>
+    {{> atoms-menu-flyouts contextItems=ddItems }}
+</div>
