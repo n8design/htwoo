@@ -43,7 +43,7 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
     try {
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes}>
-          <h3 role="heading" data-component={this.LOG_SOURCE} className="lqd-webppartheader">
+          <h3 role="heading" data-component={this.LOG_SOURCE} className="lqd-webpart-header">
             <div
               contentEditable={this.props.editMode}
               suppressContentEditableWarning={true}
