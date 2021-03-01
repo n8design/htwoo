@@ -3,6 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash/isEqual";
 
 import { ILQDStandardProps } from "../Common.model";
+//import "./LQDWebPartTitle.module.scss";
 
 export interface ILQDWebPartTitleProps extends ILQDStandardProps {
   rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
