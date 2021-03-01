@@ -5,9 +5,10 @@ import isEqual from "lodash/isEqual";
 import { ILQDStandardProps } from "../Common.model";
 
 export interface ILQDWebPartTitleProps extends ILQDStandardProps {
-  rootElementAttributes?: React.ButtonHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  title?: string;
+  placeholder?: string;
   editMode: boolean;
-  title: string;
   updateTitle: (title: string) => void;
 }
 
@@ -41,19 +42,20 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
 
   public render(): React.ReactElement<ILQDWebPartTitleProps> {
     try {
+      const className = (this.props.rootElementAttributes.className) ? `lqd-webpart-header ${this.props.rootElementAttributes.className}` : "lqd-webpart-header";
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes}>
-          <h3 role="heading" data-component={this.LOG_SOURCE} className="lqd-webpart-header">
-            <div
-              contentEditable={this.props.editMode}
-              suppressContentEditableWarning={true}
-              onBlur={this.saveTitle}
-              dangerouslySetInnerHTML={{ __html: this.props.title }}
-            >
-              {this.props.children}
-            </div>
-          </h3>
-        </div>
+        <h3 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+          <div
+            role="textbox"
+            placeholder={this.props.placeholder || ""}
+            aria-placeholder={this.props.placeholder || ""}
+            contentEditable={this.props.editMode}
+            suppressContentEditableWarning={true}
+            onBlur={this.saveTitle}
+          >
+            {this.props.title || this.props.children}
+          </div>
+        </h3>
       );
     } catch (err) {
       Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
