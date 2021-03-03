@@ -20,7 +20,8 @@
     "@pattern-lab/cli": "^5.14.1",
     "@pattern-lab/core": "^5.14.1",
     "@pattern-lab/engine-handlebars": "^5.14.0",
-    "@pattern-lab/uikit-workshop": "^5.14.1"
+    "@pattern-lab/uikit-workshop": "^5.14.1",
+    "postcss": "^8.2.6"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
