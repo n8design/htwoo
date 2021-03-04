@@ -2,8 +2,9 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash/isEqual";
 
+//Import component for styling from lib folder, SCSS build done in gulp
+import "./LQDWebPartTitle.css";
 import { ILQDStandardProps } from "../Common.model";
-//import "./LQDWebPartTitle.module.scss";
 
 export interface ILQDWebPartTitleProps extends ILQDStandardProps {
   rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
@@ -43,7 +44,7 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
 
   public render(): React.ReactElement<ILQDWebPartTitleProps> {
     try {
-      const className = (this.props.rootElementAttributes.className) ? `lqd-webpart-header ${this.props.rootElementAttributes.className}` : "lqd-webpart-header";
+      const className = (this.props.rootElementAttributes?.className) ? `lqd-webpart-header ${this.props.rootElementAttributes?.className}` : "lqd-webpart-header";
       return (
         <h3 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           <div

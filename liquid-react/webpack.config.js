@@ -19,7 +19,7 @@ module.exports = {
     modules: [
       "node_modules",
       path.resolve(__dirname, "lib")
-    ],
+    ]
   },
   module: {
     rules: [{
@@ -30,7 +30,6 @@ module.exports = {
   },
   externals: [
     'react',
-    'react-dom',
-    '@microsoft/loader-load-themed-styles'
+    'react-dom'
   ]
 };
