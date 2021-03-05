@@ -1,4 +1,4 @@
-@import '../styles/00-base/colors/colors-vars-css-converted';
-@import '../styles/00-base/colors/colors';
+@use '../styles/00-base/colors/colors-vars-css-converted' as *;
+@use '../styles/00-base/colors/colors' as *;
 
-@import '../styles/02-molecules/webpart-header';
+@use '../styles/02-molecules/webpart-header' as *;
