@@ -2,8 +2,8 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from 'lodash/isEqual';
 
+//import "./LQDButton.css";
 import { ILQDStandardProps } from "../Common.model";
-//import "./LQDButton.module.scss";
 
 export interface ILQDButtonProps extends ILQDStandardProps {
   rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
