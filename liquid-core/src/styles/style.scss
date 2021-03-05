@@ -1,5 +1,5 @@
 /***** Color converted to SCSS variables *****/
-@use "00-base/colors/colors" as *;
+@import "00-base/colors/colors";
 @import "00-base/global.vars";
 /**** REQURIED FOR STYLE GUIDE ****/
 @import "00-styleguide/00-styleguide";
