@@ -33,7 +33,7 @@ export default class LQDButton extends React.Component<ILQDButtonProps, ILQDButt
   }
 
   public render(): React.ReactElement<ILQDButtonProps> {
-    const className = (this.props.rootElementAttributes.className) ? `lqd-button ${this.props.rootElementAttributes.className}` : "lqd-button";
+    const className = (this.props.rootElementAttributes?.className) ? `lqd-button ${this.props.rootElementAttributes?.className}` : "lqd-button";
     try {
       return (
         <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>

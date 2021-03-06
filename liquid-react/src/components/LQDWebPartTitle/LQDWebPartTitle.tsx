@@ -3,7 +3,8 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash/isEqual";
 
 //Import component for styling from lib folder, SCSS build done in gulp
-import "./LQDWebPartTitle.css";
+//import "./LQDWebPartTitle.css";
+//import "../../../../liquid-core/src/components/webpart.scss";
 import { ILQDStandardProps } from "../Common.model";
 
 export interface ILQDWebPartTitleProps extends ILQDStandardProps {

@@ -1,15 +1,33 @@
 {
   "name": "liquid-react",
+  "version": "0.1.0",
   "description": "",
+  "author": "Julie Turner/Stefan Bauery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8d/liquid"
+  },
+  "bugs": {
+    "url": "https://github.com/n8d/liquid/issues"
+  },
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "version": "1.0.0",
   "private": false,
-  "scripts": {
-    "build": "webpack",
-    "prepublish": "gulp build --ship"
+  "dependencies": {
+    "@pnp/logging": "^2.2.0",
+    "liquid-core": "file:../liquid-core",
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
   },
+  "scripts": {
+    "prepare": "gulp build --ship",
+    "package": "webpack"
+  },
+  "files": [
+    "/lib",
+    "/dist"
+  ],
   "resolutions": {
     "@types/react": "16.8.8"
   },
@@ -36,14 +54,5 @@
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0",
     "webpack-stream": "^6.1.2"
-  },
-  "files": [
-    "/lib",
-    "/dist"
-  ],
-  "dependencies": {
-    "@pnp/logging": "^2.2.0",
-    "react": "16.8.5",
-    "react-dom": "16.8.5"
   }
 }
