@@ -8,7 +8,6 @@ module.exports = {
   //When upgrading to webpack 5, change target and update target: 'browserslist',
   entry: {
     liquidreact: path.resolve(__dirname, './lib/index.js')
-    //liquidreact: path.resolve(__dirname, './src/index.ts')
   },
   //When upgrading to webpack 5, add back to output: chunkLoading: false, wasmLoading: false
   output: {
