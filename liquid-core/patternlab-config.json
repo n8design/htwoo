@@ -56,9 +56,9 @@
         "viewall": "views/viewall.mustache"
       },
       "js": "./src/js",
-      "images": "./source/images",
-      "fonts": "./source/fonts",
-      "css": "./source/css"
+      "images": "./src/images",
+      "fonts": "./src/fonts",
+      "css": "./src/css"
     },
     "public": {
       "root": "public/",

@@ -74,13 +74,14 @@
 
 .sg-anim-blocks{
 	display: flex;
+	justify-content: center;
 
 	height: 200px;
 
 	background-color: $buttonBackgroundCheckedHovered;
-	justify-content: center;
-	align-items: center;
+
 	align-content: center;
+	align-items: center;
 	will-change: content;
 }
 .sg-anim-block{
@@ -90,6 +91,7 @@
 
 	content: "";
 
-	background-color: white;
+	background-color: #72ad97;
+
 	will-change: opactiy;
 }

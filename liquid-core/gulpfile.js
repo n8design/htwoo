@@ -12,14 +12,14 @@ const autoprefixer = require('autoprefixer');
 
 const baseWatch = async (cb) => {
 
-    watch(['source/styles/**/*.scss'], styles);
+    watch(['src/styles/**/*.scss'], styles);
 
     cb();
 
 }
 
 const styles = () => {
-    return src('source/styles/**/*.scss')
+    return src('src/styles/**/*.scss')
         .pipe($.plumber())
         // .pipe($.if(!isProd, $.sourcemaps.init()))
         .pipe($.sourcemaps.init())
@@ -33,7 +33,7 @@ const styles = () => {
         ]))
         // .pipe($.if(!isProd, $.sourcemaps.write()))
         .pipe($.sourcemaps.write())
-        .pipe(dest('source/css'))
+        .pipe(dest('src/css'))
 };
 
 const serve = parallel(styles, baseWatch);

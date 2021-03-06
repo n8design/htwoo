@@ -4,7 +4,7 @@ order: 5
 ---
 ### Use Grid System with CSS classes
 
-`lwd-grid` - defines the base CSS Grid on any container
+`lqd-grid` - defines the base CSS Grid on any container
 
 ### Use Grid System with SCSS
 
