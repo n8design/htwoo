@@ -1,4 +1,6 @@
-const splitButtonReg = (classSelector, handleWith) => {
+import { registerDialog } from './dialog.js';
+
+function splitButtonReg(classSelector, handleWith) {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
 
@@ -127,8 +129,6 @@ const registerAnimation = (classname, handleWith) => {
         element.addEventListener('click', handleWith);
     })
 
-
-
 }
 
 
@@ -144,6 +144,8 @@ const afterLoaded = () => {
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide)
     registerAnimation('.anim-addNslide', animateAddAndSlide)
+
+    registerDialog();
 
 
 }

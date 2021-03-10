@@ -1,41 +1,47 @@
-.lqd-mdldialog-outer {
-    position: fixed;
+.lqd-mdldialog-outer{
+	position: fixed;
+	top: 0;
 
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 
-    background-color: $backgroundOverlay;
-    // background-color: rgba(0, 0, 0, .6);
+	background-color: $backgroundOverlay;
+	// background-color: rgba(0, 0, 0, .6);
 
-    align-items: center;
+	align-items: center;
+	backdrop-filter: blur(5px) saturate(150%);
 
-    backdrop-filter: blur(5px) saturate(150%);
+	&.is-error{
+		background-color: rgba(#a80000, .6);
+	}
 
-    &.is-error {
-        background-color: rgba(#a80000, .6);
+	&.is-warning{
+		background-color: rgba(#edb51e, .6);
+	}
+
+	&.is-success{
+		background-color: rgba(#107c10, .6);
+	}
+    &.hide{
+        .lqd-mdldialog{
+            
+        }
     }
+    &.show{
 
-    &.is-warning {
-        background-color: rgba(#edb51e, .6);
-    }
-
-    &.is-success {
-        background-color: rgba(#107c10, .6);
     }
 }
 
-.lqd-mdldialog {
-    width: var(--mdlWidth);
-    min-width: px2rem(300px);
-    height: var(--mdlHeight);
-    min-height: px2rem(200px);
+.lqd-mdldialog{
+	width: var(--mdlWidth);
+	min-width: px2rem(300px);
+	height: var(--mdlHeight);
+	min-height: px2rem(200px);
 
-    background-color: $bodyBackground;
+	background-color: $bodyBackground;
 
-    @include elevation(16);
-
-
+	@include elevation(16);
 }
