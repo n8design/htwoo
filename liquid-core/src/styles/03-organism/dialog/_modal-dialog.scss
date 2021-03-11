@@ -41,7 +41,7 @@ $anim-timing: 0.25s;
 		background-color: rgba(#107c10, .6);
 	}
 
-	&.hide:not([class*="is-sidebar"]){
+	&.is-hidden:not([class*="is-sidebar"]){
 		visibility: hidden;
 
 		transition-delay: $anim-timing * 2;
@@ -56,7 +56,7 @@ $anim-timing: 0.25s;
 		}
 	}
 
-	&.show:not([class*="is-sidebar"]){
+	&.is-visible:not([class*="is-sidebar"]){
 		visibility: visible;
 
 		opacity: 1;
@@ -68,6 +68,34 @@ $anim-timing: 0.25s;
 			transform: scale(1);
 
 			opacity: 1;
+
+			@include dlgTransition(true);
+		}
+	}
+
+	&.is-hidden[class*="is-sidebar"]{
+
+
+		transition-delay: $anim-timing * 2;
+		opacity: 0;
+
+		@include dlgTransition();
+		.lqd-mdldialog{
+
+
+			@include dlgTransition();
+		}
+	}
+
+	&.is-visible[class*="is-sidebar"]{
+
+		@include dlgTransition(true);
+		opacity: 1;
+		visibility: visible;
+
+		.lqd-mdldialog{
+			transition-delay: $anim-timing * 2;
+			transform: scaleY(1);
 
 			@include dlgTransition(true);
 		}

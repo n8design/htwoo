@@ -6,13 +6,27 @@
 	&.is-sidebar-left{
 		justify-content: flex-end;
 		.lqd-mdldialog{
+			position: absolute;
+			left: 0;
+
 			height: 100vh;
+
+			transform: scaleX(0);
+			transform-origin: left top;
 		}
 	}
 	&.is-sidebar-right{
 		justify-content: flex-start;
 		.lqd-mdldialog{
+			position: absolute;
+			right: 0;
+
 			height: 100vh;
+
+			transform: scaleX(0);
+			transform-origin: top right;
+
+			opacity: 1;
 		}
 	}
 }
