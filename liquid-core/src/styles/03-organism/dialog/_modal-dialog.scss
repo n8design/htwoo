@@ -1,15 +1,30 @@
+$anim-timing: 0.25s;
+
+@mixin dlgTransition($reverse: false){
+	@if($reverse){
+		transition: all $anim-timing ease-out;
+	}
+
+	@else{
+		transition: all $anim-timing ease-in;
+	}
+}
+
 .lqd-mdldialog-outer{
 	position: fixed;
 	top: 0;
 
 	display: flex;
+	visibility: hidden;
 	justify-content: center;
 
 	width: 100vw;
 	height: 100vh;
 
+	opacity: 1;
 	background-color: $backgroundOverlay;
-	// background-color: rgba(0, 0, 0, .6);
+
+	@include dlgTransition();
 
 	align-items: center;
 	backdrop-filter: blur(5px) saturate(150%);
@@ -25,22 +40,47 @@
 	&.is-success{
 		background-color: rgba(#107c10, .6);
 	}
-    &.hide{
-        .lqd-mdldialog{
-            
-        }
-    }
-    &.show{
 
-    }
+	&.hide:not([class*="is-sidebar"]){
+		visibility: hidden;
+
+		transition-delay: $anim-timing * 2;
+
+		opacity: 0;
+
+		@include dlgTransition();
+		.lqd-mdldialog{
+			transform: scale(0);
+
+			@include dlgTransition();
+		}
+	}
+
+	&.show:not([class*="is-sidebar"]){
+		visibility: visible;
+
+		opacity: 1;
+
+		@include dlgTransition(true);
+
+		.lqd-mdldialog{
+			transition-delay: $anim-timing * 2;
+			transform: scale(1);
+
+			opacity: 1;
+
+			@include dlgTransition(true);
+		}
+	}
 }
 
 .lqd-mdldialog{
-	width: var(--mdlWidth);
-	min-width: px2rem(300px);
-	height: var(--mdlHeight);
-	min-height: px2rem(200px);
+	width: var(--lqdDialogWidth);
+	height: var(--lqdDialogHeight);
 
+	transform: scale(1);
+
+	opacity: 1;
 	background-color: $bodyBackground;
 
 	@include elevation(16);
