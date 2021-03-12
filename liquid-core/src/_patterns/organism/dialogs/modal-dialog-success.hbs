@@ -1,8 +1,8 @@
 <!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ -->
-<div style="background-image: url(../../images/background-2.jpg); min-height: 100vh; max-height: 100vw;">
+<div style="height: 100vh; width: 100vw; background: url(../../images/background-2.jpg) no-repeat center center fixed; background-size: cover;">
     <!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ -->
-    <div class="lqd-mdldialog-outer is-success">
-        <div class="lqd-mdldialog" style="--mdlHeight: 30vh; --mdlWidth: 60vw;">
+    <div class="lqd-mdldialog-outer is-success is-visible">
+        <div class="lqd-mdldialog" style="--lqdDialogHeight: 30vh; --lqdDialogWidth: 40vw;">
             {{> molecules-dialog-header title=modalDialogTitle iconAction=iconAction }}
             {{> molecules-dialog-content content=content }}
         </div>
