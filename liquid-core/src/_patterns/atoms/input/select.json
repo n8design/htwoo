@@ -1,0 +1,20 @@
+{
+    "options": [
+        {
+            "key": "apple",
+            "value": "Apple"
+        },
+        {
+            "key": "lime",
+            "value": "Lime"
+        },
+        {
+            "key": "banana",
+            "value": "Banana"
+        },
+        {
+            "key": "orange",
+            "value": "Orange"
+        }
+    ]
+}

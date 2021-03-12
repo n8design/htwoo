@@ -1,0 +1,13 @@
+.lqd-select{
+	background-color: lime;
+
+	width: auto;
+	& > *{
+		border: 3px red solid;
+
+		background-color: yellow;
+	}
+	option{
+		background: color magenta;
+	}
+}
