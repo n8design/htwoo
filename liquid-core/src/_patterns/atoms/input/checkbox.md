@@ -1,3 +1,3 @@
 ---
-title: checkbox
+title: Checkbox
 ---
