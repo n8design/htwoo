@@ -2,15 +2,29 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash/isEqual";
 
-//Import component for styling from lib folder, SCSS build done in gulp
 import "./LQDWebPartTitle.css";
 import { ILQDStandardProps } from "../Common.model";
 
 export interface ILQDWebPartTitleProps extends ILQDStandardProps {
+  /**
+   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   */
   rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  /**
+   * (Optional) Title of the web part.
+   */
   title?: string;
+  /**
+   * (Optional) Placeholder to be shown when Title is null.
+   */
   placeholder?: string;
+  /**
+   * Is the web part title editable.
+   */
   editMode: boolean;
+  /**
+   * Method to update the data source for the web part's title.
+   */
   updateTitle: (title: string) => void;
 }
 

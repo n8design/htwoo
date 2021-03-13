@@ -1,0 +1,1 @@
+export { default as LQDIcon, ILQDIconProps } from "./LQDIcon";
