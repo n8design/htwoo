@@ -6,7 +6,7 @@ const {
     parallel
 } = require('gulp');
 
-var $isProd = false;
+var isProd = false;
 
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
@@ -22,12 +22,13 @@ const baseWatch = async (cb) => {
 
 const docs = (cb) => {
 
-    $isProd = true;
-    series(styles);
-    cb();
+    isProd = true;
+    styles();
+    cb()
 }
 
 const styles = () => {
+
     return src('src/styles/**/*.scss')
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
@@ -42,7 +43,8 @@ const styles = () => {
         ]))
         .pipe($.if(!isProd, $.sourcemaps.write()))
         // .pipe($.sourcemaps.write())
-        .pipe(dest('src/css'))
+        .pipe(dest('src/css'));
+
 };
 
 const serve = parallel(styles, baseWatch);
