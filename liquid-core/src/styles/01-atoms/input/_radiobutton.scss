@@ -19,7 +19,8 @@
 
 		cursor: pointer;
 
-		color: #666;
+		color: $bodyText;
+		font-size: px2rem(14px);
 	}
 
 	&:checked + label:before,
@@ -80,5 +81,11 @@
 		transform: scale(1);
 
 		opacity: 1;
+	}
+	&:disabled + label{
+		color: $disabledText;
+	}
+	&:disabled + label:before{
+		border-color: $disabledText;
 	}
 }
