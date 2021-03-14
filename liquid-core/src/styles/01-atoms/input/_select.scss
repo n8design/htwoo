@@ -1,13 +1,53 @@
 .lqd-select{
-	background-color: lime;
+	position: relative;
 
-	width: auto;
-	& > *{
-		border: 3px red solid;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
 
-		background-color: yellow;
+	border: 1px $inputBorder solid;
+	border-radius: 2px;
+	outline: 1px rgba(255,255,255,0) solid;
+	&-text{
+		@include base-input;
+		width: calc(100% - #{px2rem(32px)});
+
+		border: none;
 	}
-	option{
-		background: color magenta;
+	&-dropdown{
+		@extend %listReset;
+		@include elevation(4);
+
+		position: absolute;
+		top: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+		margin-top: 1px;
+
+		background-color: $bodyBackground;
+		border-radius: 2px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		box-sizing: border-box;
+		li{
+			font-size: 14px;
+
+			display: flex;
+
+			height: px2rem(36px);
+			padding: 0 px2rem(8px);
+
+			color: $buttonText;
+
+			align-items: center;
+			&:hover{
+				cursor: pointer;
+
+				background-color: $buttonBackgroundHovered;
+			}
+		}
 	}
 }

@@ -1,20 +1,21 @@
 {
+    "iconAction": "icon-arrow-down",
     "options": [
         {
-            "key": "apple",
-            "value": "Apple"
+            "key": "Apple",
+            "value": "apple"
         },
         {
-            "key": "lime",
+            "key": "Lime",
             "value": "Lime"
         },
         {
-            "key": "banana",
-            "value": "Banana"
+            "key": "Banana",
+            "value": "banana"
         },
         {
-            "key": "orange",
-            "value": "Orange"
+            "key": "Orange",
+            "value": "orange"
         }
     ]
 }
