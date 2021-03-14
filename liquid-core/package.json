@@ -11,6 +11,7 @@
     "pl:install": "patternlab install --config ./patternlab-config.json",
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "gulp:serve": "gulp",
+    "gulp:docs": "gulp docs",
     "pl:version": "patternlab --version"
   },
   "keywords": [],
@@ -20,7 +21,9 @@
     "@pattern-lab/cli": "^5.14.1",
     "@pattern-lab/core": "^5.14.1",
     "@pattern-lab/engine-handlebars": "^5.14.0",
-    "@pattern-lab/uikit-workshop": "^5.14.1"
+    "@pattern-lab/uikit-workshop": "^5.14.1",
+    "postcss": "^8.2.8",
+    "webpack": "^5.25.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",

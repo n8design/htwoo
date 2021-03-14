@@ -1,0 +1,21 @@
+{
+    "iconAction": "icon-arrow-down",
+    "options": [
+        {
+            "key": "Apple",
+            "value": "apple"
+        },
+        {
+            "key": "Lime",
+            "value": "Lime"
+        },
+        {
+            "key": "Banana",
+            "value": "banana"
+        },
+        {
+            "key": "Orange",
+            "value": "orange"
+        }
+    ]
+}

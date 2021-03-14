@@ -1,0 +1,53 @@
+.lqd-select{
+	position: relative;
+
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+
+	border: 1px $inputBorder solid;
+	border-radius: 2px;
+	outline: 1px rgba(255,255,255,0) solid;
+	&-text{
+		@include base-input;
+		width: calc(100% - #{px2rem(32px)});
+
+		border: none;
+	}
+	&-dropdown{
+		@extend %listReset;
+		@include elevation(4);
+
+		position: absolute;
+		top: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+		margin-top: 1px;
+
+		background-color: $bodyBackground;
+		border-radius: 2px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		box-sizing: border-box;
+		li{
+			font-size: 14px;
+
+			display: flex;
+
+			height: px2rem(36px);
+			padding: 0 px2rem(8px);
+
+			color: $buttonText;
+
+			align-items: center;
+			&:hover{
+				cursor: pointer;
+
+				background-color: $buttonBackgroundHovered;
+			}
+		}
+	}
+}
