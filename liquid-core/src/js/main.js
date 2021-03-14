@@ -1,4 +1,6 @@
-import { registerDialog } from './dialog.js';
+import {
+    registerDialog
+} from './dialog.js';
 
 function splitButtonReg(classSelector, handleWith) {
 
@@ -142,10 +144,28 @@ const afterLoaded = () => {
     splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
     splitButtonReg('button.lqd-buttoncontext', buttonClick);
 
-    registerAnimation('.anim-deleteNslide', animateDeleteAndSlide)
-    registerAnimation('.anim-addNslide', animateAddAndSlide)
+    registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
+    registerAnimation('.anim-addNslide', animateAddAndSlide);
 
     registerDialog();
+
+
+
+    setTimeout(() => {
+        let tmpHidden = document.querySelectorAll('.tmp-hidden');
+
+        console.log(tmpHidden);
+
+        tmpHidden.forEach(item => {
+            tmpHidden.addEventListener("focus", (event)=>{
+                
+                event.target.classList.remove('.tmp-hidden');
+
+                console.log(tmpHidden);
+        
+            })
+        })
+    }, 1000);
 
 
 }

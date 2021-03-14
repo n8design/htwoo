@@ -64,10 +64,10 @@
 @import "01-atoms/elevations/elevations";
 
 /*** MOLECULES ***/
-@import '02-molecules/dialog-header';
-@import '02-molecules/dialog-content';
-@import '02-molecules/webpart-header';
+@import "02-molecules/dialog-header";
+@import "02-molecules/dialog-content";
+@import "02-molecules/webpart-header";
 
 /*** ORGANISM ***/
-@import '03-organism/dialog/modal-dialog';
-@import '03-organism/dialog/sidebar';
+@import "03-organism/dialog/modal-dialog";
+@import "03-organism/dialog/sidebar";

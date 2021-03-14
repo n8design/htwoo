@@ -1,4 +1,4 @@
-$anim-timing: 5s;
+$anim-timing: 0.25s;
 
 @mixin dlgTransition($reverse: false){
 	@if($reverse){

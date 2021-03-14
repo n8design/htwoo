@@ -1773,7 +1773,7 @@ div.lqd-buttoncontext-outer {
   height: 100vh;
   opacity: 1;
   background-color: var(--backgroundOverlay);
-  transition: all 5s ease-in;
+  transition: all 0.25s ease-in;
   align-items: center;
   -webkit-backdrop-filter: blur(5px) saturate(150%);
           backdrop-filter: blur(5px) saturate(150%);
@@ -1793,49 +1793,49 @@ div.lqd-buttoncontext-outer {
 
 .lqd-mdldialog-outer.is-hidden:not([class*="is-sidebar"]) {
   visibility: hidden;
-  transition-delay: 10s;
+  transition-delay: 0.5s;
   opacity: 0;
-  transition: all 5s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .lqd-mdldialog-outer.is-hidden:not([class*="is-sidebar"]) .lqd-mdldialog {
   transform: scale(0);
-  transition: all 5s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .lqd-mdldialog-outer.is-visible:not([class*="is-sidebar"]) {
   visibility: visible;
   opacity: 1;
-  transition: all 5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .lqd-mdldialog-outer.is-visible:not([class*="is-sidebar"]) .lqd-mdldialog {
-  transition-delay: 10s;
+  transition-delay: 0.5s;
   transform: scale(1);
   opacity: 1;
-  transition: all 5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .lqd-mdldialog-outer.is-hidden[class*="is-sidebar"] {
-  transition-delay: 10s;
+  transition-delay: 0.5s;
   opacity: 0;
-  transition: all 5s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .lqd-mdldialog-outer.is-hidden[class*="is-sidebar"] .lqd-mdldialog {
-  transition: all 5s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 .lqd-mdldialog-outer.is-visible[class*="is-sidebar"] {
-  transition: all 5s ease-out;
+  transition: all 0.25s ease-out;
   opacity: 1;
   visibility: visible;
 }
 
 .lqd-mdldialog-outer.is-visible[class*="is-sidebar"] .lqd-mdldialog {
-  transition-delay: 10s;
+  transition-delay: 0.5s;
   transform: scaleY(1);
-  transition: all 5s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .lqd-mdldialog {
