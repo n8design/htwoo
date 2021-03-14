@@ -1,9 +1,9 @@
-.lqd-checkbox{
+.lqd-checkbox {
 	position: absolute;
 
 	opacity: 0;
 
-	& + label{
+	&+label {
 		font-size: px2rem(14px);
 		line-height: px2rem(20px);
 
@@ -16,7 +16,7 @@
 	}
 
 	// Box.
-	& + label:before{
+	&+label:before {
 		// display: inline-block;
 		position: relative;
 		top: -1px;
@@ -43,43 +43,30 @@
 	}
 
 	// Box hover
-	&:hover + label:before{
+	&:hover+label:before {
 		// background: $inputIcon;
 	}
 
 	// Box hover
-	&:active + label:before{
+	&:active+label:before {
 		border-color: $primaryButtonBackgroundPressed;
 		// background: #f35429;
 		background: $primaryButtonBackgroundPressed;
 	}
 
 	// Box focus
-	&:focus + label:before{
+	&:focus+label:before {
 		box-shadow: 0 0 0 3px rgba(0, 0, 0, .12);
 	}
 
 	// Box checked
-	&:checked + label:before{
+	&:checked+label:before {
 		// background: #f35429;
 	}
 
-	// Disabled state label.
-	&:disabled + label{
-		cursor: auto;
-
-		color: #b8b8b8;
-	}
-
-	// Disabled box.
-	&:disabled + label:before{
-		background: #ddd;
-		box-shadow: none;
-	}
-
 	// Checkmark. Could be replaced with an image
-	&:hover + label:after,
-	&:checked + label:after{
+	&:hover+label:after,
+	&:checked+label:after {
 		position: absolute;
 		top: px2rem(8px);
 		left: px2rem(5px);
@@ -92,14 +79,14 @@
 
 		background: $inputIcon;
 		box-shadow: 2px 0 0 $inputIcon,
-		4px 0 0 $inputIcon,
-		4px -2px 0 $inputIcon,
-		4px -4px 0 $inputIcon,
-		4px -6px 0 $inputIcon,
-		4px -8px 0 $inputIcon;
+			4px 0 0 $inputIcon,
+			4px -2px 0 $inputIcon,
+			4px -4px 0 $inputIcon,
+			4px -6px 0 $inputIcon,
+			4px -8px 0 $inputIcon;
 	}
 
-	&:active:hover + label:after{
+	&:active:hover+label:after {
 		position: absolute;
 		top: px2rem(8px);
 		left: px2rem(5px);
@@ -112,10 +99,43 @@
 
 		background: white;
 		box-shadow: 2px 0 0 white,
-		4px 0 0 white,
-		4px -2px 0 white,
-		4px -4px 0 white,
-		4px -6px 0 white,
-		4px -8px 0 white;
+			4px 0 0 white,
+			4px -2px 0 white,
+			4px -4px 0 white,
+			4px -6px 0 white,
+			4px -8px 0 white;
+	}
+
+	// Disabled state label.
+	&:disabled+label {
+		cursor: auto;
+		pointer-events: none;
+
+		color: $disabledText;
+
+		&>* {
+			pointer-events: none;
+		}
+
+		&:hover {
+			&>* {
+				pointer-events: none;
+			}
+		}
+	}
+
+	// Disabled box.
+	&:disabled+label:before {
+		pointer-events: none;
+
+		border-color: $disabledBorder;
+		box-shadow: none;
+	}
+
+	&:disabled+label:after {
+		pointer-events: none;
+
+		border-color: $disabledBorder;
+		box-shadow: none;
 	}
 }
