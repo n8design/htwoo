@@ -1,7 +1,18 @@
+<div id='custom-select-status' class='hidden-visually' aria-live="polite"></div>
 <div class="lqd-select">
     <input type="text" id="lqd-select-input" class="lqd-select-text" aria-autocomplete="both"
         aria-controls="custom-select-list">{{> atoms-button-icon iconname=iconAction }}
-    <ul class="lqd-select-dropdown">
+    <ul class="lqd-select-dropdown hidden-all">
+        {{#each options }}
+        <li data-value="{{ this.value }}">{{ this.key }}</li>
+        {{/each }}
+    </ul>
+</div>
+<div id='custom-select-status' class='hidden-visually' aria-live="polite"></div>
+<div class="lqd-select">
+    <input type="text" id="lqd-select-input" class="lqd-select-text" aria-autocomplete="both"
+        aria-controls="custom-select-list">{{> atoms-button-icon iconname=iconAction }}
+    <ul class="lqd-select-dropdown hidden-all">
         {{#each options }}
         <li data-value="{{ this.value }}">{{ this.key }}</li>
         {{/each }}

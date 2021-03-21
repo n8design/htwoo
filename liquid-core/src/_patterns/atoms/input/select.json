@@ -3,7 +3,7 @@
     "options": [
         {
             "key": "Apple",
-            "value": "apple"
+            "value": "Apple"
         },
         {
             "key": "Lime",
@@ -11,11 +11,11 @@
         },
         {
             "key": "Banana",
-            "value": "banana"
+            "value": "Banana"
         },
         {
             "key": "Orange",
-            "value": "orange"
+            "value": "Orange"
         }
     ]
 }

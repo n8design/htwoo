@@ -1,15 +1,18 @@
 .lqd-select{
 	position: relative;
 
-	box-sizing: border-box;
 	display: flex;
-	align-items: center;
+
+	box-sizing: border-box;
 
 	border: 1px $inputBorder solid;
 	border-radius: 2px;
 	outline: 1px rgba(255,255,255,0) solid;
+
+	align-items: center;
 	&-text{
 		@include base-input;
+
 		width: calc(100% - #{px2rem(32px)});
 
 		border: none;
@@ -19,19 +22,24 @@
 		@include elevation(4);
 
 		position: absolute;
+		z-index: 100;
 		top: 100%;
 
 		display: flex;
 		flex-direction: column;
 
+		box-sizing: border-box;
 		width: 100%;
 		margin-top: 1px;
 
-		background-color: $bodyBackground;
 		border-radius: 2px;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		box-sizing: border-box;
+		background-color: $bodyBackground;
+
+		&.hidden-all{
+			display: none;
+		}
 		li{
 			font-size: 14px;
 

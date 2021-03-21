@@ -2,6 +2,10 @@ import {
     registerDialog
 } from './dialog.js';
 
+import {
+    ariaSelect
+} from './select.js'
+
 function splitButtonReg(classSelector, handleWith) {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
@@ -133,6 +137,20 @@ const registerAnimation = (classname, handleWith) => {
 
 }
 
+const registerAriaSelect = () => {
+
+    let selects = document.querySelectorAll('.lqd-select');
+
+    // debugger;
+
+    if (selects) {
+        selects.forEach((item, idx) => {
+            console.log(selects[idx]);
+            ariaSelect(item);
+        });
+    }
+}
+
 
 const afterLoaded = () => {
 
@@ -148,6 +166,7 @@ const afterLoaded = () => {
     registerAnimation('.anim-addNslide', animateAddAndSlide);
 
     registerDialog();
+    registerAriaSelect();
 
 
 
@@ -157,12 +176,12 @@ const afterLoaded = () => {
         console.log(tmpHidden);
 
         tmpHidden.forEach(item => {
-            tmpHidden.addEventListener("focus", (event)=>{
-                
+            tmpHidden.addEventListener("focus", (event) => {
+
                 event.target.classList.remove('.tmp-hidden');
 
                 console.log(tmpHidden);
-        
+
             })
         })
     }, 1000);
