@@ -1,0 +1,85 @@
+.lqd-toggle{
+	display: flex;
+
+	align-items: center;
+
+	.lqd-toggle-label{
+		display: flex;
+		flex-direction: row;
+
+		align-items: center;
+	}
+
+	.lqd-toggle-checked{
+		display: none;
+	}
+
+	.lqd-toggle-unchecked{
+		display: inline-block;
+	}
+
+	.lqd-toggle-slider{
+		position: relative;
+
+		display: flex;
+
+		width: px2rem(32px);
+		height: px2rem(16px);
+		margin: 0 1rem;
+
+		content: "";
+		transition: background .2s ease-in-out;
+
+		border: 1px $buttonBorder solid;
+		border-radius: 1rem;
+		background-color: $buttonBackground;
+
+		&::after{
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			display: inline-block;
+
+			box-sizing: border-box;
+			width: px2rem(12px);
+			height: px2rem(12px);
+			margin: 2px;
+
+			content: "";
+			transition: all .2s;
+
+			border: px2rem(2px) rgba(#fff, 0) solid;
+			border-radius: 50%;
+			background-color: $buttonText;
+		}
+	}
+
+	// toggle checkbox
+	.lqd-toggle-cb{
+		display: none;
+
+		&:checked{
+			& ~ .lqd-toggle-label{
+				.lqd-toggle-slider{
+					border-color: $primaryButtonBackground;
+					background-color: $primaryButtonBackground;
+
+					&::after{
+						transform: translateX(1rem);
+
+						background-color: $buttonBackground;
+					}
+				}
+
+				.lqd-toggle-checked{
+					display: block;
+				}
+
+				.lqd-toggle-unchecked{
+					display: none;
+				}
+			}
+		}
+	}
+}
