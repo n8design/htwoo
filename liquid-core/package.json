@@ -21,7 +21,7 @@
     "@pattern-lab/cli": "^5.14.1",
     "@pattern-lab/core": "^5.14.1",
     "@pattern-lab/engine-handlebars": "^5.14.0",
-    "@pattern-lab/uikit-workshop": "file:../../../community/patternlab-node/packages/uikit-workshop",
+    "@pattern-lab/uikit-workshop": "^5.14.0",
     "postcss": "^8.2.8",
     "webpack": "^4.46.0"
   },

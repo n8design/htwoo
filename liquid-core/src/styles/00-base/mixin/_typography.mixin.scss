@@ -84,7 +84,7 @@
 	@else if $typographyStyle==p{
 		@extend %baseParagraph;
 
-		font-size: px2rem(20px);
+		font-size: px2rem(18px);
 	}
 
 	@else if $typographyStyle==blockquote or if $typographyStyle==quote{
