@@ -1,4 +1,4 @@
 ---
-title: Split Button
-order: 50
+title: Split Button Variants
+order: 99
 ---

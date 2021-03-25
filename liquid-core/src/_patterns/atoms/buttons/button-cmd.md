@@ -1,6 +1,6 @@
 ---
 title: Command
-order: 60
+order: 99
 ---
 
 When no drop down items are specified the button renders without the chevron down as well without any flyout menu.
