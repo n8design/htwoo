@@ -1,0 +1,128 @@
+@mixin tblDefSpacing{
+	font-size: 14px;
+
+	min-height: 42px;
+	padding-top: px2rem((42px - 14px) / 2);
+	padding-right: px2rem(8px);
+	padding-bottom: px2rem((42px - 14px) / 2);
+	padding-left: px2rem(12px);
+}
+
+.lqd-table{
+	overflow: auto;
+
+	width: 100%;
+
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	.align-left{
+		text-align: left;
+	}
+
+	.align-center{
+		text-align: center;
+	}
+
+	.align-right{
+		text-align: right;
+	}
+
+	.valign-top{
+		vertical-align: top;
+	}
+
+	.valign-middle{
+		vertical-align: middle;
+	}
+
+	.valign-bottom{
+		vertical-align: bottom;
+	}
+
+	@media screen and (max-width: 640px){
+		.no-phone{
+			display: none;
+		}
+	}
+
+	tfoot,
+	thead{
+		th{
+			@include tblDefSpacing();
+
+			font-size: px2rem(14px);
+
+			text-align: left;
+			white-space: nowrap;
+
+			&:hover{
+				background-color: $buttonBackgroundHovered;
+			}
+		}
+	}
+
+	thead{
+		border-bottom: 1px $neutralLight solid;
+		background-color: $bodyBackground;
+	}
+
+	tfoot{
+		border-top: 1px $neutralLight solid;
+	}
+
+	tbody{
+		tr{
+			min-height: 42px;
+
+			&:hover{
+				background-color: $buttonBackgroundHovered;
+			}
+		}
+
+		td{
+			@include tblDefSpacing();
+
+			vertical-align: top;
+
+			border-bottom: 1px $neutralLight solid;
+		}
+	}
+
+	// Sticky header
+	.is-sticky{
+		position: sticky;
+
+		background-color: $bodyBackground;
+
+		&.top{
+			z-index: 10;
+			top: 0;
+		}
+
+		&.bottom{
+			z-index: 10;
+			bottom: 0;
+		}
+
+		&.left{
+			z-index: 8;
+			left: 0;
+		}
+
+		&.right{
+			z-index: 8;
+			right: 0;
+		}
+	}
+
+
+
+	// Compact design
+	.compact{
+		tbody{
+			td{
+			}
+		}
+	}
+}
