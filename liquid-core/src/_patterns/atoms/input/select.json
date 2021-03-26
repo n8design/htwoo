@@ -1,21 +1,52 @@
 {
     "iconAction": "icon-arrow-down",
+    "ddToggleClass": "hidden-all",
     "options": [
         {
-            "key": "Apple",
-            "value": "Apple"
+            "groupname": "Fruits",
+            "options": [{
+                "key": "Apple",
+                "value": "Apple",
+                "disabled": "is-disabled"
+            },
+            {
+                "key": "Lime",
+                "value": "Lime",
+                "disabled": ""
+            },
+            {
+                "key": "Banana",
+                "value": "Banana",
+                "disabled": ""
+            },
+            {
+                "key": "Orange",
+                "value": "Orange",
+                "disabled": ""
+            }]
         },
         {
-            "key": "Lime",
-            "value": "Lime"
-        },
-        {
-            "key": "Banana",
-            "value": "Banana"
-        },
-        {
-            "key": "Orange",
-            "value": "Orange"
+            "groupname": "Fruit Icons",
+            "options": [{
+                "key": "🍎 Apple",
+                "value": "Apple",
+                "disabled": ""
+            },
+            {
+                "key": "🍋 Lime",
+                "value": "Lime",
+                "disabled": ""
+            },
+            {
+                "key": "🍌 Banana",
+                "value": "Banana",
+                "disabled": ""
+            },
+            {
+                "key": "🍊 Orange",
+                "value": "Orange",
+                "disabled": ""
+            }]
         }
     ]
 }

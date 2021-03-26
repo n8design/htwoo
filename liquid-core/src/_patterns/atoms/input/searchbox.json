@@ -1,4 +1,5 @@
 {
     "iconname": "icon-search",
-    "placeholder": "Search"
+    "placeholder": "Search",
+    "ddToggleClass": ""
 }

@@ -4,7 +4,11 @@ import {
 
 import {
     ariaSelect
-} from './select.js'
+} from './select.js';
+
+import {
+    init
+} from './table.js';
 
 function splitButtonReg(classSelector, handleWith) {
 
@@ -169,6 +173,7 @@ const afterLoaded = () => {
     registerAriaSelect();
 
 
+    init();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');
