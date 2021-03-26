@@ -1,0 +1,8 @@
+---
+title: Primary
+order: 20
+---
+
+Primary button also has on disabled state the correct color values.
+
+To disable this button simply add the `disable="true"` as well as the `aria-disabled="true"` to it.

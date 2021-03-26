@@ -1,0 +1,51 @@
+{
+    "ddToggleClass": "",
+    "options": [
+        {
+            "groupname": "Fruits",
+            "options": [{
+                "key": "Apple",
+                "value": "Apple",
+                "disabled": "is-disabled"
+            },
+            {
+                "key": "Lime",
+                "value": "Lime",
+                "disabled": ""
+            },
+            {
+                "key": "Banana",
+                "value": "Banana",
+                "disabled": ""
+            },
+            {
+                "key": "Orange",
+                "value": "Orange",
+                "disabled": ""
+            }]
+        },
+        {
+            "groupname": "Fruit Icons",
+            "options": [{
+                "key": "🍎",
+                "value": "Apple",
+                "disabled": ""
+            },
+            {
+                "key": "🍋",
+                "value": "Lime",
+                "disabled": ""
+            },
+            {
+                "key": "🍌",
+                "value": "Banana",
+                "disabled": ""
+            },
+            {
+                "key": "🍊",
+                "value": "Orange",
+                "disabled": ""
+            }]
+        }
+    ]
+}
