@@ -1,4 +1,5 @@
 {
     "title": "Header of a modal dialog",
-    "iconAction": "icon-close"
+    "iconAction": "icon-close",
+    "aria-label": "Close"
 }

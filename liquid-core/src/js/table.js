@@ -59,9 +59,9 @@ const collapseAndExpand = (event) => {
 
                 currentItem.setAttribute('aria-hidden', 'false');
                 currentItem.setAttribute('aria-expanded', 'true');
-                
+
             }
-            
+
         } else {
             console.log(' FALSE ');
 
@@ -70,8 +70,8 @@ const collapseAndExpand = (event) => {
                 const currentItem = subSection[i];
 
                 currentItem.setAttribute('aria-hidden', 'true');
-                currentItem.setAttribute('aria-expanded', 'false');   
-                
+                currentItem.setAttribute('aria-expanded', 'false');
+
             }
 
         }
@@ -80,7 +80,7 @@ const collapseAndExpand = (event) => {
 
 }
 
-export const init = () => {
+const initCollapsability = () => {
 
     const collapseTable = document.querySelectorAll('.lqd-table.is-collapsable');
     collapseTable.forEach(table => {
@@ -95,5 +95,80 @@ export const init = () => {
             tableRow.addEventListener('click', collapseAndExpand);
         })
     })
+
+}
+
+const position = {
+    "left": "left",
+    "right": "right",
+    "top": "top",
+    "bottom": "bottom"
+};
+
+const stickyOffsetFixup = (parent, selector, offset) => {
+
+    console.log(offset);
+
+    const innerDefinition = parent.querySelectorAll(selector);
+
+    console.log('Inner Left', innerDefinition);
+
+    for (let j = 0; j < innerDefinition.length; j++) {
+
+        const innerElement = innerDefinition[j];
+        console.debug(innerElement.offsetLeft);
+        if (offset === position.left) {
+            innerElement.style[offset] = innerElement.offsetLeft + "px";
+        }
+        if (offset === position.right) {
+            innerElement.style[offset] = innerElement.offsetRight + "px";
+        }
+        if (offset === position.top) {
+            innerElement.style[offset] = innerElement.offsetTop + "px";
+        }
+        if (offset === position.bottom) {
+            innerElement.style[offset] = innerElement.offsetBottom + "px";
+        }
+
+    }
+
+}
+
+const initSticky = () => {
+    console.debug('Sticky Header');
+    const allStickyTables = document.querySelectorAll("table.sticky");
+    console.debug(allStickyTables);
+
+    for (let i = 0; i < allStickyTables.length; i++) {
+
+        const stickyTable = allStickyTables[i];
+
+
+        stickyOffsetFixup(stickyTable, "tr td.is-sticky.left", position.left);
+        stickyOffsetFixup(stickyTable, "tr th.is-sticky.left", position.left);
+        // stickyOffsetFixup(stickyTable, "tr td.is-sticky.top", position.top);
+        // stickyOffsetFixup(stickyTable, "tr th.is-sticky.top", position.top);
+
+
+        // const innerLeftHeaderDefinition = stickyTable.querySelectorAll("tr th.is-sticky.left");
+
+        // console.log('Inner Left', innerLeftHeaderDefinition);
+
+        // for (let j = 0; j < innerLeftHeaderDefinition.length; j++) {
+
+        //     const innerLeft = innerLeftHeaderDefinition[j];
+        //     console.debug(innerLeft.offsetLeft);
+        //     innerLeft.style.left = innerLeft.offsetLeft + "px";
+
+        // }
+
+
+    }
+}
+
+export const init = () => {
+
+    initCollapsability();
+    initSticky();
 
 }

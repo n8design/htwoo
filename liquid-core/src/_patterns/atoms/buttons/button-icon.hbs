@@ -1,3 +1,7 @@
-<button class="lqd-buttonicon">
-    {{> atoms-icon iconname=iconAction }}
-</button>
+{{#if aria-label }}
+<button class="lqd-buttonicon" aria-label="{{ aria-label }}">
+    {{ else }}
+    <button class="lqd-buttonicon" aria-label="{{ aria-label }}">
+        {{/if}}
+        {{> atoms-icon iconname=iconAction }}
+    </button>

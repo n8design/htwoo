@@ -1,20 +1,34 @@
-@mixin tblDefSpacing{
+@mixin tblDefSpacing {
+	$min-height: 42px;
 	font-size: 14px;
 
-	min-height: 42px;
-	padding-top: px2rem((42px - 14px) / 2);
+	min-height: $min-height;
+	padding-top: px2rem(($min-height - 14px) / 2);
 	padding-right: px2rem(8px);
-	padding-bottom: px2rem((42px - 14px) / 2);
+	padding-bottom: px2rem(($min-height - 14px) / 2);
 	padding-left: px2rem(12px);
+
 }
 
-.lqd-table-iconcell{
-	svg{
+@mixin tblDefSpacingCompact {
+	$min-height: 32px;
+	font-size: 14px;
+
+	min-height: $min-height;
+	padding-top: px2rem(($min-height - 18px) / 2);
+	padding-right: px2rem(8px);
+	padding-bottom: px2rem(($min-height - 18px) / 2);
+	padding-left: px2rem(12px);
+
+}
+
+.lqd-table-iconcell {
+	svg {
 		transition: transform .125s ease-in-out;
 	}
 }
 
-.lqd-table{
+.lqd-table {
 	overflow: auto;
 
 	width: 100%;
@@ -22,76 +36,86 @@
 	border-spacing: 0;
 	border-collapse: collapse;
 
-	.align-left{
+	.align-left {
 		text-align: left;
 	}
 
-	.align-center{
+	.align-center {
 		text-align: center;
 	}
 
-	.align-right{
+	.align-right {
 		text-align: right;
 	}
 
-	.valign-top{
+	.valign-top {
 		vertical-align: top;
 	}
 
-	.valign-middle{
+	.valign-middle {
 		vertical-align: middle;
 	}
 
-	.valign-bottom{
+	.valign-bottom {
 		vertical-align: bottom;
 	}
 
-	@media screen and (max-width: 640px){
-		.no-phone{
+	@media screen and (max-width: 640px) {
+		.no-phone {
 			display: none;
 		}
 	}
 
 	tfoot,
 	tbody,
-	thead{
-		th{
+	thead {
+		th {
 			@include tblDefSpacing();
 
 			font-size: px2rem(14px);
 
 			text-align: left;
 			white-space: nowrap;
+			background-color: $buttonBackground;
 
-			&:hover{
+			&:hover {
 				background-color: $buttonBackgroundHovered;
 			}
 		}
 	}
 
-	thead{
+	td,
+	th {
+		background-color: $buttonBackground;
+
+		&:hover {
+			background-color: $buttonBackgroundHovered;
+		}
+	}
+
+	thead {
 		border-bottom: 1px $neutralLight solid;
 		background-color: $bodyBackground;
 	}
 
-	tfoot{
+	tfoot {
 		border-top: 1px $neutralLight solid;
 	}
 
-	tbody{
-		th{
+	tbody {
+		th {
 			vertical-align: middle;
 		}
 
-		tr{
+		tr {
 			min-height: 42px;
 
-			&:hover{
+			&:hover {
 				background-color: $buttonBackgroundHovered;
 			}
 		}
 
-		td{
+		td {
 			@include tblDefSpacing();
 
 			vertical-align: top;
@@ -100,18 +124,36 @@
 		}
 	}
 
-	tr{
-		&[aria-expanded="true"]{
-			.lqd-table-iconcell{
-				svg{
+	&.compact {
+
+		tfoot,
+		tbody,
+		thead {
+			th {
+				@include tblDefSpacingCompact();
+			}
+		}
+
+		tbody {
+
+			td {
+				@include tblDefSpacingCompact();
+			}
+		}
+	}
+
+	tr {
+		&[aria-expanded="true"] {
+			.lqd-table-iconcell {
+				svg {
 					transform: rotate(0deg);
 				}
 			}
 		}
 
-		&[aria-expanded="false"]{
-			.lqd-table-iconcell{
-				svg{
+		&[aria-expanded="false"] {
+			.lqd-table-iconcell {
+				svg {
 					transform: rotate(-90deg);
 				}
 			}
@@ -119,56 +161,68 @@
 	}
 
 	// Sticky header
-	.is-sticky{
+	th.is-sticky,
+	td.is-sticky {
 		position: sticky;
 
-		background-color: $bodyBackground;
 
-		&.top{
+
+		&.top {
 			z-index: 10;
 			top: 0;
 		}
 
-		&.bottom{
+		&.bottom {
 			z-index: 10;
 			bottom: 0;
 		}
 
-		&.left{
-			z-index: 8;
+		&.left.top {
+			z-index: 10;
 			left: 0;
 		}
 
-		&.right{
+		&.right {
 			z-index: 8;
 			right: 0;
 		}
+
+		&.top.left,
+		&.bottom.left {
+			z-index: 12;
+		}
+
+		&.top.right,
+		&.bottom.right {
+			z-index: 12;
+		}
+
 	}
 
-	&.is-collapsable{
-		.is-hidden{
+	&.is-collapsable {
+		.is-hidden {
 			display: none;
 
-			td{
+			td {
 				display: none;
 			}
 		}
 
-		.is-visible{
+		.is-visible {
 			display: table-row;
 
-			td{
+			td {
 				display: table-cell;
 			}
 		}
 	}
 
-	& &-iconcell{
+	& &-iconcell {
 		width: 32px;
 		padding: 0;
 	}
 
-	&-subheader{
+	&-subheader {
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
@@ -179,10 +233,9 @@
 
 
 	// Compact design
-	.compact{
-		tbody{
-			td{
-			}
+	.compact {
+		tbody {
+			td {}
 		}
 	}
 }
