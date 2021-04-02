@@ -3,50 +3,24 @@
     "ddToggleClass": "hidden-all",
     "options": [
         {
-            "groupname": "Fruits",
-            "options": [{
-                "key": "Apple",
-                "value": "Apple",
-                "disabled": "is-disabled"
-            },
-            {
-                "key": "Lime",
-                "value": "Lime",
-                "disabled": ""
-            },
-            {
-                "key": "Banana",
-                "value": "Banana",
-                "disabled": ""
-            },
-            {
-                "key": "Orange",
-                "value": "Orange",
-                "disabled": ""
-            }]
+            "key": "Apple",
+            "value": "Apple",
+            "disabled": "is-disabled"
         },
         {
-            "groupname": "Fruit Icons",
-            "options": [{
-                "key": "🍎 Apple",
-                "value": "Apple",
-                "disabled": ""
-            },
-            {
-                "key": "🍋 Lime",
-                "value": "Lime",
-                "disabled": ""
-            },
-            {
-                "key": "🍌 Banana",
-                "value": "Banana",
-                "disabled": ""
-            },
-            {
-                "key": "🍊 Orange",
-                "value": "Orange",
-                "disabled": ""
-            }]
+            "key": "Lime",
+            "value": "Lime",
+            "disabled": ""
+        },
+        {
+            "key": "Banana",
+            "value": "Banana",
+            "disabled": ""
+        },
+        {
+            "key": "Orange",
+            "value": "Orange",
+            "disabled": ""
         }
     ]
 }

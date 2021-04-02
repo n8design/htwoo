@@ -1,7 +1,8 @@
 <div class="lqd-select">
     <div id='custom-select-status' class='hidden-visually' aria-live="polite"></div>
     <input type="text" id="lqd-select-input" class="lqd-select-text" aria-autocomplete="both"
-        aria-controls="custom-select-list">{{> atoms-button-icon iconname=iconAction }}
+        aria-controls="custom-select-list">
+    {{> atoms-button-icon iconname=iconAction }}
     {{>atoms-select-drop-down options=this.options ddToggleClass=this.ddToggleClass }}
     {{!-- <ul class="lqd-select-dropdown hidden-all">
         {{#each options }}

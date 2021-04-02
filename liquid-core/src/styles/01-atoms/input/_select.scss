@@ -59,7 +59,7 @@
 	}
 
 	// for drop down user outside of a select box
-	& > &-dropdown{
+	& > .lqd-select-dropdown{
 		position: absolute;
 		z-index: 100;
 		top: 100%;
