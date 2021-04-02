@@ -1,0 +1,14 @@
+{
+    "iconDown": "icon-ellipses",
+    "label": "New Item",
+    "ddItems": [
+        {
+            "label": "Email message",
+            "icon": "icon-ninjacat"
+        },
+        {
+            "label": "Calendar Event",
+            "icon": "icon-minus"
+        }
+    ]
+}

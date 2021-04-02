@@ -1,0 +1,51 @@
+.lqd-button-pivot{
+	font-size: 1rem;
+	line-height: px2rem(44px);
+
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+
+	padding: 0;
+
+	border: none;
+	border: 1px black solid;
+	background-color: white;
+
+	flex-wrap: wrap;
+}
+
+.lqd-pivot-inner{
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	padding-right: px2rem(4px);
+	padding-left: px2rem(4px);
+
+	text-decoration: none;
+
+	color: black;
+
+	align-items: center;
+	&:hover{
+		font-weight: bold;
+	}
+	&::after{
+		font-weight: bold;
+
+		visibility: hidden;
+		overflow: hidden;
+
+		height: 0;
+
+		content: attr(data-text);
+		content: attr(data-text) / "";
+		user-select: none;
+		pointer-events: none;
+
+		@media speech{
+			display: none;
+		}
+	}
+}
