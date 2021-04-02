@@ -42,22 +42,25 @@ const _btnFlyOut = (curSplitButton, parentElement) => {
 
 const buttonClick = (event) => {
 
-
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
 
-    console.debug("Button Click::::", curSplitButton)
-    console.debug("PARENT ELEMENT::", parentElement);
-    console.debug("PARENT ELEMENT::", parentElement.parentElement);
-    _btnFlyOut(curSplitButton, parentElement);
+    console.log("\nEVENT: buttonClick");
 
+    console.debug("curSplitButton::::", curSplitButton)
+    console.debug("PARENT ELEMENT::", parentElement);
+    // console.debug("PARENT ELEMENT::", parentElement.parentElement);
+    _btnFlyOut(curSplitButton, parentElement);
 
 }
 
 const splitButtonClick = (event) => {
 
+    console.log("\nEVENT: splitButtonClick");
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
+    console.log("curSplitButton", curSplitButton);
+    console.log("Parent Element", parentElement);
 
     _btnFlyOut(curSplitButton, parentElement);
 
@@ -160,11 +163,13 @@ const afterLoaded = () => {
 
     splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
     splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret', splitButtonClick);
+    splitButtonReg('button.lqd-buttonicon-overflow', buttonClick);
 
     splitButtonReg('button.lqd-buttoncmd', buttonClick);
     splitButtonReg('button.lqd-buttoncmdbar', buttonClick);
     splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
     splitButtonReg('button.lqd-buttoncontext', buttonClick);
+    
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);

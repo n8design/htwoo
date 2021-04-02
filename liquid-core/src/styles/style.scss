@@ -39,8 +39,9 @@
 @import "01-atoms/buttons/button-context";
 @import "01-atoms/buttons/button-icon";
 @import "01-atoms/buttons/button-split";
-@import "01-atoms/buttons/button-iconsplit";
-@import "01-atoms/buttons/button-commandbar";
+@import "01-atoms/buttons/button-icon-split";
+@import "01-atoms/buttons/button-icon-overflow";
+
 
 /**** ATOMS / Buttons ****/
 @import "01-atoms/input/label";
@@ -72,6 +73,7 @@
 @import "02-molecules/dialog-header";
 @import "02-molecules/dialog-content";
 @import "02-molecules/webpart-header";
+@import "02-molecules/commandbar";
 
 /*** ORGANISM ***/
 @import "03-organism/dialog/modal-dialog";
