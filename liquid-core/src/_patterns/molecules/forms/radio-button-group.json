@@ -7,19 +7,19 @@
             "value": "apple"
         },
         {
-            "label": "Banana",
+            "label": "Avocado",
             "id": "rbg2",
             "name": "radio-button-group",
             "value": "banana"
         },
         {
-            "label": "Citrus",
+            "label": "Banana",
             "id": "rbg3",
             "name": "radio-button-group",
             "value": "citrus"
         },
         {
-            "label": "Avocado",
+            "label": "Citrus",
             "id": "rbg4",
             "name": "radio-button-group",
             "value": "avocado"
