@@ -14,13 +14,13 @@
         },
         {
             "label": "Citrus",
-            "id": "rgb3",
+            "id": "rbg3",
             "name": "radio-button-group",
             "value": "citrus"
         },
         {
             "label": "Avocado",
-            "id": "rgb4",
+            "id": "rbg4",
             "name": "radio-button-group",
             "value": "avocado"
         }
