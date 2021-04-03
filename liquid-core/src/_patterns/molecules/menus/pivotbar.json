@@ -1,0 +1,16 @@
+{
+    "pivotItems": [
+        {
+            "title": "Coffee",
+            "isActive": true
+        },
+        {
+            "title": "Matcha",
+            "isActive": false
+        },
+        {
+            "title": "Gin Tonic",
+            "isActive": false
+        }
+    ]
+}
