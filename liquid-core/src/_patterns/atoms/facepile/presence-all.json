@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "status": "away",
+            "title": "Away"
+        },
+        {
+            "status": "dnd",
+            "title": "Do not disturb"
+        },
+        {
+            "status": "online",
+            "title": "Online"
+        },
+        {
+            "status": "invisible",
+            "title": "Invisible"
+        },
+        {
+            "status": "oof",
+            "title": "Out of Office"
+        }
+    ]
+}
