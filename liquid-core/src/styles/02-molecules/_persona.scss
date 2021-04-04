@@ -52,6 +52,45 @@
 	}
 }
 
+.lqd-persona-100{
+	$presenceSize: px2rem(32px);
+	$presonaSize: px2rem(100px);
+
+	@extend .lqd-persona;
+
+	height: $presonaSize;
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+	.lqd-persona-data{
+		margin: 0 1rem 0 1rem;
+	}
+	.lqd-persona-name{
+		font-size: px2rem(20px);
+		line-height: px2rem(28px);
+	}
+	&-function,
+	&-statustext,
+	&-available{
+		line-height: px2rem(20px);
+	}
+	.lqd-persona-statustext,
+	.lqd-persona-available{
+		display: block;
+	}
+
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
 .lqd-persona-72{
 	$presenceSize: 1.5rem;
 	$presonaSize: px2rem(72px);
@@ -66,9 +105,134 @@
 		height: $presonaSize;
 	}
 
+    .lqd-persona-available{
+        display: block;
+    }
+
 	.lqd-persona-available{
 		display: none;
 	}
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.lqd-persona-48{
+	$presenceSize: 1rem;
+	$presonaSize: px2rem(48px);
+
+	@extend .lqd-persona;
+
+	height: $presonaSize;
+
+
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+	.lqd-persona-available{
+		display: none;
+	}
+
+	.lqd-persona-data{
+		margin: 0 .75rem 0 .75rem;
+	}
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+	.lqd-persona-name{
+		font-size: px2rem(14px);
+	}
+	.lqd-persona-function,
+	.lqd-persona-statustext,
+	.lqd-persona-available{
+		font-size: px2rem(12px);
+	}
+}
+
+.lqd-persona-40{
+	$presenceSize: 1rem;
+	$presonaSize: px2rem(40px);
+
+	@extend .lqd-persona-48;
+
+	height: $presonaSize;
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.lqd-persona-32{
+	$presenceSize: px2rem(12px);
+	$presonaSize: px2rem(32px);
+
+	@extend .lqd-persona-40;
+
+	height: $presonaSize;
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+	.lqd-persona-function,
+	.lqd-persona-statustext,
+	.lqd-persona-available{
+		display: none;
+	}
+	.lqd-persona-data{
+		margin: 0 .5rem 0 .5rem;
+	}
+
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.lqd-persona-24{
+	$presenceSize: px2rem(12px);
+	$presonaSize: px2rem(24px);
+
+	@extend .lqd-persona-48;
+
+	height: $presonaSize;
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+	.lqd-persona-function,
+	.lqd-persona-statustext,
+	.lqd-persona-available{
+		display: none;
+	}
+	.lqd-persona-data{
+		margin: 0 .5rem 0 .5rem;
+	}
+
 
 	.lqd-presence{
 		top: calc(50% - #{$presenceSize/2});
