@@ -1,0 +1,8 @@
+.lqd-facepile{
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+    justify-content: flex-start space-between;
+    transition: all 1s ease-in-out;
+}

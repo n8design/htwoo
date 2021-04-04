@@ -166,7 +166,7 @@ const initSticky = () => {
     }
 }
 
-export const init = () => {
+export const initTables = () => {
 
     initCollapsability();
     initSticky();

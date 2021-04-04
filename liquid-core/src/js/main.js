@@ -5,10 +5,14 @@ import {
 import {
     ariaSelect
 } from './select.js';
-
+/** Table Helper */
 import {
-    init
+    initTables
 } from './table.js';
+/** Pivot Helpers */
+import {
+    initPivot
+} from './pivot.js';
 
 function splitButtonReg(classSelector, handleWith) {
 
@@ -177,8 +181,10 @@ const afterLoaded = () => {
     registerDialog();
     registerAriaSelect();
 
-
-    init();
+    /** Init Table Helper */
+    initTables();
+    /** Init Pivot Bars */
+    initPivot();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');
