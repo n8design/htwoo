@@ -2,7 +2,7 @@
 title: Presence
 ---
 
-This prescence bubble is used to indicate a persons availability status expecially on facepiles. The following status are defined:
+This prescence bubble is used to indicate a persons availability status expecially on avatars. The following status are defined:
 
 * away - Away
 * dnd - Do not disturbe

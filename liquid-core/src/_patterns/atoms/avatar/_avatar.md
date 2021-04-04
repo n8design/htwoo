@@ -1,4 +1,4 @@
 ---
-title: Facepile
+title: Avatar
 order: 99
 ---

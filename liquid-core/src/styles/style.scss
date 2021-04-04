@@ -29,8 +29,8 @@
 
 /**** ATOMS / icons ****/
 @import "01-atoms/icons/icon";
-@import "01-atoms/facepile/facepile";
-@import "01-atoms/facepile/presence";
+@import "01-atoms/avatar/avatar";
+@import "01-atoms/avatar/presence";
 
 /**** ATOMS / Buttons ****/
 @import "01-atoms/buttons/button-general";
@@ -72,6 +72,7 @@
 @import "01-atoms/elevations/elevations";
 
 /*** MOLECULES ***/
+@import "02-molecules/avatar-w-presence";
 @import "02-molecules/radiobutton-group";
 @import "02-molecules/dialog-header";
 @import "02-molecules/dialog-content";

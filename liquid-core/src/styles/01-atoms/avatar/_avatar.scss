@@ -1,0 +1,59 @@
+%lqd-avatar{
+	display: inline-block;
+
+	width: 64px;
+	height: 64px;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+
+	border-radius: 50%;
+	img.lqg-avatar{
+		width: 100%;
+		height: auto;
+	}
+}
+.lqd-avatar{
+	@extend %lqd-avatar;
+
+	width: inherit;
+	height: inherit;
+}
+.lqd-avatar-64{
+	@extend %lqd-avatar;
+}
+.lqd-avatar-48{
+	@extend %lqd-avatar;
+
+	width: 48px;
+	height: 48px;
+}
+.lqd-avatar-40{
+	@extend %lqd-avatar;
+
+	width: 40px;
+	height: 40px;
+}
+.lqd-avatar-32{
+	@extend %lqd-avatar;
+
+	width: 32px;
+	height: 32px;
+}
+.lqd-avatar-24{
+	@extend %lqd-avatar;
+
+	width: 24px;
+	height: 24px;
+}
+.lqd-avatar-16{
+	@extend %lqd-avatar;
+
+	width: 16px;
+	height: 16px;
+}
+.lqd-avatar-8{
+	@extend %lqd-avatar;
+
+	width: 8px;
+	height: 8px;
+}
