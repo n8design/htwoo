@@ -23,6 +23,9 @@
     "vendor-prefix-align": true,
     "sort-order": [
         [
+            "$variable"
+        ],
+        [
             "$",
             "$extend",
             "$include"

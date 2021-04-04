@@ -143,25 +143,8 @@ const initSticky = () => {
 
         const stickyTable = allStickyTables[i];
 
-
         stickyOffsetFixup(stickyTable, "tr td.is-sticky.left", position.left);
         stickyOffsetFixup(stickyTable, "tr th.is-sticky.left", position.left);
-        // stickyOffsetFixup(stickyTable, "tr td.is-sticky.top", position.top);
-        // stickyOffsetFixup(stickyTable, "tr th.is-sticky.top", position.top);
-
-
-        // const innerLeftHeaderDefinition = stickyTable.querySelectorAll("tr th.is-sticky.left");
-
-        // console.log('Inner Left', innerLeftHeaderDefinition);
-
-        // for (let j = 0; j < innerLeftHeaderDefinition.length; j++) {
-
-        //     const innerLeft = innerLeftHeaderDefinition[j];
-        //     console.debug(innerLeft.offsetLeft);
-        //     innerLeft.style.left = innerLeft.offsetLeft + "px";
-
-        // }
-
 
     }
 }

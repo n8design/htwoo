@@ -1,0 +1,80 @@
+.lqd-persona{
+	display: flex;
+
+	height: px2rem(56px);
+
+	align-items: center;
+	flex: 1;
+	// flex: 1 0 auto;
+
+	.lqd-avatar-pres{
+		width: 56px;
+		height: 56px;
+	}
+
+	.lqd-presence{
+		top: calc(50% - 1rem);
+		left: calc(100% - 1rem);
+
+		width: px2rem(20px);
+		height: px2rem(20px);
+	}
+
+	&-data{
+		display: flex;
+		flex-direction: column;
+
+		min-width: 0;
+		margin: 0 1.5rem 0 1rem;
+	}
+
+	&-name,
+	&-function,
+	&-statustext,
+	&-available{
+		font-size: px2rem(14px);
+		line-height: px2rem(20px);
+
+		overflow: hidden;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-name{
+		font-size: px2rem(20px);
+	}
+
+
+	&-statustext,
+	&-available{
+		display: none;
+	}
+}
+
+.lqd-persona-72{
+	$presenceSize: 1.5rem;
+	$presonaSize: px2rem(72px);
+
+	@extend .lqd-persona;
+
+	height: $presonaSize;
+
+
+	.lqd-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+	.lqd-persona-available{
+		display: none;
+	}
+
+	.lqd-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
