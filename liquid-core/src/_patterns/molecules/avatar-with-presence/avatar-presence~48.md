@@ -1,5 +1,5 @@
 ---
-title: Avatar /w presence - 16px
+title: Avatar /w presence - 48px
 ---
 
-The example shown here is a 16px avatar scaled up for better visibility.
+The example shown here is a 48px avatar scaled up for better visibility.

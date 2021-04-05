@@ -1,0 +1,14 @@
+.lqd-doccard{
+	@include elevation(4);
+
+	border: 1px solid $variantBorder;
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+    .lqd-avatar{
+        margin-bottom: 0;
+    }
+    .lqd-cardfooter{
+        align-self: bottom;
+    }
+}
