@@ -2594,6 +2594,7 @@ div.lqd-buttoncontext-outer {
 .lqd-mdldialog-outer {
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   visibility: hidden;
   justify-content: center;
