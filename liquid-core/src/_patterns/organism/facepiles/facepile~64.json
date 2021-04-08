@@ -1,72 +1,72 @@
 {
     "items": [
         {
-            "mugshot": "./images/mug-shots/astronaut-mugshot-001.jpg",
+            "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg",
             "size": 64,
             "status": "online"
         },
         {
-            "mugshot": "./images/mug-shots/dog-mugshot-001.jpg",
+            "mugshot": "../../images//mug-shots/dog-mugshot-001.jpg",
             "size": 64,
             "status": "online"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-001.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-001.jpg",
             "size": 64,
             "status": "away"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-001.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-001.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-002.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-002.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-002.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-002.jpg",
             "size": 64,
             "status": "oof"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-003.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-003.jpg",
             "size": 64,
             "status": "oof"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-003.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-003.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-004.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-004.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-004.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-004.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-005.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-005.jpg",
             "size": 64,
             "status": "dnd"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-005.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-005.jpg",
             "size": 64,
             "status": "online"
         },
         {
-            "mugshot": "./images/mug-shots/female-mugshot-006.jpg",
+            "mugshot": "../../images//mug-shots/female-mugshot-006.jpg",
             "size": 64,
             "status": "online"
         },
         {
-            "mugshot": "./images/mug-shots/male-mugshot-006.jpg",
+            "mugshot": "../../images//mug-shots/male-mugshot-006.jpg",
             "size": 64,
             "status": "online"
         }

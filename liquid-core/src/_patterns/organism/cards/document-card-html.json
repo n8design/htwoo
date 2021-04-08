@@ -1,8 +1,8 @@
 {
     "card-title": "New Stuff for a cool intranet",
     "card-location": "Marketing",
-    "mugshot": "./images/mug-shots/astronaut-mugshot-001.jpg",
+    "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg",
     "card-footer-name": "Man on the moon",
     "card-footer-modified": "Created a seconds ago",
-    "card-image-url": "./images/card-images/coffee-image.jpg"
+    "card-image-url": "../../images//card-images/coffee-image.jpg"
 }
