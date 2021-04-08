@@ -13,6 +13,7 @@ $anim-timing: 0.25s;
 .lqd-mdldialog-outer{
 	position: fixed;
 	top: 0;
+	left: 0;
 
 	display: flex;
 	visibility: hidden;
@@ -81,8 +82,6 @@ $anim-timing: 0.25s;
 
 		@include dlgTransition();
 		.lqd-mdldialog{
-
-
 			@include dlgTransition();
 		}
 	}
