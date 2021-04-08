@@ -2,6 +2,18 @@ import {
     registerDialog
 } from './dialog.js';
 
+import {
+    ariaSelect
+} from './select.js';
+/** Table Helper */
+import {
+    initTables
+} from './table.js';
+/** Pivot Helpers */
+import {
+    initPivot
+} from './pivot.js';
+
 function splitButtonReg(classSelector, handleWith) {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
@@ -34,22 +46,25 @@ const _btnFlyOut = (curSplitButton, parentElement) => {
 
 const buttonClick = (event) => {
 
-
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
 
-    console.debug("Button Click::::", curSplitButton)
-    console.debug("PARENT ELEMENT::", parentElement);
-    console.debug("PARENT ELEMENT::", parentElement.parentElement);
-    _btnFlyOut(curSplitButton, parentElement);
+    console.log("\nEVENT: buttonClick");
 
+    console.debug("curSplitButton::::", curSplitButton)
+    console.debug("PARENT ELEMENT::", parentElement);
+    // console.debug("PARENT ELEMENT::", parentElement.parentElement);
+    _btnFlyOut(curSplitButton, parentElement);
 
 }
 
 const splitButtonClick = (event) => {
 
+    console.log("\nEVENT: splitButtonClick");
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
+    console.log("curSplitButton", curSplitButton);
+    console.log("Parent Element", parentElement);
 
     _btnFlyOut(curSplitButton, parentElement);
 
@@ -133,23 +148,43 @@ const registerAnimation = (classname, handleWith) => {
 
 }
 
+const registerAriaSelect = () => {
+
+    let selects = document.querySelectorAll('.lqd-select');
+
+    // debugger;
+
+    if (selects) {
+        selects.forEach((item, idx) => {
+            console.log(selects[idx]);
+            ariaSelect(item);
+        });
+    }
+}
+
 
 const afterLoaded = () => {
 
     splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
     splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret', splitButtonClick);
+    splitButtonReg('button.lqd-buttonicon-overflow', buttonClick);
 
     splitButtonReg('button.lqd-buttoncmd', buttonClick);
     splitButtonReg('button.lqd-buttoncmdbar', buttonClick);
     splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
     splitButtonReg('button.lqd-buttoncontext', buttonClick);
+    
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);
 
     registerDialog();
+    registerAriaSelect();
 
-
+    /** Init Table Helper */
+    initTables();
+    /** Init Pivot Bars */
+    initPivot();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');
@@ -157,12 +192,12 @@ const afterLoaded = () => {
         console.log(tmpHidden);
 
         tmpHidden.forEach(item => {
-            tmpHidden.addEventListener("focus", (event)=>{
-                
+            tmpHidden.addEventListener("focus", (event) => {
+
                 event.target.classList.remove('.tmp-hidden');
 
                 console.log(tmpHidden);
-        
+
             })
         })
     }, 1000);

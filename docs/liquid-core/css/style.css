@@ -1,84 +1,9 @@
 /***** Color converted to SCSS variables *****/
+body {
+  font-family: var(--mediumFontFamily);
+}
+
 /**** REQURIED FOR STYLE GUIDE ****/
-.sg-colors,
-.sg-elevations {
-  font-family: sans-serif;
-  list-style: none;
-}
-
-.sg-colors {
-  -moz-column-count: 3;
-       column-count: 3;
-}
-
-.sg-elevations {
-  display: flex;
-  flex-direction: row;
-  padding: 5rem 3rem;
-  flex-wrap: wrap;
-}
-
-.sg-swatch {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.sg-swatchbox {
-  display: flex;
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  content: " ";
-  flex-shrink: 0;
-}
-
-.sg-elevation {
-  display: flex;
-  flex-direction: row;
-  margin: 2 4rem;
-  flex-basis: 50%;
-}
-
-.sg-elevationbox {
-  display: flex;
-  box-sizing: border-box;
-  width: 4rem;
-  height: 4rem;
-  margin-right: 3rem;
-  margin-bottom: 2rem;
-  border-collapse: collapse;
-  content: " ";
-  border: 1px #605e5c solid;
-  border-image-source: none;
-  border-image-slice: 100%;
-  border-image-width: 1;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  flex-shrink: 0;
-  page-break-inside: avoid;
-}
-
-.sg-anim-blocks {
-  display: flex;
-  justify-content: center;
-  height: 200px;
-  background-color: var(--buttonBackgroundCheckedHovered);
-  align-content: center;
-  align-items: center;
-  will-change: content;
-}
-
-.sg-anim-block {
-  width: 75px;
-  height: 75px;
-  margin: 1rem;
-  content: "";
-  background-color: #72ad97;
-  will-change: opactiy;
-}
-
 /**** BASE VARS AND MIXIN's ****/
 :root {
   --accent: #4f6bed;
@@ -411,6 +336,36 @@ body {
   font-family: var(--mediumFontFamily);
 }
 
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.ttf") format("ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.ttf") format("ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.ttf") format("ttf");
+  font-weight: 700;
+}
+
 /**** Core Mixing Definition ****/
 h1, h2, h3, p {
   font-family: var(--xxLargeFontFamily);
@@ -443,17 +398,17 @@ blockquote {
   border-bottom: 1px solid #edebe9;
 }
 
-.lqd-buttonflyout, .lqd-select-dropdown {
+.lqd-buttonflyout, .lqd-select-dropdown, .lqd-optgroup-items {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-div.lqd-buttoncontext-outer, .lqd-buttonsplit, .lqd-buttonsplit-primary, .lqd-buttonicon-split {
+div.lqd-buttoncontext-outer, .lqd-buttonsplit, .lqd-buttonsplit-primary, .lqd-buttonicon-split, .lqd-buttonicon-overflow {
   position: relative;
 }
 
-div.lqd-buttoncontext-outer .lqd-buttonflyout, .lqd-buttonsplit .lqd-buttonflyout, .lqd-buttonsplit-primary .lqd-buttonflyout, .lqd-buttonicon-split .lqd-buttonflyout {
+div.lqd-buttoncontext-outer .lqd-buttonflyout, .lqd-buttonsplit .lqd-buttonflyout, .lqd-buttonsplit-primary .lqd-buttonflyout, .lqd-buttonicon-split .lqd-buttonflyout, .lqd-buttonicon-overflow .lqd-buttonflyout {
   position: absolute;
   z-index: 400;
   top: 100%;
@@ -461,15 +416,15 @@ div.lqd-buttoncontext-outer .lqd-buttonflyout, .lqd-buttonsplit .lqd-buttonflyou
   display: none;
 }
 
-div.show-flyout.lqd-buttoncontext-outer, .show-flyout.lqd-buttonsplit, .show-flyout.lqd-buttonsplit-primary, .show-flyout.lqd-buttonicon-split {
+div.show-flyout.lqd-buttoncontext-outer, .show-flyout.lqd-buttonsplit, .show-flyout.lqd-buttonsplit-primary, .show-flyout.lqd-buttonicon-split, .show-flyout.lqd-buttonicon-overflow {
   background-color: inherit;
 }
 
-div.show-flyout.lqd-buttoncontext-outer .lqd-buttonflyout, .show-flyout.lqd-buttonsplit .lqd-buttonflyout, .show-flyout.lqd-buttonsplit-primary .lqd-buttonflyout, .show-flyout.lqd-buttonicon-split .lqd-buttonflyout {
+div.show-flyout.lqd-buttoncontext-outer .lqd-buttonflyout, .show-flyout.lqd-buttonsplit .lqd-buttonflyout, .show-flyout.lqd-buttonsplit-primary .lqd-buttonflyout, .show-flyout.lqd-buttonicon-split .lqd-buttonflyout, .show-flyout.lqd-buttonicon-overflow .lqd-buttonflyout {
   display: block;
 }
 
-div.show-flyout.lqd-buttoncontext-outer .lqd-buttonsplit-carret, .show-flyout.lqd-buttonsplit .lqd-buttonsplit-carret, .show-flyout.lqd-buttonsplit-primary .lqd-buttonsplit-carret, .show-flyout.lqd-buttonicon-split .lqd-buttonsplit-carret {
+div.show-flyout.lqd-buttoncontext-outer .lqd-buttonsplit-carret, .show-flyout.lqd-buttonsplit .lqd-buttonsplit-carret, .show-flyout.lqd-buttonsplit-primary .lqd-buttonsplit-carret, .show-flyout.lqd-buttonicon-split .lqd-buttonsplit-carret, .show-flyout.lqd-buttonicon-overflow .lqd-buttonsplit-carret {
   background-color: var(--buttonBackgroundCheckedHovered);
 }
 
@@ -580,7 +535,7 @@ h3 {
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 pre {
@@ -650,7 +605,7 @@ a:hover {
   color: var(--Hyperlink);
 }
 
-/**** ATOMS / Typography ****/
+/**** ATOMS / icons ****/
 .lqd-icon {
   display: flex;
   justify-content: center;
@@ -670,6 +625,85 @@ a:hover {
 
 .lqd-icon-svg:hover {
   fill: currentColor;
+}
+
+.lqd-avatar, .lqd-avatar-64, .lqd-avatar-48, .lqd-avatar-40, .lqd-avatar-32, .lqd-avatar-24, .lqd-avatar-16, .lqd-avatar-8 {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.lqd-avatar img.lqg-avatar, .lqd-avatar-64 img.lqg-avatar, .lqd-avatar-48 img.lqg-avatar, .lqd-avatar-40 img.lqg-avatar, .lqd-avatar-32 img.lqg-avatar, .lqd-avatar-24 img.lqg-avatar, .lqd-avatar-16 img.lqg-avatar, .lqd-avatar-8 img.lqg-avatar {
+  width: 100%;
+  height: auto;
+}
+
+.lqd-avatar {
+  width: inherit;
+  height: inherit;
+}
+
+.lqd-avatar-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.lqd-avatar-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.lqd-avatar-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.lqd-avatar-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.lqd-avatar-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.lqd-avatar-8 {
+  width: 8px;
+  height: 8px;
+}
+
+.lqd-presence {
+  display: block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  content: "";
+  border: 2px var(--bodyBackground) solid;
+  border-radius: 50%;
+}
+
+.lqd-presence.is-away {
+  background-color: #fa4;
+}
+
+.lqd-presence.is-dnd {
+  background-color: #c50f1f;
+}
+
+.lqd-presence.is-online {
+  background-color: #6bb700;
+}
+
+.lqd-presence.is-invisible {
+  background-color: #8a8886;
+}
+
+.lqd-presence.is-oof {
+  background-color: #b4009e;
 }
 
 /**** ATOMS / Buttons ****/
@@ -825,7 +859,7 @@ a.lqd-buttoncomp-primary:active, a.lqd-button-primary:active {
 }
 
 */
-.lqd-buttonaction, .lqd-buttoncmd button.lqd-buttoncmd, .lqd-buttoncmdbar button.lqd-buttoncmd, .lqd-buttoncmd button.lqd-buttoncmdbar, .lqd-buttoncmdbar button.lqd-buttoncmdbar, .lqd-buttonicon-split button {
+.lqd-buttonaction, .lqd-buttoncmd button.lqd-buttoncmd, .lqd-cmdbar button.lqd-buttoncmd, .lqd-buttoncmd button.lqd-cmdbar, .lqd-cmdbar button.lqd-cmdbar, .lqd-buttonicon-split button, .lqd-buttonicon-overflow button {
   display: inline-flex;
   height: 2.75rem;
   margin: 0;
@@ -836,7 +870,7 @@ a.lqd-buttoncomp-primary:active, a.lqd-button-primary:active {
   align-items: center;
 }
 
-.lqd-buttonaction .lqd-button-icon, .lqd-buttoncmd button.lqd-buttoncmd .lqd-button-icon, .lqd-buttoncmdbar button.lqd-buttoncmd .lqd-button-icon, .lqd-buttoncmd button.lqd-buttoncmdbar .lqd-button-icon, .lqd-buttoncmdbar button.lqd-buttoncmdbar .lqd-button-icon, .lqd-buttonicon-split button .lqd-button-icon {
+.lqd-buttonaction .lqd-button-icon, .lqd-buttoncmd button.lqd-buttoncmd .lqd-button-icon, .lqd-cmdbar button.lqd-buttoncmd .lqd-button-icon, .lqd-buttoncmd button.lqd-cmdbar .lqd-button-icon, .lqd-cmdbar button.lqd-cmdbar .lqd-button-icon, .lqd-buttonicon-split button .lqd-button-icon, .lqd-buttonicon-overflow button .lqd-button-icon {
   line-height: 2.25rem;
   display: flex;
   justify-content: center;
@@ -846,7 +880,7 @@ a.lqd-buttoncomp-primary:active, a.lqd-button-primary:active {
   align-items: center;
 }
 
-.lqd-buttonaction .lqd-button-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-button-label, .lqd-buttoncmdbar button.lqd-buttoncmd .lqd-button-label, .lqd-buttoncmd button.lqd-buttoncmdbar .lqd-button-label, .lqd-buttoncmdbar button.lqd-buttoncmdbar .lqd-button-label, .lqd-buttonicon-split button .lqd-button-label, .lqd-buttonaction .lqd-buttoncomp-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-buttoncomp-label, .lqd-buttoncmdbar button.lqd-buttoncmd .lqd-buttoncomp-label, .lqd-buttoncmd button.lqd-buttoncmdbar .lqd-buttoncomp-label, .lqd-buttoncmdbar button.lqd-buttoncmdbar .lqd-buttoncomp-label, .lqd-buttonicon-split button .lqd-buttoncomp-label, .lqd-buttonaction .lqd-buttoncomp-primary-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-buttoncomp-primary-label, .lqd-buttoncmdbar button.lqd-buttoncmd .lqd-buttoncomp-primary-label, .lqd-buttoncmd button.lqd-buttoncmdbar .lqd-buttoncomp-primary-label, .lqd-buttoncmdbar button.lqd-buttoncmdbar .lqd-buttoncomp-primary-label, .lqd-buttonicon-split button .lqd-buttoncomp-primary-label {
+.lqd-buttonaction .lqd-button-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-button-label, .lqd-cmdbar button.lqd-buttoncmd .lqd-button-label, .lqd-buttoncmd button.lqd-cmdbar .lqd-button-label, .lqd-cmdbar button.lqd-cmdbar .lqd-button-label, .lqd-buttonicon-split button .lqd-button-label, .lqd-buttonicon-overflow button .lqd-button-label, .lqd-buttonaction .lqd-buttoncomp-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-buttoncomp-label, .lqd-cmdbar button.lqd-buttoncmd .lqd-buttoncomp-label, .lqd-buttoncmd button.lqd-cmdbar .lqd-buttoncomp-label, .lqd-cmdbar button.lqd-cmdbar .lqd-buttoncomp-label, .lqd-buttonicon-split button .lqd-buttoncomp-label, .lqd-buttonicon-overflow button .lqd-buttoncomp-label, .lqd-buttonaction .lqd-buttoncomp-primary-label, .lqd-buttoncmd button.lqd-buttoncmd .lqd-buttoncomp-primary-label, .lqd-cmdbar button.lqd-buttoncmd .lqd-buttoncomp-primary-label, .lqd-buttoncmd button.lqd-cmdbar .lqd-buttoncomp-primary-label, .lqd-cmdbar button.lqd-cmdbar .lqd-buttoncomp-primary-label, .lqd-buttonicon-split button .lqd-buttoncomp-primary-label, .lqd-buttonicon-overflow button .lqd-buttoncomp-primary-label {
   font-size: 0.875rem;
   line-height: 2.25rem;
   box-sizing: border-box;
@@ -855,50 +889,50 @@ a.lqd-buttoncomp-primary:active, a.lqd-button-primary:active {
   font-weight: 400;
 }
 
-.lqd-buttonaction:hover, .lqd-buttoncmd button.lqd-buttoncmd:hover, .lqd-buttoncmdbar button.lqd-buttoncmd:hover, .lqd-buttoncmd button.lqd-buttoncmdbar:hover, .lqd-buttoncmdbar button.lqd-buttoncmdbar:hover, .lqd-buttonicon-split button:hover {
+.lqd-buttonaction:hover, .lqd-buttoncmd button.lqd-buttoncmd:hover, .lqd-cmdbar button.lqd-buttoncmd:hover, .lqd-buttoncmd button.lqd-cmdbar:hover, .lqd-cmdbar button.lqd-cmdbar:hover, .lqd-buttonicon-split button:hover, .lqd-buttonicon-overflow button:hover {
   color: var(--CommandLinksHover);
 }
 
-.lqd-buttonaction:active, .lqd-buttoncmd button.lqd-buttoncmd:active, .lqd-buttoncmdbar button.lqd-buttoncmd:active, .lqd-buttoncmd button.lqd-buttoncmdbar:active, .lqd-buttoncmdbar button.lqd-buttoncmdbar:active, .lqd-buttonicon-split button:active {
+.lqd-buttonaction:active, .lqd-buttoncmd button.lqd-buttoncmd:active, .lqd-cmdbar button.lqd-buttoncmd:active, .lqd-buttoncmd button.lqd-cmdbar:active, .lqd-cmdbar button.lqd-cmdbar:active, .lqd-buttonicon-split button:active, .lqd-buttonicon-overflow button:active {
   color: inherit;
 }
 
-.lqd-buttonaction:active .lqd-buttonaction-icon, .lqd-buttoncmd button.lqd-buttoncmd:active .lqd-buttonaction-icon, .lqd-buttoncmdbar button.lqd-buttoncmd:active .lqd-buttonaction-icon, .lqd-buttoncmd button.lqd-buttoncmdbar:active .lqd-buttonaction-icon, .lqd-buttoncmdbar button.lqd-buttoncmdbar:active .lqd-buttonaction-icon, .lqd-buttonicon-split button:active .lqd-buttonaction-icon {
+.lqd-buttonaction:active .lqd-buttonaction-icon, .lqd-buttoncmd button.lqd-buttoncmd:active .lqd-buttonaction-icon, .lqd-cmdbar button.lqd-buttoncmd:active .lqd-buttonaction-icon, .lqd-buttoncmd button.lqd-cmdbar:active .lqd-buttonaction-icon, .lqd-cmdbar button.lqd-cmdbar:active .lqd-buttonaction-icon, .lqd-buttonicon-split button:active .lqd-buttonaction-icon, .lqd-buttonicon-overflow button:active .lqd-buttonaction-icon {
   color: var(--CommandLinksPressed);
 }
 
-.lqd-buttoncmd, .lqd-buttoncmdbar {
+.lqd-buttoncmd, .lqd-cmdbar {
   position: relative;
 }
 
-.lqd-buttoncmd button.lqd-buttoncmd .lqd-buttonchevron, .lqd-buttoncmdbar button.lqd-buttoncmd .lqd-buttonchevron, .lqd-buttoncmd button.lqd-buttoncmdbar .lqd-buttonchevron, .lqd-buttoncmdbar button.lqd-buttoncmdbar .lqd-buttonchevron {
+.lqd-buttoncmd button.lqd-buttoncmd .lqd-buttonchevron, .lqd-cmdbar button.lqd-buttoncmd .lqd-buttonchevron, .lqd-buttoncmd button.lqd-cmdbar .lqd-buttonchevron, .lqd-cmdbar button.lqd-cmdbar .lqd-buttonchevron {
   color: var(--buttonText);
 }
 
-.lqd-buttoncmd button.lqd-buttoncmd > *, .lqd-buttoncmdbar button.lqd-buttoncmd > *, .lqd-buttoncmd button.lqd-buttoncmdbar > *, .lqd-buttoncmdbar button.lqd-buttoncmdbar > * {
+.lqd-buttoncmd button.lqd-buttoncmd > *, .lqd-cmdbar button.lqd-buttoncmd > *, .lqd-buttoncmd button.lqd-cmdbar > *, .lqd-cmdbar button.lqd-cmdbar > * {
   pointer-events: none;
 }
 
-.lqd-buttoncmd button.lqd-buttoncmd:focus, .lqd-buttoncmdbar button.lqd-buttoncmd:focus, .lqd-buttoncmd button.lqd-buttoncmdbar:focus, .lqd-buttoncmdbar button.lqd-buttoncmdbar:focus {
+.lqd-buttoncmd button.lqd-buttoncmd:focus, .lqd-cmdbar button.lqd-buttoncmd:focus, .lqd-buttoncmd button.lqd-cmdbar:focus, .lqd-cmdbar button.lqd-cmdbar:focus {
   outline: none;
 }
 
-.lqd-buttoncmd .lqd-buttonflyout, .lqd-buttoncmdbar .lqd-buttonflyout {
+.lqd-buttoncmd .lqd-buttonflyout, .lqd-cmdbar .lqd-buttonflyout {
   position: absolute;
   top: 100%;
   left: 0;
   display: none;
 }
 
-.lqd-buttoncmd .lqd-buttonflyout > *, .lqd-buttoncmdbar .lqd-buttonflyout > * {
+.lqd-buttoncmd .lqd-buttonflyout > *, .lqd-cmdbar .lqd-buttonflyout > * {
   pointer-events: all;
 }
 
-.lqd-buttoncmd .lqd-buttonflyout .lqd-buttoncontext, .lqd-buttoncmdbar .lqd-buttonflyout .lqd-buttoncontext {
+.lqd-buttoncmd .lqd-buttonflyout .lqd-buttoncontext, .lqd-cmdbar .lqd-buttonflyout .lqd-buttoncontext {
   display: flex;
 }
 
-.lqd-buttoncmd.show-flyout .lqd-buttonflyout, .show-flyout.lqd-buttoncmdbar .lqd-buttonflyout {
+.lqd-buttoncmd.show-flyout .lqd-buttonflyout, .show-flyout.lqd-cmdbar .lqd-buttonflyout {
   display: flex;
 }
 
@@ -911,22 +945,22 @@ a.lqd-buttoncomp-primary:active, a.lqd-button-primary:active {
   z-index: 400;
 }
 
-.lqd-buttonflyout .lqd-buttonaction, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar, .lqd-buttonflyout .lqd-buttonicon-split button, .lqd-buttonicon-split .lqd-buttonflyout button {
+.lqd-buttonflyout .lqd-buttonaction, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar, .lqd-buttonflyout .lqd-buttonicon-split button, .lqd-buttonicon-split .lqd-buttonflyout button, .lqd-buttonflyout .lqd-buttonicon-overflow button, .lqd-buttonicon-overflow .lqd-buttonflyout button {
   width: 100%;
   height: auto;
   min-height: 2.25rem;
   padding-right: 3rem;
 }
 
-.lqd-buttonflyout .lqd-buttonaction:hover, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd:hover, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar:hover, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar:hover, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar:hover, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar:hover, .lqd-buttonflyout .lqd-buttonicon-split button:hover, .lqd-buttonicon-split .lqd-buttonflyout button:hover {
+.lqd-buttonflyout .lqd-buttonaction:hover, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd:hover, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar:hover, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar:hover, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar:hover, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar:hover, .lqd-buttonflyout .lqd-buttonicon-split button:hover, .lqd-buttonicon-split .lqd-buttonflyout button:hover, .lqd-buttonflyout .lqd-buttonicon-overflow button:hover, .lqd-buttonicon-overflow .lqd-buttonflyout button:hover {
   background-color: var(--buttonBackgroundHovered);
 }
 
-.lqd-buttonflyout .lqd-buttonaction:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar:hover .lqd-button-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar:hover .lqd-button-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-button-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttonaction:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar:hover .lqd-buttoncomp-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar:hover .lqd-buttoncomp-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-buttoncomp-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttonaction:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-buttoncomp-primary-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-buttoncomp-primary-label {
+.lqd-buttonflyout .lqd-buttonaction:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd:hover .lqd-button-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar:hover .lqd-button-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-button-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar:hover .lqd-button-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-button-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttonicon-overflow button:hover .lqd-button-label, .lqd-buttonicon-overflow .lqd-buttonflyout button:hover .lqd-button-label, .lqd-buttonflyout .lqd-buttonaction:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar:hover .lqd-buttoncomp-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar:hover .lqd-buttoncomp-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-buttoncomp-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttonicon-overflow button:hover .lqd-buttoncomp-label, .lqd-buttonicon-overflow .lqd-buttonflyout button:hover .lqd-buttoncomp-label, .lqd-buttonflyout .lqd-buttonaction:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar:hover .lqd-buttoncomp-primary-label, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttonicon-split button:hover .lqd-buttoncomp-primary-label, .lqd-buttonicon-split .lqd-buttonflyout button:hover .lqd-buttoncomp-primary-label, .lqd-buttonflyout .lqd-buttonicon-overflow button:hover .lqd-buttoncomp-primary-label, .lqd-buttonicon-overflow .lqd-buttonflyout button:hover .lqd-buttoncomp-primary-label {
   color: var(--buttonText);
 }
 
-.lqd-buttonflyout .lqd-buttonaction:active, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:active, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:active, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmd:active, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmd:active, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmdbar:active, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmdbar:active, .lqd-buttonflyout .lqd-buttoncmdbar button.lqd-buttoncmdbar:active, .lqd-buttoncmdbar .lqd-buttonflyout button.lqd-buttoncmdbar:active, .lqd-buttonflyout .lqd-buttonicon-split button:active, .lqd-buttonicon-split .lqd-buttonflyout button:active {
+.lqd-buttonflyout .lqd-buttonaction:active, .lqd-buttonflyout .lqd-buttoncmd button.lqd-buttoncmd:active, .lqd-buttoncmd .lqd-buttonflyout button.lqd-buttoncmd:active, .lqd-buttonflyout .lqd-cmdbar button.lqd-buttoncmd:active, .lqd-cmdbar .lqd-buttonflyout button.lqd-buttoncmd:active, .lqd-buttonflyout .lqd-buttoncmd button.lqd-cmdbar:active, .lqd-buttoncmd .lqd-buttonflyout button.lqd-cmdbar:active, .lqd-buttonflyout .lqd-cmdbar button.lqd-cmdbar:active, .lqd-cmdbar .lqd-buttonflyout button.lqd-cmdbar:active, .lqd-buttonflyout .lqd-buttonicon-split button:active, .lqd-buttonicon-split .lqd-buttonflyout button:active, .lqd-buttonflyout .lqd-buttonicon-overflow button:active, .lqd-buttonicon-overflow .lqd-buttonflyout button:active {
   color: var(--buttonTextPressed);
 }
 
@@ -1148,35 +1182,80 @@ div.lqd-buttoncontext-outer {
   pointer-events: none;
 }
 
-.lqd-buttoncmdbar {
-  display: inline-flex;
-  justify-content: center;
-  height: 2.75rem;
-  border: 1px transparent solid;
-  align-items: center;
+.lqd-buttonicon-overflow {
+  display: flex;
+  height: 2rem;
 }
 
-.lqd-buttoncmdbar button.lqd-buttoncmdbar {
-  box-sizing: border-box;
-  background-color: transparent;
+.lqd-buttonicon-overflow button {
+  height: 2rem;
+  margin-right: 0;
 }
 
-.lqd-buttoncmdbar button.lqd-buttoncmdbar > * {
+.lqd-buttonicon-overflow button > * {
   pointer-events: none;
 }
 
-.lqd-buttoncmdbar button.lqd-buttoncmdbar:active {
+.lqd-buttonicon-overflow button:active {
   background-color: var(--buttonBackgroundChecked);
 }
 
-.lqd-buttoncmdbar .lqd-button-label, .lqd-buttoncmdbar .lqd-buttoncomp-label, .lqd-buttoncmdbar .lqd-buttoncomp-primary-label {
-  color: black;
+.lqd-buttonicon-overflow button:hover {
+  background-color: var(--buttonBackgroundCheckedHovered);
 }
 
-.lqd-buttoncmdbar:hover,
-.lqd-buttoncmdbar .show-flyout {
-  border: 1px var(--buttonBackgroundCheckedHovered) solid;
-  background-color: var(--buttonBackgroundCheckedHovered);
+.lqd-button-pivot {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.lqd-button-pivot.is-active .lqd-pivot-inner {
+  position: relative;
+}
+
+.lqd-button-pivot.is-active .lqd-pivot-inner:after {
+  position: absolute;
+  top: 100%;
+  left: 8px;
+  display: block;
+  width: 100%;
+  max-width: calc(100% - 16px);
+  height: 2px;
+  content: "";
+  transition: all 0.267s ease-in-out;
+  background-color: teal;
+}
+
+.lqd-button-pivot.is-active .lqd-pivot-inner:hover:after {
+  left: 0;
+  max-width: 100%;
+}
+
+.lqd-button-pivot:hover {
+  padding: 0;
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.lqd-pivot-inner {
+  font-size: 1rem;
+  line-height: 2.75rem;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 0.5rem;
+  transition: max-width .25s ease-in;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0 0.65px rgba(255, 255, 255, 0), 0 0 0.65px rgba(255, 255, 255, 0);
+}
+
+.lqd-pivot-inner:hover {
+  max-width: 110%;
+  text-shadow: 0 0 .65px currentColor, 0 0 .65px currentColor;
 }
 
 /**** ATOMS / Buttons ****/
@@ -1208,6 +1287,7 @@ div.lqd-buttoncontext-outer {
   border: 1px var(--inputBorder) solid;
   border-radius: 2px;
   outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
 }
 
 .lqd-input-text:focus {
@@ -1250,6 +1330,7 @@ div.lqd-buttoncontext-outer {
   border: 1px var(--inputBorder) solid;
   border-radius: 2px;
   outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
   display: inline-block;
   box-sizing: border-box;
   color: var(--BodyText);
@@ -1268,6 +1349,7 @@ div.lqd-buttoncontext-outer {
   border: 1px var(--inputBorder) solid;
   border-radius: 2px;
   outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
   display: inline-block;
   box-sizing: border-box;
   color: var(--BodyText);
@@ -1300,6 +1382,102 @@ div.lqd-buttoncontext-outer {
 .lqd-input-group:focus-within .lqd-input-prefix {
   padding-right: 0.5rem;
   padding-left: 0.4375rem;
+}
+
+.lqd-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.lqd-toggle .lqd-toggle-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lqd-toggle .lqd-toggle-checked {
+  display: none;
+}
+
+.lqd-toggle .lqd-toggle-unchecked {
+  display: inline-block;
+}
+
+.lqd-toggle .lqd-toggle-slider {
+  position: relative;
+  display: flex;
+  width: 2rem;
+  height: 1rem;
+  margin: 0 1rem;
+  content: "";
+  transition: background .2s ease-in-out;
+  border: 1px var(--buttonBorder) solid;
+  border-radius: 1rem;
+  background-color: var(--buttonBackground);
+  cursor: pointer;
+}
+
+.lqd-toggle .lqd-toggle-slider::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 2px;
+  content: "";
+  transition: all .1s;
+  border: 0.125rem rgba(255, 255, 255, 0) solid;
+  border-radius: 50%;
+  background-color: var(--buttonText);
+}
+
+.lqd-toggle .lqd-toggle-cb {
+  display: none;
+}
+
+.lqd-toggle .lqd-toggle-cb:checked ~ .lqd-toggle-label .lqd-toggle-slider {
+  border-color: var(--primaryButtonBackground);
+  background-color: var(--primaryButtonBackground);
+}
+
+.lqd-toggle .lqd-toggle-cb:checked ~ .lqd-toggle-label .lqd-toggle-slider::after {
+  transform: translateX(1rem);
+  background-color: var(--buttonBackground);
+}
+
+.lqd-toggle .lqd-toggle-cb:checked ~ .lqd-toggle-label .lqd-toggle-checked {
+  display: block;
+}
+
+.lqd-toggle .lqd-toggle-cb:checked ~ .lqd-toggle-label .lqd-toggle-unchecked {
+  display: none;
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled ~ .lqd-toggle-label {
+  color: var(--buttonTextDisabled);
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled ~ .lqd-toggle-label .lqd-toggle-slider {
+  border-color: var(--buttonTextDisabled);
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled ~ .lqd-toggle-label .lqd-toggle-slider::after {
+  background-color: var(--buttonTextDisabled);
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled:checked ~ .lqd-toggle-label {
+  color: var(--buttonTextDisabled);
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled:checked ~ .lqd-toggle-label .lqd-toggle-slider {
+  border-color: var(--ButtonGlyphDisabled);
+  background-color: var(--ButtonGlyphDisabled);
+}
+
+.lqd-toggle .lqd-toggle-cb:disabled:checked ~ .lqd-toggle-label .lqd-toggle-slider::after {
+  background-color: var(--buttonBackgroundDisabled);
 }
 
 .lqd-checkbox {
@@ -1472,12 +1650,25 @@ div.lqd-buttoncontext-outer {
 
 .lqd-select {
   position: relative;
-  box-sizing: border-box;
   display: flex;
-  align-items: center;
+  box-sizing: border-box;
   border: 1px var(--inputBorder) solid;
   border-radius: 2px;
   outline: 1px rgba(255, 255, 255, 0) solid;
+  align-items: center;
+}
+
+.lqd-select .hidden-visually {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
 }
 
 .lqd-select-text {
@@ -1489,26 +1680,41 @@ div.lqd-buttoncontext-outer {
   border: 1px var(--inputBorder) solid;
   border-radius: 2px;
   outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
   width: calc(100% - 2rem);
   border: none;
 }
 
-.lqd-select-dropdown {
+.lqd-select-dropdown, .lqd-optgroup-items {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
-  position: absolute;
-  top: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
   margin-top: 1px;
-  background-color: var(--bodyBackground);
   border-radius: 2px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  box-sizing: border-box;
+  background-color: var(--bodyBackground);
 }
 
-.lqd-select-dropdown li {
+.lqd-select-dropdown.hidden-all, .hidden-all.lqd-optgroup-items {
+  display: none;
+}
+
+.lqd-select > .lqd-select-dropdown, .lqd-select > .lqd-optgroup-items {
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+}
+
+.lqd-optgroup-items {
+  border-bottom: 1px var(--buttonBorder) solid;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.lqd-option {
   font-size: 14px;
   display: flex;
   height: 2.25rem;
@@ -1517,9 +1723,284 @@ div.lqd-buttoncontext-outer {
   align-items: center;
 }
 
-.lqd-select-dropdown li:hover {
+.lqd-option.is-disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+}
+
+.lqd-option:hover {
   cursor: pointer;
   background-color: var(--buttonBackgroundHovered);
+}
+
+.lqd-optgroup-name {
+  font-weight: bold;
+  display: flex;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  color: var(--themePrimary);
+  align-items: center;
+}
+
+.lqd-input-search {
+  display: flex;
+  flex-direction: row;
+}
+
+.lqd-input-search .lqd-input-text {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  width: calc(100% - 2rem);
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.lqd-input-search .icon {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  padding-right: 0.3125rem;
+  padding-left: 0.3125rem;
+  transition: all .1s;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.lqd-input-search:focus-within .icon,
+.lqd-input-search:focus-within .lqd-input-text {
+  height: 2rem;
+  border-width: 2px;
+  border-color: var(--inputFocusBorderAlt);
+  outline: 0 rgba(255, 255, 255, 0) solid;
+}
+
+.lqd-input-search:focus-within .lqd-input-text {
+  width: 100%;
+}
+
+.lqd-input-search:focus-within .icon {
+  overflow: hidden;
+  max-width: 0;
+  padding: 0;
+}
+
+/**** ATOMS / Table ****/
+.lqd-table-iconcell svg {
+  transition: transform .125s ease-in-out;
+}
+
+.lqd-table {
+  overflow: auto;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.lqd-table .align-left {
+  text-align: left;
+}
+
+.lqd-table .align-center {
+  text-align: center;
+}
+
+.lqd-table .align-right {
+  text-align: right;
+}
+
+.lqd-table .valign-top {
+  vertical-align: top;
+}
+
+.lqd-table .valign-middle {
+  vertical-align: middle;
+}
+
+.lqd-table .valign-bottom {
+  vertical-align: bottom;
+}
+
+@media screen and (max-width: 640px) {
+  .lqd-table .no-phone {
+    display: none;
+  }
+}
+
+.lqd-table tfoot th,
+.lqd-table tbody th,
+.lqd-table thead th {
+  font-size: 14px;
+  min-height: 42px;
+  padding-top: 0.875rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.875rem;
+  padding-left: 0.75rem;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
+  background-color: var(--buttonBackground);
+}
+
+.lqd-table tfoot th:hover,
+.lqd-table tbody th:hover,
+.lqd-table thead th:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.lqd-table td,
+.lqd-table th {
+  background-color: var(--buttonBackground);
+}
+
+.lqd-table td:hover,
+.lqd-table th:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.lqd-table thead {
+  border-bottom: 1px var(--neutralLight) solid;
+  background-color: var(--bodyBackground);
+}
+
+.lqd-table tfoot {
+  border-top: 1px var(--neutralLight) solid;
+}
+
+.lqd-table tbody th {
+  vertical-align: middle;
+}
+
+.lqd-table tbody tr {
+  min-height: 42px;
+}
+
+.lqd-table tbody tr:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.lqd-table tbody td {
+  font-size: 14px;
+  min-height: 42px;
+  padding-top: 0.875rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.875rem;
+  padding-left: 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px var(--neutralLight) solid;
+}
+
+.lqd-table.compact tfoot th,
+.lqd-table.compact tbody th,
+.lqd-table.compact thead th {
+  font-size: 14px;
+  min-height: 32px;
+  padding-top: 0.4375rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.4375rem;
+  padding-left: 0.75rem;
+}
+
+.lqd-table.compact tbody td {
+  font-size: 14px;
+  min-height: 32px;
+  padding-top: 0.4375rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.4375rem;
+  padding-left: 0.75rem;
+}
+
+.lqd-table tr[aria-expanded="true"] .lqd-table-iconcell svg {
+  transform: rotate(0deg);
+}
+
+.lqd-table tr[aria-expanded="false"] .lqd-table-iconcell svg {
+  transform: rotate(-90deg);
+}
+
+.lqd-table th.is-sticky,
+.lqd-table td.is-sticky {
+  position: sticky;
+}
+
+.lqd-table th.is-sticky.top,
+.lqd-table td.is-sticky.top {
+  z-index: 10;
+  top: 0;
+}
+
+.lqd-table th.is-sticky.bottom,
+.lqd-table td.is-sticky.bottom {
+  z-index: 10;
+  bottom: 0;
+}
+
+.lqd-table th.is-sticky.left.top,
+.lqd-table td.is-sticky.left.top {
+  z-index: 10;
+  left: 0;
+}
+
+.lqd-table th.is-sticky.right,
+.lqd-table td.is-sticky.right {
+  z-index: 8;
+  right: 0;
+}
+
+.lqd-table th.is-sticky.top.left, .lqd-table th.is-sticky.bottom.left,
+.lqd-table td.is-sticky.top.left,
+.lqd-table td.is-sticky.bottom.left {
+  z-index: 12;
+}
+
+.lqd-table th.is-sticky.top.right, .lqd-table th.is-sticky.bottom.right,
+.lqd-table td.is-sticky.top.right,
+.lqd-table td.is-sticky.bottom.right {
+  z-index: 12;
+}
+
+.lqd-table.is-collapsable .is-hidden {
+  display: none;
+}
+
+.lqd-table.is-collapsable .is-hidden td {
+  display: none;
+}
+
+.lqd-table.is-collapsable .is-visible {
+  display: table-row;
+}
+
+.lqd-table.is-collapsable .is-visible td {
+  display: table-cell;
+}
+
+.lqd-table .lqd-table-iconcell {
+  width: 32px;
+  padding: 0;
+}
+
+.lqd-table-subheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: middle;
 }
 
 /**** ATOMS / Error ****/
@@ -1715,6 +2196,60 @@ div.lqd-buttoncontext-outer {
 }
 
 /*** MOLECULES ***/
+.lqd-avatar-pres, .lqd-avatar-pres-16, .lqd-avatar-pres-24, .lqd-avatar-pres-32, .lqd-avatar-pres-40, .lqd-avatar-pres-48, .lqd-avatar-pres-64 {
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.lqd-avatar-pres div[class^=lqd-avatar], .lqd-avatar-pres-16 div[class^=lqd-avatar], .lqd-avatar-pres-24 div[class^=lqd-avatar], .lqd-avatar-pres-32 div[class^=lqd-avatar], .lqd-avatar-pres-40 div[class^=lqd-avatar], .lqd-avatar-pres-48 div[class^=lqd-avatar], .lqd-avatar-pres-64 div[class^=lqd-avatar] {
+  transform: rotate(-45deg);
+  transform-origin: center center;
+}
+
+.lqd-avatar-pres .lqd-presence, .lqd-avatar-pres-16 .lqd-presence, .lqd-avatar-pres-24 .lqd-presence, .lqd-avatar-pres-32 .lqd-presence, .lqd-avatar-pres-40 .lqd-presence, .lqd-avatar-pres-48 .lqd-presence, .lqd-avatar-pres-64 .lqd-presence {
+  position: absolute;
+  top: calc(50% - .5rem);
+  left: calc(100% - .5rem);
+}
+
+.lqd-avatar-pres-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.lqd-avatar-pres-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.lqd-avatar-pres-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.lqd-avatar-pres-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.lqd-avatar-pres-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.lqd-avatar-pres-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.lqd-radiobutton-group div {
+  margin-top: 0.5rem;
+}
+
 .lqd-dlgheader {
   display: flex;
   justify-content: space-between;
@@ -1762,7 +2297,300 @@ div.lqd-buttoncontext-outer {
   cursor: text;
 }
 
+.lqd-cmdbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 2.75rem;
+  border: 1px transparent solid;
+  align-items: center;
+}
+
+.lqd-pivotbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.lqd-persona, .lqd-persona-100, .lqd-persona-72, .lqd-persona-48, .lqd-persona-40, .lqd-persona-32, .lqd-persona-24 {
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+.lqd-persona .lqd-avatar-pres, .lqd-persona-100 .lqd-avatar-pres, .lqd-persona-72 .lqd-avatar-pres, .lqd-persona-48 .lqd-avatar-pres, .lqd-persona-40 .lqd-avatar-pres, .lqd-persona-32 .lqd-avatar-pres, .lqd-persona-24 .lqd-avatar-pres, .lqd-persona .lqd-avatar-pres-16, .lqd-persona-100 .lqd-avatar-pres-16, .lqd-persona-72 .lqd-avatar-pres-16, .lqd-persona-48 .lqd-avatar-pres-16, .lqd-persona-40 .lqd-avatar-pres-16, .lqd-persona-32 .lqd-avatar-pres-16, .lqd-persona-24 .lqd-avatar-pres-16, .lqd-persona .lqd-avatar-pres-24, .lqd-persona-100 .lqd-avatar-pres-24, .lqd-persona-72 .lqd-avatar-pres-24, .lqd-persona-48 .lqd-avatar-pres-24, .lqd-persona-40 .lqd-avatar-pres-24, .lqd-persona-32 .lqd-avatar-pres-24, .lqd-persona-24 .lqd-avatar-pres-24, .lqd-persona .lqd-avatar-pres-32, .lqd-persona-100 .lqd-avatar-pres-32, .lqd-persona-72 .lqd-avatar-pres-32, .lqd-persona-48 .lqd-avatar-pres-32, .lqd-persona-40 .lqd-avatar-pres-32, .lqd-persona-32 .lqd-avatar-pres-32, .lqd-persona-24 .lqd-avatar-pres-32, .lqd-persona .lqd-avatar-pres-40, .lqd-persona-100 .lqd-avatar-pres-40, .lqd-persona-72 .lqd-avatar-pres-40, .lqd-persona-48 .lqd-avatar-pres-40, .lqd-persona-40 .lqd-avatar-pres-40, .lqd-persona-32 .lqd-avatar-pres-40, .lqd-persona-24 .lqd-avatar-pres-40, .lqd-persona .lqd-avatar-pres-48, .lqd-persona-100 .lqd-avatar-pres-48, .lqd-persona-72 .lqd-avatar-pres-48, .lqd-persona-48 .lqd-avatar-pres-48, .lqd-persona-40 .lqd-avatar-pres-48, .lqd-persona-32 .lqd-avatar-pres-48, .lqd-persona-24 .lqd-avatar-pres-48, .lqd-persona .lqd-avatar-pres-64, .lqd-persona-100 .lqd-avatar-pres-64, .lqd-persona-72 .lqd-avatar-pres-64, .lqd-persona-48 .lqd-avatar-pres-64, .lqd-persona-40 .lqd-avatar-pres-64, .lqd-persona-32 .lqd-avatar-pres-64, .lqd-persona-24 .lqd-avatar-pres-64 {
+  width: 56px;
+  height: 56px;
+}
+
+.lqd-persona .lqd-presence, .lqd-persona-100 .lqd-presence, .lqd-persona-72 .lqd-presence, .lqd-persona-48 .lqd-presence, .lqd-persona-40 .lqd-presence, .lqd-persona-32 .lqd-presence, .lqd-persona-24 .lqd-presence {
+  top: calc(50% - 1rem);
+  left: calc(100% - 1rem);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.lqd-persona-data {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0 1.5rem 0 1rem;
+}
+
+.lqd-persona-name, .lqd-persona-function, .lqd-persona-statustext, .lqd-persona-available {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lqd-persona-name {
+  font-size: 1.25rem;
+}
+
+.lqd-persona-statustext, .lqd-persona-available {
+  display: none;
+}
+
+.lqd-persona-100 {
+  height: 6.25rem;
+}
+
+.lqd-persona-100 .lqd-avatar-pres, .lqd-persona-100 .lqd-avatar-pres-16, .lqd-persona-100 .lqd-avatar-pres-24, .lqd-persona-100 .lqd-avatar-pres-32, .lqd-persona-100 .lqd-avatar-pres-40, .lqd-persona-100 .lqd-avatar-pres-48, .lqd-persona-100 .lqd-avatar-pres-64 {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.lqd-persona-100 .lqd-persona-data {
+  margin: 0 1rem 0 1rem;
+}
+
+.lqd-persona-100 .lqd-persona-name {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.lqd-persona-100-function, .lqd-persona-100-statustext, .lqd-persona-100-available {
+  line-height: 1.25rem;
+}
+
+.lqd-persona-100 .lqd-persona-statustext,
+.lqd-persona-100 .lqd-persona-available {
+  display: block;
+}
+
+.lqd-persona-100 .lqd-presence {
+  top: calc(50% - 1rem);
+  left: calc(100% - 1rem);
+  width: 2rem;
+  height: 2rem;
+}
+
+.lqd-persona-72 {
+  height: 4.5rem;
+}
+
+.lqd-persona-72 .lqd-avatar-pres, .lqd-persona-72 .lqd-avatar-pres-16, .lqd-persona-72 .lqd-avatar-pres-24, .lqd-persona-72 .lqd-avatar-pres-32, .lqd-persona-72 .lqd-avatar-pres-40, .lqd-persona-72 .lqd-avatar-pres-48, .lqd-persona-72 .lqd-avatar-pres-64 {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.lqd-persona-72 .lqd-persona-available {
+  display: block;
+}
+
+.lqd-persona-72 .lqd-persona-available {
+  display: none;
+}
+
+.lqd-persona-72 .lqd-presence {
+  top: calc(50% - 0.75rem);
+  left: calc(100% - 0.75rem);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lqd-persona-48, .lqd-persona-40, .lqd-persona-32, .lqd-persona-24 {
+  height: 3rem;
+}
+
+.lqd-persona-48 .lqd-avatar-pres, .lqd-persona-40 .lqd-avatar-pres, .lqd-persona-32 .lqd-avatar-pres, .lqd-persona-24 .lqd-avatar-pres, .lqd-persona-48 .lqd-avatar-pres-16, .lqd-persona-40 .lqd-avatar-pres-16, .lqd-persona-32 .lqd-avatar-pres-16, .lqd-persona-24 .lqd-avatar-pres-16, .lqd-persona-48 .lqd-avatar-pres-24, .lqd-persona-40 .lqd-avatar-pres-24, .lqd-persona-32 .lqd-avatar-pres-24, .lqd-persona-24 .lqd-avatar-pres-24, .lqd-persona-48 .lqd-avatar-pres-32, .lqd-persona-40 .lqd-avatar-pres-32, .lqd-persona-32 .lqd-avatar-pres-32, .lqd-persona-24 .lqd-avatar-pres-32, .lqd-persona-48 .lqd-avatar-pres-40, .lqd-persona-40 .lqd-avatar-pres-40, .lqd-persona-32 .lqd-avatar-pres-40, .lqd-persona-24 .lqd-avatar-pres-40, .lqd-persona-48 .lqd-avatar-pres-48, .lqd-persona-40 .lqd-avatar-pres-48, .lqd-persona-32 .lqd-avatar-pres-48, .lqd-persona-24 .lqd-avatar-pres-48, .lqd-persona-48 .lqd-avatar-pres-64, .lqd-persona-40 .lqd-avatar-pres-64, .lqd-persona-32 .lqd-avatar-pres-64, .lqd-persona-24 .lqd-avatar-pres-64 {
+  width: 3rem;
+  height: 3rem;
+}
+
+.lqd-persona-48 .lqd-persona-available, .lqd-persona-40 .lqd-persona-available, .lqd-persona-32 .lqd-persona-available, .lqd-persona-24 .lqd-persona-available {
+  display: none;
+}
+
+.lqd-persona-48 .lqd-persona-data, .lqd-persona-40 .lqd-persona-data, .lqd-persona-32 .lqd-persona-data, .lqd-persona-24 .lqd-persona-data {
+  margin: 0 .75rem 0 .75rem;
+}
+
+.lqd-persona-48 .lqd-presence, .lqd-persona-40 .lqd-presence, .lqd-persona-32 .lqd-presence, .lqd-persona-24 .lqd-presence {
+  top: calc(50% - 0.5rem);
+  left: calc(100% - 0.5rem);
+  width: 1rem;
+  height: 1rem;
+}
+
+.lqd-persona-48 .lqd-persona-name, .lqd-persona-40 .lqd-persona-name, .lqd-persona-32 .lqd-persona-name, .lqd-persona-24 .lqd-persona-name {
+  font-size: 0.875rem;
+}
+
+.lqd-persona-48 .lqd-persona-function, .lqd-persona-40 .lqd-persona-function, .lqd-persona-32 .lqd-persona-function, .lqd-persona-24 .lqd-persona-function,
+.lqd-persona-48 .lqd-persona-statustext,
+.lqd-persona-40 .lqd-persona-statustext,
+.lqd-persona-32 .lqd-persona-statustext,
+.lqd-persona-24 .lqd-persona-statustext, .lqd-persona-48 .lqd-persona-available, .lqd-persona-40 .lqd-persona-available, .lqd-persona-32 .lqd-persona-available, .lqd-persona-24 .lqd-persona-available {
+  font-size: 0.75rem;
+}
+
+.lqd-persona-40, .lqd-persona-32 {
+  height: 2.5rem;
+}
+
+.lqd-persona-40 .lqd-avatar-pres, .lqd-persona-32 .lqd-avatar-pres, .lqd-persona-40 .lqd-avatar-pres-16, .lqd-persona-32 .lqd-avatar-pres-16, .lqd-persona-40 .lqd-avatar-pres-24, .lqd-persona-32 .lqd-avatar-pres-24, .lqd-persona-40 .lqd-avatar-pres-32, .lqd-persona-32 .lqd-avatar-pres-32, .lqd-persona-40 .lqd-avatar-pres-40, .lqd-persona-32 .lqd-avatar-pres-40, .lqd-persona-40 .lqd-avatar-pres-48, .lqd-persona-32 .lqd-avatar-pres-48, .lqd-persona-40 .lqd-avatar-pres-64, .lqd-persona-32 .lqd-avatar-pres-64 {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.lqd-persona-40 .lqd-presence, .lqd-persona-32 .lqd-presence {
+  top: calc(50% - 0.5rem);
+  left: calc(100% - 0.5rem);
+  width: 1rem;
+  height: 1rem;
+}
+
+.lqd-persona-32 {
+  height: 2rem;
+}
+
+.lqd-persona-32 .lqd-avatar-pres, .lqd-persona-32 .lqd-avatar-pres-16, .lqd-persona-32 .lqd-avatar-pres-24, .lqd-persona-32 .lqd-avatar-pres-32, .lqd-persona-32 .lqd-avatar-pres-40, .lqd-persona-32 .lqd-avatar-pres-48, .lqd-persona-32 .lqd-avatar-pres-64 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.lqd-persona-32 .lqd-persona-function,
+.lqd-persona-32 .lqd-persona-statustext,
+.lqd-persona-32 .lqd-persona-available {
+  display: none;
+}
+
+.lqd-persona-32 .lqd-persona-data {
+  margin: 0 .5rem 0 .5rem;
+}
+
+.lqd-persona-32 .lqd-presence {
+  top: calc(50% - 0.375rem);
+  left: calc(100% - 0.375rem);
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.lqd-persona-24 {
+  height: 1.5rem;
+}
+
+.lqd-persona-24 .lqd-avatar-pres, .lqd-persona-24 .lqd-avatar-pres-16, .lqd-persona-24 .lqd-avatar-pres-24, .lqd-persona-24 .lqd-avatar-pres-32, .lqd-persona-24 .lqd-avatar-pres-40, .lqd-persona-24 .lqd-avatar-pres-48, .lqd-persona-24 .lqd-avatar-pres-64 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.lqd-persona-24 .lqd-persona-function,
+.lqd-persona-24 .lqd-persona-statustext,
+.lqd-persona-24 .lqd-persona-available {
+  display: none;
+}
+
+.lqd-persona-24 .lqd-persona-data {
+  margin: 0 .5rem 0 .5rem;
+}
+
+.lqd-persona-24 .lqd-presence {
+  top: calc(50% - 0.375rem);
+  left: calc(100% - 0.375rem);
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/*** MOLECULES / CARDS ***/
+.lqd-cardimage {
+  border-collapse: collapse;
+  border: 1px solid var(--variantBorder);
+  aspect-ratio: 16/9;
+}
+
+.lqd-cardimage img {
+  display: block;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.lqd-cardimage-html {
+  width: 320px;
+  height: 180px;
+  content: "";
+  background-color: var(--primaryButtonBackground);
+  aspect-ratio: 16/9;
+}
+
+.lqd-cardlocation {
+  font-size: 0.75rem;
+  font-weight: 600px;
+  box-sizing: border-box;
+  padding: 0.625rem 0.75rem 0.5rem;
+  color: var(--primaryButtonBackground);
+}
+
+.lqd-cardtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  height: 2.375rem;
+  padding: 0 0.75rem 0.5rem;
+}
+
+.lqd-cardfooter {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0.75rem;
+}
+
+.lqd-cardfooter .lqd-avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+}
+
+.lqd-cardfooter-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.lqd-cardfooter-name {
+  font-size: 0.875rem;
+}
+
+.lqd-cardfooter-modified {
+  font-size: 0.75rem;
+}
+
 /*** ORGANISM ***/
+.lqd-facepile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start space-between;
+  transition: all 1s ease-in-out;
+  flex-wrap: wrap;
+}
+
+.lqd-facepile > * {
+  margin-right: 1.118rem;
+  margin-bottom: 1.118rem;
+}
+
 .lqd-mdldialog-outer {
   position: fixed;
   top: 0;
@@ -1870,4 +2698,20 @@ div.lqd-buttoncontext-outer {
   transform: scaleX(0);
   transform-origin: top right;
   opacity: 1;
+}
+
+.lqd-doccard {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
+  border: 1px solid var(--variantBorder);
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.lqd-doccard .lqd-avatar {
+  margin-bottom: 0;
+}
+
+.lqd-doccard .lqd-cardfooter {
+  align-self: bottom;
 }
