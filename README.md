@@ -1,8 +1,8 @@
-# Liquid UI framework
+# HTwoO
 
-[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
+[![HTWOO](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
-Liquid UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
+HTwoO UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
 
 ![Be like water][logo]
 
