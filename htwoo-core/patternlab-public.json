@@ -61,15 +61,15 @@
       "css": "./src/css"
     },
     "public": {
-      "root": "../docs/liquid-core/",
-      "patterns": "../docs/liquid-core/patterns/",
-      "data": "../docs/liquid-core/styleguide/data/",
-      "annotations": "../docs/liquid-core/annotations/",
-      "styleguide": "../docs/liquid-core/styleguide/",
-      "js": "../docs/liquid-core/js",
-      "images": "../docs/liquid-core/images",
-      "fonts": "../docs/liquid-core/fonts",
-      "css": "../docs/liquid-core/css/"
+      "root": "../docs/htwoo-core/",
+      "patterns": "../docs/htwoo-core/patterns/",
+      "data": "../docs/htwoo-core/styleguide/data/",
+      "annotations": "../docs/htwoo-core/annotations/",
+      "styleguide": "../docs/htwoo-core/styleguide/",
+      "js": "../docs/htwoo-core/js",
+      "images": "../docs/htwoo-core/images",
+      "fonts": "../docs/htwoo-core/fonts",
+      "css": "../docs/htwoo-core/css/"
     }
   },
   "patternExtension": "hbs",
