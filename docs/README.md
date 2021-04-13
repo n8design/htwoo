@@ -24,4 +24,4 @@ It plays nicely together with applications such as Microsoft SharePoint and Micr
 
 
 
-[logo]: https://github.com/n8design/htwoo/blob/b56aad4d6873f0eef22c7d08bf0ce23ef62d61be/docs/assets/htwoo.jpg "Be like water and adopt fast"
+[logo]: ./assets/htwoo.jpg "Be like water and adopt fast"
