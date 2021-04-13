@@ -1,0 +1,24 @@
+.hoo-grid{
+	box-sizing: border-box;
+
+	border: 1px silver solid;
+
+	@include gridBase();
+}
+
+.demo-item,
+.demo-item2{
+	display: flex;
+
+	box-sizing: border-box;
+	padding: 2rem;
+
+	background-color: pink;
+}
+
+.demo-item{
+	@include gridSpan(4);
+}
+.demo-item2{
+	@include gridSpan(6, 7, 2);
+}

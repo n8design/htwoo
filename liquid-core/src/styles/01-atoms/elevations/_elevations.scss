@@ -1,7 +1,0 @@
-$elevationLevels: 4,8,16,64;
-
-@each $elevationLevel in $elevationLevels {
-    .lqd-elevation#{$elevationLevel} {
-        @include elevation($elevationLevel)
-    }
-}

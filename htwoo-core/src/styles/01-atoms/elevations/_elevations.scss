@@ -1,0 +1,7 @@
+$elevationLevels: 4,8,16,64;
+
+@each $elevationLevel in $elevationLevels {
+    .hoo-elevation#{$elevationLevel} {
+        @include elevation($elevationLevel)
+    }
+}

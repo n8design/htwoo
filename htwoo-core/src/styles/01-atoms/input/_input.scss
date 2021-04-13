@@ -1,0 +1,104 @@
+@mixin base-input{
+	font-size: px2rem(14px);
+	line-height: 1.9rem;
+
+	box-sizing: border-box;
+	width: auto;
+	padding: 0 px2rem(8px);
+
+	border: 1px $inputBorder solid;
+	border-radius: 2px;
+	outline: 1px rgba(255,255,255,0) solid;
+	margin: 0;
+}
+
+.hoo-input-text{
+	@include base-input();
+
+	// general focus
+	&:focus{
+		line-height: calc(1.9rem - 2px);
+
+		padding: 0 px2rem(7px);
+
+		border: 2px $inputFocusBorderAlt solid;
+		outline: 0 rgba(255,255,255,0) solid;
+	}
+	// in valid 
+	&.is-invalid,
+	&:invalid{
+		border-color: $errorText;
+	}
+	// diabled buttn style
+	&:disabled{
+		color: $buttonTextDisabled;
+		border-color: $buttonBorderDisabled;
+		background-color: $disabledBackground;
+	}
+	&[data-prefix]{
+		padding-left: px2rem(8px);
+
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	&[data-suffix]{
+		padding-right: px2rem(8px);
+
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.hoo-input-prefix{
+	@include base-input();
+
+	display: inline-block;
+
+	box-sizing: border-box;
+
+	color: $BodyText;
+	border-right: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: $buttonBackgroundDisabled;
+}
+.hoo-input-suffix{
+	@include base-input();
+
+	display: inline-block;
+
+	box-sizing: border-box;
+
+	color: $BodyText;
+	border-left: none;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background-color: $buttonBackgroundDisabled;
+}
+
+.hoo-input-group{
+	display: flex;
+
+	&:focus-within{
+		& > *{
+			line-height: calc(1.9rem - 2px);
+
+			padding: 0 px2rem(7px);
+
+			border-width: 2px;
+			border-color: $inputFocusBorderAlt;
+		}
+		.hoo-input-text{
+			padding: 0 px2rem(8px);
+		}
+		.hoo-input-suffix{
+			padding-right: px2rem(7px);
+			padding-left: px2rem(8px);
+		}
+		.hoo-input-prefix{
+			padding-right: px2rem(8px);
+			padding-left: px2rem(7px);
+		}
+	}
+}

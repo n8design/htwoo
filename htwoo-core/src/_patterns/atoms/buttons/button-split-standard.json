@@ -1,0 +1,15 @@
+{
+    "classname": "hoo-buttonsplit",
+    "label": "Standard",
+    "disabled": null,
+    "ddItems": [
+        {
+            "label": "Email message",
+            "icon": "icon-ninjacat"
+        },
+        {
+            "label": "Callendar Event",
+            "icon": "icon-plus"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+.hoo-label{
+	font-size: px2rem(14px); // TODO: font size to small
+	font-weight: 600;
+
+	padding: px2rem(5px) 0;
+
+	color: $bodyText;
+	&.is-disabled{
+		color: $disabledText;
+	}
+	&.is-required{
+		&:after{
+			display: inline-block;
+
+			padding-left: .25em;
+			padding-right: px2rem(12px);
+
+			content: "*";
+
+			color: $errorText;
+		}
+	}
+}

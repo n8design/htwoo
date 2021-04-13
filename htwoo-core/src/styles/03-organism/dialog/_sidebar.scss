@@ -1,0 +1,32 @@
+%hoo-sidebar{
+	@extend .hoo-mdldialog;
+}
+
+.hoo-mdldialog-outer{
+	&.is-sidebar-left{
+		justify-content: flex-end;
+		.hoo-mdldialog{
+			position: absolute;
+			left: 0;
+
+			height: 100vh;
+
+			transform: scaleX(0);
+			transform-origin: left top;
+		}
+	}
+	&.is-sidebar-right{
+		justify-content: flex-start;
+		.hoo-mdldialog{
+			position: absolute;
+			right: 0;
+
+			height: 100vh;
+
+			transform: scaleX(0);
+			transform-origin: top right;
+
+			opacity: 1;
+		}
+	}
+}
