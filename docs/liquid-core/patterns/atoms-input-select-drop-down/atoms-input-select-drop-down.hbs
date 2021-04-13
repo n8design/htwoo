@@ -1,21 +1,21 @@
-<ul class="lqd-select-dropdown {{ this.ddToggleClass }}">
+<ul class="hoo-select-dropdown {{ this.ddToggleClass }}">
     {{#each options }}
     {{#if groupname }}
-    <li class="lqd-optgroup">
-        <div class="lqd-optgroup-name">{{ this.groupname }}</div>
-        <ul class="lqd-optgroup-items">
+    <li class="hoo-optgroup">
+        <div class="hoo-optgroup-name">{{ this.groupname }}</div>
+        <ul class="hoo-optgroup-items">
             {{#each this.options }}
             {{#if this.disabled }}
-            <li data-value="{{ this.value }}" class="lqd-option {{ this.disabled }}" aria-disabled="true">{{ this.key }}
+            <li data-value="{{ this.value }}" class="hoo-option {{ this.disabled }}" aria-disabled="true">{{ this.key }}
             </li>
             {{ else }}
-            <li data-value="{{ this.value }}" class="lqd-option" aria-disabled="false">{{ this.key }}</li>
+            <li data-value="{{ this.value }}" class="hoo-option" aria-disabled="false">{{ this.key }}</li>
             {{/if}}
             {{/each}}
         </ul>
     </li>
     {{ else }}
-    <li data-value="{{ value }}" class="lqd-option {{ disabled }}">{{ value }}</li>
+    <li data-value="{{ value }}" class="hoo-option {{ disabled }}">{{ value }}</li>
     {{/if}}
     {{/each }}
 </ul>

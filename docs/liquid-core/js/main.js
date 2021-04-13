@@ -150,7 +150,7 @@ const registerAnimation = (classname, handleWith) => {
 
 const registerAriaSelect = () => {
 
-    let selects = document.querySelectorAll('.lqd-select');
+    let selects = document.querySelectorAll('.hoo-select');
 
     // debugger;
 
@@ -165,14 +165,14 @@ const registerAriaSelect = () => {
 
 const afterLoaded = () => {
 
-    splitButtonReg('.lqd-buttonsplit > .lqd-buttonsplit-carret', splitButtonClick);
-    splitButtonReg('.lqd-buttonsplit-primary > .lqd-buttonsplit-carret', splitButtonClick);
-    splitButtonReg('button.lqd-buttonicon-overflow', buttonClick);
+    splitButtonReg('.hoo-buttonsplit > .hoo-buttonsplit-carret', splitButtonClick);
+    splitButtonReg('.hoo-buttonsplit-primary > .hoo-buttonsplit-carret', splitButtonClick);
+    splitButtonReg('button.hoo-buttonicon-overflow', buttonClick);
 
-    splitButtonReg('button.lqd-buttoncmd', buttonClick);
-    splitButtonReg('button.lqd-buttoncmdbar', buttonClick);
-    splitButtonReg('button.lqd-buttonicon-flyout', buttonClick);
-    splitButtonReg('button.lqd-buttoncontext', buttonClick);
+    splitButtonReg('button.hoo-buttoncmd', buttonClick);
+    splitButtonReg('button.hoo-buttoncmdbar', buttonClick);
+    splitButtonReg('button.hoo-buttonicon-flyout', buttonClick);
+    splitButtonReg('button.hoo-buttoncontext', buttonClick);
     
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);

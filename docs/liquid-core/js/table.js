@@ -82,7 +82,7 @@ const collapseAndExpand = (event) => {
 
 const initCollapsability = () => {
 
-    const collapseTable = document.querySelectorAll('.lqd-table.is-collapsable');
+    const collapseTable = document.querySelectorAll('.hoo-table.is-collapsable');
     collapseTable.forEach(table => {
 
         console.debug("Collapse Table:", collapseTable);

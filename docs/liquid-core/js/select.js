@@ -81,7 +81,7 @@ export const ariaSelect = (listItem) => {
   })
 
   document.addEventListener('click', function (e) {
-    if (!e.target.closest('.lqd-select')) {
+    if (!e.target.closest('.hoo-select')) {
       // click outside of the custom group
       toggleList('Shut')
       setState('initial')

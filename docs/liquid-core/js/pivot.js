@@ -1,5 +1,5 @@
-const elemPivotBar = '.lqd-pivotbar';
-const elemPivotButton = '.lqd-button-pivot';
+const elemPivotBar = '.hoo-pivotbar';
+const elemPivotButton = '.hoo-button-pivot';
 const stateIsActive = 'is-active';
 
 const changePivot = (event) => {

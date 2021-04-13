@@ -4,7 +4,7 @@ const evtShowDialog = (event) => {
 
     let curElement = event.target;
 
-    let modalDialog = curElement.parentElement.querySelector('.lqd-mdldialog-outer');
+    let modalDialog = curElement.parentElement.querySelector('.hoo-mdldialog-outer');
     modalDialog.classList.remove('is-hidden');
     modalDialog.classList.add('is-visible');
 
@@ -14,7 +14,7 @@ const evtHideDialog = (event) => {
 
     let curElement = event.target;
 
-    let modalDialog = curElement.closest('.lqd-mdldialog-outer');
+    let modalDialog = curElement.closest('.hoo-mdldialog-outer');
 
     modalDialog.classList.remove('is-visible');
     modalDialog.classList.add('is-hidden');
@@ -24,7 +24,7 @@ const evtHideDialog = (event) => {
 export const registerDialog = () => {
 
     showDialog = document.querySelectorAll('.show-dialog');
-    closeDialog = document.querySelectorAll('.lqd-dlgheader-closer');
+    closeDialog = document.querySelectorAll('.hoo-dlgheader-closer');
 
     if (showDialog) {
 
