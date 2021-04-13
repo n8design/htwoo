@@ -1,0 +1,39 @@
+{
+  "name": "@n8design/htwoo-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pl:build": "patternlab build --config ./patternlab-config.json",
+    "pl:publish": "patternlab build --config ./patternlab-public.json",
+    "pl:help": "patternlab --help",
+    "pl:install": "patternlab install --config ./patternlab-config.json",
+    "pl:serve": "patternlab serve --config ./patternlab-config.json",
+    "gulp:serve": "gulp",
+    "gulp:docs": "gulp docs",
+    "pl:version": "patternlab --version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pattern-lab/cli": "^5.14.2",
+    "@pattern-lab/core": "^5.14.2",
+    "@pattern-lab/engine-handlebars": "^5.14.0",
+    "@pattern-lab/uikit-workshop": "^5.14.2",
+    "postcss": "^8.2.10"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-load-plugins": "^2.0.6",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,114 @@
+.hoo-toggle{
+	display: flex;
+
+	align-items: center;
+
+	.hoo-toggle-label{
+		display: flex;
+		flex-direction: row;
+
+		align-items: center;
+	}
+
+	.hoo-toggle-checked{
+		display: none;
+	}
+
+	.hoo-toggle-unchecked{
+		display: inline-block;
+	}
+
+	.hoo-toggle-slider{
+		position: relative;
+
+		display: flex;
+
+		width: px2rem(32px);
+		height: px2rem(16px);
+		margin: 0 1rem;
+
+		content: "";
+		transition: background .2s ease-in-out;
+
+		border: 1px $buttonBorder solid;
+		border-radius: 1rem;
+		background-color: $buttonBackground;
+		cursor: pointer;
+
+		&::after{
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			display: inline-block;
+
+			box-sizing: border-box;
+			width: px2rem(12px);
+			height: px2rem(12px);
+			margin: 2px;
+
+			content: "";
+			transition: all .1s;
+
+			border: px2rem(2px) rgba(#fff, 0) solid;
+			border-radius: 50%;
+			background-color: $buttonText;
+		}
+	}
+
+	// toggle checkbox
+	.hoo-toggle-cb{
+		display: none;
+
+		&:checked{
+			& ~ .hoo-toggle-label{
+				.hoo-toggle-slider{
+					border-color: $primaryButtonBackground;
+					background-color: $primaryButtonBackground;
+
+					&::after{
+						transform: translateX(1rem);
+
+						background-color: $buttonBackground;
+					}
+				}
+
+				.hoo-toggle-checked{
+					display: block;
+				}
+
+				.hoo-toggle-unchecked{
+					display: none;
+				}
+			}
+		}
+		&:disabled{
+			& ~ .hoo-toggle-label{
+				color: $buttonTextDisabled;
+				.hoo-toggle-slider{
+					border-color: $buttonTextDisabled;
+					&::after{
+
+						background-color: $buttonTextDisabled;
+					}
+				}
+			}
+
+			&:checked{
+				
+				& ~ .hoo-toggle-label{
+					color: $buttonTextDisabled;
+					.hoo-toggle-slider{
+						border-color: $ButtonGlyphDisabled;
+						background-color: $ButtonGlyphDisabled;
+						&::after{
+							background-color: $buttonBackgroundDisabled;
+						}
+					}
+				}
+			}
+
+		}
+
+	}
+}

@@ -1,0 +1,16 @@
+.hoo-facepile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start space-between;
+
+    transition: all 1s ease-in-out;
+
+    flex-wrap: wrap;
+
+    &>* {
+        // Compensation due to rotation
+        margin-right: 1.118rem;
+        margin-bottom: 1.118rem;
+    }
+
+}

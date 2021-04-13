@@ -1,0 +1,69 @@
+.hoo-cardimage{
+	border-collapse: collapse;
+
+	border: 1px solid $variantBorder;
+
+	aspect-ratio: 16/9;
+
+	img{
+		display: block;
+
+		object-fit: fill;
+	}
+}
+
+.hoo-cardimage-html{
+	width: 320px;
+	height: 180px;
+
+	content: "";
+
+	background-color: $primaryButtonBackground;
+
+	aspect-ratio: 16/9;
+}
+
+.hoo-cardlocation{
+	font-size: px2rem(12px);
+	font-weight: 600px;
+
+	box-sizing: border-box;
+	padding: px2rem(10px) px2rem(12px) px2rem(8px);
+
+	color: $primaryButtonBackground;
+}
+
+.hoo-cardtitle{
+	font-size: px2rem(14px);
+	font-weight: 600;
+
+	box-sizing: border-box;
+	height: px2rem(38px);
+	padding: 0 px2rem(12px) px2rem(8px);
+}
+
+.hoo-cardfooter{
+	display: flex;
+
+	box-sizing: border-box;
+	padding: px2rem(12px);
+
+	.hoo-avatar{
+		width: 32px;
+		height: 32px;
+		margin-right: 1rem;
+	}
+
+	&-data{
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-name{
+		font-size: px2rem(14px);
+	}
+
+	&-modified{
+		font-size: px2rem(12px);
+	}
+}

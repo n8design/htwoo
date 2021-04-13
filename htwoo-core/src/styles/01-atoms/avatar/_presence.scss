@@ -1,0 +1,27 @@
+.hoo-presence{
+	display: block;
+
+	box-sizing: border-box;
+	width: 16px;
+	height: 16px;
+
+	content: "";
+
+	border: 2px $bodyBackground solid;
+	border-radius: 50%;
+	&.is-away{
+		background-color: #fa4;
+	}
+	&.is-dnd{
+		background-color: #c50f1f;
+	}
+	&.is-online{
+		background-color: #6bb700;
+	}
+	&.is-invisible{
+		background-color: #8a8886;
+	}
+	&.is-oof{
+		background-color: #b4009e;
+	}
+}
