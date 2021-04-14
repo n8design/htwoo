@@ -1,0 +1,2718 @@
+/***** Color converted to SCSS variables *****/
+body {
+  font-family: var(--mediumFontFamily);
+}
+
+/**** REQURIED FOR STYLE GUIDE ****/
+/**** BASE VARS AND MIXIN's ****/
+:root {
+  --accent: #4f6bed;
+  --accentButtonBackground: #4f6bed;
+  --accentButtonText: #ffffff;
+  --AccentLines: #13898d;
+  --AccentText: #03787c;
+  --actionLink: #323130;
+  --actionLinkHovered: #201f1e;
+  --BackgroundOverlay: rgba(255, 255, 255, 0.85);
+  --backgroundOverlay: rgba(255, 255, 255, 0.85);
+  --black: #000000;
+  --blackTranslucent40: rgba(0, 0, 0, .4);
+  --blockingBackground: #FDE7E9;
+  --blockingIcon: #FDE7E9;
+  --blue: #0078d4;
+  --blueDark: #002050;
+  --blueLight: #00bcf2;
+  --blueMid: #00188f;
+  --bodyBackground: #ffffff;
+  --bodyBackgroundChecked: #edebe9;
+  --bodyBackgroundHovered: #f3f2f1;
+  --bodyDivider: #edebe9;
+  --bodyFrameBackground: #ffffff;
+  --bodyFrameDivider: #edebe9;
+  --bodyStandoutBackground: #faf9f8;
+  --bodySubtext: #605e5c;
+  --bodyText: #323130;
+  --BodyText: #333333;
+  --bodyTextChecked: #000000;
+  --ButtonBackground: #f8f8f8;
+  --buttonBackground: #ffffff;
+  --buttonBackgroundChecked: #c8c6c4;
+  --buttonBackgroundCheckedHovered: #edebe9;
+  --buttonBackgroundDisabled: #f3f2f1;
+  --buttonBackgroundHovered: #f3f2f1;
+  --buttonBackgroundPressed: #edebe9;
+  --buttonBorder: #8a8886;
+  --ButtonBorder: #a6a6a6;
+  --buttonBorderDisabled: #f3f2f1;
+  --ButtonDisabledBackground: #f8f8f8;
+  --ButtonDisabledBorder: #eaeaea;
+  --ButtonDisabledText: #a6a6a6;
+  --ButtonGlyph: #666666;
+  --ButtonGlyphActive: #333333;
+  --ButtonGlyphDisabled: #c8c8c8;
+  --ButtonHoverBackground: #c5e9ea;
+  --ButtonHoverBorder: #98d6d8;
+  --ButtonPressedBackground: #98d6d8;
+  --ButtonPressedBorder: #13898d;
+  --buttonText: #323130;
+  --ButtonText: #333333;
+  --buttonTextChecked: #201f1e;
+  --buttonTextCheckedHovered: #000000;
+  --buttonTextDisabled: #a19f9d;
+  --buttonTextHovered: #201f1e;
+  --buttonTextPressed: #201f1e;
+  --cardShadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  --cardShadowHovered: 0 0 1px #a19f9d;
+  --cardStandoutBackground: #ffffff;
+  --CommandLinks: #666666;
+  --CommandLinksDisabled: #a6a6a6;
+  --CommandLinksHover: #03787c;
+  --CommandLinksPressed: #014446;
+  --CommandLinksSecondary: #212121;
+  --ContentAccent1: #03787c;
+  --ContentAccent2: #00485b;
+  --ContentAccent3: #288054;
+  --ContentAccent4: #767956;
+  --ContentAccent5: #ed0033;
+  --ContentAccent6: #682a7a;
+  --defaultStateBackground: #faf9f8;
+  --DialogBorder: #f4f4f4;
+  --dialogBorder: #f4f4f4;
+  --disabledBackground: #f3f2f1;
+  --DisabledBackground: #f8f8f8;
+  --disabledBodySubtext: #c8c6c4;
+  --disabledBodyText: #a19f9d;
+  --disabledBorder: #c8c6c4;
+  --DisabledLines: #eaeaea;
+  --disabledSubtext: #d2d0ce;
+  --disabledText: #a19f9d;
+  --DisabledText: #a6a6a6;
+  --elevation16: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+  --elevation4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  --elevation64: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
+  --elevation8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  --EmphasisBackground: #03787c;
+  --EmphasisBorder: #025c5f;
+  --EmphasisHoverBackground: #025c5f;
+  --EmphasisHoverBorder: #014446;
+  --EmphasisText: #ffffff;
+  --errorBackground: #FDE7E9;
+  --errorIcon: #A80000;
+  --errorText: #a4262c;
+  --focusBorder: #605e5c;
+  --FooterBackground: rgba(255, 255, 255, 0.85);
+  --green: #107c10;
+  --greenDark: #004b1c;
+  --greenLight: #bad80a;
+  --HeaderAccentLines: #13898d;
+  --HeaderBackground: rgba(255, 255, 255, 0.85);
+  --HeaderDisabledBackground: #f8f8f8;
+  --HeaderDisabledLines: #eaeaea;
+  --HeaderDisableText: #a6a6a6;
+  --HeaderLines: #a6a6a6;
+  --HeaderNavigationHoverText: #03787c;
+  --HeaderNavigationPressedText: #014446;
+  --HeaderNavigationSelectedText: #03787c;
+  --HeaderNavigationText: #666666;
+  --HeaderSiteTitle: #212121;
+  --HeaderStrongLines: #98d6d8;
+  --HeaderSubtleLines: #c8c8c8;
+  --HeaderSubtleText: #767676;
+  --HeaderText: #333333;
+  --HoverBackground: rgba(197, 233, 234, 0.50);
+  --Hyperlink: #03787c;
+  --HyperlinkActive: #014446;
+  --Hyperlinkfollowed: #014446;
+  --infoBackground: #f3f2f1;
+  --infoIcon: #605e5c;
+  --inputBackground: #ffffff;
+  --inputBackgroundChecked: #03787c;
+  --inputBackgroundCheckedHovered: #025c5f;
+  --inputBorder: #605e5c;
+  --inputBorderHovered: #323130;
+  --inputFocusBorderAlt: #03787c;
+  --inputForegroundChecked: #ffffff;
+  --inputIcon: #03787c;
+  --inputIconDisabled: #a19f9d;
+  --inputIconHovered: #025c5f;
+  --inputPlaceholderBackgroundChecked: #c5e9ea;
+  --inputPlaceholderText: #605e5c;
+  --inputText: #323130;
+  --inputTextHovered: #201f1e;
+  --largeFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --largeFontSize: 18px;
+  --largeFontWeight: 400;
+  --largeMozOsxFontSmoothing: grayscale;
+  --largeWebkitFontSmoothing: antialiased;
+  --Lines: #a6a6a6;
+  --link: #03787c;
+  --linkHovered: #014446;
+  --listBackground: #ffffff;
+  --listHeaderBackgroundHovered: #f3f2f1;
+  --listHeaderBackgroundPressed: #edebe9;
+  --listItemBackgroundChecked: #edebe9;
+  --listItemBackgroundCheckedHovered: #e1dfdd;
+  --listItemBackgroundHovered: #f3f2f1;
+  --listText: #323130;
+  --listTextColor: #323130;
+  --magenta: #b4009e;
+  --magentaDark: #5c005c;
+  --magentaLight: #e3008c;
+  --mediumFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --mediumFontSize: 14px;
+  --mediumFontWeight: 400;
+  --mediumMozOsxFontSmoothing: grayscale;
+  --mediumPlusFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --mediumPlusFontSize: 16px;
+  --mediumPlusFontWeight: 400;
+  --mediumPlusMozOsxFontSmoothing: grayscale;
+  --mediumPlusWebkitFontSmoothing: antialiased;
+  --mediumWebkitFontSmoothing: antialiased;
+  --megaFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --megaFontSize: 68px;
+  --megaFontWeight: 600;
+  --megaMozOsxFontSmoothing: grayscale;
+  --megaWebkitFontSmoothing: antialiased;
+  --menuBackground: #ffffff;
+  --menuDivider: #c8c6c4;
+  --menuHeader: #03787c;
+  --menuIcon: #03787c;
+  --menuItemBackgroundChecked: #edebe9;
+  --menuItemBackgroundHovered: #f3f2f1;
+  --menuItemBackgroundPressed: #edebe9;
+  --menuItemText: #323130;
+  --menuItemTextHovered: #201f1e;
+  --messageLink: #005A9E;
+  --messageLinkHovered: #004578;
+  --messageText: #323130;
+  --Navigation: #666666;
+  --NavigationAccent: #03787c;
+  --NavigationHover: #03787c;
+  --NavigationHoverBackground: rgba(197, 233, 234, 0.50);
+  --NavigationPressed: #014446;
+  --NavigationSelectedBackground: rgba(234, 234, 234, 0.78);
+  --neutralDark: #201f1e;
+  --neutralLight: #edebe9;
+  --neutralLighter: #f3f2f1;
+  --neutralLighterAlt: #faf9f8;
+  --neutralPrimary: #323130;
+  --neutralPrimaryAlt: #3b3a39;
+  --neutralQuaternary: #d2d0ce;
+  --neutralQuaternaryAlt: #e1dfdd;
+  --neutralSecondary: #605e5c;
+  --neutralSecondaryAlt: #8a8886;
+  --neutralTertiary: #a19f9d;
+  --neutralTertiaryAlt: #c8c6c4;
+  --orange: #d83b01;
+  --orangeLight: #ea4300;
+  --orangeLighter: #ff8c00;
+  --PageBackground: #ffffff;
+  --primaryBackground: #ffffff;
+  --primaryButtonBackground: #03787c;
+  --primaryButtonBackgroundDisabled: #f3f2f1;
+  --primaryButtonBackgroundHovered: #026d70;
+  --primaryButtonBackgroundPressed: #025c5f;
+  --primaryButtonBorder: transparent;
+  --primaryButtonText: #ffffff;
+  --primaryButtonTextDisabled: #d2d0ce;
+  --primaryButtonTextHovered: #ffffff;
+  --primaryButtonTextPressed: #ffffff;
+  --primaryText: #333333;
+  --purple: #5c2d91;
+  --purpleDark: #32145a;
+  --purpleLight: #b4a0ff;
+  --red: #e81123;
+  --redDark: #a80000;
+  --roundedCorner2: 2px;
+  --roundedCorner4: 4px;
+  --roundedCorner6: 6px;
+  --RowAccent: #03787c;
+  --SelectionBackground: rgba(152, 214, 216, 0.50);
+  --severeWarningBackground: #FED9CC;
+  --severeWarningIcon: #D83B01;
+  --SiteTitle: #212121;
+  --smallFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --smallFontSize: 12px;
+  --smallFontWeight: 400;
+  --smallInputBorder: #605e5c;
+  --smallMozOsxFontSmoothing: grayscale;
+  --smallPlusFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --smallPlusFontSize: 12px;
+  --smallPlusFontWeight: 400;
+  --smallPlusMozOsxFontSmoothing: grayscale;
+  --smallPlusWebkitFontSmoothing: antialiased;
+  --smallWebkitFontSmoothing: antialiased;
+  --StrongBodyText: #212121;
+  --StrongLines: #98d6d8;
+  --SubtleBodyText: #767676;
+  --SubtleEmphasisBackground: #f4f4f4;
+  --SubtleEmphasisCommandLinks: #212121;
+  --SubtleEmphasisText: #666666;
+  --SubtleLines: #c8c8c8;
+  --successBackground: #DFF6DD;
+  --successIcon: #107C10;
+  --successText: #107C10;
+  --SuiteBarBackground: #03787c;
+  --suiteBarBackground: #03787c;
+  --SuiteBarDisabledText: #eaeaea;
+  --suiteBarDisabledText: #eaeaea;
+  --SuiteBarHoverBackground: #49aeb1;
+  --SuiteBarHoverText: #98d6d8;
+  --SuiteBarText: #ffffff;
+  --suiteBarText: #ffffff;
+  --superLargeFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --superLargeFontSize: 42px;
+  --superLargeFontWeight: 600;
+  --superLargeMozOsxFontSmoothing: grayscale;
+  --superLargeWebkitFontSmoothing: antialiased;
+  --teal: #008272;
+  --tealDark: #004b50;
+  --tealLight: #00b294;
+  --themeAccent: #03787c;
+  --themeAccentTranslucent10: rgba(3, 120, 124, 0.10);
+  --themeDark: #025c5f;
+  --themeDarkAlt: #026d70;
+  --themeDarker: #014446;
+  --themeLight: #98d6d8;
+  --themeLighter: #c5e9ea;
+  --themeLighterAlt: #f0f9fa;
+  --themePrimary: #03787c;
+  --themeSecondary: #13898d;
+  --themeTertiary: #49aeb1;
+  --TileBackgroundOverlay: rgba(0, 0, 0, 0.50);
+  --TileText: #ffffff;
+  --tinyFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --tinyFontSize: 10px;
+  --tinyFontWeight: 400;
+  --tinyMozOsxFontSmoothing: grayscale;
+  --tinyWebkitFontSmoothing: antialiased;
+  --TopBarBackground: rgba(234, 234, 234, 0.78);
+  --topBarBackground: rgba(234, 234, 234, 0.78);
+  --TopBarHoverText: #333333;
+  --topBarHoverText: #333333;
+  --TopBarPressedText: #014446;
+  --TopBarText: #666666;
+  --topBarText: #666666;
+  --variantBorder: #edebe9;
+  --variantBorderHovered: #a19f9d;
+  --warningBackground: #FFF4CE;
+  --warningHighlight: #ffb900;
+  --warningIcon: #797775;
+  --warningText: #323130;
+  --WebPartHeading: #333333;
+  --white: #ffffff;
+  --whiteTranslucent40: rgba(255, 255, 255, 0.40);
+  --xLargeFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --xLargeFontSize: 20px;
+  --xLargeFontWeight: 600;
+  --xLargeMozOsxFontSmoothing: grayscale;
+  --xLargePlusFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --xLargePlusFontSize: 24px;
+  --xLargePlusFontWeight: 600;
+  --xLargePlusMozOsxFontSmoothing: grayscale;
+  --xLargePlusWebkitFontSmoothing: antialiased;
+  --xLargeWebkitFontSmoothing: antialiased;
+  --xSmallFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --xSmallFontSize: 10px;
+  --xSmallFontWeight: 400;
+  --xSmallMozOsxFontSmoothing: grayscale;
+  --xSmallWebkitFontSmoothing: antialiased;
+  --xxLargeFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --xxLargeFontSize: 28px;
+  --xxLargeFontWeight: 600;
+  --xxLargeMozOsxFontSmoothing: grayscale;
+  --xxLargePlusFontFamily: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  --xxLargePlusFontSize: 32px;
+  --xxLargePlusFontWeight: 600;
+  --xxLargePlusMozOsxFontSmoothing: grayscale;
+  --xxLargePlusWebkitFontSmoothing: antialiased;
+  --xxLargeWebkitFontSmoothing: antialiased;
+  --yellow: #ffb900;
+  --yellowDark: #d29200;
+  --yellowLight: #fff100;
+}
+
+body {
+  font-family: var(--mediumFontFamily);
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Light/latest.ttf") format("ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semilight/latest.ttf") format("ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: local("Segoe UI"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Bold/latest.ttf") format("ttf");
+  font-weight: 700;
+}
+
+/**** Core Mixing Definition ****/
+h1, h2, h3, p {
+  font-family: var(--xxLargeFontFamily);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--BodyText);
+}
+
+p {
+  font-size: 18px;
+  overflow-wrap: break-word;
+}
+
+blockquote {
+  font-family: Segoe UI Light WestEuropean, Segoe UI Light, Segoe WP Light, Segoe UI, Segoe WP, Tahoma, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 1.75rem 0;
+  padding: 2rem;
+  text-align: center;
+  color: #605e5c;
+  border-top: 1px solid #edebe9;
+  border-bottom: 1px solid #edebe9;
+}
+
+.hoo-buttonflyout, .hoo-select-dropdown, .hoo-optgroup-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+div.hoo-buttoncontext-outer, .hoo-buttonsplit, .hoo-buttonsplit-primary, .hoo-buttonicon-split, .hoo-buttonicon-overflow {
+  position: relative;
+}
+
+div.hoo-buttoncontext-outer .hoo-buttonflyout, .hoo-buttonsplit .hoo-buttonflyout, .hoo-buttonsplit-primary .hoo-buttonflyout, .hoo-buttonicon-split .hoo-buttonflyout, .hoo-buttonicon-overflow .hoo-buttonflyout {
+  position: absolute;
+  z-index: 400;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+div.show-flyout.hoo-buttoncontext-outer, .show-flyout.hoo-buttonsplit, .show-flyout.hoo-buttonsplit-primary, .show-flyout.hoo-buttonicon-split, .show-flyout.hoo-buttonicon-overflow {
+  background-color: inherit;
+}
+
+div.show-flyout.hoo-buttoncontext-outer .hoo-buttonflyout, .show-flyout.hoo-buttonsplit .hoo-buttonflyout, .show-flyout.hoo-buttonsplit-primary .hoo-buttonflyout, .show-flyout.hoo-buttonicon-split .hoo-buttonflyout, .show-flyout.hoo-buttonicon-overflow .hoo-buttonflyout {
+  display: block;
+}
+
+div.show-flyout.hoo-buttoncontext-outer .hoo-buttonsplit-carret, .show-flyout.hoo-buttonsplit .hoo-buttonsplit-carret, .show-flyout.hoo-buttonsplit-primary .hoo-buttonsplit-carret, .show-flyout.hoo-buttonicon-split .hoo-buttonsplit-carret, .show-flyout.hoo-buttonicon-overflow .hoo-buttonsplit-carret {
+  background-color: var(--buttonBackgroundCheckedHovered);
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-2-27 0:25:14
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes deleteSlide {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    overflow: hidden;
+    max-width: 100%;
+    opacity: 0;
+  }
+  100% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+@keyframes deleteSlide {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    overflow: hidden;
+    max-width: 100%;
+    opacity: 0;
+  }
+  100% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes addSlide {
+  100% {
+    opacity: 1;
+  }
+  50% {
+    overflow: hidden;
+    max-width: 100%;
+    opacity: 0;
+  }
+  0% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes addSlide {
+  100% {
+    opacity: 1;
+  }
+  50% {
+    overflow: hidden;
+    max-width: 100%;
+    opacity: 0;
+  }
+  0% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+.anim-delete-slide {
+  -webkit-animation-name: deleteSlide;
+          animation-name: deleteSlide;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.anim-add-slide {
+  -webkit-animation-name: addSlide;
+          animation-name: addSlide;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+/**** ATOMS / Typography ****/
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  color: #323130;
+  background-color: #faf9f8;
+  overflow-wrap: break-word;
+}
+
+.hoo-fontsize-68 {
+  font-size: 4.25rem;
+}
+
+.hoo-fontsize-42 {
+  font-size: 2.625rem;
+}
+
+.hoo-fontsize-32 {
+  font-size: 2rem;
+}
+
+.hoo-fontsize-28 {
+  font-size: 1.75rem;
+}
+
+.hoo-fontsize-24 {
+  font-size: 1.5rem;
+}
+
+.hoo-fontsize-20 {
+  font-size: 1.25rem;
+}
+
+.hoo-fontsize-18 {
+  font-size: 1.125rem;
+}
+
+.hoo-fontsize-16 {
+  font-size: 1rem;
+}
+
+.hoo-fontsize-14 {
+  font-size: 0.875rem;
+}
+
+.hoo-fontsize-12 {
+  font-size: 0.75rem;
+}
+
+.hoo-fontsize-10 {
+  font-size: 0.625rem;
+}
+
+a {
+  color: var(--Hyperlink);
+}
+
+a:visited {
+  color: var(--Hyperlink);
+}
+
+a:active {
+  color: var(--Hyperlink);
+}
+
+a:hover {
+  color: var(--Hyperlink);
+}
+
+/**** ATOMS / icons ****/
+.hoo-icon {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.hoo-icon-svg {
+  width: 1rem;
+  height: 1rem;
+  padding: 4px;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.hoo-icon-svg:hover {
+  fill: currentColor;
+}
+
+.hoo-avatar, .hoo-avatar-64, .hoo-avatar-48, .hoo-avatar-40, .hoo-avatar-32, .hoo-avatar-24, .hoo-avatar-16, .hoo-avatar-8 {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.hoo-avatar img.lqg-avatar, .hoo-avatar-64 img.lqg-avatar, .hoo-avatar-48 img.lqg-avatar, .hoo-avatar-40 img.lqg-avatar, .hoo-avatar-32 img.lqg-avatar, .hoo-avatar-24 img.lqg-avatar, .hoo-avatar-16 img.lqg-avatar, .hoo-avatar-8 img.lqg-avatar {
+  width: 100%;
+  height: auto;
+}
+
+.hoo-avatar {
+  width: inherit;
+  height: inherit;
+}
+
+.hoo-avatar-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.hoo-avatar-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.hoo-avatar-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.hoo-avatar-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.hoo-avatar-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.hoo-avatar-8 {
+  width: 8px;
+  height: 8px;
+}
+
+.hoo-presence {
+  display: block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  content: "";
+  border: 2px var(--bodyBackground) solid;
+  border-radius: 50%;
+}
+
+.hoo-presence.is-away {
+  background-color: #fa4;
+}
+
+.hoo-presence.is-dnd {
+  background-color: #c50f1f;
+}
+
+.hoo-presence.is-online {
+  background-color: #6bb700;
+}
+
+.hoo-presence.is-invisible {
+  background-color: #8a8886;
+}
+
+.hoo-presence.is-oof {
+  background-color: #b4009e;
+}
+
+/**** ATOMS / Buttons ****/
+.hoo-button-chevron {
+  color: var(--buttonText);
+}
+
+.hoo-button, .hoo-button-primary, .hoo-buttoncomp-primary, a.hoo-button-primary, .hoo-buttoncomp, a.hoo-button, .hoo-buttonsplit-standard, .hoo-buttonsplit-carret {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  color: var(--buttonText);
+  border: 1px var(--buttonBorder) solid;
+  border-radius: var(--roundedCorner2);
+  outline: none;
+  background-color: var(--buttonBackground);
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.hoo-button-label, .hoo-buttoncomp-label, .hoo-buttoncomp-primary-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  height: 1.875rem;
+  margin: 0 0.25rem;
+  align-items: center;
+}
+
+.hoo-button:hover, .hoo-button-primary:hover, .hoo-buttoncomp-primary:hover, .hoo-buttoncomp:hover, .hoo-buttonsplit-standard:hover, .hoo-buttonsplit-carret:hover {
+  background-color: var(--buttonBackgroundCheckedHovered);
+}
+
+.hoo-button:active, .hoo-button-primary:active, .hoo-buttoncomp-primary:active, .hoo-buttoncomp:active, .hoo-buttonsplit-standard:active, .hoo-buttonsplit-carret:active {
+  background-color: var(--buttonBackgroundPressed);
+}
+
+.hoo-button[disabled], .hoo-button-primary[disabled], .hoo-buttoncomp-primary[disabled], .hoo-buttoncomp[disabled], .hoo-buttonsplit-standard[disabled], .hoo-buttonsplit-carret[disabled], .hoo-button:disabled, .hoo-button-primary:disabled, .hoo-buttoncomp-primary:disabled, .hoo-buttoncomp:disabled, .hoo-buttonsplit-standard:disabled, .hoo-buttonsplit-carret:disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+  border-color: var(--buttonBackgroundDisabled);
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-button-primary, .hoo-buttoncomp-primary, a.hoo-button-primary {
+  color: var(--primaryButtonText);
+  border-color: var(--primaryButtonBackground);
+  background-color: var(--primaryButtonBackground);
+}
+
+.hoo-button-primary:hover, .hoo-buttoncomp-primary:hover {
+  color: var(--primaryButtonTextHovered);
+  border-color: var(--primaryButtonBackgroundHovered);
+  background-color: var(--primaryButtonBackgroundHovered);
+}
+
+.hoo-button-primary:active, .hoo-buttoncomp-primary:active {
+  border-color: var(--primaryButtonBackgroundPressed);
+  background-color: var(--primaryButtonBackgroundPressed);
+}
+
+.hoo-buttoncomp {
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  align-items: flex-start;
+}
+
+.hoo-buttoncomp-label {
+  line-height: 1em;
+  display: block;
+  height: 1em;
+  margin: 0;
+  margin-bottom: 0.3125rem;
+}
+
+.hoo-buttoncomp-desc {
+  font-size: 0.625rem;
+  font-weight: normal;
+}
+
+.hoo-buttoncomp-primary {
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  align-items: flex-start;
+}
+
+.hoo-buttoncomp-primary-label {
+  line-height: 1em;
+  display: block;
+  height: 1em;
+  margin: 0;
+  margin-bottom: 0.3125rem;
+}
+
+.hoo-buttoncomp-primary-desc {
+  font-size: 0.625rem;
+  font-weight: normal;
+}
+
+a.hoo-button-primary, a.hoo-buttoncomp, a.hoo-button, a.hoo-buttonsplit-standard, a.hoo-buttonsplit-carret {
+  display: inline-flex;
+  width: auto;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+a.hoo-button-primary *, a.hoo-buttoncomp *, a.hoo-button *, a.hoo-buttonsplit-standard *, a.hoo-buttonsplit-carret * {
+  width: auto;
+}
+
+a.hoo-button-primary:hover, a.hoo-buttoncomp:hover, a.hoo-button:hover, a.hoo-buttonsplit-standard:hover, a.hoo-buttonsplit-carret:hover {
+  color: var(--buttonText);
+}
+
+a.hoo-buttoncomp-primary, a.hoo-button-primary {
+  display: inline-flex;
+  width: auto;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+a.hoo-buttoncomp-primary:hover, a.hoo-button-primary:hover {
+  color: var(--primaryButtonTextHovered);
+  border-color: var(--primaryButtonBackgroundHovered);
+  background-color: var(--primaryButtonBackgroundHovered);
+}
+
+a.hoo-buttoncomp-primary:active, a.hoo-button-primary:active {
+  border-color: var(--primaryButtonBackgroundPressed);
+  background-color: var(--primaryButtonBackgroundPressed);
+}
+
+/* Split Button Slideout Animation
+% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+0% {
+    transform: translate3d(0px, -10px, 0px);
+    pointer-events: none;
+}
+100% {
+    transform: translate3d(0px, 0px, 0px);
+    pointer-events: auto;
+}
+
+*/
+.hoo-buttonaction, .hoo-buttoncmd button.hoo-buttoncmd, .hoo-cmdbar button.hoo-buttoncmd, .hoo-buttoncmd button.hoo-cmdbar, .hoo-cmdbar button.hoo-cmdbar, .hoo-buttonicon-split button, .hoo-buttonicon-overflow button {
+  display: inline-flex;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  white-space: nowrap;
+  border: none;
+  background-color: var(--buttonBackground);
+  align-items: center;
+}
+
+.hoo-buttonaction .hoo-button-icon, .hoo-buttoncmd button.hoo-buttoncmd .hoo-button-icon, .hoo-cmdbar button.hoo-buttoncmd .hoo-button-icon, .hoo-buttoncmd button.hoo-cmdbar .hoo-button-icon, .hoo-cmdbar button.hoo-cmdbar .hoo-button-icon, .hoo-buttonicon-split button .hoo-button-icon, .hoo-buttonicon-overflow button .hoo-button-icon {
+  line-height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--CommandLinksHover);
+  align-items: center;
+}
+
+.hoo-buttonaction .hoo-button-label, .hoo-buttoncmd button.hoo-buttoncmd .hoo-button-label, .hoo-cmdbar button.hoo-buttoncmd .hoo-button-label, .hoo-buttoncmd button.hoo-cmdbar .hoo-button-label, .hoo-cmdbar button.hoo-cmdbar .hoo-button-label, .hoo-buttonicon-split button .hoo-button-label, .hoo-buttonicon-overflow button .hoo-button-label, .hoo-buttonaction .hoo-buttoncomp-label, .hoo-buttoncmd button.hoo-buttoncmd .hoo-buttoncomp-label, .hoo-cmdbar button.hoo-buttoncmd .hoo-buttoncomp-label, .hoo-buttoncmd button.hoo-cmdbar .hoo-buttoncomp-label, .hoo-cmdbar button.hoo-cmdbar .hoo-buttoncomp-label, .hoo-buttonicon-split button .hoo-buttoncomp-label, .hoo-buttonicon-overflow button .hoo-buttoncomp-label, .hoo-buttonaction .hoo-buttoncomp-primary-label, .hoo-buttoncmd button.hoo-buttoncmd .hoo-buttoncomp-primary-label, .hoo-cmdbar button.hoo-buttoncmd .hoo-buttoncomp-primary-label, .hoo-buttoncmd button.hoo-cmdbar .hoo-buttoncomp-primary-label, .hoo-cmdbar button.hoo-cmdbar .hoo-buttoncomp-primary-label, .hoo-buttonicon-split button .hoo-buttoncomp-primary-label, .hoo-buttonicon-overflow button .hoo-buttoncomp-primary-label {
+  font-size: 0.875rem;
+  line-height: 2.25rem;
+  box-sizing: border-box;
+  padding: 0 0.25rem;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.hoo-buttonaction:hover, .hoo-buttoncmd button.hoo-buttoncmd:hover, .hoo-cmdbar button.hoo-buttoncmd:hover, .hoo-buttoncmd button.hoo-cmdbar:hover, .hoo-cmdbar button.hoo-cmdbar:hover, .hoo-buttonicon-split button:hover, .hoo-buttonicon-overflow button:hover {
+  color: var(--CommandLinksHover);
+}
+
+.hoo-buttonaction:active, .hoo-buttoncmd button.hoo-buttoncmd:active, .hoo-cmdbar button.hoo-buttoncmd:active, .hoo-buttoncmd button.hoo-cmdbar:active, .hoo-cmdbar button.hoo-cmdbar:active, .hoo-buttonicon-split button:active, .hoo-buttonicon-overflow button:active {
+  color: inherit;
+}
+
+.hoo-buttonaction:active .hoo-buttonaction-icon, .hoo-buttoncmd button.hoo-buttoncmd:active .hoo-buttonaction-icon, .hoo-cmdbar button.hoo-buttoncmd:active .hoo-buttonaction-icon, .hoo-buttoncmd button.hoo-cmdbar:active .hoo-buttonaction-icon, .hoo-cmdbar button.hoo-cmdbar:active .hoo-buttonaction-icon, .hoo-buttonicon-split button:active .hoo-buttonaction-icon, .hoo-buttonicon-overflow button:active .hoo-buttonaction-icon {
+  color: var(--CommandLinksPressed);
+}
+
+.hoo-buttoncmd, .hoo-cmdbar {
+  position: relative;
+}
+
+.hoo-buttoncmd button.hoo-buttoncmd .hoo-buttonchevron, .hoo-cmdbar button.hoo-buttoncmd .hoo-buttonchevron, .hoo-buttoncmd button.hoo-cmdbar .hoo-buttonchevron, .hoo-cmdbar button.hoo-cmdbar .hoo-buttonchevron {
+  color: var(--buttonText);
+}
+
+.hoo-buttoncmd button.hoo-buttoncmd > *, .hoo-cmdbar button.hoo-buttoncmd > *, .hoo-buttoncmd button.hoo-cmdbar > *, .hoo-cmdbar button.hoo-cmdbar > * {
+  pointer-events: none;
+}
+
+.hoo-buttoncmd button.hoo-buttoncmd:focus, .hoo-cmdbar button.hoo-buttoncmd:focus, .hoo-buttoncmd button.hoo-cmdbar:focus, .hoo-cmdbar button.hoo-cmdbar:focus {
+  outline: none;
+}
+
+.hoo-buttoncmd .hoo-buttonflyout, .hoo-cmdbar .hoo-buttonflyout {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+.hoo-buttoncmd .hoo-buttonflyout > *, .hoo-cmdbar .hoo-buttonflyout > * {
+  pointer-events: all;
+}
+
+.hoo-buttoncmd .hoo-buttonflyout .hoo-buttoncontext, .hoo-cmdbar .hoo-buttonflyout .hoo-buttoncontext {
+  display: flex;
+}
+
+.hoo-buttoncmd.show-flyout .hoo-buttonflyout, .show-flyout.hoo-cmdbar .hoo-buttonflyout {
+  display: flex;
+}
+
+.hoo-buttonflyout {
+  display: inline-block;
+  flex-direction: column;
+  border: 1px var(--buttonBorder);
+  background-color: var(--bodyBackground);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
+  z-index: 400;
+}
+
+.hoo-buttonflyout .hoo-buttonaction, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar, .hoo-buttonflyout .hoo-buttonicon-split button, .hoo-buttonicon-split .hoo-buttonflyout button, .hoo-buttonflyout .hoo-buttonicon-overflow button, .hoo-buttonicon-overflow .hoo-buttonflyout button {
+  width: 100%;
+  height: auto;
+  min-height: 2.25rem;
+  padding-right: 3rem;
+}
+
+.hoo-buttonflyout .hoo-buttonaction:hover, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd:hover, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd:hover, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd:hover, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd:hover, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar:hover, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar:hover, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar:hover, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar:hover, .hoo-buttonflyout .hoo-buttonicon-split button:hover, .hoo-buttonicon-split .hoo-buttonflyout button:hover, .hoo-buttonflyout .hoo-buttonicon-overflow button:hover, .hoo-buttonicon-overflow .hoo-buttonflyout button:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-buttonflyout .hoo-buttonaction:hover .hoo-button-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd:hover .hoo-button-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-button-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd:hover .hoo-button-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-button-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar:hover .hoo-button-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-button-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar:hover .hoo-button-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-button-label, .hoo-buttonflyout .hoo-buttonicon-split button:hover .hoo-button-label, .hoo-buttonicon-split .hoo-buttonflyout button:hover .hoo-button-label, .hoo-buttonflyout .hoo-buttonicon-overflow button:hover .hoo-button-label, .hoo-buttonicon-overflow .hoo-buttonflyout button:hover .hoo-button-label, .hoo-buttonflyout .hoo-buttonaction:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd:hover .hoo-buttoncomp-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd:hover .hoo-buttoncomp-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar:hover .hoo-buttoncomp-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar:hover .hoo-buttoncomp-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-buttonicon-split button:hover .hoo-buttoncomp-label, .hoo-buttonicon-split .hoo-buttonflyout button:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-buttonicon-overflow button:hover .hoo-buttoncomp-label, .hoo-buttonicon-overflow .hoo-buttonflyout button:hover .hoo-buttoncomp-label, .hoo-buttonflyout .hoo-buttonaction:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd:hover .hoo-buttoncomp-primary-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd:hover .hoo-buttoncomp-primary-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar:hover .hoo-buttoncomp-primary-label, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar:hover .hoo-buttoncomp-primary-label, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-buttonicon-split button:hover .hoo-buttoncomp-primary-label, .hoo-buttonicon-split .hoo-buttonflyout button:hover .hoo-buttoncomp-primary-label, .hoo-buttonflyout .hoo-buttonicon-overflow button:hover .hoo-buttoncomp-primary-label, .hoo-buttonicon-overflow .hoo-buttonflyout button:hover .hoo-buttoncomp-primary-label {
+  color: var(--buttonText);
+}
+
+.hoo-buttonflyout .hoo-buttonaction:active, .hoo-buttonflyout .hoo-buttoncmd button.hoo-buttoncmd:active, .hoo-buttoncmd .hoo-buttonflyout button.hoo-buttoncmd:active, .hoo-buttonflyout .hoo-cmdbar button.hoo-buttoncmd:active, .hoo-cmdbar .hoo-buttonflyout button.hoo-buttoncmd:active, .hoo-buttonflyout .hoo-buttoncmd button.hoo-cmdbar:active, .hoo-buttoncmd .hoo-buttonflyout button.hoo-cmdbar:active, .hoo-buttonflyout .hoo-cmdbar button.hoo-cmdbar:active, .hoo-cmdbar .hoo-buttonflyout button.hoo-cmdbar:active, .hoo-buttonflyout .hoo-buttonicon-split button:active, .hoo-buttonicon-split .hoo-buttonflyout button:active, .hoo-buttonflyout .hoo-buttonicon-overflow button:active, .hoo-buttonicon-overflow .hoo-buttonflyout button:active {
+  color: var(--buttonTextPressed);
+}
+
+.hoo-buttonflyout-item {
+  display: block;
+  width: auto;
+}
+
+div.hoo-buttoncontext-outer {
+  position: relative;
+}
+
+.hoo-buttoncontext {
+  display: inline-flex;
+  box-sizing: border-box;
+  height: 2rem;
+  margin: 0;
+  padding: 0 1rem;
+  white-space: nowrap;
+  border: none;
+  border: 1px var(--buttonBorder) solid;
+  border-radius: 2px;
+  background-color: var(--buttonBackground);
+  align-items: center;
+}
+
+.hoo-buttoncontext > * {
+  pointer-events: none;
+}
+
+.hoo-buttoncontext-icon {
+  line-height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.5rem;
+  align-items: center;
+}
+
+.hoo-buttoncontext-icon svg {
+  padding: 0 0.25rem;
+}
+
+.hoo-buttoncontext-label {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  box-sizing: border-box;
+  padding: 0 0.25rem;
+  white-space: nowrap;
+}
+
+.hoo-buttoncontext .hoo-buttonchevron {
+  padding: 0 0.25rem;
+}
+
+.hoo-buttoncontext .hoo-buttonchevron svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.hoo-buttoncontext:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-buttoncontext:active {
+  color: var(--buttonTextPressed);
+}
+
+.hoo-buttonicon {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0;
+  padding: 0.25rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  align-items: center;
+}
+
+.hoo-buttonicon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hoo-buttonicon:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-buttonicon:active {
+  background-color: var(--buttonBackgroundPressed);
+}
+
+.hoo-buttonsplit, .hoo-buttonsplit-primary {
+  display: flex;
+}
+
+.hoo-buttonsplit-standard {
+  margin: 0;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.hoo-buttonsplit-standard[disabled], .hoo-buttonsplit-standard:disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+  border-color: var(--buttonBackgroundDisabled);
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-buttonsplit-carret {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: var(--buttonText);
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hoo-buttonsplit-carret .hoo-button-label, .hoo-buttonsplit-carret .hoo-buttoncomp-label, .hoo-buttonsplit-carret .hoo-buttoncomp-primary-label {
+  font-weight: inherit;
+  line-height: 1;
+  height: auto;
+  margin: 0;
+  padding: 0.125rem 0.375rem;
+  color: inherit;
+  border-left: 1px currentColor solid;
+}
+
+.hoo-buttonsplit-carret .hoo-icon {
+  height: 16px;
+}
+
+.hoo-buttonsplit-carret > * {
+  pointer-events: none;
+}
+
+.hoo-buttonsplit-carret[disabled], .hoo-buttonsplit-carret:disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+  border-color: var(--buttonBackgroundDisabled);
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-buttonsplit .hoo-buttonflyout, .hoo-buttonsplit-primary .hoo-buttonflyout {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.hoo-buttonsplit.show-flyout .hoo-buttonflyout, .show-flyout.hoo-buttonsplit-primary .hoo-buttonflyout {
+  display: block;
+}
+
+.hoo-buttonsplit-primary .hoo-buttonsplit-standard,
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret {
+  color: var(--primaryButtonText);
+  border-color: var(--primaryButtonBackground);
+  background-color: var(--primaryButtonBackground);
+}
+
+.hoo-buttonsplit-primary .hoo-buttonsplit-standard .hoo-button-label, .hoo-buttonsplit-primary .hoo-buttonsplit-standard .hoo-buttoncomp-label, .hoo-buttonsplit-primary .hoo-buttonsplit-standard .hoo-buttoncomp-primary-label,
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret .hoo-button-label,
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret .hoo-buttoncomp-label,
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret .hoo-buttoncomp-primary-label {
+  color: currentColor;
+}
+
+.hoo-buttonsplit-primary .hoo-buttonsplit-standard[disabled], .hoo-buttonsplit-primary .hoo-buttonsplit-standard:disabled,
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret[disabled],
+.hoo-buttonsplit-primary .hoo-buttonsplit-carret:disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+  border-color: var(--buttonBackgroundDisabled);
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-buttonsplit-primary.show-flyout .hoo-buttonsplit-carret {
+  border-color: var(--primaryButtonBackgroundPressed);
+  background-color: var(--primaryButtonBackgroundPressed);
+}
+
+.hoo-buttonicon-split {
+  display: flex;
+  height: 2rem;
+}
+
+.hoo-buttonicon-split button {
+  height: 2rem;
+  margin-right: 0;
+}
+
+.hoo-buttonicon-split button:active {
+  background-color: var(--buttonBackgroundChecked);
+}
+
+.hoo-buttonicon-split button:hover {
+  background-color: var(--buttonBackgroundCheckedHovered);
+}
+
+.hoo-buttonicon-split .hoo-buttonchevron {
+  border-left: 1px var(--ButtonBorder) solid;
+}
+
+.hoo-buttonicon-split .hoo-buttonchevron .hoo-icon {
+  width: 1rem;
+  height: 1rem;
+  padding: .5rem;
+}
+
+.hoo-buttonicon-split .hoo-buttonicon-flyout {
+  height: 2rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.hoo-buttonicon-split .hoo-buttonicon-flyout > * {
+  pointer-events: none;
+}
+
+.hoo-buttonicon-overflow {
+  display: flex;
+  height: 2rem;
+}
+
+.hoo-buttonicon-overflow button {
+  height: 2rem;
+  margin-right: 0;
+}
+
+.hoo-buttonicon-overflow button > * {
+  pointer-events: none;
+}
+
+.hoo-buttonicon-overflow button:active {
+  background-color: var(--buttonBackgroundChecked);
+}
+
+.hoo-buttonicon-overflow button:hover {
+  background-color: var(--buttonBackgroundCheckedHovered);
+}
+
+.hoo-button-pivot {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.hoo-button-pivot.is-active .hoo-pivot-inner {
+  position: relative;
+}
+
+.hoo-button-pivot.is-active .hoo-pivot-inner:after {
+  position: absolute;
+  top: 100%;
+  left: 8px;
+  display: block;
+  width: 100%;
+  max-width: calc(100% - 16px);
+  height: 2px;
+  content: "";
+  transition: all 0.267s ease-in-out;
+  background-color: teal;
+}
+
+.hoo-button-pivot.is-active .hoo-pivot-inner:hover:after {
+  left: 0;
+  max-width: 100%;
+}
+
+.hoo-button-pivot:hover {
+  padding: 0;
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-pivot-inner {
+  font-size: 1rem;
+  line-height: 2.75rem;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 0.5rem;
+  transition: max-width .25s ease-in;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0 0.65px rgba(255, 255, 255, 0), 0 0 0.65px rgba(255, 255, 255, 0);
+}
+
+.hoo-pivot-inner:hover {
+  max-width: 110%;
+  text-shadow: 0 0 .65px currentColor, 0 0 .65px currentColor;
+}
+
+/**** ATOMS / Buttons ****/
+.hoo-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.3125rem 0;
+  color: var(--bodyText);
+}
+
+.hoo-label.is-disabled {
+  color: var(--disabledText);
+}
+
+.hoo-label.is-required:after {
+  display: inline-block;
+  padding-left: .25em;
+  padding-right: 0.75rem;
+  content: "*";
+  color: var(--errorText);
+}
+
+.hoo-input-text {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+}
+
+.hoo-input-text:focus {
+  line-height: calc(1.9rem - 2px);
+  padding: 0 0.4375rem;
+  border: 2px var(--inputFocusBorderAlt) solid;
+  outline: 0 rgba(255, 255, 255, 0) solid;
+}
+
+.hoo-input-text.is-invalid, .hoo-input-text:invalid {
+  border-color: var(--errorText);
+}
+
+.hoo-input-text:disabled {
+  color: var(--buttonTextDisabled);
+  border-color: var(--buttonBorderDisabled);
+  background-color: var(--disabledBackground);
+}
+
+.hoo-input-text[data-prefix] {
+  padding-left: 0.5rem;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hoo-input-text[data-suffix] {
+  padding-right: 0.5rem;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.hoo-input-prefix {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  color: var(--BodyText);
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-input-suffix {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  color: var(--BodyText);
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-input-group {
+  display: flex;
+}
+
+.hoo-input-group:focus-within > * {
+  line-height: calc(1.9rem - 2px);
+  padding: 0 0.4375rem;
+  border-width: 2px;
+  border-color: var(--inputFocusBorderAlt);
+}
+
+.hoo-input-group:focus-within .hoo-input-text {
+  padding: 0 0.5rem;
+}
+
+.hoo-input-group:focus-within .hoo-input-suffix {
+  padding-right: 0.4375rem;
+  padding-left: 0.5rem;
+}
+
+.hoo-input-group:focus-within .hoo-input-prefix {
+  padding-right: 0.5rem;
+  padding-left: 0.4375rem;
+}
+
+.hoo-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.hoo-toggle .hoo-toggle-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hoo-toggle .hoo-toggle-checked {
+  display: none;
+}
+
+.hoo-toggle .hoo-toggle-unchecked {
+  display: inline-block;
+}
+
+.hoo-toggle .hoo-toggle-slider {
+  position: relative;
+  display: flex;
+  width: 2rem;
+  height: 1rem;
+  margin: 0 1rem;
+  content: "";
+  transition: background .2s ease-in-out;
+  border: 1px var(--buttonBorder) solid;
+  border-radius: 1rem;
+  background-color: var(--buttonBackground);
+  cursor: pointer;
+}
+
+.hoo-toggle .hoo-toggle-slider::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 2px;
+  content: "";
+  transition: all .1s;
+  border: 0.125rem rgba(255, 255, 255, 0) solid;
+  border-radius: 50%;
+  background-color: var(--buttonText);
+}
+
+.hoo-toggle .hoo-toggle-cb {
+  display: none;
+}
+
+.hoo-toggle .hoo-toggle-cb:checked ~ .hoo-toggle-label .hoo-toggle-slider {
+  border-color: var(--primaryButtonBackground);
+  background-color: var(--primaryButtonBackground);
+}
+
+.hoo-toggle .hoo-toggle-cb:checked ~ .hoo-toggle-label .hoo-toggle-slider::after {
+  transform: translateX(1rem);
+  background-color: var(--buttonBackground);
+}
+
+.hoo-toggle .hoo-toggle-cb:checked ~ .hoo-toggle-label .hoo-toggle-checked {
+  display: block;
+}
+
+.hoo-toggle .hoo-toggle-cb:checked ~ .hoo-toggle-label .hoo-toggle-unchecked {
+  display: none;
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled ~ .hoo-toggle-label {
+  color: var(--buttonTextDisabled);
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled ~ .hoo-toggle-label .hoo-toggle-slider {
+  border-color: var(--buttonTextDisabled);
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled ~ .hoo-toggle-label .hoo-toggle-slider::after {
+  background-color: var(--buttonTextDisabled);
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled:checked ~ .hoo-toggle-label {
+  color: var(--buttonTextDisabled);
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled:checked ~ .hoo-toggle-label .hoo-toggle-slider {
+  border-color: var(--ButtonGlyphDisabled);
+  background-color: var(--ButtonGlyphDisabled);
+}
+
+.hoo-toggle .hoo-toggle-cb:disabled:checked ~ .hoo-toggle-label .hoo-toggle-slider::after {
+  background-color: var(--buttonBackgroundDisabled);
+}
+
+.hoo-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.hoo-checkbox + label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  position: relative;
+  top: 2px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hoo-checkbox + label:before {
+  position: relative;
+  top: -1px;
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.625rem;
+  content: "";
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+  transition-duration: 200ms;
+  transition-property: background, border, border-color;
+  vertical-align: text-top;
+  border: 1px var(--buttonBorder) solid;
+  border-radius: 2px;
+  background: white;
+  align-items: center;
+}
+
+.hoo-checkbox:active + label:before {
+  border-color: var(--primaryButtonBackgroundPressed);
+  background: var(--primaryButtonBackgroundPressed);
+}
+
+.hoo-checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.hoo-checkbox:hover + label:after,
+.hoo-checkbox:checked + label:after {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.3125rem;
+  width: 0.125rem;
+  height: 0.125rem;
+  content: "";
+  transform: rotate(45deg);
+  background: var(--inputIcon);
+  box-shadow: 2px 0 0 var(--inputIcon), 4px 0 0 var(--inputIcon), 4px -2px 0 var(--inputIcon), 4px -4px 0 var(--inputIcon), 4px -6px 0 var(--inputIcon), 4px -8px 0 var(--inputIcon);
+}
+
+.hoo-checkbox:active:hover + label:after {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.3125rem;
+  width: 0.125rem;
+  height: 0.125rem;
+  content: "";
+  transform: rotate(45deg);
+  background: white;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+}
+
+.hoo-checkbox:disabled + label {
+  cursor: auto;
+  pointer-events: none;
+  color: var(--disabledText);
+}
+
+.hoo-checkbox:disabled + label > * {
+  pointer-events: none;
+}
+
+.hoo-checkbox:disabled + label:hover > * {
+  pointer-events: none;
+}
+
+.hoo-checkbox:disabled + label:before {
+  pointer-events: none;
+  border-color: var(--disabledBorder);
+  box-shadow: none;
+}
+
+.hoo-checkbox:disabled + label:after {
+  pointer-events: none;
+  border-color: var(--disabledBorder);
+  box-shadow: none;
+}
+
+/*** TODO: Hover Style ***/
+.hoo-radio:checked, .hoo-radio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.hoo-radio:checked + label,
+.hoo-radio:not(:checked) + label {
+  line-height: 20px;
+  position: relative;
+  display: inline-block;
+  padding-left: 28px;
+  cursor: pointer;
+  color: var(--bodyText);
+  font-size: 0.875rem;
+}
+
+.hoo-radio:checked + label:before,
+.hoo-radio:not(:checked) + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  content: "";
+  border: 1px var(--buttonBorder) solid;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.hoo-radio:checked + label:after,
+.hoo-radio:not(:checked) + label:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  content: "";
+  transition: all .2s ease;
+  border-radius: 100%;
+  background: var(--primaryButtonBackground);
+}
+
+.hoo-radio:checked:hover + label:after,
+.hoo-radio:not(:checked):hover + label:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  content: "";
+  transition: all .2s ease;
+  border-radius: 100%;
+  background: var(--buttonBorder);
+}
+
+.hoo-radio:not(:checked) + label:after {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.hoo-radio:checked + label:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hoo-radio:disabled + label {
+  color: var(--disabledText);
+}
+
+.hoo-radio:disabled + label:before {
+  border-color: var(--disabledText);
+}
+
+.hoo-select {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  align-items: center;
+}
+
+.hoo-select .hidden-visually {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+}
+
+.hoo-select-text {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  width: calc(100% - 2rem);
+  border: none;
+}
+
+.hoo-select-dropdown, .hoo-optgroup-items {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1px;
+  border-radius: 2px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: var(--bodyBackground);
+}
+
+.hoo-select-dropdown.hidden-all, .hidden-all.hoo-optgroup-items {
+  display: none;
+}
+
+.hoo-select > .hoo-select-dropdown, .hoo-select > .hoo-optgroup-items {
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+}
+
+.hoo-optgroup-items {
+  border-bottom: 1px var(--buttonBorder) solid;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hoo-option {
+  font-size: 14px;
+  display: flex;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  color: var(--buttonText);
+  align-items: center;
+}
+
+.hoo-option.is-disabled {
+  pointer-events: none;
+  color: var(--buttonTextDisabled);
+}
+
+.hoo-option:hover {
+  cursor: pointer;
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-optgroup-name {
+  font-weight: bold;
+  display: flex;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  color: var(--themePrimary);
+  align-items: center;
+}
+
+.hoo-input-search {
+  display: flex;
+  flex-direction: row;
+}
+
+.hoo-input-search .hoo-input-text {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  width: calc(100% - 2rem);
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hoo-input-search .icon {
+  font-size: 0.875rem;
+  line-height: 1.9rem;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 0.5rem;
+  border: 1px var(--inputBorder) solid;
+  border-radius: 2px;
+  outline: 1px rgba(255, 255, 255, 0) solid;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  padding-right: 0.3125rem;
+  padding-left: 0.3125rem;
+  transition: all .1s;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.hoo-input-search:focus-within .icon,
+.hoo-input-search:focus-within .hoo-input-text {
+  height: 2rem;
+  border-width: 2px;
+  border-color: var(--inputFocusBorderAlt);
+  outline: 0 rgba(255, 255, 255, 0) solid;
+}
+
+.hoo-input-search:focus-within .hoo-input-text {
+  width: 100%;
+}
+
+.hoo-input-search:focus-within .icon {
+  overflow: hidden;
+  max-width: 0;
+  padding: 0;
+}
+
+/**** ATOMS / Table ****/
+.hoo-table-iconcell svg {
+  transition: transform .125s ease-in-out;
+}
+
+.hoo-table {
+  overflow: auto;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.hoo-table .align-left {
+  text-align: left;
+}
+
+.hoo-table .align-center {
+  text-align: center;
+}
+
+.hoo-table .align-right {
+  text-align: right;
+}
+
+.hoo-table .valign-top {
+  vertical-align: top;
+}
+
+.hoo-table .valign-middle {
+  vertical-align: middle;
+}
+
+.hoo-table .valign-bottom {
+  vertical-align: bottom;
+}
+
+@media screen and (max-width: 640px) {
+  .hoo-table .no-phone {
+    display: none;
+  }
+}
+
+.hoo-table tfoot th,
+.hoo-table tbody th,
+.hoo-table thead th {
+  font-size: 14px;
+  min-height: 42px;
+  padding-top: 0.875rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.875rem;
+  padding-left: 0.75rem;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: nowrap;
+  background-color: var(--buttonBackground);
+}
+
+.hoo-table tfoot th:hover,
+.hoo-table tbody th:hover,
+.hoo-table thead th:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-table td,
+.hoo-table th {
+  background-color: var(--buttonBackground);
+}
+
+.hoo-table td:hover,
+.hoo-table th:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-table thead {
+  border-bottom: 1px var(--neutralLight) solid;
+  background-color: var(--bodyBackground);
+}
+
+.hoo-table tfoot {
+  border-top: 1px var(--neutralLight) solid;
+}
+
+.hoo-table tbody th {
+  vertical-align: middle;
+}
+
+.hoo-table tbody tr {
+  min-height: 42px;
+}
+
+.hoo-table tbody tr:hover {
+  background-color: var(--buttonBackgroundHovered);
+}
+
+.hoo-table tbody td {
+  font-size: 14px;
+  min-height: 42px;
+  padding-top: 0.875rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.875rem;
+  padding-left: 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px var(--neutralLight) solid;
+}
+
+.hoo-table.compact tfoot th,
+.hoo-table.compact tbody th,
+.hoo-table.compact thead th {
+  font-size: 14px;
+  min-height: 32px;
+  padding-top: 0.4375rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.4375rem;
+  padding-left: 0.75rem;
+}
+
+.hoo-table.compact tbody td {
+  font-size: 14px;
+  min-height: 32px;
+  padding-top: 0.4375rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.4375rem;
+  padding-left: 0.75rem;
+}
+
+.hoo-table tr[aria-expanded="true"] .hoo-table-iconcell svg {
+  transform: rotate(0deg);
+}
+
+.hoo-table tr[aria-expanded="false"] .hoo-table-iconcell svg {
+  transform: rotate(-90deg);
+}
+
+.hoo-table th.is-sticky,
+.hoo-table td.is-sticky {
+  position: sticky;
+}
+
+.hoo-table th.is-sticky.top,
+.hoo-table td.is-sticky.top {
+  z-index: 10;
+  top: 0;
+}
+
+.hoo-table th.is-sticky.bottom,
+.hoo-table td.is-sticky.bottom {
+  z-index: 10;
+  bottom: 0;
+}
+
+.hoo-table th.is-sticky.left.top,
+.hoo-table td.is-sticky.left.top {
+  z-index: 10;
+  left: 0;
+}
+
+.hoo-table th.is-sticky.right,
+.hoo-table td.is-sticky.right {
+  z-index: 8;
+  right: 0;
+}
+
+.hoo-table th.is-sticky.top.left, .hoo-table th.is-sticky.bottom.left,
+.hoo-table td.is-sticky.top.left,
+.hoo-table td.is-sticky.bottom.left {
+  z-index: 12;
+}
+
+.hoo-table th.is-sticky.top.right, .hoo-table th.is-sticky.bottom.right,
+.hoo-table td.is-sticky.top.right,
+.hoo-table td.is-sticky.bottom.right {
+  z-index: 12;
+}
+
+.hoo-table.is-collapsable .is-hidden {
+  display: none;
+}
+
+.hoo-table.is-collapsable .is-hidden td {
+  display: none;
+}
+
+.hoo-table.is-collapsable .is-visible {
+  display: table-row;
+}
+
+.hoo-table.is-collapsable .is-visible td {
+  display: table-cell;
+}
+
+.hoo-table .hoo-table-iconcell {
+  width: 32px;
+  padding: 0;
+}
+
+.hoo-table-subheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: middle;
+}
+
+/**** ATOMS / Error ****/
+.hoo-error {
+  color: var(--errorText);
+  font-size: 0.75rem;
+}
+
+.hoo-success {
+  color: var(--successText);
+  font-size: 0.75rem;
+}
+
+/**** Tooltip ****/
+.hoo-tooltip {
+  font-size: var(--smallFontSize);
+  z-index: 100;
+  display: block;
+  margin: 0;
+  word-wrap: break-word;
+  opacity: 0;
+}
+
+.hoo-tooltip.show {
+  opacity: 0.9;
+}
+
+.hoo-tooltip .arrow {
+  position: absolute;
+  display: block;
+  width: 0.8rem;
+  height: 0.4rem;
+}
+
+.hoo-tooltip .arrow::before {
+  position: absolute;
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+}
+
+.hoo-tooltip-top, .bs-tooltip-auto[x-placement^="top"] {
+  padding: 0.4rem 0;
+}
+
+.hoo-tooltip-top .arrow, .bs-tooltip-auto[x-placement^="top"] .arrow {
+  bottom: 0;
+  left: calc(50% - 12.8px);
+}
+
+.hoo-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  top: 0;
+  border-width: 0.4rem 0.4rem 0;
+  border-top-color: white;
+}
+
+.hoo-tooltip-right, .bs-tooltip-auto[x-placement^="right"] {
+  padding: 0 0.4rem;
+}
+
+.hoo-tooltip-right .arrow, .bs-tooltip-auto[x-placement^="right"] .arrow {
+  left: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+.hoo-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  right: 0;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-right-color: white;
+}
+
+.hoo-tooltip-bottom, .bs-tooltip-auto[x-placement^="bottom"] {
+  padding: 0.4rem 0;
+}
+
+.hoo-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^="bottom"] .arrow {
+  top: 0;
+}
+
+.hoo-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  bottom: 0;
+  border-width: 0 0.4rem 0.4rem;
+  border-bottom-color: white;
+}
+
+.hoo-tooltip-left, .bs-tooltip-auto[x-placement^="left"] {
+  padding: 0 0.4rem;
+}
+
+.hoo-tooltip-left .arrow, .bs-tooltip-auto[x-placement^="left"] .arrow {
+  right: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+.hoo-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before {
+  left: 0;
+  border-width: 0.4rem 0 0.4rem 0.4rem;
+  border-left-color: white;
+}
+
+.hoo-tooltip-content {
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  color: var(--black);
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.132), 0 0.8px 2.4px 0 rgba(0, 0, 0, 0.108);
+}
+
+/**** ATOMS / Grid ****/
+.hoo-grid {
+  box-sizing: border-box;
+  border: 1px silver solid;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: auto 0.5rem;
+  /* > 1366 pixel */
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 2rem;
+  /* < 1366 pixel */
+  /* <= 640 pixel */
+}
+
+@media screen and (max-width: 1366px) {
+  .hoo-grid {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hoo-grid {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    row-gap: 1rem;
+  }
+}
+
+.demo-item,
+.demo-item2 {
+  display: flex;
+  box-sizing: border-box;
+  padding: 2rem;
+  background-color: pink;
+}
+
+.demo-item {
+  grid-column: auto/span 4;
+  grid-row: auto;
+  /* media query for small devices */
+}
+
+@media screen and (max-width: 640px) {
+  .demo-item {
+    grid-column: 1 / span 12;
+    grid-row: auto;
+  }
+}
+
+.demo-item2 {
+  grid-column: 7/span 6;
+  grid-row: 2;
+  /* media query for small devices */
+}
+
+@media screen and (max-width: 640px) {
+  .demo-item2 {
+    grid-column: 1 / span 12;
+    grid-row: auto;
+  }
+}
+
+/**** Elevation ****/
+.hoo-elevation4 {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
+}
+
+.hoo-elevation8 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.132), 0 0.8px 2.4px 0 rgba(0, 0, 0, 0.108);
+}
+
+.hoo-elevation16 {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.132), 0 1.6px 4.8px 0 rgba(0, 0, 0, 0.108);
+}
+
+.hoo-elevation64 {
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.132), 0 6.4px 19.2px 0 rgba(0, 0, 0, 0.108);
+}
+
+/*** MOLECULES ***/
+.hoo-avatar-pres, .hoo-avatar-pres-16, .hoo-avatar-pres-24, .hoo-avatar-pres-32, .hoo-avatar-pres-40, .hoo-avatar-pres-48, .hoo-avatar-pres-64 {
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.hoo-avatar-pres div[class^=hoo-avatar], .hoo-avatar-pres-16 div[class^=hoo-avatar], .hoo-avatar-pres-24 div[class^=hoo-avatar], .hoo-avatar-pres-32 div[class^=hoo-avatar], .hoo-avatar-pres-40 div[class^=hoo-avatar], .hoo-avatar-pres-48 div[class^=hoo-avatar], .hoo-avatar-pres-64 div[class^=hoo-avatar] {
+  transform: rotate(-45deg);
+  transform-origin: center center;
+}
+
+.hoo-avatar-pres .hoo-presence, .hoo-avatar-pres-16 .hoo-presence, .hoo-avatar-pres-24 .hoo-presence, .hoo-avatar-pres-32 .hoo-presence, .hoo-avatar-pres-40 .hoo-presence, .hoo-avatar-pres-48 .hoo-presence, .hoo-avatar-pres-64 .hoo-presence {
+  position: absolute;
+  top: calc(50% - .5rem);
+  left: calc(100% - .5rem);
+}
+
+.hoo-avatar-pres-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.hoo-avatar-pres-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.hoo-avatar-pres-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.hoo-avatar-pres-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.hoo-avatar-pres-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.hoo-avatar-pres-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.hoo-radiobutton-group div {
+  margin-top: 0.5rem;
+}
+
+.hoo-dlgheader {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem;
+}
+
+.hoo-dlgheader-title {
+  font-size: 1.25rem;
+}
+
+.hoo-dlgheader-title h2 {
+  font-size: inherit;
+  margin: 0;
+}
+
+.hoo-dlgheader-closer button > * {
+  pointer-events: none;
+}
+
+.hoo-dlgcontent {
+  padding: 0 1.25rem 1rem;
+}
+
+.hoo-webpart-header {
+  margin: 0 2rem 1rem 0;
+  text-overflow: ellipsis;
+}
+
+.hoo-webpart-header div {
+  outline: none;
+  color: var(--bodyText);
+}
+
+.hoo-webpart-header div:empty[contenteditable="false"]::before {
+  content: attr(placeholder);
+}
+
+.hoo-webpart-header div:empty[contenteditable="true"]:before {
+  content: attr(placeholder);
+  color: var(--disabledBodyText);
+}
+
+.hoo-webpart-header div:hover {
+  cursor: text;
+}
+
+.hoo-cmdbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 2.75rem;
+  border: 1px transparent solid;
+  align-items: center;
+}
+
+.hoo-pivotbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.hoo-persona, .hoo-persona-100, .hoo-persona-72, .hoo-persona-48, .hoo-persona-40, .hoo-persona-32, .hoo-persona-24 {
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+.hoo-persona .hoo-avatar-pres, .hoo-persona-100 .hoo-avatar-pres, .hoo-persona-72 .hoo-avatar-pres, .hoo-persona-48 .hoo-avatar-pres, .hoo-persona-40 .hoo-avatar-pres, .hoo-persona-32 .hoo-avatar-pres, .hoo-persona-24 .hoo-avatar-pres, .hoo-persona .hoo-avatar-pres-16, .hoo-persona-100 .hoo-avatar-pres-16, .hoo-persona-72 .hoo-avatar-pres-16, .hoo-persona-48 .hoo-avatar-pres-16, .hoo-persona-40 .hoo-avatar-pres-16, .hoo-persona-32 .hoo-avatar-pres-16, .hoo-persona-24 .hoo-avatar-pres-16, .hoo-persona .hoo-avatar-pres-24, .hoo-persona-100 .hoo-avatar-pres-24, .hoo-persona-72 .hoo-avatar-pres-24, .hoo-persona-48 .hoo-avatar-pres-24, .hoo-persona-40 .hoo-avatar-pres-24, .hoo-persona-32 .hoo-avatar-pres-24, .hoo-persona-24 .hoo-avatar-pres-24, .hoo-persona .hoo-avatar-pres-32, .hoo-persona-100 .hoo-avatar-pres-32, .hoo-persona-72 .hoo-avatar-pres-32, .hoo-persona-48 .hoo-avatar-pres-32, .hoo-persona-40 .hoo-avatar-pres-32, .hoo-persona-32 .hoo-avatar-pres-32, .hoo-persona-24 .hoo-avatar-pres-32, .hoo-persona .hoo-avatar-pres-40, .hoo-persona-100 .hoo-avatar-pres-40, .hoo-persona-72 .hoo-avatar-pres-40, .hoo-persona-48 .hoo-avatar-pres-40, .hoo-persona-40 .hoo-avatar-pres-40, .hoo-persona-32 .hoo-avatar-pres-40, .hoo-persona-24 .hoo-avatar-pres-40, .hoo-persona .hoo-avatar-pres-48, .hoo-persona-100 .hoo-avatar-pres-48, .hoo-persona-72 .hoo-avatar-pres-48, .hoo-persona-48 .hoo-avatar-pres-48, .hoo-persona-40 .hoo-avatar-pres-48, .hoo-persona-32 .hoo-avatar-pres-48, .hoo-persona-24 .hoo-avatar-pres-48, .hoo-persona .hoo-avatar-pres-64, .hoo-persona-100 .hoo-avatar-pres-64, .hoo-persona-72 .hoo-avatar-pres-64, .hoo-persona-48 .hoo-avatar-pres-64, .hoo-persona-40 .hoo-avatar-pres-64, .hoo-persona-32 .hoo-avatar-pres-64, .hoo-persona-24 .hoo-avatar-pres-64 {
+  width: 56px;
+  height: 56px;
+}
+
+.hoo-persona .hoo-presence, .hoo-persona-100 .hoo-presence, .hoo-persona-72 .hoo-presence, .hoo-persona-48 .hoo-presence, .hoo-persona-40 .hoo-presence, .hoo-persona-32 .hoo-presence, .hoo-persona-24 .hoo-presence {
+  top: calc(50% - 1rem);
+  left: calc(100% - 1rem);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hoo-persona-data {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0 1.5rem 0 1rem;
+}
+
+.hoo-persona-name, .hoo-persona-function, .hoo-persona-statustext, .hoo-persona-available {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hoo-persona-name {
+  font-size: 1.25rem;
+}
+
+.hoo-persona-statustext, .hoo-persona-available {
+  display: none;
+}
+
+.hoo-persona-100 {
+  height: 6.25rem;
+}
+
+.hoo-persona-100 .hoo-avatar-pres, .hoo-persona-100 .hoo-avatar-pres-16, .hoo-persona-100 .hoo-avatar-pres-24, .hoo-persona-100 .hoo-avatar-pres-32, .hoo-persona-100 .hoo-avatar-pres-40, .hoo-persona-100 .hoo-avatar-pres-48, .hoo-persona-100 .hoo-avatar-pres-64 {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.hoo-persona-100 .hoo-persona-data {
+  margin: 0 1rem 0 1rem;
+}
+
+.hoo-persona-100 .hoo-persona-name {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.hoo-persona-100-function, .hoo-persona-100-statustext, .hoo-persona-100-available {
+  line-height: 1.25rem;
+}
+
+.hoo-persona-100 .hoo-persona-statustext,
+.hoo-persona-100 .hoo-persona-available {
+  display: block;
+}
+
+.hoo-persona-100 .hoo-presence {
+  top: calc(50% - 1rem);
+  left: calc(100% - 1rem);
+  width: 2rem;
+  height: 2rem;
+}
+
+.hoo-persona-72 {
+  height: 4.5rem;
+}
+
+.hoo-persona-72 .hoo-avatar-pres, .hoo-persona-72 .hoo-avatar-pres-16, .hoo-persona-72 .hoo-avatar-pres-24, .hoo-persona-72 .hoo-avatar-pres-32, .hoo-persona-72 .hoo-avatar-pres-40, .hoo-persona-72 .hoo-avatar-pres-48, .hoo-persona-72 .hoo-avatar-pres-64 {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.hoo-persona-72 .hoo-persona-available {
+  display: block;
+}
+
+.hoo-persona-72 .hoo-persona-available {
+  display: none;
+}
+
+.hoo-persona-72 .hoo-presence {
+  top: calc(50% - 0.75rem);
+  left: calc(100% - 0.75rem);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.hoo-persona-48, .hoo-persona-40, .hoo-persona-32, .hoo-persona-24 {
+  height: 3rem;
+}
+
+.hoo-persona-48 .hoo-avatar-pres, .hoo-persona-40 .hoo-avatar-pres, .hoo-persona-32 .hoo-avatar-pres, .hoo-persona-24 .hoo-avatar-pres, .hoo-persona-48 .hoo-avatar-pres-16, .hoo-persona-40 .hoo-avatar-pres-16, .hoo-persona-32 .hoo-avatar-pres-16, .hoo-persona-24 .hoo-avatar-pres-16, .hoo-persona-48 .hoo-avatar-pres-24, .hoo-persona-40 .hoo-avatar-pres-24, .hoo-persona-32 .hoo-avatar-pres-24, .hoo-persona-24 .hoo-avatar-pres-24, .hoo-persona-48 .hoo-avatar-pres-32, .hoo-persona-40 .hoo-avatar-pres-32, .hoo-persona-32 .hoo-avatar-pres-32, .hoo-persona-24 .hoo-avatar-pres-32, .hoo-persona-48 .hoo-avatar-pres-40, .hoo-persona-40 .hoo-avatar-pres-40, .hoo-persona-32 .hoo-avatar-pres-40, .hoo-persona-24 .hoo-avatar-pres-40, .hoo-persona-48 .hoo-avatar-pres-48, .hoo-persona-40 .hoo-avatar-pres-48, .hoo-persona-32 .hoo-avatar-pres-48, .hoo-persona-24 .hoo-avatar-pres-48, .hoo-persona-48 .hoo-avatar-pres-64, .hoo-persona-40 .hoo-avatar-pres-64, .hoo-persona-32 .hoo-avatar-pres-64, .hoo-persona-24 .hoo-avatar-pres-64 {
+  width: 3rem;
+  height: 3rem;
+}
+
+.hoo-persona-48 .hoo-persona-available, .hoo-persona-40 .hoo-persona-available, .hoo-persona-32 .hoo-persona-available, .hoo-persona-24 .hoo-persona-available {
+  display: none;
+}
+
+.hoo-persona-48 .hoo-persona-data, .hoo-persona-40 .hoo-persona-data, .hoo-persona-32 .hoo-persona-data, .hoo-persona-24 .hoo-persona-data {
+  margin: 0 .75rem 0 .75rem;
+}
+
+.hoo-persona-48 .hoo-presence, .hoo-persona-40 .hoo-presence, .hoo-persona-32 .hoo-presence, .hoo-persona-24 .hoo-presence {
+  top: calc(50% - 0.5rem);
+  left: calc(100% - 0.5rem);
+  width: 1rem;
+  height: 1rem;
+}
+
+.hoo-persona-48 .hoo-persona-name, .hoo-persona-40 .hoo-persona-name, .hoo-persona-32 .hoo-persona-name, .hoo-persona-24 .hoo-persona-name {
+  font-size: 0.875rem;
+}
+
+.hoo-persona-48 .hoo-persona-function, .hoo-persona-40 .hoo-persona-function, .hoo-persona-32 .hoo-persona-function, .hoo-persona-24 .hoo-persona-function,
+.hoo-persona-48 .hoo-persona-statustext,
+.hoo-persona-40 .hoo-persona-statustext,
+.hoo-persona-32 .hoo-persona-statustext,
+.hoo-persona-24 .hoo-persona-statustext, .hoo-persona-48 .hoo-persona-available, .hoo-persona-40 .hoo-persona-available, .hoo-persona-32 .hoo-persona-available, .hoo-persona-24 .hoo-persona-available {
+  font-size: 0.75rem;
+}
+
+.hoo-persona-40, .hoo-persona-32 {
+  height: 2.5rem;
+}
+
+.hoo-persona-40 .hoo-avatar-pres, .hoo-persona-32 .hoo-avatar-pres, .hoo-persona-40 .hoo-avatar-pres-16, .hoo-persona-32 .hoo-avatar-pres-16, .hoo-persona-40 .hoo-avatar-pres-24, .hoo-persona-32 .hoo-avatar-pres-24, .hoo-persona-40 .hoo-avatar-pres-32, .hoo-persona-32 .hoo-avatar-pres-32, .hoo-persona-40 .hoo-avatar-pres-40, .hoo-persona-32 .hoo-avatar-pres-40, .hoo-persona-40 .hoo-avatar-pres-48, .hoo-persona-32 .hoo-avatar-pres-48, .hoo-persona-40 .hoo-avatar-pres-64, .hoo-persona-32 .hoo-avatar-pres-64 {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.hoo-persona-40 .hoo-presence, .hoo-persona-32 .hoo-presence {
+  top: calc(50% - 0.5rem);
+  left: calc(100% - 0.5rem);
+  width: 1rem;
+  height: 1rem;
+}
+
+.hoo-persona-32 {
+  height: 2rem;
+}
+
+.hoo-persona-32 .hoo-avatar-pres, .hoo-persona-32 .hoo-avatar-pres-16, .hoo-persona-32 .hoo-avatar-pres-24, .hoo-persona-32 .hoo-avatar-pres-32, .hoo-persona-32 .hoo-avatar-pres-40, .hoo-persona-32 .hoo-avatar-pres-48, .hoo-persona-32 .hoo-avatar-pres-64 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.hoo-persona-32 .hoo-persona-function,
+.hoo-persona-32 .hoo-persona-statustext,
+.hoo-persona-32 .hoo-persona-available {
+  display: none;
+}
+
+.hoo-persona-32 .hoo-persona-data {
+  margin: 0 .5rem 0 .5rem;
+}
+
+.hoo-persona-32 .hoo-presence {
+  top: calc(50% - 0.375rem);
+  left: calc(100% - 0.375rem);
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.hoo-persona-24 {
+  height: 1.5rem;
+}
+
+.hoo-persona-24 .hoo-avatar-pres, .hoo-persona-24 .hoo-avatar-pres-16, .hoo-persona-24 .hoo-avatar-pres-24, .hoo-persona-24 .hoo-avatar-pres-32, .hoo-persona-24 .hoo-avatar-pres-40, .hoo-persona-24 .hoo-avatar-pres-48, .hoo-persona-24 .hoo-avatar-pres-64 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.hoo-persona-24 .hoo-persona-function,
+.hoo-persona-24 .hoo-persona-statustext,
+.hoo-persona-24 .hoo-persona-available {
+  display: none;
+}
+
+.hoo-persona-24 .hoo-persona-data {
+  margin: 0 .5rem 0 .5rem;
+}
+
+.hoo-persona-24 .hoo-presence {
+  top: calc(50% - 0.375rem);
+  left: calc(100% - 0.375rem);
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/*** MOLECULES / CARDS ***/
+.hoo-cardimage {
+  border-collapse: collapse;
+  border: 1px solid var(--variantBorder);
+  aspect-ratio: 16/9;
+}
+
+.hoo-cardimage img {
+  display: block;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.hoo-cardimage-html {
+  width: 320px;
+  height: 180px;
+  content: "";
+  background-color: var(--primaryButtonBackground);
+  aspect-ratio: 16/9;
+}
+
+.hoo-cardlocation {
+  font-size: 0.75rem;
+  font-weight: 600px;
+  box-sizing: border-box;
+  padding: 0.625rem 0.75rem 0.5rem;
+  color: var(--primaryButtonBackground);
+}
+
+.hoo-cardtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  height: 2.375rem;
+  padding: 0 0.75rem 0.5rem;
+}
+
+.hoo-cardfooter {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0.75rem;
+}
+
+.hoo-cardfooter .hoo-avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+}
+
+.hoo-cardfooter-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.hoo-cardfooter-name {
+  font-size: 0.875rem;
+}
+
+.hoo-cardfooter-modified {
+  font-size: 0.75rem;
+}
+
+/*** ORGANISM ***/
+.hoo-facepile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start space-between;
+  transition: all 1s ease-in-out;
+  flex-wrap: wrap;
+}
+
+.hoo-facepile > * {
+  margin-right: 1.118rem;
+  margin-bottom: 1.118rem;
+}
+
+.hoo-mdldialog-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background-color: var(--backgroundOverlay);
+  transition: all 0.25s ease-in;
+  align-items: center;
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+          backdrop-filter: blur(5px) saturate(150%);
+}
+
+.hoo-mdldialog-outer.is-error {
+  background-color: rgba(168, 0, 0, 0.6);
+}
+
+.hoo-mdldialog-outer.is-warning {
+  background-color: rgba(237, 181, 30, 0.6);
+}
+
+.hoo-mdldialog-outer.is-success {
+  background-color: rgba(16, 124, 16, 0.6);
+}
+
+.hoo-mdldialog-outer.is-hidden:not([class*="is-sidebar"]) {
+  visibility: hidden;
+  transition-delay: 0.5s;
+  opacity: 0;
+  transition: all 0.25s ease-in;
+}
+
+.hoo-mdldialog-outer.is-hidden:not([class*="is-sidebar"]) .hoo-mdldialog {
+  transform: scale(0);
+  transition: all 0.25s ease-in;
+}
+
+.hoo-mdldialog-outer.is-visible:not([class*="is-sidebar"]) {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+
+.hoo-mdldialog-outer.is-visible:not([class*="is-sidebar"]) .hoo-mdldialog {
+  transition-delay: 0.5s;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+
+.hoo-mdldialog-outer.is-hidden[class*="is-sidebar"] {
+  transition-delay: 0.5s;
+  opacity: 0;
+  transition: all 0.25s ease-in;
+}
+
+.hoo-mdldialog-outer.is-hidden[class*="is-sidebar"] .hoo-mdldialog {
+  transition: all 0.25s ease-in;
+}
+
+.hoo-mdldialog-outer.is-visible[class*="is-sidebar"] {
+  transition: all 0.25s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hoo-mdldialog-outer.is-visible[class*="is-sidebar"] .hoo-mdldialog {
+  transition-delay: 0.5s;
+  transform: scaleY(1);
+  transition: all 0.25s ease-out;
+}
+
+.hoo-mdldialog {
+  width: var(--lqdDialogWidth);
+  height: var(--lqdDialogHeight);
+  transform: scale(1);
+  opacity: 1;
+  background-color: var(--bodyBackground);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.132), 0 1.6px 4.8px 0 rgba(0, 0, 0, 0.108);
+}
+
+.hoo-mdldialog-outer.is-sidebar-left {
+  justify-content: flex-end;
+}
+
+.hoo-mdldialog-outer.is-sidebar-left .hoo-mdldialog {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  transform: scaleX(0);
+  transform-origin: left top;
+}
+
+.hoo-mdldialog-outer.is-sidebar-right {
+  justify-content: flex-start;
+}
+
+.hoo-mdldialog-outer.is-sidebar-right .hoo-mdldialog {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  transform: scaleX(0);
+  transform-origin: top right;
+  opacity: 1;
+}
+
+.hoo-doccard {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.132), 0 0.4px 1.2px 0 rgba(0, 0, 0, 0.108);
+  border: 1px solid var(--variantBorder);
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.hoo-doccard .hoo-avatar {
+  margin-bottom: 0;
+}
+
+.hoo-doccard .hoo-cardfooter {
+  align-self: bottom;
+}
