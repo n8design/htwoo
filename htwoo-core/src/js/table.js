@@ -19,12 +19,8 @@ const collapseAndExpand = (event) => {
     }
 
     const sectionRows = parentTable.querySelectorAll(query);
-    console.debug("Section Row", sectionRows);
 
     for (let i = 0; i < sectionRows.length; i++) {
-
-        console.debug(sectionRows[i]);
-        console.debug(sectionRows[i].classList);
 
         const currentItem = sectionRows[i];
 
@@ -51,7 +47,6 @@ const collapseAndExpand = (event) => {
         let subSection = document.querySelectorAll("tbody tr.collapsable");
 
         if (parentRow.getAttribute('aria-expanded') === "true") {
-            console.log(' TRUUUUUUUEEE ');
 
             for (let i = 0; i < subSection.length; i++) {
 
@@ -63,7 +58,6 @@ const collapseAndExpand = (event) => {
             }
 
         } else {
-            console.log(' FALSE ');
 
             for (let i = 0; i < subSection.length; i++) {
 
@@ -85,15 +79,12 @@ const initCollapsability = () => {
     const collapseTable = document.querySelectorAll('.hoo-table.is-collapsable');
     collapseTable.forEach(table => {
 
-        console.debug("Collapse Table:", collapseTable);
-
         const collapseRow = table.querySelectorAll('.collapsable');
-
-        console.debug("Collapse Row", collapseRow);
 
         collapseRow.forEach(tableRow => {
             tableRow.addEventListener('click', collapseAndExpand);
         })
+
     })
 
 }
@@ -107,16 +98,12 @@ const position = {
 
 const stickyOffsetFixup = (parent, selector, offset) => {
 
-    console.log(offset);
-
     const innerDefinition = parent.querySelectorAll(selector);
-
-    console.log('Inner Left', innerDefinition);
 
     for (let j = 0; j < innerDefinition.length; j++) {
 
         const innerElement = innerDefinition[j];
-        console.debug(innerElement.offsetLeft);
+
         if (offset === position.left) {
             innerElement.style[offset] = innerElement.offsetLeft + "px";
         }
@@ -135,9 +122,8 @@ const stickyOffsetFixup = (parent, selector, offset) => {
 }
 
 const initSticky = () => {
-    console.debug('Sticky Header');
+
     const allStickyTables = document.querySelectorAll("table.sticky");
-    console.debug(allStickyTables);
 
     for (let i = 0; i < allStickyTables.length; i++) {
 

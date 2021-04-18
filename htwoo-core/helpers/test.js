@@ -10,4 +10,7 @@ module.exports = function (Handlebars) {
     console.debug(context)
     return JSON.stringify(context);
   });
+  Handlebars.registerHelper('isdefined', function (value) {
+    return value !== undefined;
+  });
 };

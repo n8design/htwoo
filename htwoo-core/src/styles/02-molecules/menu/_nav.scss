@@ -1,0 +1,126 @@
+.hoo-navitem-text{
+	font-size: px2rem(14px);
+
+	display: flex;
+	flex-direction: row;
+
+	align-content: baseline;
+	flex-wrap: wrap;
+
+	.hoo-buttonicon{
+		display: inline;
+
+		width: px2rem(26px);
+		height: px2rem(44px);
+
+		svg{
+			width: 12px;
+			height: 12px;
+		}
+
+		& ~ .hoo-navitem-link{
+			width: calc(100% - #{ px2rem(26px) });
+			padding-left: 0;
+		}
+	}
+
+	.hoo-navitem-link{
+		display: inline-block;
+	}
+
+	&:hover{
+		background-color: $buttonBackgroundHovered;
+	}
+}
+
+.hoo-nav-list{
+	.hoo-navitem-link{
+		padding-right: px2rem(20px);
+		padding-left: px2rem(27px);
+	}
+}
+
+.hoo-navitem{
+	&[aria-expanded="false"]{
+		.hoo-buttonicon{
+			svg{
+				transform: rotate(90deg);
+			}
+		}
+
+		.hoo-nav-listsub{
+			display: block;
+		}
+	}
+
+	&[aria-expanded="true"]{
+		.hoo-nav-listsub{
+			display: none;
+		}
+	}
+	&[aria-current]{
+		border-left: 2px $ButtonPressedBorder solid;
+		.hoo-buttonicon{
+			padding-left: px2rem(2px);
+		}
+		.hoo-navitem-link{
+			padding-left: px2rem(25px);
+		}
+		&.hoo-navitem{
+			background-color: $buttonBackgroundCheckedHovered;
+		}
+	}
+}
+
+.hoo-navitem-link{
+	display: block;
+
+	box-sizing: border-box;
+	padding-top: px2rem((44px - 17px)/2);
+	padding-bottom: px2rem((44px - 17px)/2);
+
+	text-decoration: none;
+
+	color: $bodyText;
+
+	&:visited{
+		color: $bodyText;
+	}
+
+	&:hover{
+		color: $Hyperlink;
+		:visited{
+			color: $Hyperlink;
+		}
+	}
+}
+
+.hoo-nav{
+	border: 1px solid $ButtonBorder;
+}
+
+.hoo-nav-list,
+.hoo-nav-listsub{
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.hoo-nav-listsub{
+	width: 100%;
+
+	.hoo-navitem{
+		width: 100%;
+	}
+
+	.hoo-navitem-link{
+		display: block;
+
+		width: 100%;
+		padding-right: px2rem(20px);
+		padding-left: px2rem(41px);
+	}
+}

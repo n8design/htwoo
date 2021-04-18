@@ -14,15 +14,21 @@ import {
     initPivot
 } from './pivot.js';
 
+/** Menu Helpers */
+import {
+    initMenu
+} from './nav.js';
+
 function splitButtonReg(classSelector, handleWith) {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
 
     allSplitButtons.forEach(element => {
-        console.log(element);
+
         element.addEventListener('click', (event) => {
             handleWith(event);
         });
+
     });
 
 }
@@ -40,8 +46,6 @@ const _btnFlyOut = (curSplitButton, parentElement) => {
 
     parentElement.classList.toggle('show-flyout');
 
-    // console.debug("_btnFlyout::", curSplitButton, parentElement);
-
 }
 
 const buttonClick = (event) => {
@@ -49,11 +53,6 @@ const buttonClick = (event) => {
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
 
-    console.log("\nEVENT: buttonClick");
-
-    console.debug("curSplitButton::::", curSplitButton)
-    console.debug("PARENT ELEMENT::", parentElement);
-    // console.debug("PARENT ELEMENT::", parentElement.parentElement);
     _btnFlyOut(curSplitButton, parentElement);
 
 }
@@ -63,8 +62,6 @@ const splitButtonClick = (event) => {
     console.log("\nEVENT: splitButtonClick");
     let curSplitButton = event.target;
     let parentElement = curSplitButton.parentElement;
-    console.log("curSplitButton", curSplitButton);
-    console.log("Parent Element", parentElement);
 
     _btnFlyOut(curSplitButton, parentElement);
 
@@ -103,13 +100,10 @@ const animateAddAndSlide = (event) => {
 
     let eventTarget = event.target;
 
-    console.log("EVENT FIRED :::: ");
-
     let animationClass = eventTarget.parentElement.dataset.animation;
 
     // Add class
     eventTarget.classList.add(animationClass);
-
 
     let newDomElement = document.importNode(eventTarget, true);
     newDomElement.classList.add(animationClass);
@@ -156,7 +150,6 @@ const registerAriaSelect = () => {
 
     if (selects) {
         selects.forEach((item, idx) => {
-            console.log(selects[idx]);
             ariaSelect(item);
         });
     }
@@ -185,6 +178,8 @@ const afterLoaded = () => {
     initTables();
     /** Init Pivot Bars */
     initPivot();
+    /** Init Menu Bars */
+    initMenu();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');
@@ -192,7 +187,7 @@ const afterLoaded = () => {
         console.log(tmpHidden);
 
         tmpHidden.forEach(item => {
-            tmpHidden.addEventListener("focus", (event) => {
+            item.addEventListener("focus", (event) => {
 
                 event.target.classList.remove('.tmp-hidden');
 
