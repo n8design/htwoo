@@ -1,6 +1,6 @@
 {
   "name": "@n8design/htwoo-core",
-  "version": "1.0.0",
+  "version": "0.0.0-beata1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,18 +15,19 @@
     "pl:version": "patternlab --version"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stefan Bauer (@stfbauer)",
   "license": "ISC",
-  "dependencies": {
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
     "@pattern-lab/cli": "^5.14.2",
     "@pattern-lab/core": "^5.14.2",
     "@pattern-lab/engine-handlebars": "^5.14.0",
     "@pattern-lab/uikit-bare": "^0.0.1",
     "@pattern-lab/uikit-workshop": "^5.14.2",
     "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.2.10"
-  },
-  "devDependencies": {
+    "postcss": "^8.2.10",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-if": "^3.0.0",

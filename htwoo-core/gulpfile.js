@@ -76,8 +76,30 @@ const pluginCSSOverride = () => {
 
 };
 
-const serve = parallel(styles, pluginCSSOverride, baseWatch);
+const createLibSass = () => {
 
+    return src('src/styles/**/*.scss')
+        .pipe(dest('lib/sass'));
+
+}
+
+const createLibJS = () => {
+
+    return src('src/js/**/*.js')
+        .pipe(dest('lib/js'));
+
+}
+const createLibComponents = () => {
+
+    return src('src/components/**/*.scss')
+        .pipe(dest('lib/components'));
+
+}
+
+const serve = parallel(styles, pluginCSSOverride, baseWatch);
+const buildLib = series(createLibJS, createLibSass, createLibComponents);
+
+exports["build:lib"] = buildLib;
 exports.default = serve;
 exports.styles = styles;
 exports.docs = docs;
