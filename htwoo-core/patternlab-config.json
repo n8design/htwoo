@@ -47,7 +47,7 @@
       "data": "./src/_data/",
       "meta": "./src/_meta/",
       "annotations": "./src/_annotations/",
-      "styleguide": "dist/",
+      "styleguide": "./dist/",
       "patternlabFiles": {
         "general-header": "views/partials/general-header.mustache",
         "general-footer": "views/partials/general-footer.mustache",
@@ -93,7 +93,22 @@
   "theme": {
     "color": "light",
     "density": "compact",
-    "layout": "vertical"
+    "layout": "vertical",
+    "logo": {
+      "text": "",
+      "altText": "Pattern Lab Logo",
+      "url": "/",
+      "srcLight": "styleguide/images/htwoo-logo.jpg",
+      "srcDark": "styleguide/images/htwoo-logo.jpg",
+      "width": "255px",
+      "height": "88px"
+    }
+  },
+  "plugins": {
+    "plugin-design": {
+      "enabled": true,
+      "initialized": false
+    }
   },
   "uikits": [
     {

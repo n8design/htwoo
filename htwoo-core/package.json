@@ -21,7 +21,9 @@
     "@pattern-lab/cli": "^5.14.2",
     "@pattern-lab/core": "^5.14.2",
     "@pattern-lab/engine-handlebars": "^5.14.0",
+    "@pattern-lab/uikit-bare": "^0.0.1",
     "@pattern-lab/uikit-workshop": "^5.14.2",
+    "plugin-design": "file:helpers/node/plugin-design",
     "postcss": "^8.2.10"
   },
   "devDependencies": {

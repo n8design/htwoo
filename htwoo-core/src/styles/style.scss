@@ -79,8 +79,10 @@
 @import "02-molecules/dialog-content";
 @import "02-molecules/webpart-header";
 
-@import "02-molecules/commandbar";
-@import "02-molecules/pivotbar";
+@import "02-molecules/menu/breadcrumb";
+@import "02-molecules/menu/commandbar";
+@import "02-molecules/menu/nav";
+@import "02-molecules/menu/pivotbar";
 @import "02-molecules/persona";
 
 /*** MOLECULES / CARDS ***/
