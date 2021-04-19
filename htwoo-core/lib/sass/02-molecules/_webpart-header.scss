@@ -1,0 +1,31 @@
+.hoo-webpart-header {
+    margin: 0 2rem 1rem 0;
+
+    text-overflow: ellipsis;
+
+    div {
+        outline: none;
+        color: $bodyText;
+
+        &:empty {
+
+            &[contenteditable="false"] {
+                &::before {
+                    content: attr(placeholder);
+                }
+            }
+
+            &[contenteditable="true"] {
+                &:before {
+                    content: attr(placeholder);
+
+                    color: $disabledBodyText;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: text;
+        }
+    }
+}

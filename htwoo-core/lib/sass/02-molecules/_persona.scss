@@ -1,0 +1,244 @@
+.hoo-persona{
+	display: flex;
+
+	height: px2rem(56px);
+
+	align-items: center;
+	flex: 1;
+	// flex: 1 0 auto;
+
+	.hoo-avatar-pres{
+		width: 56px;
+		height: 56px;
+	}
+
+	.hoo-presence{
+		top: calc(50% - 1rem);
+		left: calc(100% - 1rem);
+
+		width: px2rem(20px);
+		height: px2rem(20px);
+	}
+
+	&-data{
+		display: flex;
+		flex-direction: column;
+
+		min-width: 0;
+		margin: 0 1.5rem 0 1rem;
+	}
+
+	&-name,
+	&-function,
+	&-statustext,
+	&-available{
+		font-size: px2rem(14px);
+		line-height: px2rem(20px);
+
+		overflow: hidden;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-name{
+		font-size: px2rem(20px);
+	}
+
+
+	&-statustext,
+	&-available{
+		display: none;
+	}
+}
+
+.hoo-persona-100{
+	$presenceSize: px2rem(32px);
+	$presonaSize: px2rem(100px);
+
+	@extend .hoo-persona;
+
+	height: $presonaSize;
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+	.hoo-persona-data{
+		margin: 0 1rem 0 1rem;
+	}
+	.hoo-persona-name{
+		font-size: px2rem(20px);
+		line-height: px2rem(28px);
+	}
+	&-function,
+	&-statustext,
+	&-available{
+		line-height: px2rem(20px);
+	}
+	.hoo-persona-statustext,
+	.hoo-persona-available{
+		display: block;
+	}
+
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.hoo-persona-72{
+	$presenceSize: 1.5rem;
+	$presonaSize: px2rem(72px);
+
+	@extend .hoo-persona;
+
+	height: $presonaSize;
+
+
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+    .hoo-persona-available{
+        display: block;
+    }
+
+	.hoo-persona-available{
+		display: none;
+	}
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.hoo-persona-48{
+	$presenceSize: 1rem;
+	$presonaSize: px2rem(48px);
+
+	@extend .hoo-persona;
+
+	height: $presonaSize;
+
+
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+	.hoo-persona-available{
+		display: none;
+	}
+
+	.hoo-persona-data{
+		margin: 0 .75rem 0 .75rem;
+	}
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+	.hoo-persona-name{
+		font-size: px2rem(14px);
+	}
+	.hoo-persona-function,
+	.hoo-persona-statustext,
+	.hoo-persona-available{
+		font-size: px2rem(12px);
+	}
+}
+
+.hoo-persona-40{
+	$presenceSize: 1rem;
+	$presonaSize: px2rem(40px);
+
+	@extend .hoo-persona-48;
+
+	height: $presonaSize;
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.hoo-persona-32{
+	$presenceSize: px2rem(12px);
+	$presonaSize: px2rem(32px);
+
+	@extend .hoo-persona-40;
+
+	height: $presonaSize;
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+	.hoo-persona-function,
+	.hoo-persona-statustext,
+	.hoo-persona-available{
+		display: none;
+	}
+	.hoo-persona-data{
+		margin: 0 .5rem 0 .5rem;
+	}
+
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
+
+.hoo-persona-24{
+	$presenceSize: px2rem(12px);
+	$presonaSize: px2rem(24px);
+
+	@extend .hoo-persona-48;
+
+	height: $presonaSize;
+	.hoo-avatar-pres{
+		width: $presonaSize;
+		height: $presonaSize;
+	}
+	.hoo-persona-function,
+	.hoo-persona-statustext,
+	.hoo-persona-available{
+		display: none;
+	}
+	.hoo-persona-data{
+		margin: 0 .5rem 0 .5rem;
+	}
+
+
+	.hoo-presence{
+		top: calc(50% - #{$presenceSize/2});
+		left: calc(100% - #{$presenceSize/2});
+
+		width: $presenceSize;
+		height: $presenceSize;
+	}
+}
