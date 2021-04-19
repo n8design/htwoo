@@ -98,8 +98,8 @@
       "text": "",
       "altText": "Pattern Lab Logo",
       "url": "/",
-      "srcLight": "styleguide/images/htwoo-logo.jpg",
-      "srcDark": "styleguide/images/htwoo-logo.jpg",
+      "srcLight": "styleguide/images/htwoo-logo-vertical.jpg",
+      "srcDark": "styleguide/images/htwoo-logo-vertical.jpg",
       "width": "255px",
       "height": "88px"
     }
