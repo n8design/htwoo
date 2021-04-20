@@ -93,7 +93,22 @@
   "theme": {
     "color": "light",
     "density": "compact",
-    "layout": "vertical"
+    "layout": "vertical",
+    "logo": {
+      "text": "",
+      "altText": "Pattern Lab Logo",
+      "url": "/",
+      "srcLight": "styleguide/images/htwoo-logo-vertical.jpg",
+      "srcDark": "styleguide/images/htwoo-logo-vertical.jpg",
+      "width": "255px",
+      "height": "88px"
+    }
+  },
+  "plugins": {
+    "plugin-design": {
+      "enabled": true,
+      "initialized": false
+    }
   },
   "uikits": [
     {

@@ -1,6 +1,6 @@
 {
-  "name": "@n8design/htwoo-core",
-  "version": "0.0.0-beata1",
+  "name": "@n8d/htwoo-core",
+  "version": "0.0.0-alpha.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,15 @@
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
-  "license": "ISC",
+  "homepage": "https://lab.n8d.studio/htwoo/htwoo-core/",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8design/htwoo"
+  },
+  "license": "MIT",
   "files": [
     "lib"
   ],
