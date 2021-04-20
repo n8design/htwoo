@@ -107,7 +107,7 @@
   "plugins": {
     "plugin-design": {
       "enabled": true,
-      "initialized": false
+      "initialized": true
     }
   },
   "uikits": [
