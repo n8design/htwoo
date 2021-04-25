@@ -1,4 +1,4 @@
-# Use hTWOo in your no framework web part
+# Use hTWOo in your React web part
 
 This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables.
 
@@ -22,7 +22,7 @@ The property `supportThemeVariants` make sure that you can use any of the hTWOo 
 
 ### Add references to SPFx ThemeProvider
 
-To use different SharePoint themes add the following references to your web part code.
+To use different SharePoint themes add the following references to your web part code where the React components gets loaded.
 
 ```typescript
 import {
@@ -70,7 +70,7 @@ To retrieve the current theme color slots add the following code in your web par
     } else {
 
       // Fallback to core theme state options applicable for Single Canvas Apps and Microsoft Teams
-      this.setCSSVariables(window.["__themeState__"].theme)
+      this.setCSSVariables(window["__themeState__"].theme)
 
     }
 
@@ -146,7 +146,6 @@ From there you can use now all other comments in the main block of your web part
   @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
   .hTWOoSample {
-    content: "";
 
     :global {
       
@@ -220,6 +219,10 @@ If you change the background to inverted for example, the colors will get automa
 Or even an overall dark page theme work.
 
 ![Dark themed buttons][button-dark-themed]
+
+## Download this getting started
+
+You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo-samples).
 
 ## Further resources
 

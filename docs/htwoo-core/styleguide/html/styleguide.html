@@ -8825,6 +8825,11 @@ Strong is used to indicate strong importance
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
+		let rootLink = document.querySelector('.pl-c-logo');
+		if(rootLink){
+			rootLink.src = "https://lab.n8d.studio/htwoo/";
+		}
+
         if (patternlab.app.layoutMode === "vertical") {
             console.log("Layout is not vertical");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
