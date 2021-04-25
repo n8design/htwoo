@@ -232,4 +232,4 @@ Or even an overall dark page theme work.
 [button]: ./how-to-spfx-html-button.png "Standard Button"
 [button-primary]: ./how-to-spfx-html-button-primary.png "Primary Button"
 [button-theming]: ./how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ./how-to-spfx-html-dark-themed-button "Theming"
+[button-dark-themed]: ./how-to-spfx-html-dark-themed-button.png "Theming"
