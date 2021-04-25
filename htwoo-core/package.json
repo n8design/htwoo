@@ -1,5 +1,5 @@
 {
-  "name": "@n8d/htwoo-core",
+  "name": "@n8d/htwoo-core-styleguide",
   "version": "0.0.0-alpha.1",
   "description": "",
   "main": "index.js",
@@ -28,12 +28,14 @@
   "files": [
     "lib"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@pattern-lab/cli": "^5.14.2",
     "@pattern-lab/core": "^5.14.2",
     "@pattern-lab/engine-handlebars": "^5.14.0",
     "@pattern-lab/uikit-bare": "^0.0.1",
-    "@pattern-lab/uikit-workshop": "^5.14.2",
+    "@pattern-lab/uikit-workshop": "^5.14.2"
+  },
+  "devDependencies": {
     "plugin-design": "file:helpers/node/plugin-design",
     "postcss": "^8.2.10",
     "gulp": "^4.0.2",

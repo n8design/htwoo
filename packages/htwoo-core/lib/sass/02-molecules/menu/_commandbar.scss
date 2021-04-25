@@ -1,0 +1,37 @@
+.hoo-cmdbar{
+	@extend .hoo-buttoncmd;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	height: px2rem(44px);
+
+	border: 1px transparent solid;
+
+	align-items: center;
+
+	// button.hoo-buttoncmd{
+	// 	box-sizing: border-box;
+
+	// 	background-color: transparent;
+
+	// 	& > *{
+	// 		pointer-events: none;
+	// 	}
+
+	// 	&:active{
+	// 		background-color: $buttonBackgroundChecked;
+	// 	}
+	// }
+
+	// .hoo-button-label{
+	// 	color: black;
+	// }
+
+	// &:hover,
+	// .show-flyout{
+	// 	border: 1px $buttonBackgroundCheckedHovered solid;
+	// 	background-color: $buttonBackgroundCheckedHovered;
+	// }
+}

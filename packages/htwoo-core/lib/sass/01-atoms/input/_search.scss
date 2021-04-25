@@ -1,0 +1,52 @@
+.hoo-input-search{
+	// @extend .hoo-input-group;
+	display: flex;
+	flex-direction: row;
+
+	.hoo-input-text{
+		@include base-input;
+
+		width: calc(100% - 2rem);
+
+		border-left: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.icon{
+		@include base-input;
+
+		width: px2rem(32px);
+		height: 2rem;
+		padding-right: px2rem(5px);
+		padding-left: px2rem(5px);
+
+		transition: all .1s ;
+
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&:focus-within{
+		.icon,
+		.hoo-input-text{
+			height: px2rem(32px);
+
+			border-width: 2px;
+			border-color: $inputFocusBorderAlt;
+			outline: 0 rgba(255, 255, 255, 0) solid;
+		}
+
+		.hoo-input-text{
+			width: 100%;
+		}
+
+		.icon{
+			overflow: hidden;
+
+			max-width: 0;
+			padding: 0;
+		}
+	}
+}

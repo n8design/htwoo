@@ -23,28 +23,28 @@ function writeConfigToOutput(patternlab, pluginConfig) {
  * Define what events you wish to listen to here
  * For a full list of events - check out https://github.com/pattern-lab/patternlab-node/wiki/Creating-Plugins#events
  * @param patternlab - global data store which has the handle to the event emitter
-   */
+ */
 function registerEvents(patternlab) {
   //register our handler at the appropriate time of execution
 }
 
 /**
-* A single place to define the frontend configuration
-* This configuration is outputted to the frontend explicitly as well as included in the plugins object.
-*
-*/
+ * A single place to define the frontend configuration
+ * This configuration is outputted to the frontend explicitly as well as included in the plugins object.
+ *
+ */
 function getPluginFrontendConfig() {
   var defaults = {
-    "name":"plugin-design",
-    "templates":[],
-    "stylesheets":[
+    "name": "plugin-design",
+    "templates": [],
+    "stylesheets": [
       "../../_plugins/" + pluginName + "\/css\/" + pluginName + ".css"
     ],
-    "javascripts":[
+    "javascripts": [
       "_plugins/" + pluginName + "\/js\/" + pluginName + ".js"
     ],
-    "onready":"PluginUIExtension.init()",
-    "callback":""
+    "onready": "PluginUIExtension.init()",
+    "callback": ""
   };
 
   var pluginConfig = require('./config.json');
@@ -53,8 +53,8 @@ function getPluginFrontendConfig() {
 }
 
 /**
-* Creates a link from the passed in data
-*/
+ * Creates a link from the passed in data
+ */
 function createLink(link, template) {
   return template.replace('<<class>>', link.class).replace('<<url>>', link.url).replace('<<text>>', link.text);
 }
@@ -62,15 +62,15 @@ function createLink(link, template) {
 /**
  * Replaces the snippet placeholder with actual content
  */
-function fillPlaceholder(file, placeholder, snippet){
+function fillPlaceholder(file, placeholder, snippet) {
   snippet = snippet.replace(/,\s*$/, '');
   return file.replace(placeholder, snippet);
 }
 
 /**
-* The entry point for the plugin. You should not have to alter this code much under many circumstances.
-* Instead, alter getPluginFrontendConfig() and registerEvents() methods
-  */
+ * The entry point for the plugin. You should not have to alter this code much under many circumstances.
+ * Instead, alter getPluginFrontendConfig() and registerEvents() methods
+ */
 function pluginInit(patternlab) {
 
   if (!patternlab) {
@@ -105,7 +105,7 @@ function pluginInit(patternlab) {
 
   if (pluginFiles && pluginFiles.length > 0) {
 
-    console.log("PLUGIN FILES :::: ",pluginFiles[i])
+    console.log("PLUGIN FILES :::: ", pluginFiles[i])
 
     const link_frontend_snippet = fs.readFileSync(path.resolve(__dirname + '/src/snippet.js'), 'utf8');
 
@@ -115,11 +115,11 @@ function pluginInit(patternlab) {
         if (fileStat.isFile()) {
 
           try {
-          var relativePath = path.relative(__dirname, pluginFiles[i]).replace('dist', ''); //dist is dropped
-          var writePath = path.join(patternlab.config.paths.public.root, '_plugins', 'design', pluginName, relativePath);
-        } catch (err) {
-          console.log(err);
-        }
+            var relativePath = path.relative(__dirname, pluginFiles[i]).replace('dist', ''); //dist is dropped
+            var writePath = path.join(patternlab.config.paths.public.root, '_plugins', 'design', pluginName, relativePath);
+          } catch (err) {
+            console.log(err);
+          }
           // //we need to alter the dist file to add links for us
           // //we are also being a bit lazy here, since we only expect one file
           // let uiextensionJSFileContents = fs.readFileSync(pluginFiles[i], 'utf8');

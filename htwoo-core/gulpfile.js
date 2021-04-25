@@ -27,6 +27,7 @@ const docs = (cb) => {
     isProd = true;
     styles();
     cb()
+
 }
 
 const styles = () => {
@@ -79,20 +80,20 @@ const pluginCSSOverride = () => {
 const createLibSass = () => {
 
     return src('src/styles/**/*.scss')
-        .pipe(dest('lib/sass'));
+        .pipe(dest('../packages/htwoo-core/lib/sass'));
 
 }
 
 const createLibJS = () => {
 
     return src('src/js/**/*.js')
-        .pipe(dest('lib/js'));
+        .pipe(dest('../packages/htwoo-core/lib/js'));
 
 }
 const createLibComponents = () => {
 
     return src('src/components/**/*.scss')
-        .pipe(dest('lib/components'));
+        .pipe(dest('../packages/htwoo-core/lib/components'));
 
 }
 

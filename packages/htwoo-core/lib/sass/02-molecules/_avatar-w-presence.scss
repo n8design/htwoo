@@ -1,0 +1,57 @@
+.hoo-avatar-pres{
+	position: relative;
+
+	display: inline-block;
+
+	width: 128px;
+	height: 128px;
+
+	transform: rotate(45deg);
+	transform-origin: center center;
+	div[class^=hoo-avatar]{
+		transform: rotate(-45deg);
+		transform-origin: center center;
+	}
+	.hoo-presence{
+		position: absolute;
+		top: calc(50% - .5rem);
+		left: calc(100% - .5rem);
+	}
+}
+
+.hoo-avatar-pres-16{
+	@extend .hoo-avatar-pres;
+
+	width: 16px;
+	height: 16px;
+}
+.hoo-avatar-pres-24{
+	@extend .hoo-avatar-pres;
+
+	width: 24px;
+	height: 24px;
+}
+.hoo-avatar-pres-32{
+	@extend .hoo-avatar-pres;
+
+	width: 32px;
+	height: 32px;
+}
+.hoo-avatar-pres-40{
+	@extend .hoo-avatar-pres;
+
+	width: 40px;
+	height: 40px;
+}
+.hoo-avatar-pres-48{
+	@extend .hoo-avatar-pres;
+
+	width: 48px;
+	height: 48px;
+}
+.hoo-avatar-pres-64{
+	@extend .hoo-avatar-pres;
+
+	width: 64px;
+	height: 64px;
+}

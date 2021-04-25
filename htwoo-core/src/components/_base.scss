@@ -1,1 +1,7 @@
-@import '../styles/00-base/colors/color-vars-css-converted';
+@import '../styles/00-base/colors/colors';
+@import '../styles/00-base/colors/typography.fixup';
+@import './styles/00-base/mixin/typography.mixin';
+@import './styles/00-base/mixin/animations.mixin';
+@import './styles/00-base/mixin/elevation.mixin';
+@import './styles/00-base/mixin/list.mixin';
+@import './styles/00-base/mixin/grid.mixin';

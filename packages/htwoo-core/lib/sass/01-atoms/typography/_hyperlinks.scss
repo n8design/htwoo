@@ -1,0 +1,12 @@
+a{
+    color: $Hyperlink;
+    &:visited{
+        color: $Hyperlink;
+    }
+    &:active{
+        color: $Hyperlink;
+    }
+    &:hover{
+        color: $Hyperlink;
+    }
+}

@@ -1,4 +1,13 @@
-@import '../styles/00-base/colors/colors';
+@import './base';
 
-@import '../styles/01-atoms/buttons/buttons';
-@import '../styles/01-atoms/buttons/button-icon';
+@import "../styles/01-atoms/buttons/button-general";
+@import "../styles/01-atoms/buttons/buttons";
+@import "../styles/01-atoms/buttons/button-action";
+@import "../styles/01-atoms/buttons/button-command";
+@import "../styles/01-atoms/buttons/button-flyout";
+@import "../styles/01-atoms/buttons/button-context";
+@import "../styles/01-atoms/buttons/button-icon";
+@import "../styles/01-atoms/buttons/button-split";
+@import "../styles/01-atoms/buttons/button-icon-split";
+@import "../styles/01-atoms/buttons/button-icon-overflow";
+@import "../styles/01-atoms/buttons/button-pivot";
