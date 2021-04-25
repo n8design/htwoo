@@ -128,7 +128,108 @@ The `hTWOoSample` will still get replaces with a custom string like this.
 }
 ```
 
-Now import the required components from hTWOo UI Framework.
+First import the base elements from hTWOo core.
 
 ```css
+@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+
+.hTWOoSample{
+  
+}
+
 ```
+
+From there you can use now all other comments in the main block of your web part using `globals`. The full list of features may look like this.
+
+```scss
+  // Imports all base mixin
+  @import 'node_modules/@n8d/htwoo-core/lib/components/base';
+
+  .hTWOoSample {
+    content: "";
+
+    :global {
+      
+      // For Avatar and Person selector components
+      @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+
+      // Various types of buttons
+      @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+
+      // Various types of buttons
+      @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+
+      // Various types of buttons
+      @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+
+      // Various types of buttons
+      @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+
+      // Various types of icons controls
+      @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+
+      // Various types of menus controls
+      @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+
+      // Various types of tables
+      @import 'node_modules/@n8d/htwoo-core/lib/components/table';
+
+      // Various types of typography
+      @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+
+      // Various types of web part utilities
+      @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+
+    }
+  }
+```
+
+Just include what you are actually using.
+
+## Use a simple button in your web part
+
+In the render method of your file you can now add a simple button.
+
+```typescript
+  public render(): void {
+    this.domElement.innerHTML = `
+      <div class="${styles.hTWOoSample}">
+        <button class="hoo-button">
+          <div class="hoo-button-label">My First H2O button</div>
+        </button>
+      </div>`;
+  }
+```
+This should give you the following result in your browser.
+
+![Standard button on the web part][button]
+![Primary button on the web part][button-primary]
+
+You can now add additional functionalities and other buttons to your code or just simply change it to a primary button by toggle only the style sheet class from `.hoo-button` to `.hoo-primary`.
+
+A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+
+## H2O and theming
+
+The way hTWOo handles theming and theme slots also allow you to change the theme without any extra effort and coding.
+
+If you change the background to inverted for example, the colors will get automatically adjusted once the page has been saved.
+
+![Themed button][button-theming]
+
+Or even an overall dark page theme work.
+
+![Dark themed buttons][button-dark-themed]
+
+## Further resources
+
+* [Supporting section backgrounds](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/supporting-section-backgrounds)
+* [Develop SPFx web parts for different section designs using CSS](https://n8d.at/develop-spfx-web-parts-for-different-section-designs-using-css/)
+* [How to make CSS Variables work in every web part context](https://n8d.at/how-to-make-css-variables-work-in-every-web-part-context/)
+  
+
+
+[button]: ./how-to-spfx-html-button.png "Standard Button"
+[button-primary]: ./how-to-spfx-html-button-primary.png "Primary Button"
+[button-theming]: ./how-to-spfx-html-theming-1.png "Theming"
+[button-dark-themed]: ./how-to-spfx-html-dark-themed-button "Theming"

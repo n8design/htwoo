@@ -14,21 +14,6 @@
 	flex-wrap: nowrap;
 
 	cursor: pointer;
-
-	&-label {
-		font-size: px2rem(14px);
-		font-weight: 600;
-		line-height: px2rem(20px);
-
-		display: flex;
-		justify-content: center;
-
-		height: px2rem(30px);
-		margin: 0 px2rem(4px);
-
-		align-items: center;
-	}
-
 	
 	&:hover {
 		background-color: $buttonBackgroundCheckedHovered;
@@ -45,6 +30,20 @@
 		border-color: $buttonBackgroundDisabled;
 		background-color: $buttonBackgroundDisabled;
 	}
+}
+
+.hoo-button-label {
+	font-size: px2rem(14px);
+	font-weight: 600;
+	line-height: px2rem(20px);
+
+	display: flex;
+	justify-content: center;
+
+	height: px2rem(30px);
+	margin: 0 px2rem(4px);
+
+	align-items: center;
 }
 
 // Primary button don't get a disabled state because it don't make sense

@@ -1,7 +1,7 @@
-@import '../styles/00-base/colors/colors';
-@import '../styles/00-base/colors/typography.fixup';
-@import './styles/00-base/mixin/typography.mixin';
-@import './styles/00-base/mixin/animations.mixin';
-@import './styles/00-base/mixin/elevation.mixin';
-@import './styles/00-base/mixin/list.mixin';
-@import './styles/00-base/mixin/grid.mixin';
+@import '../sass/00-base/colors/colors';
+@import '../sass/00-base/colors/typography.fixup';
+@import '../sass/00-base/mixin/typography.mixin';
+@import '../sass/00-base/mixin/animations';
+@import '../sass/00-base/mixin/elevation.mixin';
+@import '../sass/00-base/mixin/lists.mixin';
+@import '../sass/00-base/mixin/grid.mixin';
