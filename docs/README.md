@@ -16,7 +16,9 @@ It plays nicely together with applications such as Microsoft SharePoint and Micr
 
 **Contributor:** You ❤️
 
+## How To Use
 
+* [No framework web part with SPFx](./how-to/how-to-spfx-html)
  
  
 
