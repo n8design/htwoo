@@ -2,6 +2,16 @@
 
 This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables.
 
+## Install hTWOo UI
+
+To add hTWOo to your project install the following package:
+
+```shell
+npm install --save-dev @n8d/htwoo-core
+```
+
+Now you are ready to add it to your web part.
+
 ## Modify the manifest to enable theme variants
 
 Edit your web part manifest and add the following code.
