@@ -224,8 +224,7 @@ export default class HooButton extends React.Component<IButtonProps, IButtonStat
 
   public render(): React.ReactElement<IButtonProps> {
     try {
-      return (
-      );
+      return (<>);
     } catch (err) {
       console.log(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
@@ -237,6 +236,9 @@ export default class HooButton extends React.Component<IButtonProps, IButtonStat
 In the render method insert the following markup for a hTWOo button.
 
 ```typescript
+
+export default class HooButton extends React.Component<IButtonProps, IButtonState> {
+  //...
   public render(): React.ReactElement<IButtonProps> {
     try {
       return (
@@ -249,11 +251,13 @@ In the render method insert the following markup for a hTWOo button.
       return null;
     }
   }
+  //...
+}
 ```
 
 Now you have a basic reusable [hTWOo Standard button](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-button-standard) in your solution.
 
-## Add button to web part.
+## Add button to the web part.
 
 To add this re-usable button add it now to your web part. The first step is to import the button to the web part component.
 
