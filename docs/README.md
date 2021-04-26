@@ -12,6 +12,7 @@ You will fine a complete list of assets in the [Style Guide](https://lab.n8d.stu
 
 ## How To Use
 
+* [SVG icons instead of icon fonts](./how-to/SVG-instead-of-icon-fonts.md)
 * [hTWOo usage in 'No framework' web part with SPFx](./how-to/how-to-spfx-html)
 * [hTWOo usage in React web part with SPFx](./how-to/how-to-spfx-react)
 * more documentation coming soon
