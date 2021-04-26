@@ -18,7 +18,8 @@ It plays nicely together with applications such as Microsoft SharePoint and Micr
 
 ## How To Use
 
-* [No framework web part with SPFx](./how-to/how-to-spfx-html)
+* [hTWOo usage in 'No framework' web part with SPFx](./how-to/how-to-spfx-html)
+* [hTWOo usage in React web part with SPFx](./how-to/how-to-spfx-react)
  
  
 
