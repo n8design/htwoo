@@ -17,6 +17,14 @@ You will fine a complete list of assets in the [Style Guide](https://lab.n8d.stu
 * [hTWOo usage in React web part with SPFx](./how-to/how-to-spfx-react)
 * more documentation coming soon
 
+## FAQ
+
+None so far please [ask](https://github.com/n8design/htwoo/discussions) or just start a new discussion.
+
+## Samples
+
+* All samples are stored in [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
+
 ## Why just HTML and CSS
 
 In the end it always comes down to HTML/CSS no matter which framework you use for your development. HTML/CSS documented components serve no other longevity than any other framework. HTML and CSS can also be easily translate, included and embedded in any other development framework.
