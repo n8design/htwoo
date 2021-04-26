@@ -10,6 +10,18 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 You will fine a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
+## Why just HTML and CSS
+
+In the end it always comes down to HTML/CSS no matter which framework you use for your development. HTML/CSS documented components serve no other longevity than any other framework. HTML and CSS can also be easily translate, included and embedded in any other development framework.
+
+HTML/CSS UI components can also be easier optimized, refactored or visually enhanced.
+
+## Concepts
+
+hTWOo style guide, documentation and building platform is based on [patternlab.io](https://patternlab.io/). To allow the most flexible implementation of designs and design pattern it follows the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/) coined by Brad Frost around 2012 / 2013.
+
+> We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
+
 ## How To Use
 
 * [SVG icons instead of icon fonts](./how-to/SVG-instead-of-icon-fonts.md)
@@ -24,19 +36,6 @@ None so far please [ask](https://github.com/n8design/htwoo/discussions) or just 
 ## Samples
 
 * All samples are stored in [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
-
-## Why just HTML and CSS
-
-In the end it always comes down to HTML/CSS no matter which framework you use for your development. HTML/CSS documented components serve no other longevity than any other framework. HTML and CSS can also be easily translate, included and embedded in any other development framework.
-
-HTML/CSS UI components can also be easier optimized, refactored or visually enhanced.
-
-## Concepts
-
-hTWOo style guide, documentation and building platform is based on [patternlab.io](https://patternlab.io/). To allow the most flexible implementation of designs and design pattern it follows the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/) coined by Brad Frost around 2012 / 2013.
-
-> We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
-
 
 **Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
