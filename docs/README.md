@@ -14,6 +14,7 @@ You will fine a complete list of assets in the [Style Guide](https://lab.n8d.stu
 
 * [hTWOo usage in 'No framework' web part with SPFx](./how-to/how-to-spfx-html)
 * [hTWOo usage in React web part with SPFx](./how-to/how-to-spfx-react)
+* more documentation coming soon
 
 ## Why just HTML and CSS
 
