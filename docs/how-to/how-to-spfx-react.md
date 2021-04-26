@@ -115,7 +115,7 @@ Using the CSS Modules own definition all external style can be include in a fake
 Go to the web part and remove all it#s existing code and add a reference to hTWOo instead.This reduce the complete style sheet to the following code.
 
 ```scss
-.hTwOoReactSpFx {
+.hTWOoReactSpFx {
 
 }
 ```
@@ -123,7 +123,7 @@ Go to the web part and remove all it#s existing code and add a reference to hTWO
 The `hTWOoSample` will still get replaces with a custom string like this.
 
 ```css
-.hTwOoReactSpFx_b629d693{
+.hTWOoReactSpFx_b629d693{
   /* this where the content goes */
 }
 ```
@@ -133,7 +133,7 @@ First import the base elements from hTWOo core.
 ```css
 @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
-.hTwOoReactSpFx{
+.hTWOoReactSpFx{
   
 }
 
@@ -145,7 +145,7 @@ From there you can use now all other comments in the main block of your web part
   // Imports all base mixin
   @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
-  .hTwOoReactSpFx {
+  .hTWOoReactSpFx {
 
     :global {
       
@@ -188,24 +188,94 @@ Just include what you are actually using.
 
 ## Use a simple button in your web part
 
-In the render method of your file you can now add a simple button.
+To use a simple web part create a new tsx file named `hoobutton-standard.tsx`.
+
 
 ```typescript
-  public render(): void {
-    this.domElement.innerHTML = `
-      <div class="${styles.hTWOoSample}">
-        <button class="hoo-button">
-          <div class="hoo-button-label">My First H2O button</div>
+import * as React from "react";
+import isEqual from "lodash/isEqual";
+
+export interface IButtonProps {
+  disabled: boolean;
+  label: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export interface IButtonState {
+}
+
+export class ButtonState implements IButtonState {
+  constructor() { }
+}
+
+export default class HooButton extends React.Component<IButtonProps, IButtonState> {
+  private LOG_SOURCE: string = "🔶Button";
+
+  constructor(props: IButtonProps) {
+    super(props);
+    this.state = new ButtonState();
+  }
+
+  public shouldComponentUpdate(nextProps: IButtonProps, nextState: IButtonState) {
+    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
+      return false;
+    return true;
+  }
+
+  public render(): React.ReactElement<IButtonProps> {
+    try {
+      return (
+      );
+    } catch (err) {
+      console.log(`${this.LOG_SOURCE} (render) - ${err}`);
+      return null;
+    }
+  }
+}
+```
+
+In the render method insert the following markup for a hTWOo button.
+
+```typescript
+  public render(): React.ReactElement<IButtonProps> {
+    try {
+      return (
+        <button className="hoo-button" disabled={this.props.disabled} aria-disabled={this.props.disabled} onClick={this.props.onClick}>
+          <div className="hoo-button-label">{this.props.label}</div>
         </button>
-      </div>`;
+      );
+    } catch (err) {
+      console.log(`${this.LOG_SOURCE} (render) - ${err}`);
+      return null;
+    }
   }
 ```
-This should give you the following result in your browser.
 
-![Standard button on the web part][button]
-![Primary button on the web part][button-primary]
+Now you have a basic reusable [hTWOo Standard button](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-button-standard) in your solution.
 
-You can now add additional functionalities and other buttons to your code or just simply change it to a primary button by toggle only the style sheet class from `.hoo-button` to `.hoo-primary`.
+## Add button to web part.
+
+To add this re-usable button add it now to your web part. The first step is to import the button to the web part component.
+
+```typescript
+import HooButton from './hoobutton-standard';
+```
+
+Now insert the web part in the main container element.
+
+```typescript
+export default class HTwOoReactSpFx extends React.Component<IHTwOoReactSpFxProps, {}> {
+  public render(): React.ReactElement<IHTwOoReactSpFxProps> {
+    return (
+      <div className={ styles.hTWOoReactSpFx }>
+        <HooButton label="My first hTWOo React Button" disabled={false} onClick={()=>{}} />
+      </div>
+    );
+  }
+}
+```
+
+Now the webpart shows the button. The same method also works with the primary button.
 
 A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
