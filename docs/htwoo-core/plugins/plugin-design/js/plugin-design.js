@@ -8,20 +8,6 @@ var PluginUIExtension = {
    */
   init: function () {
 
-    console.log(window);
-    console.log(window.parent);
-    console.log(window.localStorage);
-
-    window.dispatchEvent(new Event('storage'));
-
-    window.addEventListener('storage', () => {
-      // When local storage changes, dump the list to
-      // the console.
-      console.log(JSON.parse(window.localStorage.getItem('app')));
-    });
-
-
-
     let logoImg = document.querySelector(".pl-c-logo__img");
     if (logoImg) {
       logoImg.style.height = "auto";
@@ -35,6 +21,13 @@ var PluginUIExtension = {
 
     if (logo) {
       logo.style.padding = "0";
+    }
+
+    let logoLink = document.querySelector("a.pl-c-logo");
+
+    if(logoLink){
+      console.log(logoLink);
+      logoLink.href = "https://lab.n8d.studio/htwoo/";
     }
 
   }
