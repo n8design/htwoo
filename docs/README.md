@@ -8,7 +8,7 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 ![Be like water][logo]
 
-You will fine a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
 ## Why just HTML and CSS
 
