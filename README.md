@@ -1,10 +1,11 @@
 # HTWOO UI framework
 
-> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
+HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
 
 [![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
-HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
+> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
+
 
 ![Be like water][logo]
 
@@ -40,4 +41,4 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
 
 
-[logo]: ./assets/htwoo.jpg "Be like water and adopt fast"
+[logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adopt fast"
