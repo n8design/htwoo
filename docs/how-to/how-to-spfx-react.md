@@ -201,7 +201,7 @@ Just include what you are actually using.
 To use a simple web part create a new tsx file named `hoobutton-standard.tsx`.
 
 
-```typescript
+```tsx
 import * as React from "react";
 import isEqual from "lodash/isEqual";
 
@@ -245,7 +245,7 @@ export default class HooButton extends React.Component<IButtonProps, IButtonStat
 
 In the render method insert the following markup for a hTWOo button.
 
-```typescript
+```tsx
 
 export default class HooButton extends React.Component<IButtonProps, IButtonState> {
   //...
