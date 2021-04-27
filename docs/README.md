@@ -39,7 +39,7 @@ None so far please [ask](https://github.com/n8design/htwoo/discussions) or just 
 
 ## Engage
 
-Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
+Follow us on Twitter [@htwooui](https://twitter.com/hTWOoUI).
 
 ## More
 
