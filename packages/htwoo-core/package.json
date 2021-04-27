@@ -1,12 +1,21 @@
 {
   "name": "@n8d/htwoo-core",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Fluent Design", "Office UI Framework", "UI Framework", "Design", "Fluent UI", "Atomic Design"],
+  "keywords": [
+    "Fluent Design",
+    "Office UI Framework",
+    "UI Framework",
+    "Design",
+    "Fluent UI",
+    "Atomic Design",
+    "ReactJS",
+    "SharePoint Framework"
+  ],
   "author": "Stefan Bauer (@stfbauer)",
   "homepage": "https://lab.n8d.studio/htwoo/htwoo-core/",
   "bugs": {

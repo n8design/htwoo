@@ -14,17 +14,19 @@ Main focus of this project is to be used in SharePoint Framework, Microsoft Team
 npm install -g @n8d/htwoo-core
 ```
 
-> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
-
 ## Usage
 
 * [hTWOo usage in ‘No framework’ web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html)
-* [[hTWOo usage in React web part with SPFx](hTWOo usage in React web part with SPFx)](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react)
+* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react)
+
+## Documentation
+
+* [General Documentation](https://lab.n8d.studio/htwoo/)
+* [Pattern Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all)
+
+> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
+
 
 **Contributor:** You ❤️
-s
-
-
-
 
 [logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adopt fast"
