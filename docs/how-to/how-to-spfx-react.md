@@ -1,4 +1,4 @@
-# Use hTWOo in your no framework web part
+# Use hTWOo in your React web part
 
 This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables.
 
