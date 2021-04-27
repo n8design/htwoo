@@ -1,2 +1,12 @@
 # Google services
 google_analytics: UA-195453119-1
+
+social-network-links:
+  github: n8design
+  twitter: htwooui
+
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+  vk: false

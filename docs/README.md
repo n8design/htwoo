@@ -35,7 +35,7 @@ None so far please [ask](https://github.com/n8design/htwoo/discussions) or just 
 
 ## Samples
 
-* All samples are stored in [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
+* [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
 
 **Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
