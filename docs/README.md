@@ -37,6 +37,12 @@ None so far please [ask](https://github.com/n8design/htwoo/discussions) or just 
 
 * [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
 
+## Engage
+
+Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
+
+## More
+
 **Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
 **Contributor:** You ❤️

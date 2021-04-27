@@ -28,6 +28,10 @@ hTWOo style guide, documentation and building platform is based on [patternlab.i
 
 > We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
+## Engage
+
+Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
+
 
 **Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
