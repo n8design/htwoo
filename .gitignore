@@ -108,3 +108,6 @@ dist
 # App Specific
 .DS_Store
 .tmp
+
+htwoo-core/public
+htwoo-core/dependencyGraph.json
