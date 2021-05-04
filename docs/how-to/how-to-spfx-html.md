@@ -165,13 +165,13 @@ From there you can use now all other comments in the main block of your web part
       // Various types of buttons
       @import 'node_modules/@n8d/htwoo-core/lib/components/button';
 
-      // Various types of buttons
+      // Various types of cards
       @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
 
-      // Various types of buttons
+      // Various types of dialogs
       @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
 
-      // Various types of buttons
+      // Various types of forms
       @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
 
       // Various types of icons controls
