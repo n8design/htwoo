@@ -1,11 +1,18 @@
-const path = require("path");
-const fs = require("fs");
+const { basename } = require("path");
+const path = require("path"),
+ fs = require("fs"),
+ yargs = require("yargs").argv;
 
-const sourceFile = 'source/_data/colors.json';
-const directory = path.dirname(sourceFile);
+const sourceFile = path.join(process.cwd(), yargs._[0])
+ directory = path.dirname(sourceFile),
+ fileName = path.basename(sourceFile),
+ extension = path.extname(sourceFile),
+ baseName = fileName.replace(extension, '');
+
+console.log(baseName);
 
 const themeJsonContent = JSON.parse(
-    fs.readFileSync('source/_data/colors.json', null, "UTF-8")
+    fs.readFileSync(sourceFile, null, "UTF-8")
 );
 
 console.log(themeJsonContent);
@@ -21,7 +28,7 @@ for (let key in keys) {
 }
 
 fs.writeFileSync(
-    path.join('source/styles/00-base/colors', "color-vars-css-converted.scss"),
+    path.join('src/styles/00-base/colors', baseName+".scss"),
     `:root{ 
         ${newItems.join('\n')} 
     }`

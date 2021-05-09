@@ -52,14 +52,14 @@ const styles = () => {
 
 const pluginJSOverride = () => {
 
-    return src('src/_plugins/**/*.js')
-        .pipe(dest('public/_plugins'));
+    return src('src/plugins/**/*.js')
+        .pipe(dest('public/plugins'));
 
 }
 
 const pluginCSSOverride = () => {
 
-    return src('src/_plugins/*.scss')
+    return src('src/plugins/*.scss')
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         // .pipe($.sourcemaps.init())

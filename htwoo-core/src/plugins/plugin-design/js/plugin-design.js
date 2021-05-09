@@ -26,7 +26,6 @@ var PluginUIExtension = {
     let logoLink = document.querySelector("a.pl-c-logo");
 
     if(logoLink){
-      console.log(logoLink);
       logoLink.href = "https://lab.n8d.studio/htwoo/";
     }
 

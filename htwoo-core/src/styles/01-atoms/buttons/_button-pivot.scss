@@ -1,5 +1,4 @@
 .hoo-button-pivot{
-	display: grid;
 
 	padding: 0;
 	margin: 0;
@@ -7,6 +6,7 @@
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	height: px2rem(44px);
 
 	&.is-active{
 		.hoo-pivot-inner{

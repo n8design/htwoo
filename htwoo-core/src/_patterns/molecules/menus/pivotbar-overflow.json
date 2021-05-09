@@ -1,0 +1,42 @@
+{
+    "pivotItems": [
+        {
+            "title": "Coffee",
+            "isActive": true
+        },
+        {
+            "title": "Matcha",
+            "isActive": false
+        },
+        {
+            "title": "Ice Tea",
+            "isActive": false
+        },
+        {
+            "title": "Aqua Minerale",
+            "isActive": false
+        },
+        {
+            "title": "Earl Grey",
+            "isActive": false
+        },
+        {
+            "title": "Darjeeling tea",
+            "isActive": false
+        },
+        {
+            "title": "Chai Latte",
+            "isActive": false
+        },
+        {
+            "title": "Gin Tonic",
+            "isActive": false
+        }
+    ],
+    "overflowButton": {
+        "iconDown": "icon-ellipses",
+        "label": "New Item",
+        "ddItems": [
+        ]
+    }
+}

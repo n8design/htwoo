@@ -1,0 +1,60 @@
+.hoo-overflow{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.has-overflow {
+    position: relative;
+
+    min-height: px2rem(46px);
+
+    .is-overflow-item{
+        visibility: hidden;
+    }
+
+    .hoo-buttonicon-overflow {
+
+        height: px2rem(44px);
+
+        &:hover {
+            .hoo-buttonflyout {
+                display: block;
+                right: 0;
+                left: unset;
+            }
+
+            .hoo-button-pivot {
+                &:hover {
+                    padding-left: .25rem;
+                }
+            }
+
+        }
+
+    }
+
+    .show-flyout {
+        &.hoo-buttonicon-overflow {
+            .hoo-buttonflyout {
+                right: 0;
+                left: unset;
+            }
+        }
+
+        .hoo-button-pivot {
+            &:hover {
+                padding-left: .25rem;
+            }
+        }
+    }
+
+    .hoo-buttonflyout {
+        padding-bottom: .25rem;
+    }
+}
+
+// .hoo-overflow{
+//     display: flex;
+//     flex-wrap: nowrap;
+//     overflow: hidden;
+// }
