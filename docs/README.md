@@ -27,6 +27,7 @@ hTWOo style guide, documentation and building platform is based on [patternlab.i
 * [SVG icons instead of icon fonts](./how-to/SVG-instead-of-icon-fonts.md)
 * [hTWOo usage in 'No framework' web part with SPFx](./how-to/how-to-spfx-html)
 * [hTWOo usage in React web part with SPFx](./how-to/how-to-spfx-react)
+* [hTWOo usage in Angular Elements with SPFx](./how-to/how-to-spfx-angular-elements)
 * more documentation coming soon
 
 ## FAQ
