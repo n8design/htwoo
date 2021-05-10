@@ -36,8 +36,6 @@
     "@pattern-lab/uikit-workshop": "^5.14.2"
   },
   "devDependencies": {
-    "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.2.10",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-if": "^3.0.0",
@@ -47,6 +45,9 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^5.0.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "plugin-design": "file:helpers/node/plugin-design",
+    "postcss": "^8.2.10",
+    "yargs": "^17.0.1"
   }
 }

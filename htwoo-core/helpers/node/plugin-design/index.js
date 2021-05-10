@@ -9,7 +9,7 @@ const _ = require('lodash');
 
 function writeConfigToOutput(patternlab, pluginConfig) {
 
-  var pluginConfigPathName = path.resolve(patternlab.config.paths.public.root, '_plugin');
+  var pluginConfigPathName = path.resolve(patternlab.config.paths.public.root, 'plugin');
   console.log("pluginConfigPathName", pluginConfigPathName);
   // try {
   //   fs.outputFileSync(pluginConfigPathName + '/' + pluginName + '.json', JSON.stringify(pluginConfig, null, 2));
@@ -38,10 +38,10 @@ function getPluginFrontendConfig() {
     "name": "plugin-design",
     "templates": [],
     "stylesheets": [
-      "../../_plugins/" + pluginName + "\/css\/" + pluginName + ".css"
+      "../../plugins/" + pluginName + "\/css\/" + pluginName + ".css"
     ],
     "javascripts": [
-      "_plugins/" + pluginName + "\/js\/" + pluginName + ".js"
+      "plugins/" + pluginName + "\/js\/" + pluginName + ".js"
     ],
     "onready": "PluginUIExtension.init()",
     "callback": ""
@@ -116,7 +116,7 @@ function pluginInit(patternlab) {
 
           try {
             var relativePath = path.relative(__dirname, pluginFiles[i]).replace('dist', ''); //dist is dropped
-            var writePath = path.join(patternlab.config.paths.public.root, '_plugins', 'design', pluginName, relativePath);
+            var writePath = path.join(patternlab.config.paths.public.root, 'plugins', 'design', pluginName, relativePath);
           } catch (err) {
             console.log(err);
           }
