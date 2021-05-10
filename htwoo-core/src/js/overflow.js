@@ -1,6 +1,12 @@
 const overflowItems = [];
 const defaultOffset = 32; // Default offset for overflow width
 
+/**
+ * 
+ * @param {*} targetWidth width of the '.hoo-overflow'
+ * @param {*} children all child elements inside the '.hoo-overflow' container
+ * @param {*} curContainer current '.hoo-overflow' container
+ */
 const getOverflowItems = (targetWidth, children, curContainer) => {
 
     let overallWidth = defaultOffset,
@@ -12,6 +18,7 @@ const getOverflowItems = (targetWidth, children, curContainer) => {
         realWidth: null
     }
 
+    // Loop over all child elements and try to find where the first overflow happen
     for (let i = 0; i < children.length; i++) {
 
         overallWidth += children[i].clientWidth;
@@ -24,19 +31,19 @@ const getOverflowItems = (targetWidth, children, curContainer) => {
 
             overflowItems.items.push(children[i])
 
+            // Hide Element
             children[i].classList.add('is-overflow-item');
             // Accessibility
             children[i].setAttribute('aria-hidden', true);
-            // console.log(" OVERFLOW ::: >>>");
         } else {
             overflowItems.realWidth = overallWidth;
             children[i].classList.remove('is-overflow-item');
             children[i].removeAttribute('aria-hidden');
         }
 
-
     }
 
+    // Set the right element in the overflow container drop down
     let overflowButton = parentContainer.querySelector("div.hoo-buttonicon-overflow");
 
     if (overflowItems.firstIndex === null) {
@@ -49,6 +56,7 @@ const getOverflowItems = (targetWidth, children, curContainer) => {
 
     }
 
+    // Show and hide all elements that are hidden in the '.hoo-overflow' container
     let items = parentContainer.querySelectorAll('.hoo-buttonflyout li');
 
     items.forEach((item, index) => {
@@ -69,6 +77,7 @@ const getOverflowItems = (targetWidth, children, curContainer) => {
 
 const entryHandler = (entry, index) => {
 
+    // query for all pivot buttons
     const childButtons = entry.target.querySelectorAll('.hoo-button-pivot');
 
     getOverflowItems(entry.target.parentElement.clientWidth, childButtons, entry.target);
@@ -77,9 +86,11 @@ const entryHandler = (entry, index) => {
 
 const overflow = (entries, observer) => {
 
+    // handle the overflow behaviour for all '.hoo.overflow' container
     entries.forEach(entryHandler);
 
 }
+
 /// OnInit register [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) all overflow container
 export const init = () => {
 
