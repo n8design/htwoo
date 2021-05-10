@@ -1,12 +1,12 @@
-# Use hTWOo in your React web part
+# Use hTWOo in your Angular Elements web part
 
 This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables. 
 
-First of all create SPFx web part with Angualr elments using PnP Generator. For more information refer to [this](https://pnp.github.io/generator-spfx/) link.
+First of all create SPFx web part with Angular elements using PnP Generator. For more information refer to [this](https://pnp.github.io/generator-spfx/) link.
 
-After creation of peoject move to the angular folder and then install hTWOo library.
+After creation of project move to the angular folder and then install hTWOo library.
 
-## Install hTWOo UI
+## Install hTWOo UI in the Angular Elements projects
 
 To add hTWOo to your project install the following package:
 
@@ -16,7 +16,7 @@ npm install --save-dev @n8d/htwoo-core
 
 Now you are ready to add it to your web part.
 
-## Modify the manifest to enable theme variants
+## Modify the manifest to enable theme variants In SPFx
 
 Edit your web part manifest and add the following code.
 
@@ -36,7 +36,7 @@ The property `supportThemeVariants` make sure that you can use any of the hTWOo 
 
 ### Add references to SPFx ThemeProvider
 
-To use different SharePoint themes add the following references to your web part code where the React components gets loaded.
+To use different SharePoint themes add the following references to your web part code where the components gets loaded.
 
 ```typescript
 import {
@@ -124,7 +124,7 @@ This code will convert all theme available color to CSS variables.
 
 SharePoint frameworks use a tool named [CSS Modules](https://github.com/css-modules/css-modules) to give the web part styles a unique naming convention. To avoid bleeding out the hTWOo style to the rest of the page only one container class is needed.
 
-Move to the `src/style.scss` inside `angular project folder`. And add follwoing reference of CSS.
+Move to the `src/style.scss` inside `angular project folder`. And add following reference of CSS.
 
 First import the base elements from hTWOo core.
 
