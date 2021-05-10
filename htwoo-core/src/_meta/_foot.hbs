@@ -4,22 +4,30 @@
 <script src="../../js/main.js" type="module"></script>
 <script>
 
+    var layoutMode = null;
+
     // changing logo accordingly
     var evtLocationStorageUpdates = () => {
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
-        if (patternlab.app.layoutMode === "vertical") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
             console.log("Layout is not vertical");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
         }
-        if (patternlab.app.layoutMode === "horizontal") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
             console.log("Layout is not horizontal");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
             console.log("IMAGE ", image);
         }
+
+        layoutMode = patternlab.app.layoutMode;
 
     }
     // register event listener
