@@ -1,6 +1,10 @@
 # Use hTWOo in your React web part
 
-This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables.
+This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables. 
+
+First of all create SPFx web part with Angualr elments using PnP Generator. For more information refer to [this](https://pnp.github.io/generator-spfx/) link.
+
+After creation of peoject move to the angular folder and then install hTWOo library.
 
 ## Install hTWOo UI
 
@@ -116,105 +120,90 @@ To retrieve the current theme color slots add the following code in your web par
 
 This code will convert all theme available color to CSS variables.
 
-## Use hTWOo CSS
+## Use hTWOo CSS in Angular Elements
 
 SharePoint frameworks use a tool named [CSS Modules](https://github.com/css-modules/css-modules) to give the web part styles a unique naming convention. To avoid bleeding out the hTWOo style to the rest of the page only one container class is needed.
 
-Using the CSS Modules own definition all external style can be include in a fake pseudo class named `:global`.
-
-Go to the web part and remove all it#s existing code and add a reference to hTWOo instead.This reduce the complete style sheet to the following code.
-
-```scss
-.hTwOoSample {
-
-}
-```
-
-The `hTWOoSample` will still get replaces with a custom string like this.
-
-```css
-.hTWOoSample_b629d693{
-  /* this where the content goes */
-}
-```
+Move to the `src/style.scss` inside `angular project folder`. And add follwoing reference of CSS.
 
 First import the base elements from hTWOo core.
 
 ```css
+/* You can add global styles to this file, and also import other style files */
 @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
-.hTWOoSample{
-  
-}
+@import 'node_modules/@n8d/htwoo-core/lib/sass/style';
 
-```
+@import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
 
-From there you can use now all other comments in the main block of your web part using `globals`. The full list of features may look like this.
+// Various types of buttons
+@import 'node_modules/@n8d/htwoo-core/lib/components/button';
 
-```scss
-  // Imports all base mixin
-  @import 'node_modules/@n8d/htwoo-core/lib/components/base';
+// Various types of cards
+@import 'node_modules/@n8d/htwoo-core/lib/components/cards';
 
-  .hTWOoSample {
+// Various types of dialogs
+@import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
 
-    :global {
-      
-      // For Avatar and Person selector components
-      @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+// Various types of forms
+@import 'node_modules/@n8d/htwoo-core/lib/components/forms';
 
-      // Various types of buttons
-      @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+// Various types of icons controls
+ @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
 
-      // Various types of cards
-      @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+// Various types of menus controls
+@import 'node_modules/@n8d/htwoo-core/lib/components/menus';
 
-      // Various types of dialogs
-      @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+// Various types of tables
+@import 'node_modules/@n8d/htwoo-core/lib/components/table';
 
-      // Various types of forms
-      @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+// Various types of typography
+@import 'node_modules/@n8d/htwoo-core/lib/components/typography';
 
-      // Various types of icons controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+// Various types of web part utilities
+@import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
 
-      // Various types of menus controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
-
-      // Various types of tables
-      @import 'node_modules/@n8d/htwoo-core/lib/components/table';
-
-      // Various types of typography
-      @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
-
-      // Various types of web part utilities
-      @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
-
-    }
-  }
 ```
 
 Just include what you are actually using.
 
-## Use a simple button in your web part
+## Use a controls in angular project html file
 
-In the render method of your file you can now add a simple button.
+Move to the `src/app/{webpartname-web-part}/{webpartname-web-part.componenent.html}` inside Angular project folder. And add the controls from hTWOo library as below.
 
-```typescript
-  public render(): void {
-    this.domElement.innerHTML = `
-      <div class="${styles.hTWOoSample}">
-        <button class="hoo-button">
-          <div class="hoo-button-label">My First H2O button</div>
-        </button>
-      </div>`;
-  }
+```html
+    <h1>
+    {{description}}
+    </h1>
+    <hr>
+
+    <h3>Button</h3>
+    <button class="hoo-button-primary">
+    <div class="hoo-button-label">Primary</div>
+    </button>
+    <hr>
+
+    <h3>Forms</h3>
+    <div class="hoo-radiobutton-group">
+    <div>
+        <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox"><label for="chbg1">Apple</label>
+    </div>
+    <div>
+        <input type="checkbox" name="chbg2" id="chbg2" value="" class="hoo-checkbox"><label for="chbg2">Avocado</label>
+    </div>
+    <div>
+        <input type="checkbox" name="chbg3" id="chbg3" value="" class="hoo-checkbox"><label for="chbg3">Banana</label>
+    </div>
+    </div>
+    <hr>
+
+    <h3>Grid</h3>
+    <div class="hoo-grid">
+    <div class="demo-item">Demo Item</div>
+    <div class="demo-item2">Demo Item</div>
+    </div>
+    <hr>
 ```
-This should give you the following result in your browser.
-
-![Standard button on the web part][button]
-![Primary button on the web part][button-primary]
-
-You can now add additional functionalities and other buttons to your code or just simply change it to a primary button by toggle only the style sheet class from `.hoo-button` to `.hoo-primary`.
 
 A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
@@ -224,11 +213,7 @@ The way hTWOo handles theming and theme slots also allow you to change the theme
 
 If you change the background to inverted for example, the colors will get automatically adjusted once the page has been saved.
 
-![Themed button][button-theming]
-
-Or even an overall dark page theme work.
-
-![Dark themed buttons][button-dark-themed]
+![Themed controls][controls-theming]
 
 ## Download this getting started
 
@@ -241,8 +226,4 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
 * [How to make CSS Variables work in every web part context](https://n8d.at/how-to-make-css-variables-work-in-every-web-part-context/)
   
 
-
-[button]: ./how-to-spfx-html-button.png "Standard Button"
-[button-primary]: ./how-to-spfx-html-button-primary.png "Primary Button"
-[button-theming]: ./how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ./how-to-spfx-html-dark-themed-button.png "Theming"
+[controls-theming]: ./how-to-spfx-angular-elements-theme.png "Theming"
