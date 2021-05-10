@@ -55,16 +55,10 @@ const cloneOverflowNodes = (pivotBar) => {
                 const btnClone = button.cloneNode(true);
                 const listItem = document.createElement('li');
 
-                // console.log(listItem);
-                // console.log(button.click);
-                // console.log(button.onclick);
                 listItem.appendChild(btnClone);
 
                 btnClone.onclick = button.onclick;
                 childNodesToAppend.push(listItem);
-
-                // btnClone.classList.remove('hoo-button-pivot');
-                // btnClone.classList.add('hoo-navitem-text');
 
             }
 
