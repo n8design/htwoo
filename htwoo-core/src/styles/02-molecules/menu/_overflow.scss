@@ -1,12 +1,19 @@
 .hoo-overflow{
-    overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
+    max-height: px2rem(48px);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .has-overflow {
     position: relative;
 
     min-height: px2rem(46px);
+    background-color: lime;
+
+    & > .hoo-overflow{
+        position: fixed;
+    }
 
     
     .is-hidden,
@@ -15,6 +22,8 @@
     }
 
     .hoo-buttonicon-overflow {
+        position: absolute;
+        right: 0;
 
         height: px2rem(44px);
 

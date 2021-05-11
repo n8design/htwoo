@@ -1,5 +1,5 @@
 const overflowItems = [];
-const defaultOffset = 32; // Default offset for overflow width
+const defaultOffset = 40; // Default offset for overflow width
 
 /**
  * 
@@ -78,9 +78,19 @@ const getOverflowItems = (targetWidth, children, curContainer) => {
 const entryHandler = (entry, index) => {
 
     // query for all pivot buttons
-    const childButtons = entry.target.querySelectorAll('.hoo-button-pivot');
-
+    console.log(
+        entry.target,
+        entry.target.parentElement,
+        entry.target.parentElement.querySelectorAll('.hoo-overflow'),
+        entry.target.parentElement.querySelectorAll('.hoo-overflow > *'),
+        entry.target.querySelectorAll('.hoo-overflow > div')
+        );
+    let childButtons = entry.target.parentElement.querySelectorAll('.hoo-overflow > *');
+    console.log('Child Button ::: ', childButtons);
     getOverflowItems(entry.target.parentElement.clientWidth, childButtons, entry.target);
+
+
+    
 
 }
 
@@ -95,6 +105,7 @@ const overflow = (entries, observer) => {
 export const init = () => {
 
     let items = document.querySelectorAll('.hoo-overflow');
+    console.log(items);
 
     if (items.length !== 0) {
 

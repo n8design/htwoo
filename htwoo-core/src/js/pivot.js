@@ -42,7 +42,7 @@ const changePivot = (event) => {
 const cloneOverflowNodes = (pivotBar) => {
 
     // Getting flyout in current element
-    let flyoutMenu = pivotBar.querySelector('.hoo-buttonflyout');
+    let flyoutMenu = pivotBar.parentElement.querySelector('.hoo-buttonflyout');
 
     if (flyoutMenu) {
 
