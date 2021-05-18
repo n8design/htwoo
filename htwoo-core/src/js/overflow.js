@@ -17,6 +17,7 @@ const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
         return item.overallWidth < targetWidth - defaultOffset;
     });
 
+    // Flyout Button ellipses
     let overflowControl = curContainer.querySelector('.hoo-buttonicon-overflow .hoo-buttonflyout');
 
     if (overflowControl && overflowControl.children.length < curOverFlowItems.length) {
@@ -27,9 +28,12 @@ const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
 
                 let listItem = document.createElement('li');
 
+                // Moves the Element into a new list item with all Events attached
                 listItem.appendChild(
                     curContainer.querySelector("[data-ref=" + curOverFlowItems[i].ref + "]")
                 );
+
+                // Append list item
                 overflowControl.appendChild(listItem);
 
             }
@@ -37,12 +41,11 @@ const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
         }
     }
 
+    // if 
     if(overflowControl.children.length !== 0){
     
         var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
         
-        console.log("IS ACTIVE", overflowItems, buttonEnabled);
-    
         if(buttonEnabled){
             buttonEnabled.classList.add('is-active');
         }
@@ -65,6 +68,7 @@ const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
 
                 let overflowElement = overflowControl.querySelector("[data-ref=" + curItems[i].ref + "]");
 
+                // Move elements back from overflow menu
                 curContainer.appendChild(overflowElement);
 
             }
@@ -113,6 +117,7 @@ const overflow = (entries, observer) => {
     entries.forEach((item, index) => {
 
         initOverflowElements(item.target.children, index);
+        // handle the resizing:::
         entryHandler(item, index);
 
     });
@@ -168,10 +173,7 @@ export const init = () => {
 
         items.forEach(item => {
 
-            ofObserver.observe(item, {
-                subtree: true,
-                childList: true
-            });
+            ofObserver.observe(item);
 
         })
 
