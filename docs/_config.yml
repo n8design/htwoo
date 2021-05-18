@@ -1,3 +1,41 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: hTWWOui
+email: stefan.bauer@n8d.at
+description: > # this means to ignore newlines until "baseurl:"
+  Fluent Design made easy with hTWOo UI. Suitable for every Microsoft 365 customisation
+baseurl: "/htwoo" # the subpath of your site, e.g. /blog
+url: "https://lab.n8d.studio" # the base hostname & protocol for your site
+twitter_username: stfbauer
+github_username:  stfbauer
+
+# Build settings
+markdown: kramdown
+
+features:
+  - components: false
+
+sections:
+  - title: Getting Started
+    url: getting-started
+    type: static
+  - title:  How tos
+    path: how-tos
+    group: how-tos
+    type: dynamic
+  - title: Support
+    type: static
+    url: support
+  - title: Contribute
+    type: static
+    url: contribute
+
 # Google services
 google_analytics: UA-195453119-1
 
