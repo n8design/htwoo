@@ -1,0 +1,76 @@
+/** Max Width */
+/** Breakpoints */
+/** 1) This is an overide to have more text breathing room on home */
+@media all and (min-width: 62em) { .c-section--home { padding: 0 3rem; } }
+
+/*------------------------------------*\ #IFFFRAME \*------------------------------------*/
+/** 1) Iffframe creates a resizable component */
+.iffframe { padding: 1rem 0.7rem 1rem 0; width: 100%; position: relative; border: 1px solid #f5f5f5; border-left: none; overflow: hidden; height: auto; background-color: #ffffff; margin-bottom: 2rem; }
+
+.iffframe__iframe { width: 100%; overflow: auto; overflow-x: auto !important; }
+
+/** Iffframe handle 1) Hide resize handle for small screens */
+.iffframe__handle { display: none; /* 1 */ width: 0.7rem; height: 100%; position: absolute; right: 0; top: 0; cursor: col-resize; background-color: #f5f5f5; transition: background-color 0.3s ease; }
+
+.iffframe__handle:after { content: ""; display: block; height: 1rem; width: 2px; border-right: 1px solid #aaa; border-left: 1px solid #aaa; position: absolute; top: 50%; left: 50%; margin-top: -0.5rem; margin-left: -1px; }
+
+.iffframe__handle:hover { background: #e5e5e5; }
+
+.iffframe__handle:active { background: #cccccd; }
+
+@media all and (min-width: 40em) { .iffframe__handle { display: block; } }
+
+/*------------------------------------*\ #CODE \*------------------------------------*/
+/** 1) Override some Prism defaults 2) Fixed width button for showing and hiding code 3) Change background color 4) Update the code color to have Exxon colors */
+code[class*="language-"], pre[class*="language-"] { tab-size: 2; }
+
+.pattern-code { position: relative; margin-top: 2rem; }
+
+/** Applied to pre element */
+.pattern-code-block { margin-top: 0; max-height: 25rem; overflow-y: hidden; }
+
+.is-expanded .pattern-code-block { max-height: none; }
+
+.pattern-code-copy-btn { position: absolute; top: 0; right: 0; z-index: 2; }
+
+/* 3 */
+pre[class*="language-"] { background-color: #f5f5f5; }
+
+code[class*="language-"], pre[class*="language-"] { text-shadow: none; }
+
+/** Push the button up to be closer to the code-block in the show-more block */
+.show-more .c-btn { position: relative; bottom: 2rem; z-index: 1; }
+
+/** Force last paragraph of page header description to be inline so markdown flows into "Jump To Usage Guidelines Link" */
+.c-page-header__desc p:last-of-type { display: inline; }
+
+/** Page header icon 1) Add height and width for the page header icon for the "Jump to Usage Guidelines Link" 2) Added within the header__desc to cancel out text-passage styles; */
+.c-page-header__desc .c-page-header__icon { height: 1rem; /* 1 */ width: 1rem; /* 1 */ }
+
+/** Tabs list in reference site 1) Wrap tabs 2) Remove overflow 3) Remove shadows for overflow */
+@media all and (min-width: 47em) { .c-tabs__list { flex-wrap: wrap; /* 1 */ overflow-x: inherit; /* 2 */ overflow-y: inherit; /* 2 */ } }
+
+/*------------------------------------*\ #BADGES \*------------------------------------*/
+.c-badge { border-radius: 4px; color: #ffffff; font-size: .65rem; margin-left: 4px; padding: 4px; vertical-align: middle; }
+
+.c-badge--negative { background-color: #d82424; }
+
+.c-badge--positive { background-color: #00af53; }
+
+.c-badge--caution { background-color: #225896; }
+
+/*------------------------------------*\ #BADGES \*------------------------------------*/
+.c-table-container { width: 100%; overflow-x: auto; overflow-y: hidden; background: linear-gradient(to right, white 30%, rgba(255, 255, 255, 0)), linear-gradient(to right, rgba(255, 255, 255, 0), white 70%) right, linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, transparent 70%), linear-gradient(to left, rgba(0, 0, 0, 0.2) 0%, transparent 70%) right; background-repeat: no-repeat; background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%; background-attachment: local, local, scroll, scroll; }
+
+.c-table__cell:first-child { white-space: nowrap; }
+
+/*------------------------------------*\ #LAYOUT TWEAKS \*------------------------------------*/
+.push-right { padding-left: 0.5rem; }
+
+@media all and (min-width: 40em) { .push-right { padding-left: 8rem; } }
+
+.c-tabs-list__item { display: none; }
+
+.c-tabs-list__item.is-active { display: block; }
+
+/*# sourceMappingURL=style-guide.css.map */

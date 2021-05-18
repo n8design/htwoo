@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    #LOGO
+\*------------------------------------*/
+
+/**
+ * Branding image or text of the site
+ */
+.c-logo {
+	margin-top: 0;
+	@media all and (min-width: $bp-xl) {
+		margin: 0;
+	}
+	/**
+	 * Logo within vertical header
+	 */
+	.c-header--vertical & {
+		@media all and (min-width: $bp-xl) {
+			margin: 0 0 1rem;
+		}
+	}
+}
+
+/**
+ * Logo link
+ */
+.c-logo__link {
+	display: block;
+}
+
+
+/**
+ * Logo img
+ */
+.c-logo__img {
+	display: block;
+	max-width: 13rem;
+	height: auto;
+	display: none;
+	/**
+	 * Logo within vertical header
+	 */
+	.c-header--vertical & {
+		@media all and (min-width: $bp-xl) {
+			max-width: 15.75rem;
+		}
+	}
+}
+.c-logo__img-landscape {
+	display: block;
+	max-width: 13rem;
+	height: auto;
+	display: none;
+
+	/**
+	 * Logo within vertical header
+	 */
+	.c-header--vertical & {
+		display: block;
+		@media all and (min-width: $bp-xl) {
+			max-width: 15.75rem;
+		}
+	}
+}
