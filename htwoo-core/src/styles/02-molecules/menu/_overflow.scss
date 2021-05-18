@@ -1,34 +1,41 @@
-.hoo-overflow{
+.hoo-overflow {
     white-space: wrap;
     max-height: px2rem(48px);
     display: flex;
     flex-wrap: wrap;
+    min-width: 100%;
 }
 
 .has-overflow {
     position: relative;
 
     min-height: px2rem(46px);
-    background-color: lime;
 
-    & > .hoo-overflow{
-        position: fixed;
-    }
+    // &>.hoo-overflow {
+    //     position: fixed;
+    // }
 
-    
+
     .is-hidden,
-    .is-overflow-item{
+    .is-overflow-item {
         visibility: hidden;
     }
 
     .hoo-buttonicon-overflow {
-        position: absolute;
-        right: 0;
-
+        // position: absolute;
+        // right: 0;
+        order: 999;
         height: px2rem(44px);
+        visibility: hidden;
+        &.is-active{
+            visibility: visible;
+            .hoo-buttonicon-overflow {
+                visibility: inherit;
+            }
+        }
 
         &:hover {
-            .hoo-buttonflyout {
+            & > .hoo-buttonflyout {
                 display: block;
                 right: 0;
                 left: unset;
@@ -44,7 +51,7 @@
 
     }
 
-    .show-flyout {
+    & > .show-flyout {
         &.hoo-buttonicon-overflow {
             .hoo-buttonflyout {
                 right: 0;

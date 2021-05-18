@@ -7,97 +7,153 @@ const defaultOffset = 40; // Default offset for overflow width
  * @param {*} children all child elements inside the '.hoo-overflow' container
  * @param {*} curContainer current '.hoo-overflow' container
  */
-const getOverflowItems = (targetWidth, children, curContainer) => {
+const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
 
-    let overallWidth = defaultOffset,
-        parentContainer = curContainer.parentElement;
+    let curOverFlowItems = overflowItems[itemIndex].filter(item => {
+        return item.overallWidth > targetWidth - defaultOffset;
+    });
 
-    let overflowItems = {
-        items: [],
-        firstIndex: null,
-        realWidth: null
-    }
+    let curItems = overflowItems[itemIndex].filter(item => {
+        return item.overallWidth < targetWidth - defaultOffset;
+    });
 
-    // Loop over all child elements and try to find where the first overflow happen
-    for (let i = 0; i < children.length; i++) {
+    let overflowControl = curContainer.querySelector('.hoo-buttonicon-overflow .hoo-buttonflyout');
 
-        overallWidth += children[i].clientWidth;
+    if (overflowControl && overflowControl.children.length < curOverFlowItems.length) {
 
-        if (overallWidth >= targetWidth) {
+        for (let i = 0; i < curOverFlowItems.length; i++) {
 
-            if (overflowItems.firstIndex === null) {
-                overflowItems.firstIndex = i;
+            if (curContainer.querySelector("[data-ref=" + curOverFlowItems[i].ref + "]") !== null) {
+
+                let listItem = document.createElement('li');
+
+                listItem.appendChild(
+                    curContainer.querySelector("[data-ref=" + curOverFlowItems[i].ref + "]")
+                );
+                overflowControl.appendChild(listItem);
+
             }
 
-            overflowItems.items.push(children[i])
-
-            // Hide Element
-            children[i].classList.add('is-overflow-item');
-            // Accessibility
-            children[i].setAttribute('aria-hidden', true);
-        } else {
-            overflowItems.realWidth = overallWidth;
-            children[i].classList.remove('is-overflow-item');
-            children[i].removeAttribute('aria-hidden');
         }
-
     }
 
-    // Set the right element in the overflow container drop down
-    let overflowButton = parentContainer.querySelector("div.hoo-buttonicon-overflow");
-
-    if (overflowItems.firstIndex === null) {
-
-        overflowButton.classList.add('is-hidden');
-
+    if(overflowControl.children.length !== 0){
+    
+        var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
+        
+        console.log("IS ACTIVE", overflowItems, buttonEnabled);
+    
+        if(buttonEnabled){
+            buttonEnabled.classList.add('is-active');
+        }
+    
     } else {
+        
+        var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
+    
+        if(buttonEnabled){
+            buttonEnabled.classList.remove('is-active');
+        }
+    
+    }
 
-        overflowButton.classList.remove('is-hidden');
+    if (overflowControl && overflowControl.children.length > curOverFlowItems.length) {
+
+        for (let i = 0; i < curItems.length; i++) {
+
+            if (overflowControl.querySelector("[data-ref=" + curItems[i].ref + "]") !== null) {
+
+                let overflowElement = overflowControl.querySelector("[data-ref=" + curItems[i].ref + "]");
+
+                curContainer.appendChild(overflowElement);
+
+            }
+
+        }
 
     }
 
-    // Show and hide all elements that are hidden in the '.hoo-overflow' container
-    let items = parentContainer.querySelectorAll('.hoo-buttonflyout li');
 
-    items.forEach((item, index) => {
+    /**
+     * Cleanup left over <li> elements
+     */
+    for(let i = 0; i < overflowControl.children.length; i++){
 
-        if (index < overflowItems.firstIndex) {
+        if(overflowControl.children[i].children.length === 0){
 
-            item.style.display = "none"
-
-        } else {
-
-            item.style = null
+            overflowControl.children[i].remove();
 
         }
+
+    }
+
+
+}
+
+
+/**
+ * Handle all entries in the overflow menu
+ */
+const entryHandler = (entry, index) => {
+
+    let childButtons = entry.target.parentElement.querySelectorAll('.hoo-overflow > *');
+
+    getOverflowItems(entry.target.parentElement.clientWidth, childButtons, entry.target, index);
+
+}
+
+/**
+ * 
+ * @param {ResizeObserverEntry} entries 
+ * @param {ResizeObserver} observer 
+ */
+const overflow = (entries, observer) => {
+
+    // handle the overflow behaviour for all '.hoo.overflow' container
+    entries.forEach((item, index) => {
+
+        initOverflowElements(item.target.children, index);
+        entryHandler(item, index);
 
     });
 
 }
 
-const entryHandler = (entry, index) => {
+/**
+ * 
+ * @param {HTMLCollection} children 
+ * @param {number} index 
+ */
+const initOverflowElements = (children, index) => {
 
-    // query for all pivot buttons
-    console.log(
-        entry.target,
-        entry.target.parentElement,
-        entry.target.parentElement.querySelectorAll('.hoo-overflow'),
-        entry.target.parentElement.querySelectorAll('.hoo-overflow > *'),
-        entry.target.querySelectorAll('.hoo-overflow > div')
-        );
-    let childButtons = entry.target.parentElement.querySelectorAll('.hoo-overflow > *');
-    console.log('Child Button ::: ', childButtons);
-    getOverflowItems(entry.target.parentElement.clientWidth, childButtons, entry.target);
+    let overallWidth = 0;
 
+    if (overflowItems.length <= index) {
 
-    
+        overflowItems[index] = [];
 
-}
+        for (let i = 0; i < children.length; i++) {
 
-const overflow = (entries, observer) => {
+            overallWidth += children[i].clientWidth;
 
-    // handle the overflow behaviour for all '.hoo.overflow' container
-    entries.forEach(entryHandler);
+            if (!children[i].classList.contains("hoo-buttonicon-overflow")) {
+
+                let currentItem = {
+                    chlld: children[i],
+                    ref: "ref-" + index + "-" + i,
+                    width: children[i].clientWidth,
+                    overallWidth: overallWidth
+                }
+
+                children[i].dataset.ref = currentItem.ref;
+
+                overflowItems[index].push(currentItem);
+
+            }
+
+        }
+
+    }
 
 }
 
@@ -105,7 +161,6 @@ const overflow = (entries, observer) => {
 export const init = () => {
 
     let items = document.querySelectorAll('.hoo-overflow');
-    console.log(items);
 
     if (items.length !== 0) {
 
