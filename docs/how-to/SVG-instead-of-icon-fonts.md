@@ -1,4 +1,8 @@
-# SVG instead of icon fonts
+---
+layout: page
+title: SVG instead of icon fonts
+group: how-two
+---
 
 Fonts are for text, not for images or icons. Whenever an image is needed, use an image. In this regards, hTWOo is 100% icon font free.
 

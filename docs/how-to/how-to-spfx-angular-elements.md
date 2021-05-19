@@ -1,6 +1,10 @@
-# Use hTWOo in your Angular Elements web part
-
-This article describes the requirements to enable hTWOo in your custom web part. Since it is based on CSS custom properties or in other words CSS variables. 
+---
+layout: page
+title: Use hTWOo in your Angular Elements web part
+nav-title: SPFx with Angular Elements
+description: Learn how to use hTWOo in an Angular Elements based based SPFx web part
+group: how-to
+---
 
 First of all create SPFx web part with Angular elements using PnP Generator. For more information refer to [this](https://pnp.github.io/generator-spfx/) link.
 

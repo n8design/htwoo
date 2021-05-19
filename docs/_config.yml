@@ -10,8 +10,8 @@ title: hTWOo UI
 email: stefan.bauer@n8d.at
 description: # this means to ignore newlines until "baseurl:"
   Fluent Design made easy with hTWOo UI. Suitable for every Microsoft 365 customisation
-baseurl: "/htwoo/" # the subpath of your site, e.g. /blog
-url: "https://lab.n8d.studio/" # the base hostname & protocol for your site
+baseurl: "/htwoo" # the subpath of your site, e.g. /blog
+url: "https://lab.n8d.studio" # the base hostname & protocol for your site
 twitter_username: stfbauer
 github_username:  stfbauer
 
@@ -23,8 +23,12 @@ features:
 
 sections:
   - title: Getting Started
-    url: getting-started
+    url: README
     type: static
+  - title: Components & Style Guide
+    url: /htwoo-core/index.html
+    type: static
+    permlink: true
   - title:  How tos
     path: how-to
     group: how-to
@@ -32,6 +36,9 @@ sections:
   - title: Support
     type: static
     url: support
+  - title: Code of Conduct
+    type: static
+    url: CODE_OF_CONDUCT
   - title: Contribute
     type: static
     url: contribute
