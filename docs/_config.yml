@@ -26,8 +26,8 @@ sections:
     url: getting-started
     type: static
   - title:  How tos
-    path: how-tos
-    group: how-tos
+    path: how-to
+    group: how-to
     type: dynamic
   - title: Support
     type: static
