@@ -47,7 +47,6 @@
 					{% if section.permlink == null %}
 					{% for my_page in site.pages %}
 					{% capture staticLink %}/{{ section.url }}{% endcapture %}
-					<!-- {{ my_page.url contains tempPath | inspect }} -->
 						{% if my_page.url contains staticLink %}
 						<a href="{{ my_page.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
 							<span class="c-primary-nav__text">{{ section.title }}</span>
