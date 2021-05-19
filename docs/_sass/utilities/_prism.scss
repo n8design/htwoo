@@ -40,6 +40,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
+	content:""
 	// background: #272822;
 }
 
