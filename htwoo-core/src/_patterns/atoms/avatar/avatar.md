@@ -12,3 +12,7 @@ This avatar is show with a size of 64px and round borders. If you construct othe
 * 40px - .hoo-avatar-40
 * 40px - .hoo-avatar-40
 * 48px - .hoo-avatar-48
+
+## Changes in v0.2.0:
+
+* class name change for image in avatar molecule to `hoo-avatar-img`
