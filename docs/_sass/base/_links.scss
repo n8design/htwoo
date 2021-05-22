@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+/**
+ * Link base styles
+ */
+a {
+	color: $color-gray-73;
+	color: white;
+	text-decoration: none;
+	outline: 0;
+	transition: color $fade-quick ease-out, box-shadow $fade-quick ease-out;
+
+	&:hover, &:focus {
+		color: $color-gray-50;
+	}
+}

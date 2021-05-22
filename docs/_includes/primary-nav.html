@@ -1,0 +1,113 @@
+<nav class="c-primary-nav" role="navigation">
+
+	<ul class="c-primary-nav__list c-primary-nav__list--flush js-nav-panel" role="tablist" aria-multiselectable="true">
+
+		{% for section in site.sections %}
+			{% if section.type == "dynamic" %}
+			<li class="c-primary-nav__item {% if page.url contains section.path %}is-active{% endif %}">
+				<a class="c-primary-nav__link c-primary-nav__link--has-children js-nav-dropdown-trigger {% if page.url contains section.path %} is-active is-current{% endif %}" href="{{ section.path | prepend: site.baseurl }}">
+
+					<span class="c-primary-nav__text">{{ section.title }}</span>
+
+					<svg class="c-icon c-primary-nav__icon" aria-hidden="true">
+						<use href="{{ "/icons.svg#chevron-right" | prepend: site.baseurl }}"></use>
+					</svg>
+
+				</a>
+
+				<ul class="c-primary-nav__sublist js-nav-dropdownn {% if page.url contains section.path %} is-active{% endif %}">
+				{% for my_page in site.pages %}
+
+					{% if my_page.group == section.group %}
+					<li class="c-primary-nav__item">
+						<a class="c-primary-nav__link {% if my_page.url == page.url %}is-active is-current{% endif %}" href="{{ my_page.url | prepend: site.baseurl }}">
+						{% if my_page.title == section.title %}
+
+						<span class="c-primary-nav__text">Overview</span>
+
+						{% else %}
+
+							{% if my_page.nav-title != null  %}
+								{{ my_page.nav-title }}
+								{% else %}
+								{{ my_page.title }}
+							{% endif %}
+
+						{% endif %}
+						</a>
+					</li>
+					{% endif %}
+
+				{% endfor %}
+				</ul>
+			</li>
+			{% else if section.type == "static" %}
+				<li class="c-primary-nav__item">
+
+					{% if section.permlink == null %}
+					{% for my_page in site.pages %}
+					{% capture staticLink %}/{{ section.url }}{% endcapture %}
+						{% if my_page.url contains staticLink %}
+						<a href="{{ my_page.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
+							<span class="c-primary-nav__text">{{ section.title }}</span>
+						</a>
+						{% endif %}
+					{% endfor %}
+
+					{% else %}
+					<a href="{{ section.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
+						<span class="c-primary-nav__text">{{ section.title }}</span>
+					</a>
+					{% endif %}
+		
+				</li><!-- end c-nav__list__item -->
+			{% endif %}
+
+		{% endfor %}
+		{% if site.components %}
+		<li class="c-primary-nav__item {% if page.url contains '/components' %}is-active{% endif %}">
+			<a class="c-primary-nav__link c-primary-nav__link--has-children js-nav-dropdown-trigger {% if page.url contains '/components' %} is-active  is-current{% endif %}" href="{{ "/components/" | prepend: site.baseurl }}">
+
+				<span class="c-primary-nav__text">Components</span>
+
+				<svg class="c-icon c-primary-nav__icon" aria-hidden="true">
+					<use href="{{ "/icons.svg#chevron-right" | prepend: site.baseurl }}"></use>
+				</svg>
+
+			</a><!--end c-primary-nav__link-->
+
+			<ul class="c-primary-nav__sublist js-nav-dropdown {% assign post_index = '0' %}{% for my_page in site.pages %}{% if my_page.group == 'components' %}{% capture post_index %}{{ post_index | plus: '1' }}{% endcapture %}{% endif %}{% endfor %}{% if page.url contains '/components' %} is-active{% endif %}">
+
+				{% include primary-nav-item.html label='Blocks and cards' subgroup='blocks-and-cards' %}
+
+        		{% include primary-nav-item.html label='Buttons' subgroup='buttons' %}
+
+				{% include primary-nav-item.html label='Charts and graphs' subgroup='charts-and-graphs' %}
+
+                {% include primary-nav-item.html label='Form controls' subgroup='form-controls' %}
+
+				{% include primary-nav-item.html label='Headers and footers' subgroup='headers-and-footers' %}
+
+                {% include primary-nav-item.html label='Icons' subgroup='icons' %}
+
+                {% include primary-nav-item.html label='Interactive panels' subgroup='interactive' %}
+
+                {% include primary-nav-item.html label='Lists and collections' subgroup='lists-and-collections' %}
+
+                {% include primary-nav-item.html label='Media' subgroup='media' %}
+
+                {% include primary-nav-item.html label='Messaging' subgroup='messaging' %}
+
+                {% include primary-nav-item.html label='Navigation' subgroup='navigation' %}
+
+                {% include primary-nav-item.html label='Tables' subgroup='tables' %}
+
+                {% include primary-nav-item.html label='Text' subgroup='text' %}
+
+			</ul>
+		</li>
+		{% endif %}
+
+	</ul><!-- end c-nav__list -->
+
+</nav><!-- end c-nav -->
