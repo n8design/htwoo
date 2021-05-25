@@ -31,6 +31,5 @@ import {
 window.onload = () => {
     initTables();
 };
-
 ```
 
