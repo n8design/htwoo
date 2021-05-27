@@ -12,8 +12,11 @@
 	height: auto;
 
 	border-radius: 50%;
-
-	aspect-ratio: auto 1/1;
+	img.hoo-avatar{
+		width: 100%;
+		height: auto;
+		aspect-ratio: auto 1/1;
+	}
 }
 
 .hoo-avatar{
