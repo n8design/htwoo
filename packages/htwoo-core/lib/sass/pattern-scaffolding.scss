@@ -224,6 +224,12 @@
 
 .sg-colors{
 	column-count: 3;
+	@media screen and (max-width: 720px) {
+		column-count: 2;
+	}
+	@media screen and (max-width: 480px) {
+		column-count: 1;
+	}
 }
 
 .sg-elevations{

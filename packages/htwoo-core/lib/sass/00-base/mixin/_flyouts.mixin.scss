@@ -12,7 +12,7 @@
 	// TODO: Add SLIDEOUT ANIMATION
 	&.show-flyout{
 		background-color: inherit;
-		.hoo-buttonflyout{
+		& > .hoo-buttonflyout{
 			display: block;
 		}
 
