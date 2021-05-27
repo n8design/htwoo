@@ -13,8 +13,9 @@ You will find a complete list of assets in the [Style Guide](https://lab.n8d.stu
 
 ## How To Use
 
-* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html)
-* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react)
+* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html.html)
+* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react.html) 
+* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements.html)
 * more documentation coming soon
 
 ## Why just HTML and CSS
