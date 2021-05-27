@@ -29,7 +29,7 @@ sections:
     url: README
     type: static
   - title: Components & Style Guide
-    url: /htwoo-core/htwoo-core/index.html
+    url: /htwoo/htwoo-core/index.html
     type: static
     permlink: true
   - title:  How To
