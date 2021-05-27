@@ -1,13 +1,12 @@
 const collapseAndExpand = (event) => {
-    console.debug(event);
 
-    // const parentRow = event.target.closest("tr");
+    const parentRow = event.target.closest("tr");
     // console.debug("Parent Row", parentRow);
 
-    // const parentTable = event.target.closest("table");
+    const parentTable = event.target.closest("table");
     // console.debug("Current Table", parentTable);
 
-    // const section = parentRow.dataset.sectionheader;
+    const section = parentRow.dataset.sectionheader;
     // console.debug("Current Section", section);
 
     let query = null;
