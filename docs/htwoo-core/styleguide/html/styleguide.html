@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="../../css/style.css?1619475834136" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1619475834136" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1619475834136" media="all" />
-
+    <link rel="stylesheet" href="../../css/style.css?1622108278620" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1622108278620" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1622108278620" media="all" />
+     <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1619475834136" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1622108278620" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -1245,7 +1245,7 @@
 			<div class="hoo-input-search">
     <svg class="icon icon-search">
         <use xlink:href="../../images/icons.svg#icon-search"></use>
-    </svg><input class="hoo-input-text" type="text" placeholder="Search">
+    </svg><input class="hoo-input-text" type="search" placeholder="Search">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -3089,7 +3089,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-table-sticky" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>This table has a sticky header defined just by using an additional class on <code>tbody</code>. The class name is <code>header-sticky</code>.</p>\n<p>To make multiple columns sticky the table.js needs to be registered on the page.</p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Header Column Sticky","patternPartial":"atoms-table-sticky","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>This table has a sticky header defined just by using an additional class on <code>tbody</code>. The class name is <code>header-sticky</code>.</p>\n<p>You can define where the table header should be sticky by applying the following additional classes.</p>\n<ul>\n<li>top - sticky on top</li>\n<li>left - sticky on the left side</li>\n<li>right - sticky on the right side</li>\n<li>bottom - stick on bottom</li>\n</ul>\n<p>The classes can be also freely combined for example:</p>\n<pre><code class=\"language-html\">&lt;th class=&quot;is-stick top left&quot;&gt;\n    ...\n&lt;/th&gt;\n</code></pre>\n<p>To support multiple columns make sure you include the <a href=\"../../js/table\">table.js</a> in your code. From the htwoo-core package <code>node_modules/htwoo-core/lib/js/table</code>.</p>\n<p>To init the sticky behaviout call the following function.</p>\n<pre><code class=\"language-javascript\">/** Table Helper */\nimport {\n    initTables\n} from './table.js';\n\nwindow.onload = () =&gt; {\n    initTables();\n};\n</code></pre>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Header Column Sticky","patternPartial":"atoms-table-sticky","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="atoms-table-compact" class="pl-c-pattern">
@@ -4963,7 +4963,7 @@ Strong is used to indicate strong importance
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-button-icon" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-select","lineagePath":"../../patterns/atoms-input-select/atoms-input-select.rendered.html"},{"lineagePattern":"atoms-table-collapsable","lineagePath":"../../patterns/atoms-table-table-collapsable/atoms-table-table-collapsable.rendered.html"},{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-nav","lineagePath":"../../patterns/molecules-menus-nav/molecules-menus-nav.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-select","lineagePath":"../../patterns/atoms-input-select/atoms-input-select.rendered.html"},{"lineagePattern":"atoms-table-collapsable","lineagePath":"../../patterns/atoms-table-table-collapsable/atoms-table-table-collapsable.rendered.html"},{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-nav","lineagePath":"../../patterns/molecules-menus-nav/molecules-menus-nav.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Icon Button","patternPartial":"atoms-button-icon","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-table-collapsable","lineagePath":"../../patterns/atoms-table-table-collapsable/atoms-table-table-collapsable.rendered.html"},{"lineagePattern":"atoms-select","lineagePath":"../../patterns/atoms-input-select/atoms-input-select.rendered.html"},{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-nav","lineagePath":"../../patterns/molecules-menus-nav/molecules-menus-nav.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-table-collapsable","lineagePath":"../../patterns/atoms-table-table-collapsable/atoms-table-table-collapsable.rendered.html"},{"lineagePattern":"atoms-select","lineagePath":"../../patterns/atoms-input-select/atoms-input-select.rendered.html"},{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-nav","lineagePath":"../../patterns/molecules-menus-nav/molecules-menus-nav.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Icon Button","patternPartial":"atoms-button-icon","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="atoms-button-icon-overflow" class="pl-c-pattern">
@@ -5034,7 +5034,7 @@ Strong is used to indicate strong importance
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-button-icon-overflow" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-menu-flyouts","lineagePath":"../../patterns/atoms-buttons-menu-flyouts/atoms-buttons-menu-flyouts.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-menu-flyouts","lineagePath":"../../patterns/atoms-buttons-menu-flyouts/atoms-buttons-menu-flyouts.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Icon for Overflow","patternPartial":"atoms-button-icon-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-menu-flyouts","lineagePath":"../../patterns/atoms-buttons-menu-flyouts/atoms-buttons-menu-flyouts.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-menu-flyouts","lineagePath":"../../patterns/atoms-buttons-menu-flyouts/atoms-buttons-menu-flyouts.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"molecules-pivotbar-overflow","lineagePath":"../../patterns/molecules-menus-pivotbar-overflow/molecules-menus-pivotbar-overflow.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"molecules-pivotbar-overflow","lineagePath":"../../patterns/molecules-menus-pivotbar-overflow/molecules-menus-pivotbar-overflow.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Icon for Overflow","patternPartial":"atoms-button-icon-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="atoms-button-icon-split" class="pl-c-pattern">
@@ -5153,14 +5153,14 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<button class="hoo-button-pivot">
-    <div class="hoo-pivot-inner" title="Hello World">
-        Hello World
+    <div class="hoo-pivot-inner" title="hTWOo UI Framework">
+        hTWOo UI Framework
     </div>
 </button>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-button-pivot" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-pivotbar","lineagePath":"../../patterns/molecules-menus-pivotbar/molecules-menus-pivotbar.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-pivotbar","lineagePath":"../../patterns/molecules-menus-pivotbar/molecules-menus-pivotbar.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Pivot Button","patternPartial":"atoms-button-pivot","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-pivotbar-overflow","lineagePath":"../../patterns/molecules-menus-pivotbar-overflow/molecules-menus-pivotbar-overflow.rendered.html"},{"lineagePattern":"molecules-pivotbar","lineagePath":"../../patterns/molecules-menus-pivotbar/molecules-menus-pivotbar.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-pivotbar-overflow","lineagePath":"../../patterns/molecules-menus-pivotbar-overflow/molecules-menus-pivotbar-overflow.rendered.html"},{"lineagePattern":"molecules-pivotbar","lineagePath":"../../patterns/molecules-menus-pivotbar/molecules-menus-pivotbar.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"buttons"},"patternExtension":"hbs","patternName":"Pivot Button","patternPartial":"atoms-button-pivot","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="atoms-button-pivot-active" class="pl-c-pattern">
@@ -5201,8 +5201,8 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<button class="hoo-button-pivot is-active">
-    <div class="hoo-pivot-inner" title="Hello World">
-        Hello World
+    <div class="hoo-pivot-inner" title="hTWOo UI Framework">
+        hTWOo UI Framework
     </div>
 </button>
 			</div><!--end pl-js-pattern-example-->
@@ -5471,12 +5471,12 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-64">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-avatar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-avatar-presence-16","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html"},{"lineagePattern":"molecules-avatar-presence-24","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-24/molecules-avatar-with-presence-avatar-presence-24.rendered.html"},{"lineagePattern":"molecules-avatar-presence-32","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-32/molecules-avatar-with-presence-avatar-presence-32.rendered.html"},{"lineagePattern":"molecules-avatar-presence-40","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-40/molecules-avatar-with-presence-avatar-presence-40.rendered.html"},{"lineagePattern":"molecules-avatar-presence-48","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-48/molecules-avatar-with-presence-avatar-presence-48.rendered.html"},{"lineagePattern":"molecules-avatar-presence-64","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-64/molecules-avatar-with-presence-avatar-presence-64.rendered.html"},{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-avatar-presence-16","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html"},{"lineagePattern":"molecules-avatar-presence-24","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-24/molecules-avatar-with-presence-avatar-presence-24.rendered.html"},{"lineagePattern":"molecules-avatar-presence-32","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-32/molecules-avatar-with-presence-avatar-presence-32.rendered.html"},{"lineagePattern":"molecules-avatar-presence-40","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-40/molecules-avatar-with-presence-avatar-presence-40.rendered.html"},{"lineagePattern":"molecules-avatar-presence-48","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-48/molecules-avatar-with-presence-avatar-presence-48.rendered.html"},{"lineagePattern":"molecules-avatar-presence-64","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-64/molecules-avatar-with-presence-avatar-presence-64.rendered.html"},{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.</p>\n<h2>Supported Sizes:</h2>\n<ul>\n<li>16px - .hoo-avatar-16</li>\n<li>24px - .hoo-avatar-24</li>\n<li>32px - .hoo-avatar-32</li>\n<li>40px - .hoo-avatar-40</li>\n<li>40px - .hoo-avatar-40</li>\n<li>48px - .hoo-avatar-48</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"avatar"},"patternExtension":"hbs","patternName":"Avatar","patternPartial":"atoms-avatar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-avatar-presence-16","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html"},{"lineagePattern":"molecules-avatar-presence-24","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-24/molecules-avatar-with-presence-avatar-presence-24.rendered.html"},{"lineagePattern":"molecules-avatar-presence-32","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-32/molecules-avatar-with-presence-avatar-presence-32.rendered.html"},{"lineagePattern":"molecules-avatar-presence-40","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-40/molecules-avatar-with-presence-avatar-presence-40.rendered.html"},{"lineagePattern":"molecules-avatar-presence-48","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-48/molecules-avatar-with-presence-avatar-presence-48.rendered.html"},{"lineagePattern":"molecules-avatar-presence-64","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-64/molecules-avatar-with-presence-avatar-presence-64.rendered.html"},{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-avatar-presence-16","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html"},{"lineagePattern":"molecules-avatar-presence-24","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-24/molecules-avatar-with-presence-avatar-presence-24.rendered.html"},{"lineagePattern":"molecules-avatar-presence-32","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-32/molecules-avatar-with-presence-avatar-presence-32.rendered.html"},{"lineagePattern":"molecules-avatar-presence-40","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-40/molecules-avatar-with-presence-avatar-presence-40.rendered.html"},{"lineagePattern":"molecules-avatar-presence-48","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-48/molecules-avatar-with-presence-avatar-presence-48.rendered.html"},{"lineagePattern":"molecules-avatar-presence-64","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence-64/molecules-avatar-with-presence-avatar-presence-64.rendered.html"},{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.</p>\n<h2>Supported Sizes:</h2>\n<ul>\n<li>16px - .hoo-avatar-16</li>\n<li>24px - .hoo-avatar-24</li>\n<li>32px - .hoo-avatar-32</li>\n<li>40px - .hoo-avatar-40</li>\n<li>40px - .hoo-avatar-40</li>\n<li>48px - .hoo-avatar-48</li>\n</ul>\n<h2>Changes in v0.2.0:</h2>\n<ul>\n<li>class name change for image in avatar molecule to <code>hoo-avatar-img</code></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"avatar"},"patternExtension":"hbs","patternName":"Avatar","patternPartial":"atoms-avatar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="atoms-avatar-16" class="pl-c-pattern">
@@ -5517,7 +5517,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-16">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="16" width="16" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5563,7 +5563,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-24">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5609,7 +5609,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-32">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5655,7 +5655,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-40">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5701,7 +5701,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-48">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5747,7 +5747,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-64">
-    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+    <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -5792,7 +5792,7 @@ Strong is used to indicate strong importance
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-presence is-online" title="Hello World"></div>
+			<div class="hoo-presence is-online" title="hTWOo UI Framework"></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-presence" class="pl-js-pattern-data">
@@ -5977,7 +5977,7 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-cardfooter">
     <div class="hoo-avatar">
-        <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
+        <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
     </div>    <div class="hoo-cardfooter-data">
         <div class="hoo-cardfooter-name">Man on the moon</div>
         <div class="hoo-cardfooter-modified">Created a seconds ago</div>
@@ -6215,7 +6215,7 @@ Strong is used to indicate strong importance
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-radiobutton-group">
+			<div class="hoo-radiobutton-group" role="radiogroup">
     <div>
         <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox"><label for="chbg1">Apple</label>    </div>
     <div>
@@ -6268,14 +6268,14 @@ Strong is used to indicate strong importance
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-radiobutton-group">
-    <div>
+			<div class="hoo-radiobutton-group" role="radiogroup" tabindex="0">
+    <div tabindex="-1" role="radio">
         <input type="radio" name="radio-button-group" id="rbg1" value="apple" class="hoo-radio"><label for="rbg1">Apple</label>    </div>
-    <div>
+    <div tabindex="-1" role="radio">
         <input type="radio" name="radio-button-group" id="rbg2" value="banana" class="hoo-radio"><label for="rbg2">Avocado</label>    </div>
-    <div>
+    <div tabindex="-1" role="radio">
         <input type="radio" name="radio-button-group" id="rbg3" value="citrus" class="hoo-radio"><label for="rbg3">Banana</label>    </div>
-    <div>
+    <div tabindex="-1" role="radio">
         <input type="radio" name="radio-button-group" id="rbg4" value="avocado" class="hoo-radio"><label for="rbg4">Citrus</label>    </div>
 </div>
 			</div><!--end pl-js-pattern-example-->
@@ -6522,7 +6522,143 @@ Strong is used to indicate strong importance
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-pivotbar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar","patternPartial":"molecules-pivotbar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>To make the pivot bar responsive please checkout the overflow enabled version of this <a href=\"?p=molecules-pivotbar-overflow\">pivot bar</a>.</p>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar","patternPartial":"molecules-pivotbar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->		<div id="molecules-pivotbar-overflow" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-pivotbar-overflow&#x2F;molecules-menus-pivotbar-overflow.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-pivotbar-overflow" title="Link to Pattern">
+						Pivot Bar with Overflow
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-pivotbar-overflow" data-patternpartial="molecules-pivotbar-overflow" title="View Pattern Info">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+					</div>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-pivotbar-overflow">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-pivotbar has-overflow" role="menubar">
+        <div class="hoo-overflow">
+                <button class="hoo-button-pivot is-active">
+                    <div class="hoo-pivot-inner" title="Coffee">
+                        Coffee
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Matcha">
+                        Matcha
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Ice Tea">
+                        Ice Tea
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Aqua Minerale">
+                        Aqua Minerale
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Earl Grey">
+                        Earl Grey
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Darjeeling tea">
+                        Darjeeling tea
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Chai Latte">
+                        Chai Latte
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Gin Tonic">
+                        Gin Tonic
+                    </div>
+                </button>                <!--- Fixed element to handle overflow buttons -->
+                <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+                    <button class="hoo-buttonicon-overflow" aria-haspopup="true">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
+                    </svg>
+                </div> </span>
+                    </button>
+                    <ul class="hoo-buttonflyout" role="menu">
+                    </ul></div>        </div>
+</div>
+<div class="hoo-pivotbar has-overflow" role="menubar">
+        <div class="hoo-overflow">
+                <button class="hoo-button-pivot is-active">
+                    <div class="hoo-pivot-inner" title="Ham">
+                        Ham
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Bacon">
+                        Bacon
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Spam">
+                        Spam
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Turkey">
+                        Turkey
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Pork">
+                        Pork
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Venison">
+                        Venison
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Bison">
+                        Bison
+                    </div>
+                </button>                <button class="hoo-button-pivot">
+                    <div class="hoo-pivot-inner" title="Steak">
+                        Steak
+                    </div>
+                </button>                <!--- Fixed element to handle overflow buttons -->
+                <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+                    <button class="hoo-buttonicon-overflow" aria-haspopup="true">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
+                    </svg>
+                </div> </span>
+                    </button>
+                    <ul class="hoo-buttonflyout" role="menu">
+                    </ul></div>        </div>
+        
+</div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-pivotbar-overflow" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>To make this overflow work. Add the class <code>.has-overflow</code> on the pivot container. Also make sure you wrap all buttons in a <code>.hoo-overflow</code> container and add an overflow button.</p>\n<p>The overflow handling happen in the file <a href=\"../../js/js/overflow.js\">overflow.js</a>.\nThe menu of that contains all overflow items will be cloned when the right CSS classing in place directly in the <a href=\"../../js/pivot.js\">pivot.js</a></p>\n<h3>Links:</h3>\n<ul>\n<li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver\">ResizeObserver</a> on MDN</li>\n</ul>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar with Overflow","patternPartial":"molecules-pivotbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="molecules-cmdbar" class="pl-c-pattern">
@@ -6651,83 +6787,300 @@ Strong is used to indicate strong importance
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-cmdbar">
-    <div class="hoo-buttoncmd" aria-haspopup="true">
-        <button class="hoo-buttoncmd" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </div> </span>
-            <span class="hoo-button-label"> New Item </span>
-            <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
-        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-        </svg>
-    </div> </span>
-        </button>
-        <ul class="hoo-buttonflyout" role="menu">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </div> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>    </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </div> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>    </li>
-        </ul></div>
-    <div class="hoo-buttoncmd">
-        <button class="hoo-buttoncmd">
-            <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </div> </span>
-            <span class="hoo-button-label"> New Item </span>
-        </button>
-    </div>
-    <div class="hoo-buttonicon-overflow" aria-haspopup="true">
-        <button class="hoo-buttonicon-overflow" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-        <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
-        </svg>
-    </div> </span>
-        </button>
-        <ul class="hoo-buttonflyout" role="menu">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </div> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>    </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </div> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>    </li>
-        </ul></div></div>
+			<div class="hoo-cmdbar has-overflow">
+    <div class="hoo-overflow">
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+            <button class="hoo-buttonicon-overflow" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+            </ul></div>    </div>
+</div>
+<div class="hoo-cmdbar has-overflow">
+    <div class="hoo-overflow">
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd" aria-haspopup="true">
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>    </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </div> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>    </li>
+            </ul></div>
+        <div class="hoo-buttoncmd">
+            <button class="hoo-buttoncmd">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </div> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+            <button class="hoo-buttonicon-overflow" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <div class="hoo-icon">
+            <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
+            </svg>
+        </div> </span>
+            </button>
+            <ul class="hoo-buttonflyout" role="menu">
+            </ul></div>    </div>
+</div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-cmdbar-overflow" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Command bar use different variants of the command buttom, for example the first button has defined a drop down. The second buttom has no drop down defined. In this case the chevron won't show up.</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar Overflow","patternPartial":"molecules-cmdbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>To make the pivot bar responsive please checkout the overflow enabled version of this <a href=\"?p=molecules-pivotbar-overflow\">pivot bar</a>.</p>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n<p><strong><em>Currently the overflow shown here is only static</em></strong></p>\n<p>Command bar use different variants of the command buttom, for example the first button has defined a drop down. The second buttom has no drop down defined. In this case the chevron won't show up.</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar Overflow","patternPartial":"molecules-cmdbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="viewall-molecules-persona" class="pl-c-category">
@@ -6781,8 +7134,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -6835,8 +7188,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-24">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -6889,8 +7242,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-32">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -6943,8 +7296,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-40">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -6997,8 +7350,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-48">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -7051,8 +7404,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-72">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -7105,8 +7458,8 @@ Strong is used to indicate strong importance
 			<div class="hoo-persona-100">
     <div class="hoo-avatar-pres">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Hello World"></div></div>    <div class="hoo-persona-data">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+        </div>    <div class="hoo-presence is-dnd" title="hTWOo UI Framework"></div></div>    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -7169,8 +7522,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres">
     <div class="hoo-avatar">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence" class="pl-js-pattern-data">
@@ -7216,8 +7569,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-16">
     <div class="hoo-avatar-16">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="16" width="16" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-16" class="pl-js-pattern-data">
@@ -7263,8 +7616,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-24">
     <div class="hoo-avatar-24">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-24" class="pl-js-pattern-data">
@@ -7310,8 +7663,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-32">
     <div class="hoo-avatar-32">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-32" class="pl-js-pattern-data">
@@ -7357,8 +7710,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-48">
     <div class="hoo-avatar-48">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-40" class="pl-js-pattern-data">
@@ -7404,8 +7757,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-48">
     <div class="hoo-avatar-48">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-48" class="pl-js-pattern-data">
@@ -7451,8 +7804,8 @@ Strong is used to indicate strong importance
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-64">
     <div class="hoo-avatar-64">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div>
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-64" class="pl-js-pattern-data">
@@ -7508,7 +7861,7 @@ Strong is used to indicate strong importance
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-dlgheader">
-    <div class="hoo-dlgheader-title"><h2>Hello World</h2></div>
+    <div class="hoo-dlgheader-title"><h2>hTWOo UI Framework</h2></div>
     <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" aria-label="Close">
         <div class="hoo-icon">
             <svg class="hoo-icon-svg icon-close" aria-hidden="true">
@@ -7690,7 +8043,7 @@ Strong is used to indicate strong importance
     <img src="../../images//card-images/coffee-image.jpg" width="320" height="180" alt="">
     </div>    <div class="hoo-cardlocation">Marketing</div>    <div class="hoo-cardtitle">New Stuff for a cool intranet</div>    <div class="hoo-cardfooter">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
         </div>    <div class="hoo-cardfooter-data">
             <div class="hoo-cardfooter-name">Man on the moon</div>
             <div class="hoo-cardfooter-modified">Created a seconds ago</div>
@@ -7742,7 +8095,7 @@ Strong is used to indicate strong importance
 			<div class="hoo-doccard">
     <div class="hoo-cardimage-html"></div>    <div class="hoo-cardlocation">Marketing</div>    <div class="hoo-cardtitle">New Stuff for a cool intranet</div>    <div class="hoo-cardfooter">
         <div class="hoo-avatar">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar"   loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
         </div>    <div class="hoo-cardfooter-data">
             <div class="hoo-cardfooter-name">Man on the moon</div>
             <div class="hoo-cardfooter-modified">Created a seconds ago</div>
@@ -8350,46 +8703,46 @@ Strong is used to indicate strong importance
 			<div class="hoo-facepile">
     <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-away" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-24">
         <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="24" width="24" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -8437,46 +8790,46 @@ Strong is used to indicate strong importance
 			<div class="hoo-facepile">
     <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-away" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-32">
         <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="32" width="32" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -8524,46 +8877,46 @@ Strong is used to indicate strong importance
 			<div class="hoo-facepile">
     <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-away" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-40">
         <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="40" width="40" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -8611,46 +8964,46 @@ Strong is used to indicate strong importance
 			<div class="hoo-facepile">
     <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-away" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-48">
         <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -8698,46 +9051,46 @@ Strong is used to indicate strong importance
 			<div class="hoo-facepile">
     <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-away" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-oof" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-dnd" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div>    <div class="hoo-avatar-pres-64">
         <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="64" width="64" loading="lazy">
+            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
         </div>    <div class="hoo-presence is-online" title=""></div></div></div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -8792,10 +9145,10 @@ Strong is used to indicate strong importance
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1619475834136">
+<script id="pl-js-polyfill-insert-1622108278620">
   (function() {
     if (self != top) {
-      var cb = '1619475834136';
+      var cb = '1622108278620';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -8808,7 +9161,7 @@ Strong is used to indicate strong importance
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1619475834136" nomodule>
+<script id="pl-js-insert-1622108278620" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -8820,22 +9173,30 @@ Strong is used to indicate strong importance
 <script src="../../js/main.js" type="module"></script>
 <script>
 
+    var layoutMode = null;
+
     // changing logo accordingly
     var evtLocationStorageUpdates = () => {
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
-        if (patternlab.app.layoutMode === "vertical") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
             console.log("Layout is not vertical");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
         }
-        if (patternlab.app.layoutMode === "horizontal") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
             console.log("Layout is not horizontal");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
             console.log("IMAGE ", image);
         }
+
+        layoutMode = patternlab.app.layoutMode;
 
     }
     // register event listener

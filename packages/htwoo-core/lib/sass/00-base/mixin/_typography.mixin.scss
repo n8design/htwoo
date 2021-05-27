@@ -87,7 +87,7 @@
 		font-size: px2rem(18px);
 	}
 
-	@else if $typographyStyle==blockquote or if $typographyStyle==quote{
+	@else if $typographyStyle==blockquote or $typographyStyle==quote{
 		@extend %blockquote;
 	}
 

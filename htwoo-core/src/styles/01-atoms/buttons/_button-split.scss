@@ -2,6 +2,7 @@
 	@extend %flyoutDropDown;
 
 	display: flex;
+
 	cursor: pointer;
 
 	&-standard{
@@ -12,6 +13,7 @@
 		border-right: none;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
+
 		&[disabled],
 		&:disabled{
 			pointer-events: none;
@@ -46,12 +48,15 @@
 			color: inherit;
 			border-left: 1px currentColor solid;
 		}
+
 		.hoo-icon{
 			height: 16px;
 		}
+
 		& > *{
 			pointer-events: none;
 		}
+
 		&[disabled],
 		&:disabled{
 			pointer-events: none;
@@ -70,7 +75,7 @@
 	}
 
 	&.show-flyout{
-		.hoo-buttonflyout{
+		& > .hoo-buttonflyout{
 			display: block;
 		}
 	}
@@ -88,6 +93,7 @@
 		.hoo-button-label{
 			color: currentColor;
 		}
+
 		&[disabled],
 		&:disabled{
 			pointer-events: none;
@@ -97,8 +103,9 @@
 			background-color: $buttonBackgroundDisabled;
 		}
 	}
+
 	&.show-flyout{
-		.hoo-buttonsplit-carret{
+		& > .hoo-buttonsplit-carret{
 			border-color: $primaryButtonBackgroundPressed;
 			background-color: $primaryButtonBackgroundPressed;
 		}

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="">
   <head>
-    <title>Hello World</title>
+    <title>hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="../../css/style.css?1619475834136" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1619475834136" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1619475834136" media="all" />
-
+    <link rel="stylesheet" href="../../css/style.css?1622108278620" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1622108278620" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1622108278620" media="all" />
+     <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
     <!-- End Pattern Lab -->
@@ -17,8 +17,8 @@
   <body class="">
 <div class="hoo-avatar-pres-48">
     <div class="hoo-avatar-48">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Hello World"></div></div><!--DO NOT REMOVE-->
+        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+    </div>    <div class="hoo-presence is-online" title="hTWOo UI Framework"></div></div><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
   {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>The example shown here is a 48px avatar scaled up for better visibility.</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"avatar-with-presence"},"patternExtension":"hbs","patternName":"Avatar /w presence - 48px","patternPartial":"molecules-avatar-presence-48","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 </script>
@@ -60,10 +60,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1619475834136">
+<script id="pl-js-polyfill-insert-1622108278620">
   (function() {
     if (self != top) {
-      var cb = '1619475834136';
+      var cb = '1622108278620';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -76,7 +76,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1619475834136" nomodule>
+<script id="pl-js-insert-1622108278620" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -88,22 +88,30 @@
 <script src="../../js/main.js" type="module"></script>
 <script>
 
+    var layoutMode = null;
+
     // changing logo accordingly
     var evtLocationStorageUpdates = () => {
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
-        if (patternlab.app.layoutMode === "vertical") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
             console.log("Layout is not vertical");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
         }
-        if (patternlab.app.layoutMode === "horizontal") {
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
             console.log("Layout is not horizontal");
             let image = window.parent.document.querySelector(".pl-c-logo__img");
-            image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
             console.log("IMAGE ", image);
         }
+
+        layoutMode = patternlab.app.layoutMode;
 
     }
     // register event listener

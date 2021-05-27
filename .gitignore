@@ -111,5 +111,6 @@ dist
 .DS_Store
 .tmp
 
-htwoo-core/public
+./htwoo-core/public
+./htwoo-core/dependencyGraph.json
 htwoo-core/dependencyGraph.json

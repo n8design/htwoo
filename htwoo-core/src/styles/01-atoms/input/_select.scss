@@ -85,6 +85,7 @@
 	color: $buttonText;
 
 	align-items: center;
+	flex-shrink: 0;
 	&.is-disabled{
 		pointer-events: none;
 

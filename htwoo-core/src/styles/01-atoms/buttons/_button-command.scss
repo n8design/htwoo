@@ -34,7 +34,7 @@
 	}
 
 	&.show-flyout{
-		.hoo-buttonflyout{
+		& > .hoo-buttonflyout{
 			display: flex;
 		}
 	}

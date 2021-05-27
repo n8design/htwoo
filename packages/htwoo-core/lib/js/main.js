@@ -19,7 +19,11 @@ import {
     initMenu
 } from './nav.js';
 
-function splitButtonReg(classSelector, handleWith) {
+/** Overflow */
+import * as overflow from './overflow.js'
+
+
+const splitButtonReg = (classSelector, handleWith) => {
 
     let allSplitButtons = document.querySelectorAll(classSelector);
 
@@ -166,7 +170,7 @@ const afterLoaded = () => {
     splitButtonReg('button.hoo-buttoncmdbar', buttonClick);
     splitButtonReg('button.hoo-buttonicon-flyout', buttonClick);
     splitButtonReg('button.hoo-buttoncontext', buttonClick);
-    
+
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);
@@ -180,6 +184,8 @@ const afterLoaded = () => {
     initPivot();
     /** Init Menu Bars */
     initMenu();
+
+    overflow.init();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');

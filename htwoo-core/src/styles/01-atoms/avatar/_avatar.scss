@@ -5,13 +5,20 @@
 	height: 64px;
 	margin-right: 1rem;
 	margin-bottom: 1rem;
+}
+
+.hoo-avatar-img{
+	width: 100%;
+	height: auto;
 
 	border-radius: 50%;
 	img.hoo-avatar{
 		width: 100%;
 		height: auto;
+		aspect-ratio: auto 1/1;
 	}
 }
+
 .hoo-avatar{
 	@extend %hoo-avatar;
 
