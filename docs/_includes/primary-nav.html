@@ -45,21 +45,32 @@
 				<li class="c-primary-nav__item">
 
 					{% if section.permlink == null %}
-					{% for my_page in site.pages %}
-					{% capture staticLink %}/{{ section.url }}{% endcapture %}
-						{% if my_page.url contains staticLink %}
-						<a href="{{ my_page.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
+						{% for my_page in site.pages %}
+
+							{% capture staticLink %}/{{ section.url }}{% endcapture %}
+
+							{% if my_page.url contains staticLink %}
+
+							<a href="{{ my_page.url | prepend: site.baseurl | prepend: isPermLink }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
+								<span class="c-primary-nav__text">{{ section.title }}</span>
+							</a>
+							{% endif %}
+
+						{% endfor %}
+
+					{% else %}
+						
+						{% if section.url contains not "http" %}
+						<a href="{{ section.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
+							<span class="c-primary-nav__text">{{ section.title }}</span>
+						</a>
+						{% else %}
+						<a href="{{ section.url }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
 							<span class="c-primary-nav__text">{{ section.title }}</span>
 						</a>
 						{% endif %}
-					{% endfor %}
 
-					{% else %}
-					<a href="{{ section.url | prepend: site.baseurl }}" class="c-primary-nav__link {% if page.url contains staticLink %}is-active is-current{% endif %}">
-						<span class="c-primary-nav__text">{{ section.title }}</span>
-					</a>
 					{% endif %}
-		
 				</li><!-- end c-nav__list__item -->
 			{% endif %}
 

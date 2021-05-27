@@ -42,13 +42,13 @@ sections:
   - title: Code of Conduct
     type: static
     url: CODE_OF_CONDUCT
-  - title: Contribute
-    type: static
-    url: contribute
   - title: Engage on GitHub
     type: static
     url: https://github.com/n8design/htwoo
     permlink: true
+  - title: Contribute
+    type: static
+    url: contribute
 
 # Google services
 google_analytics: UA-195453119-1
