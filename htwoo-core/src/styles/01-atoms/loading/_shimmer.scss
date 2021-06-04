@@ -1,0 +1,50 @@
+@keyframes animate-shimmer{
+	0%,
+	100%{
+		background-position: 0 50%;
+	}
+
+	50%{
+		background-position: 100% 50%;
+	}
+}
+
+%shimmer-base-patter{
+	box-sizing: border-box;
+
+	animation: animate-shimmer 5s ease infinite;
+
+	border: .25rem $bodyBackground solid;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	&::before{
+		content: "";
+	}
+}
+
+.hoo-shimmer-squared{
+	@extend %shimmer-base-patter;
+
+	max-width: 5em;
+	max-height: 5em;
+
+	aspect-ratio: 1/1;
+}
+
+.hoo-shimmer-circle{
+	@extend .hoo-shimmer-squared;
+
+	border: 1px rgba(0,0,0,0) solid;
+	border-radius: 50%;
+
+}
+
+
+.hoo-shimmer-row{
+	@extend %shimmer-base-patter;
+
+	display: block;
+
+	width: 100%;
+	height: 1.5em;
+}

@@ -10,6 +10,16 @@
 
 		object-fit: fill;
 	}
+	.hoo-shimmer-squared{
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		max-height: 100%;
+
+		border: none;
+
+		aspect-ratio: 16/9;
+	}
 }
 
 .hoo-cardimage-html{
@@ -31,6 +41,11 @@
 	padding: px2rem(10px) px2rem(12px) px2rem(8px);
 
 	color: $primaryButtonBackground;
+	.hoo-shimmer-row{
+		width: 35%;
+
+		border: none;
+	}
 }
 
 .hoo-cardtitle{
@@ -40,6 +55,11 @@
 	box-sizing: border-box;
 	height: px2rem(38px);
 	padding: 0 px2rem(12px) px2rem(8px);
+	.hoo-shimmer-row{
+		width: 80%;
+
+		border: none;
+	}
 }
 
 .hoo-cardfooter{
@@ -57,13 +77,23 @@
 	&-data{
 		display: flex;
 		flex-direction: column;
+
+		width: 100%;
 	}
 
 	&-name{
 		font-size: px2rem(14px);
+		.hoo-shimmer-row{
+			width: 80%;
+
+			border-top: none;
+		}
 	}
 
 	&-modified{
 		font-size: px2rem(12px);
+		.hoo-shimmer-row{
+			width: 20%;
+		}
 	}
 }
