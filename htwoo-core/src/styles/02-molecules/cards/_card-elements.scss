@@ -10,7 +10,7 @@
 
 		object-fit: fill;
 	}
-	.hoo-shimmer-squared{
+	.hoo-ph-squared{
 		width: 100%;
 		max-width: 100%;
 		height: 100%;
@@ -41,7 +41,7 @@
 	padding: px2rem(10px) px2rem(12px) px2rem(8px);
 
 	color: $primaryButtonBackground;
-	.hoo-shimmer-row{
+	.hoo-ph-row{
 		width: 35%;
 
 		border: none;
@@ -55,7 +55,7 @@
 	box-sizing: border-box;
 	height: px2rem(38px);
 	padding: 0 px2rem(12px) px2rem(8px);
-	.hoo-shimmer-row{
+	.hoo-ph-row{
 		width: 80%;
 
 		border: none;
@@ -69,9 +69,14 @@
 	padding: px2rem(12px);
 
 	.hoo-avatar{
-		width: 32px;
-		height: 32px;
+		width: px2rem(32px);
+		height: px2rem(32px);
 		margin-right: 1rem;
+		.hoo-ph-circle{
+			border: none;
+			height: inherit;
+			width: inherit;
+		}
 	}
 
 	&-data{
@@ -83,7 +88,7 @@
 
 	&-name{
 		font-size: px2rem(14px);
-		.hoo-shimmer-row{
+		.hoo-ph-row{
 			width: 80%;
 
 			border-top: none;
@@ -92,7 +97,7 @@
 
 	&-modified{
 		font-size: px2rem(12px);
-		.hoo-shimmer-row{
+		.hoo-ph-row{
 			width: 20%;
 		}
 	}
