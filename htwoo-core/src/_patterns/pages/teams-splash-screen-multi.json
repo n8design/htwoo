@@ -1,7 +1,7 @@
 {
     "cards": [
         {
-            "headerImage": "../../images/placeholders/16by10.png",
+            "headerImage": "../../images/card-images/htwoo-gm-001.svg",
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
@@ -14,7 +14,7 @@
             }
         },
         {
-            "headerImage": "../../images/placeholders/16by10.png",
+            "headerImage": "../../images/card-images/htwoo-gm-002.svg",
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
@@ -27,7 +27,7 @@
             }
         },
         {
-            "headerImage": "../../images/placeholders/16by10.png",
+            "headerImage": "../../images/card-images/htwoo-gm-003.svg",
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
