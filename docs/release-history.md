@@ -3,6 +3,8 @@ layout: page
 title: Release History
 ---
 
+## v0.3.0
+
 ## v0.2.0
 - Adds overflow control to [pivotbar](https://lab.n8d.studio/htwoo/htwoo-core/?p=molecules-pivotbar-overflow) and [Command Bars](https://lab.n8d.studio/htwoo/htwoo-core/?p=molecules-cmdbar-overflow) - Feature Request [#11](https://github.com/n8design/htwoo/issues/11)
 - Documentation update
