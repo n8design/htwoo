@@ -1,14 +1,17 @@
 .hoo-doccard{
 	@include elevation(4);
 
+	display: inline-flex;
+	flex-direction: column;
+
+	width: auto;
+	min-width: 324px;
+
 	border: 1px solid $variantBorder;
-    width: auto;
-    display: inline-flex;
-    flex-direction: column;
-    .hoo-avatar{
-        margin-bottom: 0;
-    }
-    .hoo-cardfooter{
-        align-self: bottom;
-    }
+	.hoo-avatar{
+		margin-bottom: 0;
+	}
+	.hoo-cardfooter{
+		align-self: bottom;
+	}
 }
