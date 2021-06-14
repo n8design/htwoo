@@ -52,6 +52,7 @@
 
 /**** ATOMS / Loading ****/
 @import "01-atoms/loading/progress";
+@import "01-atoms/loading/shimmer";
 
 
 /**** ATOMS / Buttons ****/
@@ -102,3 +103,7 @@
 @import "03-organism/dialog/modal-dialog";
 @import "03-organism/dialog/sidebar";
 @import "03-organism/cards/cards";
+@import "03-organism/cards/splash-cards";
+
+/*** Templates ***/
+@import "04-templates/teams-splash";

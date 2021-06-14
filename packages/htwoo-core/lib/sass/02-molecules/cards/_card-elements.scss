@@ -10,6 +10,16 @@
 
 		object-fit: fill;
 	}
+	.hoo-ph-squared{
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		max-height: 100%;
+
+		border: none;
+
+		aspect-ratio: 16/9;
+	}
 }
 
 .hoo-cardimage-html{
@@ -31,6 +41,11 @@
 	padding: px2rem(10px) px2rem(12px) px2rem(8px);
 
 	color: $primaryButtonBackground;
+	.hoo-ph-row{
+		width: 35%;
+
+		border: none;
+	}
 }
 
 .hoo-cardtitle{
@@ -40,6 +55,11 @@
 	box-sizing: border-box;
 	height: px2rem(38px);
 	padding: 0 px2rem(12px) px2rem(8px);
+	.hoo-ph-row{
+		width: 80%;
+
+		border: none;
+	}
 }
 
 .hoo-cardfooter{
@@ -49,21 +69,36 @@
 	padding: px2rem(12px);
 
 	.hoo-avatar{
-		width: 32px;
-		height: 32px;
+		width: px2rem(32px);
+		height: px2rem(32px);
 		margin-right: 1rem;
+		.hoo-ph-circle{
+			border: none;
+			height: inherit;
+			width: inherit;
+		}
 	}
 
 	&-data{
 		display: flex;
 		flex-direction: column;
+
+		width: 100%;
 	}
 
 	&-name{
 		font-size: px2rem(14px);
+		.hoo-ph-row{
+			width: 80%;
+
+			border-top: none;
+		}
 	}
 
 	&-modified{
 		font-size: px2rem(12px);
+		.hoo-ph-row{
+			width: 20%;
+		}
 	}
 }
