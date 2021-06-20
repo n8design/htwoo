@@ -1,3 +1,7 @@
+---
+title: How shimmer works
+---
+
 ## Theming support for shimmer
 
 Shimmer also supports theming based on the SharePoint theme. This can be accomplished in two ways.

@@ -3,6 +3,9 @@ layout: page
 title: Release History
 ---
 
+## v0.4.0
+- Add new shimmer image placeholders for various ratios - [squared](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-squared), [16:9](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-img-16x10), [16:10]((https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-img-16x10)) images
+
 ## v0.3.0
 - Adds [placeholder loading animation](https://lab.n8d.studio/htwoo/htwoo-core/?p=viewall-atoms-loading) aka Shimmer effects
 - Adds [card layouts](https://lab.n8d.studio/htwoo/htwoo-core/?p=organism-teams-splash-card) for Microsoft Teams

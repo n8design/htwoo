@@ -1,5 +1,7 @@
 /***** Color converted to SCSS variables *****/
 @import "00-base/colors/colors";
+@import "00-base/colors/color-vars-css-converted";
+
 
 @import "00-base/global.vars";
 /**** REQURIED FOR STYLE GUIDE ****/
@@ -101,4 +103,5 @@
 @import "03-organism/cards/splash-cards";
 
 /*** Templates ***/
+@import "04-templates/card-grid";
 @import "04-templates/teams-splash";
