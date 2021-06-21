@@ -26,6 +26,9 @@ features:
 
 sections:
   - title: Getting Started
+    url: getting-started
+    type: static
+  - title: About
     url: README
     type: static
   - title: Components & Style Guide

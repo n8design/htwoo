@@ -4,6 +4,23 @@ title: Getting Started
 description: The getting started page should provide information for how to get up and running with the design system.
 ---
 
+hTWOo can be used in two ways.
+
+* npm install
+* via CDN
+
+## NPM Install
+
+First install the package.
+
+```bash
+npm install --save-dev @n8d/htwoo-core
+```
+
+Once installed you can import th SASS files from your node_modules folder.
+
+
+
 ## Downloading
 Provide links and information for downloading the design system's files:
 

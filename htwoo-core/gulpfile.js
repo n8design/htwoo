@@ -11,6 +11,7 @@ var isProd = false;
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
+const rollup = require('rollup');
 
 const baseWatch = async (cb) => {
 
