@@ -93,6 +93,7 @@
 @import "02-molecules/menu/overflow";
 @import "02-molecules/persona";
 @import "02-molecules/teams-toolbar";
+@import "02-molecules/teamsdb-card";
 
 /*** MOLECULES / CARDS ***/
 @import "02-molecules/cards/card-elements";
@@ -106,4 +107,5 @@
 
 /*** Templates ***/
 @import "04-templates/card-grid";
+@import "04-templates/teams-dashboard";
 @import "04-templates/teams-splash";
