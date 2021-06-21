@@ -39,7 +39,7 @@ const styles = () => {
         // .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
             outputStyle: 'expanded',
-            precision: 10,
+            precision: 6,
             includePaths: ['.']
         }).on('error', $.sass.logError))
         .pipe($.postcss([
@@ -66,7 +66,7 @@ const pluginCSSOverride = () => {
         // .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
             outputStyle: 'expanded',
-            precision: 10,
+            precision: 6,
             includePaths: ['.']
         }).on('error', $.sass.logError))
         .pipe($.postcss([
