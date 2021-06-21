@@ -1,7 +1,10 @@
 .hoo-cardimage{
 	border-collapse: collapse;
 
-	border: 1px solid $variantBorder;
+	// removed from version 0.3.x anwards: border: 1px solid $variantBorder;
+	border:none;
+	border-collapse: collapse;
+	box-sizing: border-box;
 
 	aspect-ratio: 16/9;
 
