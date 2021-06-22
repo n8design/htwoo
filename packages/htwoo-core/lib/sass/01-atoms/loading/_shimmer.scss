@@ -23,19 +23,16 @@
 	background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
 	background-size: 400% 400%;
 
-	.hoo-ph-primary &,
 	&.hoo-ph-primary {
 		background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
 		background-size: 400% 400%;
 	}
 
-	.hoo-ph-neutral &,
 	&.hoo-ph-neutral {
 		background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
 		background-size: 400% 400%;
 	}
 
-	.hoo-ph-fancy &,
 	&.hoo-ph-fancy {
 		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 		background-size: 400% 400%;
@@ -72,6 +69,29 @@
 
 	width: 100%;
 	height: 1.5em;
+}
+
+.hoo-ph-primary .hoo-ph-squared,
+.hoo-ph-primary .hoo-ph-circle,
+.hoo-ph-primary .hoo-ph-row {
+	background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
+	background-size: 400% 400%;
+}
+
+
+.hoo-ph-neutral .hoo-ph-squared,
+.hoo-ph-neutral .hoo-ph-circle,
+.hoo-ph-neutral .hoo-ph-row {
+	background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
+	background-size: 400% 400%;
+}
+
+
+.hoo-ph-fancy .hoo-ph-squared,
+.hoo-ph-fancy .hoo-ph-circle,
+.hoo-ph-fancy .hoo-ph-row {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
 }
 
 // .hoo-ph-primary {

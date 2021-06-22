@@ -11,6 +11,7 @@ var isProd = false;
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
+const rollup = require('rollup');
 
 const baseWatch = async (cb) => {
 
@@ -36,11 +37,20 @@ const styles = () => {
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         // .pipe($.sourcemaps.init())
-        .pipe($.sass.sync({
-            outputStyle: 'expanded',
-            precision: 10,
-            includePaths: ['.']
-        }).on('error', $.sass.logError))
+        .pipe(
+            $.if(!isProd, $.sass.sync({
+                outputStyle: 'expanded',
+                precision: 6,
+                includePaths: ['.']
+            }))
+            .on('error', $.sass.logError))
+        .pipe(
+            $.if(isProd, $.sass.sync({
+                outputStyle: 'compressed',
+                precision: 6,
+                includePaths: ['.']
+            }))
+            .on('error', $.sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))
@@ -65,7 +75,7 @@ const pluginCSSOverride = () => {
         // .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
             outputStyle: 'expanded',
-            precision: 10,
+            precision: 6,
             includePaths: ['.']
         }).on('error', $.sass.logError))
         .pipe($.postcss([

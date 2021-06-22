@@ -1,0 +1,3 @@
+---
+title: Shimmer Image boilerplate
+---
