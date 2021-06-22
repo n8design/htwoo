@@ -37,11 +37,20 @@ const styles = () => {
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         // .pipe($.sourcemaps.init())
-        .pipe($.sass.sync({
-            outputStyle: 'expanded',
-            precision: 6,
-            includePaths: ['.']
-        }).on('error', $.sass.logError))
+        .pipe(
+            $.if(!isProd, $.sass.sync({
+                outputStyle: 'expanded',
+                precision: 6,
+                includePaths: ['.']
+            }))
+            .on('error', $.sass.logError))
+        .pipe(
+            $.if(isProd, $.sass.sync({
+                outputStyle: 'compressed',
+                precision: 6,
+                includePaths: ['.']
+            }))
+            .on('error', $.sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))
