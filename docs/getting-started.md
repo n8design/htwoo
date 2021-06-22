@@ -41,6 +41,8 @@ To use hTWOo from CDN use the following URLs. The CDN version only offer limited
 <script src="https://unpkg.com/browse/@n8d/htwoo-core@<version>/dist/js/"></script>
 ```
 
+Check out the package on [unpkg](https://unpkg.com/browse/@n8d/htwoo-core@0.4.0-beta2/).
+
 ## File Structure of npm package
 
 ```
