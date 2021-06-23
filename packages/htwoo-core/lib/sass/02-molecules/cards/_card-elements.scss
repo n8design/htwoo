@@ -1,12 +1,18 @@
 .hoo-cardimage{
 	border-collapse: collapse;
 
-	border: 1px solid $variantBorder;
+	// removed from version 0.3.x anwards: border: 1px solid $variantBorder;
+	border:none;
+	border-collapse: collapse;
+	box-sizing: border-box;
 
 	aspect-ratio: 16/9;
 
 	img{
 		display: block;
+
+		width: 100%;
+		height: auto;
 
 		object-fit: fill;
 	}
@@ -23,8 +29,8 @@
 }
 
 .hoo-cardimage-html{
-	width: 320px;
-	height: 180px;
+	// min-width: 320px;
+	// min-height: 180px;
 
 	content: "";
 
@@ -52,9 +58,15 @@
 	font-size: px2rem(14px);
 	font-weight: 600;
 
+	display: -webkit-box;
+
 	box-sizing: border-box;
 	height: px2rem(38px);
 	padding: 0 px2rem(12px) px2rem(8px);
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 	.hoo-ph-row{
 		width: 80%;
 
@@ -73,9 +85,10 @@
 		height: px2rem(32px);
 		margin-right: 1rem;
 		.hoo-ph-circle{
-			border: none;
-			height: inherit;
 			width: inherit;
+			height: inherit;
+
+			border: none;
 		}
 	}
 
