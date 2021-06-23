@@ -28,7 +28,7 @@ sections:
   - title: Getting Started
     url: getting-started
     type: static
-  - title: About
+  - title: About hTWOo
     url: README
     type: static
   - title: Components & Style Guide
