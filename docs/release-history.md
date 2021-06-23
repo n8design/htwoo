@@ -12,12 +12,14 @@ title: Release History
 - Microsoft Teams [Toolbar](https://lab.n8d.studio/htwoo/htwoo-core/?p=molecules-teams-toolbar) and first draft of Microsoft Teams [Dashboard](https://lab.n8d.studio/htwoo/htwoo-core/?p=templates-teams-dashboard)
 - Adjustment of image borders
 - **EXPERIMENTAL:** JavaScript supports now AMD, CommonJS and UMD in `dist`folder of package. untransformed JavaScript still remains in the `lib` folder.
+
 **Documentation:** [Component Library and Style Guide - v0.4.0](/htwoo/htwoo-core)
 
 ## v0.3.0
 - Adds [placeholder loading animation](https://lab.n8d.studio/htwoo/htwoo-core/?p=viewall-atoms-loading) aka Shimmer effects
 - Adds [card layouts](https://lab.n8d.studio/htwoo/htwoo-core/?p=organism-teams-splash-card) for Microsoft Teams
 - Adds based on card layouts the Micorosoft Teams [splash screens template](https://lab.n8d.studio/htwoo/htwoo-core/?p=templates-teams-splash-screen-multi) and [splash screens layouts](https://lab.n8d.studio/htwoo/htwoo-core/?p=viewall-pages-teams)
+
 **Documentation:** [Component Library and Style Guide - v0.3.0](/htwoo/ver/v0.3.0)
 
 ## v0.2.0
