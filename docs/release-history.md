@@ -4,7 +4,10 @@ title: Release History
 ---
 
 ## v0.4.0
-- New component scss file that encapsulate all previouse components
+- New component scss file that encapsulate all previous components
+```tsx
+@import 'node_modules/@n8d/htwoo-core/lib/components/all'
+```
 - Add new shimmer image placeholders for various ratios - [squared](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-squared), [16:9](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-img-16x10), [16:10]((https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-shimmer-img-16x10)) images
 - Microsoft Teams [Toolbar](https://lab.n8d.studio/htwoo/htwoo-core/?p=molecules-teams-toolbar) and first draft of Microsoft Teams [Dashboard](https://lab.n8d.studio/htwoo/htwoo-core/?p=templates-teams-dashboard)
 - Adjusement of image borders
