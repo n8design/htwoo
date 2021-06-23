@@ -29,7 +29,7 @@ sections:
     url: getting-started
     type: static
   - title: About hTWOo
-    url: README
+    url: readme
     type: static
   - title: Components & Style Guide
     url: /htwoo/htwoo-core/index.html
