@@ -3,7 +3,7 @@ layout: page
 title: Release History
 ---
 
-## v0.4.0 - beta 3
+## v0.4.0 - beta 5
 - New component scss file that encapsulate all previous components
 ```tsx
 @import 'node_modules/@n8d/htwoo-core/lib/components/all'
