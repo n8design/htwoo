@@ -11,7 +11,7 @@ Main focus of this project is to be used in SharePoint Framework, Microsoft Team
 ## Installation
 
 ```sh
-npm install -g @n8d/htwoo-core
+npm install --save-dev @n8d/htwoo-core
 ```
 
 ## Usage
