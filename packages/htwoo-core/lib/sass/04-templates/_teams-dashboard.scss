@@ -2,11 +2,7 @@
 	@include gridBase();
 
 	margin: px2rem(20px);
-<<<<<<< HEAD
 	& > *{
-		@include gridSpan(3);
 		@include elevation(4);
 	}
-=======
->>>>>>> main
 }
