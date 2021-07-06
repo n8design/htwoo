@@ -17,38 +17,64 @@ First install the package.
 npm install --save-dev @n8d/htwoo-core
 ```
 
-Once installed you can import th SASS files from your node_modules folder.
+Once installed you can import the SASS files from your node_modules folder.
 
+### How to use
 
+* [Use hTWOo in SPFx no-framework web part](./how-to/how-to-spfx-html)
+* [Use hTWOo in SPFx ReactJS web part](./how-to/how-to-spfx-react)
+* [Use hTWOo in SPFx Angular Elements web part](./how-to/how-to-spfx-angular-elements)
 
-## Downloading
-Provide links and information for downloading the design system's files:
+### CDN Support
 
-<div><a href="{{ "/downloads.html" | prepend: site.baseurl }}" class="c-btn">Download Design System Files</a></div>
+To use hTWOo from CDN use the following URLs. The CDN version only offer limited capabilities but contain all styling.
 
-## File Structure
-Provide an overview of the file system structure and how users of the design system should integrate the design system's code into their project. This info will obviously vary depending on your organization's environment(s).
+**For CSS**
 
-```
-design-system-1.0/
-├── css/
-│   ├── design-system-1.0.css
-│   ├── design-system-1.0.min.css
-├── fonts/
-│   └── [design system web fonts]
-├── images/
-│   ├── design-system-icons.svg
-└── js/
-│   ├── design-system-1.0.js
-│   └── design-system-1.0.min.js
-└── [additional files]
+```html
+<link rel="stylesheet" href="https://unpkg.com/browse/@n8d/htwoo-core@<version>/dist/css/htwoo.min.css">
 ```
 
-## Creating pages and using components
-Provide information on how to properly link up design system files in order to create a basic "hello world" template. From there, describe the process of incorporating design system's components into the project. Again, this will undoubtedly vary based on the setup and technologies your organization utilizes.
+**For JavaScript**
 
-## Code conventions
-Provide a link to learn more about <a href="{{ "/guidelines/code.html" | prepend: site.baseurl }}">code conventions</a>.
+```html
+<script src="https://unpkg.com/browse/@n8d/htwoo-core@<version>/dist/js/"></script>
+```
 
-## Support and Community
-Provide information on where people can go to <a href="{{ "/support.html" | prepend: site.baseurl }}">ask for help</a>, and provide a link to the <a href="{{ "/contribute.html" | prepend: site.baseurl }}">contribution page</a> to help plant tback to the system.
+Check out the package on [unpkg](https://unpkg.com/browse/@n8d/htwoo-core@0.4.0-beta2/).
+
+## File Structure of npm package
+
+```
+htwoo-core/
+.
+├── LICENSE
+├── README.md
+├── dist                  <- For use From CDN
+│   ├── css
+│   │   └── htwoo.min.css <- Pre-compiled css
+│   └── js                <- Additional JavaScripts
+│       ├── amd
+│       ├── cjs
+│       └── umd
+│
+├── lib
+│   ├── components
+│   │   ├── _all.scss
+│   │   ├── _avatar.scss
+│   │   ├── _base.scss
+│   │   ├── _button.scss
+│   │   ├── _cards.scss
+│   │   ├── _dialogs.scss
+│   │   ├── _forms.scss
+│   │   ├── _icon.scss
+│   │   ├── _loading.scss
+│   │   ├── _menus.scss
+│   │   ├── _table.scss
+│   │   ├── _typography.scss
+│   │   ├── _webpart-title.scss
+│   │   └── _webparts.scss
+│   ├── js               <- Pure JavaScripts
+│   └── sass             <- Contains the implementation of hTWOOo
+
+```

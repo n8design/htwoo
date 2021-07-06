@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Release History
+hidden: true
 ---
 
 <ul class="c-block-list">

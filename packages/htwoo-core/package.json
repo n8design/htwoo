@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "SharePoint Framework"
   ],
   "author": "Stefan Bauer (@stfbauer)",
-  "homepage": "https://lab.n8d.studio/htwoo/htwoo-core/",
+  "homepage": "https://lab.n8d.studio/htwoo/",
   "bugs": {
     "url": "https://github.com/n8design/htwoo/issues"
   },
@@ -25,8 +25,5 @@
     "type": "git",
     "url": "https://github.com/n8design/htwoo"
   },
-  "license": "MIT",
-  "files": [
-    "lib"
-  ]
+  "license": "MIT"
 }

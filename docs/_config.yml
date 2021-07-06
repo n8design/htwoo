@@ -28,8 +28,8 @@ sections:
   - title: Getting Started
     url: getting-started
     type: static
-  - title: About
-    url: README
+  - title: About hTWOo
+    url: readme
     type: static
   - title: Components & Style Guide
     url: /htwoo/htwoo-core/index.html
