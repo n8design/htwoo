@@ -29,3 +29,10 @@ The placement of elements can be accomplished with the following SASS mixin.
 The SASS mixing has the following input:
 
 @include gridSpan([grid span], [Starting column], [Starting row]);
+
+### SCSS Imports
+
+**Main Component**\
+@n8d/htwoo-core/components/base
+
+***
