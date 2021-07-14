@@ -1,5 +1,5 @@
 ---
-title: Modal Dialog for Warning
+title: Modal Dialog for Warnings
 tags: Modal Dialog, Warning
 ---
 
