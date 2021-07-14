@@ -1,6 +1,6 @@
 ---
-title: Side Right
-tags: Side Right
+title: Sidebar Right
+tags: Sidebar Right
 ---
 
 ### SCSS Imports
