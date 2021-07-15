@@ -1,6 +1,5 @@
 ---
-hidden: true
-state: inprogress
+title: Shimmer Row
 ---
 
 ### SCSS Imports
