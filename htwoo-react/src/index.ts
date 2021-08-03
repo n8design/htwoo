@@ -1,4 +1,7 @@
 import "./Base.css";
+import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
 
-export * from './LQDButton';
-export * from './LQDWebPartTitle';
+export default SPFxThemes;
+export { ISPFxThemes };
+export * from './HOOButton';
+export * from './HOOWebPartTitle';

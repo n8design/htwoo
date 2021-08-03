@@ -1,16 +1,16 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import LQDIcon, {
-  ILQDIconProps
-} from './LQDIcon';
+import HOOIcon, {
+  IHOOIconProps
+} from './HOOIcon';
 
 export default {
-  title: 'Atoms/LQDIcon',
-  component: LQDIcon,
+  title: 'Atoms/HOOIcon',
+  component: HOOIcon,
 } as Meta;
 
-const Template: Story<ILQDIconProps> = (args) => <LQDIcon {...args} />;
+const Template: Story<IHOOIconProps> = (args) => <HOOIcon {...args} />;
 
 export const Primary = Template.bind({});
 

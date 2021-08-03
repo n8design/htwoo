@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash/isEqual";
+import isEqual from "lodash-es/isEqual";
 
-import "./LQDWebPartTitle.css";
-import { ILQDStandardProps } from "../Common.model";
+import "./HOOWebPartTitle.css";
+import { IHOOStandardProps } from "../Common.model";
 
-export interface ILQDWebPartTitleProps extends ILQDStandardProps {
+export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
    */
@@ -28,23 +28,23 @@ export interface ILQDWebPartTitleProps extends ILQDStandardProps {
   updateTitle: (title: string) => void;
 }
 
-export interface ILQDWebPartTitleState {
+export interface IHOOWebPartTitleState {
 }
 
-export class LQDWebPartTitleState implements ILQDWebPartTitleState {
+export class HOOWebPartTitleState implements IHOOWebPartTitleState {
   constructor() { }
 }
 
-export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitleProps, ILQDWebPartTitleState> {
-  private LOG_SOURCE: string = "LQDWebPartTitle";
+export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
+  private LOG_SOURCE: string = "HOOWebPartTitle";
 
-  constructor(props: ILQDWebPartTitleProps) {
+  constructor(props: IHOOWebPartTitleProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "LQDWebPartTitle";
-    this.state = new LQDWebPartTitleState();
+    this.LOG_SOURCE = props.dataComponent || "HOOWebPartTitle";
+    this.state = new HOOWebPartTitleState();
   }
 
-  public shouldComponentUpdate(nextProps: Readonly<ILQDWebPartTitleProps>, nextState: Readonly<ILQDWebPartTitleState>) {
+  public shouldComponentUpdate(nextProps: Readonly<IHOOWebPartTitleProps>, nextState: Readonly<IHOOWebPartTitleState>) {
     if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
       return false;
     return true;
@@ -56,9 +56,9 @@ export default class LQDWebPartTitle extends React.Component<ILQDWebPartTitlePro
     this.props.updateTitle(title);
   }
 
-  public render(): React.ReactElement<ILQDWebPartTitleProps> {
+  public render(): React.ReactElement<IHOOWebPartTitleProps> {
     try {
-      const className = (this.props.rootElementAttributes?.className) ? `lqd-webpart-header ${this.props.rootElementAttributes?.className}` : "lqd-webpart-header";
+      const className = (this.props.rootElementAttributes?.className) ? `HOO-webpart-header ${this.props.rootElementAttributes?.className}` : "HOO-webpart-header";
       return (
         <h3 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           <div

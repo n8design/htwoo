@@ -7,7 +7,7 @@ module.exports = {
   target: 'web',
   //When upgrading to webpack 5, change target and update target: 'browserslist',
   entry: {
-    liquidreact: path.resolve(__dirname, './lib/index.js')
+    htwooreact: path.resolve(__dirname, './lib/index.js')
   },
   //When upgrading to webpack 5, add back to output: chunkLoading: false, wasmLoading: false
   output: {

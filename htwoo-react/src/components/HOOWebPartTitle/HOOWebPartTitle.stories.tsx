@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Meta, Story } from '@storybook/react';
 
-import LQDWebPartTitle, { ILQDWebPartTitleProps } from './LQDWebPartTitle';
+import HOOWebPartTitle, { IHOOWebPartTitleProps } from './HOOWebPartTitle';
 
 export default {
-  title: 'Atoms/LQDWebPartTitle',
-  component: LQDWebPartTitle,
+  title: 'Atoms/HOOWebPartTitle',
+  component: HOOWebPartTitle,
   argTypes: {
     rootElementAttributes: {
       control: {
@@ -17,7 +17,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<ILQDWebPartTitleProps> = (args) => <LQDWebPartTitle {...args} />;
+const Template: Story<IHOOWebPartTitleProps> = (args) => <HOOWebPartTitle {...args} />;
 
 export const Standard = Template.bind({});
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import LQDButton, {
-  ILQDButtonProps
-} from './LQDButton';
+import HOOButton, {
+  IHOOButtonProps
+} from './HOOButton';
 
 export default {
-  title: 'Atoms/LQDButton',
-  component: LQDButton,
+  title: 'Atoms/HOOButton',
+  component: HOOButton,
 } as Meta;
 
-const Template: Story<ILQDButtonProps> = (args) => <LQDButton {...args} />;
+const Template: Story<IHOOButtonProps> = (args) => <HOOButton {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { label: 'Button', onClick: () => { alert("Clicked"); } };

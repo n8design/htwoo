@@ -206,7 +206,7 @@ To use a simple web part create a new tsx file named `hoobutton-standard.tsx`.
 
 ```tsx
 import * as React from "react";
-import isEqual from "lodash/isEqual";
+import isEqual from "lodash-es/isEqual";
 
 export interface IButtonProps {
   disabled: boolean;

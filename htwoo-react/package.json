@@ -1,24 +1,26 @@
 {
-  "name": "liquid-react",
-  "version": "0.1.0",
-  "description": "",
-  "author": "Julie Turner/Stefan Bauery",
+  "name": "@n8d/htwoo-react",
+  "version": "0.0.1",
+  "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
+  "author": "Julie Turner/Stefan Bauer",
+  "homepage": "https://lab.n8d.studio/htwoo/",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/n8d/liquid"
-  },
-  "bugs": {
-    "url": "https://github.com/n8d/liquid/issues"
+    "url": "https://github.com/n8design/htwoo"
   },
   "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@pnp/logging": "^2.2.0",
-    "liquid-core": "file:../liquid-core",
-    "react": "16.8.5",
-    "react-dom": "16.8.5"
+    "@n8d/htwoo-core": "file:../packages/htwoo-core",
+    "@pnp/logging": "^2.7.0",
+    "lodash-es": "^4.17.21",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   },
   "scripts": {
     "prepare": "gulp build --ship",
@@ -31,7 +33,7 @@
     "/dist"
   ],
   "resolutions": {
-    "@types/react": "16.8.8"
+    "@types/react": "16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -40,9 +42,9 @@
     "@storybook/addon-links": "^6.1.21",
     "@storybook/react": "^6.1.21",
     "@types/es6-promise": "0.0.33",
-    "@types/lodash": "^4.14.168",
-    "@types/react": "16.8.8",
-    "@types/react-dom": "16.8.3",
+    "@types/lodash": "^4.14.172",
+    "@types/react": "16.9.36",
+    "@types/react-dom": "16.9.0",
     "@types/webpack": "^4.41.26",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",

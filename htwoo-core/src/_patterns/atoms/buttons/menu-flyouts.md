@@ -1,5 +1,5 @@
 ---
-title: Fylout menu style
+title: Flyout menu style
 order: 99
 ---
 
