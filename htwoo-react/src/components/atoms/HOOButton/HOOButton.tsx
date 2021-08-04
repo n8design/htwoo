@@ -49,14 +49,14 @@ export class HOOButtonState implements IHOOButtonState {
 }
 
 export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButtonState> {
-  private LOG_SOURCE: string = "HOOButton";
+  private LOG_SOURCE: string = "🔶HOOButton";
 
   private _componentClass: string = "hoo-button";
   private _hyperlinkType: boolean = false;
 
   constructor(props: IHOOButtonProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "HOOButton";
+    this.LOG_SOURCE = props.dataComponent || "🔶HOOButton";
     switch (props.type) {
       case HOOButtonType.Icon:
         this._componentClass = `${this._componentClass}-icon`;

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
+
+import "./HOOAction.css";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon from "../HOOIcon";
 
@@ -33,7 +35,7 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
 
   constructor(props: IHOOActionProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "HOOAction";
+    this.LOG_SOURCE = props.dataComponent || "🔶HOOAction";
     this.state = new HOOActionState();
   }
 

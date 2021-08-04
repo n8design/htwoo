@@ -1,9 +1,20 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
+
+import "./HOOText.css";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOTextProps extends IHOOStandardProps {
+  //TODO: Invalid input has not been completed in core
+  /**
+   * (Optional) Is Input Invalid - default false.
+  */
+  invalid?: boolean;
+  /**
+   * (Optional) Is Input Disabled - default false.
+  */
+  disabled?: boolean;
   /**
    * (Optional) Input Prefix.
   */
@@ -38,7 +49,7 @@ export default class HOOText extends React.Component<IHOOTextProps, IHOOTextStat
 
   constructor(props: IHOOTextProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "HOOText";
+    this.LOG_SOURCE = props.dataComponent || "🔶HOOText";
     this.state = new HOOTextState();
   }
 
@@ -57,7 +68,7 @@ export default class HOOText extends React.Component<IHOOTextProps, IHOOTextStat
           {this.props.inputPrefix &&
             <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
           }
-          <input className={inputClassName} type="text" data-suffix={this.props.inputSuffix} data-prefix={this.props.inputPrefix} {...this.props.inputElementAttributes} />
+          <input className={inputClassName} type="text" disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} data-suffix={this.props.inputSuffix} data-prefix={this.props.inputPrefix} {...this.props.inputElementAttributes} />
           {this.props.inputSuffix &&
             <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
           }

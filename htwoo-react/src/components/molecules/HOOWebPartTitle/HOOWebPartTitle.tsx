@@ -8,6 +8,7 @@ import { IHOOStandardProps } from "../../Common.model";
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
    */
   rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
   /**
@@ -36,11 +37,12 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
 }
 
 export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
-  private LOG_SOURCE: string = "HOOWebPartTitle";
+  private LOG_SOURCE: string = "🔶HOOWebPartTitle";
+  private _componentClass: string = "hoo-webpart-header";
 
   constructor(props: IHOOWebPartTitleProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "HOOWebPartTitle";
+    this.LOG_SOURCE = props.dataComponent || "🔶HOOWebPartTitle";
     this.state = new HOOWebPartTitleState();
   }
 
@@ -58,7 +60,7 @@ export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitlePro
 
   public render(): React.ReactElement<IHOOWebPartTitleProps> {
     try {
-      const className = (this.props.rootElementAttributes?.className) ? `HOO-webpart-header ${this.props.rootElementAttributes?.className}` : "HOO-webpart-header";
+      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <h3 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           <div

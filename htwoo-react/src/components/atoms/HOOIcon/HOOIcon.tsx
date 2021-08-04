@@ -24,12 +24,12 @@ export class HOOIconState implements IHOOIconState {
 }
 
 export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconState> {
-  private LOG_SOURCE: string = "HOOIcon";
+  private LOG_SOURCE: string = "🔶HOOIcon";
   private componentClass: string = "hoo-icon";
 
   constructor(props: IHOOIconProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "HOOIcon";
+    this.LOG_SOURCE = props.dataComponent || "🔶HOOIcon";
     this.state = new HOOIconState();
   }
 
