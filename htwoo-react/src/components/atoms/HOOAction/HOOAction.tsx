@@ -1,14 +1,10 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
-import { IHOOStandardProps } from "../Common.model";
+import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon from "../HOOIcon";
 
 export interface IHOOActionProps extends IHOOStandardProps {
-  /**
-   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
-  */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
   /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
@@ -17,6 +13,11 @@ export interface IHOOActionProps extends IHOOStandardProps {
    * (Optional) icon name, if omitted, components children will be rendered.
    */
   iconName?: string;
+  /**
+   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
+  */
+  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
 }
 
 export interface IHOOActionState {

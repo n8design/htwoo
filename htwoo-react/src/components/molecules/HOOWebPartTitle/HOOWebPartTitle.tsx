@@ -3,7 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import "./HOOWebPartTitle.css";
-import { IHOOStandardProps } from "../Common.model";
+import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**

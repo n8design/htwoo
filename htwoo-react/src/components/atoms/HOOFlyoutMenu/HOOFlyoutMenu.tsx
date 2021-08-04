@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
-import { IHOOStandardProps } from "../Common.model";
+import { IHOOStandardProps } from "../../Common.model";
 import HOOAction from "../HOOAction";
 
 export interface IHOOFlyoutMenuItem {
@@ -16,6 +16,7 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
   contextItems: IHOOFlyoutMenuItem[];
   /**
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
 }

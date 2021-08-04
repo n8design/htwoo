@@ -3,7 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from 'lodash-es/isEqual';
 
 import "./HOOButton.css";
-import { IHOOStandardProps } from "../Common.model";
+import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOButtonType {
   "Icon",
@@ -32,6 +32,7 @@ export interface IHOOButtonProps extends IHOOStandardProps {
   rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
   /**
    * (Optional) button label, if omitted, components children will be rendered.
+   * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
    */
   label?: string;
   /**
