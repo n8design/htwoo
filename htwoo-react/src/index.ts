@@ -24,4 +24,8 @@ export * from './HOOSelect';
 export * from './HOOShimmer';
 export * from './HOOText';
 export * from './HOOToggle';
+export * from './HOOCardFooter';
+export * from './HOOCardImage';
+export * from './HOOCardLocation';
+export * from './HOOCardTitle';
 export * from './HOOWebPartTitle';
