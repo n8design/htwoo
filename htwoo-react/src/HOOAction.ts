@@ -1,3 +1,3 @@
-import HOOAction, { IHOOActionProps } from "./components/atoms/HOOAction";
+import HOOAction, { IHOOActionProps, HOOActionType } from "./components/atoms/HOOAction";
 export default HOOAction;
-export { IHOOActionProps };
+export { IHOOActionProps, HOOActionType };

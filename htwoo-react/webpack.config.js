@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  //mode: 'production',
+  mode: 'production',
   target: 'web',
   //When upgrading to webpack 5, change target and update target: 'browserslist',
   entry: {

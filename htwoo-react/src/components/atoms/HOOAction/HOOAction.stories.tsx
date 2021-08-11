@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import HOOAction, {
-  IHOOActionProps
+  IHOOActionProps, HOOActionType
 } from './HOOAction';
 
 export default {
@@ -12,5 +12,8 @@ export default {
 
 const Template: Story<IHOOActionProps> = (args) => <HOOAction {...args} />;
 
-export const Standard = Template.bind({});
-Standard.args = { label: "Action Button", iconName: "Plus" };
+export const Action = Template.bind({});
+Action.args = { type: HOOActionType.Action, label: "Action Button", iconName: "Plus" };
+
+export const Command = Template.bind({});
+Command.args = { type: HOOActionType.Command, label: "Action Button", iconName: "Plus" };

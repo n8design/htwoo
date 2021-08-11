@@ -43,7 +43,7 @@ export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconStat
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} aria-label={this.props.iconName}>
           <svg className={`hoo-icon-svg ${this.props.iconName}`} aria-hidden="true">
             <use xlinkHref={`../../images/icons.svg#${this.props.iconName}`}></use>
           </svg>
