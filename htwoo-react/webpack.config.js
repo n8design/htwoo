@@ -27,7 +27,11 @@ module.exports = {
       test: /\.css$/,
       exclude: /node_modules/,
       loader: ["style-loader", "css-loader"]
-    }, ]
+    }, {
+      test: /\.svg$/,
+      exclude: /node_modules/,
+      loader: "svg-inline-loader"
+    }]
   },
   externals: [
     'react',

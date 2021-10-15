@@ -1,8 +1,10 @@
 import "./Base.css";
 import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
+import { symset } from "./SymbolSet";
 
 export default SPFxThemes;
 export { ISPFxThemes };
+export { symset };
 
 export * from './HOOAction';
 export * from './HOOAvatar';
