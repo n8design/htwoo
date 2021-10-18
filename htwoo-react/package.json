@@ -17,7 +17,7 @@
   "private": false,
   "dependencies": {
     "@n8d/htwoo-core": "file:../packages/htwoo-core",
-    "@pnp/logging": "^2.7.0",
+    "@pnp/logging": "^2.10.0",
     "lodash-es": "^4.17.21",
     "react": "16.9.0",
     "react-dom": "16.9.0"

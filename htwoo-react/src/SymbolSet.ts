@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 
 export interface ISymbolSet {
@@ -8,11 +7,14 @@ export interface ISymbolSet {
 export class SymbolSet implements ISymbolSet {
   private LOG_SOURCE: string = "🔶SymbolSet";
 
-  private _symbolSetDictionary: { [name: string]: any } = {};
+  private _symbolSetDictionary: { [name: string]: string } = {};
 
   constructor() {
   }
 
+  /**
+   * (Optional) symbolSet: text representation of a set of icons.
+   */
   public async initSymbols(symbolSet?: string): Promise<void> {
     try {
       //Load Default if symbolSetPath is not included
@@ -28,16 +30,16 @@ export class SymbolSet implements ISymbolSet {
       const defs = symbols.getElementsByTagName("symbol");
       for (let i = 0; i < defs.length; i++) {
         const s = defs[i];
-        s.classList.add("hoo-icon-svg");
-        const symbolElement = parser.parseFromString(s.outerHTML, 'text/html');
-        this._symbolSetDictionary[s.id] = symbolElement.body;
+        const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
+        const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+        this._symbolSetDictionary[s.id] = svgElement;
       }
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (initSymbols) - ${err}`, LogLevel.Error);
     }
   }
 
-  public Icon(iconName: string): any {
+  public Icon(iconName: string): string {
     return this._symbolSetDictionary[iconName];
   }
 }
