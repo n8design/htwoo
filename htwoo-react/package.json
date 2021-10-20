@@ -16,7 +16,6 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "file:../packages/htwoo-core",
     "@pnp/logging": "^2.10.0",
     "lodash-es": "^4.17.21",
     "react": "16.9.0",
@@ -24,6 +23,7 @@
   },
   "scripts": {
     "prepare": "gulp build --ship",
+    "prepublish": "gulp build --ship",
     "package": "webpack",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -36,6 +36,7 @@
     "@types/react": "16.9.0"
   },
   "devDependencies": {
+    "@n8d/htwoo-core": "file:../packages/htwoo-core",
     "@babel/core": "^7.13.8",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
