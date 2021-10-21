@@ -1,10 +1,10 @@
 ---
-title: Card Molecules
+title: Teams Splash Cards
 ---
 
 ### SCSS Imports
 
-**Main Component**\
+**Main Component:**\
 @n8d/htwoo-core/components/cards
 
 ***

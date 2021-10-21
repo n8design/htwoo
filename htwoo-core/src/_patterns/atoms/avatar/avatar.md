@@ -13,6 +13,13 @@ This avatar is show with a size of 64px and round borders. If you construct othe
 * 40px - .hoo-avatar-40
 * 48px - .hoo-avatar-48
 
+### SCSS Imports
+
+**Main Component**\
+@n8d/htwoo-core/components/avatar
+
 ## Changes in v0.2.0:
 
-* class name change for image in avatar molecule to `hoo-avatar-img`
+Class name change for image in avatar molecule to `hoo-avatar-img`
+
+***

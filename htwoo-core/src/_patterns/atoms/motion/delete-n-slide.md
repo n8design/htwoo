@@ -1,6 +1,5 @@
 ---
-title: Inline text styles
-order: 50
+title: Delete and Slide
 ---
 
 ### SCSS Imports
