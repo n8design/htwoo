@@ -3,6 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import "./HOOIconOverflow.css";
 import { IHOOStandardProps } from "../../Common.model";
+import HOOIcon from "../HOOIcon";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
@@ -43,11 +44,7 @@ export default class HOOIconOverflow extends React.Component<IHOOIconOverflowPro
         <div data-component={this.LOG_SOURCE} aria-haspopup="true" {...this.props.rootElementAttributes} className={className}>
           <button className="hoo-buttonicon-overflow" aria-haspopup="true">
             <span className="hoo-button-icon" aria-hidden="true">
-              <div className="hoo-icon">
-                <svg className="hoo-icon-svg icon-ellipses" aria-hidden="true">
-                  <use xlinkHref="../../images/icons.svg#icon-ellipses"></use>
-                </svg>
-              </div>
+              <HOOIcon iconName="icon-ellipses" />
             </span>
           </button>
           <ul className="hoo-buttonflyout" role="menu">
