@@ -1,5 +1,6 @@
 import { Logger, LogLevel } from "@pnp/logging";
 
+
 export interface ISymbolSet {
   Icon: (iconName: string) => string;
 }
@@ -19,7 +20,7 @@ export class SymbolSet implements ISymbolSet {
     try {
       //Load Default if symbolSetPath is not included
       if (!symbolSet) {
-        const symbolSetFile = require("../src/images/icons.svg");
+        const symbolSetFile = require("./images/icons.svg");
         const result = await fetch(symbolSetFile);
         symbolSet = await result.text();
       }

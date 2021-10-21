@@ -7,8 +7,7 @@ const {
   dest,
   watch,
   series,
-  parallel,
-  lastRun
+  parallel
 } = require('gulp');
 
 /** gulp plugin */
@@ -63,6 +62,12 @@ const version = (cb) => {
 
   cb();
 
+}
+
+const copyIcons = (cb) => {
+  fs.mkdirSync("./lib/images");
+  fs.copyFileSync('./src/images/icons.svg', './lib/images/icons.svg');
+  cb();
 }
 
 /** TASK: TypeScript compile */
@@ -202,7 +207,7 @@ const clean = (cb) => {
 }
 
 const build = series(clean, version,
-  parallel(tsCompile, sassCompile),
+  parallel(tsCompile, sassCompile), copyIcons,
   webpack);
 
 exports.build = build;
