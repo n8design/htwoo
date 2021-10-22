@@ -1,87 +1,99 @@
+# HTWOO ReactJS Components
 
-<p align="center">
-  <a href="https://www.chromatic.com/">
-    <img alt="Chromatic" src="https://avatars2.githubusercontent.com/u/24584319?s=200&v=4" width="60" />
-  </a>
-</p>
+HTWOO ReactJS is an open source alternative for Microsoft's various implementations of their Fluent UI Web Design system.
+This library consists of flexible ReactJS components based on the HTWOO UI library. For a complete listing please see HTWOO Core [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
-<h1 align="center">
-  Chromatic's Intro to Storybook React template
-</h1>
+[![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
-This template ships with the main React and Storybook configuration files you'll need to get up and running fast.
+## How To Use
 
-## 🚅  Quick start
+>Note: This component library is currently under development and will most likely continue to make improvements that could likely bring about breaking changes.  Please feel free to submit your enhancement ideas and feedback to the issues list so that we can try to address them.
 
-1.  **Create the application.**
+### Initialize library in Microsoft SharePoint Framework (SPFx)
 
-    Use [degit](https://github.com/Rich-Harris/degit) to get this template.
+1. Add a reference to the base.css file in your solutions root .scss file:
 
-    ```shell
-    # Clone the template
-    npx degit chromaui/intro-storybook-react-template taskbox
+    ```SCSS
+    :global {
+      @import 'node_modules/@n8d/htwoo-react/lib/base';
+    }
     ```
 
-1.  **Install the dependencies.**
+1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
-    Navigate into your new site’s directory and install the necessary dependencies.
-
-    ```shell
-    # Navigate to the directory
-    cd taskbox/
-
-    # Install the dependencies
-    yarn
+    ```TS
+    @override
+    public async onInit(): Promise<void> {
+      // Initialize Icons Symbol Set
+      await symset.initSymbols();
+    }
     ```
 
-1.  **Open the source code and start editing!**
+    Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
+  
+    ```TS
+    @override
+    public async onInit(): Promise<void> {
+      // Initialize Icons Symbol Set with Custom Symbol File
+      const symbolSetFile = require("./images/icons.svg");
+      await symset.initSymbols(symbolSetFile);
+    }
+    ```
 
-    Open the `taskbox` directory in your code editor of choice and building your first component!
+    A SVG symbol file will look similar to the following:
 
-1.  **Browse your stories!**
+    ```HTML
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+          <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+              <path d="M22.547 31.953l-15.969-15.953 15.969-15.953 1.406 1.406-14.531 14.547 14.531 14.547-1.406 1.406z"></path>
+          </symbol>
+      </defs>
+    </svg>
+    ```
 
-    Run `yarn storybook` to see your component's stories at `http://localhost:6006`
+1. (Optional) Add theme support to your SPFx project
 
-## 🔎 What's inside?
+    a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
 
-A quick look at the top-level files and directories included with this template.
+      ```JSON
+      { 
+        //...
+        "supportsThemeVariants": true,
+        // ...
+      }
+      ```
 
-    .
-    ├── .storybook
-    ├── node_modules
-    ├── public
-    ├── src
-    ├── .gitignore
-    ├── LICENSE
-    ├── package.json
-    ├── yarn.lock
-    └── README.md
+    b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
+    ```TS
+    import SPFxThemes, { ISPFxThemes } from '@n8d/htwoo-react';
+    private _spfxThemes: ISPFxThemes = new SPFxThemes();
 
-1.  **`.storybook`**: This directory contains Storybook's [configuration](https://storybook.js.org/docs/react/configure/overview) files.
+    @override
+    public async onInit(): Promise<void> {
+      // Consume the new ThemeProvider service
+      const themeProvider = this.context.serviceScope.consume(ThemeProvider.serviceKey);
+      this._spfxThemes.initThemeHandler(this.domElement, themeProvider);
+    }
+    ```
 
-2.  **`node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages).
+1. Import the HTWOO component that you want to use into your own projects components. All components are selectively importable from the /lib/ folder. We will be working on fully documenting all components and their implementation soon.
 
-3.  **`public`**: This directory will contain the development and production build of the site.
+## HTWOO Base Concept
 
-4.  **`src`**: This directory will contain all of the code related to what you will see on your application.
+hTWOo style guide, documentation and building platform is based on [patternlab.io](https://patternlab.io/). To allow the most flexible implementation of designs and design pattern it follows the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/) coined by Brad Frost around 2012 / 2013.
 
-5.  **`.gitignore`**: This file tells git which files it should not track or maintain during the development process of your project.
+> We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
-6. **`LICENSE`**: The template is licensed under the MIT licence.
+## Engage
 
-7. **`package.json`**: Standard manifest file for Node.js projects, which typically includes project specific metadata (such as the project's name, the author among other information). It's based on this file that npm will know which packages are necessary to the project.
+Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
-8. **`yarn.lock`**: This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(Do not change it manually).**
+**Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
-9. **`README.md`**: A text file containing useful reference information about the project.
+**Contributor:** You ❤️
 
-## Contribute
-
-If you encounter an issue with the template, we encourage you to open an issue in this template's repository.
-
-## Learning Storybook
-
-1. Read our introductory tutorial at [Learn Storybook](https://www.learnstorybook.com/intro-to-storybook/react/en/get-started/).
-2. Learn how to transform your component libraries into design systems in our [Design Systems for Developers](https://www.learnstorybook.com/design-systems-for-developers/) tutorial.
-2. See our official documentation at [Storybook](https://storybook.js.org/).
+[logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adopt fast"
