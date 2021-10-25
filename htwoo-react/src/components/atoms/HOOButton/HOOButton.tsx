@@ -2,7 +2,6 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from 'lodash-es/isEqual';
 
-import "./HOOButton.css";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOButtonType {

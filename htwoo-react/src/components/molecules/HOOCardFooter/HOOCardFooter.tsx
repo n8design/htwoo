@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
-import "./HOOCardFooter.css";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar";
 

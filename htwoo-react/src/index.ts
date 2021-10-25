@@ -1,4 +1,3 @@
-import "./Base.css";
 import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
 import { symset } from "./SymbolSet";
 

@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "0.0.0-pre-alpha-5",
+  "version": "0.0.0-pre-alpha-6",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "author": "Julie Turner/Stefan Bauer",
   "homepage": "https://lab.n8d.studio/htwoo/",
@@ -19,7 +19,8 @@
     "@pnp/logging": "^2.10.0",
     "lodash-es": "^4.17.21",
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-dom": "16.9.0",
+    "@n8d/htwoo-core": "^0.*.*"
   },
   "scripts": {
     "prepare": "gulp build --ship",
@@ -36,7 +37,6 @@
     "@types/react": "16.9.0"
   },
   "devDependencies": {
-    "@n8d/htwoo-core": "file:../packages/htwoo-core",
     "@babel/core": "^7.13.8",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",

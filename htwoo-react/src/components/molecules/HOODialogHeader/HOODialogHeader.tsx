@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
-import "./HOODialogHeader.css";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon, { IHOOIconProps } from "../../atoms/HOOIcon";
 import HOOButton, { HOOButtonType } from "../../atoms/HOOButton";

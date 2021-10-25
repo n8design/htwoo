@@ -15,7 +15,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
     ```SCSS
     :global {
-      @import 'node_modules/@n8d/htwoo-react/lib/base';
+      @import 'node_modules/@n8d/htwoo-core/dist/css/htwoo.min.css';
     }
     ```
 
