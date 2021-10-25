@@ -6,7 +6,6 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 > **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
 
-
 ![Be like water][logo]
 
 You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
@@ -34,12 +33,8 @@ hTWOo style guide, documentation and building platform is based on [patternlab.i
 
 Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
-
 **Maintainer:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
 **Contributor:** You ❤️
-
-
-
 
 [logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adopt fast"

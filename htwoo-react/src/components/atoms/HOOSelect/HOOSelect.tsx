@@ -3,7 +3,6 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import findIndex from "lodash-es/findIndex";
 
-import "./HOOSelect.css";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOButton, { HOOButtonType } from "../HOOButton";
 import HOOIcon from "../HOOIcon";

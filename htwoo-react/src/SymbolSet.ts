@@ -16,24 +16,30 @@ export class SymbolSet implements ISymbolSet {
   /**
    * (Optional) symbolSet: text representation of a set of icons.
    */
-  public async initSymbols(symbolSet?: string): Promise<void> {
+  public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
+      let symbolSet: string = null;
       //Load Default if symbolSetPath is not included
-      if (!symbolSet) {
-        const symbolSetFile = require("./images/icons.svg");
+      if (!symbolSetFile) {
+        symbolSetFile = require("./images/icons.svg");
+        const result = await fetch(symbolSetFile);
+        symbolSet = await result.text();
+      } else {
         const result = await fetch(symbolSetFile);
         symbolSet = await result.text();
       }
 
-      //Parse SymbolSet
-      const parser = new DOMParser();
-      const symbols = parser.parseFromString(symbolSet, "image/svg+xml");
-      const defs = symbols.getElementsByTagName("symbol");
-      for (let i = 0; i < defs.length; i++) {
-        const s = defs[i];
-        const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
-        const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
-        this._symbolSetDictionary[s.id] = svgElement;
+      if (symbolSet !== null) {
+        //Parse SymbolSet
+        const parser = new DOMParser();
+        const symbols = parser.parseFromString(symbolSet, "image/svg+xml");
+        const defs = symbols.getElementsByTagName("symbol");
+        for (let i = 0; i < defs.length; i++) {
+          const s = defs[i];
+          const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
+          const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+          this._symbolSetDictionary[s.id] = svgElement;
+        }
       }
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (initSymbols) - ${err}`, LogLevel.Error);
