@@ -23,12 +23,12 @@ export class HOOCardTitleState implements IHOOCardTitleState {
 }
 
 export default class HOOCardTitle extends React.Component<IHOOCardTitleProps, IHOOCardTitleState> {
-  private LOG_SOURCE: string = "🔶HOOCardTitle";
+  private LOG_SOURCE: string = "💦HOOCardTitle";
   private _componentClass: string = "hoo-cardtitle";
 
   constructor(props: IHOOCardTitleProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOCardTitle";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOCardTitle";
     this.state = new HOOCardTitleState();
   }
 

@@ -41,13 +41,13 @@ export class HOOTextState implements IHOOTextState {
 }
 
 export default class HOOText extends React.Component<IHOOTextProps, IHOOTextState> {
-  private LOG_SOURCE: string = "🔶HOOText";
+  private LOG_SOURCE: string = "💦HOOText";
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
 
   constructor(props: IHOOTextProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOText";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOText";
     this.state = new HOOTextState();
   }
 

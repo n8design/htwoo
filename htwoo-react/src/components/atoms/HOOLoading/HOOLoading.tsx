@@ -31,12 +31,12 @@ export class HOOLoadingState implements IHOOLoadingState {
 }
 
 export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLoadingState> {
-  private LOG_SOURCE: string = "🔶HOOLoading";
+  private LOG_SOURCE: string = "💦HOOLoading";
   private _componentClass: string = "hoo-progress";
 
   constructor(props: IHOOLoadingProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOLoading";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOLoading";
     this.state = new HOOLoadingState();
   }
 

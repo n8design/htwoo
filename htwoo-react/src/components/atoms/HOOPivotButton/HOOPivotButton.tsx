@@ -27,12 +27,12 @@ export class HOOPivotButtonState implements IHOOPivotButtonState {
 }
 
 export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps, IHOOPivotButtonState> {
-  private LOG_SOURCE: string = "🔶HOOPivotButton";
+  private LOG_SOURCE: string = "💦HOOPivotButton";
   private _componentClass: string = "hoo-button-pivot";
 
   constructor(props: IHOOPivotButtonProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOPivotButton";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOPivotButton";
     this.state = new HOOPivotButtonState();
   }
 

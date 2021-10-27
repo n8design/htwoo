@@ -66,7 +66,7 @@ const version = (cb) => {
 
 const copyIcons = (cb) => {
   fs.mkdirSync("./lib/images");
-  fs.copyFileSync('./src/images/icons.svg', './lib/images/icons.svg');
+  fs.copyFileSync('./src/images/hoo-icons.svg', './lib/images/hoo-icons.svg');
   cb();
 }
 
@@ -156,9 +156,8 @@ const webpack = () => {
 
 const prepublish = (cb) => {
   const fs = require('fs-extra');
-
   //Make package directory
-  fs.mkdirSync("./pkg");
+  fs.mkdirSync("../packages/htwoo-react");
 
   const package = './package.json';
   if (fs.existsSync(package)) {
@@ -169,12 +168,12 @@ const prepublish = (cb) => {
     pkgContents.main = "./index.js";
     pkgContents.types = "./index.d.ts";
     pkgContents.files = ["/*", "/dist"];
-    fs.writeFileSync("./pkg/package.json", JSON.stringify(pkgContents), 'UTF-8');
+    fs.writeFileSync("../packages/htwoo-react/package.json", JSON.stringify(pkgContents), 'UTF-8');
   }
 
-  fs.copySync("./lib", "./pkg");
-  fs.mkdirSync("./pkg/dist");
-  fs.copySync("./dist", "./pkg/dist");
+  fs.copySync("./lib", "../packages/htwoo-react");
+  fs.mkdirSync("../packages/htwoo-react/dist");
+  fs.copySync("./dist", "../packages/htwoo-react/dist");
   cb();
 }
 
@@ -227,7 +226,11 @@ const watchSource = (cb) => {
 const clean = (cb) => {
   rimraf.sync('./dist')
   rimraf.sync('./lib');
-  rimraf.sync('./pkg');
+  cb();
+}
+
+const publishclean = (cb) => {
+  rimraf.sync('../packages/htwoo-react');
   cb();
 }
 
@@ -239,4 +242,4 @@ exports.build = build;
 exports.serve = series(build, serve);
 exports.clean = clean;
 
-exports.prepublish = series(build, prepublish);
+exports.prepublish = series(publishclean, build, prepublish);

@@ -43,12 +43,12 @@ export class HOOActionState implements IHOOActionState {
 }
 
 export default class HOOAction extends React.Component<IHOOActionProps, IHOOActionState> {
-  private LOG_SOURCE: string = "🔶HOOAction";
+  private LOG_SOURCE: string = "💦HOOAction";
   private _componentClass: string = "hoo-button";
 
   constructor(props: IHOOActionProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOAction";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOAction";
     switch (props.type) {
       case HOOActionType.Action:
         this._componentClass = `${this._componentClass}action`;

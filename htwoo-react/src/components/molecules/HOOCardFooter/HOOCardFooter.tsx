@@ -40,12 +40,12 @@ export class HOOCardFooterState implements IHOOCardFooterState {
 }
 
 export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, IHOOCardFooterState> {
-  private LOG_SOURCE: string = "🔶HOOCardFooter";
+  private LOG_SOURCE: string = "💦HOOCardFooter";
   private _componentClass: string = "hoo-cardfooter";
 
   constructor(props: IHOOCardFooterProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOCardFooter";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOCardFooter";
     this.state = new HOOCardFooterState();
   }
 

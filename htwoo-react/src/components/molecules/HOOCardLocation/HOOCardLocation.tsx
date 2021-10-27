@@ -23,12 +23,12 @@ export class HOOCardLocationState implements IHOOCardLocationState {
 }
 
 export default class HOOCardLocation extends React.Component<IHOOCardLocationProps, IHOOCardLocationState> {
-  private LOG_SOURCE: string = "🔶HOOCardLocation";
+  private LOG_SOURCE: string = "💦HOOCardLocation";
   private _componentClass: string = "hoo-cardlocation";
 
   constructor(props: IHOOCardLocationProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOCardLocation";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOCardLocation";
     this.state = new HOOCardLocationState();
   }
 

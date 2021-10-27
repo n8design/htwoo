@@ -41,12 +41,12 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
 }
 
 export default class HOODialogHeader extends React.Component<IHOODialogHeaderProps, IHOODialogHeaderState> {
-  private LOG_SOURCE: string = "🔶HOODialogHeader";
+  private LOG_SOURCE: string = "💦HOODialogHeader";
   private _componentClass: string = "hoo-dlgheader";
 
   constructor(props: IHOODialogHeaderProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODialogHeader";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODialogHeader";
     this.state = new HOODialogHeaderState();
   }
 

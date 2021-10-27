@@ -24,12 +24,12 @@ export class HOOSearchState implements IHOOSearchState {
 }
 
 export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSearchState> {
-  private LOG_SOURCE: string = "🔶HOOSearch";
+  private LOG_SOURCE: string = "💦HOOSearch";
   private _componentClass: string = "hoo-input-search";
 
   constructor(props: IHOOSearchProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOSearch";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOSearch";
     this.state = new HOOSearchState();
   }
 

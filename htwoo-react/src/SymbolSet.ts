@@ -6,7 +6,7 @@ export interface ISymbolSet {
 }
 
 export class SymbolSet implements ISymbolSet {
-  private LOG_SOURCE: string = "🔶SymbolSet";
+  private LOG_SOURCE: string = "💦SymbolSet";
 
   private defaultLoaded: boolean = false;
   private _symbolSetDictionary: { [name: string]: string } = {};
@@ -21,7 +21,7 @@ export class SymbolSet implements ISymbolSet {
     try {
       //Load Default if not already processed
       if (!this.defaultLoaded) {
-        symbolSetFile = require("./images/icons.svg");
+        symbolSetFile = require("./images/hoo-icons.svg");
         const result = await fetch(symbolSetFile);
         const defaultSymbolSet = await result.text();
         const loadedDefault = this.processSymbolSet(defaultSymbolSet);

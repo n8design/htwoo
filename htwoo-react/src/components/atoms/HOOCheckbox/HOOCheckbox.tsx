@@ -3,8 +3,17 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
+import { getRandomString } from "../../Common";
 
 export interface IHOOCheckboxProps extends IHOOStandardProps {
+  /**
+   * Checkbox checked.
+  */
+  checked: boolean;
+  /**
+   * Change event handler
+  */
+  change: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) Checkbox label. If omitted, children will be inserted.
   */
@@ -32,12 +41,14 @@ export class HOOCheckboxState implements IHOOCheckboxState {
 }
 
 export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOOCheckboxState> {
-  private LOG_SOURCE: string = "🔶HOOCheckbox";
+  private LOG_SOURCE: string = "💦HOOCheckbox";
   private _componentClass: string = "hoo-checkbox";
+  private _checkboxId: string = "hoo-checkbox-";
 
   constructor(props: IHOOCheckboxProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOCheckbox";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOCheckbox";
+    this._checkboxId += getRandomString(10);
     this.state = new HOOCheckboxState();
   }
 
@@ -52,8 +63,8 @@ export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOO
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE} type="checkbox" value="" {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} />
-          <label {...this.props.labelElementAttributes}>
+          <input data-component={this.LOG_SOURCE} type="checkbox" id={this._checkboxId} {...this.props.rootElementAttributes} checked={this.props.checked} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.change} className={className} />
+          <label htmlFor={this._checkboxId} {...this.props.labelElementAttributes}>
             {this.props.label &&
               this.props.label
             }

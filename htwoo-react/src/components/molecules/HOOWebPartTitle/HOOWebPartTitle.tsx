@@ -35,12 +35,12 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
 }
 
 export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
-  private LOG_SOURCE: string = "🔶HOOWebPartTitle";
+  private LOG_SOURCE: string = "💦HOOWebPartTitle";
   private _componentClass: string = "hoo-webpart-header";
 
   constructor(props: IHOOWebPartTitleProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOWebPartTitle";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOWebPartTitle";
     this.state = new HOOWebPartTitleState();
   }
 

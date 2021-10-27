@@ -25,12 +25,12 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
 }
 
 export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps, IHOONotifyLabelState> {
-  private LOG_SOURCE: string = "🔶HOONotifyLabel";
+  private LOG_SOURCE: string = "💦HOONotifyLabel";
   private _componentClass: string = "hoo";
 
   constructor(props: IHOONotifyLabelProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOONotifyLabel";
+    this.LOG_SOURCE = props.dataComponent || "💦HOONotifyLabel";
     switch (this.props.type) {
       case HOONotifyType.Success:
         this._componentClass = `${this._componentClass}-success`;

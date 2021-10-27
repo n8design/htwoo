@@ -23,6 +23,7 @@ export * from './HOOIconOverflow';
 export * from './HOOLabel';
 export * from './HOOLoading';
 export * from './HOONotifyLabel';
+export * from './HOOOptionList';
 export * from './HOOPivotButton';
 export * from './HOOPresence';
 export * from './HOORadioButton';

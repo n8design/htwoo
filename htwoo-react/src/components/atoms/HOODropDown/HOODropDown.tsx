@@ -34,12 +34,12 @@ export class HOODropDownState implements IHOODropDownState {
 }
 
 export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
-  private LOG_SOURCE: string = "🔶HOODropDown";
+  private LOG_SOURCE: string = "💦HOODropDown";
   private _componentClass: string = "hoo-select-dropdown ";
 
   constructor(props: IHOODropDownProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODropDown";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODropDown";
     this.state = new HOODropDownState();
   }
 

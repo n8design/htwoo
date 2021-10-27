@@ -20,12 +20,12 @@ export class HOOIconOverflowState implements IHOOIconOverflowState {
 }
 
 export default class HOOIconOverflow extends React.Component<IHOOIconOverflowProps, IHOOIconOverflowState> {
-  private LOG_SOURCE: string = "🔶HOOIconOverflow";
+  private LOG_SOURCE: string = "💦HOOIconOverflow";
   private _componentClass: string = "hoo-buttonicon-overflow";
 
   constructor(props: IHOOIconOverflowProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOIconOverflow";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOIconOverflow";
     this.state = new HOOIconOverflowState();
   }
 

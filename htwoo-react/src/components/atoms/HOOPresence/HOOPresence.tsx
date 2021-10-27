@@ -31,12 +31,12 @@ export class HOOPresenceState implements IHOOPresenceState {
 }
 
 export default class HOOPresence extends React.Component<IHOOPresenceProps, IHOOPresenceState> {
-  private LOG_SOURCE: string = "🔶HOOPresence";
+  private LOG_SOURCE: string = "💦HOOPresence";
   private _componentClass: string = "hoo-presence";
 
   constructor(props: IHOOPresenceProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOPresence";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOPresence";
     this.state = new HOOPresenceState();
   }
 

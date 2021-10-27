@@ -19,12 +19,12 @@ export class HOODialogContentState implements IHOODialogContentState {
 }
 
 export default class HOODialogContent extends React.Component<IHOODialogContentProps, IHOODialogContentState> {
-  private LOG_SOURCE: string = "🔶HOODialogContent";
+  private LOG_SOURCE: string = "💦HOODialogContent";
   private _componentClass: string = "hoo-dlgcontent";
 
   constructor(props: IHOODialogContentProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODialogContent";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODialogContent";
     this.state = new HOODialogContentState();
   }
 
