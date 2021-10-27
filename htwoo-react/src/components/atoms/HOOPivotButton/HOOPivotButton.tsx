@@ -13,10 +13,10 @@ export interface IHOOPivotButtonProps extends IHOOStandardProps {
   */
   isActive: boolean;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
 }
 
 export interface IHOOPivotButtonState {

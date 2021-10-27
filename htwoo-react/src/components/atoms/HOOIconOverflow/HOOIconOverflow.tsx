@@ -6,10 +6,10 @@ import HOOIcon from "../HOOIcon/HOOIcon";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOIconOverflowState {

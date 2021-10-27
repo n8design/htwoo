@@ -29,10 +29,10 @@ export interface IHOOActionProps extends IHOOStandardProps {
    */
   flyoutContextItems?: IHOOFlyoutMenuItem[];
   /**
-   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
 }
 
 export interface IHOOActionState {

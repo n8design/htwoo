@@ -20,10 +20,10 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   options: IHOODropDownGroup[];
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLUListElement>;
 }
 
 export interface IHOODropDownState {
