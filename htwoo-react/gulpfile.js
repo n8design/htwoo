@@ -154,6 +154,30 @@ const webpack = () => {
     .pipe(dest('dist'));
 }
 
+const prepublish = (cb) => {
+  const fs = require('fs-extra');
+
+  //Make package directory
+  fs.mkdirSync("./pkg");
+
+  const package = './package.json';
+  if (fs.existsSync(package)) {
+    const packageFileContent = fs.readFileSync(package, 'UTF-8');
+    const pkgContents = JSON.parse(packageFileContent);
+    delete pkgContents.scripts;
+    delete pkgContents.devDependencies;
+    pkgContents.main = "./index.js";
+    pkgContents.types = "./index.d.ts";
+    pkgContents.files = ["/*", "/dist"];
+    fs.writeFileSync("./pkg/package.json", JSON.stringify(pkgContents), 'UTF-8');
+  }
+
+  fs.copySync("./lib", "./pkg");
+  fs.mkdirSync("./pkg/dist");
+  fs.copySync("./dist", "./pkg/dist");
+  cb();
+}
+
 /** TASK: init development server */
 const serve = (cb) => {
 
@@ -203,6 +227,7 @@ const watchSource = (cb) => {
 const clean = (cb) => {
   rimraf.sync('./dist')
   rimraf.sync('./lib');
+  rimraf.sync('./pkg');
   cb();
 }
 
@@ -213,3 +238,5 @@ const build = series(clean, version,
 exports.build = build;
 exports.serve = series(build, serve);
 exports.clean = clean;
+
+exports.prepublish = series(build, prepublish);

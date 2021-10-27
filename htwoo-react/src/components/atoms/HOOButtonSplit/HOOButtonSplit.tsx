@@ -3,8 +3,8 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu";
-import HOOIcon from "../HOOIcon";
+import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOButtonSplitType {
   "Icon",

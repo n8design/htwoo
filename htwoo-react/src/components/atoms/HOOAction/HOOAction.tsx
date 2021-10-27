@@ -3,8 +3,8 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon from "../HOOIcon";
-import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu";
+import HOOIcon from "../HOOIcon/HOOIcon";
+import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
 export enum HOOActionType {
   "Action",
@@ -83,7 +83,7 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
                 <span className="hoo-button-label">{this.props.label}</span>
                 {this.props.type !== HOOActionType.Action && this.props.flyoutContextItems?.length > 0 &&
                   <span className="hoo-button-icon hoo-buttonchevron">
-                    <HOOIcon iconName="icon-arrow-down" />
+                    <HOOIcon iconName="hoo-icon-arrow-down" />
                   </span>
                 }
               </>

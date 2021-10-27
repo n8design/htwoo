@@ -2,7 +2,7 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon from "../HOOIcon";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export interface IHOOSearchProps extends IHOOStandardProps {
   /**
@@ -44,7 +44,7 @@ export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSear
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
-          <HOOIcon iconName="Search" />
+          <HOOIcon iconName="hoo-icon-search" />
           <input className="hoo-input-text" type="search" placeholder={this.props.placeholder} />
         </div>
       );

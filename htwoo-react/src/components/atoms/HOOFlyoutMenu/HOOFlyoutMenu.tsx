@@ -3,7 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOAction from "../HOOAction";
+import HOOAction from "../HOOAction/HOOAction";
 
 export interface IHOOFlyoutMenuItem {
   iconName: string;
