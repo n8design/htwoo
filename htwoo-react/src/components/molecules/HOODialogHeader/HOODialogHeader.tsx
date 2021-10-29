@@ -66,7 +66,7 @@ export default class HOODialogHeader extends React.Component<IHOODialogHeaderPro
             <>
               <div className="hoo-dlgheader-title"><h2>{this.props.title}</h2></div>
               <div className="hoo-dlgheader-closer">
-                <HOOButton type={HOOButtonType.Icon} onClick={this.props.closeOnClick} disabled={this.props.closeDisabled}>
+                <HOOButton type={HOOButtonType.Icon} click={this.props.closeOnClick} disabled={this.props.closeDisabled}>
                   <HOOIcon {...iconProp} />
                 </HOOButton>
               </div>

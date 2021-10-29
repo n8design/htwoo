@@ -13,16 +13,19 @@ export default {
 const Template: Story<IHOOTextProps> = (args) => <HOOText {...args} />;
 
 export const Standard = Template.bind({});
-Standard.args = {};
+Standard.args = { value: "Default Value" };
 
 export const Disabled = Template.bind({});
-Disabled.args = { disabled: true };
+Disabled.args = { value: "Default Value", disabled: true };
 
 export const PrefixOnly = Template.bind({});
-PrefixOnly.args = { inputPrefix: "https://" };
+PrefixOnly.args = { value: "Default Value", inputPrefix: "https://" };
 
 export const SuffixOnly = Template.bind({});
-SuffixOnly.args = { inputSuffix: ".com" };
+SuffixOnly.args = { value: "Default Value", inputSuffix: ".com" };
 
 export const WithPreSuffix = Template.bind({});
-WithPreSuffix.args = { inputPrefix: "https://", inputSuffix: ".com" };
+WithPreSuffix.args = { value: "Default Value", inputPrefix: "https://", inputSuffix: ".com" };
+
+export const Multiline = Template.bind({});
+Multiline.args = { value: "Default Value", multiline: 5 };

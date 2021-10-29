@@ -16,9 +16,17 @@ export interface IHOODropDownGroup {
 
 export interface IHOODropDownProps extends IHOOStandardProps {
   /**
+   * value
+  */
+  value: string;
+  /**
    * Options for select drop down
   */
   options: IHOODropDownGroup[];
+  /**
+   * Change event handler
+  */
+  change: React.ChangeEventHandler<HTMLUListElement>;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
@@ -53,7 +61,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <ul data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <ul data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} defaultValue={this.props.value} onChange={this.props.change}>
           {this.props.options && this.props.options.map((g) => {
             return (
               <li className="hoo-optgroup">

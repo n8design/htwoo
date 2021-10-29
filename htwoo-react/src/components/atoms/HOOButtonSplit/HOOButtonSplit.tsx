@@ -17,6 +17,10 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
    */
   type: HOOButtonSplitType;
   /**
+   * (Optional) For Non-Hyperlink style buttons only, Direct interface for buttons click event handler.
+   */
+  click?: React.MouseEventHandler<HTMLDivElement>;
+  /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
   label?: string;
@@ -73,7 +77,7 @@ export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} aria-haspopup="true" className={className} onClick={this.props.click}>
           <button className={this._componentClass} aria-haspopup="true">
             <span className="hoo-button-icon" aria-hidden="true">
               <div className="hoo-button-label">{this.props.label || this.props.children}</div>

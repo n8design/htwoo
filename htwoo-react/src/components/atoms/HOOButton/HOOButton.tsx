@@ -26,7 +26,7 @@ export interface IHOOButtonProps extends IHOOStandardProps {
   /**
    * (Optional) For Non-Hyperlink style buttons only, Direct interface for buttons click event handler.
    */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  click?: React.MouseEventHandler<HTMLButtonElement>;
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
@@ -111,7 +111,7 @@ export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButt
             </a>
           }
           {!this._hyperlinkType &&
-            <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled} aria-label={this.props.label} aria-disabled={this.props.disabled} onClick={this.props.onClick}>
+            <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled} aria-label={this.props.label} aria-disabled={this.props.disabled} onClick={this.props.click}>
               {this.props.label &&
                 <>
                   <div className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</div>
