@@ -12,7 +12,7 @@ export interface IHOOToggleProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) Toggle label for on position. If omitted, children will be inserted.
   */
@@ -75,10 +75,10 @@ export default class HOOToggle extends React.Component<IHOOToggleProps, IHOOTogg
       let inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       const labelClassName = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
-        <div data-component={this.LOG_SOURCE} className={rootClassName} {...this.props.rootElementAttributes}>
-          <input type="checkbox" id={this._toggleId} checked={this.props.checked} {...this.props.inputElementAttributes} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.change} className={inputClassName} />
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={rootClassName} >
+          <input type="checkbox" id={this._toggleId} checked={this.props.checked} {...this.props.inputElementAttributes} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.onChange} className={inputClassName} />
           {this.props.labelOn && this.props.labelOff &&
-            <label className={labelClassName} htmlFor={this._toggleId}  {...this.props.labelElementAttributes}>
+            <label  {...this.props.labelElementAttributes} className={labelClassName} htmlFor={this._toggleId} >
               <span className="hoo-toggle-slider"></span>
               <span className="hoo-toggle-checked">{this.props.labelOn}</span>
               <span className="hoo-toggle-unchecked">{this.props.labelOff}</span>

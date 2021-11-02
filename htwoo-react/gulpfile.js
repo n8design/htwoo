@@ -165,6 +165,14 @@ const prepublish = (cb) => {
     const pkgContents = JSON.parse(packageFileContent);
     delete pkgContents.scripts;
     delete pkgContents.devDependencies;
+    delete pkgContents.dependencies.react;
+    delete pkgContents.dependencies["react-dom"];
+    //delete pkgContents.dependencies["@n8d/htwoo-core"];
+    //"@n8d/htwoo-core": "^0.*.*",
+    pkgContents["peerDependencies"] = {
+      "react": "16.x",
+      "react-dom": "16.x"
+    }
     pkgContents.main = "./index.js";
     pkgContents.types = "./index.d.ts";
     pkgContents.files = ["/*", "/dist"];

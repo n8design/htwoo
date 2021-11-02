@@ -16,7 +16,7 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) RadioButton label. If omitted, children will be inserted.
   */

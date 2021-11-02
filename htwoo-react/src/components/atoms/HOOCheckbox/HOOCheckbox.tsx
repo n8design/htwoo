@@ -13,7 +13,7 @@ export interface IHOOCheckboxProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) Checkbox label. If omitted, children will be inserted.
   */
@@ -63,7 +63,7 @@ export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOO
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE} type="checkbox" id={this._checkboxId} {...this.props.rootElementAttributes} checked={this.props.checked} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.change} className={className} />
+          <input data-component={this.LOG_SOURCE} type="checkbox" id={this._checkboxId} {...this.props.rootElementAttributes} checked={this.props.checked} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.onChange} className={className} />
           <label htmlFor={this._checkboxId} {...this.props.labelElementAttributes}>
             {this.props.label &&
               this.props.label

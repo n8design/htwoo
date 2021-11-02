@@ -10,7 +10,7 @@ export default {
   component: HOOOptionList,
 } as Meta;
 
-const options: IHOOListOption[] = [{ key: 1, title: "Value 1" }, { key: 2, title: "Value 2" }, { key: 3, title: "Value 3" }];
+const options: IHOOListOption[] = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
 
 const Template: Story<IHOOOptionListProps> = (args: IHOOOptionListProps) => <HOOOptionList {...args} />;
 

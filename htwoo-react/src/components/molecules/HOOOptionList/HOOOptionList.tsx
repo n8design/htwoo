@@ -14,7 +14,7 @@ export enum HOOOptionListType {
 
 export interface IHOOListOption {
   key: number | string;
-  title: string;
+  text: string;
 }
 
 export interface IHOOOptionListProps extends IHOOStandardProps {
@@ -33,7 +33,7 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
@@ -71,10 +71,10 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     const elementAttributes: any = { name: this._optionListName };
     switch (this.props.type) {
       case HOOOptionListType.Checkbox:
-        retVal = <HOOCheckbox checked={checked} label={option.title} change={this.props.change} rootElementAttributes={elementAttributes} />;
+        retVal = <HOOCheckbox checked={checked} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />;
         break;
       case HOOOptionListType.RadioButton:
-        retVal = <HOORadioButton checked={checked} value={option.key} label={option.title} change={this.props.change} rootElementAttributes={elementAttributes} />
+        retVal = <HOORadioButton checked={checked} value={option.key} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />
         break;
     }
     return retVal;

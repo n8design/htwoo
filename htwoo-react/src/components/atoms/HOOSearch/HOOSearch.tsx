@@ -16,7 +16,7 @@ export interface IHOOSearchProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
@@ -53,7 +53,7 @@ export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSear
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           <HOOIcon iconName="hoo-icon-search" />
-          <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} onChange={this.props.change} />
+          <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} onChange={this.props.onChange} />
         </div>
       );
     } catch (err) {

@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "0.0.0-pre-alpha-10",
+  "version": "0.0.0-pre-alpha-12",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "author": "Julie Turner/Stefan Bauer",
   "homepage": "https://lab.n8d.studio/htwoo/",

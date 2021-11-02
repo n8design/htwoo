@@ -11,7 +11,7 @@ export interface IHOOTextProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  change: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   //TODO: Invalid input has not been completed in core
   /**
    * (Optional) Is Input Invalid - default false.
@@ -80,14 +80,22 @@ export default class HOOText extends React.Component<IHOOTextProps, IHOOTextStat
               {this.props.inputPrefix &&
                 <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
               }
-              <input className={inputClassName} type="text" disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} data-suffix={this.props.inputSuffix} data-prefix={this.props.inputPrefix} {...this.props.inputElementAttributes} onChange={this.props.change} />
+              <input type="text"
+                {...this.props.inputElementAttributes}
+                value={this.props.value}
+                disabled={this.props.disabled || false}
+                aria-disabled={this.props.disabled || false}
+                data-suffix={this.props.inputSuffix || null}
+                data-prefix={this.props.inputPrefix || null}
+                className={inputClassName}
+                onChange={this.props.onChange} />
               {this.props.inputSuffix &&
                 <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
               }
             </div>
           }
           {this.props.multiline &&
-            <textarea className={inputClassName} rows={this.props.multiline} {...this.props.inputElementAttributes} onChange={this.props.change} >{this.props.value}</textarea>
+            <textarea className={inputClassName} rows={this.props.multiline} {...this.props.inputElementAttributes} onChange={this.props.onChange} >{this.props.value}</textarea>
           }
         </>
       );

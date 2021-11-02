@@ -45,7 +45,7 @@ export interface IHOOSelectProps extends IHOOStandardProps {
   /**
    * onChange Function
   */
-  change: (fieldValue: string, fieldName: string) => void;
+  onChange: (fieldValue: string, fieldName: string) => void;
   /**
    * (Optional) message string for filter box, use {0} for placement of current options length. Omit will yield default message
   */
@@ -107,7 +107,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
   private _onChange = (newValue: any, fieldName: string) => {
     try {
       this.setState({ currentValue: newValue }, () => {
-        this.props.change(newValue, fieldName);
+        this.props.onChange(newValue, fieldName);
       });
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (_onChange) - ${err}`, LogLevel.Error);
@@ -129,7 +129,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             open = false;
             selectStatus = HOOSelectStatus.Initial;
           } else if (focus.tagName == "LI") {
-            this.props.change((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
             this._moveFocus(document.activeElement, HOOSelectFocus.Input);
@@ -137,7 +137,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
           break;
         case HOOSelectStatus.Filtered:
           if (focus.tagName == "LI") {
-            this.props.change((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
             this._moveFocus(document.activeElement, HOOSelectFocus.Input);
@@ -168,7 +168,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             selectStatus = HOOSelectStatus.Open;
           } else if (this.state.selectStatus === HOOSelectStatus.Open && focus.tagName === 'LI') {
             // if state = opened and focus on list, makeChoice and set state to closed
-            this.props.change((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
             this._moveFocus(document.activeElement, HOOSelectFocus.Input);
@@ -178,7 +178,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             selectStatus = HOOSelectStatus.Closed;
           } else if (this.state.selectStatus === HOOSelectStatus.Filtered && focus.tagName === 'LI') {
             // if state = filtered and focus on list, makeChoice and set state to closed
-            this.props.change((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
             this._moveFocus(document.activeElement, HOOSelectFocus.Input);

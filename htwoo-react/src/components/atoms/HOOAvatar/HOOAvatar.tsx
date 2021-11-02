@@ -27,7 +27,7 @@ export interface IHOOAvatarProps extends IHOOStandardProps {
   /**
    * Change event handler
   */
-  click?: React.MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
@@ -62,7 +62,7 @@ export default class HOOAvatar extends React.Component<IHOOAvatarProps, IHOOAvat
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass}${this.props.size} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}${this.props.size}`;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.click}>
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <img src={this.props.imageSource} alt={this.props.imageAlt} className="hoo-avatar-img" height={this.props.size} width={this.props.size} loading="lazy" />
           {this.props.children}
         </div>
