@@ -2,8 +2,8 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon, { IHOOIconProps } from "../../atoms/HOOIcon";
-import HOOButton, { HOOButtonType } from "../../atoms/HOOButton";
+import HOOIcon, { IHOOIconProps } from "../../atoms/HOOIcon/HOOIcon";
+import HOOButton, { HOOButtonType } from "../../atoms/HOOButton/HOOButton";
 
 export interface IHOODialogHeaderProps extends IHOOStandardProps {
   /**
@@ -27,10 +27,10 @@ export interface IHOODialogHeaderProps extends IHOOStandardProps {
    */
   closeIconSVG?: string;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOODialogHeaderState {
@@ -41,12 +41,12 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
 }
 
 export default class HOODialogHeader extends React.Component<IHOODialogHeaderProps, IHOODialogHeaderState> {
-  private LOG_SOURCE: string = "🔶HOODialogHeader";
+  private LOG_SOURCE: string = "💦HOODialogHeader";
   private _componentClass: string = "hoo-dlgheader";
 
   constructor(props: IHOODialogHeaderProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODialogHeader";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODialogHeader";
     this.state = new HOODialogHeaderState();
   }
 

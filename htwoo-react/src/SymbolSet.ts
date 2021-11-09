@@ -6,8 +6,9 @@ export interface ISymbolSet {
 }
 
 export class SymbolSet implements ISymbolSet {
-  private LOG_SOURCE: string = "🔶SymbolSet";
+  private LOG_SOURCE: string = "💦SymbolSet";
 
+  private defaultLoaded: boolean = false;
   private _symbolSetDictionary: { [name: string]: string } = {};
 
   constructor() {
@@ -18,32 +19,43 @@ export class SymbolSet implements ISymbolSet {
    */
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
-      let symbolSet: string = null;
-      //Load Default if symbolSetPath is not included
-      if (!symbolSetFile) {
-        symbolSetFile = require("./images/icons.svg");
+      //Load Default if not already processed
+      if (!this.defaultLoaded) {
+        symbolSetFile = require("./images/hoo-icons.svg");
         const result = await fetch(symbolSetFile);
-        symbolSet = await result.text();
-      } else {
-        const result = await fetch(symbolSetFile);
-        symbolSet = await result.text();
+        const defaultSymbolSet = await result.text();
+        const loadedDefault = this.processSymbolSet(defaultSymbolSet);
+        this.defaultLoaded = loadedDefault;
       }
 
-      if (symbolSet !== null) {
-        //Parse SymbolSet
-        const parser = new DOMParser();
-        const symbols = parser.parseFromString(symbolSet, "image/svg+xml");
-        const defs = symbols.getElementsByTagName("symbol");
-        for (let i = 0; i < defs.length; i++) {
-          const s = defs[i];
-          const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
-          const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
-          this._symbolSetDictionary[s.id] = svgElement;
-        }
+      if (symbolSetFile !== undefined && symbolSetFile.length > 0) {
+        const result = await fetch(symbolSetFile);
+        const symbolSet = await result.text();
+        this.processSymbolSet(symbolSet);
       }
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (initSymbols) - ${err}`, LogLevel.Error);
     }
+  }
+
+  private processSymbolSet(symbolSet: string): boolean {
+    let retVal: boolean = false;
+    try {
+      //Parse SymbolSet
+      const parser = new DOMParser();
+      const symbols = parser.parseFromString(symbolSet, "image/svg+xml");
+      const defs = symbols.getElementsByTagName("symbol");
+      for (let i = 0; i < defs.length; i++) {
+        const s = defs[i];
+        const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
+        const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+        this._symbolSetDictionary[s.id] = svgElement;
+      }
+      retVal = true;
+    } catch (err) {
+      Logger.write(`${this.LOG_SOURCE} (processSymbolSet) - ${err}`, LogLevel.Error);
+    }
+    return retVal;
   }
 
   public Icon(iconName: string): string {

@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "0.0.0-pre-alpha-6",
+  "version": "0.0.0-pre-alpha-12",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "author": "Julie Turner/Stefan Bauer",
   "homepage": "https://lab.n8d.studio/htwoo/",
@@ -18,13 +18,13 @@
   "dependencies": {
     "@pnp/logging": "^2.10.0",
     "lodash-es": "^4.17.21",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "@n8d/htwoo-core": "^0.*.*"
   },
   "scripts": {
     "prepare": "gulp build --ship",
-    "prepublish": "gulp build --ship",
+    "prepublish": "[[ \"$PWD\" =~ dnd ]]",
     "package": "webpack",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -33,23 +33,21 @@
     "/lib",
     "/dist"
   ],
-  "resolutions": {
-    "@types/react": "16.9.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
     "@types/es6-promise": "0.0.33",
     "@types/lodash": "^4.14.172",
-    "@types/react": "16.9.36",
-    "@types/react-dom": "16.9.0",
+    "@types/react": "16.9.51",
+    "@types/react-dom": "16.9.8",
     "@types/webpack": "^4.41.26",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "css-loader": "^3.6.0",
+    "fs-extra": "^10.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-plumber": "^1.2.1",

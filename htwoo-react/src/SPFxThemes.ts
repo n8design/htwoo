@@ -1,11 +1,11 @@
 import { Logger, LogLevel } from "@pnp/logging";
 
 export interface ISPFxThemes {
-  initThemeHandler: (domElement: HTMLElement, themeVariant: any) => void;
+  initThemeHandler: (domElement: HTMLElement, themeVariant?: any) => void;
 }
 
 export class SPFxThemes implements ISPFxThemes {
-  private LOG_SOURCE: string = "🔶SPFxThemes";
+  private LOG_SOURCE: string = "💦SPFxThemes";
 
   private _domElement: HTMLElement;
   private _themeProvider: any;
@@ -14,13 +14,13 @@ export class SPFxThemes implements ISPFxThemes {
   constructor() {
   }
 
-  public initThemeHandler = (domElement: HTMLElement, themeProvider: any) => {
+  public initThemeHandler = (domElement: HTMLElement, themeProvider?: any) => {
     try {
       this._domElement = domElement;
       this._themeProvider = themeProvider;
 
       // If it exists, get the theme variant
-      this._themeVariant = this._themeProvider.tryGetTheme();
+      this._themeVariant = this._themeProvider?.tryGetTheme();
 
       if (this._themeVariant) {
         // output all theme theme variants
@@ -43,7 +43,7 @@ export class SPFxThemes implements ISPFxThemes {
       }
 
       // Register a handler to be notified if the theme variant changes
-      this._themeProvider.themeChangedEvent.add(this, this._handleThemeChangedEvent);
+      this._themeProvider?.themeChangedEvent.add(this, this._handleThemeChangedEvent);
     } catch (err) {
       Logger.write(`${this.LOG_SOURCE} (initThemeHandler) - ${err}`, LogLevel.Error);
     }

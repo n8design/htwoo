@@ -11,10 +11,10 @@ export interface IHOONotifyLabelProps extends IHOOStandardProps {
   type: HOONotifyType;
   message: string;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLSpanElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLSpanElement>;
 }
 
 export interface IHOONotifyLabelState {
@@ -25,12 +25,12 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
 }
 
 export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps, IHOONotifyLabelState> {
-  private LOG_SOURCE: string = "🔶HOONotifyLabel";
+  private LOG_SOURCE: string = "💦HOONotifyLabel";
   private _componentClass: string = "hoo";
 
   constructor(props: IHOONotifyLabelProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOONotifyLabel";
+    this.LOG_SOURCE = props.dataComponent || "💦HOONotifyLabel";
     switch (this.props.type) {
       case HOONotifyType.Success:
         this._componentClass = `${this._componentClass}-success`;

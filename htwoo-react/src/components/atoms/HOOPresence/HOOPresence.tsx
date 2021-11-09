@@ -17,10 +17,10 @@ export interface IHOOPresenceProps extends IHOOStandardProps {
   */
   status: HOOPresenceStatus;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOPresenceState {
@@ -31,12 +31,12 @@ export class HOOPresenceState implements IHOOPresenceState {
 }
 
 export default class HOOPresence extends React.Component<IHOOPresenceProps, IHOOPresenceState> {
-  private LOG_SOURCE: string = "🔶HOOPresence";
+  private LOG_SOURCE: string = "💦HOOPresence";
   private _componentClass: string = "hoo-presence";
 
   constructor(props: IHOOPresenceProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOPresence";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOPresence";
     this.state = new HOOPresenceState();
   }
 

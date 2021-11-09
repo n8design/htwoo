@@ -17,10 +17,10 @@ export interface IHOOLoadingProps extends IHOOStandardProps {
   */
   maxValue: number;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-progress {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOLoadingState {
@@ -31,12 +31,12 @@ export class HOOLoadingState implements IHOOLoadingState {
 }
 
 export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLoadingState> {
-  private LOG_SOURCE: string = "🔶HOOLoading";
+  private LOG_SOURCE: string = "💦HOOLoading";
   private _componentClass: string = "hoo-progress";
 
   constructor(props: IHOOLoadingProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOLoading";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOLoading";
     this.state = new HOOLoadingState();
   }
 

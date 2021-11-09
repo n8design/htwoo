@@ -1,3 +1,3 @@
-import HOOCardImage, { IHOOCardImageProps } from "./components/molecules/HOOCardImage";
+import HOOCardImage, { IHOOCardImageProps } from "./components/molecules/HOOCardImage/HOOCardImage";
 export default HOOCardImage;
 export { IHOOCardImageProps };

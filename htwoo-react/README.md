@@ -11,11 +11,12 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
 ### Initialize library in Microsoft SharePoint Framework (SPFx)
 
-1. Add a reference to the base.css file in your solutions root .scss file:
+1. Add a reference to the style.prod.scss file in your solutions root .scss file:
+    >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
     ```SCSS
     :global {
-      @import 'node_modules/@n8d/htwoo-core/dist/css/htwoo.min.css';
+      @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
     }
     ```
 

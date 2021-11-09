@@ -5,10 +5,10 @@ import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOODialogContentProps extends IHOOStandardProps {
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOODialogContentState {
@@ -19,12 +19,12 @@ export class HOODialogContentState implements IHOODialogContentState {
 }
 
 export default class HOODialogContent extends React.Component<IHOODialogContentProps, IHOODialogContentState> {
-  private LOG_SOURCE: string = "🔶HOODialogContent";
+  private LOG_SOURCE: string = "💦HOODialogContent";
   private _componentClass: string = "hoo-dlgcontent";
 
   constructor(props: IHOODialogContentProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODialogContent";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODialogContent";
     this.state = new HOODialogContentState();
   }
 

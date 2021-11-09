@@ -2,8 +2,21 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
+import { getRandomString } from "../../Common";
 
 export interface IHOORadioButtonProps extends IHOOStandardProps {
+  /**
+   * Radio checked.
+  */
+  checked: boolean;
+  /**
+   * Radio value.
+  */
+  value: string | number;
+  /**
+   * Change event handler
+  */
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) RadioButton label. If omitted, children will be inserted.
   */
@@ -31,12 +44,14 @@ export class HOORadioButtonState implements IHOORadioButtonState {
 }
 
 export default class HOORadioButton extends React.Component<IHOORadioButtonProps, IHOORadioButtonState> {
-  private LOG_SOURCE: string = "🔶HOORadioButton";
+  private LOG_SOURCE: string = "💦HOORadioButton";
   private _componentClass: string = "hoo-radio";
+  private _radioId: string = "hoo-radio-";
 
   constructor(props: IHOORadioButtonProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOORadioButton";
+    this.LOG_SOURCE = props.dataComponent || "💦HOORadioButton";
+    this._radioId += getRandomString(10);
     this.state = new HOORadioButtonState();
   }
 
@@ -51,8 +66,8 @@ export default class HOORadioButton extends React.Component<IHOORadioButtonProps
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE} type="radio" value="" {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} />
-          <label {...this.props.labelElementAttributes}>
+          <input data-component={this.LOG_SOURCE} type="radio" id={this._radioId} checked={this.props.checked} value={this.props.value} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} />
+          <label htmlFor={this._radioId} {...this.props.labelElementAttributes}>
             {this.props.label &&
               this.props.label
             }

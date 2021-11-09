@@ -3,8 +3,8 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon from "../HOOIcon";
-import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu";
+import HOOIcon from "../HOOIcon/HOOIcon";
+import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
 export enum HOOActionType {
   "Action",
@@ -29,10 +29,10 @@ export interface IHOOActionProps extends IHOOStandardProps {
    */
   flyoutContextItems?: IHOOFlyoutMenuItem[];
   /**
-   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
 }
 
 export interface IHOOActionState {
@@ -43,12 +43,12 @@ export class HOOActionState implements IHOOActionState {
 }
 
 export default class HOOAction extends React.Component<IHOOActionProps, IHOOActionState> {
-  private LOG_SOURCE: string = "🔶HOOAction";
+  private LOG_SOURCE: string = "💦HOOAction";
   private _componentClass: string = "hoo-button";
 
   constructor(props: IHOOActionProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOAction";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOAction";
     switch (props.type) {
       case HOOActionType.Action:
         this._componentClass = `${this._componentClass}action`;
@@ -83,7 +83,7 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
                 <span className="hoo-button-label">{this.props.label}</span>
                 {this.props.type !== HOOActionType.Action && this.props.flyoutContextItems?.length > 0 &&
                   <span className="hoo-button-icon hoo-buttonchevron">
-                    <HOOIcon iconName="icon-arrow-down" />
+                    <HOOIcon iconName="hoo-icon-arrow-down" />
                   </span>
                 }
               </>

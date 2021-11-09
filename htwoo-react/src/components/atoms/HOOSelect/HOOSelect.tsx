@@ -4,8 +4,8 @@ import isEqual from "lodash-es/isEqual";
 import findIndex from "lodash-es/findIndex";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOButton, { HOOButtonType } from "../HOOButton";
-import HOOIcon from "../HOOIcon";
+import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOSelectStatus {
   "Initial",
@@ -74,7 +74,7 @@ export class HOOSelectState implements IHOOSelectState {
 }
 
 export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
-  private LOG_SOURCE: string = "🔶HOOSelect";
+  private LOG_SOURCE: string = "💦HOOSelect";
   private _componentClass: string = "hoo-select";
   private _optionElements = [];
   private _inputElement: React.RefObject<HTMLInputElement>;
@@ -82,7 +82,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
 
   constructor(props: IHOOSelectProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOSelect";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOSelect";
     this.state = new HOOSelectState();
   }
 
@@ -360,7 +360,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             id={`${this.props.id}-input`}
             value={this.state.currentValue} aria-autocomplete="both" autoComplete="off" aria-controls={`${this.props.id}-list`} onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }} />
           <HOOButton type={HOOButtonType.Icon}>
-            <HOOIcon iconName="DownArrow" />
+            <HOOIcon iconName="hoo-icon-arrow-down" />
           </HOOButton>
           <ul
             role="listbox"

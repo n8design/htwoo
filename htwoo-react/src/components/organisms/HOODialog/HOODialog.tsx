@@ -44,12 +44,12 @@ export class HOODialogState implements IHOODialogState {
 }
 
 export default class HOODialog extends React.Component<IHOODialogProps, IHOODialogState> {
-  private LOG_SOURCE: string = "🔶HOODialog";
+  private LOG_SOURCE: string = "💦HOODialog";
   private _componentClass: string = "hoo-mdldialog-outer";
 
   constructor(props: IHOODialogProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOODialog";
+    this.LOG_SOURCE = props.dataComponent || "💦HOODialog";
     switch (props.type) {
       case HOODialogType.StandardError:
         this._componentClass = `${this._componentClass} is-error`;

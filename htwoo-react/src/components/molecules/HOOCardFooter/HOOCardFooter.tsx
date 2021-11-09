@@ -2,7 +2,7 @@ import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar";
+import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar/HOOAvatar";
 
 export interface IHOOCardFooterProps extends IHOOStandardProps {
   /**
@@ -40,12 +40,12 @@ export class HOOCardFooterState implements IHOOCardFooterState {
 }
 
 export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, IHOOCardFooterState> {
-  private LOG_SOURCE: string = "🔶HOOCardFooter";
+  private LOG_SOURCE: string = "💦HOOCardFooter";
   private _componentClass: string = "hoo-cardfooter";
 
   constructor(props: IHOOCardFooterProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOCardFooter";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOCardFooter";
     this.state = new HOOCardFooterState();
   }
 

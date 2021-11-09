@@ -52,13 +52,13 @@ export class HOOShimmerState implements IHOOShimmerState {
 }
 
 export default class HOOShimmer extends React.Component<IHOOShimmerProps, IHOOShimmerState> {
-  private LOG_SOURCE: string = "🔶HOOShimmer";
+  private LOG_SOURCE: string = "💦HOOShimmer";
   private _componentClass: string = "hoo-ph";
   private _imageShape: boolean = false;
 
   constructor(props: IHOOShimmerProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOShimmer";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOShimmer";
     switch (props.shape) {
       case HOOShimmerShape.Row:
         this._componentClass = `${this._componentClass}-row`;

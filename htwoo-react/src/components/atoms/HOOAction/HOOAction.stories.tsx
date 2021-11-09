@@ -13,7 +13,7 @@ export default {
 const Template: Story<IHOOActionProps> = (args) => <HOOAction {...args} />;
 
 export const Action = Template.bind({});
-Action.args = { type: HOOActionType.Action, label: "Action Button", iconName: "Plus" };
+Action.args = { type: HOOActionType.Action, label: "Action Button", iconName: "hoo-icon-plus" };
 
 export const Command = Template.bind({});
-Command.args = { type: HOOActionType.Command, label: "Action Button", iconName: "Plus" };
+Command.args = { type: HOOActionType.Command, label: "Action Button", iconName: "hoo-icon-plus" };

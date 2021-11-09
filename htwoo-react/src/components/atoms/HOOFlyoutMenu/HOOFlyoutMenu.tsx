@@ -3,7 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOAction from "../HOOAction";
+import HOOAction from "../HOOAction/HOOAction";
 
 export interface IHOOFlyoutMenuItem {
   iconName: string;
@@ -16,10 +16,10 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
   */
   contextItems: IHOOFlyoutMenuItem[];
   /**
-   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.HTMLAttributes<HTMLUListElement>;
 }
 
 export interface IHOOFlyoutMenuState {
@@ -30,12 +30,12 @@ export class HOOFlyoutMenuState implements IHOOFlyoutMenuState {
 }
 
 export default class HOOFlyoutMenu extends React.Component<IHOOFlyoutMenuProps, IHOOFlyoutMenuState> {
-  private LOG_SOURCE: string = "🔶HOOFlyoutMenu";
+  private LOG_SOURCE: string = "💦HOOFlyoutMenu";
   private _componentClass: string = "hoo-buttonflyout";
 
   constructor(props: IHOOFlyoutMenuProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "🔶HOOFlyoutMenu";
+    this.LOG_SOURCE = props.dataComponent || "💦HOOFlyoutMenu";
     this.state = new HOOFlyoutMenuState();
   }
 

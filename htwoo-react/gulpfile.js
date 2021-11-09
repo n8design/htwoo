@@ -66,7 +66,7 @@ const version = (cb) => {
 
 const copyIcons = (cb) => {
   fs.mkdirSync("./lib/images");
-  fs.copyFileSync('./src/images/icons.svg', './lib/images/icons.svg');
+  fs.copyFileSync('./src/images/hoo-icons.svg', './lib/images/hoo-icons.svg');
   cb();
 }
 
@@ -154,6 +154,37 @@ const webpack = () => {
     .pipe(dest('dist'));
 }
 
+const prepublish = (cb) => {
+  const fs = require('fs-extra');
+  //Make package directory
+  fs.mkdirSync("../packages/htwoo-react");
+
+  const package = './package.json';
+  if (fs.existsSync(package)) {
+    const packageFileContent = fs.readFileSync(package, 'UTF-8');
+    const pkgContents = JSON.parse(packageFileContent);
+    delete pkgContents.scripts;
+    delete pkgContents.devDependencies;
+    delete pkgContents.dependencies.react;
+    delete pkgContents.dependencies["react-dom"];
+    //delete pkgContents.dependencies["@n8d/htwoo-core"];
+    //"@n8d/htwoo-core": "^0.*.*",
+    pkgContents["peerDependencies"] = {
+      "react": "16.x",
+      "react-dom": "16.x"
+    }
+    pkgContents.main = "./index.js";
+    pkgContents.types = "./index.d.ts";
+    pkgContents.files = ["/*", "/dist"];
+    fs.writeFileSync("../packages/htwoo-react/package.json", JSON.stringify(pkgContents), 'UTF-8');
+  }
+
+  fs.copySync("./lib", "../packages/htwoo-react");
+  fs.mkdirSync("../packages/htwoo-react/dist");
+  fs.copySync("./dist", "../packages/htwoo-react/dist");
+  cb();
+}
+
 /** TASK: init development server */
 const serve = (cb) => {
 
@@ -206,6 +237,11 @@ const clean = (cb) => {
   cb();
 }
 
+const publishclean = (cb) => {
+  rimraf.sync('../packages/htwoo-react');
+  cb();
+}
+
 const build = series(clean, version,
   parallel(tsCompile, sassCompile), copyIcons,
   webpack);
@@ -213,3 +249,5 @@ const build = series(clean, version,
 exports.build = build;
 exports.serve = series(build, serve);
 exports.clean = clean;
+
+exports.prepublish = series(publishclean, build, prepublish);
