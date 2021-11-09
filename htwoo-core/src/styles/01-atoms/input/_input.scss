@@ -1,48 +1,52 @@
-@mixin base-input{
+@mixin base-input {
 	font-size: px2rem(14px);
 	line-height: 1.9rem;
 
 	box-sizing: border-box;
 	width: auto;
+	margin: 0;
 	padding: 0 px2rem(8px);
 
 	border: 1px $inputBorder solid;
 	border-radius: 2px;
-	outline: 1px rgba(255,255,255,0) solid;
-	margin: 0;
+	outline: 1px rgba(255, 255, 255, 0) solid;
 }
 
-.hoo-input-text{
+.hoo-input-text {
 	@include base-input();
 
 	// general focus
-	&:focus{
+	&:focus {
 		line-height: calc(1.9rem - 2px);
 
 		padding: 0 px2rem(7px);
 
 		border: 2px $inputFocusBorderAlt solid;
-		outline: 0 rgba(255,255,255,0) solid;
+		outline: 0 rgba(255, 255, 255, 0) solid;
 	}
+
 	// in valid 
 	&.is-invalid,
-	&:invalid{
+	&:invalid {
 		border-color: $errorText;
 	}
+
 	// diabled buttn style
-	&:disabled{
+	&:disabled {
 		color: $buttonTextDisabled;
 		border-color: $buttonBorderDisabled;
 		background-color: $disabledBackground;
 	}
-	&[data-prefix]{
+
+	&[data-prefix] {
 		padding-left: px2rem(8px);
 
 		border-left: none;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 	}
-	&[data-suffix]{
+
+	&[data-suffix] {
 		padding-right: px2rem(8px);
 
 		border-right: none;
@@ -50,7 +54,8 @@
 		border-bottom-right-radius: 0;
 	}
 }
-.hoo-input-prefix{
+
+.hoo-input-prefix {
 	@include base-input();
 
 	display: inline-block;
@@ -63,7 +68,8 @@
 	border-bottom-right-radius: 0;
 	background-color: $buttonBackgroundDisabled;
 }
-.hoo-input-suffix{
+
+.hoo-input-suffix {
 	@include base-input();
 
 	display: inline-block;
@@ -77,11 +83,11 @@
 	background-color: $buttonBackgroundDisabled;
 }
 
-.hoo-input-group{
+.hoo-input-group {
 	display: flex;
 
-	&:focus-within{
-		& > *{
+	&:focus-within {
+		&>* {
 			line-height: calc(1.9rem - 2px);
 
 			padding: 0 px2rem(7px);
@@ -89,16 +95,40 @@
 			border-width: 2px;
 			border-color: $inputFocusBorderAlt;
 		}
-		.hoo-input-text{
+
+		.hoo-input-text {
 			padding: 0 px2rem(8px);
 		}
-		.hoo-input-suffix{
+
+		.hoo-input-suffix {
 			padding-right: px2rem(7px);
 			padding-left: px2rem(8px);
 		}
-		.hoo-input-prefix{
+
+		.hoo-input-prefix {
 			padding-right: px2rem(8px);
 			padding-left: px2rem(7px);
 		}
+	}
+}
+
+.hoo-input-time,
+.hoo-input-date {
+	font-size: px2rem(14px);
+
+	padding-right: px2rem(8px);
+	padding-left: px2rem(4px);
+
+	color: $BodyText;
+	font-family: $mediumFontFamily;
+
+	&::-webkit-calendar-picker-indicator {
+		margin-right: 0;
+		margin-left: px2rem(8px);
+	}
+
+	&:focus {
+		outline: 2px $inputFocusBorderAlt solid;
+		border-color: transparent;
 	}
 }
