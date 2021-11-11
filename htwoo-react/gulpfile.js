@@ -248,7 +248,7 @@ const clean = (cb) => {
 
 const publishclean = (cb) => {
   rimraf.sync('../packages/htwoo-react');
-  rimraf.sync('../docs/htwoo-react');
+  //rimraf.sync('../docs/htwoo-react');
   cb();
 }
 

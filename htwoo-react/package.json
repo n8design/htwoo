@@ -27,7 +27,7 @@
     "prepublish": "[[ \"$PWD\" =~ dnd ]]",
     "package": "webpack",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -- -o ../docs/htwoo-react"
+    "build-storybook": "build-storybook -o ../docs/htwoo-react"
   },
   "files": [
     "/lib",
