@@ -7,7 +7,7 @@ export interface IHOONumberProps extends IHOOStandardProps {
   /**
    * value
   */
-  value: string;
+  value: number;
   /**
    * Change event handler
   */
