@@ -10,6 +10,7 @@ export default {
   component: HOOIcon,
 } as Meta;
 
+//TODO: await symset.initSymbols();
 const Template: Story<IHOOIconProps> = (args) => <HOOIcon {...args} />;
 
 export const Primary = Template.bind({});

@@ -16,7 +16,7 @@ const Template: Story<IHOOOptionListProps> = (args: IHOOOptionListProps) => <HOO
 
 
 export const CheckboxList = Template.bind({});
-CheckboxList.args = { type: HOOOptionListType.Checkbox, options: options, value: 1 };
+CheckboxList.args = { type: HOOOptionListType.Checkbox, options: options, value: [1] };
 
 export const RadioButtonList = Template.bind({});
 RadioButtonList.args = { type: HOOOptionListType.RadioButton, options: options, value: 1 };
