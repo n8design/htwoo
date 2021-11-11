@@ -13,9 +13,13 @@ export enum HOOActionType {
 }
 export interface IHOOActionProps extends IHOOStandardProps {
   /**
-   * (Optional) button label, if omitted, components children will be rendered.
+   * Type of Action, if omitted, components children will be rendered.
    */
-  type?: HOOActionType;
+  type: HOOActionType;
+  /**
+   * Direct interface for button click event handler.
+   */
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
@@ -33,6 +37,11 @@ export interface IHOOActionProps extends IHOOStandardProps {
    * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
+  /**
+     * (Optional) HTMLSpanElement attributes that will be applied to the label element of the component.
+     * Class names will be appended to the end of the default class string - hoo-button-label {rootElementAttributes.class}
+    */
+  labelElementAttributes?: React.HTMLAttributes<HTMLSpanElement>;
 }
 
 export interface IHOOActionState {
@@ -45,6 +54,7 @@ export class HOOActionState implements IHOOActionState {
 export default class HOOAction extends React.Component<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
   private _componentClass: string = "hoo-button";
+  private _labelClass: string = "hoo-button-label";
 
   constructor(props: IHOOActionProps) {
     super(props);
@@ -72,15 +82,16 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
   public render(): React.ReactElement<IHOOActionProps> {
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const labelClass = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
         <>
-          <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+          <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
             {this.props.label &&
               <>
                 <span className="hoo-button-icon" aria-hidden="true">
                   <HOOIcon iconName={this.props.iconName} />
                 </span>
-                <span className="hoo-button-label">{this.props.label}</span>
+                <span {...this.props.labelElementAttributes} className={labelClass}>{this.props.label}</span>
                 {this.props.type !== HOOActionType.Action && this.props.flyoutContextItems?.length > 0 &&
                   <span className="hoo-button-icon hoo-buttonchevron">
                     <HOOIcon iconName="hoo-icon-arrow-down" />
@@ -93,7 +104,7 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
             }
           </button>
           {this.props.flyoutContextItems &&
-            <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} />
+            <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} contextItemClicked={this.props.onClick} />
           }
         </>
       );

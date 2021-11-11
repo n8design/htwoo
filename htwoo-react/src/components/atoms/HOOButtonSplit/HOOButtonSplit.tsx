@@ -29,9 +29,13 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
    */
   rightIconName?: string;
   /**
-   * (Optional) icon name, if omitted, components children will be rendered.
+   * (Optional) Flyout menu items, if omitted, no flyout will be rendered.
    */
   flyoutContextItems?: IHOOFlyoutMenuItem[];
+  /** 
+  * (Optional) Flyout menu items click event
+  */
+  flyoutContextItemsClicked?: React.MouseEventHandler<HTMLButtonElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
@@ -89,7 +93,7 @@ export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps
             </span>
           </button>
           {this.props.flyoutContextItems &&
-            <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} />
+            <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} contextItemClicked={this.props.flyoutContextItemsClicked} />
           }
         </div>
       );

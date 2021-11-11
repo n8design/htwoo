@@ -3,7 +3,7 @@ import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
 
 import { IHOOStandardProps } from "../../Common.model";
-import HOOAction from "../HOOAction/HOOAction";
+import HOOAction, { HOOActionType } from "../HOOAction/HOOAction";
 
 export interface IHOOFlyoutMenuItem {
   iconName: string;
@@ -15,6 +15,10 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
   * Context Items
   */
   contextItems: IHOOFlyoutMenuItem[];
+  /** 
+  * Context Items clicked event
+  */
+  contextItemClicked: React.MouseEventHandler<HTMLButtonElement>;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
@@ -53,7 +57,7 @@ export default class HOOFlyoutMenu extends React.Component<IHOOFlyoutMenuProps, 
           {this.props.contextItems && this.props.contextItems.map((ci) => {
             return (
               <li className="hoo-buttonflyout-item">
-                <HOOAction label={ci.label} iconName={ci.iconName} />
+                <HOOAction label={ci.label} iconName={ci.iconName} type={HOOActionType.Action} onClick={this.props.contextItemClicked} />
               </li>
             );
           })}

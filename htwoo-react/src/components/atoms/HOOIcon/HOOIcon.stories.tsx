@@ -14,4 +14,4 @@ const Template: Story<IHOOIconProps> = (args) => <HOOIcon {...args} />;
 
 export const Primary = Template.bind({});
 
-Primary.args = { iconName: 'icon-close' };
+Primary.args = { iconName: 'hoo-icon-close' };
