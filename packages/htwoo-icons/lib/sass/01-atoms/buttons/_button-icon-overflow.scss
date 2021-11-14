@@ -1,0 +1,27 @@
+.hoo-buttonicon-overflow {
+	@extend %flyoutDropDown;
+
+	display: flex;
+
+	height: 2rem;
+
+	button {
+		cursor: pointer;
+		@extend .hoo-buttonaction;
+
+		height: 2rem;
+		margin-right: 0;
+
+		&>* {
+			pointer-events: none;
+		}
+
+		&:active {
+			background-color: $buttonBackgroundChecked;
+		}
+
+		&:hover {
+			background-color: $buttonBackgroundCheckedHovered;
+		}
+	}
+}

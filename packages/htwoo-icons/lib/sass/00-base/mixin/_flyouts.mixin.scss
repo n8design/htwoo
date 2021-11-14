@@ -1,0 +1,23 @@
+%flyoutDropDown{
+	position: relative;
+	.hoo-buttonflyout{
+		position: absolute;
+		z-index: 400;
+		top: 100%;
+		left: 0;
+
+		display: none; // intermediate SHOW/HIDE
+	}
+
+	// TODO: Add SLIDEOUT ANIMATION
+	&.show-flyout{
+		background-color: inherit;
+		& > .hoo-buttonflyout{
+			display: block;
+		}
+
+		.hoo-buttonsplit-carret{
+			background-color: $buttonBackgroundCheckedHovered;
+		}
+	}
+}

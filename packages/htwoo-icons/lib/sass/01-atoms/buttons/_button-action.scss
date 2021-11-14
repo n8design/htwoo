@@ -1,0 +1,54 @@
+.hoo-buttonaction{
+	display: inline-flex;
+
+	height: px2rem(44px);
+	margin: 0;
+	padding: 0 px2rem(4px);
+
+	white-space: nowrap;
+
+	border: none;
+	background-color: $buttonBackground;
+
+	align-items: center;
+
+    cursor: pointer;
+
+    .hoo-button-icon{
+        line-height: px2rem(36px);
+    
+        display: flex;
+        justify-content: center;
+    
+        width: px2rem(24px);
+        height: px2rem(24px);
+    
+        color: $CommandLinksHover;
+    
+        align-items: center;
+    
+    }
+    
+    .hoo-button-label{
+        font-size: px2rem(14px);
+        line-height: px2rem(36px);
+    
+        box-sizing: border-box;
+        padding: 0 px2rem(4px);
+    
+        white-space: nowrap;
+        font-weight: 400;
+    }    
+
+	&:hover{
+		color: $CommandLinksHover;
+	}
+
+	&:active{
+		color: inherit;
+		.hoo-buttonaction-icon{
+			color: $CommandLinksPressed;
+		}
+	}
+}
+

@@ -1,0 +1,67 @@
+%hoo-avatar{
+	display: inline-block;
+
+	width: 64px;
+	height: 64px;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+
+.hoo-avatar-img{
+	width: 100%;
+	height: auto;
+
+	border-radius: 50%;
+	border-collapse: collapse;
+	img.hoo-avatar{
+		width: 100%;
+		height: auto;
+		aspect-ratio: auto 1/1;
+	}
+}
+
+.hoo-avatar{
+	@extend %hoo-avatar;
+
+	width: inherit;
+	height: inherit;
+}
+.hoo-avatar-64{
+	@extend %hoo-avatar;
+}
+.hoo-avatar-48{
+	@extend %hoo-avatar;
+
+	width: 48px;
+	height: 48px;
+}
+.hoo-avatar-40{
+	@extend %hoo-avatar;
+
+	width: 40px;
+	height: 40px;
+}
+.hoo-avatar-32{
+	@extend %hoo-avatar;
+
+	width: 32px;
+	height: 32px;
+}
+.hoo-avatar-24{
+	@extend %hoo-avatar;
+
+	width: 24px;
+	height: 24px;
+}
+.hoo-avatar-16{
+	@extend %hoo-avatar;
+
+	width: 16px;
+	height: 16px;
+}
+.hoo-avatar-8{
+	@extend %hoo-avatar;
+
+	width: 8px;
+	height: 8px;
+}

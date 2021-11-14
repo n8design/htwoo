@@ -1,0 +1,57 @@
+.hoo-breadcrumb {
+    ol {
+        display: block;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        // Styling the last element
+        .hoo-breadcrumb-item {
+
+            &:last-of-type {
+
+                font-weight: bold;
+
+            }
+
+        }
+
+    }
+
+}
+
+.hoo-breadcrumb-item {
+    display: inline-block;
+
+    width: auto;
+}
+
+.hoo-breadcrumb-link {
+    display: inline-block;
+
+    box-sizing: border-box;
+    padding-right: .5rem;
+    padding-left: .5rem;
+
+    text-decoration: none;
+
+    color: $bodyText;
+
+    &:hover {
+        line-height: px2rem(36px);
+
+        color: $bodyText;
+        background-color: $buttonBackgroundHovered;
+    }
+}
+
+.hoo-breadcrumb-separator {
+    line-height: px2rem(36px);
+
+    svg {
+        width: px2rem(12px);
+        height: px2rem(12px);
+    }
+}

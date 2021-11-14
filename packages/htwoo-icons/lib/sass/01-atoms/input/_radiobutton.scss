@@ -1,0 +1,146 @@
+/*** TODO: Hover Style ***/
+
+.hoo-radio{
+	&:checked,
+	&:not(:checked){
+		position: absolute;
+		left: -9999px;
+	}
+
+	&:checked + label,
+	&:not(:checked) + label{
+		font-size: px2rem(14px);
+		line-height: 20px;
+
+		position: relative;
+
+		display: inline-block;
+
+		padding-left: 28px;
+
+		cursor: pointer;
+
+		color: $bodyText;
+	}
+
+	&:checked + label:before,
+	&:not(:checked) + label:before{
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 18px;
+		height: 18px;
+
+		content: "";
+
+		border: 1px $buttonBorder solid;
+		border-radius: 100%;
+		background: #fff;
+	}
+
+	&:hover:checked + label:before{
+		border-color: $themeDarker;
+	}
+	&:checked + label:before{
+		border-color: $themePrimary;
+	}
+	&:active:checked + label:before{
+		border-color: $themePrimary;
+	}
+	&:active:not(:checked) + label:before{
+		border-color: $themePrimary;
+	}
+
+	&:checked + label:after,
+	&:not(:checked) + label:after{
+		position: absolute;
+		top: 4px;
+		left: 4px;
+
+		width: 12px;
+		height: 12px;
+
+		content: "";
+		transition: all .2s ease;
+
+		border-radius: 100%;
+		background: $primaryButtonBackground;
+	}
+
+	&:checked:hover + label:after,
+	&:not(:checked):hover + label:after{
+		position: absolute;
+		top: 4px;
+		left: 4px;
+
+		width: 12px;
+		height: 12px;
+
+		content: "";
+		transition: all .2s ease;
+
+		border-radius: 100%;
+		background: $buttonBorder;
+	}
+
+	// &:hover:checked + label:after,
+	&:hover:not(:checked):hover + label:after{
+		position: absolute;
+		top: 4px;
+		left: 4px;
+
+		width: 12px;
+		height: 12px;
+
+		content: "";
+		transition: all .2s ease;
+
+		border-radius: 100%;
+		background: $buttonBorder;
+	}
+
+	&:hover:checked + label:after{
+		background-color: magenta
+	}
+
+	&:hover:checked + label:after{
+		background: $themeDarker;
+		// background: lime;
+	}
+
+	&:active:checked:hover + label:after,
+	&:active:not(:checked):hover + label:after{
+		position: absolute;
+		top: 4px;
+		left: 4px;
+
+		width: 12px;
+		height: 12px;
+
+		content: "";
+		transition: all .2s ease;
+
+		border-radius: 100%;
+		background: $themePrimary;
+	}
+
+	&:not(:checked) + label:after{
+		transform: scale(0);
+
+		opacity: 0;
+	}
+
+	&:hover:not(:checked) + label:after,
+	&:checked + label:after{
+		transform: scale(1);
+
+		opacity: 1;
+	}
+	&:disabled + label{
+		color: $disabledText;
+	}
+	&:disabled + label:before{
+		border-color: $disabledText;
+	}
+}

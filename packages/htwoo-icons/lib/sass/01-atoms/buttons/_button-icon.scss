@@ -1,0 +1,26 @@
+.hoo-buttonicon{
+	display: inline-flex;
+	justify-content: center;
+
+	padding: 0;
+	padding: px2rem(4px);
+
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: $bodyText;
+
+	align-items: center;
+
+	cursor: pointer;
+	svg{
+		width: 16px;
+		height: 16px;
+	}
+	&:hover{
+		background-color: $buttonBackgroundHovered;
+	}
+	&:active{
+		background-color: $buttonBackgroundPressed;
+	}
+}

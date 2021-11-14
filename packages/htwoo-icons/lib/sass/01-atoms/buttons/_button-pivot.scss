@@ -1,0 +1,76 @@
+.hoo-button-pivot{
+
+	padding: 0;
+	margin: 0;
+
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	height: px2rem(44px);
+	text-rendering: optimizeLegibility;
+
+	&.is-active{
+		.hoo-pivot-inner{
+			position: relative;
+
+			&:after{
+				position: absolute;
+				top: 100%;
+				left: 8px;
+
+				display: block;
+
+				width: 100%;
+				max-width: calc(100% - 16px);
+				height: 2px;
+
+				content: "";
+				transition: all $transition-timing ease-in-out;
+
+				background-color: $primaryButtonBackground;
+			}
+
+			&:hover{
+				&:after{
+					left: 0;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	&:hover{
+		padding: 0;
+
+		background-color: $buttonBackgroundHovered;
+	}
+}
+
+.hoo-pivot-inner{
+	font-size: 1rem;
+	line-height: px2rem(44px);
+
+	position: relative;
+
+	color: $bodyText;
+
+	display: flex;
+
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 0 px2rem(8px);
+
+	transition: max-width .25s ease-in;
+	text-align: center;
+	white-space: nowrap;
+
+	text-shadow: 0 0 .65px rgba(white, 0), 0 0 .65px rgba(white, 0);
+
+	&:hover{
+		max-width: 110%;
+		// padding: 0 px2rem(8px);
+
+		text-shadow: 0 0 .65px currentColor, 0 0 .65px currentColor;
+	}
+
+}

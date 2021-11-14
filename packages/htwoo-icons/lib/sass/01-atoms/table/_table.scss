@@ -1,0 +1,241 @@
+@mixin tblDefSpacing {
+	$min-height: 42px;
+	font-size: 14px;
+
+	min-height: $min-height;
+	padding-top: px2rem(($min-height - 14px) / 2);
+	padding-right: px2rem(8px);
+	padding-bottom: px2rem(($min-height - 14px) / 2);
+	padding-left: px2rem(12px);
+
+}
+
+@mixin tblDefSpacingCompact {
+	$min-height: 32px;
+	font-size: 14px;
+
+	min-height: $min-height;
+	padding-top: px2rem(($min-height - 18px) / 2);
+	padding-right: px2rem(8px);
+	padding-bottom: px2rem(($min-height - 18px) / 2);
+	padding-left: px2rem(12px);
+
+}
+
+.hoo-table-iconcell {
+	svg {
+		transition: transform .125s ease-in-out;
+	}
+}
+
+.hoo-table {
+	overflow: auto;
+
+	width: 100%;
+
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	.valign-top {
+		vertical-align: top;
+	}
+
+	.valign-middle {
+		vertical-align: middle;
+	}
+
+	.valign-bottom {
+		vertical-align: bottom;
+	}
+
+	@media screen and (max-width: 640px) {
+		.no-phone {
+			display: none;
+		}
+	}
+
+	tfoot,
+	tbody,
+	thead {
+		th {
+			@include tblDefSpacing();
+
+			font-size: px2rem(14px);
+
+			text-align: left;
+			white-space: nowrap;
+			background-color: $bodyBackground;
+
+			&:hover {
+				background-color: $buttonBackgroundHovered;
+			}
+		}
+	}
+
+	td,
+	th {
+		background-color: $bodyBackground;
+
+		&:hover {
+			background-color: $buttonBackgroundHovered;
+		}
+	}
+
+	thead {
+		border-bottom: 1px $neutralLight solid;
+		background-color: $bodyBackground;
+	}
+
+	tfoot {
+		border-top: 1px $neutralLight solid;
+	}
+
+	tbody {
+		th {
+			vertical-align: middle;
+		}
+
+		tr {
+			min-height: 42px;
+
+			&:hover {
+				background-color: $buttonBackgroundHovered;
+			}
+		}
+
+		td {
+			@include tblDefSpacing();
+
+			vertical-align: top;
+
+			border-bottom: 1px $neutralLight solid;
+		}
+	}
+
+	&.compact {
+
+		tfoot,
+		tbody,
+		thead {
+			th {
+				@include tblDefSpacingCompact();
+			}
+		}
+
+		tbody {
+
+			td {
+				@include tblDefSpacingCompact();
+			}
+		}
+	}
+
+	tr {
+		&[aria-expanded="true"] {
+			.hoo-table-iconcell {
+				svg {
+					transform: rotate(0deg);
+				}
+			}
+		}
+
+		&[aria-expanded="false"] {
+			.hoo-table-iconcell {
+				svg {
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+
+	// Sticky header
+	th.is-sticky,
+	td.is-sticky {
+		position: sticky;
+
+
+
+		&.top {
+			z-index: 10;
+			top: 0;
+		}
+
+		&.bottom {
+			z-index: 10;
+			bottom: 0;
+		}
+
+		&.left.top {
+			z-index: 10;
+			left: 0;
+		}
+
+		&.right {
+			z-index: 8;
+			right: 0;
+		}
+
+		&.top.left,
+		&.bottom.left {
+			z-index: 12;
+		}
+
+		&.top.right,
+		&.bottom.right {
+			z-index: 12;
+		}
+
+	}
+
+	&.is-collapsable {
+		.is-hidden {
+			display: none;
+
+			td {
+				display: none;
+			}
+		}
+
+		.is-visible {
+			display: table-row;
+
+			td {
+				display: table-cell;
+			}
+		}
+	}
+
+	& .hoo-table-iconcell {
+		width: px2rem(32px);
+		padding: 0;
+	}
+
+	&-subheader {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		align-content: middle;
+	}
+
+
+
+	// Compact design
+	.compact {
+		tbody {
+			td {}
+		}
+	}
+}

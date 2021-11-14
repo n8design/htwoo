@@ -1,0 +1,113 @@
+.hoo-buttonsplit{
+	@extend %flyoutDropDown;
+
+	display: flex;
+
+	cursor: pointer;
+
+	&-standard{
+		@extend .hoo-button;
+
+		margin: 0;
+
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+
+		&[disabled],
+		&:disabled{
+			pointer-events: none;
+
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
+	}
+
+	&-carret{
+		@extend .hoo-button;
+
+		font-weight: 400;
+
+		margin: 0;
+		padding: 0;
+
+		color: $buttonText;
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		.hoo-button-label{
+			font-weight: inherit;
+			line-height: 1;
+
+			height: auto;
+			margin: 0;
+			padding: px2rem(2px) px2rem(6px);
+
+			color: inherit;
+			border-left: 1px currentColor solid;
+		}
+
+		.hoo-icon{
+			height: 16px;
+		}
+
+		& > *{
+			pointer-events: none;
+		}
+
+		&[disabled],
+		&:disabled{
+			pointer-events: none;
+
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
+	}
+
+	.hoo-buttonflyout{
+		position: absolute;
+		top: 100%;
+
+		display: none;
+	}
+
+	&.show-flyout{
+		& > .hoo-buttonflyout{
+			display: block;
+		}
+	}
+}
+
+.hoo-buttonsplit-primary{
+	@extend .hoo-buttonsplit;
+
+	.hoo-buttonsplit-standard,
+	.hoo-buttonsplit-carret{
+		color: $primaryButtonText;
+		border-color: $primaryButtonBackground;
+		background-color: $primaryButtonBackground;
+
+		.hoo-button-label{
+			color: currentColor;
+		}
+
+		&[disabled],
+		&:disabled{
+			pointer-events: none;
+
+			color: $buttonTextDisabled;
+			border-color: $buttonBackgroundDisabled;
+			background-color: $buttonBackgroundDisabled;
+		}
+	}
+
+	&.show-flyout{
+		& > .hoo-buttonsplit-carret{
+			border-color: $primaryButtonBackgroundPressed;
+			background-color: $primaryButtonBackgroundPressed;
+		}
+	}
+}

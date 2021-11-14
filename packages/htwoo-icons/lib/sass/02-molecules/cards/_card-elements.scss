@@ -1,0 +1,117 @@
+.hoo-cardimage{
+	border-collapse: collapse;
+
+	// removed from version 0.3.x anwards: border: 1px solid $variantBorder;
+	border:none;
+	border-collapse: collapse;
+	box-sizing: border-box;
+
+	aspect-ratio: 16/9;
+
+	img{
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		object-fit: fill;
+	}
+	.hoo-ph-squared{
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		max-height: 100%;
+
+		border: none;
+
+		aspect-ratio: 16/9;
+	}
+}
+
+.hoo-cardimage-html{
+	// min-width: 320px;
+	// min-height: 180px;
+
+	content: "";
+
+	background-color: $primaryButtonBackground;
+
+	aspect-ratio: 16/9;
+}
+
+.hoo-cardlocation{
+	font-size: px2rem(12px);
+	font-weight: 600px;
+
+	box-sizing: border-box;
+	padding: px2rem(10px) px2rem(12px) px2rem(8px);
+
+	color: $primaryButtonBackground;
+	.hoo-ph-row{
+		width: 35%;
+
+		border: none;
+	}
+}
+
+.hoo-cardtitle{
+	font-size: px2rem(14px);
+	font-weight: 600;
+
+	display: -webkit-box;
+
+	box-sizing: border-box;
+	height: px2rem(38px);
+	padding: 0 px2rem(12px) px2rem(8px);
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	.hoo-ph-row{
+		width: 80%;
+
+		border: none;
+	}
+}
+
+.hoo-cardfooter{
+	display: flex;
+
+	box-sizing: border-box;
+	padding: px2rem(12px);
+
+	.hoo-avatar{
+		width: px2rem(32px);
+		height: px2rem(32px);
+		margin-right: 1rem;
+		.hoo-ph-circle{
+			width: inherit;
+			height: inherit;
+
+			border: none;
+		}
+	}
+
+	&-data{
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+	}
+
+	&-name{
+		font-size: px2rem(14px);
+		.hoo-ph-row{
+			width: 80%;
+
+			border-top: none;
+		}
+	}
+
+	&-modified{
+		font-size: px2rem(12px);
+		.hoo-ph-row{
+			width: 20%;
+		}
+	}
+}

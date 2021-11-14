@@ -1,0 +1,35 @@
+.hoo-buttonflyout{
+	@extend %listReset;
+
+	display: inline-block;
+	flex-direction: column;
+
+	border: 1px $buttonBorder;
+	background-color: $bodyBackground;
+	cursor: pointer;
+
+	@include elevation(4);
+	z-index: 400;
+	.hoo-buttonaction{
+		width: 100%;
+		height: auto;
+		min-height: px2rem(36px);
+		padding-right: 3rem;
+		&:hover{
+			background-color: $buttonBackgroundHovered;
+			.hoo-button-label{
+				color: $buttonText;
+			}
+		}
+		&:active{
+			color: $buttonTextPressed;
+		}
+	}
+}
+.hoo-buttonflyout-item{
+	display: block;
+
+	width: auto;
+}
+.hoo-buttonflyout-button{
+}

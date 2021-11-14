@@ -1,0 +1,48 @@
+@mixin gridBase() {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: auto px2rem(8px);
+
+    /* > 1366 pixel */
+    column-gap: px2rem(32px);
+    row-gap: px2rem(32px);
+
+    /* < 1366 pixel */
+    @media screen and (max-width: 1366px) {
+        column-gap: px2rem(24px);
+        row-gap: px2rem(24px);
+    }
+
+    /* <= 640 pixel */
+    @media screen and (max-width: 640px) {
+        column-gap: px2rem(16px);
+        row-gap: px2rem(16px);
+    }
+}
+
+@mixin gridSpan($span, $start: auto, $row: auto) {
+    grid-column: $start / span $span;
+    grid-row: $row;
+
+    transition: all .123 ease-in-out;
+
+    /* media query for small devices */
+    @media screen and (max-width: 1024px) {
+        grid-column: auto / span 4;
+        grid-row: auto;
+    }
+
+    /* media query for small devices */
+    @media screen and (max-width: 768px) {
+        grid-column: auto / span 6;
+        grid-row: auto;
+    }
+
+
+    /* media query for small devices */
+    @media screen and (max-width: 640px) {
+        grid-column: auto / span 12;
+        grid-row: auto;
+    }
+
+}

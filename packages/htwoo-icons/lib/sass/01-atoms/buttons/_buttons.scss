@@ -1,0 +1,188 @@
+.hoo-button {
+	display: flex;
+	justify-content: center;
+
+	padding: 0 1rem;
+
+	color: $buttonText;
+	border: 1px $buttonBorder solid;
+	border-radius: $roundedCorner2;
+	outline: none;
+	background-color: $buttonBackground;
+
+	align-items: center;
+	flex-wrap: nowrap;
+
+	cursor: pointer;
+	
+	&:hover {
+		background-color: $buttonBackgroundCheckedHovered;
+	}
+	&:active{
+		background-color: $buttonBackgroundPressed;
+	}
+
+	&[disabled],
+	&:disabled {
+		pointer-events: none;
+
+		color: $buttonTextDisabled;
+		border-color: $buttonBackgroundDisabled;
+		background-color: $buttonBackgroundDisabled;
+	}
+}
+
+.hoo-button-label {
+	font-size: px2rem(14px);
+	font-weight: 600;
+	line-height: px2rem(20px);
+
+	display: flex;
+	justify-content: center;
+
+	height: px2rem(30px);
+	margin: 0 px2rem(4px);
+
+	align-items: center;
+}
+
+// Primary button don't get a disabled state because it don't make sense
+.hoo-button-primary {
+	@extend .hoo-button;
+
+	color: $primaryButtonText;
+	// border-color: Fixing border because the color is different
+	border-color: $primaryButtonBackground;
+	background-color: $primaryButtonBackground;
+
+	&:hover {
+		color: $primaryButtonTextHovered;
+		border-color: $primaryButtonBackgroundHovered;
+		background-color: $primaryButtonBackgroundHovered;
+	}
+
+	&:active {
+		border-color: $primaryButtonBackgroundPressed;
+		background-color: $primaryButtonBackgroundPressed;
+	}
+}
+
+.hoo-buttoncomp {
+	@extend .hoo-button;
+
+	flex-direction: column;
+
+	padding: px2rem(16px) px2rem(12px);
+
+	align-items: flex-start;
+
+	&-label {
+		@extend .hoo-button-label;
+
+		line-height: 1em;
+
+		display: block;
+
+		height: 1em;
+		margin: 0;
+		margin-bottom: px2rem(5px);
+	}
+
+	&-desc {
+		font-size: px2rem(10px);
+		font-weight: normal;
+	}
+}
+
+.hoo-buttoncomp-primary {
+	@extend .hoo-button-primary;
+
+	flex-direction: column;
+
+	padding: px2rem(16px) px2rem(12px);
+
+	align-items: flex-start;
+
+	&-label {
+		@extend .hoo-button-label;
+
+		line-height: 1em;
+
+		display: block;
+
+		height: 1em;
+		margin: 0;
+		margin-bottom: px2rem(5px);
+	}
+
+	&-desc {
+		font-size: px2rem(10px);
+		font-weight: normal;
+	}
+}
+
+a.hoo-button {
+	@extend .hoo-button;
+
+	display: inline-flex;
+
+	width: auto;
+	margin-bottom: 1rem;
+
+	text-decoration: none;
+
+	flex-grow: 0;
+	flex-shrink: 1;
+
+	* {
+		width: auto;
+	}
+
+	&:hover {
+		color: $buttonText;
+	}
+}
+
+a.hoo-button-primary {
+	@extend .hoo-button-primary;
+
+	display: inline-flex;
+
+	width: auto;
+	margin-bottom: 1rem;
+
+	text-decoration: none;
+
+	flex-grow: 0;
+	flex-shrink: 1;
+
+	&:hover {
+		color: $primaryButtonTextHovered;
+		border-color: $primaryButtonBackgroundHovered;
+		background-color: $primaryButtonBackgroundHovered;
+	}
+
+	&:active {
+		border-color: $primaryButtonBackgroundPressed;
+		background-color: $primaryButtonBackgroundPressed;
+	}
+}
+
+
+/* Split Button Slideout Animation
+% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+0% {
+    transform: translate3d(0px, -10px, 0px);
+    pointer-events: none;
+}
+100% {
+    transform: translate3d(0px, 0px, 0px);
+    pointer-events: auto;
+}
+
+*/

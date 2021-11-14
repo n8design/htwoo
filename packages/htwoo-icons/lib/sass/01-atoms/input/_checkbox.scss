@@ -1,0 +1,191 @@
+.hoo-checkbox{
+	position: absolute;
+
+	opacity: 0;
+
+	& + label{
+		font-size: px2rem(14px);
+		line-height: px2rem(20px);
+
+		position: relative;
+		top: 2px;
+
+		padding: 0;
+
+		cursor: pointer;
+	}
+
+	// Box.
+	& + label:before{
+		// display: inline-block;
+		position: relative;
+		top: -1px;
+
+		display: inline-flex;
+		justify-content: center;
+
+		box-sizing: border-box;
+		width: px2rem(20px);
+		height: px2rem(20px);
+		margin-right: px2rem(10px);
+
+		content: "";
+		transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+		transition-duration: 200ms;
+		transition-property: background, border, border-color;
+		vertical-align: text-top;
+
+		border: 1px $buttonBorder solid;
+		border-radius: 2px;
+		background: white;
+
+		align-items: center;
+	}
+
+	// Box hover
+	&:hover + label:before{
+		// background: $inputIcon;
+	}
+
+	// Box hover
+	&:active + label:before{
+		border-color: $primaryButtonBackgroundPressed;
+		// background: #f35429;
+		background: $primaryButtonBackgroundPressed;
+	}
+
+	// Box focus
+	&:focus + label:before{
+		box-shadow: 0 0 0 3px rgba(0, 0, 0, .12);
+	}
+
+	// Box checked
+	&:checked + label:before{
+		// background: #f35429;
+	}
+
+	// Checkmark. Could be replaced with an image
+	&:hover + label:after,
+	&:checked + label:after{
+		position: absolute;
+		top: px2rem(8px);
+		left: px2rem(5px);
+
+		width: px2rem(2px);
+		height: px2rem(2px);
+
+		content: "";
+		transform: rotate(45deg);
+
+		background: $inputIcon;
+		box-shadow: 2px 0 0 $inputIcon,
+		4px 0 0 $inputIcon,
+		4px -2px 0 $inputIcon,
+		4px -4px 0 $inputIcon,
+		4px -6px 0 $inputIcon,
+		4px -8px 0 $inputIcon;
+	}
+
+	&:checked + label:before{
+		background-color: $primaryButtonBackground;
+		border-color: $primaryButtonBackground;
+	}
+	&:checked:hover + label:before{
+		border-color: $primaryButtonBackgroundPressed;
+		background-color: $primaryButtonBackgroundPressed;
+	}
+
+	&:checked + label:after{
+		position: absolute;
+		top: px2rem(8px);
+		left: px2rem(5px);
+
+		width: px2rem(2px);
+		height: px2rem(2px);
+
+		content: "";
+		transform: rotate(45deg);
+
+		background: $white;
+		box-shadow: 2px 0 0 $white,
+		4px 0 0 $white,
+		4px -2px 0 $white,
+		4px -4px 0 $white,
+		4px -6px 0 $white,
+		4px -8px 0 $white;
+	}
+
+	&:not(:checked):hover + label:after{
+		position: absolute;
+		top: px2rem(8px);
+		left: px2rem(5px);
+
+		width: px2rem(2px);
+		height: px2rem(2px);
+
+		content: "";
+		transform: rotate(45deg);
+
+		background: $inputIcon;
+		background: $neutralSecondary;
+		box-shadow: 2px 0 0 $neutralSecondary,
+		4px 0 0 $neutralSecondary,
+		4px -2px 0 $neutralSecondary,
+		4px -4px 0 $neutralSecondary,
+		4px -6px 0 $neutralSecondary,
+		4px -8px 0 $neutralSecondary;
+	}
+
+	&:active:hover + label:after{
+		position: absolute;
+		top: px2rem(8px);
+		left: px2rem(5px);
+
+		width: px2rem(2px);
+		height: px2rem(2px);
+
+		content: "";
+		transform: rotate(45deg);
+
+		background: white;
+		box-shadow: 2px 0 0 white,
+		4px 0 0 white,
+		4px -2px 0 white,
+		4px -4px 0 white,
+		4px -6px 0 white,
+		4px -8px 0 white;
+	}
+
+	// Disabled state label.
+	&:disabled + label{
+		cursor: auto;
+		pointer-events: none;
+
+		color: $disabledText;
+
+		& > *{
+			pointer-events: none;
+		}
+
+		&:hover{
+			& > *{
+				pointer-events: none;
+			}
+		}
+	}
+
+	// Disabled box.
+	&:disabled + label:before{
+		pointer-events: none;
+
+		border-color: $disabledBorder;
+		box-shadow: none;
+	}
+
+	&:disabled + label:after{
+		pointer-events: none;
+
+		border-color: $disabledBorder;
+		box-shadow: none;
+	}
+}

@@ -1,0 +1,40 @@
+.hoo-buttonicon-split{
+	@extend %flyoutDropDown;
+
+	display: flex;
+
+	height: 2rem;
+
+	button{
+		@extend .hoo-buttonaction;
+
+		height: 2rem;
+		margin-right: 0;
+		cursor: pointer;
+		&:active{
+			background-color: $buttonBackgroundChecked;
+		}
+
+		&:hover{
+			background-color: $buttonBackgroundCheckedHovered;
+		}
+	}
+
+	.hoo-buttonchevron{
+		border-left: 1px $ButtonBorder solid;
+		cursor: pointer;
+		.hoo-icon{
+			width: 1rem;
+			height: 1rem;
+			padding: .5rem;
+		}
+	}
+	.hoo-buttonicon-flyout{
+		height: 2rem;
+		margin-left: 0;
+		padding-left: 0;
+		& > *{
+			pointer-events: none;
+		}
+	}
+}

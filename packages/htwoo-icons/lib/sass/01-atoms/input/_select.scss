@@ -1,0 +1,113 @@
+.hoo-select{
+	position: relative;
+
+	display: flex;
+
+	box-sizing: border-box;
+
+	border: 1px $inputBorder solid;
+	border-radius: 2px;
+	outline: 1px rgba(255, 255, 255, 0) solid;
+
+	align-items: center;
+
+	.hidden-visually{
+		position: absolute;
+
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+
+		width: 1px;
+		height: 1px;
+		padding: 0;
+
+		white-space: nowrap;
+
+		border: 0;
+
+		clip-path: inset(50%);
+	}
+
+	&-text{
+		@include base-input;
+
+		width: calc(100% - #{px2rem(32px)});
+
+		border: none;
+	}
+
+	&-dropdown{
+		@extend %listReset;
+		@include elevation(4);
+
+		display: flex;
+		flex-direction: column;
+
+		box-sizing: border-box;
+		width: 100%;
+		margin-top: 1px;
+
+		border-radius: 2px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: $buttonBackground;
+
+		&.hidden-all{
+			display: none;
+		}
+
+	}
+
+	// for drop down user outside of a select box
+	& > .hoo-select-dropdown{
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+	}
+}
+
+.hoo-optgroup-items{
+	@extend .hoo-select-dropdown;
+
+	border-bottom: 1px $buttonBorder solid;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.hoo-option{
+	font-size: 14px;
+
+	display: flex;
+
+	height: px2rem(36px);
+	padding: 0 px2rem(8px);
+
+	color: $buttonText;
+
+	align-items: center;
+	flex-shrink: 0;
+	&.is-disabled{
+		pointer-events: none;
+
+		color: $buttonTextDisabled;
+	}
+
+	&:hover{
+		cursor: pointer;
+
+		background-color: $buttonBackgroundHovered;
+	}
+}
+
+.hoo-optgroup-name{
+	font-weight: bold;
+
+	display: flex;
+
+	height: px2rem(36px);
+	padding: 0 px2rem(8px);
+
+	color: $themePrimary;
+
+	align-items: center;
+}
