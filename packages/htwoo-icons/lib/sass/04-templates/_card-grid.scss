@@ -1,6 +1,0 @@
-.hoo-cardgrid{
-	@include gridBase();
-	& > *{
-		@include gridSpan(3);
-	}
-}
