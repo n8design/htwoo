@@ -32,6 +32,8 @@ The symbol sets can be found directly in the corresponding root of the folders.
 
 Use with caution: The Fluent Design regular and filled contain around 1.5MB of icons.
 
+> Must watch: For a better accessibility experience please reject icon fonts. Kudos to Seren Davies on here talk [Death to icon fonts 2015](https://www.youtube.com/watch?v=9xXBYcWgCHA)
+
 ## Installation
 
 ```sh
