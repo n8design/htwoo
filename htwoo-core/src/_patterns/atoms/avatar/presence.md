@@ -11,3 +11,10 @@ This prescence bubble is used to indicate a persons availability status expecial
 * off - Out of Office
 
 For visual appearance check out [Presence All](/?p=atoms-presence-all),
+
+### SCSS Imports
+
+**Main Component**\
+@n8d/htwoo-core/components/avatar
+
+***

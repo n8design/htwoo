@@ -7,8 +7,7 @@ const {
   dest,
   watch,
   series,
-  parallel,
-  lastRun
+  parallel
 } = require('gulp');
 
 /** gulp plugin */
@@ -22,10 +21,12 @@ const ts = require('gulp-typescript'),
   rimraf = require('rimraf'),
   wp = require('webpack'),
   path = require('path'),
-  bundleAnalyzer = require('webpack-bundle-analyzer');
+  bundleAnalyzer = require('webpack-bundle-analyzer'),
+  run = require('gulp-run');
 
 /** Browser Sync Configuration */
 const browserSync = require('browser-sync');
+const gulpPlumber = require('gulp-plumber');
 const server = browserSync.create();
 
 /** check for productive switch */
@@ -63,6 +64,12 @@ const version = (cb) => {
 
   cb();
 
+}
+
+const copyIcons = (cb) => {
+  fs.mkdirSync("./lib/images");
+  fs.copyFileSync('./src/images/hoo-icons.svg', './lib/images/hoo-icons.svg');
+  cb();
 }
 
 /** TASK: TypeScript compile */
@@ -149,6 +156,44 @@ const webpack = () => {
     .pipe(dest('dist'));
 }
 
+const prepublish = (cb) => {
+  const fs = require('fs-extra');
+  //Make package directory
+  fs.mkdirSync("../packages/htwoo-react");
+
+  const package = './package.json';
+  if (fs.existsSync(package)) {
+    const packageFileContent = fs.readFileSync(package, 'UTF-8');
+    const pkgContents = JSON.parse(packageFileContent);
+    delete pkgContents.scripts;
+    delete pkgContents.devDependencies;
+    delete pkgContents.dependencies.react;
+    delete pkgContents.dependencies["react-dom"];
+    delete pkgContents.dependencies["@pnp/logging"];
+    delete pkgContents.dependencies["lodash-es"];
+    //delete pkgContents.dependencies["@n8d/htwoo-core"];
+    //"@n8d/htwoo-core": "^0.*.*",
+    pkgContents["peerDependencies"] = {
+      "react": "16.x",
+      "react-dom": "16.x"
+    }
+    pkgContents.main = "./index.js";
+    pkgContents.types = "./index.d.ts";
+    pkgContents.files = ["/*", "/dist"];
+    fs.writeFileSync("../packages/htwoo-react/package.json", JSON.stringify(pkgContents), 'UTF-8');
+  }
+
+  //Copy library to package folder
+  fs.copySync("./lib", "../packages/htwoo-react");
+  fs.mkdirSync("../packages/htwoo-react/dist");
+  fs.copySync("./dist", "../packages/htwoo-react/dist");
+
+  //Copy docs
+  //fs.copySync("./storybook-static", "../docs/htwoo-react");
+
+  cb();
+}
+
 /** TASK: init development server */
 const serve = (cb) => {
 
@@ -201,10 +246,22 @@ const clean = (cb) => {
   cb();
 }
 
+const publishclean = (cb) => {
+  rimraf.sync('../packages/htwoo-react');
+  //rimraf.sync('../docs/htwoo-react');
+  cb();
+}
+
 const build = series(clean, version,
-  parallel(tsCompile, sassCompile),
+  parallel(tsCompile, sassCompile), copyIcons,
   webpack);
 
 exports.build = build;
 exports.serve = series(build, serve);
 exports.clean = clean;
+
+const storybook = (cb) => {
+  run('npm run build-storybook -- -o ../docs/htwoo-react').exec();
+  cb();
+}
+exports.prepublish = series(publishclean, build, prepublish);

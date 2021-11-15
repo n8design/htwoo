@@ -338,3 +338,6 @@ ResourcesLibrary/.vscode/settings.json
 
 ResourceFinder/sharepoint/
 lib
+pkg
+
+storybook-static

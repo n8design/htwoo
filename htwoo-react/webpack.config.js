@@ -3,11 +3,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  //mode: 'production',
+  mode: 'production',
   target: 'web',
   //When upgrading to webpack 5, change target and update target: 'browserslist',
   entry: {
-    liquidreact: path.resolve(__dirname, './lib/index.js')
+    htwooreact: path.resolve(__dirname, './lib/index.js')
   },
   //When upgrading to webpack 5, add back to output: chunkLoading: false, wasmLoading: false
   output: {
@@ -27,7 +27,11 @@ module.exports = {
       test: /\.css$/,
       exclude: /node_modules/,
       loader: ["style-loader", "css-loader"]
-    }, ]
+    }, {
+      test: /\.svg$/,
+      exclude: /node_modules/,
+      loader: "svg-inline-loader"
+    }]
   },
   externals: [
     'react',

@@ -12,3 +12,10 @@ The following three themes are supported.
 * `hoo-ph-fancy` - use for the fancy gradients based background color gradient.
 
 This style sheet classes can be added to a complete block as well es directly on the placeholder container.
+
+### SCSS Imports
+
+**Main Component**\
+@n8d/htwoo-core/components/loading
+
+***
