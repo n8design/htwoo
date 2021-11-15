@@ -1,7 +1,7 @@
 {
   "name": "@n8d/htwoo-icons",
-  "version": "0.4.0",
-  "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS - This libary provide all Fluent UI System Icons as SVG and SVG Symbol Sets",
+  "version": "0.1.0",
+  "description": "Icon set for Fluent Design implementations. hTWOo is a Fluent Design Framework purely in HTML and CSS - This libary provide all Fluent UI System Icons as SVG and SVG Symbol Sets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
