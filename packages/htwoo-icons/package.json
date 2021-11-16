@@ -1,0 +1,29 @@
+{
+  "name": "@n8d/htwoo-icons",
+  "version": "0.1.0",
+  "description": "Icon set for Fluent Design implementations. hTWOo is a Fluent Design Framework purely in HTML and CSS - This libary provide all Fluent UI System Icons as SVG and SVG Symbol Sets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Fluent Design",
+    "Office UI Framework",
+    "UI Framework",
+    "Design",
+    "Fluent UI",
+    "Atomic Design",
+    "ReactJS",
+    "SharePoint Framework"
+  ],
+  "author": "Stefan Bauer (@stfbauer)",
+  "homepage": "https://lab.n8d.studio/htwoo/",
+  "funding": "https://github.com/sponsors/StfBauer",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8design/htwoo"
+  },
+  "license": "MIT"
+}
