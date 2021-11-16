@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Logger, LogLevel } from "@pnp/logging";
 import isEqual from "lodash-es/isEqual";
-import findIndex from "lodash-es/findIndex";
 
 import { IHOOStandardProps } from "../../Common.model";
 import HOOCheckbox from "../../../HOOCheckbox";
@@ -90,12 +89,12 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     const elementAttributes: any = { name: this._optionListName };
     switch (this.props.type) {
       case HOOOptionListType.Checkbox:
-        checked = option.key === this.props.value;
-        retVal = <HOOCheckbox checked={checked} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />;
+        checked = (this.props.value as Array<string | number>).indexOf(option.key) > -1;
+        retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />;
         break;
       case HOOOptionListType.RadioButton:
-        checked = findIndex(this.props.value, option.key) > -1;
-        retVal = <HOORadioButton checked={checked} value={option.key} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />
+        checked = this.props.value === option.key;
+        retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />
         break;
     }
     return retVal;

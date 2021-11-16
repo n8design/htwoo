@@ -1,5 +1,9 @@
 /** general nodejs imports */
 const fs = require('fs');
+const {
+  exec
+} = require('child_process');
+
 
 /** gulp init import */
 const {
@@ -21,8 +25,7 @@ const ts = require('gulp-typescript'),
   rimraf = require('rimraf'),
   wp = require('webpack'),
   path = require('path'),
-  bundleAnalyzer = require('webpack-bundle-analyzer'),
-  run = require('gulp-run');
+  bundleAnalyzer = require('webpack-bundle-analyzer');
 
 /** Browser Sync Configuration */
 const browserSync = require('browser-sync');
@@ -261,7 +264,14 @@ exports.serve = series(build, serve);
 exports.clean = clean;
 
 const storybook = (cb) => {
-  run('npm run build-storybook -- -o ../docs/htwoo-react').exec();
-  cb();
-}
-exports.prepublish = series(publishclean, build, prepublish);
+  exec('npm run build-storybook -- -o ../docs/htwoo-react', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+
+    cb();
+  });
+};
+
+exports.prepublish = series(publishclean, build, storybook, prepublish);

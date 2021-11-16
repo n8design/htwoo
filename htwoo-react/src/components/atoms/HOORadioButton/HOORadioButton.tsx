@@ -66,7 +66,16 @@ export default class HOORadioButton extends React.Component<IHOORadioButtonProps
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE} type="radio" id={this._radioId} checked={this.props.checked} value={this.props.value} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} />
+          <input data-component={this.LOG_SOURCE}
+            type="radio"
+            id={this._radioId}
+            {...this.props.rootElementAttributes}
+            checked={this.props.checked}
+            value={this.props.value}
+            className={className}
+            disabled={this.props.disabled || false}
+            aria-disabled={this.props.disabled || false}
+            onChange={this.props.onChange} />
           <label htmlFor={this._radioId} {...this.props.labelElementAttributes}>
             {this.props.label &&
               this.props.label
