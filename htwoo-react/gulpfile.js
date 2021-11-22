@@ -128,6 +128,7 @@ const webpack = () => {
   })];
 
   if (!isProduction) {
+    console.log('\x1b[43m\x1b[30m%s\x1b[0m', " ⚠ Not A Production Build ⚠ ");
     webpackConfig.mode = 'development';
     webpackConfig.devtool = 'source-map';
     webpackConfig.module.rules.push({
@@ -191,8 +192,9 @@ const prepublish = (cb) => {
   fs.mkdirSync("../packages/htwoo-react/dist");
   fs.copySync("./dist", "../packages/htwoo-react/dist");
 
-  //Copy docs
-  //fs.copySync("./storybook-static", "../docs/htwoo-react");
+  if (!isProduction) {
+    console.log('\x1b[43m\x1b[30m%s\x1b[0m', " ⚠ Not A Production Build ⚠ ");
+  }
 
   cb();
 }
