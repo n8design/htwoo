@@ -7,7 +7,7 @@ import HOOCardFooter, {
 import { HOOAvatarSize } from '../../atoms/HOOAvatar/HOOAvatar';
 
 export default {
-  title: 'Atoms/HOOCardFooter',
+  title: 'Molecules/HOOCardFooter',
   component: HOOCardFooter,
 } as Meta;
 

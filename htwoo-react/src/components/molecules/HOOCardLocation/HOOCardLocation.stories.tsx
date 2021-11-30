@@ -6,7 +6,7 @@ import HOOCardLocation, {
 } from './HOOCardLocation';
 
 export default {
-  title: 'Atoms/HOOCardLocation',
+  title: 'Molecules/HOOCardLocation',
   component: HOOCardLocation,
 } as Meta;
 

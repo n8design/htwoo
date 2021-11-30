@@ -6,7 +6,7 @@ import HOODialogHeader, {
 } from './HOODialogHeader';
 
 export default {
-  title: 'Atoms/HOODialogHeader',
+  title: 'Molecules/HOODialogHeader',
   component: HOODialogHeader,
 } as Meta;
 
