@@ -50,7 +50,7 @@ export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps
     try {
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.isActive) {
-        className += " isActive";
+        className += " is-active";
       }
       return (
         <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>

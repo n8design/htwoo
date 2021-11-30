@@ -7,7 +7,7 @@ import HOODialogContent, {
 import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
 
 export default {
-  title: 'Atoms/HOODialogContent',
+  title: 'Molecules/HOODialogContent',
   component: HOODialogContent,
 } as Meta;
 

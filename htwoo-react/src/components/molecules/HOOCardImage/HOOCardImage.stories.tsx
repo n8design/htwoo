@@ -6,7 +6,7 @@ import HOOCardImage, {
 } from './HOOCardImage';
 
 export default {
-  title: 'Atoms/HOOCardImage',
+  title: 'Molecules/HOOCardImage',
   component: HOOCardImage,
 } as Meta;
 

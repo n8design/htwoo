@@ -8,7 +8,7 @@ import { HOOAvatarSize } from '../../atoms/HOOAvatar/HOOAvatar';
 import { HOOPresenceStatus } from '../../atoms/HOOPresence/HOOPresence';
 
 export default {
-  title: 'Atoms/HOOAvatarPres',
+  title: 'Molecules/HOOAvatarPres',
   component: HOOAvatarPres,
 } as Meta;
 
