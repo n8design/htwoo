@@ -40,6 +40,7 @@ args.argv['analyze'] !== undefined ? analyze = true : analyze = false;
 
 /** base path definitions */
 const tsSrc = './src/**/*.ts*',
+  mdxSrc = './src/**/*.mdx',
   sassFiles = './src/**/*.scss',
   outDir = './lib/';
 
@@ -199,72 +200,6 @@ const prepublish = (cb) => {
   cb();
 }
 
-/** TASK: init development server */
-const serve = (cb) => {
-
-  server.init({
-    notify: false,
-    server: {
-      baseDir: './dist/',
-      directory: true,
-      routes: {
-        '/lib': './lib/',
-        '/node_modules': 'node_modules',
-        '/dist': './dist',
-        '/src': './src/'
-      },
-      https: false,
-    },
-    // open: false // remove if browser should open
-  });
-
-  watchSource();
-
-  cb();
-}
-
-/** WATCH: watch for ts{x} and sass */
-const watchSource = (cb) => {
-
-  // watching styles
-  watch(['./src/**/*.scss'],
-    series(sassCompile, webpack)
-  ).on('change', () => {
-    server.reload({
-      stream: true
-    });
-  });
-
-  // watching typescript
-  watch('./src/**/*.{ts,tsx}',
-    series(tsCompile, webpack)
-  ).on('change', () => {
-    server.reload();
-  });
-
-}
-
-/** TASK: remove dist folder and start from scratch */
-const clean = (cb) => {
-  rimraf.sync('./dist')
-  rimraf.sync('./lib');
-  cb();
-}
-
-const publishclean = (cb) => {
-  rimraf.sync('../packages/htwoo-react');
-  //rimraf.sync('../docs/htwoo-react');
-  cb();
-}
-
-const build = series(clean, version,
-  parallel(tsCompile, sassCompile), copyIcons,
-  webpack);
-
-exports.build = build;
-exports.serve = series(build, serve);
-exports.clean = clean;
-
 const storybook = (cb) => {
   exec('npm run build-storybook -- -o ../docs/htwoo-react', (error, stdout, stderr) => {
     if (error) {
@@ -275,5 +210,24 @@ const storybook = (cb) => {
     cb();
   });
 };
+
+/** TASK: remove dist folder and start from scratch */
+const clean = (cb) => {
+  rimraf.sync('./dist')
+  rimraf.sync('./lib');
+  cb();
+}
+
+const publishclean = (cb) => {
+  rimraf.sync('../packages/htwoo-react');
+  cb();
+}
+
+const build = series(clean, version,
+  parallel(tsCompile, sassCompile), copyIcons, webpack);
+
+exports.build = build;
+exports.clean = clean;
+exports.storybook = storybook;
 
 exports.prepublish = series(publishclean, build, storybook, prepublish);
