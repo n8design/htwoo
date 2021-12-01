@@ -1,5 +1,9 @@
 /** general nodejs imports */
 const fs = require('fs');
+const {
+  exec
+} = require('child_process');
+
 
 /** gulp init import */
 const {
@@ -21,8 +25,7 @@ const ts = require('gulp-typescript'),
   rimraf = require('rimraf'),
   wp = require('webpack'),
   path = require('path'),
-  bundleAnalyzer = require('webpack-bundle-analyzer'),
-  run = require('gulp-run');
+  bundleAnalyzer = require('webpack-bundle-analyzer');
 
 /** Browser Sync Configuration */
 const browserSync = require('browser-sync');
@@ -37,6 +40,7 @@ args.argv['analyze'] !== undefined ? analyze = true : analyze = false;
 
 /** base path definitions */
 const tsSrc = './src/**/*.ts*',
+  mdxSrc = './src/**/*.mdx',
   sassFiles = './src/**/*.scss',
   outDir = './lib/';
 
@@ -125,6 +129,7 @@ const webpack = () => {
   })];
 
   if (!isProduction) {
+    console.log('\x1b[43m\x1b[30m%s\x1b[0m', " ⚠ Not A Production Build ⚠ ");
     webpackConfig.mode = 'development';
     webpackConfig.devtool = 'source-map';
     webpackConfig.module.rules.push({
@@ -188,56 +193,23 @@ const prepublish = (cb) => {
   fs.mkdirSync("../packages/htwoo-react/dist");
   fs.copySync("./dist", "../packages/htwoo-react/dist");
 
-  //Copy docs
-  //fs.copySync("./storybook-static", "../docs/htwoo-react");
+  if (!isProduction) {
+    console.log('\x1b[43m\x1b[30m%s\x1b[0m', " ⚠ Not A Production Build ⚠ ");
+  }
 
   cb();
 }
 
-/** TASK: init development server */
-const serve = (cb) => {
+const storybook = (cb) => {
+  exec('npm run build-storybook -- -o ../docs/htwoo-react', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
 
-  server.init({
-    notify: false,
-    server: {
-      baseDir: './dist/',
-      directory: true,
-      routes: {
-        '/lib': './lib/',
-        '/node_modules': 'node_modules',
-        '/dist': './dist',
-        '/src': './src/'
-      },
-      https: false,
-    },
-    // open: false // remove if browser should open
+    cb();
   });
-
-  watchSource();
-
-  cb();
-}
-
-/** WATCH: watch for ts{x} and sass */
-const watchSource = (cb) => {
-
-  // watching styles
-  watch(['./src/**/*.scss'],
-    series(sassCompile, webpack)
-  ).on('change', () => {
-    server.reload({
-      stream: true
-    });
-  });
-
-  // watching typescript
-  watch('./src/**/*.{ts,tsx}',
-    series(tsCompile, webpack)
-  ).on('change', () => {
-    server.reload();
-  });
-
-}
+};
 
 /** TASK: remove dist folder and start from scratch */
 const clean = (cb) => {
@@ -248,20 +220,14 @@ const clean = (cb) => {
 
 const publishclean = (cb) => {
   rimraf.sync('../packages/htwoo-react');
-  //rimraf.sync('../docs/htwoo-react');
   cb();
 }
 
 const build = series(clean, version,
-  parallel(tsCompile, sassCompile), copyIcons,
-  webpack);
+  parallel(tsCompile, sassCompile), copyIcons, webpack);
 
 exports.build = build;
-exports.serve = series(build, serve);
 exports.clean = clean;
+exports.storybook = storybook;
 
-const storybook = (cb) => {
-  run('npm run build-storybook -- -o ../docs/htwoo-react').exec();
-  cb();
-}
-exports.prepublish = series(publishclean, build, prepublish);
+exports.prepublish = series(publishclean, build, storybook, prepublish);

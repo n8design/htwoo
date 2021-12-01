@@ -5,7 +5,7 @@ import { Meta, Story } from '@storybook/react';
 import HOOWebPartTitle, { IHOOWebPartTitleProps } from './HOOWebPartTitle';
 
 export default {
-  title: 'Atoms/HOOWebPartTitle',
+  title: 'Molecules/HOOWebPartTitle',
   component: HOOWebPartTitle,
   argTypes: {
     rootElementAttributes: {

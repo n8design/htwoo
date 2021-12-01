@@ -13,6 +13,10 @@ export interface IHOOPivotButtonProps extends IHOOStandardProps {
   */
   isActive: boolean;
   /**
+   * (Optional) For Non-Hyperlink style buttons only, Direct interface for buttons click event handler.
+   */
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  /**
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
@@ -46,10 +50,10 @@ export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps
     try {
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.isActive) {
-        className += " isActive";
+        className += " is-active";
       }
       return (
-        <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <div className="hoo-pivot-inner" title={this.props.label}>
             {this.props.label}
           </div>
