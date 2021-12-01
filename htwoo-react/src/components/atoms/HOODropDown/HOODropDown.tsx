@@ -106,6 +106,25 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
     }
   }
 
+  private _getDisplayValue = (): string => {
+    let retVal: string = "";
+    try {
+      this.props.options.some((g) => {
+        g.groupItems.some((item) => {
+          if (item.key === this.state.currentValue) {
+            retVal = item.text;
+            return true;
+          }
+          return false;
+        });
+        return retVal.length > 0;
+      });
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_getDisplayValue) - ${err}`);
+    }
+    return retVal;
+  };
+
   private _onChange = (newValue: any) => {
     try {
       this.setState({ currentValue: newValue }, () => {
@@ -348,6 +367,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
+      const currentDisplay = this._getDisplayValue();
       return (
         <div data-component={this.LOG_SOURCE} role="combobox" aria-haspopup="listbox" aria-owns={`${this._dropdownId}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp} {...this.props.rootElementAttributes} className={className} >
           <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">
@@ -356,7 +376,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
           <input ref={this._inputElement}
             type="text"
             id={`${this._dropdownId}-input`}
-            value={this.state.currentValue}
+            value={currentDisplay}
             className="hoo-select-text"
             aria-autocomplete="both"
             autoComplete="off"

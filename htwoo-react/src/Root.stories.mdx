@@ -11,7 +11,7 @@ import { Meta } from "@storybook/addon-docs";
 1. Add a reference to the style.prod.scss file in your solutions root .scss file:
     >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
-    ```SCSS
+    ```scss
     :global {
       @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
     }
@@ -19,7 +19,7 @@ import { Meta } from "@storybook/addon-docs";
 
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
-    ```TS
+    ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -30,7 +30,7 @@ import { Meta } from "@storybook/addon-docs";
 
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
   
-    ```TS
+    ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -42,7 +42,7 @@ import { Meta } from "@storybook/addon-docs";
 
     A SVG symbol file will look similar to the following:
 
-    ```HTML
+    ```html
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -58,7 +58,7 @@ import { Meta } from "@storybook/addon-docs";
 
     a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
 
-      ```JSON
+      ```json
       { 
         //...
         "supportsThemeVariants": true,
@@ -68,7 +68,7 @@ import { Meta } from "@storybook/addon-docs";
 
     b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
-    ```TS
+    ```ts
     import { ThemeProvider } from '@microsoft/sp-component-base';
     import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
     
@@ -87,7 +87,7 @@ import { Meta } from "@storybook/addon-docs";
 1. Import the HTWOO component that you want to use into your own projects components. All components are selectively importable from the root library. 
     >More complete documentation will be forthcoming.
 
-    ```TS
+    ```ts
     import HOOLabel from '@n8d/htwoo-react/HOOLabel';
     
     public render(): React.ReactElement<IMyComponentProps> {
