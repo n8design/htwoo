@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-
 import { IHOOStandardProps } from "../../Common.model";
 import { symset } from "../../../SymbolSet";
 
@@ -27,7 +24,7 @@ export class HOOIconState implements IHOOIconState {
   constructor() { }
 }
 
-export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconState> {
+export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIconState> {
   private LOG_SOURCE: string = "💦HOOIcon";
   private componentClass: string = "hoo-icon";
 
@@ -35,12 +32,6 @@ export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconStat
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIcon";
     this.state = new HOOIconState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOIconProps>, nextState: Readonly<IHOOIconState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOIconProps> {
@@ -52,7 +43,7 @@ export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconStat
         </div>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

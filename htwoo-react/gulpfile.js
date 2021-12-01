@@ -174,10 +174,6 @@ const prepublish = (cb) => {
     delete pkgContents.devDependencies;
     delete pkgContents.dependencies.react;
     delete pkgContents.dependencies["react-dom"];
-    delete pkgContents.dependencies["@pnp/logging"];
-    delete pkgContents.dependencies["lodash-es"];
-    //delete pkgContents.dependencies["@n8d/htwoo-core"];
-    //"@n8d/htwoo-core": "^0.*.*",
     pkgContents["peerDependencies"] = {
       "react": "16.x",
       "react-dom": "16.x"

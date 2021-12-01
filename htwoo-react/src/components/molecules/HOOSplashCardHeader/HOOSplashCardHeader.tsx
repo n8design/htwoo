@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOSplashCardHeaderProps extends IHOOStandardProps {
@@ -26,7 +24,7 @@ export class HOOSplashCardHeaderState implements IHOOSplashCardHeaderState {
   constructor() { }
 }
 
-export default class HOOSplashCardHeader extends React.Component<IHOOSplashCardHeaderProps, IHOOSplashCardHeaderState> {
+export default class HOOSplashCardHeader extends React.PureComponent<IHOOSplashCardHeaderProps, IHOOSplashCardHeaderState> {
   private LOG_SOURCE: string = "💦HOOSplashCardHeader";
   private _componentClass: string = "hoo-splashcard-header";
 
@@ -34,12 +32,6 @@ export default class HOOSplashCardHeader extends React.Component<IHOOSplashCardH
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOSplashCardHeader";
     this.state = new HOOSplashCardHeaderState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOSplashCardHeaderProps>, nextState: Readonly<IHOOSplashCardHeaderState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOSplashCardHeaderProps> {
@@ -56,7 +48,7 @@ export default class HOOSplashCardHeader extends React.Component<IHOOSplashCardH
         </header>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

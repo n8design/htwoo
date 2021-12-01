@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-
 import { IHOOStandardProps } from "../../Common.model";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -50,7 +47,7 @@ export class HOOButtonSplitState implements IHOOButtonSplitState {
   constructor() { }
 }
 
-export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps, IHOOButtonSplitState> {
+export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
   private _componentClass: string = "hoo-button";
 
@@ -69,12 +66,6 @@ export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps
         break;
     }
     this.state = new HOOButtonSplitState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOButtonSplitProps>, nextState: Readonly<IHOOButtonSplitState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOButtonSplitProps> {
@@ -98,7 +89,7 @@ export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

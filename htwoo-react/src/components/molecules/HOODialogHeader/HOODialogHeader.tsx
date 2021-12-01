@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon, { IHOOIconProps } from "../../atoms/HOOIcon/HOOIcon";
 import HOOButton, { HOOButtonType } from "../../atoms/HOOButton/HOOButton";
@@ -40,7 +38,7 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
   constructor() { }
 }
 
-export default class HOODialogHeader extends React.Component<IHOODialogHeaderProps, IHOODialogHeaderState> {
+export default class HOODialogHeader extends React.PureComponent<IHOODialogHeaderProps, IHOODialogHeaderState> {
   private LOG_SOURCE: string = "💦HOODialogHeader";
   private _componentClass: string = "hoo-dlgheader";
 
@@ -48,12 +46,6 @@ export default class HOODialogHeader extends React.Component<IHOODialogHeaderPro
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODialogHeader";
     this.state = new HOODialogHeaderState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOODialogHeaderProps>, nextState: Readonly<IHOODialogHeaderState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOODialogHeaderProps> {
@@ -76,7 +68,7 @@ export default class HOODialogHeader extends React.Component<IHOODialogHeaderPro
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

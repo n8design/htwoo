@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOTextProps extends IHOOStandardProps {
@@ -52,7 +50,7 @@ export class HOOTextState implements IHOOTextState {
   constructor() { }
 }
 
-export default class HOOText extends React.Component<IHOOTextProps, IHOOTextState> {
+export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOTextState> {
   private LOG_SOURCE: string = "💦HOOText";
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
@@ -61,12 +59,6 @@ export default class HOOText extends React.Component<IHOOTextProps, IHOOTextStat
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOText";
     this.state = new HOOTextState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOTextProps>, nextState: Readonly<IHOOTextState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOTextProps> {
@@ -100,7 +92,7 @@ export default class HOOText extends React.Component<IHOOTextProps, IHOOTextStat
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

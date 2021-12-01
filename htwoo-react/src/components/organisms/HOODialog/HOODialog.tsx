@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOODialogType {
@@ -43,7 +41,7 @@ export class HOODialogState implements IHOODialogState {
   constructor() { }
 }
 
-export default class HOODialog extends React.Component<IHOODialogProps, IHOODialogState> {
+export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOODialogState> {
   private LOG_SOURCE: string = "💦HOODialog";
   private _componentClass: string = "hoo-mdldialog-outer";
 
@@ -70,12 +68,6 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
     this.state = new HOODialogState();
   }
 
-  public shouldComponentUpdate(nextProps: Readonly<IHOODialogProps>, nextState: Readonly<IHOODialogState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
-  }
-
   public render(): React.ReactElement<IHOODialogProps> {
     try {
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -91,7 +83,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar/HOOAvatar";
 import HOOPresence, { HOOPresenceStatus } from "../../atoms/HOOPresence/HOOPresence";
@@ -41,7 +39,7 @@ export class HOOAvatarPresState implements IHOOAvatarPresState {
   constructor() { }
 }
 
-export default class HOOAvatarPres extends React.Component<IHOOAvatarPresProps, IHOOAvatarPresState> {
+export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresProps, IHOOAvatarPresState> {
   private LOG_SOURCE: string = "💦HOOAvatarPres";
   private _componentClass: string = "hoo-avatar-pres-";
 
@@ -49,12 +47,6 @@ export default class HOOAvatarPres extends React.Component<IHOOAvatarPresProps, 
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOAvatarPres";
     this.state = new HOOAvatarPresState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOAvatarPresProps>, nextState: Readonly<IHOOAvatarPresState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOAvatarPresProps> {
@@ -67,7 +59,7 @@ export default class HOOAvatarPres extends React.Component<IHOOAvatarPresProps, 
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

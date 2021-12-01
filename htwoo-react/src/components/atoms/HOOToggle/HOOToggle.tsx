@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import { getRandomString } from "../../Common";
 
@@ -49,7 +47,7 @@ export class HOOToggleState implements IHOOToggleState {
   constructor() { }
 }
 
-export default class HOOToggle extends React.Component<IHOOToggleProps, IHOOToggleState> {
+export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOOToggleState> {
   private LOG_SOURCE: string = "💦HOOToggle";
   private _componentClass: string = "hoo-toggle";
   private _inputClass: string = "hoo-toggle-cb";
@@ -61,12 +59,6 @@ export default class HOOToggle extends React.Component<IHOOToggleProps, IHOOTogg
     this.LOG_SOURCE = props.dataComponent || "💦HOOToggle";
     this._toggleId += getRandomString(10);
     this.state = new HOOToggleState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOToggleProps>, nextState: Readonly<IHOOToggleState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOToggleProps> {
@@ -90,7 +82,7 @@ export default class HOOToggle extends React.Component<IHOOToggleProps, IHOOTogg
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

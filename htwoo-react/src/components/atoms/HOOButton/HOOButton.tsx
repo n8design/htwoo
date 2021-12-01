@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from 'lodash-es/isEqual';
-
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOButtonType {
@@ -53,7 +50,7 @@ export class HOOButtonState implements IHOOButtonState {
   constructor() { }
 }
 
-export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButtonState> {
+export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOOButtonState> {
   private LOG_SOURCE: string = "💦HOOButton";
 
   private _componentClass: string = "hoo-button";
@@ -89,12 +86,6 @@ export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButt
     this.state = new HOOButtonState();
   }
 
-  public shouldComponentUpdate(nextProps: Readonly<IHOOButtonProps>, nextState: Readonly<IHOOButtonState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
-  }
-
   public render(): React.ReactElement<IHOOButtonProps> {
     const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
     try {
@@ -128,7 +119,7 @@ export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButt
         </>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
     }
   }
 }

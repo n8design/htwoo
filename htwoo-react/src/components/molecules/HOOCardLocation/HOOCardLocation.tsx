@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOCardLocationProps extends IHOOStandardProps {
@@ -22,7 +20,7 @@ export class HOOCardLocationState implements IHOOCardLocationState {
   constructor() { }
 }
 
-export default class HOOCardLocation extends React.Component<IHOOCardLocationProps, IHOOCardLocationState> {
+export default class HOOCardLocation extends React.PureComponent<IHOOCardLocationProps, IHOOCardLocationState> {
   private LOG_SOURCE: string = "💦HOOCardLocation";
   private _componentClass: string = "hoo-cardlocation";
 
@@ -30,12 +28,6 @@ export default class HOOCardLocation extends React.Component<IHOOCardLocationPro
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCardLocation";
     this.state = new HOOCardLocationState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOCardLocationProps>, nextState: Readonly<IHOOCardLocationState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOCardLocationProps> {
@@ -48,7 +40,7 @@ export default class HOOCardLocation extends React.Component<IHOOCardLocationPro
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

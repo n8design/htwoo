@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOPresenceStatus {
@@ -30,7 +28,7 @@ export class HOOPresenceState implements IHOOPresenceState {
   constructor() { }
 }
 
-export default class HOOPresence extends React.Component<IHOOPresenceProps, IHOOPresenceState> {
+export default class HOOPresence extends React.PureComponent<IHOOPresenceProps, IHOOPresenceState> {
   private LOG_SOURCE: string = "💦HOOPresence";
   private _componentClass: string = "hoo-presence";
 
@@ -38,12 +36,6 @@ export default class HOOPresence extends React.Component<IHOOPresenceProps, IHOO
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOPresence";
     this.state = new HOOPresenceState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOPresenceProps>, nextState: Readonly<IHOOPresenceState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOPresenceProps> {
@@ -55,7 +47,7 @@ export default class HOOPresence extends React.Component<IHOOPresenceProps, IHOO
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

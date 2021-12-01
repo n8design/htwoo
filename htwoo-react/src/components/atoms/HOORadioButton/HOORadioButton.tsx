@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import { getRandomString } from "../../Common";
 
@@ -43,7 +41,7 @@ export class HOORadioButtonState implements IHOORadioButtonState {
   constructor() { }
 }
 
-export default class HOORadioButton extends React.Component<IHOORadioButtonProps, IHOORadioButtonState> {
+export default class HOORadioButton extends React.PureComponent<IHOORadioButtonProps, IHOORadioButtonState> {
   private LOG_SOURCE: string = "💦HOORadioButton";
   private _componentClass: string = "hoo-radio";
   private _radioId: string = "hoo-radio-";
@@ -53,12 +51,6 @@ export default class HOORadioButton extends React.Component<IHOORadioButtonProps
     this.LOG_SOURCE = props.dataComponent || "💦HOORadioButton";
     this._radioId += getRandomString(10);
     this.state = new HOORadioButtonState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOORadioButtonProps>, nextState: Readonly<IHOORadioButtonState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOORadioButtonProps> {
@@ -87,7 +79,7 @@ export default class HOORadioButton extends React.Component<IHOORadioButtonProps
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }
