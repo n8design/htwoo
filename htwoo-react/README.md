@@ -23,7 +23,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
     ```TS
-    import { symset } from '@n8d/htwoo-react';
+    import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set
@@ -34,7 +34,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
   
     ```TS
-    import { symset } from '@n8d/htwoo-react';
+    import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set with Custom Symbol File
@@ -73,7 +73,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
     ```TS
     import { ThemeProvider } from '@microsoft/sp-component-base';
-    import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react';
+    import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
     
     private _spfxThemes: ISPFxThemes = new SPFxThemes();
 
