@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon from "../HOOIcon/HOOIcon";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
@@ -51,7 +48,7 @@ export class HOOActionState implements IHOOActionState {
   constructor() { }
 }
 
-export default class HOOAction extends React.Component<IHOOActionProps, IHOOActionState> {
+export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
   private _componentClass: string = "hoo-button";
   private _labelClass: string = "hoo-button-label";
@@ -71,12 +68,6 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
         break;
     }
     this.state = new HOOActionState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOActionProps>, nextState: Readonly<IHOOActionState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOActionProps> {
@@ -109,7 +100,7 @@ export default class HOOAction extends React.Component<IHOOActionProps, IHOOActi
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

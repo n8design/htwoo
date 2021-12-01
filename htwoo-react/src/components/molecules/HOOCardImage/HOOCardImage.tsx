@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOCardImageProps extends IHOOStandardProps {
@@ -34,7 +32,7 @@ export class HOOCardImageState implements IHOOCardImageState {
   constructor() { }
 }
 
-export default class HOOCardImage extends React.Component<IHOOCardImageProps, IHOOCardImageState> {
+export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps, IHOOCardImageState> {
   private LOG_SOURCE: string = "💦HOOCardImage";
   private _componentClass: string = "hoo-cardimage";
 
@@ -45,12 +43,6 @@ export default class HOOCardImage extends React.Component<IHOOCardImageProps, IH
       this._componentClass += "-html";
     }
     this.state = new HOOCardImageState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOCardImageProps>, nextState: Readonly<IHOOCardImageState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOCardImageProps> {
@@ -67,7 +59,7 @@ export default class HOOCardImage extends React.Component<IHOOCardImageProps, IH
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

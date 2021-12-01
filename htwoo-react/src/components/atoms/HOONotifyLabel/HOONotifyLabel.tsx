@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOONotifyType {
@@ -24,7 +22,7 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
   constructor() { }
 }
 
-export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps, IHOONotifyLabelState> {
+export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelProps, IHOONotifyLabelState> {
   private LOG_SOURCE: string = "💦HOONotifyLabel";
   private _componentClass: string = "hoo";
 
@@ -42,12 +40,6 @@ export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps
     this.state = new HOONotifyLabelState();
   }
 
-  public shouldComponentUpdate(nextProps: Readonly<IHOONotifyLabelProps>, nextState: Readonly<IHOONotifyLabelState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
-  }
-
   public render(): React.ReactElement<IHOONotifyLabelProps> {
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -57,7 +49,7 @@ export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps
         </span>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

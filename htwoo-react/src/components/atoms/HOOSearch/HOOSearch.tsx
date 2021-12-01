@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
@@ -31,7 +29,7 @@ export class HOOSearchState implements IHOOSearchState {
   constructor() { }
 }
 
-export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSearchState> {
+export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOOSearchState> {
   private LOG_SOURCE: string = "💦HOOSearch";
   private _componentClass: string = "hoo-input-search";
 
@@ -39,12 +37,6 @@ export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSear
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOSearch";
     this.state = new HOOSearchState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOSearchProps>, nextState: Readonly<IHOOSearchState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOSearchProps> {
@@ -57,7 +49,7 @@ export default class HOOSearch extends React.Component<IHOOSearchProps, IHOOSear
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

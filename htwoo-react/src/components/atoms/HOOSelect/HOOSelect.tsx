@@ -1,8 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-import findIndex from "lodash-es/findIndex";
-
 import { IHOOStandardProps } from "../../Common.model";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -73,7 +69,7 @@ export class HOOSelectState implements IHOOSelectState {
   ) { }
 }
 
-export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
+export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
   private _componentClass: string = "hoo-select";
   private _optionElements = [];
@@ -87,8 +83,6 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOOSelectProps>, nextState: Readonly<IHOOSelectState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
     if (this.props.value != nextProps.value) {
       this._valueChanged = true;
     }
@@ -110,7 +104,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
         this.props.onChange(newValue, fieldName);
       });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_onChange) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
     }
   }
 
@@ -150,7 +144,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
       }
       this.setState({ open: open, selectStatus: selectStatus });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_toggleDropdown) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_toggleDropdown) - ${err}`);
     }
   }
 
@@ -252,7 +246,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
       }
       this.setState({ open: open, selectStatus: selectStatus });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_keyUp) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_keyUp) - ${err}`);
     }
   }
 
@@ -280,7 +274,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
       optionsLength = aFilteredOptions.length;
       this.setState({ selectStatus: selectStatus, optionsLength: optionsLength });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_doFilter) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_doFilter) - ${err}`);
     }
   }
 
@@ -324,7 +318,8 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
           break;
         default: // middle list or filtered items 
           const currentItem = document.activeElement;
-          const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
+          const whichOne = aCurrentOptions.findIndex((o) => { return o == (currentItem as HTMLLIElement); });
+          //const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
           if (toThere === HOOSelectFocus.Forward) {
             const nextOne = aCurrentOptions[whichOne + 1];
             nextOne.focus();
@@ -337,7 +332,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
           break;
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_moveFocus) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_moveFocus) - ${err}`);
     }
   }
 
@@ -380,7 +375,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

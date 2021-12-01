@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOShimmerTheme {
@@ -51,7 +49,7 @@ export class HOOShimmerState implements IHOOShimmerState {
   constructor() { }
 }
 
-export default class HOOShimmer extends React.Component<IHOOShimmerProps, IHOOShimmerState> {
+export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IHOOShimmerState> {
   private LOG_SOURCE: string = "💦HOOShimmer";
   private _componentClass: string = "hoo-ph";
   private _imageShape: boolean = false;
@@ -100,13 +98,6 @@ export default class HOOShimmer extends React.Component<IHOOShimmerProps, IHOOSh
     }
     this.state = new HOOShimmerState();
   }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOShimmerProps>, nextState: Readonly<IHOOShimmerState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
-  }
-
   public render(): React.ReactElement<IHOOShimmerProps> {
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -127,7 +118,7 @@ export default class HOOShimmer extends React.Component<IHOOShimmerProps, IHOOSh
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

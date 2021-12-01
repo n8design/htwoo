@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOLoadingProps extends IHOOStandardProps {
@@ -30,7 +28,7 @@ export class HOOLoadingState implements IHOOLoadingState {
   constructor() { }
 }
 
-export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLoadingState> {
+export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IHOOLoadingState> {
   private LOG_SOURCE: string = "💦HOOLoading";
   private _componentClass: string = "hoo-progress";
 
@@ -38,12 +36,6 @@ export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLo
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOLoading";
     this.state = new HOOLoadingState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOLoadingProps>, nextState: Readonly<IHOOLoadingState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOLoadingProps> {
@@ -55,7 +47,7 @@ export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLo
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

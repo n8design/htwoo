@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-
 import { IHOOStandardProps } from "../../Common.model";
 import { getRandomString } from "../../Common";
 
@@ -40,7 +37,7 @@ export class HOOCheckboxState implements IHOOCheckboxState {
   constructor() { }
 }
 
-export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOOCheckboxState> {
+export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, IHOOCheckboxState> {
   private LOG_SOURCE: string = "💦HOOCheckbox";
   private _componentClass: string = "hoo-checkbox";
   private _checkboxId: string = "hoo-checkbox-";
@@ -50,12 +47,6 @@ export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOO
     this.LOG_SOURCE = props.dataComponent || "💦HOOCheckbox";
     this._checkboxId += getRandomString(10);
     this.state = new HOOCheckboxState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOCheckboxProps>, nextState: Readonly<IHOOCheckboxState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOCheckboxProps> {
@@ -83,7 +74,7 @@ export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOO
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

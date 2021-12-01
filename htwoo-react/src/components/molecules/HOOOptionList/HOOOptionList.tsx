@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
-
 import { IHOOStandardProps } from "../../Common.model";
 import HOOCheckbox from "../../../HOOCheckbox";
 import { getRandomString } from "../../Common";
@@ -57,7 +54,7 @@ export class HOOOptionListState implements IHOOOptionListState {
   constructor() { }
 }
 
-export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
+export default class HOOOptionList extends React.PureComponent<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
@@ -75,8 +72,6 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOOOptionListProps>, nextState: Readonly<IHOOOptionListState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
     if (nextProps.value !== this.props.value) {
       this._valid = (nextProps.value === null) || ((nextProps.type === HOOOptionListType.Checkbox) ? Array.isArray(nextProps.value) : !Array.isArray(nextProps.value));
     }
@@ -115,7 +110,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }
