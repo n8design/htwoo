@@ -114,3 +114,4 @@ typings/
 ./htwoo-core/dependencyGraph.json
 htwoo-core/dependencyGraph.json
 packages/htwoo-react
+packages/htwoo-core/lib/sass/pattern-scaffolding.scss

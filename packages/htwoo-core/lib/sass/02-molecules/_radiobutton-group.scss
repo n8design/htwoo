@@ -1,5 +1,24 @@
-.hoo-radiobutton-group{
-    div{
-        margin-top: 0.5rem;
+.hoo-radiobutton-group {
+    &.is-horizontal {
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
+
+        // gap: 1rem;
+        // padding-left: 1rem;
+        // padding-right: 1rem;
+
+        &[data-cols] {
+            columns: attr(data-cols integer);
+            &::before{
+                content: attr(data-cols integer);
+                display: block;
+            }
+        }
+    }
+
+    div {
+        margin-top: .5rem;
+        flex-grow: 0;
     }
 }
