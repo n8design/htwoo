@@ -21,7 +21,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 1. Add a reference to the style.prod.scss file in your solutions root .scss file:
     >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
-    ```SCSS
+    ```scss
     :global {
       @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
     }
@@ -29,7 +29,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
-    ```TS
+    ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -39,20 +39,21 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
     ```
 
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
+    >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
   
-    ```TS
+    ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set with Custom Symbol File
-      const symbolSetFile = require("./images/icons.svg");
+      const symbolSetFile: string = require("./images/icons.svg");
       await symset.initSymbols(symbolSetFile);
     }
     ```
 
     A SVG symbol file will look similar to the following:
 
-    ```HTML
+    ```html
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -64,11 +65,23 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
     </svg>
     ```
 
+    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder
+
+    ```ts
+    import { symset } from '@n8d/htwoo-react/SymbolSet';
+
+    public async onInit(): Promise<void> {
+      // Initialize Icons Symbol Set with HTWOO-Icons
+      const fuireg: string = require("@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg");
+      await symset.initSymbols(fuireg);
+    }
+    ```
+
 1. (Optional) Add theme support to your SPFx project
 
     a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
 
-      ```JSON
+      ```json
       { 
         //...
         "supportsThemeVariants": true,
@@ -78,7 +91,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
     b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
-    ```TS
+    ```ts
     import { ThemeProvider } from '@microsoft/sp-component-base';
     import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
     
