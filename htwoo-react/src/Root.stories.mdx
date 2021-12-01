@@ -34,15 +34,16 @@ import { Meta } from "@storybook/addon-docs";
       await symset.initSymbols();
     }
     ```
-
+    
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
+    >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
   
     ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set with Custom Symbol File
-      const symbolSetFile = require("./images/icons.svg");
+      const symbolSetFile: string = require("./images/icons.svg");
       await symset.initSymbols(symbolSetFile);
     }
     ```
@@ -59,6 +60,18 @@ import { Meta } from "@storybook/addon-docs";
           </symbol>
       </defs>
     </svg>
+    ```
+
+    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder
+
+    ```ts
+    import { symset } from '@n8d/htwoo-react/SymbolSet';
+
+    public async onInit(): Promise<void> {
+      // Initialize Icons Symbol Set with HTWOO-Icons
+      const fuireg: string = require("@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg");
+      await symset.initSymbols(fuireg);
+    }
     ```
 
 1. (Optional) Add theme support to your SPFx project
