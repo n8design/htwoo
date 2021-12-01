@@ -11,6 +11,13 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
 
 ### Initialize library in Microsoft SharePoint Framework (SPFx)
 
+1. Install package in your solution.
+    >This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you.
+
+    ```cmd
+    npm i @n8d/htwoo-react --save
+    ```
+
 1. Add a reference to the style.prod.scss file in your solutions root .scss file:
     >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
