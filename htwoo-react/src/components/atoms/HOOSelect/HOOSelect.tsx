@@ -98,6 +98,22 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
     }
   }
 
+  private _getDisplayValue = (): string => {
+    let retVal: string = "";
+    try {
+      this.props.options.some((item) => {
+        if (item.key === this.state.currentValue) {
+          retVal = item.text;
+          return true;
+        }
+        return false;
+      });
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_getDisplayValue) - ${err}`);
+    }
+    return retVal;
+  };
+
   private _onChange = (newValue: any, fieldName: string) => {
     try {
       this.setState({ currentValue: newValue }, () => {
@@ -339,6 +355,7 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
   public render(): React.ReactElement<IHOOSelectProps> {
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const currentDisplay = this._getDisplayValue();
       let optionLengthMessageString = `${this.state.optionsLength} options available. Arrow down to browse or start typing to filter.`;
       if (this.props.optionsLengthMessage) {
         const indexLengthPlaceholder = this.props.optionsLengthMessage.indexOf("{0}") || -1;
@@ -353,7 +370,11 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
             className="hoo-select-text"
             type="text"
             id={`${this.props.id}-input`}
-            value={this.state.currentValue} aria-autocomplete="both" autoComplete="off" aria-controls={`${this.props.id}-list`} onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }} />
+            value={this.state.currentValue}
+            aria-autocomplete="both"
+            autoComplete="off"
+            aria-controls={`${this.props.id}-list`}
+            onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }} />
           <HOOButton type={HOOButtonType.Icon}>
             <HOOIcon iconName="hoo-icon-arrow-down" />
           </HOOButton>
