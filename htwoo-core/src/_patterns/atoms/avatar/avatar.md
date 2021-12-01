@@ -10,8 +10,8 @@ This avatar is show with a size of 64px and round borders. If you construct othe
 * 24px - .hoo-avatar-24
 * 32px - .hoo-avatar-32
 * 40px - .hoo-avatar-40
-* 40px - .hoo-avatar-40
 * 48px - .hoo-avatar-48
+* 64px - .hoo-avatar-64
 
 ### SCSS Imports
 
