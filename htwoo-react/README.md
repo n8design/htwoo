@@ -65,7 +65,7 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
     </svg>
     ```
 
-    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder
+    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder.
 
     ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';
@@ -75,6 +75,12 @@ This library consists of flexible ReactJS components based on the HTWOO UI libra
       const fuireg: string = require("@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg");
       await symset.initSymbols(fuireg);
     }
+    ```
+    
+    To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
+
+    ```ts
+    <HOOAction iconName="hoo-icon-plus" label="Action Button" type={HOOActionType.Action}/>
     ```
 
 1. (Optional) Add theme support to your SPFx project
