@@ -39,7 +39,7 @@ export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps
   constructor(props: IHOOCardImageProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCardImage";
-    if (props.imageSource) {
+    if (!props.imageSource) {
       this._componentClass += "-html";
     }
     this.state = new HOOCardImageState();

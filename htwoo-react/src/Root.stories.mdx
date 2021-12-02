@@ -74,6 +74,12 @@ import { Meta } from "@storybook/addon-docs";
     }
     ```
 
+    To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
+
+    ```ts
+    <HOOAction iconName="icon-arrow-left" label="Action Button" type={HOOActionType.Action}/>
+    ```
+
 1. (Optional) Add theme support to your SPFx project
 
     a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
