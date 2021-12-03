@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar/HOOAvatar";
 
@@ -39,7 +37,7 @@ export class HOOCardFooterState implements IHOOCardFooterState {
   constructor() { }
 }
 
-export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, IHOOCardFooterState> {
+export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterProps, IHOOCardFooterState> {
   private LOG_SOURCE: string = "💦HOOCardFooter";
   private _componentClass: string = "hoo-cardfooter";
 
@@ -47,12 +45,6 @@ export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, 
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCardFooter";
     this.state = new HOOCardFooterState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOCardFooterProps>, nextState: Readonly<IHOOCardFooterState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOCardFooterProps> {
@@ -73,7 +65,7 @@ export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, 
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

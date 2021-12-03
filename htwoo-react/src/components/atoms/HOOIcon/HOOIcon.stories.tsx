@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
+import { symset } from '../../../SymbolSet';
 
 import HOOIcon, {
   IHOOIconProps
@@ -10,7 +11,8 @@ export default {
   component: HOOIcon,
 } as Meta;
 
-//TODO: await symset.initSymbols();
+symset.initSymbols();
+
 const Template: Story<IHOOIconProps> = (args) => <HOOIcon {...args} />;
 
 export const Primary = Template.bind({});

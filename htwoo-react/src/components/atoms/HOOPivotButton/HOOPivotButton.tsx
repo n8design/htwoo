@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOPivotButtonProps extends IHOOStandardProps {
@@ -30,7 +28,7 @@ export class HOOPivotButtonState implements IHOOPivotButtonState {
   constructor() { }
 }
 
-export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps, IHOOPivotButtonState> {
+export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonProps, IHOOPivotButtonState> {
   private LOG_SOURCE: string = "💦HOOPivotButton";
   private _componentClass: string = "hoo-button-pivot";
 
@@ -38,12 +36,6 @@ export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOPivotButton";
     this.state = new HOOPivotButtonState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOPivotButtonProps>, nextState: Readonly<IHOOPivotButtonState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOPivotButtonProps> {
@@ -60,7 +52,7 @@ export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps
         </button>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

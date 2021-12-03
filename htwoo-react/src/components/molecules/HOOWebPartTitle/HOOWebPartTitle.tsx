@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
@@ -34,7 +32,7 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
   constructor() { }
 }
 
-export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
+export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
   private LOG_SOURCE: string = "💦HOOWebPartTitle";
   private _componentClass: string = "hoo-webpart-header";
 
@@ -42,12 +40,6 @@ export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitlePro
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOWebPartTitle";
     this.state = new HOOWebPartTitleState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOWebPartTitleProps>, nextState: Readonly<IHOOWebPartTitleState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   private saveTitle = (event: React.FocusEvent<HTMLDivElement>) => {
@@ -74,7 +66,7 @@ export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitlePro
         </h3>
       );
     } catch (err) {
-      Logger.write(`${err} - ${this.LOG_SOURCE} (render)`, LogLevel.Error);
+      console.error(`${err} - ${this.LOG_SOURCE} (render)`);
       return null;
     }
   }

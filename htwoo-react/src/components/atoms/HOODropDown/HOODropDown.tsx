@@ -1,8 +1,5 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
-import findIndex from "lodash-es/findIndex";
 import { getRandomString } from "../../Common";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -76,7 +73,7 @@ export class HOODropDownState implements IHOODropDownState {
   ) { }
 }
 
-export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
+export default class HOODropDown extends React.PureComponent<IHOODropDownProps, IHOODropDownState> {
   private LOG_SOURCE: string = "💦HOODropDown";
   private _componentClass: string = "hoo-select";
   private _ulClass: string = "hoo-select-dropdown";
@@ -94,8 +91,6 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOODropDownProps>, nextState: Readonly<IHOODropDownState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
     if (this.props.value != nextProps.value) {
       this._valueChanged = true;
     }
@@ -111,13 +106,32 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     }
   }
 
+  private _getDisplayValue = (): string => {
+    let retVal: string = "";
+    try {
+      this.props.options.some((g) => {
+        g.groupItems.some((item) => {
+          if (item.key === this.state.currentValue) {
+            retVal = item.text;
+            return true;
+          }
+          return false;
+        });
+        return retVal.length > 0;
+      });
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_getDisplayValue) - ${err}`);
+    }
+    return retVal;
+  };
+
   private _onChange = (newValue: any) => {
     try {
       this.setState({ currentValue: newValue }, () => {
         this.props.onChange(newValue);
       });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_onChange) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
     }
   }
 
@@ -157,7 +171,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       }
       this.setState({ open: open, ddState: ddState });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_toggleDropdown) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_toggleDropdown) - ${err}`);
     }
   }
 
@@ -259,7 +273,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       }
       this.setState({ open: open, ddState: ddState });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_keyUp) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_keyUp) - ${err}`);
     }
   }
 
@@ -287,7 +301,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       optionsLength = aFilteredOptions.length;
       this.setState({ ddState: ddState, optionsLength: optionsLength });
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_doFilter) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_doFilter) - ${err}`);
     }
   }
 
@@ -331,7 +345,8 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           break;
         default: // middle list or filtered items 
           const currentItem = document.activeElement;
-          const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
+          const whichOne = aCurrentOptions.findIndex((o) => { return o == (currentItem as HTMLLIElement); });
+          //const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
           if (toThere === Focus.Forward) {
             const nextOne = aCurrentOptions[whichOne + 1];
             nextOne.focus();
@@ -344,7 +359,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           break;
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (_moveFocus) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (_moveFocus) - ${err}`);
     }
   }
 
@@ -352,6 +367,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
+      const currentDisplay = this._getDisplayValue();
       return (
         <div data-component={this.LOG_SOURCE} role="combobox" aria-haspopup="listbox" aria-owns={`${this._dropdownId}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp} {...this.props.rootElementAttributes} className={className} >
           <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">
@@ -360,7 +376,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           <input ref={this._inputElement}
             type="text"
             id={`${this._dropdownId}-input`}
-            value={this.state.currentValue}
+            value={currentDisplay}
             className="hoo-select-text"
             aria-autocomplete="both"
             autoComplete="off"
@@ -401,7 +417,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

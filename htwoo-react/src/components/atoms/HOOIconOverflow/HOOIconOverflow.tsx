@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
@@ -23,7 +21,7 @@ export class HOOIconOverflowState implements IHOOIconOverflowState {
   constructor() { }
 }
 
-export default class HOOIconOverflow extends React.Component<IHOOIconOverflowProps, IHOOIconOverflowState> {
+export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
   private _componentClass: string = "hoo-buttonicon-overflow";
 
@@ -31,12 +29,6 @@ export default class HOOIconOverflow extends React.Component<IHOOIconOverflowPro
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconOverflow";
     this.state = new HOOIconOverflowState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOIconOverflowProps>, nextState: Readonly<IHOOIconOverflowState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   //TODO: (Stefan) Can this pattern be simplified to no nest a span inside the button so that we can use the atoms already created
@@ -55,7 +47,7 @@ export default class HOOIconOverflow extends React.Component<IHOOIconOverflowPro
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

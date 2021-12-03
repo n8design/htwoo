@@ -1,5 +1,3 @@
-import { Logger, LogLevel } from "@pnp/logging";
-
 export interface ISPFxThemes {
   initThemeHandler: (domElement: HTMLElement, themeVariant?: any) => void;
 }
@@ -23,9 +21,6 @@ export class SPFxThemes implements ISPFxThemes {
       this._themeVariant = this._themeProvider?.tryGetTheme();
 
       if (this._themeVariant) {
-        // output all theme theme variants
-        console.log("LOG Theme variant:::", this._themeVariant);
-
         // transfer semanticColors into CSS variables
         this.setCSSVariables(this._themeVariant.semanticColors);
 
@@ -45,7 +40,7 @@ export class SPFxThemes implements ISPFxThemes {
       // Register a handler to be notified if the theme variant changes
       this._themeProvider?.themeChangedEvent.add(this, this._handleThemeChangedEvent);
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (initThemeHandler) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (initThemeHandler) - ${err}`);
     }
   }
 

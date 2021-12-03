@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOONumberProps extends IHOOStandardProps {
@@ -40,7 +38,7 @@ export class HOONumberState implements IHOONumberState {
   constructor() { }
 }
 
-export default class HOONumber extends React.Component<IHOONumberProps, IHOONumberState> {
+export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOONumberState> {
   private LOG_SOURCE: string = "💦HOONumber";
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
@@ -49,12 +47,6 @@ export default class HOONumber extends React.Component<IHOONumberProps, IHOONumb
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOONumber";
     this.state = new HOONumberState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOONumberProps>, nextState: Readonly<IHOONumberState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOONumberProps> {
@@ -75,7 +67,7 @@ export default class HOONumber extends React.Component<IHOONumberProps, IHOONumb
         </>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

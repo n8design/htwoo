@@ -1,6 +1,3 @@
-import { Logger, LogLevel } from "@pnp/logging";
-
-
 export interface ISymbolSet {
   Icon: (iconName: string) => string;
 }
@@ -34,7 +31,7 @@ export class SymbolSet implements ISymbolSet {
         this.processSymbolSet(symbolSet);
       }
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (initSymbols) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (initSymbols) - ${err}`);
     }
   }
 
@@ -53,7 +50,7 @@ export class SymbolSet implements ISymbolSet {
       }
       retVal = true;
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (processSymbolSet) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (processSymbolSet) - ${err}`);
     }
     return retVal;
   }

@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOODialogContentProps extends IHOOStandardProps {
@@ -18,7 +16,7 @@ export class HOODialogContentState implements IHOODialogContentState {
   constructor() { }
 }
 
-export default class HOODialogContent extends React.Component<IHOODialogContentProps, IHOODialogContentState> {
+export default class HOODialogContent extends React.PureComponent<IHOODialogContentProps, IHOODialogContentState> {
   private LOG_SOURCE: string = "💦HOODialogContent";
   private _componentClass: string = "hoo-dlgcontent";
 
@@ -26,12 +24,6 @@ export default class HOODialogContent extends React.Component<IHOODialogContentP
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODialogContent";
     this.state = new HOODialogContentState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOODialogContentProps>, nextState: Readonly<IHOODialogContentState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOODialogContentProps> {
@@ -43,7 +35,7 @@ export default class HOODialogContent extends React.Component<IHOODialogContentP
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }

@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Logger, LogLevel } from "@pnp/logging";
-import isEqual from "lodash-es/isEqual";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOAvatarSize {
@@ -42,7 +40,7 @@ export class HOOAvatarState implements IHOOAvatarState {
   constructor() { }
 }
 
-export default class HOOAvatar extends React.Component<IHOOAvatarProps, IHOOAvatarState> {
+export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOOAvatarState> {
   private LOG_SOURCE: string = "💦HOOAvatar";
   private _componentClass: string = "hoo-avatar-";
 
@@ -50,12 +48,6 @@ export default class HOOAvatar extends React.Component<IHOOAvatarProps, IHOOAvat
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOAvatar";
     this.state = new HOOAvatarState();
-  }
-
-  public shouldComponentUpdate(nextProps: Readonly<IHOOAvatarProps>, nextState: Readonly<IHOOAvatarState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
-    return true;
   }
 
   public render(): React.ReactElement<IHOOAvatarProps> {
@@ -68,7 +60,7 @@ export default class HOOAvatar extends React.Component<IHOOAvatarProps, IHOOAvat
         </div>
       );
     } catch (err) {
-      Logger.write(`${this.LOG_SOURCE} (render) - ${err}`, LogLevel.Error);
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
     }
   }
