@@ -34,14 +34,12 @@ export class HOOCardImageState implements IHOOCardImageState {
 
 export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps, IHOOCardImageState> {
   private LOG_SOURCE: string = "💦HOOCardImage";
-  private _componentClass: string = "hoo-cardimage";
+  private _componentClass: string = "hoo-card";
 
   constructor(props: IHOOCardImageProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCardImage";
-    if (!props.imageSource) {
-      this._componentClass += "-html";
-    }
+    this._componentClass += (props.imageSource) ? "image" : "html";
     this.state = new HOOCardImageState();
   }
 
