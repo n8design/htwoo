@@ -15,12 +15,31 @@ import { Meta } from "@storybook/addon-docs";
     npm i @n8d/htwoo-react
     ```
 
-1. Add a reference to the style.prod.scss file in your solutions root .scss file:
+1. Add a reference to the style.prod.scss file in your solutions root .scss file. Put the reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
     >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
     ```scss
-    :global {
-      @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
+    .myWebPartRoot{
+      :global {
+        @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
+      }
+    }
+    ```
+
+    then in your root component's top level HTML element add a reference to that base class. This will make sure that when your project builds, the styles will be included. For example:
+
+    ```tsx
+    public render(): React.ReactElement<IHtwooReactDemoProps> {
+      try {
+        return (
+          <div className={styles.myWebPartRoot}>
+            Hello World
+          </div>
+        );
+      } catch (err) {
+        console.error(`${this.LOG_SOURCE} (render) - ${err}`);
+        return null;
+      }
     }
     ```
 

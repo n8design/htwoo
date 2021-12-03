@@ -80,7 +80,7 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
           </button>
           <button className={`${this._componentClass} hoo-buttonicon-flyout`} aria-haspopup="true">
             <span className="hoo-button-icon hoo-buttonchevron">
-              <HOOIcon iconName={`${this.props.rightIconName || "icon-arrow-down"}`} />
+              <HOOIcon iconName={`${this.props.rightIconName || "hoo-icon-arrow-down"}`} />
             </span>
           </button>
           {this.props.flyoutContextItems &&
