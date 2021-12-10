@@ -44,7 +44,7 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
-          <HOOIcon iconName="hoo-icon-search" />
+          <HOOIcon iconName="hoo-icon-search" rootElementAttributes={{ className: "icon" }} />
           <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} onChange={this.props.onChange} />
         </div>
       );
