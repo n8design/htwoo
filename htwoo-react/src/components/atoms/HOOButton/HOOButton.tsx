@@ -102,7 +102,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
             </a>
           }
           {!this._hyperlinkType &&
-            <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled} aria-label={this.props.label} aria-disabled={this.props.disabled} onClick={this.props.onClick}>
+            <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled} onClick={this.props.onClick}>
               {this.props.label &&
                 <>
                   <div className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</div>
