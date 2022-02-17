@@ -23,6 +23,9 @@
 
 		content: " ";
 		animation-name: progress;
+		:local{
+			animation-name: progress;
+		}
 		animation-duration: 4s;
 		/* or: Xms */
 		animation-timing-function: linear;

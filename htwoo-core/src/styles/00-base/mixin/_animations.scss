@@ -53,6 +53,9 @@
 	animation-iteration-count: 1;
 
 	animation-fill-mode: forwards;
+	:local{
+		animation-name: deleteSlide;
+	}
 }
 
 .anim-add-slide{
@@ -61,6 +64,9 @@
 	animation-iteration-count: 1;
 
 	animation-fill-mode: forwards;
+	:local{
+		animation-name: addSlide;
+	}
 }
 $transition-timing: .267s;
 $transition: cubic-bezier(.1, .25, .75, .9);
