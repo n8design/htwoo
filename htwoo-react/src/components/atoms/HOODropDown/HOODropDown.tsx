@@ -46,6 +46,10 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   onChange: (fieldValue: string | number) => void;
   /**
+   * (Optional) For Non-Hyperlink style buttons only, Is button disabled.
+   */
+  disabled?: boolean;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
@@ -137,6 +141,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
 
   private _toggleDropdown = () => {
     try {
+      if (this.props.disabled) { return; }
       const focus = document.activeElement;
       let ddState = this.state.ddState;
       let open = this.state.open;
@@ -176,6 +181,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
   }
 
   private _keyUp = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (this.props.disabled) { return; }
     const focus = document.activeElement;
     const key = event.key;
     let ddState = this.state.ddState;
@@ -369,11 +375,20 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
       const currentDisplay = this._getDisplayValue();
       return (
-        <div data-component={this.LOG_SOURCE} role="combobox" aria-haspopup="listbox" aria-owns={`${this._dropdownId}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp} {...this.props.rootElementAttributes} className={className} >
+        <div data-component={this.LOG_SOURCE}
+          role="combobox"
+          aria-haspopup="listbox"
+          aria-owns={`${this._dropdownId}-list`}
+          onClick={this._toggleDropdown}
+          onKeyUp={this._keyUp}
+          {...this.props.rootElementAttributes}
+          className={className}
+        >
           <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">
             {this.props.options.length} options available. Arrow down to browse or start typing to filter.
           </div>
           <input ref={this._inputElement}
+            disabled={this.props.disabled || false}
             type="text"
             id={`${this._dropdownId}-input`}
             value={currentDisplay}
@@ -383,7 +398,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
             aria-controls={`${this._dropdownId}-list`}
             onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }}
           />
-          <HOOButton type={HOOButtonType.Icon} >
+          <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false} >
             <HOOIcon iconName="hoo-icon-arrow-down" />
           </HOOButton>
           <ul role="listbox"
