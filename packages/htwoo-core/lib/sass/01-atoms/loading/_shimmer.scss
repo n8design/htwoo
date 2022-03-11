@@ -25,6 +25,11 @@ $animation: animate-ph 5s infinite;
 	border: .25rem $bodyBackground solid;
 	background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
 	background-size: 400% 400%;
+	
+	:local{
+		animation-name: animate-ph;
+	}
+
 
 	&.hoo-ph-primary{
 		background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
@@ -117,13 +122,11 @@ $animation: animate-ph 5s infinite;
 .hoo-ph-img1x1.hoo-ph-primary,
 .hoo-ph-img16x9.hoo-ph-primary,
 .hoo-ph-img16x10.hoo-ph-primary{
-
 	background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
 }
 
 .hoo-ph-img1x1.hoo-ph-fancy,
 .hoo-ph-img16x9.hoo-ph-fancy,
 .hoo-ph-img16x10.hoo-ph-fancy{
-
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
