@@ -22,6 +22,7 @@ export * from './HOODropDown';
 export * from './HOOFlyoutMenu';
 export * from './HOOIcon';
 export * from './HOOIconOverflow';
+export * from './HOOIconSplit';
 export * from './HOOLabel';
 export * from './HOOLoading';
 export * from './HOONotifyLabel';

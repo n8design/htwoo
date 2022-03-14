@@ -79,7 +79,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
         this._compoundType = true;
         break;
       case HOOButtonType.CompoundStandard:
-        this._componentClass = `${this._componentClass}comp-standard`;
+        this._componentClass = `${this._componentClass}comp`;
         this._compoundType = true;
         break;
     }
