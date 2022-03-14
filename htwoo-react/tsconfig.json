@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "jsx": "react",
     "sourceMap": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,

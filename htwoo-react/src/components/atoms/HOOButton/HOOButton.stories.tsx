@@ -5,6 +5,7 @@ import HOOButton, {
   IHOOButtonProps,
   HOOButtonType
 } from './HOOButton';
+import HOOIcon from '../HOOIcon/HOOIcon';
 
 export default {
   title: 'Atoms/HOOButton',
@@ -12,7 +13,7 @@ export default {
 } as Meta;
 
 const Template: Story<IHOOButtonProps> = (args) => <HOOButton {...args} />;
-
+const IconTemplate: Story<IHOOButtonProps> = (args) => <HOOButton {...args}><HOOIcon iconName="hoo-icon-smile" /></HOOButton>;
 
 export const Primary = Template.bind({});
 Primary.args = { type: HOOButtonType.Primary, label: 'Button', onClick: () => { alert("Clicked"); } };
@@ -23,8 +24,8 @@ PrimaryDisabled.args = { type: HOOButtonType.Primary, disabled: true, label: 'Bu
 export const Standard = Template.bind({});
 Standard.args = { type: HOOButtonType.Standard, label: 'Button', onClick: () => { alert("Clicked"); } };
 
-export const Icon = Template.bind({});
-Icon.args = { type: HOOButtonType.Icon, iconName: 'hoo-icon-help', onClick: () => { alert("Clicked"); } };
+export const Icon = IconTemplate.bind({});
+Icon.args = { type: HOOButtonType.Icon, onClick: () => { alert("Clicked"); } };
 
 export const HyperlinkPrimary = Template.bind({});
 HyperlinkPrimary.args = { type: HOOButtonType.HyperlinkPrimary, label: 'Button', href: "https://google.com" };
