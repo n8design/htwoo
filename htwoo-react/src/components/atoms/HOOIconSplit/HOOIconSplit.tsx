@@ -3,23 +3,15 @@ import { IHOOStandardProps } from "../../Common.model";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import { symset } from "../../../SymbolSet";
 
-export enum HOOButtonSplitType {
-  "Standard",
-  "Primary"
-}
-export interface IHOOButtonSplitProps extends IHOOStandardProps {
+export interface IHOOIconSplitProps extends IHOOStandardProps {
   /**
-   * HOOButtonType enum -- omit label for "Icon" type and provide HOOIcon child node.
+   * Left Icon name
    */
-  type: HOOButtonSplitType;
+  leftIconName: string;
   /**
-   * (Optional) Flyout menu items, if omitted, no flyout will be rendered.
+   * Flyout menu items, if omitted, no flyout will be rendered.
    */
   flyoutContextItems: IHOOFlyoutMenuItem[];
-  /**
-   * (Optional) button label, if omitted, components children will be rendered.
-   */
-  label?: string;
   /**
    * (Optional) icon name, if omitted, icon-arrow-down will be used.
    */
@@ -35,38 +27,28 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
-export interface IHOOButtonSplitState {
+export interface IHOOIconSplitState {
   showFlyout: boolean;
 }
 
-export class HOOButtonSplitState implements IHOOButtonSplitState {
+export class HOOIconSplitState implements IHOOIconSplitState {
   constructor(
     public showFlyout: boolean = false
   ) { }
 }
 
-export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
-  private LOG_SOURCE: string = "💦HOOButtonSplit";
-  private _componentClass: string = "hoo-button";
-  private _buttonClass: string = "hoo-buttonsplit-standard";
-  private _splitClass: string = "hoo-buttonsplit-carret";
+export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps, IHOOIconSplitState> {
+  private LOG_SOURCE: string = "💦HOOIconSplit";
+  private _componentClass: string = "hoo-buttonicon-split";
 
-  constructor(props: IHOOButtonSplitProps) {
+  constructor(props: IHOOIconSplitProps) {
     super(props);
-    this.LOG_SOURCE = props.dataComponent || "💦HOOButtonSplit";
-    switch (props.type) {
-      case HOOButtonSplitType.Primary:
-        this._componentClass = `${this._componentClass}split-primary`;
-        break;
-      case HOOButtonSplitType.Standard:
-        this._componentClass = `${this._componentClass}split`;
-        break;
-    }
-    this.state = new HOOButtonSplitState();
+    this.LOG_SOURCE = props.dataComponent || "💦HOOIconSplit";
+    this.state = new HOOIconSplitState();
   }
 
   private _buttonClicked = () => {
-    if (this.props.flyoutContextItems && this.props.flyoutContextItems.length > 0) {
+    if (this.props.flyoutContextItems) {
       this.setState({ showFlyout: !this.state.showFlyout });
     }
   }
@@ -78,20 +60,23 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
     }
   }
 
-  public render(): React.ReactElement<IHOOButtonSplitProps> {
+  public render(): React.ReactElement<IHOOIconSplitProps> {
     try {
       const buttonDisabled = (this.props.flyoutContextItems && this.props.flyoutContextItems.length > 0) ? false : true;
       const showFlyoutClass = this.state.showFlyout ? "show-flyout " : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${showFlyoutClass}${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${showFlyoutClass}`;
       const iconName = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
       const iconSVG = symset.Icon(iconName);
+      const leftIconSVG = symset.Icon(this.props.leftIconName);
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
-          <button className="hoo-buttonsplit-standard" aria-haspopup="true">
-            <span className="hoo-button-label">{this.props.label || this.props.children}</span>
+          <button className={this._componentClass} aria-haspopup="true">
+            <span className="hoo-button-icon" aria-hidden="true">
+              <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: leftIconSVG }}></span>
+            </span>
           </button>
-          <button className="hoo-buttonsplit-carret" onClick={this._buttonClicked} aria-pressed={this.state.showFlyout} disabled={buttonDisabled} aria-disabled={buttonDisabled}>
-            <span className="hoo-button-label">
+          <button className="hoo-buttonicon-split hoo-buttonicon-flyout" onClick={this._buttonClicked} aria-pressed={this.state.showFlyout} disabled={buttonDisabled} aria-disabled={buttonDisabled}>
+            <span className="hoo-button-icon hoo-buttonchevron">
               <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
             </span>
           </button>

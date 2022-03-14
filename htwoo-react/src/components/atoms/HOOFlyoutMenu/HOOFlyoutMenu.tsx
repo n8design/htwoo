@@ -13,9 +13,9 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
   */
   contextItems: IHOOFlyoutMenuItem[];
   /** 
-  * Context Items clicked event
+  * Context Items clicked event, returns mouse event and HOOFlyoutMenuItem
   */
-  contextItemClicked: React.MouseEventHandler<HTMLButtonElement>;
+  contextItemClicked: (ev: React.MouseEvent<HTMLButtonElement>, ci: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
@@ -48,7 +48,7 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
           {this.props.contextItems && this.props.contextItems.map((ci) => {
             return (
               <li className="hoo-buttonflyout-item">
-                <HOOAction label={ci.label} iconName={ci.iconName} type={HOOActionType.Action} onClick={this.props.contextItemClicked} />
+                <HOOAction label={ci.label} iconName={ci.iconName} type={HOOActionType.Action} onClick={(event) => { this.props.contextItemClicked(event, ci) }} />
               </li>
             );
           })}

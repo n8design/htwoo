@@ -12,21 +12,30 @@ export default {
   component: HOOButtonSplit,
 } as Meta;
 
+const _menuItemClicked = (event, item: IHOOFlyoutMenuItem) => {
+  switch (item.label) {
+    case "First Element":
+      //Do something
+      break;
+    case "Second Element":
+      //Do something else
+      break;
+  }
+}
+
 const Template: Story<IHOOButtonSplitProps> = (args) => <HOOButtonSplit {...args} />;
 
+const flyoutMenuItems: IHOOFlyoutMenuItem[] = [{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }];
+
 export const Standard = Template.bind({});
-Standard.args = { type: HOOButtonSplitType.Standard, label: 'Button', onClick: () => { alert("Clicked"); } } as IHOOButtonSplitProps;
+Standard.args = { type: HOOButtonSplitType.Standard, flyoutContextItems: flyoutMenuItems, label: 'Button', flyoutContextItemsClicked: _menuItemClicked } as IHOOButtonSplitProps;
 
 export const Primary = Template.bind({});
-Primary.args = { type: HOOButtonSplitType.Primary, label: 'Button', onClick: () => { alert("Clicked"); } } as IHOOButtonSplitProps;
+Primary.args = { type: HOOButtonSplitType.Primary, flyoutContextItems: flyoutMenuItems, label: 'Button', flyoutContextItemsClicked: _menuItemClicked } as IHOOButtonSplitProps;
 
-export const Icon = Template.bind({});
-Icon.args = { type: HOOButtonSplitType.Icon, label: 'Button', rightIconName: "hoo-icon-close", onClick: () => { alert("Clicked"); } } as IHOOButtonSplitProps;
-
-const flyoutMenuItems: IHOOFlyoutMenuItem[] = [{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }];
 export const PrimaryFlyout = Template.bind({});
-PrimaryFlyout.args = { type: HOOButtonSplitType.Primary, label: 'Button', flyoutContextItems: flyoutMenuItems, onClick: () => { alert("Clicked"); } } as IHOOButtonSplitProps;
+PrimaryFlyout.args = { type: HOOButtonSplitType.Primary, label: 'Button', flyoutContextItems: flyoutMenuItems, flyoutContextItemsClicked: _menuItemClicked } as IHOOButtonSplitProps;
 
 export const Extend = Template.bind({});
 const rea: React.HTMLAttributes<HTMLDivElement> = { style: { backgroundColor: "red" } };
-Extend.args = { type: HOOButtonSplitType.Standard, label: 'Button', onClick: () => { alert("Clicked"); }, rootElementAttributes: rea } as IHOOButtonSplitProps;
+Extend.args = { type: HOOButtonSplitType.Standard, flyoutContextItems: flyoutMenuItems, label: 'Button', flyoutContextItemsClicked: _menuItemClicked, rootElementAttributes: rea } as IHOOButtonSplitProps;
