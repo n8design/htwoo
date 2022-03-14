@@ -188,6 +188,8 @@ const prepublish = (cb) => {
   fs.copySync("./lib", "../packages/htwoo-react");
   fs.mkdirSync("../packages/htwoo-react/dist");
   fs.copySync("./dist", "../packages/htwoo-react/dist");
+  //Copy README
+  fs.copySync("README.md", "../packages/htwoo-react/README.md");
 
   if (!isProduction) {
     console.log('\x1b[43m\x1b[30m%s\x1b[0m', " ⚠ Not A Production Build ⚠ ");

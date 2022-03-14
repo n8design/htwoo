@@ -1,9 +1,19 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
+  "keywords": [
+    "Fluent Design",
+    "Office UI Framework",
+    "UI Framework",
+    "Design",
+    "Fluent UI",
+    "Atomic Design",
+    "ReactJS",
+    "SharePoint Framework"
+  ],
   "author": "Julie Turner/Stefan Bauer",
-  "homepage": "https://lab.n8d.studio/htwoo/",
+  "homepage": "https://lab.n8d.studio/htwoo",
   "bugs": {
     "url": "https://github.com/n8design/htwoo/issues"
   },
