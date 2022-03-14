@@ -81,7 +81,8 @@ import { Meta } from "@storybook/addon-docs";
     </svg>
     ```
 
-    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder
+    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
+    To register multiple svg files, make additional calls to `symset.initSymbols` passing in additional svg file references.
 
     ```ts
     import { symset } from '@n8d/htwoo-react/SymbolSet';

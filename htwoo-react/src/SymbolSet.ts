@@ -18,9 +18,9 @@ export class SymbolSet implements ISymbolSet {
     try {
       //Load Default if not already processed
       if (!this.defaultLoaded) {
-        symbolSetFile = require("./images/hoo-icons.svg");
-        const result = await fetch(symbolSetFile);
-        const defaultSymbolSet = await result.text();
+        const defaultSymbolSetFile = require("./images/hoo-icons.svg");
+        const defaultResult = await fetch(defaultSymbolSetFile);
+        const defaultSymbolSet = await defaultResult.text();
         const loadedDefault = this.processSymbolSet(defaultSymbolSet);
         this.defaultLoaded = loadedDefault;
       }

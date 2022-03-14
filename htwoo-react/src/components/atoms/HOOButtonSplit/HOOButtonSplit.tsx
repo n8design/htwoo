@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
-import HOOIcon from "../HOOIcon/HOOIcon";
+import { symset } from "../../../SymbolSet";
 
 export enum HOOButtonSplitType {
   "Icon",
@@ -71,16 +71,18 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
   public render(): React.ReactElement<IHOOButtonSplitProps> {
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const iconName = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
+      const iconSVG = symset.Icon(iconName);
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} aria-haspopup="true" className={className} onClick={this.props.onClick}>
           <button className={this._componentClass} aria-haspopup="true">
             <span className="hoo-button-icon" aria-hidden="true">
-              <div className="hoo-button-label">{this.props.label || this.props.children}</div>
+              <span className="hoo-button-label">{this.props.label || this.props.children}</span>
             </span>
           </button>
           <button className={`${this._componentClass} hoo-buttonicon-flyout`} aria-haspopup="true">
             <span className="hoo-button-icon hoo-buttonchevron">
-              <HOOIcon iconName={`${this.props.rightIconName || "hoo-icon-arrow-down"}`} />
+              <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
             </span>
           </button>
           {this.props.flyoutContextItems &&

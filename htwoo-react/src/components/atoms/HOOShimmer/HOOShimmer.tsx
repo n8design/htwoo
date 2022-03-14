@@ -103,12 +103,12 @@ export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IH
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          {this._imageShape &&
+          {!this._imageShape &&
             <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
               {this.props.children}
             </div>
           }
-          {!this._imageShape &&
+          {this._imageShape &&
             <img data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes}
               className={className}
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
