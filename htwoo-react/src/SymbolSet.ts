@@ -45,7 +45,7 @@ export class SymbolSet implements ISymbolSet {
       for (let i = 0; i < defs.length; i++) {
         const s = defs[i];
         const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
-        const svgElement = `<svg id=${s.id} class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+        const svgElement = `<svg id="${s.id}" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
         this._symbolSetDictionary[s.id] = svgElement;
       }
       retVal = true;
@@ -57,6 +57,11 @@ export class SymbolSet implements ISymbolSet {
 
   public Icon(iconName: string): string {
     return this._symbolSetDictionary[iconName];
+  }
+
+  public IconBase64(iconName: string): string {
+    const iconSvg = this.Icon(iconName);
+    return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
   }
 }
 
