@@ -3,6 +3,8 @@
 HTWOO ReactJS is an open source alternative for Microsoft's various implementations of their Fluent UI Web Design system.
 This library consists of flexible ReactJS components based on the HTWOO UI library. For a complete listing please see HTWOO Core [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
+Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/htwoo/htwoo-react)
+
 [![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
 ## How To Use
