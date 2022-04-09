@@ -5,7 +5,8 @@
 		@extend .hoo-buttonaction;
 		cursor: pointer;
 		.hoo-buttonchevron{
-			color: $buttonText;
+			// color: $buttonText;
+			color: $neutral-700;
 		}
 
 		& > *{

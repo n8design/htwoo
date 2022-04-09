@@ -15,9 +15,10 @@ div.hoo-buttoncontext-outer{
 	white-space: nowrap;
 
 	border: none;
-	border: 1px $buttonBorder solid;
+	// border: 1px $buttonBorder solid;
+	border: 1px $neutral-450 solid;
 	border-radius: 2px;
-	background-color: $buttonBackground;
+	background-color: $neutral-000;
 
 	align-items: center;
 
@@ -62,10 +63,10 @@ div.hoo-buttoncontext-outer{
 	}
 
 	&:hover{
-		background-color: $buttonBackgroundHovered;
+		background-color: $neutral-100;
 	}
 
 	&:active{
-		color: $buttonTextPressed;
+		color: $neutral-200;
 	}
 }

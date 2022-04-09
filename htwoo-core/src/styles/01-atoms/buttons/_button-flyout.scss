@@ -4,8 +4,8 @@
 	display: inline-block;
 	flex-direction: column;
 
-	border: 1px $buttonBorder;
-	background-color: $bodyBackground;
+	border: 1px $neutral-450;
+	background-color: $neutral-000;
 	cursor: pointer;
 
 	@include elevation(4);
@@ -16,13 +16,13 @@
 		min-height: px2rem(36px);
 		padding-right: 3rem;
 		&:hover{
-			background-color: $buttonBackgroundHovered;
+			background-color: $neutral-100;
 			.hoo-button-label{
-				color: $buttonText;
+				color: $neutral-700;
 			}
 		}
 		&:active{
-			color: $buttonTextPressed;
+			color: $neutral-800;
 		}
 	}
 }

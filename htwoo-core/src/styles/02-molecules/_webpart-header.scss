@@ -7,7 +7,7 @@
 
     div {
         outline: none;
-        color: $bodyText;
+        color: $neutral-700;
 
         &:empty {
 
@@ -21,7 +21,7 @@
                 &:before {
                     content: attr(placeholder);
 
-                    color: $disabledBodyText;
+                    color: $neutral-400;
                 }
             }
         }

@@ -27,7 +27,7 @@
 				content: "";
 				transition: all $transition-timing ease-in-out;
 
-				background-color: $primaryButtonBackground;
+				background-color: $theme-600;
 			}
 
 			&:hover{
@@ -42,7 +42,7 @@
 	&:hover{
 		padding: 0;
 
-		background-color: $buttonBackgroundHovered;
+		background-color: $theme-700;
 	}
 }
 
@@ -52,7 +52,7 @@
 
 	position: relative;
 
-	color: $bodyText;
+	color: $neutral-500;
 
 	display: flex;
 

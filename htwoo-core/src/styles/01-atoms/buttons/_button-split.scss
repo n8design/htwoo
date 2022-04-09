@@ -18,9 +18,9 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $buttonTextDisabled;
-			border-color: $buttonBackgroundDisabled;
-			background-color: $buttonBackgroundDisabled;
+			color: $neutral-400;
+			border-color: $neutral-100;
+			background-color: $neutral-100;
 		}
 	}
 
@@ -32,7 +32,7 @@
 		margin: 0;
 		padding: 0;
 
-		color: $buttonText;
+		color: $neutral-700;
 		border-left: none;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
@@ -61,9 +61,9 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $buttonTextDisabled;
-			border-color: $buttonBackgroundDisabled;
-			background-color: $buttonBackgroundDisabled;
+			color: $neutral-400;
+			border-color: $neutral-100;
+			background-color: $neutral-100;
 		}
 	}
 
@@ -86,9 +86,9 @@
 
 	.hoo-buttonsplit-standard,
 	.hoo-buttonsplit-carret{
-		color: $primaryButtonText;
-		border-color: $primaryButtonBackground;
-		background-color: $primaryButtonBackground;
+		color: $neutral-000;
+		border-color: $theme-600;
+		background-color: $theme-600;
 
 		.hoo-button-label{
 			color: currentColor;
@@ -98,16 +98,16 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $buttonTextDisabled;
-			border-color: $buttonBackgroundDisabled;
-			background-color: $buttonBackgroundDisabled;
+			color: $neutral-400;
+			border-color: $neutral-100;
+			background-color: $neutral-100;
 		}
 	}
 
 	&.show-flyout{
 		& > .hoo-buttonsplit-carret{
-			border-color: $primaryButtonBackgroundPressed;
-			background-color: $primaryButtonBackgroundPressed;
+			border-color: $theme-800;
+			background-color: $theme-800;
 		}
 	}
 }
