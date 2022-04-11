@@ -1,42 +1,67 @@
 {
     "items": [
         {
-            "name": "Theme Darker",
-            "value": "#014446",
-            "comment": ""
+            "msftName": "themeLighterAlt",
+            "msftNameLong": "Theme Lighter Alt",
+            "colorValue": "var(--themeLighterAlt)",
+            "designToken": "100",
+            "SASSVariable": "$theme-100"
         },
         {
-            "name": "Theme Dark",
-            "value": "#025c5f",
-            "commment": ""
+            "msftName": "themeLighter",
+            "msftNameLong": "Theme Lighter",
+            "colorValue": "var(--themeLighter)",
+            "designToken": "200",
+            "SASSVariable": "$theme-200"
         },
         {
-            "name": "Theme Dark Alt",
-            "value": "#026d70"
+            "msftName": "themeLight",
+            "msftNameLong": "Theme Light",
+            "colorValue": "var(--themeLight)",
+            "designToken": "300",
+            "SASSVariable": "$theme-300"
         },
         {
-            "name": "Theme Dark Primary",
-            "value": "#03787c"
+            "msftName": "themeTertiary",
+            "msftNameLong": "Theme Tertiary",
+            "colorValue": "var(--themeTertiary)",
+            "designToken": "400",
+            "SASSVariable": "$theme-400"
         },
         {
-            "name": "Theme Dark Secondary",
-            "value": "#13898d"
+            "msftName": "themeSecondary",
+            "msftNameLong": "Theme Secondary",
+            "colorValue": "var(--themeSecondary)",
+            "designToken": "500",
+            "SASSVariable": "$theme-500"
         },
         {
-            "name": "Theme Tertiary",
-            "value": "#49aeb1"
+            "msftName": "themePrimary",
+            "msftNameLong": "Theme Primary",
+            "colorValue": "var(--themePrimary)",
+            "designToken": "600",
+            "SASSVariable": "$theme-600"
         },
         {
-            "name": "Theme Light",
-            "value": "#98d6d8"
+            "msftName": "themeDarkAlt",
+            "msftNameLong": "Theme Dark Alt",
+            "colorValue": "var(--themeDarkAlt)",
+            "designToken": "700",
+            "SASSVariable": "$theme-700"
         },
         {
-            "name": "Theme Lighter",
-            "value": "#c5e9ea"
+            "msftName": "themeDark",
+            "msftNameLong": "Theme Dark",
+            "colorValue": "var(--themeDark)",
+            "designToken": "800",
+            "SASSVariable": "$theme-800"
         },
         {
-            "name": "Theme Lighter Alt",
-            "value": "#f0f9fa"
+            "msftName": "themeDarker",
+            "msftNameLong": "Theme Darker",
+            "colorValue": "var(--themeDarker)",
+            "designToken": "900",
+            "SASSVariable": "$theme-900"
         }
     ],
     "meta": {

@@ -1,64 +1,104 @@
+
+
 {
     "items": [
         {
-            "name": "Neutral Dark",
-            "value": "#201f1e",
-            "comment": ""
+            "msftName": "White",
+            "msftNameLong": "White",
+            "colorValue": "var(--white)",
+            "designToken": "0",
+            "SASSVariable": "$neutral-000"
         },
         {
-            "name": "Neutral Primary",
-            "value": "#323130",
-            "commment": ""
+            "msftName": "neutralLighterAlt",
+            "msftNameLong": "Neutral Lighter Alt",
+            "colorValue": "var(--neutralLighterAlt)",
+            "designToken": "50",
+            "SASSVariable": "$neutral-050"
         },
         {
-            "name": "Neutral Primary Alt",
-            "value": "#3b3a39",
-            "comment": ""
+            "msftName": "neutralLighter",
+            "msftNameLong": "Neutral Lighter",
+            "colorValue": "var(--neutralLighter)",
+            "designToken": "100",
+            "SASSVariable": "$neutral-100"
         },
         {
-            "name": "Neutral Secondary",
-            "value": "#605e5c",
-            "comment": ""
+            "msftName": "neutralLight",
+            "msftNameLong": "Neutral Light",
+            "colorValue": "var(--neutralLight)",
+            "designToken": "200",
+            "SASSVariable": "$neutral-200"
         },
         {
-            "name": "Neutral Secondary Alt",
-            "value": "#8a8886",
-            "comment": ""
+            "msftName": "neutralQuaternaryAlt",
+            "msftNameLong": "Neutral Quaternary Alt",
+            "colorValue": "var(--neutralQuaternaryAlt)",
+            "designToken": "250",
+            "SASSVariable": "$neutral-250"
         },
         {
-            "name": "Neutral Tertiary",
-            "value": "#a19f9d",
-            "comment": ""
+            "msftName": "neutralQuaternary",
+            "msftNameLong": "Neutral Quaternary",
+            "colorValue": "var(--neutralQuaternary)",
+            "designToken": "300",
+            "SASSVariable": "$neutral-300"
         },
         {
-            "name": "Neutral Tertiary Alt",
-            "value": "#c8c6c4",
-            "comment": ""
+            "msftName": "neutralTertiaryAlt",
+            "msftNameLong": "Neutral Tertiary Alt",
+            "colorValue": "var(--neutralTertiaryAlt)",
+            "designToken": "350",
+            "SASSVariable": "$neutral-350"
         },
         {
-            "name": "Neutral Quaternary",
-            "value": "#d2d0ce",
-            "comment": ""
+            "msftName": "neutralTertiary",
+            "msftNameLong": "Neutral Tertiary",
+            "colorValue": "var(--neutralTertiary)",
+            "designToken": "400",
+            "SASSVariable": "$neutral-400"
         },
         {
-            "name": "Neutral Quaternary Alt",
-            "value": "#e1dfdd",
-            "comment": ""
+            "msftName": "neutralSecondaryAlt",
+            "msftNameLong": "Neutral Secondary Alt",
+            "colorValue": "var(--neutralSecondaryAlt)",
+            "designToken": "450",
+            "SASSVariable": "$neutral-450"
         },
         {
-            "name": "Neutral Light",
-            "value": "#edebe9",
-            "comment": ""
+            "msftName": "neutralSecondary",
+            "msftNameLong": "Neutral Secondary",
+            "colorValue": "var(--neutralSecondary)",
+            "designToken": "500",
+            "SASSVariable": "$neutral-500"
         },
         {
-            "name": "Neutral Lighter",
-            "value": "#f3f2f1",
-            "comment": ""
+            "msftName": "neutralPrimaryAlt",
+            "msftNameLong": "Neutral Primary Alt",
+            "colorValue": "var(--neutralPrimaryAlt)",
+            "designToken": "550",
+            "SASSVariable": "$neutral-550"
         },
         {
-            "name": "Neutral Lighter Alt",
-            "value": "#faf9f8",
-            "comment": ""
+            "msftName": "neutralPrimary",
+            "msftNameLong": "Neutral Primary",
+            "colorValue": "var(--neutralPrimary)",
+            "designToken": "600",
+            "SASSVariable": "$neutral-600"
+        },
+        {
+            "msftName": "neutralDark",
+            "msftNameLong": "Neutral Dark",
+            "colorValue": "var(--neutralDark)",
+            "designToken": "700",
+            "SASSVariable": "$neutral-700"
+        },
+        {
+            "msftName": "Black",
+            "msftNameLong": "Black",
+            "colorValue": "var(--black)",
+            "designToken": "800",
+            "SASSVariable": "$neutral-800"
         }
     ],
     "meta": {
