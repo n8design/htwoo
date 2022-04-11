@@ -34,7 +34,7 @@
 
 	content: "";
 
-	background-color: $primaryButtonBackground;
+	background-color: $theme-600;
 
 	aspect-ratio: 16/9;
 }
@@ -46,7 +46,7 @@
 	box-sizing: border-box;
 	padding: px2rem(10px) px2rem(12px) px2rem(8px);
 
-	color: $primaryButtonBackground;
+	color: $theme-600;
 	.hoo-ph-row{
 		width: 35%;
 

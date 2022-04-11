@@ -13,6 +13,9 @@ const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
 const rollup = require('rollup');
 
+const sass = require('gulp-sass')(require('node-sass'));
+
+
 const baseWatch = async (cb) => {
 
     watch(['src/styles/**/*.scss'], styles);
@@ -31,6 +34,8 @@ const docs = (cb) => {
 
 }
 
+
+
 const styles = () => {
 
     return src('src/styles/*.scss')
@@ -38,19 +43,19 @@ const styles = () => {
         .pipe($.if(!isProd, $.sourcemaps.init()))
         // .pipe($.sourcemaps.init())
         .pipe(
-            $.if(!isProd, $.sass.sync({
+            $.if(!isProd, sass.sync({
                 outputStyle: 'expanded',
                 precision: 6,
                 includePaths: ['.']
             }))
-            .on('error', $.sass.logError))
+            .on('error', sass.logError))
         .pipe(
-            $.if(isProd, $.sass.sync({
+            $.if(isProd, sass.sync({
                 outputStyle: 'compressed',
                 precision: 6,
                 includePaths: ['.']
             }))
-            .on('error', $.sass.logError))
+            .on('error', sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))
@@ -73,11 +78,11 @@ const pluginCSSOverride = () => {
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         // .pipe($.sourcemaps.init())
-        .pipe($.sass.sync({
+        .pipe(sass.sync({
             outputStyle: 'expanded',
             precision: 6,
             includePaths: ['.']
-        }).on('error', $.sass.logError))
+        }).on('error', sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))

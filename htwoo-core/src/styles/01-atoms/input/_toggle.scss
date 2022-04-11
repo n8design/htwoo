@@ -30,9 +30,9 @@
 		content: "";
 		transition: background .2s ease-in-out;
 
-		border: 1px $buttonBorder solid;
+		border: 1px $neutral-450 solid;
 		border-radius: 1rem;
-		background-color: $buttonBackground;
+		background-color: $neutral-000;
 		cursor: pointer;
 
 		&::after{
@@ -52,7 +52,7 @@
 
 			border: px2rem(2px) rgba(#fff, 0) solid;
 			border-radius: 50%;
-			background-color: $buttonText;
+			background-color: $neutral-700;
 		}
 	}
 
@@ -63,13 +63,13 @@
 		&:checked{
 			& ~ .hoo-toggle-label{
 				.hoo-toggle-slider{
-					border-color: $primaryButtonBackground;
-					background-color: $primaryButtonBackground;
+					border-color: $theme-600;
+					background-color: $theme-600;
 
 					&::after{
 						transform: translateX(1rem);
 
-						background-color: $buttonBackground;
+						background-color: $neutral-000;
 					}
 				}
 
@@ -84,12 +84,12 @@
 		}
 		&:disabled{
 			& ~ .hoo-toggle-label{
-				color: $buttonTextDisabled;
+				color: $neutral-400;
 				.hoo-toggle-slider{
-					border-color: $buttonTextDisabled;
+					border-color: $neutral-400;
 					&::after{
 
-						background-color: $buttonTextDisabled;
+						background-color: $neutral-400;
 					}
 				}
 			}
@@ -97,12 +97,12 @@
 			&:checked{
 				
 				& ~ .hoo-toggle-label{
-					color: $buttonTextDisabled;
+					color: $neutral-400;
 					.hoo-toggle-slider{
-						border-color: $ButtonGlyphDisabled;
-						background-color: $ButtonGlyphDisabled;
+						border-color: $neutral-400;
+						background-color: $neutral-400;
 						&::after{
-							background-color: $buttonBackgroundDisabled;
+							background-color: $neutral-100;
 						}
 					}
 				}

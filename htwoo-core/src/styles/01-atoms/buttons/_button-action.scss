@@ -8,7 +8,8 @@
 	white-space: nowrap;
 
 	border: none;
-	background-color: $buttonBackground;
+	background-color: $neutral-000;
+    color: $neutral-700;
 
 	align-items: center;
 
@@ -23,7 +24,7 @@
         width: px2rem(24px);
         height: px2rem(24px);
     
-        color: $CommandLinksHover;
+        color: $theme-600;
     
         align-items: center;
     
@@ -41,13 +42,14 @@
     }    
 
 	&:hover{
-		color: $CommandLinksHover;
+		color: $theme-900;
 	}
 
 	&:active{
 		color: inherit;
 		.hoo-buttonaction-icon{
-			color: $CommandLinksPressed;
+			// color: $CommandLinksPressed;
+			color: $theme-900;
 		}
 	}
 }
