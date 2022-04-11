@@ -76,29 +76,29 @@
             "msftName": "neutralPrimaryAlt",
             "msftNameLong": "Neutral Primary Alt",
             "colorValue": "var(--neutralPrimaryAlt)",
-            "designToken": "550",
-            "SASSVariable": "$neutral-550"
+            "designToken": "600",
+            "SASSVariable": "$neutral-600"
         },
         {
             "msftName": "neutralPrimary",
             "msftNameLong": "Neutral Primary",
             "colorValue": "var(--neutralPrimary)",
-            "designToken": "600",
-            "SASSVariable": "$neutral-600"
+            "designToken": "700",
+            "SASSVariable": "$neutral-700"
         },
         {
             "msftName": "neutralDark",
             "msftNameLong": "Neutral Dark",
             "colorValue": "var(--neutralDark)",
-            "designToken": "700",
-            "SASSVariable": "$neutral-700"
+            "designToken": "800",
+            "SASSVariable": "$neutral-800"
         },
         {
             "msftName": "Black",
             "msftNameLong": "Black",
             "colorValue": "var(--black)",
-            "designToken": "800",
-            "SASSVariable": "$neutral-800"
+            "designToken": "900",
+            "SASSVariable": "$neutral-900"
         }
     ],
     "meta": {

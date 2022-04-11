@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "msftName": "greenLight",
+            "msftNameLong": "greenLight",
+            "colorValue": "var(--greenLight)",
+            "designToken": "300",
+            "SASSVariable": "$green-300"
+        },
+        {
+            "msftName": "green",
+            "msftNameLong": "green",
+            "colorValue": "var(--green)",
+            "designToken": "600",
+            "SASSVariable": "$green-600"
+        },
+        {
+            "msftName": "greenDark",
+            "msftNameLong": "greenDark",
+            "colorValue": "var(--greenDark)",
+            "designToken": "800",
+            "SASSVariable": "$green-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}
