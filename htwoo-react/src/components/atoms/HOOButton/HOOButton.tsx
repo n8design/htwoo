@@ -96,7 +96,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
   }
 
   public render(): React.ReactElement<IHOOButtonProps> {
-    const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+    const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")}`;
     const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName) : ((this.props.iconRight) ? symset.Icon(this.props.iconRight) : null);
     const iconName = this.props.iconName || this.props.iconRight || null;
     try {
@@ -125,7 +125,10 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
                   }
                 </>
               }
-              {!this.props.label && (this.props.type === HOOButtonType.Icon && !this.props.iconName) &&
+              {(this.props.type === HOOButtonType.Icon && this.props.iconName) &&
+                <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+              }
+              {(!this.props.label || (this.props.type === HOOButtonType.Icon && !this.props.iconName)) &&
                 this.props.children
               }
             </button>

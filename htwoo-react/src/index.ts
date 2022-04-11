@@ -17,6 +17,7 @@ export * from './HOOCheckbox';
 export * from './HOODialog';
 export * from './HOODialogContent';
 export * from './HOODialogHeader';
+export * from './HOODialogIFrame';
 export * from './HOODocumentCard';
 export * from './HOODropDown';
 export * from './HOOFlyoutMenu';
