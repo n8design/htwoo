@@ -30,6 +30,19 @@
 		border-color: $buttonBackgroundDisabled;
 		background-color: $buttonBackgroundDisabled;
 	}
+	&.is-reversed{
+		flex-direction: row-reverse;
+		.hoo-icon{
+			margin-right: -0.25rem;
+			fill: currentColor;
+		}
+	}
+	&:not(.is-reversed){
+		.hoo-icon{
+			margin-left: -0.25rem;
+			fill: currentColor;
+		}
+	}
 }
 
 .hoo-button-label {
@@ -167,6 +180,7 @@ a.hoo-button-primary {
 		background-color: $primaryButtonBackgroundPressed;
 	}
 }
+
 
 
 /* Split Button Slideout Animation
