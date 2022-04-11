@@ -13,10 +13,15 @@ export default {
 } as Meta;
 
 const Template: Story<IHOOButtonProps> = (args) => <HOOButton {...args} />;
-const IconTemplate: Story<IHOOButtonProps> = (args) => <HOOButton {...args}><HOOIcon iconName="hoo-icon-smile" /></HOOButton>;
 
 export const Primary = Template.bind({});
 Primary.args = { type: HOOButtonType.Primary, label: 'Button', onClick: () => { alert("Clicked"); } };
+
+export const PrimaryLeftIcon = Template.bind({});
+PrimaryLeftIcon.args = { type: HOOButtonType.Primary, label: 'Button', iconName: "hoo-icon-arrow-left", onClick: () => { alert("Clicked"); } };
+
+export const PrimaryRightIcon = Template.bind({});
+PrimaryRightIcon.args = { type: HOOButtonType.Primary, label: 'Button', iconRight: "hoo-icon-arrow-right", onClick: () => { alert("Clicked"); } };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.args = { type: HOOButtonType.Primary, disabled: true, label: 'Button', onClick: () => { alert("Clicked"); } };
@@ -24,8 +29,8 @@ PrimaryDisabled.args = { type: HOOButtonType.Primary, disabled: true, label: 'Bu
 export const Standard = Template.bind({});
 Standard.args = { type: HOOButtonType.Standard, label: 'Button', onClick: () => { alert("Clicked"); } };
 
-export const Icon = IconTemplate.bind({});
-Icon.args = { type: HOOButtonType.Icon, onClick: () => { alert("Clicked"); } };
+export const Icon = Template.bind({});
+Icon.args = { type: HOOButtonType.Icon, iconName: "hoo-icon-smile", onClick: () => { alert("Clicked"); } };
 
 export const HyperlinkPrimary = Template.bind({});
 HyperlinkPrimary.args = { type: HOOButtonType.HyperlinkPrimary, label: 'Button', href: "https://google.com" };

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { symset } from "../../../SymbolSet";
 import { IHOOStandardProps } from "../../Common.model";
 
 export enum HOOButtonType {
@@ -33,6 +34,14 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    * (Optional) button label, if omitted, components children will be rendered.
    */
   label?: string;
+  /**
+   * (Optional) button iconName (alt: iconLeftName), if omitted for HOOButtonType.Icon, components children will be rendered.
+   */
+  iconName?: string;
+  /**
+   * (Optional) button iconName for right side.
+   */
+  iconRight?: string;
   /**
    * (Optional) For Hyperlink style buttons only, link reference.
    */
@@ -87,7 +96,9 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
   }
 
   public render(): React.ReactElement<IHOOButtonProps> {
-    const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+    const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+    const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName) : ((this.props.iconRight) ? symset.Icon(this.props.iconRight) : null);
+    const iconName = this.props.iconName || this.props.iconRight || null;
     try {
       return (
         <>
@@ -105,13 +116,16 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
             <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
               {this.props.label &&
                 <>
+                  {iconSVG &&
+                    <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+                  }
                   <span className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</span>
                   {this._compoundType &&
                     <span className={`hoo-button${this._compoundType ? "comp" : ""}-desc`}>{this.props.description}</span>
                   }
                 </>
               }
-              {!this.props.label &&
+              {!this.props.label && (this.props.type === HOOButtonType.Icon && !this.props.iconName) &&
                 this.props.children
               }
             </button>
