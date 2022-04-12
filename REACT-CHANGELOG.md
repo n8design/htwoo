@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### FUNCTIONS
 
-- *SymbolSet* - IconBase64 method that takes IconName and returns base64 encoded string
+- *SymbolSet* - IconBase64 method that takes IconName and returns base64 encoded string, added namepaceuri to svg element.
 
 ## 0.1.0 - 2022-March-30
 
