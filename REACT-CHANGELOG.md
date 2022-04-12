@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - *HOOButton* - IconName to support Icon button type icon child should be a span not a div.
 - *HOODialogIFrame* (ATOM) - New iFrame styling for child of the HOODialogContent molecule
 
+### MOLECULES
+
+- *HOOBreadcrumb* - New implementation, supporting button and hyperlink breadcrumb component.
+
 ### FUNCTIONS
 
 - *SymbolSet* - IconBase64 method that takes IconName and returns base64 encoded string

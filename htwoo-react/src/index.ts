@@ -7,6 +7,7 @@ export { symset };
 export * from './HOOAction';
 export * from './HOOAvatar';
 export * from './HOOAvatarPres';
+export * from './HOOBreadcrumb';
 export * from './HOOButton';
 export * from './HOOButtonSplit';
 export * from './HOOCardFooter';
