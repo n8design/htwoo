@@ -102,6 +102,7 @@ if (!sessionStorage.getItem('currentTheme')) {
 
 // Listen for Storage changes
 window.addEventListener('storage', (event) =>{
+    console.debug(event);
     if(event.key === 'currentTheme'){
         applyTheme(event.newValue);
     }
