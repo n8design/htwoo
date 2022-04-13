@@ -167,7 +167,7 @@
             "colorValue": "var(--yellowDark)",
             "designToken": "800",
             "SASSVariable": "$yellow-800"
-        },
+        }
     ],
     "meta": {
         "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
