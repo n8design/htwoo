@@ -1,5 +1,7 @@
 .hoo-radiobutton-group {
     &.is-horizontal {
+        display: inline-flex;
+        gap: 1rem;
         // display: flex;
         // flex-direction: row;
         // justify-content: space-between;
