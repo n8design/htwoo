@@ -113,6 +113,40 @@ var PluginUIExtension = {
 
     }
 
+  },
+  supportedThemes: [
+    "blue",
+    "gray",
+    "purple",
+    "darkblue",
+    "green",
+    "red",
+    "darkyellow",
+    "orange",
+    "teal",
+    "teams.light",
+    "teams.hc",
+    "teams.dark"
+  ],
+  convertTheme: (data, themeName) => {
+
+    if (typeof data === 'object') {
+
+      const keys = Object.keys(data);
+
+      const themeVars = []
+      for (let key in keys) {
+        themeVars.push(`--${keys[key]}:${data[keys[key]]}`);
+      }
+
+      const themeCSSVars = themeVars.join(';');
+
+      localStoredThemes[themeName] = themeCSSVars;
+
+      localStorage.setItem('availableThemes', JSON.stringify(localStoredThemes));
+    }
+
+    return data;
   }
 
 

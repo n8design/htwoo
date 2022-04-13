@@ -105,9 +105,9 @@
 		height: $presonaSize;
 	}
 
-    .hoo-persona-available{
-        display: block;
-    }
+	.hoo-persona-available{
+		display: block;
+	}
 
 	.hoo-persona-available{
 		display: none;
@@ -240,5 +240,23 @@
 
 		width: $presenceSize;
 		height: $presenceSize;
+	}
+}
+
+.hoo-persona-overflow{
+	font-size: px2rem(14px);
+
+	display: flex;
+	justify-content: center;
+
+	width: 32px;
+	height: 32px;
+
+	border-radius: 50%;
+	background-color: #f3f2f1;
+
+	align-items: center;
+	.hoo-persona-data{
+		margin: 0;
 	}
 }

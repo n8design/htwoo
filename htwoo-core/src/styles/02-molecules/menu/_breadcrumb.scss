@@ -20,6 +20,7 @@
 
     }
 
+
 }
 
 .hoo-breadcrumb-item {
@@ -46,6 +47,17 @@
         background-color: $buttonBackgroundHovered;
     }
 }
+
+button {
+    &.hoo-breadcrumb-link {
+        border: none;
+        font-size: 1rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+
 
 .hoo-breadcrumb-separator {
     line-height: px2rem(36px);
