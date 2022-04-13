@@ -25,7 +25,7 @@
 
 .hoo-breadcrumb-item {
     display: inline-block;
-
+    font-size: 1rem;
     width: auto;
 }
 
@@ -60,7 +60,7 @@ button {
 
 
 .hoo-breadcrumb-separator {
-    line-height: px2rem(36px);
+    line-height: px2rem(32px);
 
     svg {
         width: px2rem(12px);
