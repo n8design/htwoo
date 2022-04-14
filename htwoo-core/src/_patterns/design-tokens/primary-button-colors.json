@@ -46,8 +46,8 @@
             "msftName": "primaryButtonTextDisabled",
             "msftNameLong": "Primary Button Text Disabled",
             "colorValue": "var(--primaryButtonTextDisabled)",
-            "designToken": "",
-            "SASSVariable": "$primaryButtonTextDisabled"
+            "designToken": "neutral-300",
+            "SASSVariable": "$neutral-300"
         },
         {
             "msftName": "primaryButtonTextHovered",
