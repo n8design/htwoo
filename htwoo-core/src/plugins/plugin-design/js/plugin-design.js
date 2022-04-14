@@ -1,12 +1,64 @@
 'use strict';
 /* global PluginUIExtension, pluginDesign */
+const supportedThemes = [
+  "blue",
+  "gray",
+  "purple",
+  "darkblue",
+  "green",
+  "red",
+  "darkyellow",
+  "orange",
+  "teal",
+  "teams.light",
+  "teams.hc",
+  "teams.dark"
+]
+
+const localStoredThemes = {};
+
+const loadThemes = async () => {
+
+  for (let theme in supportedThemes)
+    // Load Teams Theme
+    await fetch(`../../js/themeswitch/themes/${supportedThemes[theme]}.theme.json`).then(response => {
+
+      return response.json();
+
+    }).then(data => {
+      return convertTheme(data, supportedThemes[theme])
+    });
+
+}
+
+const convertTheme = (data, themeName) => {
+
+  if (typeof data === 'object') {
+
+    const keys = Object.keys(data);
+
+    const themeVars = []
+    for (let key in keys) {
+      themeVars.push(`--${keys[key]}:${data[keys[key]]}`);
+    }
+
+    const themeCSSVars = themeVars.join(';');
+
+    localStoredThemes[themeName] = themeCSSVars;
+
+    localStorage.setItem('availableThemes', JSON.stringify(localStoredThemes));
+  }
+
+  return data;
+}
+
 
 var PluginUIExtension = {
 
   /**
    * The function defined as the onready callback within the plugin configuration.
    */
-  init: function () {
+  init: async function () {
 
     let logoImg = document.querySelector(".pl-c-logo__img");
     if (logoImg) {
@@ -27,6 +79,12 @@ var PluginUIExtension = {
 
     if (logoLink) {
       logoLink.href = "https://lab.n8d.studio/htwoo/";
+    }
+
+    if (localStorage.getItem('availableThemes') === null) {
+
+      await loadThemes();
+
     }
 
     this.appendColorSwitcher();
@@ -113,40 +171,6 @@ var PluginUIExtension = {
 
     }
 
-  },
-  supportedThemes: [
-    "blue",
-    "gray",
-    "purple",
-    "darkblue",
-    "green",
-    "red",
-    "darkyellow",
-    "orange",
-    "teal",
-    "teams.light",
-    "teams.hc",
-    "teams.dark"
-  ],
-  convertTheme: (data, themeName) => {
-
-    if (typeof data === 'object') {
-
-      const keys = Object.keys(data);
-
-      const themeVars = []
-      for (let key in keys) {
-        themeVars.push(`--${keys[key]}:${data[keys[key]]}`);
-      }
-
-      const themeCSSVars = themeVars.join(';');
-
-      localStoredThemes[themeName] = themeCSSVars;
-
-      localStorage.setItem('availableThemes', JSON.stringify(localStoredThemes));
-    }
-
-    return data;
   }
 
 
