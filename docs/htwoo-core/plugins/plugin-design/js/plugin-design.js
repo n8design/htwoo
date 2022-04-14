@@ -84,6 +84,7 @@ var PluginUIExtension = {
     if (localStorage.getItem('availableThemes') === null) {
 
       await loadThemes();
+      window.top.location.reload();
 
     }
 
