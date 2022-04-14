@@ -21,7 +21,7 @@ const loadThemes = async () => {
 
   for (let theme in supportedThemes)
     // Load Teams Theme
-    await fetch(`../../js/themeswitch/themes/${supportedThemes[theme]}.theme.json`).then(response => {
+    await fetch(`./js/themeswitch/themes/${supportedThemes[theme]}.theme.json`).then(response => {
 
       return response.json();
 
