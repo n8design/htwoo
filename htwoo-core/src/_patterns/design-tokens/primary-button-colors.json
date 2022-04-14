@@ -1,27 +1,32 @@
 {
     "items": [
         {
-            "name": "primaryButtonBackground",
-            "value": "#03787c",
+            "msftName": "primaryButtonBackground",
+            "msftNameLong": "Primary Button Background",
+            "designToken": "#03787c",
             "comment": ""
         },
         {
-            "name": "primaryButtonBackgroundDisabled",
+            "msftName": "primaryButtonBackgroundDisabled",
+            "msftNameLong": "Primary Button Background Disabled",
             "value": "#f3f2f1",
             "comment": ""
         },
         {
-            "name": "primaryButtonBackgroundHovered",
+            "msftName": "primaryButtonBackgroundHovered",
+            "msftNameLong": "Primary Button Background Hovered",
             "value": "#026d70",
             "comment": ""
         },
         {
-            "name": "primaryButtonBackgroundPressed",
+            "msftName": "primaryButtonBackgroundPressed",
+            "mstfNameLong": "Primary Button Background Pressed",
             "value": "#025c5f",
             "comment": ""
         },
         {
-            "name": "primaryButtonBorder",
+            "msftName": "primaryButtonBorder",
+            "msftNameLong": "primaryButtonBorder",
             "value": "transparent",
             "comment": ""
         },

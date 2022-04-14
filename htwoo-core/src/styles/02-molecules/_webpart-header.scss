@@ -1,11 +1,13 @@
 .hoo-webpart-header {
     margin: 0 2rem 1rem 0;
+    font-size: px2rem(20px);
+	font-weight: 600;
 
     text-overflow: ellipsis;
 
     div {
         outline: none;
-        color: $bodyText;
+        color: $neutral-700;
 
         &:empty {
 
@@ -19,7 +21,7 @@
                 &:before {
                     content: attr(placeholder);
 
-                    color: $disabledBodyText;
+                    color: $neutral-400;
                 }
             }
         }

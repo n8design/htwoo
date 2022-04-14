@@ -1,0 +1,35 @@
+{
+    "items": [
+        {
+            "msftName": "blueLight",
+            "msftNameLong": "Blue Light",
+            "colorValue": "var(--blueLight)",
+            "designToken": "300",
+            "SASSVariable": "$blue-300"
+        },
+        {
+            "msftName": "blue",
+            "msftNameLong": "blue",
+            "colorValue": "var(--blue)",
+            "designToken": "600",
+            "SASSVariable": "$blue-600"
+        },
+        {
+            "msftName": "blueMid",
+            "msftNameLong": "Blue Mid",
+            "colorValue": "var(--blueMid)",
+            "designToken": "700",
+            "SASSVariable": "$blue-700"
+        },
+        {
+            "msftName": "blueDark",
+            "msftNameLong": "Blue Dark",
+            "colorValue": "var(--blueDark)",
+            "designToken": "800",
+            "SASSVariable": "$blue-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}
