@@ -5,13 +5,31 @@
 	flex-direction: column;
 
 	width: auto;
+
+	text-decoration: none;
 	// min-width: 324px;
 
-	border: 1px solid $variantBorder;
+	border: 1px solid $neutral-200;
 	.hoo-avatar{
 		margin-bottom: 0;
 	}
 	.hoo-cardfooter{
 		align-self: bottom;
+	}
+}
+
+.hoo-doccard-link{
+	text-decoration: none;
+	color: inherit;
+	&:hover{
+		text-decoration: none;
+		color: inherit;
+	}
+	&:link{
+		text-decoration: none;
+		color: inherit;
+	}
+	.hoo-doccard{
+		text-decoration: none;
 	}
 }

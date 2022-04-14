@@ -1,3 +1,29 @@
 .hoo-dlgcontent{
+	box-sizing: border-box;
 	padding: 0 px2rem(20px) px2rem(16px);
+
+	border: transparent 1px solid;
+}
+.hoo-dlg-iframe{
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+	border: none;
+
+	aspect-ratio: 16 / 9;
+
+	&.ratio-16by9{
+
+		aspect-ratio: 16 / 9;
+	}
+	&.ratio-squared{
+
+		aspect-ratio: 1 / 1;
+	}
+	&.ratio-4by3{
+
+		aspect-ratio: 4 / 3;
+	}
 }

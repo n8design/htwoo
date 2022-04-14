@@ -22,8 +22,8 @@ $animation: animate-ph 5s infinite;
 	animation: animate-ph 5s infinite;
 	animation: $animation;
 
-	border: .25rem $bodyBackground solid;
-	background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
+	border: .25rem $neutral-000 solid;
+	background: linear-gradient(-45deg, $neutral-350, $neutral-300, $neutral-200, $neutral-050);
 	background-size: 400% 400%;
 	
 	:local{
@@ -32,12 +32,12 @@ $animation: animate-ph 5s infinite;
 
 
 	&.hoo-ph-primary{
-		background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
+		background: linear-gradient(-45deg, $theme-800, $theme-500, $theme-300, $theme-100);
 		background-size: 400% 400%;
 	}
 
 	&.hoo-ph-neutral{
-		background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
+		background: linear-gradient(-45deg, $neutral-350, $neutral-300, $neutral-200, $neutral-050);
 		background-size: 400% 400%;
 	}
 
@@ -84,7 +84,7 @@ $animation: animate-ph 5s infinite;
 	.hoo-ph-squared,
 	.hoo-ph-circle,
 	.hoo-ph-row{
-		background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
+		background: linear-gradient(-45deg, $theme-800, $theme-500, $theme-300, $theme-100);
 		background-size: 400% 400%;
 	}
 }
@@ -93,7 +93,7 @@ $animation: animate-ph 5s infinite;
 	.hoo-ph-squared,
 	.hoo-ph-circle,
 	.hoo-ph-row{
-		background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
+		background: linear-gradient(-45deg, $neutral-350, $neutral-300, $neutral-200, $neutral-050);
 		background-size: 400% 400%;
 	}
 }
@@ -115,14 +115,14 @@ $animation: animate-ph 5s infinite;
 .hoo-ph-img1x1.hoo-ph-neutral{
 	animation: $animation;
 
-	background: linear-gradient(-45deg, $neutralTertiaryAlt, $neutralQuaternary, $neutralLight, $neutralLighterAlt);
+	background: linear-gradient(-45deg, $neutral-350, $neutral-300, $neutral-200, $neutral-050);
 	background-size: 400% 400%;
 }
 
 .hoo-ph-img1x1.hoo-ph-primary,
 .hoo-ph-img16x9.hoo-ph-primary,
 .hoo-ph-img16x10.hoo-ph-primary{
-	background: linear-gradient(-45deg, $themeDark, $themeSecondary, $themeLight, $themeLighterAlt);
+	background: linear-gradient(-45deg, $theme-800, $theme-500, $theme-300, $theme-100);
 }
 
 .hoo-ph-img1x1.hoo-ph-fancy,

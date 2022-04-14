@@ -4,9 +4,9 @@
 
 	padding: px2rem(5px) 0;
 
-	color: $bodyText;
+	color: $neutral-700;
 	&.is-disabled{
-		color: $disabledText;
+		color: $neutral-400;
 	}
 	&.is-required{
 		&:after{

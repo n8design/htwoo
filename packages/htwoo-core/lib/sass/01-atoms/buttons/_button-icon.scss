@@ -8,7 +8,7 @@
 	border: none;
 	outline: none;
 	background-color: transparent;
-	color: $bodyText;
+	color: $neutral-700;
 
 	align-items: center;
 
@@ -18,9 +18,9 @@
 		height: 16px;
 	}
 	&:hover{
-		background-color: $buttonBackgroundHovered;
+		background-color: $neutral-100;
 	}
 	&:active{
-		background-color: $buttonBackgroundPressed;
+		background-color: $neutral-200;
 	}
 }
