@@ -76,30 +76,30 @@
 
 			text-align: left;
 			white-space: nowrap;
-			background-color: $bodyBackground;
+			background-color: $neutral-000;
 
 			&:hover {
-				background-color: $buttonBackgroundHovered;
+				background-color: $neutral-100;
 			}
 		}
 	}
 
 	td,
 	th {
-		background-color: $bodyBackground;
+		background-color: $neutral-000;
 
 		&:hover {
-			background-color: $buttonBackgroundHovered;
+			background-color: $neutral-100;
 		}
 	}
 
 	thead {
-		border-bottom: 1px $neutralLight solid;
-		background-color: $bodyBackground;
+		border-bottom: 1px $neutral-200 solid;
+		background-color: $neutral-000;
 	}
 
 	tfoot {
-		border-top: 1px $neutralLight solid;
+		border-top: 1px $neutral-200 solid;
 	}
 
 	tbody {
@@ -111,7 +111,7 @@
 			min-height: 42px;
 
 			&:hover {
-				background-color: $buttonBackgroundHovered;
+				background-color: $neutral-100;
 			}
 		}
 
@@ -120,7 +120,7 @@
 
 			vertical-align: top;
 
-			border-bottom: 1px $neutralLight solid;
+			border-bottom: 1px $neutral-200 solid;
 		}
 	}
 

@@ -1,12 +1,12 @@
 a{
-    color: $Hyperlink;
+    color: $theme-600;
     &:visited{
-        color: $Hyperlink;
+        color: $theme-600;
     }
     &:active{
-        color: $Hyperlink;
+        color: $theme-600;
     }
     &:hover{
-        color: $Hyperlink;
+        color: $theme-600;
     }
 }

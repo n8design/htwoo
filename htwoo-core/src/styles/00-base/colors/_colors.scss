@@ -323,3 +323,32 @@ $xxLargeWebkitFontSmoothing: #{var(--xxLargeWebkitFontSmoothing)};
 $yellow: #{var(--yellow)};
 $yellowDark: #{var(--yellowDark)};
 $yellowLight: #{var(--yellowLight)};
+
+
+
+
+
+$theme-100: #{var(--themeLighterAlt)};
+$theme-200: #{var(--themeLighter)};
+$theme-300: #{var(--themeLight)};
+$theme-400: #{var(--themeTertiary)};
+$theme-500: #{var(--themeSecondary)};
+$theme-600: #{var(--themePrimary)};
+$theme-700: #{var(--themeDarkAlt)};
+$theme-800: #{var(--themeDark)};
+$theme-900: #{var(--themeDarker)};
+
+$neutral-000: #{var(--white)};
+$neutral-050: #{var(--neutralLighterAlt)};
+$neutral-100: #{var(--neutralLighter)};
+$neutral-200: #{var(--neutralLight)};
+$neutral-250: #{var(--neutralQuaternaryAlt)};
+$neutral-300: #{var(--neutralQuaternary)};
+$neutral-350: #{var(--neutralTertiaryAlt)};
+$neutral-400: #{var(--neutralTertiary)};
+$neutral-450: #{var(--neutralSecondaryAlt)};
+$neutral-500: #{var(--neutralSecondary)};
+$neutral-600: #{var(--neutralPrimaryAlt)};
+$neutral-700: #{var(--neutralPrimary)};
+$neutral-800: #{var(--neutralDark)};
+$neutral-900: #{var(--black)};

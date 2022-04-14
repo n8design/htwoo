@@ -2,11 +2,15 @@
 
     {{# items }}
     <li class="sg-swatch">
-        <span class="sg-swatchbox" style="background: {{ value }};"></span>
         <span class="sg-label">
-            {{ name }}
-            <br /> {{ value }}
-            <br /> {{ comment }}
+            <stong class="sg-label-big">{{ designToken }}</stong><br>
+            <span class="sg-color-code"></span><br>
+
+        </span>
+        <span class="sg-swatchbox" style="background: {{ colorValue }};"></span>
+        <span class="sg-label">
+            <strong>SASS:</strong>&nbsp;{{ SASSVariable }}<br>
+            <em><strong>Fluent UI:</strong>&nbsp;{{ msftNameLong }} / {{ msftName }}</em><br>
         </span>
     </li>
     {{/ items }}
