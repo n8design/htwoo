@@ -15,6 +15,34 @@ const supportedThemes = [
 
 const localStoredThemes = {};
 
+const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`;
+
+
+
+const addColorValues = () => {
+
+    const colorSwatches = document.querySelectorAll('.sg-swatch');
+    if (colorSwatches.length === 0) return;
+
+    for (let i = 0; i < colorSwatches.length; i++) {
+
+        console.debug('COLOR Swatch', colorSwatches[i]);
+        let curSwatch = colorSwatches[i];
+        let sgSwatchColor = curSwatch.querySelector('.sg-color-code');
+        let sgSwatchBox = curSwatch.querySelector('.sg-swatchbox');
+        let computedStyle = window.getComputedStyle(sgSwatchBox);
+
+        let color = computedStyle.getPropertyValue('background-color');
+
+        sgSwatchColor.innerText = `${ color } / ${rgb2hex(color)}`;
+
+        console.debug(computedStyle.getPropertyValue('background-color'), curSwatch);
+
+
+    }
+
+}
+
 const convertTheme = (data, themeName) => {
 
     if (typeof data === 'object') {
@@ -100,9 +128,13 @@ if (!sessionStorage.getItem('currentTheme')) {
 
 }
 
+addColorValues();
+
 // Listen for Storage changes
-window.addEventListener('storage', (event) =>{
-    if(event.key === 'currentTheme'){
+window.addEventListener('storage', (event) => {
+    console.debug(event);
+    if (event.key === 'currentTheme') {
         applyTheme(event.newValue);
+        addColorValues();
     }
 })

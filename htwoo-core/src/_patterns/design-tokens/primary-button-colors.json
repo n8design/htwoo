@@ -3,52 +3,65 @@
         {
             "msftName": "primaryButtonBackground",
             "msftNameLong": "Primary Button Background",
-            "designToken": "#03787c",
-            "comment": ""
+            "colorValue": "var(--primaryButtonBackground)",
+            "designToken": "theme-600",
+            "SASSVariable": "$theme-600"
         },
         {
             "msftName": "primaryButtonBackgroundDisabled",
             "msftNameLong": "Primary Button Background Disabled",
-            "value": "#f3f2f1",
-            "comment": ""
+            "colorValue": "var(--primaryButtonBackgroundDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
         },
         {
             "msftName": "primaryButtonBackgroundHovered",
             "msftNameLong": "Primary Button Background Hovered",
-            "value": "#026d70",
-            "comment": ""
+            "colorValue": "var(--primaryButtonBackgroundHovered)",
+            "designToken": "theme-700",
+            "SASSVariable": "$theme-700"
         },
         {
             "msftName": "primaryButtonBackgroundPressed",
             "mstfNameLong": "Primary Button Background Pressed",
-            "value": "#025c5f",
-            "comment": ""
+            "colorValue": "var(--primaryButtonBackgroundPressed)",
+            "designToken": "theme-800",
+            "SASSVariable": "$theme-800"
         },
         {
             "msftName": "primaryButtonBorder",
-            "msftNameLong": "primaryButtonBorder",
-            "value": "transparent",
-            "comment": ""
+            "msftNameLong": "Primary Button Border",
+            "colorValue": "transparent",
+            "designToken": "transparent",
+            "SASSVariable": ""
         },
         {
-            "name": "primaryButtonText",
-            "value": "#ffffff",
-            "comment": ""
+            "msftName": "primaryButtonText",
+            "msftNameLong": "Primary Button Text",
+            "colorValue": "var(--primaryButtonText)",
+            "designToken": "neutral-000",
+            "SASSVariable": "$neutral-000"
         },
         {
-            "name": "primaryButtonTextDisabled",
-            "value": "#d2d0ce",
-            "comment": ""
+            "msftName": "primaryButtonTextDisabled",
+            "msftNameLong": "Primary Button Text Disabled",
+            "colorValue": "var(--primaryButtonTextDisabled)",
+            "designToken": "neutral-300",
+            "SASSVariable": "$neutral-300"
         },
         {
-            "name": "primaryButtonTextHovered",
-            "value": "#ffffff",
-            "comment": ""
+            "msftName": "primaryButtonTextHovered",
+            "msftNameLong": "Primary Button Text Hovered",
+            "colorValue": "var(--primaryButtonTextHovered)",
+            "designToken": "neutral-000",
+            "SASSVariable": "$neutral-000"
         },
         {
-            "name": "primaryButtonTextPressed",
-            "value": "#ffffff",
-            "comment": ""
+            "msftName": "primaryButtonTextPressed",
+            "msftNameLong": "Primary Button Text Pressed",
+            "colorValue": "var(--primaryButtonTextPressed)",
+            "designToken": "neutral-000",
+            "SASSVariable": "$neutral-000"
         }
     ],
     "meta": {

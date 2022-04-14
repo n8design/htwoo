@@ -13,6 +13,7 @@
 		padding: 0;
 
 		cursor: pointer;
+		display: flex;
 	}
 
 	// Box.
@@ -28,6 +29,7 @@
 		width: px2rem(20px);
 		height: px2rem(20px);
 		margin-right: px2rem(10px);
+		flex-shrink: 0;
 
 		content: "";
 		transition-timing-function: cubic-bezier(.4, 0, .23, 1);

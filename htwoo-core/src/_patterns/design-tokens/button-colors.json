@@ -1,139 +1,102 @@
 {
     "items": [
         {
-            "name": "ButtonBackground",
-            "value": "#f8f8f8",
-            "comment": ""
+            "msftName": "buttonBackground",
+            "mstfNameLong": "Button Background",
+            "colorValue": "var(--buttonBackground)",
+            "designToken": "neutral-000",
+            "SASSVariable": "$neutral-000"
         },
         {
-            "name": "buttonBackground",
-            "value": "#ffffff",
-            "comment": ""
+            "msftName": "buttonBackgroundChecked",
+            "msftNameLong": "buttonBackgroundChecked",
+            "colorValue": "var(--buttonBackgroundChecked)",
+            "designToken": "neutral-350",
+            "SASSVariable": "$neutral-350"
         },
         {
-            "name": "buttonBackgroundChecked",
-            "value": "#c8c6c4",
-            "comment": ""
+            "msftName": "buttonBackgroundCheckedHovered",
+            "msftNameLong": "Button Background Checked Hovered",
+            "colorValue": "var(--buttonBackgroundCheckedHovered)",
+            "designToken": "neutral-350",
+            "SASSVariable": "$neutral-350"
         },
         {
-            "name": "buttonBackgroundCheckedHovered",
-            "value": "#edebe9",
-            "comment": ""
+            "msftName": "Button Background Disabled",
+            "msftNameLong": "buttonBackgroundDisabled",
+            "colorValue": "var(--buttonBackgroundDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
         },
         {
-            "name": "buttonBackgroundDisabled",
-            "value": "#f3f2f1",
-            "comment": ""
+            "msftName": "buttonBackgroundHovered",
+            "msftNameLong": "Button Background Hovered",
+            "colorValue": "var(--buttonBackgroundHovered)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
         },
         {
-            "name": "buttonBackgroundHovered",
-            "value": "#f3f2f1",
-            "comment": ""
+            "msftName": "buttonBackgroundPressed",
+            "msftNameLong": "Button Background Pressed",
+            "colorValue": "var(--buttonBackgroundPressed)",
+            "designToken": "neutral-200",
+            "SASSVariable": "$neutral-200"
         },
         {
-            "name": "buttonBackgroundPressed",
-            "value": "#edebe9",
-            "comment": ""
+            "msftName": "buttonBorder",
+            "msftNameLong": "Button Border",
+            "colorValue": "var(--buttonBorder)",
+            "designToken": "neutral-450",
+            "SASSVariable": "$neutral-450"
         },
         {
-            "name": "buttonBorder",
-            "value": "#8a8886",
-            "comment": ""
+            "msftName": "buttonBorderDisabled",
+            "msftNameLong": "buttonBorderDisabled",
+            "colorValue": "var(--buttonBorderDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
         },
         {
-            "name": "ButtonBorder",
-            "value": "#a6a6a6",
-            "comment": ""
+            "msftName": "buttonText",
+            "msftNameLong": "Button Text",
+            "colorValue": "var(--buttonText)",
+            "designToken": "neutral-700",
+            "SASSVariable": "$neutral-700"
         },
         {
-            "name": "buttonBorderDisabled",
-            "value": "#f3f2f1",
-            "comment": ""
+            "msftName": "buttonTextChecked",
+            "msftNameLong": "Button Text Checked",
+            "colorValue": "var(--buttonTextChecked)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
         },
         {
-            "name": "ButtonDisabledBackground",
-            "value": "#f8f8f8",
-            "comment": ""
+            "msftName": "buttonTextCheckedHovered",
+            "msftNameLong": "buttonTextCheckedHovered",
+            "colorValue": "var(--buttonTextCheckedHovered)",
+            "designToken": "neutral-900",
+            "SASSVariable": "$neutral-900"
         },
         {
-            "name": "ButtonDisabledBorder",
-            "value": "#eaeaea",
-            "comment": ""
+            "msftName": "buttonTextDisabled",
+            "msftNameLong": "Button Text Disabled",
+            "colorValue": "var(--buttonTextDisabled)",
+            "designToken": "neutral-400",
+            "SASSVariable": "$neutral-400"
         },
         {
-            "name": "ButtonDisabledText",
-            "value": "#a6a6a6",
-            "comment": ""
+            "msftName": "buttonTextHovered",
+            "msftNameLong": "Button Text Hovered",
+            "colorValue": "var(--buttonTextHovered)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
         },
         {
-            "name": "ButtonGlyph",
-            "value": "#666666",
-            "comment": ""
-        },
-        {
-            "name": "ButtonGlyphActive",
-            "value": "#333333",
-            "comment": ""
-        },
-        {
-            "name": "ButtonGlyphDisabled",
-            "value": "#c8c8c8",
-            "comment": ""
-        },
-        {
-            "name": "ButtonHoverBackground",
-            "value": "#c5e9ea",
-            "comment": ""
-        },
-        {
-            "name": "ButtonHoverBorder",
-            "value": "#98d6d8",
-            "comment": ""
-        },
-        {
-            "name": "ButtonPressedBackground",
-            "value": "#98d6d8",
-            "comment": ""
-        },
-        {
-            "name": "ButtonPressedBorder",
-            "value": "#13898d",
-            "comment": ""
-        },
-        {
-            "name": "buttonText",
-            "value": "#323130",
-            "comment": ""
-        },
-        {
-            "name": "ButtonText",
-            "value": "#333333",
-            "comment": ""
-        },
-        {
-            "name": "buttonTextChecked",
-            "value": "#201f1e",
-            "comment": ""
-        },
-        {
-            "name": "buttonTextCheckedHovered",
-            "value": "#000000",
-            "comment": ""
-        },
-        {
-            "name": "buttonTextDisabled",
-            "value": "#a19f9d",
-            "comment": ""
-        },
-        {
-            "name": "buttonTextHovered",
-            "value": "#201f1e",
-            "comment": ""
-        },
-        {
-            "name": "buttonTextPressed",
-            "value": "#201f1e",
-            "comment": ""
+            "msftName": "buttonTextPressed",
+            "msftNameLong": "Button Text Pressed",
+            "colorValue": "var(--buttonTextPressed)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
         }
     ],
     "meta": {
