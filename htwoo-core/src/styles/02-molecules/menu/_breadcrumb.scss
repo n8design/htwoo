@@ -1,69 +1,71 @@
-.hoo-breadcrumb {
-    ol {
-        display: block;
+.hoo-breadcrumb{
+	ol{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
 
-        margin: 0;
-        padding: 0;
+		margin: 0;
+		padding: 0;
 
-        list-style: none;
+		list-style: none;
 
-        // Styling the last element
-        .hoo-breadcrumb-item {
+		align-items: center;
 
-            &:last-of-type {
-
-                font-weight: bold;
-
-            }
-
-        }
-
-    }
-
-
+		// Styling the last element
+		.hoo-breadcrumb-item{
+			&:last-of-type{
+				font-weight: bold;
+			}
+		}
+	}
 }
 
-.hoo-breadcrumb-item {
-    display: inline-block;
-    font-size: 1rem;
-    width: auto;
+.hoo-breadcrumb-item{
+	font-size: 1rem;
+
+	display: inline-block;
+
+	width: auto;
 }
 
-.hoo-breadcrumb-link {
-    display: inline-block;
+.hoo-breadcrumb-link{
+	line-height: px2rem(32px);
 
-    box-sizing: border-box;
-    padding-right: .5rem;
-    padding-left: .5rem;
+	display: inline-block;
 
-    text-decoration: none;
+	box-sizing: border-box;
+	padding-right: .5rem;
+	padding-left: .5rem;
 
-    color: $bodyText;
+	text-decoration: none;
 
-    &:hover {
-        line-height: px2rem(36px);
+	color: $bodyText;
 
-        color: $bodyText;
-        background-color: $buttonBackgroundHovered;
-    }
+	&:hover{
+
+		color: $bodyText;
+		background-color: $buttonBackgroundHovered;
+	}
 }
 
-button {
-    &.hoo-breadcrumb-link {
-        border: none;
-        font-size: 1rem;
-        background-color: transparent;
-        cursor: pointer;
-    }
+button{
+	&.hoo-breadcrumb-link{
+		font-size: 1rem;
+
+		cursor: pointer;
+
+		border: none;
+		background-color: transparent;
+	}
 }
 
 
 
-.hoo-breadcrumb-separator {
-    line-height: px2rem(32px);
+.hoo-breadcrumb-separator{
+	line-height: px2rem(32px);
 
-    svg {
-        width: px2rem(12px);
-        height: px2rem(12px);
-    }
+	svg{
+		width: px2rem(12px);
+		height: px2rem(12px);
+	}
 }
