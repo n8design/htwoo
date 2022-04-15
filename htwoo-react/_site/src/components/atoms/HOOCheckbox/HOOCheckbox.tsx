@@ -40,7 +40,7 @@ export class HOOCheckboxState implements IHOOCheckboxState {
   constructor() { }
 }
 
-export default class HOOCheckbox extends React.Component<IHOOCheckboxProps, IHOOCheckboxState> {
+export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, IHOOCheckboxState> {
   private LOG_SOURCE: string = "💦HOOCheckbox";
   private _componentClass: string = "hoo-checkbox";
   private _checkboxId: string = "hoo-checkbox-";

@@ -40,7 +40,7 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
   constructor() { }
 }
 
-export default class HOODialogHeader extends React.Component<IHOODialogHeaderProps, IHOODialogHeaderState> {
+export default class HOODialogHeader extends React.PureComponent<IHOODialogHeaderProps, IHOODialogHeaderState> {
   private LOG_SOURCE: string = "💦HOODialogHeader";
   private _componentClass: string = "hoo-dlgheader";
 

@@ -27,7 +27,7 @@ export class HOOIconState implements IHOOIconState {
   constructor() { }
 }
 
-export default class HOOIcon extends React.Component<IHOOIconProps, IHOOIconState> {
+export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIconState> {
   private LOG_SOURCE: string = "💦HOOIcon";
   private componentClass: string = "hoo-icon";
 

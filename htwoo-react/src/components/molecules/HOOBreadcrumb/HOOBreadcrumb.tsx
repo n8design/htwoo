@@ -44,7 +44,7 @@ export class HOOBreadcrumbState implements IHOOBreadcrumbState {
   constructor() { }
 }
 
-export default class HOOBreadcrumb extends React.Component<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
+export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
   private LOG_SOURCE: string = "💦HOOBreadcrumb";
   private _componentClass: string = "hoo-breadcrumb";
 
@@ -75,7 +75,7 @@ export default class HOOBreadcrumb extends React.Component<IHOOBreadcrumbProps, 
                       {i.text}
                     </button>
                   }
-                  {iconSVG &&
+                  {iconSVG && !last &&
                     <span className="hoo-breadcrumb-separator" aria-label={this.props.seperatorIconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
                   }
                 </li>

@@ -13,7 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - *HOOButton* - Icon Left and Icon Right to be used with Primary Button type.
 - *HOOButton* - IconName to support Icon button type icon child should be a span not a div.
-- *HOODialogIFrame* (ATOM) - New iFrame styling for child of the HOODialogContent molecule
+- *HOODialogIFrame* - New iFrame styling for child of the HOODialogContent molecule
+- *HOODate* - New date picker implementation
+- *HOOTime* - New time picker implementation
 
 ### MOLECULES
 

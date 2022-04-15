@@ -34,7 +34,7 @@ export class HOODialogIFrameState implements IHOODialogIFrameState {
   constructor() { }
 }
 
-export default class HOODialogIFrame extends React.Component<IHOODialogIFrameProps, IHOODialogIFrameState> {
+export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFrameProps, IHOODialogIFrameState> {
   private LOG_SOURCE: string = "💦HOODialogIFrame";
   private _componentClass: string = "hoo-dlg-iframe";
 

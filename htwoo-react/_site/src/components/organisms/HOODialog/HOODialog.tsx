@@ -43,7 +43,7 @@ export class HOODialogState implements IHOODialogState {
   constructor() { }
 }
 
-export default class HOODialog extends React.Component<IHOODialogProps, IHOODialogState> {
+export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOODialogState> {
   private LOG_SOURCE: string = "💦HOODialog";
   private _componentClass: string = "hoo-mdldialog-outer";
 

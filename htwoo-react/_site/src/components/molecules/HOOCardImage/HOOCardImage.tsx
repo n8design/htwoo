@@ -34,7 +34,7 @@ export class HOOCardImageState implements IHOOCardImageState {
   constructor() { }
 }
 
-export default class HOOCardImage extends React.Component<IHOOCardImageProps, IHOOCardImageState> {
+export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps, IHOOCardImageState> {
   private LOG_SOURCE: string = "💦HOOCardImage";
   private _componentClass: string = "hoo-cardimage";
 

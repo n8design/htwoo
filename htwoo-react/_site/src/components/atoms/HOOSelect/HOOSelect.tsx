@@ -73,7 +73,7 @@ export class HOOSelectState implements IHOOSelectState {
   ) { }
 }
 
-export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
+export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
   private _componentClass: string = "hoo-select";
   private _optionElements = [];

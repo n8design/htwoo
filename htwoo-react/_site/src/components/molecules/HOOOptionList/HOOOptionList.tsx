@@ -57,7 +57,7 @@ export class HOOOptionListState implements IHOOOptionListState {
   constructor() { }
 }
 
-export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
+export default class HOOOptionList extends React.PureComponent<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
