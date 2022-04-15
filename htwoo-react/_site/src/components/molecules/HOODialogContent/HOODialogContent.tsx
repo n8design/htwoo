@@ -18,7 +18,7 @@ export class HOODialogContentState implements IHOODialogContentState {
   constructor() { }
 }
 
-export default class HOODialogContent extends React.Component<IHOODialogContentProps, IHOODialogContentState> {
+export default class HOODialogContent extends React.PureComponent<IHOODialogContentProps, IHOODialogContentState> {
   private LOG_SOURCE: string = "💦HOODialogContent";
   private _componentClass: string = "hoo-dlgcontent";
 

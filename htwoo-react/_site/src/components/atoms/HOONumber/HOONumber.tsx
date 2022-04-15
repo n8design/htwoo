@@ -40,7 +40,7 @@ export class HOONumberState implements IHOONumberState {
   constructor() { }
 }
 
-export default class HOONumber extends React.Component<IHOONumberProps, IHOONumberState> {
+export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOONumberState> {
   private LOG_SOURCE: string = "💦HOONumber";
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";

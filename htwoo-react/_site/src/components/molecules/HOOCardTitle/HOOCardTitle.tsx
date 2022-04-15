@@ -22,7 +22,7 @@ export class HOOCardTitleState implements IHOOCardTitleState {
   constructor() { }
 }
 
-export default class HOOCardTitle extends React.Component<IHOOCardTitleProps, IHOOCardTitleState> {
+export default class HOOCardTitle extends React.PureComponent<IHOOCardTitleProps, IHOOCardTitleState> {
   private LOG_SOURCE: string = "💦HOOCardTitle";
   private _componentClass: string = "hoo-cardtitle";
 

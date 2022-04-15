@@ -50,7 +50,7 @@ export class HOOButtonSplitState implements IHOOButtonSplitState {
   constructor() { }
 }
 
-export default class HOOButtonSplit extends React.Component<IHOOButtonSplitProps, IHOOButtonSplitState> {
+export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
   private _componentClass: string = "hoo-button";
 

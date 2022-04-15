@@ -51,7 +51,7 @@ export class HOOShimmerState implements IHOOShimmerState {
   constructor() { }
 }
 
-export default class HOOShimmer extends React.Component<IHOOShimmerProps, IHOOShimmerState> {
+export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IHOOShimmerState> {
   private LOG_SOURCE: string = "💦HOOShimmer";
   private _componentClass: string = "hoo-ph";
   private _imageShape: boolean = false;

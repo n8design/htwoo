@@ -52,7 +52,7 @@ export class HOOTextState implements IHOOTextState {
   constructor() { }
 }
 
-export default class HOOText extends React.Component<IHOOTextProps, IHOOTextState> {
+export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOTextState> {
   private LOG_SOURCE: string = "💦HOOText";
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";

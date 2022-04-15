@@ -49,7 +49,7 @@ export class HOOToggleState implements IHOOToggleState {
   constructor() { }
 }
 
-export default class HOOToggle extends React.Component<IHOOToggleProps, IHOOToggleState> {
+export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOOToggleState> {
   private LOG_SOURCE: string = "💦HOOToggle";
   private _componentClass: string = "hoo-toggle";
   private _inputClass: string = "hoo-toggle-cb";

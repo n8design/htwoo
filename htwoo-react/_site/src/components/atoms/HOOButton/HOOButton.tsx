@@ -53,7 +53,7 @@ export class HOOButtonState implements IHOOButtonState {
   constructor() { }
 }
 
-export default class HOOButton extends React.Component<IHOOButtonProps, IHOOButtonState> {
+export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOOButtonState> {
   private LOG_SOURCE: string = "💦HOOButton";
 
   private _componentClass: string = "hoo-button";

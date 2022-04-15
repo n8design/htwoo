@@ -43,7 +43,7 @@ export class HOORadioButtonState implements IHOORadioButtonState {
   constructor() { }
 }
 
-export default class HOORadioButton extends React.Component<IHOORadioButtonProps, IHOORadioButtonState> {
+export default class HOORadioButton extends React.PureComponent<IHOORadioButtonProps, IHOORadioButtonState> {
   private LOG_SOURCE: string = "💦HOORadioButton";
   private _componentClass: string = "hoo-radio";
   private _radioId: string = "hoo-radio-";
