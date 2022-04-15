@@ -14,12 +14,25 @@
 	flex-wrap: nowrap;
 
 	cursor: pointer;
-	
+	position: relative;
+
 	&:hover {
 		background-color: $neutral-100;
 	}
-	&:active{
+
+	&:active {
 		background-color: $neutral-200;
+	}
+
+	&:focus {
+		&:after {
+			content: "";
+			position: absolute;
+			inset: 2px;
+			border: none;
+			outline: $neutral-000 solid 1px;
+			z-index: 1;
+		}
 	}
 
 	&[disabled],
@@ -30,15 +43,18 @@
 		border-color: $neutral-100;
 		background-color: $neutral-100;
 	}
-	&.is-reversed{
+
+	&.is-reversed {
 		flex-direction: row-reverse;
-		.hoo-icon{
+
+		.hoo-icon {
 			margin-right: -0.25rem;
 			fill: currentColor;
 		}
 	}
-	&:not(.is-reversed){
-		.hoo-icon{
+
+	&:not(.is-reversed) {
+		.hoo-icon {
 			margin-left: -0.25rem;
 			fill: currentColor;
 		}
