@@ -30,7 +30,7 @@
 			position: absolute;
 			inset: 2px;
 			border: none;
-			outline: $neutral-000 solid 1px;
+			outline: $neutral-450 solid 1px;
 			z-index: 1;
 		}
 	}
@@ -93,6 +93,11 @@
 	&:active {
 		border-color: $theme-800;
 		background-color: $theme-800;
+	}
+	&:focus{
+		&:after {
+			outline: $neutral-000 solid 1px;
+		}
 	}
 }
 
