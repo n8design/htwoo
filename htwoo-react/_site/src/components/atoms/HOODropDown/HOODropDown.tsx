@@ -76,7 +76,7 @@ export class HOODropDownState implements IHOODropDownState {
   ) { }
 }
 
-export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
+export default class HOODropDown extends React.PureComponent<IHOODropDownProps, IHOODropDownState> {
   private LOG_SOURCE: string = "💦HOODropDown";
   private _componentClass: string = "hoo-select";
   private _ulClass: string = "hoo-select-dropdown";

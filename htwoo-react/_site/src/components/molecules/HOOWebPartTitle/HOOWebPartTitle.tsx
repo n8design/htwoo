@@ -34,7 +34,7 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
   constructor() { }
 }
 
-export default class HOOWebPartTitle extends React.Component<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
+export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
   private LOG_SOURCE: string = "💦HOOWebPartTitle";
   private _componentClass: string = "hoo-webpart-header";
 

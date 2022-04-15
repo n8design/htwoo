@@ -22,7 +22,7 @@ export class HOOLabelState implements IHOOLabelState {
   constructor() { }
 }
 
-export default class HOOLabel extends React.Component<IHOOLabelProps, IHOOLabelState> {
+export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLabelState> {
   private LOG_SOURCE: string = "💦HOOLabel";
   private _componentClass: string = "hoo-label";
 

@@ -24,7 +24,7 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
   constructor() { }
 }
 
-export default class HOONotifyLabel extends React.Component<IHOONotifyLabelProps, IHOONotifyLabelState> {
+export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelProps, IHOONotifyLabelState> {
   private LOG_SOURCE: string = "💦HOONotifyLabel";
   private _componentClass: string = "hoo";
 

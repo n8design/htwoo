@@ -51,7 +51,7 @@ export class HOOActionState implements IHOOActionState {
   constructor() { }
 }
 
-export default class HOOAction extends React.Component<IHOOActionProps, IHOOActionState> {
+export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
   private _componentClass: string = "hoo-button";
   private _labelClass: string = "hoo-button-label";

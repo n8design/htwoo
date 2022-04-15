@@ -39,7 +39,7 @@ export class HOOCardFooterState implements IHOOCardFooterState {
   constructor() { }
 }
 
-export default class HOOCardFooter extends React.Component<IHOOCardFooterProps, IHOOCardFooterState> {
+export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterProps, IHOOCardFooterState> {
   private LOG_SOURCE: string = "💦HOOCardFooter";
   private _componentClass: string = "hoo-cardfooter";
 

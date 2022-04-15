@@ -42,7 +42,7 @@ export class HOOAvatarState implements IHOOAvatarState {
   constructor() { }
 }
 
-export default class HOOAvatar extends React.Component<IHOOAvatarProps, IHOOAvatarState> {
+export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOOAvatarState> {
   private LOG_SOURCE: string = "💦HOOAvatar";
   private _componentClass: string = "hoo-avatar-";
 

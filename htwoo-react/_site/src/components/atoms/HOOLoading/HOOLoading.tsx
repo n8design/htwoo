@@ -30,7 +30,7 @@ export class HOOLoadingState implements IHOOLoadingState {
   constructor() { }
 }
 
-export default class HOOLoading extends React.Component<IHOOLoadingProps, IHOOLoadingState> {
+export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IHOOLoadingState> {
   private LOG_SOURCE: string = "💦HOOLoading";
   private _componentClass: string = "hoo-progress";
 

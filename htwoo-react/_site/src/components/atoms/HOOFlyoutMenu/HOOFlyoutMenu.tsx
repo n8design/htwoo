@@ -33,7 +33,7 @@ export class HOOFlyoutMenuState implements IHOOFlyoutMenuState {
   constructor() { }
 }
 
-export default class HOOFlyoutMenu extends React.Component<IHOOFlyoutMenuProps, IHOOFlyoutMenuState> {
+export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuProps, IHOOFlyoutMenuState> {
   private LOG_SOURCE: string = "💦HOOFlyoutMenu";
   private _componentClass: string = "hoo-buttonflyout";
 

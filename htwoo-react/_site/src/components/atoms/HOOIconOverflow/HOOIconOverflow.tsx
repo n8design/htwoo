@@ -23,7 +23,7 @@ export class HOOIconOverflowState implements IHOOIconOverflowState {
   constructor() { }
 }
 
-export default class HOOIconOverflow extends React.Component<IHOOIconOverflowProps, IHOOIconOverflowState> {
+export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
   private _componentClass: string = "hoo-buttonicon-overflow";
 

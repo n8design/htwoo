@@ -30,7 +30,7 @@ export class HOOPivotButtonState implements IHOOPivotButtonState {
   constructor() { }
 }
 
-export default class HOOPivotButton extends React.Component<IHOOPivotButtonProps, IHOOPivotButtonState> {
+export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonProps, IHOOPivotButtonState> {
   private LOG_SOURCE: string = "💦HOOPivotButton";
   private _componentClass: string = "hoo-button-pivot";
 
