@@ -2,3 +2,5 @@ public
 htwoo-core/dependencyGraph.json
 node_modules
 .npmrc
+test-results/
+playwright-report/

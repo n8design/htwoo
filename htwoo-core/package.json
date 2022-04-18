@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-public.json",
     "pl:help": "patternlab --help",
@@ -12,7 +11,8 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "gulp:serve": "gulp",
     "gulp:docs": "gulp docs",
-    "pl:version": "patternlab --version"
+    "pl:version": "patternlab --version",
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
@@ -36,6 +36,7 @@
     "@pattern-lab/uikit-workshop": "^5.16.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.21.0",
     "@rollup/plugin-json": "^4.1.0",
     "autoprefixer": "^10.4.4",
     "gulp": "^4.0.2",
