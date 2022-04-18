@@ -1,0 +1,58 @@
+// @ts-check
+const {
+  test,
+  expect
+} = require('@playwright/test');
+
+const path = require('path');
+
+const patternTool = require('../tools/get-test');
+const patternsToTest = patternTool.getPatterns();
+const testConfigJson = require('./localStorage.json');
+
+const currentTheme = 'teams.dark'
+
+test.beforeEach(async ({
+  page
+}) => {
+
+  await page.goto(`http://localhost:3000/`);
+
+  await page.addInitScript(value => {
+    window.localStorage.setItem('availableThemes', value);
+    window.sessionStorage.setItem('currentTheme', currentTheme);
+  }, testConfigJson);
+
+});
+
+
+for (const currentTest in patternsToTest) {
+  // console.log(currentPattern);
+
+  test.describe('Pattern ', () => {
+
+    const currentPattern = patternsToTest[currentTest];
+
+    test(`Test ${currentPattern.name}`, async ({
+      page
+    }) => {
+
+      const screenshotPath = `./screenshots/${currentTheme}/${path.basename(currentPattern.name, '.html')}.png`
+
+      await page.goto(`http://localhost:3000/patterns/${currentPattern.path}`);
+
+      await page.waitForLoadState('domcontentloaded');
+
+      await page.screenshot({
+        path: screenshotPath,
+        fullPage: true
+      });
+
+    });
+
+
+  });
+
+
+
+};
