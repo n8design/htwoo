@@ -1,0 +1,7 @@
+{{#if aria-label }}
+<button class="hoo-buttonicon" aria-label="{{ aria-label }}">
+    {{ else }}
+    <button class="hoo-buttonicon" aria-label="{{ aria-label }}">
+        {{/if}}
+        {{> atoms-icon iconname=iconAction }}
+    </button>
