@@ -33,7 +33,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
     then in your root component's top level HTML element add a reference to that base class. This will make sure that when your project builds, the styles will be included. For example:
 
-    ```tsx
+    ```TypeScriptx
     public render(): React.ReactElement<IHtwooReactDemoProps> {
       try {
         return (
@@ -50,7 +50,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
-    ```ts
+    ```TypeScript
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -62,7 +62,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
     >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
   
-    ```ts
+    ```TypeScript
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -88,7 +88,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
     If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder.
 
-    ```ts
+    ```TypeScript
     import { symset } from '@n8d/htwoo-react/SymbolSet';
 
     public async onInit(): Promise<void> {
@@ -100,7 +100,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
     To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
 
-    ```ts
+    ```TypeScript
     <HOOAction iconName="hoo-icon-plus" label="Action Button" type={HOOActionType.Action}/>
     ```
 
@@ -118,7 +118,7 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
     b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
-    ```ts
+    ```TypeScript
     import { ThemeProvider } from '@microsoft/sp-component-base';
     import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
     
@@ -126,13 +126,16 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
     public async onInit(): Promise<void> {
       // Consume the new ThemeProvider service
+      const microsoftTeams = this.context.sdks?.microsoftTeams;
       const themeProvider = this.context.serviceScope.consume(ThemeProvider.serviceKey);
-      this._spfxThemes.initThemeHandler(this.domElement, themeProvider);
+      this._spfxThemes.initThemeHandler(this.domElement, themeProvider, microsoftTeams);
 
-      // If no ThemeProvider service, use undefined which will use page context
-      this._spfxThemes.initThemeHandler(document.body, undefined);
+      // If no ThemeProvider service, do not include property which will use page context
+      this._spfxThemes.initThemeHandler(document.body);
     }
     ```
+
+    There are two other alterivatives to adding theme support, for more information please check out the [SPFxThemes Class documentation](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page).
 
 1. Import the HTWOO component that you want to use into your own projects components. All components are selectively importable from the /lib/ folder. We will be working on fully documenting all components and their implementation soon.
 

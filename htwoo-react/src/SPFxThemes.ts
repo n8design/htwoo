@@ -1,26 +1,49 @@
+import React from "react";
+import { darkModeTheme, highContrastTheme, lightModeTheme } from "./TeamsThemes";
+
 export interface ISPFxThemes {
-  initThemeHandler: (domElement: HTMLElement, themeVariant?: any) => void;
+  isInverted: boolean;
+  inTeams: boolean;
+  initThemeHandler: (domElement: HTMLElement, themeProvider?: any, microsoftTeams?: any, usePageTheme?: boolean) => void;
 }
 
 export class SPFxThemes implements ISPFxThemes {
   private LOG_SOURCE: string = "💦SPFxThemes";
 
   private _domElement: HTMLElement;
+  private _microsoftTeams: any;
   private _themeProvider: any;
   private _themeVariant: any;
+  private _isInverted: boolean;
 
   constructor() {
   }
 
-  public initThemeHandler = (domElement: HTMLElement, themeProvider?: any) => {
+  public get isInverted(): boolean {
+    return this._isInverted;
+  }
+
+  public get inTeams(): boolean {
+    return (this._microsoftTeams != null);
+  }
+
+  public initThemeHandler = (domElement: HTMLElement, themeProvider?: any, microsoftTeams?: any, usePageTheme: boolean = false) => {
     try {
       this._domElement = domElement;
-      this._themeProvider = themeProvider;
+      if (themeProvider) {
+        this._themeProvider = themeProvider;
+      }
+      if (microsoftTeams) {
+        this._microsoftTeams = microsoftTeams;
+      }
 
       // If it exists, get the theme variant
       this._themeVariant = this._themeProvider?.tryGetTheme();
 
-      if (this._themeVariant) {
+      if (this._themeVariant && !usePageTheme) {
+        // set isInverted property
+        this._isInverted = this._themeVariant.isInverted;
+
         // transfer semanticColors into CSS variables
         this.setCSSVariables(this._themeVariant.semanticColors);
 
@@ -39,6 +62,26 @@ export class SPFxThemes implements ISPFxThemes {
 
       // Register a handler to be notified if the theme variant changes
       this._themeProvider?.themeChangedEvent.add(this, this._handleThemeChangedEvent);
+
+      //Support Microsoft Teams context
+      if (this._microsoftTeams) {
+        switch (this._microsoftTeams.context.theme) {
+          case "dark": {
+            this._domElement.classList.add("dark-mode");
+            this.setCSSVariables(darkModeTheme);
+            break;
+          }
+          case "contrast": {
+            this._domElement.classList.add("contrast-mode");
+            this.setCSSVariables(highContrastTheme);
+            break;
+          }
+          default: {
+            this.setCSSVariables(lightModeTheme);
+            break;
+          }
+        }
+      }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (initThemeHandler) - ${err}`);
     }
@@ -61,3 +104,6 @@ export class SPFxThemes implements ISPFxThemes {
     }
   }
 }
+
+export const spfxThemes = new SPFxThemes();
+export const SPFxThemesContext = React.createContext(new SPFxThemes());
