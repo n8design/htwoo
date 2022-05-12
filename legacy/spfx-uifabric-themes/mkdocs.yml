@@ -1,0 +1,30 @@
+site_name: SPFx-uifabric-themes
+nav:
+  - Home: 'index.md'
+  - Release notes: 'release-notes.md'
+  - SASS:
+    - How To: ./sass/how-to.md
+    - Typography: ./sass/typography.md
+    - State Styles: ./sass/statestyles.md
+    - SASS Variable reference: ./sass/ouif.theme.md
+  - CSS Variable: 'css-variables.md'
+  - TypeScript: 'typescript.md'
+  - License: 'license.md'
+theme:
+  name: 'material'
+  palette:
+    primary: 'cyan'
+    accent: 'pink'
+markdown_extensions:
+  - codehilite
+  - admonition
+google_analytics:
+  - 'UA-15086819-7'
+  - 'auto'
+site_url: https://n8design.github.io/spfx-uifabric-themes/
+repo_url: https://github.com/n8design/spfx-uifabric-themes
+edit_uri: blob/master/docs/
+extra:
+  social:
+    - type: 'twitter'
+      link: 'https://twitter.com/stfbauer'

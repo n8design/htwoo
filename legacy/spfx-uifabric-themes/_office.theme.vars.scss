@@ -1,0 +1,92 @@
+/* Theme related color values */
+$ms-themeDark:		           "[theme:themeDark, default: #005a9e]";
+$ms-themeDarkAlt:		       "[theme:themeDarkAlt, default: #106ebe]";
+$ms-themeDarker:		       "[theme:themeDarker, default: #004578]";
+$ms-themeLight:		           "[theme:themeLight, default: #c7e0f4]";
+$ms-themeLighter:		       "[theme:themeLighter, default: #deecf9]";
+$ms-themeLighterAlt:		   "[theme:themeLighterAlt, default: #eff6fc]";
+$ms-themePrimary:		       "[theme:themePrimary, default: #0078d7]";
+$ms-themeSecondary:		       "[theme:themeSecondary, default: #2b88d8]";
+$ms-themeTertiary:		       "[theme:themeTertiary, default: #71afe5]";
+
+/* Natural Colors */
+$ms-neutralDark:		       "[theme:neutralDark, default: #212121]";
+$ms-neutralLight:		       "[theme:neutralLight, default: #eaeaea]";
+$ms-neutralLighter:		       "[theme:neutralLighter, default: #f4f4f4]";
+$ms-neutralLighterAlt:	       "[theme:neutralLighterAlt, default: #f8f8f8]";
+$ms-neutralPrimary:		       "[theme:neutralPrimary, default: #333333]";
+$ms-neutralPrimaryAlt:	       "[theme:neutralPrimaryAlt, default: #3c3c3c]";
+$ms-neutralQuaternary:	       "[theme:neutralQuaternary, default: #d0d0d0]";
+$ms-neutralQuaternaryAlt:      "[theme:neutralQuaternaryAlt, default: #dadada]";
+$ms-neutralSecondary:		   "[theme:neutralSecondary, default: #666666]";
+$ms-neutralSecondaryAlt:	   "[theme:neutralSecondaryAlt, default: #767676]";
+$ms-neutralTertiary:		   "[theme:neutralTertiary, default: #a6a6a6]";
+$ms-neutralTertiaryAlt:		   "[theme:neutralTertiaryAlt, default: #c8c8c8]";
+
+/* Base Colors */
+/** Black #000 **/
+$ms-black:                     "[theme:black, default: #000000]";
+$ms-blackTranslucent40:	       "[theme:blackTranslucent40, default: rgba(0,0,0,.4)]";
+/** Blue #0078d7 **/
+$ms-blue:		               "[theme:blue, default: #0078d7]";
+$ms-blueDark:		           "[theme:blueDark, default: #002050]";
+$ms-blueLight:		           "[theme:blueLight, default: #00bcf2]";
+$ms-blueMid:		           "[theme:blueMid, default: #00188f]";
+/** Green #107c10 **/
+$ms-green:		               "[theme:green, default: #107c10]";
+$ms-greenDark:		           "[theme:greenDark, default: #004b1c]";
+$ms-greenLight:		           "[theme:greenLight, default: #bad80a]";
+/** Green #b4009e **/
+$ms-magenta:		           "[theme:magenta, default: #b4009e]";
+$ms-magentaDark:		       "[theme:magentaDark, default: #5c005c]";
+$ms-magentaLight:		       "[theme:magentaLight, default: #e3008c]";
+/** Orange #d83b01 **/
+$ms-orange:		               "[theme:orange, default: #d83b01]";
+$ms-orangeLight:		       "[theme:orangeLight, default: #ff8c00]";
+$ms-orangeLighter:		       "[theme:orangeLighter, default: #ea4300]";
+/** Purble #5c2d91 **/
+$ms-purple:		               "[theme:purple, default: #5c2d91]";
+$ms-purpleDark:		           "[theme:purpleDark, default: #32145a]";
+$ms-purpleLight:		       "[theme:purpleLight, default: #b4a0ff]";
+/** Red #e81123 **/
+$ms-red:		               "[theme:red, default: #e81123]";
+$ms-redDark:		           "[theme:redDark, default: #a80000]";
+/*** Teal ***/
+$ms-teal:		               "[theme:teal, default: #008272]";
+$ms-tealDark:		           "[theme:tealDark, default: #004b50]";
+$ms-tealLight:		           "[theme:tealLight, default: #00b294]";
+/** White **/
+$ms-white:		               "[theme:white, default: #ffffff]";
+$ms-whiteTranslucent40:		   "[theme:whiteTranslucent40, default: rgba(255,255,255,.4)]";
+/** Yellow **/
+$ms-yellow:		               "[theme:yellow, default: #ffb900]";
+$ms-yellowLight:		       "[theme:yellowLight, default: #fff100]";
+
+/* State Colors */
+/** Alerts **/
+$ms-alert:		               "[theme:alert, default: #d83b01]";
+$ms-alertBackground:	       "[theme:alertBackground, default: #deecf9]";
+$ms-alertText:                 "[theme:alertText, default: #333333]";
+/** Error **/
+$ms-error:		               "[theme:error, default: #a80000]";
+$ms-errorBackground:	       "[theme:errorBackground, default: #fde7e9]";
+$ms-errorText:		           "[theme:errorText, default: #333333]";
+/** Info ***/
+$ms-info:		               "[theme:info, default: #767676]";
+$ms-infoBackground:		       "[theme:infoBackground, default: #f4f4f4]";
+$ms-infoText:		           "[theme:infoText, default: #333333]";
+/** Warning **/
+$ms-warning:		           "[theme:warning, default: #767676]";
+$ms-warningBackground:		   "[theme:warningBackground, default: #fff4ce]";
+$ms-warningText:		       "[theme:warningText, default: #333333]";
+/** Server Warning **/
+$ms-severeWarning:		       "[theme:severeWarning, default: #d83b01]";
+$ms-severeWarningBackground:   "[theme:severeWarningBackground, default: #fed9cc]";
+$ms-severeWarningText:		   "[theme:severeWarningText, default: #333333]";
+/** Success **/
+$ms-success:		           "[theme:success, default: #107c10]";
+$ms-successBackground:		   "[theme:successBackground, default: #dff6dd]";
+$ms-successText:		       "[theme:successText, default: #333333]";
+
+/* Misc Colors */
+$ms-accent:                    "[theme:accent, default: #8764b8]";
