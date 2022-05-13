@@ -1,0 +1,232 @@
+@import "true";
+@import "../node_modules/sass-true/sass/true";
+@import "../office.theme";
+
+$fontList: su, xxl, xl, l, m-plus, m, s-plus, s, xs, mi;
+
+// Default Office UI Fabric Documentation
+// $fontWeights: light, semilight, regular, bold;
+
+// Expected Font sizes
+$fontSizeExpectedEm: 3em, 2em, 1.5em, 1.21429em, 1.07143em, 1em, 0.92857em, 0.85714em, 0.78571em, 0.71429em;
+$fontSizeExpectedRem: 2.625rem, 1.75rem, 1.3125rem, 1.0625rem, 0.9375rem, 0.875rem, 0.8125rem, 0.75rem, 0.6875rem, 0.625rem;
+$fontWeightExpected: 100, 300, 400, 700;
+
+$fontsExpectedEm: (
+    ('su', 
+        nth($fontSizeExpectedEm, 1), 
+        100
+    ),
+    ('xxl', 
+        nth($fontSizeExpectedEm, 2), 
+        100
+    ),
+    ('xl', 
+        nth($fontSizeExpectedEm, 3), 
+        100
+    ),
+    ('l', 
+        nth($fontSizeExpectedEm, 4), 
+        300
+    ),
+    ('m-plus', 
+        nth($fontSizeExpectedEm, 5), 
+        400
+    ),
+    ('m', 
+        nth($fontSizeExpectedEm, 6), 
+        400
+    ),
+    ('s-plus', 
+        nth($fontSizeExpectedEm, 7), 
+        400
+    ),
+    ('s', 
+        nth($fontSizeExpectedEm, 8), 
+        400
+    ),
+    ('xs', 
+        nth($fontSizeExpectedEm, 9), 
+        400
+    ),
+    ('mi', 
+        nth($fontSizeExpectedEm, 10), 
+        700
+    )
+);
+
+$fontsExpectedRem: (
+    ('su', 
+        nth($fontSizeExpectedRem, 1), 
+        100
+    ),
+    ('xxl', 
+        nth($fontSizeExpectedRem, 2), 
+        100
+    ),
+    ('xl', 
+        nth($fontSizeExpectedRem, 3), 
+        100
+    ),
+    ('l', 
+        nth($fontSizeExpectedRem, 4), 
+        300
+    ),
+    ('m-plus', 
+        nth($fontSizeExpectedRem, 5), 
+        400
+    ),
+    ('m', 
+        nth($fontSizeExpectedRem, 6), 
+        400
+    ),
+    ('s-plus', 
+        nth($fontSizeExpectedRem, 7), 
+        400
+    ),
+    ('s', 
+        nth($fontSizeExpectedRem, 8), 
+        400
+    ),
+    ('xs', 
+        nth($fontSizeExpectedRem, 9), 
+        400
+    ),
+    ('mi', 
+        nth($fontSizeExpectedRem, 10), 
+        700
+    )
+);
+
+// Testing -- uiFontSize
+@include describe("Testing font definition:") {
+    $i: 1;
+
+    // Set output to EM
+    @include uiUseRem(false);
+
+    @each $font in $fontList {
+        @include it("Convert Font size to em:  " $font) {
+            @include assert {
+                @include output {
+                    @include uiFont($font);
+                }
+                @include expect {
+                    font-size: nth(nth($fontsExpectedEm, $i), 2);
+                    font-weight: #{nth(nth($fontsExpectedEm, $i), 3)};
+                }
+            }
+        }
+        $i: $i+1;
+    }
+
+    $i: 1;
+    
+    // Set output to REM
+    @include uiUseRem(true);
+
+    @each $font in $fontList {
+        @include it("Convert Font size to rem: " $font) {
+            @include assert {
+                @include output {
+                    @include uiFont($font);
+                }
+                @include expect {
+                    font-size: nth(nth($fontsExpectedRem, $i), 2);
+                    font-weight: #{nth(nth($fontsExpectedRem, $i), 3)};
+                }
+            }
+        }
+        $i: $i+1;
+    }
+
+}
+
+
+// Testing -- uiFontWeight
+@include describe("Testing font size:") {
+    $i: 1; // increment over loop to find correct index;
+    @debug $useRem;
+
+    // Set output to EM
+    @include uiUseRem(false);
+        
+
+    @each $fontSize in $fontList {
+        @include it("Expected Font size in em:  " nth($fontList, $i)) {
+            @include assert {
+                @include output {
+                    @include uiFontSize($fontSize);
+                }
+                @include expect {
+                    font-size: #{nth($fontSizeExpectedEm, $i)};
+                }
+            }
+        }
+        $i: $i+1;
+    }
+
+    // reseting counter
+    $i: 1;
+
+    // Set output to REM
+    @include uiUseRem(true);
+
+    @each $fontSize in $fontList {
+        @include it("Expected Font size in rem: " nth($fontList, $i)) {
+            @include assert {
+                @include output {
+                    @include uiFontSize($fontSize);
+                }
+                @include expect {
+                    font-size: #{nth($fontSizeExpectedRem, $i)};
+                }
+            }
+        }
+        $i: $i+1;
+    }
+        
+}
+
+// Testing -- uiFont
+@include describe("Testing font weight:") {
+    
+    $i: 1; // increment over loop to find correct index;
+    
+    @each $fontWeight in $fontWeights {
+        @include it("Expected Font Weight: " nth($fontWeightExpected, $i)) {
+            @include assert {
+                @include output {
+                    @include uiFontWeight($fontWeight);
+                }
+                @include expect {
+                    font-weight: #{nth($fontWeightExpected, $i)};
+                }
+            }
+        }
+        $i: $i+1;
+    }
+}
+
+// Testing -- uiFont
+@include describe("Test switching between REM and EM") {
+    
+    
+        @include it("Testing REM an EM switch") {
+            @include assert {
+                @include output {
+                    @include uiUseRem(true);
+                    @include uiFontSize(su);
+                    @include uiUseRem(false);
+                    @include uiFontSize(su);
+                }
+                @include expect {
+                    font-size: #{nth($fontSizeExpectedRem, 1)};
+                    font-size: #{nth($fontSizeExpectedEm, 1)};
+                }
+            }
+        }
+
+}
+
+

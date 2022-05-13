@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - 6
+npm:
+  - 5
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update; npm rebuild node-sass;
+after_script: npm test
