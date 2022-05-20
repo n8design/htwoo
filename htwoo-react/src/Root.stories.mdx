@@ -114,6 +114,8 @@ import { Meta } from "@storybook/addon-docs";
 
     b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
+    >For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation.  
+    
     ```TypeScript
     import { ThemeProvider } from '@microsoft/sp-component-base';
     import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
@@ -132,7 +134,7 @@ import { Meta } from "@storybook/addon-docs";
     ```
 
 1. Import the HTWOO component that you want to use into your own projects components. All components are selectively importable from the root library. 
-    >More complete documentation will be forthcoming.
+    >More complete documentation will be forthcoming. Please submit any questions you have to the [issues list](https://github.com/n8design/htwoo/issues) and we'll assist you as soon as we can.
 
     ```TypeScript
     import HOOLabel from '@n8d/htwoo-react/HOOLabel';
