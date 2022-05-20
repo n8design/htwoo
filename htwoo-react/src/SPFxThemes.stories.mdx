@@ -10,7 +10,7 @@ The SPFxThemes class provides handling for setting up the CSS Variables that the
 
 The class can be instatiated by creating a new instance in the root ts file of your project and then initializing it in the SPFx onInit method. This method is a good choice where you want to initialize the theme for the solution but do not need access to any of the theme properties elesewhere in your solution.
 
-```TypeScript
+```typescript
 import { ThemeProvider } from '@microsoft/sp-component-base';
 import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
 
@@ -34,7 +34,7 @@ In addition, the SPFxThemes class exports two constants that can be utilized bas
 
 The first is an exported constant `spfxThemes` that can be utilized anywhere in your solution by simply importing the constant into your file and making sure you've initialized it in the SPFx onInit method. This is not the correct choice for a web part implementation because web parts can end up in page sections with an inverted background color, if you use a globally defined theme provider then whichever web part loads first with initialize the theme provider and all the instances of the web part on the page will utilize that one theme.
 
-```TypeScript
+```typescript
 import { ThemeProvider } from '@microsoft/sp-component-base';
 import { spfxThemes } from '@n8d/htwoo-react/SPFxThemes';
 
@@ -53,8 +53,7 @@ public async onInit(): Promise<void> {
 
 The second is an exported React Context Provider called `SPFxThemesContext` which can be used to add a Context provider to your React application. One way to use this in SPFx is to render the root element inside the Provider. This is a good choice for web parts that could end up in multiple locations on the same page. Each instance of the web part would initialize their own theme provider yet to get at theme information you don't have to pass the object down the React property chain.
 
-```TypeScript
-
+```typescript
 import { ThemeProvider } from '@microsoft/sp-component-base';
 import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
 
@@ -86,7 +85,7 @@ public render(): void {
 
 To consume the provider in a React Component you would do the following
 
-```TypeScript
+```typescript
 import { SPFxThemesContext, SPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
 
 export default class MyComponent extends React.PureComponent<IMyComponentProps, IMyComponentState> {

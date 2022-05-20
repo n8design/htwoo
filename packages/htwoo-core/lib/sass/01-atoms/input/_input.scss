@@ -7,7 +7,7 @@
 	margin: 0;
 	padding: 0 px2rem(8px);
 
-	border: 1px $inputBorder solid;
+	border: 1px $neutral-500 solid;
 	border-radius: 2px;
 	outline: 1px rgba(255, 255, 255, 0) solid;
 }
@@ -21,7 +21,7 @@
 
 		padding: 0 px2rem(7px);
 
-		border: 2px $inputFocusBorderAlt solid;
+		border: 2px $theme-600 solid;
 		outline: 0 rgba(255, 255, 255, 0) solid;
 	}
 
@@ -33,9 +33,9 @@
 
 	// diabled buttn style
 	&:disabled{
-		color: $buttonTextDisabled;
-		border-color: $buttonBorderDisabled;
-		background-color: $disabledBackground;
+		color: $neutral-400;
+		border-color: $neutral-100;
+		background-color: $neutral-100;
 	}
 
 	&[data-prefix]{
@@ -62,11 +62,11 @@
 
 	box-sizing: border-box;
 
-	color: $BodyText;
+	color: $neutral-700;
 	border-right: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	background-color: $buttonBackgroundDisabled;
+	background-color: $neutral-100;
 }
 
 .hoo-input-suffix{
@@ -76,11 +76,11 @@
 
 	box-sizing: border-box;
 
-	color: $BodyText;
+	color: $neutral-700;
 	border-left: none;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	background-color: $buttonBackgroundDisabled;
+	background-color: $neutral-100;
 }
 
 .hoo-input-group{
@@ -93,7 +93,7 @@
 			padding: 0 px2rem(7px);
 
 			border-width: 2px;
-			border-color: $inputFocusBorderAlt;
+			border-color: $theme-600;
 		}
 
 		.hoo-input-text{
@@ -120,7 +120,7 @@
 	padding-right: px2rem(8px);
 	padding-left: px2rem(4px);
 
-	color: $BodyText;
+	color: $neutral-700;
 
 	&::-webkit-calendar-picker-indicator{
 		margin-right: 0;
@@ -129,7 +129,7 @@
 
 	&:focus{
 		border-color: transparent;
-		outline: 2px $inputFocusBorderAlt solid;
+		outline: 2px $theme-600 solid;
 	}
 }
 

@@ -14,7 +14,7 @@
 		width: 100%;
 		height: auto;
 
-		object-fit: fill;
+		object-fit: cover;
 	}
 	.hoo-ph-squared{
 		width: 100%;
@@ -34,7 +34,7 @@
 
 	content: "";
 
-	background-color: $primaryButtonBackground;
+	background-color: $theme-600;
 
 	aspect-ratio: 16/9;
 }
@@ -46,7 +46,7 @@
 	box-sizing: border-box;
 	padding: px2rem(10px) px2rem(12px) px2rem(8px);
 
-	color: $primaryButtonBackground;
+	color: $theme-600;
 	.hoo-ph-row{
 		width: 35%;
 

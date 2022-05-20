@@ -17,11 +17,11 @@
 		}
 
 		&:active {
-			background-color: $buttonBackgroundChecked;
+			background-color: $neutral-350;
 		}
 
 		&:hover {
-			background-color: $buttonBackgroundCheckedHovered;
+			background-color: $neutral-200;
 		}
 	}
 }

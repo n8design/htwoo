@@ -4,11 +4,11 @@
 
 	padding: 0 1rem;
 
-	color: $buttonText;
-	border: 1px $buttonBorder solid;
+	color: $neutral-700;
+	border: 1px $neutral-450 solid;
 	border-radius: $roundedCorner2;
 	outline: none;
-	background-color: $buttonBackground;
+	background-color: $neutral-000;
 
 	align-items: center;
 	flex-wrap: nowrap;
@@ -16,19 +16,32 @@
 	cursor: pointer;
 	
 	&:hover {
-		background-color: $buttonBackgroundCheckedHovered;
+		background-color: $neutral-100;
 	}
 	&:active{
-		background-color: $buttonBackgroundPressed;
+		background-color: $neutral-200;
 	}
 
 	&[disabled],
 	&:disabled {
 		pointer-events: none;
 
-		color: $buttonTextDisabled;
-		border-color: $buttonBackgroundDisabled;
-		background-color: $buttonBackgroundDisabled;
+		color: $neutral-400;
+		border-color: $neutral-100;
+		background-color: $neutral-100;
+	}
+	&.is-reversed{
+		flex-direction: row-reverse;
+		.hoo-icon{
+			margin-right: -0.25rem;
+			fill: currentColor;
+		}
+	}
+	&:not(.is-reversed){
+		.hoo-icon{
+			margin-left: -0.25rem;
+			fill: currentColor;
+		}
 	}
 }
 
@@ -50,20 +63,20 @@
 .hoo-button-primary {
 	@extend .hoo-button;
 
-	color: $primaryButtonText;
+	color: $neutral-000;
 	// border-color: Fixing border because the color is different
-	border-color: $primaryButtonBackground;
-	background-color: $primaryButtonBackground;
+	border-color: $theme-600;
+	background-color: $theme-600;
 
 	&:hover {
-		color: $primaryButtonTextHovered;
-		border-color: $primaryButtonBackgroundHovered;
-		background-color: $primaryButtonBackgroundHovered;
+		color: $neutral-000;
+		border-color: $theme-700;
+		background-color: $theme-700;
 	}
 
 	&:active {
-		border-color: $primaryButtonBackgroundPressed;
-		background-color: $primaryButtonBackgroundPressed;
+		border-color: $theme-800;
+		background-color: $theme-800;
 	}
 }
 
@@ -157,16 +170,17 @@ a.hoo-button-primary {
 	flex-shrink: 1;
 
 	&:hover {
-		color: $primaryButtonTextHovered;
-		border-color: $primaryButtonBackgroundHovered;
-		background-color: $primaryButtonBackgroundHovered;
+		color: $neutral-000;
+		border-color: $theme-700;
+		background-color: $theme-700;
 	}
 
 	&:active {
-		border-color: $primaryButtonBackgroundPressed;
-		background-color: $primaryButtonBackgroundPressed;
+		border-color: $theme-800;
+		background-color: $theme-800;
 	}
 }
+
 
 
 /* Split Button Slideout Animation
