@@ -48,8 +48,6 @@ export class HOOButtonSplitState implements IHOOButtonSplitState {
 export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
   private _componentClass: string = "hoo-button";
-  private _buttonClass: string = "hoo-buttonsplit-standard";
-  private _splitClass: string = "hoo-buttonsplit-carret";
 
   constructor(props: IHOOButtonSplitProps) {
     super(props);
