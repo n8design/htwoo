@@ -1,0 +1,99 @@
+// available Office UI States
+$officeUIStates: alert, error, info, servere, success;
+
+// configuration color and background-color
+$officeUIStateCombinations: ( 
+  alert: ($ouif-alertText, $ouif-alertBackground), 
+  error: ($ouif-errorText, $ouif-errorBackground), 
+  info: ($ouif-infoText, $ouif-infoBackground), 
+  servere: ($ouif-severeWarningText, $ouif-severeWarningBackground), 
+  success: ($ouif-successText, $ouif-successBackground)
+);
+// configuration text colors
+$officeUIStateText: ( 
+  alert: $ouif-alert, 
+  error: $ouif-error,
+  info: $ouif-infoText,
+  servere: $ouif-severeWarning, 
+  success: $ouif-successText
+);
+
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes color and background styles
+*/
+@mixin stateStyle($state) {
+
+    $stateindex: index($officeUIStates, $state);
+    $backcolor: null;
+    $forecolor: null;
+
+    @if($stateindex !=null) {
+        $backcolor: nth( nth( nth($officeUIStateCombinations, $stateindex), 2), 2);
+        $forecolor: nth( nth( nth($officeUIStateCombinations, $stateindex), 2), 1);
+    } @else {
+        @warn 'Error: wrong state';
+    }
+    
+    background-color: $backcolor;
+    color: $forecolor;
+    
+}
+
+/*
+    Get css for state objects for: alert, error, info, servere, success
+    This includes only the color values
+*/
+@mixin stateTextStyle($state) {
+
+    $stateindex: index($officeUIStates, $state);
+    $forecolor: null;
+
+    @if($stateindex !=null) {
+        $forecolor: nth( nth( nth($officeUIStateText, $stateindex), 2), 1);
+    } @else {
+        @warn 'Error: wrong state';
+    }
+    
+    color: $forecolor;
+
+}
+
+/***
+100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy)
+**/
+@function thin(){
+    @return 100;
+};
+@function ultralight(){
+    @return 200;
+};
+@function light(){
+    @return 300;
+};
+@function normal(){
+    @return 400;
+};
+@function medium(){
+    @return 500;
+};
+@function semibold(){
+    @return 600;
+};
+@function bold(){
+    @return 700;
+};
+@function extrabold(){
+    @return 800;
+};
+@function heavy(){
+    @return 900;
+};

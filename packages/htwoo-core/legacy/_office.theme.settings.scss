@@ -1,0 +1,58 @@
+// Typography settings
+$fontSizeCore: 14px;
+$fontSizeRoot: 16px;
+
+// defines if root EM should be used to calculate font size
+$useRem: false;
+
+// Office UI Fabric font size definition
+$fontSizes: (
+    ('su', 
+        42px, 
+        thin
+    ),
+    ('xxl', 
+        28px, 
+        thin
+    ),
+    ('xl', 
+        21px, 
+        thin
+    ),
+    ('l', 
+        17px, 
+        light
+    ),
+    ('m-plus', 
+        15px, 
+        normal
+    ),
+    ('m', 
+        14px, 
+        normal
+    ),
+    ('s-plus', 
+        13px, 
+        normal
+    ),
+    ('s', 
+        12px, 
+        normal
+    ),
+    ('xs', 
+        11px, 
+        normal
+    ),
+    ('mi', 
+        10px, 
+        bold
+    )
+);
+
+// Office UI Fabric font weight definition
+$fontWeights: (
+    ('light', thin),
+    ('semilight', light),
+    ('regular', normal),
+    ('semibold', bold),
+);

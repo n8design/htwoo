@@ -1,0 +1,46 @@
+{
+  "name": "spfx-uifabric-themes",
+  "version": "0.9.0",
+  "description": "Include theme slots in your SharePoint Framework Project",
+  "main": "index.js",
+  "types": "./types/themestate.d.ts",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "commit": "npm test",
+    "convert2theme": "node ./tools/themeTosass",
+    "update-doc": "node ./tools/docthemeslot"
+  },
+  "keywords": [
+    "Office",
+    "UI",
+    "Fabric",
+    "Office UI Fabric",
+    "SPFX",
+    "SharePoint",
+    "SharePoint Framework",
+    "Office",
+    "Themes",
+    "Office 365",
+    "Microsoft 365",
+    "Branding"
+  ],
+  "author": "Stefan Bauer <@stfbauer>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^6.0.0",
+    "mocha": "^6.2.0",
+    "sass-true": "^5.0.0",
+    "sassytester": "^1.1.0",
+    "gulp-plumber": "^1.2.1",
+    "node-sass": "^4.12.0",
+    "sass-test.sh": "^1.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StfBauer/spfx-uifabric-themes"
+  },
+  "bugs": {
+    "url": "https://github.com/StfBauer/spfx-uifabric-themes/issues"
+  }
+}
