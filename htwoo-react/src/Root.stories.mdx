@@ -9,144 +9,151 @@ import { Meta } from "@storybook/addon-docs";
 ## Initialize library in Microsoft SharePoint Framework (SPFx)
 
 1. Install package in your solution.
-    >This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you.
+  
+  >This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you.
 
-    ```cmd
-    npm i @n8d/htwoo-react
-    ```
+  ```cmd
+  npm i @n8d/htwoo-react
+  ```
 
 1. Add a reference to the style.prod.scss file in your solutions root .scss file. Put the reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
-    >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
+  
+  >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
 
-    ```scss
-    .myWebPartRoot{
-      :global {
-        @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
-      }
+  ```css
+  .myWebPartRoot{
+    :global {
+      @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
     }
-    ```
+  }
+  ```
 
-    then in your root component's top level HTML element add a reference to that base class. This will make sure that when your project builds, the styles will be included. For example:
+  then in your root component's top level HTML element add a reference to that base class. This will make sure that when your project builds, the styles will be included. For example:
 
-    ```tsx
-    public render(): React.ReactElement<IHtwooReactDemoProps> {
-      try {
-        return (
-          <div className={styles.myWebPartRoot}>
-            Hello World
-          </div>
-        );
-      } catch (err) {
-        console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-        return null;
-      }
+  ```typescript
+  public render(): React.ReactElement<IHtwooReactDemoProps> {
+    try {
+      return (
+        <div className={styles.myWebPartRoot}>
+          Hello World
+        </div>
+      );
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
+      return null;
     }
-    ```
-
+  }
+  ```
+    
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
-    ```ts
-    import { symset } from '@n8d/htwoo-react/SymbolSet';
+  ```typescript
+  import { symset } from '@n8d/htwoo-react/SymbolSet';
 
-    public async onInit(): Promise<void> {
-      // Initialize Icons Symbol Set
-      await symset.initSymbols();
-    }
-    ```
+  public async onInit(): Promise<void> {
+    // Initialize Icons Symbol Set
+    await symset.initSymbols();
+  }
+  ```
     
-    Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
-    >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
+  Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
   
-    ```ts
-    import { symset } from '@n8d/htwoo-react/SymbolSet';
+  >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
+    
+  ```typescript
+  import { symset } from '@n8d/htwoo-react/SymbolSet';
 
-    public async onInit(): Promise<void> {
-      // Initialize Icons Symbol Set with Custom Symbol File
-      const symbolSetFile: string = require("./images/icons.svg");
-      await symset.initSymbols(symbolSetFile);
-    }
-    ```
+  public async onInit(): Promise<void> {
+    // Initialize Icons Symbol Set with Custom Symbol File
+    const symbolSetFile: string = require('./images/icons.svg');
+    await symset.initSymbols(symbolSetFile);
+  }
+  ```
+   
+  A SVG symbol file will look similar to the following:
 
-    A SVG symbol file will look similar to the following:
+  ```html
+  <svg aria-hidden='true' style='position: absolute; width: 0; height: 0; overflow: hidden;' version='1.1'
+    xmlns='http://www.w3.org/2000/svg'
+    xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <defs>
+        <symbol id='icon-arrow-left' viewBox='0 0 32 32'>
+            <path d='M22.547 31.953l-15.969-15.953 15.969-15.953 1.406 1.406-14.531 14.547 14.531 14.547-1.406 1.406z'></path>
+        </symbol>
+    </defs>
+  </svg>
+  ```
 
-    ```html
-    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink">
-      <defs>
-          <symbol id="icon-arrow-left" viewBox="0 0 32 32">
-              <path d="M22.547 31.953l-15.969-15.953 15.969-15.953 1.406 1.406-14.531 14.547 14.531 14.547-1.406 1.406z"></path>
-          </symbol>
-      </defs>
-    </svg>
-    ```
+  If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
+  To register multiple svg files, make additional calls to `symset.initSymbols` passing in additional svg file references.
 
-    If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
-    To register multiple svg files, make additional calls to `symset.initSymbols` passing in additional svg file references.
+  ```typescript
+  import { symset } from '@n8d/htwoo-react/SymbolSet';
 
-    ```ts
-    import { symset } from '@n8d/htwoo-react/SymbolSet';
+  public async onInit(): Promise<void> {
+    // Initialize Icons Symbol Set with HTWOO-Icons
+    const fuireg: string = require('@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg');
+    await symset.initSymbols(fuireg);
+  }
+  ```
 
-    public async onInit(): Promise<void> {
-      // Initialize Icons Symbol Set with HTWOO-Icons
-      const fuireg: string = require("@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg");
-      await symset.initSymbols(fuireg);
-    }
-    ```
+  To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
 
-    To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
-
-    ```ts
-    <HOOAction iconName="icon-arrow-left" label="Action Button" type={HOOActionType.Action}/>
-    ```
+  ```jsx
+  <HOOAction iconName='icon-arrow-left' label='Action Button' type={HOOActionType.Action}/>
+  ```
 
 1. (Optional) Add theme support to your SPFx project
 
-    a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
+  a. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
 
-      ```json
-      { 
-        //...
-        "supportsThemeVariants": true,
-        // ...
-      }
-      ```
+  ```json
+  { 
+    //...
+    'supportsThemeVariants': true,
+    // ...
+  }
+  ```
 
-    b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
+  b. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
-    ```ts
-    import { ThemeProvider } from '@microsoft/sp-component-base';
-    import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
-    
-    private _spfxThemes: ISPFxThemes = new SPFxThemes();
+  >For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation.  
+  
+  ```typescript
+  import { ThemeProvider } from '@microsoft/sp-component-base';
+  import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
+  
+  private _spfxThemes: ISPFxThemes = new SPFxThemes();
 
-    public async onInit(): Promise<void> {
-      // Consume the new ThemeProvider service
-      const themeProvider = this.context.serviceScope.consume(ThemeProvider.serviceKey);
-      this._spfxThemes.initThemeHandler(this.domElement, themeProvider);
+  public async onInit(): Promise<void> {
+    // Consume the new ThemeProvider service
+    const microsoftTeams = this.context.sdks?.microsoftTeams;
+    const themeProvider = this.context.serviceScope.consume(ThemeProvider.serviceKey);
+    this._spfxThemes.initThemeHandler(this.domElement, themeProvider, microsoftTeams);
 
-      // If no ThemeProvider service, use undefined which will use page context
-      this._spfxThemes.initThemeHandler(document.body, undefined);
-    }
-    ```
+    // If no ThemeProvider service, do not include property which will use page context
+    this._spfxThemes.initThemeHandler(document.body);
+  }
+  ```
 
 1. Import the HTWOO component that you want to use into your own projects components. All components are selectively importable from the root library. 
-    >More complete documentation will be forthcoming.
+  
+  >More complete documentation will be forthcoming. Please submit any questions you have to the [issues list](https://github.com/n8design/htwoo/issues) and we'll assist you as soon as we can.
 
-    ```ts
-    import HOOLabel from '@n8d/htwoo-react/HOOLabel';
-    
-    public render(): React.ReactElement<IMyComponentProps> {
-      try {
-        return (
-          <div data-component={this.LOG_SOURCE}>
-            <HOOLabel label="My Label" />
-          </div>
-        );
-      } catch (err) {
-        console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-        return null;
-      }
+  ```typescript
+  import HOOLabel from '@n8d/htwoo-react/HOOLabel';
+  
+  public render(): React.ReactElement<IMyComponentProps> {
+    try {
+      return (
+        <div data-component={this.LOG_SOURCE}>
+          <HOOLabel label='My Label' />
+        </div>
+      );
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (render) - ${err}`);
+      return null;
     }
-    ```
+  }
+  ```
 
