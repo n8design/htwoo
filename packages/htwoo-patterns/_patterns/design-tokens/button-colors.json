@@ -1,0 +1,105 @@
+{
+    "items": [
+        {
+            "msftName": "buttonBackground",
+            "mstfNameLong": "Button Background",
+            "colorValue": "var(--buttonBackground)",
+            "designToken": "neutral-000",
+            "SASSVariable": "$neutral-000"
+        },
+        {
+            "msftName": "buttonBackgroundChecked",
+            "msftNameLong": "buttonBackgroundChecked",
+            "colorValue": "var(--buttonBackgroundChecked)",
+            "designToken": "neutral-350",
+            "SASSVariable": "$neutral-350"
+        },
+        {
+            "msftName": "buttonBackgroundCheckedHovered",
+            "msftNameLong": "Button Background Checked Hovered",
+            "colorValue": "var(--buttonBackgroundCheckedHovered)",
+            "designToken": "neutral-350",
+            "SASSVariable": "$neutral-350"
+        },
+        {
+            "msftName": "Button Background Disabled",
+            "msftNameLong": "buttonBackgroundDisabled",
+            "colorValue": "var(--buttonBackgroundDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
+        },
+        {
+            "msftName": "buttonBackgroundHovered",
+            "msftNameLong": "Button Background Hovered",
+            "colorValue": "var(--buttonBackgroundHovered)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
+        },
+        {
+            "msftName": "buttonBackgroundPressed",
+            "msftNameLong": "Button Background Pressed",
+            "colorValue": "var(--buttonBackgroundPressed)",
+            "designToken": "neutral-200",
+            "SASSVariable": "$neutral-200"
+        },
+        {
+            "msftName": "buttonBorder",
+            "msftNameLong": "Button Border",
+            "colorValue": "var(--buttonBorder)",
+            "designToken": "neutral-450",
+            "SASSVariable": "$neutral-450"
+        },
+        {
+            "msftName": "buttonBorderDisabled",
+            "msftNameLong": "buttonBorderDisabled",
+            "colorValue": "var(--buttonBorderDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
+        },
+        {
+            "msftName": "buttonText",
+            "msftNameLong": "Button Text",
+            "colorValue": "var(--buttonText)",
+            "designToken": "neutral-700",
+            "SASSVariable": "$neutral-700"
+        },
+        {
+            "msftName": "buttonTextChecked",
+            "msftNameLong": "Button Text Checked",
+            "colorValue": "var(--buttonTextChecked)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
+        },
+        {
+            "msftName": "buttonTextCheckedHovered",
+            "msftNameLong": "buttonTextCheckedHovered",
+            "colorValue": "var(--buttonTextCheckedHovered)",
+            "designToken": "neutral-900",
+            "SASSVariable": "$neutral-900"
+        },
+        {
+            "msftName": "buttonTextDisabled",
+            "msftNameLong": "Button Text Disabled",
+            "colorValue": "var(--buttonTextDisabled)",
+            "designToken": "neutral-400",
+            "SASSVariable": "$neutral-400"
+        },
+        {
+            "msftName": "buttonTextHovered",
+            "msftNameLong": "Button Text Hovered",
+            "colorValue": "var(--buttonTextHovered)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
+        },
+        {
+            "msftName": "buttonTextPressed",
+            "msftNameLong": "Button Text Pressed",
+            "colorValue": "var(--buttonTextPressed)",
+            "designToken": "neutral-800",
+            "SASSVariable": "$neutral-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

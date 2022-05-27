@@ -112,10 +112,27 @@ const createLibComponents = () => {
 
 }
 
+const movePatterns = (cb) => {
+
+    src(['src/_data/*+/*'])
+        .pipe(
+            dest('../packages/htwoo-patterns/_data/')
+        )
+    src(['src/_patterns/**/*'])
+        .pipe(
+            dest('../packages/htwoo-patterns/_patterns/')
+        )
+
+    cb();
+
+}
+
 const serve = parallel(styles, pluginCSSOverride, baseWatch);
 const buildLib = series(createLibJS, createLibSass, createLibComponents);
+const buildPLRepo = series(movePatterns);
 
 exports["build:lib"] = buildLib;
+exports["build:pllib"] = buildPLRepo;
 exports.default = serve;
 exports.styles = styles;
 exports.docs = docs;

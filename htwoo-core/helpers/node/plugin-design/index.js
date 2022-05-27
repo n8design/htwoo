@@ -48,7 +48,7 @@ function getPluginFrontendConfig() {
   };
 
   var pluginConfig = require('./config.json');
-  console.log('CONFIGIGIGI ', _.extend({}, defaults, pluginConfig));
+  // console.log('CONFIGIGIGI ', _.extend({}, defaults, pluginConfig));
   return _.extend({}, defaults, pluginConfig);
 }
 
@@ -81,12 +81,12 @@ function pluginInit(patternlab) {
   //write the plugin json to public/patternlab-components
   var pluginConfig = getPluginFrontendConfig();
 
-  console.log("----- PLUGIN CONFIG --------\n", pluginConfig);
+  // console.log("----- PLUGIN CONFIG --------\n", pluginConfig);
 
   // console.log(" ----------   ", patternlab.config.plugins[pluginName].options.stylesheets)
   // pluginConfig.stylesheets = patternlab.config.plugins[pluginName].options.stylesheets;
   // writeConfigToOutput(patternlab, pluginConfig);
-  console.log(" ----------  patternlab.config.plugins[pluginName].stylesheets \n ", patternlab.config.plugins[pluginName].stylesheets)
+  // console.log(" ----------  patternlab.config.plugins[pluginName].stylesheets \n ", patternlab.config.plugins[pluginName].stylesheets)
   // pluginConfig.stylesheets = patternlab.config.plugins[pluginName].stylesheets;
   pluginConfig.stylesheets = pluginConfig.stylesheets;
   writeConfigToOutput(patternlab, pluginConfig);
@@ -98,14 +98,14 @@ function pluginInit(patternlab) {
 
   patternlab.plugins.push(pluginConfig);
 
-  console.log("patternlab.plugins", patternlab.plugins)
+  // console.log("patternlab.plugins", patternlab.plugins)
 
   //write the plugin dist folder to public/pattern-lab
   var pluginFiles = glob.sync(__dirname + '/dist/**/*');
 
   if (pluginFiles && pluginFiles.length > 0) {
 
-    console.log("PLUGIN FILES :::: ", pluginFiles[i])
+    // console.log("PLUGIN FILES :::: ", pluginFiles[i])
 
     const link_frontend_snippet = fs.readFileSync(path.resolve(__dirname + '/src/snippet.js'), 'utf8');
 

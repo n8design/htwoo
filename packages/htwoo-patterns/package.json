@@ -1,0 +1,48 @@
+{
+  "name": "@n8d/htwoo-patterns",
+  "version": "0.1.0",
+  "description": "hTWOo Patterns to setup custom style guide",
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./lib/move-patterns.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8design/htwoo.git"
+  },
+  "keywords": [
+    "hTWOo",
+    "Atomic Design",
+    "Office UI Framework",
+    "UI Framework",
+    "Design",
+    "Patternlabs",
+    "patternlabs.io",
+    "Style Guide",
+    "Guide",
+    "Fluent",
+    "Design",
+    "UI",
+    "Fluent Design",
+    "Fluent UI",
+    "SharePoint Framework",
+    "SPFx"
+  ],
+  "author": "Stefan Bauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
+  "homepage": "https://lab.n8d.studio/htwoo/",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/StfBauer"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/n8design"
+    }
+  ]
+}

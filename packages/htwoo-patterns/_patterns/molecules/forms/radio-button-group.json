@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "label": "Apple",
+            "id": "rbg1",
+            "name": "radio-button-group",
+            "value": "apple"
+        },
+        {
+            "label": "Avocado",
+            "id": "rbg2",
+            "name": "radio-button-group",
+            "value": "banana"
+        },
+        {
+            "label": "Banana",
+            "id": "rbg3",
+            "name": "radio-button-group",
+            "value": "citrus"
+        },
+        {
+            "label": "Citrus",
+            "id": "rbg4",
+            "name": "radio-button-group",
+            "value": "avocado"
+        }
+    ]
+}

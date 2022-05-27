@@ -1,0 +1,12 @@
+{
+    "contextItems": [
+        {
+            "label": "Email message",
+            "icon": "icon-ninjacat"
+        },
+        {
+            "label": "Callendar Event",
+            "icon": "icon-minus"
+        }
+    ]
+}
