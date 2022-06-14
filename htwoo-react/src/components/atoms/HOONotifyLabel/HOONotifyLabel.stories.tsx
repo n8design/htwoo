@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOONotifyLabel, {
-  IHOONotifyLabelProps, HOONotifyType
+  HOONotifyType
 } from './HOONotifyLabel';
 
 export default {
-  title: 'Atoms/HOONotifyLabel',
+  title: 'Atoms/Validation/HOONotifyLabel',
   component: HOONotifyLabel,
-} as Meta;
+} as ComponentMeta<typeof HOONotifyLabel>;
 
-const Template: Story<IHOONotifyLabelProps> = (args) => <HOONotifyLabel {...args} />;
+const Template: ComponentStory<typeof HOONotifyLabel> = (args) => <HOONotifyLabel {...args} />;
 
 export const Success = Template.bind({});
 Success.args = { type: HOONotifyType.Success, message: "Successful message" };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOSplashCardFooter, {
   IHOOSplashCardFooterProps
@@ -8,11 +8,11 @@ import HOOSplashCardFooter, {
 import HOOButton, { HOOButtonType } from '../../atoms/HOOButton/HOOButton';
 
 export default {
-  title: 'Molecules/HOOSplashCardFooter',
+  title: 'Molecules/Card-Elements/HOOSplashCardFooter',
   component: HOOSplashCardFooter,
-} as Meta;
+} as ComponentMeta<typeof HOOSplashCardFooter>;
 
-const Template: Story<IHOOSplashCardFooterProps> = (args) => <HOOSplashCardFooter {...args}>
+const Template: ComponentStory<typeof HOOSplashCardFooter> = (args) => <HOOSplashCardFooter {...args}>
   <HOOButton type={HOOButtonType.Primary} label="Create Something" onClick={() => { alert("Clicked"); }} />
   <HOOButton type={HOOButtonType.Standard} label="Call to Action" onClick={() => { alert("Clicked"); }} />
 </HOOSplashCardFooter>;

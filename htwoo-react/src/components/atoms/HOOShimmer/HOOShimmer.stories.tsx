@@ -1,17 +1,17 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOShimmer, {
   IHOOShimmerProps, HOOShimmerTheme, HOOShimmerShape
 } from './HOOShimmer';
 
 export default {
-  title: 'Atoms/HOOShimmer',
+  title: 'Atoms/Loading/HOOShimmer',
   component: HOOShimmer,
-} as Meta;
+} as ComponentMeta<typeof HOOShimmer>;
 
-const Template: Story<IHOOShimmerProps> = (args) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args} /></HOOShimmer>;
-const MultiTemplate: Story<IHOOShimmerProps[]> = (args) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args[0]} /><HOOShimmer {...args[1]} /></HOOShimmer>;
+const Template: ComponentStory<typeof HOOShimmer> = (args: IHOOShimmerProps) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args} /></HOOShimmer>;
+const MultiTemplate: ComponentStory<typeof HOOShimmer> = (args: IHOOShimmerProps) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args[0]} /><HOOShimmer {...args[1]} /></HOOShimmer>;
 
 export const Circle = Template.bind({});
 Circle.args = { shape: HOOShimmerShape.Circle, theme: HOOShimmerTheme.Neutral } as IHOOShimmerProps;

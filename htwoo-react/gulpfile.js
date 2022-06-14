@@ -209,6 +209,17 @@ const storybook = (cb) => {
   });
 };
 
+
+/** WATCH: watch for ts{x} and sass */
+const watchSource = (cb) => {
+  // watching typescript
+  watch('./src/**/*.{ts,tsx,mdx}',
+    series(tsCompile, webpack)
+  ).on('change', () => {
+    server.reload();
+  });
+}
+
 /** TASK: remove dist folder and start from scratch */
 const clean = (cb) => {
   rimraf.sync('./dist')
@@ -225,6 +236,7 @@ const build = series(clean, version,
   parallel(tsCompile, sassCompile), copyIcons, webpack);
 
 exports.build = build;
+exports.watch = watchSource;
 exports.clean = clean;
 exports.storybook = storybook;
 

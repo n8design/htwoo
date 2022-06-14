@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOODocumentCard, {
   IHOODocumentCardProps
@@ -11,11 +11,11 @@ import HOOCardFooter from '../../molecules/HOOCardFooter/HOOCardFooter';
 import { HOOAvatarSize } from '../../atoms/HOOAvatar/HOOAvatar';
 
 export default {
-  title: 'Organisms/HOODocumentCard',
+  title: 'Organisms/Cards/HOODocumentCard',
   component: HOODocumentCard,
-} as Meta;
+} as ComponentMeta<typeof HOODocumentCard>;
 
-const Template: Story<IHOODocumentCardProps> = (args) => <HOODocumentCard {...args}>
+const Template: ComponentStory<typeof HOODocumentCard> = (args: IHOODocumentCardProps) => <HOODocumentCard {...args}>
   <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
   <HOOCardLocation location="My Location Card" />
   <HOOCardTitle title="My Card Title" />

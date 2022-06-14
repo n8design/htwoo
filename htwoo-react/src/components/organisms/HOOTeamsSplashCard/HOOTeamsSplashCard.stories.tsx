@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOTeamsSplashCard, {
   IHOOTeamsSplashCardProps
@@ -9,15 +9,13 @@ import HOOSplashCardTitle from '../../molecules/HOOSplashCardTitle/HOOSplashCard
 import HOOSplashCardDesc from '../../molecules/HOOSplashCardDesc/HOOSplashCardDesc';
 import HOOSplashCardFooter from '../../molecules/HOOSplashCardFooter/HOOSplashCardFooter';
 import HOOButton, { HOOButtonType } from '../../atoms/HOOButton/HOOButton';
-import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
-
 
 export default {
-  title: 'Organisms/HOOTeamsSplashCard',
+  title: 'Organisms/Cards/HOOTeamsSplashCard',
   component: HOOTeamsSplashCard,
-} as Meta;
+} as ComponentMeta<typeof HOOTeamsSplashCard>;
 
-const Template: Story<IHOOTeamsSplashCardProps> = (args) => <HOOTeamsSplashCard {...args}>
+const Template: ComponentStory<typeof HOOTeamsSplashCard> = (args: IHOOTeamsSplashCardProps) => <HOOTeamsSplashCard {...args}>
   <HOOSplashCardHeader imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
   <HOOSplashCardTitle title="My Teams Splash Card" />
   <HOOSplashCardDesc description="My Teams Splash Card Description" />

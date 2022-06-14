@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOWebPartTitle, { IHOOWebPartTitleProps } from './HOOWebPartTitle';
 
 export default {
-  title: 'Molecules/HOOWebPartTitle',
+  title: 'Molecules/WebPart/HOOWebPartTitle',
   component: HOOWebPartTitle,
   argTypes: {
     rootElementAttributes: {
@@ -15,9 +15,9 @@ export default {
     },
     updateTitle: { action: 'title updated' }
   }
-} as Meta;
+} as ComponentMeta<typeof HOOWebPartTitle>;
 
-const Template: Story<IHOOWebPartTitleProps> = (args) => <HOOWebPartTitle {...args} />;
+const Template: ComponentStory<typeof HOOWebPartTitle> = (args: IHOOWebPartTitleProps) => <HOOWebPartTitle {...args} />;
 
 export const Standard = Template.bind({});
 

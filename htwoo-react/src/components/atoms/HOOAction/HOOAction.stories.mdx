@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOAction, { HOOActionType } from './HOOAction';
+
+<Meta title="Atoms/Buttons/HOOAction" component={HOOAction} />
+
+# HOOAction 
+
+Predefined enum defined for the supported actions:
+```ts
+export enum HOOActionType {
+  "Action",
+  "Command",
+  "Context"
+}
+```
+export const Template = (args) => <HOOAction {...args} />;
+
+<Canvas>
+  <Story
+    name="Action"
+    args={
+      { type: HOOActionType.Action,
+       label: "Action Button", 
+       iconName: "hoo-icon-plus", 
+      onClick: () => { } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Command"
+    args={
+      { type: HOOActionType.Command,
+      label: "Action Button", 
+       iconName: "hoo-icon-plus" ,
+      onClick: () => { } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

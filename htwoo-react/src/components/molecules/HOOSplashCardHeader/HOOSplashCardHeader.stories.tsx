@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOSplashCardHeader, {
   IHOOSplashCardHeaderProps
 } from './HOOSplashCardHeader';
 
 export default {
-  title: 'Molecules/HOOSplashCardHeader',
+  title: 'Molecules/Card-Elements/HOOSplashCardHeader',
   component: HOOSplashCardHeader,
-} as Meta;
+} as ComponentMeta<typeof HOOSplashCardHeader>;
 
-const Template: Story<IHOOSplashCardHeaderProps> = (args) => <HOOSplashCardHeader {...args} />;
+const Template: ComponentStory<typeof HOOSplashCardHeader> = (args) => <HOOSplashCardHeader {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten" } as IHOOSplashCardHeaderProps;

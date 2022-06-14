@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOAvatarPres, {
   IHOOAvatarPresProps
@@ -8,11 +8,11 @@ import { HOOAvatarSize } from '../../atoms/HOOAvatar/HOOAvatar';
 import { HOOPresenceStatus } from '../../atoms/HOOPresence/HOOPresence';
 
 export default {
-  title: 'Molecules/HOOAvatarPres',
+  title: 'Molecules/Persona/HOOAvatarPres',
   component: HOOAvatarPres,
-} as Meta;
+} as ComponentMeta<typeof HOOAvatarPres>;
 
-const Template: Story<IHOOAvatarPresProps> = (args) => <HOOAvatarPres {...args} />;
+const Template: ComponentStory<typeof HOOAvatarPres> = (args: IHOOAvatarPresProps) => <HOOAvatarPres {...args} />;
 
 export const Standard32 = Template.bind({});
 Standard32.args = { size: HOOAvatarSize.Px32, imageSource: "https://placekitten.com/32/32", imageAlt: "Placeholder Image", onClick: () => { }, status: HOOPresenceStatus.Online } as IHOOAvatarPresProps;

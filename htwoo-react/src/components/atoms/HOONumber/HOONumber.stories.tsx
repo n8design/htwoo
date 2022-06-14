@@ -1,16 +1,14 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import HOONumber, {
-  IHOONumberProps
-} from './HOONumber';
+import HOONumber from './HOONumber';
 
 export default {
-  title: 'Atoms/HOONumber',
+  title: 'Atoms/Input/HOONumber',
   component: HOONumber,
-} as Meta;
+} as ComponentMeta<typeof HOONumber>;
 
-const Template: Story<IHOONumberProps> = (args) => <HOONumber {...args} />;
+const Template: ComponentStory<typeof HOONumber> = (args) => <HOONumber {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { value: 0 };

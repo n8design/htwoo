@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOText, {
   IHOOTextProps
 } from './HOOText';
 
 export default {
-  title: 'Atoms/HOOText',
+  title: 'Atoms/Input/HOOText',
   component: HOOText,
-} as Meta;
+} as ComponentMeta<typeof HOOText>;
 
-const Template: Story<IHOOTextProps> = (args) => <HOOText {...args} />;
+const Template: ComponentStory<typeof HOOText> = (args: IHOOTextProps) => <HOOText {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { value: "Default Value" };

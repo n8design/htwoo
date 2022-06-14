@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOTime, {
   IHOOTimeProps
 } from './HOOTime';
 
 export default {
-  title: 'Atoms/HOOTime',
+  title: 'Atoms/Input/HOOTime',
   component: HOOTime,
-} as Meta;
+} as ComponentMeta<typeof HOOTime>;
 
-const Template: Story<IHOOTimeProps> = (args) => <HOOTime {...args} />;
+const Template: ComponentStory<typeof HOOTime> = (args: IHOOTimeProps) => <HOOTime {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { value: (new Date()).toLocaleDateString() };

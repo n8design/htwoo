@@ -6,7 +6,7 @@ import HOODate, {
 } from './HOODate';
 
 export default {
-  title: 'Atoms/HOODate',
+  title: 'Atoms/Input/HOODate',
   component: HOODate,
 } as Meta;
 

@@ -1,16 +1,14 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import HOOLabel, {
-  IHOOLabelProps
-} from './HOOLabel';
+import HOOLabel from './HOOLabel';
 
 export default {
-  title: 'Atoms/HOOLabel',
+  title: 'Atoms/Input/HOOLabel',
   component: HOOLabel,
-} as Meta;
+} as ComponentMeta<typeof HOOLabel>;
 
-const Template: Story<IHOOLabelProps> = (args) => <HOOLabel {...args} />;
+const Template: ComponentStory<typeof HOOLabel> = (args) => <HOOLabel {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { label: "My Label" };

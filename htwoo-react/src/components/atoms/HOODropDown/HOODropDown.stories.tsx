@@ -1,18 +1,17 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOODropDown, {
   IHOODropDownGroup,
-  IHOODropDownItem,
-  IHOODropDownProps
+  IHOODropDownItem
 } from './HOODropDown';
 
 export default {
-  title: 'Atoms/HOODropDown',
+  title: 'Atoms/Input/HOODropDown',
   component: HOODropDown,
-} as Meta;
+} as ComponentMeta<typeof HOODropDown>;
 
-const Template: Story<IHOODropDownProps> = (args) => <HOODropDown {...args} />;
+const Template: ComponentStory<typeof HOODropDown> = (args) => <HOODropDown {...args} />;
 const groupItems: IHOODropDownItem[] = [{ key: "apple", text: "Apple", disabled: false }, { key: "orange", text: "Orange", disabled: false }];
 const options: IHOODropDownGroup[] = [{ groupName: "", groupItems: groupItems }];
 
