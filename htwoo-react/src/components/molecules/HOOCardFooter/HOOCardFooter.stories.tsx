@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOCardFooter, {
   IHOOCardFooterProps
@@ -7,11 +7,11 @@ import HOOCardFooter, {
 import { HOOAvatarSize } from '../../atoms/HOOAvatar/HOOAvatar';
 
 export default {
-  title: 'Molecules/HOOCardFooter',
+  title: 'Molecules/Card-Elements/HOOCardFooter',
   component: HOOCardFooter,
-} as Meta;
+} as ComponentMeta<typeof HOOCardFooter>;
 
-const Template: Story<IHOOCardFooterProps> = (args) => <HOOCardFooter {...args} />;
+const Template: ComponentStory<typeof HOOCardFooter> = (args: IHOOCardFooterProps) => <HOOCardFooter {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { avatarImage: "https://placekitten.com/32/32", avatarImageAlt: "Kitten", avatarImageSize: HOOAvatarSize.Px32, name: "Kitten King", modified: "Dec 1, 2021" } as IHOOCardFooterProps;

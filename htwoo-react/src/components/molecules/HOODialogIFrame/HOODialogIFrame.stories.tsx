@@ -1,19 +1,19 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOODialogIFrame, {
   IHOODialogIFrameProps,
   HOOIFrameRatio
 } from './HOODialogIFrame';
-import HOODialogContent from '../../molecules/HOODialogContent/HOODialogContent';
+import HOODialogContent from '../HOODialogContent/HOODialogContent';
 
 
 export default {
-  title: 'Atoms/HOODialogIFrame',
+  title: 'Molecules/Dialog/HOODialogIFrame',
   component: HOODialogIFrame,
-} as Meta;
+} as ComponentMeta<typeof HOODialogIFrame>;
 
-const Template: Story<IHOODialogIFrameProps> = (args) => <HOODialogContent >
+const Template: ComponentStory<typeof HOODialogIFrame> = (args: IHOODialogIFrameProps) => <HOODialogContent>
   <HOODialogIFrame {...args} />
 </HOODialogContent>;
 

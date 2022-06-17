@@ -8,7 +8,7 @@ import HOOButtonSplit, {
 import { IHOOFlyoutMenuItem } from '../../../HOOFlyoutMenu';
 
 export default {
-  title: 'Atoms/HOOButtonSplit',
+  title: 'Atoms/Buttons/HOOButtonSplit',
   component: HOOButtonSplit,
 } as Meta;
 

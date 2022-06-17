@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOAvatar, { HOOAvatarSize } from './HOOAvatar';
+
+<Meta title="Atoms/Avatar/HOOAvatar" component={HOOAvatar} />
+
+# HOOAvatar
+
+Predefined enum defined for the supported avatar sizes:
+```ts
+export enum HOOAvatarSize {
+  Px16 = "16",
+  Px24 = "24",
+  Px32 = "32",
+  Px40 = "40",
+  Px48 = "48"
+}
+```
+## Example using 32px size
+
+export const Template = (args) => <HOOAvatar {...args} />;
+
+<Canvas>
+  <Story 
+    name="Standard 32px"
+    args = { 
+      {size: HOOAvatarSize.Px32, 
+      imageSource: "https://placekitten.com/32/32", 
+      imageAlt: "Placeholder Image", 
+      onClick: () => { } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

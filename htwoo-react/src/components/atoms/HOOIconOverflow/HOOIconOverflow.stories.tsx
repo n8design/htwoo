@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOIconOverflow, {
   IHOOIconOverflowProps
 } from './HOOIconOverflow';
 
 export default {
-  title: 'Atoms/HOOIconOverflow',
+  title: 'Atoms/Buttons/HOOIconOverflow',
   component: HOOIconOverflow,
-} as Meta;
+} as ComponentMeta<typeof HOOIconOverflow>;
 
-const Template: Story<IHOOIconOverflowProps> = (args) => <HOOIconOverflow {...args} />;
+const Template: ComponentStory<typeof HOOIconOverflow> = (args) => <HOOIconOverflow {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { onClick: () => { alert("Clicked"); } } as IHOOIconOverflowProps;

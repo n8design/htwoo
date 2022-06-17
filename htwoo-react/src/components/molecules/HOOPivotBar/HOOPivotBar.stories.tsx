@@ -1,19 +1,18 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOPivotBar, {
   IHOOPivotBarProps, IHOOPivotItem
 } from './HOOPivotBar';
 
 export default {
-  title: 'Molecules/HOOPivotBar',
+  title: 'Molecules/Menus/HOOPivotBar',
   component: HOOPivotBar,
-} as Meta;
+} as ComponentMeta<typeof HOOPivotBar>;
 
 const options: IHOOPivotItem[] = [{ key: 1, text: "Menu 1" }, { key: 2, text: "Menu 2" }, { key: 3, text: "Menu 3" }];
 
-const Template: Story<IHOOPivotBarProps> = (args: IHOOPivotBarProps) => <HOOPivotBar {...args} />;
-
+const Template: ComponentStory<typeof HOOPivotBar> = (args: IHOOPivotBarProps) => <HOOPivotBar {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { selectedKey: 1, pivotItems: options, onClick: () => { alert("Clicked"); } };

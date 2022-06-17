@@ -1,19 +1,18 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOOptionList, {
   IHOOOptionListProps, HOOOptionListType, IHOOListOption
 } from './HOOOptionList';
 
 export default {
-  title: 'Molecules/HOOOptionList',
+  title: 'Molecules/Forms/HOOOptionList',
   component: HOOOptionList,
-} as Meta;
+} as ComponentMeta<typeof HOOOptionList>;
 
 const options: IHOOListOption[] = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
 
-const Template: Story<IHOOOptionListProps> = (args: IHOOOptionListProps) => <HOOOptionList {...args} />;
-
+const Template: ComponentStory<typeof HOOOptionList> = (args: IHOOOptionListProps) => <HOOOptionList {...args} />;
 
 export const CheckboxList = Template.bind({});
 CheckboxList.args = { type: HOOOptionListType.Checkbox, options: options, value: [1] };

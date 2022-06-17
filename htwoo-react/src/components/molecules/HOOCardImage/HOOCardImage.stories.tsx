@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOCardImage, {
   IHOOCardImageProps
 } from './HOOCardImage';
 
 export default {
-  title: 'Molecules/HOOCardImage',
+  title: 'Molecules/Card-Elements/HOOCardImage',
   component: HOOCardImage,
-} as Meta;
+} as ComponentMeta<typeof HOOCardImage>;
 
-const Template: Story<IHOOCardImageProps> = (args) => <HOOCardImage {...args} />;
+const Template: ComponentStory<typeof HOOCardImage> = (args: IHOOCardImageProps) => <HOOCardImage {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", width: 320, height: 180 } as IHOOCardImageProps;

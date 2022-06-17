@@ -1,14 +1,14 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOSelect, {
-  IHOOSelectProps, IHOOSelectOption
+  IHOOSelectOption
 } from './HOOSelect';
 
 export default {
-  title: 'Atoms/HOOSelect',
+  title: 'Atoms/Input/HOOSelect',
   component: HOOSelect,
-} as Meta;
+} as ComponentMeta<typeof HOOSelect>;
 
 const options: IHOOSelectOption[] = [
   { key: "Apple", text: "Apple" },
@@ -17,7 +17,7 @@ const options: IHOOSelectOption[] = [
   { key: "Orange", text: "Orange" },
 ];
 
-const Template: Story<IHOOSelectProps> = (args) => <HOOSelect {...args} />;
+const Template: ComponentStory<typeof HOOSelect> = (args) => <HOOSelect {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { options: options, id: "TestSelect", value: "", containsTypeAhead: false, onChange: (fieldValue: string, fieldName: string) => { alert(`FieldValue: ${fieldValue} & FieldName: ${fieldName}`) } };

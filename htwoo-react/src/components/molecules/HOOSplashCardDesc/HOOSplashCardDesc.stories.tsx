@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOSplashCardDesc, {
   IHOOSplashCardDescProps
 } from './HOOSplashCardDesc';
 
 export default {
-  title: 'Molecules/HOOSplashCardDesc',
+  title: 'Molecules/Card-Elements/HOOSplashCardDesc',
   component: HOOSplashCardDesc,
-} as Meta;
+} as ComponentMeta<typeof HOOSplashCardDesc>;
 
-const Template: Story<IHOOSplashCardDescProps> = (args) => <HOOSplashCardDesc {...args} />;
+const Template: ComponentStory<typeof HOOSplashCardDesc> = (args) => <HOOSplashCardDesc {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { description: "Splash Card Description" } as IHOOSplashCardDescProps;

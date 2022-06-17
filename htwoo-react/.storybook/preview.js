@@ -11,4 +11,18 @@ export const parameters = {
       order: ['Introduction', 'Advanced', 'Atoms', 'Molecules', 'Organisms'],
     },
   },
+  docs: {
+    source: {
+      state: 'open',
+    },
+  },
+  addons: [{
+    name: '@storybook/addon-docs',
+    options: {
+      configureJSX: true,
+      babelOptions: {},
+      sourceLoaderOptions: null,
+      transcludeMarkdown: true,
+    },
+  }, ],
 }

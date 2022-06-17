@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOPivotButton, {
   IHOOPivotButtonProps
 } from './HOOPivotButton';
 
 export default {
-  title: 'Atoms/HOOPivotButton',
+  title: 'Atoms/Buttons/HOOPivotButton',
   component: HOOPivotButton,
-} as Meta;
+} as ComponentMeta<typeof HOOPivotButton>;
 
-const Template: Story<IHOOPivotButtonProps> = (args) => <HOOPivotButton {...args} />;
+const Template: ComponentStory<typeof HOOPivotButton> = (args) => <HOOPivotButton {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { label: "Pivot Button", isActive: true, onClick: () => { alert("Clicked"); } } as IHOOPivotButtonProps;

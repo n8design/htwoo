@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOODialogContent, {
   IHOODialogContentProps
@@ -7,11 +7,11 @@ import HOODialogContent, {
 import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
 
 export default {
-  title: 'Molecules/HOODialogContent',
+  title: 'Molecules/Dialog/HOODialogContent',
   component: HOODialogContent,
-} as Meta;
+} as ComponentMeta<typeof HOODialogContent>;
 
-const Template: Story<IHOODialogContentProps> = (args) => <HOODialogContent {...args} >
+const Template: ComponentStory<typeof HOODialogContent> = (args: IHOODialogContentProps) => <HOODialogContent {...args} >
   <HOOLabel label="Contents of Dialog" />
 </HOODialogContent>;
 

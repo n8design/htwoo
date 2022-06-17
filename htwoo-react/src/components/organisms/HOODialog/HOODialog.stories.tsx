@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOODialog, {
   IHOODialogProps, HOODialogType
@@ -10,11 +10,11 @@ import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
 
 
 export default {
-  title: 'Organisms/HOODialog',
+  title: 'Organisms/Dialogs/HOODialog',
   component: HOODialog,
-} as Meta;
+} as ComponentMeta<typeof HOODialogHeader>;
 
-const Template: Story<IHOODialogProps> = (args) => <HOODialog {...args}>
+const Template: ComponentStory<typeof HOODialog> = (args: IHOODialogProps) => <HOODialog {...args}>
   <HOODialogHeader title="Dialog Header" closeDisabled={true} closeOnClick={() => { alert("Clicked"); }} />
   <HOODialogContent>
     <HOOLabel label="Content of Dialog" />

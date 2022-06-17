@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOIconSplit, {
   IHOOIconSplitProps
@@ -7,9 +7,10 @@ import HOOIconSplit, {
 import { IHOOFlyoutMenuItem } from '../../../HOOFlyoutMenu';
 
 export default {
-  title: 'Atoms/HOOIconSplit',
+  title: 'Atoms/Buttons/HOOIconSplit',
   component: HOOIconSplit,
-} as Meta;
+} as ComponentMeta<typeof HOOIconSplit>;
+
 
 const _menuItemClicked = (event, item: IHOOFlyoutMenuItem) => {
   switch (item.label) {
@@ -22,7 +23,7 @@ const _menuItemClicked = (event, item: IHOOFlyoutMenuItem) => {
   }
 }
 
-const Template: Story<IHOOIconSplitProps> = (args) => <HOOIconSplit {...args} />;
+const Template: ComponentStory<typeof HOOIconSplit> = (args) => <HOOIconSplit {...args} />;
 
 const flyoutMenuItems: IHOOFlyoutMenuItem[] = [{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }];
 export const Icon = Template.bind({});

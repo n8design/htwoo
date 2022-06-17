@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOCardLocation, {
   IHOOCardLocationProps
 } from './HOOCardLocation';
 
 export default {
-  title: 'Molecules/HOOCardLocation',
+  title: 'Molecules/Card-Elements/HOOCardLocation',
   component: HOOCardLocation,
-} as Meta;
+} as ComponentMeta<typeof HOOCardLocation>;
 
-const Template: Story<IHOOCardLocationProps> = (args) => <HOOCardLocation {...args} />;
+const Template: ComponentStory<typeof HOOCardLocation> = (args: IHOOCardLocationProps) => <HOOCardLocation {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { location: "Location Value" } as IHOOCardLocationProps;

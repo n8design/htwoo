@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOCardTitle, {
   IHOOCardTitleProps
 } from './HOOCardTitle';
 
 export default {
-  title: 'Molecules/HOOCardTitle',
+  title: 'Molecules/Card-Elements/HOOCardTitle',
   component: HOOCardTitle,
-} as Meta;
+} as ComponentMeta<typeof HOOCardTitle>;
 
-const Template: Story<IHOOCardTitleProps> = (args) => <HOOCardTitle {...args} />;
+const Template: ComponentStory<typeof HOOCardTitle> = (args: IHOOCardTitleProps) => <HOOCardTitle {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = { title: "Title Value" } as IHOOCardTitleProps;

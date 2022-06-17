@@ -1,19 +1,20 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOBreadcrumb, {
   IHOOBreadcrumbProps, IHOOBreadcrumbItem, HOOBreadcrumbType
 } from './HOOBreadcrumb';
 
 export default {
-  title: 'Molecules/HOOBreadcrumb',
+  title: 'Molecules/Menus/HOOBreadcrumb',
   component: HOOBreadcrumb,
-} as Meta;
+} as ComponentMeta<typeof HOOBreadcrumb>;
+
 
 const buttonOptions: IHOOBreadcrumbItem[] = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
 const hyperlinkOptions: IHOOBreadcrumbItem[] = [{ key: 1, text: "Value 1", href: "#" }, { key: 2, text: "Value 2", href: "#" }, { key: 3, text: "Value 3", href: "#" }];
 
-const Template: Story<IHOOBreadcrumbProps> = (args: IHOOBreadcrumbProps) => <HOOBreadcrumb {...args} />;
+const Template: ComponentStory<typeof HOOBreadcrumb> = (args: IHOOBreadcrumbProps) => <HOOBreadcrumb {...args} />;
 
 export const BreadcrumbButtons = Template.bind({});
 BreadcrumbButtons.args = { type: HOOBreadcrumbType.Button, breadcrumbItems: buttonOptions, onBreadcrumbClick: () => { alert("Clicked"); } };

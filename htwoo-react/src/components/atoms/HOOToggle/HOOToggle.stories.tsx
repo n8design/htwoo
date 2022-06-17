@@ -1,16 +1,16 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import HOOToggle, {
   IHOOToggleProps
 } from './HOOToggle';
 
 export default {
-  title: 'Atoms/HOOToggle',
+  title: 'Atoms/Input/HOOToggle',
   component: HOOToggle,
-} as Meta;
+} as ComponentMeta<typeof HOOToggle>;
 
-const Template: Story<IHOOToggleProps> = (args) => <HOOToggle {...args} />;
+const Template: ComponentStory<typeof HOOToggle> = (args: IHOOToggleProps) => <HOOToggle {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = { labelOn: "On", labelOff: "Off" };
