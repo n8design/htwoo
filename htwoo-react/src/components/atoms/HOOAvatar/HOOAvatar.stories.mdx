@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOAvatar, { HOOAvatarSize } from './HOOAvatar';
 
 <Meta title="Atoms/Avatar/HOOAvatar" component={HOOAvatar} />
@@ -15,13 +15,17 @@ export enum HOOAvatarSize {
   Px48 = "48"
 }
 ```
-## Example using 32px size
+
+## Arguments
+
+<ArgsTable of={HOOAvatar} />
 
 export const Template = (args) => <HOOAvatar {...args} />;
 
+## Basic 32px
 <Canvas>
   <Story 
-    name="Standard 32px"
+    name="Basic 32px"
     args = { 
       {size: HOOAvatarSize.Px32, 
       imageSource: "https://placekitten.com/32/32", 

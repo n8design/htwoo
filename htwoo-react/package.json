@@ -26,7 +26,7 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "^1.0.0",
+    "@n8d/htwoo-core": "^1.1.0",
     "react": "^16.*",
     "react-dom": "^16.*"
   },

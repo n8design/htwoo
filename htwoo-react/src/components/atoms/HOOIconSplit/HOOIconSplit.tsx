@@ -31,12 +31,6 @@ export interface IHOOIconSplitState {
   showFlyout: boolean;
 }
 
-export class HOOIconSplitState implements IHOOIconSplitState {
-  constructor(
-    public showFlyout: boolean = false
-  ) { }
-}
-
 export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps, IHOOIconSplitState> {
   private LOG_SOURCE: string = "💦HOOIconSplit";
   private _componentClass: string = "hoo-buttonicon-split";
@@ -44,7 +38,7 @@ export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps
   constructor(props: IHOOIconSplitProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconSplit";
-    this.state = new HOOIconSplitState();
+    this.state = { showFlyout: false };
   }
 
   private _buttonClicked = () => {

@@ -39,12 +39,6 @@ export interface IHOOButtonSplitState {
   showFlyout: boolean;
 }
 
-export class HOOButtonSplitState implements IHOOButtonSplitState {
-  constructor(
-    public showFlyout: boolean = false
-  ) { }
-}
-
 export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
   private _componentClass: string = "hoo-button";
@@ -60,7 +54,7 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
         this._componentClass = `${this._componentClass}split`;
         break;
     }
-    this.state = new HOOButtonSplitState();
+    this.state = { showFlyout: false };
   }
 
   private _buttonClicked = () => {

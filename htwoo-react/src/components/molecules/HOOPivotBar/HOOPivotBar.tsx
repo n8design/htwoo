@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOPivotButton from "../../../HOOPivotButton";
+import HOOPivotButton from "../../../components/atoms/HOOPivotButton/HOOPivotButton";
 
 export interface IHOOPivotItem {
   key: number | string;

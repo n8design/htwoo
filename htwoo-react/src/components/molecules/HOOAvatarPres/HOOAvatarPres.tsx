@@ -30,6 +30,14 @@ export interface IHOOAvatarPresProps extends IHOOStandardProps {
    * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * (Optional) HTMLDivElement attributes that will be applied to the HOOAvatar element of the component.
+  */
+  avatarAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * (Optional) HTMLDivElement attributes that will be applied to the HOOPresence element of the component.
+  */
+  presenceAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOAvatarPresState {
@@ -54,8 +62,8 @@ export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresPro
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass}${this.props.size} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}${this.props.size}`;
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
-          <HOOAvatar size={this.props.size} imageSource={this.props.imageSource} imageAlt={this.props.imageAlt} />
-          <HOOPresence status={this.props.status} />
+          <HOOAvatar size={this.props.size} imageSource={this.props.imageSource} imageAlt={this.props.imageAlt} rootElementAttributes={this.props.avatarAttributes} />
+          <HOOPresence status={this.props.status} rootElementAttributes={this.props.presenceAttributes} />
         </div>
       );
     } catch (err) {

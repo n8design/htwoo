@@ -1,0 +1,64 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOMeta, {HOOMetaType, HOOMetaStyle} from './HOOMeta';
+
+<Meta title="Atoms/Meta/HOOMeta" component={HOOMeta} />
+
+Predefined enum defined for the supported meta types and styles:
+```ts
+export enum HOOMetaType {
+  Button = "button",
+  Link = "link",
+  Static = "static"
+}
+
+export enum HOOMetaStyle {
+  Primary = "primary",
+  Standard = "standard"
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOOMeta} />
+
+export const Template = (args) => <HOOMeta {...args} />;
+
+<Canvas>
+  <Story
+    name="Primary - Button"
+    args={
+      { metaType: HOOMetaType.Button , metaStyle: HOOMetaStyle.Primary, text: 'Meta Button', onClick: () => { alert("Clicked"); } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Primary - Link"
+    args={
+      { metaType: HOOMetaType.Link , metaStyle: HOOMetaStyle.Primary, text: 'Meta Link', linkUrl: "https://google.com", linkTarget: "_blank" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Static: Standard"
+    args={
+      { metaType: HOOMetaType.Static , metaStyle: HOOMetaStyle.Standard, text: 'Meta Static' }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Extending"
+    args={
+      { metaType: HOOMetaType.Static , metaStyle: HOOMetaStyle.Standard, text: 'Meta Static Ext', rootElementAttributes: { style: { backgroundColor: "red" } } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -28,6 +28,7 @@ export * from './HOOIconOverflow';
 export * from './HOOIconSplit';
 export * from './HOOLabel';
 export * from './HOOLoading';
+export * from './HOOMeta';
 export * from './HOONotifyLabel';
 export * from './HOOOptionList';
 export * from './HOOPivotBar';

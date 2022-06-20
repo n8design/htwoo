@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOButton, {HOOButtonType} from './HOOButton';
 
 <Meta title="Atoms/Buttons/HOOButton" component={HOOButton} />
@@ -15,6 +15,11 @@ export enum HOOButtonType {
   "CompoundStandard"
 }
 ```
+
+## Arguments
+
+<ArgsTable of={HOOButton} />
+
 export const Template = (args) => <HOOButton {...args} />;
 
 <Canvas>

@@ -1,9 +1,14 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import HOOCheckbox from './HOOCheckbox';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCheckbox from './HOOCheckbox.tsx';
 
 <Meta title="Atoms/Input/HOOCheckbox" component={HOOCheckbox} />
 
 # HOOCheckbox
+
+
+## Arguments
+
+<ArgsTable of={HOOCheckbox} />
 
 export const Template = (args) => <HOOCheckbox {...args} />;
 

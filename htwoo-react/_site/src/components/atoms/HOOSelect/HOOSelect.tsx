@@ -84,6 +84,7 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOSelect";
     this.state = new HOOSelectState();
+    this._inputElement = React.createRef<HTMLInputElement>();
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOOSelectProps>, nextState: Readonly<IHOOSelectState>) {
