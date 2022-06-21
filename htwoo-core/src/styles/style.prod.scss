@@ -51,6 +51,9 @@
 @import "01-atoms/input/select";
 @import "01-atoms/input/search";
 
+/**** ATOMS / Meta Tags ****/
+@import "01-atoms/meta/tags";
+
 /**** ATOMS / Table ****/
 @import "01-atoms/table/table";
 
@@ -80,6 +83,7 @@
 @import "02-molecules/menu/nav";
 @import "02-molecules/menu/pivotbar";
 @import "02-molecules/menu/overflow";
+@import "02-molecules/meta/lists";
 @import "02-molecules/persona";
 @import "02-molecules/teams-toolbar";
 @import "02-molecules/teamsdb-card";
