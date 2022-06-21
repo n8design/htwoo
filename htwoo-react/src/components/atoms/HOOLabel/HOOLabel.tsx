@@ -8,7 +8,7 @@ export interface IHOOLabelProps extends IHOOStandardProps {
   label: string;
   /**
    * (Optional) HTMLLabelElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-label {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLLabelElement>;
 }

@@ -22,7 +22,7 @@ export interface IHOOIconSplitProps extends IHOOStandardProps {
   flyoutContextItemsClicked?: (ev: React.MouseEvent<HTMLButtonElement>, ci: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-buttonicon-split {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
