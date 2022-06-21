@@ -1,8 +1,8 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOCheckbox from "../../../HOOCheckbox";
+import HOOCheckbox from "../../../components/atoms/HOOCheckbox/HOOCheckbox";
 import { getRandomString } from "../../Common";
-import HOORadioButton from "../../../HOORadioButton";
+import HOORadioButton from "../../../components/atoms/HOORadioButton/HOORadioButton";
 
 export enum HOOOptionListType {
   "Checkbox",
@@ -42,7 +42,7 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   direction?: HOOOptionListDirection;
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
 }

@@ -1,0 +1,56 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOONotifyLabel, {
+  HOONotifyType
+} from './HOONotifyLabel';
+
+<Meta title="Atoms/Validation/HOONotifyLabel" component={HOONotifyLabel} />
+
+# HOONotifyLabel
+
+Predefined enum defined for the supported notification types:
+```ts
+export enum HOONotifyType {
+  "Success",
+  "Error"
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOONotifyLabel} />
+
+export const Template = (args) => <HOONotifyLabel {...args} />;
+
+## Success
+<Canvas>
+  <Story 
+    name="Success"
+    args = { 
+      { type: HOONotifyType.Success, message: "Successful message" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Error
+<Canvas>
+  <Story 
+    name="Error"
+    args = { 
+      { type: HOONotifyType.Error, message: "Error message" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { type: HOONotifyType.Error, message: "Error message",
+        rootElementAttributes: { style: { backgroundColor: "red" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

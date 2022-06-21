@@ -42,7 +42,7 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   containsTypeAhead: boolean;
   /**
-   * Change event handler
+   * Change event handler returns the new field value based on the selected items key
   */
   onChange: (fieldValue: string | number) => void;
   /**
@@ -68,16 +68,7 @@ export interface IHOODropDownState {
   optionsLength: number;
 }
 
-export class HOODropDownState implements IHOODropDownState {
-  constructor(
-    public currentValue: string | number = null,
-    public optionsLength: number = 0,
-    public ddState: DDState = DDState.Initial,
-    public open: boolean = false
-  ) { }
-}
-
-export default class HOODropDown extends React.PureComponent<IHOODropDownProps, IHOODropDownState> {
+export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
   private LOG_SOURCE: string = "💦HOODropDown";
   private _componentClass: string = "hoo-select";
   private _ulClass: string = "hoo-select-dropdown";
@@ -90,7 +81,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODropDown";
     this._dropdownId += getRandomString(10);
-    this.state = new HOODropDownState(props.value, props.options.length);
+    this.state = { currentValue: props.value, optionsLength: props.options.length, ddState: DDState.Initial, open: false };
     this._inputElement = React.createRef<HTMLInputElement>();
   }
 
@@ -406,7 +397,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
             className={ulClassName}>
             {this.props.options && this.props.options.map((g) => {
               return (
-                <li className="hoo-optgroup">
+                <li className="hoo-optgroup" key={g.groupName}>
                   {g.groupName.length > 0 &&
                     <div className="hoo-optgroup-name">{g.groupName}</div>
                   }
@@ -414,6 +405,7 @@ export default class HOODropDown extends React.PureComponent<IHOODropDownProps, 
                     {g.groupItems && g.groupItems.map((i, index) => {
                       return (
                         <li ref={element => this._optionElements[index] = element}
+                          key={i.key}
                           data-value={i.key}
                           className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
                           aria-disabled={i.disabled}

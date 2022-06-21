@@ -60,16 +60,7 @@ export interface IHOOSelectState {
   optionsLength: number;
 }
 
-export class HOOSelectState implements IHOOSelectState {
-  constructor(
-    public currentValue: string | number = null,
-    public optionsLength: number = 0,
-    public selectStatus: HOOSelectStatus = HOOSelectStatus.Initial,
-    public open: boolean = false
-  ) { }
-}
-
-export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOOSelectState> {
+export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
   private _componentClass: string = "hoo-select";
   private _optionElements = [];
@@ -79,7 +70,8 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
   constructor(props: IHOOSelectProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOSelect";
-    this.state = new HOOSelectState();
+    this.state = { currentValue: props.value || undefined, selectStatus: HOOSelectStatus.Initial, open: false, optionsLength: 0 };
+    this._inputElement = React.createRef<HTMLInputElement>();
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOOSelectProps>, nextState: Readonly<IHOOSelectState>) {
@@ -335,7 +327,6 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
         default: // middle list or filtered items 
           const currentItem = document.activeElement;
           const whichOne = aCurrentOptions.findIndex((o) => { return o == (currentItem as HTMLLIElement); });
-          //const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
           if (toThere === HOOSelectFocus.Forward) {
             const nextOne = aCurrentOptions[whichOne + 1];
             nextOne.focus();
@@ -385,7 +376,8 @@ export default class HOOSelect extends React.PureComponent<IHOOSelectProps, IHOO
               return (
                 <li ref={element => this._optionElements[index] = element}
                   key={o.key}
-                  className="hoo-option" role="option"
+                  className="hoo-option"
+                  role="option"
                   data-value={o.key}
                   tabIndex={-1}
                   onClick={() => { this._onChange(o.key, this.props.id); }}

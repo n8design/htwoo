@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOFlyoutMenu from './HOOFlyoutMenu';
 
 <Meta title="Atoms/Menu/HOOFlyoutMenu" component={HOOFlyoutMenu} />
@@ -14,6 +14,10 @@ export interface IHOOFlyoutMenuItem {
   label: string;
 }
 ```
+
+## Arguments
+
+<ArgsTable of={HOOFlyoutMenu} />
 
 export const Template = (args) => <HOOFlyoutMenu {...args} />;
 

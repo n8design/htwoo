@@ -17,7 +17,7 @@ export interface IHOOSearchProps extends IHOOStandardProps {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-input-search {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }

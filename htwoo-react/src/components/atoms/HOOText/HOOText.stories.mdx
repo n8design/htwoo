@@ -1,0 +1,90 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOText from './HOOText';
+
+<Meta title="Atoms/Input/HOOText" component={HOOText} />
+
+# HOOText
+
+
+## Arguments
+
+<ArgsTable of={HOOText} />
+
+export const Template = (args) => <HOOText {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { value: "Default Value" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+<Canvas>
+  <Story 
+    name="Disabled"
+    args = { 
+      { value: "Default Value", disabled: true }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Prefix
+<Canvas>
+  <Story 
+    name="Prefix"
+    args = { 
+      { value: "Default Value", inputPrefix: "https://" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Suffix
+<Canvas>
+  <Story 
+    name="Suffix"
+    args = { 
+      { value: "Default Value", inputSuffix: ".com" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Prefix/Suffix
+<Canvas>
+  <Story 
+    name="Prefix/Suffix"
+    args = { 
+      { value: "Default Value", inputPrefix: "https://", inputSuffix: ".com" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Multiline
+<Canvas>
+  <Story 
+    name="Multiline"
+    args = { 
+      { value: "Default Value", multiline: 5 }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { value: "Default Value", rootElementAttributes: { style: { backgroundColor: "red" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

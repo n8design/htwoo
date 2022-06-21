@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCardTitle from './HOOCardTitle';
+
+<Meta title="Molecules/Card-Elements/HOOCardTitle" component={HOOCardTitle} />
+
+# HOOCardTitle
+
+
+## Arguments
+
+<ArgsTable of={HOOCardTitle} />
+
+export const Template = (args) => <HOOCardTitle {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { title: "Title Value" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { title: "Title Value", rootElementAttributes: { style: { backgroundColor: "red" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
