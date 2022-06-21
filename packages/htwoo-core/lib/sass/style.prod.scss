@@ -41,6 +41,8 @@
 @import "01-atoms/loading/progress";
 @import "01-atoms/loading/shimmer";
 
+/**** ATOMS / Meta Tags ****/
+@import "01-atoms/meta/tags";
 
 /**** ATOMS / Buttons ****/
 @import "01-atoms/input/label";
@@ -81,6 +83,7 @@
 @import "02-molecules/menu/pivotbar";
 @import "02-molecules/menu/overflow";
 @import "02-molecules/persona";
+@import "02-molecules/meta/lists";
 @import "02-molecules/teams-toolbar";
 @import "02-molecules/teamsdb-card";
 
