@@ -1,4 +1,4 @@
-.hoo-mtag-lbl{
+.hoo-mtag-lbl {
 	font-size: .875em;
 	line-height: 1.25em;
 
@@ -6,13 +6,13 @@
 
 	box-sizing: border-box;
 	margin: 0.125em .75em 0;
-    padding-left: 0 0.25rem;
+	padding: 0.125em 0.25em 0;
 
 	flex-wrap: nowrap;
 }
 
 .hoo-mtag,
-.hoo-mtag-primary{
+.hoo-mtag-primary {
 	font-size: 1rem;
 
 	display: inline-flex;
@@ -31,31 +31,36 @@
 	align-items: baseline;
 }
 
-.hoo-mtag{
+.hoo-mtag {
 	color: $neutral-700;
 	background-color: $neutral-100;
 }
 
-.hoo-mtag-primary{
+.hoo-mtag-primary {
 	color: $neutral-000;
 	background-color: $theme-700;
+
+	&:visited {
+		color: $neutral-000;
+		background-color: $theme-700;
+	}
 }
 
 a.hoo-mtag,
-button.hoo-mtag{
+button.hoo-mtag {
 	cursor: pointer;
 
-	&:hover{
+	&:hover {
 		color: $neutral-000;
 		background-color: $theme-700;
 	}
 }
 
 a.hoo-mtag-primary,
-button.hoo-mtag-primary{
+button.hoo-mtag-primary {
 	cursor: pointer;
 
-	&:hover{
+	&:hover {
 		color: $neutral-700;
 		background-color: $neutral-100;
 	}
