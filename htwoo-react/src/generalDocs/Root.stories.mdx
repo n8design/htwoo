@@ -4,13 +4,17 @@ import { Meta } from "@storybook/addon-docs";
 
 # Getting Started with HTWOO-REACT
 
->Note: This component library is currently under development and will most likely continue to make improvements that could likely bring about breaking changes.  Please feel free to submit your enhancement ideas and feedback to the issues list so that we can try to address them.
+_To get all the details on what has been released when check out our [REACT_CHANGELOG](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)._
+
+## Getting Help/Giving Feedback
+
+Please feel free to submit your questions, enhancement ideas, and feedback to the GitHub [issues list](https://github.com/n8design/htwoo/issues) so that we can try to address them.
 
 ## Initialize library in Microsoft SharePoint Framework (SPFx)
 
 ### 1. Install package in your solution.
   
-  >This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you.
+  _This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you._
 
   ```cmd
   npm i @n8d/htwoo-react
@@ -20,7 +24,7 @@ import { Meta } from "@storybook/addon-docs";
 
   Add a reference to the `style.prod.scss` file in your solutions root .scss file. Put the reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
   
-  >Note: The import is wrapped in :global so that the class names will not be modified with a namespace.
+  _Note: The import is wrapped in :global so that the class names will not be modified with a namespace._
 
   ```css
   .myWebPartRoot{
@@ -61,7 +65,7 @@ import { Meta } from "@storybook/addon-docs";
   ```
     
   Alternatively if you have additional icons in your own symbol set file, you can add them by passing the path into the initSymbols method:
-  >Note: This will load both the basic SVG icons referenced above as well as whatever icons are in your referenced file, so you only need to do one call.
+  _Note: This will load both the basic SVG icons referenced above as well as whatever icons are in your referenced file, so you only need to do one call._
     
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
@@ -120,7 +124,7 @@ import { Meta } from "@storybook/addon-docs";
 
   2. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
 
-  >For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation.  
+  _For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation._
   
   ```ts
   import { ThemeProvider } from '@microsoft/sp-component-base';

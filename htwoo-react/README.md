@@ -9,7 +9,11 @@ Complete documentation of the [HTWOO ReactJS components](https://lab.n8d.studio/
 
 ## How To Use
 
->Note: This component library is currently under development and will most likely continue to make improvements that could likely bring about breaking changes.  Please feel free to submit your enhancement ideas and feedback to the issues list so that we can try to address them.
+>To get all the details on what has been released when check out our [REACT_CHANGELOG](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md).
+
+## Getting Help/Giving Feedback
+
+Please feel free to submit your questions, enhancement ideas, and feedback to the GitHub [issues list](https://github.com/n8design/htwoo/issues) so that we can try to address them.
 
 ### Initialize library in Microsoft SharePoint Framework (SPFx)
 
