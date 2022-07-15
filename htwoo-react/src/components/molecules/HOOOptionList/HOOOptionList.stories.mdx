@@ -10,6 +10,11 @@ The `options` property requires an array of items of type `IHOOListOption`.
 
 Predefined enum defined for the supported Option list type and the option list direction:
 ```ts
+export interface IHOOListOption {
+  key: number | string;
+  text: string;
+}
+
 export enum HOOOptionListType {
   "Checkbox",
   "RadioButton",

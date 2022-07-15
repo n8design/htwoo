@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.2.0 - 2022-July-15
+
+>In support of HTWOO-CORE v1.2.0
+
+### GENERAL
+
+- Updated peerDependency to support larger range of React versions: >=16.13.1 <=17.0.2
+
+### ATOMS
+
+- *HOOLabel* - Adds optional `for` property to specify the id of the form element the label should be bound to.
+
+### MOLECULES
+
+- *HOOOptionList* - Bug fix `onChange` event was incorrectly surfacing `React.ChangeEventHandler<HTMLInputElement>` - now is a custom event type that returns the key and and checked state.
+- *HOOWebPartTitle* - Bug fix `title` field set as optional.
+
 ## 1.1.0 - 2022-June-21
 
 >In support of HTWOO-CORE v1.1.1
