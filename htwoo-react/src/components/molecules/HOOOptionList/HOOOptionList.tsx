@@ -33,9 +33,9 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   value: string | number | string[] | number[];
   /**
-   * Change event handler
+   * Change event handler that receives the key and checked status of the option changed
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: (key: string | number, checked: boolean) => void;
   /**
    * (Optional) Direction for child options; defaults to Verticle
   */
@@ -54,7 +54,7 @@ export class HOOOptionListState implements IHOOOptionListState {
   constructor() { }
 }
 
-export default class HOOOptionList extends React.PureComponent<IHOOOptionListProps, IHOOOptionListState> {
+export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
@@ -78,6 +78,15 @@ export default class HOOOptionList extends React.PureComponent<IHOOOptionListPro
     return true;
   }
 
+  private _onChange = (event, key: string | number) => {
+    try {
+      const checked = event.target.checked;
+      this.props.onChange(key, checked);
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
+    }
+  }
+
   private _getOptionTSX = (option: IHOOListOption) => {
     let retVal = null;
     let checked = false;
@@ -85,11 +94,11 @@ export default class HOOOptionList extends React.PureComponent<IHOOOptionListPro
     switch (this.props.type) {
       case HOOOptionListType.Checkbox:
         checked = (this.props.value as Array<string | number>).indexOf(option.key) > -1;
-        retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />;
+        retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
         break;
       case HOOOptionListType.RadioButton:
         checked = this.props.value === option.key;
-        retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={this.props.onChange} rootElementAttributes={elementAttributes} />
+        retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
         break;
     }
     return retVal;

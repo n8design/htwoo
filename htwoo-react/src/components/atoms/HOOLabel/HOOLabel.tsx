@@ -7,6 +7,10 @@ export interface IHOOLabelProps extends IHOOStandardProps {
   */
   label: string;
   /**
+   * (Optional) Specifies the id of the form element the label should be bound to
+  */
+  for?: string;
+  /**
    * (Optional) HTMLLabelElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-label {rootElementAttributes.class}
   */
@@ -34,7 +38,7 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <label data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>{this.props.label}</label>
+        <label data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} htmlFor={this.props.for} className={className}>{this.props.label}</label>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

@@ -3,18 +3,9 @@ import { IHOOStandardProps } from "../../Common.model";
 
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**
-   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
+   * Title of the web part.
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
-  /**
-   * (Optional) Title of the web part.
-   */
-  title?: string;
-  /**
-   * (Optional) Placeholder to be shown when Title is null.
-   */
-  placeholder?: string;
+  title: string;
   /**
    * Is the web part title editable.
    */
@@ -23,6 +14,15 @@ export interface IHOOWebPartTitleProps extends IHOOStandardProps {
    * Method to update the data source for the web part's title.
    */
   updateTitle: (title: string) => void;
+  /**
+   * (Optional) Placeholder to be shown when Title is null.
+   */
+  placeholder?: string;
+  /**
+   * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
+   * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
+   */
+  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
 }
 
 export interface IHOOWebPartTitleState {

@@ -52,7 +52,7 @@ export class HOOTagState implements IHOOTagState {
   constructor() { }
 }
 
-export default class HOOTag extends React.Component<IHOOTagProps, IHOOTagState> {
+export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagState> {
   private LOG_SOURCE: string = "💦HOOTag";
   private _componentClass: string = "hoo-mtag";
 
