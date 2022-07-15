@@ -25,9 +25,13 @@ export interface IHOOCardFooterProps extends IHOOStandardProps {
   modified: string;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-cardfooter {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * (Optional) HTMLDivElement attributes that will be applied to the HOOAvatar element of the component.
+  */
+  avatarAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOCardFooterState {
@@ -54,7 +58,7 @@ export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterPro
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           {!this.props.children &&
             <>
-              <HOOAvatar imageSource={this.props.avatarImage} imageAlt={this.props.avatarImageAlt} size={this.props.avatarImageSize} />
+              <HOOAvatar imageSource={this.props.avatarImage} imageAlt={this.props.avatarImageAlt} size={this.props.avatarImageSize} rootElementAttributes={this.props.avatarAttributes} />
               <div className="hoo-cardfooter-data">
                 <div className="hoo-cardfooter-name">{this.props.name}</div>
                 <div className="hoo-cardfooter-modified">{this.props.modified}</div>

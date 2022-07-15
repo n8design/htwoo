@@ -5,15 +5,11 @@ export const parameters = {
   controls: {
     expanded: true
   },
+  viewMode: 'docs',
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Introduction', 'Advanced', 'Atoms', 'Molecules', 'Organisms'],
-    },
-  },
-  docs: {
-    source: {
-      state: 'open',
+      order: ['Introduction', ['Getting Started', 'Component Structure'], 'Advanced', 'Atoms', 'Molecules', 'Organisms', 'Contributing'],
     },
   },
   addons: [{

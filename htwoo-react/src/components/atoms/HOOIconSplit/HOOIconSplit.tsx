@@ -22,19 +22,13 @@ export interface IHOOIconSplitProps extends IHOOStandardProps {
   flyoutContextItemsClicked?: (ev: React.MouseEvent<HTMLButtonElement>, ci: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-buttonicon-split {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOIconSplitState {
   showFlyout: boolean;
-}
-
-export class HOOIconSplitState implements IHOOIconSplitState {
-  constructor(
-    public showFlyout: boolean = false
-  ) { }
 }
 
 export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps, IHOOIconSplitState> {
@@ -44,7 +38,7 @@ export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps
   constructor(props: IHOOIconSplitProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconSplit";
-    this.state = new HOOIconSplitState();
+    this.state = { showFlyout: false };
   }
 
   private _buttonClicked = () => {

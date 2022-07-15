@@ -6,14 +6,13 @@ export enum HOOAvatarSize {
   Px24 = "24",
   Px32 = "32",
   Px40 = "40",
-  Px48 = "48"
+  Px48 = "48",
+  Px64 = "64",
+  Px72 = "72",
+  Px96 = "96",
 }
 
 export interface IHOOAvatarProps extends IHOOStandardProps {
-  /**
-   * The size of the avatar
-  */
-  size: HOOAvatarSize;
   /**
   * The source of the avatar image
  */
@@ -23,12 +22,16 @@ export interface IHOOAvatarProps extends IHOOStandardProps {
  */
   imageAlt: string;
   /**
+    * (Optional) The size of the avatar - can be controled by container
+   */
+  size?: HOOAvatarSize;
+  /**
    * Change event handler
   */
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-* {rootElementAttributes.class}
+   * Class names will be appended to the end of the default class string - hoo-avatar {rootElementAttributes.class}
   */
   rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
 }
@@ -42,17 +45,20 @@ export class HOOAvatarState implements IHOOAvatarState {
 
 export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOOAvatarState> {
   private LOG_SOURCE: string = "💦HOOAvatar";
-  private _componentClass: string = "hoo-avatar-";
+  private _componentClass: string = "hoo-avatar";
 
   constructor(props: IHOOAvatarProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOAvatar";
     this.state = new HOOAvatarState();
+    if (props.size != null) {
+      this._componentClass += `-${props.size}`;
+    }
   }
 
   public render(): React.ReactElement<IHOOAvatarProps> {
     try {
-      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass}${this.props.size} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}${this.props.size}`;
+      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}`;
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <img src={this.props.imageSource} alt={this.props.imageAlt} className="hoo-avatar-img" height={this.props.size} width={this.props.size} loading="lazy" />

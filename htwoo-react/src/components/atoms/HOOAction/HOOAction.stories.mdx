@@ -1,7 +1,7 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import {ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOAction, { HOOActionType } from './HOOAction';
 
-<Meta title="Atoms/Buttons/HOOAction" component={HOOAction} />
+<Meta title="Atoms/Buttons/HOOAction" component={HOOAction}/>
 
 # HOOAction 
 
@@ -13,8 +13,14 @@ export enum HOOActionType {
   "Context"
 }
 ```
+
+## Arguments
+
+<ArgsTable of={HOOAction} />
+
 export const Template = (args) => <HOOAction {...args} />;
 
+## Action
 <Canvas>
   <Story
     name="Action"
@@ -28,6 +34,7 @@ export const Template = (args) => <HOOAction {...args} />;
   </Story>
 </Canvas>
 
+## Command
 <Canvas>
   <Story
     name="Command"

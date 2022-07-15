@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOIconOverflow from './HOOIconOverflow';
+
+<Meta title="Atoms/Buttons/HOOIconOverflow" component={HOOIconOverflow} />
+
+# HOOIconOverflow
+
+## Arguments
+
+<ArgsTable of={HOOIconOverflow} />
+
+export const Template = (args) => <HOODropHOOIconOverflowDown {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { { onClick: () => { alert("Clicked"); } } }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { { onClick: () => { alert("Clicked"); }, rootElementAttributes: { style: { backgroundColor: "red" } } } }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

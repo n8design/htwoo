@@ -1,0 +1,59 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOTeamsSplashCard from './HOOTeamsSplashCard';
+import HOOSplashCardHeader from '../../molecules/HOOSplashCardHeader/HOOSplashCardHeader';
+import HOOSplashCardTitle from '../../molecules/HOOSplashCardTitle/HOOSplashCardTitle';
+import HOOSplashCardDesc from '../../molecules/HOOSplashCardDesc/HOOSplashCardDesc';
+import HOOSplashCardFooter from '../../molecules/HOOSplashCardFooter/HOOSplashCardFooter';
+import HOOButton, { HOOButtonType } from '../../atoms/HOOButton/HOOButton';
+
+<Meta title="Organisms/Cards/HOOTeamsSplashCard" component={HOOTeamsSplashCard}/>
+
+# HOOTeamsSplashCard
+
+This example shows using a `HOOSplashCardHeader`, `HOOSplashCardTitle`, `HOOSplashCardDesc`, and `HOOSplashCardFooter` (`HOOButton`) components as the children of the `HOOTeamsSplashCard` component.
+
+## Children
+
+See more information about the properties for the sub components:
+
+- [HOOSplashCardHeader](?path=/docs/molecules-card-elements-hoosplashcardheader--basic)
+- [HOOSplashCardTitle](?path=/docs/molecules-card-elements-hoosplashcardtitle--basic)
+- [HOOSplashCardDesc](?path=/docs/molecules-card-elements-hoosplashcarddesc--basic)
+- [HOOSplashCardFooter](?path=/docs/molecules-card-elements-hoosplashcardfooter--basic)
+- [HOOButton](?path=/docs/atoms-buttons-hoobutton--primary)
+
+## Arguments
+
+<ArgsTable of={HOOTeamsSplashCard} />
+
+export const Template = (args) => <HOOTeamsSplashCard {...args}>
+  <HOOSplashCardHeader imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+  <HOOSplashCardTitle title="My Teams Splash Card" />
+  <HOOSplashCardDesc description="My Teams Splash Card Description" />
+  <HOOSplashCardFooter>
+    <HOOButton type={HOOButtonType.Primary} label="Create Something" onClick={() => { alert("Clicked"); }} />
+    <HOOButton type={HOOButtonType.Standard} label="Call to Action" onClick={() => { alert("Clicked"); }} />
+  </HOOSplashCardFooter>
+</HOOTeamsSplashCard>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { rootElementAttributes: { style: { backgroundColor: "red" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
