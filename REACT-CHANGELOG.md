@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### GENERAL
 
-- Updated peerDependency to support larger range of React versions: >=16.13.1 <=17.0.2
+- Updated peerDependency to support larger range of React versions: >=16 <=17
 
 ### ATOMS
 
