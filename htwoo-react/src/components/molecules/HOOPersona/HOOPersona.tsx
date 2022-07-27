@@ -41,7 +41,7 @@ export class HOOPersonaState implements IHOOPersonaState {
   constructor() { }
 }
 
-export default class HOOPersona extends React.Component<IHOOPersonaProps, IHOOPersonaState> {
+export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IHOOPersonaState> {
   private LOG_SOURCE: string = "💦HOOPersona";
   private _componentClass: string = "hoo-persona-";
   private _showData: boolean = true;

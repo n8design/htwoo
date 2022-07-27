@@ -36,7 +36,7 @@ export class HOOTagListState implements IHOOTagListState {
   constructor() { }
 }
 
-export default class HOOTagList extends React.Component<IHOOTagListProps, IHOOTagListState> {
+export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IHOOTagListState> {
   private LOG_SOURCE: string = "💦HOOTagList";
   private _componentClass: string = "hoo-meta-list";
 

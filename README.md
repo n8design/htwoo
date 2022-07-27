@@ -8,9 +8,17 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 ![Be like water][logo]
 
+## HTWOO-React
+
+For ReactJS developers, we have an implementation of the htwoo-core library where we have provided a set of components compatible with Versions 16 & 17 of [ReactJS](https://reactjs.org/).
+
+A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://lab.n8d.studio/htwoo/htwoo-react/)
+
+## HTWOO-Core
+
 You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
-## How To Use
+## How To Use HTWOO-CORE
 
 * [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html.html)
 * [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react.html) 
