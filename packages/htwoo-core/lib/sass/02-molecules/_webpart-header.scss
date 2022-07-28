@@ -14,9 +14,9 @@
         &:empty {
 
             &[contenteditable="false"] {
-                &::before {
-                    content: attr(placeholder);
-                }
+                // &::before {
+                //     content: attr(placeholder);
+                // }
             }
 
             &[contenteditable="true"] {
