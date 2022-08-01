@@ -109,9 +109,9 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this._direction === HOOOptionListDirection.Vertical ? "is-vertical" : "is-horizontal")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const role = (this.props.type === HOOOptionListType.Checkbox) ? "checkboxgroup" : "radiogroup";
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role={role}>
+        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
-            return (this._getOptionTSX(option));
+            return (<div>{this._getOptionTSX(option)}</div>);
           })}
           {!this._valid &&
             "The type of HOOOptionList does not match the type of value"
