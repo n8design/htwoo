@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.2.1 - 2022-Aug-1
+
+>In support of HTWOO-CORE v1.2.3
+
+### MOLECULES
+
+- *HOOOptionList* - Bug fix for missing html/styles on checkbox option group.
+
 ## 1.2.0 - 2022-July-15
 
 >In support of HTWOO-CORE v1.2.0
