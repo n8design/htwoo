@@ -89,17 +89,21 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
 
   private _getOptionTSX = (option: IHOOListOption) => {
     let retVal = null;
-    let checked = false;
-    const elementAttributes: any = { name: this._optionListName };
-    switch (this.props.type) {
-      case HOOOptionListType.Checkbox:
-        checked = (this.props.value as Array<string | number>).indexOf(option.key) > -1;
-        retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
-        break;
-      case HOOOptionListType.RadioButton:
-        checked = this.props.value === option.key;
-        retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
-        break;
+    try {
+      let checked = false;
+      const elementAttributes: any = { name: this._optionListName };
+      switch (this.props.type) {
+        case HOOOptionListType.Checkbox:
+          checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
+          retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          break;
+        case HOOOptionListType.RadioButton:
+          checked = this.props.value === option.key;
+          retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          break;
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_getOptionTSX) - ${err}`);
     }
     return retVal;
   }
