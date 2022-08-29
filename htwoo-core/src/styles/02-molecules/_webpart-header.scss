@@ -4,17 +4,19 @@
 	font-weight: 600;
 
     text-overflow: ellipsis;
+    
+    color: $neutral-700;
 
     div {
         outline: none;
-        color: $neutral-700;
+        color: currentColor;    
 
         &:empty {
 
             &[contenteditable="false"] {
-                &::before {
-                    content: attr(placeholder);
-                }
+                // &::before {
+                //     content: attr(placeholder);
+                // }
             }
 
             &[contenteditable="true"] {

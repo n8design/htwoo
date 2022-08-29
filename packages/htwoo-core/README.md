@@ -25,6 +25,11 @@ npm install --save-dev @n8d/htwoo-core
 * [General Documentation](https://lab.n8d.studio/htwoo/)
 * [Pattern Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all)
 
+## other Resource
+
+* [hTWOo React](https://www.npmjs.com/package/@n8d/htwoo-react) - ReactJS implementation of hTWOo components - [Documentation](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/introduction-getting-started--page)
+* [hTWOo Icons](https://www.npmjs.com/package/@n8d/htwoo-icons) - A set of all Fluent Design Icons
+
 > **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
 
 

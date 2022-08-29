@@ -1,7 +1,7 @@
-import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
+import { SPFxThemes, ISPFxThemes, IHOOTheme } from "./SPFxThemes";
 import { symset } from "./SymbolSet";
 
-export { SPFxThemes, ISPFxThemes };
+export { SPFxThemes, ISPFxThemes, IHOOTheme };
 export { symset };
 
 export * from './HOOAction';

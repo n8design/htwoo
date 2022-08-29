@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "keywords": [
     "Fluent Design",
@@ -26,7 +26,7 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "^1.2.0",
+    "@n8d/htwoo-core": "^1.2.4",
     "react": "^16.*",
     "react-dom": "^16.*"
   },

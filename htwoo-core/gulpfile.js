@@ -98,6 +98,12 @@ const createLibSass = () => {
         .pipe(dest('../packages/htwoo-core/lib/sass'));
 
 }
+const createLibThemes = () => {
+
+    return src('./themes/**/*')
+        .pipe(dest('../packages/htwoo-core/lib/sass/themes'));
+
+}
 
 const createLibJS = () => {
 
@@ -128,7 +134,7 @@ const movePatterns = (cb) => {
 }
 
 const serve = parallel(styles, pluginCSSOverride, baseWatch);
-const buildLib = series(createLibJS, createLibSass, createLibComponents);
+const buildLib = series(createLibJS, createLibSass, createLibComponents, createLibThemes);
 const buildPLRepo = series(movePatterns);
 
 exports["build:lib"] = buildLib;
