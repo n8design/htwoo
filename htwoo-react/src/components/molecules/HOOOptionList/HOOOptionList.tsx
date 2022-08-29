@@ -37,6 +37,10 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   onChange: (key: string | number, checked: boolean) => void;
   /**
+   * (Optional) Is option list disabled
+  */
+  disabled?: boolean;
+  /**
    * (Optional) Direction for child options; defaults to Verticle
   */
   direction?: HOOOptionListDirection;
@@ -95,11 +99,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       switch (this.props.type) {
         case HOOOptionListType.Checkbox:
           checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
-          retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
           break;
         case HOOOptionListType.RadioButton:
           checked = this.props.value === option.key;
-          retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
           break;
       }
     } catch (err) {
@@ -115,7 +119,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       return (
         <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
-            return (<div>{this._getOptionTSX(option)}</div>);
+            return (<div key={option.key}>{this._getOptionTSX(option)}</div>);
           })}
           {!this._valid &&
             "The type of HOOOptionList does not match the type of value"
