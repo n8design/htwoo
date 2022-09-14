@@ -1,6 +1,6 @@
 # HTWOO UI framework
 
-HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive, this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
+HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. [hTWOo Core](https://www.npmjs.com/package/@n8d/htwoo-core) is a pure HTML/CSS and JavaScript implementation that can be used in any project. In addition, [hTWOo React](https://www.npmjs.com/package/@n8d/htwoo-react) is a component based implementation that can be used in any ReactJS project (>= React 16).
 
 [![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
@@ -8,28 +8,28 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 ![Be like water][logo]
 
-## HTWOO-React
-
-For ReactJS developers, we have an implementation of the htwoo-core library where we have provided a set of components compatible with Versions 16 & 17 of [ReactJS](https://reactjs.org/).
-
-A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://lab.n8d.studio/htwoo/htwoo-react/)
-
 ## HTWOO-Core
 
 You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
-## How To Use HTWOO-CORE
+### How To Use HTWOO-CORE
 
 * [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html.html)
 * [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react.html) 
 * [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements.html)
 * more to come
 
-## Why just HTML and CSS
+### Why just HTML and CSS
 
 In the end it always comes down to HTML/CSS, no matter which framework you use for your development. HTML/CSS documented components serve no other longevity than any other framework. HTML and CSS can also be easily translated, included, and embedded in any other development framework.
 
 HTML/CSS UI components can also be more easily optimized, refactored, or visually enhanced.
+
+## HTWOO-React
+
+For ReactJS developers, we have an implementation of the htwoo-core library where we have provided a set of components compatible with Versions >=16 of [ReactJS](https://reactjs.org/).
+
+A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://lab.n8d.studio/htwoo/htwoo-react/)
 
 ## Concepts
 
