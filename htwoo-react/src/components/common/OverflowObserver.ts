@@ -9,6 +9,7 @@ export interface IOverflowItem {
 export interface IOverflowResizer {
   InstanceId: string;
   ObserveElement: HTMLElement;
+  OverflowChangedEvent: Function;
 }
 
 export class OverflowResizer implements IOverflowResizer {
@@ -16,6 +17,7 @@ export class OverflowResizer implements IOverflowResizer {
   private _instanceId: string;
   private _resizeObserver: ResizeObserver;
   private _resizeContainer: HTMLElement;
+  private _overflowChangedEvent: (overflow: boolean) => void;
 
   private _overflowItems: IOverflowItem[] = [];
 
@@ -31,6 +33,10 @@ export class OverflowResizer implements IOverflowResizer {
   public set ObserveElement(value: HTMLElement) {
     this._resizeContainer = value;
     this._resizeObserver.observe(value, { box: "border-box" });
+  }
+
+  public set OverflowChangedEvent(value: (overflow: boolean) => void) {
+    this._overflowChangedEvent = value;
   }
 
   private _resizeObserverHandler: ResizeObserverCallback = () => {
@@ -75,7 +81,6 @@ export class OverflowResizer implements IOverflowResizer {
   private _getOverflowItems = () => {
     try {
       const overflowButton = this._resizeContainer.querySelector('hoo-buttonicon-overflow');
-      // const defaultOffset = overflowButton?.clientHeight || 40;
       const defaultOffset = 40;
       const targetWidth = this._resizeContainer.parentElement.clientWidth;
       let curOverFlowItems = this._overflowItems.filter(item => {
@@ -101,18 +106,8 @@ export class OverflowResizer implements IOverflowResizer {
         }
       }
 
-      let buttonEnabled: HTMLElement = null;
-      if (overflowControl.children.length !== 0) {
-        buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
-        if (buttonEnabled) {
-          buttonEnabled.classList.add('is-active');
-        }
-      } else {
-        buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
-        if (buttonEnabled) {
-          buttonEnabled.classList.remove('is-active');
-        }
-      }
+      //Trigger parent container to add is-active class to Overflow div
+      this._overflowChangedEvent((overflowControl.children.length !== 0))
 
       // Move elements back from overflow menu
       if (overflowControl && overflowControl.children.length > curOverFlowItems.length) {

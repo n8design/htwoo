@@ -108,7 +108,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
           {this.props.hasOverflow &&
             <div ref={this._overflowContainer} className={`hoo-overflow ${(this.state.showOverflow ? "show-flyout" : "")}`}>
               {this._renderCommandItems()}
-              <HOOIconOverflow overflowClicked={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} />
+              <HOOIconOverflow overflow={this.state.showOverflow} />
             </div>
           }
         </div>
