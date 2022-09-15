@@ -27,15 +27,17 @@
         order: 999;
         height: px2rem(44px);
         visibility: hidden;
-        &.is-active{
+
+        &.is-active {
             visibility: visible;
+
             .hoo-buttonicon-overflow {
                 visibility: inherit;
             }
         }
 
         &:hover {
-            & > .hoo-buttonflyout {
+            &>.hoo-buttonflyout {
                 display: block;
                 right: 0;
                 left: unset;
@@ -51,17 +53,20 @@
 
     }
 
-    & > .show-flyout {
-        &.hoo-buttonicon-overflow {
-            .hoo-buttonflyout {
-                right: 0;
-                left: unset;
+    &>.hoo-overflow {
+        &>.show-flyout {
+            &.hoo-buttonicon-overflow {
+                &>.hoo-buttonflyout {
+                    display: block;
+                    right: 0;
+                    left: unset;
+                }
             }
-        }
 
-        .hoo-button-pivot {
-            &:hover {
-                padding-left: .25rem;
+            .hoo-button-pivot {
+                &:hover {
+                    padding-left: .25rem;
+                }
             }
         }
     }
