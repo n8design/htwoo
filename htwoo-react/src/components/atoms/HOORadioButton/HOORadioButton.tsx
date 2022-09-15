@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import { getRandomString } from "../../Common";
+import { getRandomString } from "../../common/Common";
 
 export interface IHOORadioButtonProps extends IHOOStandardProps {
   /**

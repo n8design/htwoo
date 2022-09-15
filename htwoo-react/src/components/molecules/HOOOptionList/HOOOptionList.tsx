@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOCheckbox from "../../../components/atoms/HOOCheckbox/HOOCheckbox";
-import { getRandomString } from "../../Common";
+import { getRandomString } from "../../common/Common";
 import HOORadioButton from "../../../components/atoms/HOORadioButton/HOORadioButton";
 
 export enum HOOOptionListType {
