@@ -1,12 +1,12 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon from "../HOOIcon/HOOIcon";
+import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
-   * Direct interface for buttons click event handler.
+   * Event handler that will apply "show-flyout" class to the parent components "hoo-overflow" div container.
    */
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  overflowClicked: React.MouseEventHandler<HTMLButtonElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonicon-overflow {rootElementAttributes.class}
@@ -31,17 +31,12 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
     this.state = new HOOIconOverflowState();
   }
 
-  //TODO: (Stefan) Can this pattern be simplified to no nest a span inside the button so that we can use the atoms already created
   public render(): React.ReactElement<IHOOIconOverflowProps> {
     try {
-      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <div data-component={this.LOG_SOURCE} aria-haspopup="true" {...this.props.rootElementAttributes} className={className}>
-          <button className="hoo-buttonicon-overflow" aria-haspopup="true" onClick={this.props.onClick}>
-            <span className="hoo-button-icon" aria-hidden="true">
-              <HOOIcon iconName="hoo-icon-ellipses" />
-            </span>
-          </button>
+          <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={this.props.overflowClicked} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
           <ul className="hoo-buttonflyout" role="menu">
           </ul>
         </div>

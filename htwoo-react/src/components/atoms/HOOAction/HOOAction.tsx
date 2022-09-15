@@ -50,6 +50,7 @@ export class HOOActionState implements IHOOActionState {
 
 export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _labelClass: string = "hoo-button-label";
 
@@ -72,11 +73,12 @@ export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOO
 
   public render(): React.ReactElement<IHOOActionProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const labelClass = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
         <>
-          <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+          <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
             {this.props.label &&
               <>
                 <span className="hoo-button-icon" aria-hidden="true">

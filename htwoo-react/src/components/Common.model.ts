@@ -2,6 +2,10 @@ import React from "react";
 
 export interface IHOOStandardProps {
   /**
+   * (Optional) React key property, when included added to root element
+   */
+  reactKey?: React.Key;
+  /**
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
    */
   rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
