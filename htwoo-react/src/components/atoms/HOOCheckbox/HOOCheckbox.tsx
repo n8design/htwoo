@@ -39,6 +39,7 @@ export class HOOCheckboxState implements IHOOCheckboxState {
 
 export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, IHOOCheckboxState> {
   private LOG_SOURCE: string = "💦HOOCheckbox";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-checkbox";
   private _checkboxId: string = "hoo-checkbox-";
 
@@ -51,13 +52,14 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
 
   public render(): React.ReactElement<IHOOCheckboxProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE}
-            type="checkbox"
+          <input {...this._rootProps}
             id={this._checkboxId}
             {...this.props.rootElementAttributes}
+            type="checkbox"
             checked={this.props.checked}
             disabled={this.props.disabled || false}
             aria-disabled={this.props.disabled || false}

@@ -52,6 +52,7 @@ export class HOOCommandBarState implements IHOOCommandBarState {
 
 export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarProps, IHOOCommandBarState> {
   private LOG_SOURCE: string = "💦HOOCommandBar";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cmdbar";
   private _overflowResizer: IOverflowResizer;
   private _overflowContainer: React.RefObject<HTMLDivElement>;
@@ -94,12 +95,13 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
 
   public render(): React.ReactElement<IHOOCommandBarProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.hasOverflow) {
         className += " has-overflow";
       }
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {!this.props.hasOverflow &&
             this._renderCommandItems()
           }

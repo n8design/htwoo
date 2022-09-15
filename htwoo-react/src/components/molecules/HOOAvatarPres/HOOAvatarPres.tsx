@@ -49,6 +49,7 @@ export class HOOAvatarPresState implements IHOOAvatarPresState {
 
 export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresProps, IHOOAvatarPresState> {
   private LOG_SOURCE: string = "💦HOOAvatarPres";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-avatar-pres";
 
   constructor(props: IHOOAvatarPresProps) {
@@ -62,9 +63,10 @@ export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresPro
 
   public render(): React.ReactElement<IHOOAvatarPresProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}`;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <HOOAvatar size={this.props.size} imageSource={this.props.imageSource} imageAlt={this.props.imageAlt} rootElementAttributes={this.props.avatarAttributes} />
           <HOOPresence status={this.props.status} rootElementAttributes={this.props.presenceAttributes} />
         </div>

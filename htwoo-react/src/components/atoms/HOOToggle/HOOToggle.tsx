@@ -49,6 +49,7 @@ export class HOOToggleState implements IHOOToggleState {
 
 export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOOToggleState> {
   private LOG_SOURCE: string = "💦HOOToggle";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-toggle";
   private _inputClass: string = "hoo-toggle-cb";
   private _labelClass: string = "hoo-toggle-label";
@@ -63,11 +64,12 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
 
   public render(): React.ReactElement<IHOOToggleProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       let inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       const labelClassName = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={rootClassName} >
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName} >
           <input type="checkbox" id={this._toggleId} checked={this.props.checked} {...this.props.inputElementAttributes} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.onChange} className={inputClassName} />
           {this.props.labelOn && this.props.labelOff &&
             <label  {...this.props.labelElementAttributes} className={labelClassName} htmlFor={this._toggleId} >

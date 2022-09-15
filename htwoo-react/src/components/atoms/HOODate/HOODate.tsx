@@ -38,6 +38,7 @@ export class HOODateState implements IHOODateState {
 
 export default class HOODate extends React.PureComponent<IHOODateProps, IHOODateState> {
   private LOG_SOURCE: string = "💦HOODate";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-date";
   private _minValue: Date = new Date();
   private _maxValue: Date = new Date();
@@ -49,7 +50,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
   }
 
   public render(): React.ReactElement<IHOODateProps> {
-
+    if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     if (!this.props.maxValue && this._maxValue != new Date()) {
       this._maxValue.setFullYear(this._maxValue.getFullYear() + 10);
     }
@@ -62,9 +63,9 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <input
-          data-component={this.LOG_SOURCE}
-          type="date"
+          {...this._rootProps}
           {...this.props.rootElementAttributes}
+          type="date"
           value={this.props.value}
           className={className}
           min={minValue}

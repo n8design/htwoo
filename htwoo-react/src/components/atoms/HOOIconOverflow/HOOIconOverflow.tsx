@@ -23,6 +23,7 @@ export class HOOIconOverflowState implements IHOOIconOverflowState {
 
 export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonicon-overflow";
 
   constructor(props: IHOOIconOverflowProps) {
@@ -33,9 +34,10 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
 
   public render(): React.ReactElement<IHOOIconOverflowProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} aria-haspopup="true" {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
           <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={this.props.overflowClicked} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
           <ul className="hoo-buttonflyout" role="menu">
           </ul>

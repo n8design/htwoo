@@ -45,6 +45,7 @@ export class HOOAvatarState implements IHOOAvatarState {
 
 export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOOAvatarState> {
   private LOG_SOURCE: string = "💦HOOAvatar";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-avatar";
 
   constructor(props: IHOOAvatarProps) {
@@ -58,9 +59,10 @@ export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOO
 
   public render(): React.ReactElement<IHOOAvatarProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}`;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <img src={this.props.imageSource} alt={this.props.imageAlt} className="hoo-avatar-img" height={this.props.size} width={this.props.size} loading="lazy" />
           {this.props.children}
         </div>

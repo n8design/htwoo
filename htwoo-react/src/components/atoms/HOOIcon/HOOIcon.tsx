@@ -26,6 +26,7 @@ export class HOOIconState implements IHOOIconState {
 
 export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIconState> {
   private LOG_SOURCE: string = "💦HOOIcon";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private componentClass: string = "hoo-icon";
 
   constructor(props: IHOOIconProps) {
@@ -36,10 +37,11 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
 
   public render(): React.ReactElement<IHOOIconProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
       const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName);
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} aria-label={this.props.iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} aria-label={this.props.iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}>
         </div>
       );
     } catch (err) {
