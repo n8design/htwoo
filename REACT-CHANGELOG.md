@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### GENERAL
 
 - Added reactKey of type React.Key to IHOOStandardProps and when added injected into the root element for the component.
+- Small update to HTWOO-Snippets for new reactKey property
 
 ### ATOMS
 

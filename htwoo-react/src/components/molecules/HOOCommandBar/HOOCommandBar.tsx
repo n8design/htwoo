@@ -9,6 +9,7 @@ import { IHOOFlyoutMenuItem } from "../../../HOOFlyoutMenu";
 export interface IHOOCommandItem {
   key: number | string;
   text: string;
+  flyoutMenuItems: IHOOFlyoutMenuItem[];
 }
 
 export interface IHOOCommandBarProps extends IHOOStandardProps {
@@ -23,7 +24,7 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
   /**
    * Command Item click event handler.
    */
-  onClick: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>, key: number | string) => void;
+  onClick: (ev: React.MouseEvent<HTMLElement>, commandKey: number | string, flyoutItem: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) Overflow enabled - default false
    */
@@ -63,7 +64,12 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
     props.hasOverflow = props.hasOverflow || false;
     this.state = new HOOCommandBarState();
     this._overflowResizer = new OverflowResizer(`HOOCommandBarOR_${getRandomString(10)}`);
+    this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
     this._overflowContainer = React.createRef<HTMLDivElement>();
+  }
+
+  private _toggleOverflow = (overflow: boolean) => {
+    this.setState({ showOverflow: overflow });
   }
 
   public componentDidMount(): void {
@@ -83,7 +89,12 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
         retVal = this.props.commandItems.map((pi, index) => {
           const isSelected = (pi.key === this.props.selectedKey);
           return (
-            <HOOButtonCommand key={pi.key} label={pi.text} flyoutContextItemsClicked={(ev, ci: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key); }} rootElementAttributes={this.props.commandButtonAttributes} />
+            <HOOButtonCommand
+              key={pi.key}
+              label={pi.text}
+              flyoutMenuItems={pi.flyoutMenuItems}
+              flyoutMenuItemClicked={(ev, fmi: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key, fmi); }}
+              rootElementAttributes={this.props.commandButtonAttributes} />
           );
         });
       }

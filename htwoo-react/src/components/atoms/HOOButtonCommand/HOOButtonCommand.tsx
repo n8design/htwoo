@@ -11,7 +11,7 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
   /**
    * (Optional) Flyout menu items, if omitted, no flyout will be rendered.
    */
-  flyoutContextItems?: IHOOFlyoutMenuItem[];
+  flyoutMenuItems?: IHOOFlyoutMenuItem[];
   /**
    * (Optional) icon name, if omitted, hoo-icon-plus will be used.
    */
@@ -21,9 +21,13 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
    */
   rightIconName?: string;
   /** 
+   * (Optional) When no flyout menu items available, returns mouse event for button click
+   */
+  onClick?: (ev: React.MouseEvent<HTMLElement>) => void;
+  /** 
   * (Optional) Flyout menu items click event, returns mouse event and HOOFlyoutMenuItem
   */
-  flyoutContextItemsClicked?: (ev: React.MouseEvent<HTMLButtonElement>, ci: IHOOFlyoutMenuItem) => void;
+  flyoutMenuItemClicked?: (ev: React.MouseEvent<HTMLElement>, ci: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttoncmd {rootElementAttributes.class}
@@ -32,6 +36,13 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
 }
 
 export interface IHOOButtonCommandState {
+  showFlyout: boolean;
+}
+
+export class HOOButtonCommandState implements IHOOButtonCommandState {
+  constructor(
+    public showFlyout: boolean = false
+  ) { }
 }
 
 export default class HOOButtonCommand extends React.PureComponent<IHOOButtonCommandProps, IHOOButtonCommandState> {
@@ -42,37 +53,53 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
   constructor(props: IHOOButtonCommandProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOButtonCommand";
-    this.state = { showFlyout: false };
+    this.state = new HOOButtonCommandState()
   }
 
-  private _flyoutItemClicked = (event, item) => {
+  private _flyoutItemClicked = (event: React.MouseEvent<HTMLButtonElement>, item: IHOOFlyoutMenuItem) => {
+    event.stopPropagation();
     this.setState({ showFlyout: false });
-    if (typeof this.props.flyoutContextItemsClicked == "function") {
-      this.props.flyoutContextItemsClicked(event, item);
+    if (typeof this.props.flyoutMenuItemClicked == "function") {
+      this.props.flyoutMenuItemClicked(event, item);
+    }
+  }
+
+  private _onClick = (ev: React.MouseEvent<HTMLDivElement>) => {
+    try {
+      if (this.props.flyoutMenuItems && this.props.flyoutMenuItems.length > 0) {
+        this.setState({ showFlyout: !this.state.showFlyout });
+      } else {
+        this.props.onClick(ev as React.MouseEvent<HTMLElement>);
+      }
+    } catch (err) {
+
     }
   }
 
   public render(): React.ReactElement<IHOOButtonCommandProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      if (this.state.showFlyout) {
+        className += " show-flyout";
+      }
       const leftIcon = `${this.props.leftIconName || "hoo-icon-plus"}`;
       const rightIcon = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className} onClick={this._onClick}>
           <button className="hoo-buttoncmd" aria-haspopup="true">
             <span className="hoo-button-icon" aria-hidden="true">
               <HOOIcon iconName={leftIcon} />
             </span>
             <span className="hoo-button-label">{this.props.label || this.props.children}</span>
-            {this.props.flyoutContextItems != null && this.props.flyoutContextItems.length > 0 &&
+            {this.props.flyoutMenuItems != null && this.props.flyoutMenuItems.length > 0 &&
               <span className="hoo-button-icon hoo-buttonchevron">
                 <HOOIcon iconName={rightIcon} />
               </span>
             }
           </button>
-          {this.props.flyoutContextItems && this.props.flyoutContextItems.length > 0 &&
-            <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} contextItemClicked={this._flyoutItemClicked} />
+          {this.props.flyoutMenuItems && this.props.flyoutMenuItems.length > 0 &&
+            <HOOFlyoutMenu contextItems={this.props.flyoutMenuItems} contextItemClicked={this._flyoutItemClicked} />
           }
         </div>
       );
