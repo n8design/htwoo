@@ -43,12 +43,6 @@ export interface IHOOPivotBarState {
   showOverflow: boolean;
 }
 
-export class HOOPivotBarState implements IHOOPivotBarState {
-  constructor(
-    public showOverflow: boolean = false
-  ) { }
-}
-
 export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, IHOOPivotBarState> {
   private LOG_SOURCE: string = "💦HOOPivotBar";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -60,7 +54,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOPivotBar";
     props.hasOverflow = props.hasOverflow || false;
-    this.state = new HOOPivotBarState();
+    this.state = { showOverflow: false };
     this._overflowResizer = new OverflowResizer(`HOOPivotBarOR_${getRandomString(10)}`);
     this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
     this._overflowContainer = React.createRef<HTMLDivElement>();

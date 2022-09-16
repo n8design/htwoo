@@ -18,12 +18,6 @@ export interface IHOOIconOverflowState {
   showOverflow: boolean;
 }
 
-export class HOOIconOverflowState implements IHOOIconOverflowState {
-  constructor(
-    public showOverflow: boolean = false
-  ) { }
-}
-
 export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -32,7 +26,7 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
   constructor(props: IHOOIconOverflowProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconOverflow";
-    this.state = new HOOIconOverflowState();
+    this.state = { showOverflow: false };
   }
 
   public render(): React.ReactElement<IHOOIconOverflowProps> {

@@ -39,12 +39,6 @@ export interface IHOOButtonCommandState {
   showFlyout: boolean;
 }
 
-export class HOOButtonCommandState implements IHOOButtonCommandState {
-  constructor(
-    public showFlyout: boolean = false
-  ) { }
-}
-
 export default class HOOButtonCommand extends React.PureComponent<IHOOButtonCommandProps, IHOOButtonCommandState> {
   private LOG_SOURCE: string = "💦HOOButtonCommand";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -53,7 +47,7 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
   constructor(props: IHOOButtonCommandProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOButtonCommand";
-    this.state = new HOOButtonCommandState()
+    this.state = { showFlyout: false };
   }
 
   private _flyoutItemClicked = (event: React.MouseEvent<HTMLButtonElement>, item: IHOOFlyoutMenuItem) => {
