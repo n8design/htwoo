@@ -55,7 +55,6 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
   constructor(props: IHOOCommandBarProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCommandBar";
-    props.hasOverflow = props.hasOverflow || false;
     this.state = { showOverflow: false };
     this._overflowResizer = new OverflowResizer(`HOOCommandBarOR_${getRandomString(10)}`);
     this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
