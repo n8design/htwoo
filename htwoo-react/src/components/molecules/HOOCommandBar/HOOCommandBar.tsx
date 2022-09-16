@@ -45,12 +45,6 @@ export interface IHOOCommandBarState {
   showOverflow: boolean;
 }
 
-export class HOOCommandBarState implements IHOOCommandBarState {
-  constructor(
-    public showOverflow: boolean = false
-  ) { }
-}
-
 export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarProps, IHOOCommandBarState> {
   private LOG_SOURCE: string = "💦HOOCommandBar";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -62,7 +56,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCommandBar";
     props.hasOverflow = props.hasOverflow || false;
-    this.state = new HOOCommandBarState();
+    this.state = { showOverflow: false };
     this._overflowResizer = new OverflowResizer(`HOOCommandBarOR_${getRandomString(10)}`);
     this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
     this._overflowContainer = React.createRef<HTMLDivElement>();
