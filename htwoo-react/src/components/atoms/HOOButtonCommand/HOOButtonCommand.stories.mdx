@@ -1,8 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { symset } from '../../../SymbolSet';
 import HOOButtonCommand, {
-  IHOOButtonCommandProps,
-  HOOButtonCommandType
+  IHOOButtonCommandProps
 } from './HOOButtonCommand';
 
 <Meta title="Atoms/Buttons/HOOButtonCommand" component={HOOButtonCommand} />
@@ -15,8 +14,8 @@ import HOOButtonCommand, {
 
 export const DefaultParams = {
   label: "Button",
-  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutContextItemsClicked: (event, item) => {
+  flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
+  flyoutMenuItemClicked: (event, item) => {
     console.alert(item.label);
   }
 }
@@ -40,12 +39,12 @@ export const Template = (args) => <HOOButtonCommand {...args} />;
 ## No Flyout Menu
 <Canvas>
   <Story 
-    name="No Flyout Menu"
+    name="NoFlyoutMenu"
     args = { 
       (function () {
         const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
-        mergedArgs["flyoutContextItems"] = [];
-        delete mergedArgs["flyoutContextItemsClicked"];
+        mergedArgs["flyoutMenuItems"] = [];
+        delete mergedArgs["flyoutMenuItemClicked"];
         return mergedArgs;
       })()
     }>
@@ -60,7 +59,6 @@ export const Template = (args) => <HOOButtonCommand {...args} />;
     args = { 
       (function () {
         const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
-        mergedArgs["type"] = HOOButtonCommandType.Primary;
         mergedArgs["rootElementAttributes"] = { style: { backgroundColor: "red" } };
         return mergedArgs;
       })()
