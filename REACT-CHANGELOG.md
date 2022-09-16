@@ -9,9 +9,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 >In support of HTWOO-CORE v1.2.5
 
+### GENERAL
+
+- Added reactKey of type React.Key to IHOOStandardProps and when added injected into the root element for the component.
+- Small update to HTWOO-Snippets for new reactKey property
+
+### ATOMS
+
+- HOOCommandButton - Added new menu atom.
+- HOOCheckbox - Sets a default id value to "hoo-checkbox-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
+- HOODropdown - Sets a default id value to "hoo-dropdown-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
+- HOOIconOverflow - Updates/Fixes to support addition of overflow features in HOOPivotBar and HOOCommandBar
+- HOORadioButton - Sets a default id value to "hoo-radio-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
+- HOOToggle - Sets a default id value to "hoo-toggle-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
+
 ### MOLECULES
 
 - HOOPivotBar - Added hasOverflow property to support enabling menu overflow.
+- HOOCommandBar - Added new menu bar molecule.
+- HOOOptionList - Sets a default name value to "hoo-options-" plus 10 random characters on each element in the list.
 
 ## 1.3.0 - 2022-Aug-25
 

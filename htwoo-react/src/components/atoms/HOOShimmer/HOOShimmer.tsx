@@ -51,6 +51,7 @@ export class HOOShimmerState implements IHOOShimmerState {
 
 export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IHOOShimmerState> {
   private LOG_SOURCE: string = "💦HOOShimmer";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-ph";
   private _imageShape: boolean = false;
 
@@ -100,16 +101,17 @@ export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IH
   }
   public render(): React.ReactElement<IHOOShimmerProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
           {!this._imageShape &&
-            <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+            <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
               {this.props.children}
             </div>
           }
           {this._imageShape &&
-            <img data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes}
+            <img {...this._rootProps} {...this.props.rootElementAttributes}
               className={className}
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               width={this.props.imageWidth}

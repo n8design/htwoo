@@ -34,6 +34,7 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
 
 export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
   private LOG_SOURCE: string = "💦HOOWebPartTitle";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-webpart-header";
 
   constructor(props: IHOOWebPartTitleProps) {
@@ -50,9 +51,10 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
 
   public render(): React.ReactElement<IHOOWebPartTitleProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <h3 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <h3 {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <div
             role="textbox"
             placeholder={this.props.placeholder || ""}

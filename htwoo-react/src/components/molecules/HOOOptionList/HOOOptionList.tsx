@@ -60,6 +60,7 @@ export class HOOOptionListState implements IHOOOptionListState {
 
 export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
   private _direction: HOOOptionListDirection = HOOOptionListDirection.Vertical;
@@ -114,10 +115,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
 
   public render(): React.ReactElement<IHOOOptionListProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this._direction === HOOOptionListDirection.Vertical ? "is-vertical" : "is-horizontal")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const role = (this.props.type === HOOOptionListType.Checkbox) ? "checkboxgroup" : "radiogroup";
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
             return (<div key={option.key}>{this._getOptionTSX(option)}</div>);
           })}

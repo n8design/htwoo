@@ -4,9 +4,9 @@ import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
-   * Event handler that will apply "show-flyout" class to the parent components "hoo-overflow" div container.
+   * Overflow is active
    */
-  overflowClicked: React.MouseEventHandler<HTMLButtonElement>;
+  overflow: boolean;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonicon-overflow {rootElementAttributes.class}
@@ -15,14 +15,18 @@ export interface IHOOIconOverflowProps extends IHOOStandardProps {
 }
 
 export interface IHOOIconOverflowState {
+  showOverflow: boolean;
 }
 
 export class HOOIconOverflowState implements IHOOIconOverflowState {
-  constructor() { }
+  constructor(
+    public showOverflow: boolean = false
+  ) { }
 }
 
 export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonicon-overflow";
 
   constructor(props: IHOOIconOverflowProps) {
@@ -33,10 +37,17 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
 
   public render(): React.ReactElement<IHOOIconOverflowProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      if (this.props.overflow) {
+        className += " is-active";
+      }
+      if (this.state.showOverflow) {
+        className += " show-flyout";
+      }
       return (
-        <div data-component={this.LOG_SOURCE} aria-haspopup="true" {...this.props.rootElementAttributes} className={className}>
-          <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={this.props.overflowClicked} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
+        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+          <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
           <ul className="hoo-buttonflyout" role="menu">
           </ul>
         </div>

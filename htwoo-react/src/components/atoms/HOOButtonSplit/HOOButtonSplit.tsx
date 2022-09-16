@@ -41,6 +41,7 @@ export interface IHOOButtonSplitState {
 
 export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
 
   constructor(props: IHOOButtonSplitProps) {
@@ -72,13 +73,14 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
 
   public render(): React.ReactElement<IHOOButtonSplitProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const buttonDisabled = (this.props.flyoutContextItems && this.props.flyoutContextItems.length > 0) ? false : true;
       const showFlyoutClass = this.state.showFlyout ? "show-flyout " : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${showFlyoutClass}${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${showFlyoutClass}`;
       const iconName = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
       const iconSVG = symset.Icon(iconName);
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
           <button className="hoo-buttonsplit-standard" aria-haspopup="true">
             <span className="hoo-button-label">{this.props.label || this.props.children}</span>
           </button>

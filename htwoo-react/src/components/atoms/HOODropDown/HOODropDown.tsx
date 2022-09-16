@@ -70,6 +70,7 @@ export interface IHOODropDownState {
 
 export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
   private LOG_SOURCE: string = "💦HOODropDown";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-select";
   private _ulClass: string = "hoo-select-dropdown";
   private _dropdownId: string = "hoo-dropdown-";
@@ -362,17 +363,18 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   public render(): React.ReactElement<IHOODropDownProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
       const currentDisplay = this._getDisplayValue();
       return (
-        <div data-component={this.LOG_SOURCE}
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
           role="combobox"
           aria-haspopup="listbox"
           aria-owns={`${this._dropdownId}-list`}
           onClick={this._toggleDropdown}
           onKeyUp={this._keyUp}
-          {...this.props.rootElementAttributes}
           className={className}
         >
           <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">

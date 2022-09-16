@@ -9,6 +9,7 @@ import { IHOOFlyoutMenuItem } from "../../../HOOFlyoutMenu";
 export interface IHOOCommandItem {
   key: number | string;
   text: string;
+  flyoutMenuItems: IHOOFlyoutMenuItem[];
 }
 
 export interface IHOOCommandBarProps extends IHOOStandardProps {
@@ -23,7 +24,7 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
   /**
    * Command Item click event handler.
    */
-  onClick: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>, key: number | string) => void;
+  onClick: (ev: React.MouseEvent<HTMLElement>, commandKey: number | string, flyoutItem: IHOOFlyoutMenuItem) => void;
   /**
    * (Optional) Overflow enabled - default false
    */
@@ -52,6 +53,7 @@ export class HOOCommandBarState implements IHOOCommandBarState {
 
 export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarProps, IHOOCommandBarState> {
   private LOG_SOURCE: string = "💦HOOCommandBar";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cmdbar";
   private _overflowResizer: IOverflowResizer;
   private _overflowContainer: React.RefObject<HTMLDivElement>;
@@ -62,7 +64,12 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
     props.hasOverflow = props.hasOverflow || false;
     this.state = new HOOCommandBarState();
     this._overflowResizer = new OverflowResizer(`HOOCommandBarOR_${getRandomString(10)}`);
+    this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
     this._overflowContainer = React.createRef<HTMLDivElement>();
+  }
+
+  private _toggleOverflow = (overflow: boolean) => {
+    this.setState({ showOverflow: overflow });
   }
 
   public componentDidMount(): void {
@@ -82,7 +89,12 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
         retVal = this.props.commandItems.map((pi, index) => {
           const isSelected = (pi.key === this.props.selectedKey);
           return (
-            <HOOButtonCommand key={pi.key} label={pi.text} flyoutContextItemsClicked={(ev, ci: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key); }} rootElementAttributes={this.props.commandButtonAttributes} />
+            <HOOButtonCommand
+              key={pi.key}
+              label={pi.text}
+              flyoutMenuItems={pi.flyoutMenuItems}
+              flyoutMenuItemClicked={(ev, fmi: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key, fmi); }}
+              rootElementAttributes={this.props.commandButtonAttributes} />
           );
         });
       }
@@ -94,19 +106,20 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
 
   public render(): React.ReactElement<IHOOCommandBarProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.hasOverflow) {
         className += " has-overflow";
       }
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {!this.props.hasOverflow &&
             this._renderCommandItems()
           }
           {this.props.hasOverflow &&
             <div ref={this._overflowContainer} className={`hoo-overflow ${(this.state.showOverflow ? "show-flyout" : "")}`}>
               {this._renderCommandItems()}
-              <HOOIconOverflow overflowClicked={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} />
+              <HOOIconOverflow overflow={this.state.showOverflow} />
             </div>
           }
         </div>

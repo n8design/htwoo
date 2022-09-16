@@ -18,6 +18,7 @@ export class HOOSplashCardFooterState implements IHOOSplashCardFooterState {
 
 export default class HOOSplashCardFooter extends React.PureComponent<IHOOSplashCardFooterProps, IHOOSplashCardFooterState> {
   private LOG_SOURCE: string = "💦HOOSplashCardFooter";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-footer";
 
   constructor(props: IHOOSplashCardFooterProps) {
@@ -28,9 +29,10 @@ export default class HOOSplashCardFooter extends React.PureComponent<IHOOSplashC
 
   public render(): React.ReactElement<IHOOSplashCardFooterProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <footer data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <footer {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.children}
         </footer>
       );

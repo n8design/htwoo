@@ -18,6 +18,7 @@ export class HOODocumentCardState implements IHOODocumentCardState {
 
 export default class HOODocumentCard extends React.PureComponent<IHOODocumentCardProps, IHOODocumentCardState> {
   private LOG_SOURCE: string = "💦HOODocumentCard";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-doccard";
 
   constructor(props: IHOODocumentCardProps) {
@@ -28,9 +29,10 @@ export default class HOODocumentCard extends React.PureComponent<IHOODocumentCar
 
   public render(): React.ReactElement<IHOODocumentCardProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <article data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <article {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.children}
         </article>
       );

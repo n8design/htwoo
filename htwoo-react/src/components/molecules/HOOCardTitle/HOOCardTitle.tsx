@@ -22,6 +22,7 @@ export class HOOCardTitleState implements IHOOCardTitleState {
 
 export default class HOOCardTitle extends React.PureComponent<IHOOCardTitleProps, IHOOCardTitleState> {
   private LOG_SOURCE: string = "💦HOOCardTitle";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cardtitle";
 
   constructor(props: IHOOCardTitleProps) {
@@ -32,9 +33,10 @@ export default class HOOCardTitle extends React.PureComponent<IHOOCardTitleProps
 
   public render(): React.ReactElement<IHOOCardTitleProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.title && this.props.title}
           {!this.props.title && this.props.children}
         </div>

@@ -40,6 +40,7 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
 
 export default class HOODialogHeader extends React.PureComponent<IHOODialogHeaderProps, IHOODialogHeaderState> {
   private LOG_SOURCE: string = "💦HOODialogHeader";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlgheader";
 
   constructor(props: IHOODialogHeaderProps) {
@@ -50,10 +51,11 @@ export default class HOODialogHeader extends React.PureComponent<IHOODialogHeade
 
   public render(): React.ReactElement<IHOODialogHeaderProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const iconProp: IHOOIconProps = (this.props.closeIconName) ? { iconName: this.props.closeIconName } : { iconSVG: this.props.closeIconSVG };
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {!this.props.children &&
             <>
               <div className="hoo-dlgheader-title"><h2>{this.props.title}</h2></div>

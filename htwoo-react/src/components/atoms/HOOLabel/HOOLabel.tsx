@@ -26,6 +26,7 @@ export class HOOLabelState implements IHOOLabelState {
 
 export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLabelState> {
   private LOG_SOURCE: string = "💦HOOLabel";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-label";
 
   constructor(props: IHOOLabelProps) {
@@ -36,9 +37,10 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
 
   public render(): React.ReactElement<IHOOLabelProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <label data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} htmlFor={this.props.for} className={className}>{this.props.label}</label>
+        <label {...this._rootProps} {...this.props.rootElementAttributes} htmlFor={this.props.for} className={className}>{this.props.label}</label>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

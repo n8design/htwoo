@@ -46,6 +46,7 @@ export class HOOBreadcrumbState implements IHOOBreadcrumbState {
 
 export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
   private LOG_SOURCE: string = "💦HOOBreadcrumb";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-breadcrumb";
 
   constructor(props: IHOOBreadcrumbProps) {
@@ -56,10 +57,11 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
 
   public render(): React.ReactElement<IHOOBreadcrumbProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const iconSVG = (this.props.seperatorIconName) ? symset.Icon(this.props.seperatorIconName) : null;
       return (
-        <nav data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <nav {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <ol>
             {this.props.breadcrumbItems && this.props.breadcrumbItems.map((i, idx) => {
               const last: React.HTMLAttributes<HTMLElement> = (idx === this.props.breadcrumbItems.length - 1) ? { "aria-current": "location" } : null;

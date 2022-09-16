@@ -38,6 +38,7 @@ export class HOOTimeState implements IHOOTimeState {
 
 export default class HOOTime extends React.PureComponent<IHOOTimeProps, IHOOTimeState> {
   private LOG_SOURCE: string = "💦HOOTime";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-time";
   private _minValue: string = "00:00:00";
   private _maxValue: string = "23:59:59";
@@ -49,15 +50,16 @@ export default class HOOTime extends React.PureComponent<IHOOTimeProps, IHOOTime
   }
 
   public render(): React.ReactElement<IHOOTimeProps> {
+    if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     const maxValue: string = this.props.maxValue || this._maxValue;
     const minValue: string = this.props.minValue || this._minValue;
     try {
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <input
-          data-component={this.LOG_SOURCE}
-          type="time"
+          {...this._rootProps}
           {...this.props.rootElementAttributes}
+          type="time"
           value={this.props.value}
           className={className}
           min={minValue}

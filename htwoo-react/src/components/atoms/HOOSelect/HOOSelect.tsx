@@ -62,6 +62,7 @@ export interface IHOOSelectState {
 
 export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-select";
   private _optionElements = [];
   private _inputElement: React.RefObject<HTMLInputElement>;
@@ -345,6 +346,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
 
   public render(): React.ReactElement<IHOOSelectProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const currentDisplay = this._getDisplayValue();
       let optionLengthMessageString = `${this.state.optionsLength} options available. Arrow down to browse or start typing to filter.`;
@@ -353,7 +355,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
         optionLengthMessageString = (indexLengthPlaceholder > -1) ? this.props.optionsLengthMessage.replace("{0}", this.state.optionsLength.toString()) : `${this.state.optionsLength} ${this.props.optionsLengthMessage}`;
       }
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role="combobox" aria-haspopup="listbox" aria-owns={`${this.props.id}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="combobox" aria-haspopup="listbox" aria-owns={`${this.props.id}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp}>
           <div id={`${this.props.id}-status`} className="hidden-visually" aria-live="polite">
             {optionLengthMessageString}
           </div>
@@ -361,7 +363,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             className="hoo-select-text"
             type="text"
             id={`${this.props.id}-input`}
-            value={this.state.currentValue}
+            value={currentDisplay}
             aria-autocomplete="both"
             autoComplete="off"
             aria-controls={`${this.props.id}-list`}

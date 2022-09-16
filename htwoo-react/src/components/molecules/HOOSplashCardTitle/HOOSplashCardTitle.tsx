@@ -22,6 +22,7 @@ export class HOOSplashCardTitleState implements IHOOSplashCardTitleState {
 
 export default class HOOSplashCardTitle extends React.PureComponent<IHOOSplashCardTitleProps, IHOOSplashCardTitleState> {
   private LOG_SOURCE: string = "💦HOOSplashCardTitle";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-title";
 
   constructor(props: IHOOSplashCardTitleProps) {
@@ -32,9 +33,10 @@ export default class HOOSplashCardTitle extends React.PureComponent<IHOOSplashCa
 
   public render(): React.ReactElement<IHOOSplashCardTitleProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <h1 data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <h1 {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.title &&
             this.props.title
           }

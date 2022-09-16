@@ -61,7 +61,7 @@ export class HOOButtonState implements IHOOButtonState {
 
 export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOOButtonState> {
   private LOG_SOURCE: string = "💦HOOButton";
-
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _hyperlinkType: boolean = false;
   private _compoundType: boolean = false;
@@ -96,6 +96,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
   }
 
   public render(): React.ReactElement<IHOOButtonProps> {
+    if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")}`;
     const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName) : ((this.props.iconRight) ? symset.Icon(this.props.iconRight) : null);
     const iconName = this.props.iconName || this.props.iconRight || null;
@@ -103,7 +104,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
       return (
         <>
           {this._hyperlinkType &&
-            <a href={this.props.href} role="button" data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+            <a {...this._rootProps} {...this.props.rootElementAttributes} href={this.props.href} role="button" className={className}>
               {this.props.label &&
                 <span className="hoo-button-label">{this.props.label}</span>
               }
@@ -113,7 +114,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
             </a>
           }
           {!this._hyperlinkType &&
-            <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
+            <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
               {this.props.label &&
                 <>
                   {iconSVG &&

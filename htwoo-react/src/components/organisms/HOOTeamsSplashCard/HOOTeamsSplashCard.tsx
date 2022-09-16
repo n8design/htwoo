@@ -18,6 +18,7 @@ export class HOOTeamsSplashCardState implements IHOOTeamsSplashCardState {
 
 export default class HOOTeamsSplashCard extends React.PureComponent<IHOOTeamsSplashCardProps, IHOOTeamsSplashCardState> {
   private LOG_SOURCE: string = "💦HOOTeamsSplashCard";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard";
 
   constructor(props: IHOOTeamsSplashCardProps) {
@@ -28,9 +29,10 @@ export default class HOOTeamsSplashCard extends React.PureComponent<IHOOTeamsSpl
 
   public render(): React.ReactElement<IHOOTeamsSplashCardProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <article data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <article {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.children}
         </article>
       );

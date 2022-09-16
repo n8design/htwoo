@@ -31,6 +31,7 @@ export class HOOSearchState implements IHOOSearchState {
 
 export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOOSearchState> {
   private LOG_SOURCE: string = "💦HOOSearch";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-search";
 
   constructor(props: IHOOSearchProps) {
@@ -41,9 +42,10 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
 
   public render(): React.ReactElement<IHOOSearchProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <HOOIcon iconName="hoo-icon-search" rootElementAttributes={{ className: "icon" }} />
           <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} onChange={this.props.onChange} />
         </div>

@@ -34,6 +34,7 @@ export class HOOCardImageState implements IHOOCardImageState {
 
 export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps, IHOOCardImageState> {
   private LOG_SOURCE: string = "💦HOOCardImage";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-card";
 
   constructor(props: IHOOCardImageProps) {
@@ -45,9 +46,10 @@ export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps
 
   public render(): React.ReactElement<IHOOCardImageProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.imageSource &&
             <img src={this.props.imageSource} width={this.props.width || 320} height={this.props.height || 180} alt={this.props.imageAlt} />
           }

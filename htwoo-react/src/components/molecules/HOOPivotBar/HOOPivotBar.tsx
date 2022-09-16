@@ -62,7 +62,12 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
     props.hasOverflow = props.hasOverflow || false;
     this.state = new HOOPivotBarState();
     this._overflowResizer = new OverflowResizer(`HOOPivotBarOR_${getRandomString(10)}`);
+    this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
     this._overflowContainer = React.createRef<HTMLDivElement>();
+  }
+
+  private _toggleOverflow = (overflow: boolean) => {
+    this.setState({ showOverflow: overflow });
   }
 
   public componentDidMount(): void {
@@ -107,7 +112,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
           {this.props.hasOverflow &&
             <div ref={this._overflowContainer} className={`hoo-overflow ${(this.state.showOverflow ? "show-flyout" : "")}`}>
               {this._renderPivotItems()}
-              <HOOIconOverflow overflowClicked={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} />
+              <HOOIconOverflow overflow={this.state.showOverflow} />
             </div>
           }
         </div>

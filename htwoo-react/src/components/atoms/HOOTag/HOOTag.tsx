@@ -54,6 +54,7 @@ export class HOOTagState implements IHOOTagState {
 
 export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagState> {
   private LOG_SOURCE: string = "💦HOOTag";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-mtag";
 
   constructor(props: IHOOTagProps) {
@@ -63,36 +64,28 @@ export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagSta
     this._componentClass += (props.tagStyle === HOOTagStyle.Primary) ? "-primary" : "";
   }
 
-  private _getElementType = () => {
-    let retVal = null;
+  public render(): React.ReactElement<IHOOTagProps> {
     try {
+      let retVal = null;
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       switch (this.props.tagType) {
         case HOOTagType.Button:
-          retVal = <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+          retVal = <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
             <span className="hoo-mtag-lbl">{this.props.text}</span>
           </button>;
           break;
         case HOOTagType.Link:
-          retVal = <a data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} href={this.props.linkUrl} target={this.props.linkTarget || "_self"}>
+          retVal = <a {...this._rootProps} {...this.props.rootElementAttributes} className={className} href={this.props.linkUrl} target={this.props.linkTarget || "_self"}>
             <span className="hoo-mtag-lbl">{this.props.text}</span>
           </a>;
           break;
         default:
-          retVal = <span data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+          retVal = <span {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
             <span className="hoo-mtag-lbl">{this.props.text}</span>
           </span>;
       }
-    } catch (err) {
-      console.error(`${this.LOG_SOURCE} (getElementType) - ${err}`);
-    } finally {
       return retVal;
-    }
-  }
-
-  public render(): React.ReactElement<IHOOTagProps> {
-    try {
-      return this._getElementType();
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
       return null;
