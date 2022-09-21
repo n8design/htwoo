@@ -30,6 +30,7 @@ export class HOOLoadingState implements IHOOLoadingState {
 
 export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IHOOLoadingState> {
   private LOG_SOURCE: string = "💦HOOLoading";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-progress";
 
   constructor(props: IHOOLoadingProps) {
@@ -40,9 +41,10 @@ export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IH
 
   public render(): React.ReactElement<IHOOLoadingProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} role="progressbar" aria-valuenow={this.props.value} aria-valuemin={this.props.minValue} aria-valuemax={this.props.maxValue} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} role="progressbar" aria-valuenow={this.props.value} aria-valuemin={this.props.minValue} aria-valuemax={this.props.maxValue} {...this.props.rootElementAttributes} className={className}>
           <div className="hoo-progress-indicator"></div>
         </div>
       );

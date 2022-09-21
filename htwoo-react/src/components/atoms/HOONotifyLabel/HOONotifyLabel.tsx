@@ -24,6 +24,7 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
 
 export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelProps, IHOONotifyLabelState> {
   private LOG_SOURCE: string = "💦HOONotifyLabel";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo";
 
   constructor(props: IHOONotifyLabelProps) {
@@ -42,9 +43,10 @@ export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelP
 
   public render(): React.ReactElement<IHOONotifyLabelProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <span data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} >
+        <span {...this._rootProps} {...this.props.rootElementAttributes} className={className} >
           {this.props.message}
         </span>
       );

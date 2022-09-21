@@ -66,13 +66,24 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     
   Alternatively if you have additional icons in your own symbol set file, you can add them by passing the path into the initSymbols method:
   _Note: This will load both the basic SVG icons referenced above as well as whatever icons are in your referenced file, so you only need to do one call._
-    
+
+  Add a typing for svg files to be read as a module (images.d.ts):
+
+  file: images.d.ts
+  ```ts
+  declare module '*.svg' {
+    const content: any;
+    export default content;
+  }
+  ```
+
+  Then import the svg file and pass it to initSymbols method:    
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
+  import symbolSetFile from './images/icons.svg';
 
   public async onInit(): Promise<void> {
     // Initialize Icons Symbol Set with Custom Symbol File
-    const symbolSetFile: string = require('./images/icons.svg');
     await symset.initSymbols(symbolSetFile);
   }
   ```
@@ -93,13 +104,24 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
   If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
   To register multiple svg files, make additional calls to `symset.initSymbols` passing in additional svg file references.
+  
+  Add a typing for svg files to be read as a module (images.d.ts):
 
+  file: images.d.ts
+  ```ts
+  declare module '*.svg' {
+    const content: any;
+    export default content;
+  }
+  ```
+
+  Then import the svg file and pass it to initSymbols method:
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
+  import fuireg from '@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg';
 
   public async onInit(): Promise<void> {
     // Initialize Icons Symbol Set with HTWOO-Icons
-    const fuireg: string = require('@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg');
     await symset.initSymbols(fuireg);
   }
   ```
@@ -151,14 +173,17 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
   #### Example of using the HOOLabel atom component
   
+  >Note the use of rootElementAttributes (Acknowledged that this is NOT a real world use) which is a typed interface for all the HTML Attributes of the root dom element for the component. Use this object as a way to overriding and/or adding additoinal accissibility properties to the element.
+
   ```ts
   import HOOLabel from '@n8d/htwoo-react/HOOLabel';
   
   public render(): React.ReactElement<IMyComponentProps> {
     try {
+      const labelREA = {"aria-hidden": true};
       return (
         <div data-component={this.LOG_SOURCE}>
-          <HOOLabel label='My Label' />
+          <HOOLabel label='My Label' rootElementAttributes={labelREA} />
         </div>
       );
     } catch (err) {

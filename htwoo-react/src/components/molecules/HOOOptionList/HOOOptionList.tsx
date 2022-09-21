@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
 import HOOCheckbox from "../../../components/atoms/HOOCheckbox/HOOCheckbox";
-import { getRandomString } from "../../Common";
+import { getRandomString } from "../../common/Common";
 import HOORadioButton from "../../../components/atoms/HOORadioButton/HOORadioButton";
 
 export enum HOOOptionListType {
@@ -37,6 +37,10 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   onChange: (key: string | number, checked: boolean) => void;
   /**
+   * (Optional) Is option list disabled
+  */
+  disabled?: boolean;
+  /**
    * (Optional) Direction for child options; defaults to Verticle
   */
   direction?: HOOOptionListDirection;
@@ -56,6 +60,7 @@ export class HOOOptionListState implements IHOOOptionListState {
 
 export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
   private _direction: HOOOptionListDirection = HOOOptionListDirection.Vertical;
@@ -95,11 +100,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       switch (this.props.type) {
         case HOOOptionListType.Checkbox:
           checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
-          retVal = <HOOCheckbox key={option.key} checked={checked} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
           break;
         case HOOOptionListType.RadioButton:
           checked = this.props.value === option.key;
-          retVal = <HOORadioButton checked={checked} key={option.key} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
           break;
       }
     } catch (err) {
@@ -110,12 +115,13 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
 
   public render(): React.ReactElement<IHOOOptionListProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this._direction === HOOOptionListDirection.Vertical ? "is-vertical" : "is-horizontal")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const role = (this.props.type === HOOOptionListType.Checkbox) ? "checkboxgroup" : "radiogroup";
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
-            return (<div>{this._getOptionTSX(option)}</div>);
+            return (<div key={option.key}>{this._getOptionTSX(option)}</div>);
           })}
           {!this._valid &&
             "The type of HOOOptionList does not match the type of value"

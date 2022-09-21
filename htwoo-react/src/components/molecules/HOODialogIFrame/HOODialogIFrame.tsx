@@ -36,6 +36,7 @@ export class HOODialogIFrameState implements IHOODialogIFrameState {
 
 export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFrameProps, IHOODialogIFrameState> {
   private LOG_SOURCE: string = "💦HOODialogIFrame";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlg-iframe";
 
   constructor(props: IHOODialogIFrameProps) {
@@ -46,10 +47,11 @@ export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFram
 
   public render(): React.ReactElement<IHOODialogIFrameProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const ratio = (this.props.ratio) ? `ratio-${this.props.ratio}` : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${ratio} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${ratio}`;
       return (
-        <iframe data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} ref={this.props.iFrameRef} src={this.props.src}>
+        <iframe {...this._rootProps} {...this.props.rootElementAttributes} className={className} ref={this.props.iFrameRef} src={this.props.src}>
         </iframe>
       );
     } catch (err) {

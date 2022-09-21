@@ -52,6 +52,7 @@ export class HOOTextState implements IHOOTextState {
 
 export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOTextState> {
   private LOG_SOURCE: string = "💦HOOText";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
 
@@ -63,12 +64,13 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
 
   public render(): React.ReactElement<IHOOTextProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       return (
         <>
           {!this.props.multiline &&
-            <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={rootClassName}>
+            <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
               {this.props.inputPrefix &&
                 <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
               }
@@ -87,7 +89,13 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
             </div>
           }
           {this.props.multiline &&
-            <textarea className={inputClassName} rows={this.props.multiline} {...this.props.inputElementAttributes} onChange={this.props.onChange} >{this.props.value}</textarea>
+            <textarea {...this._rootProps}
+              {...this.props.inputElementAttributes}
+              className={inputClassName}
+              rows={this.props.multiline}
+              onChange={this.props.onChange} >
+              {this.props.value}
+            </textarea>
           }
         </>
       );

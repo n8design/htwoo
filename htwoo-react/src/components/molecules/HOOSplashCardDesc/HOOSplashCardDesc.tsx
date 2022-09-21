@@ -22,6 +22,7 @@ export class HOOSplashCardDescState implements IHOOSplashCardDescState {
 
 export default class HOOSplashCardDesc extends React.PureComponent<IHOOSplashCardDescProps, IHOOSplashCardDescState> {
   private LOG_SOURCE: string = "💦HOOSplashCardDesc";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-desc";
 
   constructor(props: IHOOSplashCardDescProps) {
@@ -32,9 +33,10 @@ export default class HOOSplashCardDesc extends React.PureComponent<IHOOSplashCar
 
   public render(): React.ReactElement<IHOOSplashCardDescProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <p data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <p {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.description &&
             this.props.description
           }

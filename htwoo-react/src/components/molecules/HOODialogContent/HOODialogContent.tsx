@@ -18,6 +18,7 @@ export class HOODialogContentState implements IHOODialogContentState {
 
 export default class HOODialogContent extends React.PureComponent<IHOODialogContentProps, IHOODialogContentState> {
   private LOG_SOURCE: string = "💦HOODialogContent";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlgcontent";
 
   constructor(props: IHOODialogContentProps) {
@@ -28,9 +29,10 @@ export default class HOODialogContent extends React.PureComponent<IHOODialogCont
 
   public render(): React.ReactElement<IHOODialogContentProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.children}
         </div>
       );

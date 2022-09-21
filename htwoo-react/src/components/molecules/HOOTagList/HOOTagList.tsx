@@ -38,6 +38,7 @@ export class HOOTagListState implements IHOOTagListState {
 
 export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IHOOTagListState> {
   private LOG_SOURCE: string = "💦HOOTagList";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-meta-list";
 
   constructor(props: IHOOTagListProps) {
@@ -63,9 +64,10 @@ export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IH
 
   public render(): React.ReactElement<IHOOTagListProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.tags && this.props.tags.map((tag) => {
             return (
               <li key={tag.text}>{this._getTag(tag)}</li>

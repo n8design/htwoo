@@ -32,6 +32,7 @@ export class HOOFlyoutMenuState implements IHOOFlyoutMenuState {
 
 export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuProps, IHOOFlyoutMenuState> {
   private LOG_SOURCE: string = "💦HOOFlyoutMenu";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonflyout";
 
   constructor(props: IHOOFlyoutMenuProps) {
@@ -42,9 +43,10 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
 
   public render(): React.ReactElement<IHOOFlyoutMenuProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <ul role="menu" data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <ul {...this._rootProps} {...this.props.rootElementAttributes} role="menu" className={className}>
           {this.props.contextItems && this.props.contextItems.map((ci) => {
             return (
               <li key={ci.label} className="hoo-buttonflyout-item">

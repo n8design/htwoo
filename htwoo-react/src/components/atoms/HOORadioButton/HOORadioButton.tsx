@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import { getRandomString } from "../../Common";
+import { getRandomString } from "../../common/Common";
 
 export interface IHOORadioButtonProps extends IHOOStandardProps {
   /**
@@ -43,6 +43,7 @@ export class HOORadioButtonState implements IHOORadioButtonState {
 
 export default class HOORadioButton extends React.PureComponent<IHOORadioButtonProps, IHOORadioButtonState> {
   private LOG_SOURCE: string = "💦HOORadioButton";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-radio";
   private _radioId: string = "hoo-radio-";
 
@@ -55,13 +56,14 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
 
   public render(): React.ReactElement<IHOORadioButtonProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <>
-          <input data-component={this.LOG_SOURCE}
-            type="radio"
+          <input {...this._rootProps}
             id={this._radioId}
             {...this.props.rootElementAttributes}
+            type="radio"
             checked={this.props.checked}
             value={this.props.value}
             className={className}

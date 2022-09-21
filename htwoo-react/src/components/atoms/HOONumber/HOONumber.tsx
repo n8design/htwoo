@@ -40,6 +40,7 @@ export class HOONumberState implements IHOONumberState {
 
 export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOONumberState> {
   private LOG_SOURCE: string = "💦HOONumber";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
 
@@ -51,20 +52,19 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
 
   public render(): React.ReactElement<IHOONumberProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       return (
-        <>
-          <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={rootClassName}>
-            <input type="number"
-              {...this.props.inputElementAttributes}
-              value={this.props.value}
-              disabled={this.props.disabled || false}
-              aria-disabled={this.props.disabled || false}
-              className={inputClassName}
-              onChange={this.props.onChange} />
-          </div>
-        </>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
+          <input type="number"
+            {...this.props.inputElementAttributes}
+            value={this.props.value}
+            disabled={this.props.disabled || false}
+            aria-disabled={this.props.disabled || false}
+            className={inputClassName}
+            onChange={this.props.onChange} />
+        </div>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

@@ -1,7 +1,7 @@
-import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
+import { SPFxThemes, ISPFxThemes, IHOOTheme } from "./SPFxThemes";
 import { symset } from "./SymbolSet";
 
-export { SPFxThemes, ISPFxThemes };
+export { SPFxThemes, ISPFxThemes, IHOOTheme };
 export { symset };
 
 export * from './HOOAction';
@@ -9,12 +9,14 @@ export * from './HOOAvatar';
 export * from './HOOAvatarPres';
 export * from './HOOBreadcrumb';
 export * from './HOOButton';
+export * from './HOOButtonCommand';
 export * from './HOOButtonSplit';
 export * from './HOOCardFooter';
 export * from './HOOCardImage';
 export * from './HOOCardLocation';
 export * from './HOOCardTitle';
 export * from './HOOCheckbox';
+export * from './HOOCommandBar';
 export * from './HOODate';
 export * from './HOODialog';
 export * from './HOODialogContent';

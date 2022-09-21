@@ -43,6 +43,7 @@ export class HOODialogState implements IHOODialogState {
 
 export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOODialogState> {
   private LOG_SOURCE: string = "💦HOODialog";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-mdldialog-outer";
 
   constructor(props: IHOODialogProps) {
@@ -70,13 +71,14 @@ export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOO
 
   public render(): React.ReactElement<IHOODialogProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.visible) { className += " is-visible"; }
       let styleBlock = {} as React.CSSProperties;
       if (this.props.width !== undefined) { styleBlock["--lqdDialogWidth"] = this.props.width; }
       if (this.props.height !== undefined) { styleBlock["--lqdDialogHeight"] = this.props.height; }
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <div className="hoo-mdldialog" style={styleBlock}>
             {this.props.children}
           </div>

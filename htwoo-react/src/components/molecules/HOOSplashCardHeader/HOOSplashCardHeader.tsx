@@ -26,6 +26,7 @@ export class HOOSplashCardHeaderState implements IHOOSplashCardHeaderState {
 
 export default class HOOSplashCardHeader extends React.PureComponent<IHOOSplashCardHeaderProps, IHOOSplashCardHeaderState> {
   private LOG_SOURCE: string = "💦HOOSplashCardHeader";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-header";
 
   constructor(props: IHOOSplashCardHeaderProps) {
@@ -36,9 +37,10 @@ export default class HOOSplashCardHeader extends React.PureComponent<IHOOSplashC
 
   public render(): React.ReactElement<IHOOSplashCardHeaderProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <header data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role="presentation">
+        <header {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="presentation">
           {this.props.imageSource &&
             <img src={this.props.imageSource} alt={this.props.imageAlt} className="hoo-splashcard-img" />
           }

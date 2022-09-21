@@ -43,6 +43,7 @@ export class HOOPersonaState implements IHOOPersonaState {
 
 export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IHOOPersonaState> {
   private LOG_SOURCE: string = "💦HOOPersona";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-persona-";
   private _showData: boolean = true;
 
@@ -58,9 +59,10 @@ export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IH
 
   public render(): React.ReactElement<IHOOPersonaProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           {this.props.children}
           {this._showData &&
             <div className="hoo-persona-data">

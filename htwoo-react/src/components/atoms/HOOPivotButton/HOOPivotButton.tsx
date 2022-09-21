@@ -30,6 +30,7 @@ export class HOOPivotButtonState implements IHOOPivotButtonState {
 
 export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonProps, IHOOPivotButtonState> {
   private LOG_SOURCE: string = "💦HOOPivotButton";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button-pivot";
 
   constructor(props: IHOOPivotButtonProps) {
@@ -40,12 +41,13 @@ export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonP
 
   public render(): React.ReactElement<IHOOPivotButtonProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       if (this.props.isActive) {
         className += " is-active";
       }
       return (
-        <button data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+        <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
           <div className="hoo-pivot-inner" title={this.props.label}>
             {this.props.label}
           </div>

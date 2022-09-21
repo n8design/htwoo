@@ -1,12 +1,12 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../../Common.model";
-import HOOIcon from "../HOOIcon/HOOIcon";
+import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
-   * Direct interface for buttons click event handler.
+   * Overflow is active
    */
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  overflow: boolean;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonicon-overflow {rootElementAttributes.class}
@@ -15,33 +15,33 @@ export interface IHOOIconOverflowProps extends IHOOStandardProps {
 }
 
 export interface IHOOIconOverflowState {
-}
-
-export class HOOIconOverflowState implements IHOOIconOverflowState {
-  constructor() { }
+  showOverflow: boolean;
 }
 
 export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
   private LOG_SOURCE: string = "💦HOOIconOverflow";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonicon-overflow";
 
   constructor(props: IHOOIconOverflowProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconOverflow";
-    this.state = new HOOIconOverflowState();
+    this.state = { showOverflow: false };
   }
 
-  //TODO: (Stefan) Can this pattern be simplified to no nest a span inside the button so that we can use the atoms already created
   public render(): React.ReactElement<IHOOIconOverflowProps> {
     try {
-      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
+      let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      if (this.props.overflow) {
+        className += " is-active";
+      }
+      if (this.state.showOverflow) {
+        className += " show-flyout";
+      }
       return (
-        <div data-component={this.LOG_SOURCE} aria-haspopup="true" {...this.props.rootElementAttributes} className={className}>
-          <button className="hoo-buttonicon-overflow" aria-haspopup="true" onClick={this.props.onClick}>
-            <span className="hoo-button-icon" aria-hidden="true">
-              <HOOIcon iconName="hoo-icon-ellipses" />
-            </span>
-          </button>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+          <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
           <ul className="hoo-buttonflyout" role="menu">
           </ul>
         </div>

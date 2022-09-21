@@ -1,3 +1,6 @@
+/** dependency constants */
+const reactVer = ">=16 <=18.2";
+
 /** general nodejs imports */
 const fs = require("fs");
 const { exec } = require("child_process");
@@ -168,8 +171,8 @@ const prepublish = (cb) => {
     delete pkgContents.dependencies.react;
     delete pkgContents.dependencies["react-dom"];
     pkgContents["peerDependencies"] = {
-      react: ">=16 <=17",
-      "react-dom": ">=16 <=17",
+      react: reactVer,
+      "react-dom": reactVer,
     };
     pkgContents.main = "./index.js";
     pkgContents.types = "./index.d.ts";

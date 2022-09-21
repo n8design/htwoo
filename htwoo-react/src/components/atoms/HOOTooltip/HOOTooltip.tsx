@@ -35,6 +35,7 @@ export class HOOTooltipState implements IHOOTooltipState {
 
 export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTooltipState> {
   private LOG_SOURCE: string = "💦HOOTooltip";
+  private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-tooltip";
 
   constructor(props: IHOOTooltipProps) {
@@ -47,10 +48,11 @@ export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTo
 
   public render(): React.ReactElement<IHOOTooltipProps> {
     try {
+      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const styleBlock = { "will-change": "transform" } as React.CSSProperties;
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div data-component={this.LOG_SOURCE} id="tooltip20619" {...this.props.rootElementAttributes} className={className} style={styleBlock} role="tooltip" x-placement="top">
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} style={styleBlock} role="tooltip" x-placement="top">
           <div className="arrow"></div>
           <div className="hoo-tooltip-content">{this.props.text}</div>
         </div>
