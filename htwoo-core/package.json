@@ -1,10 +1,10 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "1.2.6",
+  "version": "1.2.5",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cl:update": "standard-version",
+    "cl:update": "standard-version --changelog --skip.bump --skip.commit --skip.tag",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-public.json",
