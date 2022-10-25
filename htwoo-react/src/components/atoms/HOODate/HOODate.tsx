@@ -26,7 +26,7 @@ export interface IHOODateProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-date {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLInputElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLInputElement>;
 }
 
 export interface IHOODateState {

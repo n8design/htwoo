@@ -33,12 +33,12 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to all Command Buttons.
    * Class names will be appended to the end of the default class string - hoo-button-command {rootElementAttributes.class}
   */
-  commandButtonAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  commandButtonAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cmdbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOCommandBarState {

@@ -10,7 +10,7 @@ export interface IHOOSplashCardTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeadingElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-title {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLHeadingElement>;
 }
 
 export interface IHOOSplashCardTitleState {

@@ -42,7 +42,7 @@ export interface IHOOTagProps extends IHOOStandardProps {
     * (Optional) HTMLElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-mtag {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
 }
 
 export interface IHOOTagState {
@@ -71,7 +71,7 @@ export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagSta
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       switch (this.props.tagType) {
         case HOOTagType.Button:
-          retVal = <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+          retVal = <button {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>} className={className} onClick={this.props.onClick}>
             <span className="hoo-mtag-lbl">{this.props.text}</span>
           </button>;
           break;

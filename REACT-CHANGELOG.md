@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.5.0 - 2022-Oct-25
+
+### General
+
+- Changed typing of rootElementAttributes in IHOOStandardProps from `React.HTMLAttributes<HTMLElement>` -> `React.AllHTMLAttributes<HTMLElement>`
+  which had a cascading effect on all components but is backward compatible. This could possibly use further refinement in the future.
+- Added new `SearchIconDictionary` method to the SymbolSet class to provide a way to do a contains search on the loaded icons
+- Updated interface for SymbolSet class to fix missing references.
+
+### ATOMS
+
+- Added `onSearch` event to HOOSearch that fires when the user presses the `Enter` key.
+- Added `disabled` property to HOOSearch that disables the search box.
+- Added `inputType` property to adjust input type in HOOText; default is "text".
+- Fixed typings for inputElementAttributes on HOONumber, HOOText, and HOOToggle.
+
 ## 1.4.0 - 2022-Sept-16
 
 >In support of HTWOO-CORE v1.2.5

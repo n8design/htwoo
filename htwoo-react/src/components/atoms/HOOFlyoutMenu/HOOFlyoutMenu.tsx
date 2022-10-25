@@ -20,7 +20,7 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
    * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLUListElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLUListElement>;
 }
 
 export interface IHOOFlyoutMenuState {

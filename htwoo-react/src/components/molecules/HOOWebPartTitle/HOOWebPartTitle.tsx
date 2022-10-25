@@ -22,7 +22,7 @@ export interface IHOOWebPartTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLHeadingElement>;
 }
 
 export interface IHOOWebPartTitleState {
