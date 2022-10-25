@@ -39,7 +39,7 @@ export interface IHOOShimmerProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-ph {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
 }
 
 export interface IHOOShimmerState {
@@ -111,7 +111,7 @@ export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IH
             </div>
           }
           {this._imageShape &&
-            <img {...this._rootProps} {...this.props.rootElementAttributes}
+            <img {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>}
               className={className}
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               width={this.props.imageWidth}

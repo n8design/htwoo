@@ -53,12 +53,12 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the UL element of the component.
    * Class names will be appended to the end of the default class string - hoo-select-dropdown {ulElementAttributes.class}
   */
-  ulElementAttributes?: React.HTMLAttributes<HTMLUListElement>;
+  ulElementAttributes?: React.AllHTMLAttributes<HTMLUListElement>;
 }
 
 export interface IHOODropDownState {

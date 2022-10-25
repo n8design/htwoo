@@ -27,11 +27,11 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-radio {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLInputElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLInputElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the label element of the component. Use to override for, class, and other attributes.
   */
-  labelElementAttributes?: React.HTMLAttributes<HTMLLabelElement>;
+  labelElementAttributes?: React.AllHTMLAttributes<HTMLLabelElement>;
 }
 
 export interface IHOORadioButtonState {

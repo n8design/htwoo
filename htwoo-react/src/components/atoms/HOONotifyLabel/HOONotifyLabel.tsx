@@ -12,7 +12,7 @@ export interface IHOONotifyLabelProps extends IHOOStandardProps {
    * (Optional) HTMLSpanElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-success/hoo-error {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLSpanElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLSpanElement>;
 }
 
 export interface IHOONotifyLabelState {

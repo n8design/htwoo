@@ -14,7 +14,7 @@ export interface IHOOIconProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOIconState {

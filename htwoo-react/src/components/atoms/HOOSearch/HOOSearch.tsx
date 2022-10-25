@@ -12,14 +12,22 @@ export interface IHOOSearchProps extends IHOOStandardProps {
   */
   value: string;
   /**
+   * Disables using the search box
+   */
+  disabled: boolean;
+  /**
    * Change event handler
   */
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
+   * Fires when user presses the enter key
+  */
+  onSearch: (newValue: string) => void;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-search {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOSearchState {
@@ -40,6 +48,16 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
     this.state = new HOOSearchState();
   }
 
+  private _onKeyUp: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+    try {
+      if ((event.key === "Enter") && (typeof this.props.onSearch === "function")) {
+        this.props.onSearch(this.props.value);
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_onKeyUp) - ${err}`);
+    }
+  }
+
   public render(): React.ReactElement<IHOOSearchProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
@@ -47,7 +65,7 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <HOOIcon iconName="hoo-icon-search" rootElementAttributes={{ className: "icon" }} />
-          <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} onChange={this.props.onChange} />
+          <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} disabled={this.props.disabled} onChange={this.props.onChange} onKeyUp={this._onKeyUp} />
         </div>
       );
     } catch (err) {

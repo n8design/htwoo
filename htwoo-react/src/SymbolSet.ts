@@ -1,5 +1,8 @@
 export interface ISymbolSet {
+  initSymbols: (symbolSetFile?: string) => Promise<void>;
   Icon: (iconName: string) => string;
+  IconBase64: (iconName: string) => string;
+  SearchIconDictionary: (search: string) => string[];
 }
 
 export class SymbolSet implements ISymbolSet {
@@ -12,7 +15,10 @@ export class SymbolSet implements ISymbolSet {
   }
 
   /**
-   * (Optional) symbolSet: text representation of a set of icons.
+   * Initializes the SymbolSet service which provides icons for several components.
+   * Must be called once to initialize the included default icons, but can be called repeatedly to add
+   * additional icons to the dictonary.
+   * (Optional) symbolSetFile: additional svg icons to load into the dictionary.
    */
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
@@ -56,13 +62,43 @@ export class SymbolSet implements ISymbolSet {
     return retVal;
   }
 
+  /**
+   * Returns the svg string representation of the icon referenced
+   * @iconName: string - The id/key of the icon to retrieve
+   * -returns: string - svg string (<svg>...</svg>)
+  */
   public Icon(iconName: string): string {
     return this._symbolSetDictionary[iconName];
   }
 
+  /**
+   * Returns the base64 encoded string representation of the icon referenced
+   * @iconName: string - The id/key of the icon to retrieve
+   * -returns: string - base64 encoded string (data:image/svg+xml;base64,....)
+  */
   public IconBase64(iconName: string): string {
     const iconSvg = this.Icon(iconName);
     return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
+  }
+
+  /**
+   * Performs a case insensitive contains search on keys of Icon dictionary
+   * @search: string - The string to search for
+   * -returns: string[] - Array of keys that match search parameter
+  */
+  public SearchIconDictionary(search: string): string[] {
+    let retVal: string[] = [];
+    try {
+      const keys = Object.keys(this._symbolSetDictionary);
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].toLowerCase().includes(search.toLowerCase())) {
+          retVal.push(keys[i]);
+        }
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (SearchIconDictionary) - ${err}`);
+    }
+    return retVal;
   }
 }
 

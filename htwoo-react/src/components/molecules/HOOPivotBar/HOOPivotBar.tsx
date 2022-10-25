@@ -31,12 +31,12 @@ export interface IHOOPivotBarProps extends IHOOStandardProps {
   * (Optional) HTMLButtonElement attributes that will be applied to all Pivot Buttons.
   * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
  */
-  pivotButtonAttributes?: React.HTMLAttributes<HTMLButtonElement>;
+  pivotButtonAttributes?: React.AllHTMLAttributes<HTMLButtonElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-pivotbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
 }
 
 export interface IHOOPivotBarState {

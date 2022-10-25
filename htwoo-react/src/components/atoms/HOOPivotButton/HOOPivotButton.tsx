@@ -18,7 +18,7 @@ export interface IHOOPivotButtonProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLButtonElement>;
 }
 
 export interface IHOOPivotButtonState {
@@ -47,7 +47,7 @@ export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonP
         className += " is-active";
       }
       return (
-        <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+        <button {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>} className={className} onClick={this.props.onClick}>
           <div className="hoo-pivot-inner" title={this.props.label}>
             {this.props.label}
           </div>

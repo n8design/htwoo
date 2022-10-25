@@ -29,7 +29,7 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
   /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
@@ -114,7 +114,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
             </a>
           }
           {!this._hyperlinkType &&
-            <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
+            <button {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
               {this.props.label &&
                 <>
                   {iconSVG &&

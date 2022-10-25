@@ -10,7 +10,7 @@ export interface IHOOSplashCardDescProps extends IHOOStandardProps {
    * (Optional) HTMLParagraphElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-desc {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLParagraphElement>;
+  rootElementAttributes?: React.AllHTMLAttributes<HTMLParagraphElement>;
 }
 
 export interface IHOOSplashCardDescState {
