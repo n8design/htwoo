@@ -1,0 +1,60 @@
+{
+    "locations": [
+        {
+            "name": "New York",
+            "address": "1271 Madison Avenue, Suite 404",
+            "zip": "New York NY 10020",
+            "img": "https://images.unsplash.com/photo-1492666673288-3c4b4576ad9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "name": "Boston",
+            "address": "1271 Madison Avenue, Suite 404",
+            "zip": "New York NY 10020",
+            "img": "https://images.unsplash.com/photo-1506551907304-60bb62ffc9b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "name": "Los Angeles",
+            "address": "1271 Madison Avenue, Suite 404",
+            "zip": "Beverly Hills CA 90210",
+            "img": "https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+        }
+    ],
+    "persons": [
+        {
+            "img": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1661&q=80",
+            "caption": "Employee of the month",
+            "name": "Jane Doe",
+            "address":"N8D - New York"
+        },
+        {
+            "img": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            "caption": "Employee of the month",
+            "name": "Irene Adler",
+            "address":"N8D - New York"
+        },
+        {
+            "img": "https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            "caption": "Employee of the month",
+            "name": "Tim Taylor",
+            "address":"N8D - Boston"
+        },
+        {
+            "img": "https://images.unsplash.com/photo-1606161274286-0341653b9e7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80",
+            "caption": "Employee of the month",
+            "name": "Jill Pijama",
+            "address": "N8D - Los Angeles"
+        }
+    ],
+    "hotm": [
+        {
+            "name": "John Doe",
+            "img": "http://localhost:3000/images/demo/homeworker-of-the-month.png",
+            "award": "worked 24/7 in the last 3 weeks"
+        },
+        {
+            "name": "Jane Doe",
+            "img": "https://images.unsplash.com/photo-1606161274286-0341653b9e7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80",
+            "award": "Was able to manage everything"
+        }
+    ]
+}

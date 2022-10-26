@@ -1,0 +1,54 @@
+.card{
+	@include elevation(0);
+
+	overflow: hidden;
+
+	border: 1px $neutral-600 solid;
+	border-radius: px2rem(4px);
+	&:hover{
+		@include elevation(32);
+
+		border: 1px $theme-600 solid;
+	}
+}
+.card-media{
+	margin: 0;
+
+	object-fit: fill;
+}
+.card-img{
+	display: block;
+
+	width: 100%;
+	height: auto;
+
+	pointer-events: none;
+
+	aspect-ratio: 16 / 9;
+}
+.card-caption{
+}
+.card-data{
+	padding: .5rem 1rem 1rem;
+    box-sizing: border-box;
+}
+.card-title{
+	font-size: px2rem(20px);
+	font-weight: 600;
+
+	display: -webkit-box;
+
+	box-sizing: border-box;
+
+	color: $theme-600;
+}
+.card-address{
+	font-style: normal;;
+	p{
+		margin: 0;
+	}
+}
+.card-footer{
+	padding: .5rem 1rem 0;
+    box-sizing: border-box;
+}

@@ -1,6 +1,39 @@
-.hoo-cardgrid{
+.hoo-cardgrid {
 	@include gridBase();
-	& > *{
+
+	&>* {
 		@include gridSpan(3);
+	}
+
+	@media screen and (max-width: 768px) {
+		&>* {
+			@include gridSpan(6);
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		&>* {
+			@include gridSpan(12);
+		}
+	}
+}
+
+.card-grid {
+	@include gridBase();
+
+	&>* {
+		@include gridSpan(3);
+	}
+
+	@media screen and (max-width: 768px) {
+		&>* {
+			@include gridSpan(6);
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		&>* {
+			@include gridSpan(12);
+		}
 	}
 }

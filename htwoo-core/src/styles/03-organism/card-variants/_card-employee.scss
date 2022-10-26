@@ -1,0 +1,64 @@
+.employee{
+	border-color: transparent;
+	border-radius: px2rem(8px);
+	background-color: $neutral-600;
+	&:hover{
+		border-width: inherit;
+		border-radius: px2rem(8px);
+		background-color: $theme-600;
+	}
+	.card-data{
+		padding-bottom: 1.5rem;
+
+		background-color: $neutral-000;
+	}
+	.card-media{
+		position: relative;
+
+		overflow: hidden;
+
+		border-color: 1px transparent solid;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+	.card-img{
+		object-fit: cover;
+		aspect-ratio: 4 / 5;
+	}
+	.card-caption{
+		font-weight: 600;
+
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+
+		padding: .45rem .75rem .75rem;
+
+		color: white;
+		background-color: rgba(0,0,0,.5);
+
+		backdrop-filter: blur(5px);
+	}
+}
+.hotm{
+	position: relative;
+	.card-media-svg{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+	.card-media{
+		padding: 0 1rem;
+		object-fit: fill;
+	}
+	.card-img{
+		aspect-ratio: 1 / 1;
+		clip-path: url(#card-media-clip);
+	}
+}
