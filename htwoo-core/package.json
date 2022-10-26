@@ -13,7 +13,9 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "gulp:serve": "gulp",
     "gulp:docs": "gulp docs",
-    "pl:version": "patternlab --version"
+    "pl:version": "patternlab --version",
+    "hoo:buildlib": "gulp build:lib",
+    "hoo:exportpatterns": "gulp build:pllib"
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
