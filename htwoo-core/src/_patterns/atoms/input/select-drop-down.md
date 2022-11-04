@@ -1,5 +1,5 @@
 ---
-title: Selct Drop Down
+title: Select Drop Down
 ---
 
 ### SCSS Imports
