@@ -1,6 +1,6 @@
 ---
-title: Standard Split
-order: 11
+title: Primary Split Button - disabled
+order: 20
 ---
 
 ### SCSS Imports
@@ -9,4 +9,3 @@ order: 11
 @n8d/htwoo-core/components/buttons
 
 ***
-
