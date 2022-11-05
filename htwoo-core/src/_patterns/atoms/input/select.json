@@ -1,5 +1,7 @@
 {
-    "iconAction": "icon-arrow-down",
+    "button": {
+        "iconname": "icon-arrow-down"
+    },
     "ddToggleClass": "hidden-all",
     "options": [
         {

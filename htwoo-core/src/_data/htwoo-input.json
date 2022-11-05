@@ -45,6 +45,11 @@
             "inputPrefix": "https://",
             "inputSuffix": ".com",
             "placeholder": "A placeholder text"
+        },
+        "label": {
+            "label": "Label for field x",
+            "stateStyle": null,
+            "id": "label-1234"
         }
     }
 }
