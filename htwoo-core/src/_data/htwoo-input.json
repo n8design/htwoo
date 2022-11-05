@@ -1,0 +1,23 @@
+{
+    "button": {
+        "iconname": "icon-ninjacat",
+        "label": "Button",
+        "aria-label": "Button"
+    },
+    "contextMenu": {
+        "contextItems": [
+            {
+                "button": {
+                    "label": "Email message",
+                    "iconname": "icon-ninjacat"
+                }
+            },
+            {
+                "button": {
+                    "label": "Callendar Event",
+                    "iconname": "icon-minus"
+                }
+            }
+        ]
+    }
+}
