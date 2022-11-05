@@ -2,7 +2,7 @@
     "button": {
         "iconname": "icon-ninjacat",
         "label": "Button",
-        "description":"Primary with description",
+        "description": "Primary with description",
         "aria-label": "Button"
     },
     "contextMenu": {
@@ -20,5 +20,26 @@
                 }
             }
         ]
+    },
+    "checkbox": {
+        "label": "Checkbox Label",
+        "id": "checkbox-1234"
+    },
+    "radiobutton": {
+        "label": "Radio Button Label",
+        "id": "checkbox-1234"
+    },
+    "input": {
+        "date": {
+            "id": "my-date-picker",
+            "name": "my-date-picker-name",
+            "value": "2021-10-26",
+            "min-value": "2021-10-25",
+            "max-value": "2030-10-25"
+        },
+        "number": {
+            "min": 0,
+            "max": 100
+        }
     }
 }
