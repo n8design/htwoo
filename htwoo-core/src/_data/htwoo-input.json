@@ -50,6 +50,14 @@
             "label": "Label for field x",
             "stateStyle": null,
             "id": "label-1234"
+        },
+        "toggle": {
+            "name": "toggleName",
+            "id": "toggle-1234",
+            "label": {
+                "checked": "On",
+                "unchecked": "Off"
+            }
         }
     }
 }
