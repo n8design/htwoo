@@ -2,6 +2,7 @@
     "button": {
         "iconname": "icon-ninjacat",
         "label": "Button",
+        "description":"Primary with description",
         "aria-label": "Button"
     },
     "contextMenu": {
