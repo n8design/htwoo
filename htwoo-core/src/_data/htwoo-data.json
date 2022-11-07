@@ -5,5 +5,9 @@
         "ar16by9": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==",
         "ar16by10": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAQAAADSmGXeAAAAD0lEQVR42mNkQAOMVBAAAAFUAAYo30j5AAAAAElFTkSuQmCC",
         "ar1by1": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+    },
+    "tooltip":{
+        "arrow": null,
+        "content": "Tooltip"
     }
 }

@@ -15,7 +15,7 @@
             },
             {
                 "button": {
-                    "label": "Callendar Event",
+                    "label": "Calendar Event",
                     "iconname": "icon-minus"
                 }
             }
