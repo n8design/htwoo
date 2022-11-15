@@ -1,0 +1,17 @@
+.pl-iconsearch{
+	box-sizing: border-box;
+	padding: 1rem 5vw 1.5rem;
+    position: sticky;
+}
+.pl-iconinfo{
+}
+.pl-icongrid{
+	display: grid;
+
+	max-width: 90vw;
+	max-height: 80vh;
+	margin: 0 auto;
+
+	gap: 1rem 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+}
