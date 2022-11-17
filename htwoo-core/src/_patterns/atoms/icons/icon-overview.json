@@ -1,0 +1,12 @@
+{
+    "input": {
+        "toggle": {
+            "name": "pl-overview-toggle",
+            "id": "plOverViewTgl1",
+            "label": {
+                "unchecked": "Regular",
+                "checked": "Filled"
+            }
+        }
+    }
+}
