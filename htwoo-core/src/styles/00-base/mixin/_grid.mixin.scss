@@ -20,29 +20,32 @@
     }
 }
 
-@mixin gridSpan($span, $start: auto, $row: auto) {
+@mixin gridSpan($span, $start: auto, $row: auto, $includeMQ: false) {
     grid-column: $start / span $span;
     grid-row: $row;
 
     transition: all .123 ease-in-out;
 
-    /* media query for small devices */
-    @media screen and (max-width: 1024px) {
-        grid-column: auto / span 4;
-        grid-row: auto;
-    }
+    @if $includeMQ {
 
-    /* media query for small devices */
-    @media screen and (max-width: 768px) {
-        grid-column: auto / span 6;
-        grid-row: auto;
-    }
+        /* media query for small devices */
+        @media screen and (max-width: 1024px) {
+            grid-column: auto / span 4;
+            grid-row: auto;
+        }
+
+        /* media query for small devices */
+        @media screen and (max-width: 768px) {
+            grid-column: auto / span 6;
+            grid-row: auto;
+        }
 
 
-    /* media query for small devices */
-    @media screen and (max-width: 640px) {
-        grid-column: auto / span 12;
-        grid-row: auto;
+        /* media query for small devices */
+        @media screen and (max-width: 640px) {
+            grid-column: auto / span 12;
+            grid-row: auto;
+        }
     }
 
 }

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 1.6.0 - 2022-Nov-?
 
+>In support of HTWOO-CORE v1.2.6
+
 ### General
 
 - Updated component development version of React to major version 17.x; library version still remains compatible from 16-18.2.
