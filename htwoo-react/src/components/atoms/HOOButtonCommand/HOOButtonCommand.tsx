@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
@@ -32,7 +32,7 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttoncmd {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOButtonCommandState {
@@ -79,8 +79,9 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       }
       const leftIcon = `${this.props.leftIconName || "hoo-icon-plus"}`;
       const rightIcon = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
+      const ariaHaspopup = (this.props.flyoutMenuItems != null && this.props.flyoutMenuItems.length > 0) ? { "aria-haspopup": true } : null;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className} onClick={this._onClick}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} {...ariaHaspopup} className={className} onClick={this._onClick}>
           <button className="hoo-buttoncmd" aria-haspopup="true">
             <span className="hoo-button-icon" aria-hidden="true">
               <HOOIcon iconName={leftIcon} />

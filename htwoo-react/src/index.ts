@@ -50,4 +50,5 @@ export * from './HOOShimmer';
 export * from './HOOText';
 export * from './HOOTime';
 export * from './HOOToggle';
+export * from './HOOVerticalNav';
 export * from './HOOWebPartTitle';

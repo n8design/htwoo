@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
 export interface IHOOSearchProps extends IHOOStandardProps {
@@ -27,7 +27,12 @@ export interface IHOOSearchProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-search {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  /**
+   * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
+   * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
+  */
+  inputElementAttributes?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 export interface IHOOSearchState {
@@ -65,7 +70,7 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <HOOIcon iconName="hoo-icon-search" rootElementAttributes={{ className: "icon" }} />
-          <input className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} disabled={this.props.disabled} onChange={this.props.onChange} onKeyUp={this._onKeyUp} />
+          <input {...this.props.inputElementAttributes} className="hoo-input-text" type="search" value={this.props.value} placeholder={this.props.placeholder} disabled={this.props.disabled} onChange={this.props.onChange} onKeyUp={this._onKeyUp} />
         </div>
       );
     } catch (err) {

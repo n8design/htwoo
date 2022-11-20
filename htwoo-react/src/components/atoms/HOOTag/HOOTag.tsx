@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOOTagType {
   Button = "button",
@@ -42,7 +42,7 @@ export interface IHOOTagProps extends IHOOStandardProps {
     * (Optional) HTMLElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-mtag {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 }
 
 export interface IHOOTagState {
@@ -76,7 +76,7 @@ export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagSta
           </button>;
           break;
         case HOOTagType.Link:
-          retVal = <a {...this._rootProps} {...this.props.rootElementAttributes} className={className} href={this.props.linkUrl} target={this.props.linkTarget || "_self"}>
+          retVal = <a {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>} className={className} href={this.props.linkUrl} target={this.props.linkTarget || "_self"}>
             <span className="hoo-mtag-lbl">{this.props.text}</span>
           </a>;
           break;

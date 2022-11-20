@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOPivotButtonProps extends IHOOStandardProps {
   /**
@@ -18,7 +18,7 @@ export interface IHOOPivotButtonProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLButtonElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 }
 
 export interface IHOOPivotButtonState {

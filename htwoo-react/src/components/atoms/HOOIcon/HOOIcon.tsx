@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import { symset } from "../../../SymbolSet";
 
 export interface IHOOIconProps extends IHOOStandardProps {
@@ -14,7 +14,7 @@ export interface IHOOIconProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOIconState {

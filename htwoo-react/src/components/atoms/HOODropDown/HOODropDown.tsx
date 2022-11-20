@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import { getRandomString } from "../../common/Common";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -53,12 +53,12 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the UL element of the component.
    * Class names will be appended to the end of the default class string - hoo-select-dropdown {ulElementAttributes.class}
   */
-  ulElementAttributes?: React.AllHTMLAttributes<HTMLUListElement>;
+  ulElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>;
 }
 
 export interface IHOODropDownState {
@@ -166,7 +166,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           ddState = DDState.Open;
           break;
       }
-      this.setState({ open: open, ddState: ddState });
+      this.setState({ open, ddState });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_toggleDropdown) - ${err}`);
     }
@@ -269,7 +269,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           }
           break;
       }
-      this.setState({ open: open, ddState: ddState });
+      this.setState({ open, ddState });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_keyUp) - ${err}`);
     }
@@ -297,7 +297,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
         ddState = DDState.Filtered;
       }
       optionsLength = aFilteredOptions.length;
-      this.setState({ ddState: ddState, optionsLength: optionsLength });
+      this.setState({ ddState, optionsLength });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_doFilter) - ${err}`);
     }

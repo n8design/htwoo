@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOOIFrameRatio {
   "3by4" = "3by4",
@@ -21,10 +21,10 @@ export interface IHOODialogIFrameProps extends IHOOStandardProps {
   */
   iFrameRef?: React.RefObject<HTMLIFrameElement>;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLIFrameElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-dlg-iframe {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>;
 }
 
 export interface IHOODialogIFrameState {

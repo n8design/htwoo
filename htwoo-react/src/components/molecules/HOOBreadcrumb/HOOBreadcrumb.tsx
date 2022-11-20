@@ -1,6 +1,6 @@
 import * as React from "react";
 import { symset } from "../../../SymbolSet";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOOBreadcrumbType {
   "Hyperlink",
@@ -34,7 +34,7 @@ export interface IHOOBreadcrumbProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-breadcrumb {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 }
 
 export interface IHOOBreadcrumbState {

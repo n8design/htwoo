@@ -1,6 +1,6 @@
 import * as React from "react";
 import HOOTag, { HOOTagStyle, HOOTagType } from "../../atoms/HOOTag/HOOTag";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOTag {
   text: string;
@@ -23,10 +23,10 @@ export interface IHOOTagListProps extends IHOOStandardProps {
   */
   tagStyle: HOOTagStyle;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-meta-list {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOTagListState {
