@@ -367,17 +367,21 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
       const currentDisplay = this._getDisplayValue();
+      const expanded = (this.state.ddState === DDState.Open || this.state.ddState === DDState.Filtered);
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}
           role="combobox"
           aria-haspopup="listbox"
           aria-owns={`${this._dropdownId}-list`}
+          aria-expanded={expanded}
           onClick={this._toggleDropdown}
           onKeyUp={this._keyUp}
           className={className}
         >
-          <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">
+          <div id={`${this._dropdownId}-status`}
+            className="hidden-visually"
+            aria-live="polite">
             {this.props.options.length} options available. Arrow down to browse or start typing to filter.
           </div>
           <input ref={this._inputElement}

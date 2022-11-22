@@ -64,6 +64,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
       return (
         <input
           {...this._rootProps}
+          aria-label="Date input"
           {...this.props.rootElementAttributes}
           type="date"
           value={this.props.value}

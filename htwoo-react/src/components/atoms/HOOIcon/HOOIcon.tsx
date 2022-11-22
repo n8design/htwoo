@@ -14,7 +14,7 @@ export interface IHOOIconProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
 }
 
 export interface IHOOIconState {
@@ -41,8 +41,11 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
       const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName);
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} aria-label={this.props.iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}>
-        </div>
+        <span {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          className={className}
+          dangerouslySetInnerHTML={{ __html: iconSVG }}>
+        </span >
       );
     } catch (err) {
       console.error(`${err} - ${this.LOG_SOURCE} (render)`);

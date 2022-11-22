@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Updated component development version of React to major version 17.x; library version still remains compatible from 16-18.2.
 - More speicific typings for rootElementAttributes in IHOOStandardProps from `React.AllHTMLAttributes<HTMLElement>` -> `React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>` and updated all components accordingly
+- Added documentation about supporting font's in dialogs by adding `root-40` class to root element
+- Fixed accessibility errors for all components
 
 ### ATOMS
 

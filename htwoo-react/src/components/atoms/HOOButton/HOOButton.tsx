@@ -1,6 +1,7 @@
 import * as React from "react";
 import { symset } from "../../../SymbolSet";
 import { IHOOStandardProps } from "../../common/IHOOStandardProps";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOButtonType {
   "Icon",
@@ -128,7 +129,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
               {this.props.label &&
                 <>
                   {iconSVG &&
-                    <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+                    <HOOIcon iconSVG={iconSVG} />
                   }
                   <span className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</span>
                   {this._compoundType &&
@@ -137,7 +138,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
                 </>
               }
               {(this.props.type === HOOButtonType.Icon && this.props.iconName) &&
-                <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+                <HOOIcon iconSVG={iconSVG} />
               }
               {(!this.props.label || (this.props.type === HOOButtonType.Icon && !this.props.iconName)) &&
                 this.props.children

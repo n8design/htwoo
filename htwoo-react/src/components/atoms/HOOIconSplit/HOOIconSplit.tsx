@@ -2,6 +2,7 @@ import * as React from "react";
 import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import { symset } from "../../../SymbolSet";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export interface IHOOIconSplitProps extends IHOOStandardProps {
   /**
@@ -65,16 +66,15 @@ export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps
       const iconSVG = symset.Icon(iconName);
       const leftIconSVG = symset.Icon(this.props.leftIconName);
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          aria-haspopup="true"
+          className={className}>
           <button className={this._componentClass} aria-haspopup="true">
-            <span className="hoo-button-icon" aria-hidden="true">
-              <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: leftIconSVG }}></span>
-            </span>
+            <HOOIcon iconSVG={leftIconSVG} />
           </button>
           <button className="hoo-buttonicon-split hoo-buttonicon-flyout" onClick={this._buttonClicked} aria-pressed={this.state.showFlyout} disabled={buttonDisabled} aria-disabled={buttonDisabled}>
-            <span className="hoo-button-icon hoo-buttonchevron">
-              <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
-            </span>
+            <HOOIcon iconSVG={iconSVG} rootElementAttributes={{ className: "hoo-buttonchevron" }} />
           </button>
           {this.props.flyoutContextItems &&
             <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} contextItemClicked={this._flyoutItemClicked} />

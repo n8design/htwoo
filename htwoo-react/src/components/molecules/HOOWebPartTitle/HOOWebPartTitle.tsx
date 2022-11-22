@@ -54,11 +54,15 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <h3 {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <h3 {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          className={className}>
           <div
             role="textbox"
             placeholder={this.props.placeholder || ""}
             aria-placeholder={this.props.placeholder || ""}
+            aria-label="Web Part title input"
+            title={this.props.title}
             contentEditable={this.props.editMode}
             suppressContentEditableWarning={true}
             onBlur={this.saveTitle}

@@ -78,7 +78,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {this.props.inputPrefix &&
                 <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
               }
-              <input {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
+              <input aria-label={`${this.props.inputType || "text"} input`}
+                {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
                 type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}
