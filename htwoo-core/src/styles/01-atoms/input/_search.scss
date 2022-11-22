@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: row;
 
+  .hoo-icon {
+    background-color: white;
+  }
+
   .hoo-input-text {
     @include base-input;
 

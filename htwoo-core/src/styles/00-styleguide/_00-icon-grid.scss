@@ -1,4 +1,4 @@
-.pl-header{
+.pl-header {
 	display: none;
 	flex-direction: row;
 
@@ -10,19 +10,19 @@
 	align-content: stretch;
 	align-items: center;
 
-	&.show{
+	&.show {
 		display: flex;
 	}
 }
 
-.pl-header-logo{
+.pl-header-logo {
 	display: block;
 
 	width: auto;
 	height: #{"max(5vh, 3rem)"};
 }
 
-.pl-header-title{
+.pl-header-title {
 	font-size: 1.5vh;
 	font-weight: 700;
 
@@ -34,7 +34,7 @@
 	color: white;
 }
 
-.pl-iconsearch{
+.pl-iconsearch {
 	position: sticky;
 	top: 0;
 	right: 0;
@@ -46,7 +46,7 @@
 	background-color: $neutral-000;
 }
 
-.pl-toolbar{
+.pl-toolbar {
 	display: flex;
 	overflow: hidden;
 	justify-content: space-between;
@@ -61,22 +61,22 @@
 	border: 1px $theme-600 solid;
 }
 
-.pl-actions{
+.pl-actions {
 	display: flex;
 	flex-direction: row;
 }
 
-.pl-action{
+.pl-action {
 	width: px2rem(200px);
 }
 
-.pl-selection{
+.pl-selection {
 	width: auto;
-	min-width: 50rem;
+	min-width: 50vw;
 	max-width: 100%;
 }
 
-.pl-selection-ctn{
+.pl-selection-ctn {
 	display: grid;
 
 	min-height: 3.5rem;
@@ -86,7 +86,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
 }
 
-.pl-icongrid{
+.pl-icongrid {
 	display: grid;
 
 	max-width: 90vw;
@@ -96,14 +96,14 @@
 	grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
 }
 
-.object-embedd{
+.object-embedd {
 	overflow: hidden;
 
 	width: 0;
 	height: 0;
 }
 
-.pl-svg-symbol{
+.pl-svg-symbol {
 	display: block;
 
 	box-sizing: border-box;
@@ -116,40 +116,44 @@
 
 	fill: currentColor;
 
-	&:hover{
+	&:hover {
 		// transform: scale(1.25);
 		background-color: $theme-200;
 	}
 
-	&.selected{
+	&.selected {
 		background-color: $theme-200;
 	}
 
-	svg{
+	svg {
 		pointer-events: none;
 	}
 
-	&.hidden{
+	&.hidden {
 		display: none;
 	}
 }
 
-.pl-act-dwnld{
+.pl-act-dwnld {
 	padding: 1rem 0 .5rem;
 
 	text-align: center;
 
-	.hoo-button-primary{
+	.hoo-button-primary {
 		display: inline-flex;
 	}
 }
 
-.pl-act-stylswtch{
-	padding-bottom: .5rem;
+.pl-act-stylswtch {
+	padding-bottom: .75rem;
 
 	border-bottom: 1px $theme-600 solid;
 
-	.hoo-label{
+	.hoo-toggle-slider {
+		margin-left: 0;
+	}
+
+	.hoo-label {
 		display: block;
 
 		margin-bottom: .25rem;
