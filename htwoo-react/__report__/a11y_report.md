@@ -4,16 +4,23 @@
 - include: 
 - exclude: 
 
-## 61 violations have been found
-### A11y ID: aria-allowed-attr
-Failing Element Count: 3
+## 68 violations have been found
+### A11y ID: aria-input-field-name
+Failing Element Count: 1
 
-Description: Ensures ARIA attributes are allowed for an element's role
+Description: Ensures every ARIA input field has an accessible name
 
 Detected on:
-- [molecules-menus-hoobreadcrumb--buttons-seperated](http://localhost:6006/?path=/story/molecules-menus-hoobreadcrumb--buttons-seperated)
-- [molecules-menus-hoobreadcrumb--extending](http://localhost:6006/?path=/story/molecules-menus-hoobreadcrumb--extending)
-- [molecules-menus-hoobreadcrumb--hyperlink-seperated](http://localhost:6006/?path=/story/molecules-menus-hoobreadcrumb--hyperlink-seperated)
+- [molecules-webpart-hoowebparttitle--extending](http://localhost:6006/?path=/story/molecules-webpart-hoowebparttitle--extending)
+
+### A11y ID: aria-progressbar-name
+Failing Element Count: 2
+
+Description: Ensures every ARIA progressbar node has an accessible name
+
+Detected on:
+- [atoms-loading-hooloading--basic](http://localhost:6006/?path=/story/atoms-loading-hooloading--basic)
+- [atoms-loading-hooloading--extending](http://localhost:6006/?path=/story/atoms-loading-hooloading--extending)
 
 ### A11y ID: aria-required-attr
 Failing Element Count: 2
@@ -23,23 +30,6 @@ Description: Ensures elements with ARIA roles have all required ARIA attributes
 Detected on:
 - [atoms-input-hooselect--basic](http://localhost:6006/?path=/story/atoms-input-hooselect--basic)
 - [atoms-input-hooselect--extending](http://localhost:6006/?path=/story/atoms-input-hooselect--extending)
-
-### A11y ID: aria-required-children
-Failing Element Count: 1
-
-Description: Ensures elements with an ARIA role that require child roles contain them
-
-Detected on:
-- [atoms-menu-hooflyoutmenu--standard](http://localhost:6006/?path=/story/atoms-menu-hooflyoutmenu--standard)
-
-### A11y ID: aria-roles
-Failing Element Count: 2
-
-Description: Ensures all elements with a role attribute use a valid value
-
-Detected on:
-- [molecules-forms-hoooptionlist--checkbox-list](http://localhost:6006/?path=/story/molecules-forms-hoooptionlist--checkbox-list)
-- [molecules-forms-hoooptionlist--extending](http://localhost:6006/?path=/story/molecules-forms-hoooptionlist--extending)
 
 ### A11y ID: aria-valid-attr-value
 Failing Element Count: 3
@@ -95,7 +85,7 @@ Detected on:
 - [organisms-cards-hooteamssplashcard--extending](http://localhost:6006/?path=/story/organisms-cards-hooteamssplashcard--extending)
 
 ### A11y ID: empty-heading
-Failing Element Count: 3
+Failing Element Count: 4
 
 Description: Ensures headings have discernible text
 
@@ -103,6 +93,7 @@ Detected on:
 - [molecules-dialog-hoodialogheader--extending](http://localhost:6006/?path=/story/molecules-dialog-hoodialogheader--extending)
 - [molecules-dialog-hoodialogheader--icon-name](http://localhost:6006/?path=/story/molecules-dialog-hoodialogheader--icon-name)
 - [molecules-dialog-hoodialogheader--icon-svg](http://localhost:6006/?path=/story/molecules-dialog-hoodialogheader--icon-svg)
+- [molecules-webpart-hoowebparttitle--extending](http://localhost:6006/?path=/story/molecules-webpart-hoowebparttitle--extending)
 
 ### A11y ID: frame-title
 Failing Element Count: 5
@@ -125,27 +116,29 @@ Detected on:
 - [atoms-loading-hooshimmer--image-16-x-9](http://localhost:6006/?path=/story/atoms-loading-hooshimmer--image-16-x-9)
 
 ### A11y ID: label
-Failing Element Count: 11
+Failing Element Count: 21
 
 Description: Ensures every form element has a label
 
 Detected on:
+- [atoms-input-hoodate--disabled](http://localhost:6006/?path=/story/atoms-input-hoodate--disabled)
+- [atoms-input-hoodate--extending](http://localhost:6006/?path=/story/atoms-input-hoodate--extending)
+- [atoms-input-hoodate--min-max-values](http://localhost:6006/?path=/story/atoms-input-hoodate--min-max-values)
+- [atoms-input-hoodate--standard](http://localhost:6006/?path=/story/atoms-input-hoodate--standard)
 - [atoms-input-hoodropdown--standard](http://localhost:6006/?path=/story/atoms-input-hoodropdown--standard)
 - [atoms-input-hoonumber--basic](http://localhost:6006/?path=/story/atoms-input-hoonumber--basic)
 - [atoms-input-hoonumber--disabled](http://localhost:6006/?path=/story/atoms-input-hoonumber--disabled)
 - [atoms-input-hoonumber--extending](http://localhost:6006/?path=/story/atoms-input-hoonumber--extending)
 - [atoms-input-hooselect--basic](http://localhost:6006/?path=/story/atoms-input-hooselect--basic)
 - [atoms-input-hooselect--extending](http://localhost:6006/?path=/story/atoms-input-hooselect--extending)
+- [atoms-input-hootext--basic](http://localhost:6006/?path=/story/atoms-input-hootext--basic)
+- [atoms-input-hootext--disabled](http://localhost:6006/?path=/story/atoms-input-hootext--disabled)
+- [atoms-input-hootext--extending](http://localhost:6006/?path=/story/atoms-input-hootext--extending)
 - [atoms-input-hootext--multiline](http://localhost:6006/?path=/story/atoms-input-hootext--multiline)
+- [atoms-input-hootext--prefix](http://localhost:6006/?path=/story/atoms-input-hootext--prefix)
+- [atoms-input-hootext--prefix-suffix](http://localhost:6006/?path=/story/atoms-input-hootext--prefix-suffix)
+- [atoms-input-hootext--suffix](http://localhost:6006/?path=/story/atoms-input-hootext--suffix)
 - [atoms-input-hootime--basic](http://localhost:6006/?path=/story/atoms-input-hootime--basic)
 - [atoms-input-hootime--disabled](http://localhost:6006/?path=/story/atoms-input-hootime--disabled)
 - [atoms-input-hootime--extending](http://localhost:6006/?path=/story/atoms-input-hootime--extending)
 - [atoms-input-hootime--min-max-values](http://localhost:6006/?path=/story/atoms-input-hootime--min-max-values)
-
-### A11y ID: listitem
-Failing Element Count: 1
-
-Description: Ensures li elements are used semantically
-
-Detected on:
-- [atoms-menu-hooflyoutmenu--standard](http://localhost:6006/?path=/story/atoms-menu-hooflyoutmenu--standard)

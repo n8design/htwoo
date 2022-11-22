@@ -123,7 +123,6 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
               {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>}
               className={className}
               disabled={this.props.disabled || false}
-              aria-label={this.props.label}
               aria-disabled={this.props.disabled || false}
               onClick={this.props.onClick}>
               {this.props.label &&

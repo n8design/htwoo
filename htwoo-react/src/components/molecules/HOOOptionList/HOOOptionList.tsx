@@ -119,9 +119,12 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       if (this.props.type === HOOOptionListType.RadioButton) { this._rootProps["tabindex"] = 0 }
       let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
       className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
-      const role = (this.props.type === HOOOptionListType.Checkbox) ? "checkboxgroup" : "radiogroup";
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          className={className}
+          role="radiogroup"
+          data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
             const tabIndexProp = (this.props.type === HOOOptionListType.RadioButton) ? { tabIndex: 0 } : {};
             return (<div key={option.key} {...tabIndexProp}>{this._getOptionTSX(option)}</div>);

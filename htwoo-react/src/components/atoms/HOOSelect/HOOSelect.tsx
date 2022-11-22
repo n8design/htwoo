@@ -43,6 +43,10 @@ export interface IHOOSelectProps extends IHOOStandardProps {
   */
   onChange: (fieldValue: string, fieldName: string) => void;
   /**
+   * (Optional) For Non-Hyperlink style buttons only, Is button disabled.
+   */
+  disabled?: boolean;
+  /**
    * (Optional) message string for filter box, use {0} for placement of current options length. Omit will yield default message
   */
   optionsLengthMessage?: string;
@@ -51,6 +55,11 @@ export interface IHOOSelectProps extends IHOOStandardProps {
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
   rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  /**
+   * (Optional) HTMLInputElement attributes that will be applied to the Input element of the component.
+   * Class names will be appended to the end of the default class string - hoo-select-text {inputElementAttributes.class}
+  */
+  inputElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
 
 export interface IHOOSelectState {
@@ -119,6 +128,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
 
   private _toggleDropdown = () => {
     try {
+      if (this.props.disabled) { return; }
       const focus = document.activeElement;
       let selectStatus = this.state.selectStatus;
       let open = this.state.open;
@@ -158,6 +168,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
   }
 
   private _keyUp = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (this.props.disabled) { return; }
     const focus = document.activeElement;
     const key = event.key;
     let selectStatus = this.state.selectStatus;
@@ -348,6 +359,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-select-text ${this.props.inputElementAttributes?.className}` : "hoo-select-text";
       const currentDisplay = this._getDisplayValue();
       let optionLengthMessageString = `${this.state.optionsLength} options available. Arrow down to browse or start typing to filter.`;
       if (this.props.optionsLengthMessage) {
@@ -360,15 +372,17 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             {optionLengthMessageString}
           </div>
           <input ref={this._inputElement}
-            className="hoo-select-text"
-            type="text"
+            {...this.props.inputElementAttributes}
             id={`${this.props.id}-input`}
+            type="text"
+            className={inputClassName}
             value={currentDisplay}
+            disabled={this.props.disabled || false}
             aria-autocomplete="both"
             autoComplete="off"
             aria-controls={`${this.props.id}-list`}
             onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }} />
-          <HOOButton type={HOOButtonType.Icon}>
+          <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false}>
             <HOOIcon iconName="hoo-icon-arrow-down" />
           </HOOButton>
           <ul

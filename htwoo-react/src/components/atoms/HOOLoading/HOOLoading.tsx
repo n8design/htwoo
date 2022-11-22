@@ -49,7 +49,6 @@ export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IH
           aria-valuenow={this.props.value}
           aria-valuemin={this.props.minValue}
           aria-valuemax={this.props.maxValue}
-          aria-label="Progress Bar"
           {...this.props.rootElementAttributes}
           className={className}>
           <div className="hoo-progress-indicator"></div>
