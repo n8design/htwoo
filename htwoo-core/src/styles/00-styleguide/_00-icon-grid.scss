@@ -1,4 +1,40 @@
-.pl-iconsearch {
+.pl-header{
+	display: none;
+	flex-direction: row;
+
+	height: #{"max(5vh, 3rem)"};
+
+	background-color: #018dae;
+	text-shadow: 3px 3px #000;
+
+	align-content: stretch;
+	align-items: center;
+
+	&.show{
+		display: flex;
+	}
+}
+
+.pl-header-logo{
+	display: block;
+
+	width: auto;
+	height: #{"max(5vh, 3rem)"};
+}
+
+.pl-header-title{
+	font-size: 1.5vh;
+	font-weight: 700;
+
+	box-sizing: border-box;
+	padding: .75rem 1rem 1rem;
+
+	text-transform: uppercase;
+
+	color: white;
+}
+
+.pl-iconsearch{
 	position: sticky;
 	top: 0;
 	right: 0;
@@ -10,9 +46,47 @@
 	background-color: $neutral-000;
 }
 
-.pl-iconinfo {}
+.pl-toolbar{
+	display: flex;
+	overflow: hidden;
+	justify-content: space-between;
 
-.pl-icongrid {
+	height: auto;
+	min-height: 2rem;
+	max-height: 50vh;
+	margin: 1rem 0;
+	padding: .5rem 1rem;
+	// transition: all 3s ease-in-out;
+
+	border: 1px $theme-600 solid;
+}
+
+.pl-actions{
+	display: flex;
+	flex-direction: row;
+}
+
+.pl-action{
+	width: px2rem(200px);
+}
+
+.pl-selection{
+	width: auto;
+	min-width: 50rem;
+	max-width: 100%;
+}
+
+.pl-selection-ctn{
+	display: grid;
+
+	min-height: 3.5rem;
+
+	align-content: end;
+	align-items: end;
+	grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+}
+
+.pl-icongrid{
 	display: grid;
 
 	max-width: 90vw;
@@ -22,29 +96,62 @@
 	grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
 }
 
-.object-embedd {
+.object-embedd{
 	overflow: hidden;
 
 	width: 0;
 	height: 0;
 }
 
-.pl-svg-symbol {
+.pl-svg-symbol{
+	display: block;
+
 	box-sizing: border-box;
 	padding: .5rem;
 
+	cursor: pointer;
+
 	border: 1px transparent solid;
-	border-radius: 0.24rem;
-	display: block;
-	transition: all 0.125s ease-in-out;
+	border-radius: .24rem;
+
 	fill: currentColor;
 
-	&:hover {
+	&:hover{
+		// transform: scale(1.25);
 		background-color: $theme-200;
-		transform: scale(1.5);
 	}
 
-	&.hidden {
+	&.selected{
+		background-color: $theme-200;
+	}
+
+	svg{
+		pointer-events: none;
+	}
+
+	&.hidden{
 		display: none;
+	}
+}
+
+.pl-act-dwnld{
+	padding: 1rem 0 .5rem;
+
+	text-align: center;
+
+	.hoo-button-primary{
+		display: inline-flex;
+	}
+}
+
+.pl-act-stylswtch{
+	padding-bottom: .5rem;
+
+	border-bottom: 1px $theme-600 solid;
+
+	.hoo-label{
+		display: block;
+
+		margin-bottom: .25rem;
 	}
 }

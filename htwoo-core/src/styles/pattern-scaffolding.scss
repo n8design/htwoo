@@ -1,6 +1,8 @@
 @import "00-base/colors/colors";
 @import "00-base/global.vars";
+@import "00-base/mixin/_core.mixin.scss";
 @import "00-styleguide/00-icon-grid";
+
 /**
  * This stylesheet is for styles you want to include only when displaying demo
  * styles for grids, animations, color swatches, etc.
