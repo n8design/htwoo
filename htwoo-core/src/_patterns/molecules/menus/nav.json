@@ -1,5 +1,9 @@
 {
-    "iconActionTree": "icon-arrow-right",
+    "tree-icon": {
+        "button": {
+            "iconname": "icon-arrow-right"
+        }
+    },
     "navItems": [
         {
             "text": "Item 1",

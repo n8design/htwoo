@@ -1,11 +1,16 @@
 <nav class="hoo-nav">
     <ul role="tree" class="hoo-nav-list" role="tree">
         {{#each navItems }}
-        <li role="treeitem" class="hoo-navitem" aria-expanded="true" {{#if isCurrent }}aria-current="page" {{/if}}>
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" {{#if isCurrent }}aria-current="page" {{/if}}>
             <div class="hoo-navitem-text">
                 {{#if (isdefined subentries) }}
-                {{> atoms-button-icon iconAction=../iconActionTree }}
+
+                {{#../tree-icon }}
+                {{> atoms-button-icon this }}
+                {{/../tree-icon }}
+
                 {{/if}}
+
                 <a href="{{ link }}" class="hoo-navitem-link">{{ text }}</a>
                 {{#if (isdefined subentries) }}
             </div>
