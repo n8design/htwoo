@@ -19,7 +19,7 @@ export const Template = (args) => <HOODialogHeader {...args} />;
   <Story 
     name="IconName"
     args = { 
-      { closeIconName: "hoo-icon-close" }
+      { title: "Dialog Header Example - IconName", closeIconName: "hoo-icon-close" }
     }>
     {Template.bind({})}
   </Story>
@@ -30,7 +30,7 @@ export const Template = (args) => <HOODialogHeader {...args} />;
   <Story 
     name="IconSVG"
     args = { 
-      { closeIconSVG: iconSVG }
+      { title: "Dialog Header Example - IconSVG", closeIconSVG: iconSVG }
     }>
     {Template.bind({})}
   </Story>
@@ -41,7 +41,7 @@ export const Template = (args) => <HOODialogHeader {...args} />;
   <Story 
     name="Extending"
     args = { 
-     { closeIconName: "hoo-icon-close", rootElementAttributes: { style: { backgroundColor: "red" } }}
+     { title: "Dialog Header Example - Extending", closeIconName: "hoo-icon-close", rootElementAttributes: { style: { backgroundColor: "pink" } }}
     }>
     {Template.bind({})}
   </Story>

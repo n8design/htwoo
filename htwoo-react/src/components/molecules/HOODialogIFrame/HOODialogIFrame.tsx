@@ -51,7 +51,12 @@ export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFram
       const ratio = (this.props.ratio) ? `ratio-${this.props.ratio}` : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${ratio} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${ratio}`;
       return (
-        <iframe {...this._rootProps} {...this.props.rootElementAttributes} className={className} ref={this.props.iFrameRef} src={this.props.src}>
+        <iframe {...this._rootProps}
+          title={this.props.src}
+          {...this.props.rootElementAttributes}
+          className={className}
+          ref={this.props.iFrameRef}
+          src={this.props.src}>
         </iframe>
       );
     } catch (err) {

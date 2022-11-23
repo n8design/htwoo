@@ -59,6 +59,11 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * Class names will be appended to the end of the default class string - hoo-select-dropdown {ulElementAttributes.class}
   */
   ulElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement>;
+  /**
+   * (Optional) HTMLInputElement attributes that will be applied to the Input element of the component.
+   * Class names will be appended to the end of the default class string - hoo-select-text {inputElementAttributes.class}
+  */
+  inputElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
 
 export interface IHOODropDownState {
@@ -366,26 +371,33 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
+      const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-select-text ${this.props.inputElementAttributes?.className}` : "hoo-select-text";
       const currentDisplay = this._getDisplayValue();
+      const expanded = (this.state.ddState === DDState.Open || this.state.ddState === DDState.Filtered);
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}
+          id={`${this._dropdownId}-list`}
           role="combobox"
           aria-haspopup="listbox"
           aria-owns={`${this._dropdownId}-list`}
+          aria-expanded={expanded}
           onClick={this._toggleDropdown}
           onKeyUp={this._keyUp}
           className={className}
         >
-          <div id={`${this._dropdownId}-status`} className="hidden-visually" aria-live="polite">
+          <div id={`${this._dropdownId}-status`}
+            className="hidden-visually"
+            aria-live="polite">
             {this.props.options.length} options available. Arrow down to browse or start typing to filter.
           </div>
           <input ref={this._inputElement}
-            disabled={this.props.disabled || false}
-            type="text"
+            {...this.props.inputElementAttributes}
             id={`${this._dropdownId}-input`}
+            type="text"
+            disabled={this.props.disabled || false}
             value={currentDisplay}
-            className="hoo-select-text"
+            className={inputClassName}
             aria-autocomplete="both"
             autoComplete="off"
             aria-controls={`${this._dropdownId}-list`}

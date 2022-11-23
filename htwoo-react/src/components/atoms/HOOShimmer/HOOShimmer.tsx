@@ -111,7 +111,9 @@ export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IH
             </div>
           }
           {this._imageShape &&
-            <img {...this._rootProps} {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>}
+            <img {...this._rootProps}
+              alt={this.props.shape.toString()}
+              {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>}
               className={className}
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               width={this.props.imageWidth}

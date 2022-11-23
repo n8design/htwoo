@@ -78,7 +78,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
                     </button>
                   }
                   {iconSVG && !last &&
-                    <span className="hoo-breadcrumb-separator" aria-label={this.props.seperatorIconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+                    <span className="hoo-breadcrumb-separator" dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
                   }
                 </li>
               );

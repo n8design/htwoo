@@ -70,7 +70,14 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
       const labelClassName = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
-          <input type="checkbox" {...this.props.inputElementAttributes} id={this._toggleId} checked={this.props.checked} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.onChange} className={inputClassName} />
+          <input {...this.props.inputElementAttributes}
+            type="checkbox"
+            id={this._toggleId}
+            checked={this.props.checked}
+            disabled={this.props.disabled || false}
+            aria-disabled={this.props.disabled || false}
+            onChange={this.props.onChange}
+            className={inputClassName} />
           {this.props.labelOn && this.props.labelOff &&
             <label  {...this.props.labelElementAttributes} className={labelClassName} htmlFor={this._toggleId} >
               <span className="hoo-toggle-slider"></span>
