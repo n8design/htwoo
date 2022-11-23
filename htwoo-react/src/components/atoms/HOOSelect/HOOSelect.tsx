@@ -361,13 +361,23 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-select-text ${this.props.inputElementAttributes?.className}` : "hoo-select-text";
       const currentDisplay = this._getDisplayValue();
+      const expanded = (this.state.selectStatus === HOOSelectStatus.Open || this.state.selectStatus === HOOSelectStatus.Filtered);
       let optionLengthMessageString = `${this.state.optionsLength} options available. Arrow down to browse or start typing to filter.`;
       if (this.props.optionsLengthMessage) {
         const indexLengthPlaceholder = this.props.optionsLengthMessage.indexOf("{0}") || -1;
         optionLengthMessageString = (indexLengthPlaceholder > -1) ? this.props.optionsLengthMessage.replace("{0}", this.state.optionsLength.toString()) : `${this.state.optionsLength} ${this.props.optionsLengthMessage}`;
       }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="combobox" aria-haspopup="listbox" aria-owns={`${this.props.id}-list`} onClick={this._toggleDropdown} onKeyUp={this._keyUp}>
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          id={`${this.props.id}-list`}
+          className={className}
+          role="combobox"
+          aria-haspopup="listbox"
+          aria-owns={`${this.props.id}-list`}
+          aria-expanded={expanded}
+          onClick={this._toggleDropdown}
+          onKeyUp={this._keyUp}>
           <div id={`${this.props.id}-status`} className="hidden-visually" aria-live="polite">
             {optionLengthMessageString}
           </div>

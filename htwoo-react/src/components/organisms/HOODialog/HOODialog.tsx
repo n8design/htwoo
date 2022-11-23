@@ -79,9 +79,9 @@ export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOO
       if (this.props.height !== undefined) { styleBlock["--lqdDialogHeight"] = this.props.height; }
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
-          <div className="hoo-mdldialog" style={styleBlock}>
+          <dialog className="hoo-mdldialog" style={styleBlock}>
             {this.props.children}
-          </div>
+          </dialog>
         </div>
       );
     } catch (err) {

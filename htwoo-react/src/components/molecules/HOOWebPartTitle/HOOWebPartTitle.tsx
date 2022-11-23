@@ -59,6 +59,7 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
           className={className}>
           <div
             role="textbox"
+            aria-label={this.props.placeholder || "Web Part Title"}
             placeholder={this.props.placeholder || ""}
             aria-placeholder={this.props.placeholder || ""}
             title={this.props.title}

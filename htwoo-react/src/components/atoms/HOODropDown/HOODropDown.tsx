@@ -377,6 +377,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}
+          id={`${this._dropdownId}-list`}
           role="combobox"
           aria-haspopup="listbox"
           aria-owns={`${this._dropdownId}-list`}
