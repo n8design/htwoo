@@ -1,0 +1,10 @@
+{
+    "card-footer": {
+        "name": "Man on the moon",
+        "modified": "Created a seconds ago",
+        "avatar": {
+            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+            "size": 32
+        }
+    }
+}

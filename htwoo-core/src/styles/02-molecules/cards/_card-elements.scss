@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 
 	aspect-ratio: 16/9;
+	margin: 0;
 
 	img{
 		display: block;
@@ -76,9 +77,12 @@
 
 .hoo-cardfooter{
 	display: flex;
+	flex-direction: row;
+	align-items: center;
 
 	box-sizing: border-box;
 	padding: px2rem(12px);
+	gap: px2rem(8px);
 
 	.hoo-avatar{
 		width: px2rem(32px);
