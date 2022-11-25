@@ -6,5 +6,8 @@
             "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
             "size": 32
         }
+    },
+    "card-media": {
+        "image": "../../images/card-images/coffee-image.jpg"
     }
 }
