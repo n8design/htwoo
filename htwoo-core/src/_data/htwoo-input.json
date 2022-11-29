@@ -1,6 +1,6 @@
 {
     "button": {
-        "iconname": "icon-ninjacat",
+        "iconname": "icon-arrow-left",
         "label": "Button",
         "description": "Primary with description",
         "aria-label": "Button"
