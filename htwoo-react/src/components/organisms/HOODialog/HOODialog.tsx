@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOODialogType {
   "Standard",
@@ -31,7 +31,7 @@ export interface IHOODialogProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-mdldialog-outer {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOODialogState {
@@ -79,9 +79,9 @@ export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOO
       if (this.props.height !== undefined) { styleBlock["--lqdDialogHeight"] = this.props.height; }
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
-          <div className="hoo-mdldialog" style={styleBlock}>
+          <dialog className="hoo-mdldialog" style={styleBlock}>
             {this.props.children}
-          </div>
+          </dialog>
         </div>
       );
     } catch (err) {

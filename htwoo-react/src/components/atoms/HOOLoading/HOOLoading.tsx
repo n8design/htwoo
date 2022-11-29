@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOLoadingProps extends IHOOStandardProps {
   /**
@@ -18,7 +18,7 @@ export interface IHOOLoadingProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-progress {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOLoadingState {
@@ -44,7 +44,14 @@ export default class HOOLoading extends React.PureComponent<IHOOLoadingProps, IH
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div {...this._rootProps} role="progressbar" aria-valuenow={this.props.value} aria-valuemin={this.props.minValue} aria-valuemax={this.props.maxValue} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps}
+          role="progressbar"
+          aria-valuenow={this.props.value}
+          aria-valuemin={this.props.minValue}
+          aria-valuemax={this.props.maxValue}
+          title="Progress"
+          {...this.props.rootElementAttributes}
+          className={className}>
           <div className="hoo-progress-indicator"></div>
         </div>
       );

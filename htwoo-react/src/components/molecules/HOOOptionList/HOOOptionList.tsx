@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOCheckbox from "../../../components/atoms/HOOCheckbox/HOOCheckbox";
 import { getRandomString } from "../../common/Common";
 import HOORadioButton from "../../../components/atoms/HOORadioButton/HOORadioButton";
@@ -48,7 +48,7 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOOptionListState {
@@ -116,12 +116,18 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   public render(): React.ReactElement<IHOOOptionListProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-      const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this._direction === HOOOptionListDirection.Vertical ? "is-vertical" : "is-horizontal")} ${this.props.rootElementAttributes?.className}` : this._componentClass;
-      const role = (this.props.type === HOOOptionListType.Checkbox) ? "checkboxgroup" : "radiogroup";
+      if (this.props.type === HOOOptionListType.RadioButton) { this._rootProps["tabindex"] = 0 }
+      let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
+      className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role={role} data-cols="2">
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          className={className}
+          role="radiogroup"
+          data-cols="2">
           {this._valid && this.props.options && this.props.options.map((option) => {
-            return (<div key={option.key}>{this._getOptionTSX(option)}</div>);
+            const tabIndexProp = (this.props.type === HOOOptionListType.RadioButton) ? { tabIndex: 0 } : {};
+            return (<div key={option.key} {...tabIndexProp}>{this._getOptionTSX(option)}</div>);
           })}
           {!this._valid &&
             "The type of HOOOptionList does not match the type of value"

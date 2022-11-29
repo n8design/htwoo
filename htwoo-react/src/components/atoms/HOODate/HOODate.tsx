@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOODateProps extends IHOOStandardProps {
   /**
@@ -26,7 +26,7 @@ export interface IHOODateProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-date {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLInputElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
 
 export interface IHOODateState {

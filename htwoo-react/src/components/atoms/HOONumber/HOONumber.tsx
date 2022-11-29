@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOONumberProps extends IHOOStandardProps {
   /**
@@ -23,7 +23,7 @@ export interface IHOONumberProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"

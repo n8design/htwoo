@@ -18,7 +18,7 @@ export const Template = (args) => <HOOWebPartTitle {...args} />;
     name="Basic"
     args = { 
       (function() {
-      let titleValue1 = null;
+      let titleValue1 = "My Web Part";
       return { title: titleValue1, placeholder: "Web Part Title", editMode: true, updateTitle: (title) => { titleValue1 = title; } }
       })()
     }>

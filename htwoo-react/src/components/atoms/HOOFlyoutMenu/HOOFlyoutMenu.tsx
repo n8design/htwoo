@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOAction, { HOOActionType } from "../HOOAction/HOOAction";
 
 export interface IHOOFlyoutMenuItem {
@@ -17,10 +17,10 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
   */
   contextItemClicked: (ev: React.MouseEvent<HTMLButtonElement>, ci: IHOOFlyoutMenuItem) => void;
   /**
-   * (Optional) HTMLUListElement attributes that will be applied to the root element of the component.
+   * (Optional) MenuHTMLAttributes attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLUListElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.MenuHTMLAttributes<HTMLElement>, HTMLElement>;
 }
 
 export interface IHOOFlyoutMenuState {
@@ -46,7 +46,7 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <ul {...this._rootProps} {...this.props.rootElementAttributes} role="menu" className={className}>
+        <menu {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.contextItems && this.props.contextItems.map((ci) => {
             return (
               <li key={ci.label} className="hoo-buttonflyout-item">
@@ -54,7 +54,7 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
               </li>
             );
           })}
-        </ul>
+        </menu>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

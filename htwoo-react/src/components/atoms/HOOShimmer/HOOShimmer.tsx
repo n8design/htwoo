@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOOShimmerTheme {
   "None",
@@ -36,10 +36,10 @@ export interface IHOOShimmerProps extends IHOOStandardProps {
  */
   imageHeight?: number;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLImageElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-ph {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.AllHTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
 }
 
 export interface IHOOShimmerState {
@@ -111,7 +111,9 @@ export default class HOOShimmer extends React.PureComponent<IHOOShimmerProps, IH
             </div>
           }
           {this._imageShape &&
-            <img {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>}
+            <img {...this._rootProps}
+              alt={this.props.shape.toString()}
+              {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>}
               className={className}
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
               width={this.props.imageWidth}
