@@ -3,50 +3,92 @@
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         },
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         },
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         },
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         },
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         },
         {
             "card-title": "New Stuff for a cool intranet with a really long title",
             "card-location": "Marketing",
-            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
-            "card-footer-name": "Man on the moon",
-            "card-footer-modified": "Created a seconds ago",
-            "card-image-url": "../../images/card-images/coffee-image.jpg"
+            "card-footer": {
+                "avatar": {
+                    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+                    "size": 32
+                },
+                "name": "Man on the moon",
+                "modified": "Created a seconds ago"
+            },
+            "card-media": {
+                "image": "../../images/card-images/coffee-image.jpg"
+            }
         }
     ]
 }
