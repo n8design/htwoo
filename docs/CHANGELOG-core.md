@@ -1,4 +1,3 @@
-# hTWOo Core - Changelog
 
 Changes in hTWOo core as they happen
 
