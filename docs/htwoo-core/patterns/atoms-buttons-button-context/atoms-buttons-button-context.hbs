@@ -4,5 +4,7 @@
         <span class="hoo-buttoncontext-label"> {{label}} </span>
         <span class="hoo-button-icon hoo-buttonchevron"> {{> atoms-icon iconname=iconDown }} </span>
     </button>
-    {{> atoms-menu-flyouts contextItems=ddItems }}
+    {{#contextMenu}}
+    {{> atoms-menu-flyouts  }}
+    {{/contextMenu}}
 </div>

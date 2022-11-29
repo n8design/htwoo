@@ -1,7 +1,9 @@
-<div class="hoo-radiobutton-group" role="radiogroup">
+{{#checkbox-group}}
+<div class="hoo-checkbox-group" role="checkbox" tabindex="0">
     {{#each items }}
-    <div>
+    <div tabindex="-1">
         {{>atoms-checkbox this }}
     </div>
     {{/each}}
 </div>
+{{/checkbox-group}}

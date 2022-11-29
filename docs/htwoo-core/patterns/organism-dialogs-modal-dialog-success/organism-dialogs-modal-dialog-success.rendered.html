@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="">
   <head>
-    <title>hTWOo UI Framework</title>
+    <title>hTWOo UI Framework - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1657891166601" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1657891166601" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1657891166601" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1669729096095" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1669729096095" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1669729096095" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -19,21 +19,22 @@
     <div
         style="height: 100vh; width: 100vw; background: url(../../images/background-2.jpg) no-repeat center center fixed; background-size: cover;">
         <!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ -->
-        <div class="hoo-mdldialog-outer is-success is-visible">
+        <dialog class="hoo-mdldialog-outer is-success is-visible">
             <div class="hoo-mdldialog" style="--lqdDialogHeight: 30vh; --lqdDialogWidth: 40vw;">
                 <div class="hoo-dlgheader">
                     <div class="hoo-dlgheader-title"><h2>Modal Dialog Title</h2></div>
-                    <div class="hoo-dlgheader-closer">    <button class="hoo-buttonicon" aria-label="">
-                        <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-close"></use>
-                            </svg>
-                        </span>    </button></div>
+                    <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" aria-label="Button">
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-close"></use>
+                        </svg>
+                    </span></button>
+                </div>
                 </div>
                 <div class="hoo-dlgcontent">
                     This is the modal dialog content
                 </div>            </div>
-        </div>
+        </dialog>
         <!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ -->
     </div>
     <!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ -->
@@ -79,10 +80,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1657891166601">
+<script id="pl-js-polyfill-insert-1669729096095">
   (function() {
     if (self != top) {
-      var cb = '1657891166601';
+      var cb = '1669729096095';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -95,7 +96,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1657891166601" nomodule>
+<script id="pl-js-insert-1669729096095" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
