@@ -5,24 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 1.6.0 - 2022-Nov-?
+## 1.6.0 - 2022-Nov-29
 
->In support of HTWOO-CORE v1.2.6
+>In support of HTWOO-CORE v1.3.0
 
 ### General
 
 - Updated component development version of React to major version 17.x; library version still remains compatible from 16-18.2.
 - More speicific typings for rootElementAttributes in IHOOStandardProps from `React.AllHTMLAttributes<HTMLElement>` -> `React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>` and updated all components accordingly
 - Added documentation about supporting font's in dialogs by adding `root-40` class to root element
-- Fixed accessibility errors for all components
+- Fixed accessibility errors as appropriate for all components, see [a11y_report.md](https://github.com/n8design/htwoo/blob/react-v1.6.0/htwoo-react/__report__/a11y_report.md) for outstanding issues.
 
 ### ATOMS
 
-- Added `inputElementAttributes` to HOOSearch, HOODropDownm, and HOOSelect
-- Added required property to HOOLabel, which adds * to indicate associated control is required.
+- Added `inputElementAttributes` to HOOSearch, HOODropDown, and HOOSelect
+- Added 'required' property to HOOLabel, which adds * to indicate associated control is required.
 - Updated typing for HOOText `inputType` property to React.HTMLInputTypeAttribute
 - _hTWOo Core_: Update `HOOFlyoutMenu` and `HOOIconOverflow` from ul to menu element
 - Updated documentation/example for `HOOIconOverflow` and fully implemented children to accept instance of `HOOFlyoutMenu`
+- Fixed styling bug for `HOOAvatar`, where left margin for description was wrong
 
 ### MOLECULES
 

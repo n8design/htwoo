@@ -45,7 +45,10 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
       const isRequired = (this.props.required) ? "is-required" : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className} ${isRequired}` : `${this._componentClass} ${isRequired}`;
       return (
-        <label {...this._rootProps} {...this.props.rootElementAttributes} htmlFor={this.props.for} className={className}>{this.props.label}</label>
+        <label {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          htmlFor={this.props.for}
+          className={className}>{this.props.label}</label>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

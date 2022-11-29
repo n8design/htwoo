@@ -53,7 +53,7 @@ export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOO
     this.LOG_SOURCE = props.dataComponent || "💦HOOAvatar";
     this.state = new HOOAvatarState();
     if (props.size != null) {
-      this._componentClass += `-${props.size}`;
+      this._componentClass += ` ${this._componentClass}-${props.size}`;
     }
   }
 
