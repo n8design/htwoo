@@ -1,10 +1,13 @@
 {
     "prim-btn": {
-        "classname": "hoo-button-primary",
-        "label": "Create something"
+        "button": {
+            "label": "Create something"
+        }
     },
     "sec-btn": {
-        "classname": "hoo-button",
-        "label": "Call for action"
+        "button": {
+            "classname": "hoo-button",
+            "label": "Call for action"
+        }
     }
 }
