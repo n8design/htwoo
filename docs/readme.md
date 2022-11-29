@@ -24,6 +24,10 @@ hTWOo style guide, documentation and building platform is based on [patternlab.i
 
 > We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
+## Changelog
+
+* [hTWOo Core - recent update](./CHANGELOG-core)
+
 ## How To Use
 
 * [SVG icons instead of icon fonts](./how-to/SVG-instead-of-icon-fonts)
