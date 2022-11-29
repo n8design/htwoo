@@ -1,6 +1,6 @@
 ---
-title: Split Standard
-order: 99
+title: Standard Split
+order: 11
 ---
 
 ### SCSS Imports

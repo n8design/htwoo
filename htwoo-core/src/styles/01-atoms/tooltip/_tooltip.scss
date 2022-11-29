@@ -1,143 +1,221 @@
-// Base class
-.hoo-tooltip{
-	// Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
-	// So reset our font and text properties to avoid inheriting weird values.
-	// @include reset-text();
-	font-size: $tooltip-font-size;
+$arrow-size: .75;
+$arrow-offset: ($arrow-size /2) * 1em;
 
-	// position: absolute;
-	z-index: $zindex-tooltip;
+
+@mixin ttev($depth: 16) {
+	$d1: $depth / 2;
+	$d2: $depth * 1;
+	// ($depth*1px)
+	// box-shadow: 0 $d1 * 1px $d2 * 1px 0 $neutral-400,
+	// 0 #{($depth*0.1px)} #{($depth*0.1*3px)} 0 $neutral-400;
+
+	filter: drop-shadow(0 0 .25em $neutral-400);
+
+	// 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+}
+
+%arrow {
+	// filter: drop-shadow(2px 2px 5px $neutral-000);
+	@include ttev;
+
+	position: absolute;
 
 	display: block;
 
-	margin: $tooltip-margin;
-	// Allow breaking very long words so they don't overflow the tooltip's bounds
+	box-sizing: border-box;
+	width: $arrow-size * 1em;
+	height: $arrow-size * 1em;
 
-	word-wrap: break-word;
+	content: "";
+	transform: rotate(45deg);
+	transform-origin: center center;
 
-	opacity: 0;
+	border-top: 1px $neutral-300 solid;
+	border-right: 1px $neutral-000 solid;
+	border-bottom: 1px $neutral-000 solid;
+	border-left: 1px $neutral-300 solid;
+	background-color: $neutral-000;
 
+	clip-path: polygon(0% 0, calc(100% + 1px) 0%, 0% calc(100% + 1px));
+}
 
+.hoo-tooltip {
+	font-size: px2rem(14px);
 
-	&.show{
-		opacity: $tooltip-opacity;
-	}
+	display: inline-block;
 
-	.arrow{
-		position: absolute;
+	width: auto;
+	height: auto;
+	padding: .5em;
+	box-sizing: border-box;
 
-		display: block;
+	&.top-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
 
-		width: $tooltip-arrow-width;
-		height: $tooltip-arrow-height;
-
-		&::before{
-			position: absolute;
-
-			content: "";
-
-			border-style: solid;
-			border-color: transparent;
-		}
-	}
-
-
-	&-top{
-		padding: $tooltip-arrow-height 0;
-
-		.arrow{
-			bottom: 0;
-			left: calc(50% - 12.8px);
-
-			&::before{
-				top: 0;
-
-				border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-				border-top-color: $tooltip-arrow-color;
+				top: -1*$arrow-offset;
+				left: calc(50% - #{$arrow-offset});
 			}
 		}
 	}
 
-	&-right{
-		padding: 0 $tooltip-arrow-height;
+	&.top-left {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
 
-		.arrow{
-			left: 0;
-
-			width: $tooltip-arrow-height;
-			height: $tooltip-arrow-width;
-
-			&::before{
-				right: 0;
-
-				border-width: ($tooltip-arrow-width / 2) $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-				border-right-color: $tooltip-arrow-color;
+				top: -1*$arrow-offset;
+				left: $arrow-offset;
 			}
 		}
 	}
 
-	&-bottom{
-		padding: $tooltip-arrow-height 0;
+	&.top-right {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
 
-		.arrow{
-			top: 0;
-
-			&::before{
-				bottom: 0;
-
-				border-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-				border-bottom-color: $tooltip-arrow-color;
+				top: -1*$arrow-offset;
+				right: $arrow-offset;
 			}
 		}
 	}
 
-	&-left{
-		padding: 0 $tooltip-arrow-height;
+	&.bottom-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
 
-		.arrow{
-			right: 0;
+				bottom: -1*$arrow-offset;
+				left: calc(50% - #{$arrow-offset});
 
-			width: $tooltip-arrow-height;
-			height: $tooltip-arrow-width;
+				transform: rotate(225deg);
+			}
+		}
+	}
 
-			&::before{
-				left: 0;
+	&.bottom-left {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
 
-				border-width: ($tooltip-arrow-width / 2) 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-				border-left-color: $tooltip-arrow-color;
+				bottom: -1*$arrow-offset;
+				left: $arrow-offset;
+
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+	&.bottom-right {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				right: $arrow-offset;
+				bottom: -1*$arrow-offset;
+
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+	&.right-top {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: $arrow-offset;
+				right: -1*$arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.right-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: calc(50% - #{$arrow-offset});
+				right: -1*$arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.right-bottom {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				right: -1*$arrow-offset;
+				bottom: $arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.left-top {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: $arrow-offset;
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&.left-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: calc(50% - #{$arrow-offset});
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&.left-bottom {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				bottom: $arrow-offset;
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
 			}
 		}
 	}
 }
 
-.bs-tooltip-auto{
-	&[x-placement^="top"]{
-		@extend .hoo-tooltip-top;
-	}
+.hoo-tooltip-content {
+	@include elevation(16);
+	// filter: drop-shadow(2px 2px 5px $neutral-000);
+	@include ttev;
 
-	&[x-placement^="right"]{
-		@extend .hoo-tooltip-right;
-	}
+	position: relative;
+	// width: 10em;
+	// height: 5em;
 
-	&[x-placement^="bottom"]{
-		@extend .hoo-tooltip-bottom;
-	}
+	display: inline-block;
 
-	&[x-placement^="left"]{
-		@extend .hoo-tooltip-left;
-	}
-}
+	box-sizing: border-box;
+	padding: .2em .75em .3em;
 
-// Wrapper for the tooltip content
-.hoo-tooltip-content{
-	max-width: $tooltip-max-width;
-	padding: $tooltip-padding-y $tooltip-padding-x;
-
-	text-align: center;
-
-	color: $tooltip-color;
-	border-radius: 2px;
-	background-color: $tooltip-bg;
-	// @include border-radius($tooltip-border-radius);
-  @include elevation(8);
+	color: $neutral-900;
+	border: 1px $neutral-300 solid;
+	border-radius: px2rem(4px);
+	background-color: $neutral-000;
 }

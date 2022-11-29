@@ -1,6 +1,6 @@
 @mixin base-input{
 	font-size: px2rem(14px);
-	line-height: 1.9rem;
+	line-height: px2rem(30px);
 
 	box-sizing: border-box;
 	width: auto;

@@ -5,12 +5,14 @@
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
+                "button": {
+                    "label": "Create something"
+                }
             },
             "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+                "button": {
+                    "label": "Call for action"
+                }
             }
         },
         {
@@ -18,12 +20,14 @@
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
+                "button": {
+                    "label": "Create something"
+                }
             },
             "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+                "button": {
+                    "label": "Call for action"
+                }
             }
         },
         {
@@ -31,12 +35,14 @@
             "cardtitle": "Welcome to your hTWOo Splash card",
             "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
             "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
+                "button": {
+                    "label": "Create something"
+                }
             },
             "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+                "button": {
+                    "label": "Call for action"
+                }
             }
         }
     ]

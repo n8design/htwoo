@@ -1,5 +1,5 @@
 {
-    "classname": "hoo-button-primary",
-    "label": "Primary",
-    "iconname": "icon-chevron-right-filled"
+    "button":{
+        "iconname": "icon-arrow-right"
+    }
 }

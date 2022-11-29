@@ -1,4 +1,5 @@
 {
-    "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg",
-    "size": 64
+    "avatar": {
+        "size": 64
+    }
 }

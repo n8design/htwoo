@@ -1,27 +1,14 @@
 .hoo-checkbox-group,
 .hoo-radiobutton-group {
-    &.is-horizontal {
-        display: inline-flex;
-        gap: 1rem;
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
+	&.is-horizontal {
+		display: inline-flex;
 
-        // gap: 1rem;
-        // padding-left: 1rem;
-        // padding-right: 1rem;
+		gap: 1rem;
+	}
 
-        &[data-cols] {
-            columns: attr(data-cols integer);
-            &::before{
-                content: attr(data-cols integer);
-                display: block;
-            }
-        }
-    }
+	div {
+		margin-top: .5rem;
 
-    div {
-        margin-top: .5rem;
-        flex-grow: 0;
-    }
+		flex-grow: 0;
+	}
 }

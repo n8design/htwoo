@@ -41,7 +41,7 @@
 }
 
 .hoo-navitem{
-	&[aria-expanded="false"]{
+	&[aria-expanded="true"]{
 		.hoo-buttonicon{
 			svg{
 				transform: rotate(90deg);
@@ -53,7 +53,7 @@
 		}
 	}
 
-	&[aria-expanded="true"]{
+	&[aria-expanded="false"]{
 		.hoo-nav-listsub{
 			display: none;
 		}

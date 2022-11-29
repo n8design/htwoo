@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: row;
 
+  .hoo-icon {
+    background-color: white;
+  }
+
   .hoo-input-text {
     @include base-input;
 
@@ -34,7 +38,7 @@
     .hoo-input-text {
       height: px2rem(32px);
 
-      border-width: 2px;
+      border-width: px2rem(2px);
       border-color: $theme-600;
       outline: 0 rgba(255, 255, 255, 0) solid;
     }

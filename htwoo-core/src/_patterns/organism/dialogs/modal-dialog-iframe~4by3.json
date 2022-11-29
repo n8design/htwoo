@@ -1,6 +1,8 @@
 {
     "modalDialogTitle": "Modal Dialog Title",
-    "iconAction": "icon-close",
+    "button":{
+        "iconname": "icon-close"
+    },
     "content": "This is the modal dialog content",
     "iFrameSource": "/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html",
     "ratio": " ratio-4by3"

@@ -1,5 +1,7 @@
 ---
 title: Shimmer Image boilerplate
+hidden: true
+order: 20
 ---
 
 ### SCSS Imports

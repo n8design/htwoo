@@ -14,7 +14,7 @@
     "mqs": false,
     "find": false,
     "views-all": false,
-    "views-annotations": false,
+    "views-annotations": true,
     "views-code": false,
     "views-new": false,
     "tools-all": false,

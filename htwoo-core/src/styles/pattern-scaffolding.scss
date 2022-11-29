@@ -1,5 +1,10 @@
 @import "00-base/colors/colors";
 @import "00-base/global.vars";
+@import "00-base/mixin/_core.mixin.scss";
+@import "00-styleguide/00-icon-grid";
+@import "00-styleguide/variables";
+@import "00-styleguide/00-annotations";
+
 /**
  * This stylesheet is for styles you want to include only when displaying demo
  * styles for grids, animations, color swatches, etc.
@@ -38,10 +43,12 @@
 	line-height: 1.4;
 
 	flex-basis: 50%;
+
 	&-big{
 		font-size: 1.2rem;
 		font-weight: bold;
 	}
+
 	&:first-child{
 		text-align: right;
 	}
@@ -132,11 +139,9 @@
  * FPO block within two column fixed layout within secondary section
  * 1) Width expands entire container at small screens
  */
-.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__secondary
-	.fpo-block{
-	width: 100%; /* 1 */
+.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__secondary .fpo-block{
+	width: 100%;
+	/* 1 */
 }
 
 /**
@@ -145,12 +150,11 @@
  * 2) Set width = width of vertical header
  */
 @media all and (min-width: 70em){
-	.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__secondary
-	.fpo-block{
-		width: 20rem; /* 1 */
-		height: 100vh; /* 2 */
+	.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__secondary .fpo-block{
+		width: 20rem;
+		/* 1 */
+		height: 100vh;
+		/* 2 */
 		margin-bottom: 0;
 	}
 }
@@ -174,14 +178,15 @@
  */
 
 @media all and (min-width: 70em){
-	.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__secondary{
-		position: absolute; /* 1 */
+	.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__secondary{
+		position: absolute;
+		/* 1 */
 
-		float: left; /* 3 */
+		float: left;
+		/* 3 */
 
-		height: inherit; /* 2 */
+		height: inherit;
+		/* 2 */
 	}
 }
 
@@ -189,11 +194,9 @@
  *  Fpo block within pattern example, two column fixed, and secondary section
  * 1) Make fpo block width of the container on small screens
  */
-.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__secondary
-	.fpo-block{
-	width: 100%; /* 1 */
+.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__secondary .fpo-block{
+	width: 100%;
+	/* 1 */
 }
 
 /**
@@ -202,12 +205,11 @@
  * 2) Height inherits so it doesn't span longer than the pattern window on "All" PL page
  */
 @media all and (min-width: 70em){
-	.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__secondary
-	.fpo-block{
-		width: 20rem; /* 1 */
-		height: inherit; /* 2 */
+	.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__secondary .fpo-block{
+		width: 20rem;
+		/* 1 */
+		height: inherit;
+		/* 2 */
 	}
 }
 
@@ -221,10 +223,7 @@
 /**
  * Add height of fpo block to equal height of main to help with scrolling main window/fixed sidebar effect.
  */
-.sg-pattern-example
-	.l-page-layout--two-column-fixed
-	.l-page-layout__main
-	.fpo-block{
+.sg-pattern-example .l-page-layout--two-column-fixed .l-page-layout__main .fpo-block{
 	height: 30rem;
 	margin-bottom: 0;
 }
@@ -247,8 +246,8 @@
 
 .sg-colors{
 	max-width: 800px;
-	margin-top: 2rem;
 	margin: auto;
+	margin-top: 2rem;
 	padding: 0;
 }
 
@@ -310,7 +309,7 @@
 		border: 1px rgb(96, 94, 92) solid;
 		border-image-source: none;
 		border-image-slice: 100%;
-		border-image-width: 1 ;
+		border-image-width: 1;
 		border-image-outset: 0;
 		border-image-repeat: stretch;
 
@@ -331,6 +330,7 @@
 	align-items: center;
 	will-change: content;
 }
+
 .sg-anim-block{
 	width: 75px;
 	height: 75px;
@@ -347,6 +347,24 @@
 .tmp-hidden{
 	display: none;
 }
+
 body > .tmp-hidden{
 	display: block;
+}
+
+.sg-center{
+	display: flex;
+	justify-content: center;
+
+	height: 100%;
+	max-height: 100vh;
+	margin-top: 5rem;
+	align-content: stretch;
+	align-items: center;
+}
+
+.sg-item-showcase{
+	display: flex;
+
+	gap: 1rem;
 }

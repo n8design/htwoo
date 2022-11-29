@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html class="">
   <head>
-    <title>hTWOo UI Framework</title>
+    <title>hTWOo UI Framework - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1657891166601" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1657891166601" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1657891166601" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1669729096095" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1669729096095" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1669729096095" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1657891166601" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1669729096095" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -68,14 +68,16 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-cardfooter">
-    <div class="hoo-avatar">
-        <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-    </div>    <div class="hoo-cardfooter-data">
+			<footer class="hoo-cardfooter">
+    <div class="hoo-avatar-32">
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+    </div>
+    <div class="hoo-cardfooter-data">
         <div class="hoo-cardfooter-name">Man on the moon</div>
         <div class="hoo-cardfooter-modified">Created a seconds ago</div>
     </div>
-</div>
+</footer>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-card-footer" class="pl-js-pattern-data">
@@ -119,9 +121,10 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-cardimage">
-<img src="../../images//card-images/coffee-image.jpg" width="320" height="180" alt="">
-</div>
+			<figure class="hoo-cardimage">
+    <img src="../../images/card-images/coffee-image.jpg" width="320" height="180" alt="">
+</figure>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-card-image" class="pl-js-pattern-data">
@@ -303,9 +306,11 @@
 			    <footer class="hoo-splashcard-footer">
         <button class="hoo-button-primary">
             <span class="hoo-button-label">Create something</span>
-        </button>        <button class="hoo-button">
+        </button>
+        <button class="hoo-button">
             <span class="hoo-button-label">Call for action</span>
-        </button>    </p>
+        </button>
+    </p>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-card-splash-footer" class="pl-js-pattern-data">
@@ -497,16 +502,21 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-radiobutton-group" role="radiogroup">
-    <div>
-        <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox"><label for="chbg1">Apple</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg2" id="chbg2" value="" class="hoo-checkbox"><label for="chbg2">Avocado</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg3" id="chbg3" value="" class="hoo-checkbox"><label for="chbg3">Banana</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg4" id="chbg4" value="" class="hoo-checkbox"><label for="chbg4">Citrus</label>    </div>
+			<div class="hoo-checkbox-group" role="checkbox" tabindex="0">
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox" ><label for="chbg1">Apple</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg2" id="chbg2" value="" class="hoo-checkbox" ><label for="chbg2">Avocado</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg3" id="chbg3" value="" class="hoo-checkbox" ><label for="chbg3">Banana</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg4" id="chbg4" value="" class="hoo-checkbox" ><label for="chbg4">Citrus</label>
+    </div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-checkbox-group" class="pl-js-pattern-data">
@@ -520,7 +530,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/molecules-forms-checkbox-group-horizontal&#x2F;molecules-forms-checkbox-group-horizontal.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-checkbox-group-horizontal" title="Link to Pattern">
-						Checkbox Group Horizontal
+						Checkbox Group - Horizontal
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -550,20 +560,25 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-radiobutton-group is-horizontal" data-cols="2" role="radiogroup">
-    <div>
-        <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox"><label for="chbg1">Apple</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg2" id="chbg2" value="" class="hoo-checkbox"><label for="chbg2">Avocado</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg3" id="chbg3" value="" class="hoo-checkbox"><label for="chbg3">Banana</label>    </div>
-    <div>
-        <input type="checkbox" name="chbg4" id="chbg4" value="" class="hoo-checkbox"><label for="chbg4">Citrus</label>    </div>
+			<div class="hoo-checkbox-group is-horizontal" role="radiogroup" tabindex="0">
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg1" id="chbg1" value="" class="hoo-checkbox" ><label for="chbg1">Apple</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg2" id="chbg2" value="" class="hoo-checkbox" ><label for="chbg2">Avocado</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg3" id="chbg3" value="" class="hoo-checkbox" ><label for="chbg3">Banana</label>
+    </div>
+    <div tabindex="-1">
+        <input type="checkbox" name="chbg4" id="chbg4" value="" class="hoo-checkbox" ><label for="chbg4">Citrus</label>
+    </div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-checkbox-group-horizontal" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"}],"lineage":[{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Checkbox Group Horizontal","patternPartial":"molecules-checkbox-group-horizontal","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"}],"lineage":[{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Checkbox Group - Horizontal","patternPartial":"molecules-checkbox-group-horizontal","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="molecules-radio-button-group" class="pl-c-pattern">
@@ -605,18 +620,81 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-radiobutton-group" role="radiogroup" tabindex="0">
     <div tabindex="-1" role="radio">
-        <input type="radio" name="radio-button-group" id="rbg1" value="apple" class="hoo-radio"><label for="rbg1">Apple</label>    </div>
+        <input type="radio" name="radio-button-group" id="rbg1" value="apple" class="hoo-radio"><label for="rbg1">Apple</label>
+    </div>
     <div tabindex="-1" role="radio">
-        <input type="radio" name="radio-button-group" id="rbg2" value="banana" class="hoo-radio"><label for="rbg2">Avocado</label>    </div>
+        <input type="radio" name="radio-button-group" id="rbg2" value="banana" class="hoo-radio"><label for="rbg2">Avocado</label>
+    </div>
     <div tabindex="-1" role="radio">
-        <input type="radio" name="radio-button-group" id="rbg3" value="citrus" class="hoo-radio"><label for="rbg3">Banana</label>    </div>
+        <input type="radio" name="radio-button-group" id="rbg3" value="citrus" class="hoo-radio"><label for="rbg3">Banana</label>
+    </div>
     <div tabindex="-1" role="radio">
-        <input type="radio" name="radio-button-group" id="rbg4" value="avocado" class="hoo-radio"><label for="rbg4">Citrus</label>    </div>
+        <input type="radio" name="radio-button-group" id="rbg4" value="avocado" class="hoo-radio"><label for="rbg4">Citrus</label>
+    </div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-radio-button-group" class="pl-js-pattern-data">
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"lineage":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Radio Button Group","patternPartial":"molecules-radio-button-group","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->		<div id="molecules-radio-button-group-horizontal" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-forms-radio-button-group-horizontal&#x2F;molecules-forms-radio-button-group-horizontal.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-radio-button-group-horizontal" title="Link to Pattern">
+						Radio Button Group - Horizontal
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-radio-button-group-horizontal" data-patternpartial="molecules-radio-button-group-horizontal" title="View Pattern Info">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+					</div>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-radio-button-group-horizontal">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-radiobutton-group is-horizontal" role="radiogroup" tabindex="0">
+    <div tabindex="-1" role="radio">
+        <input type="radio" name="radio-button-group" id="rbg1" value="apple" class="hoo-radio"><label for="rbg1">Apple</label>
+    </div>
+    <div tabindex="-1" role="radio">
+        <input type="radio" name="radio-button-group" id="rbg2" value="banana" class="hoo-radio"><label for="rbg2">Avocado</label>
+    </div>
+    <div tabindex="-1" role="radio">
+        <input type="radio" name="radio-button-group" id="rbg3" value="citrus" class="hoo-radio"><label for="rbg3">Banana</label>
+    </div>
+    <div tabindex="-1" role="radio">
+        <input type="radio" name="radio-button-group" id="rbg4" value="avocado" class="hoo-radio"><label for="rbg4">Citrus</label>
+    </div>
+</div>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-radio-button-group-horizontal" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"lineage":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Radio Button Group - Horizontal","patternPartial":"molecules-radio-button-group-horizontal","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="viewall-molecules-menus" class="pl-c-category">
@@ -817,14 +895,18 @@
 			<div class="pl-js-pattern-example">
 			<nav class="hoo-nav">
     <ul role="tree" class="hoo-nav-list" role="tree">
-        <li role="treeitem" class="hoo-navitem" aria-expanded="true" >
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
-                    <button class="hoo-buttonicon" aria-label="">
-                        <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                            </svg>
-                        </span>    </button>                <a href="#" class="hoo-navitem-link">Item 1</a>
+
+                <button class="hoo-buttonicon" >
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                        </svg>
+                    </span></button>
+
+
+                <a href="#" class="hoo-navitem-link">Item 1</a>
             </div>
             <ul class="hoo-nav-listsub" role="group">
                 <li class="hoo-navitem">
@@ -844,18 +926,23 @@
                 </li>
             </ul>
         </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="true" aria-current="page" >
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" aria-current="page" >
             <div class="hoo-navitem-text">
+
                 <a href="#" class="hoo-navitem-link">Item 2</a>
         </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="true" >
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
-                    <button class="hoo-buttonicon" aria-label="">
-                        <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                            </svg>
-                        </span>    </button>                <a href="#" class="hoo-navitem-link">Item 3</a>
+
+                <button class="hoo-buttonicon" >
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                        </svg>
+                    </span></button>
+
+
+                <a href="#" class="hoo-navitem-link">Item 3</a>
             </div>
             <ul class="hoo-nav-listsub" role="group">
                 <li class="hoo-navitem">
@@ -865,8 +952,9 @@
                 </li>
             </ul>
         </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="true" >
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
+
                 <a href="#" class="hoo-navitem-link">Item 4</a>
         </li>
     </ul>
@@ -1014,8 +1102,7 @@
             </svg>
         </span> </span>
             </button>
-            <ul class="hoo-buttonflyout" role="menu">
-            </ul></div>    </div>
+        </div>    </div>
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -1063,42 +1150,8 @@
 			<div class="hoo-teams-toolbar">
     <div class="hoo-cmdbar has-overflow">
         <div class="hoo-overflow">
-            <div class="hoo-buttoncmd" aria-haspopup="true">
-                <button class="hoo-buttoncmd" aria-haspopup="true">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-                </svg>
-            </span> </span>
-                </button>
-                <ul class="hoo-buttonflyout" role="menu">
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Email message </span>
-                        </button>    </li>
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Calendar Event </span>
-                        </button>    </li>
-                </ul></div>
-            <div class="hoo-buttoncmd">
-                <button class="hoo-buttoncmd">
+            <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                     <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1106,43 +1159,8 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>
-            <div class="hoo-buttoncmd" aria-haspopup="true">
-                <button class="hoo-buttoncmd" aria-haspopup="true">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-                </svg>
-            </span> </span>
-                </button>
-                <ul class="hoo-buttonflyout" role="menu">
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Email message </span>
-                        </button>    </li>
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Calendar Event </span>
-                        </button>    </li>
-                </ul></div>
-            <div class="hoo-buttoncmd">
-                <button class="hoo-buttoncmd">
+            </div>        <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                     <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1150,43 +1168,8 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>
-            <div class="hoo-buttoncmd" aria-haspopup="true">
-                <button class="hoo-buttoncmd" aria-haspopup="true">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-                </svg>
-            </span> </span>
-                </button>
-                <ul class="hoo-buttonflyout" role="menu">
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Email message </span>
-                        </button>    </li>
-                    <li class="hoo-buttonflyout-item">
-                        <button class="hoo-buttonaction">
-                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                            </svg>
-                        </span> </span>
-                            <span class="hoo-button-label"> Calendar Event </span>
-                        </button>    </li>
-                </ul></div>
-            <div class="hoo-buttoncmd">
-                <button class="hoo-buttoncmd">
+            </div>        <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                     <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1194,8 +1177,34 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>
-            <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+            </div>        <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                </button>
+            </div>        <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                </button>
+            </div>        <div class="hoo-buttoncmd" >
+                <button class="hoo-buttoncmd" >
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                </button>
+            </div>        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
                 <button class="hoo-buttonicon-overflow" aria-haspopup="true">
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
@@ -1203,8 +1212,7 @@
                 </svg>
             </span> </span>
                 </button>
-                <ul class="hoo-buttonflyout" role="menu">
-                </ul></div>    </div>
+            </div>    </div>
     </div>    <div class="hoo-input-search">
         <svg class="hoo-icon icon-search">
             <use xlink:href="../../images/icons.svg#icon-search"></use>
@@ -1254,42 +1262,8 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-cmdbar">
-    <div class="hoo-buttoncmd" aria-haspopup="true">
-        <button class="hoo-buttoncmd" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-        </svg>
-    </span> </span>
-        </button>
-        <ul class="hoo-buttonflyout" role="menu">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>    </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>    </li>
-        </ul></div>
-    <div class="hoo-buttoncmd">
-        <button class="hoo-buttoncmd">
+    <div class="hoo-buttoncmd" >
+        <button class="hoo-buttoncmd" >
             <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
         <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
             <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1297,8 +1271,16 @@
     </span> </span>
             <span class="hoo-button-label"> New Item </span>
         </button>
-    </div>
-</div>
+    </div>    <div class="hoo-buttoncmd" >
+        <button class="hoo-buttoncmd" >
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+        </button>
+    </div></div>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-cmdbar" class="pl-js-pattern-data">
@@ -1344,42 +1326,8 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-cmdbar has-overflow">
     <div class="hoo-overflow">
-        <div class="hoo-buttoncmd" aria-haspopup="true">
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <ul class="hoo-buttonflyout" role="menu">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>    </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>    </li>
-            </ul></div>
-        <div class="hoo-buttoncmd">
-            <button class="hoo-buttoncmd">
+        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                 <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1387,43 +1335,8 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>
-        <div class="hoo-buttoncmd" aria-haspopup="true">
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <ul class="hoo-buttonflyout" role="menu">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>    </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>    </li>
-            </ul></div>
-        <div class="hoo-buttoncmd">
-            <button class="hoo-buttoncmd">
+        </div>        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                 <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1431,43 +1344,8 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>
-        <div class="hoo-buttoncmd" aria-haspopup="true">
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <ul class="hoo-buttonflyout" role="menu">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>    </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>    </li>
-            </ul></div>
-        <div class="hoo-buttoncmd">
-            <button class="hoo-buttoncmd">
+        </div>        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
                 <use xlink:href="../../images/icons.svg#icon-plus"></use>
@@ -1475,8 +1353,34 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>
-        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+        </div>        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>        <div class="hoo-buttoncmd" >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
             <button class="hoo-buttonicon-overflow" aria-haspopup="true">
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
@@ -1484,8 +1388,7 @@
             </svg>
         </span> </span>
             </button>
-            <ul class="hoo-buttonflyout" role="menu">
-            </ul></div>    </div>
+        </div>    </div>
 </div>
 			</div><!--end pl-js-pattern-example-->
 		
@@ -1931,10 +1834,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -1985,10 +1890,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-24">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2039,10 +1946,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-32">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2093,10 +2002,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-40">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2147,10 +2058,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-48">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2201,10 +2114,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-72">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2303,10 +2218,12 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-persona-96">
-    <div class="hoo-avatar-pres">
-        <div class="hoo-avatar">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title="Online"></div></div>    <div class="hoo-persona-data">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
         <div class="hoo-persona-statustext"><span>In a meeting</span></div>
@@ -2367,14 +2284,16 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-avatar-pres">
-    <div class="hoo-avatar">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img"   loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+			<div class="hoo-avatar-pres-16">
+    <div class="hoo-avatar-16">
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"organism-facepile-32","lineagePath":"../../patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html"},{"lineagePattern":"organism-facepile-40","lineagePath":"../../patterns/organism-facepiles-facepile-40/organism-facepiles-facepile-40.rendered.html"},{"lineagePattern":"organism-facepile-48","lineagePath":"../../patterns/organism-facepiles-facepile-48/organism-facepiles-facepile-48.rendered.html"},{"lineagePattern":"organism-facepile-64","lineagePath":"../../patterns/organism-facepiles-facepile-64/organism-facepiles-facepile-64.rendered.html"},{"lineagePattern":"molecules-persona-24","lineagePath":"../../patterns/molecules-persona-persona-24/molecules-persona-persona-24.rendered.html"},{"lineagePattern":"molecules-persona-32","lineagePath":"../../patterns/molecules-persona-persona-32/molecules-persona-persona-32.rendered.html"},{"lineagePattern":"molecules-persona-40","lineagePath":"../../patterns/molecules-persona-persona-40/molecules-persona-persona-40.rendered.html"},{"lineagePattern":"molecules-persona-48","lineagePath":"../../patterns/molecules-persona-persona-48/molecules-persona-persona-48.rendered.html"},{"lineagePattern":"molecules-persona-72","lineagePath":"../../patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html"},{"lineagePattern":"molecules-persona-96","lineagePath":"../../patterns/molecules-persona-persona-96/molecules-persona-persona-96.rendered.html"},{"lineagePattern":"molecules-persona","lineagePath":"../../patterns/molecules-persona-persona/molecules-persona-persona.rendered.html"},{"lineagePattern":"organism-facepile","lineagePath":"../../patterns/organism-facepiles-facepile/organism-facepiles-facepile.rendered.html"}],"lineageR":[{"lineagePattern":"organism-facepile-32","lineagePath":"../../patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html"},{"lineagePattern":"organism-facepile-40","lineagePath":"../../patterns/organism-facepiles-facepile-40/organism-facepiles-facepile-40.rendered.html"},{"lineagePattern":"organism-facepile-48","lineagePath":"../../patterns/organism-facepiles-facepile-48/organism-facepiles-facepile-48.rendered.html"},{"lineagePattern":"organism-facepile-64","lineagePath":"../../patterns/organism-facepiles-facepile-64/organism-facepiles-facepile-64.rendered.html"},{"lineagePattern":"molecules-persona-24","lineagePath":"../../patterns/molecules-persona-persona-24/molecules-persona-persona-24.rendered.html"},{"lineagePattern":"molecules-persona-32","lineagePath":"../../patterns/molecules-persona-persona-32/molecules-persona-persona-32.rendered.html"},{"lineagePattern":"molecules-persona-40","lineagePath":"../../patterns/molecules-persona-persona-40/molecules-persona-persona-40.rendered.html"},{"lineagePattern":"molecules-persona-48","lineagePath":"../../patterns/molecules-persona-persona-48/molecules-persona-persona-48.rendered.html"},{"lineagePattern":"molecules-persona-72","lineagePath":"../../patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html"},{"lineagePattern":"molecules-persona-96","lineagePath":"../../patterns/molecules-persona-persona-96/molecules-persona-persona-96.rendered.html"},{"lineagePattern":"molecules-persona","lineagePath":"../../patterns/molecules-persona-persona/molecules-persona-persona.rendered.html"},{"lineagePattern":"organism-facepile","lineagePath":"../../patterns/organism-facepiles-facepile/organism-facepiles-facepile.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>The example shown here is a 128px avatar scaled up for better visibility.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/avatar</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"avatar-with-presence"},"patternExtension":"hbs","patternName":"Avatar with presence","patternPartial":"molecules-avatar-presence","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-persona-24","lineagePath":"../../patterns/molecules-persona-persona-24/molecules-persona-persona-24.rendered.html"},{"lineagePattern":"molecules-persona-32","lineagePath":"../../patterns/molecules-persona-persona-32/molecules-persona-persona-32.rendered.html"},{"lineagePattern":"molecules-persona-40","lineagePath":"../../patterns/molecules-persona-persona-40/molecules-persona-persona-40.rendered.html"},{"lineagePattern":"molecules-persona-48","lineagePath":"../../patterns/molecules-persona-persona-48/molecules-persona-persona-48.rendered.html"},{"lineagePattern":"molecules-persona-72","lineagePath":"../../patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html"},{"lineagePattern":"molecules-persona-96","lineagePath":"../../patterns/molecules-persona-persona-96/molecules-persona-persona-96.rendered.html"},{"lineagePattern":"organism-facepile-32","lineagePath":"../../patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html"},{"lineagePattern":"organism-facepile-40","lineagePath":"../../patterns/organism-facepiles-facepile-40/organism-facepiles-facepile-40.rendered.html"},{"lineagePattern":"organism-facepile-48","lineagePath":"../../patterns/organism-facepiles-facepile-48/organism-facepiles-facepile-48.rendered.html"},{"lineagePattern":"organism-facepile-64","lineagePath":"../../patterns/organism-facepiles-facepile-64/organism-facepiles-facepile-64.rendered.html"},{"lineagePattern":"molecules-avatar-showcase","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-showcase/molecules-avatar-with-presence-avatar-showcase.rendered.html"},{"lineagePattern":"molecules-persona","lineagePath":"../../patterns/molecules-persona-persona/molecules-persona-persona.rendered.html"},{"lineagePattern":"organism-facepile","lineagePath":"../../patterns/organism-facepiles-facepile/organism-facepiles-facepile.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-persona-24","lineagePath":"../../patterns/molecules-persona-persona-24/molecules-persona-persona-24.rendered.html"},{"lineagePattern":"molecules-persona-32","lineagePath":"../../patterns/molecules-persona-persona-32/molecules-persona-persona-32.rendered.html"},{"lineagePattern":"molecules-persona-40","lineagePath":"../../patterns/molecules-persona-persona-40/molecules-persona-persona-40.rendered.html"},{"lineagePattern":"molecules-persona-48","lineagePath":"../../patterns/molecules-persona-persona-48/molecules-persona-persona-48.rendered.html"},{"lineagePattern":"molecules-persona-72","lineagePath":"../../patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html"},{"lineagePattern":"molecules-persona-96","lineagePath":"../../patterns/molecules-persona-persona-96/molecules-persona-persona-96.rendered.html"},{"lineagePattern":"organism-facepile-32","lineagePath":"../../patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html"},{"lineagePattern":"organism-facepile-40","lineagePath":"../../patterns/organism-facepiles-facepile-40/organism-facepiles-facepile-40.rendered.html"},{"lineagePattern":"organism-facepile-48","lineagePath":"../../patterns/organism-facepiles-facepile-48/organism-facepiles-facepile-48.rendered.html"},{"lineagePattern":"organism-facepile-64","lineagePath":"../../patterns/organism-facepiles-facepile-64/organism-facepiles-facepile-64.rendered.html"},{"lineagePattern":"molecules-avatar-showcase","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-showcase/molecules-avatar-with-presence-avatar-showcase.rendered.html"},{"lineagePattern":"molecules-persona","lineagePath":"../../patterns/molecules-persona-persona/molecules-persona-persona.rendered.html"},{"lineagePattern":"organism-facepile","lineagePath":"../../patterns/organism-facepiles-facepile/organism-facepiles-facepile.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>The example shown here is a 128px avatar scaled up for better visibility.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/avatar</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"avatar-with-presence"},"patternExtension":"hbs","patternName":"Avatar with presence","patternPartial":"molecules-avatar-presence","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="molecules-avatar-presence-16" class="pl-c-pattern">
@@ -2416,8 +2335,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-16">
     <div class="hoo-avatar-16">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-16" class="pl-js-pattern-data">
@@ -2463,8 +2384,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-24">
     <div class="hoo-avatar-24">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-24" class="pl-js-pattern-data">
@@ -2510,8 +2433,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-32">
     <div class="hoo-avatar-32">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-32" class="pl-js-pattern-data">
@@ -2555,10 +2480,12 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-avatar-pres-48">
-    <div class="hoo-avatar-48">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+			<div class="hoo-avatar-pres-40">
+    <div class="hoo-avatar-40">
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-40" class="pl-js-pattern-data">
@@ -2604,8 +2531,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-48">
     <div class="hoo-avatar-48">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-48" class="pl-js-pattern-data">
@@ -2651,8 +2580,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-64">
     <div class="hoo-avatar-64">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-64" class="pl-js-pattern-data">
@@ -2698,8 +2629,10 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-72">
     <div class="hoo-avatar-72">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="72" width="72" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="72" width="72" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-72" class="pl-js-pattern-data">
@@ -2745,12 +2678,99 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-avatar-pres-96">
     <div class="hoo-avatar-96">
-        <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="96" width="96" loading="lazy">
-    </div>    <div class="hoo-presence is-online" title="Online"></div></div>
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="96" width="96" loading="lazy">
+    </div>
+    <div class="hoo-presence is-online" title="Online"></div></div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-avatar-presence-96" class="pl-js-pattern-data">
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"atoms-avatar","lineagePath":"../../patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html"},{"lineagePattern":"atoms-presence","lineagePath":"../../patterns/atoms-avatar-presence/atoms-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>The example shown here is a 96px avatar scaled up for better visibility.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/avatar</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"avatar-with-presence"},"patternExtension":"hbs","patternName":"Avatar /w presence - 96px","patternPartial":"molecules-avatar-presence-96","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->		<div id="molecules-avatar-showcase" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-avatar-with-presence-avatar-showcase&#x2F;molecules-avatar-with-presence-avatar-showcase.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-avatar-showcase" title="Link to Pattern">
+						Showcase
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-avatar-showcase" data-patternpartial="molecules-avatar-showcase" title="View Pattern Info">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+					</div>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-avatar-showcase">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="sg-item-showcase">
+    <div class="hoo-avatar-pres-16">
+        <div class="hoo-avatar-16">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-24">
+        <div class="hoo-avatar-24">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-32">
+        <div class="hoo-avatar-32">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-40">
+        <div class="hoo-avatar-40">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-48">
+        <div class="hoo-avatar-48">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-64">
+        <div class="hoo-avatar-64">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-72">
+        <div class="hoo-avatar-72">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="72" width="72" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-96">
+        <div class="hoo-avatar-96">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="96" width="96" loading="lazy">
+        </div>
+        <div class="hoo-presence is-online" title="Online"></div></div>
+</div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-avatar-showcase" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"avatar-with-presence"},"patternExtension":"hbs","patternName":"Showcase","patternPartial":"molecules-avatar-showcase","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":0}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->		<div id="viewall-molecules-dialogs" class="pl-c-category">
@@ -2803,12 +2823,13 @@
 			<div class="pl-js-pattern-example">
 			<div class="hoo-dlgheader">
     <div class="hoo-dlgheader-title"><h2>Header of a modal dialog</h2></div>
-    <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" aria-label="Close">
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span>    </button></div>
+    <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" aria-label="Button">
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-arrow-left"></use>
+        </svg>
+    </span></button>
+</div>
 </div>
 
 			</div><!--end pl-js-pattern-example-->
@@ -2901,7 +2922,7 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-dlgcontent">
-    <iframe class="hoo-dlg-iframe" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" loading="lazy">
+    <iframe class="hoo-dlg-iframe" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
     </iframe>
 </div>
 			</div><!--end pl-js-pattern-example-->
@@ -2948,7 +2969,7 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-dlgcontent">
-    <iframe class="hoo-dlg-iframe ratio-3by4" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" loading="lazy">
+    <iframe class="hoo-dlg-iframe ratio-3by4" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
     </iframe>
 </div>
 			</div><!--end pl-js-pattern-example-->
@@ -2995,7 +3016,7 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-dlgcontent">
-    <iframe class="hoo-dlg-iframe ratio-squared" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" loading="lazy">
+    <iframe class="hoo-dlg-iframe ratio-squared" src="/patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
     </iframe>
 </div>
 			</div><!--end pl-js-pattern-example-->
@@ -3108,10 +3129,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1657891166601">
+<script id="pl-js-polyfill-insert-1669729096095">
   (function() {
     if (self != top) {
-      var cb = '1657891166601';
+      var cb = '1669729096095';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -3124,7 +3145,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1657891166601" nomodule>
+<script id="pl-js-insert-1669729096095" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
