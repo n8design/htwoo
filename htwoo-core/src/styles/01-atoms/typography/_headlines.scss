@@ -1,11 +1,13 @@
+@use "00-base/mixin/typography.mixin";
+
 h1 {
-    @include typography(h1);
+    @include typography.typography(h1);
 }
 
 h2 {
-    @include typography(h2);
+    @include typography.typography(h2);
 }
 
 h3 {
-    @include typography(h3);
+    @include typography.typography(h3);
 }

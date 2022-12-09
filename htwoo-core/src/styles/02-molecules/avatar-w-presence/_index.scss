@@ -1,10 +1,12 @@
+@use "00-base/mixin/core.mixin";
+
 .hoo-avatar-pres{
 	position: relative;
 
 	display: inline-block;
 
-	width: px2rem(128px);
-	height: px2rem(128px);
+	width: core.px2rem(128px);
+	height: core.px2rem(128px);
 
 	transform: rotate(45deg);
 	transform-origin: center center;
@@ -22,50 +24,50 @@
 .hoo-avatar-pres-16{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(16px);
-	height: px2rem(16px);
+	width: core.px2rem(16px);
+	height: core.px2rem(16px);
 }
 .hoo-avatar-pres-24{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(24px);
-	height: px2rem(24px);
+	width: core.px2rem(24px);
+	height: core.px2rem(24px);
 }
 .hoo-avatar-pres-32{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(32px);
-	height: px2rem(32px);
+	width: core.px2rem(32px);
+	height: core.px2rem(32px);
 }
 .hoo-avatar-pres-40{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(40px);
-	height: px2rem(40px);
+	width: core.px2rem(40px);
+	height: core.px2rem(40px);
 }
 .hoo-avatar-pres-48{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(48px);
-	height: px2rem(48px);
+	width: core.px2rem(48px);
+	height: core.px2rem(48px);
 }
 .hoo-avatar-pres-64{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(64px);
-	height: px2rem(64px);
+	width: core.px2rem(64px);
+	height: core.px2rem(64px);
 }
 
 .hoo-avatar-pres-72{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(72px);
-	height: px2rem(72px);
+	width: core.px2rem(72px);
+	height: core.px2rem(72px);
 }
 
 .hoo-avatar-pres-96{
 	@extend .hoo-avatar-pres;
 
-	width: px2rem(96px);
-	height: px2rem(96px);
+	width: core.px2rem(96px);
+	height: core.px2rem(96px);
 }

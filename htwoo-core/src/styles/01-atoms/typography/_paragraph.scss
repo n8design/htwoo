@@ -1,3 +1,5 @@
+@use "00-base/mixin/typography.mixin";
+
 p{
-    @include typography(p);
+    @include typography.typography(p);
 }

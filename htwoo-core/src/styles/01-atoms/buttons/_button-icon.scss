@@ -1,14 +1,17 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 .hoo-buttonicon{
 	display: inline-flex;
 	justify-content: center;
 
 	padding: 0;
-	padding: px2rem(4px);
+	padding: core.px2rem(4px);
 
 	border: none;
 	outline: none;
 	background-color: transparent;
-	color: $neutral-700;
+	color: colors.$neutral-700;
 
 	align-items: center;
 
@@ -18,9 +21,9 @@
 		height: 16px;
 	}
 	&:hover{
-		background-color: $neutral-100;
+		background-color: colors.$neutral-100;
 	}
 	&:active{
-		background-color: $neutral-200;
+		background-color: colors.$neutral-200;
 	}
 }

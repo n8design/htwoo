@@ -13,7 +13,7 @@ const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
 const rollup = require('rollup');
 
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
 
 
 const baseWatch = async (cb) => {

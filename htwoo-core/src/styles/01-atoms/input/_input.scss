@@ -1,13 +1,16 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 @mixin base-input{
-	font-size: px2rem(14px);
-	line-height: px2rem(30px);
+	font-size: core.px2rem(14px);
+	line-height: core.px2rem(30px);
 
 	box-sizing: border-box;
 	width: auto;
 	margin: 0;
-	padding: 0 px2rem(8px);
+	padding: 0 core.px2rem(8px);
 
-	border: 1px $neutral-500 solid;
+	border: 1px colors.$neutral-500 solid;
 	border-radius: 2px;
 	outline: 1px rgba(255, 255, 255, 0) solid;
 }
@@ -19,27 +22,27 @@
 	&:focus{
 		line-height: calc(1.9rem - 2px);
 
-		padding: 0 px2rem(7px);
+		padding: 0 core.px2rem(7px);
 
-		border: 2px $theme-600 solid;
+		border: 2px colors.$theme-600 solid;
 		outline: 0 rgba(255, 255, 255, 0) solid;
 	}
 
 	// in valid 
 	&.is-invalid,
 	&:invalid{
-		border-color: $errorText;
+		border-color: colors.$errorText;
 	}
 
 	// diabled buttn style
 	&:disabled{
-		color: $neutral-400;
-		border-color: $neutral-100;
-		background-color: $neutral-100;
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
 	}
 
 	&[data-prefix]{
-		padding-left: px2rem(8px);
+		padding-left: core.px2rem(8px);
 
 		border-left: none;
 		border-top-left-radius: 0;
@@ -47,7 +50,7 @@
 	}
 
 	&[data-suffix]{
-		padding-right: px2rem(8px);
+		padding-right: core.px2rem(8px);
 
 		border-right: none;
 		border-top-right-radius: 0;
@@ -62,11 +65,11 @@
 
 	box-sizing: border-box;
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 	border-right: none;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	background-color: $neutral-100;
+	background-color: colors.$neutral-100;
 }
 
 .hoo-input-suffix{
@@ -76,11 +79,11 @@
 
 	box-sizing: border-box;
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 	border-left: none;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	background-color: $neutral-100;
+	background-color: colors.$neutral-100;
 }
 
 .hoo-input-group{
@@ -90,58 +93,58 @@
 		& > *{
 			line-height: calc(1.9rem - 2px);
 
-			padding: 0 px2rem(7px);
+			padding: 0 core.px2rem(7px);
 
 			border-width: 2px;
-			border-color: $theme-600;
+			border-color: colors.$theme-600;
 		}
 
 		.hoo-input-text{
-			padding: 0 px2rem(8px);
+			padding: 0 core.px2rem(8px);
 		}
 
 		.hoo-input-suffix{
-			padding-right: px2rem(7px);
-			padding-left: px2rem(8px);
+			padding-right: core.px2rem(7px);
+			padding-left: core.px2rem(8px);
 		}
 
 		.hoo-input-prefix{
-			padding-right: px2rem(8px);
-			padding-left: px2rem(7px);
+			padding-right: core.px2rem(8px);
+			padding-left: core.px2rem(7px);
 		}
 	}
 }
 
 .hoo-input-time,
 .hoo-input-date{
-	font-family: $mediumFontFamily;
-	font-size: px2rem(14px);
+	font-family: colors.$mediumFontFamily;
+	font-size: core.px2rem(14px);
 
-	padding-right: px2rem(8px);
-	padding-left: px2rem(4px);
+	padding-right: core.px2rem(8px);
+	padding-left: core.px2rem(4px);
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 
 	&::-webkit-calendar-picker-indicator{
 		margin-right: 0;
-		margin-left: px2rem(8px);
+		margin-left: core.px2rem(8px);
 	}
 
 	&:focus{
 		border-color: transparent;
-		outline: 2px $theme-600 solid;
+		outline: 2px colors.$theme-600 solid;
 	}
 }
 
 input[type="number"]{
 	line-height: 1.9rem;
 
-	min-width: px2rem(100px);
+	min-width: core.px2rem(100px);
 	padding-right: 0;
 
 	div:last-child{
-		margin-top: px2rem(-8px);
-		margin-bottom: px2rem(-8px);
+		margin-top: core.px2rem(-8px);
+		margin-bottom: core.px2rem(-8px);
 	}
 
 	&:hover,

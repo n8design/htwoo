@@ -1,12 +1,16 @@
+@use 'sass:math';
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 @mixin tblDefSpacing {
 	$min-height: 42px;
 	font-size: 14px;
 
 	min-height: $min-height;
-	padding-top: px2rem(($min-height - 14px) / 2);
-	padding-right: px2rem(8px);
-	padding-bottom: px2rem(($min-height - 14px) / 2);
-	padding-left: px2rem(12px);
+	padding-top: core.px2rem(math.div(($min-height - 14px), 2));
+	padding-right: core.px2rem(8px);
+	padding-bottom: core.px2rem(math.div(($min-height - 14px), 2));
+	padding-left: core.px2rem(12px);
 
 }
 
@@ -15,10 +19,10 @@
 	font-size: 14px;
 
 	min-height: $min-height;
-	padding-top: px2rem(($min-height - 18px) / 2);
-	padding-right: px2rem(8px);
-	padding-bottom: px2rem(($min-height - 18px) / 2);
-	padding-left: px2rem(12px);
+	padding-top: core.px2rem(math.div(($min-height - 18px), 2));
+	padding-right: core.px2rem(8px);
+	padding-bottom: core.px2rem(math.div(($min-height - 18px), 2));
+	padding-left: core.px2rem(12px);
 
 }
 
@@ -72,34 +76,34 @@
 		th {
 			@include tblDefSpacing();
 
-			font-size: px2rem(14px);
+			font-size: core.px2rem(14px);
 
 			text-align: left;
 			white-space: nowrap;
-			background-color: $neutral-000;
+			background-color: colors.$neutral-000;
 
 			&:hover {
-				background-color: $neutral-100;
+				background-color: colors.$neutral-100;
 			}
 		}
 	}
 
 	td,
 	th {
-		background-color: $neutral-000;
+		background-color: colors.$neutral-000;
 
 		&:hover {
-			background-color: $neutral-100;
+			background-color: colors.$neutral-100;
 		}
 	}
 
 	thead {
-		border-bottom: 1px $neutral-200 solid;
-		background-color: $neutral-000;
+		border-bottom: 1px colors.$neutral-200 solid;
+		background-color: colors.$neutral-000;
 	}
 
 	tfoot {
-		border-top: 1px $neutral-200 solid;
+		border-top: 1px colors.$neutral-200 solid;
 	}
 
 	tbody {
@@ -111,7 +115,7 @@
 			min-height: 42px;
 
 			&:hover {
-				background-color: $neutral-100;
+				background-color: colors.$neutral-100;
 			}
 		}
 
@@ -120,7 +124,7 @@
 
 			vertical-align: top;
 
-			border-bottom: 1px $neutral-200 solid;
+			border-bottom: 1px colors.$neutral-200 solid;
 		}
 	}
 
@@ -218,7 +222,7 @@
 	}
 
 	& .hoo-table-iconcell {
-		width: px2rem(32px);
+		width: core.px2rem(32px);
 		padding: 0;
 	}
 

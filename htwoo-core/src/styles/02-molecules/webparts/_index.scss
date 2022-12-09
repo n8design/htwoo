@@ -1,11 +1,14 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 .hoo-webpart-header {
     margin: 0 2rem 1rem 0;
-    font-size: px2rem(20px);
+    font-size: core.px2rem(20px);
 	font-weight: 600;
 
     text-overflow: ellipsis;
     
-    color: $neutral-700;
+    color: colors.$neutral-700;
 
     div {
         outline: none;
@@ -23,7 +26,7 @@
                 &:before {
                     content: attr(placeholder);
 
-                    color: $neutral-400;
+                    color: colors.$neutral-400;
                 }
             }
         }

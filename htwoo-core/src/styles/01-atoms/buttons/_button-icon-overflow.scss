@@ -1,3 +1,7 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/flyouts.mixin";
+@use "01-atoms/buttons/button-action";
+
 .hoo-buttonicon-overflow {
 	@extend %flyoutDropDown;
 
@@ -17,11 +21,11 @@
 		}
 
 		&:active {
-			background-color: $neutral-350;
+			background-color: colors.$neutral-350;
 		}
 
 		&:hover {
-			background-color: $neutral-200;
+			background-color: colors.$neutral-200;
 		}
 	}
 }

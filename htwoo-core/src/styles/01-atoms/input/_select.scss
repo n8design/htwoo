@@ -1,3 +1,9 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/lists.mixin";
+@use "00-base/mixin/core.mixin";
+@use "00-base/mixin/elevation.mixin";
+@use "input";
+
 .hidden-visually{
 	position: absolute;
 
@@ -22,7 +28,7 @@
 
 	box-sizing: border-box;
 
-	border: 1px $neutral-500 solid;
+	border: 1px colors.$neutral-500 solid;
 	border-radius: 2px;
 	outline: 1px rgba(255, 255, 255, 0) solid;
 
@@ -46,16 +52,16 @@
 	}
 
 	&-text{
-		@include base-input;
+		@include input.base-input;
 
-		width: calc(100% - #{px2rem(32px)});
+		width: calc(100% - #{core.px2rem(32px)});
 
 		border: none;
 	}
 
 	&-dropdown{
 		@extend %listReset;
-		@include elevation(4);
+		@include elevation.elevation(4);
 
 		display: flex;
 		flex-direction: column;
@@ -67,7 +73,7 @@
 		border-radius: 2px;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		background-color: $neutral-000;
+		background-color: colors.$neutral-000;
 
 		&.hidden-all{
 			display: none;
@@ -86,7 +92,7 @@
 .hoo-optgroup-items{
 	@extend .hoo-select-dropdown;
 
-	border-bottom: 1px $neutral-450 solid;
+	border-bottom: 1px colors.$neutral-450 solid;
 	border-radius: 0;
 	box-shadow: none;
 }
@@ -96,23 +102,23 @@
 
 	display: flex;
 
-	height: px2rem(36px);
-	padding: 0 px2rem(8px);
+	height: core.px2rem(36px);
+	padding: 0 core.px2rem(8px);
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 
 	align-items: center;
 	flex-shrink: 0;
 	&.is-disabled{
 		pointer-events: none;
 
-		color: $neutral-400;
+		color: colors.$neutral-400;
 	}
 
 	&:hover{
 		cursor: pointer;
 
-		background-color: $neutral-100;
+		background-color: colors.$neutral-100;
 	}
 }
 
@@ -121,10 +127,10 @@
 
 	display: flex;
 
-	height: px2rem(36px);
-	padding: 0 px2rem(8px);
+	height: core.px2rem(36px);
+	padding: 0 core.px2rem(8px);
 
-	color: $theme-600;
+	color: colors.$theme-600;
 
 	align-items: center;
 }

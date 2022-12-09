@@ -1,0 +1,80 @@
+/**** BASE VARS AND MIXIN's ****/
+@use "00-base/core";
+@use "00-base/fonts/base-fonts";
+
+/**** Prodcution Style sheet ***/
+/**** Core Mixing Definition ****/
+@use "00-base/mixin/index";
+
+/**** ATOMS / Typography ****/
+@use "01-atoms/typography/index" as index2;
+
+/**** ATOMS / icons ****/
+@use "01-atoms/icons/index" as index3;
+/**** ATOMS / Avatar and related ****/
+@use "01-atoms/avatar/index" as index4;
+
+/**** ATOMS / Buttons ****/
+@use "01-atoms/buttons/index" as index5;
+
+/**** ATOMS / Loading ****/
+@use "01-atoms/loading/index" as index6;
+
+
+/**** ATOMS / Buttons ****/
+@use "01-atoms/input/index" as index7;
+
+/**** ATOMS / Meta Tags ****/
+@use "01-atoms/meta/index" as index8;
+
+/**** ATOMS / Table ****/
+@use "01-atoms/table/index" as index9;
+
+/**** ATOMS / Error ****/
+@use "01-atoms/validation/index" as index10;
+
+/**** Tooltip ****/
+@use "01-atoms/tooltip/index" as index11;
+
+/**** ATOMS / Grid ****/
+@use "01-atoms/grid/index" as index12;
+
+/**** Elevation ****/
+@use "01-atoms/elevations/index" as index13;
+
+/*** MOLECULES ***/
+/*** MOLECULES / Avatar with presence ***/
+@use "02-molecules/avatar-w-presence/index" as index14;
+/*** MOLECULES / Persona ***/
+@use "02-molecules/persona/index" as index15;
+/*** MOLECULES / Input Elements ***/
+@use "02-molecules/inputs/index" as index16;
+/*** MOLECULES / Input Elements ***/
+@use "02-molecules/webparts/index.scss" as index17;
+
+/*** MOLECULES / Menu ***/
+@use "02-molecules/menu/index" as index18;
+/*** MOLECULES / Dialogs ***/
+@use "02-molecules/dialogs/index" as index19;
+/*** MOLECULES / Meta Data List ***/
+@use "02-molecules/meta-list/index" as index20;
+/*** MOLECULES / Team related ***/
+@use "02-molecules/teams/index" as index21;
+
+/*** MOLECULES / CARDS ***/
+@use "02-molecules/card-elements/index" as index22;
+
+/*** ORGANISM ***/
+
+/*** ORGANISM / Facepile ***/
+@use "03-organism/facepile/index" as index23;
+/*** ORGANISM / Dialogs ***/
+@use "03-organism/dialog/index" as index24;
+/*** ORGANISM / Card Layout System ***/
+@use "03-organism/cards/index" as index25;
+
+
+/*** Templates ***/
+@use "04-templates/card-grid";
+@use "04-templates/teams-dashboard";
+@use "04-templates/teams-splash";

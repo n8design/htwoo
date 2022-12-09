@@ -1,3 +1,6 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 .hoo-cardimage{
 	border-collapse: collapse;
 
@@ -35,19 +38,19 @@
 
 	content: "";
 
-	background-color: $theme-600;
+	background-color: colors.$theme-600;
 
 	aspect-ratio: 16/9;
 }
 
 .hoo-cardlocation{
-	font-size: px2rem(12px);
+	font-size: core.px2rem(12px);
 	font-weight: 600px;
 
 	box-sizing: border-box;
-	padding: px2rem(10px) px2rem(12px) px2rem(8px);
+	padding: core.px2rem(10px) core.px2rem(12px) core.px2rem(8px);
 
-	color: $theme-600;
+	color: colors.$theme-600;
 	.hoo-ph-row{
 		width: 35%;
 
@@ -56,14 +59,14 @@
 }
 
 .hoo-cardtitle{
-	font-size: px2rem(14px);
+	font-size: core.px2rem(14px);
 	font-weight: 600;
 
 	display: -webkit-box;
 
 	box-sizing: border-box;
-	height: px2rem(38px);
-	padding: 0 px2rem(12px) px2rem(8px);
+	height: core.px2rem(38px);
+	padding: 0 core.px2rem(12px) core.px2rem(8px);
 
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -81,12 +84,12 @@
 	align-items: center;
 
 	box-sizing: border-box;
-	padding: px2rem(12px);
-	gap: px2rem(8px);
+	padding: core.px2rem(12px);
+	gap: core.px2rem(8px);
 
 	.hoo-avatar{
-		width: px2rem(32px);
-		height: px2rem(32px);
+		width: core.px2rem(32px);
+		height: core.px2rem(32px);
 		margin-right: 1rem;
 		.hoo-ph-circle{
 			width: inherit;
@@ -104,7 +107,7 @@
 	}
 
 	&-name{
-		font-size: px2rem(14px);
+		font-size: core.px2rem(14px);
 		.hoo-ph-row{
 			width: 80%;
 
@@ -113,7 +116,7 @@
 	}
 
 	&-modified{
-		font-size: px2rem(12px);
+		font-size: core.px2rem(12px);
 		.hoo-ph-row{
 			width: 20%;
 		}

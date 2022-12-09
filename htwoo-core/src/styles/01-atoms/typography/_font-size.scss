@@ -1,7 +1,9 @@
+@use "00-base/mixin/core.mixin";
+
 $fontSizes: 68,42,32,28,24,20,18,16,14,12,10;
 
 @each $fontSize in $fontSizes{
 	.hoo-fontsize-#{$fontSize}{
-		font-size: px2rem($fontSize * 1px);
+		font-size: core.px2rem($fontSize * 1px);
 	}
 }

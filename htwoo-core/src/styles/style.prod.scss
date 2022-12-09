@@ -1,104 +1,87 @@
-@import "00-base/colors/colors";
-@import "00-base/global.vars";
+@forward "00-base/colors/colors";
+@forward "00-base/global.vars";
 // @import "00-base/colors/TeamsTheme";
 
 /**** Core Mixing Definition ****/
-@import "00-base/mixin/core.mixin";
-@import "00-base/mixin/typography.mixin";
-@import "00-base/mixin/elevation.mixin";
-@import "00-base/mixin/grid.mixin";
-@import "00-base/mixin/lists.mixin";
-@import "00-base/mixin/flyouts.mixin";
-@import "00-base/mixin/animations";
+@forward "00-base/mixin/core.mixin";
+@forward "00-base/mixin/typography.mixin";
+@forward "00-base/mixin/elevation.mixin";
+@forward "00-base/mixin/grid.mixin";
+@use "00-base/mixin/lists.mixin";
+@use "00-base/mixin/flyouts.mixin";
+@forward "00-base/mixin/animations";
 
 /**** ATOMS / Typography ****/
-@import "01-atoms/typography/headlines";
-@import "01-atoms/typography/paragraph";
-@import "01-atoms/typography/monospace";
-@import "01-atoms/typography/blockquote";
-@import "01-atoms/typography/font-size";
-@import "01-atoms/typography/hyperlinks";
+@use "01-atoms/typography/headlines";
+@use "01-atoms/typography/paragraph";
+@use "01-atoms/typography/monospace";
+@use "01-atoms/typography/blockquote";
+@forward "01-atoms/typography/font-size";
+@use "01-atoms/typography/hyperlinks";
 
 /**** ATOMS / icons ****/
-@import "01-atoms/icons/icon";
-@import "01-atoms/avatar/avatar";
-@import "01-atoms/avatar/presence";
+@use "01-atoms/icons/index";
+
+@use "01-atoms/avatar/index" as index2;
 
 /**** ATOMS / Buttons ****/
-@import "01-atoms/buttons/button-general";
-@import "01-atoms/buttons/buttons";
-@import "01-atoms/buttons/button-action";
-@import "01-atoms/buttons/button-command";
-@import "01-atoms/buttons/button-flyout";
-@import "01-atoms/buttons/button-context";
-@import "01-atoms/buttons/button-icon";
-@import "01-atoms/buttons/button-split";
-@import "01-atoms/buttons/button-icon-split";
-@import "01-atoms/buttons/button-icon-overflow";
-@import "01-atoms/buttons/button-pivot";
+@use "01-atoms/buttons/index" as index3;
 
 /**** ATOMS / Loading ****/
-@import "01-atoms/loading/progress";
-@import "01-atoms/loading/shimmer";
+@use "01-atoms/loading/progress";
+@forward "01-atoms/loading/shimmer";
 
 
 /**** ATOMS / Buttons ****/
-@import "01-atoms/input/label";
-@import "01-atoms/input/input";
-@import "01-atoms/input/toggle";
-@import "01-atoms/input/checkbox";
-@import "01-atoms/input/radiobutton";
-@import "01-atoms/input/select";
-@import "01-atoms/input/search";
+@use "01-atoms/input/index" as index4;
+
 
 /**** ATOMS / Meta Tags ****/
-@import "01-atoms/meta/tags";
+@use "01-atoms/meta/index" as index5;
 
 /**** ATOMS / Table ****/
-@import "01-atoms/table/table";
+@forward "01-atoms/table/index";
 
 /**** ATOMS / Error ****/
-@import "01-atoms/validation/validation";
+@use "01-atoms/validation/index" as index7;
 
 /**** Tooltip ****/
-@import "01-atoms/tooltip/tooltip";
+@forward "01-atoms/tooltip/index";
 
 /**** ATOMS / Grid ****/
-@import "01-atoms/grid/grid";
+@use "01-atoms/grid/index" as index9;
 
 
 /**** Elevation ****/
-@import "01-atoms/elevations/elevations";
+@forward "01-atoms/elevations/index";
 
 /*** MOLECULES ***/
-@import "02-molecules/avatar-w-presence";
-@import "02-molecules/radiobutton-group";
+@use "02-molecules/avatar-w-presence/index" as index11;
 
-@import "02-molecules/dialog-header";
-@import "02-molecules/dialog-content";
-@import "02-molecules/webpart-header";
+@use "02-molecules/persona/index" as index12;
+@use "02-molecules/inputs/index.scss" as index13;
 
-@import "02-molecules/menu/breadcrumb";
-@import "02-molecules/menu/commandbar";
-@import "02-molecules/menu/nav";
-@import "02-molecules/menu/pivotbar";
-@import "02-molecules/menu/overflow";
-@import "02-molecules/meta/lists";
-@import "02-molecules/persona";
-@import "02-molecules/teams-toolbar";
-@import "02-molecules/teamsdb-card";
+@use "02-molecules/dialogs/index" as index14;
+
+@use "02-molecules/webparts/index" as index15;
+
+@use "02-molecules/menu/index" as index16;
+@use "02-molecules/meta-list/index" as index17;
+
+@use "02-molecules/teams/index" as index18;
 
 /*** MOLECULES / CARDS ***/
-@import "02-molecules/cards/card-elements";
+@use "02-molecules/card-elements/index" as index19;
 
 /*** ORGANISM ***/
-@import "03-organism/facepile";
-@import "03-organism/dialog/modal-dialog";
-@import "03-organism/dialog/sidebar";
-@import "03-organism/cards/cards";
-@import "03-organism/cards/splash-cards";
+@use "03-organism/facepile";
+@forward "03-organism/dialog/modal-dialog";
+@use "03-organism/dialog/sidebar";
+
+/*** ORGANISM  / Cards ***/
+@use "03-organism/cards/index" as index20;
 
 /*** Templates ***/
-@import "04-templates/card-grid";
-@import "04-templates/teams-dashboard";
-@import "04-templates/teams-splash";
+@use "04-templates/card-grid";
+@use "04-templates/teams-dashboard";
+@use "04-templates/teams-splash";

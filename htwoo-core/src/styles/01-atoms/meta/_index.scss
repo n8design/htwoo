@@ -1,3 +1,5 @@
+@use "00-base/colors/colors";
+
 .hoo-mtag-lbl {
 	font-size: .875em;
 	line-height: 1.25em;
@@ -32,17 +34,17 @@
 }
 
 .hoo-mtag {
-	color: $neutral-700;
-	background-color: $neutral-100;
+	color: colors.$neutral-700;
+	background-color: colors.$neutral-100;
 }
 
 .hoo-mtag-primary {
-	color: $neutral-000;
-	background-color: $theme-700;
+	color: colors.$neutral-000;
+	background-color: colors.$theme-700;
 
 	&:visited {
-		color: $neutral-000;
-		background-color: $theme-700;
+		color: colors.$neutral-000;
+		background-color: colors.$theme-700;
 	}
 }
 
@@ -51,8 +53,8 @@ button.hoo-mtag {
 	cursor: pointer;
 
 	&:hover {
-		color: $neutral-000;
-		background-color: $theme-700;
+		color: colors.$neutral-000;
+		background-color: colors.$theme-700;
 	}
 }
 
@@ -61,7 +63,7 @@ button.hoo-mtag-primary {
 	cursor: pointer;
 
 	&:hover {
-		color: $neutral-700;
-		background-color: $neutral-100;
+		color: colors.$neutral-700;
+		background-color: colors.$neutral-100;
 	}
 }

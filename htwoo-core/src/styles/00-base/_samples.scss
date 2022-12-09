@@ -1,11 +1,4 @@
-.hoo-grid{
-	box-sizing: border-box;
-
-	border: 1px silver solid;
-
-	@include gridBase();
-}
-
+@import 'mixin/grid.mixin';
 .demo-item,
 .demo-item2{
 	display: flex;

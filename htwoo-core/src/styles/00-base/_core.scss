@@ -1,5 +1,7 @@
+@use "colors/colors";
+
 body{
-    font-family: $mediumFontFamily;
+    font-family: colors.$mediumFontFamily;
     background-color: var(--bodyBackground);
     color: var(--bodyText);
     margin: 0;

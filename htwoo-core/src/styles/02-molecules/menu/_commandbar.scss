@@ -1,3 +1,6 @@
+@use "01-atoms/buttons/button-command";
+@use "00-base/mixin/core.mixin";
+
 .hoo-cmdbar{
 	@extend .hoo-buttoncmd;
 
@@ -5,7 +8,7 @@
 	flex-direction: row;
 	justify-content: flex-start;
 
-	height: px2rem(44px);
+	height: core.px2rem(44px);
 
 	border: 1px transparent solid;
 

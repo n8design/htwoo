@@ -1,7 +1,10 @@
+@use "sass:math";
+@use "00-base/mixin/core.mixin";
+
 .hoo-persona{
 	display: flex;
 
-	height: px2rem(56px);
+	height: core.px2rem(56px);
 
 	align-items: center;
 	flex: 1;
@@ -16,8 +19,8 @@
 		top: calc(50% - 1rem);
 		left: calc(100% - 1rem);
 
-		width: px2rem(20px);
-		height: px2rem(20px);
+		width: core.px2rem(20px);
+		height: core.px2rem(20px);
 	}
 
 	&-data{
@@ -32,8 +35,8 @@
 	&-function,
 	&-statustext,
 	&-available{
-		font-size: px2rem(14px);
-		line-height: px2rem(20px);
+		font-size: core.px2rem(14px);
+		line-height: core.px2rem(20px);
 
 		overflow: hidden;
 
@@ -42,7 +45,7 @@
 	}
 
 	&-name{
-		font-size: px2rem(20px);
+		font-size: core.px2rem(20px);
 	}
 
 
@@ -53,8 +56,8 @@
 }
 
 .hoo-persona-100{
-	$presenceSize: px2rem(32px);
-	$presonaSize: px2rem(100px);
+	$presenceSize: core.px2rem(32px);
+	$presonaSize: core.px2rem(100px);
 
 	@extend .hoo-persona;
 
@@ -68,13 +71,13 @@
 		margin: 0 1rem 0 1rem;
 	}
 	.hoo-persona-name{
-		font-size: px2rem(20px);
-		line-height: px2rem(28px);
+		font-size: core.px2rem(20px);
+		line-height: core.px2rem(28px);
 	}
 	&-function,
 	&-statustext,
 	&-available{
-		line-height: px2rem(20px);
+		line-height: core.px2rem(20px);
 	}
 	.hoo-persona-statustext,
 	.hoo-persona-available{
@@ -83,8 +86,8 @@
 
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
@@ -93,7 +96,7 @@
 
 .hoo-persona-72{
 	$presenceSize: 1.5rem;
-	$presonaSize: px2rem(72px);
+	$presonaSize: core.px2rem(72px);
 
 	@extend .hoo-persona;
 
@@ -114,8 +117,8 @@
 	}
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
@@ -124,7 +127,7 @@
 
 .hoo-persona-48{
 	$presenceSize: 1rem;
-	$presonaSize: px2rem(48px);
+	$presonaSize: core.px2rem(48px);
 
 	@extend .hoo-persona;
 
@@ -145,25 +148,25 @@
 	}
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
 	}
 	.hoo-persona-name{
-		font-size: px2rem(14px);
+		font-size: core.px2rem(14px);
 	}
 	.hoo-persona-function,
 	.hoo-persona-statustext,
 	.hoo-persona-available{
-		font-size: px2rem(12px);
+		font-size: core.px2rem(12px);
 	}
 }
 
 .hoo-persona-40{
 	$presenceSize: 1rem;
-	$presonaSize: px2rem(40px);
+	$presonaSize: core.px2rem(40px);
 
 	@extend .hoo-persona-48;
 
@@ -175,8 +178,8 @@
 
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
@@ -184,8 +187,8 @@
 }
 
 .hoo-persona-32{
-	$presenceSize: px2rem(12px);
-	$presonaSize: px2rem(32px);
+	$presenceSize: core.px2rem(12px);
+	$presonaSize: core.px2rem(32px);
 
 	@extend .hoo-persona-40;
 
@@ -205,8 +208,8 @@
 
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
@@ -214,8 +217,8 @@
 }
 
 .hoo-persona-24{
-	$presenceSize: px2rem(12px);
-	$presonaSize: px2rem(24px);
+	$presenceSize: core.px2rem(12px);
+	$presonaSize: core.px2rem(24px);
 
 	@extend .hoo-persona-48;
 
@@ -235,8 +238,8 @@
 
 
 	.hoo-presence{
-		top: calc(50% - #{$presenceSize/2});
-		left: calc(100% - #{$presenceSize/2});
+		top: calc(50% - #{math.div($presenceSize,2)});
+		left: calc(100% - #{math.div($presenceSize,2)});
 
 		width: $presenceSize;
 		height: $presenceSize;
@@ -244,7 +247,7 @@
 }
 
 .hoo-persona-overflow{
-	font-size: px2rem(14px);
+	font-size: core.px2rem(14px);
 
 	display: flex;
 	justify-content: center;

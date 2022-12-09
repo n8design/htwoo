@@ -1,13 +1,16 @@
+@use "00-base/mixin/core.mixin";
+@use "00-base/mixin/elevation.mixin";
+
 .hoo-teams-toolbar{
-	@include elevation(4);
+	@include elevation.elevation(4);
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 
 	box-sizing: border-box;
-	height: px2rem(48px);
-	padding: 0 px2rem(20px);
+	height: core.px2rem(48px);
+	padding: 0 core.px2rem(20px);
 
 	align-items: center;
 	flex-wrap: nowrap;

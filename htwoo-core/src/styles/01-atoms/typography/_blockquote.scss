@@ -1,3 +1,5 @@
+@use "00-base/mixin/typography.mixin";
+
 blockquote{
-	@include typography(blockquote);
+	@include typography.typography(blockquote);
 }

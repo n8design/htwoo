@@ -1,6 +1,8 @@
+@use "00-base/mixin/core.mixin";
+
 .hoo-dlgcontent{
 	box-sizing: border-box;
-	padding: 0 px2rem(20px) px2rem(16px);
+	padding: 0 core.px2rem(20px) core.px2rem(16px);
 
 	border: transparent 1px solid;
 }
