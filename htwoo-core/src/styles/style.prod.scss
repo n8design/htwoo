@@ -1,87 +1,9 @@
-@forward "00-base/colors/colors";
-@forward "00-base/global.vars";
-// @import "00-base/colors/TeamsTheme";
+/***** Color converted to SCSS variables *****/
+@use '00-base/colors/index.scss';
+@use "00-base/global.vars";
 
-/**** Core Mixing Definition ****/
-@forward "00-base/mixin/core.mixin";
-@forward "00-base/mixin/typography.mixin";
-@forward "00-base/mixin/elevation.mixin";
-@forward "00-base/mixin/grid.mixin";
-@use "00-base/mixin/lists.mixin";
-@use "00-base/mixin/flyouts.mixin";
-@forward "00-base/mixin/animations";
+/**** REQURIED FOR STYLE GUIDE ****/
+@use "00-styleguide/00-styleguide" as styleguide;
 
-/**** ATOMS / Typography ****/
-@use "01-atoms/typography/headlines";
-@use "01-atoms/typography/paragraph";
-@use "01-atoms/typography/monospace";
-@use "01-atoms/typography/blockquote";
-@forward "01-atoms/typography/font-size";
-@use "01-atoms/typography/hyperlinks";
-
-/**** ATOMS / icons ****/
-@use "01-atoms/icons/index";
-
-@use "01-atoms/avatar/index" as index2;
-
-/**** ATOMS / Buttons ****/
-@use "01-atoms/buttons/index" as index3;
-
-/**** ATOMS / Loading ****/
-@use "01-atoms/loading/progress";
-@forward "01-atoms/loading/shimmer";
-
-
-/**** ATOMS / Buttons ****/
-@use "01-atoms/input/index" as index4;
-
-
-/**** ATOMS / Meta Tags ****/
-@use "01-atoms/meta/index" as index5;
-
-/**** ATOMS / Table ****/
-@forward "01-atoms/table/index";
-
-/**** ATOMS / Error ****/
-@use "01-atoms/validation/index" as index7;
-
-/**** Tooltip ****/
-@forward "01-atoms/tooltip/index";
-
-/**** ATOMS / Grid ****/
-@use "01-atoms/grid/index" as index9;
-
-
-/**** Elevation ****/
-@forward "01-atoms/elevations/index";
-
-/*** MOLECULES ***/
-@use "02-molecules/avatar-w-presence/index" as index11;
-
-@use "02-molecules/persona/index" as index12;
-@use "02-molecules/inputs/index.scss" as index13;
-
-@use "02-molecules/dialogs/index" as index14;
-
-@use "02-molecules/webparts/index" as index15;
-
-@use "02-molecules/menu/index" as index16;
-@use "02-molecules/meta-list/index" as index17;
-
-@use "02-molecules/teams/index" as index18;
-
-/*** MOLECULES / CARDS ***/
-@use "02-molecules/card-elements/index" as index19;
-
-/*** ORGANISM ***/
-@use "03-organism/facepile";
-@forward "03-organism/dialog/modal-dialog";
-@use "03-organism/dialog/sidebar";
-
-/*** ORGANISM  / Cards ***/
-@use "03-organism/cards/index" as index20;
-
-/*** Templates ***/
-@use "04-templates/card-grid";
-@use "04-templates/teams-dashboard";
-@use "04-templates/teams-splash";
+/*** All Core references of hTWOo ***/
+@use "_htwoo-core";
