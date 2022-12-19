@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### General
 
 - Updated target typings to ES2019 (Updated from es5 to support IE11 which is no longer supported); includes update to export types.
+- Updated build chain removing legacy code; removed bundling as unneeded for this library.
 
 ### ORGANISMS
 
