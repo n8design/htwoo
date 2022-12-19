@@ -23,12 +23,6 @@ export interface IHOOVerticalNavState {
   expanded: (number | string)[];
 }
 
-export class HOOVerticalNavState implements IHOOVerticalNavState {
-  constructor(
-    public expanded: (number | string)[] = []
-  ) { }
-}
-
 export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavProps, IHOOVerticalNavState> {
   private LOG_SOURCE: string = "💦HOOVerticalNav";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -37,7 +31,7 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
   constructor(props: IHOOVerticalNavProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOVerticalNav";
-    this.state = new HOOVerticalNavState();
+    this.state = { expanded: [] };
   }
 
   private _expanded = (itemKey: number | string): void => {
