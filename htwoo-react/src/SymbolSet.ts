@@ -18,7 +18,7 @@ export class SymbolSet implements ISymbolSet {
    * Initializes the SymbolSet service which provides icons for several components.
    * Must be called once to initialize the included default icons, but can be called repeatedly to add
    * additional icons to the dictonary.
-   * (Optional) symbolSetFile: additional svg icons to load into the dictionary.
+   * @param (Optional) symbolSetFile: additional svg icons to load into the dictionary.
    */
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
@@ -64,8 +64,8 @@ export class SymbolSet implements ISymbolSet {
 
   /**
    * Returns the svg string representation of the icon referenced
-   * @iconName: string - The id/key of the icon to retrieve
-   * -returns: string - svg string (<svg>...</svg>)
+   * @param iconName: string - The id/key of the icon to retrieve
+   * @returns: string - svg string (<svg>...</svg>)
   */
   public Icon(iconName: string): string {
     return this._symbolSetDictionary[iconName];
@@ -73,8 +73,8 @@ export class SymbolSet implements ISymbolSet {
 
   /**
    * Returns the base64 encoded string representation of the icon referenced
-   * @iconName: string - The id/key of the icon to retrieve
-   * -returns: string - base64 encoded string (data:image/svg+xml;base64,....)
+   * @param iconName: string - The id/key of the icon to retrieve
+   * @returns: string - base64 encoded string (data:image/svg+xml;base64,....)
   */
   public IconBase64(iconName: string): string {
     const iconSvg = this.Icon(iconName);
@@ -83,8 +83,8 @@ export class SymbolSet implements ISymbolSet {
 
   /**
    * Performs a case insensitive contains search on keys of Icon dictionary
-   * @search: string - The string to search for
-   * -returns: string[] - Array of keys that match search parameter
+   * @param search: string - The string to search for
+   * @returns: string[] - Array of keys that match search parameter
   */
   public SearchIconDictionary(search: string): string[] {
     let retVal: string[] = [];

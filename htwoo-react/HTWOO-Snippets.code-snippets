@@ -19,7 +19,7 @@
     "prefix": "HOOComponent",
     "body": [
       "import * as React from \"react\";",
-      "import { IHOOStandardProps } from \"../../Common.model\";",
+      "import { IHOOStandardProps } from \"../../common/IHOOStandardProps\"",
       "",
       "export interface IHOO${componentName}Props extends IHOOStandardProps {",
       "  /**",

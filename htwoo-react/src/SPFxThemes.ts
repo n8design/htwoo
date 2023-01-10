@@ -209,10 +209,10 @@ export class SPFxThemes implements ISPFxThemes {
   /** initThemeHandler
    * Used to set up theme handling for SPFx and SPFx hosted in Microsoft Teams
    * 
-   * domElement: HTMLElement - Sets the currently defined domElement the CSS Variables will be assigned to.
-   * themeProvider: any (no type dependency) - Optionally pass in the SPFx theme provider
-   * microsoftTeams: any (no type dependency) - Optionally pass in the Microsoft Teams context
-   * usePageTheme: boolean - Optionally use legacy SharePoint theme context
+   * @param domElement: HTMLElement - Sets the currently defined domElement the CSS Variables will be assigned to.
+   * @param themeProvider: any (no type dependency) - Optionally pass in the SPFx theme provider
+   * @param microsoftTeams: any (no type dependency) - Optionally pass in the Microsoft Teams context
+   * @param usePageTheme: boolean - Optionally use legacy SharePoint theme context
    */
   public initThemeHandler = (domElement: HTMLElement, themeProvider?: any, microsoftTeams?: any, usePageTheme: boolean = false) => {
     try {
@@ -290,8 +290,8 @@ export class SPFxThemes implements ISPFxThemes {
   /** setCSSVariables
    * Used to manually apply a theme to a DOM Element; Internally used to set CSS Variables
    * 
-   * theme: IHOOTheme - a custom theme
-   * altDomElement: HTMLElement - (Optional) Alternate HTMLElement to apply CSS Variables to instead of currently defined `domElement`
+   * @param theme: IHOOTheme - a custom theme
+   * @param altDomElement: HTMLElement - (Optional) Alternate HTMLElement to apply CSS Variables to instead of currently defined `domElement`
    */
   public setCSSVariables(theme: IHOOTheme, altDomElement?: HTMLElement): void {
     if (this._domElement == null && altDomElement == null) { return; }

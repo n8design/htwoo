@@ -1,3 +1,4 @@
 import HOODialogIFrame, { IHOODialogIFrameProps, HOOIFrameRatio } from "./components/molecules/HOODialogIFrame/HOODialogIFrame";
 export default HOODialogIFrame;
-export { IHOODialogIFrameProps, HOOIFrameRatio };
+export type { IHOODialogIFrameProps }
+export { HOOIFrameRatio };
