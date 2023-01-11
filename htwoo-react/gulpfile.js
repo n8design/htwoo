@@ -65,6 +65,7 @@ const prePublish = (cb) => {
     };
     pkgContents.main = "./index.js";
     pkgContents.types = "./index.d.ts";
+    pkgContents.files = ["/*"];
     fs.writeFileSync(
       "../packages/htwoo-react/package.json",
       JSON.stringify(pkgContents),
