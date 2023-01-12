@@ -127,7 +127,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
               onClick={this.props.onClick}>
               {this.props.label &&
                 <>
-                  {iconSVG &&
+                  {this.props.iconName && iconSVG &&
                     <HOOIcon iconSVG={iconSVG} />
                   }
                   <span className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</span>
@@ -136,7 +136,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
                   }
                 </>
               }
-              {(this.props.type === HOOButtonType.Icon && this.props.iconName) &&
+              {(this.props.type === HOOButtonType.Icon && this.props.iconRight) &&
                 <HOOIcon iconSVG={iconSVG} />
               }
               {(!this.props.label || (this.props.type === HOOButtonType.Icon && !this.props.iconName)) &&
