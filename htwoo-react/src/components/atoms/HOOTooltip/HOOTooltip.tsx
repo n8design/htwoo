@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export enum HOOPosition {
   Top = "top",
@@ -20,10 +20,10 @@ export interface IHOOTooltipProps extends IHOOStandardProps {
   */
   visible: boolean;
   /**
-    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-tooltip {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOTooltipState {

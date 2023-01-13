@@ -1,7 +1,8 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import { symset } from "../../../SymbolSet";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOButtonSplitType {
   "Standard",
@@ -32,7 +33,7 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOButtonSplitState {
@@ -85,9 +86,7 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
             <span className="hoo-button-label">{this.props.label || this.props.children}</span>
           </button>
           <button className="hoo-buttonsplit-carret" onClick={this._buttonClicked} aria-pressed={this.state.showFlyout} disabled={buttonDisabled} aria-disabled={buttonDisabled}>
-            <span className="hoo-button-label">
-              <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
-            </span>
+            <HOOIcon iconSVG={iconSVG} rootElementAttributes={{ className: "hoo-button-label" }} />
           </button>
           {this.props.flyoutContextItems &&
             <HOOFlyoutMenu contextItems={this.props.flyoutContextItems} contextItemClicked={this._flyoutItemClicked} />

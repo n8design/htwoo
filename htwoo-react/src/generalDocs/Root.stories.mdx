@@ -50,11 +50,21 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     }
   }
   ```
+
+  and finally (starting in SharePoint Framework version 1.16.0) modify your projects config/sass.json file to include the property quietDeps:
+
+  ```json
+  {
+    "quietDeps": true
+  }
+  ```
     
 ### 3. Initialze Basic SVG Icons
 
-  To initilize the basic SVG icons used by some of the more complext compoents by adding the following line to your components main ts file's onInit method:
+  To initilize the basic SVG icons used by some of the more complex components by adding the following line to your components main ts file's onInit method.
 
+  _For more detailed information on using the SymbolSet see the [Advanced/SymbolSet Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-symbolset-class--page) documentation._
+  
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
 
@@ -63,9 +73,11 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     await symset.initSymbols();
   }
   ```
-    
-  Alternatively if you have additional icons in your own symbol set file, you can add them by passing the path into the initSymbols method:
+  
+  Alternatively if you have icons in your own symbolset file**, you can add them by passing the path into the initSymbols method:
   _Note: This will load both the basic SVG icons referenced above as well as whatever icons are in your referenced file, so you only need to do one call._
+
+  **New in hTWOo is the <a href="https://my.n8d.at/htwoo-icons" target="blank">Icon Tool</a> to create your own symbolset file. This tool allows you to select icons from hoo-icons in regular/filled styles and then download the resulting file to use in your solution.
 
   Add a typing for svg files to be read as a module (images.d.ts):
 

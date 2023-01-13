@@ -2,4 +2,5 @@ import HOOTagList, { IHOOTagListProps, IHOOTag } from "./components/molecules/HO
 import { HOOTagType, HOOTagStyle } from "./components/atoms/HOOTag/HOOTag";
 
 export default HOOTagList;
-export { IHOOTagListProps, IHOOTag, HOOTagType as HOOTagType, HOOTagStyle as HOOTagStyle };
+export type { IHOOTagListProps, IHOOTag };
+export { HOOTagType, HOOTagStyle };

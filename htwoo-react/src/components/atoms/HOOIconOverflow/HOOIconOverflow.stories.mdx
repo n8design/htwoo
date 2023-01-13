@@ -1,22 +1,30 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOIconOverflow from './HOOIconOverflow';
+import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
 <Meta title="Atoms/Buttons/HOOIconOverflow" component={HOOIconOverflow} />
 
 # HOOIconOverflow
 
+## Flyout Menu Items
+
+Enabling flyout menu depends on passing an instance of `HOOFlyoutMenu` as a child
+
 ## Arguments
 
 <ArgsTable of={HOOIconOverflow} />
 
-export const Template = (args) => <HOODropHOOIconOverflowDown {...args} />;
+export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
+    <HOOFlyoutMenu contextItems={[{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }]} 
+    contextItemClicked={(ev, contextItem) => { alert(JSON.stringify(contextItem)) }}/>
+  </HOOIconOverflow>;
 
 ## Basic
 <Canvas>
   <Story 
     name="Basic"
-    args = { { onClick: () => { alert("Clicked"); } } }>
-    {Template.bind({})}
+    args = { { overflow: true } }>
+    {OverflowTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -24,7 +32,7 @@ export const Template = (args) => <HOODropHOOIconOverflowDown {...args} />;
 <Canvas>
   <Story 
     name="Extending"
-    args = { { onClick: () => { alert("Clicked"); }, rootElementAttributes: { style: { backgroundColor: "red" } } } }>
-    {Template.bind({})}
+    args = { { overflow: true, rootElementAttributes: { style: { backgroundColor: "pink" } } } }>
+    {OverflowTemplate.bind({})}
   </Story>
 </Canvas>

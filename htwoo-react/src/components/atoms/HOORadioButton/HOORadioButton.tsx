@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import { getRandomString } from "../../common/Common";
 
 export interface IHOORadioButtonProps extends IHOOStandardProps {
@@ -27,11 +27,11 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-radio {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLInputElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the label element of the component. Use to override for, class, and other attributes.
   */
-  labelElementAttributes?: React.HTMLAttributes<HTMLLabelElement>;
+  labelElementAttributes?: React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 }
 
 export interface IHOORadioButtonState {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOIconOverflow from "../../../HOOIconOverflow";
 import { IOverflowResizer, OverflowResizer } from "../../common/OverflowObserver";
 import { getRandomString } from "../../common/Common";
@@ -33,12 +33,12 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to all Command Buttons.
    * Class names will be appended to the end of the default class string - hoo-button-command {rootElementAttributes.class}
   */
-  commandButtonAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  commandButtonAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cmdbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOCommandBarState {

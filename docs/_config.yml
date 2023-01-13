@@ -43,6 +43,10 @@ sections:
     url: /htwoo/htwoo-react/
     type: static
     permlink: true
+  - title: hTWOo - Icons
+    url: https://my.n8d.at/htwoo-icons
+    type: static
+    permlink: true
   - title:  How To
     path: how-to
     group: how-to

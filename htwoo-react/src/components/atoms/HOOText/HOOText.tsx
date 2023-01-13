@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOTextProps extends IHOOStandardProps {
   /**
@@ -32,15 +32,19 @@ export interface IHOOTextProps extends IHOOStandardProps {
    */
   multiline?: number;
   /**
+    * (Optional) override for input type. Default is `text`; Not used when multiline parameter is included.
+   */
+  inputType?: React.HTMLInputTypeAttribute;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
   */
-  inputElementAttributes?: React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
+  inputElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> | React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 }
 
 export interface IHOOTextState {
@@ -74,8 +78,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {this.props.inputPrefix &&
                 <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
               }
-              <input type="text"
-                {...this.props.inputElementAttributes}
+              <input {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
+                type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}
                 aria-disabled={this.props.disabled || false}
@@ -90,7 +94,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
           }
           {this.props.multiline &&
             <textarea {...this._rootProps}
-              {...this.props.inputElementAttributes}
+              {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>}
               className={inputClassName}
               rows={this.props.multiline}
               onChange={this.props.onChange} >

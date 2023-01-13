@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import { getRandomString } from "../../common/Common";
 
 export interface IHOOToggleProps extends IHOOStandardProps {
@@ -27,17 +27,17 @@ export interface IHOOToggleProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-toggle {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-toggle-cb {inputElementAttributes.class}
   */
-  inputElementAttributes?: React.HTMLAttributes<HTMLInputElement>;
+  inputElementAttributes?: React.InputHTMLAttributes<HTMLInputElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the label element of the component. Use to override for, class, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-toggle-label {labelElementAttributes.class}
   */
-  labelElementAttributes?: React.HTMLAttributes<HTMLLabelElement>;
+  labelElementAttributes?: React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 }
 
 export interface IHOOToggleState {
@@ -69,8 +69,15 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
       let inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       const labelClassName = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName} >
-          <input type="checkbox" id={this._toggleId} checked={this.props.checked} {...this.props.inputElementAttributes} disabled={this.props.disabled || false} aria-disabled={this.props.disabled || false} onChange={this.props.onChange} className={inputClassName} />
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
+          <input {...this.props.inputElementAttributes}
+            type="checkbox"
+            id={this._toggleId}
+            checked={this.props.checked}
+            disabled={this.props.disabled || false}
+            aria-disabled={this.props.disabled || false}
+            onChange={this.props.onChange}
+            className={inputClassName} />
           {this.props.labelOn && this.props.labelOff &&
             <label  {...this.props.labelElementAttributes} className={labelClassName} htmlFor={this._toggleId} >
               <span className="hoo-toggle-slider"></span>

@@ -30,8 +30,8 @@ export default class MyComponent extends React.PureComponent<IMyComponentProps, 
         //create approval container div
         element = document.createElement("DIV") as HTMLDivElement;
         element.setAttribute("id", id);
-        //Make sure you add the root class (namespacing class) so that the htwoo styles are available to your dialog
-        element.className = styles.myComponent;
+        //Make sure you add `root-40` to support the font, and the root class (namespacing class) so that the htwoo styles are available to your dialog
+        element.className = `root-40 ${styles.myComponent}`;
         //Give the div a high z-index so when it's shown we make sure it overlays the whole page.
         element.style["z-index"] = 1000;
         element.style.position = "relative";

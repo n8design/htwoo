@@ -3,6 +3,10 @@ layout: page
 title: Release History
 ---
 
+## Changelog
+
+Check out hTWOo Core [changelogs](CHANGELOG-core)
+
 ## v0.4.1
 - Minor state fixes with Radio Buttons and Check Boxes
 

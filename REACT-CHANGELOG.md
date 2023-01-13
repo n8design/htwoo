@@ -5,6 +5,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.7.0 - 2023-Jan-10
+
+### General
+
+- Updated target typings to ES2019 (Updated from es5 to support IE11 which is no longer supported); includes update to export types.
+- Updated build chain removing legacy code; removed bundling as unneeded for this library.
+- New SymbolSet documentation
+
+### ORGANISMS
+
+- Added HOOFacepile
+
+### TEMPLATES
+
+- Added HOOCardGrid
+
+## 1.6.0 - 2022-Nov-29
+
+>In support of HTWOO-CORE v1.3.0
+
+### General
+
+- Updated component development version of React to major version 17.x; library version still remains compatible from 16-18.2.
+- More speicific typings for rootElementAttributes in IHOOStandardProps from `React.AllHTMLAttributes<HTMLElement>` -> `React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>` and updated all components accordingly
+- Added documentation about supporting font's in dialogs by adding `root-40` class to root element
+- Fixed accessibility errors as appropriate for all components, see [a11y_report.md](https://github.com/n8design/htwoo/blob/react-v1.6.0/htwoo-react/__report__/a11y_report.md) for outstanding issues.
+
+### ATOMS
+
+- Added `inputElementAttributes` to HOOSearch, HOODropDown, and HOOSelect
+- Added 'required' property to HOOLabel, which adds * to indicate associated control is required.
+- Updated typing for HOOText `inputType` property to React.HTMLInputTypeAttribute
+- _hTWOo Core_: Update `HOOFlyoutMenu` and `HOOIconOverflow` from ul to menu element
+- Updated documentation/example for `HOOIconOverflow` and fully implemented children to accept instance of `HOOFlyoutMenu`
+- Fixed styling bug for `HOOAvatar`, where left margin for description was wrong
+
+### MOLECULES
+
+- HTML/Styling cleanup on HOOOptionList
+- Added `HOOVerticalNav` component.
+
+## 1.5.0 - 2022-Oct-25
+
+### General
+
+- Changed typing of rootElementAttributes in IHOOStandardProps from `React.HTMLAttributes<HTMLElement>` -> `React.AllHTMLAttributes<HTMLElement>`
+  which had a cascading effect on all components but is backward compatible. This could possibly use further refinement in the future.
+- Added new `SearchIconDictionary` method to the SymbolSet class to provide a way to do a contains search on the loaded icons
+- Updated interface for SymbolSet class to fix missing references.
+
+### ATOMS
+
+- Added `onSearch` event to HOOSearch that fires when the user presses the `Enter` key.
+- Added `disabled` property to HOOSearch that disables the search box.
+- Added `inputType` property to adjust input type in HOOText; default is "text".
+- Fixed typings for inputElementAttributes on HOONumber, HOOText, and HOOToggle.
+
 ## 1.4.0 - 2022-Sept-16
 
 >In support of HTWOO-CORE v1.2.5
@@ -41,7 +98,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### SERVICES
 
-- *SPFxThemes*
+- _SPFxThemes_
   - Changed `setCSSVariables` to public so that it could be called independently of `initThemeHandler`, accepts an optional HTML Element to apply the theme.
   - Created public property for root `domElement` so that it can be set independently of `initThemeHandler`
   - Fixed issue with changing the theme in SharePoint and not completely refreshing CSS variables.
@@ -49,13 +106,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### MOLECULES
 
-- *HOOOptionList* - Bug fix for improperly placed key attribute.
+- _HOOOptionList_ - Bug fix for improperly placed key attribute.
 
 ## 1.2.2 - 2022-Aug-10
 
 ### MOLECULES
 
-- *HOOOptionList* - Bug fix for null/undefined value throwing indexOf error.
+- _HOOOptionList_ - Bug fix for null/undefined value throwing indexOf error.
 
 ## 1.2.1 - 2022-Aug-1
 
@@ -63,7 +120,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### MOLECULES
 
-- *HOOOptionList* - Bug fix for missing html/styles on checkbox option group.
+- _HOOOptionList_ - Bug fix for missing html/styles on checkbox option group.
 
 ## 1.2.0 - 2022-July-15
 
@@ -75,12 +132,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### ATOMS
 
-- *HOOLabel* - Adds optional `for` property to specify the id of the form element the label should be bound to.
+- _HOOLabel_ - Adds optional `for` property to specify the id of the form element the label should be bound to.
 
 ### MOLECULES
 
-- *HOOOptionList* - Bug fix `onChange` event was incorrectly surfacing `React.ChangeEventHandler<HTMLInputElement>` - now is a custom event type that returns the key and and checked state.
-- *HOOWebPartTitle* - Bug fix `title` field set as optional.
+- _HOOOptionList_ - Bug fix `onChange` event was incorrectly surfacing `React.ChangeEventHandler<HTMLInputElement>` - now is a custom event type that returns the key and and checked state.
+- _HOOWebPartTitle_ - Bug fix `title` field set as optional.
 
 ## 1.1.0 - 2022-June-21
 
@@ -90,14 +147,14 @@ Significant reorganization, update, and addition of documentation to more closel
 
 ### ATOMS
 
-- *HOOTag* - New meta tag implementation
-- *HOOAvatar* - Size is now optional parameter to support container sizing, added additional sizes to enum HOOAvatarSize
+- _HOOTag_ - New meta tag implementation
+- _HOOAvatar_ - Size is now optional parameter to support container sizing, added additional sizes to enum HOOAvatarSize
 
 ### MOLECULES
 
-- *HOOTagList* - New meta tag list implementation
-- *HOOPersona* - New persona implementation
-- *HOOAvatarPres* - Size is now optional parameter to support container sizing
+- _HOOTagList_ - New meta tag list implementation
+- _HOOPersona_ - New persona implementation
+- _HOOAvatarPres_ - Size is now optional parameter to support container sizing
 
 ## 1.0.0 - 2022-May-20
 
@@ -105,7 +162,7 @@ Significant reorganization, update, and addition of documentation to more closel
 
 ### FUNCTIONS
 
-- *SPFxThemes*
+- _SPFxThemes_
   - Extended properties for `initThemeHandler` method to include passing in `microsoftTeams` page context to apply Teams theme to CSS Variables, also added a `usePageTheme` optional override that will use the page's theme for those instances when you need the root, unmodified SharePoint theme.
   - Added `isInverted` property to class to retrieve if the theme is in it's inverted state
   - Added `inTeams` property to class to retieve if theme is coming from Microsoft Teams.
@@ -118,19 +175,19 @@ Significant reorganization, update, and addition of documentation to more closel
 
 ### ATOMS
 
-- *HOOButton* - Icon Left and Icon Right to be used with Primary Button type.
-- *HOOButton* - IconName to support Icon button type icon child should be a span not a div.
-- *HOODialogIFrame* - New iFrame styling for child of the HOODialogContent molecule
-- *HOODate* - New date picker implementation
-- *HOOTime* - New time picker implementation
+- _HOOButton_ - Icon Left and Icon Right to be used with Primary Button type.
+- _HOOButton_ - IconName to support Icon button type icon child should be a span not a div.
+- _HOODialogIFrame_ - New iFrame styling for child of the HOODialogContent molecule
+- _HOODate_ - New date picker implementation
+- _HOOTime_ - New time picker implementation
 
 ### MOLECULES
 
-- *HOOBreadcrumb* - New implementation, supporting button and hyperlink breadcrumb component.
+- _HOOBreadcrumb_ - New implementation, supporting button and hyperlink breadcrumb component.
 
 ### FUNCTIONS
 
-- *SymbolSet* - IconBase64 method that takes IconName and returns base64 encoded string, added namepaceuri to svg element.
+- _SymbolSet_ - IconBase64 method that takes IconName and returns base64 encoded string, added namepaceuri to svg element.
 
 ## 0.1.0 - 2022-March-30
 

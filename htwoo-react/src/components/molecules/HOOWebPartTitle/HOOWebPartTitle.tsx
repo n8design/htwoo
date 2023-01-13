@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**
@@ -22,7 +22,7 @@ export interface IHOOWebPartTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 }
 
 export interface IHOOWebPartTitleState {
@@ -54,11 +54,15 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <h3 {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <h3 {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          className={className}>
           <div
             role="textbox"
+            aria-label={this.props.placeholder || "Web Part Title"}
             placeholder={this.props.placeholder || ""}
             aria-placeholder={this.props.placeholder || ""}
+            title={this.props.title}
             contentEditable={this.props.editMode}
             suppressContentEditableWarning={true}
             onBlur={this.saveTitle}

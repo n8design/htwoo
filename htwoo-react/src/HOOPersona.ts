@@ -2,4 +2,5 @@ import HOOPersona, { IHOOPersonaProps } from "./components/molecules/HOOPersona/
 import { HOOAvatarSize } from "./components/atoms/HOOAvatar/HOOAvatar";
 
 export default HOOPersona;
-export { IHOOPersonaProps, HOOAvatarSize };
+export type { IHOOPersonaProps };
+export { HOOAvatarSize };

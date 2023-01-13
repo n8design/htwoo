@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
@@ -33,12 +33,12 @@ export interface IHOOActionProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLButtonElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
   /**
      * (Optional) HTMLSpanElement attributes that will be applied to the label element of the component.
      * Class names will be appended to the end of the default class string - hoo-button-label {rootElementAttributes.class}
     */
-  labelElementAttributes?: React.HTMLAttributes<HTMLSpanElement>;
+  labelElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
 }
 
 export interface IHOOActionState {
@@ -78,7 +78,7 @@ export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOO
       const labelClass = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
         <>
-          <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} onClick={this.props.onClick}>
+          <button {...this._rootProps} {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} className={className} onClick={this.props.onClick}>
             {this.props.label &&
               <>
                 <span className="hoo-button-icon" aria-hidden="true">

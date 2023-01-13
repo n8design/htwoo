@@ -1,3 +1,4 @@
 import HOOAvatar, { IHOOAvatarProps, HOOAvatarSize } from "./components/atoms/HOOAvatar/HOOAvatar";
 export default HOOAvatar;
-export { IHOOAvatarProps, HOOAvatarSize };
+export type { IHOOAvatarProps };
+export { HOOAvatarSize };

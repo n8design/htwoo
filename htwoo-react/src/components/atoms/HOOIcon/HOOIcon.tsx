@@ -1,8 +1,12 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import { symset } from "../../../SymbolSet";
 
 export interface IHOOIconProps extends IHOOStandardProps {
+  /**
+   * Accessibility label for the icon
+   */
+  iconLabel?: string;
   /**
    * Name of icon to be rendered, if omitted must include iconSVG
    */
@@ -14,7 +18,7 @@ export interface IHOOIconProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
 }
 
 export interface IHOOIconState {
@@ -41,8 +45,14 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
       const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName);
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} aria-label={this.props.iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}>
-        </div>
+        <>
+          <span {...this._rootProps}
+            {...this.props.rootElementAttributes}
+            className={className}
+            dangerouslySetInnerHTML={{ __html: iconSVG }}>
+          </span >
+          <span className="hidden-visually">{this.props.iconLabel || this.props.iconName || "Icon"}</span>
+        </>
       );
     } catch (err) {
       console.error(`${err} - ${this.LOG_SOURCE} (render)`);

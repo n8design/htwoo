@@ -1,6 +1,7 @@
 import * as React from "react";
 import { symset } from "../../../SymbolSet";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
+import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOButtonType {
   "Icon",
@@ -26,11 +27,6 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
-   * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
-   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLElement>;
-  /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
   label?: string;
@@ -50,6 +46,11 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    * (Optional) For Compound style buttons only, second line of label.
    */
   description?: string;
+  /**
+   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
+   */
+  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> | React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 }
 
 export interface IHOOButtonState {
@@ -104,7 +105,11 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
       return (
         <>
           {this._hyperlinkType &&
-            <a {...this._rootProps} {...this.props.rootElementAttributes} href={this.props.href} role="button" className={className}>
+            <a {...this._rootProps}
+              {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>}
+              href={this.props.href}
+              role="button"
+              className={className}>
               {this.props.label &&
                 <span className="hoo-button-label">{this.props.label}</span>
               }
@@ -114,11 +119,16 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
             </a>
           }
           {!this._hyperlinkType &&
-            <button {...this._rootProps} {...this.props.rootElementAttributes} className={className} disabled={this.props.disabled || false} aria-label={this.props.label} aria-disabled={this.props.disabled || false} onClick={this.props.onClick}>
+            <button {...this._rootProps}
+              {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>}
+              className={className}
+              disabled={this.props.disabled || false}
+              aria-disabled={this.props.disabled || false}
+              onClick={this.props.onClick}>
               {this.props.label &&
                 <>
-                  {iconSVG &&
-                    <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+                  {this.props.iconName && iconSVG &&
+                    <HOOIcon iconSVG={iconSVG} />
                   }
                   <span className={`hoo-button${this._compoundType ? "comp" : ""}-label`}>{this.props.label}</span>
                   {this._compoundType &&
@@ -126,8 +136,8 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
                   }
                 </>
               }
-              {(this.props.type === HOOButtonType.Icon && this.props.iconName) &&
-                <span className="hoo-icon" aria-label={iconName} dangerouslySetInnerHTML={{ __html: iconSVG }}></span>
+              {(this.props.type === HOOButtonType.Icon && this.props.iconRight) &&
+                <HOOIcon iconSVG={iconSVG} />
               }
               {(!this.props.label || (this.props.type === HOOButtonType.Icon && !this.props.iconName)) &&
                 this.props.children

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOAvatar, { HOOAvatarSize } from "../../atoms/HOOAvatar/HOOAvatar";
 import HOOPresence, { HOOPresenceStatus } from "../../atoms/HOOPresence/HOOPresence";
 
@@ -29,15 +29,15 @@ export interface IHOOAvatarPresProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-avatar-pres {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the HOOAvatar element of the component.
   */
-  avatarAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  avatarAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the HOOPresence element of the component.
   */
-  presenceAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  presenceAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOAvatarPresState {

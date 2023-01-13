@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOPivotButton from "../../../components/atoms/HOOPivotButton/HOOPivotButton";
 import HOOIconOverflow from "../../../HOOIconOverflow";
 import { IOverflowResizer, OverflowResizer } from "../../common/OverflowObserver";
@@ -31,12 +31,12 @@ export interface IHOOPivotBarProps extends IHOOStandardProps {
   * (Optional) HTMLButtonElement attributes that will be applied to all Pivot Buttons.
   * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
  */
-  pivotButtonAttributes?: React.HTMLAttributes<HTMLButtonElement>;
+  pivotButtonAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-pivotbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOPivotBarState {

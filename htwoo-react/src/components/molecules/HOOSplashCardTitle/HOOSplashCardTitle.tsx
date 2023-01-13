@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 
 export interface IHOOSplashCardTitleProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOSplashCardTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeadingElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-title {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLHeadingElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 }
 
 export interface IHOOSplashCardTitleState {

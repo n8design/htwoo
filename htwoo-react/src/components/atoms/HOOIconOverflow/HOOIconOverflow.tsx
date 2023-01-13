@@ -1,17 +1,17 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../../Common.model";
+import { IHOOStandardProps } from "../../common/IHOOStandardProps";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 
 export interface IHOOIconOverflowProps extends IHOOStandardProps {
   /**
-   * Overflow is active
+   * Overflow is active; show's children which is normally instance of HOOFlyoutMenu
    */
   overflow: boolean;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonicon-overflow {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 }
 
 export interface IHOOIconOverflowState {
@@ -40,10 +40,15 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
         className += " show-flyout";
       }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
-          <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-ellipses" onClick={() => { this.setState({ showOverflow: !this.state.showOverflow }); }} rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
-          <ul className="hoo-buttonflyout" role="menu">
-          </ul>
+        <div {...this._rootProps}
+          {...this.props.rootElementAttributes}
+          aria-haspopup="true"
+          className={className}>
+          <HOOButton type={HOOButtonType.Icon}
+            iconName="hoo-icon-ellipses"
+            onClick={() => { this.setState({ showOverflow: !this.state.showOverflow }); }}
+            rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
+          {this.state.showOverflow && this.props.children}
         </div>
       );
     } catch (err) {
