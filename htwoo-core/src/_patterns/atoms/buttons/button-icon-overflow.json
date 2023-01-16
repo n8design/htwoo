@@ -1,4 +1,5 @@
 {
     "iconDown": "icon-ellipses",
-    "label": "New Item"
+    "label": "New Item",
+    "contextMenu": {}
 }
