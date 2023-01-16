@@ -1,3 +1,5 @@
+import defaultSymbolSetFile from "./images/hoo-icons.svg";
+
 export interface ISymbolSet {
   initSymbols: (symbolSetFile?: string) => Promise<void>;
   Icon: (iconName: string) => string;
@@ -23,8 +25,7 @@ export class SymbolSet implements ISymbolSet {
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
       //Load Default if not already processed
-      if (!this.defaultLoaded) {
-        const defaultSymbolSetFile = require("./images/hoo-icons.svg");
+      if (!this.defaultLoaded && defaultSymbolSetFile != null) {
         const defaultResult = await fetch(defaultSymbolSetFile);
         const defaultSymbolSet = await defaultResult.text();
         const loadedDefault = this.processSymbolSet(defaultSymbolSet);

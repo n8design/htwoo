@@ -75,6 +75,8 @@ const prePublish = (cb) => {
 
   //Copy library to package folder
   fs.copySync("./lib", "../packages/htwoo-react");
+  //Copy svg typing
+  fs.copySync("./src/symbols.d.ts", "../packages/htwoo-react/symbols.d.ts");
   //Copy README
   fs.copySync("README.md", "../packages/htwoo-react/README.md");
 

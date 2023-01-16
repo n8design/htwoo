@@ -50,6 +50,7 @@ export class OverflowResizer implements IOverflowResizer {
 
   private _initOverflowElements = (children) => {
     try {
+      this._overflowItems = [];
       let overallWidth = 0;
       for (let i = 0; i < children.length; i++) {
         overallWidth += children[i].clientWidth;
@@ -80,7 +81,7 @@ export class OverflowResizer implements IOverflowResizer {
 
   private _getOverflowItems = () => {
     try {
-      const overflowButton = this._resizeContainer.querySelector('hoo-buttonicon-overflow');
+      const overflowButton = this._resizeContainer.querySelector('.hoo-buttonicon-overflow');
       const defaultOffset = 40;
       const targetWidth = this._resizeContainer.parentElement.clientWidth;
       let curOverFlowItems = this._overflowItems.filter(item => {
@@ -107,7 +108,7 @@ export class OverflowResizer implements IOverflowResizer {
       }
 
       //Trigger parent container to add is-active class to Overflow div
-      this._overflowChangedEvent((overflowControl.children.length !== 0))
+      this._overflowChangedEvent((overflowControl != null && overflowControl?.children.length !== 0))
 
       // Move elements back from overflow menu
       if (overflowControl && overflowControl.children.length > curOverFlowItems.length) {
@@ -121,7 +122,7 @@ export class OverflowResizer implements IOverflowResizer {
       }
 
       // Cleanup left over <li> elements
-      for (let i = 0; i < overflowControl.children.length; i++) {
+      for (let i = 0; i < overflowControl?.children.length; i++) {
         if (overflowControl.children[i].children.length === 0) {
           overflowControl.children[i].remove();
         }

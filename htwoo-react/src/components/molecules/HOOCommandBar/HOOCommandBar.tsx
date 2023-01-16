@@ -14,10 +14,6 @@ export interface IHOOCommandItem {
 
 export interface IHOOCommandBarProps extends IHOOStandardProps {
   /**
-   * Key of currently selected Command Item
-  */
-  selectedKey: number | string;
-  /**
    * Menu items to render in Command Bar
   */
   commandItems: IHOOCommandItem[];
@@ -80,11 +76,11 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
     try {
       if (this.props.commandItems) {
         retVal = this.props.commandItems.map((pi, index) => {
-          const isSelected = (pi.key === this.props.selectedKey);
           return (
             <HOOButtonCommand
               key={pi.key}
               label={pi.text}
+              onClick={(ev) => { this.props.onClick(ev, pi.key, null); }}
               flyoutMenuItems={pi.flyoutMenuItems}
               flyoutMenuItemClicked={(ev, fmi: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key, fmi); }}
               rootElementAttributes={this.props.commandButtonAttributes} />
@@ -110,9 +106,12 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
             this._renderCommandItems()
           }
           {this.props.hasOverflow &&
-            <div ref={this._overflowContainer} className={`hoo-overflow ${(this.state.showOverflow ? "show-flyout" : "")}`}>
+            <div ref={this._overflowContainer} className={`${this.props.hasOverflow ? "hoo-overflow" : ""}`}>
               {this._renderCommandItems()}
-              <HOOIconOverflow overflow={this.state.showOverflow} />
+              <HOOIconOverflow overflow={this.state.showOverflow}>
+                <menu className="hoo-buttonflyout">
+                </menu>
+              </HOOIconOverflow>
             </div>
           }
         </div>

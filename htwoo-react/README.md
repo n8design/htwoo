@@ -52,6 +52,14 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     }
     ```
 
+    and finally (starting in SharePoint Framework version 1.16.0) modify your projects config/sass.json file to include the property quietDeps:
+
+    ```json
+    {
+      "quietDeps": true
+    }
+    ```
+
 1. To initilize the basic SVG icons add the following line to your components main ts file's onInit method:
 
     ```TypeScript
@@ -66,12 +74,27 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     Alternately you can load your own icon symbol set by passing the path into the initSymbols method:
     >This will load both the default hoo-icons as well as whatever icons are in your referenced file.
   
+    **New in hTWOo is the <a href="https://my.n8d.at/htwoo-icons" target="blank">Icon Tool</a> to create your own symbolset file. This tool allows you to select icons from hoo-icons in regular/filled styles and then download the resulting file to use in your solution.
+
+    Add a typing for svg files to be read as a module (images.d.ts):
+
+    file: images.d.ts
+
+    ```ts
+    declare module '*.svg' {
+      const content: any;
+      export default content;
+    }
+    ```
+
+    Then import the svg file and pass it to initSymbols method:
+
     ```TypeScript
     import { symset } from '@n8d/htwoo-react/SymbolSet';
+    import symbolSetFile from './images/icons.svg';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set with Custom Symbol File
-      const symbolSetFile: string = require("./images/icons.svg");
       await symset.initSymbols(symbolSetFile);
     }
     ```
@@ -92,12 +115,25 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
     If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder.
 
+    Add a typing for svg files to be read as a module (images.d.ts):
+
+    file: images.d.ts
+
+    ```ts
+    declare module '*.svg' {
+      const content: any;
+      export default content;
+    }
+    ```
+
+    Then import the svg file and pass it to initSymbols method:
+
     ```TypeScript
     import { symset } from '@n8d/htwoo-react/SymbolSet';
+    import fuireg from '@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg';
 
     public async onInit(): Promise<void> {
       // Initialize Icons Symbol Set with HTWOO-Icons
-      const fuireg: string = require("@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg");
       await symset.initSymbols(fuireg);
     }
     ```

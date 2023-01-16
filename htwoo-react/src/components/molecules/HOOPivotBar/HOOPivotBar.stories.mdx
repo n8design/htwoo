@@ -1,4 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useArgs } from "@storybook/client-api";
 import HOOPivotBar, {HOOPivotBarType} from './HOOPivotBar';
 import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
 
@@ -20,14 +21,23 @@ export interface IHOOPivotItem {
 <ArgsTable of={HOOPivotBar} />
 
 export const options = [{ key: 1, text: "Menu 1" }, { key: 2, text: "Menu 2" }, { key: 3, text: "Menu 3" }, { key: 4, text: "Menu 4" }, { key: 5, text: "Menu 5" }];
-export const Template = (args) => <HOOPivotBar {...args} />;
+export const Template = (args) => {
+  const [_, updateArgs] = useArgs();
+
+  const handle = (ev, key) => {
+    args.selectedKey = key;
+    updateArgs({ ...args });
+  };
+
+  return <HOOPivotBar {...args} onClick={handle} />;
+};
 
 ## Basic
 <Canvas>
   <Story 
     name="Basic"
     args = { 
-      { selectedKey: 1, pivotItems: options, hasOverflow: false, onClick: () => { alert("Clicked"); } }
+      {selectedKey: 1, pivotItems: options, hasOverflow: false}
     }>
     {Template.bind({})}
   </Story>
@@ -38,7 +48,7 @@ export const Template = (args) => <HOOPivotBar {...args} />;
   <Story 
     name="Overflow"
     args = { 
-      { selectedKey: 1, pivotItems: options, hasOverflow: true, onClick: () => { alert("Clicked"); } }
+      { selectedKey: 1, pivotItems: options, hasOverflow: true }
     }>
     {Template.bind({})}
   </Story>
@@ -49,7 +59,7 @@ export const Template = (args) => <HOOPivotBar {...args} />;
   <Story 
     name="Extending"
     args = { 
-     { selectedKey: 1, pivotItems: options, hasOverflow: false, onClick: () => { alert("Clicked"); }, rootElementAttributes: { style: { backgroundColor: "pink" } }}
+     { selectedKey: 1, pivotItems: options, hasOverflow: false, rootElementAttributes: { style: { backgroundColor: "pink" } }}
     }>
     {Template.bind({})}
   </Story>

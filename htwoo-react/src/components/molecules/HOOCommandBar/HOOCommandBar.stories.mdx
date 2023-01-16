@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
-import { symset } from '../../../SymbolSet';
+import { useArgs } from "@storybook/client-api";
 import HOOCommandBar, {HOOCommandBarType} from './HOOCommandBar';
 import HOOLabel from '../../atoms/HOOLabel/HOOLabel';
 
@@ -21,23 +21,23 @@ export interface IHOOCommandItem {
 <ArgsTable of={HOOCommandBar} />
 export const flyoutMenuItems = [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }];
 export const options = [{ key: 1, text: "Menu 1", flyoutMenuItems: flyoutMenuItems }, { key: 2, text: "Menu 2" , flyoutMenuItems: flyoutMenuItems}, { key: 3, text: "Menu 3" , flyoutMenuItems: flyoutMenuItems}, { key: 4, text: "Menu 4" }, { key: 5, text: "Menu 5", flyoutMenuItems: [] }];
-export const DefaultParams = {
-  selectedKey: 1, 
-  commandItems: options, 
-  onClick: () => { alert("Clicked");} 
-}
-export const Template = (args) => <HOOCommandBar {...args} />;
+export const Template = (args) => {
+  const [_, updateArgs] = useArgs();
+
+  const handle = (ev, key, flyoutItem) => {
+    alert(`Selected menu option ${key} -> flyout item: ${JSON.stringify(flyoutItem)}`);
+    updateArgs({ ...args });
+  };
+
+  return <HOOCommandBar {...args} onClick={handle} />;
+};
 
 ## Basic
 <Canvas>
   <Story 
     name="Basic"
     args = { 
-      (function () {
-        symset.initSymbols();
-        const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
-        return mergedArgs;
-      })()
+      { commandItems: options, hasOverflow: false }
     }>
     {Template.bind({})}
   </Story>
@@ -48,12 +48,7 @@ export const Template = (args) => <HOOCommandBar {...args} />;
   <Story 
     name="Overflow"
     args = { 
-      (function () {
-        symset.initSymbols();
-        const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
-        mergedArgs["hasOverflow"] = true;
-        return mergedArgs;
-      })()
+      { commandItems: options, hasOverflow: true }
     }>
     {Template.bind({})}
   </Story>
@@ -64,12 +59,7 @@ export const Template = (args) => <HOOCommandBar {...args} />;
   <Story 
     name="Extending"
     args = { 
-      (function () {
-        symset.initSymbols();
-        const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
-        mergedArgs["rootElementAttributes"] = { style: { backgroundColor: "pink" } };
-        return mergedArgs;
-      })()
+      { commandItems: options, hasOverflow: true, rootElementAttributes: { style: { backgroundColor: "pink" } } }
     }>
     {Template.bind({})}
   </Story>
