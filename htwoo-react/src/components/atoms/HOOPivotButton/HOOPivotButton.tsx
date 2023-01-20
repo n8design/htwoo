@@ -48,9 +48,9 @@ export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonP
       }
       return (
         <button {...this._rootProps} {...this.props.rootElementAttributes as React.HTMLAttributes<HTMLElement>} className={className} onClick={this.props.onClick}>
-          <div className="hoo-pivot-inner" title={this.props.label}>
+          <span className="hoo-pivot-inner" title={this.props.label}>
             {this.props.label}
-          </div>
+          </span>
         </button>
       );
     } catch (err) {
