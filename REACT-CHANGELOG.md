@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.8.0 - 2023-Feb-20
+
+### General
+
+- Fixed bugs in OverflowObserver.ts that supports HOOPivotBar and HOOCommandBar
+
+### ATOMS
+
+- Fixed bug with right icon in HOOButton
+- Fixed bug with HOOIconOverflow; fixed issue with overflow observer
+- Fixed bug with HOOPivotButton; fixed issue with overflow observer
+
+### MOLECULES
+
+- Fixed bug with HOOPivotBar; fixed overflow observer implementation
+- Fixed bug with HOOCommandBar; fixed overflow observer implementation; fixed command bar menu click even with no child menu to fire.
+
+## 1.7.1 - 2023-Jan-11
+
+Fixed issue with packaging in 1.7.0.
+
 ## 1.7.0 - 2023-Jan-10
 
 ### General

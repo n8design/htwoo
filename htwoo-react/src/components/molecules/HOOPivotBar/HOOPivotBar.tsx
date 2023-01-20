@@ -4,6 +4,7 @@ import HOOPivotButton from "../../../components/atoms/HOOPivotButton/HOOPivotBut
 import HOOIconOverflow from "../../../HOOIconOverflow";
 import { IOverflowResizer, OverflowResizer } from "../../common/OverflowObserver";
 import { getRandomString } from "../../common/Common";
+import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../../../HOOFlyoutMenu";
 
 export interface IHOOPivotItem {
   key: number | string;
@@ -53,7 +54,6 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
   constructor(props: IHOOPivotBarProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOPivotBar";
-    props.hasOverflow = props.hasOverflow || false;
     this.state = { showOverflow: false };
     this._overflowResizer = new OverflowResizer(`HOOPivotBarOR_${getRandomString(10)}`);
     this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
@@ -76,12 +76,18 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
 
   private _renderPivotItems() {
     let retVal = null;
+    const pivotButtonAttributes = {...this.props.pivotButtonAttributes, role: "menuitem"};
     try {
       if (this.props.pivotItems) {
         retVal = this.props.pivotItems.map((pi, index) => {
           const isSelected = (pi.key === this.props.selectedKey);
           return (
-            <HOOPivotButton reactKey={pi.key} label={pi.text} isActive={isSelected} onClick={(ev) => { this.props.onClick(ev, pi.key); }} rootElementAttributes={this.props.pivotButtonAttributes} />
+            <HOOPivotButton
+              key={pi.key}
+              label={pi.text}
+              isActive={isSelected}
+              onClick={(ev) => { this.props.onClick(ev, pi.key); }}
+              rootElementAttributes={pivotButtonAttributes} />
           );
         });
       }
@@ -99,14 +105,17 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
         className += " has-overflow";
       }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="menubar">
           {!this.props.hasOverflow &&
             this._renderPivotItems()
           }
           {this.props.hasOverflow &&
-            <div ref={this._overflowContainer} className={`hoo-overflow ${(this.state.showOverflow ? "show-flyout" : "")}`}>
+            <div ref={this._overflowContainer} className={`${this.props.hasOverflow ? "hoo-overflow" : ""}`}>
               {this._renderPivotItems()}
-              <HOOIconOverflow overflow={this.state.showOverflow} />
+              <HOOIconOverflow overflow={this.state.showOverflow} rootElementAttributes={ {role:"menuitem"}}>
+                <menu className="hoo-buttonflyout">
+                </menu>
+              </HOOIconOverflow>
             </div>
           }
         </div>

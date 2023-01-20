@@ -24,6 +24,7 @@ export enum HOOButtonType {
 
 export const Template = (args) => <HOOButton {...args} />;
 
+## Primary Button
 <Canvas>
   <Story
     name="Primary"
@@ -34,6 +35,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Primary Button - Left Icon
 <Canvas>
   <Story
     name="Primary: Left Icon"
@@ -42,8 +44,9 @@ export const Template = (args) => <HOOButton {...args} />;
     }>
     {Template.bind({})}
   </Story>
-</Canvas>
+</Canvas> 
 
+## Primary Button - Right Icon
 <Canvas>
   <Story
     name="Primary: Right Icon"
@@ -54,6 +57,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Primary Button - Disabled
 <Canvas>
   <Story
     name="Primary: Disabled"
@@ -64,6 +68,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Standard Button
 <Canvas>
   <Story
     name="Standard"
@@ -74,16 +79,18 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Icon Button
 <Canvas>
   <Story
     name="Icon"
     args={
-      { type: HOOButtonType.Icon, iconName: "hoo-icon-smile", onClick: () => { alert("Clicked"); } }
+      { type: HOOButtonType.Icon, iconName: "hoo-icon-close", onClick: () => { alert("Clicked"); } }
     }>
     {Template.bind({})}
   </Story>
 </Canvas>
 
+## Primary: Hyperlink Button
 <Canvas>
   <Story
     name="Primary: Hyperlink"
@@ -94,6 +101,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Stanard: Hyperlink Button
 <Canvas>
   <Story
     name="Standard: Hyperlink"
@@ -104,6 +112,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Primary: Compound Button
 <Canvas>
   <Story
     name="Primary: Compound"
@@ -114,6 +123,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Standard: Compound Button
 <Canvas>
   <Story
     name="Standard: Compound"
@@ -124,6 +134,7 @@ export const Template = (args) => <HOOButton {...args} />;
   </Story>
 </Canvas>
 
+## Extending the HOOButton component
 <Canvas>
   <Story
     name="Extending"
@@ -133,3 +144,4 @@ export const Template = (args) => <HOOButton {...args} />;
     {Template.bind({})}
   </Story>
 </Canvas>
+

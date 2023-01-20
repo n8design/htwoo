@@ -15,7 +15,7 @@ export interface IHOOIconOverflowProps extends IHOOStandardProps {
 }
 
 export interface IHOOIconOverflowState {
-  showOverflow: boolean;
+  showMenu: boolean;
 }
 
 export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflowProps, IHOOIconOverflowState> {
@@ -26,7 +26,15 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
   constructor(props: IHOOIconOverflowProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOIconOverflow";
-    this.state = { showOverflow: false };
+    this.state = { showMenu: false };
+  }
+
+  private _showMenu = (): void => {
+    try{
+      this.setState({showMenu: !this.state.showMenu});
+    }catch(err){
+      console.error(`${this.LOG_SOURCE} (_showMenu) - ${err}`);
+    }
   }
 
   public render(): React.ReactElement<IHOOIconOverflowProps> {
@@ -36,7 +44,7 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
       if (this.props.overflow) {
         className += " is-active";
       }
-      if (this.state.showOverflow) {
+      if(this.state.showMenu) {
         className += " show-flyout";
       }
       return (
@@ -46,9 +54,9 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
           className={className}>
           <HOOButton type={HOOButtonType.Icon}
             iconName="hoo-icon-ellipses"
-            onClick={() => { this.setState({ showOverflow: !this.state.showOverflow }); }}
+            onClick={this._showMenu}
             rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
-          {this.state.showOverflow && this.props.children}
+          {this.props.children}
         </div>
       );
     } catch (err) {
