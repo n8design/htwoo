@@ -94,7 +94,48 @@
                     "value": "avocado"
                 }
             }
-        ]
+        ],
+        "cols": null
+    },
+    "checkbox-group-cols": {
+        "items": [
+            {
+                "checkbox": {
+                    "label": "Apple",
+                    "id": "chbg1",
+                    "name": "radio-button-group",
+                    "value": "apple"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Avocado",
+                    "id": "chbg2",
+                    "name": "radio-button-group",
+                    "value": "banana"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Banana",
+                    "id": "chbg3",
+                    "name": "radio-button-group",
+                    "value": "citrus"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Citrus",
+                    "id": "chbg4",
+                    "name": "radio-button-group",
+                    "value": "avocado"
+                }
+            }
+        ],
+        "cols": {
+            "desktop": 2,
+            "mobile": 1
+        }
     },
     "radiobutton-group": {
         "items": [
@@ -131,5 +172,45 @@
                 }
             }
         ]
+    },
+    "radiobutton-group-cols": {
+        "items": [
+            {
+                "radiobutton": {
+                    "label": "Apple",
+                    "id": "rbg1",
+                    "name": "radio-button-group",
+                    "value": "apple"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Avocado",
+                    "id": "rbg2",
+                    "name": "radio-button-group",
+                    "value": "banana"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Banana",
+                    "id": "rbg3",
+                    "name": "radio-button-group",
+                    "value": "citrus"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Citrus",
+                    "id": "rbg4",
+                    "name": "radio-button-group",
+                    "value": "avocado"
+                }
+            }
+        ],
+        "cols": {
+            "desktop": 2,
+            "mobile": 1
+        }
     }
 }
