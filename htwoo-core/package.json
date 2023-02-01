@@ -15,7 +15,8 @@
     "gulp:docs": "gulp docs",
     "pl:version": "patternlab --version",
     "hoo:buildlib": "gulp build:lib",
-    "hoo:exportpatterns": "gulp build:pllib"
+    "hoo:exportpatterns": "gulp build:pllib",
+    "start": "run-p gulp:serve pl:serve"
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
