@@ -1,4 +1,5 @@
-@import 'mixin/grid.mixin';
+@use 'mixin/grid.mixin' as grid;
+
 .demo-item,
 .demo-item2{
 	display: flex;
@@ -10,8 +11,8 @@
 }
 
 .demo-item{
-	@include gridSpan(4);
+	@include grid.gridSpan(4, auto, auto, true);
 }
 .demo-item2{
-	@include gridSpan(6, 7, 2);
+	@include grid.gridSpan(6, 7, 2, true);
 }
