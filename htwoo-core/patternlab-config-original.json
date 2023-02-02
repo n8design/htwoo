@@ -14,7 +14,7 @@
     "mqs": false,
     "find": false,
     "views-all": false,
-    "views-annotations": true,
+    "views-annotations": false,
     "views-code": false,
     "views-new": false,
     "tools-all": false,
@@ -42,12 +42,12 @@
   },
   "paths": {
     "source": {
-      "root": "./src/",
-      "patterns": "./src/_patterns/",
-      "data": "./src/_data/",
-      "meta": "./src/_meta/",
-      "annotations": "./src/_annotations/",
-      "styleguide": "./dist/",
+      "root": "./source/",
+      "patterns": "./source/_patterns/",
+      "data": "./source/_data/",
+      "meta": "./source/_meta/",
+      "annotations": "./source/_annotations/",
+      "styleguide": "dist/",
       "patternlabFiles": {
         "general-header": "views/partials/general-header.mustache",
         "general-footer": "views/partials/general-footer.mustache",
@@ -55,10 +55,10 @@
         "patternSectionSubgroup": "views/partials/patternSectionSubgroup.mustache",
         "viewall": "views/viewall.mustache"
       },
-      "js": "./src/js",
-      "images": "./src/images",
-      "fonts": "./src/fonts",
-      "css": "./src/css"
+      "js": "./source/js",
+      "images": "./source/images",
+      "fonts": "./source/fonts",
+      "css": "./source/css"
     },
     "public": {
       "root": "public/",
@@ -69,7 +69,7 @@
       "js": "public/js",
       "images": "public/images",
       "fonts": "public/fonts",
-      "css": "public/css/"
+      "css": "public/css"
     }
   },
   "patternExtension": "hbs",
@@ -93,22 +93,7 @@
   "theme": {
     "color": "light",
     "density": "compact",
-    "layout": "vertical",
-    "logo": {
-      "text": "",
-      "altText": "Pattern Lab Logo",
-      "url": "/",
-      "srcLight": "styleguide/images/htwoo-logo-vertical.jpg",
-      "srcDark": "styleguide/images/htwoo-logo-vertical.jpg",
-      "width": "255px",
-      "height": "88px"
-    }
-  },
-  "plugins": {
-    "plugin-design": {
-      "enabled": true,
-      "initialized": false
-    }
+    "layout": "vertical"
   },
   "uikits": [
     {
@@ -123,11 +108,11 @@
   "engines": {
     "handlebars": {
       "package": "@pattern-lab/engine-handlebars",
-      "extensions": [
+      "fileExtensions": [
         "handlebars",
         "hbs"
       ],
-      "extend": "helpers/hbs/*.js"
+      "extend": "helpers/*.js"
     }
   }
 }
