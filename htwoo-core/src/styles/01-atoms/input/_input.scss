@@ -157,3 +157,26 @@ input[type="number"]{
 		margin-left: 8px;
 	}
 }
+
+input[type="color"].hoo-input-color{
+	-webkit-appearance: none;
+	height: 2rem;
+	width: 2rem;
+	padding: 0;
+	border: 1px colors.$neutral-450 solid;
+	border-radius: colors.$roundedCorner2;
+
+	
+	&::-webkit-color-swatch-wrapper{
+		padding: 0.25rem;
+	}
+	&::-moz-color-swatch{
+		height: calc(2rem - 0.5rem);
+		width: calc(2rem - 0.5rem);
+		border: none;
+	}
+	&::-webkit-color-swatch{
+		border: none;
+	}
+
+}
