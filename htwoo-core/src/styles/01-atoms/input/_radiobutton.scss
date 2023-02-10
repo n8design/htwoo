@@ -12,7 +12,7 @@
 
 	&:checked + label,
 	&:not(:checked) + label{
-		font-size: core.px2rem(14px);
+		font-size: core.px2rem(16px);
 		line-height: 20px;
 
 		position: relative;
