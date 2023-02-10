@@ -30,7 +30,7 @@
 
 	// in valid 
 	&.is-invalid,
-	&:invalid {
+	&:not(.is-empty):invalid {
 		border-color: colors.$errorText;
 	}
 
