@@ -46,6 +46,15 @@
             "inputSuffix": ".com",
             "placeholder": "A placeholder text"
         },
+        "email": {
+            "placeholder": "John.Doe@example.com"
+        },
+        "phone": {
+            "placeholder": "555-8039"
+        },
+        "url": {
+            "placeholder": "https://example.com"
+        },
         "label": {
             "label": "Label for field x",
             "stateStyle": null,
