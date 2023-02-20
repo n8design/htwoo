@@ -46,6 +46,7 @@ export * from './HOOSplashCardFooter';
 export * from './HOOSplashCardHeader';
 export * from './HOOSplashCardTitle';
 export * from './HOOTeamsSplashCard';
+export * from './HOOTable';
 export * from './HOOTag';
 export * from './HOOTagList';
 export * from './HOOShimmer';
