@@ -1,8 +1,10 @@
-<table class="hoo-table is-collapsable">
+<table class="hoo-table is-collapsible">
     <thead>
-        <tr class="collapsable" data-sectionHeader="all">
+        <tr class="collapsible" data-sectionHeader="all">
             <th class="hoo-table-iconcell" scope="col">
-                {{> atoms-button-icon iconame=iconAction }}
+                {{# closer }}
+                {{> atoms-button-icon }}
+                {{/ closer }}
             </th>
             <th scope="col">Hello</th>
             <th scope="col">World</th>
@@ -11,9 +13,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="collapsable" data-sectionHeader="section1">
+        <tr class="collapsible" data-sectionHeader="section1">
             <th class="hoo-table-iconcell">
-                {{> atoms-button-icon iconame=iconAction }}
+                {{# closer }}
+                {{> atoms-button-icon }}
+                {{/ closer }}
             </th>
             <th colspan="4">
                 <div class="hoo-table-subheader"><span>Lorem, ipsum
@@ -48,9 +52,11 @@
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr class="collapsable" data-sectionHeader="section2">
+        <tr class="collapsible" data-sectionHeader="section2">
             <th class="hoo-table-iconcell">
-                {{> atoms-button-icon iconame=iconAction }}
+                {{# closer }}
+                {{> atoms-button-icon }}
+                {{/ closer }}
             </th>
             <th colspan="4">
                 <div class="hoo-table-subheader"><span>Lorem, ipsum
