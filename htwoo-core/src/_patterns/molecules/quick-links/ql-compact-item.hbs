@@ -1,5 +1,7 @@
 {{#quick-link}}
+{{#if href }}
 <a class="hoo-qllink" href="?">
+{{/if}}
     <div class="hoo-qlcompact">
         {{#if qlimg}}
         {{> atoms-ql-icon }}
@@ -21,5 +23,7 @@
                 {{!-- </li> --}}
         </menu>
     </div>
+{{#if href }}
 </a>
+{{/if}}
 {{/quick-link}}

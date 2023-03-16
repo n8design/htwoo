@@ -5,10 +5,6 @@
     display: block;
 
 	text-decoration: none;
-
-	&:active {
-		outline: 1px colors.$neutral-700 solid;
-	}
 }
 
 
@@ -61,6 +57,11 @@
 	align-content: center;
 	align-items: stretch;
 	gap: core.px2rem(12px);
+
+	&:active {
+		outline: 1px colors.$neutral-700 solid;
+	}
+	
 	.hoo-qlinfo {
 		flex-direction: row;
 		align-items: center;

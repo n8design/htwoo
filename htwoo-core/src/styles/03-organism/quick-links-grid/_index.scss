@@ -5,6 +5,10 @@
     .hoo-qllink{
         @include grid.gridSpan(2);
     }
+    .hoo-qlcompact,
+    .hoo-qllist{
+        @include grid.gridSpan(2);
+    }
 }
 .CanvasSection-xl12{
     .hoo-ql-grid{
