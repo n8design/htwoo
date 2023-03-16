@@ -7,3 +7,15 @@
 	@return $out;
 
 }
+
+@mixin lineClamp($lines, $line-height: 1rem){
+	display: -webkit-box;
+	overflow: hidden;
+
+	max-height: $line-height*$lines;
+
+	text-overflow: ellipsis;
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+}

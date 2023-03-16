@@ -1,0 +1,194 @@
+@use "00-base/mixin/core.mixin";
+@use "00-base/colors/colors";
+
+.hoo-qllink {
+    display: block;
+
+	text-decoration: none;
+
+	&:active {
+		outline: 1px colors.$neutral-700 solid;
+	}
+}
+
+
+.hoo-qlinfo {
+	display: flex;
+	flex-direction: column;
+
+	margin-right: core.px2rem(12px);
+
+	align-content: center;
+}
+
+.hoo-ql-media {
+	display: flex;
+	justify-content: center;
+
+	width: core.px2rem(48px);
+	height: core.px2rem(48px);
+
+	background-color: colors.$neutral-050;
+
+	align-items: center;
+
+	svg {
+		width: 26px;
+		height: auto;
+	}
+}
+
+
+.hoo-qlcompact {
+	font-size: core.px2rem(14px);
+
+	position: relative;
+
+	display: flex;
+	overflow: hidden;
+	flex-direction: row;
+
+	box-sizing: border-box;
+	height: core.px2rem(48px);
+
+	cursor: pointer;
+
+	color: colors.$neutral-700;
+	border: 1px transparent solid;
+	// border-style: inset;
+	border-radius: core.px2rem(2px);
+
+	align-content: center;
+	align-items: stretch;
+	gap: core.px2rem(12px);
+	.hoo-qlinfo {
+		flex-direction: row;
+		align-items: center;
+	}
+	&:hover {
+		border-color: 1px colors.$theme-100 solid;
+	}
+
+	.hoo-qltitle {
+		@include core.lineClamp(2, core.px2rem(21px));
+	}
+
+	&.mode-edit {
+		&:hover {
+			border-color: colors.$neutral-350;
+
+			.hoo-qlmenu {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.hoo-qlabout {
+				display: none;
+			}
+		}
+	}
+
+}
+
+.hoo-qltitle {
+	font-weight: 600;
+	line-height: core.px2rem(20px);
+
+	margin-bottom: core.px2rem(2px);
+
+	text-decoration: inherit;
+
+	color: colors.$neutral-700;
+
+	block-size: min-content;
+}
+
+.hoo-qllist {
+	font-size: core.px2rem(14px);
+
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+
+	box-sizing: border-box;
+	height: 100%;
+	min-height: core.px2rem(40px);
+	padding: core.px2rem(10px);
+	padding-left: 0;
+	padding-left: .75rem;
+
+	cursor: pointer;
+
+	color: colors.$neutral-700;
+	border: 1px transparent solid;
+
+	align-items: flex-start;
+
+	@supports (gap: core.px2rem(3px)) {
+		gap: core.px2rem(3px);
+	}
+
+	.hoo-ql-media {
+		width: core.px2rem(22px);
+		height: core.px2rem(22px);
+		margin-right: core.px2rem(12px);
+
+		.hoo-icon-svg {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+		}
+	}
+
+	.hoo-qltitle {
+		@include core.lineClamp(1, core.px2rem(20px));
+	}
+
+	.hoo-qldesc {
+		@include core.lineClamp(2, core.px2rem(20px));
+	}
+
+	&.mode-edit {
+		&:hover {
+			border-color: colors.$neutral-350;
+
+			.hoo-qlmenu {
+				display: flex;
+			}
+
+			.hoo-qlabout {
+				display: none;
+			}
+		}
+	}
+
+	&:hover {
+		color: colors.$theme-900;
+		border-color: 1px colors.$theme-100 solid;
+
+		.hoo-qlabout {
+			display: flex;
+		}
+	}
+}
+
+.hoo-qlmenu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	display: none;
+	flex-direction: column;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+}
+
+.hoo-qlabout {
+	@extend .hoo-qlmenu;
+}
