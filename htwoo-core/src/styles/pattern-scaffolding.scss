@@ -1,7 +1,7 @@
-@import "00-base/colors/colors";
-@import "00-base/global.vars";
-@import "00-base/mixin/_core.mixin.scss";
-@import "00-styleguide/index";
+@use "00-base/colors/colors" as color;
+@use "00-base/global.vars" as global;
+@use "00-base/mixin/_core.mixin.scss" as core;
+@use "00-styleguide/index" as styleguide;
 
 /**
  * This stylesheet is for styles you want to include only when displaying demo

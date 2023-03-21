@@ -1,5 +1,5 @@
 @use 'core';
-@use "colors/colors";
+@use 'colors/colors';
 
 $tooltip-font-size: colors.$smallFontSize !default;
 $tooltip-max-width: 200px !default;
