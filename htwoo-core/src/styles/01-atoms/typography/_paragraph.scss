@@ -1,4 +1,4 @@
-@use "00-base/mixin/typography.mixin";
+@use "../../00-base/mixin/typography.mixin";
 
 p{
     @include typography.typography(p);
