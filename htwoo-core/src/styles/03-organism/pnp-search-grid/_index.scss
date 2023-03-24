@@ -6,9 +6,7 @@
     .CanvasSection-xl12 & {
         grid-template-columns: repeat(12, 1fr);
 
-        .CanvasVerticalSection & {
-            grid-template-columns: repeat(4, 1fr);
-        }
+
     }
 
     .CanvasSection-xl8 & {
@@ -41,6 +39,17 @@
         color: white;
     }
 }
+
+@media screen and (min-width: 1280px) {
+    .CanvasVerticalSection {
+        .CanvasSection-xl12{
+            .hoo-pnpsearch-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
 
 .CanvasSection-xl12,
 .CanvasSection-xl8,
