@@ -1,5 +1,5 @@
 <nav class="hoo-nav">
-    <ul role="tree" class="hoo-nav-list" role="tree">
+    <menu role="tree" class="hoo-nav-list" role="tree">
         {{#each navItems }}
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" {{#if isCurrent }}aria-current="page" {{/if}}>
             <div class="hoo-navitem-text">
@@ -14,7 +14,7 @@
                 <a href="{{ link }}" class="hoo-navitem-link">{{ text }}</a>
                 {{#if (isdefined subentries) }}
             </div>
-            <ul class="hoo-nav-listsub" role="group">
+            <menu class="hoo-nav-listsub" role="group">
                 {{/if}}
                 {{#each subentries }}
                 <li class="hoo-navitem">
@@ -24,11 +24,11 @@
                 </li>
                 {{/each}}
                 {{#if (isdefined subentries) }}
-            </ul>
+            </menu>
             {{/if}}
         </li>
         {{/each}}
-    </ul>
+    </menu>
     {{!-- <ul class="hoo-nav-list">
         <li class="hoo-nav-item">
             <a href="" class="hoo-nav-link">aaa</a>
