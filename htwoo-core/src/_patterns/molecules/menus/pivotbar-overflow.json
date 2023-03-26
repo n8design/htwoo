@@ -70,7 +70,8 @@
     "overflowButton": {
         "iconDown": "icon-ellipses",
         "label": "New Item",
-        "ddItems": [
-        ]
+        "contextMenu": {
+            "contextItems": []
+        }
     }
 }
