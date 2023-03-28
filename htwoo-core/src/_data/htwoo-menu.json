@@ -113,64 +113,80 @@
     "commandBar": {
         "cmdBarButtons": [
             {
+                "iconAction": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item",
+                "contextMenu": {
+                    "contextItems": [
+                        {
+                            "button": {
+                                "label": "Email message",
+                                "iconname": "icon-ninjacat"
+                            }
+                        },
+                        {
+                            "button": {
+                                "label": "Calendar Event",
+                                "iconname": "icon-minus"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "iconAction": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item"
+            },
+            {
+                "iconAction": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item",
+                "contextMenu": {
+                    "contextItems": [
+                        {
+                            "button": {
+                                "label": "Email message",
+                                "iconname": "icon-ninjacat"
+                            }
+                        },
+                        {
+                            "button": {
+                                "label": "Calendar Event",
+                                "iconname": "icon-minus"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "iconAction": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item"
+            },
+            {
                 "icon": "icon-plus",
                 "iconDown": "icon-arrow-down",
                 "label": "New Item",
                 "contextMenu": {
                     "contextItems": [
                         {
-                            "label": "Email message",
-                            "icon": "icon-ninjacat"
+                            "button": {
+                                "label": "Email message",
+                                "iconname": "icon-ninjacat"
+                            }
                         },
                         {
-                            "label": "Calendar Event",
-                            "icon": "icon-minus"
+                            "button": {
+                                "label": "Calendar Event",
+                                "iconname": "icon-minus"
+                            }
                         }
                     ]
                 }
             },
             {
-                "icon": "icon-plus",
-                "iconDown": "icon-arrow-down",
-                "label": "New Item"
-            },
-            {
-                "icon": "icon-plus",
-                "iconDown": "icon-arrow-down",
-                "label": "New Item",
-                "ddItems": [
-                    {
-                        "label": "Email message",
-                        "icon": "icon-ninjacat"
-                    },
-                    {
-                        "label": "Calendar Event",
-                        "icon": "icon-minus"
-                    }
-                ]
-            },
-            {
-                "icon": "icon-plus",
-                "iconDown": "icon-arrow-down",
-                "label": "New Item"
-            },
-            {
-                "icon": "icon-plus",
-                "iconDown": "icon-arrow-down",
-                "label": "New Item",
-                "ddItems": [
-                    {
-                        "label": "Email message",
-                        "icon": "icon-ninjacat"
-                    },
-                    {
-                        "label": "Calendar Event",
-                        "icon": "icon-minus"
-                    }
-                ]
-            },
-            {
-                "icon": "icon-plus",
+                "iconAction": "icon-plus",
                 "iconDown": "icon-arrow-down",
                 "label": "New Item"
             }
