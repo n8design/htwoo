@@ -1,7 +1,7 @@
 <menu class="hoo-buttonflyout">
-    {{# contextItems }}
+    {{#each contextItems }}
     <li class="hoo-buttonflyout-item">
-        {{> atoms-button-action iconname=this.icon label=this.label }}
+        {{> atoms-button-action }}
     </li>
-    {{/ contextItems }}
+    {{/each }}
 </menu>

@@ -5,6 +5,27 @@
         "description": "Primary with description",
         "aria-label": "Button"
     },
+    "buttonCmd": {
+        "iconAction": "icon-plus",
+        "iconDown": "icon-arrow-down",
+        "label": "New Item",
+        "contextMenu": {
+            "contextItems": [
+                {
+                    "button": {
+                        "label": "Email message",
+                        "iconname": "icon-ninjacat"
+                    }
+                },
+                {
+                    "button": {
+                        "label": "Calendar Event",
+                        "iconname": "icon-minus"
+                    }
+                }
+            ]
+        }
+    },
     "contextMenu": {
         "contextItems": [
             {

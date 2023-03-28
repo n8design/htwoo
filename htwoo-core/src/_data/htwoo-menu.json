@@ -52,5 +52,133 @@
                 "link": "#"
             }
         ]
+    },
+    "menu": {
+        "menuItems": [
+            {
+                "title": "Coffee",
+                "isActive": true
+            },
+            {
+                "title": "Matcha",
+                "isActive": false
+            },
+            {
+                "title": "Ice Tea",
+                "isActive": false
+            },
+            {
+                "title": "Aqua Minerale",
+                "isActive": false
+            },
+            {
+                "title": "Earl Grey",
+                "isActive": false
+            },
+            {
+                "title": "Darjeeling tea",
+                "isActive": false
+            },
+            {
+                "title": "Chai Latte",
+                "isActive": false
+            },
+            {
+                "title": "Gin Tonic",
+                "isActive": false
+            }
+        ],
+        "overflowButton": {
+            "iconDown": "icon-ellipses",
+            "label": "New Item",
+            "contextMenu": {
+                "contextItems": []
+            }
+        }
+    },
+    "contextItems": [
+        {
+            "button": {
+                "label": "Email message",
+                "iconname": "icon-ninjacat"
+            }
+        },
+        {
+            "button": {
+                "label": "Calendar Event",
+                "iconname": "icon-minus"
+            }
+        }
+    ],
+    "commandBar": {
+        "cmdBarButtons": [
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item",
+                "contextMenu": {
+                    "contextItems": [
+                        {
+                            "label": "Email message",
+                            "icon": "icon-ninjacat"
+                        },
+                        {
+                            "label": "Calendar Event",
+                            "icon": "icon-minus"
+                        }
+                    ]
+                }
+            },
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item"
+            },
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item",
+                "ddItems": [
+                    {
+                        "label": "Email message",
+                        "icon": "icon-ninjacat"
+                    },
+                    {
+                        "label": "Calendar Event",
+                        "icon": "icon-minus"
+                    }
+                ]
+            },
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item"
+            },
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item",
+                "ddItems": [
+                    {
+                        "label": "Email message",
+                        "icon": "icon-ninjacat"
+                    },
+                    {
+                        "label": "Calendar Event",
+                        "icon": "icon-minus"
+                    }
+                ]
+            },
+            {
+                "icon": "icon-plus",
+                "iconDown": "icon-arrow-down",
+                "label": "New Item"
+            }
+        ],
+        "overflowButton": {
+            "iconDown": "icon-ellipses",
+            "label": "New Item",
+            "ddItems": []
+        }
     }
 }
