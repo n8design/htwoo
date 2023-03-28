@@ -1,5 +1,6 @@
 ---
 title: Splash Card Description
+order: 30
 ---
 
 ### SCSS Imports

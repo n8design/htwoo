@@ -1,5 +1,5 @@
 ---
-title: Pivot Button active
+title: Pivot Button - active
 order: 99
 ---
 

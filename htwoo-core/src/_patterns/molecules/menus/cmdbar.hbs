@@ -1,7 +1,7 @@
 {{#commandBar}}
 <menu class="hoo-cmdbar">
-    {{# cmdBarButtons }}
-    {{> atoms-button-cmd }}
-    {{/ cmdBarButtons }}
+    {{#each cmdBarButtons }}
+    {{> atoms-button-cmd buttonCmd=this }}
+    {{/each }}
 </menu>
 {{/commandBar}}
