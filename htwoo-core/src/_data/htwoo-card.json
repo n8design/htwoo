@@ -22,7 +22,6 @@
         },
         "secondary-button": {
             "button": {
-                "classname": "hoo-button",
                 "label": "Call for action"
             }
         }
