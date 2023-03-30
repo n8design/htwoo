@@ -1,22 +1,24 @@
+@use "core.mixin";
+
 @mixin gridBase() {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    margin: auto px2rem(8px);
+    margin: auto core.px2rem(8px);
 
     /* > 1366 pixel */
-    column-gap: px2rem(32px);
-    row-gap: px2rem(32px);
+    column-gap: core.px2rem(32px);
+    row-gap: core.px2rem(32px);
 
     /* < 1366 pixel */
     @media screen and (max-width: 1366px) {
-        column-gap: px2rem(24px);
-        row-gap: px2rem(24px);
+        column-gap: core.px2rem(24px);
+        row-gap: core.px2rem(24px);
     }
 
     /* <= 640 pixel */
     @media screen and (max-width: 640px) {
-        column-gap: px2rem(16px);
-        row-gap: px2rem(16px);
+        column-gap: core.px2rem(16px);
+        row-gap: core.px2rem(16px);
     }
 }
 

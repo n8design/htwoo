@@ -8,20 +8,6 @@
             "SASSVariable": "$neutral-000"
         },
         {
-            "msftName": "buttonBackgroundChecked",
-            "msftNameLong": "buttonBackgroundChecked",
-            "colorValue": "var(--buttonBackgroundChecked)",
-            "designToken": "neutral-350",
-            "SASSVariable": "$neutral-350"
-        },
-        {
-            "msftName": "buttonBackgroundCheckedHovered",
-            "msftNameLong": "Button Background Checked Hovered",
-            "colorValue": "var(--buttonBackgroundCheckedHovered)",
-            "designToken": "neutral-350",
-            "SASSVariable": "$neutral-350"
-        },
-        {
             "msftName": "Button Background Disabled",
             "msftNameLong": "buttonBackgroundDisabled",
             "colorValue": "var(--buttonBackgroundDisabled)",
@@ -36,6 +22,14 @@
             "SASSVariable": "$neutral-100"
         },
         {
+            "msftName": "buttonBorderDisabled",
+            "msftNameLong": "buttonBorderDisabled",
+            "colorValue": "var(--buttonBorderDisabled)",
+            "designToken": "neutral-100",
+            "SASSVariable": "$neutral-100"
+        },
+
+        {
             "msftName": "buttonBackgroundPressed",
             "msftNameLong": "Button Background Pressed",
             "colorValue": "var(--buttonBackgroundPressed)",
@@ -43,18 +37,32 @@
             "SASSVariable": "$neutral-200"
         },
         {
+            "msftName": "buttonBackgroundCheckedHovered",
+            "msftNameLong": "Button Background Checked Hovered",
+            "colorValue": "var(--buttonBackgroundCheckedHovered)",
+            "designToken": "neutral-200",
+            "SASSVariable": "$neutral-200"
+        },
+        {
+            "msftName": "buttonBackgroundChecked",
+            "msftNameLong": "buttonBackgroundChecked",
+            "colorValue": "var(--buttonBackgroundChecked)",
+            "designToken": "neutral-350",
+            "SASSVariable": "$neutral-350"
+        },
+        {
+            "msftName": "buttonTextDisabled",
+            "msftNameLong": "Button Text Disabled",
+            "colorValue": "var(--buttonTextDisabled)",
+            "designToken": "neutral-400",
+            "SASSVariable": "$neutral-400"
+        },
+        {
             "msftName": "buttonBorder",
             "msftNameLong": "Button Border",
             "colorValue": "var(--buttonBorder)",
             "designToken": "neutral-450",
             "SASSVariable": "$neutral-450"
-        },
-        {
-            "msftName": "buttonBorderDisabled",
-            "msftNameLong": "buttonBorderDisabled",
-            "colorValue": "var(--buttonBorderDisabled)",
-            "designToken": "neutral-100",
-            "SASSVariable": "$neutral-100"
         },
         {
             "msftName": "buttonText",
@@ -71,20 +79,6 @@
             "SASSVariable": "$neutral-800"
         },
         {
-            "msftName": "buttonTextCheckedHovered",
-            "msftNameLong": "buttonTextCheckedHovered",
-            "colorValue": "var(--buttonTextCheckedHovered)",
-            "designToken": "neutral-900",
-            "SASSVariable": "$neutral-900"
-        },
-        {
-            "msftName": "buttonTextDisabled",
-            "msftNameLong": "Button Text Disabled",
-            "colorValue": "var(--buttonTextDisabled)",
-            "designToken": "neutral-400",
-            "SASSVariable": "$neutral-400"
-        },
-        {
             "msftName": "buttonTextHovered",
             "msftNameLong": "Button Text Hovered",
             "colorValue": "var(--buttonTextHovered)",
@@ -97,6 +91,13 @@
             "colorValue": "var(--buttonTextPressed)",
             "designToken": "neutral-800",
             "SASSVariable": "$neutral-800"
+        },
+        {
+            "msftName": "buttonTextCheckedHovered",
+            "msftNameLong": "buttonTextCheckedHovered",
+            "colorValue": "var(--buttonTextCheckedHovered)",
+            "designToken": "neutral-900",
+            "SASSVariable": "$neutral-900"
         }
     ],
     "meta": {

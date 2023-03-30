@@ -1,14 +1,17 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 .hoo-button {
 	display: flex;
 	justify-content: center;
 
 	padding: 0 1rem;
 
-	color: $neutral-700;
-	border: 1px $neutral-450 solid;
-	border-radius: $roundedCorner2;
+	color: colors.$neutral-700;
+	border: 1px colors.$neutral-450 solid;
+	border-radius: colors.$roundedCorner2;
 	outline: none;
-	background-color: $neutral-000;
+	background-color: colors.$neutral-000;
 
 	align-items: center;
 	flex-wrap: nowrap;
@@ -16,19 +19,19 @@
 	cursor: pointer;
 	
 	&:hover {
-		background-color: $neutral-100;
+		background-color: colors.$neutral-100;
 	}
 	&:active{
-		background-color: $neutral-200;
+		background-color: colors.$neutral-200;
 	}
 
 	&[disabled],
 	&:disabled {
 		pointer-events: none;
 
-		color: $neutral-400;
-		border-color: $neutral-100;
-		background-color: $neutral-100;
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
 	}
 	&.is-reversed{
 		flex-direction: row-reverse;
@@ -46,15 +49,15 @@
 }
 
 .hoo-button-label {
-	font-size: px2rem(14px);
+	font-size: core.px2rem(14px);
 	font-weight: 600;
-	line-height: px2rem(20px);
+	line-height: core.px2rem(20px);
 
 	display: flex;
 	justify-content: center;
 
-	height: px2rem(30px);
-	margin: 0 px2rem(4px);
+	height: core.px2rem(30px);
+	margin: 0 core.px2rem(4px);
 
 	align-items: center;
 	white-space: nowrap;
@@ -64,20 +67,20 @@
 .hoo-button-primary {
 	@extend .hoo-button;
 
-	color: $neutral-000;
+	color: colors.$neutral-000;
 	// border-color: Fixing border because the color is different
-	border-color: $theme-600;
-	background-color: $theme-600;
+	border-color: colors.$theme-600;
+	background-color: colors.$theme-600;
 
 	&:hover {
-		color: $neutral-000;
-		border-color: $theme-700;
-		background-color: $theme-700;
+		color: colors.$neutral-000;
+		border-color: colors.$theme-700;
+		background-color: colors.$theme-700;
 	}
 
 	&:active {
-		border-color: $theme-800;
-		background-color: $theme-800;
+		border-color: colors.$theme-800;
+		background-color: colors.$theme-800;
 	}
 }
 
@@ -86,7 +89,7 @@
 
 	flex-direction: column;
 
-	padding: px2rem(16px) px2rem(12px);
+	padding: core.px2rem(16px) core.px2rem(12px);
 
 	align-items: flex-start;
 
@@ -99,11 +102,11 @@
 
 		height: 1em;
 		margin: 0;
-		margin-bottom: px2rem(5px);
+		margin-bottom: core.px2rem(5px);
 	}
 
 	&-desc {
-		font-size: px2rem(10px);
+		font-size: core.px2rem(10px);
 		font-weight: normal;
 	}
 }
@@ -113,7 +116,7 @@
 
 	flex-direction: column;
 
-	padding: px2rem(16px) px2rem(12px);
+	padding: core.px2rem(16px) core.px2rem(12px);
 
 	align-items: flex-start;
 
@@ -126,11 +129,11 @@
 
 		height: 1em;
 		margin: 0;
-		margin-bottom: px2rem(5px);
+		margin-bottom: core.px2rem(5px);
 	}
 
 	&-desc {
-		font-size: px2rem(10px);
+		font-size: core.px2rem(10px);
 		font-weight: normal;
 	}
 }
@@ -153,7 +156,7 @@ a.hoo-button {
 	}
 
 	&:hover {
-		color: $buttonText;
+		color: colors.$buttonText;
 	}
 }
 
@@ -171,14 +174,14 @@ a.hoo-button-primary {
 	flex-shrink: 1;
 
 	&:hover {
-		color: $neutral-000;
-		border-color: $theme-700;
-		background-color: $theme-700;
+		color: colors.$neutral-000;
+		border-color: colors.$theme-700;
+		background-color: colors.$theme-700;
 	}
 
 	&:active {
-		border-color: $theme-800;
-		background-color: $theme-800;
+		border-color: colors.$theme-800;
+		background-color: colors.$theme-800;
 	}
 }
 

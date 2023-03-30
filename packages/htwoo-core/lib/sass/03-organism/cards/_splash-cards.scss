@@ -1,3 +1,6 @@
+@use "00-base/mixin/core.mixin";
+@use "00-base/mixin/elevation.mixin";
+
 .hoo-splashcard{
 	display: flex;
 	flex-direction: column;
@@ -21,7 +24,7 @@
 	margin-bottom: 2rem;
 }
 .hoo-splashcard-title{
-	font-size: px2rem(18px);
+	font-size: core.px2rem(18px);
 
 	display: block;
 
@@ -31,8 +34,8 @@
 	text-align: center;
 }
 .hoo-splashcard-desc{
-	font-size: px2rem(14px);
-	line-height: px2rem(20px);
+	font-size: core.px2rem(14px);
+	line-height: core.px2rem(20px);
 
 	margin-top: 0;
 	margin-bottom: 0;
@@ -44,11 +47,11 @@
 	flex-direction: column;
 	align-self: center;
 
-	width: px2rem(290px);
+	width: core.px2rem(290px);
 	margin: 2rem auto;
 
 	gap: .5rem;
 	& > *{
-		@include elevation(4);
+		@include elevation.elevation(4);
 	}
 }

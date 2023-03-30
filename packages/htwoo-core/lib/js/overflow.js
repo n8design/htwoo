@@ -41,7 +41,6 @@ const getOverflowItems = (targetWidth, children, curContainer, itemIndex) => {
         }
     }
 
-    // if 
     if(overflowControl.children.length !== 0){
     
         var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');

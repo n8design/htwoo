@@ -1,55 +1,58 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
 .hoo-buttonaction{
 	display: inline-flex;
 
-	height: px2rem(44px);
+	height: core.px2rem(44px);
 	margin: 0;
-	padding: 0 px2rem(4px);
+	padding: 0 core.px2rem(4px);
 
 	white-space: nowrap;
 
 	border: none;
-	background-color: $neutral-000;
-    color: $neutral-700;
+	background-color: colors.$neutral-000;
+    color: colors.$neutral-700;
 
 	align-items: center;
 
     cursor: pointer;
 
     .hoo-button-icon{
-        line-height: px2rem(36px);
+        line-height: core.px2rem(36px);
     
         display: flex;
         justify-content: center;
     
-        width: px2rem(24px);
-        height: px2rem(24px);
+        width: core.px2rem(24px);
+        height: core.px2rem(24px);
     
-        color: $theme-600;
+        color: colors.$theme-600;
     
         align-items: center;
     
     }
     
     .hoo-button-label{
-        font-size: px2rem(14px);
-        line-height: px2rem(36px);
+        font-size: core.px2rem(14px);
+        line-height: core.px2rem(36px);
     
         box-sizing: border-box;
-        padding: 0 px2rem(4px);
+        padding: 0 core.px2rem(4px);
     
         white-space: nowrap;
         font-weight: 400;
     }    
 
 	&:hover{
-		color: $theme-900;
+		color: colors.$theme-900;
 	}
 
 	&:active{
 		color: inherit;
 		.hoo-buttonaction-icon{
 			// color: $CommandLinksPressed;
-			color: $theme-900;
+			color: colors.$theme-900;
 		}
 	}
 }

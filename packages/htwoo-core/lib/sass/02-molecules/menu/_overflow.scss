@@ -1,6 +1,8 @@
+@use "00-base/mixin/core.mixin";
+
 .hoo-overflow {
     white-space: wrap;
-    max-height: px2rem(48px);
+    max-height: core.px2rem(48px);
     display: flex;
     flex-wrap: wrap;
     min-width: 100%;
@@ -9,7 +11,7 @@
 .has-overflow {
     position: relative;
 
-    min-height: px2rem(46px);
+    min-height: core.px2rem(46px);
 
     // &>.hoo-overflow {
     //     position: fixed;
@@ -25,7 +27,7 @@
         // position: absolute;
         // right: 0;
         order: 999;
-        height: px2rem(44px);
+        height: core.px2rem(44px);
         visibility: hidden;
 
         &.is-active {

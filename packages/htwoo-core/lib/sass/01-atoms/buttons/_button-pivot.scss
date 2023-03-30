@@ -1,3 +1,7 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/animations";
+@use "00-base/mixin/core.mixin";
+
 .hoo-button-pivot{
 
 	padding: 0;
@@ -6,7 +10,7 @@
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	height: px2rem(44px);
+	height: core.px2rem(44px);
 	text-rendering: optimizeLegibility;
 
 	&.is-active{
@@ -25,9 +29,9 @@
 				height: 2px;
 
 				content: "";
-				transition: all $transition-timing ease-in-out;
+				transition: all animations.$transition-timing ease-in-out;
 
-				background-color: $theme-600;
+				background-color: colors.$theme-600;
 			}
 
 			&:hover{
@@ -46,17 +50,17 @@
 
 .hoo-pivot-inner{
 	font-size: 1rem;
-	line-height: px2rem(44px);
+	line-height: core.px2rem(44px);
 
 	position: relative;
 
-	color: $neutral-500;
+	color: colors.$neutral-500;
 
 	display: flex;
 
 	box-sizing: border-box;
 	max-width: 100%;
-	padding: 0 px2rem(8px);
+	padding: 0 core.px2rem(8px);
 
 	transition: max-width .25s ease-in;
 	text-align: center;
