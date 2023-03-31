@@ -1,0 +1,109 @@
+{
+    "qlimg": {
+        "src": "https://via.placeholder.com/48/000000/FFFFFF"
+    },
+    "qlsvg": {
+        "src": "../../images/icons.svg#icon-ninjacat"
+    },
+    "quick-link": {
+        "qlimg": {
+            "src": "https://via.placeholder.com/48/000000/FFFFFF"
+        },
+        "title": "Quick-link title",
+        "description": "Quick-links description lorem ipsum dolor sit amet",
+        "icon-close": "",
+        "icon-move": ""
+    },
+    "quick-links": [
+        {
+            "qlimg": {
+                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlsvg": {
+                "src": "../../images/icons.svg#icon-ninjacat"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlimg": {
+                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlsvg": {
+                "src": "../../images/icons.svg#icon-ninjacat"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlimg": {
+                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlsvg": {
+                "src": "../../images/icons.svg#icon-ninjacat"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlimg": {
+                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlsvg": {
+                "src": "../../images/icons.svg#icon-ninjacat"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlimg": {
+                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        },
+        {
+            "qlsvg": {
+                "src": "../../images/icons.svg#icon-ninjacat"
+            },
+            "title": "Quick-link title",
+            "description": "Quick-links description lorem ipsum dolor sit amet",
+            "icon-close": "",
+            "icon-move": ""
+        }
+    ]
+}

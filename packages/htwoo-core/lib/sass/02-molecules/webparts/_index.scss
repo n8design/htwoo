@@ -1,0 +1,38 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
+.hoo-webpart-header {
+    margin: 0 2rem 1rem 0;
+    font-size: core.px2rem(20px);
+	font-weight: 600;
+
+    text-overflow: ellipsis;
+    
+    color: colors.$neutral-700;
+
+    div {
+        outline: none;
+        color: currentColor;    
+
+        &:empty {
+
+            &[contenteditable="false"] {
+                // &::before {
+                //     content: attr(placeholder);
+                // }
+            }
+
+            &[contenteditable="true"] {
+                &:before {
+                    content: attr(placeholder);
+
+                    color: colors.$neutral-400;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: text;
+        }
+    }
+}

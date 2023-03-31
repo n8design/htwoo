@@ -1,0 +1,32 @@
+@use '../../00-base/mixin/grid.mixin' as grid;
+
+.hoo-ql-grid{
+    @include grid.gridBase();
+    .hoo-qllink{
+        @include grid.gridSpan(2);
+    }
+    .hoo-qlcompact,
+    .hoo-qllist{
+        @include grid.gridSpan(2);
+    }
+}
+.CanvasSection-xl12{
+    .hoo-ql-grid{
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+.CanvasSection-xl8{
+    .hoo-ql-grid{
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+.CanvasSection-xl6{
+    .hoo-ql-grid{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+.CanvasSection-xl4{
+    .hoo-ql-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

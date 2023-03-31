@@ -1,28 +1,33 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/lists.mixin";
+@use "00-base/mixin/core.mixin";
+@use "00-base/mixin/elevation.mixin";
+
 .hoo-buttonflyout{
 	@extend %listReset;
 
 	display: inline-block;
 	flex-direction: column;
 
-	border: 1px $neutral-450;
-	background-color: $neutral-000;
+	border: 1px colors.$neutral-450;
+	background-color: colors.$neutral-000;
 	cursor: pointer;
 
-	@include elevation(4);
+	@include elevation.elevation(4);
 	z-index: 400;
 	.hoo-buttonaction{
 		width: 100%;
 		height: auto;
-		min-height: px2rem(36px);
+		min-height: core.px2rem(36px);
 		padding-right: 3rem;
 		&:hover{
-			background-color: $neutral-100;
+			background-color: colors.$neutral-100;
 			.hoo-button-label{
-				color: $neutral-700;
+				color: colors.$neutral-700;
 			}
 		}
 		&:active{
-			color: $neutral-800;
+			color: colors.$neutral-800;
 		}
 	}
 }

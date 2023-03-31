@@ -1,0 +1,226 @@
+@use 'sass:math';
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+@use "00-base/mixin/elevation.mixin";
+
+$arrow-size: .75;
+$arrow-offset: math.div($arrow-size,2) * 1em;
+
+
+@mixin ttev($depth: 16) {
+	$d1: math.div($depth, 2);
+	$d2: $depth * 1;
+	// ($depth*1px)
+	// box-shadow: 0 $d1 * 1px $d2 * 1px 0 $neutral-400,
+	// 0 #{($depth*0.1px)} #{($depth*0.1*3px)} 0 $neutral-400;
+
+	filter: drop-shadow(0 0 .25em colors.$neutral-400);
+
+	// 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+}
+
+%arrow {
+	// filter: drop-shadow(2px 2px 5px $neutral-000);
+	@include ttev;
+
+	position: absolute;
+
+	display: block;
+
+	box-sizing: border-box;
+	width: $arrow-size * 1em;
+	height: $arrow-size * 1em;
+
+	content: "";
+	transform: rotate(45deg);
+	transform-origin: center center;
+
+	border-top: 1px colors.$neutral-300 solid;
+	border-right: 1px colors.$neutral-000 solid;
+	border-bottom: 1px colors.$neutral-000 solid;
+	border-left: 1px colors.$neutral-300 solid;
+	background-color: colors.$neutral-000;
+
+	clip-path: polygon(0% 0, calc(100% + 1px) 0%, 0% calc(100% + 1px));
+}
+
+.hoo-tooltip {
+	font-size: core.px2rem(14px);
+
+	display: inline-block;
+
+	width: auto;
+	height: auto;
+	padding: .5em;
+	box-sizing: border-box;
+
+	&.top-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: -1*$arrow-offset;
+				left: calc(50% - #{$arrow-offset});
+			}
+		}
+	}
+
+	&.top-left {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: -1*$arrow-offset;
+				left: $arrow-offset;
+			}
+		}
+	}
+
+	&.top-right {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: -1*$arrow-offset;
+				right: $arrow-offset;
+			}
+		}
+	}
+
+	&.bottom-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				bottom: -1*$arrow-offset;
+				left: calc(50% - #{$arrow-offset});
+
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+	&.bottom-left {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				bottom: -1*$arrow-offset;
+				left: $arrow-offset;
+
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+	&.bottom-right {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				right: $arrow-offset;
+				bottom: -1*$arrow-offset;
+
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+	&.right-top {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: $arrow-offset;
+				right: -1*$arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.right-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: calc(50% - #{$arrow-offset});
+				right: -1*$arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.right-bottom {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				right: -1*$arrow-offset;
+				bottom: $arrow-offset;
+
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&.left-top {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: $arrow-offset;
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&.left-center {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				top: calc(50% - #{$arrow-offset});
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&.left-bottom {
+		.hoo-tooltip-content {
+			&:before {
+				@extend %arrow;
+
+				bottom: $arrow-offset;
+				left: -1*$arrow-offset;
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+.hoo-tooltip-content {
+	@include elevation.elevation(16);
+	// filter: drop-shadow(2px 2px 5px $neutral-000);
+	@include ttev;
+
+	position: relative;
+	// width: 10em;
+	// height: 5em;
+
+	display: inline-block;
+
+	box-sizing: border-box;
+	padding: .2em .75em .3em;
+
+	color: colors.$neutral-900;
+	border: 1px colors.$neutral-300 solid;
+	border-radius: core.px2rem(4px);
+	background-color: colors.$neutral-000;
+}

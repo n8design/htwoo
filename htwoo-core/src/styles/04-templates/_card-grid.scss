@@ -1,6 +1,8 @@
+@use "00-base/mixin/grid.mixin";
+
 .hoo-cardgrid{
-	@include gridBase();
+	@include grid.gridBase();
 	& > *{
-		@include gridSpan(3);
+		@include grid.gridSpan(3);
 	}
 }

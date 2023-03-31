@@ -1,0 +1,11 @@
+@use "00-base/colors/colors";
+@use "00-base/mixin/core.mixin";
+
+.hoo-error{
+    color: colors.$errorText;
+    font-size: core.px2rem(12px);
+}
+.hoo-success{
+    color: colors.$successText;
+    font-size: core.px2rem(12px);
+}

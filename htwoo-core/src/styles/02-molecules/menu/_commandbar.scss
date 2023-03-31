@@ -1,3 +1,6 @@
+@use "01-atoms/buttons/button-command";
+@use "00-base/mixin/core.mixin";
+
 .hoo-cmdbar{
 	@extend .hoo-buttoncmd;
 
@@ -5,33 +8,12 @@
 	flex-direction: row;
 	justify-content: flex-start;
 
-	height: px2rem(44px);
+	height: core.px2rem(44px);
 
 	border: 1px transparent solid;
 
 	align-items: center;
-
-	// button.hoo-buttoncmd{
-	// 	box-sizing: border-box;
-
-	// 	background-color: transparent;
-
-	// 	& > *{
-	// 		pointer-events: none;
-	// 	}
-
-	// 	&:active{
-	// 		background-color: $buttonBackgroundChecked;
-	// 	}
-	// }
-
-	// .hoo-button-label{
-	// 	color: black;
-	// }
-
-	// &:hover,
-	// .show-flyout{
-	// 	border: 1px $buttonBackgroundCheckedHovered solid;
-	// 	background-color: $buttonBackgroundCheckedHovered;
-	// }
+	margin: 0;
+	padding: 0;
+	
 }
