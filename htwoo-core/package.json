@@ -32,6 +32,9 @@
   "files": [
     "lib"
   ],
+  "browserslist": [
+    "> 0.2% and not dead", "supports css-grid"
+  ],
   "dependencies": {
     "@pattern-lab/cli": "^6.0.1",
     "@pattern-lab/core": "^6.0.1",
