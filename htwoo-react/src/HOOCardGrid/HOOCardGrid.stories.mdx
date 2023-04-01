@@ -1,0 +1,102 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCardGrid from "./HOOCardGrid"
+import HOOCardImage from '../HOOCardImage';
+import HOOCardLocation from '../HOOCardLocation';
+import HOOCardTitle from '../HOOCardTitle';
+import HOOCardFooter from '../HOOCardFooter';
+import HOODocumentCard from '../HOODocumentCard';
+import { HOOAvatarSize } from '../HOOAvatar';
+
+<Meta title="Components/Cards/Card Grid/HOOCardGrid" component={HOOCardGrid} />
+
+# HOOCardGrid
+[![Available in v1.7](https://img.shields.io/badge/💦%20Added%20Version-1.7-blue.svg?style=for-the-badge)](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)
+
+Pass in instances of `HOODocumentCard` as children elements.
+
+See more information about the properties for the child components:
+
+- [HOODocumentCard](?path=/docs/molecules-persona-hooavatarpres--basic)
+
+## Arguments
+
+<ArgsTable of={HOOCardGrid} />
+
+export const Template = (args) => <HOOCardGrid {...args}>
+  <HOODocumentCard>
+    <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+    <HOOCardLocation location="My Location Card" />
+    <HOOCardTitle title="My Card Title" />
+    <HOOCardFooter
+      avatarImage="https://placekitten.com/32/32"
+      avatarImageAlt="Kitty"
+      avatarImageSize={HOOAvatarSize.Px32}
+      name="Mr. Bigglesworth"
+      modified="December 31, 2021" />
+  </HOODocumentCard>
+  <HOODocumentCard>
+    <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+    <HOOCardLocation location="My Location Card" />
+    <HOOCardTitle title="My Card Title 2" />
+    <HOOCardFooter
+      avatarImage="https://placekitten.com/32/32"
+      avatarImageAlt="Kitty"
+      avatarImageSize={HOOAvatarSize.Px32}
+      name="Mr. Bigglesworth"
+      modified="December 31, 2021" />
+  </HOODocumentCard>
+  <HOODocumentCard>
+    <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+    <HOOCardLocation location="My Location Card" />
+    <HOOCardTitle title="My Card Title 3" />
+    <HOOCardFooter
+      avatarImage="https://placekitten.com/32/32"
+      avatarImageAlt="Kitty"
+      avatarImageSize={HOOAvatarSize.Px32}
+      name="Mr. Bigglesworth"
+      modified="December 31, 2021" />
+  </HOODocumentCard>
+  <HOODocumentCard>
+    <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+    <HOOCardLocation location="My Location Card" />
+    <HOOCardTitle title="My Card Title 4" />
+    <HOOCardFooter
+      avatarImage="https://placekitten.com/32/32"
+      avatarImageAlt="Kitty"
+      avatarImageSize={HOOAvatarSize.Px32}
+      name="Mr. Bigglesworth"
+      modified="December 31, 2021" />
+  </HOODocumentCard>
+  <HOODocumentCard>
+    <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+    <HOOCardLocation location="My Location Card" />
+    <HOOCardTitle title="My Card Title 5" />
+    <HOOCardFooter
+      avatarImage="https://placekitten.com/32/32"
+      avatarImageAlt="Kitty"
+      avatarImageSize={HOOAvatarSize.Px32}
+      name="Mr. Bigglesworth"
+      modified="December 31, 2021" />
+  </HOODocumentCard>
+</HOOCardGrid>;
+
+### Basic
+<Canvas>
+  <Story
+    name="Basic">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Extending
+<Canvas>
+  <Story
+    name="Extending"
+    args={
+      (function () {
+        return { rootElementAttributes: { style: { backgroundColor: "mintcream" } } };
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

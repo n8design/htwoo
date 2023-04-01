@@ -13,14 +13,13 @@ Although we are very happy to have any of your contributions, we would encourage
 
 _Note: It's always a good idea to see what other's did and copy the pattern, so feel free to start from an existing component._
 
-1. Decide what level the component belongs in by referencing the HTWOO-Core documentation. This can be Atoms, Molecules, Oraganisms, Templates, Pages.
-1. Create a new folder under the appropriate level folder under the components directory that is named for your new component.
+1. Create a new folder for your component and name it using the naming convention 'HOO{myComponent}'.
 1. Create a new `tsx` file that will be the component, naming it the same as the parent folder. _e.g. HOOButton.tsx_
     1. Using the snippets, start your component.tsx file out by utilizing the `HOOComponent` snippet. 
     1. Code your component and test it making sure it works as intended.
 1. Create a new `stories.mdx` file in the same parent folder. _e.g. HOOButton.stories.mdx_
     1. Using the snippets, start your component.stories.mdx file out by utilizing the `HOOStory` snippet. 
     1. Create appropriate documentation for your component, creating at least two stories (Basic and Extending) to highlight how to use your component.
-1. Add a correspoinding `ts` file to the `src` folder and import/export all the relevant pieces of your component. This step is what ensures selective imports.
-1. Add a reference to your components `ts` file to the `index.ts` file (try to maintain alphabetical order) to include the component in the library.
+1. Create an index.ts file in the same parent folder to export classes and types that will be neccessary for the use of the component. This allows for selective imports.
+1. Add a reference to your components folder in the `index.ts` file (try to maintain alphabetical order) to include the component in the global import.
 1. Submit a PR with your new component.

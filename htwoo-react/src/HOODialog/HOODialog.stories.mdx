@@ -1,0 +1,78 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOODialog, {HOODialogType} from './HOODialog';
+import HOODialogHeader from '../HOODialogHeader';
+import HOODialogContent from '../HOODialogContent';
+import HOOLabel from '../HOOLabel';
+import HOOButton, {HOOButtonType} from '../HOOButton';
+
+<Meta title="Components/Dialogs/HOODialog" component={HOODialog}/>
+
+# HOODialog
+
+This example shows using a `HOOLabel` component as the child(children) of the `HOODialogContent` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+Predefined enum defined for the supported dialog types:
+```ts
+export enum HOODialogType {
+  "Standard",
+  "StandardError",
+  "StandardSuccess",
+  "StandardWarning",
+  "SidebarLeft",
+  "SidebarRight"
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOODialog} />
+
+export const Template = (args) => <HOODialog {...args}>
+  <HOODialogHeader title="Dialog Header" closeIconName="hoo-icon-close" closeDisabled={false} closeOnClick={args.close} />
+  <HOODialogContent>
+    <HOOLabel label="Content of Dialog" />
+  </HOODialogContent>
+</HOODialog>;
+
+## Standard
+
+Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
+
+<Canvas>
+  <Story 
+    name="Standard"
+    args = {
+      { type: HOODialogType.Standard, visible: false, height: "80vh", width: "80vw" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sidebar Left
+
+Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
+
+<Canvas>
+  <Story 
+    name="Sidebar Left"
+    args = { 
+      { type: HOODialogType.SidebarLeft, visible: false, width: "80vw" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+
+Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
+
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      { type: HOODialogType.Standard, visible: false, height: "80vh", width: "80vw", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,40 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOODialogContent from './HOODialogContent';
+import HOOLabel from '../HOOLabel';
+
+<Meta title="Components/Dialogs/HOODialogContent" component={HOODialogContent}/>
+
+# HOODialogContent
+
+This example shows using a `HOOLabel` component as the child(children) of the `HOODialogContent` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+## Arguments
+
+<ArgsTable of={HOODialogContent} />
+
+export const Template = (args) => <HOODialogContent {...args} >
+  <HOOLabel label="Contents of Dialog" />
+</HOODialogContent>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
