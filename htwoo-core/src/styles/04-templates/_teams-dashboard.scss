@@ -1,6 +1,6 @@
-@use "00-base/mixin/core.mixin";
-@use "00-base/mixin/elevation.mixin";
-@use "00-base/mixin/grid.mixin";
+@use "../00-base/mixin/core.mixin";
+@use "../00-base/mixin/elevation.mixin";
+@use "../00-base/mixin/grid.mixin";
 
 .hoo-teamsdb{
 	@include grid.gridBase();
