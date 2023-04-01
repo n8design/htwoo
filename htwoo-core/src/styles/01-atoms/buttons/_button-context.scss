@@ -1,6 +1,6 @@
-@use "00-base/colors/colors";
-@use "00-base/mixin/flyouts.mixin";
-@use "00-base/mixin/core.mixin";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "../../00-base/mixin/core.mixin";
 
 div.hoo-buttoncontext-outer{
 	@extend %flyoutDropDown;

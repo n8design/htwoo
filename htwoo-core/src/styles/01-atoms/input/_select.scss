@@ -1,7 +1,7 @@
-@use "00-base/colors/colors";
-@use "00-base/mixin/lists.mixin";
-@use "00-base/mixin/core.mixin";
-@use "00-base/mixin/elevation.mixin";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/lists.mixin";
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/elevation.mixin";
 @use "input";
 
 .hidden-visually{

@@ -34,8 +34,6 @@ const docs = (cb) => {
 
 }
 
-
-
 const styles = () => {
 
     return src('src/styles/*.scss')

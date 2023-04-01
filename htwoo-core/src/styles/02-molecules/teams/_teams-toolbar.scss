@@ -1,5 +1,5 @@
-@use "00-base/mixin/core.mixin";
-@use "00-base/mixin/elevation.mixin";
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/elevation.mixin";
 
 .hoo-teams-toolbar{
 	@include elevation.elevation(4);
