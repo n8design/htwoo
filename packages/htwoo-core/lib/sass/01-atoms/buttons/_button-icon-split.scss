@@ -1,6 +1,6 @@
-@use "00-base/colors/colors";
-@use "00-base/mixin/flyouts.mixin";
-@use "01-atoms/buttons/button-action";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "button-action";
 
 .hoo-buttonicon-split{
 	@extend %flyoutDropDown;
