@@ -1,6 +1,6 @@
 @use 'sass:math';
-@use "00-base/colors/colors";
-@use "00-base/mixin/core.mixin";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
 
 @mixin tblDefSpacing {
 	$min-height: 42px;

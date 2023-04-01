@@ -1,5 +1,5 @@
-@use "00-base/colors/colors";
-@use "00-base/mixin/elevation.mixin";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/elevation.mixin";
 
 .hoo-doccard{
 	@include elevation.elevation(4);

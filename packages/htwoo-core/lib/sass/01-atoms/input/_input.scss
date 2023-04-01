@@ -1,5 +1,5 @@
-@use "00-base/colors/colors";
-@use "00-base/mixin/core.mixin";
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
 
 @mixin base-input {
 	font-size: core.px2rem(14px);
