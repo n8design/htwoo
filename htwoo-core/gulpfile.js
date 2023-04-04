@@ -6,7 +6,7 @@ const {
     parallel
 } = require('gulp');
 
-var isProd = false;
+var isProd = true;
 
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
