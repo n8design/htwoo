@@ -6,10 +6,11 @@ main:
   pageRef: /readme
   weight: 100
 - name: hTWOo Core
-  pageRef: /htwoo-core
+  url: /htwoo-core/
+  weight: 110
 - name: Sponsors
   pageRef: /sponsors
-  weight: 110
+  weight: 120
 # - name: Guidelines
 #   pageRef: '/guidelines'
 #   weight: 120
