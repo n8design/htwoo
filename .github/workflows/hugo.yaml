@@ -58,9 +58,14 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-react public/htwoo-core/
+        run: |
+          git checkout main -- docs/htwoo-core/*
+          mv -f docs/htwoo-react public/htwoo-core/
+
       - name: Copy hTWOo React style guide
-        run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
+        run: |
+          git checkout main -- docs/htwoo-react/*
+          mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
