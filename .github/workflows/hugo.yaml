@@ -67,7 +67,7 @@ jobs:
           mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: |
-          git checkout orign/main -- docs/htwoo-react/*
+          git checkout origin/main -- docs/htwoo-react/*
           mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
