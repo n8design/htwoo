@@ -44,9 +44,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Show All Branches
-        run: bash ${GITHUB_WORKSPACE}/update-docs.sh
-        shell: bash
+      # - name: Show All Branches
+      #   run: bash ${GITHUB_WORKSPACE}/update-docs.sh
+      #   shell: bash
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -63,11 +63,11 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
         run: |
-          git checkout main -- docs/htwoo-core/*
+          git checkout origin/main -- docs/htwoo-core/*
           mv -f docs/htwoo-react public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: |
-          git checkout main -- docs/htwoo-react/*
+          git checkout orign/main -- docs/htwoo-react/*
           mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
