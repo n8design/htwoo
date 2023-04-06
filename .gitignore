@@ -34,4 +34,4 @@ Temporary Items
 # Node Modules
 node_modules
 public
-./docs/
+./docs/*
