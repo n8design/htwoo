@@ -45,7 +45,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Show All Branches
-        run: ./.github/scripts/update-docs.sh
+        run: ./update-docs.sh
         shell: bash
       - name: Setup Pages
         id: pages
