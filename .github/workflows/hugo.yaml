@@ -70,7 +70,9 @@ jobs:
           git checkout origin/main -- docs/htwoo-react/*
           mv -f docs/htwoo-react public/htwoo-react/
       - name: Cleanup Docs
-        run: rm -rf docs
+        run: rm -rf ./docs
+      - name: Cleanup Docs 2
+        run: ls -al
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
