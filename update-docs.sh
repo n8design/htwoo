@@ -4,6 +4,6 @@ echo PWD
 echo '################################'
 git branch
 echo '################################'
-git checkout main -- docs/*
+git checkout origin/main -- docs/*
 echo '################################'
 echo "Hello world"
