@@ -24,14 +24,16 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
 ### 2. Import htwoo-core styles
 
-  Add a reference to the `style.prod.scss` file in your solutions root .scss file. Put the reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
+  Add a `@use` statement at the top of your solutions root .scss file and then add an `@include` reference to the `htwoo-core.scss` file. Put the `@include` reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
   
   _Note: The import is wrapped in :global so that the class names will not be modified with a namespace._
 
   ```css
+  @use 'sass:meta';
+
   .myWebPartRoot{
     :global {
-      @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/sass/htwoo-core');
     }
   }
   ```

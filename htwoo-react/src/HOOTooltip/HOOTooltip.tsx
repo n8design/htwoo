@@ -1,24 +1,34 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
 
-export enum HOOPosition {
-  Top = "top",
-  Right = "right"
+export enum HOOTipPosition {
+  TopLeft="top-left",
+  TopCenter="top-center",
+  TopRight="top-right",
+  RightTop="right-top",
+  RightCenter="right-center",
+  RightBottom="right-bottom",
+  BottomLeft="bottom-left",
+  BottomCenter="bottom-center",
+  BottomRight="bottom-right",
+  LeftTop="left-top",
+  LeftCenter="left-center",
+  LeftBottom="left-bottom"
 }
 
 export interface IHOOTooltipProps extends IHOOStandardProps {
   /**
-  * Tooltip text
-  */
-  text: string;
-  /**
   * Tooltip position
   */
-  position: HOOPosition;
+  position: HOOTipPosition;
+  /**
+  * (Optional) Tooltip text, if omitted renders children
+  */
+  text?: string;
   /**
   * Tooltip is visible
   */
-  visible: boolean;
+  visible?: boolean;
   /**
     * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-tooltip {rootElementAttributes.class}
@@ -42,8 +52,8 @@ export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTo
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOTooltip";
     this.state = new HOOTooltipState();
-    this._componentClass += (props.position === HOOPosition.Right) ? " hoo-tooltip-right" : " hoo-tooltip-top";
-    this._componentClass += (props.visible) ? " show" : "";
+    this._componentClass += this.props.position;
+    //this._componentClass += (props.visible) ? " show" : "";
   }
 
   public render(): React.ReactElement<IHOOTooltipProps> {
@@ -52,9 +62,8 @@ export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTo
       const styleBlock = { "will-change": "transform" } as React.CSSProperties;
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} style={styleBlock} role="tooltip" x-placement="top">
-          <div className="arrow"></div>
-          <div className="hoo-tooltip-content">{this.props.text}</div>
+        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} style={styleBlock} role="tooltip">         
+          <div className="hoo-tooltip-content">{this.props.text || this.props.children}</div>
         </div>
       );
     } catch (err) {

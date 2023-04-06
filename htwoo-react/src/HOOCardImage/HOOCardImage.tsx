@@ -11,6 +11,10 @@ export interface IHOOCardImageProps extends IHOOStandardProps {
  */
   imageAlt?: string;
   /**
+   * (Optional) Image caption
+  */
+  caption?: string;
+  /**
    * (Optional) Image width, include when using imageSource or defaults to 320
   */
   width?: number;
@@ -49,14 +53,17 @@ export default class HOOCardImage extends React.PureComponent<IHOOCardImageProps
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <figure {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {this.props.imageSource &&
             <img src={this.props.imageSource} width={this.props.width || 320} height={this.props.height || 180} alt={this.props.imageAlt} />
+          }
+          {this.props.imageSource && this.props.caption &&
+            <figcaption>{this.props.caption}</figcaption>
           }
           {!this.props.imageSource &&
             this.props.children
           }
-        </div>
+        </figure>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

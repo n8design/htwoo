@@ -23,12 +23,23 @@ export const Template = (args) => <HOOCardImage {...args} />;
   </Story>
 </Canvas>
 
+## Image Caption
+<Canvas>
+  <Story 
+    name="Image Caption"
+    args = { 
+      { imageSource: "https://placekitten.com/320/180", caption: "Cute Kitten Image", imageAlt: "Kitten", width: 320, height: 180 }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Extending
 <Canvas>
   <Story 
     name="Extending"
     args = { 
-     { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", width: 320, height: 180, rootElementAttributes: { style: { backgroundColor: "pink" } }}
+     { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", width: 320, height: 180, rootElementAttributes: { style: { border: "10px solid pink" } }}
     }>
     {Template.bind({})}
   </Story>

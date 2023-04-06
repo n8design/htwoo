@@ -5,6 +5,8 @@ export type { ISPFxThemes, IHOOTheme };
 export { SPFxThemes };
 export { symset };
 
+export * from './HOOAccordion';
+export * from './HOOAccordionGroup';
 export * from './HOOAction';
 export * from './HOOAvatar';
 export * from './HOOAvatarPres';
@@ -39,6 +41,8 @@ export * from './HOOPersona';
 export * from './HOOPivotBar';
 export * from './HOOPivotButton';
 export * from './HOOPresence';
+export * from './HOOQuickLink';
+export * from './HOOQuickLinkGrid';
 export * from './HOORadioButton';
 export * from './HOOSearch';
 export * from './HOOSelect';

@@ -12,7 +12,18 @@
     "ReactJS",
     "SharePoint Framework"
   ],
-  "author": "Julie Turner/Stefan Bauer",
+  "maintainers": [
+    {
+      "name": "Julie Turner",
+      "email": "julie.turner@sympraxisconsulting",
+      "url": "https://sympraxisconsulting.com"
+    },
+    {
+      "name": "Stefan Bauer",
+      "email": "office@n8d.at",
+      "url": "https://n8d.at"
+    }
+  ],
   "homepage": "https://lab.n8d.studio/htwoo",
   "bugs": {
     "url": "https://github.com/n8design/htwoo/issues"
@@ -26,7 +37,7 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "^2.0.0-alpha1",
+    "@n8d/htwoo-core": "^2.0.0-alpha8",
     "react": "^17.*",
     "react-dom": "^17.*"
   },

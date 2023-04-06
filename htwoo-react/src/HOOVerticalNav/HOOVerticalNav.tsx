@@ -64,9 +64,9 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
             <a className="hoo-navitem-link" {...hrefClick}>{navItems[i].text}</a>
           </div>
           {navItems[i].childNavItems != null && navItems[i].childNavItems.length > 0 &&
-            <ul className="hoo-nav-listsub" role="group">
+            <menu className="hoo-nav-listsub" role="group">
               {this._renderNav(navItems[i].childNavItems)}
-            </ul>
+            </menu>
           }
         </li>
         retVal.push(navItem);
@@ -83,9 +83,9 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <nav {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
-          <ul role="tree" className="hoo-nav-list">
+          <menu role="tree" className="hoo-nav-list">
             {this.props.navItems && this.props.navItems.length > 0 && this._renderNav(this.props.navItems)}
-          </ul>
+          </menu>
         </nav >
       );
     } catch (err) {
