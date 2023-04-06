@@ -18,6 +18,7 @@
 .hoo-input-text {
 	@include base-input();
 
+	font-family: inherit;
 	// general focus
 	&:focus {
 		line-height: calc(1.9rem - 2px);
