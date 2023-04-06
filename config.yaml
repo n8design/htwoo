@@ -1,0 +1,41 @@
+baseURL: 'http://lab.n8d.studio/htwoo/'
+languageCode: 'en-us'
+title: 'hTWOo'
+
+theme: 'h2o'
+
+
+params:
+  seoTitle: 'The LAB by N8D'
+  siteDescription: "Research and Innovation by N8D, Products, Projects and tryouts"
+  author: "Stefan Bauer / N8D"
+  github: "https://github.com/stfbauer"
+  facebook: "https://www.facebook.com/n8dstudio"
+  og_image: "/images/og.png"
+  sitename: "The LAB by N8D"
+  twitter: "@stfbauer"
+  dateFormat: "January 2, 2006"
+  
+
+# enable full markup
+# markup:
+#   goldemark:
+#     renderer:
+#       unsafe: true
+#     parser:
+#       wrapStandAloneImageWithinParagraph: false
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: false
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+

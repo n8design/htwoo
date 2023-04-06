@@ -1,0 +1,10 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "../themes/h2o/assets/*"
+   ]
+  }
+ }
+}

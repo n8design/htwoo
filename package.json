@@ -1,0 +1,49 @@
+{
+  "name": "htwoo-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8design/htwoo-web.git"
+  },
+  "author": "Stefan Bauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo-web/issues"
+  },
+  "homepage": "https://github.com/n8design/htwoo-web#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "staged": "git add public && git add themes/no-theme",
+    "hugo:build": "hugo build",
+    "hugo:dev": "hugo server --gc --disableFastRender --buildFuture --buildDrafts"
+  },
+  "browsers": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ],
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@swup/a11y-plugin": "^3.0.0",
+    "autoprefixer": "^10.4.14",
+    "hugo": "^0.0.3",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.59.2",
+    "sass-embedded": "^1.59.2",
+    "stylelint-semantic-groups": "^1.2.0",
+    "swup": "^3.0.5",
+    "typescript": "^4.9.5"
+  }
+}

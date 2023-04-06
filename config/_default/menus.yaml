@@ -1,0 +1,57 @@
+main:
+- name: Introduction
+  pageRef: /why-htwoo
+  weight: 90
+- name: About hTWOo
+  pageRef: /readme
+  weight: 100
+- name: Sponsors
+  pageRef: /sponsors
+  weight: 110
+- name: Guidelines
+  pageRef: '/guidelines'
+  weight: 120
+  params:
+    dynamic: true
+    section: guidelines
+- name: How To's
+  pageRef: '/how-to'
+  weight: 130
+  params:
+    dynamic: true
+- name: Code of Conduct
+  pageRef: /code-of-conduct
+  weight: 140
+- name: License
+  pageRef: /LICENSE
+  weight: 150
+
+footer:
+- name: "Footer Nav 1"
+  url: https://n8d.at
+  target: '_blank'
+  params:
+    blank: true
+- name: "Footer Nav 2"
+  url: https://n8d.at
+  target: '_blank'
+  params:
+    blank: true
+- name: "Footer Nav 3"
+  url: https://n8d.at
+  target: '_blank'
+  params:
+    blank: true
+legal:
+  - name: "Imprint"
+    url: /imprint
+    params:
+      blank: false
+  - name: "About"
+    url: https://n8d.at
+    params:
+      blank: false
+  - name: "Contact"
+    url: https://n8d.at
+    params:
+      blank: true
