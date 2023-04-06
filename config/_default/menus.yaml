@@ -5,6 +5,8 @@ main:
 - name: About hTWOo
   pageRef: /readme
   weight: 100
+- name: hTWOo Core
+  pageRef: /htwoo-core
 - name: Sponsors
   pageRef: /sponsors
   weight: 110
