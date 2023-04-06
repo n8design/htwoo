@@ -61,9 +61,6 @@ jobs:
         run: |
           git checkout main -- docs/htwoo-core/*
           mv -f docs/htwoo-react public/htwoo-core/
-        with:
-          ref: main
-
       - name: Copy hTWOo React style guide
         run: |
           git checkout main -- docs/htwoo-react/*
