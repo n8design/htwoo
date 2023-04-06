@@ -1,4 +1,5 @@
 #!/bin/bash
 echo PWD
-git branch
+git checkout main -- docs/*
+ls -al
 echo "Hello world"
