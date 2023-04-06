@@ -1,3 +1,4 @@
+@use "00-base/colors/colors" as colors;
 /***** Color converted to SCSS variables *****/
 @use '00-base/colors/index.scss';
 @use "00-base/global.vars";
@@ -7,3 +8,10 @@
 
 /*** All Core references of hTWOo ***/
 @use "_htwoo-core";
+
+body{
+    font-family: colors.$mediumFontFamily;
+    background-color: var(--bodyBackground);
+    color: var(--bodyText);
+    margin: 0;
+}
