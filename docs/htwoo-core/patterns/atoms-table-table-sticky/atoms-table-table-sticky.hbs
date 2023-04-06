@@ -1,0 +1,31 @@
+<table class="hoo-table sticky">
+    <thead>
+        <tr>
+            <th class="is-sticky top left">Icon</th>
+            <th class="is-sticky top left">Name</th>
+            <th class="is-sticky top">Modified by</th>
+            <th class="is-sticky top">Date Modifed</th>
+            <th class="is-sticky top">File Size</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataSet }}
+        <tr>
+            <td class="is-sticky left"><img src="{{ Icon }}"></td>
+            <td class="is-sticky left">{{ Filename }}</td>
+            <td>{{ Modified }}</td>
+            <td>{{ ModifiedBy }}</td>
+            <td>{{ FileSize }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="is-sticky bottom left">Icon</th>
+            <th class="is-sticky bottom left">Name</th>
+            <th class="is-sticky bottom">Modified by</th>
+            <th class="is-sticky bottom">Date Modifed</th>
+            <th class="is-sticky bottom">File Size</th>
+        </tr>
+    </tfoot>
+</table>

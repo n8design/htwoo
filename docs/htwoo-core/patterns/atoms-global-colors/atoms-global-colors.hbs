@@ -1,0 +1,21 @@
+<ul class="sg-colors">
+
+    {{# items }}
+    <li class="sg-swatch">
+        <span class="sg-label">
+            <stong class="sg-label-big">{{ designToken }}</stong><br>
+            <span class="sg-color-code"></span><br>
+
+        </span>
+        <span class="sg-swatchbox" style="background: {{ colorValue }};"></span>
+        <span class="sg-label">
+            <strong>SASS:</strong>&nbsp;{{ SASSVariable }}<br>
+            <em><strong>Fluent UI:</strong>&nbsp;{{ msftNameLong }} / {{ msftName }}</em><br>
+        </span>
+    </li>
+    {{/ items }}
+
+</ul>
+<!--end sg-colors-->
+
+<small>{{{ meta.description }}}</small>
