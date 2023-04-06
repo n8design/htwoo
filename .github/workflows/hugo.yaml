@@ -44,6 +44,8 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Show All Branches
+        run: git branch
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
