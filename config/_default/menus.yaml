@@ -5,10 +5,14 @@ main:
 - name: About hTWOo
   pageRef: /readme
   weight: 100
+- name: Flavors
+  weight: 110
 - name: hTWOo Core
+  partent: Flavors
   url: /htwoo-core/
   weight: 110
 - name: hTWOo React
+  partent: Flavors
   url: /htwoo-react/
   weight: 110
 - name: Sponsors
