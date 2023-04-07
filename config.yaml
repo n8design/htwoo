@@ -6,13 +6,13 @@ theme: 'h2o'
 
 
 params:
-  seoTitle: 'The LAB by N8D'
-  siteDescription: "Research and Innovation by N8D, Products, Projects and tryouts"
+  seoTitle: 'hTWOo by N8D'
+  siteDescription: "hTWOo is a set of Fluent Design UI components and utilities resulting from an effort to converge the set of HTML and ReactJS based component libraries."
   author: "Stefan Bauer / N8D"
   github: "https://github.com/stfbauer"
   facebook: "https://www.facebook.com/n8dstudio"
   og_image: "/images/og.png"
-  sitename: "The LAB by N8D"
+  sitename: "hTWOo by N8D"
   twitter: "@stfbauer"
   dateFormat: "January 2, 2006"
   

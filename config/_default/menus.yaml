@@ -15,8 +15,8 @@ main:
   partent: Flavors
   url: /htwoo-react/
   weight: 110
-- name: Sponsors
-  pageRef: /sponsors
+- name: Supporters
+  pageRef: /supporters
   weight: 120
 # - name: Guidelines
 #   pageRef: '/guidelines'
