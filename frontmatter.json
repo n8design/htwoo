@@ -17,6 +17,21 @@
           "type": "string"
         },
         {
+          "title": "Cover Image",
+          "name": "coverImage",
+          "type": "image"
+        },
+        {
+          "title": "Cover Image Alt",
+          "name": "coverImageAlt",
+          "type": "string"
+        },
+        {
+          "title": "Cover Content",
+          "name": "coverContent",
+          "type": "string"
+        },
+        {
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
@@ -67,6 +82,23 @@
       "path": "[[workspace]]/content/supporters"
     }
   ],
-  "frontMatter.taxonomy.tags": [],
+  "frontMatter.taxonomy.tags": [
+    "Fluent Design",
+    "Fluent Design System",
+    "Fluent Design Pattern",
+    "Fluent Ui",
+    "Fluent UI Icons",
+    "Fluent UI React",
+    "Office UI Fabric",
+    "Microsoft Design",
+    "Microsoft Fluent",
+    "React Northstar",
+    "Microsoft Fluent Design",
+    "Fluent Design Pattern",
+    "Microsoft",
+    "Microsoft UI Design",
+    "Windows 11 Design"
+
+  ],
   "frontMatter.taxonomy.categories": []
 }
