@@ -101,7 +101,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
             }
             {this.props.iconName && this.props.iconName.length > 0 &&
               <figure className="hoo-ql-media">
-                <HOOIcon iconName={this.props.iconName} rootElementAttributes={{ className: "sh-media-svg" }} />
+                <HOOIcon iconName={this.props.iconName} rootElementAttributes={{ className: "hoo-media-svg" }} />
               </figure>
             }
             <div className="hoo-qlinfo">
@@ -115,12 +115,12 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
               }
             </div>
             {(this.props.editMode === true) &&
-              <menu className="hoo-qllink-menu">
-                <li className="hoo-qllink-menuitem">
+              <menu className="hoo-qlmenu">
+                <li>
                   <Button type={HOOButtonType.Icon} iconName="hoo-icon-close" onClick={this.props.onClickMenuClose} />
                 </li>
                 {(this.props.enableDragDrop === true) &&
-                  <li className="sh-ql-menuiterm">
+                  <li>
                     <Button type={HOOButtonType.Icon} iconName="hoo-icon-move" rootElementAttributes={this.props.moveElementAttributes} />
                   </li>
                 }

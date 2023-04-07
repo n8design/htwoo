@@ -1,8 +1,11 @@
-import { SPFxThemes, ISPFxThemes, IHOOTheme } from "./SPFxThemes";
+import { SPFxThemes, ISPFxThemes } from "./SPFxThemes";
+import { IHOOTheme } from "./common/IHOOTheme";
+import { GenericThemes } from "./GenericThemes";
 import { symset } from "./SymbolSet";
 
 export type { ISPFxThemes, IHOOTheme };
 export { SPFxThemes };
+export { GenericThemes };
 export { symset };
 
 export * from './HOOAccordion';

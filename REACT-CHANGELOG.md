@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - HOOAccordion: New detail/summary element to implement accordion element.
 - HOOAccordionGroup: Container for a group of HOOAccordion elements.
 - HOOCardImage: Added caption property
+- GenericThemes: New helper class for adding theme support in non-SPFx solutions.
