@@ -1,6 +1,6 @@
 ---
 layout: landing
-title: About hTWOo UI
+title: About hTWOo
 description: HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. Despite being ReactJS exclusive this project offers a style guide based on HTML and CSS to create implementations for other frameworks as well.
 preview: /launch-img.jpg
 ---
@@ -58,4 +58,4 @@ Follow us on Twitter [@htwooui](https://twitter.com/hTWOoUI).
 
 
 
-[logo]: /images/htwoo.jpg "Be like water and adopt fast"
+[logo]: /htwoo/images/htwoo.jpg "Be like water and adopt fast"
