@@ -8,6 +8,9 @@ main:
 - name: hTWOo Core
   url: /htwoo-core/
   weight: 110
+- name: hTWOo Core
+  url: /htwoo-react/
+  weight: 110
 - name: Sponsors
   pageRef: /sponsors
   weight: 120
