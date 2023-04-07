@@ -8,7 +8,7 @@ main:
 - name: hTWOo Core
   url: /htwoo-core/
   weight: 110
-- name: hTWOo Core
+- name: hTWOo React
   url: /htwoo-react/
   weight: 110
 - name: Sponsors
