@@ -7,56 +7,29 @@
       "previewPath": null,
       "fields": [
         {
-          "title": "Title",
+          "title": "title",
           "name": "title",
           "type": "string"
         },
         {
-          "title": "Description",
-          "name": "description",
+          "title": "link",
+          "name": "link",
           "type": "string"
         },
         {
-          "title": "Cover Image",
-          "name": "coverImage",
+          "title": "logo",
+          "name": "logo",
           "type": "image"
         },
         {
-          "title": "Cover Image Alt",
-          "name": "coverImageAlt",
+          "title": "tagline",
+          "name": "tagline",
           "type": "string"
         },
         {
-          "title": "Cover Content",
-          "name": "coverContent",
-          "type": "string"
-        },
-        {
-          "title": "Publishing date",
-          "name": "date",
-          "type": "datetime",
-          "default": "{{now}}",
-          "isPublishDate": true
-        },
-        {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image"
-        },
-        {
-          "title": "Is in draft",
+          "title": "draft",
           "name": "draft",
-          "type": "draft"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
+          "type": "datetime"
         }
       ]
     }
@@ -98,7 +71,6 @@
     "Microsoft",
     "Microsoft UI Design",
     "Windows 11 Design"
-
   ],
   "frontMatter.taxonomy.categories": []
 }

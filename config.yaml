@@ -4,6 +4,8 @@ title: 'hTWOo'
 
 theme: 'h2o'
 
+relativeURLs: true
+canonifyURLs: true
 
 params:
   seoTitle: 'hTWOo by N8D'
@@ -15,6 +17,7 @@ params:
   sitename: "hTWOo by N8D"
   twitter: "@stfbauer"
   dateFormat: "January 2, 2006"
+  localSVGPath: "static"
   
 
 # enable full markup
@@ -24,6 +27,10 @@ params:
 #       unsafe: true
 #     parser:
 #       wrapStandAloneImageWithinParagraph: false
+
+mount:
+  - source: static
+    target: static
 
 markup:
   goldmark:

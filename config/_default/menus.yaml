@@ -8,16 +8,17 @@ main:
 - name: Flavors
   weight: 110
 - name: hTWOo Core
-  partent: Flavors
+  parent: Flavors
+  idenitifer: Flavors
   url: /htwoo-core/
-  weight: 110
+  weight: 1100
 - name: hTWOo React
-  partent: Flavors
+  parent: Flavors
   url: /htwoo-react/
-  weight: 110
+  weight: 1200
 - name: Supporters
-  pageRef: /supporters
-  weight: 120
+  pageRef: supporters
+  weight: 1300
 # - name: Guidelines
 #   pageRef: '/guidelines'
 #   weight: 120
