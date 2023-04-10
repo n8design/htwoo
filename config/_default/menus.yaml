@@ -1,12 +1,12 @@
 main:
 - name: Introduction
-  pageRef: /why-htwoo
-  weight: 90
+  pageRef: /
+  weight: 80
 - name: Concepts
   pageRef: /concepts
-  weight: 100
+  weight: 90
 - name: Flavors
-  weight: 110
+  weight: 100
 - name: hTWOo Core
   parent: Flavors
   idenitifer: Flavors
@@ -18,7 +18,7 @@ main:
   weight: 1200
 - name: Supporters
   pageRef: supporters
-  weight: 1300
+  weight: 110
 # - name: Guidelines
 #   pageRef: '/guidelines'
 #   weight: 120
