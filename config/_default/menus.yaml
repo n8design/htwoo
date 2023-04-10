@@ -1,24 +1,31 @@
 main:
 - name: Introduction
   pageRef: /
-  weight: 80
+  weight: 10
 - name: Concepts
   pageRef: /concepts
-  weight: 90
+  weight: 20
 - name: Flavors
-  weight: 100
+  idenitifer: flavors
+  weight: 30
 - name: hTWOo Core
   parent: Flavors
-  idenitifer: Flavors
   url: /htwoo-core/
-  weight: 1100
+  weight: 35
 - name: hTWOo React
   parent: Flavors
   url: /htwoo-react/
-  weight: 1200
+  weight: 36
+- name: Changelogs
+  idenitifer: changelog
+  weight: 40
+- name: hTWOo Core - Changelog
+  parent: Changelogs
+  pageRef: /changelog/htwoo-core
+  weight: 41
 - name: Supporters
   pageRef: supporters
-  weight: 110
+  weight: 50
 # - name: Guidelines
 #   pageRef: '/guidelines'
 #   weight: 120
@@ -27,18 +34,18 @@ main:
 #     section: guidelines
 - name: How To's
   pageRef: '/how-to'
-  weight: 130
+  weight: 60
   params:
     dynamic: true
 - name: Case Studies
   pageRef: '/case-studies'
-  weight: 140
+  weight: 70
 - name: Code of Conduct
   pageRef: /code-of-conduct
-  weight: 140
+  weight: 80
 - name: License
   pageRef: /LICENSE
-  weight: 150
+  weight: 90
 
 footer:
 - name: "Footer Nav 1"
