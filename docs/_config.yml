@@ -12,7 +12,7 @@ description: # this means to ignore newlines until "baseurl:"
   Fluent Design made easy with hTWOo UI. Suitable for every Microsoft 365 customisation
 baseurl: "/htwoo" # the subpath of your site, e.g. /blog
 url: "https://lab.n8d.studio" # the base hostname & protocol for your site
-twitter_username: stfbauer
+twitter_username: htwooui
 github_username:  stfbauer
 
 # Build settings
@@ -29,7 +29,7 @@ sections:
     url: getting-started
     type: static
   - title: About hTWOo
-    url: readme
+    url: about
     type: static
   - title: Components & Style Guide
     url: /htwoo/htwoo-core/index.html
@@ -66,7 +66,7 @@ sections:
     url: contribute
 
 # Google services
-google_analytics: UA-195453119-1
+#google_analytics: G-7GBZFB89Y7
 
 social-network-links:
   github: n8design

@@ -1,5 +1,6 @@
 ---
 title: Splash Card Header
+order: 30
 ---
 
 ### SCSS Imports

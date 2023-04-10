@@ -23,7 +23,7 @@ npm install --save-dev @n8d/htwoo-core
 ## Documentation
 
 * [General Documentation](https://lab.n8d.studio/htwoo/)
-* [Pattern Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all)
+* [Pattern Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/)
 
 ## other Resource
 
@@ -35,4 +35,4 @@ npm install --save-dev @n8d/htwoo-core
 
 **Contributor:** You ❤️
 
-[logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adopt fast"
+[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adopt fast"

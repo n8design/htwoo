@@ -1,8 +1,21 @@
-@function px2rem($pxValue: 16px){
+@use 'sass:math';
 
-	$out: ( $pxValue / 16px) * 1rem;
-	
+@function px2rem($pxValue: 16px) {
+
+	$out: math.div($pxValue, 16px) * 1rem;
+
 	@return $out;
 
 }
 
+@mixin lineClamp($lines, $line-height: 1rem){
+	display: -webkit-box;
+	overflow: hidden;
+
+	max-height: $line-height*$lines;
+
+	text-overflow: ellipsis;
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+}

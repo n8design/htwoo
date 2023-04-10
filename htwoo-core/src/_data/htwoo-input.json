@@ -5,6 +5,27 @@
         "description": "Primary with description",
         "aria-label": "Button"
     },
+    "buttonCmd": {
+        "iconAction": "icon-plus",
+        "iconDown": "icon-arrow-down",
+        "label": "New Item",
+        "contextMenu": {
+            "contextItems": [
+                {
+                    "button": {
+                        "label": "Email message",
+                        "iconname": "icon-ninjacat"
+                    }
+                },
+                {
+                    "button": {
+                        "label": "Calendar Event",
+                        "iconname": "icon-minus"
+                    }
+                }
+            ]
+        }
+    },
     "contextMenu": {
         "contextItems": [
             {
@@ -35,21 +56,36 @@
             "name": "my-date-picker-name",
             "value": "2021-10-26",
             "min-value": "2021-10-25",
-            "max-value": "2030-10-25"
+            "max-value": "2030-10-25",
+            "aria-tags": ""
         },
         "number": {
             "min": 0,
-            "max": 100
+            "max": 100,
+            "aria-tags": ""
         },
         "text": {
             "inputPrefix": "https://",
             "inputSuffix": ".com",
-            "placeholder": "A placeholder text"
+            "placeholder": "A placeholder text",
+            "aria-tags": ""
+        },
+        "email": {
+            "placeholder": "John.Doe@example.com",
+            "aria-tags": ""
+        },
+        "phone": {
+            "placeholder": "555-8039",
+            "aria-tags": ""
+        },
+        "url": {
+            "placeholder": "https://example.com",
+            "aria-tags": ""
         },
         "label": {
             "label": "Label for field x",
             "stateStyle": null,
-            "id": "label-1234"
+            "aria-tags": ""
         },
         "toggle": {
             "name": "toggleName",
@@ -57,7 +93,8 @@
             "label": {
                 "checked": "On",
                 "unchecked": "Off"
-            }
+            },
+            "aria-tags": ""
         }
     },
     "checkbox-group": {
@@ -94,7 +131,48 @@
                     "value": "avocado"
                 }
             }
-        ]
+        ],
+        "cols": null
+    },
+    "checkbox-group-cols": {
+        "items": [
+            {
+                "checkbox": {
+                    "label": "Apple",
+                    "id": "chbg1",
+                    "name": "radio-button-group",
+                    "value": "apple"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Avocado",
+                    "id": "chbg2",
+                    "name": "radio-button-group",
+                    "value": "banana"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Banana",
+                    "id": "chbg3",
+                    "name": "radio-button-group",
+                    "value": "citrus"
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Citrus",
+                    "id": "chbg4",
+                    "name": "radio-button-group",
+                    "value": "avocado"
+                }
+            }
+        ],
+        "cols": {
+            "desktop": 2,
+            "mobile": 1
+        }
     },
     "radiobutton-group": {
         "items": [
@@ -131,5 +209,45 @@
                 }
             }
         ]
+    },
+    "radiobutton-group-cols": {
+        "items": [
+            {
+                "radiobutton": {
+                    "label": "Apple",
+                    "id": "rbg1",
+                    "name": "radio-button-group",
+                    "value": "apple"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Avocado",
+                    "id": "rbg2",
+                    "name": "radio-button-group",
+                    "value": "banana"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Banana",
+                    "id": "rbg3",
+                    "name": "radio-button-group",
+                    "value": "citrus"
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Citrus",
+                    "id": "rbg4",
+                    "name": "radio-button-group",
+                    "value": "avocado"
+                }
+            }
+        ],
+        "cols": {
+            "desktop": 2,
+            "mobile": 1
+        }
     }
 }

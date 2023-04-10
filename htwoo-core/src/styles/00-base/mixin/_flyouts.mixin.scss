@@ -1,3 +1,5 @@
+@use "../colors/colors";
+
 %flyoutDropDown{
 	position: relative;
 	.hoo-buttonflyout{
@@ -17,7 +19,7 @@
 		}
 
 		.hoo-buttonsplit-carret{
-			background-color: $buttonBackgroundCheckedHovered;
+			background-color: colors.$buttonBackgroundCheckedHovered;
 		}
 	}
 }

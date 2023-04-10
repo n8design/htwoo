@@ -1,0 +1,9 @@
+{{#radiobutton-group-cols}}
+<menu class="hoo-radiobutton-group" role="radiogroup" tabindex="0" {{#if cols}}style="{{#if cols.desktop}}--cols-desk: {{ cols.desktop }};{{/if}} {{#if cols.mobile}}--cols-mobile: {{ cols.mobile }}{{/if}}"{{/if}}>
+    {{#each items }}
+    <li tabindex="-1" role="radio">
+        {{>atoms-radiobutton this }}
+    </li>
+    {{/each}}
+</menu>
+{{/radiobutton-group-cols}}

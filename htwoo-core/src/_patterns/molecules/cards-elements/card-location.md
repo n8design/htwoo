@@ -1,5 +1,6 @@
 ---
 title: Card Location
+order: 20
 ---
 
 ### SCSS Imports

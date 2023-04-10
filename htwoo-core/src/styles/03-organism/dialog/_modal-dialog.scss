@@ -1,3 +1,6 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/elevation.mixin";
+
 $anim-timing: 0.25s;
 
 @mixin dlgTransition($reverse: false){
@@ -23,7 +26,7 @@ $anim-timing: 0.25s;
 	height: 100vh;
 
 	opacity: 1;
-	background-color: $backgroundOverlay;
+	background-color: colors.$backgroundOverlay;
 
 	@include dlgTransition();
 
@@ -108,7 +111,7 @@ $anim-timing: 0.25s;
 	transform: scale(1);
 
 	opacity: 1;
-	background-color: $bodyBackground;
+	background-color: colors.$bodyBackground;
 
-	@include elevation(16);
+	@include elevation.elevation(16);
 }

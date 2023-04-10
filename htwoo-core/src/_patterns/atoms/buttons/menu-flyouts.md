@@ -1,6 +1,6 @@
 ---
 title: Flyout menu style
-order: 99
+order: 105
 ---
 
 ### SCSS Imports

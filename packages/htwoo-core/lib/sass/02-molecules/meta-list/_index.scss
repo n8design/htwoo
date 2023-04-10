@@ -1,0 +1,14 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/lists.mixin";
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/elevation.mixin";
+
+.hoo-meta-list{
+	@extend %listReset;
+
+	display: flex;
+	flex-direction: row;
+
+	flex-wrap: wrap;
+	gap: .35rem .5rem;
+}

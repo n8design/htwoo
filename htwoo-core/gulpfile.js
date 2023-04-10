@@ -6,14 +6,14 @@ const {
     parallel
 } = require('gulp');
 
-var isProd = false;
+var isProd = true;
 
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
 const rollup = require('rollup');
 
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
 
 
 const baseWatch = async (cb) => {
@@ -33,8 +33,6 @@ const docs = (cb) => {
     cb()
 
 }
-
-
 
 const styles = () => {
 

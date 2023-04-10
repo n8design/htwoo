@@ -1,8 +1,12 @@
-.hoo-teamsdb{
-	@include gridBase();
+@use "../00-base/mixin/core.mixin";
+@use "../00-base/mixin/elevation.mixin";
+@use "../00-base/mixin/grid.mixin";
 
-	margin: px2rem(20px);
+.hoo-teamsdb{
+	@include grid.gridBase();
+
+	margin: core.px2rem(20px);
 	& > *{
-		@include elevation(4);
+		@include elevation.elevation(4);
 	}
 }

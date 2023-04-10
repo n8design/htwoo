@@ -1,0 +1,29 @@
+.hoo-checkbox-group,
+.hoo-radiobutton-group {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	div{
+		margin-top: .5rem;
+	}
+	
+	&.is-horizontal {
+		display: inline-flex;
+
+		gap: 1rem;
+	}
+
+	li {
+		padding-top: .5rem;
+		flex-grow: 0;
+	}
+
+	&[style*='--cols-desk']{
+		columns: var(--cols-desk);
+	}
+	&[style*='--cols-mobile']{
+		@media screen and (max-width: 480px) {
+			columns: var(--cols-mobile);
+		}
+	}
+}

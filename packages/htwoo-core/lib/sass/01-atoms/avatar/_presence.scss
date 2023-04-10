@@ -1,3 +1,5 @@
+@use "../../00-base/colors/colors";
+
 .hoo-presence{
 	display: block;
 
@@ -7,7 +9,7 @@
 
 	content: "";
 
-	border: 2px $bodyBackground solid;
+	border: 2px colors.$bodyBackground solid;
 	border-radius: 50%;
 	&.is-away{
 		background-color: #fa4;
