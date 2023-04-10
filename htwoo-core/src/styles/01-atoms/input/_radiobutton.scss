@@ -1,3 +1,6 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 /*** TODO: Hover Style ***/
 
 .hoo-radio{
@@ -9,7 +12,7 @@
 
 	&:checked + label,
 	&:not(:checked) + label{
-		font-size: px2rem(14px);
+		font-size: core.px2rem(16px);
 		line-height: 20px;
 
 		position: relative;
@@ -20,7 +23,7 @@
 
 		cursor: pointer;
 
-		color: $neutral-700;
+		color: colors.$neutral-700;
 	}
 
 	&:checked + label:before,
@@ -34,22 +37,22 @@
 
 		content: "";
 
-		border: 1px $neutral-450 solid;
+		border: 1px colors.$neutral-450 solid;
 		border-radius: 100%;
 		background: #fff;
 	}
 
 	&:hover:checked + label:before{
-		border-color: $theme-900;
+		border-color: colors.$theme-900;
 	}
 	&:checked + label:before{
-		border-color: $theme-600;
+		border-color: colors.$theme-600;
 	}
 	&:active:checked + label:before{
-		border-color: $theme-600;
+		border-color: colors.$theme-600;
 	}
 	&:active:not(:checked) + label:before{
-		border-color: $theme-600;
+		border-color: colors.$theme-600;
 	}
 
 	&:checked + label:after,
@@ -65,7 +68,7 @@
 		transition: all .2s ease;
 
 		border-radius: 100%;
-		background: $theme-600;
+		background: colors.$theme-600;
 	}
 
 	&:checked:hover + label:after,
@@ -81,7 +84,7 @@
 		transition: all .2s ease;
 
 		border-radius: 100%;
-		background: $neutral-450;
+		background: colors.$neutral-450;
 	}
 
 	// &:hover:checked + label:after,
@@ -97,7 +100,7 @@
 		transition: all .2s ease;
 
 		border-radius: 100%;
-		background: $neutral-450;
+		background: colors.$neutral-450;
 	}
 
 	&:hover:checked + label:after{
@@ -106,7 +109,7 @@
 	}
 
 	&:hover:checked + label:after{
-		background: $theme-900;
+		background: colors.$theme-900;
 		// background: lime;
 	}
 
@@ -123,7 +126,7 @@
 		transition: all .2s ease;
 
 		border-radius: 100%;
-		background: $theme-600;
+		background: colors.$theme-600;
 	}
 
 	&:not(:checked) + label:after{
@@ -139,9 +142,9 @@
 		opacity: 1;
 	}
 	&:disabled + label{
-		color: $neutral-400;
+		color: colors.$neutral-400;
 	}
 	&:disabled + label:before{
-		border-color: $neutral-400;
+		border-color: colors.$neutral-400;
 	}
 }

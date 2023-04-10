@@ -1,4 +1,3 @@
 /** Meta Tags **/
-
-@import "../sass/01-atoms/meta/tags";
-@import "../sass/02-molecules/meta/lists";
+@forward "../sass/01-atoms/meta/index";
+@forward "../sass/02-molecules/meta-list/index";

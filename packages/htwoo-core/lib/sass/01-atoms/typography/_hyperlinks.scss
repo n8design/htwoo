@@ -1,12 +1,14 @@
+@use "../../00-base/colors/colors";
+
 a{
-    color: $theme-600;
+    color: colors.$theme-600;
     &:visited{
-        color: $theme-600;
+        color: colors.$theme-600;
     }
     &:active{
-        color: $theme-600;
+        color: colors.$theme-600;
     }
     &:hover{
-        color: $theme-600;
+        color: colors.$theme-600;
     }
 }

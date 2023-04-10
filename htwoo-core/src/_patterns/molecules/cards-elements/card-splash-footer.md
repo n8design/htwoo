@@ -1,5 +1,6 @@
 ---
 title: Splash Card Footer
+order: 30
 ---
 
 ### SCSS Imports

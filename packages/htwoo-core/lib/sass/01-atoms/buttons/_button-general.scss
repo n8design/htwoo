@@ -1,4 +1,6 @@
+@use "../../00-base/colors/colors";
+
 .hoo-button-chevron{
-    color: $neutral-800;
+    color: colors.$neutral-800;
     cursor: pointer;
 }

@@ -1,3 +1,3 @@
-@import './base';
+@debug "[hTWOo] Deprecation Warning: '_webpart-title.scss' is deprecated. Use '_webpart.scss' instead";
 
-@import '../sass/02-molecules/webpart-header';
+@forward '../sass/02-molecules/webpart';

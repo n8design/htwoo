@@ -1,3 +1,5 @@
+@use "../../00-base/colors/colors";
+
 @keyframes progress{
 	0%{
 		width: 0;
@@ -36,7 +38,7 @@
 		animation-direction: normal;
 		/* or: normal */
 
-		background-color: $theme-900;
+		background-color: colors.$theme-900;
 
 		animation-fill-mode: forwards;
 		/* or: backwards, both, none */

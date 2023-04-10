@@ -1,3 +1,8 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "../../00-base/mixin/core.mixin";
+@use "buttons";
+
 .hoo-buttonsplit{
 	@extend %flyoutDropDown;
 
@@ -18,9 +23,9 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $neutral-400;
-			border-color: $neutral-100;
-			background-color: $neutral-100;
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
 		}
 	}
 
@@ -32,7 +37,7 @@
 		margin: 0;
 		padding: 0;
 
-		color: $neutral-700;
+		color: colors.$neutral-700;
 		border-left: none;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
@@ -43,7 +48,7 @@
 
 			height: auto;
 			margin: 0;
-			padding: px2rem(2px) px2rem(6px);
+			padding: core.px2rem(2px) core.px2rem(6px);
 
 			color: inherit;
 			border-left: 1px currentColor solid;
@@ -61,9 +66,9 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $neutral-400;
-			border-color: $neutral-100;
-			background-color: $neutral-100;
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
 		}
 	}
 
@@ -86,9 +91,9 @@
 
 	.hoo-buttonsplit-standard,
 	.hoo-buttonsplit-carret{
-		color: $neutral-000;
-		border-color: $theme-600;
-		background-color: $theme-600;
+		color: colors.$neutral-000;
+		border-color: colors.$theme-600;
+		background-color: colors.$theme-600;
 
 		.hoo-button-label{
 			color: currentColor;
@@ -98,16 +103,16 @@
 		&:disabled{
 			pointer-events: none;
 
-			color: $neutral-400;
-			border-color: $neutral-100;
-			background-color: $neutral-100;
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
 		}
 	}
 
 	&.show-flyout{
 		& > .hoo-buttonsplit-carret{
-			border-color: $theme-800;
-			background-color: $theme-800;
+			border-color: colors.$theme-800;
+			background-color: colors.$theme-800;
 		}
 	}
 }

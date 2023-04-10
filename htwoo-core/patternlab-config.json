@@ -123,7 +123,7 @@
   "engines": {
     "handlebars": {
       "package": "@pattern-lab/engine-handlebars",
-      "extend": "helpers/*.js"
+      "extend": "helpers/hbs/*.js"
     }
   }
 }

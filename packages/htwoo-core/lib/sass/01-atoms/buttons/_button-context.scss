@@ -1,3 +1,7 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "../../00-base/mixin/core.mixin";
+
 div.hoo-buttoncontext-outer{
 	@extend %flyoutDropDown;
 
@@ -8,18 +12,18 @@ div.hoo-buttoncontext-outer{
 	display: inline-flex;
 
 	box-sizing: border-box;
-	height: px2rem(32px);
+	height: core.px2rem(32px);
 	margin: 0;
-	padding: 0 px2rem(16px);
+	padding: 0 core.px2rem(16px);
 
 	white-space: nowrap;
 
 	border: none;
 	// border: 1px $buttonBorder solid;
-	border: 1px $neutral-450 solid;
+	border: 1px colors.$neutral-450 solid;
 	border-radius: 2px;
-	background-color: $neutral-000;
-	color: $neutral-700;
+	background-color: colors.$neutral-000;
+	color: colors.$neutral-700;
 
 	align-items: center;
 
@@ -29,45 +33,45 @@ div.hoo-buttoncontext-outer{
 	}
 
 	&-icon{
-		line-height: px2rem(36px);
+		line-height: core.px2rem(36px);
 
 		display: flex;
 		justify-content: center;
 
 		box-sizing: border-box;
-		width: px2rem(24px);
+		width: core.px2rem(24px);
 
 		align-items: center;
 
 		svg{
-			padding: 0 px2rem(4px);
+			padding: 0 core.px2rem(4px);
 		}
 	}
 
 	&-label{
-		font-size: px2rem(14px);
-		line-height: px2rem(32px);
+		font-size: core.px2rem(14px);
+		line-height: core.px2rem(32px);
 
 		box-sizing: border-box;
-		padding: 0 px2rem(4px);
+		padding: 0 core.px2rem(4px);
 
 		white-space: nowrap;
 	}
 
 	.hoo-buttonchevron{
-		padding: 0 px2rem(4px);
+		padding: 0 core.px2rem(4px);
 
 		svg{
-			width: px2rem(12px);
-			height: px2rem(12px);
+			width: core.px2rem(12px);
+			height: core.px2rem(12px);
 		}
 	}
 
 	&:hover{
-		background-color: $neutral-100;
+		background-color: colors.$neutral-100;
 	}
 
 	&:active{
-		color: $neutral-200;
+		color: colors.$neutral-200;
 	}
 }

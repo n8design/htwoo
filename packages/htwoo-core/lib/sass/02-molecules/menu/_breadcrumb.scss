@@ -1,3 +1,6 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-breadcrumb{
 	ol{
 		display: flex;
@@ -29,7 +32,7 @@
 }
 
 .hoo-breadcrumb-link{
-	line-height: px2rem(32px);
+	line-height: core.px2rem(32px);
 
 	display: inline-block;
 
@@ -39,12 +42,12 @@
 
 	text-decoration: none;
 
-	color: $bodyText;
+	color: colors.$bodyText;
 
 	&:hover{
 
-		color: $bodyText;
-		background-color: $buttonBackgroundHovered;
+		color: colors.$bodyText;
+		background-color: colors.$buttonBackgroundHovered;
 	}
 }
 
@@ -63,10 +66,10 @@ button{
 
 
 .hoo-breadcrumb-separator{
-	line-height: px2rem(32px);
+	line-height: core.px2rem(32px);
 
 	svg{
-		width: px2rem(12px);
-		height: px2rem(12px);
+		width: core.px2rem(12px);
+		height: core.px2rem(12px);
 	}
 }

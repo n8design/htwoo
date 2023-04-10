@@ -1,3 +1,6 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-toggle{
 	display: flex;
 
@@ -23,16 +26,16 @@
 
 		display: flex;
 
-		width: px2rem(32px);
-		height: px2rem(16px);
+		width: core.px2rem(32px);
+		height: core.px2rem(16px);
 		margin: 0 1rem;
 
 		content: "";
 		transition: background .2s ease-in-out;
 
-		border: 1px $neutral-450 solid;
+		border: 1px colors.$neutral-450 solid;
 		border-radius: 1rem;
-		background-color: $neutral-000;
+		background-color: colors.$neutral-000;
 		cursor: pointer;
 
 		&::after{
@@ -43,16 +46,16 @@
 			display: inline-block;
 
 			box-sizing: border-box;
-			width: px2rem(12px);
-			height: px2rem(12px);
+			width: core.px2rem(12px);
+			height: core.px2rem(12px);
 			margin: 2px;
 
 			content: "";
 			transition: all .1s;
 
-			border: px2rem(2px) rgba(#fff, 0) solid;
+			border: core.px2rem(2px) rgba(#fff, 0) solid;
 			border-radius: 50%;
-			background-color: $neutral-700;
+			background-color: colors.$neutral-700;
 		}
 	}
 
@@ -63,13 +66,13 @@
 		&:checked{
 			& ~ .hoo-toggle-label{
 				.hoo-toggle-slider{
-					border-color: $theme-600;
-					background-color: $theme-600;
+					border-color: colors.$theme-600;
+					background-color: colors.$theme-600;
 
 					&::after{
 						transform: translateX(1rem);
 
-						background-color: $neutral-000;
+						background-color: colors.$neutral-000;
 					}
 				}
 
@@ -84,12 +87,12 @@
 		}
 		&:disabled{
 			& ~ .hoo-toggle-label{
-				color: $neutral-400;
+				color: colors.$neutral-400;
 				.hoo-toggle-slider{
-					border-color: $neutral-400;
+					border-color: colors.$neutral-400;
 					&::after{
 
-						background-color: $neutral-400;
+						background-color: colors.$neutral-400;
 					}
 				}
 			}
@@ -97,12 +100,12 @@
 			&:checked{
 				
 				& ~ .hoo-toggle-label{
-					color: $neutral-400;
+					color: colors.$neutral-400;
 					.hoo-toggle-slider{
-						border-color: $neutral-400;
-						background-color: $neutral-400;
+						border-color: colors.$neutral-400;
+						background-color: colors.$neutral-400;
 						&::after{
-							background-color: $neutral-100;
+							background-color: colors.$neutral-100;
 						}
 					}
 				}

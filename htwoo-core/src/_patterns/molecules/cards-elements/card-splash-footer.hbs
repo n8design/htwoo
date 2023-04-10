@@ -1,4 +1,10 @@
-    <footer class="hoo-splashcard-footer">
-        {{> atoms-button-primary prim-btn }}
-        {{> atoms-button-standard sec-btn }}
-    </p>
+{{#splash-card }}
+<footer class="hoo-splashcard-footer">
+    {{#primary-button }}
+    {{> atoms-button-primary this }}
+    {{/primary-button}}
+    {{#secondary-button}}
+    {{> atoms-button-standard this }}
+    {{/secondary-button}}
+</footer>
+{{/splash-card }}

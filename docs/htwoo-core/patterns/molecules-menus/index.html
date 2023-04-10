@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="">
+<html lang="" class="">
   <head>
     <title>hTWOo UI Framework - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1678898565090" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1678898565090" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1678898565090" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1681153311346" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1681153311346" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1681153311346" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1678898565090" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1681153311346" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -213,71 +214,74 @@
 		
 			<div class="pl-js-pattern-example">
 			<nav class="hoo-nav">
-    <ul role="tree" class="hoo-nav-list" role="tree">
+    <menu role="tree" class="hoo-nav-list" role="tree">
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
-
                 <button class="hoo-buttonicon" >
                     <span class="hoo-icon">
                         <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
                             <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
                         </svg>
                     </span></button>
-
-
                 <a href="#" class="hoo-navitem-link">Item 1</a>
             </div>
-            <ul class="hoo-nav-listsub" role="group">
-                <li class="hoo-navitem">
-                    <div class="hoo-navitem-text">
-                        <a href="" class="hoo-navitem-link">bbb</a>
-                    </div>
-                </li>
-                <li class="hoo-navitem">
-                    <div class="hoo-navitem-text">
-                        <a href="" class="hoo-navitem-link">bbb</a>
-                    </div>
-                </li>
-                <li class="hoo-navitem">
-                    <div class="hoo-navitem-text">
-                        <a href="" class="hoo-navitem-link">bbb</a>
-                    </div>
-                </li>
-            </ul>
+            <menu class="hoo-nav-listsub" role="group">
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 1.1</a>
+            </div>
         </li>
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 1.2</a>
+            </div>
+        </li>
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 1.3</a>
+            </div>
+        </li>
+    </menu>
+    </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" aria-current="page" >
             <div class="hoo-navitem-text">
-
                 <a href="#" class="hoo-navitem-link">Item 2</a>
-        </li>
+    </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
-
                 <button class="hoo-buttonicon" >
                     <span class="hoo-icon">
                         <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
                             <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
                         </svg>
                     </span></button>
-
-
                 <a href="#" class="hoo-navitem-link">Item 3</a>
             </div>
-            <ul class="hoo-nav-listsub" role="group">
-                <li class="hoo-navitem">
-                    <div class="hoo-navitem-text">
-                        <a href="" class="hoo-navitem-link">bbb</a>
-                    </div>
-                </li>
-            </ul>
+            <menu class="hoo-nav-listsub" role="group">
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 3.1</a>
+            </div>
         </li>
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 3.2</a>
+            </div>
+        </li>
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 3.3</a>
+            </div>
+        </li>
+    </menu>
+    </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
-
                 <a href="#" class="hoo-navitem-link">Item 4</a>
-        </li>
-    </ul>
+    </li>
+    </menu>
 </nav>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-nav" class="pl-js-pattern-data">
@@ -320,7 +324,7 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-pivotbar">
+			<menu class="hoo-pivotbar">
     <button class="hoo-button-pivot is-active">
         <span class="hoo-pivot-inner" title="Coffee">
             Coffee
@@ -330,10 +334,31 @@
             Matcha
         </span>
     </button>    <button class="hoo-button-pivot">
+        <span class="hoo-pivot-inner" title="Ice Tea">
+            Ice Tea
+        </span>
+    </button>    <button class="hoo-button-pivot">
+        <span class="hoo-pivot-inner" title="Aqua Minerale">
+            Aqua Minerale
+        </span>
+    </button>    <button class="hoo-button-pivot">
+        <span class="hoo-pivot-inner" title="Earl Grey">
+            Earl Grey
+        </span>
+    </button>    <button class="hoo-button-pivot">
+        <span class="hoo-pivot-inner" title="Darjeeling tea">
+            Darjeeling tea
+        </span>
+    </button>    <button class="hoo-button-pivot">
+        <span class="hoo-pivot-inner" title="Chai Latte">
+            Chai Latte
+        </span>
+    </button>    <button class="hoo-button-pivot">
         <span class="hoo-pivot-inner" title="Gin Tonic">
             Gin Tonic
         </span>
-    </button></div>
+    </button></menu>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-pivotbar" class="pl-js-pattern-data">
@@ -376,7 +401,7 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-pivotbar has-overflow" role="menubar">
+			<menu class="hoo-pivotbar has-overflow" role="menubar">
     <div class="hoo-overflow">
         <button class="hoo-button-pivot is-active">
             <span class="hoo-pivot-inner" title="Coffee">
@@ -421,7 +446,8 @@
             </button>
             <menu class="hoo-buttonflyout">
             </menu></div>    </div>
-</div>
+</menu>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-pivotbar-overflow" class="pl-js-pattern-data">
@@ -465,8 +491,44 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-teams-toolbar">
-    <div class="hoo-cmdbar has-overflow">
+    <menu class="hoo-cmdbar has-overflow">
         <div class="hoo-overflow">
+            <div class="hoo-buttoncmd"  aria-haspopup="true" >
+                <button class="hoo-buttoncmd" aria-haspopup="true">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+                </svg>
+            </span> </span>
+                </button>
+                <menu class="hoo-buttonflyout">
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Email message </span>
+                        </button>
+                    </li>
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Calendar Event </span>
+                        </button>
+                    </li>
+                </menu></div>
             <div class="hoo-buttoncmd" >
                 <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
@@ -476,7 +538,44 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>        <div class="hoo-buttoncmd" >
+            </div>
+            <div class="hoo-buttoncmd"  aria-haspopup="true" >
+                <button class="hoo-buttoncmd" aria-haspopup="true">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+                </svg>
+            </span> </span>
+                </button>
+                <menu class="hoo-buttonflyout">
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Email message </span>
+                        </button>
+                    </li>
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Calendar Event </span>
+                        </button>
+                    </li>
+                </menu></div>
+            <div class="hoo-buttoncmd" >
                 <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
@@ -485,7 +584,44 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>        <div class="hoo-buttoncmd" >
+            </div>
+            <div class="hoo-buttoncmd"  aria-haspopup="true" >
+                <button class="hoo-buttoncmd" aria-haspopup="true">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg " aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#"></use>
+                </svg>
+            </span> </span>
+                    <span class="hoo-button-label"> New Item </span>
+                    <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+                <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                    <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+                </svg>
+            </span> </span>
+                </button>
+                <menu class="hoo-buttonflyout">
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Email message </span>
+                        </button>
+                    </li>
+                    <li class="hoo-buttonflyout-item">
+                        <button class="hoo-buttonaction">
+                            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                            <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                                <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                            </svg>
+                        </span> </span>
+                            <span class="hoo-button-label"> Calendar Event </span>
+                        </button>
+                    </li>
+                </menu></div>
+            <div class="hoo-buttoncmd" >
                 <button class="hoo-buttoncmd" >
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
@@ -494,43 +630,19 @@
             </span> </span>
                     <span class="hoo-button-label"> New Item </span>
                 </button>
-            </div>        <div class="hoo-buttoncmd" >
-                <button class="hoo-buttoncmd" >
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                </button>
-            </div>        <div class="hoo-buttoncmd" >
-                <button class="hoo-buttoncmd" >
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                </button>
-            </div>        <div class="hoo-buttoncmd" >
-                <button class="hoo-buttoncmd" >
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                    <use xlink:href="../../images/icons.svg#icon-plus"></use>
-                </svg>
-            </span> </span>
-                    <span class="hoo-button-label"> New Item </span>
-                </button>
-            </div>        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
-                <button class="hoo-buttonicon-flyout" aria-haspopup="true">
+            </div>
+            <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+                <button class="hoo-buttonicon-overflow" aria-haspopup="true">
                     <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
                 <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
                     <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
                 </svg>
             </span> </span>
                 </button>
-            </div>    </div>
-    </div>    <div class="hoo-input-search">
+                <menu class="hoo-buttonflyout">
+                </menu></div>    </div>
+    </menu>
+    <div class="hoo-input-search">
         <svg class="hoo-icon icon-search">
             <use xlink:href="../../images/icons.svg#icon-search"></use>
         </svg><input class="hoo-input-text" type="search" placeholder="Search">
@@ -577,7 +689,43 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-cmdbar">
+			<menu class="hoo-cmdbar">
+    <div class="hoo-buttoncmd"  aria-haspopup="true" >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
     <div class="hoo-buttoncmd" >
         <button class="hoo-buttoncmd" >
             <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
@@ -587,7 +735,44 @@
     </span> </span>
             <span class="hoo-button-label"> New Item </span>
         </button>
-    </div>    <div class="hoo-buttoncmd" >
+    </div>
+    <div class="hoo-buttoncmd"  aria-haspopup="true" >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
+    <div class="hoo-buttoncmd" >
         <button class="hoo-buttoncmd" >
             <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
         <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
@@ -596,7 +781,55 @@
     </span> </span>
             <span class="hoo-button-label"> New Item </span>
         </button>
-    </div></div>
+    </div>
+    <div class="hoo-buttoncmd"  aria-haspopup="true" >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg " aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
+    <div class="hoo-buttoncmd" >
+        <button class="hoo-buttoncmd" >
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+        </button>
+    </div>
+</menu>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-cmdbar" class="pl-js-pattern-data">
@@ -639,8 +872,44 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<div class="hoo-cmdbar has-overflow">
+			<menu class="hoo-cmdbar has-overflow">
     <div class="hoo-overflow">
+        <div class="hoo-buttoncmd"  aria-haspopup="true" >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
         <div class="hoo-buttoncmd" >
             <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
@@ -650,7 +919,44 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>        <div class="hoo-buttoncmd" >
+        </div>
+        <div class="hoo-buttoncmd"  aria-haspopup="true" >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
+        <div class="hoo-buttoncmd" >
             <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
@@ -659,7 +965,44 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>        <div class="hoo-buttoncmd" >
+        </div>
+        <div class="hoo-buttoncmd"  aria-haspopup="true" >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg " aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
+        <div class="hoo-buttoncmd" >
             <button class="hoo-buttoncmd" >
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
@@ -668,35 +1011,9 @@
         </span> </span>
                 <span class="hoo-button-label"> New Item </span>
             </button>
-        </div>        <div class="hoo-buttoncmd" >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>        <div class="hoo-buttoncmd" >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>        <div class="hoo-buttoncmd" >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
-            <button class="hoo-buttonicon-flyout" aria-haspopup="true">
+        </div>
+        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+            <button class="hoo-buttonicon-overflow" aria-haspopup="true">
                 <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
                 <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
@@ -705,7 +1022,8 @@
             </button>
             <menu class="hoo-buttonflyout">
             </menu></div>    </div>
-</div>
+</menu>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-cmdbar-overflow" class="pl-js-pattern-data">
@@ -760,10 +1078,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1678898565090">
+<script id="pl-js-polyfill-insert-1681153311346">
   (function() {
     if (self != top) {
-      var cb = '1678898565090';
+      var cb = '1681153311346';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -776,7 +1094,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1678898565090" nomodule>
+<script id="pl-js-insert-1681153311346" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -785,7 +1103,8 @@
 </script>
 
 
-<script src="../../js/main.js" type="module"></script>
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module" />
 <script src="../../js/themeswitch/index.js" type="module"></script>
 <script>
 
@@ -820,15 +1139,7 @@
     // on first run detect layout
     evtLocationStorageUpdates();
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GBZFB89Y7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7GBZFB89Y7');
-</script>
+<script src="../../js/_util.js" type="module"></script>
 </body>
 
 </html>

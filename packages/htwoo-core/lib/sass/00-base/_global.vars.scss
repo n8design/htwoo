@@ -1,10 +1,11 @@
-@import './core';
+@use 'core';
+@use 'colors/colors';
 
-$tooltip-font-size: $smallFontSize !default;
+$tooltip-font-size: colors.$smallFontSize !default;
 $tooltip-max-width: 200px !default;
-$tooltip-color: $black !default;
+$tooltip-color: colors.$black !default;
 $tooltip-bg: white !default;
-$tooltip-border-radius: $roundedCorner2 !default;
+$tooltip-border-radius: colors.$roundedCorner2 !default;
 $tooltip-opacity: .9 !default;
 $tooltip-padding-y: .25rem !default;
 $tooltip-padding-x: .5rem !default;

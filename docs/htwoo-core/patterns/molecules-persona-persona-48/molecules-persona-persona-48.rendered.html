@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="">
+<html lang="en" class="">
   <head>
     <title>Online - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1678898565090" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1678898565090" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1678898565090" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1681153311346" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1681153311346" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1681153311346" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -15,11 +16,10 @@
   </head>
   <body class="">
 <div class="hoo-persona-48">
-    <div class="hoo-avatar-pres-16">
-        <div class="hoo-avatar-16">
-            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="16" width="16" loading="lazy">
-        </div>
-        <div class="hoo-presence is-online" title="Online"></div></div>
+    <div class="hoo-avatar-pres-48">
+        <div class="hoo-avatar-48">
+            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+        </div>    <div class="hoo-presence is-online" title="Online"></div></div>
     <div class="hoo-persona-data">
         <div class="hoo-persona-name">Jane Doeminica</div>
         <div class="hoo-persona-function"><span>Lead Fluent Designer</span></div>
@@ -68,10 +68,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1678898565090">
+<script id="pl-js-polyfill-insert-1681153311346">
   (function() {
     if (self != top) {
-      var cb = '1678898565090';
+      var cb = '1681153311346';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -84,7 +84,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1678898565090" nomodule>
+<script id="pl-js-insert-1681153311346" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -93,7 +93,8 @@
 </script>
 
 
-<script src="../../js/main.js" type="module"></script>
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module" />
 <script src="../../js/themeswitch/index.js" type="module"></script>
 <script>
 
@@ -128,15 +129,7 @@
     // on first run detect layout
     evtLocationStorageUpdates();
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GBZFB89Y7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7GBZFB89Y7');
-</script>
+<script src="../../js/_util.js" type="module"></script>
 </body>
 
 </html>
