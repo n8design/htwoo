@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCardLocation from './HOOCardLocation';
+
+<Meta title="Components/Cards/Document Card/Elements/HOOCardLocation" component={HOOCardLocation} />
+
+# HOOCardLocation
+
+
+## Arguments
+
+<ArgsTable of={HOOCardLocation} />
+
+export const Template = (args) => <HOOCardLocation {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { location: "Location Value" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { location: "Location Value", rootElementAttributes: { style: { backgroundColor: "mintcream" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,0 +1,69 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOTooltip, {HOOTipPosition} from './HOOTooltip';
+import HOOLabel from '../HOOLabel';
+
+<Meta title="Components/Tooltips/HOOTooltip" component={HOOTooltip} />
+
+# HOOTooltip
+
+Renders a tooltip with the specified text. If the text property is omitted it will render the tooltip's child elements.
+
+Predefined enum defined for the supported tooltip positions:
+```ts
+export enum HOOTipPosition {
+  TopLeft="top-left",
+  TopCenter="top-center",
+  TopRight="top-right",
+  RightTop="right-top",
+  RightCenter="right-center",
+  RightBottom="right-bottom",
+  BottomLeft="bottom-left",
+  BottomCenter="bottom-center",
+  BottomRight="bottom-right",
+  LeftTop="left-top",
+  LeftCenter="left-center",
+  LeftBottom="left-bottom"
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOOTooltip} />
+
+export const Template = (args) => <HOOTooltip {...args} />;
+export const TemplateChildren = (args) => <HOOTooltip {...args} >
+  <HOOLabel label="My child element">
+</HOOTooltip>;
+
+## Basic: Top Left
+<Canvas>
+  <Story 
+    name="Basic - Top Left"
+    args = { 
+      { position: HOOTipPosition.TopLeft, text: "My Tooltip content" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Children: Top Right
+<Canvas>
+  <Story 
+    name="Children - Top Right"
+    args = { 
+      { position: HOOTipPosition.TopRight }
+    }>
+    {TemplateChildren.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { position: HOOTipPosition.TopLeft, text: "My Tooltip content", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

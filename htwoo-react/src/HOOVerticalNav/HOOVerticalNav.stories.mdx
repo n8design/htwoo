@@ -1,0 +1,38 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOVerticalNav from './HOOVerticalNav';
+import { IHOONavItem } from '../common/IHOONavItem';
+
+<Meta title="Components/Menus/HOOVerticalNav" component={HOOVerticalNav} />
+[![Available in v1.6](https://img.shields.io/badge/💦%20Added%20Version-1.6-blue.svg?style=for-the-badge)](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)
+
+# HOOVerticalNav
+
+## Arguments
+
+<ArgsTable of={HOOVerticalNav} />
+
+export const childNavItems = [{ key: 101, text: "Value 1 - 1", href: "https://microsoft.com" }, { key: 102, text: "Value 1 - 2", onItemClick: (key) => {alert(`Key: ${key}`)} }, { key: 103, text: "Value 1 - 3", href: "https://boston.com" }];
+export const navItems = [{ key: 1, text: "Value 1", href: "https://google.com", childNavItems: childNavItems  }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3", onItemClick: (key) => {alert(`Key: ${key}`)} }];
+export const Template = (args) => <HOOVerticalNav selectedKey={101} {...args} />;
+
+## Standard
+<Canvas>
+  <Story 
+    name="Standard"
+    args = { 
+      { navItems: navItems }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { navItems: navItems, rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

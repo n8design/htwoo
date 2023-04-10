@@ -1,0 +1,53 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOODropDown, {
+  IHOODropDownGroup,
+  IHOODropDownItem
+} from './HOODropDown';
+
+<Meta title="Components/Inputs/HOODropDown" component={HOODropDown} />
+
+# HOODropDown
+
+## Item Interface
+The `options` property should be of type `IHOODropDownGroup` which then contains 
+groupItems which is an array of `IHOODropDownItem` values. See defintions below:
+
+```ts
+export interface IHOODropDownItem {
+  key: string | number;
+  text: string;
+  disabled: boolean;
+}
+
+export interface IHOODropDownGroup {
+  groupName: string;
+  groupItems: IHOODropDownItem[];
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOODropDown} />
+
+export const Template = (args) => <HOODropDown {...args} />;
+
+## Standard
+<Canvas>
+  <Story 
+    name="Standard"
+    args = { 
+      (function () {
+        const groupItems = [{ key: "apple", text: "Apple", disabled: false }, { key: "orange", text: "Orange", disabled: false }];
+        const options = [{ groupName: "", groupItems: groupItems }];
+
+        return {
+          value: "apple",
+          options: options,
+          containsTypeAhead: false,
+          onChange: (fieldValue) => { console.log(`Dropdown value: ${fieldValue}`) }
+        };
+      })()      
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
