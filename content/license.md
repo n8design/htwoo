@@ -4,7 +4,7 @@ title: License
 
 MIT License
 
-Copyright (c) 2021 N8D, Stefan Bauer, Julie Turner
+Copyright (c) 2023 N8D, [Stefan Bauer](https://n8d.at), [Julie Turner](https://julieturner.net/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

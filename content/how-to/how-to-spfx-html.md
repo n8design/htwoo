@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Use hTWOo in your No-Framework SPFx web part
+title: Use hTWOo Core in your No-Framework SPFx web part
 nav-title: SPFx with No-framework
 description: Learn how to use hTWOo in a no-framework based SPFx web part
 group: how-to

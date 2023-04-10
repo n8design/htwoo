@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Use hTWOo in your Angular Elements web part
+title: Use hTWOo Core in your Angular Elements web part
 nav-title: SPFx with Angular Elements
 description: Learn how to use hTWOo in an Angular Elements based based SPFx web part
 group: how-to

@@ -24,7 +24,7 @@ tags:
 
 <div class="t-general landing">
   <h2>Why hTWOo?</h2>
-  <p>We strongly believe that accessibility, inclusivity, and performance are essential for every front-end framework. hTWOo was built with this in mind. It allows you to develop customisations and applications for Microsoft 365 and web applications and provides the fastest way to implement Fluent Design.</p>
+  <p>We strongly believe that accessibility, inclusivity, and performance are essential for every front-end framework. hTWOo was built with this in mind. It allows you to develop customizations and applications for Microsoft 365 and web applications and provides the fastest way to implement Fluent Design.</p>
   <p>Built on a strong fundament of semantic markup, it brings longevity to your applications while gradually involving over time, which makes the upgrade path as smooth as possible.</p>
   <p>hTWOo was built on the <a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank">Atomic Design Methodology</a>, making it easy for the developer to use and reuse built-in components to create new experiences faster without reinventing the wheel.</p>
   <p>

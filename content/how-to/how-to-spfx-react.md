@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Use hTWOo in your ReactJS SPFx web part
+title: Use hTWOo Core in your ReactJS SPFx web part
 nav-title: SPFx with ReactJS
 description: This article describes the requirements to enable hTWOo in your custom web part
 group: how-to
 ---
+
+This documentation covers using the hTWOo-core html/css only implementation in your ReactJS project. We also have a component library implemented for ReactJS that you can alternatively use called `hTWOo React`, check out the [documentation](/htwoo/htwoo-react).
 
 ## Install hTWOo UI
 
