@@ -233,7 +233,7 @@ You can now add additional functionalities and other buttons to your code or jus
 
 A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
-## H2O and theming
+## HTWOO and theming
 
 The way hTWOo handles theming and theme slots also allow you to change the theme without any extra effort and coding.
 
