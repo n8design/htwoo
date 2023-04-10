@@ -147,6 +147,8 @@ The `hTWOoSample` will still get replaces with a custom string like this.
 First import the base elements from hTWOo core.
 
 ```css
+@use 'sass:meta';
+
 @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
 .hTWOoReactSpFx{
@@ -158,42 +160,51 @@ First import the base elements from hTWOo core.
 From there you can use now all other comments in the main block of your web part using `globals`. The full list of features may look like this.
 
 ```scss
-  // Imports all base mixin
-  @import 'node_modules/@n8d/htwoo-core/lib/components/base';
+    // Imports all base mixin
+  @use 'sass:meta'
 
   .hTWOoSample {
 
     :global {
       
+      // For Accordions
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/accordion');
+
       // For Avatar and Person selector components
-      @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/avatar');
 
       // Various types of buttons
-      @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/buttons');
 
       // Various types of cards
-      @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/cards');
 
       // Various types of dialogs
-      @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/dialogs');
 
       // Various types of forms
-      @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/forms');
 
       // Various types of icons controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/icon');
 
       // Various types of menus controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/menus');
+
+      // Various meta tags
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/meta-tags');
 
       // Various types of tables
-      @import 'node_modules/@n8d/htwoo-core/lib/components/table';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/table');
+
+      // Various types of quicklinks
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/quicklinks');
 
       // Various types of typography
-      @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/typography');
 
       // Various types of web part utilities
-      @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/webparts');
 
     }
   }

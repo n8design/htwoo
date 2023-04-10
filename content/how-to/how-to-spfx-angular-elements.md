@@ -132,40 +132,56 @@ Move to the `src/style.scss` inside `angular project folder`. And add following 
 
 First import the base elements from hTWOo core.
 
-```css
+```scss
 /* You can add global styles to this file, and also import other style files */
-@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+  // Imports all base mixin
+  @use 'sass:meta'
 
-@import 'node_modules/@n8d/htwoo-core/lib/sass/style';
+  .hTWOoSample {
 
-@import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+    :global {
+      
+      // For Accordions
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/accordion');
 
-// Various types of buttons
-@import 'node_modules/@n8d/htwoo-core/lib/components/button';
+      // For Avatar and Person selector components
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/avatar');
 
-// Various types of cards
-@import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+      // Various types of buttons
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/buttons');
 
-// Various types of dialogs
-@import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+      // Various types of cards
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/cards');
 
-// Various types of forms
-@import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+      // Various types of dialogs
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/dialogs');
 
-// Various types of icons controls
- @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+      // Various types of forms
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/forms');
 
-// Various types of menus controls
-@import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+      // Various types of icons controls
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/icon');
 
-// Various types of tables
-@import 'node_modules/@n8d/htwoo-core/lib/components/table';
+      // Various types of menus controls
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/menus');
 
-// Various types of typography
-@import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+      // Various meta tags
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/meta-tags');
 
-// Various types of web part utilities
-@import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+      // Various types of tables
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/table');
+
+      // Various types of quicklinks
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/quicklinks');
+
+      // Various types of typography
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/typography');
+
+      // Various types of web part utilities
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/webparts');
+
+    }
+  }
 
 ```
 
