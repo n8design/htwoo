@@ -52,10 +52,6 @@ Documentation and implementation in hTWOo go hand in hand, without additional ef
 
 Please feel free to [ask](https://github.com/n8design/htwoo/discussions) any question you have in the discussion forum or reach out to us on twitter [@htwooui](https://twitter.com/hTWOoUI).
 
-## Samples
-
-* [n8design/htwoo-sample](https://github.com/n8design/htwoo-samples)
-
 ## Maintaind by 
 
 [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner) and You ❤️
