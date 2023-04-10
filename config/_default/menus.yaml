@@ -2,8 +2,8 @@ main:
 - name: Introduction
   pageRef: /why-htwoo
   weight: 90
-- name: About hTWOo
-  pageRef: /readme
+- name: Concepts
+  pageRef: /concepts
   weight: 100
 - name: Flavors
   weight: 110
