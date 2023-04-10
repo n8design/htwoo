@@ -29,9 +29,7 @@ tags:
 
   <p>
   hTWOo is the only <a href="https://www.microsoft.com/design/fluent/" target="_blank">Fluent Design System</a> implementation offering HTML and CSS components in its core. Which is also the fundment
-  <p>
-  <p>In addition, hTWOo also provides a dedicated ReactJS version.</p>
-
+  In addition, hTWOo also provides a dedicated ReactJS version.</p>
 </div>
 
 {{< sponsors >}}
