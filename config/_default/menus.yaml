@@ -30,6 +30,9 @@ main:
   weight: 130
   params:
     dynamic: true
+- name: Case Studies
+  pageRef: '/case-studies'
+  weight: 140
 - name: Code of Conduct
   pageRef: /code-of-conduct
   weight: 140
