@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html class="">
+<html lang="" class="">
   <head>
     <title>hTWOo UI Framework - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1669729096095" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1669729096095" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1669729096095" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1681153116378" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1681153116378" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1681153116378" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1669729096095" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1681153116378" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -45,10 +46,9 @@
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-theming-support" data-patternpartial="atoms-shimmer-theming-support" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-theming-support" data-patternpartial="atoms-shimmer-theming-support" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -59,7 +59,6 @@
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -113,7 +112,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"lineage":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Theming support for shimmer</h2>\n<p>Shimmer also supports theming based on the SharePoint theme. This can be accomplished in two ways.\nThe following three themes are supported.</p>\n<ul>\n<li>No theme or <code>hoo-ph-neutral</code> - use for the neutral based background color gradient.</li>\n<li><code>hoo-ph-primary</code> - use for the primary theme base background colors;</li>\n<li><code>hoo-ph-fancy</code> - use for the fancy gradients based background color gradient.</li>\n</ul>\n<p>This style sheet classes can be added to a complete block as well es directly on the placeholder container.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"How shimmer / Loading works","patternPartial":"atoms-shimmer-theming-support","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":0}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-loading" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-loading" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -127,10 +127,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-loading" data-patternpartial="atoms-loading" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-loading" data-patternpartial="atoms-loading" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -141,7 +140,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -159,7 +157,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Loading","patternPartial":"atoms-loading","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-circle" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-circle" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -173,10 +172,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-circle" data-patternpartial="atoms-shimmer-circle" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-circle" data-patternpartial="atoms-shimmer-circle" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -187,7 +185,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -203,7 +200,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Circle","patternPartial":"atoms-shimmer-circle","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-row" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-row" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -217,10 +215,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-row" data-patternpartial="atoms-shimmer-row" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-row" data-patternpartial="atoms-shimmer-row" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -231,7 +228,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -247,7 +243,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Row","patternPartial":"atoms-shimmer-row","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-squared" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-squared" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -261,10 +258,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-squared" data-patternpartial="atoms-shimmer-squared" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-squared" data-patternpartial="atoms-shimmer-squared" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -275,7 +271,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -291,7 +286,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer squared","patternPartial":"atoms-shimmer-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-img-16x10" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-16x10" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -305,10 +301,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x10" data-patternpartial="atoms-shimmer-img-16x10" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x10" data-patternpartial="atoms-shimmer-img-16x10" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -319,7 +314,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -335,7 +329,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Shimmer effect on an image. The image src on the image <code>&lt;img&gt;</code> is just a transparent image of an aspect ration of 16:9. Once the original image location is know the source needs to get replaces with the url of the image.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:9","patternPartial":"atoms-shimmer-img-16x10","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20,"hidden":false}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-img-16x9" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-16x9" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -349,10 +344,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x9" data-patternpartial="atoms-shimmer-img-16x9" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x9" data-patternpartial="atoms-shimmer-img-16x9" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -363,7 +357,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -379,7 +372,8 @@ Apply any of the theming classes on the placeholder element.
 			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Shimmer effect on an image. The image src on the image <code>&lt;img&gt;</code> is just a transparent image of an aspect ration of 16:10. Once the original image location is know the source needs to get replaces with the url of the image.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:10","patternPartial":"atoms-shimmer-img-16x9","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20,"hidden":false}}
 			</script>
 		
-		</div><!--end pl-c-pattern-->		<div id="atoms-shimmer-img-1x1" class="pl-c-pattern">
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-1x1" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -393,10 +387,9 @@ Apply any of the theming classes on the placeholder element.
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-1x1" data-patternpartial="atoms-shimmer-img-1x1" title="View Pattern Info">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-1x1" data-patternpartial="atoms-shimmer-img-1x1" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-					<div class="pl-c-pattern__toggle-icon-wrapper" aria-hidden="true">
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
 							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
@@ -407,7 +400,6 @@ Apply any of the theming classes on the placeholder element.
 							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
 							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
 						</svg>
-					</div>
 				</button>
 		
 			</div><!--end pl-c-pattern__header-->
@@ -424,6 +416,7 @@ Apply any of the theming classes on the placeholder element.
 			</script>
 		
 		</div><!--end pl-c-pattern-->
+
 	</div>
 	<!--end pl-c-pattern-index-->
 
@@ -470,10 +463,10 @@ Apply any of the theming classes on the placeholder element.
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1669729096095">
+<script id="pl-js-polyfill-insert-1681153116378">
   (function() {
     if (self != top) {
-      var cb = '1669729096095';
+      var cb = '1681153116378';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -486,7 +479,7 @@ Apply any of the theming classes on the placeholder element.
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1669729096095" nomodule>
+<script id="pl-js-insert-1681153116378" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -495,7 +488,8 @@ Apply any of the theming classes on the placeholder element.
 </script>
 
 
-<script src="../../js/main.js" type="module"></script>
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module" />
 <script src="../../js/themeswitch/index.js" type="module"></script>
 <script>
 
@@ -530,6 +524,7 @@ Apply any of the theming classes on the placeholder element.
     // on first run detect layout
     evtLocationStorageUpdates();
 </script>
+<script src="../../js/_util.js" type="module"></script>
 </body>
 
 </html>
