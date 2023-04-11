@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "msftName": "purpleLight",
+            "msftNameLong": "purpleLight",
+            "colorValue": "var(--purpleLight)",
+            "designToken": "300",
+            "SASSVariable": "$purple-300"
+        },
+        {
+            "msftName": "purple",
+            "msftNameLong": "purple",
+            "colorValue": "var(--purple)",
+            "designToken": "600",
+            "SASSVariable": "$purple-600"
+        },
+        {
+            "msftName": "purpleDark",
+            "msftNameLong": "purpleDark",
+            "colorValue": "var(--purpleDark)",
+            "designToken": "800",
+            "SASSVariable": "$purple-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

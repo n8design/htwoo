@@ -1,5 +1,6 @@
 ---
 title: Shimmer Row
+order: 10
 ---
 
 ### SCSS Imports

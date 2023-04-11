@@ -1,23 +1,5 @@
-{{!-- <div class="hoo-tooltip show">
-    <div class="hoo-tooltip-content">Hello world</div>
-    <div class="arrow"></div>
-</div> --}}
-
-<div>
-    <div style="position: relative;">
-        <div class="hoo-tooltip hoo-tooltip-top show" role="tooltip" id="tooltip20619" style="will-change: transform;"
-            x-placement="top">
-            <div class="arrow"></div>
-            <div class="hoo-tooltip-content">Tooltip on top</div>
-        </div>
-    </div>
+{{#tooltip}}
+<div class="hoo-tooltip{{#if arrow}} {{arrow}}{{/if}}" role="tooltip">
+    <div class="hoo-tooltip-content">{{{content}}}</div>
 </div>
-<div>
-    <div style="position: relative;">
-        <div class="hoo-tooltip hoo-tooltip-right show" role="tooltip" id="tooltip20619" style="will-change: transform;"
-            x-placement="top">
-            <div class="arrow"></div>
-            <div class="hoo-tooltip-content">Tooltip on top</div>
-        </div>
-    </div>
-</div>
+{{/tooltip}}

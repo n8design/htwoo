@@ -1,0 +1,29 @@
+{
+    "items": [
+
+        {
+            "msftName": "tealLight",
+            "msftNameLong": "tealLight",
+            "colorValue": "var(--tealLight)",
+            "designToken": "300",
+            "SASSVariable": "$teal-300"
+        },
+        {
+            "msftName": "teal",
+            "msftNameLong": "teal",
+            "colorValue": "var(--teal)",
+            "designToken": "600",
+            "SASSVariable": "$teal-600"
+        },
+        {
+            "msftName": "tealDark",
+            "msftNameLong": "tealDark",
+            "colorValue": "var(--tealDark)",
+            "designToken": "800",
+            "SASSVariable": "$teal-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

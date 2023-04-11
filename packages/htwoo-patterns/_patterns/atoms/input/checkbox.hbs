@@ -1,1 +1,4 @@
-<input type="checkbox" name="{{ id }}" id="{{ id }}" value="" class="hoo-checkbox"><label for="{{ id }}">{{ label }}</label>
+{{#checkbox}}
+<input type="checkbox" name="{{ id }}" id="{{ id }}" value="" class="hoo-checkbox" {{#if disabled }} disabled="true"
+    aria-disabled="true" {{/if}}><label for="{{ id }}">{{ label }}</label>
+{{/checkbox}}

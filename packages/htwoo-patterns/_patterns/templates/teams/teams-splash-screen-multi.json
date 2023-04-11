@@ -1,43 +1,56 @@
 {
     "cards": [
         {
-            "headerImage": "../../images/placeholders/16by10.png",
-            "cardtitle": "Welcome to your hTWOo Splash card",
-            "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
-            "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
-            },
-            "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+            "splash-card": {
+                "headerImage": "../../images/placeholders/16by10.png",
+                "title": "This is the first splash card",
+                "description": "This shows the base setup of a teams splash card setup and I'am out of further text here",
+                "primary-button": {
+                    "button": {
+                        "label": "Create something"
+                    }
+                },
+                "secondary-button": {
+                    "button": {
+                        "label": "Call for action"
+                    }
+                }
             }
         },
         {
-            "headerImage": "../../images/placeholders/16by10.png",
-            "cardtitle": "Welcome to your hTWOo Splash card",
-            "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
-            "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
-            },
-            "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+            "splash-card": {
+                "headerImage": "../../images/placeholders/16by10.png",
+                "title": "This is the second splash card",
+                "description": "This shows the base setup of a teams splash card setup and I'am out of further text here",
+                "primary-button": {
+                    "button": {
+                        "label": "Create something"
+                    }
+                },
+                "secondary-button": {
+                    "button": {
+                        "label": "Call for action"
+                    }
+                }
             }
         },
         {
-            "headerImage": "../../images/placeholders/16by10.png",
-            "cardtitle": "Welcome to your hTWOo Splash card",
-            "description": "This shows the base setup of a teams splash card setup and I'am out of futher text here",
-            "prim-btn": {
-                "classname": "hoo-button-primary",
-                "label": "Create something"
-            },
-            "sec-btn": {
-                "classname": "hoo-button",
-                "label": "Call for action"
+            "splash-card": {
+                "headerImage": "../../images/placeholders/16by10.png",
+                "title": "This is the third splash card",
+                "description": "This shows the base setup of a teams splash card setup and I'am out of further text here",
+                "primary-button": {
+                    "button": {
+                        "label": "Third Primary Action"
+                    }
+                },
+                "secondary-button": {
+                    "button": {
+                        "label": "Call for action"
+                    }
+                }
             }
-        }
+        },
+
     ]
 }

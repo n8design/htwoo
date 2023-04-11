@@ -1,5 +1,8 @@
 {
-    "mugshot": "../../images//mug-shots/female-mugshot-001.jpg",
-    "status": "online",
-    "title": "Online"
+    "avatar": {
+        "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+        "size": 16,
+        "status": "online",
+        "title": "Online"
+    }
 }
