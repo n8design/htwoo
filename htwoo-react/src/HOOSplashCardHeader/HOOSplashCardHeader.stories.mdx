@@ -1,0 +1,35 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOSplashCardHeader from './HOOSplashCardHeader';
+
+<Meta title="Components/Cards/Splash Card/Elements/HOOSplashCardHeader" component={HOOSplashCardHeader}/>
+
+# HOOSplashCardHeader
+
+
+## Arguments
+
+<ArgsTable of={HOOSplashCardHeader} />
+
+export const Template = (args) => <HOOSplashCardHeader {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

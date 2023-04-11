@@ -1,0 +1,34 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOFlyoutMenu from './HOOFlyoutMenu';
+
+<Meta title="Components/Menus/HOOFlyoutMenu" component={HOOFlyoutMenu} />
+
+# HOOFlyoutMenu
+
+## Flyout Menu Items
+
+Context items can be passed to the component with as an array for IFlyoutMenuItems as defined:
+```ts
+export interface IHOOFlyoutMenuItem {
+  iconName: string;
+  label: string;
+}
+```
+
+## Arguments
+
+<ArgsTable of={HOOFlyoutMenu} />
+
+export const Template = (args) => <HOOFlyoutMenu {...args} />;
+
+<Canvas>
+  <Story
+    name="Standard"
+    args={
+      { contextItems: [{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }],
+      contextItemClicked: (ev, contextItem) => { alert(JSON.stringify(contextItem)) } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

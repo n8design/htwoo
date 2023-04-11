@@ -1,0 +1,41 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOWebPartTitle from './HOOWebPartTitle';
+
+<Meta title="Components/WebPart/HOOWebPartTitle" component={HOOWebPartTitle}/>
+
+# HOOWebPartTitle
+
+
+## Arguments
+
+<ArgsTable of={HOOWebPartTitle} />
+
+export const Template = (args) => <HOOWebPartTitle {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      (function() {
+      let titleValue1 = "My Web Part";
+      return { title: titleValue1, placeholder: "Web Part Title", editMode: true, updateTitle: (title) => { titleValue1 = title; } }
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      (function() {
+      let titleValue2 = null;
+      return { title: titleValue2, placeholder: "Web Part Title", editMode: true, updateTitle: (title) => { titleValue2 = title; }, rootElementAttributes: { className: "myClass" }}
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

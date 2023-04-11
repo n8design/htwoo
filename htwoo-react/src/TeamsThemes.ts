@@ -1,4 +1,4 @@
-import { IHOOTheme } from "./SPFxThemes";
+import { IHOOTheme } from "./common/IHOOTheme";
 
 export const lightModeTheme: IHOOTheme = {
   primaryBackground: "#ffffff",

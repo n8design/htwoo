@@ -1,0 +1,60 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOODocumentCard from './HOODocumentCard';
+import HOOCardImage from '../HOOCardImage';
+import HOOCardLocation from '../HOOCardLocation';
+import HOOCardTitle from '../HOOCardTitle';
+import HOOCardFooter from '../HOOCardFooter';
+import { HOOAvatarSize } from '../HOOAvatar';
+
+<Meta title="Components/Cards/Document Card/HOODocumentCard" component={HOODocumentCard}/>
+
+# HOODocumentCard
+
+This example shows using a `HOOCardImage`, `HOOCardLocation`, `HOOCardTitle`, and `HOOCardFooter` components as the children of the `HOODocumentCard` component.
+
+## Children
+
+See more information about the properties for the sub components:
+
+- [HOOCardImage](?path=/docs/molecules-card-elements-hoocardimage--basic)
+- [HOOCardLocation](?path=/docs/molecules-card-elements-hoocardlocation--basic)
+- [HOOCardTitle](?path=/docs/molecules-card-elements-hoocardtitle--basic)
+- [HOOCardFooter](?path=/docs/molecules-card-elements-hoocardfooter--basic)
+
+## Arguments
+
+<ArgsTable of={HOODocumentCard} />
+
+export const Template = (args) => <HOODocumentCard {...args}>
+  <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />
+  <HOOCardLocation location="My Location Card" />
+  <HOOCardTitle title="My Card Title" />
+  <HOOCardFooter
+    avatarImage="https://placekitten.com/32/32"
+    avatarImageAlt="Kitty"
+    avatarImageSize={HOOAvatarSize.Px32}
+    name="Mr. Bigglesworth"
+    modified="December 31, 2021" />
+</HOODocumentCard>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { rootElementAttributes: { style: { backgroundColor: "mintcream" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

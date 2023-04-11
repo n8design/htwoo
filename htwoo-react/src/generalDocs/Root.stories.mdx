@@ -12,7 +12,7 @@ _To get all the details on what has been released when check out our [REACT_CHAN
 
 Please feel free to submit your questions, enhancement ideas, and feedback to the GitHub [issues list](https://github.com/n8design/htwoo/issues) so that we can try to address them.
 
-## Initialize library in Microsoft SharePoint Framework (SPFx)
+## Getting Started Walkthrough
 
 ### 1. Install package in your solution.
   
@@ -24,14 +24,16 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
 ### 2. Import htwoo-core styles
 
-  Add a reference to the `style.prod.scss` file in your solutions root .scss file. Put the reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
+  Add a `@use` statement at the top of your solutions root .scss file and then add an `@include` reference to the `htwoo-core.scss` file. Put the `@include` reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
   
   _Note: The import is wrapped in :global so that the class names will not be modified with a namespace._
 
   ```css
+  @use 'sass:meta';
+
   .myWebPartRoot{
     :global {
-      @import 'node_modules/@n8d/htwoo-core/lib/sass/style.prod';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/sass/htwoo-core');
     }
   }
   ```
@@ -39,7 +41,7 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   then in your root component's top level HTML element add a reference to that base class. This will make sure that when your project builds, the styles will be included. For example:
 
   ```ts
-  public render(): React.ReactElement<IHtwooReactDemoProps> {
+  public render(): React.ReactElement<IMyComponentProps> {
     try {
       return (
         <div className={styles.myWebPartRoot}>
@@ -52,21 +54,15 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     }
   }
   ```
-
-  and finally (starting in SharePoint Framework version 1.16.0) modify your projects config/sass.json file to include the property quietDeps:
-
-  ```json
-  {
-    "quietDeps": true
-  }
-  ```
     
 ### 3. Initialze Basic SVG Icons
 
-  To initilize the basic SVG icons used by some of the more complex components by adding the following line to your components main ts file's onInit method.
+  To initilize the basic SVG icons, used by some of the more complex components, add the following line to your project starting method. In Microsoft SharePoint Framework (SPFx) that would be in the project's main ts file's onInit method.
 
   _For more detailed information on using the SymbolSet see the [Advanced/SymbolSet Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-symbolset-class--page) documentation._
   
+  >This example shows initializing in an SPFx project.
+
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
 
@@ -76,6 +72,8 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   }
   ```
   
+  #### Add more icons from a custom symbolset file
+
   Alternatively if you have icons in your own symbolset file**, you can add them by passing the path into the initSymbols method:
   _Note: This will load both the basic SVG icons referenced above as well as whatever icons are in your referenced file, so you only need to do one call._
 
@@ -91,7 +89,9 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   }
   ```
 
-  Then import the svg file and pass it to initSymbols method:    
+  Then import the svg file and pass it to initSymbols method:
+  
+  >This example shows initializing in an SPFx project.    
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
   import symbolSetFile from './images/icons.svg';
@@ -116,22 +116,19 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   </svg>
   ```
 
-  If you are looking to load icons from the `@n8d\htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
+  #### Add more icons from @n8d/htwoo-icons
+
+  If you are looking to load icons from the `@n8d/htwoo-icons` library you can install the package and then import them by referencing the svg file in the node_modules folder. 
+
   To register multiple svg files, make additional calls to `symset.initSymbols` passing in additional svg file references.
   
-  Add a typing for svg files to be read as a module (images.d.ts):
+  First, add a typing for svg files to be read as a module (images.d.ts), then import the svg file and pass it to initSymbols method:
 
-  file: images.d.ts
-  ```ts
-  declare module '*.svg' {
-    const content: any;
-    export default content;
-  }
-  ```
+  >This example shows initializing in an SPFx project.
 
-  Then import the svg file and pass it to initSymbols method:
   ```ts
   import { symset } from '@n8d/htwoo-react/SymbolSet';
+  // Requires typings to be declared in an images.d.ts file
   import fuireg from '@n8d/htwoo-icons/fluent-ui-regular/fluent-ui-regular.svg';
 
   public async onInit(): Promise<void> {
@@ -140,13 +137,15 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   }
   ```
 
-  To use the icons in this file, you will reference them by the individual icon's id value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
+  To use the icons in this file, you will reference them by the individual icon's `id` value, which in the SVG file sample above is `icon-arrow-left`. Here's an example of using an icon in the HOOAction component
 
   ```jsx
   <HOOAction iconName='icon-arrow-left' label='Action Button' type={HOOActionType.Action}/>
   ```
 
-### 4. (Optional) Add theme support to your SPFx project
+### 4. Add theme support
+
+  #### SPFx projects
 
   1. Modify your components manifest and add `supportsThemeVariants` which allows any of the hTWOo components to render properly in colored SharePoint section.
 
@@ -159,8 +158,6 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
   ```
 
   2. Add the following helper code to your components main ts file's onInit method which initializes the CSS Variables to support themes. Make sure to add the import and the private _spfxThemes variable:
-
-  _For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation._
   
   ```ts
   import { ThemeProvider } from '@microsoft/sp-component-base';
@@ -178,6 +175,17 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
     this._spfxThemes.initThemeHandler(document.body);
   }
   ```
+  
+  _For more detailed information on using the SPFxThemes see the [Advanced/SPFxThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-spfxthemes-class--page) documentation._
+
+  #### Platform without Microsoft theme support
+  
+  If you're hosting your solution outside of the Microsoft 365 platform you will need to provide your themes in an alternative manner. The library provides a helper class for applying the theme CSS variables to the root dom element.
+  
+  First you must define your theme colors. You can do this in a few different ways. The `@n8d/htwoo-core` library which is a dependency, includes some [pre-defined themes](). You can import that theme into your project and then pass it to an instance of the `GenericThemes` class which will then apply that theme to your root DOM element. You can alternatively create your own theme files in `json` or in code and pass them into the `GenericThemes` class.
+
+  For more information and samples see the [Advanced/GenericThemes Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-genericthemes-class--page) documentation.
+
 
 ### 5. Start using the components
 

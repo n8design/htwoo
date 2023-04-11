@@ -1,0 +1,46 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCardImage from './HOOCardImage';
+
+<Meta title="Components/Cards/Document Card/Elements/HOOCardImage" component={HOOCardImage} />
+
+# HOOCardImage
+
+
+## Arguments
+
+<ArgsTable of={HOOCardImage} />
+
+export const Template = (args) => <HOOCardImage {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", width: 320, height: 180 }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Image Caption
+<Canvas>
+  <Story 
+    name="Image Caption"
+    args = { 
+      { imageSource: "https://placekitten.com/320/180", caption: "Cute Kitten Image", imageAlt: "Kitten", width: 320, height: 180 }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { imageSource: "https://placekitten.com/320/180", imageAlt: "Kitten", width: 320, height: 180, rootElementAttributes: { style: { border: "10px solid pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

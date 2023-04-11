@@ -9,7 +9,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Introduction', ['Getting Started', 'Component Structure'], 'Advanced', 'Atoms', 'Molecules', 'Organisms', 'Templates', 'Contributing'],
+      order: ['Introduction', ['Getting Started', 'Component Structure'], 'Advanced', 'Components', 'Contributing','Legacy Docs', ['V1'], ['Introduction','Advanced','Contributing']],
     },
   },
   addons: [{

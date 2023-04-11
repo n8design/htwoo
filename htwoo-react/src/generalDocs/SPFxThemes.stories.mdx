@@ -6,7 +6,7 @@ import { Meta } from "@storybook/addon-docs";
 
 The SPFxThemes class provides handling for setting up the CSS Variables that the htwoo-* library depends on to render the controls with the appropriate styling for the theme of the surface they are being rendered (i.e SharePoint page sections, inverted sections, Microsoft Teams, classic SharePoint page, or outside of Microsoft surface). 
 
-## Constructor
+## Initialize
 
 The class can be instatiated by creating a new instance in the root ts file of your project and then initializing it in the SPFx onInit method. This method is a good choice where you want to initialize the theme for the solution but do not need access to any of the theme properties elesewhere in your solution.
 
@@ -91,7 +91,7 @@ The second is an exported React Context Provider called `SPFxThemesContext` whic
 
 ```typescript
 import { ThemeProvider } from '@microsoft/sp-component-base';
-import { SPFxThemes, ISPFxThemes } from '@n8d/htwoo-react/SPFxThemes';
+import { SPFxThemes, ISPFxThemes, SPFxThemesContext } from '@n8d/htwoo-react/SPFxThemes';
 
 private _spfxThemes: ISPFxThemes = new SPFxThemes();
 

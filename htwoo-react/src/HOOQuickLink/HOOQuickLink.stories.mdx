@@ -1,0 +1,67 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOQuickLink, {HOOQuickLinkType} from './HOOQuickLink';
+
+<Meta title="Components/Quick Link/HOOQuickLink" component={HOOQuickLink} />
+
+# HOOQuickLink
+
+Predefined enum defined for the supported button types:
+```ts
+export enum HOOQuickLinkType {
+  "Link",
+  "Compact"
+}
+```
+
+When the Quick Link element is not going to be hosted in a SharePoint page and you are using this component in conjunction with the `HOOQuickLinkGrid`, you need to add the columnSpan element to tell the grid how many columns the element will span.
+
+## Arguments
+
+<ArgsTable of={HOOQuickLink} />
+
+export const Template = (args) => <HOOQuickLink {...args} />;
+
+## Quick Link - Standard
+<Canvas>
+  <Story
+    name="Quick Link: Standard"
+    args={
+      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Quick Link - Compact
+<Canvas>
+  <Story
+    name="Quick Link: Compact"
+    args={
+      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas> 
+
+## Quick Link - Standard Edit Mode
+<Canvas>
+  <Story
+    name="Quick Link: Standard Edit Mode"
+    args={
+      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", editMode: true }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending the Quick Link component
+<Canvas>
+  <Story
+    name="Extending"
+    args={
+      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", rootElementAttributes: { style: { backgroundColor: "pink" } } }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

@@ -1,0 +1,53 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { symset } from '../SymbolSet';
+import HOOIconSplit from './HOOIconSplit';
+
+<Meta title="Components/Buttons/HOOIconSplit" component={HOOIconSplit} />
+
+# HOOIconSplit
+
+
+## Arguments
+
+<ArgsTable of={HOOIconSplit} />
+
+export const DefaultParams = {
+  label: "Button",
+  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
+  flyoutContextItemsClicked: (event, item) => {
+    console.alert(item.label);
+  }
+}
+export const Template = (args) => <HOOIconSplit {...args} />;
+
+## Icon
+<Canvas>
+  <Story 
+    name="Icon"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
+        mergedArgs["leftIconName"] = "hoo-icon-smile"
+        return mergedArgs;
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      (function () {
+        const mergedArgs = JSON.parse(JSON.stringify(DefaultParams));
+        mergedArgs["leftIconName"] = "hoo-icon-smile";
+        mergedArgs["rootElementAttributes"] = { style: { backgroundColor: "pink" } };
+        return mergedArgs;
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
