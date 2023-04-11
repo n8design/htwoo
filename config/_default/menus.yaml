@@ -19,10 +19,14 @@ main:
 - name: Changelogs
   idenitifer: changelog
   weight: 40
-- name: hTWOo Core - Changelog
+- name: hTWOo Core - Change Log
   parent: Changelogs
-  pageRef: /changelog/htwoo-core
+  pageRef: /changelog/htwoo-core-cl
   weight: 41
+- name: hTWOo React - Change Log
+  parent: Changelogs
+  pageRef: /changelog/htwoo-react-cl
+  weight: 42
 - name: Supporters
   pageRef: supporters
   weight: 50

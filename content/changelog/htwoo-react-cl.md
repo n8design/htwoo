@@ -1,4 +1,6 @@
-# Changelog
+---
+title: hTWOo React - Change Log
+---
 
 All notable changes to this project will be documented in this file.
 
