@@ -13,7 +13,7 @@ PWD
 for file in *.scss; do
     echo "$file"
     newFile="${file%.*}.css"
-    sass $file ../output/$newFile
+    sass --style=compressed --no-source-map $file ../output/$newFile
     echo "-------"
 done
 
