@@ -1,12 +1,88 @@
-@import './base';
-@import './avatar';
-@import './buttons';
-@import './cards';
-@import './dialogs';
-@import './forms';
-@import './icon';
-@import './loading';
-@import './menus';
-@import './table';
-@import './typography';
-@import './webparts';
+/**** BASE VARS AND MIXIN's ****/
+@use "00-base/core";
+@use "00-base/fonts/base-fonts";
+
+/**** Prodcution Style sheet ***/
+/**** Core Mixing Definition ****/
+@use "00-base/mixin/index";
+
+/**** ATOMS / Typography ****/
+@use "01-atoms/typography/index" as typo;
+
+/**** ATOMS / icons ****/
+@use "01-atoms/icons/index" as icons;
+/**** ATOMS / Avatar and related ****/
+@use "01-atoms/avatar/index" as avatar;
+
+/**** ATOMS / Buttons ****/
+@use "01-atoms/buttons/index" as button;
+
+/**** ATOMS / Loading ****/
+@use "01-atoms/loading/index" as loading;
+
+
+/**** ATOMS / Buttons ****/
+@use "01-atoms/input/index" as input;
+
+/**** ATOMS / Meta Tags ****/
+@use "01-atoms/meta/index" as meta;
+
+/**** ATOMS / Table ****/
+@use "01-atoms/table/index" as table;
+
+/**** ATOMS / Error ****/
+@use "01-atoms/validation/index" as validation;
+
+/**** Tooltip ****/
+@use "01-atoms/tooltip/index" as tooltip;
+
+/**** ATOMS / Grid ****/
+@use "01-atoms/grid/index" as grid;
+
+/**** Elevation ****/
+@use "01-atoms/elevations/index" as elevations;
+
+/*** MOLECULES ***/
+/*** MOLECULES / Avatar with presence ***/
+@use "02-molecules/avatar-w-presence/index" as avatar-w-presence;
+/*** MOLECULES / Persona ***/
+@use "02-molecules/persona/index" as persona;
+/*** MOLECULES / Input Elements ***/
+@use "02-molecules/inputs/index" as inputs;
+/*** MOLECULES / Input Elements ***/
+@use "02-molecules/webparts/index.scss" as webparts;
+
+/*** MOLECULES / Menu ***/
+@use "02-molecules/menu/index" as menu;
+/*** MOLECULES / Dialogs ***/
+@use "02-molecules/dialogs/index" as dialog;
+/*** MOLECULES / Meta Data List ***/
+@use "02-molecules/meta-list/index" as metalist;
+/*** MOLECULES / Team related ***/
+@use "02-molecules/teams/index" as teams;
+
+/*** MOLECULES / CARDS ***/
+@use "02-molecules/card-elements/index" as cardelement;
+
+/*** MOLECULES / CARDS ***/
+@use "02-molecules/quicklinks/index" as quicklinks;
+
+/*** ORGANISM ***/
+
+/*** ORGANISM / Facepile ***/
+@use "03-organism/facepile/index" as facepile;
+/*** ORGANISM / Dialogs ***/
+@use "03-organism/dialog/index" as dialogs;
+/*** ORGANISM / Card Layout System ***/
+@use "03-organism/cards/index" as cards;
+
+/*** ORGANISM / Card Layout System ***/
+@use "03-organism/quick-links-grid/index" as quick-links-grid;
+/*** ORGANISM / Card Layout System ***/
+@use "03-organism/pnp-search-grid/index" as pnp-search-grid;
+
+
+/*** Templates ***/
+@use "04-templates/card-grid";
+@use "04-templates/teams-dashboard";
+@use "04-templates/teams-splash";
