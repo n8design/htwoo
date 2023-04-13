@@ -36,6 +36,8 @@ tags:
   <p>Be water, my friend. - (<a href="https://www.youtube.com/watch?v=cJMwBwFj5nQ">Bruce Lee</a>)</p>
   </blockquote>
 
+  Engage with <a href="https://github.com/n8design/htwoo">hTWOo UI on Github</a>
+
   For futher information please checkout the concept behind [hTWOo](./concepts)
   {{< sponsors >}}
 </div>
