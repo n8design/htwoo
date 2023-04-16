@@ -46,14 +46,14 @@ const styles = () => {
                 precision: 6,
                 includePaths: ['.']
             }))
-            .on('error', sass.logError))
+                .on('error', sass.logError))
         .pipe(
             $.if(isProd, sass.sync({
                 outputStyle: 'compressed',
                 precision: 6,
                 includePaths: ['.']
             }))
-            .on('error', sass.logError))
+                .on('error', sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))
@@ -123,6 +123,11 @@ const movePatterns = (cb) => {
             dest('../packages/htwoo-patterns/_data/')
         )
     src(['src/_patterns/**/*'])
+        .pipe(
+            dest('../packages/htwoo-patterns/_patterns/')
+        )
+
+    src(['src/images/**/*'])
         .pipe(
             dest('../packages/htwoo-patterns/_patterns/')
         )
