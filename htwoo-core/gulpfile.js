@@ -129,7 +129,7 @@ const movePatterns = (cb) => {
 
     src(['src/images/**/*'])
         .pipe(
-            dest('../packages/htwoo-patterns/_patterns/')
+            dest('../packages/htwoo-patterns/images/')
         )
 
     cb();
