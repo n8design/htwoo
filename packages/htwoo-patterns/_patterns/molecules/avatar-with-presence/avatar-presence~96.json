@@ -1,6 +1,5 @@
 {
-    "mugshot": "../../images//mug-shots/female-mugshot-001.jpg",
-    "size": 96,
-    "status": "online",
-    "title": "Online"
+    "avatar": {
+        "size": 96
+    }
 }

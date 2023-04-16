@@ -1,5 +1,6 @@
 ---
 title: Card Footer
+order: 20
 ---
 
 ### SCSS Imports

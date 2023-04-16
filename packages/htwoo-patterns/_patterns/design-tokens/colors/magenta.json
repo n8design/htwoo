@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "msftName": "magentaLight",
+            "msftNameLong": "magentaLight",
+            "colorValue": "var(--magentaLight)",
+            "designToken": "300",
+            "SASSVariable": "$magenta-300"
+        },
+        {
+            "msftName": "magenta",
+            "msftNameLong": "magenta",
+            "colorValue": "var(--magenta)",
+            "designToken": "600",
+            "SASSVariable": "$magenta-600"
+        },
+        {
+            "msftName": "magentaDark",
+            "msftNameLong": "magentaDark",
+            "colorValue": "var(--magentaDark)",
+            "designToken": "800",
+            "SASSVariable": "$magenta-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

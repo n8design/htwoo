@@ -1,0 +1,27 @@
+{
+    "items": [
+        {
+            "name": "hoo-elevation4",
+            "value": "hoo-elevation4",
+            "comment": ""
+        },
+        {
+            "name": "hoo-elevation8",
+            "value": "hoo-elevation8",
+            "comment": ""
+        },
+        {
+            "name": "hoo-elevation16",
+            "value": "hoo-elevation16",
+            "comment": ""
+        },
+        {
+            "name": "hoo-elevation64",
+            "value": "hoo-elevation64",
+            "comment": ""
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

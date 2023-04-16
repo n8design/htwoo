@@ -1,5 +1,4 @@
 ---
-hide: true
-state: inprogress
-order: 99
+title: All Tooltips
+order: 0
 ---
