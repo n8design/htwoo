@@ -1,7 +1,7 @@
-@use "label";
-@use "input";
-@use "toggle";
-@use "checkbox";
-@use "radiobutton";
-@use "select";
-@use "search";
+@forward "label";
+@forward "input";
+@forward "toggle";
+@forward "checkbox";
+@forward "radiobutton";
+@forward "select";
+@forward "search";

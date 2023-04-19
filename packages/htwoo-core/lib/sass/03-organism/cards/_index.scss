@@ -1,2 +1,2 @@
-@use 'cards';
-@use 'splash-cards';
+@forward 'cards';
+@forward 'splash-cards';

@@ -1,5 +1,7 @@
 @use 'core';
 @use 'colors/colors';
+@forward 'core';
+@forward 'colors/colors';
 
 $tooltip-font-size: colors.$smallFontSize !default;
 $tooltip-max-width: 200px !default;
@@ -17,5 +19,6 @@ $tooltip-arrow-color: white !default;
 
 $zindex-tooltip: 100;
 
-@forward 'core';
-@forward 'colors/colors'; 
+*[class^="hoo-"]{
+    font-size: 1rem;
+}

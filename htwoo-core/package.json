@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,10 @@
     "lib"
   ],
   "browserslist": [
-    ">0.5%", "last 3 years", "supports css-grid", "not dead"
+    ">0.5%",
+    "last 3 years",
+    "supports css-grid",
+    "not dead"
   ],
   "dependencies": {
     "@pattern-lab/cli": "^6.0.1",
