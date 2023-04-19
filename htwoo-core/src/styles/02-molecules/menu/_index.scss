@@ -1,6 +1,6 @@
-@use "accordion";
-@use "breadcrumb";
-@use "commandbar";
-@use "nav";
-@use "pivotbar";
-@use "overflow";
+@forward "accordion";
+@forward "breadcrumb";
+@forward "commandbar";
+@forward "nav";
+@forward "pivotbar";
+@forward "overflow";

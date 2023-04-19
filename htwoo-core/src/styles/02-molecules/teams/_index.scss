@@ -1,2 +1,2 @@
-@use 'teams-toolbar';
-@use 'teamsdb-card';
+@forward 'teams-toolbar';
+@forward 'teamsdb-card';
