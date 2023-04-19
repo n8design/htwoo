@@ -11,50 +11,55 @@ main:
 - name: hTWOo Core
   parent: Flavors
   url: /htwoo-core/
-  weight: 35
+  weight: 55
 - name: hTWOo React
   parent: Flavors
   url: /htwoo-react/
   weight: 36
+- name: How To's
+  pageRef: '/how-to'
+  weight: 40
+  params:
+    dynamic: true
+- name: Samples
+  url: https://github.com/n8design/htwoo-samples/
+  weight: 45
+  params:
+    blank: true
+- name: Engage on GitHub
+  url: https://github.com/n8design/htwoo/
+  weight: 47
+  params:
+    blank: true
 - name: Changelogs
   idenitifer: changelog
-  weight: 40
+  weight: 50
 - name: hTWOo Core - Change Log
   parent: Changelogs
   pageRef: /changelog/htwoo-core-cl
-  weight: 41
+  weight: 51
 - name: hTWOo React - Change Log
   parent: Changelogs
   pageRef: /changelog/htwoo-react-cl
-  weight: 42
-- name: Engage on GitHub
-  url: https://github.com/n8design/htwoo/
-  weight: 43
-  params:
-    blank: true
+  weight: 52
 - name: Supporters
   pageRef: supporters
-  weight: 50
+  weight: 70
 # - name: Guidelines
 #   pageRef: '/guidelines'
 #   weight: 120
 #   params:
 #     dynamic: true
 #     section: guidelines
-- name: How To's
-  pageRef: '/how-to'
-  weight: 60
-  params:
-    dynamic: true
 - name: Case Studies
   pageRef: '/case-studies'
   weight: 70
 - name: Code of Conduct
   pageRef: /code-of-conduct
-  weight: 80
+  weight: 90
 - name: License
   pageRef: /LICENSE
-  weight: 90
+  weight: 100
 
 footer:
 - name: "Footer Nav 1"
