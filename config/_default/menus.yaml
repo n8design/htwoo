@@ -18,7 +18,7 @@ main:
   weight: 34
 - name: hTWOo Icons
   parent: Flavors
-  url: /htwoo/htwoo-core/patterns/design-tokens-icon-overview/design-tokens-icon-overview.rendered.html
+  url: /htwoo-core/patterns/design-tokens-icon-overview/design-tokens-icon-overview.rendered.html
   weight: 36
 - name: How To's
   pageRef: '/how-to'
