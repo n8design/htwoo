@@ -97,9 +97,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>}
               className={inputClassName}
               rows={this.props.multiline}
-              onChange={this.props.onChange} >
-              {this.props.value}
-            </textarea>
+              value={this.props.value}
+              onChange={this.props.onChange} />
           }
         </>
       );
