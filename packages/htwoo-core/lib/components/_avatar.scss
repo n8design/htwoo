@@ -1,8 +1,10 @@
-@import './base';
+@forward './base';
 
-@import "../sass/01-atoms/avatar/avatar";
-@import "../sass/01-atoms/avatar/presence";
-@import "../sass/02-molecules/avatar-w-presence";
-@import "../sass/03-organism/facepile";
+// ATOMS
+@forward "../sass/01-atoms/avatar/index";
+// MOLECULES
+@forward "../sass/02-molecules/avatar-w-presence/index";
+@forward "../sass/02-molecules/persona/index";
 
-@import "../sass/02-molecules/persona";
+// ORAGANISMS
+@forward "../sass/03-organism/facepile/index";

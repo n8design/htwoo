@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "msftName": "yellowLight",
+            "msftNameLong": "yellowLight",
+            "colorValue": "var(--yellowLight)",
+            "designToken": "300",
+            "SASSVariable": "$yellow-300"
+        },
+        {
+            "msftName": "yellow",
+            "msftNameLong": "yellow",
+            "colorValue": "var(--yellow)",
+            "designToken": "600",
+            "SASSVariable": "$yellow-600"
+        },
+        {
+            "msftName": "yellowDark",
+            "msftNameLong": "yellowDark",
+            "colorValue": "var(--yellowDark)",
+            "designToken": "800",
+            "SASSVariable": "$yellow-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

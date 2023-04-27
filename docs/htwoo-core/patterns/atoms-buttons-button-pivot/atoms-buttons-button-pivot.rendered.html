@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="">
+<html lang="en" class="">
   <head>
     <title>Pivot Element - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1673638518653" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1673638518653" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1673638518653" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1681936331713" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1681936331713" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1681936331713" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -60,10 +61,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1673638518653">
+<script id="pl-js-polyfill-insert-1681936331713">
   (function() {
     if (self != top) {
-      var cb = '1673638518653';
+      var cb = '1681936331713';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -76,7 +77,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1673638518653" nomodule>
+<script id="pl-js-insert-1681936331713" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -85,6 +86,7 @@
 </script>
 
 
+<script src="../../js/prismjs/prism.js"></script>
 <script src="../../js/main.js" type="module"></script>
 <script src="../../js/themeswitch/index.js" type="module"></script>
 <script>
@@ -93,6 +95,8 @@
 
     // changing logo accordingly
     var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
@@ -120,6 +124,7 @@
     // on first run detect layout
     evtLocationStorageUpdates();
 </script>
+<script src="../../js/_util.js" type="module"></script>
 </body>
 
 </html>

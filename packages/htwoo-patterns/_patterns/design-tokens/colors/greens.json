@@ -1,0 +1,25 @@
+{
+    "items": [
+        {
+            "msftName": "greenLight",
+            "msftNameLong": "greenLight",
+            "colorValue": "var(--greenLight)",
+            "designToken": "300",
+            "SASSVariable": "$green-300"
+        },
+        {
+            "msftName": "green",
+            "msftNameLong": "green",
+            "colorValue": "var(--green)",
+            "designToken": "600",
+            "SASSVariable": "$green-600"
+        },
+        {
+            "msftName": "greenDark",
+            "msftNameLong": "greenDark",
+            "colorValue": "var(--greenDark)",
+            "designToken": "800",
+            "SASSVariable": "$green-800"
+        }
+    ]
+}

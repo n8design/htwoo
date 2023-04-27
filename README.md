@@ -45,4 +45,4 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
 **Contributors:** You ❤️
 
-[logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adapt fast"
+[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"

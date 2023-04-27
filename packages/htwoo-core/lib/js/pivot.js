@@ -37,7 +37,7 @@ const cloneOverflowNodes = (pivotBar) => {
 
     let overflowCtn = pivotBar.querySelector('.hoo-overflow');
 
-    if (overflowCtn.lenght !== 0) {
+    if (overflowCtn.length !== 0) {
 
         let overflowCtnItems = overflowCtn.children;
         let childNodesToAppend = [];

@@ -1,5 +1,6 @@
 ---
-title: How shimmer works
+title: How shimmer / Loading works
+order: 0
 ---
 
 ## Theming support for shimmer

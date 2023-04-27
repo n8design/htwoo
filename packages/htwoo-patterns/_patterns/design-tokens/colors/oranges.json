@@ -1,0 +1,29 @@
+{
+    "items": [
+        
+        {
+            "msftName": "orangeLighter",
+            "msftNameLong": "orangeLighter",
+            "colorValue": "var(--orangeLighter)",
+            "designToken": "200",
+            "SASSVariable": "$orange-200"
+        },
+        {
+            "msftName": "orangeLight",
+            "msftNameLong": "orangeLight",
+            "colorValue": "var(--orangeLight)",
+            "designToken": "300",
+            "SASSVariable": "$orange-300"
+        },
+        {
+            "msftName": "orange",
+            "msftNameLong": "orange",
+            "colorValue": "var(--orange)",
+            "designToken": "600",
+            "SASSVariable": "$orange-600"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

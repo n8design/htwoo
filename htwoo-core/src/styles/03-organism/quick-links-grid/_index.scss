@@ -3,11 +3,11 @@
 .hoo-ql-grid{
     @include grid.gridBase();
     .hoo-qllink{
-        @include grid.gridSpan(2);
+        @include grid.gridSpan(2, auto, auto, true);
     }
     .hoo-qlcompact,
     .hoo-qllist{
-        @include grid.gridSpan(2);
+        @include grid.gridSpan(2, auto, auto, true);
     }
 }
 .CanvasSection-xl12{

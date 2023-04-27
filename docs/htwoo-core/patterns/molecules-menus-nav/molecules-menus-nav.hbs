@@ -1,42 +1,31 @@
+{{#nav}}
 <nav class="hoo-nav">
-    <ul role="tree" class="hoo-nav-list" role="tree">
-        {{#each navItems }}
+    <menu role="tree" class="hoo-nav-list" role="tree">
+        {{#each items }}
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" {{#if isCurrent }}aria-current="page" {{/if}}>
             <div class="hoo-navitem-text">
-                {{#if (isdefined subentries) }}
-
+                {{#if this.items }}
                 {{#../tree-icon }}
                 {{> atoms-button-icon this }}
                 {{/../tree-icon }}
-
                 {{/if}}
-
                 <a href="{{ link }}" class="hoo-navitem-link">{{ text }}</a>
-                {{#if (isdefined subentries) }}
+                {{#if (isdefined this.items) }}
             </div>
-            <ul class="hoo-nav-listsub" role="group">
+            <menu class="hoo-nav-listsub" role="group">
                 {{/if}}
-                {{#each subentries }}
-                <li class="hoo-navitem">
-                    <div class="hoo-navitem-text">
-                        <a href="" class="hoo-navitem-link">bbb</a>
-                    </div>
-                </li>
-                {{/each}}
-                {{#if (isdefined subentries) }}
-            </ul>
-            {{/if}}
+                {{#each this.items }}
+        <li class="hoo-navitem">
+            <div class="hoo-navitem-text">
+                <a href="{{ this.link }}" class="hoo-navitem-link">{{ this.text }}</a>
+            </div>
         </li>
         {{/each}}
-    </ul>
-    {{!-- <ul class="hoo-nav-list">
-        <li class="hoo-nav-item">
-            <a href="" class="hoo-nav-link">aaa</a>
-            <ul class="hoo-nav-listsub">
-                <li class="hoo-nav-item">
-                    <a href="" class="hoo-nav-link">bbb</a>
-                </li>
-            </ul>
-        </li>
-    </ul> --}}
+        {{#if (isdefined this.items) }}
+    </menu>
+    {{/if}}
+    </li>
+    {{/each}}
+    </menu>
 </nav>
+{{/nav}}

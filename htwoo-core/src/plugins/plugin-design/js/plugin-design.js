@@ -97,6 +97,8 @@ var PluginUIExtension = {
     allThemeButtons.forEach((item) => {
       item.classList.remove('selected')
     });
+
+    console.debug(' ... Switching theme to'+ event.target.dataset.theme);
     // apply selected to current button
     event.target.classList.add('selected');
 
@@ -159,7 +161,9 @@ var PluginUIExtension = {
         }
 
         var allThemeButtons = document.querySelectorAll('.n8d-themeswitch-btn');
+        console.debug(allThemeButtons);
         allThemeButtons.forEach((btn) => {
+          console.debug(btn.dataset.theme);
           btn.addEventListener('click', this.switchTheme);
         })
 

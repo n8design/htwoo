@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+	background-color: transparent;
 }
 .hoo-ql-img{
 	height: 100%;
@@ -37,4 +38,6 @@
 .hoo-media-svg{
     aspect-ratio: 1 / 1;
     justify-content: center;
+	fill: currentColor;
+	background-color: transparent;
 }
