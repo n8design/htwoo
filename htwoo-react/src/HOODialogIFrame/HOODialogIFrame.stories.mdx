@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOODialogIFrame, {HOOIFrameRatio} from './HOODialogIFrame';
 import HOOLabel from '../HOOLabel';
 
@@ -22,7 +23,7 @@ See more information about the properties for the parent component:
 
 ## Arguments
 
-<ArgsTable of={HOODialogIFrame} />
+<ArgTypes of={HOODialogIFrame} />
 
 export const Template = (args) => <HOODialogIFrame {...args} />;
 

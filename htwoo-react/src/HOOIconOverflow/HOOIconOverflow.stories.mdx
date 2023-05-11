@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOIconOverflow from './HOOIconOverflow';
 import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
@@ -12,7 +13,7 @@ Enabling flyout menu depends on passing an instance of `HOOFlyoutMenu` as a chil
 
 ## Arguments
 
-<ArgsTable of={HOOIconOverflow} />
+<ArgTypes of={HOOIconOverflow} />
 
 export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
     <HOOFlyoutMenu contextItems={[{ iconName: 'Plus', label: 'First Element' }, { iconName: 'Plus', label: 'Second Element' }]} 

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOAccordionGroup from './HOOAccordionGroup';
 import HOOAccordion from '../HOOAccordion';
 import HOOLabel from '../HOOLabel';
@@ -11,7 +12,7 @@ Accordion element that expands when the user clicks on the icon. Icon is automat
 
 ## Arguments
 
-<ArgsTable of={HOOAccordionGroup} />
+<ArgTypes of={HOOAccordionGroup} />
 
 export const Template = (args) => <HOOAccordionGroup {...args} >
   <HOOAccordion header="My Simple Accordion" iconName="hoo-icon-arrow-right" content="My Accordion details." />

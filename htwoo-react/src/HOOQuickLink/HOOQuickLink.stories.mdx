@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOQuickLink, {HOOQuickLinkType} from './HOOQuickLink';
 
 <Meta title="Components/Quick Link/HOOQuickLink" component={HOOQuickLink} />
@@ -17,7 +18,7 @@ When the Quick Link element is not going to be hosted in a SharePoint page and y
 
 ## Arguments
 
-<ArgsTable of={HOOQuickLink} />
+<ArgTypes of={HOOQuickLink} />
 
 export const Template = (args) => <HOOQuickLink {...args} />;
 

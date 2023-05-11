@@ -4,19 +4,18 @@ import HOOIcon from "../HOOIcon/HOOIcon";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
 export enum HOOActionType {
-  "Action",
-  "Command",
-  "Context"
+  "Action"
 }
+
 export interface IHOOActionProps extends IHOOStandardProps {
-  /**
-   * Type of Action, if omitted, components children will be rendered.
-   */
-  type: HOOActionType;
   /**
    * Direct interface for button click event handler.
    */
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  /**
+   * (Deprecated) Type of Action.
+   */
+  type?: HOOActionType;
   /**
    * (Optional) button label, if omitted, components children will be rendered.
    */
@@ -44,31 +43,16 @@ export interface IHOOActionProps extends IHOOStandardProps {
 export interface IHOOActionState {
 }
 
-export class HOOActionState implements IHOOActionState {
-  constructor() { }
-}
-
 export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
   private _rootProps = { "data-component": this.LOG_SOURCE };
-  private _componentClass: string = "hoo-button";
+  private _componentClass: string = "hoo-buttonaction";
   private _labelClass: string = "hoo-button-label";
 
   constructor(props: IHOOActionProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOAction";
-    switch (props.type) {
-      case HOOActionType.Action:
-        this._componentClass = `${this._componentClass}action`;
-        break;
-      case HOOActionType.Command:
-        this._componentClass = `${this._componentClass}cmd`;
-        break;
-      case HOOActionType.Context:
-        this._componentClass = `${this._componentClass}context`;
-        break;
-    }
-    this.state = new HOOActionState();
+    this.state = {};
   }
 
   public render(): React.ReactElement<IHOOActionProps> {

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOSplashCardFooter from './HOOSplashCardFooter';
 import HOOButton, { HOOButtonType } from '../HOOButton';
 
@@ -11,7 +12,7 @@ In reality you can put whatever DOM elements you want inside it the component th
 
 ## Arguments
 
-<ArgsTable of={HOOSplashCardFooter} />
+<ArgTypes of={HOOSplashCardFooter} />
 
 export const Template = (args) => <HOOSplashCardFooter {...args}>
   <HOOButton type={HOOButtonType.Primary} label="Create Something" onClick={() => { alert("Clicked"); }} />

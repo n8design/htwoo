@@ -110,12 +110,6 @@ export class SPFxThemes implements ISPFxThemes {
       // set isInverted property
       this._isInverted = this._themeVariant.isInverted;
 
-      // transfer semanticColors into CSS variables
-      this.setCSSVariables(this._themeVariant.semanticColors);
-
-      // transfer fonts into CSS variables
-      this.setCSSVariables(this._themeVariant.fonts);
-
       // transfer color palette into CSS variables
       this.setCSSVariables(this._themeVariant.palette);
 
