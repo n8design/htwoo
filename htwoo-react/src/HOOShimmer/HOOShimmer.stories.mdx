@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOShimmer, {
   IHOOShimmerProps, HOOShimmerTheme, HOOShimmerShape
 } from './HOOShimmer';
@@ -31,7 +32,7 @@ export enum HOOShimmerShape {
 
 ## Arguments
 
-<ArgsTable of={HOOShimmer} />
+<ArgTypes of={HOOShimmer} />
 
 export const Template = (args) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args} /></HOOShimmer>;
 export const MultiTemplate = (args) => <HOOShimmer shape={HOOShimmerShape.Container} theme={HOOShimmerTheme.Neutral}><HOOShimmer {...args.shimmer1} /><HOOShimmer {...args.shimmer2} /></HOOShimmer>;

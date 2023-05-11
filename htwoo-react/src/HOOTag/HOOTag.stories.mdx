@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOTag, {HOOTagType, HOOTagStyle} from './HOOTag';
 
 <Meta title="Components/Meta/HOOTag" component={HOOTag} />
@@ -22,7 +23,7 @@ export enum HOOTagStyle {
 
 ## Arguments
 
-<ArgsTable of={HOOTag} />
+<ArgTypes of={HOOTag} />
 
 export const Template = (args) => <HOOTag {...args} />;
 

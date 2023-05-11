@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOLoading from './HOOLoading';
 
 <Meta title="Components/Loading/HOOLoading" component={HOOLoading} />
@@ -8,7 +9,7 @@ import HOOLoading from './HOOLoading';
 
 ## Arguments
 
-<ArgsTable of={HOOLoading} />
+<ArgTypes of={HOOLoading} />
 
 export const Template = (args) => <HOOLoading {...args} />;
 

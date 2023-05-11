@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOTooltip, {HOOTipPosition} from './HOOTooltip';
 import HOOLabel from '../HOOLabel';
 
@@ -28,7 +29,7 @@ export enum HOOTipPosition {
 
 ## Arguments
 
-<ArgsTable of={HOOTooltip} />
+<ArgTypes of={HOOTooltip} />
 
 export const Template = (args) => <HOOTooltip {...args} />;
 export const TemplateChildren = (args) => <HOOTooltip {...args} >

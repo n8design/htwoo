@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOFacepile from "./HOOFacepile"
 import HOOAvatarPres from '../HOOAvatarPres';
 import { HOOAvatarSize } from '../HOOAvatar';
@@ -18,7 +19,7 @@ See more information about the properties for the child components:
 
 ## Arguments
 
-<ArgsTable of={HOOFacepile} />
+<ArgTypes of={HOOFacepile} />
 
 export const Template32 = (args) => <HOOFacepile {...args}>
 <HOOAvatarPres size={HOOAvatarSize.Px32} imageSource="https://placekitten.com/32/32" imageAlt={"Placeholder Image"} onClick={() => { }} status={HOOPresenceStatus.Online} />

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOONotifyLabel, {
   HOONotifyType
 } from './HOONotifyLabel';
@@ -17,7 +18,7 @@ export enum HOONotifyType {
 
 ## Arguments
 
-<ArgsTable of={HOONotifyLabel} />
+<ArgTypes of={HOONotifyLabel} />
 
 export const Template = (args) => <HOONotifyLabel {...args} />;
 

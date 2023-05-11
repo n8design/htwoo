@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOQuickLinkGrid from './HOOQuickLinkGrid';
 import HOOQuickLink, {HOOQuickLinkType} from '../HOOQuickLink';
 
@@ -16,7 +17,7 @@ export enum HOOQuickLinkType {
 
 ## Arguments
 
-<ArgsTable of={HOOQuickLinkGrid} />
+<ArgTypes of={HOOQuickLinkGrid} />
 
 export const Template = (args) => <HOOQuickLinkGrid {...args}>
   <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 1' description="Details about my quick link item" columnSpan= "auto / span 4"/>

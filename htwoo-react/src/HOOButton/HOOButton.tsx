@@ -56,10 +56,6 @@ export interface IHOOButtonProps extends IHOOStandardProps {
 export interface IHOOButtonState {
 }
 
-export class HOOButtonState implements IHOOButtonState {
-  constructor() { }
-}
-
 export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOOButtonState> {
   private LOG_SOURCE: string = "💦HOOButton";
   private _rootProps = { "data-component": this.LOG_SOURCE };
@@ -93,7 +89,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
         this._compoundType = true;
         break;
     }
-    this.state = new HOOButtonState();
+    this.state = {};
   }
 
   public render(): React.ReactElement<IHOOButtonProps> {

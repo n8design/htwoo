@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
 import HOOAvatarPres from './HOOAvatarPres';
 import { HOOAvatarSize } from '../HOOAvatar';
 import { HOOPresenceStatus } from '../HOOPresence';
@@ -14,7 +15,7 @@ See more information about the properties for the sub components:
 
 ## Arguments
 
-<ArgsTable of={HOOAvatarPres} />
+<ArgTypes of={HOOAvatarPres} />
 
 export const Template = (args) => <HOOAvatarPres {...args} />;
 
