@@ -13,7 +13,10 @@ const $ = gulpLoadPlugins();
 const autoprefixer = require('autoprefixer');
 const rollup = require('rollup');
 
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
+
+console.log(require.main.paths);
+console.log(sass);
 
 
 const baseWatch = async (cb) => {
@@ -38,6 +41,8 @@ const docs = (cb) => {
 
 const styles = () => {
 
+    console.log(sass);
+
     return src('src/styles/*.scss')
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
@@ -46,14 +51,16 @@ const styles = () => {
             $.if(!isProd, sass.sync({
                 outputStyle: 'expanded',
                 precision: 6,
-                includePaths: ['.']
+                includePaths: ['.'],
+                disableDeprecationWarnings: true
             }))
             .on('error', sass.logError))
         .pipe(
             $.if(isProd, sass.sync({
                 outputStyle: 'compressed',
                 precision: 6,
-                includePaths: ['.']
+                includePaths: ['.'],
+                disableDeprecationWarnings: true
             }))
             .on('error', sass.logError))
         .pipe($.postcss([
