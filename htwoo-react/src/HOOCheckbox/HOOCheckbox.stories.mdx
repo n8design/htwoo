@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOCheckbox from './HOOCheckbox.tsx';
 
 <Meta title="Components/Inputs/HOOCheckbox" component={HOOCheckbox} />
@@ -8,7 +9,7 @@ import HOOCheckbox from './HOOCheckbox.tsx';
 
 ## Arguments
 
-<ArgsTable of={HOOCheckbox} />
+<ArgTypes of={HOOCheckbox} />
 
 export const Template = (args) => <HOOCheckbox {...args} />;
 

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOPersona from './HOOPersona';
 import HOOAvatarPres from '../HOOAvatarPres';
 import { HOOAvatarSize } from '../HOOAvatar';
@@ -15,7 +16,7 @@ See more information about the properties for the child components:
 
 ## Arguments
 
-<ArgsTable of={HOOPersona} />
+<ArgTypes of={HOOPersona} />
 
 export const Template = (args) => <HOOPersona {...args.root}>
     <HOOAvatarPres imageSource={args.imageUrl} imageAlt="Placeholder Image" status={HOOPresenceStatus.Online}/>

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOLabel from './HOOLabel';
 
 <Meta title="Components/Inputs/HOOLabel" component={HOOLabel} />
@@ -8,7 +9,7 @@ import HOOLabel from './HOOLabel';
 
 ## Arguments
 
-<ArgsTable of={HOOLabel} />
+<ArgTypes of={HOOLabel} />
 
 export const Template = (args) => <HOOLabel {...args} />;
 

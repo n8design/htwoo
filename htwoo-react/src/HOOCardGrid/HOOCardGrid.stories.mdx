@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOCardGrid from "./HOOCardGrid"
 import HOOCardImage from '../HOOCardImage';
 import HOOCardLocation from '../HOOCardLocation';
@@ -20,7 +21,7 @@ See more information about the properties for the child components:
 
 ## Arguments
 
-<ArgsTable of={HOOCardGrid} />
+<ArgTypes of={HOOCardGrid} />
 
 export const Template = (args) => <HOOCardGrid {...args}>
   <HOODocumentCard>

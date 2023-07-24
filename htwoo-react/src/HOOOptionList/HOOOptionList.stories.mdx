@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOOptionList, {HOOOptionListType} from './HOOOptionList.tsx';
 import HOOLabel from '../HOOLabel';
 
@@ -28,7 +29,7 @@ export enum HOOOptionListDirection {
 
 ## Arguments
 
-<ArgsTable of={HOOOptionList} />
+<ArgTypes of={HOOOptionList} />
 
 export const options = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
 export const Template = (args) => <HOOOptionList {...args} />;

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOODialog, {HOODialogType} from './HOODialog';
 import HOODialogHeader from '../HOODialogHeader';
 import HOODialogContent from '../HOODialogContent';
@@ -26,7 +27,7 @@ export enum HOODialogType {
 
 ## Arguments
 
-<ArgsTable of={HOODialog} />
+<ArgTypes of={HOODialog} />
 
 export const Template = (args) => <HOODialog {...args}>
   <HOODialogHeader title="Dialog Header" closeIconName="hoo-icon-close" closeDisabled={false} closeOnClick={args.close} />

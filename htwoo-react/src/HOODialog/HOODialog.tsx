@@ -28,10 +28,10 @@ export interface IHOODialogProps extends IHOOStandardProps {
   */
   width?: string;
   /**
-   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLDialogElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-mdldialog-outer {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement>;
 }
 
 export interface IHOODialogState {
@@ -78,11 +78,11 @@ export default class HOODialog extends React.PureComponent<IHOODialogProps, IHOO
       if (this.props.width !== undefined) { styleBlock["--lqdDialogWidth"] = this.props.width; }
       if (this.props.height !== undefined) { styleBlock["--lqdDialogHeight"] = this.props.height; }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
-          <dialog className="hoo-mdldialog" style={styleBlock}>
+        <dialog {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+          <div className="hoo-mdldialog" style={styleBlock}>
             {this.props.children}
-          </dialog>
-        </div>
+          </div>
+        </dialog>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

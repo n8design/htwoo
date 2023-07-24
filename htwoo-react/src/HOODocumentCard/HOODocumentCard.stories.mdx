@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOODocumentCard from './HOODocumentCard';
 import HOOCardImage from '../HOOCardImage';
 import HOOCardLocation from '../HOOCardLocation';
@@ -23,7 +24,7 @@ See more information about the properties for the sub components:
 
 ## Arguments
 
-<ArgsTable of={HOODocumentCard} />
+<ArgTypes of={HOODocumentCard} />
 
 export const Template = (args) => <HOODocumentCard {...args}>
   <HOOCardImage imageSource="https://placekitten.com/320/180" imageAlt="Kitten" />

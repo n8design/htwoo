@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOSearch from './HOOSearch';
 
 <Meta title="Components/Inputs/HOOSearch" component={HOOSearch} />
@@ -8,7 +9,7 @@ import HOOSearch from './HOOSearch';
 
 ## Arguments
 
-<ArgsTable of={HOOSearch} />
+<ArgTypes of={HOOSearch} />
 
 export const Template = (args) => <HOOSearch {...args}/>
 

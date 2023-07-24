@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOODialogContent from './HOODialogContent';
 import HOOLabel from '../HOOLabel';
 
@@ -11,7 +12,7 @@ In reality you can put whatever DOM elements you want inside it the component th
 
 ## Arguments
 
-<ArgsTable of={HOODialogContent} />
+<ArgTypes of={HOODialogContent} />
 
 export const Template = (args) => <HOODialogContent {...args} >
   <HOOLabel label="Contents of Dialog" />

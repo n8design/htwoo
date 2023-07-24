@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOCardTitle from './HOOCardTitle';
 
 <Meta title="Components/Cards/Document Card/Elements/HOOCardTitle" component={HOOCardTitle} />
@@ -8,7 +9,7 @@ import HOOCardTitle from './HOOCardTitle';
 
 ## Arguments
 
-<ArgsTable of={HOOCardTitle} />
+<ArgTypes of={HOOCardTitle} />
 
 export const Template = (args) => <HOOCardTitle {...args} />;
 

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOORadioButton from './HOORadioButton';
 
 <Meta title="Components/Inputs/HOORadioButton" component={HOORadioButton} />
@@ -8,7 +9,7 @@ import HOORadioButton from './HOORadioButton';
 
 ## Arguments
 
-<ArgsTable of={HOORadioButton} />
+<ArgTypes of={HOORadioButton} />
 
 export const Template = (args) => <HOORadioButton {...args}/>
 
