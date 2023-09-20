@@ -246,7 +246,7 @@ if (toggle.length > 0) {
 
             svg.setAttribute('data-id', svgSymbol.id);
             if (svgSymbol.hasAttribute('viewBox')) {
-
+                console.debug('has Viewbox')
                 // set viewBox with namespace
                 svg.setAttributeNS('http://www.w3.org/2000/svg', 'viewBox', svgSymbol.getAttribute('viewBox'));
 
@@ -312,7 +312,7 @@ const createSymbolSet = () => {
         let symbol = document.createElement('symbol');
 
         symbol.setAttribute('id', item.getAttribute('data-id'));
-        symbol.setAttribute('viewBox', svg.getAttribute('viewBox'));
+        symbol.setAttributeNS('http://www.w3.org/2000/svg', 'viewBox', svg.getAttribute('viewBox'));
         symbol.setAttribute('data-icontype', svg.getAttribute('data-icontype'));
 
         symbol.innerHTML = svg.innerHTML;
