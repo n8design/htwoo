@@ -247,6 +247,7 @@ if (toggle.length > 0) {
             svg.setAttribute('data-id', svgSymbol.id);
             if (svgSymbol.hasAttribute('viewBox')) {
 
+                // set viewBox with namespace
                 svg.setAttributeNS('http://www.w3.org/2000/svg', 'viewBox', svgSymbol.getAttribute('viewBox'));
 
             }
