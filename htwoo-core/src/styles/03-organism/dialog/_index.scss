@@ -1,2 +1,4 @@
-@forward 'modal-dialog';
-@forward 'sidebar';
+@forward 'legacy/modal-dialog';
+@forward 'legacy/sidebar';
+
+@forward 'dialog'
