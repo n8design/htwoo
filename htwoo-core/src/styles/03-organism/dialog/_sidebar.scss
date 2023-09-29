@@ -1,11 +1,15 @@
-%hoo-sidebar{
+%hoo-sidebar {
 	@extend .hoo-mdldialog;
 }
 
-.hoo-mdldialog-outer{
-	&.is-sidebar-left{
+.hoo-mdldialog-outer {
+	box-sizing: border-box;
+	border: 0;
+
+	&.is-sidebar-left {
 		justify-content: flex-end;
-		.hoo-mdldialog{
+
+		.hoo-mdldialog {
 			position: absolute;
 			left: 0;
 
@@ -15,9 +19,11 @@
 			transform-origin: left top;
 		}
 	}
-	&.is-sidebar-right{
+
+	&.is-sidebar-right {
 		justify-content: flex-start;
-		.hoo-mdldialog{
+
+		.hoo-mdldialog {
 			position: absolute;
 			right: 0;
 
