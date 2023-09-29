@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOSelect, {
   IHOOSelectOption
 } from './HOOSelect';
@@ -19,7 +20,7 @@ export interface IHOOSelectOption {
 
 ## Arguments
 
-<ArgsTable of={HOOSelect} />
+<ArgTypes of={HOOSelect} />
 
 export const DefaultParams = {
   options: [

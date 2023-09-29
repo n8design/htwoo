@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
 import HOOAvatar, { HOOAvatarSize } from './HOOAvatar';
 
 <Meta title="Components/Personas/HOOAvatar" component={HOOAvatar} />
@@ -21,7 +22,7 @@ export enum HOOAvatarSize {
 
 ## Arguments
 
-<ArgsTable of={HOOAvatar} />
+<ArgTypes of={HOOAvatar} />
 
 export const Template = (args) => <HOOAvatar {...args} />;
 

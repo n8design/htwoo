@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
 import HOOBreadcrumb, {IHOOBreadcrumbItem, HOOBreadcrumbType} from './HOOBreadcrumb';
 
 <Meta title="Components/Menus/HOOBreadcrumb" component={HOOBreadcrumb} />
@@ -8,7 +9,7 @@ import HOOBreadcrumb, {IHOOBreadcrumbItem, HOOBreadcrumbType} from './HOOBreadcr
 
 ## Arguments
 
-<ArgsTable of={HOOBreadcrumb} />
+<ArgTypes of={HOOBreadcrumb} />
 
 export const buttonOptions = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
 export const hyperlinkOptions = [{ key: 1, text: "Value 1", href: "#" }, { key: 2, text: "Value 2", href: "#" }, { key: 3, text: "Value 3", href: "#" }];

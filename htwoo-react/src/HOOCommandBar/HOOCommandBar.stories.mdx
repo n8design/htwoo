@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { useArgs } from "@storybook/client-api";
 import HOOCommandBar, {HOOCommandBarType} from './HOOCommandBar';
 import HOOLabel from '../HOOLabel';
@@ -18,7 +19,7 @@ export interface IHOOCommandItem {
 
 ## Arguments
 
-<ArgsTable of={HOOCommandBar} />
+<ArgTypes of={HOOCommandBar} />
 export const flyoutMenuItems = [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }];
 export const options = [{ key: 1, text: "Menu 1", flyoutMenuItems: flyoutMenuItems }, { key: 2, text: "Menu 2" , flyoutMenuItems: flyoutMenuItems}, { key: 3, text: "Menu 3" , flyoutMenuItems: flyoutMenuItems}, { key: 4, text: "Menu 4" }, { key: 5, text: "Menu 5", flyoutMenuItems: [] }];
 export const Template = (args) => {

@@ -1,7 +1,21 @@
-import {ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
 import HOOAction, { HOOActionType } from './HOOAction';
 
-<Meta title="Components/Buttons/HOOAction" component={HOOAction}/>
+<Meta 
+  title="Components/Buttons/HOOAction" 
+  component={HOOAction}
+  argTypes={{
+    type: { 
+        options: [0, 1, 2], 
+        control: { 
+          type: 'select', 
+          labels: ["Action",  "Command",  "Context"]
+        }
+      }
+    }
+  }
+/>
 
 # HOOAction 
 
@@ -16,7 +30,7 @@ export enum HOOActionType {
 
 ## Arguments
 
-<ArgsTable of={HOOAction} />
+<ArgTypes of={HOOAction} />
 
 export const Template = (args) => <HOOAction {...args} />;
 
@@ -25,8 +39,7 @@ export const Template = (args) => <HOOAction {...args} />;
   <Story
     name="Action"
     args={
-      { type: HOOActionType.Action,
-       label: "Action Button", 
+      { label: "Action Button", 
        iconName: "hoo-icon-plus", 
       onClick: () => { } }
     }>
@@ -34,14 +47,14 @@ export const Template = (args) => <HOOAction {...args} />;
   </Story>
 </Canvas>
 
-## Command
+## Extending
 <Canvas>
   <Story
-    name="Command"
+    name="Extending"
     args={
-      { type: HOOActionType.Command,
-      label: "Action Button", 
-       iconName: "hoo-icon-plus" ,
+      { label: "Action Button", 
+       iconName: "hoo-icon-plus", 
+       rootElementAttributes: { style: { backgroundColor: "pink" } },
       onClick: () => { } }
     }>
     {Template.bind({})}

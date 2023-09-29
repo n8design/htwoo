@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOAccordion from './HOOAccordion';
 import HOOLabel from '../HOOLabel';
 
@@ -10,7 +11,7 @@ Accordion element that expands when the user clicks on the header. If the icon i
 
 ## Arguments
 
-<ArgsTable of={HOOAccordion} />
+<ArgTypes of={HOOAccordion} />
 
 export const Template = (args) => <HOOAccordion {...args} />;
 export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel label="My Child Content"/></HOOAccordion>;

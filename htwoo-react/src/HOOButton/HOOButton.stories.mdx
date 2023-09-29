@@ -1,7 +1,21 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
 import HOOButton, {HOOButtonType} from './HOOButton';
 
-<Meta title="Components/Buttons/HOOButton" component={HOOButton} />
+<Meta 
+  title="Components/Buttons/HOOButton" 
+  component={HOOButton}
+  argTypes={{
+    type: { 
+        options: [0, 1, 2, 3, 4, 5, 6], 
+        control: { 
+          type: 'select', 
+          labels: ["Icon",  "Primary",  "Standard",  "HyperlinkPrimary",  "HyperlinkStandard",  "CompoundPrimary",  "CompoundStandard"]
+        }
+      }
+    }
+  }
+/>
 
 # HOOButton
 
@@ -20,7 +34,7 @@ export enum HOOButtonType {
 
 ## Arguments
 
-<ArgsTable of={HOOButton} />
+<ArgTypes of={HOOButton} />
 
 export const Template = (args) => <HOOButton {...args} />;
 

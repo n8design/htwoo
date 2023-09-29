@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOSplashCardHeader from './HOOSplashCardHeader';
 
 <Meta title="Components/Cards/Splash Card/Elements/HOOSplashCardHeader" component={HOOSplashCardHeader}/>
@@ -8,7 +9,7 @@ import HOOSplashCardHeader from './HOOSplashCardHeader';
 
 ## Arguments
 
-<ArgsTable of={HOOSplashCardHeader} />
+<ArgTypes of={HOOSplashCardHeader} />
 
 export const Template = (args) => <HOOSplashCardHeader {...args} />;
 

@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOText from './HOOText';
 
 <Meta title="Components/Inputs/HOOText" component={HOOText} />
@@ -14,7 +15,7 @@ Supports html input types:
 
 ## Arguments
 
-<ArgsTable of={HOOText} />
+<ArgTypes of={HOOText} />
 
 export const Template = (args) => <HOOText {...args} />;
 

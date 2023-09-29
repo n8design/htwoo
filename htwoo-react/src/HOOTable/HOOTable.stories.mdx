@@ -1,4 +1,5 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOTable, {
   IHOOTableProps, HOOTableStyle
 } from './HOOTable';
@@ -21,7 +22,7 @@ To use, include table layout as children of the HOOTable component.
 
 ## Arguments
 
-<ArgsTable of={HOOTable} />
+<ArgTypes of={HOOTable} />
 
 export const Template = (args) => <HOOTable {...args}>
   <thead>
