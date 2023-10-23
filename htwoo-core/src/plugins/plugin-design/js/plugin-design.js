@@ -61,7 +61,7 @@ var PluginUIExtension = {
   init: async function () {
 
     let logoImg = document.querySelector(".pl-c-logo__img");
-    c
+
     if (logoImg) {
       logoImg.style.height = "auto";
       logoImg.style.width = "100%";
