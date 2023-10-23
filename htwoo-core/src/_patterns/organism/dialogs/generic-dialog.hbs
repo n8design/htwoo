@@ -1,0 +1,55 @@
+<button id="btn-dialog">Show Dialog (position: absolute)</button>
+<button id="btn-modal-dialog">Show Modal Dialog (position: fixed)</button>
+
+<dialog id="myDialog" class="hoo-dlg">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non officia vel aliquid impedit, nam at minima, fugit
+    necessitatibus ab perferendis illum corrupti ratione ea nihil, doloremque consectetur corporis dolorem?
+    <button id="closer">Close</button>
+</dialog>
+<script type="module">
+</script>
+
+<code style="display: none">
+
+    const dialogElement = document.querySelector('.hoo-dlg');
+
+    console.debug(typeof dialogElement)
+    //dialogElement.prototype = HTMLDialogElement.prototype;
+    //    dialogElement.show = HTMLDialogElement.prototype.show;
+    //    dialogElement.showModal = HTMLDialogElement.prototype.showModal;
+
+    const showDialog = () => {
+        
+        console.debug('-> Fired showDialog');
+        
+        dialogElement.show();
+
+        const autofocus = dialogElement.querySelector('[autofocus]');
+
+        if (autofocus) {
+            console.debug('No Autofocus');
+            dialogElement.focus();
+        }
+
+    }
+
+    const showModalDialog = () => {
+        
+        console.debug('-> Fired showModalDialog')
+
+        dialogElement.showModal();
+
+        const autofocus = dialogElement.querySelector('[autofocus]');
+
+        if (autofocus) {
+            console.debug('No Autofocus');
+            dialogElement.focus();
+        }
+
+    }
+
+    const closeDialog = () => {
+        console.debug('closing dialog');
+        dialogElement.close();
+    }
+</code>
