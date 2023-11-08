@@ -1,5 +1,5 @@
 {{#buttonCmd }}
-<div class="hoo-buttoncmd{{ modifier }}" {{#if contextMenu}} aria-haspopup="true" {{/if}}>
+<div class="hoo-buttoncmd{{ modifier }}" {{#if contextMenu}} aria-haspopup="true" {{/if}} {{#if props}} {{{props}}}{{/if}}>
     <button class="hoo-buttoncmd{{ modifier }}" {{#if contextMenu}}aria-haspopup="true"{{/if}}>
         <span class="hoo-button-icon" aria-hidden="true"> {{> atoms-icon iconname=iconAction }} </span>
         <span class="hoo-button-label"> {{label}} </span>

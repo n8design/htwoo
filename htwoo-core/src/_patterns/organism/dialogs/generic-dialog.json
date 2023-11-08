@@ -1,12 +1,14 @@
 {
     "dialog":{
         "button": {
-            "label": "Show Dialog"
+            "label": "Show Dialog",
+            "props": 'id="btn-dialog"'
         }
     },
     "modal-dialog":{
         "button": {
-            "label": "Show Dialog"
+            "label": "Show Modal Dialog",
+            "props": 'id="btn-modal-dialog"'
         }
     }
 }
