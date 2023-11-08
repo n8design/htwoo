@@ -1,4 +1,4 @@
-import { HooDialog }
+import { HOODialog }
     from './dialog.js';
 
 import {
@@ -157,8 +157,8 @@ const registerAriaSelect = () => {
 
 const registerDialog = () => {
 
-    let dialog1 = new HooDialog('#btn-dialog', '#myDialog', HooDialog.dialogType.DIALOG, '#closer');
-    let dialog2 = new HooDialog('#btn-modal-dialog', '#myDialog', HooDialog.dialogType.MODAL);
+    let dialog1 = new HOODialog('#btn-dialog', '#myDialog', HOODialog.dialogType.DIALOG, { closer: '#closer' });
+    let dialog2 = new HOODialog('#btn-modal-dialog', '#myDialog-1', HOODialog.dialogType.MODAL);
 
 }
 

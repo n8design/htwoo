@@ -1,9 +1,21 @@
-export class HooDialog {
+export class HOODialog {
 
     #launcher;
     #dialog;
     #dialogType;
     #closer;
+    #options = {
+        closer: null,
+        backdropCloser: true,
+        escCloser: true
+    };
+
+    /** Options for modal dialog */
+    static options = {
+        closer: null,
+        backdropCloser: true,
+        escCloser: true
+    }
 
     /**
      * Enum of available dialog types
@@ -20,13 +32,14 @@ export class HooDialog {
 
         console.debug('-> Fired showDialog -- ', this.#dialog);
 
-        if (this.#dialogType === HooDialog.dialogType.DIALOG) {
-            
+        if (this.#dialogType === HOODialog.dialogType.DIALOG) {
+
             this.#dialog.show();
 
-        } else if (this.#dialogType === HooDialog.dialogType.MODAL) {
-            
+        } else if (this.#dialogType === HOODialog.dialogType.MODAL) {
+
             this.#dialog.showModal();
+            // FIX: Make backdrop click optional
             // Capture click on backdrop
             this.#dialog.addEventListener('click', this.#backdropClick);
         } else {
@@ -83,7 +96,8 @@ export class HooDialog {
         this.#dialog.close();
     }
 
-    constructor(launcher, dialog, dialogType = HooDialog.dialogType.DIALOG, closer = null) {
+    constructor(launcher, dialog, dialogType = HOODialog.dialogType.DIALOG,
+        options = HOODialog.options) {
 
         console.debug("Register dialog", dialogType);
 
@@ -108,9 +122,19 @@ export class HooDialog {
 
         this.#dialogType = dialogType;
 
+        options.closer === undefined? this.#options.closer = null : options.closer;
+        options.backdropCloser === undefined? this.#options.backdropCloser = true : options.backdropCloser;
+        options.escCloser === undefined? this.#options.escCloser = true : options.escCloser;
+
+        this.#options = options;
+
         // in case a close button is defined fo the dialog
-        if (closer !== null) {
-            const closerElement = dialogElement.querySelector(closer);
+        if (options.closer !== null) {
+
+            const closerElement = dialogElement.querySelector(options.closer);
+            
+            this.#options.closer = options.closer;
+
             if (closerElement) {
                 this.#closer = closerElement;
             }

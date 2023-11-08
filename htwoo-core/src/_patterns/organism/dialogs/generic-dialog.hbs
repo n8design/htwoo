@@ -1,11 +1,23 @@
+{{#dialog}}
+{{> atoms-button-primary }}
+{{/dialog}}
+{{#modal-dialog}}
+{{> atoms-button-primary }}
+{{/modal-dialog}}
+
 <button id="btn-dialog">Show Dialog (position: absolute)</button>
 <button id="btn-modal-dialog">Show Modal Dialog (position: fixed)</button>
-
-<dialog id="myDialog" class="hoo-dlg">
+<dialog id="myDialog" class="hoo-dlg msg">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non officia vel aliquid impedit, nam at minima, fugit
     necessitatibus ab perferendis illum corrupti ratione ea nihil, doloremque consectetur corporis dolorem?
-    <button id="closer">Close</button>
+    <button id="closer" autofocus>Close</button>
 </dialog>
+<dialog id="myDialog-1" class="hoo-dlg">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non officia vel aliquid impedit, nam at minima, fugit
+    necessitatibus ab perferendis illum as-da sd-.a sd.,as d.-asd ,.-as,d ,-a.sd ,.asd -.asd corrupti ratione ea nihil, doloremque consectetur corporis dolorem?
+    <button id="closer" autofocus>Close</button>
+</dialog>
+
 <script type="module">
 </script>
 
