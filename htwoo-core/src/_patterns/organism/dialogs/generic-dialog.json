@@ -1,0 +1,12 @@
+{
+    "dialog":{
+        "button": {
+            "label": "Show Dialog"
+        }
+    },
+    "modal-dialog":{
+        "button": {
+            "label": "Show Dialog"
+        }
+    }
+}
