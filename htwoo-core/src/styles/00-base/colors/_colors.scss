@@ -352,3 +352,24 @@ $neutral-600: #{var(--neutralPrimaryAlt)};
 $neutral-700: #{var(--neutralPrimary)};
 $neutral-800: #{var(--neutralDark)};
 $neutral-900: #{var(--black)};
+
+// Statusbar Color
+$info-background: rgb(245,245,245);
+$info-border: rgb(209,209,209);
+$info-text: rgb(36,36,36);
+$info-icon: rgb(97,97,97);
+
+$warning-background: rgb(255,249,245);
+$warning-border: rgb(253,207,180);
+$warning-text: rgb(36,36,36);
+$warning-icon: rgb(188,75,9);
+
+$error-background: rgb(253,243,244);
+$error-border: rgb(238,172,178);
+$error-text: rgb(36,36,36);
+$error-icon: rgb(177,14,28);
+
+$success-background: rgb(241,250,241);
+$success-border: rgb(159,216,159);
+$success-text: rgb(36,36,36);
+$success-icon: rgb(14,112,14);

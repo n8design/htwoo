@@ -368,4 +368,15 @@ body > .tmp-hidden{
 }
 
 @import '00-base/samples';
-@import '00-base/samples';
+
+.dlg-preview{
+	display: flex;
+	flex-direction: column;
+	max-width: 90vw;
+	margin: auto;
+	gap: 1rem;
+	&>dialog{
+		position: static;
+
+	}
+}
