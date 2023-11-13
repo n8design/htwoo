@@ -1,3 +1,6 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-dialog {
     &::backdrop {
         opacity: 0.75;
@@ -9,15 +12,83 @@
     overflow: hidden;
 
     box-sizing: border-box;
+    width: var(--hoo-dlg-width, revert);
+    height: var(--hoo-dlg-height, revert);
     padding: 1.5rem;
 
     border: 0;
     border-radius: 0.5rem;
+    transition: all 2s ease-in-out;
+
+    &::backdrop{
+        backdrop-filter: blur(5px) saturate(150%);
+    }
 
     &.msg {
-        width: 100%;
         padding: 0.5rem;
 
         background-color: white;
+    }
+
+    &.sidebar {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: unset;
+
+        height: 100vh;
+        max-height: unset;
+        margin: 0;
+
+        &.left {
+            right: unset;
+            left: 0;
+        }
+    }
+
+    &.topbar {
+        top: 0;
+        bottom: unset;
+
+        width: var(--hoo-dlg-width, 100vw);
+        max-width: unset;
+        height: var(--hoo-dlg-height, revert);
+        margin: 0;
+    }
+
+    &.bottombar {
+        top: unset;
+        bottom: 0;
+
+        width: var(--hoo-dlg-width, 100vw);
+        max-width: unset;
+        height: var(--hoo-dlg-height, revert);
+        margin: 0;
+    }
+
+    &.fullscreen {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 100vw;
+        max-width: unset;
+        height: 100vh;
+        max-height: unset;
+        margin: 0;
+    }
+
+    &.statusbar{
+        box-sizing: border-box;
+        border-radius: core.px2rem(2px);
+        width: 100%;
+        background-color: colors.$neutral-100;
+        border-block: 1px colors.$neutral-400 solid;
+        padding: 0.25rem 0.5rem;
+        justify-content: space-between;
+        &[open]{
+            display: flex;
+        }
     }
 }

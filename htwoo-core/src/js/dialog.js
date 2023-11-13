@@ -69,7 +69,23 @@ export class HOODialog {
         var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
             rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
 
-        if (!isInDialog) {
+        // console.debug('Event Target', event.target);
+        // console.debug(
+        //     'Rect Top', rect.top,'\n',
+        //     'Rect Height', rect.height,'\n',
+        //     'Client Top', event.clientY,'\n',
+        //     'Rect Left', rect.left,'\n',
+        //     'Rect Width', rect.width,'\n',
+        //     'Client Left', event.clientX,'\n',
+        // )
+        // 
+        // console.debug(
+        //     'Rect Top', rect.top, event.clientY, rect.top+rect.height,'\n',
+        //     'Rect left', rect.left, event.clientX, rect.left+rect.width,'\n',
+        // )
+        
+
+        if (!isInDialog && event.target === this.#dialog) {
 
             this.#dialog.close();
 
