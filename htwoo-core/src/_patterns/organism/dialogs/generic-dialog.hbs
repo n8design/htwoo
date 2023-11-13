@@ -19,8 +19,12 @@ Through the change to regular <code>&lt;dialog&gt;</code> elements greater flexi
 See <a href="">MDN Dialog</a>
 
 <dialog id="myDialog" class="hoo-dlg statusbar">
-    This dialog comes without a backgrop and can be used for a statusbar for example.
-    <button id="closer-dlg" autofocus>Close</button>
+    {{> atoms-icon iconname='icon-info-filled'}}
+    <div class="hoo-dlg-content">This dialog comes without a backdrop and can be used for a
+        statusbar for example.</div>
+    <div class="hoo-dlg-actions">
+        <button id="closer-dlg" autofocus>Close</button>
+    </div>
 </dialog>
 <dialog id="myDialog-1" class="hoo-dlg" resize="true">
     <button id="closer-mdl" autofocus>Close</button>

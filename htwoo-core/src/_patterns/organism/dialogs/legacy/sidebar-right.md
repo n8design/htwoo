@@ -1,6 +1,7 @@
 ---
 title: Sidebar Right
 tags: Sidebar Right
+hidden: true
 ---
 
 ### SCSS Imports

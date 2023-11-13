@@ -1,6 +1,7 @@
 ---
 title: Sidebar left
 tags: Sidebar Left
+hidden: true
 ---
 
 ### SCSS Imports

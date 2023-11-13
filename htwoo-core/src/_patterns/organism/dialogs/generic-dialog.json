@@ -1,4 +1,5 @@
 {
+    "bodyClass": "dlg-preview",
     "dialog": {
         "button": {
             "label": "Show Dialog",
