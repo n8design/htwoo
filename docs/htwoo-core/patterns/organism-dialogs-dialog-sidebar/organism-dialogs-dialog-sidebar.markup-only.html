@@ -29,49 +29,54 @@
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
+
     let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
 
-        console.debug(event.currentTarget.id);
+        dlg ? dlg.showModal() : dlg;
 
-        let newSize = null;
+        const resize = (event) => {
 
-        switch (event.currentTarget.id) {
-            case 'width-unset':
-                break;
-            case 'width-20vw':
-                newSize = '20vw';
-                break;
-            case 'width-50vw':
-                newSize = '50vw';
-                break;
-            case 'width-75vw':
-                newSize = '75vw';
-                break;
-            default:
-                break;
-        }
+            console.debug(event.currentTarget.id);
 
-        console.debug(dlg, newSize);
+            let newSize = null;
 
-        if (dlg && newSize) {
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-width', newSize);
+            console.debug(dlg, newSize);
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-width', null);
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='width']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
 
 </script>

@@ -1,4 +1,4 @@
-<dialog id="dlgsb" class="hoo-dlg sidebar right">
+<dialog id="dlgsbright" class="hoo-dlg sidebar right">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -29,49 +29,54 @@
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    let dlg = document.querySelector('#dlgsbright');
 
-        console.debug(event.currentTarget.id);
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
 
-        let newSize = null;
+        dlg ? dlg.showModal() : dlg;
 
-        switch (event.currentTarget.id) {
-            case 'width-unset':
-                break;
-            case 'width-20vw':
-                newSize = '20vw';
-                break;
-            case 'width-50vw':
-                newSize = '50vw';
-                break;
-            case 'width-75vw':
-                newSize = '75vw';
-                break;
-            default:
-                break;
-        }
+        const resize = (event) => {
 
-        console.debug(dlg, newSize);
+            console.debug(event.currentTarget.id);
 
-        if (dlg && newSize) {
+            let newSize = null;
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-width', newSize);
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-width', null);
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='width']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
 
 </script>

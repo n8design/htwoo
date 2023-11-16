@@ -4,13 +4,13 @@
     <title>hTWOo UI Framework - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1700151796977" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1700151796977" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1700163694882" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1700163694882" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1700151796977" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1700163694882" media="all" />
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1700151796977" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1700163694882" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -130,6 +130,7 @@ See <a href="">MDN Dialog</a>
     </div>
 </dialog>
 <script>
+    if (window.location !== window.parent.location) {
     let sidebarLeft = document.querySelector('#btn-sidebar-left');
 
     sidebarLeft.addEventListener('click', (event) => {
@@ -193,7 +194,7 @@ See <a href="">MDN Dialog</a>
         event.preventDefault();
 
     })
-
+    }
 
 </script>
 			</div><!--end pl-js-pattern-example-->
@@ -330,7 +331,7 @@ See <a href="">MDN Dialog</a>
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<dialog id="dlgsb" class="hoo-dlg sidebar left">
+			<dialog id="dlgsbleft" class="hoo-dlg sidebar left">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -361,50 +362,55 @@ See <a href="">MDN Dialog</a>
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    let dlg = document.querySelector('#dlgsbleft');
 
-        console.debug(event.currentTarget.id);
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
 
-        let newSize = null;
+        dlg ? dlg.showModal() : dlg;
 
-        switch (event.currentTarget.id) {
-            case 'width-unset':
-                break;
-            case 'width-20vw':
-                newSize = '20vw';
-                break;
-            case 'width-50vw':
-                newSize = '50vw';
-                break;
-            case 'width-75vw':
-                newSize = '75vw';
-                break;
-            default:
-                break;
-        }
+        const resize = (event) => {
 
-        console.debug(dlg, newSize);
+            console.debug(event.currentTarget.id);
 
-        if (dlg && newSize) {
+            let newSize = null;
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-width', newSize);
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-width', null);
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='width']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
 
 </script>
 			</div><!--end pl-js-pattern-example-->
@@ -449,7 +455,7 @@ See <a href="">MDN Dialog</a>
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<dialog id="dlgsb" class="hoo-dlg sidebar right">
+			<dialog id="dlgsbright" class="hoo-dlg sidebar right">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -480,50 +486,55 @@ See <a href="">MDN Dialog</a>
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    let dlg = document.querySelector('#dlgsbright');
 
-        console.debug(event.currentTarget.id);
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
 
-        let newSize = null;
+        dlg ? dlg.showModal() : dlg;
 
-        switch (event.currentTarget.id) {
-            case 'width-unset':
-                break;
-            case 'width-20vw':
-                newSize = '20vw';
-                break;
-            case 'width-50vw':
-                newSize = '50vw';
-                break;
-            case 'width-75vw':
-                newSize = '75vw';
-                break;
-            default:
-                break;
-        }
+        const resize = (event) => {
 
-        console.debug(dlg, newSize);
+            console.debug(event.currentTarget.id);
 
-        if (dlg && newSize) {
+            let newSize = null;
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-width', newSize);
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-width', null);
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='width']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
 
 </script>
 			</div><!--end pl-js-pattern-example-->
@@ -568,7 +579,7 @@ See <a href="">MDN Dialog</a>
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<dialog id="dlgsb" class="hoo-dlg topbar">
+			<dialog id="dlgtopbar" class="hoo-dlg topbar">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -599,50 +610,55 @@ See <a href="">MDN Dialog</a>
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
+    let dlg = document.querySelector('#dlgtopbar');
 
-    const resize = (event) => {
+    // Hide background
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
 
-        console.debug(event.currentTarget.id);
+        dlg ? dlg.showModal() : dlg;
+        
+        const resize = (event) => {
 
-        let newSize = null;
+            console.debug(event.currentTarget.id);
 
-        switch (event.currentTarget.id) {
-            case 'height-unset':
-                break;
-            case 'height-20vw':
-                newSize = '20vh';
-                break;
-            case 'height-50vw':
-                newSize = '50vh';
-                break;
-            case 'height-75vw':
-                newSize = '75vh';
-                break;
-            default:
-                break;
-        }
+            let newSize = null;
 
-        console.debug(dlg, newSize);
+            switch (event.currentTarget.id) {
+                case 'height-unset':
+                    break;
+                case 'height-20vw':
+                    newSize = '20vh';
+                    break;
+                case 'height-50vw':
+                    newSize = '50vh';
+                    break;
+                case 'height-75vw':
+                    newSize = '75vh';
+                    break;
+                default:
+                    break;
+            }
 
-        if (dlg && newSize) {
+            console.debug(dlg, newSize);
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-height', newSize);
+            if (dlg && newSize) {
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-height', null);
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-height', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-height', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='height']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='height']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
 
 </script>
 			</div><!--end pl-js-pattern-example-->
@@ -687,7 +703,7 @@ See <a href="">MDN Dialog</a>
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<dialog id="dlgsb" class="hoo-dlg bottombar">
+			<dialog id="dlgbottombar" class="hoo-dlg bottombar">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -718,56 +734,261 @@ See <a href="">MDN Dialog</a>
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    let dlg = document.querySelector('#dlgbottombar');
 
-        console.debug(event.currentTarget.id);
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+        
+        dlg.showModal()
 
-        let newSize = null;
+        const resize = (event) => {
 
-        switch (event.currentTarget.id) {
-            case 'height-unset':
-                break;
-            case 'height-20vw':
-                newSize = '20vh';
-                break;
-            case 'height-50vw':
-                newSize = '50vh';
-                break;
-            case 'height-75vw':
-                newSize = '75vh';
-                break;
-            default:
-                break;
-        }
+            console.debug(event.currentTarget.id);
 
-        console.debug(dlg, newSize);
+            let newSize = null;
 
-        if (dlg && newSize) {
+            switch (event.currentTarget.id) {
+                case 'height-unset':
+                    break;
+                case 'height-20vw':
+                    newSize = '20vh';
+                    break;
+                case 'height-50vw':
+                    newSize = '50vh';
+                    break;
+                case 'height-75vw':
+                    newSize = '75vh';
+                    break;
+                default:
+                    break;
+            }
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-height', newSize);
+            console.debug(dlg, newSize);
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-height', null);
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-height', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-height', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='height']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='height']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
-
 </script>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-dialog-bottombar" class="pl-js-pattern-data">
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Bottom Bar","patternPartial":"organism-dialog-bottombar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":5}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe&#x2F;organism-dialogs-dialog-iframe.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe" title="Link to Pattern">
+						with IFrame
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe" data-patternpartial="organism-dialog-iframe" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe-3by4" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe-3by4&#x2F;organism-dialogs-dialog-iframe-3by4.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-3by4" title="Link to Pattern">
+						with IFrame - 3:4
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-3by4" data-patternpartial="organism-dialog-iframe-3by4" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-3by4">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe ratio-3by4" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-3by4" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - 3:4","patternPartial":"organism-dialog-iframe-3by4","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe-squared" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe-squared&#x2F;organism-dialogs-dialog-iframe-squared.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-squared" title="Link to Pattern">
+						with IFrame - squared
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-squared" data-patternpartial="organism-dialog-iframe-squared" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-squared">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe ratio-squared" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-squared" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - squared","patternPartial":"organism-dialog-iframe-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -818,10 +1039,10 @@ See <a href="">MDN Dialog</a>
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1700151796977">
+<script id="pl-js-polyfill-insert-1700163694882">
   (function() {
     if (self != top) {
-      var cb = '1700151796977';
+      var cb = '1700163694882';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -834,7 +1055,7 @@ See <a href="">MDN Dialog</a>
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1700151796977" nomodule>
+<script id="pl-js-insert-1700163694882" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 

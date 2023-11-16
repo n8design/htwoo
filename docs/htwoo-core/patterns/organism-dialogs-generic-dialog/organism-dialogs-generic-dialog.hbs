@@ -48,6 +48,7 @@ See <a href="">MDN Dialog</a>
     </div>
 </dialog>
 <script>
+    if (window.location !== window.parent.location) {
     let sidebarLeft = document.querySelector('#btn-sidebar-left');
 
     sidebarLeft.addEventListener('click', (event) => {
@@ -111,6 +112,6 @@ See <a href="">MDN Dialog</a>
         event.preventDefault();
 
     })
-
+    }
 
 </script>

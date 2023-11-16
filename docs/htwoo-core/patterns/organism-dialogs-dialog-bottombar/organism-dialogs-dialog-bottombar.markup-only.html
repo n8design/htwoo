@@ -1,4 +1,4 @@
-<dialog id="dlgsb" class="hoo-dlg bottombar">
+<dialog id="dlgbottombar" class="hoo-dlg bottombar">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
         <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
@@ -29,49 +29,53 @@
 </div></dialog>
 <!--- ⬇️ Script below is just for demo purposes ⬇️ -->
 <script>
-    let dlg = document.querySelector('#dlgsb');
-    dlg ? dlg.showModal() : dlg;
 
-    const resize = (event) => {
+    let dlg = document.querySelector('#dlgbottombar');
 
-        console.debug(event.currentTarget.id);
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+        
+        dlg.showModal()
 
-        let newSize = null;
+        const resize = (event) => {
 
-        switch (event.currentTarget.id) {
-            case 'height-unset':
-                break;
-            case 'height-20vw':
-                newSize = '20vh';
-                break;
-            case 'height-50vw':
-                newSize = '50vh';
-                break;
-            case 'height-75vw':
-                newSize = '75vh';
-                break;
-            default:
-                break;
-        }
+            console.debug(event.currentTarget.id);
 
-        console.debug(dlg, newSize);
+            let newSize = null;
 
-        if (dlg && newSize) {
+            switch (event.currentTarget.id) {
+                case 'height-unset':
+                    break;
+                case 'height-20vw':
+                    newSize = '20vh';
+                    break;
+                case 'height-50vw':
+                    newSize = '50vh';
+                    break;
+                case 'height-75vw':
+                    newSize = '75vh';
+                    break;
+                default:
+                    break;
+            }
 
-            console.debug(' --- Update ....')
-            dlg.style.setProperty('--hoo-dlg-height', newSize);
+            console.debug(dlg, newSize);
 
-        } else {
-            if (newSize === null) {
-                dlg.style.setProperty('--hoo-dlg-height', null);
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-height', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-height', null);
+                }
             }
         }
+
+        let resizers = document.querySelectorAll("button[id^='height']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
     }
-
-    let resizers = document.querySelectorAll("button[id^='height']");
-
-    console.debug(resizers);
-
-    resizers.forEach(resizer => resizer.addEventListener('click', resize));
-
 </script>
