@@ -61,6 +61,7 @@ var PluginUIExtension = {
   init: async function () {
 
     let logoImg = document.querySelector(".pl-c-logo__img");
+
     if (logoImg) {
       logoImg.style.height = "auto";
       logoImg.style.width = "100%";
@@ -160,10 +161,9 @@ var PluginUIExtension = {
 
         }
 
-        var allThemeButtons = document.querySelectorAll('.n8d-themeswitch-btn');
-        console.debug(allThemeButtons);
+        const allThemeButtons = document.querySelectorAll('.n8d-themeswitch-btn');
         allThemeButtons.forEach((btn) => {
-          console.debug(btn.dataset.theme);
+          // console.debug(btn.dataset.theme);
           btn.addEventListener('click', this.switchTheme);
         })
 
