@@ -1,5 +1,5 @@
 {{#buttonCmd }}
-<div class="hoo-buttoncontext-outer">
+<div class="hoo-buttoncontext-outer"{{#if props}} {{{props}}}{{/if}}>
     <button class="hoo-buttoncontext">
         <span class="hoo-buttoncontext-icon" aria-hidden="true"> {{> atoms-icon iconname=iconAction }} </span>
         <span class="hoo-buttoncontext-label"> {{label}} </span>
