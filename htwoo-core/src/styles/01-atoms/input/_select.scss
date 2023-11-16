@@ -4,11 +4,11 @@
 @use "../../00-base/mixin/elevation.mixin";
 @use "input";
 
-.hidden-visually{
+.hidden-visually {
 	position: absolute;
 
 	overflow: hidden;
-	clip: rect(0,0,0,0);
+	clip: rect(0, 0, 0, 0);
 
 	width: 1px;
 	height: 1px;
@@ -21,7 +21,7 @@
 	clip-path: inset(50%);
 }
 
-.hoo-select{
+.hoo-select {
 	position: relative;
 
 	display: flex;
@@ -34,11 +34,11 @@
 
 	align-items: center;
 
-	.hidden-visually{
+	.hidden-visually {
 		position: absolute;
 
 		overflow: hidden;
-		clip: rect(0,0,0,0);
+		clip: rect(0, 0, 0, 0);
 
 		width: 1px;
 		height: 1px;
@@ -51,7 +51,7 @@
 		clip-path: inset(50%);
 	}
 
-	&-text{
+	&-text {
 		@include input.base-input;
 
 		width: calc(100% - #{core.px2rem(32px)});
@@ -59,7 +59,7 @@
 		border: none;
 	}
 
-	&-dropdown{
+	&-dropdown {
 		@extend %listReset;
 		@include elevation.elevation(4);
 
@@ -75,21 +75,25 @@
 		border-top-right-radius: 0;
 		background-color: colors.$neutral-000;
 
-		&.hidden-all{
+		max-height: 50vh;
+		overflow: hidden;
+		overflow-y: auto;
+
+		&.hidden-all {
 			display: none;
 		}
 
 	}
 
 	// for drop down user outside of a select box
-	& > .hoo-select-dropdown{
+	&>.hoo-select-dropdown {
 		position: absolute;
 		z-index: 100;
 		top: 100%;
 	}
 }
 
-.hoo-optgroup-items{
+.hoo-optgroup-items {
 	@extend .hoo-select-dropdown;
 
 	border-bottom: 1px colors.$neutral-450 solid;
@@ -97,7 +101,7 @@
 	box-shadow: none;
 }
 
-.hoo-option{
+.hoo-option {
 	font-size: 14px;
 
 	display: flex;
@@ -109,20 +113,21 @@
 
 	align-items: center;
 	flex-shrink: 0;
-	&.is-disabled{
+
+	&.is-disabled {
 		pointer-events: none;
 
 		color: colors.$neutral-400;
 	}
 
-	&:hover{
+	&:hover {
 		cursor: pointer;
 
 		background-color: colors.$neutral-100;
 	}
 }
 
-.hoo-optgroup-name{
+.hoo-optgroup-name {
 	font-weight: bold;
 
 	display: flex;
