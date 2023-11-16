@@ -6,6 +6,7 @@
   // @extend .hoo-input-group;
   display: flex;
   flex-direction: row;
+  flex-grow: 0;
 
   .hoo-icon {
     background-color: white;
@@ -14,6 +15,7 @@
   .hoo-input-text {
     @include input.base-input;
 
+    height: fit-content;
     width: calc(100% - 2rem);
 
     border-left: 0;
@@ -24,7 +26,7 @@
   .hoo-icon {
     @include input.base-input;
 
-    width: core.px2rem(32px);
+    width: 2rem;
     height: 2rem;
     padding-right: core.px2rem(5px);
     padding-left: core.px2rem(5px);
