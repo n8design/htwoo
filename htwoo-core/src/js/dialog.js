@@ -123,7 +123,7 @@ export class HOODialog {
 
 
         if (!launchElement) {
-            throw new Error(`Launcher '${launcher}' is not registered`);
+            throw new Error(`Launcher '${launcher}' Element cannot be found`);
         }
 
         this.#launcher = launchElement;

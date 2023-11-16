@@ -8,6 +8,23 @@
     }
 }
 
+// ** Void legacy styles ** //
+.hoo-dlg {
+    // ** Void legacy styles ** //
+    .hoo-dlgheader {
+        padding: 0;
+    }
+    .hoo-dlgcontent{
+        padding: 0;
+        margin-top: 0.5rem;
+        &>*:first-child{
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+}
+
 .hoo-dlg {
     overflow: hidden;
 
@@ -16,13 +33,13 @@
     height: var(--hoo-dlg-height, revert);
     padding: 1.5rem;
 
-    transition: all 2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     border: 0;
     border-radius: 0.5rem;
 
     &::backdrop {
-        backdrop-filter: blur(5px) saturate( 150%);
+        backdrop-filter: blur(5px) saturate(150%);
     }
 
     &.msg {
@@ -41,7 +58,14 @@
         max-height: unset;
         margin: 0;
 
+        &.right {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
         &.left {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             right: unset;
             left: 0;
         }
@@ -55,6 +79,8 @@
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 
     &.bottombar {
@@ -65,6 +91,8 @@
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     &.fullscreen {

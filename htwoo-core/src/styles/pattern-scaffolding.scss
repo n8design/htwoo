@@ -390,6 +390,16 @@ body>.tmp-hidden {
 	}
 
 }
+
+.dlg-background {
+	background-image: url('../../images/background.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100dvh;
+	width: 100vw;
+}
+
 .pl-js-pattern-example{
 	&>dialog[open] {
 		position: static;
