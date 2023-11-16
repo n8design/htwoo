@@ -249,5 +249,10 @@
             "desktop": 2,
             "mobile": 1
         }
+    },
+    "searchbox": {
+        "iconname": "icon-search",
+        "placeholder": "Search",
+        "ddToggleClass": ""
     }
 }

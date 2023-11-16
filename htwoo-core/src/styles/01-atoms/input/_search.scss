@@ -15,6 +15,7 @@
   .hoo-input-text {
     @include input.base-input;
 
+    height: fit-content;
     width: calc(100% - 2rem);
 
     border-left: 0;
