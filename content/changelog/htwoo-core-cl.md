@@ -81,7 +81,7 @@ Changes in hTWOo core as they happen
 * theme switcher ([4abc2a1](https://github.com/n8design/htwoo/commit/4abc2a1b331ab008e113473c6e8a0bcf818b9dca))
 * update component in htwoo-core ([2b215d9](https://github.com/n8design/htwoo/commit/2b215d9bd17f0fddc8412fe356c031e8d8ffac06))
 * Update icon names ([66509a6](https://github.com/n8design/htwoo/commit/66509a6f6f83cc1d58641c40d2a66b2f6da1ae17))
-* update molecule-card-image to <figure> ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
+* update molecule-card-image to `<figure>` ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
 * Updated library for alpha2 release ([e723380](https://github.com/n8design/htwoo/commit/e72338057e325420c18d91645c72d7a4d4f8a49c))
 
 
@@ -106,8 +106,8 @@ Changes in hTWOo core as they happen
 * Data update to label ([a078739](https://github.com/n8design/htwoo/commit/a07873962749db1a551b476934366c0e5b7ef36a))
 * Date update to toggle ([f3ffbf1](https://github.com/n8design/htwoo/commit/f3ffbf1d559ad6a37289423b22d0bfd87046446b))
 * Node-sass to sass-dart Migration ([a1c1a33](https://github.com/n8design/htwoo/commit/a1c1a3342d5f2104f3878cc97bb4d6236d581803))
-* Organism Dialogs got updated from <div> to <dialog> ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
-* Update context button replaced `<ul> with new `<menu>` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
+* Organism Dialogs got updated from `<div>` to `<dialog>` ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
+* Update context button replaced `<ul>` with new `<menu>` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
 * Update shimmer / loading animations documentation ([9d07c8f](https://github.com/n8design/htwoo/commit/9d07c8f79f79a8a6296171b37d65ca31d28826ec))
 
 ## [2.0.0](https://github.com/n8design/htwoo/commit/) (2023-04-10)
@@ -136,7 +136,7 @@ Changes in hTWOo core as they happen
 ### Bug Fixes
 
 * [WAI-ARIA] added hidden-visually global style ([2f845f2](https://github.com/n8design/htwoo/commit/2f845f2af9ebbe3a80d31be4f0bb30c709ece5f5))
-* [wai-aria] removed role menu from <menu> ([2e36c1b](https://github.com/n8design/htwoo/commit/2e36c1beec1d95aebd5d4b7ca00f6dcf6b492aa5))
+* [wai-aria] removed role menu from `<menu>` ([2e36c1b](https://github.com/n8design/htwoo/commit/2e36c1beec1d95aebd5d4b7ca00f6dcf6b492aa5))
 * Avatar, Presences and Persona Status ([a0dbbdd](https://github.com/n8design/htwoo/commit/a0dbbdd760c0a18586cbcc6f31e8f8a11d9bfaad))
 * card-grid and card-grid-html ([e721864](https://github.com/n8design/htwoo/commit/e72186444bb10e1e672c529ebfe959db877bec5e))
 * color order of buttons and buttons-primary ([ace33d7](https://github.com/n8design/htwoo/commit/ace33d7cb6533ee88e2ceb433e8eef534d49fbbe))
@@ -152,7 +152,7 @@ Changes in hTWOo core as they happen
 * Facepile update new structure ([872d0ee](https://github.com/n8design/htwoo/commit/872d0ee9b96d81be83c3bfc7af2809c89043986b))
 * hoo-icon - removed 100% height/width ([eb2677d](https://github.com/n8design/htwoo/commit/eb2677de9a42a8bf8c8bf4c483b342bff4f8ed80))
 * hoo-input-text - line-height adjusted ([18caea9](https://github.com/n8design/htwoo/commit/18caea92446830b2f32623b85c82a73778d0d698))
-* molecules-nav - update to use <menu> instead of <ul> ([09fe451](https://github.com/n8design/htwoo/commit/09fe451e428188955a4b125e4b0981b23a6dc928))
+* molecules-nav - update to use `<menu>` instead of `<ul>` ([09fe451](https://github.com/n8design/htwoo/commit/09fe451e428188955a4b125e4b0981b23a6dc928))
 * Oveflow Button Flyout data-binding ([0183741](https://github.com/n8design/htwoo/commit/01837414092b9821521077da7f665cd94b3ae485))
 * pnp-search-grid CanvasVerticalSection ([2e9d5e0](https://github.com/n8design/htwoo/commit/2e9d5e0f8c8f4a66385e76422a0f8b7db8cd968d))
 * relative path issue in SPFx ([607fd38](https://github.com/n8design/htwoo/commit/607fd38cd4d6996df36610db46f3a62d309021ac))
@@ -162,7 +162,7 @@ Changes in hTWOo core as they happen
 * Search Icon background updated ([40112d1](https://github.com/n8design/htwoo/commit/40112d10a9329967e2aa3cd59b278339d14cf702))
 * Teams Splash Screen - new data structure ([1456407](https://github.com/n8design/htwoo/commit/1456407f756d435fe7de012fcb9a94453e190618))
 * Update icon names ([66509a6](https://github.com/n8design/htwoo/commit/66509a6f6f83cc1d58641c40d2a66b2f6da1ae17))
-* update molecule-card-image to <figure> ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
+* update molecule-card-image to `<figure>` ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
 * Updated library for alpha2 release ([e723380](https://github.com/n8design/htwoo/commit/e72338057e325420c18d91645c72d7a4d4f8a49c))
 
 
@@ -186,8 +186,8 @@ Changes in hTWOo core as they happen
 * Data update to label ([a078739](https://github.com/n8design/htwoo/commit/a07873962749db1a551b476934366c0e5b7ef36a))
 * Date update to toggle ([f3ffbf1](https://github.com/n8design/htwoo/commit/f3ffbf1d559ad6a37289423b22d0bfd87046446b))
 * Node-sass to sass-dart Migration ([a1c1a33](https://github.com/n8design/htwoo/commit/a1c1a3342d5f2104f3878cc97bb4d6236d581803))
-* Organism Dialogs got updated from <div> to <dialog> ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
-* Update context button replaced `<ul> with new `<menu>` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
+* Organism Dialogs got updated from `<div>` to `<dialog>` ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
+* Update context button replaced `<ul>` with new `<menu>` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
 * Update shimmer / loading animations documentation ([9d07c8f](https://github.com/n8design/htwoo/commit/9d07c8f79f79a8a6296171b37d65ca31d28826ec))
 
 
@@ -207,7 +207,7 @@ Changes in hTWOo core as they happen
 ### Bug Fixes
 
 * [WAI-ARIA] added hidden-visually global style ([2f845f2](https://github.com/n8design/htwoo/commit/2f845f2af9ebbe3a80d31be4f0bb30c709ece5f5))
-* [wai-aria] removed role menu from <menu> ([2e36c1b](https://github.com/n8design/htwoo/commit/2e36c1beec1d95aebd5d4b7ca00f6dcf6b492aa5))
+* [wai-aria] removed role menu from `<menu>` ([2e36c1b](https://github.com/n8design/htwoo/commit/2e36c1beec1d95aebd5d4b7ca00f6dcf6b492aa5))
 * Data restructure card footer and minor style tweaks ([2e23820](https://github.com/n8design/htwoo/commit/2e23820ff23bb547ad5fd0a54199590e5fb6e386))
 * Data structure avatars - Added htwoo-avatar.json ([de53995](https://github.com/n8design/htwoo/commit/de53995aac7f5444edb8632b4308931a6b8c58fd))
 * dialog button icon update ([a9c2300](https://github.com/n8design/htwoo/commit/a9c2300cb2801c170f8caccef333b70681a58b5b))
@@ -218,7 +218,7 @@ Changes in hTWOo core as they happen
 * Search Icon background updated ([40112d1](https://github.com/n8design/htwoo/commit/40112d10a9329967e2aa3cd59b278339d14cf702))
 * Teams Splash Screen - new data structure ([1456407](https://github.com/n8design/htwoo/commit/1456407f756d435fe7de012fcb9a94453e190618))
 * Update icon names ([66509a6](https://github.com/n8design/htwoo/commit/66509a6f6f83cc1d58641c40d2a66b2f6da1ae17))
-* update molecule-card-image to <figure> ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
+* update molecule-card-image to `<figure>` ([db32a9a](https://github.com/n8design/htwoo/commit/db32a9a2797096e2496427790edb4f97e5f7bdca))
 
 
 ### Refactoring
@@ -239,6 +239,6 @@ Changes in hTWOo core as they happen
 * data update on all input text fields ([8c078f5](https://github.com/n8design/htwoo/commit/8c078f566a19922623109a6a1991d4d49a54f36b))
 * Data update to label ([a078739](https://github.com/n8design/htwoo/commit/a07873962749db1a551b476934366c0e5b7ef36a))
 * Date update to toggle ([f3ffbf1](https://github.com/n8design/htwoo/commit/f3ffbf1d559ad6a37289423b22d0bfd87046446b))
-* Organism Dialogs got updated from <div> to <dialog> ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
-* Update context button replaced `<ul> with new `<menu` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
+* Organism Dialogs got updated from `<div>` to `<dialog>` ([3ac64db](https://github.com/n8design/htwoo/commit/3ac64dbb17c23186b0fcf72221eaf13b9a64f749))
+* Update context button replaced `<ul>` with new `<menu>` ([921dfd8](https://github.com/n8design/htwoo/commit/921dfd86bfab825f39aa341cd965ebd1f22fb4a1))
 * Update shimmer / loading animations documentation ([9d07c8f](https://github.com/n8design/htwoo/commit/9d07c8f79f79a8a6296171b37d65ca31d28826ec))
