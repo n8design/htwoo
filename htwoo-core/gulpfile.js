@@ -116,6 +116,14 @@ const createLibComponents = () => {
 
 }
 
+const createHooMin = () => {
+
+    return src('./src/css/htwoo.min.css')
+    .pipe(dest('../packages/htwoo-core/dist/htwoo.min.css'))
+
+}
+
+
 const movePatterns = (cb) => {
 
     src(['src/_data/*+/*'])
@@ -137,7 +145,7 @@ const movePatterns = (cb) => {
 }
 
 const serve = parallel(styles, pluginCSSOverride, baseWatch);
-const buildLib = series(createLibJS, createLibSass, createLibComponents, createLibThemes);
+const buildLib = series(createLibJS, createLibSass, createLibComponents, createLibThemes, createHooMin);
 const buildPLRepo = series(movePatterns);
 
 exports["build:lib"] = buildLib;
