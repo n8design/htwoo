@@ -119,7 +119,7 @@ const createLibComponents = () => {
 const createHooMin = () => {
 
     return src('./src/css/htwoo.min.css')
-    .pipe(dest('../packages/htwoo-core/dist/htwoo.min.css'))
+    .pipe(dest('../packages/htwoo-core/dist/'))
 
 }
 
