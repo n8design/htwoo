@@ -1,49 +1,168 @@
-define(function () { 'use strict';
+define((function () { 'use strict';
 
-    let showDialog, closeDialog;
+    class HOODialog {
 
-    const evtShowDialog = (event) => {
+        #launcher;
+        #dialog;
+        #dialogType;
+        #closer;
+        #options = {
+            closer: null,
+            backdropCloser: true,
+            escCloser: true
+        };
 
-        let curElement = event.target;
+        /** Options for modal dialog */
+        static options = {
+            closer: null,
+            backdropCloser: true,
+            escCloser: true
+        }
 
-        let modalDialog = curElement.parentElement.querySelector('.hoo-mdldialog-outer');
-        modalDialog.classList.remove('is-hidden');
-        modalDialog.classList.add('is-visible');
+        /**
+         * Enum of available dialog types
+         */
+        static dialogType = {
+            DIALOG: 'dialog',
+            MODAL: 'modal'
+        }
 
-    };
+        /**
+         * Open the dialog
+         */
+        #showDialog = () => {
 
-    const evtHideDialog = (event) => {
+            console.debug('-> Fired showDialog -- ', this.#dialog);
 
-        let curElement = event.target;
+            if (this.#dialogType === HOODialog.dialogType.DIALOG) {
 
-        let modalDialog = curElement.closest('.hoo-mdldialog-outer');
+                this.#dialog.show();
 
-        modalDialog.classList.remove('is-visible');
-        modalDialog.classList.add('is-hidden');
+            } else if (this.#dialogType === HOODialog.dialogType.MODAL) {
 
-    };
+                this.#dialog.showModal();
+                // FIX: Make backdrop click optional
+                // Capture click on backdrop
+                this.#dialog.addEventListener('click', this.#backdropClick);
+            } else {
+                throw new Error(`Invalid dialog type specified for ${this.#dialog}`);
+            }
 
-    const registerDialog = () => {
+            if (this.#closer) {
+                this.#closer.addEventListener('click', this.#closeDialog);
+            }
 
-        showDialog = document.querySelectorAll('.show-dialog');
-        closeDialog = document.querySelectorAll('.hoo-dlgheader-closer');
+            const autofocus = this.#dialog.querySelector('[autofocus]');
 
-        if (showDialog) {
+            if (autofocus) {
+                console.debug('No Autofocus');
+                dialogElement.focus();
+            }
 
-            showDialog.forEach(item => {
-                item.addEventListener('click', evtShowDialog);
-            });
+            // Capture close on ESC click
+            this.#dialog.addEventListener('keydown', this.#keyboardClose);
 
         }
 
-        if (closeDialog) {
+        #backdropClick = (event) => {
 
-            closeDialog.forEach(item => {
-                item.addEventListener('click', evtHideDialog);
-            });
+            var rect = this.#dialog.getBoundingClientRect();
+
+            var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+                rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+
+            // console.debug('Event Target', event.target);
+            // console.debug(
+            //     'Rect Top', rect.top,'\n',
+            //     'Rect Height', rect.height,'\n',
+            //     'Client Top', event.clientY,'\n',
+            //     'Rect Left', rect.left,'\n',
+            //     'Rect Width', rect.width,'\n',
+            //     'Client Left', event.clientX,'\n',
+            // )
+            // 
+            // console.debug(
+            //     'Rect Top', rect.top, event.clientY, rect.top+rect.height,'\n',
+            //     'Rect left', rect.left, event.clientX, rect.left+rect.width,'\n',
+            // )
+            
+
+            if (!isInDialog && event.target === this.#dialog) {
+
+                this.#dialog.close();
+
+            }
+
         }
 
-    };
+        /**
+         * Close the dialog on keyCode ESC
+         */
+        #keyboardClose = (event) => {
+
+            if (event.keyCode === 27) {
+                this.#dialog.close();
+            }
+
+        }
+
+        /**
+         * Close the dialog used for custom event or close button
+         */
+        #closeDialog = (event) => {
+            console.debug('closing dialog');
+            this.#dialog.close();
+        }
+
+        constructor(launcher, dialog, dialogType = HOODialog.dialogType.DIALOG,
+            options = HOODialog.options) {
+
+            console.debug("Register dialog", dialogType);
+
+            // query DOM elements
+            const launchElement = document.querySelector(launcher),
+                dialogElement = document.querySelector(dialog);
+
+
+            if (!launchElement) {
+                throw new Error(`Launcher '${launcher}' Element cannot be found`);
+            }
+
+            this.#launcher = launchElement;
+
+            if (!dialogElement) {
+                throw new Error(`Dialog '${dialog}' Element not found`);
+            }
+
+            this.#dialog = dialogElement;
+
+            this.#launcher.addEventListener('click', this.#showDialog);
+
+            this.#dialogType = dialogType;
+
+            options.closer === undefined? this.#options.closer = null : options.closer;
+            options.backdropCloser === undefined? this.#options.backdropCloser = true : options.backdropCloser;
+            options.escCloser === undefined? this.#options.escCloser = true : options.escCloser;
+
+            this.#options = options;
+
+            // in case a close button is defined fo the dialog
+            if (options.closer !== null) {
+
+                const closerElement = dialogElement.querySelector(options.closer);
+                
+                this.#options.closer = options.closer;
+
+                if (closerElement) {
+                    this.#closer = closerElement;
+                }
+            }
+
+            console.debug('AFTER LAUNCH ::: ', this.#dialogType, this.#launcher, this.#dialog, this.#closer);
+
+        }
+
+    }
 
     // Origin 1: https://24ways.org/2019/making-a-better-custom-select-element/
     // Origin 2: https://css-tricks.com/making-a-better-custom-select-element/
@@ -531,28 +650,20 @@ define(function () { 'use strict';
 
     const handleMenuItems = (event) => {
 
-        console.log(event);
-
         let curNavItem = event.target;
         let curNavMenu = curNavItem.closest('.hoo-navitem');
 
-        console.log(curNavMenu);
-        console.log(curNavMenu.getAttribute('aria-expanded'));
-        console.log(typeof curNavMenu.getAttribute('aria-expanded'));
+        // console.log(curNavMenu);
+        // console.log(curNavMenu.getAttribute('aria-expanded'));
+        // console.log(typeof curNavMenu.getAttribute('aria-expanded'));
 
-        console.log(" LOOMA ::: ",
-            curNavMenu.getAttribute('aria-expanded'),
-            Boolean(curNavMenu.getAttribute('aria-expanded')),
-            Boolean(curNavMenu.getAttribute('aria-expanded')) === true
-        );
+        if (curNavMenu.getAttribute('aria-expanded') === 'false') {
 
-        if (curNavMenu.getAttribute('aria-expanded') === 'true') {
-
-            curNavMenu.setAttribute('aria-expanded', false);
+            curNavMenu.setAttribute('aria-expanded', true);
 
         } else {
 
-            curNavMenu.setAttribute('aria-expanded', true);
+            curNavMenu.setAttribute('aria-expanded', false);
 
         }
 
@@ -614,7 +725,6 @@ define(function () { 'use strict';
             }
         }
 
-        // if 
         if(overflowControl.children.length !== 0){
         
             var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
@@ -881,8 +991,6 @@ define(function () { 'use strict';
 
         let selects = document.querySelectorAll('.hoo-select');
 
-        // debugger;
-
         if (selects) {
             selects.forEach((item, idx) => {
                 ariaSelect(item);
@@ -890,8 +998,20 @@ define(function () { 'use strict';
         }
     };
 
+    const registerDialog = () => {
+
+        try{
+            let dialog1 = new HOODialog('#btn-dialog', '#myDialog', HOODialog.dialogType.DIALOG, { closer: '#closer-dlg' });
+            let dialog2 = new HOODialog('#btn-modal-dialog', '#myDialog-1', HOODialog.dialogType.MODAL, { closer: '#closer-mdl' });
+        } catch (e) {
+        }
+
+    };
+
 
     const afterLoaded = () => {
+
+        registerDialog();
 
         splitButtonReg('.hoo-buttonsplit > .hoo-buttonsplit-carret', splitButtonClick);
         splitButtonReg('.hoo-buttonsplit-primary > .hoo-buttonsplit-carret', splitButtonClick);
@@ -906,7 +1026,7 @@ define(function () { 'use strict';
         registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
         registerAnimation('.anim-addNslide', animateAddAndSlide);
 
-        registerDialog();
+        // registerDialog();
         registerAriaSelect();
 
         /** Init Table Helper */
@@ -939,4 +1059,4 @@ define(function () { 'use strict';
 
     window.onload = afterLoaded();
 
-});
+}));

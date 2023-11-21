@@ -1,52 +1,169 @@
-define(['exports'], function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
-    let showDialog, closeDialog;
+    class HOODialog {
 
-    const evtShowDialog = (event) => {
+        #launcher;
+        #dialog;
+        #dialogType;
+        #closer;
+        #options = {
+            closer: null,
+            backdropCloser: true,
+            escCloser: true
+        };
 
-        let curElement = event.target;
+        /** Options for modal dialog */
+        static options = {
+            closer: null,
+            backdropCloser: true,
+            escCloser: true
+        }
 
-        let modalDialog = curElement.parentElement.querySelector('.hoo-mdldialog-outer');
-        modalDialog.classList.remove('is-hidden');
-        modalDialog.classList.add('is-visible');
+        /**
+         * Enum of available dialog types
+         */
+        static dialogType = {
+            DIALOG: 'dialog',
+            MODAL: 'modal'
+        }
 
-    };
+        /**
+         * Open the dialog
+         */
+        #showDialog = () => {
 
-    const evtHideDialog = (event) => {
+            console.debug('-> Fired showDialog -- ', this.#dialog);
 
-        let curElement = event.target;
+            if (this.#dialogType === HOODialog.dialogType.DIALOG) {
 
-        let modalDialog = curElement.closest('.hoo-mdldialog-outer');
+                this.#dialog.show();
 
-        modalDialog.classList.remove('is-visible');
-        modalDialog.classList.add('is-hidden');
+            } else if (this.#dialogType === HOODialog.dialogType.MODAL) {
 
-    };
+                this.#dialog.showModal();
+                // FIX: Make backdrop click optional
+                // Capture click on backdrop
+                this.#dialog.addEventListener('click', this.#backdropClick);
+            } else {
+                throw new Error(`Invalid dialog type specified for ${this.#dialog}`);
+            }
 
-    const registerDialog = () => {
+            if (this.#closer) {
+                this.#closer.addEventListener('click', this.#closeDialog);
+            }
 
-        showDialog = document.querySelectorAll('.show-dialog');
-        closeDialog = document.querySelectorAll('.hoo-dlgheader-closer');
+            const autofocus = this.#dialog.querySelector('[autofocus]');
 
-        if (showDialog) {
+            if (autofocus) {
+                console.debug('No Autofocus');
+                dialogElement.focus();
+            }
 
-            showDialog.forEach(item => {
-                item.addEventListener('click', evtShowDialog);
-            });
+            // Capture close on ESC click
+            this.#dialog.addEventListener('keydown', this.#keyboardClose);
 
         }
 
-        if (closeDialog) {
+        #backdropClick = (event) => {
 
-            closeDialog.forEach(item => {
-                item.addEventListener('click', evtHideDialog);
-            });
+            var rect = this.#dialog.getBoundingClientRect();
+
+            var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+                rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+
+            // console.debug('Event Target', event.target);
+            // console.debug(
+            //     'Rect Top', rect.top,'\n',
+            //     'Rect Height', rect.height,'\n',
+            //     'Client Top', event.clientY,'\n',
+            //     'Rect Left', rect.left,'\n',
+            //     'Rect Width', rect.width,'\n',
+            //     'Client Left', event.clientX,'\n',
+            // )
+            // 
+            // console.debug(
+            //     'Rect Top', rect.top, event.clientY, rect.top+rect.height,'\n',
+            //     'Rect left', rect.left, event.clientX, rect.left+rect.width,'\n',
+            // )
+            
+
+            if (!isInDialog && event.target === this.#dialog) {
+
+                this.#dialog.close();
+
+            }
+
         }
 
-    };
+        /**
+         * Close the dialog on keyCode ESC
+         */
+        #keyboardClose = (event) => {
 
-    exports.registerDialog = registerDialog;
+            if (event.keyCode === 27) {
+                this.#dialog.close();
+            }
 
-    Object.defineProperty(exports, '__esModule', { value: true });
+        }
 
-});
+        /**
+         * Close the dialog used for custom event or close button
+         */
+        #closeDialog = (event) => {
+            console.debug('closing dialog');
+            this.#dialog.close();
+        }
+
+        constructor(launcher, dialog, dialogType = HOODialog.dialogType.DIALOG,
+            options = HOODialog.options) {
+
+            console.debug("Register dialog", dialogType);
+
+            // query DOM elements
+            const launchElement = document.querySelector(launcher),
+                dialogElement = document.querySelector(dialog);
+
+
+            if (!launchElement) {
+                throw new Error(`Launcher '${launcher}' Element cannot be found`);
+            }
+
+            this.#launcher = launchElement;
+
+            if (!dialogElement) {
+                throw new Error(`Dialog '${dialog}' Element not found`);
+            }
+
+            this.#dialog = dialogElement;
+
+            this.#launcher.addEventListener('click', this.#showDialog);
+
+            this.#dialogType = dialogType;
+
+            options.closer === undefined? this.#options.closer = null : options.closer;
+            options.backdropCloser === undefined? this.#options.backdropCloser = true : options.backdropCloser;
+            options.escCloser === undefined? this.#options.escCloser = true : options.escCloser;
+
+            this.#options = options;
+
+            // in case a close button is defined fo the dialog
+            if (options.closer !== null) {
+
+                const closerElement = dialogElement.querySelector(options.closer);
+                
+                this.#options.closer = options.closer;
+
+                if (closerElement) {
+                    this.#closer = closerElement;
+                }
+            }
+
+            console.debug('AFTER LAUNCH ::: ', this.#dialogType, this.#launcher, this.#dialog, this.#closer);
+
+        }
+
+    }
+
+    exports.HOODialog = HOODialog;
+
+}));

@@ -1,4 +1,4 @@
-define(['exports'], function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
   // Origin 1: https://24ways.org/2019/making-a-better-custom-select-element/
   // Origin 2: https://css-tricks.com/making-a-better-custom-select-element/
@@ -302,6 +302,4 @@ define(['exports'], function (exports) { 'use strict';
 
   exports.ariaSelect = ariaSelect;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-});
+}));

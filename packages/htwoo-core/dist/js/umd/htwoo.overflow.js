@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.htwoo = global.htwoo || {}, global.htwoo.overflow = {})));
-}(this, (function (exports) { 'use strict';
+})(this, (function (exports) { 'use strict';
 
     const overflowItems = [];
     const defaultOffset = 40; // Default offset for overflow width
@@ -47,7 +47,6 @@
             }
         }
 
-        // if 
         if(overflowControl.children.length !== 0){
         
             var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
@@ -189,6 +188,4 @@
 
     exports.init = init;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+}));
