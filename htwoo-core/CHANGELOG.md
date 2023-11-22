@@ -7,6 +7,14 @@ Changes in hTWOo core as they happen
 
 ### Bug Fixes
 
+* **CSS:** [#92](https://github.com/n8design/htwoo/issues/92) Limit dialog to be not larger than the max viewport height and width of 100% ([82fcd31](https://github.com/n8design/htwoo/commit/82fcd312cf6f7a690a064fe55ddcbec2efa0ed5f))
+* **html:** atom-icon-button added to close message bar dialogs ([57bbcaf](https://github.com/n8design/htwoo/commit/57bbcafe8a5202f65c676932160a946aeebe5bba))
+
+### [2.1.3](https://github.com/n8design/htwoo/commit/) (2023-11-22)
+
+
+### Bug Fixes
+
 * **css:** [#92](https://github.com/n8design/htwoo/issues/92) Limit dialog to be not larger than the max viewport height and width of 100% ([2157575](https://github.com/n8design/htwoo/commit/21575754f0d8bdccc95d9437b8e3579b233dfd55))
 * **html:** atom-icon-button added to close message bar dialogs ([57bbcaf](https://github.com/n8design/htwoo/commit/57bbcafe8a5202f65c676932160a946aeebe5bba))
 
