@@ -257,156 +257,36 @@
     },
     "select-options": {
         "options": [
-            {
-                "key": 1,
-                "value": "Apple",
-                "disabled": false
-            },
-            {
-                "key": 2,
-                "value": "Banana",
-                "disabled": false
-            },
-            {
-                "key": 3,
-                "value": "Cherry",
-                "disabled": false
-            },
-            {
-                "key": 4,
-                "value": "Date",
-                "disabled": false
-            },
-            {
-                "key": 5,
-                "value": "Elderberry",
-                "disabled": false
-            },
-            {
-                "key": 6,
-                "value": "Fig",
-                "disabled": false
-            },
-            {
-                "key": 7,
-                "value": "Grape",
-                "disabled": false
-            },
-            {
-                "key": 8,
-                "value": "Honeydew",
-                "disabled": false
-            },
-            {
-                "key": 9,
-                "value": "Ice Cream Bean",
-                "disabled": false
-            },
-            {
-                "key": 10,
-                "value": "Jackfruit",
-                "disabled": false
-            },
-            {
-                "key": 11,
-                "value": "Kiwi",
-                "disabled": false
-            },
-            {
-                "key": 12,
-                "value": "Lemon",
-                "disabled": false
-            },
-            {
-                "key": 13,
-                "value": "Mango",
-                "disabled": false
-            },
-            {
-                "key": 14,
-                "value": "Nectarine",
-                "disabled": false
-            },
-            {
-                "key": 15,
-                "value": "Orange",
-                "disabled": false
-            },
-            {
-                "key": 16,
-                "value": "Papaya",
-                "disabled": false
-            },
-            {
-                "key": 17,
-                "value": "Quince",
-                "disabled": false
-            },
-            {
-                "key": 18,
-                "value": "Raspberry",
-                "disabled": false
-            },
-            {
-                "key": 19,
-                "value": "Strawberry",
-                "disabled": false
-            },
-            {
-                "key": 20,
-                "value": "Tangerine",
-                "disabled": false
-            },
-            {
-                "key": 21,
-                "value": "Ugli Fruit",
-                "disabled": false
-            },
-            {
-                "key": 22,
-                "value": "Vanilla Bean",
-                "disabled": false
-            },
-            {
-                "key": 23,
-                "value": "Watermelon",
-                "disabled": false
-            },
-            {
-                "key": 24,
-                "value": "Xigua",
-                "disabled": false
-            },
-            {
-                "key": 25,
-                "value": "Yellow Passionfruit",
-                "disabled": false
-            },
-            {
-                "key": 26,
-                "value": "Zucchini",
-                "disabled": false
-            },
-            {
-                "key": 27,
-                "value": "Peach",
-                "disabled": false
-            },
-            {
-                "key": 28,
-                "value": "Lychee",
-                "disabled": false
-            },
-            {
-                "key": 29,
-                "value": "Blueberry",
-                "disabled": false
-            },
-            {
-                "key": 30,
-                "value": "Blackberry",
-                "disabled": false
-            }
+            {"key": 1, "value": "Apple", "disabled": false},
+            {"key": 2, "value": "Banana", "disabled": false},
+            {"key": 3, "value": "Blackberry", "disabled": false},
+            {"key": 4, "value": "Blueberry", "disabled": false},
+            {"key": 5, "value": "Cherry", "disabled": false},
+            {"key": 6, "value": "Date", "disabled": false},
+            {"key": 7, "value": "Elderberry", "disabled": false},
+            {"key": 8, "value": "Fig", "disabled": false},
+            {"key": 9, "value": "Grape", "disabled": false},
+            {"key": 10, "value": "Honeydew", "disabled": false},
+            {"key": 11, "value": "Ice Cream Bean", "disabled": false},
+            {"key": 12, "value": "Jackfruit", "disabled": false},
+            {"key": 13, "value": "Kiwi", "disabled": false},
+            {"key": 14, "value": "Lemon", "disabled": false},
+            {"key": 15, "value": "Lychee", "disabled": false},
+            {"key": 16, "value": "Mango", "disabled": false},
+            {"key": 17, "value": "Orange", "disabled": false},
+            {"key": 18, "value": "Papaya", "disabled": false},
+            {"key": 19, "value": "Peach", "disabled": false},
+            {"key": 20, "value": "Quince", "disabled": false},
+            {"key": 21, "value": "Raspberry", "disabled": false},
+            {"key": 22, "value": "Strawberry", "disabled": false},
+            {"key": 23, "value": "Tangerine", "disabled": false},
+            {"key": 24, "value": "Ugli Fruit", "disabled": false},
+            {"key": 25, "value": "Vanilla Bean", "disabled": false},
+            {"key": 26, "value": "Watermelon", "disabled": false},
+            {"key": 27, "value": "Xigua", "disabled": false},
+            {"key": 28, "value": "Yellow Passionfruit", "disabled": false},
+            {"key": 29, "value": "Zucchini", "disabled": false}
         ]
+        
     }
 }
