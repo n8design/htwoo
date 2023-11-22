@@ -5,3 +5,7 @@ export function getRandomString(chars: number): string {
   }
   return text.join("");
 }
+
+export function isEqual(a: any, b: any): boolean {
+  return JSON.stringify(a) === JSON.stringify(b);
+}

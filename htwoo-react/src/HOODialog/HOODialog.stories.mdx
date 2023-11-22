@@ -1,10 +1,13 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useArgs } from '@storybook/preview-api';
+import { symset } from '../SymbolSet';
 import HOODialog, {HOODialogType} from './HOODialog';
 import HOODialogHeader from '../HOODialogHeader';
 import HOODialogContent from '../HOODialogContent';
 import HOOLabel from '../HOOLabel';
 import HOOButton, {HOOButtonType} from '../HOOButton';
+import HOOIcon from '../HOOIcon';
 
 <Meta title="Components/Dialogs/HOODialog" component={HOODialog}/>
 
@@ -21,7 +24,9 @@ export enum HOODialogType {
   "StandardSuccess",
   "StandardWarning",
   "SidebarLeft",
-  "SidebarRight"
+  "SidebarRight",
+  "Topbar",
+  "Bottombar"
 }
 ```
 
@@ -29,23 +34,51 @@ export enum HOODialogType {
 
 <ArgTypes of={HOODialog} />
 
-export const Template = (args) => <HOODialog {...args}>
-  <HOODialogHeader title="Dialog Header" closeIconName="hoo-icon-close" closeDisabled={false} closeOnClick={args.close} />
-  <HOODialogContent>
-    <HOOLabel label="Content of Dialog" />
-  </HOODialogContent>
-</HOODialog>;
+export const Template = (args) => {
+  const [_, updateArgs] = useArgs();
+  const onClick = () => {
+    const args = JSON.parse(JSON.stringify(_));
+    args.visible = !args.visible;
+    updateArgs(args);
+  }
+  symset.initSymbols();
+  return <div>
+    <HOOButton type={HOOButtonType.Primary} label={`${(args.visible)?"Hide Dialog":"Show Dialog"}`} onClick={onClick}/>
+    <HOODialog changeVisibility={onClick} {...args}>
+      <HOOIcon iconName='hoo-icon-smile' />
+      <HOODialogContent>This is the message in the dialog box.</HOODialogContent>
+      <HOOButton label='Close' onClick={onClick} />
+    </HOODialog>
+  </div>;
+};
+
+export const TemplateModal = (args) => {
+  const [_, updateArgs] = useArgs();
+  const onClick = () => {
+    const args = JSON.parse(JSON.stringify(_));
+    args.visible = !args.visible;
+    updateArgs(args);
+  }
+  symset.initSymbols();
+  return <div>
+    <HOOButton type={HOOButtonType.Primary} label={`${(args.visible)?"Hide Dialog":"Show Dialog"}`} onClick={onClick}/>
+    <HOODialog changeVisibility={onClick} {...args}>
+      <HOODialogHeader title="Dialog Header" closeIconName="hoo-icon-close" closeDisabled={false} closeOnClick={onClick} />
+      <HOODialogContent>
+        <HOOLabel label="Content of Dialog" />
+      </HOODialogContent>
+    </HOODialog>
+  </div>;
+};
 
 ## Standard
 
 Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
 
-<Canvas>
+<Canvas layout='fullscreen'>
   <Story 
     name="Standard"
-    args = {
-      { type: HOODialogType.Standard, visible: false, height: "80vh", width: "80vw" }
-    }>
+    args = {{type: HOODialogType.Standard, visible: false }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -54,13 +87,11 @@ Showing and hiding the dialog requires manipulation of a state variable for the 
 
 Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
 
-<Canvas>
+<Canvas layout='fullscreen'>
   <Story 
     name="Sidebar Left"
-    args = { 
-      { type: HOODialogType.SidebarLeft, visible: false, width: "80vw" }
-    }>
-    {Template.bind({})}
+    args = {{type: HOODialogType.SidebarLeft, visible: false }}>
+    {TemplateModal.bind({})}
   </Story>
 </Canvas>
 
@@ -68,12 +99,3 @@ Showing and hiding the dialog requires manipulation of a state variable for the 
 
 Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
 
-<Canvas>
-  <Story 
-    name="Extending"
-    args = { 
-      { type: HOODialogType.Standard, visible: false, height: "80vh", width: "80vw", rootElementAttributes: { style: { backgroundColor: "pink" } }}
-    }>
-    {Template.bind({})}
-  </Story>
-</Canvas>

@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.1.0 - 2023-Nov-xx
+
+>In support of HTWOO-CORE v2.1.2
+
+### Fix
+
+- HOODropdown: Fixed value assignment, type-ahead visibility.
+
+### Additions
+
+- HOODropdown: Added optional placeholder property for dropdowns input to make it easier to set.
+
 ## 2.0.2 - 2023-May-15
 
 ### Fix

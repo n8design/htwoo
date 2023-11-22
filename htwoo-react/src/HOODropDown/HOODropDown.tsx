@@ -38,13 +38,19 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   options: IHOODropDownGroup[];
   /**
-   * Options for select drop down
+   * Type-ahead options for select drop down; default is false
+   *   If true, options are filtered for any items starting with the string in the input box
+   *   If false, options are filtered for any items containing the string in the input box
   */
   containsTypeAhead: boolean;
   /**
    * Change event handler returns the new field value based on the selected items key
   */
   onChange: (fieldValue: string | number) => void;
+  /**
+   * (Optional) Placeholder text for the input element
+  */
+  placeholder?: string;
   /**
    * (Optional) For Non-Hyperlink style buttons only, Is button disabled.
    */
@@ -108,7 +114,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   }
 
   private _getDisplayValue = (): string => {
-    let retVal: string = "";
+    let retVal: string = this.state.currentValue as string || "";
     try {
       this.props.options.some((g) => {
         g.groupItems.some((item) => {
@@ -395,6 +401,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             {...this.props.inputElementAttributes}
             id={`${this._dropdownId}-input`}
             type="text"
+            placeholder={this.props.placeholder || null}
             disabled={this.props.disabled || false}
             value={currentDisplay}
             className={inputClassName}
