@@ -4,7 +4,6 @@ Changes in hTWOo core as they happen
 
 ## [2.1.0](https://github.com/n8design/htwoo/commit/) (2023-11-16)
 
-
 ### Features
 
 * [CSS] Statusbar / Message Bar added ([10fdb67](https://github.com/n8design/htwoo/commit/10fdb67733cf74b948ecd113ec0b9f646c6265d6))

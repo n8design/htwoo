@@ -1,0 +1,8 @@
+{
+    "name": "htwoo",
+    "workspaces": [
+        "htwoo-core",
+        "htwoo-react",
+        "htwoo-icons"
+    ]
+  }

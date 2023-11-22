@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "gulp:serve": "gulp",
     "gulp:docs": "gulp docs",
-    "postversion": "cl:update",
+    "postversion": "npm run cl:update",
     "pl:version": "patternlab --version",
     "hoo:buildlib": "gulp build:lib",
     "hoo:exportpatterns": "gulp build:pllib",
