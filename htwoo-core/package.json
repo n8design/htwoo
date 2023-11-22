@@ -17,7 +17,7 @@
     "pl:version": "patternlab --version",
     "hoo:buildlib": "gulp build:lib",
     "hoo:exportpatterns": "gulp build:pllib",
-    "prestart": "npx shx cp -r src/plugins/plugin-design/ public/plugins/plugin-design/",
+    "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
     "start": "run-p gulp:serve pl:serve"
   },
   "keywords": [],
