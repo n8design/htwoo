@@ -7,7 +7,7 @@ Changes in hTWOo core as they happen
 
 ### Features
 
-* **html:** Atoms-text-area added ([74e8132](https://github.com/n8design/htwoo/commit/74e81326e2f84341e71166b71606155395668d6b))
+* **HTML:** Atoms-text-area added ([74e8132](https://github.com/n8design/htwoo/commit/74e81326e2f84341e71166b71606155395668d6b))
 
 
 ### Bug Fixes
