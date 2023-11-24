@@ -58,6 +58,12 @@
 		border-bottom-right-radius: 0;
 	}
 }
+textarea.hoo-input-text{
+	line-height: 1.5;
+	&:focus{
+		line-height: 1.5;
+	}
+}
 
 .hoo-input-prefix {
 	@include base-input();
