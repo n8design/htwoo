@@ -2,6 +2,26 @@
 
 Changes in hTWOo core as they happen
 
+### [2.1.4](https://github.com/n8design/htwoo/commit/) (2023-11-24)
+
+
+### Features
+
+* **html:** Atoms-text-area added ([74e8132](https://github.com/n8design/htwoo/commit/74e81326e2f84341e71166b71606155395668d6b))
+
+
+### Bug Fixes
+
+* **CSS:** [#92](https://github.com/n8design/htwoo/issues/92) Limit dialog to be not larger than the max viewport height and width of 100% ([f587a22](https://github.com/n8design/htwoo/commit/f587a227cd7a2c39011d1647b72afa195ac251f9))
+* **data:** changed select options to be alphabetically sorted ([3112afe](https://github.com/n8design/htwoo/commit/3112afe14d9f6742e4f218cf4dc8ee584fbdcf36))
+* **HTML:** atom-icon-button added to close message bar dialogs ([7f17717](https://github.com/n8design/htwoo/commit/7f17717bc95d8590903fbf6080710e74406ca3f4))
+
+
+### Refactoring
+
+* **CSS:** Update and adjusted the styles fron .hoo-dlg-content to .hoo-dlgcontent ([fef66e3](https://github.com/n8design/htwoo/commit/fef66e31fd74945618519944e1daf3fcba430598))
+* **HTML:** change .hoo-dlg-content to .hoo-dlgcontent ([e0f0ee8](https://github.com/n8design/htwoo/commit/e0f0ee835a0933771b297d107c911cbd107b5f43))
+
 ### [2.1.3](https://github.com/n8design/htwoo/commit/) (2023-11-22)
 
 
