@@ -31,7 +31,6 @@ params:
 mount:
   - source: static
     target: static
-
 markup:
   goldmark:
     parser:
