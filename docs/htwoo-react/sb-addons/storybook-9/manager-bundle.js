@@ -1,4 +1,3 @@
 try{
 var m=__STORYBOOKADDONS__,{addons:r,types:p,mockChannel:O}=__STORYBOOKADDONS__;var u=__STORYBOOKTHEMING__,{CacheProvider:f,ClassNames:x,Global:y,ThemeProvider:S,background:v,color:w,convert:R,create:a,createCache:k,createGlobal:C,createReset:N,css:B,darken:D,ensure:G,ignoreSsrWarning:K,isPropValid:Y,jsx:H,keyframes:I,lighten:P,styled:j,themes:A,typography:E,useTheme:M,withTheme:W}=__STORYBOOKTHEMING__;var s=a({base:"light",brandTitle:"HTWOO-React",brandUrl:"https://lab.n8d.studio/htwoo/",brandImage:"https://lab.n8d.studio/htwoo/htwoo-core/styleguide/images/htwoo-logo-vertical.jpg"});r.setConfig({theme:s,previewTabs:{"storybook/docs/panel":{index:-1},canvas:{hidden:!0}}});
 }catch(e){ console.error("[Storybook] One of your manager-entries failed: " + import.meta.url, e); }
-//# sourceMappingURL=manager-bundle.js.map
