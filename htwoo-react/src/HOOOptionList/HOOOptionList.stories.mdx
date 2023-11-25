@@ -31,7 +31,18 @@ export enum HOOOptionListDirection {
 
 <ArgTypes of={HOOOptionList} />
 
-export const options = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
+export const options = [
+    {"key": 1, "text": "Apple"},
+    {"key": 2, "text": "Banana"},
+    {"key": 3, "text": "Cherry"},
+    {"key": 4, "text": "Date"},
+    {"key": 5, "text": "Elderberry"},
+    {"key": 6, "text": "Fig"},
+    {"key": 7, "text": "Grape"},
+    {"key": 8, "text": "Honeydew"},
+    {"key": 9, "text": "Iced Melon"},
+    {"key": 10, "text": "Jackfruit"}
+];
 export const Template = (args) => <HOOOptionList {...args} />;
 
 ## Checkbox List
@@ -40,6 +51,17 @@ export const Template = (args) => <HOOOptionList {...args} />;
     name="Checkbox List"
     args = { 
       { type: HOOOptionListType.Checkbox, options: options, value: [1] }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Multi-column Checkbox List
+<Canvas>
+  <Story 
+    name="Multi-column Checkbox List"
+    args = { 
+      { type: HOOOptionListType.Checkbox, options: options, value: [1], colsDesk: 2, colsMobile: 1 }
     }>
     {Template.bind({})}
   </Story>

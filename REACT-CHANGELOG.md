@@ -7,15 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 2.1.0 - 2023-Nov-xx
 
->In support of HTWOO-CORE v2.1.2
+>In support of HTWOO-CORE v2.1.4
 
 ### Fix
 
 - HOODropdown: Fixed value assignment, type-ahead visibility.
+- HOODialog: Updates for new html dialog implementation and expanded layouts in HTWOO-CORE.
 
 ### Additions
 
 - HOODropdown: Added optional placeholder property for dropdowns input to make it easier to set.
+- HOOOptionList: Now supports multi-column layouts in desktop and mobile.
+- HOODialogActions: Added in support of Message/Status Bars.
 
 ## 2.0.2 - 2023-May-15
 

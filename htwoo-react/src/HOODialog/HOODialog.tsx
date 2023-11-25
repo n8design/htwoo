@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { isEqual } from "../common/Common";
 //import { isEqual } from "../common/Common";
 
 export enum HOODialogType {
@@ -10,7 +11,8 @@ export enum HOODialogType {
   "SidebarLeft",
   "SidebarRight",
   "Topbar",
-  "Bottombar"
+  "Bottombar",
+  "Fullscreen"
 }
 
 export interface IHOODialogProps extends IHOOStandardProps {
@@ -21,7 +23,7 @@ export interface IHOODialogProps extends IHOOStandardProps {
   /**
    * Is dialog visible
   */
-  visible: boolean;  
+  visible: boolean;
   /**
    * Change event handler returns the new field value based on the selected items key
   */
@@ -42,10 +44,15 @@ export interface IHOODialogProps extends IHOOStandardProps {
 }
 
 export interface IHOODialogState {
+  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement>;
+  styleblock: React.CSSProperties;
 }
 
 export class HOODialogState implements IHOODialogState {
-  constructor() { }
+  constructor(
+    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> = undefined,
+    public styleblock: React.CSSProperties = {}
+  ) { }
 }
 
 export default class HOODialog extends React.Component<IHOODialogProps, IHOODialogState> {
@@ -54,6 +61,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   private _componentClass: string = "hoo-dlg";
   private _modal: boolean = false;
   private _updateShow: boolean = false;
+  private _updateStyle: boolean = false;
   private _dialogElement: React.RefObject<HTMLDialogElement>;
 
   constructor(props: IHOODialogProps) {
@@ -88,15 +96,36 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
         this._componentClass = `${this._componentClass} bottombar`;
         this._modal = true;
         break;
+      case HOODialogType.Fullscreen:
+        this._componentClass = `${this._componentClass} fullscreen`;
+        this._modal = true;
+        break;
     }
-    this.state = new HOODialogState();
+    let styleblock: React.CSSProperties = undefined;
+    if (this.props.rootElementAttributes?.style) {
+      styleblock = { ...this.props.rootElementAttributes?.style };
+    }
+    if ((this.props.width !== undefined) || (this.props.height !== undefined)) {
+      styleblock = styleblock || {};
+      if (this.props.width !== undefined) { styleblock["--hoo-dlg-width"] = this.props.width; }
+      if (this.props.height !== undefined) { styleblock["--hoo-dlg-height"] = this.props.height; }
+    }
+    let rea = undefined;
+    if (this.props.rootElementAttributes) {
+      rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+      delete rea.style;
+    }
+    this.state = new HOODialogState(rea, styleblock);
     this._dialogElement = React.createRef<HTMLDialogElement>();
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOODialogProps>, nextState: Readonly<IHOODialogState>) {
-    // if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-    //   return false;
+    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
+      return false;
     if (nextProps.visible != this.props.visible) { this._updateShow = true; }
+    if (nextProps.width != this.props.width) { this._updateStyle = true; }
+    if (nextProps.height != this.props.height) { this._updateStyle = true; }
+    if (nextProps.rootElementAttributes != this.props.rootElementAttributes) { this._updateStyle = true; }
     return true;
   }
 
@@ -114,18 +143,36 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
           }
         }
       }
+      if (this._updateStyle) {
+        this._updateStyle = false;
+        let styleblock: React.CSSProperties = undefined;
+        if (this.props.rootElementAttributes?.style) {
+          styleblock = { ...this.props.rootElementAttributes?.style };
+        }
+        if ((this.props.width !== undefined) || (this.props.height !== undefined)) {
+          styleblock = styleblock || {};
+          if (this.props.width !== undefined) { styleblock["--hoo-dlg-width"] = this.props.width; }
+          if (this.props.height !== undefined) { styleblock["--hoo-dlg-height"] = this.props.height; }
+        }
+        let rea = undefined;
+        if (this.props.rootElementAttributes) {
+          rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+          delete rea.style;
+        }
+        this.setState({ rea, styleblock });
+      }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (componentDidUpdate) - ${err}`);
     }
   }
 
-  private _backdropClick  = (event: React.MouseEvent<HTMLDialogElement, MouseEvent>): void => {
+  private _backdropClick = (event: React.MouseEvent<HTMLDialogElement, MouseEvent>): void => {
     try {
       if (this._dialogElement != null && this._dialogElement.current != null) {
         const rect = this._dialogElement.current.getBoundingClientRect();
         const isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
-            rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-        
+          rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+
         if (!isInDialog && event.target === this._dialogElement.current) {
           this.props.changeVisibility();
         }
@@ -147,16 +194,13 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
 
   public render(): React.ReactElement<IHOODialogProps> {
     try {
-      const events: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> = {};
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
-      let styleBlock = {} as React.CSSProperties;
-      if (this.props.width !== undefined) { styleBlock["--hoo-dlg-width"] = this.props.width; }
-      if (this.props.height !== undefined) { styleBlock["--hoo-dlg-height"] = this.props.height; }
+      const events: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> = {};
       events.onKeyDown = this._handleKeyDown;
       if (this._modal) { events.onClick = this._backdropClick; }
       return (
-        <dialog ref={this._dialogElement} {...this._rootProps} {...this.props.rootElementAttributes} className={className} style={styleBlock} {...events}>
+        <dialog ref={this._dialogElement} {...this._rootProps} {...this.state.rea} className={className} style={this.state.styleblock} {...events}>
           {this.props.children}
         </dialog>
       );
