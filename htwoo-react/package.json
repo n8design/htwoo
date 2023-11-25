@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "keywords": [
     "Fluent Design",
@@ -37,7 +37,7 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "^2.0.2",
+    "@n8d/htwoo-core": "^2.1.4",
     "react": "^17.*",
     "react-dom": "^17.*"
   },
@@ -49,26 +49,26 @@
     "/lib"
   ],
   "devDependencies": {
-    "@babel/preset-env": "^7.21.5",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.5",
-    "@storybook/addon-a11y": "^7.0.10",
-    "@storybook/addon-actions": "^7.0.10",
-    "@storybook/addon-docs": "^7.0.10",
-    "@storybook/addon-essentials": "^7.0.10",
-    "@storybook/addon-links": "^7.0.10",
-    "@storybook/client-api": "^7.0.10",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@storybook/addon-a11y": "^7.5.3",
+    "@storybook/addon-actions": "^7.5.3",
+    "@storybook/addon-docs": "^7.5.3",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/client-api": "^7.5.3",
     "@storybook/mdx2-csf": "1.1.0",
-    "@storybook/react-webpack5": "^7.0.10",
+    "@storybook/react-webpack5": "^7.5.3",
     "@types/react": "17.*",
     "@types/react-dom": "17.*",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^5.0.1",
     "rimraf": "^3.0.2",
-    "storybook": "^7.0.10",
-    "typescript": "^4.7.3"
+    "storybook": "^7.5.3",
+    "typescript": "^4.9.3"
   }
 }

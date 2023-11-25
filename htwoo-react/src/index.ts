@@ -26,6 +26,7 @@ export * from './HOOCheckbox';
 export * from './HOOCommandBar';
 export * from './HOODate';
 export * from './HOODialog';
+export * from './HOODialogActions';
 export * from './HOODialogContent';
 export * from './HOODialogHeader';
 export * from './HOODialogIFrame';
