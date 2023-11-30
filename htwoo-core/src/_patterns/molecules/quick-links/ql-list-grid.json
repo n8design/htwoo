@@ -1,0 +1,9 @@
+{
+    "bodyClass": "small center",
+    "quick-link": {
+        "title": "This is a really long title to get everything working lorem ipsum dolor sit amet",
+        "qlimg": {
+            "src": "../../images/placeholders/ph-16by9.png"
+        }
+    }
+}
