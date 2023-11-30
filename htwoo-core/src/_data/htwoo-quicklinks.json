@@ -1,13 +1,13 @@
 {
     "qlimg": {
-        "src": "https://via.placeholder.com/48/000000/FFFFFF"
+        "src": "../../images/placeholders/ph-48.png"
     },
     "qlsvg": {
         "src": "../../images/icons.svg#icon-ninjacat"
     },
     "quick-link": {
         "qlimg": {
-            "src": "https://via.placeholder.com/48/000000/FFFFFF"
+            "src": "../../images/placeholders/ph-48.png"
         },
         "title": "Quick-link title",
         "description": "Quick-links description lorem ipsum dolor sit amet",
@@ -17,7 +17,7 @@
     "quick-links": [
         {
             "qlimg": {
-                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+                "src": "../../images/placeholders/ph-48.png"
             },
             "title": "Quick-link title",
             "description": "Quick-links description lorem ipsum dolor sit amet",
@@ -35,7 +35,7 @@
         },
         {
             "qlimg": {
-                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+                "src": "../../images/placeholders/ph-48.png"
             },
             "title": "Quick-link title",
             "description": "Quick-links description lorem ipsum dolor sit amet",
@@ -53,7 +53,7 @@
         },
         {
             "qlimg": {
-                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+                "src": "../../images/placeholders/ph-48.png"
             },
             "title": "Quick-link title",
             "description": "Quick-links description lorem ipsum dolor sit amet",
@@ -71,7 +71,7 @@
         },
         {
             "qlimg": {
-                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+                "src": "../../images/placeholders/ph-48.png"
             },
             "title": "Quick-link title",
             "description": "Quick-links description lorem ipsum dolor sit amet",
@@ -89,7 +89,7 @@
         },
         {
             "qlimg": {
-                "src": "https://via.placeholder.com/48/000000/FFFFFF"
+                "src": "../../images/placeholders/ph-48.png"
             },
             "title": "Quick-link title",
             "description": "Quick-links description lorem ipsum dolor sit amet",
