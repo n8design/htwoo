@@ -5,6 +5,8 @@
     display: block;
 
 	text-decoration: none;
+
+	color: colors.$neutral-700;
 }
 
 
@@ -29,17 +31,18 @@
 	background-color: transparent;
 
 	align-items: center;
-	border-radius: core.px2rem(4px);
+	
 	overflow: hidden;
+	flex-shrink: 0;
 	&>*{
 		flex: 0 1 50%;
-		flex-grow: 0;
-		flex-shrink: 1;
+		flex-grow: 1;
+		flex-shrink: 0;
 		flex-basis: 50%;
 	}
 
-	svg {
-		width: 26px;
+	.hoo-media-svg {
+		width: 100%;
 		height: auto;
 	}
 }
@@ -85,6 +88,10 @@
 		@include core.lineClamp(2, core.px2rem(21px));
 	}
 
+	.hoo-ql-media{
+		border-radius: core.px2rem(4px);
+	}
+
 	&.mode-edit {
 		&:hover {
 			border-color: colors.$neutral-350;
@@ -109,8 +116,6 @@
 	margin-bottom: core.px2rem(2px);
 
 	text-decoration: inherit;
-
-	color: colors.$neutral-700;
 
 	block-size: min-content;
 }

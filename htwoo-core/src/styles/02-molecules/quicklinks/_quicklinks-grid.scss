@@ -12,10 +12,12 @@
 
     @include elevation.elevation(4);
 
+
+
     &:hover {
         transition: all 0.25s ease-out;
 
-        @include elevation.elevation(8);
+        @include elevation.elevation(16);
     }
 
     .hoo-ql-media {
@@ -41,6 +43,7 @@
         overflow: hidden;
         -webkit-box-orient: vertical;
 
+        height: 2lh;
         max-height: 2lh;
 
         text-wrap: balance;

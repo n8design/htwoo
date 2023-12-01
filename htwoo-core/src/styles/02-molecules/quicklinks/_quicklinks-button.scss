@@ -22,6 +22,9 @@
         background-color: colors.$neutral-200;
         transition: all 0.125s ease-out
     }
+    .hoo-qlinfo{
+        padding-block: core.px2rem(8px);
+    }
 
     .hoo-qltitle {
         font-size: core.px2rem(14px);
@@ -58,6 +61,10 @@
         width: 1.5rem;
         height: 1.5rem;
         margin-left: core.px2rem(12px);
+        border-radius: 0;
+        svg{
+            fill: currentColor;
+        }
     }
 
     &.center {
@@ -87,11 +94,7 @@
     &.filled {
 
         background-color: colors.$theme-600;
-
-        .hoo-qldesc,
-        .hoo-qltitle {
-            color: colors.$neutral-000;
-        }
+        color: colors.$neutral-000;
 
         &:hover {
             background-color: colors.$theme-800;
