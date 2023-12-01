@@ -406,3 +406,47 @@ body>.tmp-hidden {
 		margin-block: 1rem;
 	}
 }
+
+.medium{
+	max-width: 50svw;
+	margin: 2rem auto;
+}
+.small{
+	max-width: 320px;
+	margin: 2rem auto;
+}
+.tidy{
+	max-width: 6.5rem;
+}
+.tiles-grid{
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-auto-rows: 1fr;
+
+    &::before {
+        content: '';
+        width: 0;
+        padding-bottom: 100%;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    }
+
+    &>*:first-child {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    }
+}
+
+hr{
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+h3{
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+.medium-margin{
+	margin-inline: 4rem;
+	margin-bottom: 5rem;
+}
+

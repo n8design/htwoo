@@ -5,6 +5,8 @@
     display: block;
 
 	text-decoration: none;
+
+	color: colors.$neutral-700;
 }
 
 
@@ -29,9 +31,18 @@
 	background-color: transparent;
 
 	align-items: center;
+	
+	overflow: hidden;
+	flex-shrink: 0;
+	&>*{
+		flex: 0 1 50%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 50%;
+	}
 
-	svg {
-		width: 26px;
+	.hoo-media-svg {
+		width: 100%;
 		height: auto;
 	}
 }
@@ -46,7 +57,6 @@
 	overflow: hidden;
 	flex-direction: row;
 
-	box-sizing: border-box;
 	height: core.px2rem(48px);
 
 	cursor: pointer;
@@ -60,8 +70,10 @@
 	align-items: stretch;
 	gap: core.px2rem(12px);
 
+	border-radius: core.px2rem(4px);
+
 	&:active {
-		outline: 1px colors.$neutral-700 solid;
+		border: 1px colors.$neutral-700 solid;
 	}
 	
 	.hoo-qlinfo {
@@ -69,11 +81,15 @@
 		align-items: center;
 	}
 	&:hover {
-		border-color: 1px colors.$theme-100 solid;
+		border-color: colors.$theme-900;
 	}
 
 	.hoo-qltitle {
 		@include core.lineClamp(2, core.px2rem(21px));
+	}
+
+	.hoo-ql-media{
+		border-radius: core.px2rem(4px);
 	}
 
 	&.mode-edit {
@@ -94,14 +110,12 @@
 }
 
 .hoo-qltitle {
-	font-weight: 600;
+	font-weight: 400;
 	line-height: core.px2rem(20px);
 
 	margin-bottom: core.px2rem(2px);
 
 	text-decoration: inherit;
-
-	color: colors.$neutral-700;
 
 	block-size: min-content;
 }
@@ -127,14 +141,15 @@
 	border: 1px transparent solid;
 
 	align-items: flex-start;
+	border-radius: core.px2rem(4px);
 
 	@supports (gap: core.px2rem(3px)) {
 		gap: core.px2rem(3px);
 	}
 
 	.hoo-ql-media {
-		width: core.px2rem(22px);
-		height: core.px2rem(22px);
+		width: core.px2rem(24px);
+		height: core.px2rem(24px);
 		margin-right: core.px2rem(12px);
 
 		.hoo-icon-svg {
@@ -168,7 +183,7 @@
 
 	&:hover {
 		color: colors.$theme-900;
-		border-color: 1px colors.$theme-100 solid;
+		border-color: colors.$theme-900;
 
 		.hoo-qlabout {
 			display: flex;
