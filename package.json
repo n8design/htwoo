@@ -4,5 +4,11 @@
         "htwoo-core",
         "htwoo-react",
         "htwoo-icons"
-    ]
+    ],
+    "scripts": {
+        "launch:core": "npm start --workspace=htwoo-core",
+        "launch:react": "npm start --workspace=htwoo-react",
+        "docs:core:update": "npm run update:docs --workspace=htwoo-core",
+        "build:core": "npm run hoo:buildlib --workspace=htwoo-core"
+    }
 }

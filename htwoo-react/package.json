@@ -43,6 +43,7 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
+    "start": "npm run storybook",
     "build-storybook": "storybook build -o ../docs/htwoo-react"
   },
   "files": [

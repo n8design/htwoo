@@ -1,32 +1,73 @@
 @use '../../00-base/mixin/grid.mixin' as grid;
 
-.hoo-ql-grid{
+.hoo-ql-grid {
+
     @include grid.gridBase();
-    .hoo-qllink{
+
+    &:has(> .hoo-qltiles) {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(8rem, 1fr));
+        grid-template-rows: repeat(auto-fill, 8rem);
+        grid-auto-rows: 1fr;
+        gap: 1rem;
+
+        &::before {
+            content: '';
+            width: 0;
+            padding-bottom: 100%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+
+        &>*:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+    }
+
+    .hoo-qlbtn,
+    .hoo-qlgrid {
+        @include grid.gridSpan(3, auto, auto, true);
+    }
+
+    .hoo-qllink {
         @include grid.gridSpan(2, auto, auto, true);
     }
+
     .hoo-qlcompact,
-    .hoo-qllist{
+    .hoo-qllist {
         @include grid.gridSpan(2, auto, auto, true);
     }
 }
-.CanvasSection-xl12{
-    .hoo-ql-grid{
+
+.CanvasSection-xl12 {
+    .hoo-ql-grid {
         grid-template-columns: repeat(12, 1fr);
     }
 }
-.CanvasSection-xl8{
-    .hoo-ql-grid{
+
+.CanvasSection-xl8 {
+    .hoo-ql-grid {
         grid-template-columns: repeat(8, 1fr);
     }
-}
-.CanvasSection-xl6{
-    .hoo-ql-grid{
-        grid-template-columns: repeat(6, 1fr);
+
+    .hoo-qlbtn {
+        @include grid.gridSpan(4, auto, auto, true);
     }
 }
-.CanvasSection-xl4{
-    .hoo-ql-grid{
+
+.CanvasSection-xl6 {
+    .hoo-ql-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .hoo-qlbtn {
+        @include grid.gridSpan(3, auto, auto, true);
+    }
+}
+
+.CanvasSection-xl4 {
+    .hoo-ql-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
