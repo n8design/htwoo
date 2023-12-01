@@ -9,5 +9,6 @@
         "launch:core": "npm start --workspace=htwoo-core",
         "launch:react": "npm start --workspace=htwoo-react",
         "build:core": "npm run hoo:buildlib --workspace=htwoo-core"
-    }
+    },
+    "version": "0.1.0"
 }
