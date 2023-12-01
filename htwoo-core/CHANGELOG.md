@@ -4,6 +4,15 @@ Changes in hTWOo core as they happen
 
 ## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
 
+### Features
+
+* **HTML** Quick Links styles for title and grid layouts added ([a8cc295](https://github.com/n8design/htwoo/commit/a8cc295b6159bde4b692b7e07841b10d53296900))
+* **HTML** New Quick Link styles added: ([3b6380e](https://github.com/n8design/htwoo/commit/3b6380ef4218726fedb40948b2fef6f8e7819801))
+    - Button Style
+    - Grid Style
+    - Compact Style and
+    - List Item
+
 
 ### Bug Fixes
 
