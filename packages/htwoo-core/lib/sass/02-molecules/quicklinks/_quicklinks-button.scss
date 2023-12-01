@@ -1,0 +1,103 @@
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/colors/colors";
+
+.hoo-qlbtn {
+    line-height: core.px2rem(20px);
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    box-sizing: border-box;
+    min-height: core.px2rem(62px);
+
+    border: 1px colors.$theme-600 solid;
+    border-radius: core.px2rem(4px);
+
+    gap: core.px2rem(12px);
+
+    transition: all 0.125s ease-in;
+
+    &:hover {
+        background-color: colors.$neutral-200;
+        transition: all 0.125s ease-out
+    }
+    .hoo-qlinfo{
+        padding-block: core.px2rem(8px);
+    }
+
+    .hoo-qltitle {
+        font-size: core.px2rem(14px);
+
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+
+        max-height: 2lh;
+
+        text-wrap: balance;
+
+        -webkit-line-clamp: 2;
+    }
+
+    .hoo-qldesc {
+        font-size: core.px2rem(14px);
+
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+
+        max-height: 2lh;
+
+        text-wrap: balance;
+
+        -webkit-line-clamp: 2;
+    }
+
+    .hoo-ql-media {
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: core.px2rem(12px);
+        border-radius: 0;
+        svg{
+            fill: currentColor;
+        }
+    }
+
+    &.center {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-block: core.px2rem(12px);
+        padding-inline: core.px2rem(12px);
+    }
+
+    &.no-outline {
+        border-color: transparent;
+        &:hover{
+            border-color: transparent;
+        }
+    }
+
+    &.one-line {
+        .hoo-qltitle {
+            max-height: 1lh;
+
+            -webkit-line-clamp: 1;
+        }
+    }
+
+    &.filled {
+
+        background-color: colors.$theme-600;
+        color: colors.$neutral-000;
+
+        &:hover {
+            background-color: colors.$theme-800;
+        }
+    }
+}
