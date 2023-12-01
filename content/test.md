@@ -17,3 +17,6 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, in?
 lorem1007
 
 Another test 007-01 another try hopefully now. Naother 2.1.3 2.1.4  
+
+
+v2.2.0 relased
