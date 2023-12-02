@@ -11,27 +11,31 @@ Changes in hTWOo core as they happen
 * **CSS:** Optimisation Quicklinks responsive behavior ([b58dd49](https://github.com/n8design/htwoo/commit/b58dd4951173c0890b4d515ea17aaf31ae8ed5b4))
 * **docs:** fixes partially the atoms-select data model ([91cbc3c](https://github.com/n8design/htwoo/commit/91cbc3cd3097ded3c4a0df527064bfa0a286adbb))
 
-## [2.3.0](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+
+## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
+
+### Features
+
+* **HTML** Quick Links styles for title and grid layouts added ([a8cc295](https://github.com/n8design/htwoo/commit/a8cc295b6159bde4b692b7e07841b10d53296900))
+* **HTML** New Quick Link styles added: ([3b6380e](https://github.com/n8design/htwoo/commit/3b6380ef4218726fedb40948b2fef6f8e7819801))
+    - Button Style
+    - Grid Style
+    - Compact Style and
+    - List Item
 
 
 ### Bug Fixes
 
-* **CSS:** Image resizing in quick links ([ae89688](https://github.com/n8design/htwoo/commit/ae896880c8527bbc2b925d59e394ecb17d4eb559))
-* **CSS:** Optimisation Quicklinks responsive behavior ([b58dd49](https://github.com/n8design/htwoo/commit/b58dd4951173c0890b4d515ea17aaf31ae8ed5b4))
-* **docs:** fixes partially the atoms-select data model ([91cbc3c](https://github.com/n8design/htwoo/commit/91cbc3cd3097ded3c4a0df527064bfa0a286adbb))
-
-## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+* **CSS:** [#92](https://github.com/n8design/htwoo/issues/92) Limit dialog to be not larger than the max viewport height and width of 100% ([f587a22](https://github.com/n8design/htwoo/commit/f587a227cd7a2c39011d1647b72afa195ac251f9))
+* **data:** changed select options to be alphabetically sorted ([3112afe](https://github.com/n8design/htwoo/commit/3112afe14d9f6742e4f218cf4dc8ee584fbdcf36))
+* **HTML:** atom-icon-button added to close message bar dialogs ([7f17717](https://github.com/n8design/htwoo/commit/7f17717bc95d8590903fbf6080710e74406ca3f4))
 
 
-### Bug Fixes
+### Refactoring
 
-* **CSS:** Image resizing in quick links ([ae89688](https://github.com/n8design/htwoo/commit/ae896880c8527bbc2b925d59e394ecb17d4eb559))
-* **CSS:** Optimisation Quicklinks responsive behavior ([b58dd49](https://github.com/n8design/htwoo/commit/b58dd4951173c0890b4d515ea17aaf31ae8ed5b4))
-* **docs:** fixes partially the atoms-select data model ([91cbc3c](https://github.com/n8design/htwoo/commit/91cbc3cd3097ded3c4a0df527064bfa0a286adbb))
+* **CSS:** Update and adjusted the styles fron .hoo-dlg-content to .hoo-dlgcontent ([fef66e3](https://github.com/n8design/htwoo/commit/fef66e31fd74945618519944e1daf3fcba430598))
+* **HTML:** change .hoo-dlg-content to .hoo-dlgcontent ([e0f0ee8](https://github.com/n8design/htwoo/commit/e0f0ee835a0933771b297d107c911cbd107b5f43))
 
-## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
-
-## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
 
 ### [2.1.4](https://github.com/n8design/htwoo/commit/) (2023-11-24)
 
