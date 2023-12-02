@@ -3,7 +3,9 @@
     <input type="text" id="hoo-select-input" class="hoo-select-text" aria-autocomplete="both"
         aria-controls="custom-select-list">
     {{> atoms-button-icon }}
-    {{>atoms-select-drop-down options=this.options ddToggleClass=this.ddToggleClass }}
+    {{#dropdown}}
+    {{>atoms-select-drop-down}}
+    {{/dropdown}}
     {{!-- <ul class="hoo-select-dropdown hidden-all">
         {{#each options }}
         <li data-value="{{ this.value }}" class="hoo-option">{{ this.key }}</li>
