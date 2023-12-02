@@ -27,7 +27,7 @@ params:
 #       unsafe: true
 #     parser:
 #       wrapStandAloneImageWithinParagraph: false
-
+ 
 mount:
   - source: static
     target: static
