@@ -41,14 +41,22 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   disabled?: boolean;
   /**
-   * (Optional) Direction for child options; defaults to Verticle
+   * (Optional) Direction for child options; defaults to Vertical
   */
   direction?: HOOOptionListDirection;
   /**
-   * (Optional) HTMLElement attributes that will be applied to the root element of the component.
+   * (Optional) Number of columns for desktop experience; defaults to 1
+  */
+  colsDesk?: number;
+  /**
+   * (Optional) Number of columns for mobile experience; defaults to 1
+  */
+  colsMobile?: number;
+  /**
+   * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
 }
 
 export interface IHOOOptionListState {
@@ -116,23 +124,29 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   public render(): React.ReactElement<IHOOOptionListProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-      if (this.props.type === HOOOptionListType.RadioButton) { this._rootProps["tabindex"] = 0 }
+      if (this.props.type === HOOOptionListType.RadioButton) { 
+        this._rootProps["tabindex"] = 0; this._rootProps["role"] = "radiogroup"; 
+      } else { 
+        this._rootProps["role"] = "checkbox"; 
+      }
       let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
       className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
+      const styleBlock: React.CSSProperties = {};
+      if(this.props.colsDesk) { styleBlock["--cols-desk"] = this.props.colsDesk; }
+      if(this.props.colsMobile) { styleBlock["--cols-mobile"] = this.props.colsMobile; }
       return (
-        <div {...this._rootProps}
+        <menu {...this._rootProps}
           {...this.props.rootElementAttributes}
           className={className}
-          role="radiogroup"
-          data-cols="2">
+          style={styleBlock}>
           {this._valid && this.props.options && this.props.options.map((option) => {
             const tabIndexProp = (this.props.type === HOOOptionListType.RadioButton) ? { tabIndex: 0 } : {};
-            return (<div key={option.key} {...tabIndexProp}>{this._getOptionTSX(option)}</div>);
+            return (<li key={option.key} {...tabIndexProp}>{this._getOptionTSX(option)}</li>);
           })}
           {!this._valid &&
             "The type of HOOOptionList does not match the type of value"
           }
-        </div>
+        </menu>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

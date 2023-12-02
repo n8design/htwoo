@@ -1,6 +1,7 @@
 {
   "cacheBust": true,
   "cleanPublic": true,
+  "defaultInitialViewportWidth": true,
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
   "ishControlsHide": {

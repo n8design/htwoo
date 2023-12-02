@@ -1,6 +1,10 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
+<<<<<<< HEAD
   "version": "2.2.1",
+=======
+  "version": "2.2.0",
+>>>>>>> dev
   "description": "",
   "main": "index.js",
   "scripts": {

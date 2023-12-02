@@ -36,7 +36,6 @@ Changes in hTWOo core as they happen
 * **CSS:** Update and adjusted the styles fron .hoo-dlg-content to .hoo-dlgcontent ([fef66e3](https://github.com/n8design/htwoo/commit/fef66e31fd74945618519944e1daf3fcba430598))
 * **HTML:** change .hoo-dlg-content to .hoo-dlgcontent ([e0f0ee8](https://github.com/n8design/htwoo/commit/e0f0ee835a0933771b297d107c911cbd107b5f43))
 
-
 ### [2.1.4](https://github.com/n8design/htwoo/commit/) (2023-11-24)
 
 
