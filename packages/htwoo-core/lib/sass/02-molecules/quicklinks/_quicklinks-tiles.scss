@@ -7,8 +7,12 @@
     display: grid;
 
     box-sizing: border-box;
-    min-height: core.px2rem(62px);
-    padding: core.px2rem(12px);
+    min-width: 5rem;
+    max-width: 11.5rem;
+
+    // min-height: core.px2rem(62px);
+
+    padding: core.px2rem(8px);
 
     transition: all 0.125s ease-in;
     text-align: center;
@@ -22,6 +26,7 @@
     grid-template-columns: 1fr;
     gap: core.px2rem(12px);
     grid-auto-flow: column dense;
+    aspect-ratio: 1 / 1;
 
     &:hover {
         transition: all 0.125s ease-out;
@@ -76,6 +81,7 @@
         height: auto;
 
         border-radius: 0;
+
         .hoo-media-svg,
         .hoo-ql-img {
             flex: unset;
@@ -89,6 +95,7 @@
 
     &.img-m {
         .hoo-ql-media {
+
             .hoo-media-svg,
             .hoo-ql-img {
                 width: 2rem;
@@ -99,6 +106,7 @@
 
     &.img-l {
         .hoo-ql-media {
+
             .hoo-media-svg,
             .hoo-ql-img {
                 width: 2.5rem;
