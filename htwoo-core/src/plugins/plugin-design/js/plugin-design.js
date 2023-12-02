@@ -70,6 +70,9 @@ var PluginUIExtension = {
       logoImg.removeAttribute('width');
     }
 
+    logoImg.setAttribute('srcset', "styleguide/images/htwoo-logo-horizontal-sm.png 480w");
+    logoImg.setAttribute('sizes', "(max-width: 600px) 480px");
+
     let logo = document.querySelector(".pl-c-logo");
 
     if (logo) {

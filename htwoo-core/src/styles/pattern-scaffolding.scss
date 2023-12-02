@@ -448,5 +448,24 @@ h3{
 .medium-margin{
 	margin-inline: 4rem;
 	margin-bottom: 5rem;
+	@media screen and (max-width: 480px) {
+		margin-inline: 2rem;
+	}
 }
+
+.CanvasSection-xl4{
+    max-width: 400px;
+}
+.CanvasSection-xl6{
+    max-width: 618px;
+}
+
+.CanvasSection-xl8{
+    max-width: 802px;
+}
+
+.CanvasSection-xl12{
+    max-width: 1240px;
+}
+
 

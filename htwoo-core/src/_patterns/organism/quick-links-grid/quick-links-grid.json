@@ -1,3 +1,4 @@
 {
-    "bodyClass": "medium-margin"
+    "bodyClass": "medium-margin",
+    "col-count": "CanvasSection-xl12"
 }
