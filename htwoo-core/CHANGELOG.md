@@ -2,6 +2,15 @@
 
 Changes in hTWOo core as they happen
 
+## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+
+
+### Bug Fixes
+
+* **CSS:** Image resizing in quick links ([ae89688](https://github.com/n8design/htwoo/commit/ae896880c8527bbc2b925d59e394ecb17d4eb559))
+* **CSS:** Optimisation Quicklinks responsive behavior ([b58dd49](https://github.com/n8design/htwoo/commit/b58dd4951173c0890b4d515ea17aaf31ae8ed5b4))
+* **docs:** fixes partially the atoms-select data model ([91cbc3c](https://github.com/n8design/htwoo/commit/91cbc3cd3097ded3c4a0df527064bfa0a286adbb))
+
 ## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
 
 ## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
