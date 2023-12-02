@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOCheckbox from "../HOOCheckbox";
-import { getRandomString } from "../common/Common";
+import { getRandomString, isEqual } from "../common/Common";
 import HOORadioButton from "../HOORadioButton";
 
 export enum HOOOptionListType {
@@ -60,10 +60,15 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
 }
 
 export interface IHOOOptionListState {
+  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
+  styleblock: React.CSSProperties;
 }
 
 export class HOOOptionListState implements IHOOOptionListState {
-  constructor() { }
+  constructor(
+    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement> = undefined,
+    public styleblock: React.CSSProperties = {}
+  ) { }
 }
 
 export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
@@ -73,6 +78,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   private _optionListName: string = "hoo-options-";
   private _direction: HOOOptionListDirection = HOOOptionListDirection.Vertical;
   private _valid: boolean = true;
+  private _updateStyle: boolean = false;
 
   constructor(props: IHOOOptionListProps) {
     super(props);
@@ -81,14 +87,71 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     this._optionListName += getRandomString(10);
     this._componentClass = (props.type === HOOOptionListType.Checkbox) ? "hoo-checkbox-group" : "hoo-radiobutton-group";
     this._valid = (props.value === null) || ((props.type === HOOOptionListType.Checkbox) ? Array.isArray(props.value) : !Array.isArray(props.value));
+    let styleblock: React.CSSProperties = undefined;
+    if (this.props.rootElementAttributes?.style) {
+      styleblock = { ...this.props.rootElementAttributes?.style };
+    }
+    if ((this.props.colsDesk !== undefined) || (this.props.colsMobile !== undefined)) {
+      styleblock = styleblock || {};
+      if (this.props.colsDesk !== undefined) { styleblock["--cols-desk"] = this.props.colsDesk; }
+      if (this.props.colsMobile !== undefined) { styleblock["--cols-mobile"] = this.props.colsMobile; }
+    }
+    let rea = undefined;
+    if (this.props.rootElementAttributes) {
+      rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+      if (this.props.reactKey) { rea["key"] = this.props.reactKey } 
+      if (this.props.type === HOOOptionListType.RadioButton) { 
+        rea["tabindex"] = 0; rea["role"] = "radiogroup"; 
+      } else { 
+        rea["role"] = "checkbox"; 
+      }
+      delete rea.style;
+    }
     this.state = new HOOOptionListState();
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOOOptionListProps>, nextState: Readonly<IHOOOptionListState>) {
+    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
+      return false;
     if (nextProps.value !== this.props.value) {
       this._valid = (nextProps.value === null) || ((nextProps.type === HOOOptionListType.Checkbox) ? Array.isArray(nextProps.value) : !Array.isArray(nextProps.value));
     }
+    if (nextProps.type != this.props.type) { this._updateStyle = true; }
+    if (nextProps.colsDesk != this.props.colsDesk) { this._updateStyle = true; }
+    if (nextProps.colsMobile != this.props.colsMobile) { this._updateStyle = true; }
+    if (nextProps.rootElementAttributes != this.props.rootElementAttributes) { this._updateStyle = true; }
     return true;
+  }
+
+  public componentDidUpdate(prevProps: Readonly<IHOOOptionListProps>, prevState: Readonly<IHOOOptionListState>, snapshot?: any): void {
+    try {
+      if (this._updateStyle) {
+        this._updateStyle = false;
+        let styleblock: React.CSSProperties = undefined;
+        if (this.props.rootElementAttributes?.style) {
+          styleblock = { ...this.props.rootElementAttributes?.style };
+        }
+        if ((this.props.colsDesk !== undefined) || (this.props.colsMobile !== undefined)) {
+          styleblock = styleblock || {};
+          if (this.props.colsDesk !== undefined) { styleblock["--cols-desk"] = this.props.colsDesk; }
+          if (this.props.colsMobile !== undefined) { styleblock["--cols-mobile"] = this.props.colsMobile; }
+        }
+        let rea = undefined;
+        if (this.props.rootElementAttributes) {
+          rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+          if (this.props.reactKey) { rea["key"] = this.props.reactKey } 
+          if (this.props.type === HOOOptionListType.RadioButton) { 
+            rea["tabindex"] = 0; rea["role"] = "radiogroup"; 
+          } else { 
+            rea["role"] = "checkbox"; 
+          }
+          delete rea.style;
+        }
+        this.setState({ rea, styleblock });
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (componentDidUpdate) - ${err}`);
+    }
   }
 
   private _onChange = (event, key: string | number) => {
@@ -122,23 +185,14 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   }
 
   public render(): React.ReactElement<IHOOOptionListProps> {
-    try {
-      if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-      if (this.props.type === HOOOptionListType.RadioButton) { 
-        this._rootProps["tabindex"] = 0; this._rootProps["role"] = "radiogroup"; 
-      } else { 
-        this._rootProps["role"] = "checkbox"; 
-      }
+    try {     
       let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
       className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
-      const styleBlock: React.CSSProperties = {};
-      if(this.props.colsDesk) { styleBlock["--cols-desk"] = this.props.colsDesk; }
-      if(this.props.colsMobile) { styleBlock["--cols-mobile"] = this.props.colsMobile; }
       return (
-        <menu {...this._rootProps}
+        <menu {...this.state.rea}
           {...this.props.rootElementAttributes}
           className={className}
-          style={styleBlock}>
+          style={this.state.styleblock}>
           {this._valid && this.props.options && this.props.options.map((option) => {
             const tabIndexProp = (this.props.type === HOOOptionListType.RadioButton) ? { tabIndex: 0 } : {};
             return (<li key={option.key} {...tabIndexProp}>{this._getOptionTSX(option)}</li>);
