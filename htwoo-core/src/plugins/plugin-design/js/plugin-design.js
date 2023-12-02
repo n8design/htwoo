@@ -70,8 +70,16 @@ var PluginUIExtension = {
       logoImg.removeAttribute('width');
     }
 
-    logoImg.setAttribute('srcset', "styleguide/images/htwoo-logo-horizontal-sm.png 480w");
-    logoImg.setAttribute('sizes', "(max-width: 600px) 480px");
+    let matchMedia = window.matchMedia('screen and (max-width: 768px)');
+
+    if(matchMedia.matches) {
+      console.debug('entering match media');
+      logoImg.setAttribute('src', "styleguide/images/htwoo-logo-horizontal-sm.png");
+      logoImg.setAttribute('srcset', `styleguide/images/htwoo-logo-horizontal-sm.png 200w, ${logoImg.src} 800w`);
+      logoImg.setAttribute('sizes', "(max-width: 768px) 200px, 800px");  
+    } else {
+      console.debug('Do not match');
+    }
 
     let logo = document.querySelector(".pl-c-logo");
 
