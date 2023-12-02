@@ -12,7 +12,8 @@ export enum HOODialogType {
   "SidebarRight",
   "Topbar",
   "Bottombar",
-  "Fullscreen"
+  "Fullscreen",
+  "Center"
 }
 
 export interface IHOODialogProps extends IHOOStandardProps {
@@ -98,6 +99,10 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
         break;
       case HOODialogType.Fullscreen:
         this._componentClass = `${this._componentClass} fullscreen`;
+        this._modal = true;
+        break;
+      case HOODialogType.Center:
+        this._componentClass = `${this._componentClass}`;
         this._modal = true;
         break;
     }

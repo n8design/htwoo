@@ -27,7 +27,9 @@ export enum HOODialogType {
   "SidebarLeft",
   "SidebarRight",
   "Topbar",
-  "Bottombar"
+  "Bottombar",
+  "Fullscreen",
+  "Center"
 }
 ```
 
@@ -162,14 +164,14 @@ Fullscreen modal dialog. Visibility is changed by controling the visible propert
 
 Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
 
-## Modal Dialog - Extending 
+## Modal Dialog - Center (Extending)
 
 Topbar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Height can be specified in pixels or percentage or viewport height.
 
 <Canvas layout='fullscreen'>
   <Story
-    name="Topbar - Extending"
-    args={{ type: HOODialogType.Topbar, visible: false, height: '60vh', rootElementAttributes: { style: { backgroundColor: "pink" } } }}>
+    name="Center - Extending"
+    args={{ type: HOODialogType.Center, visible: false, height: '60vh', width: '60vw', rootElementAttributes: { style: { backgroundColor: "pink" } } }}>
     {TemplateModal.bind({})}
   </Story>
 </Canvas>
