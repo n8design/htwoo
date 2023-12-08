@@ -10,5 +10,64 @@
             "imageUrl": "../../images/placeholders/16by10.png"
         }
     },
-    "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg"
+    "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg",
+    "player": {
+        "src": "../../images/videos/chemex.mp4"
+    },
+    "player-yt": {
+        "src": "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si=jNRCpQW6ukJ1Zunl&"
+    },
+    "player-stream": {
+        "src": ""
+    },
+    "player-thumbnail": {
+        "url": "../../images/videos/chemex-thumb.webp",
+        "alt": "How to make the perfect coffee"
+    },
+    "overlay": {
+        "iconname": "icon-play-filled"
+    },
+    "thumbnail": {
+        "url": "../../images/videos/big-bug-bunny.webp",
+        "alt": "How to make the perfect coffee"
+    },
+    "video": {
+        "thumbnail": {
+            "url": "../../images/videos/chemex-thumb.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player": {
+            "src": "../../images/videos/chemex.mp4"
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
+    ,
+    "video-yt": {
+        "thumbnail": {
+            "url": "../../images/videos/big-bug-bunny.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player-yt": {
+            "src": "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si=jNRCpQW6ukJ1Zunl",
+            "autoplay": "&autoplay=1"
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
+    ,
+    "video-stream": {
+        "thumbnail": {
+            "url": "../../images/videos/chemex-thumb.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player-stream": {
+            "src": ""
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
 }
