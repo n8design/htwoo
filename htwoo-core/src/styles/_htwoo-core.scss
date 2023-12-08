@@ -56,8 +56,11 @@
 @use "02-molecules/menu/index" as menu;
 /*** MOLECULES / Dialogs ***/
 @use "02-molecules/dialogs/index" as dialog;
+/*** MOLECULES / Media ***/
+@use "02-molecules/media/index" as media;
 /*** MOLECULES / Meta Data List ***/
 @use "02-molecules/meta-list/index" as metalist;
+
 /*** MOLECULES / Team related ***/
 @use "02-molecules/teams/index" as teams;
 
