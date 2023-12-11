@@ -17,6 +17,9 @@
     "player-yt": {
         "src": "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si=jNRCpQW6ukJ1Zunl&"
     },
+    "player-vimeo": {
+        "src": "https://player.vimeo.com/video/307133457?h=7d6c76e92d"
+    },
     "player-stream": {
         "src": ""
     },
@@ -65,6 +68,19 @@
         },
         "player-stream": {
             "src": ""
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    },
+    "video-vimeo": {
+        "thumbnail": {
+            "url": "../../images/videos/delicious-coffee-8k.png",
+            "alt": "My Delicious Coffee 8K - <a href='https://vimeo.com/thomasblanchard'>Thomas Blanchard</a>"
+        },
+        "player-vimeo": {
+            "src": "https://player.vimeo.com/video/307133457?h=7d6c76e92d",
+            "autoplay": "&autoplay=1"
         },
         "overlay": {
             "iconname": "icon-play-filled"
