@@ -257,36 +257,311 @@
     },
     "select-options": {
         "options": [
-            {"key": 1, "value": "Apple", "disabled": false},
-            {"key": 2, "value": "Banana", "disabled": false},
-            {"key": 3, "value": "Blackberry", "disabled": false},
-            {"key": 4, "value": "Blueberry", "disabled": false},
-            {"key": 5, "value": "Cherry", "disabled": false},
-            {"key": 6, "value": "Date", "disabled": false},
-            {"key": 7, "value": "Elderberry", "disabled": false},
-            {"key": 8, "value": "Fig", "disabled": false},
-            {"key": 9, "value": "Grape", "disabled": false},
-            {"key": 10, "value": "Honeydew", "disabled": false},
-            {"key": 11, "value": "Ice Cream Bean", "disabled": false},
-            {"key": 12, "value": "Jackfruit", "disabled": false},
-            {"key": 13, "value": "Kiwi", "disabled": false},
-            {"key": 14, "value": "Lemon", "disabled": false},
-            {"key": 15, "value": "Lychee", "disabled": false},
-            {"key": 16, "value": "Mango", "disabled": false},
-            {"key": 17, "value": "Orange", "disabled": false},
-            {"key": 18, "value": "Papaya", "disabled": false},
-            {"key": 19, "value": "Peach", "disabled": false},
-            {"key": 20, "value": "Quince", "disabled": false},
-            {"key": 21, "value": "Raspberry", "disabled": false},
-            {"key": 22, "value": "Strawberry", "disabled": false},
-            {"key": 23, "value": "Tangerine", "disabled": false},
-            {"key": 24, "value": "Ugli Fruit", "disabled": false},
-            {"key": 25, "value": "Vanilla Bean", "disabled": false},
-            {"key": 26, "value": "Watermelon", "disabled": false},
-            {"key": 27, "value": "Xigua", "disabled": false},
-            {"key": 28, "value": "Yellow Passionfruit", "disabled": false},
-            {"key": 29, "value": "Zucchini", "disabled": false}
+            {
+                "groupname": "Fruit Icons",
+                "options": [
+                    {
+                        "key": 1,
+                        "value": "Banana",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 2,
+                        "value": "Apple",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 3,
+                        "value": "Orange",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 4,
+                        "value": "Lime",
+                        "disabled": ""
+                    }
+                ]
+            },
+            {
+                "groupname": "Fruits",
+                "options": [
+                    {
+                        "key": 5,
+                        "value": "Acai Berries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 6,
+                        "value": "Apple",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 7,
+                        "value": "Avocado",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 8,
+                        "value": "Bell Peppers",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 9,
+                        "value": "Blackberries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 10,
+                        "value": "Blueberries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 11,
+                        "value": "Cabbage",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 12,
+                        "value": "Carrots",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 13,
+                        "value": "Cauliflower",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 14,
+                        "value": "Cherries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 15,
+                        "value": "Collard Greens",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 16,
+                        "value": "Dragon Fruit",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 17,
+                        "value": "Garlic",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 18,
+                        "value": "Ginger",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 19,
+                        "value": "Grapefruits",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 20,
+                        "value": "Kiwi",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 21,
+                        "value": "Lemons",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 22,
+                        "value": "Limes",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 23,
+                        "value": "Mango",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 24,
+                        "value": "Onions",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 25,
+                        "value": "Oranges",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 26,
+                        "value": "Papaya",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 27,
+                        "value": "Peaches",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 28,
+                        "value": "Plums",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 29,
+                        "value": "Pomegranate",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 30,
+                        "value": "Raspberries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 31,
+                        "value": "Spinach",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 32,
+                        "value": "Strawberries",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 33,
+                        "value": "Sweet Potatoes",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 34,
+                        "value": "Swiss Chard",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 35,
+                        "value": "Tomatoes",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 36,
+                        "value": "Ginger",
+                        "disabled": ""
+                    }
+                ]
+            },
+            {
+                "groupname": "Vegetables",
+                "options": [
+                    {
+                        "key": 37,
+                        "value": "Avocado",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 38,
+                        "value": "Beets",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 39,
+                        "value": "Bell Peppers",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 40,
+                        "value": "Brussels Sprouts",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 41,
+                        "value": "Cabbage",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 42,
+                        "value": "Cauliflower",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 43,
+                        "value": "Collard Greens",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 44,
+                        "value": "Dragon Fruit",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 45,
+                        "value": "Eggplant",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 46,
+                        "value": "Garlic",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 47,
+                        "value": "Ginger",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 48,
+                        "value": "Kale",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 49,
+                        "value": "Leeks",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 50,
+                        "value": "Mango",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 51,
+                        "value": "Onions",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 52,
+                        "value": "Papaya",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 53,
+                        "value": "Red Cabbage",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 54,
+                        "value": "Shallots",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 55,
+                        "value": "Spinach",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 56,
+                        "value": "Sweet Potatoes",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 57,
+                        "value": "Swiss Chard",
+                        "disabled": ""
+                    },
+                    {
+                        "key": 58,
+                        "value": "Tomatoes",
+                        "disabled": ""
+                    }
+                ]
+            }
         ]
-        
     }
 }
