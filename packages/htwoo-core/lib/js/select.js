@@ -13,7 +13,7 @@ export const ariaSelect = (listItem) => {
   // console.log('csInput', csInput);
   const csList = csSelector.querySelector('ul');
   // console.log('csList', csList);
-  const csOptions = csList.querySelectorAll('li');
+  const csOptions = csList.querySelectorAll('li.hoo-option');
   // console.log('csOptions', csOptions);
   const csIcons = csSelector.querySelectorAll('svg');
   // console.log('csIcons', csIcons);
@@ -166,6 +166,7 @@ export const ariaSelect = (listItem) => {
         return true
       }
     })
+    console.debug(aFilteredOptions);
     csOptions.forEach(option => option.style.display = "none")
     aFilteredOptions.forEach(function (option) {
       option.style.display = ""

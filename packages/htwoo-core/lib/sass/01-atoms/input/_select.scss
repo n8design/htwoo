@@ -76,8 +76,7 @@
 		background-color: colors.$neutral-000;
 
 		max-height: 50vh;
-		overflow: hidden;
-		overflow-y: auto;
+        overflow: hidden;
 
 		&.hidden-all {
 			display: none;
@@ -94,11 +93,18 @@
 }
 
 .hoo-optgroup-items {
-	@extend .hoo-select-dropdown;
+	// @extend .hoo-select-dropdown;
+    padding-left: 0.5rem;
 
 	border-bottom: 1px colors.$neutral-450 solid;
 	border-radius: 0;
 	box-shadow: none;
+}
+
+.hoo-select-dropdown{
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
 }
 
 .hoo-option {
@@ -136,6 +142,10 @@
 	padding: 0 core.px2rem(8px);
 
 	color: colors.$theme-600;
+    background-color: colors.$neutral-000;
 
 	align-items: center;
+    position: sticky;
+    top: 0;
+    padding-bottom: 0.25rem;
 }
