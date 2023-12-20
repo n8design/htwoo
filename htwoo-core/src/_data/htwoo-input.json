@@ -258,310 +258,78 @@
     "select-options": {
         "options": [
             {
-                "groupname": "Fruit Icons",
-                "options": [
-                    {
-                        "key": 1,
-                        "value": "Banana",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 2,
-                        "value": "Apple",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 3,
-                        "value": "Orange",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 4,
-                        "value": "Lime",
-                        "disabled": ""
-                    }
-                ]
+              "groupname": "Fruit Icons",
+              "options": [
+                {"key": "banana", "value": "Banana", "disabled": ""},
+                {"key": "apple", "value": "Apple", "disabled": ""},
+                {"key": "orange", "value": "Orange", "disabled": ""},
+                {"key": "lime", "value": "Lime", "disabled": ""}
+              ]
             },
             {
-                "groupname": "Fruits",
-                "options": [
-                    {
-                        "key": 5,
-                        "value": "Acai Berries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 6,
-                        "value": "Apple",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 7,
-                        "value": "Avocado",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 8,
-                        "value": "Bell Peppers",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 9,
-                        "value": "Blackberries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 10,
-                        "value": "Blueberries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 11,
-                        "value": "Cabbage",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 12,
-                        "value": "Carrots",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 13,
-                        "value": "Cauliflower",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 14,
-                        "value": "Cherries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 15,
-                        "value": "Collard Greens",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 16,
-                        "value": "Dragon Fruit",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 17,
-                        "value": "Garlic",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 18,
-                        "value": "Ginger",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 19,
-                        "value": "Grapefruits",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 20,
-                        "value": "Kiwi",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 21,
-                        "value": "Lemons",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 22,
-                        "value": "Limes",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 23,
-                        "value": "Mango",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 24,
-                        "value": "Onions",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 25,
-                        "value": "Oranges",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 26,
-                        "value": "Papaya",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 27,
-                        "value": "Peaches",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 28,
-                        "value": "Plums",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 29,
-                        "value": "Pomegranate",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 30,
-                        "value": "Raspberries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 31,
-                        "value": "Spinach",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 32,
-                        "value": "Strawberries",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 33,
-                        "value": "Sweet Potatoes",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 34,
-                        "value": "Swiss Chard",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 35,
-                        "value": "Tomatoes",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 36,
-                        "value": "Ginger",
-                        "disabled": ""
-                    }
-                ]
+              "groupname": "Fruits",
+              "options": [
+                {"key": "acai berries", "value": "Acai Berries", "disabled": ""},
+                {"key": "apple", "value": "Apple", "disabled": ""},
+                {"key": "avocado", "value": "Avocado", "disabled": ""},
+                {"key": "bell peppers", "value": "Bell Peppers", "disabled": ""},
+                {"key": "blackberries", "value": "Blackberries", "disabled": ""},
+                {"key": "blueberries", "value": "Blueberries", "disabled": ""},
+                {"key": "cabbage", "value": "Cabbage", "disabled": ""},
+                {"key": "carrots", "value": "Carrots", "disabled": ""},
+                {"key": "cauliflower", "value": "Cauliflower", "disabled": ""},
+                {"key": "cherries", "value": "Cherries", "disabled": ""},
+                {"key": "collard greens", "value": "Collard Greens", "disabled": ""},
+                {"key": "dragon fruit", "value": "Dragon Fruit", "disabled": ""},
+                {"key": "garlic", "value": "Garlic", "disabled": ""},
+                {"key": "ginger", "value": "Ginger", "disabled": ""},
+                {"key": "grapefruits", "value": "Grapefruits", "disabled": ""},
+                {"key": "kiwi", "value": "Kiwi", "disabled": ""},
+                {"key": "lemons", "value": "Lemons", "disabled": ""},
+                {"key": "limes", "value": "Limes", "disabled": ""},
+                {"key": "mango", "value": "Mango", "disabled": ""},
+                {"key": "onions", "value": "Onions", "disabled": ""},
+                {"key": "oranges", "value": "Oranges", "disabled": ""},
+                {"key": "papaya", "value": "Papaya", "disabled": ""},
+                {"key": "peaches", "value": "Peaches", "disabled": ""},
+                {"key": "plums", "value": "Plums", "disabled": ""},
+                {"key": "pomegranate", "value": "Pomegranate", "disabled": ""},
+                {"key": "raspberries", "value": "Raspberries", "disabled": ""},
+                {"key": "spinach", "value": "Spinach", "disabled": ""},
+                {"key": "strawberries", "value": "Strawberries", "disabled": ""},
+                {"key": "sweet potatoes", "value": "Sweet Potatoes", "disabled": ""},
+                {"key": "swiss chard", "value": "Swiss Chard", "disabled": ""},
+                {"key": "tomatoes", "value": "Tomatoes", "disabled": ""},
+                {"key": "ginger", "value": "Ginger", "disabled": ""}
+              ]
             },
             {
-                "groupname": "Vegetables",
-                "options": [
-                    {
-                        "key": 37,
-                        "value": "Avocado",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 38,
-                        "value": "Beets",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 39,
-                        "value": "Bell Peppers",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 40,
-                        "value": "Brussels Sprouts",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 41,
-                        "value": "Cabbage",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 42,
-                        "value": "Cauliflower",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 43,
-                        "value": "Collard Greens",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 44,
-                        "value": "Dragon Fruit",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 45,
-                        "value": "Eggplant",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 46,
-                        "value": "Garlic",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 47,
-                        "value": "Ginger",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 48,
-                        "value": "Kale",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 49,
-                        "value": "Leeks",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 50,
-                        "value": "Mango",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 51,
-                        "value": "Onions",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 52,
-                        "value": "Papaya",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 53,
-                        "value": "Red Cabbage",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 54,
-                        "value": "Shallots",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 55,
-                        "value": "Spinach",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 56,
-                        "value": "Sweet Potatoes",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 57,
-                        "value": "Swiss Chard",
-                        "disabled": ""
-                    },
-                    {
-                        "key": 58,
-                        "value": "Tomatoes",
-                        "disabled": ""
-                    }
-                ]
+              "groupname": "Vegetables",
+              "options": [
+                {"key": "avocado", "value": "Avocado", "disabled": ""},
+                {"key": "beets", "value": "Beets", "disabled": ""},
+                {"key": "bell peppers", "value": "Bell Peppers", "disabled": ""},
+                {"key": "brussels sprouts", "value": "Brussels Sprouts", "disabled": ""},
+                {"key": "cabbage", "value": "Cabbage", "disabled": ""},
+                {"key": "cauliflower", "value": "Cauliflower", "disabled": ""},
+                {"key": "collard greens", "value": "Collard Greens", "disabled": ""},
+                {"key": "dragon fruit", "value": "Dragon Fruit", "disabled": ""},
+                {"key": "eggplant", "value": "Eggplant", "disabled": ""},
+                {"key": "garlic", "value": "Garlic", "disabled": ""},
+                {"key": "ginger", "value": "Ginger", "disabled": ""},
+                {"key": "kale", "value": "Kale", "disabled": ""},
+                {"key": "leeks", "value": "Leeks", "disabled": ""},
+                {"key": "mango", "value": "Mango", "disabled": ""},
+                {"key": "onions", "value": "Onions", "disabled": ""},
+                {"key": "papaya", "value": "Papaya", "disabled": ""},
+                {"key": "red cabbage", "value": "Red Cabbage", "disabled": ""},
+                {"key": "shallots", "value": "Shallots", "disabled": ""},
+                {"key": "spinach", "value": "Spinach", "disabled": ""},
+                {"key": "sweet potatoes", "value": "Sweet Potatoes", "disabled": ""},
+                {"key": "swiss chard", "value": "Swiss Chard", "disabled": ""},
+                {"key": "tomatoes", "value": "Tomatoes", "disabled": ""}
+              ]
             }
-        ]
+          ]
     }
 }
