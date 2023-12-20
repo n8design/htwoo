@@ -8,7 +8,6 @@ Changes in hTWOo core as they happen
 ### Features
 
 * **Assets:** Media player assets added ([0005e7a](https://github.com/n8design/htwoo/commit/0005e7a091dcead8f7618d808f1aeccd81e7f00c))
-* **conf:** Updated workspace configuration to start: ([fe60a00](https://github.com/n8design/htwoo/commit/fe60a00ffe5f0c2c7d51310f88fc2f2849be41e5))
 * **CSS:** Media Player CSS ([99f7504](https://github.com/n8design/htwoo/commit/99f7504c8f00c676efc23bc1e962adb3c7951ac5))
 * **CSS:** Update for quick link styles ([6dfe80c](https://github.com/n8design/htwoo/commit/6dfe80c4393aeb4f393aafd65b98fdf35f746fb4))
 * **DATA:** Media player default data added ([a463201](https://github.com/n8design/htwoo/commit/a46320145954be72594949a9de5903efba089568))
