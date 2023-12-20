@@ -2,6 +2,32 @@
 
 Changes in hTWOo core as they happen
 
+## [2.3.0](https://github.com/n8design/htwoo/commit/) (2023-12-20)
+
+
+### Features
+
+* **Assets:** Media player assets added ([0005e7a](https://github.com/n8design/htwoo/commit/0005e7a091dcead8f7618d808f1aeccd81e7f00c))
+* **conf:** Updated workspace configuration to start: ([fe60a00](https://github.com/n8design/htwoo/commit/fe60a00ffe5f0c2c7d51310f88fc2f2849be41e5))
+* **CSS:** Media Player CSS ([99f7504](https://github.com/n8design/htwoo/commit/99f7504c8f00c676efc23bc1e962adb3c7951ac5))
+* **CSS:** Update for quick link styles ([6dfe80c](https://github.com/n8design/htwoo/commit/6dfe80c4393aeb4f393aafd65b98fdf35f746fb4))
+* **DATA:** Media player default data added ([a463201](https://github.com/n8design/htwoo/commit/a46320145954be72594949a9de5903efba089568))
+* **HTML:** Added Molecule for Vimeo Player ([d4f8d9a](https://github.com/n8design/htwoo/commit/d4f8d9a678d0b772ed59b396320143b42351f83c))
+* **HTML:** Organism for Viemo Video player added ([60ac856](https://github.com/n8design/htwoo/commit/60ac856e26b9b4ee9efb117608e3dc9adfab27da))
+* **HTML:** Quick Links styles for tiles and grid layouts added ([a8cc295](https://github.com/n8design/htwoo/commit/a8cc295b6159bde4b692b7e07841b10d53296900))
+* **HTML:** Video Player molecules added ([cbe34db](https://github.com/n8design/htwoo/commit/cbe34db63106ef48a242d2b9d5bd3d689ae2a7fc))
+* **HTML:** Video Player organisms added ([9fc969c](https://github.com/n8design/htwoo/commit/9fc969ce1d893a522b92acae45069e0c1b76ad1a))
+
+### [2.2.1](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+
+
+### Bug Fixes
+
+* **CSS:** Image resizing in quick links ([ae89688](https://github.com/n8design/htwoo/commit/ae896880c8527bbc2b925d59e394ecb17d4eb559))
+* **CSS:** Optimisation Quicklinks responsive behavior ([b58dd49](https://github.com/n8design/htwoo/commit/b58dd4951173c0890b4d515ea17aaf31ae8ed5b4))
+* **docs:** fixes partially the atoms-select data model ([91cbc3c](https://github.com/n8design/htwoo/commit/91cbc3cd3097ded3c4a0df527064bfa0a286adbb))
+
+
 ## [2.2.0](https://github.com/n8design/htwoo/commit/) (2023-12-01)
 
 ### Features
