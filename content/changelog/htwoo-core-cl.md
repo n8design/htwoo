@@ -18,7 +18,7 @@ Changes in hTWOo core as they happen
 * **HTML:** Video Player molecules added ([cbe34db](https://github.com/n8design/htwoo/commit/cbe34db63106ef48a242d2b9d5bd3d689ae2a7fc))
 * **HTML:** Video Player organisms added ([9fc969c](https://github.com/n8design/htwoo/commit/9fc969ce1d893a522b92acae45069e0c1b76ad1a))
 
-### [2.2.1](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+## [2.2.1](https://github.com/n8design/htwoo/commit/) (2023-12-02)
 
 
 ### Bug Fixes
