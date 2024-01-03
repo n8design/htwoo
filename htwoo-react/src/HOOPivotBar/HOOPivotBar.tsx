@@ -33,10 +33,10 @@ export interface IHOOPivotBarProps extends IHOOStandardProps {
  */
   pivotButtonAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
   /**
-   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-pivotbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
 }
 
 export interface IHOOPivotBarState {
@@ -104,7 +104,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
         className += " has-overflow";
       }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="menubar">
+        <menu {...this._rootProps} {...this.props.rootElementAttributes} className={className} role="menubar">
           {!this.props.hasOverflow &&
             this._renderPivotItems()
           }
@@ -117,7 +117,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
               </HOOIconOverflow>
             </div>
           }
-        </div>
+        </menu>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

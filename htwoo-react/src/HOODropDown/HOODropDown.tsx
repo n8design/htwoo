@@ -34,9 +34,9 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   value: string | number;
   /**
-   * Options for select drop down
+   * Options for select drop down, either a list of groups or a list of items; default is empty array
   */
-  options: IHOODropDownGroup[];
+  options: IHOODropDownGroup[] | IHOODropDownItem[];
   /**
    * Type-ahead options for select drop down; default is false
    *   If true, options are filtered for any items starting with the string in the input box
@@ -47,6 +47,10 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * Change event handler returns the new field value based on the selected items key
   */
   onChange: (fieldValue: string | number) => void;
+  /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
   /**
    * (Optional) Placeholder text for the input element
   */
@@ -77,6 +81,7 @@ export interface IHOODropDownState {
   ddState: DDState;
   open: boolean;
   optionsLength: number;
+  grouped: boolean;
 }
 
 export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
@@ -92,8 +97,9 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   constructor(props: IHOODropDownProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODropDown";
-    this._dropdownId += getRandomString(10);
-    this.state = { currentValue: props.value, optionsLength: props.options.length, ddState: DDState.Initial, open: false };
+    this._dropdownId = props.forId || `${this._dropdownId}${getRandomString(10)}`;
+    const grouped = (props.options[0] as IHOODropDownGroup)?.groupName ? true : false;
+    this.state = { currentValue: props.value, optionsLength: props.options.length, ddState: DDState.Initial, open: false, grouped };
     this._inputElement = React.createRef<HTMLInputElement>();
   }
 
@@ -116,16 +122,26 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   private _getDisplayValue = (): string => {
     let retVal: string = this.state.currentValue as string || "";
     try {
-      this.props.options.some((g) => {
-        g.groupItems.some((item) => {
+      if (this.state.grouped) {
+        this.props.options.some((g) => {
+          g.groupItems.some((item) => {
+            if (item.key === this.state.currentValue) {
+              retVal = item.text;
+              return true;
+            }
+            return false;
+          });
+          return (retVal.length > 0);
+        });
+      } else {
+        this.props.options.some((item) => {
           if (item.key === this.state.currentValue) {
             retVal = item.text;
             return true;
           }
           return false;
         });
-        return retVal.length > 0;
-      });
+      }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_getDisplayValue) - ${err}`);
     }
@@ -417,29 +433,44 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             {...this.props.ulElementAttributes}
             className={ulClassName}>
             {this.props.options && this.props.options.map((g) => {
-              return (
-                <li className="hoo-optgroup" key={g.groupName}>
-                  {g.groupName.length > 0 &&
-                    <div className="hoo-optgroup-name">{g.groupName}</div>
-                  }
-                  <ul className="hoo-optgroup-items">
-                    {g.groupItems && g.groupItems.map((i, index) => {
-                      return (
-                        <li ref={element => this._optionElements[index] = element}
-                          key={i.key}
-                          data-value={i.key}
-                          className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
-                          aria-disabled={i.disabled}
-                          tabIndex={-1}
-                          onClick={() => { this._onChange(i.key); }}
-                        >
-                          {i.text}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </li>
-              );
+              if (this.state.grouped) {
+                return (
+                  <li className="hoo-optgroup" key={g.groupName}>
+                    {g.groupName.length > 0 &&
+                      <div className="hoo-optgroup-name">{g.groupName}</div>
+                    }
+                    <ul className="hoo-optgroup-items">
+                      {g.groupItems && g.groupItems.map((i, index) => {
+                        return (
+                          <li ref={element => this._optionElements[index] = element}
+                            key={i.key}
+                            data-value={i.key}
+                            className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
+                            aria-disabled={i.disabled}
+                            tabIndex={-1}
+                            onClick={() => { this._onChange(i.key); }}
+                          >
+                            {i.text}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              } else {
+                return (
+                  <li ref={element => this._optionElements.push(element)}
+                    key={g.key}
+                    data-value={g.key}
+                    className={`hoo-option ${g.disabled ? "is-disabled" : ""}`}
+                    aria-disabled={g.disabled}
+                    tabIndex={-1}
+                    onClick={() => { this._onChange(g.key); }}
+                  >
+                    {g.text}
+                  </li>
+                );
+              }
             })}
           </ul>
         </div>

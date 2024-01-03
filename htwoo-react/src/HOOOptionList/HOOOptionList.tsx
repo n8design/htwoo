@@ -41,6 +41,10 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   disabled?: boolean;
   /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
+  /**
    * (Optional) Direction for child options; defaults to Vertical
   */
   direction?: HOOOptionListDirection;
@@ -76,6 +80,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
+  private _optionListId: string = "hoo-options-";
   private _direction: HOOOptionListDirection = HOOOptionListDirection.Vertical;
   private _valid: boolean = true;
   private _updateStyle: boolean = false;
@@ -85,6 +90,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     this.LOG_SOURCE = props.dataComponent || "💦HOOOptionList";
     this._direction = this.props.direction || HOOOptionListDirection.Vertical;
     this._optionListName += getRandomString(10);
+    this._optionListId = props.forId || `${this._optionListId}${getRandomString(10)}`;
     this._componentClass = (props.type === HOOOptionListType.Checkbox) ? "hoo-checkbox-group" : "hoo-radiobutton-group";
     this._valid = (props.value === null) || ((props.type === HOOOptionListType.Checkbox) ? Array.isArray(props.value) : !Array.isArray(props.value));
     let styleblock: React.CSSProperties = undefined;
@@ -189,8 +195,9 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
       className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
       return (
-        <menu {...this.state.rea}
-          {...this.props.rootElementAttributes}
+        <menu {...this._rootProps}
+          id={this._optionListId}
+          {...this.state.rea}
           className={className}
           style={this.state.styleblock}>
           {this._valid && this.props.options && this.props.options.map((option) => {

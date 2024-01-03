@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { getRandomString } from "../common/Common";
 
 export interface IHOOTimeProps extends IHOOStandardProps {
   /**
@@ -18,6 +19,10 @@ export interface IHOOTimeProps extends IHOOStandardProps {
  * (Optional) Maximum value of time selector. Must be in format "hh:mm:ss.ms".
  */
   maxValue?: string;
+  /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
   /**
    * Change event handler
   */
@@ -42,10 +47,12 @@ export default class HOOTime extends React.PureComponent<IHOOTimeProps, IHOOTime
   private _componentClass: string = "hoo-input-time";
   private _minValue: string = "00:00:00";
   private _maxValue: string = "23:59:59";
+  private _timeId: string = "hoo-time-";
 
   constructor(props: IHOOTimeProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOTime";
+    this._timeId = props.forId || `${this._timeId}${getRandomString(10)}`;
     this.state = new HOOTimeState();
   }
 
@@ -58,6 +65,7 @@ export default class HOOTime extends React.PureComponent<IHOOTimeProps, IHOOTime
       return (
         <input
           {...this._rootProps}
+          id={this._timeId}
           {...this.props.rootElementAttributes}
           type="time"
           value={this.props.value}

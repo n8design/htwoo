@@ -1,6 +1,8 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
+import { getRandomString } from "../common/Common";
+
 
 export interface IHOOSearchProps extends IHOOStandardProps {
   /**
@@ -15,6 +17,10 @@ export interface IHOOSearchProps extends IHOOStandardProps {
    * Disables using the search box
    */
   disabled: boolean;
+  /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
   /**
    * Change event handler
   */
@@ -46,10 +52,12 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
   private LOG_SOURCE: string = "💦HOOSearch";
   private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-search";
+  private _searchId: string = "hoo-search-";
 
   constructor(props: IHOOSearchProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOSearch";
+    this._searchId = props.forId || `${this._searchId}${getRandomString(10)}`;
     this.state = new HOOSearchState();
   }
 
@@ -69,7 +77,10 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-input-text ${this.props.inputElementAttributes?.className}` : "hoo-input-text";
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <div {...this._rootProps}
+          id={this._searchId}
+          {...this.props.rootElementAttributes}
+          className={className}>
           <HOOIcon iconName="hoo-icon-search" rootElementAttributes={{ className: "icon" }} />
           <input {...this.props.inputElementAttributes}
             className={inputClassName}

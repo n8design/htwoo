@@ -1,5 +1,6 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { symset } from '../SymbolSet';
 import HOOQuickLinkGrid from './HOOQuickLinkGrid';
 import HOOQuickLink, {HOOQuickLinkType} from '../HOOQuickLink';
 
@@ -27,12 +28,39 @@ export const Template = (args) => <HOOQuickLinkGrid {...args}>
   <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 5' description="Details about my quick link item" columnSpan= "auto / span 4" rootElementAttributes={{style: { backgroundColor: "lemonchiffon" }}}/>
 </HOOQuickLinkGrid>;
 
-## Quick Link Grid
+export const Template2 = (args) => <HOOQuickLinkGrid {...args}>
+  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://placekitten.com/320/180" title='Quick Link Item 1' columnSpan= "auto / span 4"/>
+  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://placekitten.com/320/180" title='Quick Link Item 2' columnSpan= "auto / span 4"/>
+  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://placekitten.com/320/180" title='Quick Link Item 3' columnSpan= "auto / span 4"/>
+  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://placekitten.com/320/180" title='Quick Link Item 4' columnSpan= "auto / span 4"/>  
+  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://placekitten.com/320/180" title='Quick Link Item 5' columnSpan= "auto / span 4" rootElementAttributes={{style: { backgroundColor: "lemonchiffon" }}}/>
+</HOOQuickLinkGrid>;
+
+## Quick Link Grid - Links
 <Canvas>
   <Story
-    name="Quick Link Grid"
-    args={{}}>
+    name="Quick Link Grid - Links"
+    args={
+      (function(){
+        symset.initSymbols();
+        return {};
+      })()
+    }>
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Quick Link Grid - Grid
+<Canvas>
+  <Story
+    name="Quick Link Grid - Grid"
+    args={
+      (function(){
+        symset.initSymbols();
+        return {};
+      })()}>
+    {Template2.bind({})}
   </Story>
 </Canvas>
 
@@ -40,8 +68,11 @@ export const Template = (args) => <HOOQuickLinkGrid {...args}>
 <Canvas>
   <Story
     name="Extending"
-    args={
-      { columnSpan: "auto / span 4", rootElementAttributes: { style: { backgroundColor: "pink" } } }
+    args={      
+      (function(){
+        symset.initSymbols();
+        return { columnSpan: "auto / span 4", rootElementAttributes: { style: { backgroundColor: "pink" } } };
+      })()
     }>
     {Template.bind({})}
   </Story>
