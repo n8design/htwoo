@@ -63,4 +63,5 @@ export * from './HOOText';
 export * from './HOOTime';
 export * from './HOOToggle';
 export * from './HOOVerticalNav';
+export * from './HOOVideo';
 export * from './HOOWebPartTitle';
