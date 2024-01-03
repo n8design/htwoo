@@ -5,6 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.3.0 - 2024-Jan-03
+
+>In support of HTWOO-CORE v2.3.0
+
+### Fix
+
+- HOODropdown: Unable to override Id attribute
+- HOOPivotBar: update html; root element is now menu
+- HOOCommandBar: update html; root element is not menu
+- HOOSelect: Officially deprecate as duplicate of HOODropdown
+- HOODialog: Fix bug where dialog doesn't open with initial visible=true property.
+
+### Update
+
+- HOODropdown: Added optional typing for options property, now IHOODropDownGroup[] | IHOODropDownItem[]; Added optional `forId` property to be mapped to input element attribute id
+- HOOCheckbox: Added optional `forId` property to be mapped to input element attribute id.
+- HOONumber: Added optional `forId` property to be mapped to input element attribute id.
+- HOOOptionList: Added optional `forId` property to be mapped to input element attribute id.
+- HOORadioButton: Added optional `forId` property to be mapped to input element attribute id.
+- HOOSearch: Added optional `forId` property to be mapped to input element attribute id.
+- HOOText: Added optional `forId` property to be mapped to input element attribute id.
+- HOOTime: Added optional `forId` property to be mapped to input element attribute id.
+- HOOToggle: Added optional `forId` property to be mapped to input element attribute id.
+
+### Additions
+
+- HOOFacepile: Prepped for overflow style, not available yet in core.
+- HOOQuickLink: Added new grid, button, and tile layout types and supporting properties.
+- HOOVideo: Added new Video component that supports various embedded video players.
+
+## 2.2.0 - SKIPPED TO KEEP VERSIONS CONSISTENT
+
 ## 2.1.1 - 2023-Dec-01
 
 ### Fix

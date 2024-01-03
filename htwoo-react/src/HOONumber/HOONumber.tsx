@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { getRandomString } from "../common/Common";
 
 export interface IHOONumberProps extends IHOOStandardProps {
   /**
@@ -19,6 +20,10 @@ export interface IHOONumberProps extends IHOOStandardProps {
    * (Optional) Is Input Disabled - default false.
   */
   disabled?: boolean;
+  /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
@@ -43,10 +48,12 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
   private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
+  private _numberInputId: string = "hoo-number-";
 
   constructor(props: IHOONumberProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOONumber";
+    this._numberInputId = props.forId || `${this._numberInputId}${getRandomString(10)}`;
     this.state = new HOONumberState();
   }
 
@@ -58,6 +65,7 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
           <input type="number"
+            id={this._numberInputId}
             {...this.props.inputElementAttributes}
             value={this.props.value}
             disabled={this.props.disabled || false}

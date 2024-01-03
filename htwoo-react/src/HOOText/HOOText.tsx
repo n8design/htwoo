@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { getRandomString } from "../common/Common";
 
 export interface IHOOTextProps extends IHOOStandardProps {
   /**
@@ -36,6 +37,10 @@ export interface IHOOTextProps extends IHOOStandardProps {
    */
   inputType?: React.HTMLInputTypeAttribute;
   /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
@@ -59,10 +64,12 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
   private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
+  private _textId: string = "hoo-text-";
 
   constructor(props: IHOOTextProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOText";
+    this._textId = props.forId || `${this._textId}${getRandomString(10)}`;
     this.state = new HOOTextState();
   }
 
@@ -78,7 +85,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {this.props.inputPrefix &&
                 <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
               }
-              <input {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
+              <input id={this._textId}
+                {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>}
                 type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}

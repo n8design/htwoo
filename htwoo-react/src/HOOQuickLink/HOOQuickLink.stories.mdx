@@ -1,6 +1,7 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import HOOQuickLink, {HOOQuickLinkType} from './HOOQuickLink';
+import { symset } from '../SymbolSet';
+import HOOQuickLink, {HOOQuickLinkType, HOOQuickLinkStyle, HOOQuickLinkAlignment, HOOQuickLinkButtonLines, HOOQuickLinkImageSize} from './HOOQuickLink';
 
 <Meta title="Components/Quick Link/HOOQuickLink" component={HOOQuickLink} />
 
@@ -10,7 +11,40 @@ Predefined enum defined for the supported button types:
 ```ts
 export enum HOOQuickLinkType {
   "Link",
-  "Compact"
+  "Compact",
+  "Grid",
+  "Button",
+  "Tile"
+}
+```
+Style options for the Quick Link Button type component:
+
+```ts
+export enum HOOQuickLinkStyle{ 
+  "Outline"="",
+  "Filled"="filled",
+  "None"="no-outline"
+}
+
+export enum HOOQuickLinkAlignment{
+  "Left"="",
+  "Center"="center"
+}
+
+export enum HOOQuickLinkButtonLines{
+  "Normal"="",
+  "One"="one-line",
+}
+```
+
+Image Size options for teh Quick Link Tile type component:
+```ts
+export enum HOOQuickLinkImageSize{
+  "Small"="",
+  "Medium"="img-m",
+  "Large"="img-l",
+  "XLarge"="img-xl",
+  "Fill"="img-fill",
 }
 ```
 
@@ -27,7 +61,10 @@ export const Template = (args) => <HOOQuickLink {...args} />;
   <Story
     name="Quick Link: Standard"
     args={
-      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" }
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -38,7 +75,10 @@ export const Template = (args) => <HOOQuickLink {...args} />;
   <Story
     name="Quick Link: Compact"
     args={
-      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" }
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Compact, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -49,7 +89,52 @@ export const Template = (args) => <HOOQuickLink {...args} />;
   <Story
     name="Quick Link: Standard Edit Mode"
     args={
-      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", editMode: true }
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", editMode: true };
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Quick Link - Button
+<Canvas>
+  <Story
+    name="Quick Link: Button"
+    args={
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Button, style: HOOQuickLinkStyle.Filled, alignment: HOOQuickLinkAlignment.Center, buttonLines: HOOQuickLinkButtonLines.Normal, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item" };
+      })()      
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Quick Link - Tile
+<Canvas>
+  <Story
+    name="Quick Link: Tile"
+    args={
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Tile, imageSize: HOOQuickLinkImageSize.Large, iconSrc: "https://placekitten.com/320/180", title: 'My Quick Link Item' };
+      })()      
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Quick Link - Grid
+<Canvas>
+  <Story
+    name="Quick Link: Grid"
+    args={
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Grid,  iconSrc: "https://placekitten.com/320/180", title: 'My Quick Link Item' };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -60,7 +145,10 @@ export const Template = (args) => <HOOQuickLink {...args} />;
   <Story
     name="Extending"
     args={
-      { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", rootElementAttributes: { style: { backgroundColor: "pink" } } }
+      (function(){
+        symset.initSymbols();
+        return { type: HOOQuickLinkType.Link, iconName: "hoo-icon-ninjacat", title: 'My Quick Link Item', description: "Details about my quick link item", rootElementAttributes: { style: { backgroundColor: "pink" } } };
+      })()
     }>
     {Template.bind({})}
   </Story>

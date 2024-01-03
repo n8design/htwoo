@@ -69,6 +69,9 @@ export interface IHOOSelectState {
   optionsLength: number;
 }
 
+/**
+* @deprecated Use HOODropdown
+*/
 export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
   private _rootProps = { "data-component": this.LOG_SOURCE };
