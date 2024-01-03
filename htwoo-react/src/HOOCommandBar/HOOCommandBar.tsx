@@ -31,10 +31,10 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
   */
   commandButtonAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
   /**
-   * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
+   * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cmdbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
 }
 
 export interface IHOOCommandBarState {
@@ -101,7 +101,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
         className += " has-overflow";
       }
       return (
-        <div {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
+        <menu {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           {!this.props.hasOverflow &&
             this._renderCommandItems()
           }
@@ -114,7 +114,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
               </HOOIconOverflow>
             </div>
           }
-        </div>
+        </menu>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

@@ -5,7 +5,34 @@ import HOOIcon from "../HOOIcon";
 
 export enum HOOQuickLinkType {
   "Link",
-  "Compact"
+  "Compact",
+  "Grid",
+  "Button",
+  "Tile"
+}
+
+export enum HOOQuickLinkStyle{ 
+  "Outline"="",
+  "Filled"="filled",
+  "None"="no-outline"
+}
+
+export enum HOOQuickLinkAlignment{
+  "Left"="",
+  "Center"="center"
+}
+
+export enum HOOQuickLinkButtonLines{
+  "Normal"="",
+  "One"="one-line",
+}
+
+export enum HOOQuickLinkImageSize{
+  "Small"="",
+  "Medium"="img-m",
+  "Large"="img-l",
+  "XLarge"="img-xl",
+  "Fill"="img-fill",
 }
 
 export interface IHOOQuickLinkProps extends IHOOStandardProps {
@@ -18,11 +45,27 @@ export interface IHOOQuickLinkProps extends IHOOStandardProps {
   */
   title: string;
   /**
+   * (Optional) HOOQuickLinkType="Button" style, Outline, Fill, None; default to Outline
+  */
+  style?: HOOQuickLinkStyle;
+  /**
+   * (Optional) HOOQuickLinkType="Button" alignment, Center, Left; default to Left
+  */
+  alignment?: HOOQuickLinkAlignment;
+  /**
+   * (Optional) HOOQuickLinkType="Button" lines, Normal, One; default to Normal
+  */
+  buttonLines?: HOOQuickLinkButtonLines;
+  /**
+   * (Optional) HOOQuickLinkType="Tile" image size, Small, Medium, Large, XLarge, Fill; default Small
+  */
+  imageSize?: HOOQuickLinkImageSize;
+  /**
    * (Optional) Quick link item's link url
   */
   url?: string;
   /**
-   * (Optional) Quick link item's description
+   * (Optional) HOOQuickLinkType="Link" or HOOQuickLinkType="Button" item's description;
   */
   description?: string;
   /**
@@ -73,27 +116,45 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
   constructor(props: IHOOQuickLinkProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOQuickLink";
-    if(props.type === HOOQuickLinkType.Compact){
-      this._linkClass = "hoo-qlcompact";
-    }
     this.state = {};
+  }
+
+  private _getLinkClass = (): string => {
+    let linkClass = this._linkClass;
+    try{
+      if(this.props.type === HOOQuickLinkType.Compact){
+        linkClass = "hoo-qlcompact";
+      }else if(this.props.type === HOOQuickLinkType.Button){
+        linkClass = "hoo-qlbtn";
+      }else if(this.props.type === HOOQuickLinkType.Tile){
+        linkClass = "hoo-qltiles";
+      }else if(this.props.type === HOOQuickLinkType.Grid){
+        linkClass = "hoo-qlgrid";
+      }
+      linkClass += ` ${this.props.style || ""} ${this.props.alignment || ""} ${this.props.buttonLines || ""} ${this.props.imageSize || ""} ${this.props.editMode || ""}`;
+      linkClass = linkClass.trim();
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_getLinkClass) - ${err}`);
+    }
+    return linkClass;
   }
 
   public render(): React.ReactElement<IHOOQuickLinkProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const linkClassValue = this._getLinkClass();
       let rea = this.props.rootElementAttributes;
       if(this.props.columnSpan != null){
         if(rea == null){
           rea = { style: {}};
         }
-        rea.style.gridColumn = this.props.columnSpan;
+        rea.style["gridColumn"] = this.props.columnSpan;
       }
 
       return (
         <a data-component={this.LOG_SOURCE} {...rea} className={className} href={this.props.url || ""} >
-          <div  className={`${this._linkClass} ${(this.props.editMode) ? "mode-edit" : ""}`}>
+          <div className={linkClassValue}>
             {this.props.iconSrc && this.props.iconSrc.length > 0 &&
               <figure className="hoo-ql-media">
                 <img src={this.props.iconSrc} className="hoo-ql-img" alt="" loading="lazy" />
@@ -108,7 +169,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
               <div className="hoo-qltitle">
                 {this.props.title}
               </div>
-              {this.props.description &&
+              {(this.props.type == HOOQuickLinkType.Button || this.props.type == HOOQuickLinkType.Link) && this.props.description &&
                 <div className="hoo-qldesc">
                   {this.props.description}
                 </div>

@@ -20,6 +20,10 @@ export interface IHOOCheckboxProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
+  /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-checkbox {rootElementAttributes.class}
   */
@@ -46,7 +50,7 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
   constructor(props: IHOOCheckboxProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCheckbox";
-    this._checkboxId += getRandomString(10);
+    this._checkboxId = props.forId || `${this._checkboxId}${getRandomString(10)}`;
     this.state = new HOOCheckboxState();
   }
 

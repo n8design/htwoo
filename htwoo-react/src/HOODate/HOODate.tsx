@@ -1,5 +1,6 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { getRandomString } from "../common/Common";
 
 export interface IHOODateProps extends IHOOStandardProps {
   /**
@@ -18,6 +19,10 @@ export interface IHOODateProps extends IHOOStandardProps {
  * (Optional) Maximum value of date selector. Must be in format "YYYY-MM-DD".
  */
   maxValue?: string;
+  /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
   /**
    * Change event handler
   */
@@ -42,10 +47,12 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
   private _componentClass: string = "hoo-input-date";
   private _minValue: Date = new Date();
   private _maxValue: Date = new Date();
+  private _dateId: string = "hoo-date-";
 
   constructor(props: IHOODateProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODate";
+    this._dateId = props.forId || `${this._dateId}${getRandomString(10)}`;
     this.state = new HOODateState();
   }
 
@@ -63,6 +70,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <input
+          id={this._dateId}
           {...this._rootProps}
           {...this.props.rootElementAttributes}
           type="date"

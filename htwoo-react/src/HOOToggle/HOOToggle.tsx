@@ -24,6 +24,10 @@ export interface IHOOToggleProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-toggle {rootElementAttributes.class}
   */
@@ -58,7 +62,7 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
   constructor(props: IHOOToggleProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOToggle";
-    this._toggleId += getRandomString(10);
+    this._toggleId = props.forId || `${this._toggleId}${getRandomString(10)}`;
     this.state = new HOOToggleState();
   }
 
@@ -70,9 +74,10 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
       const labelClassName = (this.props.labelElementAttributes?.className) ? `${this._labelClass} ${this.props.labelElementAttributes?.className}` : this._labelClass;
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
-          <input {...this.props.inputElementAttributes}
-            type="checkbox"
+          <input 
             id={this._toggleId}
+            {...this.props.inputElementAttributes}
+            type="checkbox"
             checked={this.props.checked}
             disabled={this.props.disabled || false}
             aria-disabled={this.props.disabled || false}

@@ -134,6 +134,20 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
     return true;
   }
 
+  public componentDidMount(): void {
+    try {
+      if (this.props.visible && this._dialogElement != null && this._dialogElement.current != null) {
+        if (this._modal) {
+          this._dialogElement.current.showModal();
+        } else if (!this._modal) {
+          this._dialogElement.current.show();
+        }
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (componentDidMount) - ${err}`);
+    }
+  }
+
   public componentDidUpdate(prevProps: Readonly<IHOODialogProps>, prevState: Readonly<IHOODialogState>, snapshot?: any): void {
     try {
       if (this._updateShow) {

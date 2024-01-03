@@ -24,6 +24,10 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Id attribute for the input element; only valid if set in original component properties.
+  */
+  forId?: string;
+  /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-radio {rootElementAttributes.class}
   */
@@ -50,7 +54,7 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
   constructor(props: IHOORadioButtonProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOORadioButton";
-    this._radioId += getRandomString(10);
+    this._radioId = props.forId || `${this._radioId}${getRandomString(10)}`;
     this.state = new HOORadioButtonState();
   }
 
