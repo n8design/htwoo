@@ -32,7 +32,7 @@ export default class HOOAccordionGroup extends React.PureComponent<IHOOAccordion
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <section data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className} role="accordion">
+        <section data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
           {this.props.children}
         </section >
       );
