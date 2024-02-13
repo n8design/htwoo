@@ -38,13 +38,13 @@ HTWO React - embedded the HTML markup and CSS styles into reusable components wh
 
 **hTWOo core** uses [PatternLab.io](https://patternlab.io), a tool that allows you to create a style guide based on the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) by [Brad Frost](https://bradfrost.com). This methodology has been proven since 2012/13 that it's an easy way to create and describe user interfaces, from the smallest design components to full-page experiences. It is not only limited to the web but is capable of describing and user interface.
 
-See it in action: [hTWOo Core documentation](/htwoo/htwoo-core)
+See it in action: [hTWOo Core documentation](https://lab.n8d.studio/htwoo/htwoo-core)
 
 > We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
 The documentation of **hTWOo React** is built using [Storybook](https://storybook.js.org), which not only serves as the documentation but also provides complete developer experience to create React Components.
 
-See it in action: [hTWOo React Documentation](/htwoo/htwoo-react).
+See it in action: [hTWOo React Documentation](https://lab.n8d.studio/htwoo/htwoo-react/).
 
 Documentation and implementation in hTWOo go hand in hand, without additional effort.
 
