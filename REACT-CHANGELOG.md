@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.3.1 - 2024-Feb-13
+
+### Fix
+
+- HOODropdown: Bug fix for grouped options.
+- HOOAccordionGroup: ARIA Role incorrect.
+
 ## 2.3.0 - 2024-Jan-03
 
 >In support of HTWOO-CORE v2.3.0

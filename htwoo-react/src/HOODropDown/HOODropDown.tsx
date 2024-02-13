@@ -98,7 +98,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODropDown";
     this._dropdownId = props.forId || `${this._dropdownId}${getRandomString(10)}`;
-    const grouped = (props.options[0] as IHOODropDownGroup)?.groupName ? true : false;
+    const grouped = props.options[0]?.hasOwnProperty("groupName") ? true : false;
     this.state = { currentValue: props.value, optionsLength: props.options.length, ddState: DDState.Initial, open: false, grouped };
     this._inputElement = React.createRef<HTMLInputElement>();
   }
