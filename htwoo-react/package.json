@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "keywords": [
     "Fluent Design",
@@ -43,7 +43,6 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "start": "npm run storybook",
     "build-storybook": "storybook build -o ../docs/htwoo-react"
   },
   "files": [
