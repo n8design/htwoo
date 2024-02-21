@@ -2,6 +2,14 @@
 
 Changes in hTWOo core as they happen
 
+## [2.2.1](https://github.com/n8design/htwoo/commit/) (2023-12-02)
+
+
+### Bug Fixes
+
+* **CSS:** fixes commandbar button and flyout behaviour ([408aca4](https://github.com/n8design/htwoo/pull/106/commits/408aca462954fdf370e1fcc26d67e86f0385b82d))
+* **CSS:** fixes color assignments ([94dd8a6](https://github.com/n8design/htwoo/pull/106/commits/94dd8a6f12cce6942b963e96ab2011b61efeac99))
+
 ## [2.3.0](https://github.com/n8design/htwoo/commit/) (2023-12-20)
 
 
