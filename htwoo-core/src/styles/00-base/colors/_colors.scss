@@ -353,6 +353,7 @@ $neutral-700: #{var(--neutralPrimary)};
 $neutral-800: #{var(--neutralDark)};
 $neutral-900: #{var(--black)};
 
+// base colors
 $green-300: #{var(--greenLight)};
 $green-600: #{var(--green)};
 $green-800: #{var(--greenDark)};
@@ -365,9 +366,9 @@ $blue-800: #{var(--blueDark)};
 $red-600: #{var(--red)};
 $red-800: #{var(--redDark)};
 
-$magenta-200: #{var(--magentaLighter)};
 $magenta-300: #{var(--magentaLight)};
-$magenta-600: #{var(--magentaDark)};
+$magenta-600: #{var(--magenta)};
+$magenta-800: #{var(--magentaDark)};
 
 $orange-300: #{var(--orangeLight)};
 $orange-600: #{var(--orange)};
