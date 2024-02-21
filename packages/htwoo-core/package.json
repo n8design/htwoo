@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
   "main": "index.js",
   "scripts": {
