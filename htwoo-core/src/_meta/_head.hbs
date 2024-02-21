@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}" class="{{ htmlClass }}">
   <head>
-    <title>{{ title }} - Fluent UI</title>
+    <title>{{ seoTitle patternPartial }}{{ title }} - Fluent UI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
@@ -15,3 +15,5 @@
 
   </head>
   <body class="{{ bodyClass }}">
+  {{ patternPartial }}<br>
+  {{ seoTitle patternPartial }}
