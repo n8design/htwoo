@@ -9,3 +9,4 @@ nvm use
 npx run-s gulp:docs pl:publish
 cp -r ./src/plugins/* ../docs/htwoo-core/plugins/
 cp -r ./src/styleguide/images/* ../docs/htwoo-core/styleguide/images/
+node helpers/tools/sitemap.js

@@ -13,25 +13,25 @@ let files = fs.readdirSync(path.join(process.cwd(), 'public/patterns'), { recurs
 
 if (files) {
     files = files.filter(file => file.endsWith('.rendered.html'));
-    let fileBaseName = files.map(file => path.basename(file, '.rendered.html'));
-    console.debug(fileBaseName);
-    console.debug('Generating sitemaps...', fileBaseName);
+    let fileBaseNames = files.map(file => path.basename(file, '.rendered.html'));
+    // console.debug(fileBaseNames);
+    // console.debug('Generating sitemaps...', fileBaseNames);
 
 
     // Create sitemap stream
     const stream = new SitemapStream({ hostname: 'https://lab.n8d.studio/htwoo/htwoo-core/' }); // Replace 'example.com' with your actual domain
 
     // Add URLs to sitemap stream
-    filepaths.forEach(filepath => {
+    fileBaseNames.forEach(filepath => {
         const sitename = filenameToSitename(filepath);
-        stream.write({ url: sitename, changefreq: 'daily', priority: 0.5 });
+        stream.write({ url: sitename, changefreq: 'monthly', priority: 0.5 });
     });
     stream.end();
 
     // Write sitemap to file
     streamToPromise(stream)
         .then((sm) => {
-            fs.writeFileSync('sitemap.xml', sm);
+            fs.writeFileSync('../docs/htwoo-core/sitemap.xml', sm);
         })
         .catch(console.error);
 
