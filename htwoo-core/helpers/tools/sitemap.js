@@ -24,7 +24,7 @@ if (files) {
     // Add URLs to sitemap stream
     fileBaseNames.forEach(filepath => {
         const sitename = filenameToSitename(filepath);
-        stream.write({ url: sitename, changefreq: 'monthly', priority: 0.5 });
+        stream.write({ url: sitename, changefreq: 'weekly', priority: 0.5 });
     });
     stream.end();
 
