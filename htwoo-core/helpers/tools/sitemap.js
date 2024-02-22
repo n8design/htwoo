@@ -2,43 +2,45 @@ const fs = require('fs');
 const path = require('path');
 const { SitemapStream, streamToPromise } = require('sitemap');
 
-// File paths
-const filepaths = [
-    './public/patterns//atoms-avatar-avatar-16/atoms-avatar-avatar-16.rendered.html',
-    './public/patterns//atoms-avatar-avatar-16/atoms-avatar-avatar-16.markup-only.html',
-    './public/patterns//organism-dialogs-dialog-sidebar-right/organism-dialogs-dialog-sidebar-right.markup-only.html',
-    './public/patterns//organism-dialogs-dialog-sidebar-right/organism-dialogs-dialog-sidebar-right.rendered.html',
-    './public/patterns//organism-quick-links-grid-quick-links-grid-grid/organism-quick-links-grid-quick-links-grid-grid.rendered.html',
-    './public/patterns//organism-quick-links-grid-quick-links-grid-grid/organism-quick-links-grid-quick-links-grid-grid.markup-only.html',
-    './public/patterns//molecules-media/index.html',
-    './public/patterns//molecules-persona-persona-24/molecules-persona-persona-24.markup-only.html',
-    './public/patterns//molecules-persona-persona-24/molecules-persona-persona-24.rendered.html'
-];
 
 // Function to convert filename to SEO sitename
 function filenameToSitename(filename) {
-    const basename = path.basename(filename, path.extname(filename)); // Get basename without extension
-    const queryParam = 'q=fixed_value'; // Fixed value for query parameter
-    return `${basename}?${queryParam}`;
+    const queryParam = `p=${filename}`; // Fixed value for query parameter
+    return `?${queryParam}`;
 }
 
-// Create sitemap stream
-const stream = new SitemapStream({ hostname: 'https://example.com' }); // Replace 'example.com' with your actual domain
+let files = fs.readdirSync(path.join(process.cwd(), 'public/patterns'), { recursive: true });
 
-// Add URLs to sitemap stream
-filepaths.forEach(filepath => {
-    const sitename = filenameToSitename(filepath);
-    stream.write({ url: sitename, changefreq: 'daily', priority: 0.5 });
-});
-stream.end();
-
-// Write sitemap to file
-streamToPromise(stream)
-    .then((sm) => { 
-        fs.writeFileSync('sitemap.xml', sm);
-    })
-  .catch (console.error);
+if (files) {
+    files = files.filter(file => file.endsWith('.rendered.html'));
+    let fileBaseName = files.map(file => path.basename(file, '.rendered.html'));
+    console.debug(fileBaseName);
+    console.debug('Generating sitemaps...', fileBaseName);
 
 
+    // Create sitemap stream
+    const stream = new SitemapStream({ hostname: 'https://lab.n8d.studio/htwoo/htwoo-core/' }); // Replace 'example.com' with your actual domain
 
-console.log('Sitemap generated successfully!');
+    // Add URLs to sitemap stream
+    filepaths.forEach(filepath => {
+        const sitename = filenameToSitename(filepath);
+        stream.write({ url: sitename, changefreq: 'daily', priority: 0.5 });
+    });
+    stream.end();
+
+    // Write sitemap to file
+    streamToPromise(stream)
+        .then((sm) => {
+            fs.writeFileSync('sitemap.xml', sm);
+        })
+        .catch(console.error);
+
+
+
+    console.log('Sitemap generated successfully!');
+
+}
+
+
+
+
