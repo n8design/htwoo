@@ -7,6 +7,10 @@ theme: 'h2o'
 relativeURLs: true
 canonifyURLs: true
 
+disableKinds:
+- taxonomy
+- term
+
 params:
   seoTitle: 'hTWOo by N8D'
   siteDescription: "hTWOo is a set of Fluent Design UI components and utilities resulting from an effort to converge the set of HTML and ReactJS based component libraries."
