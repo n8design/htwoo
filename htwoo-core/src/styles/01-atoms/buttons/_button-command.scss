@@ -1,45 +1,66 @@
 @use "../../00-base/colors/colors";
 @use "button-action";
 
-.hoo-buttoncmd{
+div.hoo-buttoncmd {
 	position: relative;
-	
 
-	button.hoo-buttoncmd{
+	display: inline-flex;
+
+	&:hover {
+
+		button.hoo-buttoncmd {
+			background-color: colors.$neutral-100;
+		}
+
+	}
+
+	button.hoo-buttoncmd {
 		@extend .hoo-buttonaction;
 		cursor: pointer;
-		.hoo-buttonchevron{
+		background-color: inherit;
+
+		.hoo-buttonchevron {
 			// color: $buttonText;
 			color: colors.$neutral-700;
 		}
 
-		& > *{
-			pointer-events: none;
+		// &>* {
+		// 	pointer-events: none;
+		// }
+
+		&:hover {
+			background-color: colors.$neutral-100;
 		}
-		&:focus{
+
+		&:active {
+			background-color: colors.$neutral-200;
+		}
+
+		&:focus {
 			outline: none;
 		}
 	}
 
 
-	.hoo-buttonflyout{
+	.hoo-buttonflyout {
 		position: absolute;
 		top: 100%;
 		left: 0;
 
 		display: none;
 
-		& > *{
+		&>* {
 			pointer-events: all;
 		}
 
-		.hoo-buttoncontext{
+		.hoo-buttoncontext {
 			display: flex;
 		}
 	}
 
-	&.show-flyout{
-		& > .hoo-buttonflyout{
+	&:hover,
+	&.show-flyout {
+		&>.hoo-buttonflyout {
 			display: flex;
 		}
 	}

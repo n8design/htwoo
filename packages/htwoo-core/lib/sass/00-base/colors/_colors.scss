@@ -353,6 +353,39 @@ $neutral-700: #{var(--neutralPrimary)};
 $neutral-800: #{var(--neutralDark)};
 $neutral-900: #{var(--black)};
 
+// base colors
+$green-300: #{var(--greenLight)};
+$green-600: #{var(--green)};
+$green-800: #{var(--greenDark)};
+
+$blue-300: #{var(--blueLight)};
+$blue-600: #{var(--blue)};
+$blue-700: #{var(--blueMid)};
+$blue-800: #{var(--blueDark)};
+
+$red-600: #{var(--red)};
+$red-800: #{var(--redDark)};
+
+$magenta-300: #{var(--magentaLight)};
+$magenta-600: #{var(--magenta)};
+$magenta-800: #{var(--magentaDark)};
+
+$orange-300: #{var(--orangeLight)};
+$orange-600: #{var(--orange)};
+$orange-800: #{var(--orangeDark)};
+
+$purple-300: #{var(--purpleLight)};
+$purple-600: #{var(--purple)};
+$purple-800: #{var(--purpleDark)};
+
+$teal-300: #{var(--tealLight)};
+$teal-600: #{var(--teal)};
+$teal-800: #{var(--tealDark)};
+
+$yellow-300: #{var(--yellowLight)};
+$yellow-600: #{var(--yellow)};
+$yellow-800: #{var(--yellowDark)};
+
 // Statusbar Color
 $info-background: rgb(245,245,245);
 $info-border: rgb(209,209,209);
