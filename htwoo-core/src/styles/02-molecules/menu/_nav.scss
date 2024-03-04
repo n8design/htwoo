@@ -29,10 +29,6 @@
 		}
 	}
 
-	.hoo-navitem-link{
-		display: inline-block;
-	}
-
 	&:hover{
 		background-color: colors.$buttonBackgroundHovered;
 	}
@@ -79,6 +75,7 @@
 
 .hoo-navitem-link{
 	display: block;
+	width: 100%;
 
 	box-sizing: border-box;
 	padding-top: core.px2rem(math.div(44px - 17px,2));
