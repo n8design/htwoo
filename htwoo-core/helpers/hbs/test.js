@@ -52,6 +52,42 @@ module.exports = function (Handlebars) {
     }
   });
 
+  Handlebars.registerHelper('h1Title', function (value) {
+
+    if (value) {
+
+      console.log(value);
+
+      console.log('ATOMS', value.indexOf('atoms') !== -1);
+      console.log('Molecule', value.indexOf('molecule') !== -1)
+      console.log('ORGANS', value.indexOf('organsism') !== -1)
+      if(value.indexOf('pages') !== -1){
+        return "";
+      }
+
+      let seoJunks = value.split('-');
+      let seoTitle = "";
+
+      if (seoJunks.length > 1) {
+        
+        let firstEntry = seoJunks.shift();
+        
+        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1)+' - ';
+        
+        seoJunks.forEach(element => {
+
+          seoTitle += ' '+element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+
+        });
+        
+        return `<h1>${seoTitle}</h1>`;
+
+      }
+      // let seoTitle = value.split('-');
+      return seoTitle;
+    }
+  });
+
   Handlebars.registerHelper('seoKeyword', function (value) {
 
     if (value) {
