@@ -17,3 +17,8 @@ body{
     color: var(--bodyText);
     margin: 0;
 }
+button[class^='hoo'],
+input[class^='hoo'],
+textarea[class^='hoo']{
+    font-family: inherit;
+}
