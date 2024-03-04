@@ -7,7 +7,7 @@ Changes in hTWOo core as they happen
 ### Bug Fixes
 
 * fix [#113](https://github.com/n8design/htwoo/issues/113): Update to navitem-link length ([7285d31](https://github.com/n8design/htwoo/pull/116/commits/7285d316a047c6fda97585bf1046bd19b35074f4))
-* fix [#111](https://github.com/n8design/htwoo/issues/113): renamed error field ([aefdaec]https://github.com/n8design/htwoo/pull/116/commits/aefdaec4514574b87a86fa8b5f9f3f3605fb1503)
+* fix [#111](https://github.com/n8design/htwoo/issues/113): renamed error field ([aefdaec](https://github.com/n8design/htwoo/pull/116/commits/aefdaec4514574b87a86fa8b5f9f3f3605fb1503))
 * fix [#110](https://github.com/n8design/htwoo/issues/110): font family inheritance update for button, input and textareas ([71d1fdb](https://github.com/n8design/htwoo/pull/116/commits/71d1fdb9a3c77aeba03b759030ec2366d06ec42f))
 
 ## [2.3.1](https://github.com/n8design/htwoo/commit/) (2023-12-02)
