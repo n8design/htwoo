@@ -56,11 +56,6 @@ module.exports = function (Handlebars) {
 
     if (value) {
 
-      console.log(value);
-
-      console.log('ATOMS', value.indexOf('atoms') !== -1);
-      console.log('Molecule', value.indexOf('molecule') !== -1)
-      console.log('ORGANS', value.indexOf('organsism') !== -1)
       if(value.indexOf('pages') !== -1){
         return "";
       }
