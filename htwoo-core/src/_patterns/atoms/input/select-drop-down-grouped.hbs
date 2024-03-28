@@ -1,4 +1,4 @@
-{{#select-options}}
+{{#select-options-grouped}}
 <ul class="hoo-select-dropdown {{ this.ddToggleClass }}">
     {{#each options }}
     {{#if groupname }}
@@ -16,9 +16,8 @@
         </ul>
     </li>
     {{ else }}
-    <li data-value="{{ key }}" class="hoo-option {{ disabled }}">{{ value }}</li>
+    <li data-value="{{ this.key }}" class="hoo-option {{ disabled }}">{{ this.value }}</li>
     {{/if}}
     {{/each }}
 </ul>
-{{/select-options}}
-
+{{/select-options-grouped}}
