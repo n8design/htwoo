@@ -15,6 +15,9 @@
 
 	@include elevation.elevation(4);
 	z-index: 400;
+	.hoo-buttoncmd{
+		width: 100%;
+	}
 	.hoo-buttonaction{
 		width: 100%;
 		height: auto;
