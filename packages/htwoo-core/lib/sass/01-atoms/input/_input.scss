@@ -21,7 +21,7 @@
 	font-family: inherit;
 	// general focus
 	&:focus {
-		line-height: calc(1.9rem - 2px);
+		line-height: calc(core.px2rem(30px) - 2px);
 
 		padding: 0 core.px2rem(7px);
 

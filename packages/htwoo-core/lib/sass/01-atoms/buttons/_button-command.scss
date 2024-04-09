@@ -8,7 +8,7 @@ div.hoo-buttoncmd {
 
 	&:hover {
 
-		button.hoo-buttoncmd {
+		&> button.hoo-buttoncmd {
 			background-color: colors.$neutral-100;
 		}
 
