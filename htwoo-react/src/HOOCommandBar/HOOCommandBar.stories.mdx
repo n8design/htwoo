@@ -37,8 +37,11 @@ export const Template = (args) => {
 <Canvas>
   <Story 
     name="Basic"
-    args = { 
-      { commandItems: options, hasOverflow: false }
+    args={
+      (function(){
+        symset.initSymbols();
+        return { commandItems: options, hasOverflow: false };
+      })()      
     }>
     {Template.bind({})}
   </Story>
@@ -48,8 +51,11 @@ export const Template = (args) => {
 <Canvas>
   <Story 
     name="Overflow"
-    args = { 
-      { commandItems: options, hasOverflow: true }
+    args={
+      (function(){
+        symset.initSymbols();
+        return { commandItems: options, hasOverflow: true };
+      })()      
     }>
     {Template.bind({})}
   </Story>
@@ -59,8 +65,11 @@ export const Template = (args) => {
 <Canvas>
   <Story 
     name="Extending"
-    args = { 
-      { commandItems: options, hasOverflow: true, rootElementAttributes: { style: { backgroundColor: "mintcream" } } }
+    args={
+      (function(){
+        symset.initSymbols();
+        return { commandItems: options, hasOverflow: true, rootElementAttributes: { style: { backgroundColor: "mintcream" } } };
+      })()      
     }>
     {Template.bind({})}
   </Story>
