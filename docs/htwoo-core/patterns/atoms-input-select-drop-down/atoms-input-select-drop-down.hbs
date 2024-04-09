@@ -16,8 +16,9 @@
         </ul>
     </li>
     {{ else }}
-    <li data-value="{{ value }}" class="hoo-option {{ disabled }}">{{ value }}</li>
+    <li data-value="{{ key }}" class="hoo-option {{ disabled }}">{{ value }}</li>
     {{/if}}
     {{/each }}
 </ul>
 {{/select-options}}
+
