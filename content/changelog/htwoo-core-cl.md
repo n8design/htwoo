@@ -6,7 +6,7 @@ Changes in hTWOo core as they happen
 
 ### Features
 
-* Added <h1> title to rendered pages ([6ced6d4](https://github.com/n8design/htwoo/commit/6ced6d47c3bf46c7d24bff5f6250050d2700fca6))
+* Added &lt;h1&gt; title to rendered pages ([6ced6d4](https://github.com/n8design/htwoo/commit/6ced6d47c3bf46c7d24bff5f6250050d2700fca6))
 
 
 ### Bug Fixes
@@ -14,7 +14,7 @@ Changes in hTWOo core as they happen
 * Additional update to issue 104 ([bd459a4](https://github.com/n8design/htwoo/commit/bd459a47b9f71781d9e8803715e725aaf14a971e))
 * **css:** [#124](https://github.com/n8design/htwoo/issues/124) Updated width on cmdbar overflow ([4c00657](https://github.com/n8design/htwoo/commit/4c00657f31ef39530aeab175e5b968823d75f8a0))
 * **css:** [#125](https://github.com/n8design/htwoo/issues/125) - Updated font-weight on table headers ([07ba1f7](https://github.com/n8design/htwoo/commit/07ba1f71d3e6db65411b82b7efc7894caddbfa3c))
-* **HTML,SVG:** Added <title> field to label svg icons properly ([8becca5](https://github.com/n8design/htwoo/commit/8becca5aaf52a5ac64008e9aed740cd9e20ce47b))
+* **HTML,SVG:** Added &lt;title&gt; field to label svg icons properly ([8becca5](https://github.com/n8design/htwoo/commit/8becca5aaf52a5ac64008e9aed740cd9e20ce47b))
 * **html:** [#123](https://github.com/n8design/htwoo/issues/123) revert back from menu to regular div and added additional role ([ca034c6](https://github.com/n8design/htwoo/commit/ca034c64586f5da2e42daca30497c75b8bf3e5a7))
 * **html:** Changed select drop down and group ([d00b664](https://github.com/n8design/htwoo/commit/d00b66445d5a51bd054a30a1ba354b173dd0e5dd))
 
