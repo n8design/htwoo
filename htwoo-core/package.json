@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "hoo:buildlib": "gulp build:lib",
     "hoo:exportpatterns": "gulp build:pllib",
     "update:docs": "./docs.sh",
-    "postversion": "git tag htwoo-core-v$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -p conventionalcommits -t htwoo-core- --commit-path . -s",
+    "postversion": "git tag htwoo-core-v$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -p conventionalcommits -t htwoo-core- --commit-path . -s -u --config conventional-changelog.json",
     "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
     "start": "run-p gulp:serve pl:serve"
   },
@@ -45,7 +45,8 @@
     "@pattern-lab/cli": "^6.0.1",
     "@pattern-lab/core": "^6.0.1",
     "@pattern-lab/engine-handlebars": "^6.0.0",
-    "@pattern-lab/uikit-workshop": "^6.0.3"
+    "@pattern-lab/uikit-workshop": "^6.0.3",
+    "conventional-changelog": "^5.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",

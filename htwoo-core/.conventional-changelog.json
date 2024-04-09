@@ -1,0 +1,39 @@
+{
+  "header": "# hTWOo Core - Changelog\n\nChanges in hTWOo core as they happen\n",
+  "types": [
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes"
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    },
+    {
+      "type": "docs",
+      "hidden": true
+    },
+    {
+      "type": "style",
+      "hidden": true
+    },
+    {
+      "type": "refactor",
+      "section": "Refactoring"
+    },
+    {
+      "type": "perf",
+      "hidden": true
+    },
+    {
+      "type": "test",
+      "hidden": true
+    }
+  ],
+  "commitUrlFormat": "https://github.com/n8design/htwoo/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/n8design/htwoo/commit/{{hash}}"
+}
