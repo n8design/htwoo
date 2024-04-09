@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "hoo:buildlib": "gulp build:lib",
     "hoo:exportpatterns": "gulp build:pllib",
     "update:docs": "./docs.sh",
-    "postversion": "git tag htwoo-core-$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -p conventionalcommits -t htwoo-core- --commit-path . -s",
+    "postversion": "git tag htwoo-core-v$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -p conventionalcommits -t htwoo-core- --commit-path . -s",
     "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
     "start": "run-p gulp:serve pl:serve"
   },

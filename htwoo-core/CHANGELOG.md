@@ -1,3 +1,5 @@
+## [2.4.0](https://github.com/n8design/htwoo/compare/htwoo-core-2.4.0...htwoo-core-2.4.0) (2024-04-09)
+
 # hTWOo Core - Changelog
 
 Changes in hTWOo core as they happen
