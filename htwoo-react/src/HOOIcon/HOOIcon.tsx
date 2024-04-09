@@ -16,6 +16,10 @@ export interface IHOOIconProps extends IHOOStandardProps {
    */
   iconSVG?: string;
   /**
+   * (Optional) Title applied to SVG tag to provide hover description for icon. Only works in conjunction with iconName
+   */
+  title?: string;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
   rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
@@ -43,7 +47,7 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
-      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName);
+      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName, this.props.title || "");
       return (
         <>
           <span {...this._rootProps}

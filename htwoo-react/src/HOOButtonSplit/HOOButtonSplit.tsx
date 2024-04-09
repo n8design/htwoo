@@ -25,6 +25,10 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
    * (Optional) icon name, if omitted, icon-arrow-down will be used.
    */
   rightIconName?: string;
+  /**
+   * (Optional) icon title
+   */
+  rightIconTitle?: string;
   /** 
   * (Optional) Flyout menu items click event, returns mouse event and HOOFlyoutMenuItem
   */
@@ -79,7 +83,7 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
       const showFlyoutClass = this.state.showFlyout ? "show-flyout " : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${showFlyoutClass}${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${showFlyoutClass}`;
       const iconName = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
-      const iconSVG = symset.Icon(iconName);
+      const iconSVG = symset.Icon(iconName, this.props.rightIconTitle || "");
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} aria-haspopup="true" className={className}>
           <button className="hoo-buttonsplit-standard" aria-haspopup="true">
