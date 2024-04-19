@@ -35,9 +35,17 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    */
   iconName?: string;
   /**
+   * (Optional) button icon title
+   */
+  iconTitle?: string;
+  /**
    * (Optional) button iconName for right side.
    */
   iconRight?: string;
+  /**
+   * (Optional) button icon title for right side.
+   */
+  iconRightTitle?: string;
   /**
    * (Optional) For Hyperlink style buttons only, link reference.
    */
@@ -95,7 +103,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
   public render(): React.ReactElement<IHOOButtonProps> {
     if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")}`;
-    const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName) : ((this.props.iconRight) ? symset.Icon(this.props.iconRight) : null);
+    const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName, this.props.iconTitle || "") : ((this.props.iconRight) ? symset.Icon(this.props.iconRight, this.props.iconRightTitle) : null);
     const iconName = this.props.iconName || this.props.iconRight || null;
     try {
       return (
