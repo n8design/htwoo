@@ -4,7 +4,7 @@ import { Meta } from "@storybook/addon-docs";
 
 # Using Dialogs in SPFx
 
->As of HTWOO version 2.1.x all dialogs are not rendered using the HTML Dialog element and therefore this guidance is not needed. Dialogs can be rendered inline and will overlay the page properly.
+>As of HTWOO version 2.1.x all dialogs are rendered using the HTML Dialog element and therefore this guidance is not needed. Dialogs can be rendered inline and will overlay the page properly.
 
 Because of how SharePoint applies styles to it's UI, we cannot consistently, and in some cases at all, support CSS that will allow dialogs added inline to the DOM where an extension or webpart is being rendered to properly overlay the SharePoint page. The safest work around for this issue, although a subtil use of DOM manipulation, is to add a DIV element to the bottom of the BODY of the page to then render and apply styling that will overlay the page successfully.  The following is a bit of sample code that provides a generic way to implement that DIV element and what's required to have it use the styling properly.
 
