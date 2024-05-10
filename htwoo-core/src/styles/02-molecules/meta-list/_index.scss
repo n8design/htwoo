@@ -1,0 +1,11 @@
+@use "../../00-base/mixin/lists.mixin";
+
+.hoo-meta-list{
+	@extend %listReset;
+
+	display: flex;
+	flex-direction: row;
+
+	flex-wrap: wrap;
+	gap: .35rem .5rem;
+}

@@ -1,3 +1,8 @@
-<div class="hoo-cardimage">
-<img src="{{card-image-url}}" width="320" height="180" alt="">
-</div>
+{{#card.media }}
+<figure class="hoo-cardimage">
+    <img src="{{image}}" width="320" height="180" alt="">
+    {{#if caption}}
+    <figcaption>{{ caption}}</figcaption>
+    {{/if}}
+</figure>
+{{/card.media}}

@@ -1,0 +1,175 @@
+{
+    "items": [
+        {
+            "msftName": "blueLight",
+            "msftNameLong": "Blue Light",
+            "colorValue": "var(--blueLight)",
+            "designToken": "300",
+            "SASSVariable": "$blue-300"
+        },
+        {
+            "msftName": "blue",
+            "msftNameLong": "blue",
+            "colorValue": "var(--blue)",
+            "designToken": "600",
+            "SASSVariable": "$blue-600"
+        },
+        {
+            "msftName": "blueMid",
+            "msftNameLong": "Blue Mid",
+            "colorValue": "var(--blueMid)",
+            "designToken": "700",
+            "SASSVariable": "$blue-700"
+        },
+        {
+            "msftName": "blueDark",
+            "msftNameLong": "Blue Dark",
+            "colorValue": "var(--blueDark)",
+            "designToken": "800",
+            "SASSVariable": "$blue-800"
+        },
+        {
+            "msftName": "greenLight",
+            "msftNameLong": "greenLight",
+            "colorValue": "var(--greenLight)",
+            "designToken": "300",
+            "SASSVariable": "$green-300"
+        },
+        {
+            "msftName": "green",
+            "msftNameLong": "green",
+            "colorValue": "var(--green)",
+            "designToken": "600",
+            "SASSVariable": "$green-600"
+        },
+        {
+            "msftName": "greenDark",
+            "msftNameLong": "greenDark",
+            "colorValue": "var(--greenDark)",
+            "designToken": "800",
+            "SASSVariable": "$green-800"
+        },
+        {
+            "msftName": "magentaLight",
+            "msftNameLong": "magentaLight",
+            "colorValue": "var(--magentaLight)",
+            "designToken": "300",
+            "SASSVariable": "$magenta-300"
+        },
+        {
+            "msftName": "magenta",
+            "msftNameLong": "magenta",
+            "colorValue": "var(--magenta)",
+            "designToken": "600",
+            "SASSVariable": "$magenta-600"
+        },
+        {
+            "msftName": "magentaDark",
+            "msftNameLong": "magentaDark",
+            "colorValue": "var(--magentaDark)",
+            "designToken": "800",
+            "SASSVariable": "$magenta-800"
+        },
+        {
+            "msftName": "orangeLighter",
+            "msftNameLong": "orangeLighter",
+            "colorValue": "var(--orangeLighter)",
+            "designToken": "200",
+            "SASSVariable": "$orange-200"
+        },
+        {
+            "msftName": "orangeLight",
+            "msftNameLong": "orangeLight",
+            "colorValue": "var(--orangeLight)",
+            "designToken": "300",
+            "SASSVariable": "$orange-300"
+        },
+        {
+            "msftName": "orange",
+            "msftNameLong": "orange",
+            "colorValue": "var(--orange)",
+            "designToken": "600",
+            "SASSVariable": "$orange-600"
+        },
+        {
+            "msftName": "purpleLight",
+            "msftNameLong": "purpleLight",
+            "colorValue": "var(--purpleLight)",
+            "designToken": "300",
+            "SASSVariable": "$purple-300"
+        },
+        {
+            "msftName": "purple",
+            "msftNameLong": "purple",
+            "colorValue": "var(--purple)",
+            "designToken": "600",
+            "SASSVariable": "$purple-600"
+        },
+        {
+            "msftName": "purpleDark",
+            "msftNameLong": "purpleDark",
+            "colorValue": "var(--purpleDark)",
+            "designToken": "800",
+            "SASSVariable": "$purple-800"
+        },
+        {
+            "msftName": "red",
+            "msftNameLong": "red",
+            "colorValue": "var(--red)",
+            "designToken": "600",
+            "SASSVariable": "$red-600"
+        },
+        {
+            "msftName": "redDark",
+            "msftNameLong": "redDark",
+            "colorValue": "var(--redDark)",
+            "designToken": "800",
+            "SASSVariable": "$red-800"
+        },
+        {
+            "msftName": "tealLight",
+            "msftNameLong": "tealLight",
+            "colorValue": "var(--tealLight)",
+            "designToken": "300",
+            "SASSVariable": "$teal-300"
+        },
+        {
+            "msftName": "teal",
+            "msftNameLong": "teal",
+            "colorValue": "var(--teal)",
+            "designToken": "600",
+            "SASSVariable": "$teal-600"
+        },
+        {
+            "msftName": "tealDark",
+            "msftNameLong": "tealDark",
+            "colorValue": "var(--tealDark)",
+            "designToken": "800",
+            "SASSVariable": "$teal-800"
+        },
+        {
+            "msftName": "yellowLight",
+            "msftNameLong": "yellowLight",
+            "colorValue": "var(--yellowLight)",
+            "designToken": "300",
+            "SASSVariable": "$yellow-300"
+        },
+        {
+            "msftName": "yellow",
+            "msftNameLong": "yellow",
+            "colorValue": "var(--yellow)",
+            "designToken": "600",
+            "SASSVariable": "$yellow-600"
+        },
+        {
+            "msftName": "yellowDark",
+            "msftNameLong": "yellowDark",
+            "colorValue": "var(--yellowDark)",
+            "designToken": "800",
+            "SASSVariable": "$yellow-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

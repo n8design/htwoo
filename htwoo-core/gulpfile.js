@@ -15,9 +15,6 @@ const rollup = require('rollup');
 
 const sass = require('gulp-sass')(require('sass'));
 
-console.log(require.main.paths);
-console.log(sass);
-
 
 const baseWatch = async (cb) => {
 
@@ -37,8 +34,6 @@ const docs = (cb) => {
 
 }
 
-
-
 const styles = () => {
 
     console.log(sass);
@@ -54,7 +49,7 @@ const styles = () => {
                 includePaths: ['.'],
                 disableDeprecationWarnings: true
             }))
-            .on('error', sass.logError))
+                .on('error', sass.logError))
         .pipe(
             $.if(isProd, sass.sync({
                 outputStyle: 'compressed',
@@ -62,7 +57,7 @@ const styles = () => {
                 includePaths: ['.'],
                 disableDeprecationWarnings: true
             }))
-            .on('error', sass.logError))
+                .on('error', sass.logError))
         .pipe($.postcss([
             autoprefixer()
         ]))
@@ -125,6 +120,14 @@ const createLibComponents = () => {
 
 }
 
+const createHooMin = () => {
+
+    return src('./src/css/htwoo.min.css')
+    .pipe(dest('../packages/htwoo-core/dist/css/'))
+
+}
+
+
 const movePatterns = (cb) => {
 
     src(['src/_data/*+/*'])
@@ -136,12 +139,17 @@ const movePatterns = (cb) => {
             dest('../packages/htwoo-patterns/_patterns/')
         )
 
+    src(['src/images/**/*'])
+        .pipe(
+            dest('../packages/htwoo-patterns/images/')
+        )
+
     cb();
 
 }
 
 const serve = parallel(styles, pluginCSSOverride, baseWatch);
-const buildLib = series(createLibJS, createLibSass, createLibComponents, createLibThemes);
+const buildLib = series(createLibJS, createLibSass, createLibComponents, createLibThemes, createHooMin);
 const buildPLRepo = series(movePatterns);
 
 exports["build:lib"] = buildLib;

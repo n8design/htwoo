@@ -1,4 +1,4 @@
-define(['exports'], function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
     const elemPivotBar = '.hoo-pivotbar';
     const elemPivotButton = '.hoo-button-pivot';
@@ -41,6 +41,4 @@ define(['exports'], function (exports) { 'use strict';
 
     exports.initPivot = initPivot;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-});
+}));

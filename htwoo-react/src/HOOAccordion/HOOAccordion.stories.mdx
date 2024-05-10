@@ -1,0 +1,74 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { symset } from '../SymbolSet';
+import HOOAccordion from './HOOAccordion';
+import HOOLabel from '../HOOLabel';
+
+<Meta title="Components/Accordion/HOOAccordion" component={HOOAccordion} />
+
+# HOOAccordion
+
+Accordion element that expands when the user clicks on the header. If the icon is present it is rotated 90deg when item is expanded.
+
+## Arguments
+
+<ArgTypes of={HOOAccordion} />
+
+export const Template = (args) => <HOOAccordion {...args} />;
+export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel label="My Child Content"/></HOOAccordion>;
+
+## Simple
+<Canvas>
+  <Story 
+    name="Simple"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details."};
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Content Children
+<Canvas>
+  <Story 
+    name="Content w/ Children Elements"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right" }
+      })()
+    }>
+    {TemplateChildren.bind({})}
+  </Story>
+</Canvas>
+
+## No Icon
+<Canvas>
+  <Story 
+    name="No Icon"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", content: "My Accordion details."}
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details.", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

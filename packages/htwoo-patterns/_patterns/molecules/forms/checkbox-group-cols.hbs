@@ -1,0 +1,9 @@
+{{#checkbox-group-cols }}
+<menu class="hoo-checkbox-group" role="group" tabindex="0" {{#if cols}}style="{{#if cols.desktop}}--cols-desk: {{ cols.desktop }};{{/if}} {{#if cols.mobile}}--cols-mobile: {{ cols.mobile }}{{/if}}"{{/if}}>
+    {{#each items }}
+    <li tabindex="-1">
+        {{>atoms-checkbox this }}
+    </li>
+    {{/each}}
+</menu>
+{{/checkbox-group-cols}}

@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.htwoo = global.htwoo || {}, global.htwoo.select = {})));
-}(this, (function (exports) { 'use strict';
+})(this, (function (exports) { 'use strict';
 
   // Origin 1: https://24ways.org/2019/making-a-better-custom-select-element/
   // Origin 2: https://css-tricks.com/making-a-better-custom-select-element/
@@ -306,6 +306,4 @@
 
   exports.ariaSelect = ariaSelect;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+}));

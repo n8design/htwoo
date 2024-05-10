@@ -1,6 +1,6 @@
 ---
-title: Split Primary
-order: 99
+title: Primary Split Button
+order: 20
 ---
 
 ### SCSS Imports

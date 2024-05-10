@@ -1,0 +1,70 @@
+{
+    "items": [
+        {
+            "msftName": "themeLighterAlt",
+            "msftNameLong": "Theme Lighter Alt",
+            "colorValue": "var(--themeLighterAlt)",
+            "designToken": "100",
+            "SASSVariable": "$theme-100"
+        },
+        {
+            "msftName": "themeLighter",
+            "msftNameLong": "Theme Lighter",
+            "colorValue": "var(--themeLighter)",
+            "designToken": "200",
+            "SASSVariable": "$theme-200"
+        },
+        {
+            "msftName": "themeLight",
+            "msftNameLong": "Theme Light",
+            "colorValue": "var(--themeLight)",
+            "designToken": "300",
+            "SASSVariable": "$theme-300"
+        },
+        {
+            "msftName": "themeTertiary",
+            "msftNameLong": "Theme Tertiary",
+            "colorValue": "var(--themeTertiary)",
+            "designToken": "400",
+            "SASSVariable": "$theme-400"
+        },
+        {
+            "msftName": "themeSecondary",
+            "msftNameLong": "Theme Secondary",
+            "colorValue": "var(--themeSecondary)",
+            "designToken": "500",
+            "SASSVariable": "$theme-500"
+        },
+        {
+            "msftName": "themePrimary",
+            "msftNameLong": "Theme Primary",
+            "colorValue": "var(--themePrimary)",
+            "designToken": "600",
+            "SASSVariable": "$theme-600"
+        },
+        {
+            "msftName": "themeDarkAlt",
+            "msftNameLong": "Theme Dark Alt",
+            "colorValue": "var(--themeDarkAlt)",
+            "designToken": "700",
+            "SASSVariable": "$theme-700"
+        },
+        {
+            "msftName": "themeDark",
+            "msftNameLong": "Theme Dark",
+            "colorValue": "var(--themeDark)",
+            "designToken": "800",
+            "SASSVariable": "$theme-800"
+        },
+        {
+            "msftName": "themeDarker",
+            "msftNameLong": "Theme Darker",
+            "colorValue": "var(--themeDarker)",
+            "designToken": "900",
+            "SASSVariable": "$theme-900"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.htwoo = global.htwoo || {}, global.htwoo.table = {})));
-}(this, (function (exports) { 'use strict';
+})(this, (function (exports) { 'use strict';
 
     const collapseAndExpand = (event) => {
 
@@ -149,6 +149,4 @@
 
     exports.initTables = initTables;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+}));

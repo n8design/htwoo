@@ -1,4 +1,4 @@
-define(['exports'], function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
     const overflowItems = [];
     const defaultOffset = 40; // Default offset for overflow width
@@ -43,7 +43,6 @@ define(['exports'], function (exports) { 'use strict';
             }
         }
 
-        // if 
         if(overflowControl.children.length !== 0){
         
             var buttonEnabled = overflowControl.closest('.hoo-buttonicon-overflow');
@@ -185,6 +184,4 @@ define(['exports'], function (exports) { 'use strict';
 
     exports.init = init;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-});
+}));

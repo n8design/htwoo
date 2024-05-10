@@ -352,3 +352,57 @@ $neutral-600: #{var(--neutralPrimaryAlt)};
 $neutral-700: #{var(--neutralPrimary)};
 $neutral-800: #{var(--neutralDark)};
 $neutral-900: #{var(--black)};
+
+// base colors
+$green-300: #{var(--greenLight)};
+$green-600: #{var(--green)};
+$green-800: #{var(--greenDark)};
+
+$blue-300: #{var(--blueLight)};
+$blue-600: #{var(--blue)};
+$blue-700: #{var(--blueMid)};
+$blue-800: #{var(--blueDark)};
+
+$red-600: #{var(--red)};
+$red-800: #{var(--redDark)};
+
+$magenta-300: #{var(--magentaLight)};
+$magenta-600: #{var(--magenta)};
+$magenta-800: #{var(--magentaDark)};
+
+$orange-300: #{var(--orangeLight)};
+$orange-600: #{var(--orange)};
+$orange-800: #{var(--orangeDark)};
+
+$purple-300: #{var(--purpleLight)};
+$purple-600: #{var(--purple)};
+$purple-800: #{var(--purpleDark)};
+
+$teal-300: #{var(--tealLight)};
+$teal-600: #{var(--teal)};
+$teal-800: #{var(--tealDark)};
+
+$yellow-300: #{var(--yellowLight)};
+$yellow-600: #{var(--yellow)};
+$yellow-800: #{var(--yellowDark)};
+
+// Statusbar Color
+$info-background: rgb(245,245,245);
+$info-border: rgb(209,209,209);
+$info-text: rgb(36,36,36);
+$info-icon: rgb(97,97,97);
+
+$warning-background: rgb(255,249,245);
+$warning-border: rgb(253,207,180);
+$warning-text: rgb(36,36,36);
+$warning-icon: rgb(188,75,9);
+
+$error-background: rgb(253,243,244);
+$error-border: rgb(238,172,178);
+$error-text: rgb(36,36,36);
+$error-icon: rgb(177,14,28);
+
+$success-background: rgb(241,250,241);
+$success-border: rgb(159,216,159);
+$success-text: rgb(36,36,36);
+$success-icon: rgb(14,112,14);

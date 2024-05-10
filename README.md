@@ -37,6 +37,10 @@ The hTWOo style guide, documentation and building platform is based on [patternl
 
 > We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
+## Project Configuration
+
+See the full [project configuration](./project.conf.md).
+
 ## Engage
 
 Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
@@ -45,4 +49,4 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
 **Contributors:** You ❤️
 
-[logo]: https://lab.n8d.studio/htwoo/assets/htwoo.jpg "Be like water and adapt fast"
+[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"

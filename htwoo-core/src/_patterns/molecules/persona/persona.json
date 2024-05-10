@@ -1,5 +1,9 @@
 {
-    "mugshot": "../../images//mug-shots/female-mugshot-001.jpg",
+    "avatar":{
+        "size": 24,
+        "mugshot": "../../images//mug-shots/female-mugshot-001.jpg"
+    },    
+    "size": 24,
     "status": "dnd",
     "title": "Online",
     "name": "Jane Doeminica",

@@ -1,0 +1,58 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOTime from './HOOTime';
+
+<Meta title="Components/Inputs/HOOTime" component={HOOTime} />
+
+# HOOTime
+
+
+## Arguments
+
+<ArgTypes of={HOOTime} />
+
+export const Template = (args) => <HOOTime {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { value: (new Date()).toLocaleDateString() }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## With Min/Max values set
+<Canvas>
+  <Story 
+    name="Min/Max Values"
+    args = {
+      { value: (new Date()).toLocaleDateString(), minValue: "00:00:00", maxValue: "23:59:59" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+<Canvas>
+  <Story 
+    name="Disabled"
+    args = { 
+      { value: (new Date()).toLocaleDateString(), disabled: true }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { value: (new Date()).toLocaleDateString(), rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

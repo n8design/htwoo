@@ -1,11 +1,14 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-checkbox{
 	position: absolute;
 
 	opacity: 0;
 
 	& + label{
-		font-size: px2rem(14px);
-		line-height: px2rem(20px);
+		font-size: core.px2rem(16px);
+		line-height: core.px2rem(20px);
 
 		position: relative;
 		top: 2px;
@@ -26,9 +29,9 @@
 		justify-content: center;
 
 		box-sizing: border-box;
-		width: px2rem(20px);
-		height: px2rem(20px);
-		margin-right: px2rem(10px);
+		width: core.px2rem(20px);
+		height: core.px2rem(20px);
+		margin-right: core.px2rem(10px);
 		flex-shrink: 0;
 
 		content: "";
@@ -37,7 +40,7 @@
 		transition-property: background, border, border-color;
 		vertical-align: text-top;
 
-		border: 1px $neutral-450 solid;
+		border: 1px colors.$neutral-450 solid;
 		border-radius: 2px;
 		background: white;
 
@@ -51,9 +54,9 @@
 
 	// Box hover
 	&:active + label:before{
-		border-color: $theme-800;
+		border-color: colors.$theme-800;
 		// background: #f35429;
-		background: $theme-800;
+		background: colors.$theme-800;
 	}
 
 	// Box focus
@@ -70,92 +73,92 @@
 	&:hover + label:after,
 	&:checked + label:after{
 		position: absolute;
-		top: px2rem(8px);
-		left: px2rem(5px);
+		top: core.px2rem(8px);
+		left: core.px2rem(5px);
 
-		width: px2rem(2px);
-		height: px2rem(2px);
+		width: core.px2rem(2px);
+		height: core.px2rem(2px);
 
 		content: "";
 		transform: rotate(45deg);
 
-		background: $inputIcon;
-		box-shadow: 2px 0 0 $inputIcon,
-		4px 0 0 $inputIcon,
-		4px -2px 0 $inputIcon,
-		4px -4px 0 $inputIcon,
-		4px -6px 0 $inputIcon,
-		4px -8px 0 $inputIcon;
+		background: colors.$inputIcon;
+		box-shadow: 2px 0 0 colors.$inputIcon,
+		4px 0 0 colors.$inputIcon,
+		4px -2px 0 colors.$inputIcon,
+		4px -4px 0 colors.$inputIcon,
+		4px -6px 0 colors.$inputIcon,
+		4px -8px 0 colors.$inputIcon;
 	}
 
 	&:checked + label:before{
-		background-color: $theme-600;
-		border-color: $theme-600;
+		background-color: colors.$theme-600;
+		border-color: colors.$theme-600;
 	}
 	&:checked:hover + label:before{
-		border-color: $theme-800;
-		background-color: $theme-800;
+		border-color: colors.$theme-800;
+		background-color: colors.$theme-800;
 	}
 
 	&:checked + label:after{
 		position: absolute;
-		top: px2rem(8px);
-		left: px2rem(5px);
+		top: core.px2rem(8px);
+		left: core.px2rem(5px);
 
-		width: px2rem(2px);
-		height: px2rem(2px);
+		width: core.px2rem(2px);
+		height: core.px2rem(2px);
 
 		content: "";
 		transform: rotate(45deg);
 
-		background: $neutral-000;
-		box-shadow: 2px 0 0 $neutral-000,
-		4px 0 0 $neutral-000,
-		4px -2px 0 $neutral-000,
-		4px -4px 0 $neutral-000,
-		4px -6px 0 $neutral-000,
-		4px -8px 0 $neutral-000;
+		background: colors.$neutral-000;
+		box-shadow: 2px 0 0 colors.$neutral-000,
+		4px 0 0 colors.$neutral-000,
+		4px -2px 0 colors.$neutral-000,
+		4px -4px 0 colors.$neutral-000,
+		4px -6px 0 colors.$neutral-000,
+		4px -8px 0 colors.$neutral-000;
 	}
 
 	&:not(:checked):hover + label:after{
 		position: absolute;
-		top: px2rem(8px);
-		left: px2rem(5px);
+		top: core.px2rem(8px);
+		left: core.px2rem(5px);
 
-		width: px2rem(2px);
-		height: px2rem(2px);
+		width: core.px2rem(2px);
+		height: core.px2rem(2px);
 
 		content: "";
 		transform: rotate(45deg);
 
-		background: $inputIcon;
-		background: $neutral-500;
-		box-shadow: 2px 0 0 $neutral-500,
-		4px 0 0 $neutral-500,
-		4px -2px 0 $neutral-500,
-		4px -4px 0 $neutral-500,
-		4px -6px 0 $neutral-500,
-		4px -8px 0 $neutral-500;
+		background: colors.$inputIcon;
+		background: colors.$neutral-500;
+		box-shadow: 2px 0 0 colors.$neutral-500,
+		4px 0 0 colors.$neutral-500,
+		4px -2px 0 colors.$neutral-500,
+		4px -4px 0 colors.$neutral-500,
+		4px -6px 0 colors.$neutral-500,
+		4px -8px 0 colors.$neutral-500;
 	}
 
 	&:active:hover + label:after{
 		position: absolute;
-		top: px2rem(8px);
-		left: px2rem(5px);
+		top: core.px2rem(8px);
+		left: core.px2rem(5px);
 
-		width: px2rem(2px);
-		height: px2rem(2px);
+		width: core.px2rem(2px);
+		height: core.px2rem(2px);
 
 		content: "";
 		transform: rotate(45deg);
 
-		background: $neutral-000;
-		box-shadow: 2px 0 0 $neutral-000,
-		4px 0 0 $neutral-000,
-		4px -2px 0 $neutral-000,
-		4px -4px 0 $neutral-000,
-		4px -6px 0 $neutral-000,
-		4px -8px 0 $neutral-000;
+		background: colors.$neutral-000;
+		box-shadow: 2px 0 0 colors.$neutral-000,
+		4px 0 0 colors.$neutral-000,
+		4px -2px 0 colors.$neutral-000,
+		4px -4px 0 colors.$neutral-000,
+		4px -6px 0 colors.$neutral-000,
+		4px -8px 0 colors.$neutral-000;
 	}
 
 	// Disabled state label.
@@ -163,7 +166,7 @@
 		cursor: auto;
 		pointer-events: none;
 
-		color: $neutral-400;
+		color: colors.$neutral-400;
 
 		& > *{
 			pointer-events: none;
@@ -180,14 +183,14 @@
 	&:disabled + label:before{
 		pointer-events: none;
 
-		border-color: $neutral-350;
+		border-color: colors.$neutral-350;
 		box-shadow: none;
 	}
 
 	&:disabled + label:after{
 		pointer-events: none;
 
-		border-color: $neutral-350;
+		border-color: colors.$neutral-350;
 		box-shadow: none;
 	}
 }

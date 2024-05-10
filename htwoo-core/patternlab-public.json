@@ -1,6 +1,7 @@
 {
   "cacheBust": true,
   "cleanPublic": true,
+  "defaultInitialViewportWidth": true,
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
   "ishControlsHide": {
@@ -122,7 +123,8 @@
   ],
   "engines": {
     "handlebars": {
-      "extend": "helpers/*.js"
+      "package": "@pattern-lab/engine-handlebars",
+      "extend": "helpers/hbs/*.js"
     }
   }
 }

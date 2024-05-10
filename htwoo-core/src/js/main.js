@@ -1,6 +1,5 @@
-import {
-    registerDialog
-} from './dialog.js';
+import { HOODialog }
+    from './dialog.js';
 
 import {
     ariaSelect
@@ -21,7 +20,6 @@ import {
 
 /** Overflow */
 import * as overflow from './overflow.js'
-
 
 const splitButtonReg = (classSelector, handleWith) => {
 
@@ -150,8 +148,6 @@ const registerAriaSelect = () => {
 
     let selects = document.querySelectorAll('.hoo-select');
 
-    // debugger;
-
     if (selects) {
         selects.forEach((item, idx) => {
             ariaSelect(item);
@@ -159,8 +155,21 @@ const registerAriaSelect = () => {
     }
 }
 
+const registerDialog = () => {
+
+    try{
+        let dialog1 = new HOODialog('#btn-dialog', '#myDialog', HOODialog.dialogType.DIALOG, { closer: '#closer-dlg' });
+        let dialog2 = new HOODialog('#btn-modal-dialog', '#myDialog-1', HOODialog.dialogType.MODAL, { closer: '#closer-mdl' });
+    } catch (e) {
+        void e;
+    }
+
+}
+
 
 const afterLoaded = () => {
+
+    registerDialog();
 
     splitButtonReg('.hoo-buttonsplit > .hoo-buttonsplit-carret', splitButtonClick);
     splitButtonReg('.hoo-buttonsplit-primary > .hoo-buttonsplit-carret', splitButtonClick);
@@ -175,7 +184,7 @@ const afterLoaded = () => {
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);
 
-    registerDialog();
+    // registerDialog();
     registerAriaSelect();
 
     /** Init Table Helper */

@@ -1,5 +1,6 @@
 ---
 title: Shimmer squared
+order: 10
 ---
 
 ### SCSS Imports

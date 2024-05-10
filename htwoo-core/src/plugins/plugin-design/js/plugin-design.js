@@ -61,12 +61,24 @@ var PluginUIExtension = {
   init: async function () {
 
     let logoImg = document.querySelector(".pl-c-logo__img");
+
     if (logoImg) {
       logoImg.style.height = "auto";
       logoImg.style.width = "100%";
       logoImg.style.maxHeight = "100%";
       logoImg.removeAttribute('height');
       logoImg.removeAttribute('width');
+    }
+
+    let matchMedia = window.matchMedia('screen and (max-width: 768px)');
+
+    if(matchMedia.matches) {
+      console.debug('entering match media');
+      logoImg.setAttribute('src', "styleguide/images/htwoo-logo-horizontal-sm.png");
+      logoImg.setAttribute('srcset', `styleguide/images/htwoo-logo-horizontal-sm.png 200w, ${logoImg.src} 800w`);
+      logoImg.setAttribute('sizes', "(max-width: 768px) 200px, 800px");  
+    } else {
+      console.debug('Do not match');
     }
 
     let logo = document.querySelector(".pl-c-logo");
@@ -97,6 +109,8 @@ var PluginUIExtension = {
     allThemeButtons.forEach((item) => {
       item.classList.remove('selected')
     });
+
+    console.debug(' ... Switching theme to'+ event.target.dataset.theme);
     // apply selected to current button
     event.target.classList.add('selected');
 
@@ -158,8 +172,9 @@ var PluginUIExtension = {
 
         }
 
-        var allThemeButtons = document.querySelectorAll('.n8d-themeswitch-btn');
+        const allThemeButtons = document.querySelectorAll('.n8d-themeswitch-btn');
         allThemeButtons.forEach((btn) => {
+          // console.debug(btn.dataset.theme);
           btn.addEventListener('click', this.switchTheme);
         })
 

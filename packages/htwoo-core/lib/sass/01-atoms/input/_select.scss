@@ -1,21 +1,44 @@
-.hoo-select{
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/lists.mixin";
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/elevation.mixin";
+@use "input";
+
+.hidden-visually {
+	position: absolute;
+
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+
+	width: 1px;
+	height: 1px;
+	padding: 0;
+
+	white-space: nowrap;
+
+	border: 0;
+
+	clip-path: inset(50%);
+}
+
+.hoo-select {
 	position: relative;
 
 	display: flex;
 
 	box-sizing: border-box;
 
-	border: 1px $neutral-500 solid;
+	border: 1px colors.$neutral-500 solid;
 	border-radius: 2px;
 	outline: 1px rgba(255, 255, 255, 0) solid;
 
 	align-items: center;
 
-	.hidden-visually{
+	.hidden-visually {
 		position: absolute;
 
 		overflow: hidden;
-		clip: rect(0,0,0,0);
+		clip: rect(0, 0, 0, 0);
 
 		width: 1px;
 		height: 1px;
@@ -28,17 +51,17 @@
 		clip-path: inset(50%);
 	}
 
-	&-text{
-		@include base-input;
+	&-text {
+		@include input.base-input;
 
-		width: calc(100% - #{px2rem(32px)});
+		width: calc(100% - #{core.px2rem(32px)});
 
 		border: none;
 	}
 
-	&-dropdown{
+	&-dropdown {
 		@extend %listReset;
-		@include elevation(4);
+		@include elevation.elevation(4);
 
 		display: flex;
 		flex-direction: column;
@@ -50,64 +73,79 @@
 		border-radius: 2px;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		background-color: $neutral-000;
+		background-color: colors.$neutral-000;
 
-		&.hidden-all{
+		max-height: 50vh;
+        overflow: hidden;
+
+		&.hidden-all {
 			display: none;
 		}
 
 	}
 
 	// for drop down user outside of a select box
-	& > .hoo-select-dropdown{
+	&>.hoo-select-dropdown {
 		position: absolute;
 		z-index: 100;
 		top: 100%;
 	}
 }
 
-.hoo-optgroup-items{
-	@extend .hoo-select-dropdown;
+.hoo-optgroup-items {
+	// @extend .hoo-select-dropdown;
+    padding-left: 0.5rem;
 
-	border-bottom: 1px $neutral-450 solid;
+	border-bottom: 1px colors.$neutral-450 solid;
 	border-radius: 0;
 	box-shadow: none;
 }
 
-.hoo-option{
+.hoo-select-dropdown{
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.hoo-option {
 	font-size: 14px;
 
 	display: flex;
 
-	height: px2rem(36px);
-	padding: 0 px2rem(8px);
+	height: core.px2rem(36px);
+	padding: 0 core.px2rem(8px);
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 
 	align-items: center;
 	flex-shrink: 0;
-	&.is-disabled{
+
+	&.is-disabled {
 		pointer-events: none;
 
-		color: $neutral-400;
+		color: colors.$neutral-400;
 	}
 
-	&:hover{
+	&:hover {
 		cursor: pointer;
 
-		background-color: $neutral-100;
+		background-color: colors.$neutral-100;
 	}
 }
 
-.hoo-optgroup-name{
+.hoo-optgroup-name {
 	font-weight: bold;
 
 	display: flex;
 
-	height: px2rem(36px);
-	padding: 0 px2rem(8px);
+	height: core.px2rem(36px);
+	padding: 0 core.px2rem(8px);
 
-	color: $theme-600;
+	color: colors.$theme-600;
+    background-color: colors.$neutral-000;
 
 	align-items: center;
+    position: sticky;
+    top: 0;
+    padding-bottom: 0.25rem;
 }

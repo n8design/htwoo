@@ -1,0 +1,89 @@
+{
+    "images": {
+        "squared": {
+            "imageUrl": "../../images/placeholders/1by1.png"
+        },
+        "16by9":{
+            "imageUrl": "../../images/placeholders/16by9.png"
+        },
+        "16by10":{
+            "imageUrl": "../../images/placeholders/16by10.png"
+        }
+    },
+    "mugshot": "../../images//mug-shots/astronaut-mugshot-001.jpg",
+    "player": {
+        "src": "../../images/videos/chemex.mp4"
+    },
+    "player-yt": {
+        "src": "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si=jNRCpQW6ukJ1Zunl&"
+    },
+    "player-vimeo": {
+        "src": "https://player.vimeo.com/video/307133457?h=7d6c76e92d"
+    },
+    "player-stream": {
+        "src": ""
+    },
+    "player-thumbnail": {
+        "url": "../../images/videos/chemex-thumb.webp",
+        "alt": "How to make the perfect coffee"
+    },
+    "overlay": {
+        "iconname": "icon-play-filled"
+    },
+    "thumbnail": {
+        "url": "../../images/videos/big-bug-bunny.webp",
+        "alt": "How to make the perfect coffee"
+    },
+    "video": {
+        "thumbnail": {
+            "url": "../../images/videos/chemex-thumb.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player": {
+            "src": "../../images/videos/chemex.mp4"
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
+    ,
+    "video-yt": {
+        "thumbnail": {
+            "url": "../../images/videos/big-bug-bunny.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player-yt": {
+            "src": "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si=jNRCpQW6ukJ1Zunl",
+            "autoplay": "&autoplay=1"
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
+    ,
+    "video-stream": {
+        "thumbnail": {
+            "url": "../../images/videos/chemex-thumb.webp",
+            "alt": "How to make the perfect coffee"
+        },
+        "player-stream": {
+            "src": ""
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    },
+    "video-vimeo": {
+        "thumbnail": {
+            "url": "../../images/videos/delicious-coffee-8k.png",
+            "alt": "My Delicious Coffee 8K - <a href='https://vimeo.com/thomasblanchard'>Thomas Blanchard</a>"
+        },
+        "player-vimeo": {
+            "src": "https://player.vimeo.com/video/307133457?h=7d6c76e92d",
+            "autoplay": "&autoplay=1"
+        },
+        "overlay": {
+            "iconname": "icon-play-filled"
+        }
+    }
+}

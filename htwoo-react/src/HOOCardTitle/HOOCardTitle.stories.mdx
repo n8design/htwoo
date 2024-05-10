@@ -1,0 +1,36 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOCardTitle from './HOOCardTitle';
+
+<Meta title="Components/Cards/Document Card/Elements/HOOCardTitle" component={HOOCardTitle} />
+
+# HOOCardTitle
+
+
+## Arguments
+
+<ArgTypes of={HOOCardTitle} />
+
+export const Template = (args) => <HOOCardTitle {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { title: "Title Value" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { title: "Title Value", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

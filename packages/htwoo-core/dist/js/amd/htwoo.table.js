@@ -1,4 +1,4 @@
-define(['exports'], function (exports) { 'use strict';
+define(['exports'], (function (exports) { 'use strict';
 
     const collapseAndExpand = (event) => {
 
@@ -145,6 +145,4 @@ define(['exports'], function (exports) { 'use strict';
 
     exports.initTables = initTables;
 
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-});
+}));

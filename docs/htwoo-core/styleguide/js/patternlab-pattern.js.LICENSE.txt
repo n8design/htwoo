@@ -1,0 +1,23 @@
+/*!
+ * Basic postMessage Support
+ *
+ * Copyright (c) 2013-2016 Dave Olsen, http://dmolsen.com
+ * Licensed under the MIT license
+ *
+ * Handles the postMessage stuff in the pattern, view-all, and style guide templates.
+ *
+ */
+
+/*!
+ * EventEmitter v5.2.9 - git.io/ee
+ * Unlicense - http://unlicense.org/
+ * Oliver Caldwell - https://oli.me.uk/
+ * @preserve
+ */
+
+/*!
+ * clipboard.js v2.0.11
+ * https://clipboardjs.com/
+ *
+ * Licensed MIT © Zeno Rocha
+ */

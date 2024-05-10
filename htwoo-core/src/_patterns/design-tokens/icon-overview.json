@@ -1,0 +1,29 @@
+{
+    "tools": {
+        "input": {
+            "toggle": {
+                "name": "pl-overview-toggle",
+                "id": "plOverViewTgl1",
+                "label": {
+                    "unchecked": "Regular",
+                    "checked": "Filled"
+                }
+            },
+            "label": {
+                "id": "plOverViewTgl1",
+                "label": "Icon Style"
+            }
+        },
+        "button": {
+            "label": "Download"
+        }
+    },
+    "iconselection": {
+        "input": {
+            "label": {
+                "id": "plOverViewTgl2",
+                "label": "Selected Icons"
+            }
+        }
+    }
+}

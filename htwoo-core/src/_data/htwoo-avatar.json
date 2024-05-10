@@ -1,0 +1,92 @@
+{
+    "avatar": {
+        "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+        "size": 16,
+        "status": "online",
+        "title": "Online"
+    },
+    "avatars": [
+        {
+            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/dog-mugshot-001.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-001.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-001.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-002.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-002.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-003.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-003.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-004.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-004.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-005.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-005.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-006.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/male-mugshot-006.jpg",
+            "size": 16
+        },
+        {
+            "mugshot": "../../images/mug-shots/female-mugshot-007.jpg",
+            "size": 16
+        }
+    ],
+    "presence-state": [
+        {
+            "status": "away",
+            "title": "Away"
+        },
+        {
+            "status": "dnd",
+            "title": "Do not disturb"
+        },
+        {
+            "status": "online",
+            "title": "Online"
+        },
+        {
+            "status": "invisible",
+            "title": "Invisible"
+        },
+        {
+            "status": "oof",
+            "title": "Out of Office"
+        }
+    ]
+}

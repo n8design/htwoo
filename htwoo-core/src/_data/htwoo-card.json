@@ -1,0 +1,29 @@
+{
+    "card": {
+        "footer": {
+            "name": "Man on the moon",
+            "modified": "Created a seconds ago",
+            "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+            "size": 32
+        },
+        "media": {
+            "image": "../../images/card-images/coffee-image.jpg"
+        },
+        "location": "Marketing"
+    },
+    "splash-card": {
+        "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.",
+        "headerImage": "../../images/card-images/htwoo-gm-001.svg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.",
+        "primary-button": {
+            "button": {
+                "label": "Create something"
+            }
+        },
+        "secondary-button": {
+            "button": {
+                "label": "Call for action"
+            }
+        }
+    }
+}

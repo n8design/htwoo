@@ -1,0 +1,36 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOSplashCardDesc from './HOOSplashCardDesc';
+
+<Meta title="Components/Cards/Splash Card/Elements/HOOSplashCardDesc" component={HOOSplashCardDesc}/>
+
+# HOOSplashCardDesc
+
+
+## Arguments
+
+<ArgTypes of={HOOSplashCardDesc} />
+
+export const Template = (args) => <HOOSplashCardDesc {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { description: "Splash Card Description" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { description: "Splash Card Description", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

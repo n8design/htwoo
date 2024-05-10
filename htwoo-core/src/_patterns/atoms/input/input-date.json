@@ -1,7 +1,0 @@
-{
-    "id": "my-date-picker",
-    "name": "my-date-picker-name",
-    "value": "2021-10-26",
-    "min-value": "2021-10-25",
-    "max-value": "2030-10-25"
-}

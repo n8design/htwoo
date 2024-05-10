@@ -1,0 +1,41 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOSearch from './HOOSearch';
+
+<Meta title="Components/Inputs/HOOSearch" component={HOOSearch} />
+
+# HOOSearch
+
+
+## Arguments
+
+<ArgTypes of={HOOSearch} />
+
+export const Template = (args) => <HOOSearch {...args}/>
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { placeholder: "Search here",
+        value: "",
+        onChange: () => {alert("changed")} }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { placeholder: "Search here",
+        value: "",
+        onChange: () => {alert("changed")},
+        rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

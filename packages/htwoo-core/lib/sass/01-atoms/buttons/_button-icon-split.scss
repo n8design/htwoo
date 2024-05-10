@@ -1,3 +1,7 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "button-action";
+
 .hoo-buttonicon-split{
 	@extend %flyoutDropDown;
 
@@ -12,16 +16,16 @@
 		margin-right: 0;
 		cursor: pointer;
 		&:active{
-			background-color: $neutral-350;
+			background-color: colors.$neutral-350;
 		}
 
 		&:hover{
-			background-color: $neutral-200;
+			background-color: colors.$neutral-200;
 		}
 	}
 
 	.hoo-buttonchevron{
-		border-left: 1px $neutral-450 solid;
+		border-left: 1px colors.$neutral-450 solid;
 		cursor: pointer;
 		.hoo-icon{
 			width: 1rem;

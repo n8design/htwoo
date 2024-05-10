@@ -1,0 +1,37 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOLoading from './HOOLoading';
+
+<Meta title="Components/Loading/HOOLoading" component={HOOLoading} />
+
+# HOOLabel
+
+
+## Arguments
+
+<ArgTypes of={HOOLoading} />
+
+export const Template = (args) => <HOOLoading {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { minValue: 0, maxValue: 100, value: 20 }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { minValue: 0, maxValue: 100, value: 20,
+        rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

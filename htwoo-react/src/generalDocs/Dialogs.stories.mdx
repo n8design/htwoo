@@ -4,6 +4,8 @@ import { Meta } from "@storybook/addon-docs";
 
 # Using Dialogs in SPFx
 
+>As of HTWOO version 2.1.x all dialogs are rendered using the HTML Dialog element and therefore this guidance is not needed. Dialogs can be rendered inline and will overlay the page properly.
+
 Because of how SharePoint applies styles to it's UI, we cannot consistently, and in some cases at all, support CSS that will allow dialogs added inline to the DOM where an extension or webpart is being rendered to properly overlay the SharePoint page. The safest work around for this issue, although a subtil use of DOM manipulation, is to add a DIV element to the bottom of the BODY of the page to then render and apply styling that will overlay the page successfully.  The following is a bit of sample code that provides a generic way to implement that DIV element and what's required to have it use the styling properly.
 
 The method can be called from some type of user interaction (like a button) where you would pass a local variable 
@@ -30,8 +32,8 @@ export default class MyComponent extends React.PureComponent<IMyComponentProps, 
         //create approval container div
         element = document.createElement("DIV") as HTMLDivElement;
         element.setAttribute("id", id);
-        //Make sure you add the root class (namespacing class) so that the htwoo styles are available to your dialog
-        element.className = styles.myComponent;
+        //Make sure you add `root-40` to support the font, and the root class (namespacing class) so that the htwoo styles are available to your dialog
+        element.className = `root-40 ${styles.myComponent}`;
         //Give the div a high z-index so when it's shown we make sure it overlays the whole page.
         element.style["z-index"] = 1000;
         element.style.position = "relative";

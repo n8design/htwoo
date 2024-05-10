@@ -1,0 +1,119 @@
+@use '../../00-base/mixin/grid.mixin' as grid;
+
+.CanvasSection-xl12 {
+
+}
+
+.CanvasSection-xl8 {
+    .hoo-ql-grid {
+        &:has(> .hoo-qltiles) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    .hoo-qlbtn {
+        @include grid.gridSpan(4, auto, auto, true);
+    }
+}
+
+.CanvasSection-xl6 {
+    .hoo-ql-grid {
+
+        &:has(> .hoo-qltiles) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+    .hoo-qllist,
+    .hoo-qlcompact,
+    .hoo-qlbtn {
+        @include grid.gridSpan(4, auto, auto, true);
+    }
+
+
+}
+
+.CanvasSection-xl4 {
+    .hoo-ql-grid {
+
+        &:has(> .hoo-qltiles) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .hoo-qllist,
+    .hoo-qlcompact,
+    .hoo-qlbtn {
+        @include grid.gridSpan(12, auto, auto, true);
+    }
+    .hoo-qlgrid{
+        @include grid.gridSpan(6, auto, auto, true);
+    }
+}
+
+.hoo-ql-grid {
+
+    @include grid.gridBase();
+
+    container-type: block-size;
+    container-name: quicklinksgrid;
+
+    max-width: 100%;
+
+    &:has(> .hoo-qltiles) {
+        display: grid;
+        grid-template-columns: repeat(10, minmax(min-content, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+        grid-auto-rows: 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-flow: row;
+        gap: min(1rem, 2rem);
+
+        &::before {
+            content: '';
+            width: 0;
+            padding-bottom: 100%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+
+        &>*:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(5, minmax(min-content, 1fr));
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(3, minmax(min-content, 1fr));
+        }
+
+        @media screen and (max-width: 480px) {
+            grid-template-columns: repeat(2, minmax(min-content, 1fr));
+        }
+
+    }
+
+    // &:has(> .hoo-qltiles.img-fill),
+    // &:has(> .hoo-qltiles.img-xl) {
+    //     display: grid;
+    //     grid-template-columns: repeat(6, minmax(min-content, 1fr));
+    //     grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+    // }
+
+    .hoo-qlbtn,
+    .hoo-qlgrid {
+        @include grid.gridSpan(3, auto, auto, true);
+    }
+
+    .hoo-qllink {
+        @include grid.gridSpan(2, auto, auto, true);
+    }
+
+    .hoo-qlcompact,
+    .hoo-qllist {
+        @include grid.gridSpan(2, auto, auto, true);
+    }
+    
+}

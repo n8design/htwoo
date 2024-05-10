@@ -1,5 +1,10 @@
+import defaultSymbolSetFile from "./images/hoo-icons.svg";
+
 export interface ISymbolSet {
+  initSymbols: (symbolSetFile?: string) => Promise<void>;
   Icon: (iconName: string) => string;
+  IconBase64: (iconName: string) => string;
+  SearchIconDictionary: (search: string) => string[];
 }
 
 export class SymbolSet implements ISymbolSet {
@@ -12,13 +17,15 @@ export class SymbolSet implements ISymbolSet {
   }
 
   /**
-   * (Optional) symbolSet: text representation of a set of icons.
+   * Initializes the SymbolSet service which provides icons for several components.
+   * Must be called once to initialize the included default icons, but can be called repeatedly to add
+   * additional icons to the dictonary.
+   * @param (Optional) symbolSetFile: additional svg icons to load into the dictionary.
    */
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
       //Load Default if not already processed
-      if (!this.defaultLoaded) {
-        const defaultSymbolSetFile = require("./images/hoo-icons.svg");
+      if (!this.defaultLoaded && defaultSymbolSetFile != null) {
         const defaultResult = await fetch(defaultSymbolSetFile);
         const defaultSymbolSet = await defaultResult.text();
         const loadedDefault = this.processSymbolSet(defaultSymbolSet);
@@ -46,7 +53,7 @@ export class SymbolSet implements ISymbolSet {
         const s = defs[i];
         const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
         s.firstElementChild.removeAttribute("xmlns");
-        const svgElement = `<svg xmlns="http://www.w3.org/2000/svg" data-svgid="${s.id}" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+        const svgElement = `<svg xmlns="http://www.w3.org/2000/svg" data-svgid="${s.id}" title="%title%" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
         this._symbolSetDictionary[s.id] = svgElement;
       }
       retVal = true;
@@ -56,13 +63,43 @@ export class SymbolSet implements ISymbolSet {
     return retVal;
   }
 
-  public Icon(iconName: string): string {
-    return this._symbolSetDictionary[iconName];
+  /**
+   * Returns the svg string representation of the icon referenced
+   * @param iconName: string - The id/key of the icon to retrieve
+   * @returns: string - svg string (<svg>...</svg>)
+  */
+  public Icon(iconName: string, iconTitle: string = ""): string {
+    return this._symbolSetDictionary[iconName].replace("%title%", iconTitle);
   }
 
+  /**
+   * Returns the base64 encoded string representation of the icon referenced
+   * @param iconName: string - The id/key of the icon to retrieve
+   * @returns: string - base64 encoded string (data:image/svg+xml;base64,....)
+  */
   public IconBase64(iconName: string): string {
     const iconSvg = this.Icon(iconName);
     return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
+  }
+
+  /**
+   * Performs a case insensitive contains search on keys of Icon dictionary
+   * @param search: string - The string to search for
+   * @returns: string[] - Array of keys that match search parameter
+  */
+  public SearchIconDictionary(search: string): string[] {
+    let retVal: string[] = [];
+    try {
+      const keys = Object.keys(this._symbolSetDictionary);
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].toLowerCase().includes(search.toLowerCase())) {
+          retVal.push(keys[i]);
+        }
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (SearchIconDictionary) - ${err}`);
+    }
+    return retVal;
   }
 }
 

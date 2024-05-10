@@ -1,0 +1,6 @@
+{
+    "tooltip": {
+        "arrow": "top-left",
+        "content": "<p>Password Rules:</p><ul><li>Minimum of 8 characters</li><li>Include at least one lowercase letter, one uppercase letter, one number and one special character</li><li>Unique to this website</li></ul>"
+    }
+}

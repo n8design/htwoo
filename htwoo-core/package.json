@@ -1,10 +1,10 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "1.2.5",
+  "version": "2.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cl:update": "standard-version --changelog --skip.bump --skip.commit --skip.tag",
+    "cl:update": "standard-version --changelog --skip.bump --skip.tag",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-public.json",
@@ -13,7 +13,13 @@
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "gulp:serve": "gulp",
     "gulp:docs": "gulp docs",
-    "pl:version": "patternlab --version"
+    "pl:version": "patternlab --version",
+    "hoo:buildlib": "gulp build:lib",
+    "hoo:exportpatterns": "gulp build:pllib",
+    "update:docs": "./docs.sh",
+    "postversion": "git tag htwoo-core-v$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -p conventionalcommits -t htwoo-core-v -s -u",
+    "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
+    "start": "run-p gulp:serve pl:serve"
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
@@ -29,30 +35,37 @@
   "files": [
     "lib"
   ],
+  "browserslist": [
+    ">0.5%",
+    "last 3 years",
+    "supports css-grid",
+    "not dead"
+  ],
   "dependencies": {
-    "@pattern-lab/cli": "^5.16.2",
-    "@pattern-lab/core": "^5.16.2",
-    "@pattern-lab/engine-handlebars": "^5.16.1",
-    "@pattern-lab/uikit-bare": "^0.0.1",
-    "@pattern-lab/uikit-workshop": "^5.16.2"
+    "@pattern-lab/cli": "^6.0.1",
+    "@pattern-lab/core": "^6.0.1",
+    "@pattern-lab/engine-handlebars": "^6.0.0",
+    "@pattern-lab/uikit-workshop": "^6.0.3",
+    "conventional-changelog": "^5.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.16",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
+    "gulp-autoprefixer": "^9.0.0",
     "gulp-if": "^3.0.0",
     "gulp-load-plugins": "^2.0.8",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.31",
     "rollup": "^2.79.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.62.1",
-    "standard-version": "^9.5.0",
-    "yargs": "^17.5.1"
+    "sass": "^1.69.5",
+    "sitemap": "^7.1.1",
+    "yargs": "^17.7.2"
   }
 }

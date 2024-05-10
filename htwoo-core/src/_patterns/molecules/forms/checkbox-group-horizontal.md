@@ -1,3 +1,3 @@
 ---
-title: Checkbox Group Horizontal
+title: Checkbox Group - Horizontal
 ---

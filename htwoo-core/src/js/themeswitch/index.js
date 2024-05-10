@@ -33,11 +33,11 @@ const addColorValues = () => {
         let computedStyle = window.getComputedStyle(sgSwatchBox);
 
         let color = computedStyle.getPropertyValue('background-color');
-
-        if (color.indexOf('#') === 0) {
+        // debugger;
+        if (color.indexOf("rgb(") !== -1) {
             sgSwatchColor.innerText = `${color} / ${rgb2hex(color)}`;
         } else {
-            sgSwatchColor.innerText = `${color}`;
+            sgSwatchColor.innerText = color;
         }
 
         console.debug(computedStyle.getPropertyValue('background-color'), curSwatch);

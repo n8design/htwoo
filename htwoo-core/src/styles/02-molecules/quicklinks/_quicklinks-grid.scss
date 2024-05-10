@@ -1,0 +1,53 @@
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/elevation.mixin";
+@use "../../00-base/colors/colors";
+
+.hoo-qlgrid {
+    overflow: hidden;
+
+    transition: all 0.25s ease-in;
+
+    border: 1px colors.$neutral-300 solid;
+    border-radius: core.px2rem(4px);
+
+    @include elevation.elevation(4);
+
+
+
+    &:hover {
+        transition: all 0.25s ease-out;
+
+        @include elevation.elevation(16);
+    }
+
+    .hoo-ql-media {
+        width: 100%;
+        width: 100%;
+        height: auto;
+
+        border-radius: 0;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .hoo-ql-img {
+        width: 100%;
+    }
+
+    .hoo-qlinfo {
+        padding: core.px2rem(12px);
+    }
+
+    .hoo-qltitle {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+
+        height: 2lh;
+        max-height: 2lh;
+
+        text-wrap: balance;
+
+        -webkit-line-clamp: 2;
+    }
+}

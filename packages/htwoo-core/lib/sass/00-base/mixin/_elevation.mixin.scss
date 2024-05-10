@@ -1,9 +1,11 @@
+@use 'sass:math';
+
 // 01-mixin-elevation
 // Common fluent UI Elevations:
 // 4,8,16,64
 @mixin elevation($depth: 0) {
 
-    $d1: $depth / 2;
+    $d1: math.div($depth, 2);
     $d2: $depth * 1;
 
     // ($depth*1px)

@@ -1,3 +1,4 @@
+{{#select-options}}
 <ul class="hoo-select-dropdown {{ this.ddToggleClass }}">
     {{#each options }}
     {{#if groupname }}
@@ -6,16 +7,18 @@
         <ul class="hoo-optgroup-items">
             {{#each this.options }}
             {{#if this.disabled }}
-            <li data-value="{{ this.value }}" class="hoo-option {{ this.disabled }}" aria-disabled="true">{{ this.key }}
+            <li data-value="{{ this.key }}" class="hoo-option {{ this.disabled }}" aria-disabled="true">{{ this.value }}
             </li>
             {{ else }}
-            <li data-value="{{ this.value }}" class="hoo-option" aria-disabled="false">{{ this.key }}</li>
+            <li data-value="{{ this.key }}" class="hoo-option" aria-disabled="false">{{ this.value }}</li>
             {{/if}}
             {{/each}}
         </ul>
     </li>
     {{ else }}
-    <li data-value="{{ value }}" class="hoo-option {{ disabled }}">{{ value }}</li>
+    <li data-value="{{ key }}" class="hoo-option {{ disabled }}">{{ value }}</li>
     {{/if}}
     {{/each }}
 </ul>
+{{/select-options}}
+

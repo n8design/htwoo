@@ -1,1 +1,3 @@
-<input class="hoo-input-text" type="text" disabled="true" aria-disabled="true" placeholder="This is just a placehoder">
+{{#input.text}}
+<input class="hoo-input-text" type="text" {{#if diabled}} disabled="true" aria-disabled="true"{{/if}} placeholder="{{ placeholder }}">
+{{/input.text}}

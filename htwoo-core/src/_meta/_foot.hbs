@@ -1,6 +1,7 @@
 <!--DO NOT REMOVE-->
 {{{ patternLabFoot }}}
 
+<script src="../../js/prismjs/prism.js"></script>
 <script src="../../js/main.js" type="module"></script>
 <script src="../../js/themeswitch/index.js" type="module"></script>
 <script>
@@ -9,6 +10,8 @@
 
     // changing logo accordingly
     var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
 
         let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
 
@@ -36,6 +39,7 @@
     // on first run detect layout
     evtLocationStorageUpdates();
 </script>
+<script src="../../js/_util.js" type="module"></script>
 </body>
 
 </html>

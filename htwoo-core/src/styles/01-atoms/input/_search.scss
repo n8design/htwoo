@@ -1,11 +1,21 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+@use "input";
+
 .hoo-input-search {
   // @extend .hoo-input-group;
   display: flex;
   flex-direction: row;
+  flex-grow: 0;
+
+  .hoo-icon {
+    background-color: white;
+  }
 
   .hoo-input-text {
-    @include base-input;
+    @include input.base-input;
 
+    height: fit-content;
     width: calc(100% - 2rem);
 
     border-left: 0;
@@ -14,12 +24,12 @@
   }
 
   .hoo-icon {
-    @include base-input;
+    @include input.base-input;
 
-    width: px2rem(32px);
+    width: 2rem;
     height: 2rem;
-    padding-right: px2rem(5px);
-    padding-left: px2rem(5px);
+    padding-right: core.px2rem(5px);
+    padding-left: core.px2rem(5px);
 
     transition: all .1s;
 
@@ -32,10 +42,10 @@
 
     .hoo-icon,
     .hoo-input-text {
-      height: px2rem(32px);
+      height: core.px2rem(32px);
 
-      border-width: 2px;
-      border-color: $theme-600;
+      border-width: core.px2rem(2px);
+      border-color: colors.$theme-600;
       outline: 0 rgba(255, 255, 255, 0) solid;
     }
 

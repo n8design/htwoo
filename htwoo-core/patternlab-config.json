@@ -2,7 +2,8 @@
   "cacheBust": true,
   "cleanPublic": true,
   "defaultPattern": "all",
-  "defaultShowPatternInfo": false,
+  "defaultShowPatternInfo": true,
+  "defaultInitialViewportWidth": true,
   "ishControlsHide": {
     "s": false,
     "m": false,
@@ -14,7 +15,7 @@
     "mqs": false,
     "find": false,
     "views-all": false,
-    "views-annotations": false,
+    "views-annotations": true,
     "views-code": false,
     "views-new": false,
     "tools-all": false,
@@ -96,7 +97,7 @@
     "layout": "vertical",
     "logo": {
       "text": "",
-      "altText": "Pattern Lab Logo",
+      "altText": "hTWOo Logo",
       "url": "/",
       "srcLight": "styleguide/images/htwoo-logo-vertical.jpg",
       "srcDark": "styleguide/images/htwoo-logo-vertical.jpg",
@@ -122,7 +123,8 @@
   ],
   "engines": {
     "handlebars": {
-      "extend": "helpers/*.js"
+      "package": "@pattern-lab/engine-handlebars",
+      "extend": "helpers/hbs/*.js"
     }
   }
 }

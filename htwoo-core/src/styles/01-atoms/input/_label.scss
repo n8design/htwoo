@@ -1,23 +1,26 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-label{
-	font-size: px2rem(14px); // TODO: font size to small
+	font-size: core.px2rem(14px); // TODO: font size to small
 	font-weight: 600;
 
-	padding: px2rem(5px) 0;
+	padding: core.px2rem(5px) 0;
 
-	color: $neutral-700;
+	color: colors.$neutral-700;
 	&.is-disabled{
-		color: $neutral-400;
+		color: colors.$neutral-400;
 	}
 	&.is-required{
 		&:after{
 			display: inline-block;
 
 			padding-left: .25em;
-			padding-right: px2rem(12px);
+			padding-right: core.px2rem(12px);
 
 			content: "*";
 
-			color: $errorText;
+			color: colors.$errorText;
 		}
 	}
 }

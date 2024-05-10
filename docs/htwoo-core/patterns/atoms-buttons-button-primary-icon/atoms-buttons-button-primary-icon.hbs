@@ -1,3 +1,5 @@
-<button class="{{ classname }}">
-    {{> atoms-icon iconname=iconname }}<span class="hoo-button-label">{{ label }}</span>
+{{#button}}
+<button class="hoo-button-primary"{{#if props}} {{{props}}}{{/if}}>
+    {{> atoms-icon }}<span class="hoo-button-label">{{ label }}</span>
 </button>
+{{/button}}

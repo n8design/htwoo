@@ -1,5 +1,6 @@
 ---
-title: Card Image HTML
+title: Card HTML
+order: 20
 ---
 
 ### SCSS Imports

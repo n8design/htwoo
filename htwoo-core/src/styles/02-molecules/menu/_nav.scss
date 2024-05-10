@@ -1,5 +1,10 @@
+@use 'sass:math';
+
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
 .hoo-navitem-text{
-	font-size: px2rem(14px);
+	font-size: core.px2rem(14px);
 
 	display: flex;
 	flex-direction: row;
@@ -10,8 +15,8 @@
 	.hoo-buttonicon{
 		display: inline;
 
-		width: px2rem(26px);
-		height: px2rem(44px);
+		width: core.px2rem(26px);
+		height: core.px2rem(44px);
 
 		svg{
 			width: 12px;
@@ -19,29 +24,25 @@
 		}
 
 		& ~ .hoo-navitem-link{
-			width: calc(100% - #{ px2rem(26px) });
+			width: calc(100% - #{ core.px2rem(26px) });
 			padding-left: 0;
 		}
 	}
 
-	.hoo-navitem-link{
-		display: inline-block;
-	}
-
 	&:hover{
-		background-color: $buttonBackgroundHovered;
+		background-color: colors.$buttonBackgroundHovered;
 	}
 }
 
 .hoo-nav-list{
 	.hoo-navitem-link{
-		padding-right: px2rem(20px);
-		padding-left: px2rem(27px);
+		padding-right: core.px2rem(20px);
+		padding-left: core.px2rem(27px);
 	}
 }
 
 .hoo-navitem{
-	&[aria-expanded="false"]{
+	&[aria-expanded="true"]{
 		.hoo-buttonicon{
 			svg{
 				transform: rotate(90deg);
@@ -53,50 +54,51 @@
 		}
 	}
 
-	&[aria-expanded="true"]{
+	&[aria-expanded="false"]{
 		.hoo-nav-listsub{
 			display: none;
 		}
 	}
 	&[aria-current]{
-		border-left: 2px $ButtonPressedBorder solid;
+		border-left: 2px colors.$ButtonPressedBorder solid;
 		.hoo-buttonicon{
-			padding-left: px2rem(2px);
+			padding-left: core.px2rem(2px);
 		}
 		.hoo-navitem-link{
-			padding-left: px2rem(25px);
+			padding-left: core.px2rem(25px);
 		}
 		&.hoo-navitem{
-			background-color: $buttonBackgroundCheckedHovered;
+			background-color: colors.$buttonBackgroundCheckedHovered;
 		}
 	}
 }
 
 .hoo-navitem-link{
 	display: block;
+	width: 100%;
 
 	box-sizing: border-box;
-	padding-top: px2rem((44px - 17px)/2);
-	padding-bottom: px2rem((44px - 17px)/2);
+	padding-top: core.px2rem(math.div(44px - 17px,2));
+	padding-bottom: core.px2rem(math.div(44px - 17px,2));
 
 	text-decoration: none;
 
-	color: $bodyText;
+	color: colors.$bodyText;
 
 	&:visited{
-		color: $bodyText;
+		color: colors.$bodyText;
 	}
 
 	&:hover{
-		color: $Hyperlink;
+		color: colors.$Hyperlink;
 		:visited{
-			color: $Hyperlink;
+			color: colors.$Hyperlink;
 		}
 	}
 }
 
 .hoo-nav{
-	border: 1px solid $ButtonBorder;
+	border: 1px solid colors.$ButtonBorder;
 }
 
 .hoo-nav-list,
@@ -120,7 +122,7 @@
 		display: block;
 
 		width: 100%;
-		padding-right: px2rem(20px);
-		padding-left: px2rem(41px);
+		padding-right: core.px2rem(20px);
+		padding-left: core.px2rem(41px);
 	}
 }

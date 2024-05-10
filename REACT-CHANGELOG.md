@@ -5,133 +5,107 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 1.4.0 - 2022-Sept-16
+## 2.4.0 - 2024-Apr-19
 
->In support of HTWOO-CORE v1.2.5
+>In support of HTWOO-CORE v2.4.0
 
-### GENERAL
+- SymbolSet - Adjusted icon method to allow for SVG to have title attribute that is specified by the user. Provides hover experience.
+- HOOIcon - Adjusted to provide optional "title" property to be applied to icons loaded with SymbolSet helper class.
+- HOOBreadcrumb - Added optional icon title property
+- HOOButton - Added optional icon title properties
+- HOOButtonSplit - Added optional icon title properties
+- HOOIconSplit - Added optional icon title properties
 
-- Added reactKey of type React.Key to IHOOStandardProps and when added injected into the root element for the component.
-- Small update to HTWOO-Snippets for new reactKey property
+## 2.3.1 - 2024-Feb-13
 
-### ATOMS
+### Fix
 
-- HOOCommandButton - Added new menu atom.
-- HOOCheckbox - Sets a default id value to "hoo-checkbox-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
-- HOODropdown - Sets a default id value to "hoo-dropdown-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
-- HOOIconOverflow - Updates/Fixes to support addition of overflow features in HOOPivotBar and HOOCommandBar
-- HOORadioButton - Sets a default id value to "hoo-radio-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
-- HOOToggle - Sets a default id value to "hoo-toggle-" plus 10 random characters unless id provided in rootElementAttributes; used with labelFor property.
+- HOODropdown: Bug fix for grouped options.
+- HOOAccordionGroup: ARIA Role incorrect.
 
-### MOLECULES
+## 2.3.0 - 2024-Jan-03
 
-- HOOPivotBar - Added hasOverflow property to support enabling menu overflow.
-- HOOCommandBar - Added new menu bar molecule.
-- HOOOptionList - Sets a default name value to "hoo-options-" plus 10 random characters on each element in the list.
+>In support of HTWOO-CORE v2.3.0
 
-## 1.3.0 - 2022-Aug-25
+### Fix
 
-### GENERAL
+- HOODropdown: Unable to override Id attribute
+- HOOPivotBar: update html; root element is now menu
+- HOOCommandBar: update html; root element is not menu
+- HOOSelect: Officially deprecate as duplicate of HOODropdown
+- HOODialog: Fix bug where dialog doesn't open with initial visible=true property.
 
-- Updated peerDependency to support larger range of React versions: >=16 <=18.2
-- Added children explicitly to IHOOStandardProps for support of React 18 typing requirements.
-- Documentation with update for adding theme support for solutions outside of SPFx & Teams.
-- Updated documentation for ES6 imports for svg files for icons, removing use of `require`.
-- Added a type defintion for theme - IHOOTheme.
+### Update
 
-### SERVICES
+- HOODropdown: Added optional typing for options property, now IHOODropDownGroup[] | IHOODropDownItem[]; Added optional `forId` property to be mapped to input element attribute id
+- HOOCheckbox: Added optional `forId` property to be mapped to input element attribute id.
+- HOONumber: Added optional `forId` property to be mapped to input element attribute id.
+- HOOOptionList: Added optional `forId` property to be mapped to input element attribute id.
+- HOORadioButton: Added optional `forId` property to be mapped to input element attribute id.
+- HOOSearch: Added optional `forId` property to be mapped to input element attribute id.
+- HOOText: Added optional `forId` property to be mapped to input element attribute id.
+- HOOTime: Added optional `forId` property to be mapped to input element attribute id.
+- HOOToggle: Added optional `forId` property to be mapped to input element attribute id.
 
-- *SPFxThemes*
-  - Changed `setCSSVariables` to public so that it could be called independently of `initThemeHandler`, accepts an optional HTML Element to apply the theme.
-  - Created public property for root `domElement` so that it can be set independently of `initThemeHandler`
-  - Fixed issue with changing the theme in SharePoint and not completely refreshing CSS variables.
-  - Added new `domElement` and `currentTheme` (readonly) properties
+### Additions
 
-### MOLECULES
+- HOOFacepile: Prepped for overflow style, not available yet in core.
+- HOOQuickLink: Added new grid, button, and tile layout types and supporting properties.
+- HOOVideo: Added new Video component that supports various embedded video players.
 
-- *HOOOptionList* - Bug fix for improperly placed key attribute.
+## 2.2.0 - SKIPPED TO KEEP VERSIONS CONSISTENT
 
-## 1.2.2 - 2022-Aug-10
+## 2.1.1 - 2023-Dec-01
 
-### MOLECULES
+### Fix
 
-- *HOOOptionList* - Bug fix for null/undefined value throwing indexOf error.
+- HOOOptionList: Elevate various component properties to state.
+- HOODialog: Added missing 'Center' modal dialog configuration.
 
-## 1.2.1 - 2022-Aug-1
+## 2.1.0 - 2023-Nov-25
 
->In support of HTWOO-CORE v1.2.3
+>In support of HTWOO-CORE v2.1.4
 
-### MOLECULES
+### Fix
 
-- *HOOOptionList* - Bug fix for missing html/styles on checkbox option group.
+- HOODropdown: Fixed value assignment, type-ahead visibility.
+- HOODialog: Updates for new html dialog implementation and expanded layouts in HTWOO-CORE.
 
-## 1.2.0 - 2022-July-15
+### Additions
 
->In support of HTWOO-CORE v1.2.0
+- HOODropdown: Added optional placeholder property for dropdowns input to make it easier to set.
+- HOOOptionList: Now supports multi-column layouts in desktop and mobile.
+- HOODialogActions: Added in support of Message/Status Bars.
 
-### GENERAL
+## 2.0.2 - 2023-May-15
 
-- Updated peerDependency to support larger range of React versions: >=16 <=17
+### Fix
 
-### ATOMS
+- HOODialog: HTML changed for HTWOO-CORE v2 missing from React component
 
-- *HOOLabel* - Adds optional `for` property to specify the id of the form element the label should be bound to.
+## 2.0.1 - 2023-May-11
 
-### MOLECULES
+>In support of HTWOO-CORE v2.0.2
 
-- *HOOOptionList* - Bug fix `onChange` event was incorrectly surfacing `React.ChangeEventHandler<HTMLInputElement>` - now is a custom event type that returns the key and and checked state.
-- *HOOWebPartTitle* - Bug fix `title` field set as optional.
+### Fix
 
-## 1.1.0 - 2022-June-21
+- SPFxThemes: Optimize loading CSS variables from SPFx theme provider.
+- HOOText: Multiline text field had bug setting the value.
+- HOOAction: Removed command and context options from HOOActionType because they were not rendering at all and HOOButtonCommand is the 'command' option, therefore it was a duplication. Deprecated type property (optional) since this property can be omitted and will be removed. Context option will be added later.
 
->In support of HTWOO-CORE v1.1.1
+### Note
 
-Significant reorganization, update, and addition of documentation to more closely match HTWOO-Core doc navigation and to extend the documentation of the controls.
+- Documentation was updated to Stroybook v7, some features are deprecated and will address those in future releases.
 
-### ATOMS
+## 2.0.0 - 2023-Apr-1
 
-- *HOOTag* - New meta tag implementation
-- *HOOAvatar* - Size is now optional parameter to support container sizing, added additional sizes to enum HOOAvatarSize
+>In support of HTWOO-CORE v2.0.0
 
-### MOLECULES
+### Additions
 
-- *HOOTagList* - New meta tag list implementation
-- *HOOPersona* - New persona implementation
-- *HOOAvatarPres* - Size is now optional parameter to support container sizing
-
-## 1.0.0 - 2022-May-20
-
->In support of HTWOO-CORE v1.0.0
-
-### FUNCTIONS
-
-- *SPFxThemes*
-  - Extended properties for `initThemeHandler` method to include passing in `microsoftTeams` page context to apply Teams theme to CSS Variables, also added a `usePageTheme` optional override that will use the page's theme for those instances when you need the root, unmodified SharePoint theme.
-  - Added `isInverted` property to class to retrieve if the theme is in it's inverted state
-  - Added `inTeams` property to class to retieve if theme is coming from Microsoft Teams.
-  - Added global const `spfxThemes` when a global theme state is required
-  - Added global React conext object `SPFxThemesContext` to utilize a theme provider with your React project.
-
-## 0.2.0 - 2022-April-15
-
->In support of HTWOO-CORE v0.7.0
-
-### ATOMS
-
-- *HOOButton* - Icon Left and Icon Right to be used with Primary Button type.
-- *HOOButton* - IconName to support Icon button type icon child should be a span not a div.
-- *HOODialogIFrame* - New iFrame styling for child of the HOODialogContent molecule
-- *HOODate* - New date picker implementation
-- *HOOTime* - New time picker implementation
-
-### MOLECULES
-
-- *HOOBreadcrumb* - New implementation, supporting button and hyperlink breadcrumb component.
-
-### FUNCTIONS
-
-- *SymbolSet* - IconBase64 method that takes IconName and returns base64 encoded string, added namepaceuri to svg element.
-
-## 0.1.0 - 2022-March-30
-
-Initial GA Release
+- HOOQuickLink: New element that mimics the Microsoft 365 Quick Link list element style
+- HOOQuickLinkGrid: New grid element to contain HOOQuickLink items
+- HOOAccordion: New detail/summary element to implement accordion element.
+- HOOAccordionGroup: Container for a group of HOOAccordion elements.
+- HOOCardImage: Added caption property
+- GenericThemes: New helper class for adding theme support in non-SPFx solutions.

@@ -1,8 +1,9 @@
-.hoo-cardgrid {
-	@include gridBase();
+@use "../00-base/mixin/grid.mixin";
 
-	&>* {
-		@include gridSpan(3);
+.hoo-cardgrid{
+	@include grid.gridBase();
+	& > *{
+		@include grid.gridSpan(3);
 	}
 
 	@media screen and (max-width: 768px) {

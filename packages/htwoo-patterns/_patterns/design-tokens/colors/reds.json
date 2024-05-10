@@ -1,0 +1,22 @@
+{
+    "items": [
+
+        {
+            "msftName": "red",
+            "msftNameLong": "red",
+            "colorValue": "var(--red)",
+            "designToken": "600",
+            "SASSVariable": "$red-600"
+        },
+        {
+            "msftName": "redDark",
+            "msftNameLong": "redDark",
+            "colorValue": "var(--redDark)",
+            "designToken": "800",
+            "SASSVariable": "$red-800"
+        }
+    ],
+    "meta": {
+        "description": "To add to these items, use Sass variables that start with <code>$color-brand-</code> in <code>./source/css/scss/abstracts/_variables.scss</code>"
+    }
+}

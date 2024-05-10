@@ -1,163 +1,7 @@
 import React from "react";
 import { darkModeTheme, highContrastTheme, lightModeTheme } from "./TeamsThemes";
+import { IHOOTheme } from "./common/IHOOTheme";
 
-export interface IHOOTheme {
-  accentButtonBackground: string;
-  accentButtonText: string;
-  actionLink: string;
-  actionLinkHovered: string;
-  blockingBackground: string;
-  blockingIcon: string;
-  bodyBackground: string;
-  bodyBackgroundChecked: string;
-  bodyBackgroundHovered: string;
-  bodyDivider: string;
-  bodyFrameBackground: string;
-  bodyFrameDivider: string;
-  bodyStandoutBackground: string;
-  bodySubtext: string;
-  bodyText: string;
-  bodyTextChecked: string;
-  buttonBackground: string;
-  buttonBackgroundChecked: string;
-  buttonBackgroundCheckedHovered: string;
-  buttonBackgroundDisabled: string;
-  buttonBackgroundHovered: string;
-  buttonBackgroundPressed: string;
-  buttonBorder: string;
-  buttonBorderDisabled: string;
-  buttonText: string;
-  buttonTextChecked: string;
-  buttonTextCheckedHovered: string;
-  buttonTextDisabled: string;
-  buttonTextHovered: string;
-  buttonTextPressed: string;
-  cardShadow: string;
-  cardShadowHovered: string;
-  cardStandoutBackground: string;
-  defaultStateBackground: string;
-  disabledBackground: string;
-  disabledBodySubtext: string;
-  disabledBodyText: string;
-  disabledBorder: string;
-  disabledSubtext: string;
-  disabledText: string;
-  errorBackground: string;
-  errorIcon: string;
-  errorText: string;
-  focusBorder: string;
-  infoBackground: string;
-  infoIcon: string;
-  inputBackground: string;
-  inputBackgroundChecked: string;
-  inputBackgroundCheckedHovered: string;
-  inputBorder: string;
-  inputBorderHovered: string;
-  inputFocusBorderAlt: string;
-  inputForegroundChecked: string;
-  inputIcon: string;
-  inputIconDisabled: string;
-  inputIconHovered: string;
-  inputPlaceholderBackgroundChecked: string;
-  inputPlaceholderText: string;
-  inputText: string;
-  inputTextHovered: string;
-  link: string;
-  linkHovered: string;
-  listBackground: string;
-  listHeaderBackgroundHovered: string;
-  listHeaderBackgroundPressed: string;
-  listItemBackgroundChecked: string;
-  listItemBackgroundCheckedHovered: string;
-  listItemBackgroundHovered: string;
-  listText: string;
-  listTextColor: string;
-  menuBackground: string;
-  menuDivider: string;
-  menuHeader: string;
-  menuIcon: string;
-  menuItemBackgroundChecked: string;
-  menuItemBackgroundHovered: string;
-  menuItemBackgroundPressed: string;
-  menuItemText: string;
-  menuItemTextHovered: string;
-  messageLink: string;
-  messageLinkHovered: string;
-  messageText: string;
-  primaryButtonBackground: string;
-  primaryButtonBackgroundDisabled: string;
-  primaryButtonBackgroundHovered: string;
-  primaryButtonBackgroundPressed: string;
-  primaryButtonBorder: string;
-  primaryButtonText: string;
-  primaryButtonTextDisabled: string;
-  primaryButtonTextHovered: string;
-  primaryButtonTextPressed: string;
-  severeWarningBackground: string;
-  severeWarningIcon: string;
-  smallInputBorder: string;
-  successBackground: string;
-  successIcon: string;
-  successText: string;
-  variantBorder: string;
-  variantBorderHovered: string;
-  warningBackground: string;
-  warningHighlight: string;
-  warningIcon: string;
-  warningText: string;
-  accent: string;
-  black: string;
-  blackTranslucent40: string;
-  blue: string;
-  blueDark: string;
-  blueLight: string;
-  blueMid: string;
-  green: string;
-  greenDark: string;
-  greenLight: string;
-  magenta: string;
-  magentaDark: string;
-  magentaLight: string;
-  neutralDark: string;
-  neutralLight: string;
-  neutralLighter: string;
-  neutralLighterAlt: string;
-  neutralPrimary: string;
-  neutralPrimaryAlt: string;
-  neutralQuaternary: string;
-  neutralQuaternaryAlt: string;
-  neutralSecondary: string;
-  neutralSecondaryAlt: string;
-  neutralTertiary: string;
-  neutralTertiaryAlt: string;
-  orange: string;
-  orangeLight: string;
-  orangeLighter: string;
-  primaryBackground: string;
-  primaryText: string;
-  purple: string;
-  purpleDark: string;
-  purpleLight: string;
-  red: string;
-  redDark: string;
-  teal: string;
-  tealDark: string;
-  tealLight: string;
-  themeDark: string;
-  themeDarkAlt: string;
-  themeDarker: string;
-  themeLight: string;
-  themeLighter: string;
-  themeLighterAlt: string;
-  themePrimary: string;
-  themeSecondary: string;
-  themeTertiary: string;
-  white: string;
-  whiteTranslucent40: string;
-  yellow: string;
-  yellowDark: string;
-  yellowLight: string;
-}
 
 export interface ISPFxThemes {
   domElement: HTMLElement;
@@ -191,7 +35,7 @@ export class SPFxThemes implements ISPFxThemes {
     this._domElement = value;
   }
 
-  /**Returns boolean indiciating if the solution is running in a SharePoint page section that has a background color */
+  /**Returns boolean indicating if the solution is running in a SharePoint page section that has a background color */
   public get isInverted(): boolean {
     return this._isInverted;
   }
@@ -209,10 +53,10 @@ export class SPFxThemes implements ISPFxThemes {
   /** initThemeHandler
    * Used to set up theme handling for SPFx and SPFx hosted in Microsoft Teams
    * 
-   * domElement: HTMLElement - Sets the currently defined domElement the CSS Variables will be assigned to.
-   * themeProvider: any (no type dependency) - Optionally pass in the SPFx theme provider
-   * microsoftTeams: any (no type dependency) - Optionally pass in the Microsoft Teams context
-   * usePageTheme: boolean - Optionally use legacy SharePoint theme context
+   * @param domElement: HTMLElement - Sets the currently defined domElement the CSS Variables will be assigned to.
+   * @param themeProvider: any (no type dependency) - Optionally pass in the SPFx theme provider
+   * @param microsoftTeams: any (no type dependency) - Optionally pass in the Microsoft Teams context
+   * @param usePageTheme: boolean - Optionally use legacy SharePoint theme context
    */
   public initThemeHandler = (domElement: HTMLElement, themeProvider?: any, microsoftTeams?: any, usePageTheme: boolean = false) => {
     try {
@@ -266,12 +110,6 @@ export class SPFxThemes implements ISPFxThemes {
       // set isInverted property
       this._isInverted = this._themeVariant.isInverted;
 
-      // transfer semanticColors into CSS variables
-      this.setCSSVariables(this._themeVariant.semanticColors);
-
-      // transfer fonts into CSS variables
-      this.setCSSVariables(this._themeVariant.fonts);
-
       // transfer color palette into CSS variables
       this.setCSSVariables(this._themeVariant.palette);
 
@@ -290,8 +128,8 @@ export class SPFxThemes implements ISPFxThemes {
   /** setCSSVariables
    * Used to manually apply a theme to a DOM Element; Internally used to set CSS Variables
    * 
-   * theme: IHOOTheme - a custom theme
-   * altDomElement: HTMLElement - (Optional) Alternate HTMLElement to apply CSS Variables to instead of currently defined `domElement`
+   * @param theme: IHOOTheme - a custom theme
+   * @param altDomElement: HTMLElement - (Optional) Alternate HTMLElement to apply CSS Variables to instead of currently defined `domElement`
    */
   public setCSSVariables(theme: IHOOTheme, altDomElement?: HTMLElement): void {
     if (this._domElement == null && altDomElement == null) { return; }

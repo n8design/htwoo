@@ -1,0 +1,36 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOSplashCardHeader from './HOOSplashCardHeader';
+
+<Meta title="Components/Cards/Splash Card/Elements/HOOSplashCardHeader" component={HOOSplashCardHeader}/>
+
+# HOOSplashCardHeader
+
+
+## Arguments
+
+<ArgTypes of={HOOSplashCardHeader} />
+
+export const Template = (args) => <HOOSplashCardHeader {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { imageSource: "https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg", imageAlt: "Kitten" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+     { imageSource: "https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg", imageAlt: "Kitten", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,3 +1,5 @@
-<button class="{{ classname }} is-reversed">
+{{#button }}
+<button class="hoo-button is-reversed"{{#if props}} {{{props}}}{{/if}}>
     {{> atoms-icon iconname=iconname }}<span class="hoo-button-label">{{ label }}</span>
 </button>
+{{/button}}
