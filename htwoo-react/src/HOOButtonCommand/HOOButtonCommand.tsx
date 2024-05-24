@@ -5,7 +5,7 @@ import HOOIcon from "../HOOIcon/HOOIcon";
 
 export interface IHOOButtonCommandProps extends IHOOStandardProps {
   /**
-   * (Optional) button label, if omitted, components children will be rendered.
+   * (Optional) button label, if omitted, components children will be rendered unless omitted and then leftIconName will only be rendered.
    */
   label?: string;
   /**
@@ -17,7 +17,7 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
    */
   leftIconName?: string;
   /**
-   * (Optional) icon name, if omitted, hoo-icon-arrow-down will be used.
+   * (Optional) icon name, if omitted, hoo-icon-arrow-down will be used if flyoutMenuItems are included.
    */
   rightIconName?: string;
   /** 
@@ -82,11 +82,15 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       const ariaHaspopup = (this.props.flyoutMenuItems != null && this.props.flyoutMenuItems.length > 0) ? { "aria-haspopup": true } : null;
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} {...ariaHaspopup} className={className} onClick={this._onClick}>
-          <button className="hoo-buttoncmd" aria-haspopup="true">
-            <span className="hoo-button-icon" aria-hidden="true">
-              <HOOIcon iconName={leftIcon} />
-            </span>
-            <span className="hoo-button-label">{this.props.label || this.props.children}</span>
+          <button className="hoo-buttoncmd" aria-haspopup="true" title={this.props.label || leftIcon || "Command Button"}>
+            {this.props.children == null &&
+              <span className="hoo-button-icon" aria-hidden="true">
+                <HOOIcon iconName={leftIcon} title={leftIcon}/>
+              </span>
+            }
+            {(this.props.label || this.props.children) &&
+              <span className="hoo-button-label">{this.props.label || this.props.children}</span>
+            }
             {this.props.flyoutMenuItems != null && this.props.flyoutMenuItems.length > 0 &&
               <span className="hoo-button-icon hoo-buttonchevron">
                 <HOOIcon iconName={rightIcon} />
