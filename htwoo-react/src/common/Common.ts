@@ -17,9 +17,13 @@ export function getRandomString(chars: number): string {
 /**
  * A function that tests javascript object for equality doing a deep comparison
 */
-export function isEqual(a: any, b: any): boolean {
+export function isEqual(a: any, b: any, c: number = 0): boolean {
   const LOG_SOURCE: string = "💦Common";
   try {
+    if (typeof a == "function" || typeof b == "function" || c > 3) {
+      return true;
+    }
+
     if (a === b) {
       return true;
     }
@@ -36,7 +40,7 @@ export function isEqual(a: any, b: any): boolean {
     }
 
     for (let key of keys1) {
-      if (!keys2.includes(key) || !isEqual(a[key], b[key])) {
+      if (!keys2.includes(key) || !isEqual(a[key], b[key], c++)) {
         return false;
       }
     }
