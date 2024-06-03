@@ -26,12 +26,6 @@
     animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
 }
 
-.hoo-spinner-medium {
-    @extend %hoo-spinner;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
 .hoo-spinner-xsmall {
     @extend %hoo-spinner;
     width: 0.75rem;
@@ -42,6 +36,13 @@
     @extend %hoo-spinner;
     width: 1rem;
     height: 1rem;
+}
+
+.hoo-spinner,
+.hoo-spinner-medium {
+    @extend %hoo-spinner;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .hoo-spinner-large {
