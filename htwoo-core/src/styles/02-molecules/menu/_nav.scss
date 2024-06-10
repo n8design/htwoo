@@ -1,7 +1,7 @@
 @use 'sass:math';
 
-@use "../../00-base/colors/colors";
-@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/colors/colors" as dt;
+@use "../../00-base/mixin/core.mixin" as core;
 
 .hoo-navitem-text{
 	font-size: core.px2rem(14px);
@@ -30,7 +30,7 @@
 	}
 
 	&:hover{
-		background-color: colors.$buttonBackgroundHovered;
+		background-color: dt.$neutral-100;
 	}
 }
 
@@ -60,7 +60,7 @@
 		}
 	}
 	&[aria-current]{
-		border-left: 2px colors.$ButtonPressedBorder solid;
+		border-left: 2px dt.$theme-500 solid;
 		.hoo-buttonicon{
 			padding-left: core.px2rem(2px);
 		}
@@ -68,7 +68,7 @@
 			padding-left: core.px2rem(25px);
 		}
 		&.hoo-navitem{
-			background-color: colors.$buttonBackgroundCheckedHovered;
+			background-color: dt.$neutral-200;
 		}
 	}
 }
@@ -83,22 +83,22 @@
 
 	text-decoration: none;
 
-	color: colors.$bodyText;
+	color: dt.$neutral-600;
 
 	&:visited{
-		color: colors.$bodyText;
+		color: dt.$neutral-600;
 	}
 
 	&:hover{
-		color: colors.$Hyperlink;
+		color: dt.$theme-600;
 		:visited{
-			color: colors.$Hyperlink;
+			color: dt.$theme-600;
 		}
 	}
 }
 
 .hoo-nav{
-	border: 1px solid colors.$ButtonBorder;
+	border: 1px solid dt.$neutral-450;
 }
 
 .hoo-nav-list,
