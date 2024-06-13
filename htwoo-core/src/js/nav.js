@@ -47,7 +47,7 @@ const handleNavItemClick = (event) => {
     } else if (curClickItem.classList.contains('hoo-icon')) {
 
         let curNavItem = curClickItem.closest('.hoo-navitem');
-        
+
         if (curNavItem.getAttribute('aria-expanded') === 'true') {
             curNavItem.setAttribute('aria-expanded', false);
         } else {
@@ -67,19 +67,10 @@ export const initMenu = () => {
         let navItems = nav.querySelectorAll('.hoo-navitem');
         navItems.forEach(navItem => {
 
-            navItem.addEventListener('click', handleNavItemClick, {});
+            navItem.addEventListener('click', handleNavItemClick, {capture: true});
 
         })
 
     })
-
-    // let menuItems = document.querySelectorAll('.hoo-navitem[aria-expanded]');
-
-    // menuItems.forEach(item => {
-
-    //     item.addEventListener('click', handleMenuItems);
-
-    // })
-
 
 }
