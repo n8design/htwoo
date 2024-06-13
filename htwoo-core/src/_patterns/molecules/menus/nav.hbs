@@ -15,17 +15,17 @@
             <menu class="hoo-nav-listsub" role="group">
                 {{/if}}
                 {{#each this.items }}
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="{{ this.link }}" class="hoo-navitem-link">{{ this.text }}</a>
-            </div>
+                <li class="hoo-navitem">
+                    <div class="hoo-navitem-text">
+                        <a href="{{ this.link }}" class="hoo-navitem-link">{{ this.text }}</a>
+                    </div>
+                </li>
+                {{/each}}
+                {{#if (isdefined this.items) }}
+            </menu>
+            {{/if}}
         </li>
         {{/each}}
-        {{#if (isdefined this.items) }}
-    </menu>
-    {{/if}}
-    </li>
-    {{/each}}
     </menu>
 </nav>
 {{/nav}}

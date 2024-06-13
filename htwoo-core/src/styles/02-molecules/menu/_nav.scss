@@ -147,6 +147,9 @@
 .hoo-nav-listsub {
 	width: 100%;
 
+	--subnav-padding-right: #{core.px2rem(20px)};
+	--subnav-padding-left: #{core.px2rem(39px)};
+
 	.hoo-navitem {
 		width: 100%;
 	}
@@ -156,7 +159,12 @@
 		display: block;
 
 		width: 100%;
-		padding-right: core.px2rem(20px);
-		padding-left: core.px2rem(39px);
+		padding-right: var(--subnav-padding-right);
+		padding-left: var(--subnav-padding-left);
+	}
+	.hoo-nav-listsub{
+		--subnav-padding-right: core.px2rem(40px);
+		--subnav-padding-left: core.px2rem(59px);
 	}
 }
+
