@@ -1,60 +1,49 @@
 "use strict";
 /** MENU ITEM */
 
-const handleMenuItems = (event) => {
+const resetCurrentPage = (allNavItems) => {
 
-    let curNavItem = event.target;
-    let curNavMenu = curNavItem.closest('.hoo-navitem');
-    let curNavMenuAll = curNavMenu.parentNode.querySelectorAll('.hoo-navitem');
+    allNavItems.forEach((item) => {
 
-    if (curNavMenu.getAttribute('aria-expanded') === 'false') {
-
-        curNavMenu.setAttribute('aria-expanded', true);
-        curNavMenu.setAttribute('aria-selected', true);
-        curNavMenu.setAttribute('aria-current', true);
-
-    } else {
-
-        curNavMenu.setAttribute('aria-expanded', false);
-        curNavMenu.setAttribute('aria-selected', false);
-        curNavMenu.setAttribute('aria-current', false);
-
-    }
-
-}
-
-const resetAria = (items) => {
-    console.debug('All Items', items);
-    items.forEach((item) => {
         item.removeAttribute('aria-current');
+
     });
+
 }
 
 const handleNavItemClick = (event) => {
 
     let curClickItem = event.target;
 
-    if (curClickItem.classList.contains('hoo-navitem-link')) {
-
+    if (!curClickItem.classList.contains('hoo-buttonitem') && !curClickItem.classList.contains('hoo-icon')) {
         let curNavItem = curClickItem.closest('.hoo-navitem');
 
-        let curNavMenuItems = curClickItem.closest('.hoo-nav').querySelectorAll('* .hoo-navitem');
-        
-        resetAria(curNavMenuItems);
+        if (curNavItem) {
 
-        curNavItem.setAttribute('aria-current', true);
+            let curNav = curClickItem.closest('.hoo-nav');
+            let allNavItems = curNav.querySelectorAll('* .hoo-navitem');
 
-    } else if (curClickItem.classList.contains('hoo-icon')) {
+            resetCurrentPage(allNavItems);
 
-        let curNavItem = curClickItem.closest('.hoo-navitem');
+            curNavItem.setAttribute('aria-current', true);
 
-        if (curNavItem.getAttribute('aria-expanded') === 'true') {
-            curNavItem.setAttribute('aria-expanded', false);
-        } else {
-            curNavItem.setAttribute('aria-expanded', true);
         }
-
     }
+
+}
+
+const handleIconClick = (event) => {
+
+    let curIcon = event.target;
+    let subMenu = curIcon.closest('.hoo-navitem');
+
+    if (subMenu.getAttribute('aria-expanded') === 'true') {
+        subMenu.setAttribute('aria-expanded', false);
+    } else {
+        subMenu.setAttribute('aria-expanded', true);
+    }
+
+
 
 }
 
@@ -67,8 +56,13 @@ export const initMenu = () => {
         let navItems = nav.querySelectorAll('.hoo-navitem');
         navItems.forEach(navItem => {
 
-            navItem.addEventListener('click', handleNavItemClick, {capture: true});
+            navItem.addEventListener('click', handleNavItemClick);
 
+        })
+
+        let navIcons = nav.querySelectorAll('.hoo-buttonicon');
+        navIcons.forEach(navIcon => {
+            navIcon.addEventListener('click', handleIconClick);
         })
 
     })

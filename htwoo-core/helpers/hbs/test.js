@@ -33,17 +33,17 @@ module.exports = function (Handlebars) {
       let seoTitle = "";
 
       if (seoJunks.length > 1) {
-        
+
         let firstEntry = seoJunks.shift();
-        
-        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1)+' - ';
-        
+
+        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1) + ' - ';
+
         seoJunks.forEach(element => {
 
-          seoTitle += ' '+element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+          seoTitle += ' ' + element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
 
         });
-        
+
         return seoTitle + " - ";
 
       }
@@ -56,7 +56,7 @@ module.exports = function (Handlebars) {
 
     if (value) {
 
-      if(value.indexOf('pages') !== -1){
+      if (value.indexOf('pages') !== -1) {
         return "";
       }
 
@@ -64,17 +64,17 @@ module.exports = function (Handlebars) {
       let seoTitle = "";
 
       if (seoJunks.length > 1) {
-        
+
         let firstEntry = seoJunks.shift();
-        
-        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1)+' - ';
-        
+
+        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1) + ' - ';
+
         seoJunks.forEach(element => {
 
-          seoTitle += ' '+element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+          seoTitle += ' ' + element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
 
         });
-        
+
         return `<h1>${seoTitle}</h1>`;
 
       }
@@ -91,17 +91,17 @@ module.exports = function (Handlebars) {
       let seoTitle = "";
 
       if (seoJunks.length > 1) {
-        
+
         let firstEntry = seoJunks.shift();
-        
-        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1)+', ';
-        
+
+        let seoTitle = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1) + ', ';
+
         seoJunks.forEach(element => {
 
           seoTitle += element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
 
         });
-        
+
         return seoTitle;
 
       }
