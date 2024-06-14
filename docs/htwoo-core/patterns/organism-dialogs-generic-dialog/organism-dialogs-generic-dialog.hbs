@@ -28,6 +28,7 @@ See <a href="">MDN Dialog</a>
 </dialog>
 <dialog id="myDialog-1" class="hoo-dlg" resize="true">
     <button id="closer-mdl" autofocus>Close</button>
+    {{#> molecules-dialog-content}}
     <p>By clicking on the buttons you get a demonstation of possible options of the dialog.</p>
     <p>To change the dialog appearance you can pass in the following css variables via the style attribute:</p>
 
@@ -46,6 +47,7 @@ See <a href="">MDN Dialog</a>
         {{/this}}
         {{/each}}
     </div>
+    {{/molecules-dialog-content}}
 </dialog>
 <script>
     if (window.location !== window.parent.location) {

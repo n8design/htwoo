@@ -4,7 +4,7 @@
 .hoo-dialog {
     &::backdrop {
         opacity: 0.75;
-        background-image: linear-gradient(45deg, magenta, rebeccapurple, dodgerblue, green);
+
     }
 }
 
@@ -44,6 +44,8 @@
 
     border: 0;
     border-radius: 0.5rem;
+    background-color: colors.$neutral-000;
+    color: colors.$neutral-700;
 
     .hoo-dlgcontent {
         width: 100%;
@@ -73,6 +75,7 @@
         left: unset;
 
         height: 100vh;
+        height: 100svh;
         max-height: unset;
         margin: 0;
 
@@ -95,6 +98,7 @@
         bottom: unset;
 
         width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;
@@ -108,6 +112,7 @@
         bottom: 0;
 
         width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;

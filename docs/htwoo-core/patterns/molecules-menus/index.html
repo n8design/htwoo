@@ -4,15 +4,15 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1712672369927" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1712672369927" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1718372960924" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1718372960924" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1712672369927" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1718372960924" media="all" />
     <link rel="canonical" href="https://lab.n8d.studio/htwoo/htwoo-core/?p=">
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1712672369927" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1718372960924" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -145,7 +145,7 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<nav class="hoo-breadcrumb">
+			<nav class="hoo-breadcrumb" aria-label="Breadcrumb" tabindex="0">
     <ol>
         <li class="hoo-breadcrumb-item">
             <button class="hoo-breadcrumb-link">Item 1</button>
@@ -235,27 +235,97 @@
                 <a href="#" class="hoo-navitem-link">Item 1</a>
             </div>
             <menu class="hoo-nav-listsub" role="group">
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 1.1</a>
-            </div>
-        </li>
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 1.2</a>
-            </div>
-        </li>
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 1.3</a>
-            </div>
-        </li>
-    </menu>
-    </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <button class="hoo-buttonicon" >
+                            <span class="hoo-icon">
+                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                    
+                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                </svg>
+                            </span></button>
+                        <a href="#" class="hoo-navitem-link">Item 1.1</a>
+                    </div>
+                    <menu class="hoo-nav-listsub" role="group">
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <button class="hoo-buttonicon" >
+                                    <span class="hoo-icon">
+                                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                            
+                                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                        </svg>
+                                    </span></button>
+                                <a href="#" class="hoo-navitem-link">Item 1.1.1</a>
+                            </div>
+                            <menu class="hoo-nav-listsub" role="group">
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <a href="#" class="hoo-navitem-link">Item 1.1.1.1</a>
+                                    </div>
+                                </li>
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <button class="hoo-buttonicon" >
+                                            <span class="hoo-icon">
+                                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                                    
+                                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                                </svg>
+                                            </span></button>
+                                        <a href="#" class="hoo-navitem-link">Item 1.2.1.1</a>
+                                    </div>
+                                    <menu class="hoo-nav-listsub" role="group">
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.1</a>
+                                            </div>
+                                        </li>
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.2</a>
+                                            </div>
+                                        </li>
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.3</a>
+                                            </div>
+                                        </li>
+                                    </menu>    </li>
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <a href="#" class="hoo-navitem-link">Item 1.3.1.1</a>
+                                    </div>
+                                </li>
+                            </menu>    </li>
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <a href="#" class="hoo-navitem-link">Item 1.2.1</a>
+                            </div>
+                        </li>
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <a href="#" class="hoo-navitem-link">Item 1.3.1</a>
+                            </div>
+                        </li>
+                    </menu>    </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 1.2</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 1.3</a>
+                    </div>
+                </li>
+            </menu>        </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" aria-current="page" >
             <div class="hoo-navitem-text">
                 <a href="#" class="hoo-navitem-link">Item 2</a>
-    </li>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+            </menu>        </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
                 <button class="hoo-buttonicon" >
@@ -268,34 +338,35 @@
                 <a href="#" class="hoo-navitem-link">Item 3</a>
             </div>
             <menu class="hoo-nav-listsub" role="group">
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 3.1</a>
-            </div>
-        </li>
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 3.2</a>
-            </div>
-        </li>
-        <li class="hoo-navitem">
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 3.3</a>
-            </div>
-        </li>
-    </menu>
-    </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.1</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.2</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.3</a>
+                    </div>
+                </li>
+            </menu>        </li>
         <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
             <div class="hoo-navitem-text">
                 <a href="#" class="hoo-navitem-link">Item 4</a>
-    </li>
-    </menu>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+            </menu>        </li>
+        </ul>
 </nav>
 
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-nav" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Accessibility information on <a href=\"https://www.w3.org/WAI/tutorials/menus/structure/\">structure menu</a></p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Vertical Navigation","patternPartial":"molecules-nav","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Vertical navigation support up to a maximum of five levels.</p>\n<p>Accessibility information on <a href=\"https://www.w3.org/WAI/tutorials/menus/structure/\">structure menu</a><br>\n\\</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Vertical Navigation","patternPartial":"molecules-nav","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -1132,10 +1203,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1712672369927">
+<script id="pl-js-polyfill-insert-1718372960924">
   (function() {
     if (self != top) {
-      var cb = '1712672369927';
+      var cb = '1718372960924';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -1148,7 +1219,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1712672369927" nomodule>
+<script id="pl-js-insert-1718372960924" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
