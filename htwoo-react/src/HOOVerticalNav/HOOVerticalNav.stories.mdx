@@ -1,7 +1,7 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOVerticalNav from './HOOVerticalNav';
-import { IHOONavItem } from '../common/IHOONavItem';
+import { symset } from '../SymbolSet';
 
 <Meta title="Components/Menus/HOOVerticalNav" component={HOOVerticalNav} />
 [![Available in v1.6](https://img.shields.io/badge/💦%20Added%20Version-1.6-blue.svg?style=for-the-badge)](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)
@@ -21,7 +21,31 @@ export const Template = (args) => <HOOVerticalNav selectedKey={101} {...args} />
   <Story 
     name="Standard"
     args = { 
-      { navItems: navItems }
+    (function () {
+        symset.initSymbols();
+
+        return {
+          navItems: navItems
+        };
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Expanded on Load 
+<Canvas>
+  <Story 
+    name="Expanded On Load"
+    args = { 
+    (function () {
+        symset.initSymbols();
+
+        return {
+          navItems: navItems,
+          defaultExpandedLevel: 1
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -32,7 +56,14 @@ export const Template = (args) => <HOOVerticalNav selectedKey={101} {...args} />
   <Story 
     name="Extending"
     args = { 
-     { navItems: navItems, rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    (function () {
+        symset.initSymbols();
+
+        return {
+          navItems: navItems,
+          rootElementAttributes: { style: { backgroundColor: "pink" } }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>

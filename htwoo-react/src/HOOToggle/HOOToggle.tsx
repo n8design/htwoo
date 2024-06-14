@@ -12,11 +12,11 @@ export interface IHOOToggleProps extends IHOOStandardProps {
   */
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   /**
-   * (Optional) Toggle label for on position. If omitted, children will be inserted.
+   * (Optional) Toggle label for on position, default "On". If children included, they will be rendered instead.
   */
   labelOn?: string;
   /**
-   * (Optional) Toggle label for off position. If omitted, children will be inserted.
+   * (Optional) Toggle label for off position, default "Off". If children included, they will be rendered instead.
   */
   labelOff?: string;
   /**
@@ -83,14 +83,14 @@ export default class HOOToggle extends React.PureComponent<IHOOToggleProps, IHOO
             aria-disabled={this.props.disabled || false}
             onChange={this.props.onChange}
             className={inputClassName} />
-          {this.props.labelOn && this.props.labelOff &&
+          {!this.props.children &&
             <label  {...this.props.labelElementAttributes} className={labelClassName} htmlFor={this._toggleId} >
               <span className="hoo-toggle-slider"></span>
-              <span className="hoo-toggle-checked">{this.props.labelOn}</span>
-              <span className="hoo-toggle-unchecked">{this.props.labelOff}</span>
+              <span className="hoo-toggle-checked">{this.props.labelOn || "On"}</span>
+              <span className="hoo-toggle-unchecked">{this.props.labelOff || "Off"}</span>
             </label>
           }
-          {(!this.props.labelOn || !this.props.labelOff) &&
+          {(this.props.children) &&
             this.props.children
           }
         </div>
