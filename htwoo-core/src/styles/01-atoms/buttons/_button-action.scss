@@ -18,6 +18,10 @@
 
     cursor: pointer;
 
+    &:disabled{
+        color: colors.$neutral-400;
+    }
+
     .hoo-button-icon{
         line-height: core.px2rem(36px);
     
