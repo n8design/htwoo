@@ -1,0 +1,66 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOButtonMenu from './HOOButtonMenu';
+import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
+import { symset } from '../SymbolSet';
+
+<Meta title="Components/Menus/HOOButtonMenu" component={HOOButtonMenu} />
+
+# HOOButtonMenu
+
+## Flyout Menu Items
+
+This depicts using `HOOButtonMenu`.
+
+## Arguments
+
+<ArgTypes of={HOOButtonMenu} />
+
+export const OverflowTemplate = (args) => <HOOButtonMenu {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = {
+      (function () {
+        symset.initSymbols();
+        const dropdownItems = [
+          { iconName: 'Plus', label: 'First Element' }, 
+          { iconName: 'Plus', label: 'Second Element' }
+        ];
+        const options = dropdownItems;
+
+        return {
+          contextItems: options,
+          contextItemClicked: (event, menuItem) => { console.log(`Flyout menu item: ${JSON.stringify(menuItem)}`) }
+        };
+      })()
+    }>
+    {OverflowTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = {
+      (function () {
+        symset.initSymbols();
+        const dropdownItems = [
+          { iconName: 'Plus', label: 'First Element' }, 
+          { iconName: 'Plus', label: 'Second Element' }
+        ];
+        const options = dropdownItems;
+
+        return {
+          contextItems: options,
+          contextItemClicked: (event, menuItem) => { console.log(`Flyout menu item: ${JSON.stringify(menuItem)}`) },
+          rootElementAttributes: { style: { backgroundColor: "pink" } }
+        };
+      })()
+    }>
+    {OverflowTemplate.bind({})}
+  </Story>
+</Canvas>

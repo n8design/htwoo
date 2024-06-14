@@ -16,6 +16,7 @@ export * from './HOOAvatarPres';
 export * from './HOOBreadcrumb';
 export * from './HOOButton';
 export * from './HOOButtonCommand';
+export * from './HOOButtonMenu';
 export * from './HOOButtonSplit';
 export * from './HOOCardFooter';
 export * from './HOOCardGrid';

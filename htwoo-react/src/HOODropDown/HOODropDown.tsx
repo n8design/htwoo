@@ -309,17 +309,15 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       const terms = (this.state.currentValue === this.props.value) ? "" : this.state.currentValue as string;
       const aFilteredOptions = this._optionElements.filter((option) => {
         if (this.props.containsTypeAhead) {
-          return (option.innerText.toLowerCase().indexOf(terms.toLowerCase()) > -1);
+          return (option?.innerText?.toLowerCase().indexOf(terms.toLowerCase()) > -1);
         } else {
-          if (option.innerText.toLowerCase().substring(0, terms.length) == (terms.toLowerCase())) {
+          if (option?.innerText?.toLowerCase().substring(0, terms.length) == (terms.toLowerCase())) {
             return true;
           }
         }
       });
-      this._optionElements.forEach(option => option.style.display = "none");
-      aFilteredOptions.forEach((option) => {
-        option.style.display = "";
-      });
+      this._optionElements.forEach(option => { if (option?.style) { option.style.display = "none"; } });
+      aFilteredOptions.forEach((option) => {if (option?.style) { option.style.display = ""; } });
       if (aFilteredOptions.length < this._optionElements.length) {
         ddState = DDState.Filtered;
       }
@@ -334,7 +332,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     try {
       // grab the currently showing options, which might have been filtered
       const aCurrentOptions = this._optionElements.filter((option) => {
-        if (option.style.display === '') {
+        if (option?.style?.display === '') {
           return true;
         }
       });

@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ArgTypes } from '@storybook/blocks';
 import HOOAction, { HOOActionType } from './HOOAction';
+import { symset } from '../SymbolSet';
 
 <Meta 
   title="Components/Buttons/HOOAction" 
@@ -38,10 +39,15 @@ export const Template = (args) => <HOOAction {...args} />;
 <Canvas>
   <Story
     name="Action"
-    args={
-      { label: "Action Button", 
-       iconName: "hoo-icon-plus", 
-      onClick: () => { } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return {
+          label: "Action Button", 
+          iconName: "hoo-icon-plus", 
+          onClick: () => { console.log(`Action Button Clicked`) }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -51,11 +57,16 @@ export const Template = (args) => <HOOAction {...args} />;
 <Canvas>
   <Story
     name="Extending"
-    args={
-      { label: "Action Button", 
-       iconName: "hoo-icon-plus", 
-       rootElementAttributes: { style: { backgroundColor: "pink" } },
-      onClick: () => { } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return {
+          label: "Action Button", 
+          iconName: "hoo-icon-plus", 
+          rootElementAttributes: { style: { backgroundColor: "pink" } },
+          onClick: () => { console.log(`Action Button Clicked`) }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>

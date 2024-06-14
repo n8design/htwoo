@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.5.1 - 2024-June-04
+
+>In support of HTWOO-CORE v2.5.0
+
+- Documentation Fixes
+- HOODropDown - throws errors when null option is included
+- SPFx Themes - added semanticColors import for SPFx theme support.
+- HOOToggle - labelOn/labelOff attributes are optional but now default to "On"/"Off", children are displayed instead, if they are available.
+- HOOVerticalNav - added optional parameter that allows navigation items up to and including specified level expanded by default on first load.
+- HOOButtonMenu - added new component that is a renamed and integrated version of HOOIconOverflow that uses a button to show a menu and then displays a flyout menu when clicked and closes when an item in the flyout is selected.
+
 ## 2.5.0 - 2024-May-24
 
 - Missing HOONumber import in root index.
