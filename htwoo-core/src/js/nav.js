@@ -25,7 +25,7 @@ const handleNavItemClick = (event) => {
 
             resetCurrentPage(allNavItems);
 
-            curNavItem.setAttribute('aria-current', true);
+            curNavItem.setAttribute('aria-current', "page");
 
         }
     }
