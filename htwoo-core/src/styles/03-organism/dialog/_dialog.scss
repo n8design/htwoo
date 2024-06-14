@@ -75,6 +75,7 @@
         left: unset;
 
         height: 100vh;
+        height: 100svh;
         max-height: unset;
         margin: 0;
 
@@ -97,6 +98,7 @@
         bottom: unset;
 
         width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;
@@ -110,6 +112,7 @@
         bottom: 0;
 
         width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
         max-width: unset;
         height: var(--hoo-dlg-height, revert);
         margin: 0;
