@@ -15,7 +15,7 @@
   .hoo-input-text {
     @include input.base-input;
 
-    height: fit-content;
+    height: 2rem;
     width: calc(100% - 2rem);
 
     border-left: 0;
@@ -25,7 +25,7 @@
 
   .hoo-icon {
     @include input.base-input;
-
+    box-sizing: border-box;
     width: 2rem;
     height: 2rem;
     padding-right: core.px2rem(5px);
