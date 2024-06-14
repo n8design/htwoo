@@ -2,6 +2,34 @@
 
 Changes in hTWOo core as they happen
 
+## [2.5.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.4.0...htwoo-core-v2.5.0) (2024-06-14)
+
+### Features
+
+* **CSS:** Updated vertical nav to use CSS variables ([66bc5b8](https://github.com/n8design/htwoo/commit/66bc5b8faa0ab39386f6a33784b56d199f9fdd3e))
+* **HTML:** Icon button with menu added ([59aea91](https://github.com/n8design/htwoo/commit/59aea91fcc8e54097c0b56cbaf8be996c04ef630))
+
+### Bug Fixes
+
+* **CSS:** [#114](https://github.com/n8design/htwoo/issues/114) Style update to support 5 levels of depth ([c792d1c](https://github.com/n8design/htwoo/commit/c792d1c784a956273cc3a7b80f2ca7b7dca4a9b4))
+* **CSS:** [#117](https://github.com/n8design/htwoo/issues/117) transparent border over command bar removed ([38be681](https://github.com/n8design/htwoo/commit/38be681f89d894bfd1dd4bc0bdbd045b5567c506))
+* **CSS:** [#129](https://github.com/n8design/htwoo/issues/129) added dark mode support for dialogs and input fields ([7bf9c33](https://github.com/n8design/htwoo/commit/7bf9c33f01ad18db0c5d541a23eb67c9d404b5d6))
+* **CSS:** [#130](https://github.com/n8design/htwoo/issues/130) fix hover styles for vertical nav ([e87c368](https://github.com/n8design/htwoo/commit/e87c368b06fbec744e105988ced867f66f74e540))
+* **CSS:** [#131](https://github.com/n8design/htwoo/issues/131) Update to hover behaviour when radio button and checkbox is disabled ([84447d2](https://github.com/n8design/htwoo/commit/84447d2a63b56439f942363134602c3e2b74474f))
+* **CSS:** [#132](https://github.com/n8design/htwoo/issues/132) - Search box icon misalignment ([65a7853](https://github.com/n8design/htwoo/commit/65a78535ad3a3c44ba7d7063e3863d9970e8714b))
+* **CSS:** [#134](https://github.com/n8design/htwoo/issues/134) style update on load indicator ([acb35fe](https://github.com/n8design/htwoo/commit/acb35fe2c2d6e1fcd678fca26ec2871a31467923))
+* **CSS:** [#137](https://github.com/n8design/htwoo/issues/137) Add min-height to hoo-meta-list ([9770e26](https://github.com/n8design/htwoo/commit/9770e26cb91bc92c55ec83f28581296bc9628162))
+* **CSS:** [#140](https://github.com/n8design/htwoo/issues/140) fix wrong font on buttons ([19ca4d4](https://github.com/n8design/htwoo/commit/19ca4d498458b53b8637679eb748048165f5b38e))
+* **CSS:** [#141](https://github.com/n8design/htwoo/issues/141) disabled button flyout style ([452beae](https://github.com/n8design/htwoo/commit/452beae483f29199e65c942d7a55cc0ccb84313d))
+* **CSS:** Designtoken update for molecules-nav ([bd824f7](https://github.com/n8design/htwoo/commit/bd824f77c1d959b337b70378815ddf68efe18a8c))
+* **CSS:** Height and widht handling optimisation for mobile dialogs ([023759d](https://github.com/n8design/htwoo/commit/023759d0458b03732fece8524c51bc959e64c79a))
+* **CSS:** hoo-dialog block content height ([17fdee8](https://github.com/n8design/htwoo/commit/17fdee871f47ea5bb8a9735d1a3aa29da3d66688))
+* **CSS:** hoo-nav style fixing ([b9d9035](https://github.com/n8design/htwoo/commit/b9d90358f46cb168141a7bd736089c492a0ff7d0))
+* **CSS:** max-height on dialog box fixed ([0079eea](https://github.com/n8design/htwoo/commit/0079eea812e49ddc8d0bff8f63c5d8f4fa494d19))
+* **HTML:** [#114](https://github.com/n8design/htwoo/issues/114) Current vertial navigation now support up to five levels of depth ([9b8cf0d](https://github.com/n8design/htwoo/commit/9b8cf0d979d69cd719242b3cade9379aa3213771))
+* **HTML:** Breadcrumb aria label added ([a294132](https://github.com/n8design/htwoo/commit/a294132f7c29d353afcd92bb5d69f5fab7d90513))
+* **JS:** hoo-nav accessiblity behaviour update ([93aab90](https://github.com/n8design/htwoo/commit/93aab908954d310d0101ce90a5621998eac7854d))
+
 ## [2.4.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.4.0...htwoo-core-v2.4.0) (2024-04-09)
 
 ### Features
