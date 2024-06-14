@@ -23,6 +23,9 @@
 		height: auto;
 		min-height: core.px2rem(36px);
 		padding-right: 3rem;
+		:disabled:hover{
+			background-color: inherit;
+		}
 		&:hover{
 			background-color: colors.$neutral-100;
 			.hoo-button-label{
