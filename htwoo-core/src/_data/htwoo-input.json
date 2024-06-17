@@ -313,6 +313,11 @@
                 "disabled": ""
             },
             {
+                "key": "A really really realy really really really realy really long option",
+                "value": "A really really realy really really really realy really long option",
+                "disabled": ""
+            },
+            {
                 "key": "carrots",
                 "value": "Carrots",
                 "disabled": ""
