@@ -12,7 +12,7 @@
     }
 }
 
-%hoo-spinner {
+.hoo-spinner {
     display: block;
     box-sizing: border-box;
     border-radius: 50%;
@@ -24,29 +24,21 @@
     animation-duration: 1.3s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
-}
-
-.hoo-spinner-xsmall {
-    @extend %hoo-spinner;
-    width: 0.75rem;
-    height: 0.75rem;
-}
-
-.hoo-spinner-small {
-    @extend %hoo-spinner;
-    width: 1rem;
-    height: 1rem;
-}
-
-.hoo-spinner,
-.hoo-spinner-medium {
-    @extend %hoo-spinner;
     width: 1.25rem;
     height: 1.25rem;
-}
 
-.hoo-spinner-large {
-    @extend %hoo-spinner;
-    width: 1.75rem;
-    height: 1.75rem;
+    &.xsmall {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    &.small {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &.large {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
 }
