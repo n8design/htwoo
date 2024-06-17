@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.5.2 - 2024-June-17
+
+- Documentation Fixes
+- HOOButtonMenu - Updates for new class names and html attributes in htwoo-core
+- HOOVerticalNav - Updates for new class names and html attributes in htwoo-core
+
 ## 2.5.1 - 2024-June-04
 
 >In support of HTWOO-CORE v2.5.0

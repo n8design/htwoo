@@ -82,10 +82,10 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
     let retVal: React.ReactElement<IHOOVerticalNavProps>[] = (navItems != null) ? [] : null;
     try {
       for (let i = 0; i < navItems.length; i++) {
-        const ariaCurrent: React.LiHTMLAttributes<HTMLLIElement> = (navItems[i].key === this.props.selectedKey) ? { "aria-current": "page" } : null;
+        const ariaCurrent: React.LiHTMLAttributes<HTMLLIElement> = (navItems[i].key === this.props.selectedKey) ? { "aria-current": "true" } : null;
         const hrefClick: React.AnchorHTMLAttributes<HTMLAnchorElement> = (navItems[i].onItemClick != null) ? { onClick: () => navItems[i].onItemClick(navItems[i].key) } : { href: navItems[i].href || "#", target: navItems[i].target || "_blank" };
         const expanded: boolean = this.state.expanded.indexOf(navItems[i].key) > -1;
-        const navItem = <li role="treeitem" data-index={i} className="hoo-navitem" aria-expanded={expanded} {...ariaCurrent}>
+        const navItem = <li key={navItems[i].key} role="treeitem" data-index={i} className="hoo-navitem" aria-expanded={expanded} {...ariaCurrent}>
           <div className="hoo-navitem-text">
             {navItems[i].childNavItems != null && navItems[i].childNavItems.length > 0 &&
               <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-arrow-right" onClick={() => { this._expanded(navItems[i].key) }} />
@@ -93,7 +93,7 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
             <a className="hoo-navitem-link" {...hrefClick}>{navItems[i].text}</a>
           </div>
           {navItems[i].childNavItems != null && navItems[i].childNavItems.length > 0 &&
-            <menu className="hoo-nav-listsub" role="group">
+            <menu key={`child${navItems[i].key}`} className="hoo-nav-listsub" role="group">
               {this._renderNav(navItems[i].childNavItems)}
             </menu>
           }
