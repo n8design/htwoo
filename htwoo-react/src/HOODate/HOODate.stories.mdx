@@ -9,16 +9,19 @@ import HOODate from './HOODate';
 
 ## Arguments
 
+Format value as YYYY-MM-DD. e.g. `(new Date()).toISOString().split('T')[0]`
+
 <ArgTypes of={HOODate} />
 
 export const Template = (args) => <HOODate {...args} />;
 
 ## Standard
+
 <Canvas>
   <Story 
     name="Standard"
     args = { 
-      { value: (new Date()).toLocaleDateString() }
+      { value: (new Date()).toISOString().split('T')[0] }
     }>
     {Template.bind({})}
   </Story>
@@ -36,7 +39,7 @@ export const Template = (args) => <HOODate {...args} />;
         _maxValue.setFullYear(_maxValue.getFullYear() + 1);
         _minValue.setFullYear(_minValue.getFullYear() - 1);
 
-        return { value: (new Date()).toLocaleDateString(), minValue: _minValue.toISOString().split('T')[0], maxValue: _maxValue.toISOString().split('T')[0] };
+        return { value: (new Date()).toISOString().split('T')[0] , minValue: _minValue.toISOString().split('T')[0], maxValue: _maxValue.toISOString().split('T')[0] };
       })()
     }>
     {Template.bind({})}
@@ -48,7 +51,7 @@ export const Template = (args) => <HOODate {...args} />;
   <Story 
     name="Disabled"
     args = { 
-      { value: (new Date()).toLocaleDateString(), disabled: true }
+      { value: (new Date()).toISOString().split('T')[0] , disabled: true }
     }>
     {Template.bind({})}
   </Story>
@@ -59,7 +62,7 @@ export const Template = (args) => <HOODate {...args} />;
   <Story 
     name="Extending"
     args = { 
-     { value: (new Date()).toLocaleDateString(), rootElementAttributes: { style: { backgroundColor: "pink" } }}
+     { value: (new Date()).toISOString().split('T')[0] , rootElementAttributes: { style: { backgroundColor: "pink" } }}
     }>
     {Template.bind({})}
   </Story>

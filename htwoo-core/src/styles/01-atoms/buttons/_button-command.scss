@@ -8,7 +8,7 @@ div.hoo-buttoncmd {
 
 	&:hover {
 
-		&> button.hoo-buttoncmd {
+		&>button.hoo-buttoncmd {
 			background-color: colors.$neutral-100;
 		}
 
@@ -39,6 +39,26 @@ div.hoo-buttoncmd {
 		&:focus {
 			outline: none;
 		}
+
+	}
+
+	&[disabled],
+	&:disabled {
+		button.hoo-buttoncmd {
+			pointer-events: none;
+
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
+
+			.hoo-button-icon {
+				color: colors.$neutral-400;
+			}
+
+			.hoo-pivot-inner {
+				color: inherit;
+			}
+		}
 	}
 
 
@@ -58,7 +78,7 @@ div.hoo-buttoncmd {
 		}
 	}
 
-	&:hover,
+	&:not([disabled]):hover,
 	&.show-flyout {
 		&>.hoo-buttonflyout {
 			display: flex;

@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "2.3.1",
+  "version": "2.5.1",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "keywords": [
     "Fluent Design",
@@ -37,7 +37,7 @@
   "types": "./lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@n8d/htwoo-core": "^2.3.0",
+    "@n8d/htwoo-core": "^2.5.0",
     "react": "^17.*",
     "react-dom": "^17.*"
   },
@@ -49,9 +49,9 @@
     "/lib"
   ],
   "devDependencies": {
-    "@babel/preset-env": "^7.23.5",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "@storybook/addon-a11y": "^7.6.3",
     "@storybook/addon-actions": "^7.6.3",
     "@storybook/addon-docs": "^7.6.3",

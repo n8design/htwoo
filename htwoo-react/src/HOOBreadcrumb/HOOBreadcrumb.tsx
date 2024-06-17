@@ -31,6 +31,10 @@ export interface IHOOBreadcrumbProps extends IHOOStandardProps {
    */
   seperatorIconName?: string;
   /**
+   * (Optional) Seperator Icon Title
+   */
+  seperatorIconTitle?: string;
+  /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-breadcrumb {rootElementAttributes.class}
   */
@@ -46,7 +50,7 @@ export class HOOBreadcrumbState implements IHOOBreadcrumbState {
 
 export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
   private LOG_SOURCE: string = "💦HOOBreadcrumb";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps = { "data-component": this.LOG_SOURCE, "aria-label": "Breadcrumb", "tabindex": "0" };
   private _componentClass: string = "hoo-breadcrumb";
 
   constructor(props: IHOOBreadcrumbProps) {
@@ -59,7 +63,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
-      const iconSVG = (this.props.seperatorIconName) ? symset.Icon(this.props.seperatorIconName) : null;
+      const iconSVG = (this.props.seperatorIconName) ? symset.Icon(this.props.seperatorIconName, this.props.seperatorIconTitle || "") : null;
       return (
         <nav {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <ol>

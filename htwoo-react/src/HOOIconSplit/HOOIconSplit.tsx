@@ -10,6 +10,10 @@ export interface IHOOIconSplitProps extends IHOOStandardProps {
    */
   leftIconName: string;
   /**
+   * (Optional) Left Icon title
+   */
+  leftIconTitle?: string;
+  /**
    * Flyout menu items, if omitted, no flyout will be rendered.
    */
   flyoutContextItems: IHOOFlyoutMenuItem[];
@@ -17,6 +21,10 @@ export interface IHOOIconSplitProps extends IHOOStandardProps {
    * (Optional) icon name, if omitted, icon-arrow-down will be used.
    */
   rightIconName?: string;
+  /**
+   * (Optional) Right Icon title
+   */
+  rightIconTitle?: string;
   /** 
   * (Optional) Flyout menu items click event, returns mouse event and HOOFlyoutMenuItem
   */
@@ -63,8 +71,8 @@ export default class HOOIconSplit extends React.PureComponent<IHOOIconSplitProps
       const showFlyoutClass = this.state.showFlyout ? "show-flyout " : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${showFlyoutClass}${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${showFlyoutClass}`;
       const iconName = `${this.props.rightIconName || "hoo-icon-arrow-down"}`;
-      const iconSVG = symset.Icon(iconName);
-      const leftIconSVG = symset.Icon(this.props.leftIconName);
+      const iconSVG = symset.Icon(iconName, this.props.rightIconTitle || "");
+      const leftIconSVG = symset.Icon(this.props.leftIconName, this.props.leftIconTitle || "");
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}

@@ -8,7 +8,8 @@ import { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu";
 
 export interface IHOOCommandItem {
   key: number | string;
-  text: string;
+  iconName?: string;
+  text?: string;
   flyoutMenuItems: IHOOFlyoutMenuItem[];
 }
 
@@ -79,7 +80,8 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
           return (
             <HOOButtonCommand
               key={pi.key}
-              label={pi.text}
+              label={pi.text || null}
+              leftIconName={pi.iconName || null}
               onClick={(ev) => { this.props.onClick(ev, pi.key, null); }}
               flyoutMenuItems={pi.flyoutMenuItems}
               flyoutMenuItemClicked={(ev, fmi: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key, fmi); }}

@@ -9,9 +9,13 @@ export interface IHOOVerticalNavProps extends IHOOStandardProps {
    */
   selectedKey: string | number;
   /**
-   * Hierarchtical navigation items
+   * Hierarchical navigation items
    */
   navItems: IHOONavItem[];
+  /**
+   * (Optional) On first load navigation items up to and including the level specified are expanded - Default 0
+   */
+  defaultExpandedLevel?: number;
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-nav {rootElementAttributes.class}
@@ -31,7 +35,32 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
   constructor(props: IHOOVerticalNavProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOVerticalNav";
-    this.state = { expanded: [] };
+    const expanded = this._defaultExpandedFirstLoad(props.navItems, props.defaultExpandedLevel);
+    this.state = { expanded };
+  }
+
+  private _defaultExpandedFirstLoad = (navItems: IHOONavItem[], defaultExpandedLevel: number = 0): (number | string)[] => {
+    let retVal: (number | string)[] = [];
+    try {
+      function addExpanded(ni: IHOONavItem[], level: number = 1): void {
+        for (let i = 0; i < ni.length; i++) {
+          const idx = retVal.findIndex((o) => { return o === ni[i].key });
+          if (idx === -1) {
+            retVal.push(ni[i].key);
+          }
+          const nextLevel = level++;
+          if (ni[i].childNavItems != null && ni[i].childNavItems.length > 0 && nextLevel <= defaultExpandedLevel) {
+            addExpanded(ni[i].childNavItems);
+          }
+        }
+      }
+      if (defaultExpandedLevel > 0) {
+        addExpanded(navItems);
+      }
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_defaultExpandedFirstLoad) - ${err}`);
+    }
+    return retVal;
   }
 
   private _expanded = (itemKey: number | string): void => {

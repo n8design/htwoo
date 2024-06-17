@@ -53,7 +53,7 @@ export class SymbolSet implements ISymbolSet {
         const s = defs[i];
         const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
         s.firstElementChild.removeAttribute("xmlns");
-        const svgElement = `<svg xmlns="http://www.w3.org/2000/svg" data-svgid="${s.id}" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
+        const svgElement = `<svg xmlns="http://www.w3.org/2000/svg" data-svgid="${s.id}" title="%title%" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
         this._symbolSetDictionary[s.id] = svgElement;
       }
       retVal = true;
@@ -68,8 +68,14 @@ export class SymbolSet implements ISymbolSet {
    * @param iconName: string - The id/key of the icon to retrieve
    * @returns: string - svg string (<svg>...</svg>)
   */
-  public Icon(iconName: string): string {
-    return this._symbolSetDictionary[iconName];
+  public Icon(iconName: string, iconTitle: string = ""): string {
+    try {
+      const iconSVG = this._symbolSetDictionary[iconName]?.replace("%title%", iconTitle);
+      return iconSVG || "<svg />";
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (Icon) - ${err}`);
+      return null;
+    }
   }
 
   /**
@@ -78,8 +84,13 @@ export class SymbolSet implements ISymbolSet {
    * @returns: string - base64 encoded string (data:image/svg+xml;base64,....)
   */
   public IconBase64(iconName: string): string {
-    const iconSvg = this.Icon(iconName);
-    return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
+    try {
+      const iconSvg = this.Icon(iconName);
+      return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (IconBase64) - ${err}`);
+      return null;
+    }
   }
 
   /**

@@ -1,5 +1,6 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { symset } from '../SymbolSet';
 import HOOAccordion from './HOOAccordion';
 import HOOLabel from '../HOOLabel';
 
@@ -21,7 +22,10 @@ export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel labe
   <Story 
     name="Simple"
     args = { 
-      { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details."}
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details."};
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -32,7 +36,10 @@ export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel labe
   <Story 
     name="Content w/ Children Elements"
     args = { 
-      { header: "My Accordion", iconName: "hoo-icon-arrow-right" }
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right" }
+      })()
     }>
     {TemplateChildren.bind({})}
   </Story>
@@ -43,7 +50,10 @@ export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel labe
   <Story 
     name="No Icon"
     args = { 
-      { header: "My Accordion", content: "My Accordion details."}
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", content: "My Accordion details."}
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -54,7 +64,10 @@ export const TemplateChildren = (args) => <HOOAccordion {...args}><HOOLabel labe
   <Story 
     name="Extending"
     args = { 
-     { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details.", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+      (function () {
+        symset.initSymbols();
+        return { header: "My Accordion", iconName: "hoo-icon-arrow-right", content: "My Accordion details.", rootElementAttributes: { style: { backgroundColor: "pink" } }}
+      })()
     }>
     {Template.bind({})}
   </Story>

@@ -45,6 +45,22 @@
 		&:hover {
 			background-color: colors.$neutral-200;
 		}
+
+		&[disabled],
+		&:disabled {
+			pointer-events: none;
+	
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
+			.hoo-buttonicon-flyout{
+				color: colors.$neutral-400;
+				.hoo-icon{
+					fill: inherit;
+				}
+			}
+		}
+
 	}
 }
 
