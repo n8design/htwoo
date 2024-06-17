@@ -47,9 +47,9 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
         <menu {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
-          {this.props.contextItems && this.props.contextItems.map((ci) => {
+          {this.props.contextItems && this.props.contextItems.map((ci, index) => {
             return (
-              <li key={ci.label} className="hoo-buttonflyout-item">
+              <li key={ci.label || index} className="hoo-buttonflyout-item">
                 <HOOAction label={ci.label} iconName={ci.iconName} type={HOOActionType.Action} onClick={(event) => { this.props.contextItemClicked(event, ci) }} />
               </li>
             );

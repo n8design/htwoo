@@ -50,7 +50,7 @@ export class HOOBreadcrumbState implements IHOOBreadcrumbState {
 
 export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
   private LOG_SOURCE: string = "💦HOOBreadcrumb";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps = { "data-component": this.LOG_SOURCE, "aria-label": "Breadcrumb", "tabindex": "0" };
   private _componentClass: string = "hoo-breadcrumb";
 
   constructor(props: IHOOBreadcrumbProps) {

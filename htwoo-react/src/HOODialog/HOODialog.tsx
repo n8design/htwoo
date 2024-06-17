@@ -26,7 +26,7 @@ export interface IHOODialogProps extends IHOOStandardProps {
   */
   visible: boolean;
   /**
-   * Change event handler returns the new field value based on the selected items key
+   * Change event handler called when user clicks background or presses escape key
   */
   changeVisibility: () => void;
   /**

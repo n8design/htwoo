@@ -23,8 +23,15 @@ export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
 ## Basic
 <Canvas>
   <Story 
-    name="Basic"
-    args = { { overflow: true } }>
+    name="Basic"    
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          overflow: true
+        };
+      })()
+    }>
     {OverflowTemplate.bind({})}
   </Story>
 </Canvas>
@@ -32,8 +39,16 @@ export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
 ## Extending
 <Canvas>
   <Story 
-    name="Extending"
-    args = { { overflow: true, rootElementAttributes: { style: { backgroundColor: "pink" } } } }>
+    name="Extending"    
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          overflow: true, 
+          rootElementAttributes: { style: { backgroundColor: "pink" } }
+        };
+      })()
+    }>
     {OverflowTemplate.bind({})}
   </Story>
 </Canvas>

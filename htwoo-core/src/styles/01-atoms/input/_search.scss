@@ -9,13 +9,13 @@
   flex-grow: 0;
 
   .hoo-icon {
-    background-color: white;
+    background-color: colors.$neutral-700;
   }
 
   .hoo-input-text {
     @include input.base-input;
 
-    height: fit-content;
+    height: 2rem;
     width: calc(100% - 2rem);
 
     border-left: 0;
@@ -25,7 +25,7 @@
 
   .hoo-icon {
     @include input.base-input;
-
+    box-sizing: border-box;
     width: 2rem;
     height: 2rem;
     padding-right: core.px2rem(5px);
@@ -36,6 +36,7 @@
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    fill: currentColor;
   }
 
   &:focus-within {

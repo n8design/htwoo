@@ -4,25 +4,7 @@
 - include: 
 - exclude: 
 
-## 24 violations have been found
-### A11y ID: aria-allowed-role
-Failing Element Count: 2
-
-Description: Ensures role attribute has an appropriate value for the element
-
-Detected on:
-- [components-accordion-hooaccordiongroup--extending](http://localhost:6006/?path=/story/components-accordion-hooaccordiongroup--extending)
-- [components-accordion-hooaccordiongroup--simple](http://localhost:6006/?path=/story/components-accordion-hooaccordiongroup--simple)
-
-### A11y ID: aria-required-attr
-Failing Element Count: 2
-
-Description: Ensures elements with ARIA roles have all required ARIA attributes
-
-Detected on:
-- [components-accordion-hooaccordiongroup--extending](http://localhost:6006/?path=/story/components-accordion-hooaccordiongroup--extending)
-- [components-accordion-hooaccordiongroup--simple](http://localhost:6006/?path=/story/components-accordion-hooaccordiongroup--simple)
-
+## 20 violations have been found
 ### A11y ID: label
 Failing Element Count: 20
 

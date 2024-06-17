@@ -5,6 +5,8 @@
 	padding: 0 core.px2rem(20px) core.px2rem(16px);
 
 	border: transparent 1px solid;
+	overflow: auto;
+	max-height: calc(100% - 5rem);
 }
 .hoo-dlg-iframe{
 	box-sizing: border-box;

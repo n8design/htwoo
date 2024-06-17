@@ -47,7 +47,7 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
-      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName, this.props.title || "");
+      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName, this.props.title || "<span/>");
       return (
         <>
           <span {...this._rootProps}

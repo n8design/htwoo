@@ -32,35 +32,37 @@ See <a href="">MDN Dialog</a>
 </dialog>
 <dialog id="myDialog-1" class="hoo-dlg" resize="true">
     <button id="closer-mdl" autofocus>Close</button>
-    <p>By clicking on the buttons you get a demonstation of possible options of the dialog.</p>
-    <p>To change the dialog appearance you can pass in the following css variables via the style attribute:</p>
-
-    <ul>
-        <li>
-            <code>style="--hoo-dlg-height: 30vh"</code> - result in the dialog with 30% of the viewport height
-        </li>
-        <li>
-            <code>style="--hoo-dlg-width: 30vw"</code> - result in the dialog with 30% of the viewport width
-        </li>
-    </ul>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; margin: 1rem;">
-        <button class="hoo-button" id="btn-sidebar-left">
-            <span class="hoo-button-label">Sidebar Left</span>
-        </button>
-        <button class="hoo-button" id="btn-sidebar-right">
-            <span class="hoo-button-label">Sidebar Right</span>
-        </button>
-        <button class="hoo-button" id="btn-topbar">
-            <span class="hoo-button-label">Top Bar</span>
-        </button>
-        <button class="hoo-button" id="btn-bottombar">
-            <span class="hoo-button-label">Bottom Bar</span>
-        </button>
-        <button class="hoo-button" id="btn-fullscreen">
-            <span class="hoo-button-label">Full Screen</span>
-        </button>
-    </div>
-</dialog>
+<div class="hoo-dlgcontent">
+    
+        <p>By clicking on the buttons you get a demonstation of possible options of the dialog.</p>
+        <p>To change the dialog appearance you can pass in the following css variables via the style attribute:</p>
+    
+        <ul>
+            <li>
+                <code>style="--hoo-dlg-height: 30vh"</code> - result in the dialog with 30% of the viewport height
+            </li>
+            <li>
+                <code>style="--hoo-dlg-width: 30vw"</code> - result in the dialog with 30% of the viewport width
+            </li>
+        </ul>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; margin: 1rem;">
+            <button class="hoo-button" id="btn-sidebar-left">
+                <span class="hoo-button-label">Sidebar Left</span>
+            </button>
+            <button class="hoo-button" id="btn-sidebar-right">
+                <span class="hoo-button-label">Sidebar Right</span>
+            </button>
+            <button class="hoo-button" id="btn-topbar">
+                <span class="hoo-button-label">Top Bar</span>
+            </button>
+            <button class="hoo-button" id="btn-bottombar">
+                <span class="hoo-button-label">Bottom Bar</span>
+            </button>
+            <button class="hoo-button" id="btn-fullscreen">
+                <span class="hoo-button-label">Full Screen</span>
+            </button>
+        </div>
+</div></dialog>
 <script>
     if (window.location !== window.parent.location) {
     let sidebarLeft = document.querySelector('#btn-sidebar-left');

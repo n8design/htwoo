@@ -9,6 +9,8 @@ import HOOTime from './HOOTime';
 
 ## Arguments
 
+Format value as hh:mm:ss. e.g. `(new Date()).toISOString().split('T')[1]`
+
 <ArgTypes of={HOOTime} />
 
 export const Template = (args) => <HOOTime {...args} />;
@@ -18,7 +20,7 @@ export const Template = (args) => <HOOTime {...args} />;
   <Story 
     name="Basic"
     args = { 
-      { value: (new Date()).toLocaleDateString() }
+      { value: (new Date()).toISOString().split('T')[1]  }
     }>
     {Template.bind({})}
   </Story>
@@ -29,7 +31,7 @@ export const Template = (args) => <HOOTime {...args} />;
   <Story 
     name="Min/Max Values"
     args = {
-      { value: (new Date()).toLocaleDateString(), minValue: "00:00:00", maxValue: "23:59:59" }
+      { value: (new Date()).toISOString().split('T')[1], minValue: "00:00:00", maxValue: "23:59:59" }
     }>
     {Template.bind({})}
   </Story>
@@ -40,7 +42,7 @@ export const Template = (args) => <HOOTime {...args} />;
   <Story 
     name="Disabled"
     args = { 
-      { value: (new Date()).toLocaleDateString(), disabled: true }
+      { value: (new Date()).toISOString().split('T')[1], disabled: true }
     }>
     {Template.bind({})}
   </Story>
@@ -51,7 +53,7 @@ export const Template = (args) => <HOOTime {...args} />;
   <Story 
     name="Extending"
     args = { 
-     { value: (new Date()).toLocaleDateString(), rootElementAttributes: { style: { backgroundColor: "pink" } }}
+     { value: (new Date()).toISOString().split('T')[1], rootElementAttributes: { style: { backgroundColor: "pink" } }}
     }>
     {Template.bind({})}
   </Story>

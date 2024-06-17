@@ -3,6 +3,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import HOOAccordionGroup from './HOOAccordionGroup';
 import HOOAccordion from '../HOOAccordion';
 import HOOLabel from '../HOOLabel';
+import { symset } from '../SymbolSet';
 
 <Meta title="Components/Accordion/HOOAccordionGroup" component={HOOAccordionGroup} />
 
@@ -28,7 +29,10 @@ export const Template = (args) => <HOOAccordionGroup {...args} >
   <Story 
     name="Simple"
     args = { 
-      {}
+      (function () {
+        symset.initSymbols();
+        return {};
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -39,7 +43,10 @@ export const Template = (args) => <HOOAccordionGroup {...args} >
   <Story 
     name="Extending"
     args = { 
-     { rootElementAttributes: { style: { backgroundColor: "pink" } }}
+      (function () {
+        symset.initSymbols();
+        return { rootElementAttributes: { style: { backgroundColor: "pink" } }};
+      })()
     }>
     {Template.bind({})}
   </Story>

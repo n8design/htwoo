@@ -115,6 +115,9 @@ export class SPFxThemes implements ISPFxThemes {
 
       // transfer color palette into CSS variables
       this.setCSSVariables(this._themeVariant["effects"]);
+
+      // transfer semantic colors into CSS variables
+      this.setCSSVariables(this._themeVariant.semanticColors);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_setThemeVariants) - ${err}`);
     }

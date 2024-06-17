@@ -1,6 +1,12 @@
 @use "../../00-base/colors/colors";
 @use "../../00-base/mixin/core.mixin";
 
+button[class^='hoo'],
+input[class^='hoo'],
+textarea[class^='hoo']{
+    font-family: inherit;
+}
+
 .hoo-button {
 	display: inline-flex;
 	justify-content: center;

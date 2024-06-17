@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ArgTypes } from '@storybook/blocks';
 import HOOButton, {HOOButtonType} from './HOOButton';
+import { symset } from '../SymbolSet';
 
 <Meta 
   title="Components/Buttons/HOOButton" 
@@ -42,8 +43,15 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary"
-    args={
-      { type: HOOButtonType.Primary, label: 'Button', onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Primary, 
+          label: 'Button', 
+          onClick: () => { alert("Clicked"); } 
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -53,8 +61,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary: Left Icon"
-    args={
-      { type: HOOButtonType.Primary, label: 'Button', iconName: "hoo-icon-arrow-left", onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Primary, 
+          label: 'Button', 
+          iconName: "hoo-icon-arrow-left", 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -64,8 +80,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary: Right Icon"
-    args={
-      { type: HOOButtonType.Primary, label: 'Button', iconRight: "hoo-icon-arrow-right", onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Primary, 
+          label: 'Button', 
+          iconRight: "hoo-icon-arrow-right", 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -75,8 +99,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary: Disabled"
-    args={
-      { type: HOOButtonType.Primary, disabled: true, label: 'Button', onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Primary, 
+          disabled: true, 
+          label: 'Button', 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -86,8 +118,15 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Standard"
-    args={
-      { type: HOOButtonType.Standard, label: 'Button', onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Standard, 
+          label: 'Button', 
+          onClick: () => { alert("Clicked"); } 
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -97,8 +136,15 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Icon"
-    args={
-      { type: HOOButtonType.Icon, iconName: "hoo-icon-close", onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Icon, 
+          iconName: "hoo-icon-close", 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -108,8 +154,15 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary: Hyperlink"
-    args={
-      { type: HOOButtonType.HyperlinkPrimary, label: 'Button', href: "https://google.com" }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.HyperlinkPrimary, 
+          label: 'Button', 
+          href: "https://google.com"
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -119,8 +172,15 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Standard: Hyperlink"
-    args={
-      { type: HOOButtonType.HyperlinkStandard, label: 'Button', href: "https://google.com" }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.HyperlinkStandard, 
+          label: 'Button', 
+          href: "https://google.com"
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -130,8 +190,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Primary: Compound"
-    args={
-      { type: HOOButtonType.CompoundPrimary, label: 'Button', description: "Compound button description", onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.CompoundPrimary, 
+          label: 'Button', 
+          description: "Compound button description", 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -141,8 +209,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Standard: Compound"
-    args={
-      { type: HOOButtonType.CompoundStandard, label: 'Button', description: "Compound button description", onClick: () => { alert("Clicked"); } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.CompoundStandard, 
+          label: 'Button', 
+          description: "Compound button description", 
+          onClick: () => { alert("Clicked"); }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
@@ -152,8 +228,16 @@ export const Template = (args) => <HOOButton {...args} />;
 <Canvas>
   <Story
     name="Extending"
-    args={
-      { type: HOOButtonType.Standard, label: 'Button', onClick: () => { alert("Clicked"); }, rootElementAttributes: { style: { backgroundColor: "pink" } } }
+    args = { 
+      (function () {
+        symset.initSymbols();
+        return { 
+          type: HOOButtonType.Standard, 
+          label: 'Button', 
+          onClick: () => { alert("Clicked"); }, 
+          rootElementAttributes: { style: { backgroundColor: "pink" } }
+        };
+      })()
     }>
     {Template.bind({})}
   </Story>
