@@ -5,10 +5,6 @@ const handleMenuItems = (event) => {
     let curNavItem = event.target;
     let curNavMenu = curNavItem.closest('.hoo-navitem');
 
-    // console.log(curNavMenu);
-    // console.log(curNavMenu.getAttribute('aria-expanded'));
-    // console.log(typeof curNavMenu.getAttribute('aria-expanded'));
-
     if (curNavMenu.getAttribute('aria-expanded') === 'false') {
 
         curNavMenu.setAttribute('aria-expanded', true);

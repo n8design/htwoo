@@ -1,0 +1,9 @@
+{
+    "button": {
+        "props": "disabled"
+    },
+    "buttonCmd": {
+        "props": "disabled"
+    },
+    "props": "disabled"
+}
