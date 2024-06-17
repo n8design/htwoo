@@ -1,0 +1,44 @@
+/*
+ * Animation from Fluent React
+ * MIT license: https://github.com/microsoft/fluentui/blob/master/packages/react/LICENSE
+ */
+@keyframes hoo-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hoo-spinner {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 0.125rem;
+    border-style: solid;
+    border-color: var(--themePrimary) var(--themeLight) var(--themeLight);
+    border-image: initial;
+    animation-name: hoo-spinner;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+    width: 1.25rem;
+    height: 1.25rem;
+
+    &.xsmall {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    &.small {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &.large {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
