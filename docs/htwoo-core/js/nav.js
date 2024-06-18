@@ -1,35 +1,70 @@
+"use strict";
 /** MENU ITEM */
 
-const handleMenuItems = (event) => {
+const resetCurrentPage = (allNavItems) => {
 
-    let curNavItem = event.target;
-    let curNavMenu = curNavItem.closest('.hoo-navitem');
+    allNavItems.forEach((item) => {
 
-    // console.log(curNavMenu);
-    // console.log(curNavMenu.getAttribute('aria-expanded'));
-    // console.log(typeof curNavMenu.getAttribute('aria-expanded'));
+        item.removeAttribute('aria-current');
 
-    if (curNavMenu.getAttribute('aria-expanded') === 'false') {
+    });
 
-        curNavMenu.setAttribute('aria-expanded', true);
+}
 
-    } else {
+const handleNavItemClick = (event) => {
 
-        curNavMenu.setAttribute('aria-expanded', false);
+    let curClickItem = event.target;
 
+    if (!curClickItem.classList.contains('hoo-buttonitem') && !curClickItem.classList.contains('hoo-icon')) {
+        let curNavItem = curClickItem.closest('.hoo-navitem');
+
+        if (curNavItem) {
+
+            let curNav = curClickItem.closest('.hoo-nav');
+            let allNavItems = curNav.querySelectorAll('* .hoo-navitem');
+
+            resetCurrentPage(allNavItems);
+
+            curNavItem.setAttribute('aria-current', true);
+
+        }
     }
+
+}
+
+const handleIconClick = (event) => {
+
+    let curIcon = event.target;
+    let subMenu = curIcon.closest('.hoo-navitem');
+
+    if (subMenu.getAttribute('aria-expanded') === 'true') {
+        subMenu.setAttribute('aria-expanded', false);
+    } else {
+        subMenu.setAttribute('aria-expanded', true);
+    }
+
+
 
 }
 
 export const initMenu = () => {
 
-    let menuItems = document.querySelectorAll('.hoo-navitem[aria-expanded]');
+    let navMenus = document.querySelectorAll('.hoo-nav');
 
-    menuItems.forEach(item => {
+    navMenus.forEach(nav => {
 
-        item.addEventListener('click', handleMenuItems);
+        let navItems = nav.querySelectorAll('.hoo-navitem');
+        navItems.forEach(navItem => {
+
+            navItem.addEventListener('click', handleNavItemClick);
+
+        })
+
+        let navIcons = nav.querySelectorAll('.hoo-buttonicon');
+        navIcons.forEach(navIcon => {
+            navIcon.addEventListener('click', handleIconClick);
+        })
 
     })
-
 
 }

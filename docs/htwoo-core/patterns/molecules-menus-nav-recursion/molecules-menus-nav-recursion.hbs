@@ -1,0 +1,17 @@
+<menu class="hoo-nav-listsub" role="group">
+    {{#each items}}
+    <li role="treeitem" class="hoo-navitem" aria-expanded="false" {{#if isCurrent }}aria-current="page" {{/if}}>
+        <div class="hoo-navitem-text">
+            {{#this.tree-icon}}
+            {{> atoms-button-icon this }}
+            {{/this.tree-icon}}
+            <a href="{{ link }}" class="hoo-navitem-link">{{ text }}</a>
+        </div>
+        {{#if this.items}}
+        {{#this}}
+        {{> molecules-nav-recursion}}
+        {{/this}}
+        {{/if}}
+    </li>
+    {{/each}}
+</menu>

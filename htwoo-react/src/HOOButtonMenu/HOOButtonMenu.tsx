@@ -36,7 +36,7 @@ export interface IHOOButtonMenuState {
 export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuProps, IHOOButtonMenuState> {
   private LOG_SOURCE: string = "💦HOOButtonMenu";
   private _rootProps = { "data-component": this.LOG_SOURCE };
-  private _componentClass: string = "hoo-buttonicon-overflow is-active";
+  private _componentClass: string = "hoo-buttonmenu";
 
   constructor(props: IHOOButtonMenuProps) {
     super(props);
@@ -65,8 +65,10 @@ export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuPro
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
+      const buttonREA:React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> = { className: "hoo-buttonicon-flyout", "aria-haspopup": "true" };
       if (this.state.showMenu) {
         className += " show-flyout";
+        buttonREA["aria-pressed"] = "true";
       }
       const menuClassName = `hoo-buttonflyout ${(this.props.menuElementAttributes?.className) ? this.props.rootElementAttributes?.className : ""}`;
       return (
@@ -77,7 +79,7 @@ export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuPro
           <HOOButton type={HOOButtonType.Icon}
             iconName={this.props.iconName || "hoo-icon-ellipses"}
             onClick={this._showMenu}
-            rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
+            rootElementAttributes={buttonREA} />
           <menu {...this.props.menuElementAttributes} className={menuClassName}>
             {this.props.contextItems && this.props.contextItems.map((ci, index) => {
               return (
