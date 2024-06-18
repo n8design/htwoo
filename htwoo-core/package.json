@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "@pattern-lab/core": "^6.1.0",
     "@pattern-lab/engine-handlebars": "^6.1.0",
     "@pattern-lab/uikit-workshop": "^6.1.0",
+    "caniuse-lite": "^1.0.30001636",
     "conventional-changelog": "^6.0.0"
   },
   "devDependencies": {
@@ -63,8 +64,7 @@
     "plugin-design": "file:helpers/node/plugin-design",
     "postcss": "^8.4.38",
     "rollup": "^4.18.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.77.5",
+    "sass": "^1.77.6",
     "sitemap": "^8.0.0",
     "yargs": "^17.7.2"
   }

@@ -111,6 +111,8 @@
 	font-size: 14px;
 
 	display: flex;
+	flex-wrap: nowrap;
+	text-overflow: ellipsis;
 
 	height: core.px2rem(36px);
 	padding: 0 core.px2rem(8px);

@@ -46,7 +46,19 @@
     
         white-space: nowrap;
         font-weight: 400;
-    }    
+    }
+    
+    &[disabled],
+	&:disabled {
+		pointer-events: none;
+
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
+        .hoo-button-icon{
+            color: colors.$neutral-400;
+        }
+	}
 
 	&:hover{
 		color: colors.$theme-900;
