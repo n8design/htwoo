@@ -1,6 +1,6 @@
 # hTWOo Core - Changelog
 
-Changes in hTWOo core as they happen
+Changes in hTWOo core as they happend
 
 ## [2.5.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.4.0...htwoo-core-v2.5.0) (2024-06-14)
 
