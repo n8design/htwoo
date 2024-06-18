@@ -157,7 +157,9 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   private _onChangeSelection = (newValue: any) => {
     try {
       this.setState({ currentValue: newValue }, () => {
-        this.props.onChange(newValue);
+        if (this.props.value != newValue) {
+          this.props.onChange(newValue);
+        }
       });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
@@ -203,7 +205,9 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = false;
             ddState = DDState.Initial;
           } else if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this.props.onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -211,10 +215,15 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           break;
         case DDState.Filtered:
           if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this.props.onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
+          } else if (focus.tagName == "BUTTON") {
+            open = !open;
+            ddState = (open) ? DDState.Filtered : DDState.Closed;
           }
           break;
         case DDState.Closed:
@@ -232,6 +241,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     if (this.props.disabled) { return; }
     const focus = document.activeElement;
     const key = event.key;
+    let currentValue = this.state.currentValue;
     let ddState = this.state.ddState;
     let open = this.state.open;
     try {
@@ -242,8 +252,11 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = true;
             ddState = DDState.Open;
           } else if (this.state.ddState === DDState.Open && focus.tagName === 'LI') {
+            currentValue = (focus as HTMLLIElement).dataset.value;
             // if state = opened and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this.props.onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -252,8 +265,11 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = false;
             ddState = DDState.Closed;
           } else if (this.state.ddState === DDState.Filtered && focus.tagName === 'LI') {
+            currentValue = (focus as HTMLLIElement).dataset.value;
             // if state = filtered and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this.props.onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -317,15 +333,17 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             ddState = DDState.Filtered;
             this._doFilter();
           } else if (this.state.ddState === DDState.Closed) {
-            // if state = closed, doFilter and set state to filtered
+            // if state = closed, doFilter and set state to filtered and open
             ddState = DDState.Filtered;
+            open = true;
             this._doFilter();
           } else { // already filtered
+            open = true;
             this._doFilter();
           }
           break;
       }
-      this.setState({ open, ddState });
+      this.setState({ open, ddState, currentValue });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_keyUp) - ${err}`);
     }
@@ -401,10 +419,10 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           //const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
           if (toThere === Focus.Forward) {
             const nextOne = aCurrentOptions[whichOne + 1];
-            nextOne.focus();
+            nextOne?.focus();
           } else if (toThere === Focus.Back && whichOne > 0) {
             const previousOne = aCurrentOptions[whichOne - 1];
-            previousOne.focus();
+            previousOne?.focus();
           } else { // if whichOne = 0
             this._inputElement.current.focus();
           }
@@ -501,14 +519,14 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
               }
             })}
             {this.state.optionsLength < 1 &&
-                <li
-                  key={-1}
-                  data-value={-1}
-                  className="hoo-option is-disabled"
-                  aria-disabled={true}
-                  tabIndex={-1}
-                >{(this.props.options == null) ? noOptionText[0] : noOptionText[1]}</li>
-              }
+              <li
+                key={-1}
+                data-value={-1}
+                className="hoo-option is-disabled"
+                aria-disabled={true}
+                tabIndex={-1}
+              >{(this.props.options == null) ? noOptionText[0] : noOptionText[1]}</li>
+            }
           </ul>
         </div>
       );
