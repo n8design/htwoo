@@ -253,3 +253,4 @@
 * **HTML:** Breadcrumb aria label added ([a294132](https://github.com/n8design/htwoo/commit/a294132f7c29d353afcd92bb5d69f5fab7d90513))
 * **JS:** hoo-nav accessiblity behaviour update ([93aab90](https://github.com/n8design/htwoo/commit/93aab908954d310d0101ce90a5621998eac7854d))
 ## [2.5.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.0...htwoo-core-v2.5.0) (2024-06-18)
+## [2.5.1](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.1...htwoo-core-v2.5.1) (2024-06-18)
