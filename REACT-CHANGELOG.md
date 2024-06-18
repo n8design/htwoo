@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.5.5 - 2024-June-18
+
+- HOODropdown - Bug where numeric keys are getting returned as strings.
+- HOODropdown - containsTypeahead is now optional, and not setting value will disable typeahead feature.
+
 ## 2.5.4 - 2024-June-18
 
 - HOODropdown - Bug where change event was firing multiple times; tightend up UX bugs with drop down showing.
