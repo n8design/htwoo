@@ -46,6 +46,20 @@
 	&:hover{
 		padding: 0;
 	}
+	&[disabled],
+	&:disabled {
+		pointer-events: none;
+
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
+        .hoo-button-icon{
+            color: colors.$neutral-400;
+        }
+		.hoo-pivot-inner{
+			color: inherit;
+		}
+	}
 }
 
 .hoo-pivot-inner{

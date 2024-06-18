@@ -1,0 +1,11 @@
+{
+    "button": {
+        "iconname": "icon-ninjacat",
+        "props": "disabled"
+    },
+    "disabled": true,
+    "buttonCmd": {
+        "props": "disabled",
+        "disabled": true
+    }
+}
