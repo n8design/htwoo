@@ -163,18 +163,6 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     return retVal;
   };
 
-  private _onChangeSelection = (newValue: any) => {
-    try {
-      this.setState({ currentValue: newValue }, () => {
-        if (this.props.value != newValue) {
-          this._onChange(newValue);
-        }
-      });
-    } catch (err) {
-      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
-    }
-  }
-
   private _onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
       let ddState = this.state.ddState;
@@ -505,7 +493,6 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                             className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
                             aria-disabled={i.disabled}
                             tabIndex={-1}
-                            onClick={() => { this._onChangeSelection(i.key); }}
                           >
                             {i.text}
                           </li>
@@ -522,7 +509,6 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                     className={`hoo-option ${g.disabled ? "is-disabled" : ""}`}
                     aria-disabled={g.disabled}
                     tabIndex={-1}
-                    onClick={() => { this._onChangeSelection(g.key); }}
                   >
                     {g.text}
                   </li>
