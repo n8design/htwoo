@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.5.7 - 2024-June-20
+
+- HOODropdown - Fix bug when key is a guid.
+
 ## 2.5.6 - 2024-June-19
 
 - HOODropdown - Click event on LI elements was causing double update and was unneeded because change event was handled by keyUp event.

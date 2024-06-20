@@ -127,8 +127,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   private _onChange = (newValue: string | number) => {
     try {
-      const value = parseInt(newValue as string);
-      this.props.onChange((isNaN(value)) ? newValue: value);
+      this.props.onChange((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string): newValue);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
     }
