@@ -125,12 +125,11 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOODialogProps>, nextState: Readonly<IHOODialogState>) {
-    if ((isEqual(nextState, this.state) && isEqual(nextProps, this.props)))
-      return false;
     if (nextProps.visible != this.props.visible) { this._updateShow = true; }
     if (nextProps.width != this.props.width) { this._updateStyle = true; }
     if (nextProps.height != this.props.height) { this._updateStyle = true; }
     if (nextProps.rootElementAttributes != this.props.rootElementAttributes) { this._updateStyle = true; }
+    //Must always return true or can block update of contents.
     return true;
   }
 
