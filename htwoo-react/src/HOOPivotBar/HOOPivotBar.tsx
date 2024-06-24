@@ -75,7 +75,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
 
   private _renderPivotItems() {
     let retVal = null;
-    const pivotButtonAttributes = {...this.props.pivotButtonAttributes, role: "menuitem"};
+    const pivotButtonAttributes = { ...this.props.pivotButtonAttributes, role: "menuitem" };
     try {
       if (this.props.pivotItems) {
         retVal = this.props.pivotItems.map((pi, index) => {
@@ -111,7 +111,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
           {this.props.hasOverflow &&
             <div ref={this._overflowContainer} className={`${this.props.hasOverflow ? "hoo-overflow" : ""}`}>
               {this._renderPivotItems()}
-              <HOOIconOverflow overflow={this.state.showOverflow} rootElementAttributes={ {role:"menuitem"}}>
+              <HOOIconOverflow overflow={this.state.showOverflow} rootElementAttributes={{ role: "menuitem" }}>
                 <menu className="hoo-buttonflyout">
                 </menu>
               </HOOIconOverflow>

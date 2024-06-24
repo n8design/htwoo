@@ -55,7 +55,7 @@ export default class HOOIconOverflow extends React.PureComponent<IHOOIconOverflo
           <HOOButton type={HOOButtonType.Icon}
             iconName="hoo-icon-ellipses"
             onClick={this._showMenu}
-            rootElementAttributes={{ className: "hoo-buttonicon-overflow", "aria-haspopup": "true" }} />
+            rootElementAttributes={{ className: "hoo-buttonicon-flyout", "aria-haspopup": "true" }} />
           {this.props.children}
         </div>
       );
