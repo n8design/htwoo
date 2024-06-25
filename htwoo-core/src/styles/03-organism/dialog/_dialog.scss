@@ -144,6 +144,7 @@
         box-sizing: border-box;
         width: 100%;
         padding: 0.25rem 0.5rem;
+        line-height: 1.5;
 
         color: colors.$info-text;
         border: 1px colors.$info-border solid;
@@ -176,7 +177,7 @@
             color: colors.$error-text;
             border: 1px colors.$error-border solid;
             background-color: colors.$error-background;
-
+            outline-color: colors.$error-border;
             svg {
                 fill: colors.$error-icon;
             }
@@ -186,7 +187,7 @@
             color: colors.$warning-text;
             border: 1px colors.$warning-border solid;
             background-color: colors.$warning-background;
-
+            outline-color: colors.$warning-border;
             svg {
                 fill: colors.$warning-icon;
             }
@@ -196,6 +197,7 @@
             color: colors.$success-text;
             border: 1px colors.$success-border solid;
             background-color: colors.$success-background;
+            outline-color: colors.$success-border;
 
             svg {
                 fill: colors.$success-icon;
