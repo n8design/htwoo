@@ -1,5 +1,9 @@
 @use "../colors/colors";
 
+.hoo-buttonsplit,
+.hoo-buttonicon-split,
+.hoo-buttonicon-overflow,
+div.hoo-buttoncontext-outer,
 %flyoutDropDown{
 	position: relative;
 	.hoo-buttonflyout{
@@ -17,6 +21,9 @@
 		background-color: inherit;
 		& > .hoo-buttonflyout{
 			display: block;
+			.hoo-button-pivot{
+				display: flex;
+			}
 		}
 
 		.hoo-buttonsplit-carret{
