@@ -83,7 +83,6 @@ export class OverflowResizer implements IOverflowResizer {
 
   private _getOverflowItems = () => {
     try {
-      //const overflowButton = this._resizeContainer.querySelector('.hoo-buttonicon-overflow');
       const defaultOffset = 40;
       const targetWidth = this._resizeContainer.parentElement.clientWidth;
 
