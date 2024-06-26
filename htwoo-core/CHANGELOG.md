@@ -254,3 +254,4 @@
 * **JS:** hoo-nav accessiblity behaviour update ([93aab90](https://github.com/n8design/htwoo/commit/93aab908954d310d0101ce90a5621998eac7854d))
 ## [2.5.1](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.1...htwoo-core-v2.5.1) (2024-06-18)
 ## [2.5.1](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.1...htwoo-core-v2.5.1) (2024-06-18)
+## [2.5.2](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.2...htwoo-core-v2.5.2) (2024-06-26)
