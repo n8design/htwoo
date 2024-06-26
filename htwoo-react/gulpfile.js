@@ -98,14 +98,19 @@ const storybook = (cb) => {
 };
 
 /** WATCH: watch for ts{x} and sass */
+// const watchSource = (cb) => {
+//   // watching typescript
+//   watch("./src/**/*.{ts,tsx,mdx}", tsCompile.on(
+//     "change",
+//     () => {
+//       server.reload();
+//     }
+//   ));
+// };
+
 const watchSource = (cb) => {
   // watching typescript
-  watch("./src/**/*.{ts,tsx,mdx}", tsCompile.on(
-    "change",
-    () => {
-      server.reload();
-    }
-  ));
+  watch("./src/**/*.{ts,tsx,mdx}", tsCompile);
 };
 
 /** TASK: remove lib folder and start from scratch */

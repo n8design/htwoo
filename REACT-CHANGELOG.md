@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.5.8 - 2024-June-21
+
+- HOODialog/HOODialogContent - Bug fix for shouldComponentUpdate methods which need to always return true to pass through updates to contents of Dialog.
+
+## 2.5.7 - 2024-June-20
+
+- HOODropdown - Fix bug when key is a guid.
+
+## 2.5.6 - 2024-June-19
+
+- HOODropdown - Click event on LI elements was causing double update and was unneeded because change event was handled by keyUp event.
+
+## 2.5.5 - 2024-June-18
+
+- HOODropdown - Bug where numeric keys are getting returned as strings.
+- HOODropdown - containsTypeahead is now optional, and not setting value will disable typeahead feature.
+
+## 2.5.4 - 2024-June-18
+
+- HOODropdown - Bug where change event was firing multiple times; tightend up UX bugs with drop down showing.
+
+## 2.5.3 - 2024-June-18
+
+- HOODropdown - Tighten up filtering for typeahead in input. Added optional "noOptionsText" tuple for better UX.
+
 ## 2.5.2 - 2024-June-17
 
 - Documentation Fixes

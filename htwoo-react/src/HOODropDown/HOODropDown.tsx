@@ -38,15 +38,21 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   options: IHOODropDownGroup[] | IHOODropDownItem[];
   /**
-   * Type-ahead options for select drop down; default is false
-   *   If true, options are filtered for any items starting with the string in the input box
-   *   If false, options are filtered for any items containing the string in the input box
-  */
-  containsTypeAhead: boolean;
-  /**
    * Change event handler returns the new field value based on the selected items key
   */
   onChange: (fieldValue: string | number) => void;
+  /**
+   * (Optional) Type-ahead options for select drop down; default is null which disables typeahead
+   *   If true, options are filtered for any items starting with the string in the input box
+   *   If false, options are filtered for any items containing the string in the input box
+  */
+  containsTypeAhead?: boolean;
+  /** 
+   * (Optional) Text to display if dropdown has been filtered so no options are available or no options are provided.
+   * Provide a tuple where the first string is used when the field is empty, the second is when the input field has characters.
+   * Default is English "No options" / "No options match input"
+   */
+  noOptionsText?: [string, string];
   /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
@@ -119,6 +125,14 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     }
   }
 
+  private _onChange = (newValue: string | number) => {
+    try {
+      this.props.onChange((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string): newValue);
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
+    }
+  }
+
   private _getDisplayValue = (): string => {
     let retVal: string = this.state.currentValue as string || "";
     try {
@@ -148,13 +162,26 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     return retVal;
   };
 
-  private _onChange = (newValue: any) => {
+  private _onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     try {
-      this.setState({ currentValue: newValue }, () => {
-        this.props.onChange(newValue);
+      let ddState = this.state.ddState;
+      let open = this.state.open;
+      if (this.state.ddState === DDState.Initial) {
+        // if state = initial, toggle open, doFilter and set state to filtered
+        open = true;
+        ddState = DDState.Filtered;
+      } else if (this.state.ddState === DDState.Open) {
+        // if state = opened, doFilter and set state to filtered
+        ddState = DDState.Filtered;
+      } else if (this.state.ddState === DDState.Closed) {
+        // if state = closed, doFilter and set state to filtered
+        ddState = DDState.Filtered;
+      }
+      this.setState({ currentValue: e.currentTarget.value, ddState, open }, () => {
+        this._doFilter();
       });
     } catch (err) {
-      console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
+      console.error(`${this.LOG_SOURCE} (_onChangeInput) - ${err}`);
     }
   }
 
@@ -174,7 +201,9 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = false;
             ddState = DDState.Initial;
           } else if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this._onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -182,10 +211,15 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           break;
         case DDState.Filtered:
           if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this._onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
+          } else if (focus.tagName == "BUTTON") {
+            open = !open;
+            ddState = (open) ? DDState.Filtered : DDState.Closed;
           }
           break;
         case DDState.Closed:
@@ -203,6 +237,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     if (this.props.disabled) { return; }
     const focus = document.activeElement;
     const key = event.key;
+    let currentValue = this.state.currentValue;
     let ddState = this.state.ddState;
     let open = this.state.open;
     try {
@@ -213,8 +248,11 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = true;
             ddState = DDState.Open;
           } else if (this.state.ddState === DDState.Open && focus.tagName === 'LI') {
+            currentValue = (focus as HTMLLIElement).dataset.value;
             // if state = opened and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this._onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -223,8 +261,11 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = false;
             ddState = DDState.Closed;
           } else if (this.state.ddState === DDState.Filtered && focus.tagName === 'LI') {
+            currentValue = (focus as HTMLLIElement).dataset.value;
             // if state = filtered and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value);
+            if (this.props.value != (focus as HTMLLIElement).dataset.value) {
+              this._onChange((focus as HTMLLIElement).dataset.value);
+            }
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
@@ -288,15 +329,17 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             ddState = DDState.Filtered;
             this._doFilter();
           } else if (this.state.ddState === DDState.Closed) {
-            // if state = closed, doFilter and set state to filtered
+            // if state = closed, doFilter and set state to filtered and open
             ddState = DDState.Filtered;
+            open = true;
             this._doFilter();
           } else { // already filtered
+            open = true;
             this._doFilter();
           }
           break;
       }
-      this.setState({ open, ddState });
+      this.setState({ open, ddState, currentValue });
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_keyUp) - ${err}`);
     }
@@ -304,20 +347,21 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   private _doFilter = () => {
     try {
+      if (this.props.containsTypeAhead == null) { return; }
       let optionsLength = this.state.optionsLength;
       let ddState = this.state.ddState;
       const terms = (this.state.currentValue === this.props.value) ? "" : this.state.currentValue as string;
       const aFilteredOptions = this._optionElements.filter((option) => {
-        if (this.props.containsTypeAhead) {
+        if (this.props.containsTypeAhead === true) {
           return (option?.innerText?.toLowerCase().indexOf(terms.toLowerCase()) > -1);
-        } else {
+        } else if (this.props.containsTypeAhead === false) {
           if (option?.innerText?.toLowerCase().substring(0, terms.length) == (terms.toLowerCase())) {
             return true;
           }
         }
       });
       this._optionElements.forEach(option => { if (option?.style) { option.style.display = "none"; } });
-      aFilteredOptions.forEach((option) => {if (option?.style) { option.style.display = ""; } });
+      aFilteredOptions.forEach((option) => { if (option?.style) { option.style.display = ""; } });
       if (aFilteredOptions.length < this._optionElements.length) {
         ddState = DDState.Filtered;
       }
@@ -372,10 +416,10 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           //const whichOne = findIndex(aCurrentOptions, (o) => { return o == (currentItem as HTMLLIElement); });
           if (toThere === Focus.Forward) {
             const nextOne = aCurrentOptions[whichOne + 1];
-            nextOne.focus();
+            nextOne?.focus();
           } else if (toThere === Focus.Back && whichOne > 0) {
             const previousOne = aCurrentOptions[whichOne - 1];
-            previousOne.focus();
+            previousOne?.focus();
           } else { // if whichOne = 0
             this._inputElement.current.focus();
           }
@@ -394,6 +438,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-select-text ${this.props.inputElementAttributes?.className}` : "hoo-select-text";
       const currentDisplay = this._getDisplayValue();
       const expanded = (this.state.ddState === DDState.Open || this.state.ddState === DDState.Filtered);
+      const noOptionText: [string, string] = this.props.noOptionsText || ["No options", "No options match input"];
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}
@@ -422,7 +467,8 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             aria-autocomplete="both"
             autoComplete="off"
             aria-controls={`${this._dropdownId}-list`}
-            onChange={(e) => { this.setState({ currentValue: e.currentTarget.value }); }}
+            onChange={this._onChangeInput}
+            readOnly={this.props.containsTypeAhead == null ? true : false}
           />
           <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false} >
             <HOOIcon iconName="hoo-icon-arrow-down" />
@@ -446,7 +492,6 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                             className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
                             aria-disabled={i.disabled}
                             tabIndex={-1}
-                            onClick={() => { this._onChange(i.key); }}
                           >
                             {i.text}
                           </li>
@@ -463,13 +508,21 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                     className={`hoo-option ${g.disabled ? "is-disabled" : ""}`}
                     aria-disabled={g.disabled}
                     tabIndex={-1}
-                    onClick={() => { this._onChange(g.key); }}
                   >
                     {g.text}
                   </li>
                 );
               }
             })}
+            {this.state.optionsLength < 1 &&
+              <li
+                key={-1}
+                data-value={-1}
+                className="hoo-option is-disabled"
+                aria-disabled={true}
+                tabIndex={-1}
+              >{(this.props.options == null) ? noOptionText[0] : noOptionText[1]}</li>
+            }
           </ul>
         </div>
       );
