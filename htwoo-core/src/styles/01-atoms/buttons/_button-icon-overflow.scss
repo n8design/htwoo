@@ -3,7 +3,7 @@
 @use "button-action";
 
 .hoo-buttonicon-overflow {
-	@extend %flyoutDropDown;
+	// @extend %flyoutDropDown;
 
 	display: flex;
 
@@ -31,7 +31,7 @@
 		cursor: pointer;
 		@extend .hoo-buttonaction;
 
-		height: 2rem;
+		height: 2lh;
 		margin-right: 0;
 
 		&>* {
