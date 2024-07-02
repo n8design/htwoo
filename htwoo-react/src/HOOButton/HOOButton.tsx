@@ -102,6 +102,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
 
   public render(): React.ReactElement<IHOOButtonProps> {
     if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
+    if (this.props.iconTitle) { this._rootProps["title"] = this.props.iconTitle }
     const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")}`;
     const iconSVG = (this.props.iconName) ? symset.Icon(this.props.iconName, this.props.iconTitle || "") : ((this.props.iconRight) ? symset.Icon(this.props.iconRight, this.props.iconRightTitle) : null);
     const iconName = this.props.iconName || this.props.iconRight || null;
