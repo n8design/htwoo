@@ -18,6 +18,8 @@ export class OverflowResizer implements IOverflowResizer {
   private _resizeObserver: ResizeObserver;
   private _resizeContainer: HTMLElement;
   private _overflowChangedEvent: (overflow: boolean) => void;
+  private _timeOutId: any;
+  private _clientWidth: number;
 
   private _overflowItems: IOverflowItem[] = [];
 
@@ -41,10 +43,33 @@ export class OverflowResizer implements IOverflowResizer {
 
   private _resizeObserverHandler: ResizeObserverCallback = () => {
     try {
-      this._initOverflowElements(this._resizeContainer.children);
-      this._entryHandler();
+      if (this._resizeContainer.parentElement.clientWidth > 0) {
+        this._debounceResize(this._resize, 100);        
+      }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_resizeObserverHandler) - ${err}`);
+    }
+  }
+
+  private _resize = () => {
+    try{
+      this._initOverflowElements(this._resizeContainer.children);
+      this._entryHandler();
+    }catch(err){
+      console.error(this.LOG_SOURCE, "(_resize)", err);
+    }
+  }
+
+  private _debounceResize = (fn: () => void, delay: number): void => {
+    try {
+      if (this._timeOutId) {
+        clearTimeout(this._timeOutId);
+      }
+      this._timeOutId = setTimeout(() => {
+        fn();
+      }, delay);
+    } catch (err) {
+      console.error(`err - ${this.LOG_SOURCE} (_debounceResize)`);
     }
   }
 
@@ -83,7 +108,7 @@ export class OverflowResizer implements IOverflowResizer {
 
   private _getOverflowItems = () => {
     try {
-      const defaultOffset = 40;
+      const defaultOffset = 32;
       const targetWidth = this._resizeContainer.parentElement.clientWidth;
 
       let curOverFlowItems = this._overflowItems.filter(item => {
