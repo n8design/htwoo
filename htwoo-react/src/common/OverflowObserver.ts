@@ -44,7 +44,7 @@ export class OverflowResizer implements IOverflowResizer {
   private _resizeObserverHandler: ResizeObserverCallback = () => {
     try {
       if (this._resizeContainer.parentElement.clientWidth > 0) {
-        this._debounceResize(this._resize, 100);        
+        this._debounceResize(this._resize, 100);
       }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_resizeObserverHandler) - ${err}`);
@@ -52,10 +52,10 @@ export class OverflowResizer implements IOverflowResizer {
   }
 
   private _resize = () => {
-    try{
+    try {
       this._initOverflowElements(this._resizeContainer.children);
       this._entryHandler();
-    }catch(err){
+    } catch (err) {
       console.error(this.LOG_SOURCE, "(_resize)", err);
     }
   }
@@ -119,38 +119,39 @@ export class OverflowResizer implements IOverflowResizer {
         return item.overallWidth < targetWidth - defaultOffset;
       });
 
-      let overflowControl = this._resizeContainer.querySelector('.hoo-buttonicon-overflow .hoo-buttonflyout');
-
-      // Moves the Element into a new list item with all Events attached
-      if (overflowControl && overflowControl.children.length < curOverFlowItems.length) {
-        for (let i = 0; i < curOverFlowItems.length; i++) {
-          if (this._resizeContainer.querySelector(`[data-ref=${curOverFlowItems[i].ref}]`) !== null) {
-            const listItem = document.createElement('li');
-            const overflow = this._resizeContainer.querySelector(`[data-ref=${curOverFlowItems[i].ref}]`);
-            listItem.appendChild(overflow);
-            overflowControl.appendChild(listItem);
+      const overflowControl = this._resizeContainer.querySelector('.hoo-buttonicon-overflow .hoo-buttonflyout');
+      if (overflowControl != null) {
+        // Moves the Element into a new list item with all Events attached
+        if (overflowControl.children.length < curOverFlowItems.length) {
+          for (let i = 0; i < curOverFlowItems.length; i++) {
+            if (this._resizeContainer.querySelector(`[data-ref=${curOverFlowItems[i].ref}]`) !== null) {
+              const listItem = document.createElement('li');
+              const overflow = this._resizeContainer.querySelector(`[data-ref=${curOverFlowItems[i].ref}]`);
+              listItem.appendChild(overflow);
+              overflowControl.appendChild(listItem);
+            }
           }
         }
-      }
 
-      //Trigger parent container to add is-active class to Overflow div
-      this._overflowChangedEvent((overflowControl != null && overflowControl?.children.length !== 0))
-
-      // Move elements back from overflow menu
-      if (overflowControl && overflowControl.children.length > curOverFlowItems.length) {
-        for (let i = 0; i < curItems.length; i++) {
-          if (overflowControl.querySelector(`[data-ref=${curItems[i].ref}]`) !== null) {
-            let overflowElement = overflowControl.querySelector(`[data-ref=${curItems[i].ref}]`);
-            this._resizeContainer.appendChild(overflowElement);
+        // Move elements back from overflow menu
+        if (overflowControl.children.length > curOverFlowItems.length) {
+          for (let i = 0; i < curItems.length; i++) {
+            if (overflowControl.querySelector(`[data-ref=${curItems[i].ref}]`) !== null) {
+              let overflowElement = overflowControl.querySelector(`[data-ref=${curItems[i].ref}]`);
+              this._resizeContainer.appendChild(overflowElement);
+            }
           }
         }
-      }
 
-      // Cleanup left over <li> elements
-      for (let i = 0; i < overflowControl?.children.length; i++) {
-        if (overflowControl.children[i].children.length === 0) {
-          overflowControl.children[i].remove();
+        // Cleanup left over <li> elements
+        for (let i = 0; i < overflowControl.children.length; i++) {
+          if (overflowControl.children[i].children.length === 0) {
+            overflowControl.children[i].remove();
+          }
         }
+
+        //Trigger parent container to refresh overflow if state has changed
+        this._overflowChangedEvent(overflowControl.children.length > 0);
       }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_getOverflowItems) - ${err}`);
