@@ -3,9 +3,9 @@ import { IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOLabelProps extends IHOOStandardProps {
   /**
-   * The label string
+   * (Optional) The label string; if omitted will use children
   */
-  label: string;
+  label?: string;
   /**
    * (Optional) Styles label to indicated the associated input is required
   */
@@ -45,10 +45,15 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
       const isRequired = (this.props.required) ? "is-required" : "";
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className} ${isRequired}` : `${this._componentClass} ${isRequired}`;
       return (
+        (this.props.label)?
         <label {...this._rootProps}
           {...this.props.rootElementAttributes}
           htmlFor={this.props.for}
           className={className}>{this.props.label}</label>
+        :<label {...this._rootProps}
+        {...this.props.rootElementAttributes}
+        htmlFor={this.props.for}
+        className={className}>{this.props.children}</label>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

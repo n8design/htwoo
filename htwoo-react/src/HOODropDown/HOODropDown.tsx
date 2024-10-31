@@ -20,7 +20,7 @@ export enum Focus {
 export interface IHOODropDownItem {
   key: string | number;
   text: string;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export interface IHOODropDownGroup {
@@ -490,7 +490,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                             key={i.key}
                             data-value={i.key}
                             className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
-                            aria-disabled={i.disabled}
+                            aria-disabled={i.disabled || false}
                             tabIndex={-1}
                           >
                             {i.text}
@@ -506,7 +506,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                     key={g.key}
                     data-value={g.key}
                     className={`hoo-option ${g.disabled ? "is-disabled" : ""}`}
-                    aria-disabled={g.disabled}
+                    aria-disabled={g.disabled || false}
                     tabIndex={-1}
                   >
                     {g.text}
