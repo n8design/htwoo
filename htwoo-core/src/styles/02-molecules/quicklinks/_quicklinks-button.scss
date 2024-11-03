@@ -20,7 +20,7 @@
 
     &:hover {
         background-color: colors.$neutral-200;
-        transition: all 0.125s ease-out
+        transition: all 0.125s ease-out;
     }
     .hoo-qlinfo{
         padding-block: core.px2rem(8px);
@@ -98,6 +98,7 @@
 
         &:hover {
             background-color: colors.$theme-800;
+            color: colors.$neutral-000;
         }
     }
 }
