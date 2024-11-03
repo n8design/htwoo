@@ -1,6 +1,4 @@
 {{#field}}
-{{ this.text }}
-{{ json this }}
 <div class="hoo-field">
     {{>atoms-label}}
     {{>atoms-input-description }}
@@ -8,3 +6,17 @@
     {{>atoms-validation-message}} 
 </div>
 {{/field}}
+
+<div>
+    <label for="username">Username</label>
+    <!-- Accessible description for additional guidance -->
+    <p id="username-description" class="description">
+      Enter your preferred username. Must be between 4 and 12 characters.
+    </p>
+
+    <!-- Text input with aria-describedby to provide additional context -->
+    <input type="text" id="username" name="username" aria-describedby="username-description error-message" aria-required="true" required>
+
+    <!-- Output element for errors -->
+    <output id="error-message" role="alert" aria-live="polite"></output>
+  </div>
