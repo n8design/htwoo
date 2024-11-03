@@ -2,7 +2,7 @@
 	display: -webkit-box;
 	overflow: hidden;
 
-	max-height: $line-height*$lines;
+	max-height: #{$lines'lh'};
 
 	text-overflow: ellipsis;
 
