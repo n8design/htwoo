@@ -13,7 +13,8 @@ div.hoo-buttoncmd {
 		}
 
 	}
-
+	
+	a.hoo-buttoncmd,
 	button.hoo-buttoncmd {
 		@extend .hoo-buttonaction;
 		cursor: pointer;
@@ -40,6 +41,10 @@ div.hoo-buttoncmd {
 			outline: none;
 		}
 
+	}
+
+	a.hoo-buttoncmd{
+		text-decoration: none;
 	}
 
 	&[disabled],
