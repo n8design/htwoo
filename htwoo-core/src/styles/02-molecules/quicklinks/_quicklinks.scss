@@ -1,4 +1,5 @@
 @use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/line-clamp.mixin";
 @use "../../00-base/colors/colors";
 
 .hoo-qllink {
@@ -85,7 +86,7 @@
 	}
 
 	.hoo-qltitle {
-		@include core.lineClamp(2, core.px2rem(21px));
+		@include line-clamp.lineClamp(2, core.px2rem(21px));
 	}
 
 	.hoo-ql-media{
@@ -160,11 +161,11 @@
 	}
 
 	.hoo-qltitle {
-		@include core.lineClamp(1, core.px2rem(20px));
+		@include line-clamp.lineClamp(1, core.px2rem(20px));
 	}
 
 	.hoo-qldesc {
-		@include core.lineClamp(2, core.px2rem(20px));
+		@include line-clamp.lineClamp(2, core.px2rem(20px));
 	}
 
 	&.mode-edit {
