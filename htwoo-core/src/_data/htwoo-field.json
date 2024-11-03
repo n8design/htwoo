@@ -1,0 +1,18 @@
+{
+    "field": {
+        "input": {
+            "label": {
+                "label": "Label for field x",
+                "stateStyle": null,
+                "aria-tags": ""
+            },
+            "text": {
+                "inputPrefix": "https://",
+                "inputSuffix": ".com",
+                "placeholder": "A placeholder text",
+                "aria-tags": ""
+            },
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        }
+    }
+}
