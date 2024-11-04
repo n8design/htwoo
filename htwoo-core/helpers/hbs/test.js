@@ -8,6 +8,18 @@ module.exports = function (Handlebars) {
   Handlebars.registerHelper('test', function () {
     return 'This is a test helper';
   });
+
+  Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+    switch (operator) {
+      case '&&':
+        return (v1 && v2) ? options.fn(this) : options.inverse(this);
+      case '||':
+        return (v1 || v2) ? options.fn(this) : options.inverse(this);
+      default:
+        return options.inverse(this);
+    }
+  });
+
   Handlebars.registerHelper('getJsonContext', function (data, options) {
     // console.debug(data, options)
     return options.fn(JSON.parse(data));
