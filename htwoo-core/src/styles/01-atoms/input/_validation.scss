@@ -3,7 +3,7 @@
 
 .hoo-validation{
     font-size: core.px2rem(14px); // TODO: font size to small
-	font-weight: 600;
+	font-weight: 400;
     color: colors.$errorText;
     &.success{
         color: colors.$successText;
