@@ -4,15 +4,26 @@
             "label": {
                 "label": "Label for field x",
                 "stateStyle": null,
-                "aria-tags": ""
+                "aria-tags": "",
+                "for": "field-x-label"
             },
             "text": {
                 "inputPrefix": "https://",
                 "inputSuffix": ".com",
                 "placeholder": "A placeholder text",
-                "aria-tags": ""
+                "aria-tags": "",
+                "descRef": "field-x-description",
+                "errorRef": "field-x-error"
             },
-            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            "description": {
+                "descRef": "field-x-description",
+                "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            },
+            "error":{
+                "errorRef": "field-x-error",
+                "text": "This is an error message"
+            }
+            
         }
     }
 }

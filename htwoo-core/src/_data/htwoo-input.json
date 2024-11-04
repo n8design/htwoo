@@ -85,7 +85,8 @@
         "label": {
             "label": "Label for field x",
             "stateStyle": null,
-            "aria-tags": ""
+            "aria-tags": "",
+            "for": "field-x-label"
         },
         "toggle": {
             "name": "toggleName",
@@ -95,6 +96,14 @@
                 "unchecked": "Off"
             },
             "aria-tags": ""
+        },
+        "description": {
+            "descRef": "field-x-description",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "error": {
+            "errorRef": "field-x-error",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
         }
     },
     "checkbox-group": {
