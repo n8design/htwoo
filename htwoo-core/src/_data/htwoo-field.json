@@ -2,25 +2,25 @@
     "field": {
         "input": {
             "label": {
-                "label": "Label for field x",
+                "label": "First Name",
                 "stateStyle": null,
                 "aria-tags": "",
-                "for": "field-x-label"
+                "for": "firstname"
             },
             "text": {
                 "inputPrefix": "https://",
                 "inputSuffix": ".com",
                 "placeholder": "A placeholder text",
                 "aria-tags": "",
-                "descRef": "field-x-description",
-                "errorRef": "field-x-error"
+                "descRef": "firstname-desc",
+                "errorRef": "firstname-error"
             },
             "description": {
-                "descRef": "field-x-description",
-                "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                "descRef": "firstname-desc",
+                "text": "Please enter your first name with only alphabetic characters"
             },
             "error":{
-                "errorRef": "field-x-error",
+                "errorRef": "firstname-error",
                 "text": "This is an error message"
             }
             
