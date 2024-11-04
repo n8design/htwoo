@@ -1,1 +1,3 @@
-<output class="hoo-validation">This is for an error message</output>
+{{#input.error}}
+<output class="hoo-validation" {{#if errorRef}}id="{{ errorRef }}-{{ getLastNumericId }}"{{/if}} >{{ text }}</output>
+{{/input.error}}
