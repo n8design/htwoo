@@ -1,6 +1,7 @@
 "use strict";
 
 let lastId = ``;
+let lastIdClean = -1;
 
 module.exports = function (Handlebars) {
 
@@ -20,11 +21,17 @@ module.exports = function (Handlebars) {
   });
   Handlebars.registerHelper('getId', function (value) {
     lastId = `${value}-${Math.floor(Math.random(100) * 100)}`;
+    lastIdClean = parseInt(lastId.split('-')[1]);
     return lastId;
   });
   Handlebars.registerHelper('getLastId', function (value) {
     return lastId;
   });
+
+  Handlebars.registerHelper('getLastNumericId', function (value) {
+    return lastId;
+  });
+  
   Handlebars.registerHelper('seoTitle', function (value) {
 
     if (value) {
