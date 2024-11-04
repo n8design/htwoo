@@ -1,7 +1,7 @@
 {{#input.text}}
 <div class="hoo-input-group">
     <div class="hoo-input-prefix">{{ inputPrefix }}</div>
-    <input class="hoo-input-text" type="text" placeholder="{{ placeholder }}" data-suffix="{{ inputSuffix }}" data-prefix="{{ inputPrefix }}">
+    <input class="hoo-input-text" {{#if getLastId}}id="{{ getLastId }}"{{/if}} type="text" placeholder="{{ placeholder }}" data-suffix="{{ inputSuffix }}" data-prefix="{{ inputPrefix }}" {{#if disabled}} disabled="{{ disabled }}"  aria-disabled="{{ disabled }}"  {{/if}} {{#if readonly}} readonly="{{ readonly }}" {{/if}} {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}}>
     <div class="hoo-input-suffix">{{ inputSuffix }}</div>
 </div>
 {{/input.text}}
