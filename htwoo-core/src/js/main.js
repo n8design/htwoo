@@ -1,5 +1,4 @@
-import { HOODialog }
-    from './dialog.js';
+import { HOODialog } from './dialog.js';
 
 import {
     ariaSelect
@@ -18,8 +17,10 @@ import {
     initMenu
 } from './nav.js';
 
+// import InputMask from './vendor/estelle/input-mask.js';
+
 /** Overflow */
-import * as overflow from './overflow.js'
+import * as overflow from './overflow.js';
 
 const splitButtonReg = (classSelector, handleWith) => {
 
@@ -195,6 +196,8 @@ const afterLoaded = () => {
     initMenu();
 
     overflow.init();
+
+    // new InputMask();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');
