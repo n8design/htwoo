@@ -1,6 +1,3 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -50,7 +47,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-         # Add Node.js 20 setup here
       - name: Setup Node.js 20
         uses: actions/setup-node@v3
         with:
@@ -61,36 +57,4 @@ jobs:
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Copy hTWOo Core style guide
-        run: |
-          git checkout origin/main -- docs/htwoo-core/*
-          mv -f docs/htwoo-core public/htwoo-core/
-      - name: Copy hTWOo React style guide
-        run: |
-          git checkout origin/main -- docs/htwoo-react/*
-          mv -f docs/htwoo-react public/htwoo-react/
-      - name: Cleanup Docs
-        run: rm -rf ./docs
-      - name: Cleanup Docs 2
-        run: ls -al
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./public
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        run: hugo
