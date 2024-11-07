@@ -2,6 +2,8 @@
 
 Changes in hTWOo core as they happen
 
+### [2.3.4](https://github.com/n8design/htwoo/commit/) (2024-11-07)
+
 ### 2.3.3 (2024-11-07)
 
 
