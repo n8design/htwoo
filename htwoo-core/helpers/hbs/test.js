@@ -1,12 +1,25 @@
 "use strict";
 
-module.exports = function (Handlebars) {
+let lastId = ``;
+let lastIdClean = -1;
 
-  let lastId = ``;
+module.exports = function (Handlebars) {
 
   Handlebars.registerHelper('test', function () {
     return 'This is a test helper';
   });
+
+  Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+    switch (operator) {
+      case '&&':
+        return (v1 && v2) ? options.fn(this) : options.inverse(this);
+      case '||':
+        return (v1 || v2) ? options.fn(this) : options.inverse(this);
+      default:
+        return options.inverse(this);
+    }
+  });
+
   Handlebars.registerHelper('getJsonContext', function (data, options) {
     // console.debug(data, options)
     return options.fn(JSON.parse(data));
@@ -19,12 +32,18 @@ module.exports = function (Handlebars) {
     return value !== undefined;
   });
   Handlebars.registerHelper('getId', function (value) {
-    this.lastId = `${value}-${Math.floor(Math.random(100) * 100)}`;
-    return this.lastId;
+    lastId = `${value}-${Math.floor(Math.random(100) * 100)}`;
+    lastIdClean = parseInt(lastId.split('-')[1]);
+    return lastId;
   });
   Handlebars.registerHelper('getLastId', function (value) {
-    return this.lastId;
+    return lastId;
   });
+
+  Handlebars.registerHelper('getLastNumericId', function (value) {
+    return lastId;
+  });
+  
   Handlebars.registerHelper('seoTitle', function (value) {
 
     if (value) {

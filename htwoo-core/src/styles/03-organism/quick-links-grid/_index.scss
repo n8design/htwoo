@@ -1,8 +1,6 @@
 @use '../../00-base/mixin/grid.mixin' as grid;
 
-.CanvasSection-xl12 {
-
-}
+.CanvasSection-xl12 {}
 
 .CanvasSection-xl8 {
     .hoo-ql-grid {
@@ -23,6 +21,7 @@
             grid-template-columns: repeat(5, 1fr);
         }
     }
+
     .hoo-qllist,
     .hoo-qlcompact,
     .hoo-qlbtn {
@@ -39,24 +38,44 @@
             grid-template-columns: repeat(3, 1fr);
         }
     }
+
     .hoo-qllist,
     .hoo-qlcompact,
     .hoo-qlbtn {
         @include grid.gridSpan(12, auto, auto, true);
     }
-    .hoo-qlgrid{
+
+    .hoo-qlgrid {
         @include grid.gridSpan(6, auto, auto, true);
     }
 }
 
 .hoo-ql-grid {
 
-    @include grid.gridBase();
-
     container-type: block-size;
     container-name: quicklinksgrid;
 
     max-width: 100%;
+
+    & {
+
+        @include grid.gridBase();
+
+    }
+
+    .hoo-qlbtn,
+    .hoo-qlgrid {
+        @include grid.gridSpan(3, auto, auto, true);
+    }
+
+    .hoo-qllink {
+        @include grid.gridSpan(2, auto, auto, true);
+    }
+
+    .hoo-qlcompact,
+    .hoo-qllist {
+        @include grid.gridSpan(2, auto, auto, true);
+    }
 
     &:has(> .hoo-qltiles) {
         display: grid;
@@ -95,25 +114,4 @@
 
     }
 
-    // &:has(> .hoo-qltiles.img-fill),
-    // &:has(> .hoo-qltiles.img-xl) {
-    //     display: grid;
-    //     grid-template-columns: repeat(6, minmax(min-content, 1fr));
-    //     grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
-    // }
-
-    .hoo-qlbtn,
-    .hoo-qlgrid {
-        @include grid.gridSpan(3, auto, auto, true);
-    }
-
-    .hoo-qllink {
-        @include grid.gridSpan(2, auto, auto, true);
-    }
-
-    .hoo-qlcompact,
-    .hoo-qllist {
-        @include grid.gridSpan(2, auto, auto, true);
-    }
-    
 }

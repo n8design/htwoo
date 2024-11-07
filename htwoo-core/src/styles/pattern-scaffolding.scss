@@ -1,7 +1,9 @@
-@import "00-base/colors/colors";
-@import "00-base/global.vars";
-@import "00-base/mixin/_core.mixin.scss";
-@import "00-styleguide/index";
+@use 'sass:meta';
+@use "00-base/colors/colors";
+@use "00-base/global.vars";
+@use "00-base/mixin/_core.mixin.scss";
+@use "00-styleguide/index";
+
 
 /**
  * This stylesheet is for styles you want to include only when displaying demo
@@ -322,7 +324,7 @@
 
 	height: 200px;
 
-	background-color: $buttonBackgroundCheckedHovered;
+	background-color: colors.$buttonBackgroundCheckedHovered;
 
 	align-content: center;
 	align-items: center;
@@ -367,7 +369,7 @@ body>.tmp-hidden {
 	gap: 1rem;
 }
 
-@import '00-base/samples';
+@include meta.load-css('00-base/samples');
 
 .dlg-preview {
 	max-width: 90vw;
