@@ -1,0 +1,24 @@
+{
+    "bodyClass": "medium",
+    "steps": [
+        {
+            "progress-bar-step": {
+                "label": "Step 1",
+                "step-offset": "20%"
+            }
+        },
+        {
+            "progress-bar-step": {
+                "label": "Step 2",
+                "step-offset": "50%"
+            }
+        },
+        {
+            "progress-bar-step": {
+                "label": "Step 3",
+                "step-offset": "70%"
+            }
+        }
+    ]
+}
+
