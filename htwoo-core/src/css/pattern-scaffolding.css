@@ -516,7 +516,6 @@ body > .tmp-hidden {
   /* media query for small devices */
   /* media query for small devices */
 }
-
 @media screen and (max-width: 1024px) {
   .demo-item {
     grid-column: auto/span 4;
@@ -543,7 +542,6 @@ body > .tmp-hidden {
   /* media query for small devices */
   /* media query for small devices */
 }
-
 @media screen and (max-width: 1024px) {
   .demo-item2 {
     grid-column: auto/span 4;
