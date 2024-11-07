@@ -7,7 +7,7 @@
         <ul class="hoo-optgroup-items">
             {{#each this.options }}
             {{#if this.disabled }}
-            <li data-value="{{ this.key }}" class="hoo-option {{ this.disabled }}" aria-disabled="true">{{ this.value }}
+            <li data-value="{{ this.key }}" class="hoo-option {{ this.disabled }}" aria-disabled="{{ disabled }}" >{{ this.value }}
             </li>
             {{ else }}
             <li data-value="{{ this.key }}" class="hoo-option" aria-disabled="false">{{ this.value }}</li>
