@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. See [standa
 * [HTML] iFrame web parts added ([586b0f6](https://github.com/n8design/htwoo/commit/586b0f66ac18a7297e8327e7909467461871ef06))
 * [HTML] Statusbar / Message Bar added ([e3b875a](https://github.com/n8design/htwoo/commit/e3b875a4a043ba77d7a9092c2bbd59af2e61a132))
 * Accordion added ([adcc671](https://github.com/n8design/htwoo/commit/adcc6715fd9087641e0c06beb05bd430ab61a19c))
-* Added <h1> title to rendered pages ([6ced6d4](https://github.com/n8design/htwoo/commit/6ced6d47c3bf46c7d24bff5f6250050d2700fca6))
+* Added `<h1>` title to rendered pages ([6ced6d4](https://github.com/n8design/htwoo/commit/6ced6d47c3bf46c7d24bff5f6250050d2700fca6))
 * Added avatar showcase ([191ca4d](https://github.com/n8design/htwoo/commit/191ca4d585b0cdecc9f6512109adc4f23d5767c3))
 * added pivot bar tester ([46d60cc](https://github.com/n8design/htwoo/commit/46d60ccc802fc3f74e8beb907aa2dd1086eef796))
 * **alpha:** Code for input masking added. currently early alpha version just for testing for now ([142a448](https://github.com/n8design/htwoo/commit/142a4485e4e05f6fb72c6016050a547a243fbd81))
