@@ -37,6 +37,8 @@ jobs:
         with:
           ref: docs
           submodules: recursive
+      - name: Fetch main branch
+        run: git fetch origin main:main
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -55,10 +57,21 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-react public/htwoo-core/
+        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
