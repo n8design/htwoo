@@ -50,6 +50,11 @@ jobs:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Ensure Hugo is in PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Verify Hugo Installation
+        run: /usr/local/bin/hugo version
+
 
   build:
     runs-on: ubuntu-latest
