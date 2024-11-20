@@ -88,15 +88,28 @@ jobs:
         with:
           name: site
           path: ./public
+      - name: Cleanup symbolic links in public directory
+        run: find ./public -type l -exec rm -f {} \;
+      - name: Cleanup hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            find ./public -type f -links +1 -exec rm -f {} \;
+          fi
       - name: Verify no symbolic links in public directory
         run: |
           if find ./public -type l | grep -q .; then
             echo "Error: Symbolic links found in the public directory."
             exit 1
           fi
+      - name: Verify no hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           artifact_name: site
