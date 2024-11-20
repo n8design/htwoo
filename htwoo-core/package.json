@@ -1,9 +1,10 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "release": "standard-version",
     "cl:update": "standard-version --changelog --skip.bump --skip.tag",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
@@ -46,7 +47,8 @@
     "@pattern-lab/core": "^6.1.0",
     "@pattern-lab/engine-handlebars": "^6.1.0",
     "@pattern-lab/uikit-workshop": "^6.1.0",
-    "caniuse-lite": "^1.0.30001680"
+    "caniuse-lite": "^1.0.30001680",
+    "standard-version": "^9.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
