@@ -1,13 +1,29 @@
-group: "pages"
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: 
+      - main
+      - docs
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
   cancel-in-progress: false
 
-# Default to bash
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     env:
@@ -19,22 +35,24 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout docs branch
+        uses: actions/checkout@v4
         with:
+          ref: docs
           submodules: recursive
+      - name: Fetch main branch
+        run: git fetch origin main:main
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
       - name: Setup Node.js 20
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
@@ -42,15 +60,25 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-react public/htwoo-core/
+        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
+      - name: Verify artifact size and content
+        run: |
+          find ./public -type l -exec rm -f {} \;  # Remove symlinks
+          find ./public -type f -exec du -ch {} + | grep total$  # Check total size
+      - name: Check for hard links
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
+          name: site
           path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -58,6 +86,33 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: ./public
+      - name: Cleanup symbolic links in public directory
+        run: find ./public -type l -exec rm -f {} \;
+      - name: Cleanup hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            find ./public -type f -links +1 -exec rm -f {} \;
+          fi
+      - name: Verify no symbolic links in public directory
+        run: |
+          if find ./public -type l | grep -q .; then
+            echo "Error: Symbolic links found in the public directory."
+            exit 1
+          fi
+      - name: Verify no hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/upload-artifact@v4
+        with:
+          name: htwoo-site
+          path: ./public
