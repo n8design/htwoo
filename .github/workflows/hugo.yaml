@@ -26,24 +26,10 @@ jobs:
     env:
       HUGO_VERSION: 0.108.0
     steps:
-      - name: Cache Hugo CLI
-        id: cache-hugo
-        uses: actions/cache@v3
-        with:
-          path: /usr/local/bin/hugo
-          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-hugo-
       - name: Install Hugo CLI
-        if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
-          wget -O ${{ runner.temp }}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
-          && tar -xzf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }} \
-          && sudo mv ${{ runner.temp }}/hugo /usr/local/bin/hugo
-      - name: Verify Hugo Installation
-        run: |
-          ls -l /usr/local/bin/hugo
-          /usr/local/bin/hugo version
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
       - name: Checkout docs branch
@@ -53,23 +39,23 @@ jobs:
           submodules: recursive
       - name: Fetch main branch
         run: git fetch origin main:main
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Ensure Hugo is in PATH
-        run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
-        working-directory: ./path/to/your/hugo/site  # Update this path to the correct location of your Hugo site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
           hugo \
             --minify \
-            --baseURL "/"
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
         run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
