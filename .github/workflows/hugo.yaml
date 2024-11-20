@@ -70,11 +70,6 @@ jobs:
             echo "Error: Hard links found in the public directory."
             exit 1
           fi
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: ./public
 
   deploy:
     environment:
@@ -107,6 +102,10 @@ jobs:
             echo "Error: Hard links found in the public directory."
             exit 1
           fi
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
