@@ -78,8 +78,7 @@ jobs:
       - name: Ensure Hugo is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
-        # Remove or update the working-directory path to the correct location of your Hugo site
-        # working-directory: ./path/to/your/hugo/site
+        working-directory: ./path/to/your/hugo/site  # Update this path to the correct location of your Hugo site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
