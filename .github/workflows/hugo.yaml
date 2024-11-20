@@ -114,5 +114,5 @@ jobs:
         id: deployment
         uses: actions/upload-artifact@v4
         with:
-          name: site
+          name: htwoo
           path: ./public
