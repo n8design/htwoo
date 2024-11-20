@@ -39,9 +39,6 @@ jobs:
           submodules: recursive
       - name: Fetch main branch
         run: git fetch origin main:main
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -60,6 +57,10 @@ jobs:
         run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
+      - name: Verify artifact size and content
+        run: |
+          find ./public -type l -exec rm -f {} \;  # Remove symlinks
+          find ./public -type f -exec du -ch {} + | grep total$  # Check total size
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
