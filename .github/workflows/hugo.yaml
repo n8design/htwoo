@@ -62,7 +62,7 @@ jobs:
       - name: Verify Hugo Installation
         run: which hugo
       - name: Verify Hugo Installation
-        run: hugo version
+        run: /usr/local/bin/hugo version
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
