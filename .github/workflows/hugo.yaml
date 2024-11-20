@@ -85,7 +85,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: site
+          name: github-pages
           path: ./public
 
   deploy:
@@ -99,4 +99,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v3
         with:
-          artifact_name: site
+          artifact_name: github-pages
