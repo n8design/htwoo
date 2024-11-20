@@ -21,7 +21,7 @@ defaults:
     shell: bash
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
@@ -59,22 +59,6 @@ jobs:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-
-  build:
-    runs-on: ubuntu-latest
-    needs: setup
-    env:
-      HUGO_VERSION: 0.108.0
-    steps:
-      - name: Restore Hugo CLI from cache
-        uses: actions/cache@v3
-        with:
-          path: /usr/local/bin/hugo
-          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}
-      - name: Verify Hugo Installation
-        run: which hugo
-      - name: Verify Hugo Installation
-        run: /usr/local/bin/hugo version
       - name: Ensure Hugo is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
