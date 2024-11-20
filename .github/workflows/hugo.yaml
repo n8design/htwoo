@@ -75,7 +75,7 @@ jobs:
       - name: Copy hTWOo React style guide
         run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           path: ./public
 
