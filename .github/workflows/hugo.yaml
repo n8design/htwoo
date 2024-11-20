@@ -53,6 +53,8 @@ jobs:
     env:
       HUGO_VERSION: 0.108.0
     steps:
+      - name: Ensure Hugo is in PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
