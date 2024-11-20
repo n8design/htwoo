@@ -83,4 +83,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
+          token: ${{ github.token }}
           artifact_name: site
