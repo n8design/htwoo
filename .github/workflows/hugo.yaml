@@ -39,6 +39,9 @@ jobs:
           submodules: recursive
       - name: Fetch main branch
         run: git fetch origin main:main
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -61,6 +64,12 @@ jobs:
         run: |
           find ./public -type l -exec rm -f {} \;  # Remove symlinks
           find ./public -type f -exec du -ch {} + | grep total$  # Check total size
+      - name: Check for hard links
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
