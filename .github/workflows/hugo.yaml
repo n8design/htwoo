@@ -5,6 +5,9 @@ on:
     branches: 
       - main
       - docs
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -71,9 +74,8 @@ jobs:
             exit 1
           fi
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: site
           path: ./public
 
   deploy:
