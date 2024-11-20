@@ -26,7 +26,16 @@ jobs:
     env:
       HUGO_VERSION: 0.108.0
     steps:
+      - name: Cache Hugo CLI
+        id: cache-hugo
+        uses: actions/cache@v3
+        with:
+          path: /usr/local/bin/hugo
+          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
       - name: Install Hugo CLI
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
         run: |
           wget -O ${{ runner.temp }}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz \
           && tar -xzf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }} \
@@ -50,11 +59,6 @@ jobs:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Ensure Hugo is in PATH
-        run: echo "/usr/local/bin" >> $GITHUB_PATH
-      - name: Verify Hugo Installation
-        run: /usr/local/bin/hugo version
-
 
   build:
     runs-on: ubuntu-latest
@@ -62,10 +66,17 @@ jobs:
     env:
       HUGO_VERSION: 0.108.0
     steps:
-      - name: Ensure Hugo is in PATH
-        run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Restore Hugo CLI from cache
+        uses: actions/cache@v3
+        with:
+          path: /usr/local/bin/hugo
+          key: ${{ runner.os }}-hugo-${{ env.HUGO_VERSION }}
+      - name: Verify Hugo Installation
+        run: which hugo
       - name: Verify Hugo Installation
         run: /usr/local/bin/hugo version
+      - name: Ensure Hugo is in PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
