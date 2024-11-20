@@ -88,6 +88,12 @@ jobs:
         with:
           name: site
           path: ./public
+      - name: Verify no symbolic links in public directory
+        run: |
+          if find ./public -type l | grep -q .; then
+            echo "Error: Symbolic links found in the public directory."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
