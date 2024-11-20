@@ -32,7 +32,7 @@ jobs:
           && tar -xzf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }} \
           && sudo mv ${{ runner.temp }}/hugo /usr/local/bin/hugo
       - name: Verify Hugo Installation
-        run: hugo version
+        run: /usr/local/bin/hugo version
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
       - name: Checkout docs branch
@@ -56,9 +56,7 @@ jobs:
       HUGO_VERSION: 0.108.0
     steps:
       - name: Verify Hugo Installation
-        run: which hugo
-      - name: Verify Hugo Installation
-        run: hugo version
+        run: /usr/local/bin/hugo version
       - name: Ensure Hugo is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
