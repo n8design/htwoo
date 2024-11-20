@@ -1,33 +1,26 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["docs"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: 
+      - main
+      - docs
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# Default to bash
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     env:
@@ -39,27 +32,22 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout docs branch
+        uses: actions/checkout@v3
         with:
+          ref: docs
           submodules: recursive
-          fetch-depth: 0
-      - name: Show All Branches
-        run: bash ${GITHUB_WORKSPACE}/update-docs.sh
-        shell: bash
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-         # Add Node.js 20 setup here
+        uses: actions/configure-pages@v3
       - name: Setup Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
@@ -67,23 +55,14 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: |
-          git checkout origin/main -- docs/htwoo-core/*
-          mv -f docs/htwoo-core public/htwoo-core/
+        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-react public/htwoo-core/
       - name: Copy hTWOo React style guide
-        run: |
-          git checkout origin/main -- docs/htwoo-react/*
-          mv -f docs/htwoo-react public/htwoo-react/
-      - name: Cleanup Docs
-        run: rm -rf ./docs
-      - name: Cleanup Docs 2
-        run: ls -al
+        run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
