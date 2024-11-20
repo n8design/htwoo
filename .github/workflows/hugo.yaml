@@ -112,6 +112,7 @@ jobs:
           fi
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
+          name: site
           path: ./public
