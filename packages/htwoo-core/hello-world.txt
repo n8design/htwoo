@@ -1,0 +1,52 @@
+463b44e85 (tag: htwoo-core-v2.6.0) fix: Fixed references
+93177e073 (tag: htwoo-core-v2.5.4) chore(release): 2.5.4
+b2e9dafa9 (tag: htwoo-core-v2.4.2) chore(release): 2.4.2
+92b7b4de2 (tag: htwoo-core-v2.3.4) chore(release): 2.3.4
+74213af86 (tag: htwoo-core-v2.5.3) chore(release): 2.5.3
+99781cd6f (tag: htwoo-core-v2.3.3) chore(release): 2.3.3
+81c06ee2e (tag: htwoo-core-v2.5.2) chore: resolved merge conflicts
+c28f18f40 (tag: htwoo-core-v2.5.1) chore: revamped changelog
+6305ffdac (tag: htwoo-core-v2.4.1) fix(CSS): Fix overflow option on drop down
+16c536a4c (tag: htwoo-core-v2.5.0, origin/dev, dev) chore(misc): Update documentation
+ddb88eec5 (tag: htwoo-core-v2.4.0) chore: updated package.version
+c4d6edec0 (tag: htwoo-core-v2.3.2) Update style definitions for v2.3.2
+4ec1a0fdc (tag: htwoo-core-v2.3.1, tag: htwoo-core-v2.3.0) Update to version 2.3.1
+be60aa407 (tag: htwoo-core-v2.2.1) chore(2.3.0): release
+c82251430 (tag: htwoo-core-v2.1.4) chore(v2.2.1): Update to verstion 2.2.1
+bbd975a46 (tag: htwoo-core-v2.1.2) chore: version package update
+afc7d5ac1 (tag: htwoo-core-v2.1.1) fixed version 2.1.1
+dbeb2ef6e (tag: htwoo-core-v2.1.0) Updated version and changelog
+1873acad7 (tag: htwoo-core-v2.0.2) package 2.1.0 release
+0e80190f5 (tag: htwoo-core-v2.0.1) Update version to 2.0.2
+5f3709913 (tag: htwoo-core-v2.0.0) Dumped to version 2.0.1
+6ad92a9c0 (tag: htwoo-core-v2.0.0-alpha8) Release version 2.0.0
+5b76d5b69 (tag: htwoo-core-v2.0.0-alpha7) updated logos
+ac0818785 (tag: htwoo-core-v2.0.0-alpha4) Update style
+078aa64a8 (tag: htwoo-core-v2.0.0-alpha3) fixing faulty references
+b0a4b619e (tag: htwoo-core-v2.0.0-alpha2) Update
+af67a20f5 (tag: htwoo-core-v2.0.0-alpha1) Update to version alpha2
+e8e561fe4 (tag: htwoo-core-v1.2.5) Update to version 2.0.0-alpha1
+88f8674a1 (tag: htwoo-core-v1.2.4) Release v1.2.5
+d50e747cc (tag: htwoo-core-v1.2.3) published version 1.2.4
+8fbe11300 (tag: htwoo-core-v1.2.2) Released version 1.2.3
+9620c4af8 (tag: htwoo-core-v1.2.1) Update to version 1.2.2
+24f7723e9 (tag: htwoo-core-v1.2.0) Update to hTWOo Core 1.2.1
+d0e630ed3 (tag: htwoo-core-v1.1.1) Documentation Update and preperations for 1.2.0
+b2f978aa3 (tag: htwoo-core-v1.1.0) 1.1.1 minor bigfixes
+971b468d2 (tag: htwoo-core-v1.0.0) Update to version 1.1.0
+51b61ac7b (tag: htwoo-core-v0.7.0) Update to version 1.0.0
+d478ce969 (tag: htwoo-core-v0.6.0) Update version to 0.7.0
+1f3745e32 (tag: htwoo-core-v0.6.0-beta1) Update to version 0.6.0
+91bffefdc (tag: htwoo-core-v0.5.1) Update package.json
+d39386424 (tag: htwoo-core-v0.5.0) Upgrade to version 0.6.0-beta1
+437c0c3f4 (tag: htwoo-core-v0.4.0) update to version 0.5.0
+df37493aa (tag: htwoo-core-v0.4.0-beta4) Publish version 0.4.0
+9d9e8184f (tag: htwoo-core-v0.4.0-beta3) beta4
+de9fccd07 (tag: htwoo-core-v0.4.0-beta2) update all
+726d7d82d (tag: htwoo-core-v0.3.0) Update to beta2
+89b654ffd (tag: htwoo-core-v0.2.2) Update for shimmer
+0a9245673 (tag: htwoo-core-v0.2.1) Update to v0.2.2
+d32d17884 (tag: htwoo-core-v0.2.0) Quick fix mixin
+210d3fc29 (tag: htwoo-core-v0.1.0) Update styles
+9679d3dc3 (tag: htwoo-core-v0.0.0-alpha.2) Update readme.md
+d2a85aecd (tag: htwoo-core-v0.0.0-alpha.1) Added social media
