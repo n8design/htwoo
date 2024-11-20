@@ -78,14 +78,15 @@ jobs:
       - name: Ensure Hugo is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Build with Hugo
-        working-directory: ./path/to/your/hugo/site
+        # Remove or update the working-directory path to the correct location of your Hugo site
+        # working-directory: ./path/to/your/hugo/site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "/"
       - name: Copy hTWOo Core style guide
         run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
