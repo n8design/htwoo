@@ -60,8 +60,6 @@ jobs:
       - name: Ensure Hugo is in PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
       - name: Verify Hugo Installation
-        run: which hugo
-      - name: Verify Hugo Installation
         run: /usr/local/bin/hugo version
       - name: Build with Hugo
         env:
