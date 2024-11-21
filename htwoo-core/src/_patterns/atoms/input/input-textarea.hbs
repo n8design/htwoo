@@ -1,1 +1,1 @@
-<textarea class="hoo-input-text" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}}></textarea>
+<textarea class="hoo-input-text" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}} {{ html-props }}></textarea>
