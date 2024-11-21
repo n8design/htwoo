@@ -1,0 +1,348 @@
+{
+    "form": {
+        "issue-type": {
+            "input": {
+                "label": {
+                    "label": "Issue Type",
+                    "for": "issue-type-radio"
+                }
+            },
+            "radiobutton-group": {
+                "items": [
+                    {
+                        "radiobutton": {
+                            "label": "Electrical",
+                            "id": "rbg1",
+                            "name": "radio-button-group",
+                            "value": "Electrical"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "Plumbing",
+                            "id": "rbg2",
+                            "name": "radio-button-group",
+                            "value": "Plubming"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "HVAC",
+                            "id": "rbg3",
+                            "name": "radio-button-group",
+                            "value": "HAVC"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "Safety Hazard",
+                            "id": "rbg4",
+                            "name": "radio-button-group",
+                            "value": "Safety Hazard"
+                        }
+                    }
+                ]
+            }
+        },
+        "location": {
+            "input": {
+                "label": {
+                    "label": "Location",
+                    "for": "location-select-input"
+                }
+            },
+            "button": {
+                "iconname": "icon-arrow-down",
+                "label": "Show Options",
+                "description": "Show Optiosn",
+                "aria-label": "Button"
+            },
+            "select-options-grouped": {
+                "options": [
+                    {
+                        "groupname": "Building A",
+                        "options": [
+                            {
+                                "key": "A101",
+                                "value": "A101 - Conference Room - Small",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A102",
+                                "value": "A102 - Meeting Room - Large",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A103",
+                                "value": "A103 - Kitchen Area - Employee Lounge",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A104",
+                                "value": "A104 - Breakout Space - Casual",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A105",
+                                "value": "A105 - Storage Room - Supplies",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A106",
+                                "value": "A106 - Restroom - Men’s",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A107",
+                                "value": "A107 - Restroom - Women’s",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "A108",
+                                "value": "A108 - Server Room",
+                                "disabled": ""
+                            }
+                        ]
+                    },
+                    {
+                        "groupname": "Building B",
+                        "options": [
+                            {
+                                "key": "B201",
+                                "value": "B201 - Manager’s Office - John Doe",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B202",
+                                "value": "B202 - Customer Service - Shared Desk",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B203",
+                                "value": "B203 - R&D Lab - Prototype Testing",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B204",
+                                "value": "B204 - Lounge - Break Area",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B205",
+                                "value": "B205 - Conference Room - Middle",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B206",
+                                "value": "B206 - Storage - Documents",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B207",
+                                "value": "B207 - Restroom - Unisex",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "B208",
+                                "value": "B208 - Utility Room",
+                                "disabled": ""
+                            }
+                        ]
+                    },
+                    {
+                        "groupname": "Building C",
+                        "options": [
+                            {
+                                "key": "C301",
+                                "value": "C301 - Sales Office - Meeting Area",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C302",
+                                "value": "C302 - Marketing Department - Creative Team",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C303",
+                                "value": "C303 - IT Support - Desk Area",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C304",
+                                "value": "C304 - Operations Office - Supplies",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C305",
+                                "value": "C305 - HR Office - Employee Records",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C306",
+                                "value": "C306 - Kitchen Area - Coffee Station",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C307",
+                                "value": "C307 - Meeting Room - Virtual Teams",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "C308",
+                                "value": "C308 - Restroom - Gender Neutral",
+                                "disabled": ""
+                            }
+                        ]
+                    },
+                    {
+                        "groupname": "Building D",
+                        "options": [
+                            {
+                                "key": "D401",
+                                "value": "D401 - Executive Office - CEO",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D402",
+                                "value": "D402 - Creative Space - Design Team",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D403",
+                                "value": "D403 - Meeting Room - Large",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D404",
+                                "value": "D404 - Library - Research Area",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D405",
+                                "value": "D405 - Employee Lounge - Relaxation Area",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D406",
+                                "value": "D406 - Printer Room - Multi-Function",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D407",
+                                "value": "D407 - Restroom - Women’s",
+                                "disabled": ""
+                            },
+                            {
+                                "key": "D408",
+                                "value": "D408 - Restroom - Men’s",
+                                "disabled": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "datetime-reported": {
+            "input": {
+                "label": {
+                    "label": "Date/Time Reported",
+                    "for": "datetime-reported-input"
+                },
+                "date": {
+                    "id": "my-date-picker",
+                    "name": "my-date-picker-name",
+                    "value": "2021-10-26",
+                    "min-value": "2021-10-25",
+                    "max-value": "2030-10-25",
+                    "aria-tags": ""
+                }
+            }
+        },
+        "priority-level": {
+            "input": {
+                "label": {
+                    "label": "Priority Level",
+                    "for": "issue-type-radio"
+                }
+            },
+            "radiobutton-group": {
+                "items": [
+                    {
+                        "radiobutton": {
+                            "label": "Low",
+                            "id": "proiority-1",
+                            "name": "priority-level",
+                            "value": "Low"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "Medium",
+                            "id": "proiority-2",
+                            "name": "priority-level",
+                            "value": "Medium"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "High",
+                            "id": "proiority",
+                            "name": "priority-level",
+                            "value": "High-3"
+                        }
+                    },
+                    {
+                        "radiobutton": {
+                            "label": "Urgent",
+                            "id": "proiority-4",
+                            "name": "priority-level",
+                            "value": "Urgent"
+                        }
+                    }
+                ]
+            }
+        },
+        "description": {
+            "input": {
+                "label": {
+                    "label": "Issue Description",
+                    "for": "issue-type-radio"
+                }
+            }
+        },
+        "reported-by": {
+            "input": {
+                "label": {
+                    "label": "Reported By",
+                    "for": "reported-by-input"
+                },
+                "text": {
+                    "inputPrefix": "",
+                    "inputSuffix": "",
+                    "placeholder": "",
+                    "aria-tags": "readonly",
+                    "id": "reported-by-input"
+                }
+            }
+        },
+        "equipment-asset-Id": {
+            "input": {
+                "description": {
+                    "text": "Unique identifier assigned to the equipment or asset. Watch out for a label with in the form ACME-1234-5678",
+                    "descRef": "equipment-asset-id-input"
+                },
+                "label": {
+                    "label": "Equipment/Asset ID",
+                    "for": "equipment-asset-id-input"
+                },
+                "text": {
+                    "inputPrefix": "",
+                    "inputSuffix": "",
+                    "placeholder": "",
+                    "aria-tags": "readonly",
+                    "id": "equipment-asset-id-input"
+                }
+            }
+        }
+    }
+}
