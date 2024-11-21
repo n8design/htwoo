@@ -1,3 +1,3 @@
 {{#input.url}}
-<input class="hoo-input-text" type="url" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} {{#if diabled}} disabled="{{ disabled }}"  aria-disabled="{{ disabled }}" {{/if}} placeholder="{{ placeholder }}" {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}} {{ html-props }}>
+<input class="hoo-input-text" type="url" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} {{#if diabled}} disabled="{{ disabled }}"  aria-disabled="{{ disabled }}" {{/if}} placeholder="{{ placeholder }}" {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}} {{{ html-props }}}>
 {{/input.url}}
