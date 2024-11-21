@@ -308,7 +308,8 @@
                     "label": "Issue Description",
                     "for": "issue-type-radio"
                 }
-            }
+            },
+            "html-props": "maxlength='500' minlength='500' style='width: 65ch; height: 10lh;'"
         },
         "reported-by": {
             "input": {
