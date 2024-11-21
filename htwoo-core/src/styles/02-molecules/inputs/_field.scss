@@ -35,6 +35,7 @@
 .hoo-field{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.125rem;
     &[class*="hoo-input"]{
         flex-grow: 0;
