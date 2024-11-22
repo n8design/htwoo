@@ -8,4 +8,8 @@
     margin: 0;
     margin-bottom: .25rem;
     margin-top: .25rem;
+    width: 100%;
+    max-width: 65ch;
+    line-height: 1.1;
+    text-wrap: balance;
 }
