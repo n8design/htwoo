@@ -304,6 +304,10 @@
         },
         "description": {
             "input": {
+                "description": {
+                    "text": "Please provide a detailed explanation of the issue that help the team understand the situation.",
+                    "descRef": "issue-type-radio"
+                },
                 "label": {
                     "label": "Issue Description",
                     "for": "issue-type-radio"
