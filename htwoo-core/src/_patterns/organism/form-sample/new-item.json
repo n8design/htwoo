@@ -473,6 +473,47 @@
                     "html-props": "size='10'"
                 }
             }
+        },
+        "resolution-description": {
+            "input": {
+                "description": {
+                    "text": "Please provide a detailed explanation of the resolution to the issue. Include any relevant actions taken to address the problem. Remember to include any necessary documentation or updates to the asset's inventory. Also, be sure to include any follow-up steps or recommendations for future maintenance."
+                },
+                "label": {
+                    "label": "Resolution Description",
+                    "for": "resolution-description"
+                }
+            },
+            "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+        },
+        "parts-materials": {
+            "input": {
+                "description": {
+                    "text": "Please list any parts or materials used to resolve the issue. Include the quantity, part number, and any other relevant information. If no parts or materials were used, please indicate 'None'."
+                },
+                "label": {
+                    "label": "Parts/Materials used:",
+                    "for": "parts-materials"
+                }
+            },
+            "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+        },
+        "follow-up-required": {
+            "input": {
+                "label": {
+                    "label": "Follow up Required?",
+                    "for": "follow-up-required"
+                },
+                "toggle": {
+                    "name": "toggleName",
+                    "id": "follow-up-required",
+                    "label": {
+                        "checked": "Yes",
+                        "unchecked": "No"
+                    },
+                    "aria-tags": ""
+                }
+            }
         }
     }
 }

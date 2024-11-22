@@ -85,4 +85,27 @@
         {{/estimate-time-to-resolve}}
     </div>
 </fieldset>
+<fieldset id="resolution" class="hoo-fieldset no-outline">
+    <div class="hoo-field" role="group">
+        {{#resolution-description}}
+        {{> atoms-label }}
+        {{> atoms-input-description }}
+        {{> atoms-input-textarea }}
+        {{/resolution-description}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#parts-materials}}
+        {{> atoms-label }}
+        {{> atoms-input-description }}
+        {{> atoms-input-textarea }}
+        {{/parts-materials}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#follow-up-required}}
+        {{> atoms-label }}
+        {{> atoms-toggle }}
+        {{> atoms-input-description }}
+        {{/follow-up-required}}
+    </div>
+</fieldset>
 {{/form}}
