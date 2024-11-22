@@ -278,7 +278,6 @@ export const ariaSelect = (listItem) => {
         }
         break
       default:
-        consoe.debug('CS STATE:::: ', csState);
         if (csState === 'initial') {
           // if state = initial, toggle open, doFilter and set state to filtered
           toggleList('Open')
@@ -299,3 +298,32 @@ export const ariaSelect = (listItem) => {
     }
   }
 }
+
+function updateOptgroupVisibility() {
+  const optgroups = document.querySelectorAll('.hoo-optgroup');
+
+  optgroups.forEach(optgroup => {
+      const options = optgroup.querySelectorAll('.hoo-option');
+      const hasVisibleOption = Array.from(options).some(option => 
+          option.style.display !== 'none'
+      );
+
+      // Hide or show the optgroup based on visibility of its options
+      optgroup.style.display = hasVisibleOption ? '' : 'none';
+  });
+}
+
+// Run initially to set visibility
+updateOptgroupVisibility();
+
+// Example: Attach to a mutation observer to handle dynamic changes
+const observer = new MutationObserver(() => {
+  updateOptgroupVisibility();
+});
+
+observer.observe(document.querySelector('.hoo-select-dropdown'), {
+  childList: true,
+  subtree: true,
+  attributes: true,
+  attributeFilter: ['style'] // Monitor only style changes
+});

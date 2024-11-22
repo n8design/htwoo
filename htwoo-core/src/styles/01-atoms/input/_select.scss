@@ -106,6 +106,9 @@
     overflow: hidden;
     overflow-y: auto;
     position: relative;
+	// &:has(:not(.hoo-optgroup-items)) {
+	// 	display: none;
+	// }
 }
 
 .hoo-option {
