@@ -323,7 +323,6 @@
                     "placeholder": "",
                     "aria-tags": "",
                     "id": "reported-by-input",
-                    "readonly": true,
                     "html-props": "size='30'"
                 }
             }
@@ -342,17 +341,32 @@
                     "inputPrefix": "",
                     "inputSuffix": "",
                     "placeholder": "ACME-1234-5678",
-                    "aria-tags": "readonly",
                     "id": "equipment-asset-id-input",
                     "html-props": "size='16'"
                 }
             }
         },
+        "btn-report-cancel":{
+            "button": {
+                "label": "Cancel",
+                "html-props": "data-step='new-issue-cancel'"
+            }
+        },
+        "btn-report-issue":{
+            "button": {
+                "label": "Report issue",
+                "html-props": "data-step='new-issue'"
+            }
+        },
         "assigned-to": {
             "input": {
                 "label": {
-                    "label": "Assigned To",
+                    "label": "Assign To",
                     "for": "assigned-to-input"
+                },
+                "description": {
+                    "text": "Enter the name of the person responsible for resolving the issue.",
+                    "descRef": "assigned-to-input"
                 },
                 "text": {
                     "inputPrefix": "",
@@ -360,7 +374,6 @@
                     "placeholder": "",
                     "aria-tags": "",
                     "id": "assigned-to-input",
-                    "readonly": true,
                     "html-props": "size='30'"
                 }
             }
@@ -449,7 +462,10 @@
         },
         "comments": {
             "input": {
-                "description": "Text area for additional comments or notes",
+                "description": {
+                    "text": "Additional information or notes about the issue. Include any relevant details or observations that may help in resolving the issue. If there are any special instructions or considerations, please include them here.",
+                    "descRef": ""
+                },
                 "label": {
                     "label": "Comments",
                     "for": "Comments"
@@ -463,6 +479,10 @@
                     "label": "Estimated Time to Resolve",
                     "for": "estimate-time-to-resolve-input"
                 },
+                "description": {
+                    "text": "Estimated time in hours it would take for the issue to be resolved. This should be based on the current state of the asset and the estimated effort required to fix the issue.",
+                    "descRef": "estimate-time-to-resolve-input"
+                },
                 "text": {
                     "type": "number",
                     "inputPrefix": "",
@@ -472,6 +492,18 @@
                     "id": "estimate-time-to-resolve-input",
                     "html-props": "size='10'"
                 }
+            }
+        },
+        "btn-report-invalid":{
+            "button": {
+                "label": "Invalid report",
+                "html-props": "data-step='invalid'"
+            }
+        },
+        "btn-report-verified":{
+            "button": {
+                "label": "Report verified",
+                "html-props": "data-step='verified'"
             }
         },
         "resolution-description": {
@@ -513,6 +545,39 @@
                     },
                     "aria-tags": ""
                 }
+            }
+        },
+        "actual-time-to-resolve": {
+            "input": {
+                "label": {
+                    "label": "Actual time to resolve",
+                    "for": "actual-time-to-resolve-input"
+                },
+                "description": {
+                    "text": "The actual time spent on this issue",
+                    "descRef": "actual-time-to-resolve-input"
+                },
+                "text": {
+                    "type": "number",
+                    "inputPrefix": "",
+                    "inputSuffix": "hours",
+                    "placeholder": "",
+                    "aria-tags": "",
+                    "id": "actual-time-to-resolve-input",
+                    "html-props": "size='10'"
+                }
+            }
+        },
+        "btn-report-unable":{
+            "button": {
+                "label": "Unable to resolve",
+                "html-props": "data-step='invalid'"
+            }
+        },
+        "btn-report-completed":{
+            "button": {
+                "label": "Completed",
+                "html-props": "data-step='verified'"
             }
         }
     }

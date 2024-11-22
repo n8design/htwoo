@@ -1,0 +1,12 @@
+.facility-form{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start; /* Align items at the top (or `center`, `end`) */
+    // justify-items: start; /* Align items to the left (or `center`, `end`) */
+    .actions{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
