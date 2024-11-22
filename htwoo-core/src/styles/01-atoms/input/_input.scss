@@ -59,7 +59,11 @@
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
+	&[readonly] {
+		border-color: transparent;
+    }
 }
+
 textarea.hoo-input-text{
 	line-height: 1.5;
 	&:focus{
