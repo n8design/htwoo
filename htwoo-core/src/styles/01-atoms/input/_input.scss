@@ -110,6 +110,9 @@ textarea.hoo-input-text{
 
 		.hoo-input-text {
 			padding: 0 core.px2rem(8px);
+			&[type="number"] {
+				padding-right: 0;
+			}
 		}
 
 		.hoo-input-suffix {
