@@ -38,6 +38,7 @@ export const ariaSelect = (listItem) => {
   })
   // set up a message to keep screen reader users informed of what the custom input is for/doing
   csStatus.textContent = csOptions.length + " options available. Arrow down to browse or start typing to filter."
+  toggleList('Shut');
 
   // EVENTS
   // /////////////////////////////////
@@ -277,6 +278,7 @@ export const ariaSelect = (listItem) => {
         }
         break
       default:
+        consoe.debug('CS STATE:::: ', csState);
         if (csState === 'initial') {
           // if state = initial, toggle open, doFilter and set state to filtered
           toggleList('Open')
@@ -296,5 +298,4 @@ export const ariaSelect = (listItem) => {
         break
     }
   }
-
 }

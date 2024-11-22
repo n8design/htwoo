@@ -149,8 +149,11 @@ const registerAriaSelect = () => {
 
     let selects = document.querySelectorAll('.hoo-select');
 
+    console.debug('ALL SELECTED', selects)
+
     if (selects) {
         selects.forEach((item, idx) => {
+            console.debug(item, idx);
             ariaSelect(item);
         });
     }
