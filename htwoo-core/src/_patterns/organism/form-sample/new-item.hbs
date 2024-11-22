@@ -1,55 +1,88 @@
 {{#form}}
-<form id="form" method="get" action="?">
-    <fieldset id="new-item-form" class="hoo-fieldset no-outline">
-        <div class="hoo-field" role="group">
-            {{#issue-type}}
-            {{> atoms-label }}
-            {{> molecules-radio-button-group}}
-            {{/issue-type}}
+<fieldset id="new-item-form" class="hoo-fieldset no-outline">
+    <div class="hoo-field" role="group">
+        {{#issue-type}}
+        {{> atoms-label }}
+        {{> molecules-radio-button-group}}
+        {{/issue-type}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#location}}
+        {{> atoms-label }}
+        <div class="hoo-select">
+            <div id='location-select' class='hidden-visually' aria-live="polite"></div>
+            <input type="text" id="location-select-input" class="hoo-select-text" aria-autocomplete="both"
+                aria-controls="custom-select-list">
+            {{> atoms-button-icon }}
+            {{!-- {{> atoms-select-drop-down-grouped }} --}}
         </div>
-        <div class="hoo-field" role="group">
-            {{#location}}
-            {{> atoms-label }}
-            <div class="hoo-select">
-                <div id='location-select' class='hidden-visually' aria-live="polite"></div>
-                <input type="text" id="location-select-input" class="hoo-select-text" aria-autocomplete="both"
-                    aria-controls="custom-select-list">
-                {{> atoms-button-icon }}
-                {{!-- {{> atoms-select-drop-down-grouped }} --}}
-            </div>
-            {{/location}}
-        </div>
-        <div class="hoo-field" role="group">
-            {{#datetime-reported}}
-            {{> atoms-label }}
-            {{> atoms-input-datetime-local }}
-            {{/datetime-reported}}
-        </div>
-        <div class="hoo-field" role="group">
-            {{#priority-level}}
-            {{> atoms-label }}
-            {{> molecules-radio-button-group}}
-            {{/priority-level}}
-        </div>
-        <div class="hoo-field" role="group">
-            {{#description}}
-            {{> atoms-label }}
-            {{> atoms-input-textarea }}
-            {{/description}}
-        </div>
-        <div class="hoo-field" role="group">
-            {{#reported-by}}
-            {{> atoms-label }}
-            {{> atoms-input-text }}
-            {{/reported-by}}
-        </div>
-        <div class="hoo-field" role="group">
-            {{#equipment-asset-Id}}
-            {{> atoms-label }}
-            {{> atoms-input-text }}
-            {{> atoms-input-description }}
-            {{/equipment-asset-Id}}
-        </div>
-    </fieldset>
-</form>
+        {{/location}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#datetime-reported}}
+        {{> atoms-label }}
+        {{> atoms-input-datetime-local }}
+        {{/datetime-reported}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#priority-level}}
+        {{> atoms-label }}
+        {{> molecules-radio-button-group}}
+        {{/priority-level}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#description}}
+        {{> atoms-label }}
+        {{> atoms-input-textarea }}
+        {{/description}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#reported-by}}
+        {{> atoms-label }}
+        {{> atoms-input-text }}
+        {{/reported-by}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#equipment-asset-Id}}
+        {{> atoms-label }}
+        {{> atoms-input-text }}
+        {{> atoms-input-description }}
+        {{/equipment-asset-Id}}
+    </div>
+</fieldset>
+<fieldset id="issue-verification" class="hoo-fieldset no-outline">
+    <div class="hoo-field" role="group">
+        {{#assigned-to}}
+        {{> atoms-label }}
+        {{> atoms-input-text }}
+        {{> atoms-input-description }}
+        {{/assigned-to}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#verification-date}}
+        {{> atoms-label }}
+        {{> atoms-input-datetime-local }}
+        {{/verification-date}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#status}}
+        {{> atoms-label }}
+        {{> molecules-radio-button-group}}
+        {{/status}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#comments}}
+        {{> atoms-label }}
+        {{> atoms-input-description }}
+        {{> atoms-input-textarea }}
+        {{/comments}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#estimate-time-to-resolve}}
+        {{> atoms-label }}
+        {{> atoms-input-text-suffixed }}
+        {{> atoms-input-description }}
+        {{/estimate-time-to-resolve}}
+    </div>
+</fieldset>
 {{/form}}
