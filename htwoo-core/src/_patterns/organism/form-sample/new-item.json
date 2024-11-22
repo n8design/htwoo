@@ -464,6 +464,7 @@
                     "for": "estimate-time-to-resolve-input"
                 },
                 "text": {
+                    "type": "number",
                     "inputPrefix": "",
                     "inputSuffix": "hours",
                     "placeholder": "",
