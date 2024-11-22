@@ -61,6 +61,7 @@
 	}
 	&[readonly] {
 		border-color: transparent;
+		padding-inline: 0;
     }
 }
 
@@ -188,6 +189,11 @@ input[type="color"].hoo-input-color {
 	padding-left: core.px2rem(8px);
 
 	color: colors.$neutral-700;
+
+	&[readonly]{
+		padding-inline: 0;
+		border-color: transparent;
+	}
 
 	&:focus {
 		border-color: transparent;
