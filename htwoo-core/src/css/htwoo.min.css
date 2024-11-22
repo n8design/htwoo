@@ -1826,6 +1826,10 @@ input[type=color].hoo-input-color::-webkit-color-swatch {
   position: relative;
 }
 
+.hoo-optgroup:not(:has(.hoo-option:not([style*="display: none;"]))) {
+  background-color: lime;
+}
+
 .hoo-option {
   font-size: 14px;
   display: flex;
