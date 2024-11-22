@@ -49,7 +49,8 @@
                 "label": {
                     "label": "Location",
                     "for": "location-select-input"
-                }
+                },
+                "html-props": "autocomplete='off'"
             },
             "button": {
                 "iconname": "icon-arrow-down",
@@ -63,42 +64,42 @@
                         "groupname": "Building A",
                         "options": [
                             {
-                                "key": "A101",
+                                "key": "A101 - Conference Room - Small",
                                 "value": "A101 - Conference Room - Small",
                                 "disabled": ""
                             },
                             {
-                                "key": "A102",
+                                "key": "A102 - Meeting Room - Large",
                                 "value": "A102 - Meeting Room - Large",
                                 "disabled": ""
                             },
                             {
-                                "key": "A103",
+                                "key": "A103 - Kitchen Area - Employee Lounge",
                                 "value": "A103 - Kitchen Area - Employee Lounge",
                                 "disabled": ""
                             },
                             {
-                                "key": "A104",
+                                "key": "A104 - Breakout Space - Casual",
                                 "value": "A104 - Breakout Space - Casual",
                                 "disabled": ""
                             },
                             {
-                                "key": "A105",
+                                "key": "A105 - Storage Room - Supplies",
                                 "value": "A105 - Storage Room - Supplies",
                                 "disabled": ""
                             },
                             {
-                                "key": "A106",
+                                "key": "A106 - Restroom - Men’s",
                                 "value": "A106 - Restroom - Men’s",
                                 "disabled": ""
                             },
                             {
-                                "key": "A107",
+                                "key": "A107 - Restroom - Women’s",
                                 "value": "A107 - Restroom - Women’s",
                                 "disabled": ""
                             },
                             {
-                                "key": "A108",
+                                "key": "A108 - Server Room",
                                 "value": "A108 - Server Room",
                                 "disabled": ""
                             }
@@ -108,42 +109,42 @@
                         "groupname": "Building B",
                         "options": [
                             {
-                                "key": "B201",
+                                "key": "B201 - Manager’s Office - John Doe",
                                 "value": "B201 - Manager’s Office - John Doe",
                                 "disabled": ""
                             },
                             {
-                                "key": "B202",
+                                "key": "B202 - Customer Service - Shared Desk",
                                 "value": "B202 - Customer Service - Shared Desk",
                                 "disabled": ""
                             },
                             {
-                                "key": "B203",
+                                "key": "B203 - R&D Lab - Prototype Testing",
                                 "value": "B203 - R&D Lab - Prototype Testing",
                                 "disabled": ""
                             },
                             {
-                                "key": "B204",
+                                "key": "B204 - Lounge - Break Area",
                                 "value": "B204 - Lounge - Break Area",
                                 "disabled": ""
                             },
                             {
-                                "key": "B205",
+                                "key": "B205 - Conference Room - Middle",
                                 "value": "B205 - Conference Room - Middle",
                                 "disabled": ""
                             },
                             {
-                                "key": "B206",
+                                "key": "B206 - Storage - Documents",
                                 "value": "B206 - Storage - Documents",
                                 "disabled": ""
                             },
                             {
-                                "key": "B207",
+                                "key": "B207 - Restroom - Unisex",
                                 "value": "B207 - Restroom - Unisex",
                                 "disabled": ""
                             },
                             {
-                                "key": "B208",
+                                "key": "B208 - Utility Room",
                                 "value": "B208 - Utility Room",
                                 "disabled": ""
                             }
@@ -153,42 +154,42 @@
                         "groupname": "Building C",
                         "options": [
                             {
-                                "key": "C301",
+                                "key": "C301 - Sales Office - Meeting Area",
                                 "value": "C301 - Sales Office - Meeting Area",
                                 "disabled": ""
                             },
                             {
-                                "key": "C302",
+                                "key": "C302 - Marketing Department - Creative Team",
                                 "value": "C302 - Marketing Department - Creative Team",
                                 "disabled": ""
                             },
                             {
-                                "key": "C303",
+                                "key": "C303 - IT Support - Desk Area",
                                 "value": "C303 - IT Support - Desk Area",
                                 "disabled": ""
                             },
                             {
-                                "key": "C304",
+                                "key": "C304 - Operations Office - Supplies",
                                 "value": "C304 - Operations Office - Supplies",
                                 "disabled": ""
                             },
                             {
-                                "key": "C305",
+                                "key": "C305 - HR Office - Employee Records",
                                 "value": "C305 - HR Office - Employee Records",
                                 "disabled": ""
                             },
                             {
-                                "key": "C306",
+                                "key": "C306 - Kitchen Area - Coffee Station",
                                 "value": "C306 - Kitchen Area - Coffee Station",
                                 "disabled": ""
                             },
                             {
-                                "key": "C307",
+                                "key": "C307 - Meeting Room - Virtual Teams",
                                 "value": "C307 - Meeting Room - Virtual Teams",
                                 "disabled": ""
                             },
                             {
-                                "key": "C308",
+                                "key": "C308 - Restroom - Gender Neutral",
                                 "value": "C308 - Restroom - Gender Neutral",
                                 "disabled": ""
                             }
@@ -198,42 +199,42 @@
                         "groupname": "Building D",
                         "options": [
                             {
-                                "key": "D401",
+                                "key": "D401 - Executive Office - CEO",
                                 "value": "D401 - Executive Office - CEO",
                                 "disabled": ""
                             },
                             {
-                                "key": "D402",
+                                "key": "D402 - Creative Space - Design Team",
                                 "value": "D402 - Creative Space - Design Team",
                                 "disabled": ""
                             },
                             {
-                                "key": "D403",
+                                "key": "D403 - Meeting Room - Large",
                                 "value": "D403 - Meeting Room - Large",
                                 "disabled": ""
                             },
                             {
-                                "key": "D404",
+                                "key": "D404 - Library - Research Area",
                                 "value": "D404 - Library - Research Area",
                                 "disabled": ""
                             },
                             {
-                                "key": "D405",
+                                "key": "D405 - Employee Lounge - Relaxation Area",
                                 "value": "D405 - Employee Lounge - Relaxation Area",
                                 "disabled": ""
                             },
                             {
-                                "key": "D406",
+                                "key": "D406 - Printer Room - Multi-Function",
                                 "value": "D406 - Printer Room - Multi-Function",
                                 "disabled": ""
                             },
                             {
-                                "key": "D407",
+                                "key": "D407 - Restroom - Women’s",
                                 "value": "D407 - Restroom - Women’s",
                                 "disabled": ""
                             },
                             {
-                                "key": "D408",
+                                "key": "D408 - Restroom - Men’s",
                                 "value": "D408 - Restroom - Men’s",
                                 "disabled": ""
                             }
@@ -350,13 +351,13 @@
                 }
             }
         },
-        "btn-report-cancel":{
+        "btn-report-cancel": {
             "button": {
                 "label": "Cancel",
                 "html-props": "data-step='new-issue-cancel'"
             }
         },
-        "btn-report-issue":{
+        "btn-report-issue": {
             "button": {
                 "label": "Report issue",
                 "html-props": "data-step='new-issue'"
@@ -498,13 +499,13 @@
                 }
             }
         },
-        "btn-report-invalid":{
+        "btn-report-invalid": {
             "button": {
                 "label": "Invalid report",
                 "html-props": "data-step='invalid'"
             }
         },
-        "btn-report-verified":{
+        "btn-report-verified": {
             "button": {
                 "label": "Report verified",
                 "html-props": "data-step='verified'"
@@ -572,13 +573,13 @@
                 }
             }
         },
-        "btn-report-unable":{
+        "btn-report-unable": {
             "button": {
                 "label": "Unable to resolve",
                 "html-props": "data-step='invalid'"
             }
         },
-        "btn-report-completed":{
+        "btn-report-completed": {
             "button": {
                 "label": "Completed",
                 "html-props": "data-step='verified'"

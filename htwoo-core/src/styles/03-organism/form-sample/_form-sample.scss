@@ -10,3 +10,10 @@
         margin-top: 1rem;
     }
 }
+.hoo-field{
+    &.stretched{
+        .hoo-select{
+            width: 100%;
+        }       
+    }
+}
