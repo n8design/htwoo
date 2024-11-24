@@ -3,6 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: start; /* Align items at the top (or `center`, `end`) */
     // justify-items: start; /* Align items to the left (or `center`, `end`) */
+    font-size: .875rem;
     .actions{
         display: flex;
         flex-direction: row;

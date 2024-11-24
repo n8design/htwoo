@@ -1,5 +1,6 @@
 {
     "form": {
+        "instructions": "Please provide ",
         "issue-type": {
             "input": {
                 "label": {
@@ -27,7 +28,7 @@
                     },
                     {
                         "radiobutton": {
-                            "label": "<abbr>HVAC</abbr> Heating, Ventilation, and Air Conditioning",
+                            "label": "<abbr>HVAC</abbr> - Heating, Ventilation, and Air Conditioning",
                             "id": "rbg3",
                             "name": "radio-button-group",
                             "value": "HAVC"
@@ -321,6 +322,10 @@
                 "label": {
                     "label": "Reported By",
                     "for": "reported-by-input"
+                },
+                "description": {
+                    "text": "Please fill out only when the person reporting the issue is different from the person filling out the form.",
+                    "descRef": "reported-by-input"
                 },
                 "text": {
                     "inputPrefix": "",
