@@ -1,0 +1,51 @@
+{{#form}}
+<fieldset id="new-item-form" class="hoo-fieldset no-outline">
+    <div class="hoo-field" role="group">
+        {{#issue-type}}
+        {{> atoms-label }}
+        Electrical
+        {{/issue-type}}
+    </div>
+    <div class="hoo-field stretched" role="group">
+        {{#location}}
+        {{> atoms-label }}
+        A104 - Breakout Space - Casual
+        {{/location}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#equipment-asset-Id}}
+        {{> atoms-label }}
+        ACME-2049-0819
+        {{/equipment-asset-Id}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#priority-level}}
+        {{> atoms-label }}
+        Low
+        {{/priority-level}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#description}}
+        {{> atoms-label }}
+        Late last night, the coffee machine decided to take a vacation. It now only dispenses lukewarm water and
+        stares blankly at anyone who dares approach.
+        <br>
+        <br>
+        The ‘Brew’ button is still intact, but no amount of button-mashing seems to convince it to do its job.
+        Please send help before we resort to using the office kettle and turning into tea drinkers.
+        {{/description}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#reported-by}}
+        {{> atoms-label }}
+        Dwight Schrute
+        {{/reported-by}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#datetime-reported}}
+        {{> atoms-label }}
+        <time id="current-time" datetime=""></time>
+        {{/datetime-reported}}
+    </div>
+</fieldset>
+{{/form}}
