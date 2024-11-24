@@ -1,12 +1,8 @@
+{{#form-flow}}
 <section class="facility-form">
-    <section>
+    <section class="hoo-accordion-group" role="accordion">
         <details class="hoo-accordion" open name="issue-tracking">
-            <summary class="hoo-accordion-header">
-                <div class="hoo-accordion-summary">
-                    {{> atoms-icon }}
-                    <h3>Reported issue{{text}}</h3>
-                </div>
-            </summary>
+            {{> molecules-accordion-header text="Reported issue"}}
             <div>
                 {{> molecules-new-disp-step1 }}
             </div>
@@ -50,3 +46,4 @@
     document.getElementById('next-time').setAttribute('datetime', nextTime.toISOString());
     document.getElementById('next-time').textContent = formattedNextTime;
 </script>
+{{/form-flow}}
