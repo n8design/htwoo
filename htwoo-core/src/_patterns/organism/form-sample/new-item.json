@@ -27,7 +27,7 @@
                     },
                     {
                         "radiobutton": {
-                            "label": "HVAC",
+                            "label": "<abbr>HVAC</abbr> Heating, Ventilation, and Air Conditioning",
                             "id": "rbg3",
                             "name": "radio-button-group",
                             "value": "HAVC"
@@ -495,7 +495,7 @@
                     "placeholder": "",
                     "aria-tags": "",
                     "id": "estimate-time-to-resolve-input",
-                    "html-props": "size='10'"
+                    "html-props": "size='10' min='0' max='100'"
                 }
             }
         },
