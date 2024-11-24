@@ -306,7 +306,7 @@
         "description": {
             "input": {
                 "description": {
-                    "text": "Please provide a detailed explanation of the issue that help the team understand the situation.",
+                    "text": "Please provide a detailed explanation of the issue that help the team understand the situation.<br>Minimum of 20 characters and a maximum of 500 characters.",
                     "descRef": "issue-type-radio"
                 },
                 "label": {
@@ -314,7 +314,7 @@
                     "for": "issue-type-radio"
                 }
             },
-            "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+            "html-props": "maxlength='500' minlength='20' style='max-width: 65ch; width: 100%; height: 5lh;'"
         },
         "reported-by": {
             "input": {
