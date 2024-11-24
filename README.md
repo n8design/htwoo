@@ -49,4 +49,7 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
 **Contributors:** You ❤️
 
+This project is tested with BrowserStack
+
+
 [logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"
