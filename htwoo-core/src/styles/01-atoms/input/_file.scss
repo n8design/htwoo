@@ -1,0 +1,36 @@
+@use '../../00-base/colors/colors';
+
+.hoo-input-file {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px colors.$neutral-200 solid;
+    background-color: colors.$neutral-050;
+    border-radius: .5rem;
+    &-inner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.hoo-infile-label{
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    padding: 2rem;
+}
+
+.hoo-infile-context{
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+.hoo-infile-output{
+    text-align: left;
+}
