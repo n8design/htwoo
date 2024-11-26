@@ -1618,7 +1618,6 @@ div.hoo-buttoncontext-outer {
   border-bottom-left-radius: 0;
 }
 .hoo-input-text[data-suffix] {
-  padding-right: 0.5rem;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -4902,6 +4901,33 @@ button.hoo-breadcrumb-link {
   .hoo-splashscr-content > * {
     max-width: 100%;
   }
+}
+
+.facility-form-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start; /* Align items at the top (or `center`, `end`) */
+  font-size: 0.875rem;
+  margin: 2rem auto;
+}
+
+.facility-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start; /* Align items at the top (or `center`, `end`) */
+  font-size: 0.875rem;
+  margin: 2rem auto;
+  max-width: 1024px;
+}
+.facility-form .actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hoo-field.stretched .hoo-select {
+  width: 100%;
 }
 
 body {

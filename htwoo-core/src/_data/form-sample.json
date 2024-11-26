@@ -1,0 +1,597 @@
+{
+    "form-flow": {
+        "iconname": "icon-arrow-right",
+        "form": {
+            "instructions": "Please provide ",
+            "issue-type": {
+                "input": {
+                    "label": {
+                        "label": "Issue Type",
+                        "for": "issue-type-radio"
+                    }
+                },
+                "radiobutton-group": {
+                    "items": [
+                        {
+                            "radiobutton": {
+                                "label": "Electrical",
+                                "id": "rbg1",
+                                "name": "radio-button-group",
+                                "value": "Electrical"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Plumbing",
+                                "id": "rbg2",
+                                "name": "radio-button-group",
+                                "value": "Plubming"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "<abbr>HVAC</abbr> - Heating, Ventilation, and Air Conditioning",
+                                "id": "rbg3",
+                                "name": "radio-button-group",
+                                "value": "HAVC"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Safety Hazard",
+                                "id": "rbg4",
+                                "name": "radio-button-group",
+                                "value": "Safety Hazard"
+                            }
+                        }
+                    ]
+                }
+            },
+            "location": {
+                "input": {
+                    "label": {
+                        "label": "Location",
+                        "for": "location-select-input"
+                    },
+                    "html-props": "autocomplete='off'"
+                },
+                "button": {
+                    "iconname": "icon-arrow-down",
+                    "label": "Show Options",
+                    "description": "Show Optiosn",
+                    "aria-label": "Button"
+                },
+                "select-options-grouped": {
+                    "options": [
+                        {
+                            "groupname": "Building A",
+                            "options": [
+                                {
+                                    "key": "A101 - Conference Room - Small",
+                                    "value": "A101 - Conference Room - Small",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A102 - Meeting Room - Large",
+                                    "value": "A102 - Meeting Room - Large",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A103 - Kitchen Area - Employee Lounge",
+                                    "value": "A103 - Kitchen Area - Employee Lounge",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A104 - Breakout Space - Casual",
+                                    "value": "A104 - Breakout Space - Casual",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A105 - Storage Room - Supplies",
+                                    "value": "A105 - Storage Room - Supplies",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A106 - Restroom - Men’s",
+                                    "value": "A106 - Restroom - Men’s",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A107 - Restroom - Women’s",
+                                    "value": "A107 - Restroom - Women’s",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "A108 - Server Room",
+                                    "value": "A108 - Server Room",
+                                    "disabled": ""
+                                }
+                            ]
+                        },
+                        {
+                            "groupname": "Building B",
+                            "options": [
+                                {
+                                    "key": "B201 - Manager’s Office - John Doe",
+                                    "value": "B201 - Manager’s Office - John Doe",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B202 - Customer Service - Shared Desk",
+                                    "value": "B202 - Customer Service - Shared Desk",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B203 - R&D Lab - Prototype Testing",
+                                    "value": "B203 - R&D Lab - Prototype Testing",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B204 - Lounge - Break Area",
+                                    "value": "B204 - Lounge - Break Area",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B205 - Conference Room - Middle",
+                                    "value": "B205 - Conference Room - Middle",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B206 - Storage - Documents",
+                                    "value": "B206 - Storage - Documents",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B207 - Restroom - Unisex",
+                                    "value": "B207 - Restroom - Unisex",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "B208 - Utility Room",
+                                    "value": "B208 - Utility Room",
+                                    "disabled": ""
+                                }
+                            ]
+                        },
+                        {
+                            "groupname": "Building C",
+                            "options": [
+                                {
+                                    "key": "C301 - Sales Office - Meeting Area",
+                                    "value": "C301 - Sales Office - Meeting Area",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C302 - Marketing Department - Creative Team",
+                                    "value": "C302 - Marketing Department - Creative Team",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C303 - IT Support - Desk Area",
+                                    "value": "C303 - IT Support - Desk Area",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C304 - Operations Office - Supplies",
+                                    "value": "C304 - Operations Office - Supplies",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C305 - HR Office - Employee Records",
+                                    "value": "C305 - HR Office - Employee Records",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C306 - Kitchen Area - Coffee Station",
+                                    "value": "C306 - Kitchen Area - Coffee Station",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C307 - Meeting Room - Virtual Teams",
+                                    "value": "C307 - Meeting Room - Virtual Teams",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "C308 - Restroom - Gender Neutral",
+                                    "value": "C308 - Restroom - Gender Neutral",
+                                    "disabled": ""
+                                }
+                            ]
+                        },
+                        {
+                            "groupname": "Building D",
+                            "options": [
+                                {
+                                    "key": "D401 - Executive Office - CEO",
+                                    "value": "D401 - Executive Office - CEO",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D402 - Creative Space - Design Team",
+                                    "value": "D402 - Creative Space - Design Team",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D403 - Meeting Room - Large",
+                                    "value": "D403 - Meeting Room - Large",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D404 - Library - Research Area",
+                                    "value": "D404 - Library - Research Area",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D405 - Employee Lounge - Relaxation Area",
+                                    "value": "D405 - Employee Lounge - Relaxation Area",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D406 - Printer Room - Multi-Function",
+                                    "value": "D406 - Printer Room - Multi-Function",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D407 - Restroom - Women’s",
+                                    "value": "D407 - Restroom - Women’s",
+                                    "disabled": ""
+                                },
+                                {
+                                    "key": "D408 - Restroom - Men’s",
+                                    "value": "D408 - Restroom - Men’s",
+                                    "disabled": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "datetime-reported": {
+                "input": {
+                    "label": {
+                        "label": "Date/Time Reported",
+                        "for": "datetime-reported-input"
+                    },
+                    "date": {
+                        "id": "my-date-picker",
+                        "name": "my-date-picker-name",
+                        "value": "2021-10-26",
+                        "min-value": "2021-10-25",
+                        "max-value": "2030-10-25",
+                        "aria-tags": ""
+                    }
+                }
+            },
+            "priority-level": {
+                "input": {
+                    "label": {
+                        "label": "Priority Level",
+                        "for": "issue-type-radio"
+                    }
+                },
+                "radiobutton-group": {
+                    "items": [
+                        {
+                            "radiobutton": {
+                                "label": "Low",
+                                "id": "proiority-1",
+                                "name": "priority-level",
+                                "value": "Low"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Medium",
+                                "id": "proiority-2",
+                                "name": "priority-level",
+                                "value": "Medium"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "High",
+                                "id": "proiority",
+                                "name": "priority-level",
+                                "value": "High-3"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Urgent",
+                                "id": "proiority-4",
+                                "name": "priority-level",
+                                "value": "Urgent"
+                            }
+                        }
+                    ]
+                }
+            },
+            "description": {
+                "input": {
+                    "description": {
+                        "text": "Please provide a detailed explanation of the issue that help the team understand the situation.<br>Minimum of 20 characters and a maximum of 500 characters.",
+                        "descRef": "issue-type-radio"
+                    },
+                    "label": {
+                        "label": "Issue Description",
+                        "for": "issue-type-radio"
+                    }
+                },
+                "html-props": "maxlength='500' minlength='20' style='max-width: 65ch; width: 100%; height: 5lh;'"
+            },
+            "reported-by": {
+                "input": {
+                    "label": {
+                        "label": "Reported By",
+                        "for": "reported-by-input"
+                    },
+                    "description": {
+                        "text": "Please fill out only when the person reporting the issue is different from the person filling out the form.",
+                        "descRef": "reported-by-input"
+                    },
+                    "text": {
+                        "inputPrefix": "",
+                        "inputSuffix": "",
+                        "placeholder": "",
+                        "aria-tags": "",
+                        "id": "reported-by-input",
+                        "html-props": "size='30'"
+                    }
+                }
+            },
+            "equipment-asset-Id": {
+                "input": {
+                    "description": {
+                        "text": "Unique identifier assigned to the equipment or asset. Watch out for a label with in the form ACME-1234-5678",
+                        "descRef": "equipment-asset-id-input"
+                    },
+                    "label": {
+                        "label": "Equipment/Asset ID",
+                        "for": "equipment-asset-id-input"
+                    },
+                    "text": {
+                        "inputPrefix": "",
+                        "inputSuffix": "",
+                        "placeholder": "ACME-1234-5678",
+                        "id": "equipment-asset-id-input",
+                        "html-props": "size='16'"
+                    }
+                }
+            },
+            "btn-report-cancel": {
+                "button": {
+                    "label": "Cancel",
+                    "html-props": "data-step='new-issue-cancel'"
+                }
+            },
+            "btn-report-issue": {
+                "button": {
+                    "label": "Report issue",
+                    "html-props": "data-step='new-issue'"
+                }
+            },
+            "assigned-to": {
+                "input": {
+                    "label": {
+                        "label": "Assign To",
+                        "for": "assigned-to-input"
+                    },
+                    "description": {
+                        "text": "Enter the name of the person responsible for resolving the issue.",
+                        "descRef": "assigned-to-input"
+                    },
+                    "text": {
+                        "inputPrefix": "",
+                        "inputSuffix": "",
+                        "placeholder": "",
+                        "aria-tags": "",
+                        "id": "assigned-to-input",
+                        "html-props": "size='30'"
+                    }
+                }
+            },
+            "verification-date": {
+                "input": {
+                    "label": {
+                        "label": "Verification Date",
+                        "for": "verification-date-input"
+                    },
+                    "date": {
+                        "id": "verification-date-input",
+                        "name": "verification-date-input-name",
+                        "value": "2024-11-21T15:56",
+                        "min-value": "2021-10-25",
+                        "max-value": "2030-10-25",
+                        "aria-tags": ""
+                    }
+                }
+            },
+            "status": {
+                "input": {
+                    "label": {
+                        "label": "Status",
+                        "for": "status-radio"
+                    }
+                },
+                "radiobutton-group": {
+                    "items": [
+                        {
+                            "radiobutton": {
+                                "label": "Pending Verification",
+                                "id": "status1",
+                                "name": "radio-button-group",
+                                "value": "Pending Verification",
+                                "html-props": "data-step='verification'"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Verified",
+                                "id": "status2",
+                                "name": "radio-button-group",
+                                "value": "Verified",
+                                "html-props": "data-step='verification'"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Invalid Report",
+                                "id": "status3",
+                                "name": "radio-button-group",
+                                "value": "Invalid Report",
+                                "html-props": "data-step='verification resolution'"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Completed",
+                                "id": "status4",
+                                "name": "radio-button-group",
+                                "value": "Completed",
+                                "html-props": "data-step='resolution'"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Required Follow-Up",
+                                "id": "status2",
+                                "name": "radio-button-group",
+                                "value": "Required Follow-Up",
+                                "html-props": "data-step='resolution'"
+                            }
+                        },
+                        {
+                            "radiobutton": {
+                                "label": "Unable to Resolve",
+                                "id": "status3",
+                                "name": "radio-button-group",
+                                "value": "Unable to Resolve",
+                                "html-props": "data-step='resolution'"
+                            }
+                        }
+                    ]
+                }
+            },
+            "comments": {
+                "input": {
+                    "description": {
+                        "text": "Additional information or notes about the issue. Include any relevant details or observations that may help in resolving the issue. If there are any special instructions or considerations, please include them here.",
+                        "descRef": ""
+                    },
+                    "label": {
+                        "label": "Comments",
+                        "for": "Comments"
+                    }
+                },
+                "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+            },
+            "estimate-time-to-resolve": {
+                "input": {
+                    "label": {
+                        "label": "Estimated Time to Resolve",
+                        "for": "estimate-time-to-resolve-input"
+                    },
+                    "description": {
+                        "text": "Estimated time in hours it would take for the issue to be resolved. This should be based on the current state of the asset and the estimated effort required to fix the issue.",
+                        "descRef": "estimate-time-to-resolve-input"
+                    },
+                    "text": {
+                        "type": "number",
+                        "inputPrefix": "",
+                        "inputSuffix": "hours",
+                        "placeholder": "",
+                        "aria-tags": "",
+                        "id": "estimate-time-to-resolve-input",
+                        "html-props": "size='10' min='0' max='100'"
+                    }
+                }
+            },
+            "btn-report-invalid": {
+                "button": {
+                    "label": "Invalid report",
+                    "html-props": "data-step='invalid'"
+                }
+            },
+            "btn-report-verified": {
+                "button": {
+                    "label": "Report verified",
+                    "html-props": "data-step='verified'"
+                }
+            },
+            "resolution-description": {
+                "input": {
+                    "description": {
+                        "text": "Please provide a detailed explanation of the resolution to the issue. Include any relevant actions taken to address the problem. Remember to include any necessary documentation or updates to the asset's inventory. Also, be sure to include any follow-up steps or recommendations for future maintenance."
+                    },
+                    "label": {
+                        "label": "Resolution Description",
+                        "for": "resolution-description"
+                    }
+                },
+                "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+            },
+            "parts-materials": {
+                "input": {
+                    "description": {
+                        "text": "Please list any parts or materials used to resolve the issue. Include the quantity, part number, and any other relevant information. If no parts or materials were used, please indicate 'None'."
+                    },
+                    "label": {
+                        "label": "Parts/Materials used:",
+                        "for": "parts-materials"
+                    }
+                },
+                "html-props": "maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'"
+            },
+            "follow-up-required": {
+                "input": {
+                    "label": {
+                        "label": "Follow up Required?",
+                        "for": "follow-up-required"
+                    },
+                    "toggle": {
+                        "name": "toggleName",
+                        "id": "follow-up-required",
+                        "label": {
+                            "checked": "Yes",
+                            "unchecked": "No"
+                        },
+                        "aria-tags": ""
+                    }
+                }
+            },
+            "actual-time-to-resolve": {
+                "input": {
+                    "label": {
+                        "label": "Actual time to resolve",
+                        "for": "actual-time-to-resolve-input"
+                    },
+                    "description": {
+                        "text": "The actual time spent on this issue",
+                        "descRef": "actual-time-to-resolve-input"
+                    },
+                    "text": {
+                        "type": "number",
+                        "inputPrefix": "",
+                        "inputSuffix": "hours",
+                        "placeholder": "",
+                        "aria-tags": "",
+                        "id": "actual-time-to-resolve-input",
+                        "html-props": "size='10'"
+                    }
+                }
+            },
+            "btn-report-unable": {
+                "button": {
+                    "label": "Unable to resolve",
+                    "html-props": "data-step='invalid'"
+                }
+            },
+            "btn-report-completed": {
+                "button": {
+                    "label": "Completed",
+                    "html-props": "data-step='verified'"
+                }
+            }
+        }
+    }
+}

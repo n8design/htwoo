@@ -1618,7 +1618,6 @@ div.hoo-buttoncontext-outer {
   border-bottom-left-radius: 0;
 }
 .hoo-input-text[data-suffix] {
-  padding-right: 0.5rem;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

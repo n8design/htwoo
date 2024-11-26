@@ -11,7 +11,7 @@ export class FileUploadHandler {
             files = Array.from(event.target.files);
         }
 
-        const fileOutput = document.createElement('menu');
+        const fileOutput = document.createElement('ul');
         console.debug('FileUploadHandler', files);
         files.forEach(file => {
             const fileItem = document.createElement('li');

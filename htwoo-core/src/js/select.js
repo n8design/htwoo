@@ -6,6 +6,8 @@
 // assign names to things we'll need to use more than once
 
 export const ariaSelect = (listItem) => {
+
+  console.debug('ariaSelect', listItem);
   // console.log('listItem',listItem);
   const csSelector = listItem; // the input, svg and ul as a group
   console.log('csSelector', csSelector);
