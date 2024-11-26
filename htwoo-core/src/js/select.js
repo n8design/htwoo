@@ -305,13 +305,13 @@ function updateOptgroupVisibility() {
   const optgroups = document.querySelectorAll('.hoo-optgroup');
 
   optgroups.forEach(optgroup => {
-      const options = optgroup.querySelectorAll('.hoo-option');
-      const hasVisibleOption = Array.from(options).some(option => 
-          option.style.display !== 'none'
-      );
+    const options = optgroup.querySelectorAll('.hoo-option');
+    const hasVisibleOption = Array.from(options).some(option =>
+      option.style.display !== 'none'
+    );
 
-      // Hide or show the optgroup based on visibility of its options
-      optgroup.style.display = hasVisibleOption ? '' : 'none';
+    // Hide or show the optgroup based on visibility of its options
+    optgroup.style.display = hasVisibleOption ? '' : 'none';
   });
 }
 
@@ -323,9 +323,12 @@ const observer = new MutationObserver(() => {
   updateOptgroupVisibility();
 });
 
-observer.observe(document.querySelector('.hoo-select-dropdown'), {
-  childList: true,
-  subtree: true,
-  attributes: true,
-  attributeFilter: ['style'] // Monitor only style changes
-});
+if (document.querySelector('.hoo-select-dropdown')) {
+
+  observer.observe(document.querySelector('.hoo-select-dropdown'), {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style'] // Monitor only style changes
+  });
+}
