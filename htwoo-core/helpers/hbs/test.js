@@ -41,9 +41,9 @@ module.exports = function (Handlebars) {
   });
 
   Handlebars.registerHelper('getLastNumericId', function (value) {
-    return lastId;
+    return lastIdClean;
   });
-  
+
   Handlebars.registerHelper('seoTitle', function (value) {
 
     if (value) {
@@ -127,6 +127,22 @@ module.exports = function (Handlebars) {
       // let seoTitle = value.split('-');
       return seoTitle;
     }
+  });
+
+  Handlebars.registerHelper('dynamicPartial', function(partialName, context) {
+
+    // console.debug('🤟🤟', partialName, context);
+    // console.debug('🤟', Handlebars.partials[partialName]);
+
+    const partial = Handlebars.partials[partialName];
+  
+    if (!partial) {
+      return `Partial "${partialName}" not found.`;
+    }
+  
+    // If the partial is a string, compile it first
+    const template = typeof partial === "function" ? partial : Handlebars.compile(partial);
+    return new Handlebars.SafeString(template(context));
   });
 
 };

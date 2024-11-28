@@ -17,6 +17,8 @@ import {
     initMenu
 } from './nav.js';
 
+import { FileUploadHandler } from './file.js';
+
 // import InputMask from './vendor/estelle/input-mask.js';
 
 /** Overflow */
@@ -145,12 +147,22 @@ const registerAnimation = (classname, handleWith) => {
 
 }
 
+const registerInputHandler = (classname) => {
+    const allFileHandler = document.querySelectorAll(classname);
+    allFileHandler.forEach(fileHandler => {
+        new FileUploadHandler(fileHandler);
+    });
+}
+
 const registerAriaSelect = () => {
 
     let selects = document.querySelectorAll('.hoo-select');
 
+    console.debug('ALL SELECTED', selects)
+
     if (selects) {
         selects.forEach((item, idx) => {
+            console.debug(item, idx);
             ariaSelect(item);
         });
     }
@@ -184,6 +196,7 @@ const afterLoaded = () => {
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);
+    registerInputHandler('.hoo-input-file');
 
     // registerDialog();
     registerAriaSelect();

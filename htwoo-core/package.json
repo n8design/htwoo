@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "release": "standard-version",
     "cl:update": "standard-version --changelog --skip.bump --skip.tag",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
@@ -46,7 +47,8 @@
     "@pattern-lab/core": "^6.1.0",
     "@pattern-lab/engine-handlebars": "^6.1.0",
     "@pattern-lab/uikit-workshop": "^6.1.0",
-    "caniuse-lite": "^1.0.30001677"
+    "caniuse-lite": "^1.0.30001680",
+    "standard-version": "^9.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
@@ -61,9 +63,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.4.47",
-    "rollup": "^4.24.3",
-    "sass": "^1.80.6",
+    "postcss": "^8.4.49",
+    "rollup": "^4.27.3",
+    "sass": "^1.81.0",
     "sitemap": "^8.0.0",
     "yargs": "^17.7.2"
   }

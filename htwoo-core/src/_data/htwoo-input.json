@@ -104,6 +104,12 @@
         "error": {
             "errorRef": "field-x-error",
             "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "file-upload": {
+            "label": "Click or drag and drop files here to upload filed",
+            "description": "Max file size: 10MB, Types: jpg, png, pdf",
+            "iconname": "icon-arrow-upload-filled",
+            "title": "Upload"
         }
     },
     "checkbox-group": {
