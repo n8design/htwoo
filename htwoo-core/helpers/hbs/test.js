@@ -41,7 +41,7 @@ module.exports = function (Handlebars) {
   });
 
   Handlebars.registerHelper('getLastNumericId', function (value) {
-    return lastId;
+    return lastIdClean;
   });
 
   Handlebars.registerHelper('seoTitle', function (value) {
