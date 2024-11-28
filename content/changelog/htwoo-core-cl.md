@@ -6,6 +6,38 @@ Changes in hTWOo core as they happend
 
 All notable changes to this project will be documented in this file.
 
+## [2.7.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.6.0...htwoo-core-v2.7.0) (2024-11-28)
+
+🍗🍗🍗🍗 Happy Thanksgiving 🍗🍗🍗🍗
+
+### Bug Fixes
+
+* **CSS:** fixes [#157](https://github.com/n8design/htwoo/issues/157) - Upate style for error oand descriptuon ([8e1206c](https://github.com/n8design/htwoo/commit/8e1206cde7806e03f26007ed5b2b7403c0a96267))
+* **CSS:** Fixes padding jumping on focus within on number fields ([82b7a37](https://github.com/n8design/htwoo/commit/82b7a374d165238a7c672d9c408d618068f2c014))
+* **CSS:** Prevent input fields in hoo-field to grow 100%; ([6ab621e](https://github.com/n8design/htwoo/commit/6ab621eacb879ed68aabc7251935ea89b0088e2a))
+* **CSS:** Refactoring specificity on input styles ([3980657](https://github.com/n8design/htwoo/commit/3980657307d1203c04ee101fdff227059fcbb9c1))
+* **HTML:** Added dynamic types to prefix and suffixed inputs ([ba3d5f0](https://github.com/n8design/htwoo/commit/ba3d5f0c18cdf3c61a19d175650752ca1958c14a))
+* **HTML:** Allow to pass HTML code to the label of radio Buttons and checkbox Button to allow passing in for example <abbr/> abbrivation tags ([ba04156](https://github.com/n8design/htwoo/commit/ba041569326cff588bd17fd6e50e5412c7989d29))
+* **HTML:** Allow to pass html markup into field description ([2b244b5](https://github.com/n8design/htwoo/commit/2b244b5e3fcf7245ce667cdda3e6f6681ccf74fd))
+* **JS:** Fixes removal of empty groups from drop down ([95a6188](https://github.com/n8design/htwoo/commit/95a6188fa440557d54297af12517214d25249462))
+* **JS:** Fixing open menu issue on hoo-select drop downs ([6db61b8](https://github.com/n8design/htwoo/commit/6db61b8df69a427ecf51e5935e5faea2981626d9))
+* padding issues ([c8b72ab](https://github.com/n8design/htwoo/commit/c8b72ab6b3cdf2f722fd539179de3615c5a97ff0))
+* refactoring of form ([ab272b0](https://github.com/n8design/htwoo/commit/ab272b09de3819a5023d9f676ce634ef252a6c41))
+* refactoring of form ([346c8cd](https://github.com/n8design/htwoo/commit/346c8cd7054d191b2ef5246e3fbb3e54c0f1a563))
+
+
+### Features
+
+* **Core:** Handlebars `dynamicPartial` funtion added to core functionality ([2928577](https://github.com/n8design/htwoo/commit/29285779e803e2aa8a52f78aaaca5bbf6112df5b))
+* **CSS:** Readonly styles added for input fields ([f76ced9](https://github.com/n8design/htwoo/commit/f76ced95276e635ddfc678cced21ac9c5b630854))
+* **CSS:** readonly styles for .hoo-input-time and .hoo-input-date ([b3d6a21](https://github.com/n8design/htwoo/commit/b3d6a2118efb2e2f16a9ab4d3e889a23c933b3dc))
+* **demo:** Select mentu with grouped entries ([7b57f6a](https://github.com/n8design/htwoo/commit/7b57f6abd289dafd388398ead23426a29c5c48a2))
+* **fieldset:** HTML fieldset support added - style modifier includes default, no-outline and raised ([46e4ad3](https://github.com/n8design/htwoo/commit/46e4ad3e778ec3ad2032c0450ada9dd6003195ba))
+* **HTML:** Facility management - New Form ([0353bfc](https://github.com/n8design/htwoo/commit/0353bfcb09e8d4be92d6733338e231d8487c543a))
+* **HTML:** HTML legend element support added ([53c70d4](https://github.com/n8design/htwoo/commit/53c70d49b5cd9300326e6fecbd06cb2536d1237a))
+* **HTML:** input[type="file"] support added, inclusive drag and drop files ([146f96a](https://github.com/n8design/htwoo/commit/146f96a555d6a194fdd657d363fc47b7f7a18099))
+
+
 ## 2.6.0 (2024-11-07)
 
 
