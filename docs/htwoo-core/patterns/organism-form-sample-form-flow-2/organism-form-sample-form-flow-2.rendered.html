@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Organism -  Form Flow 2 - Fluent UI / Fluent Design by hTWOo UI Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/style.css?1732820376846" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1732820376846" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1732820376846" media="all" />
+    <link rel="canonical" href="https://lab.n8d.studio/htwoo/htwoo-core/?p=organism-form-flow-2">
+    <meta name="keywords" content="Organism, FormFlow2, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
+     <base target="_top">
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="">
+  <h1>Organism -  Form Flow 2</h1><section class="facility-form">
+    <details class="hoo-accordion" open>
+        <summary class="hoo-accordion-header">
+            <div class="hoo-accordion-summary">
+                <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                        <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+                        <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                    </svg>
+                </span>                <h3>Reported issue</h3>
+            </div>
+        </summary>
+        <div>
+            <fieldset id="new-item-form" class="hoo-fieldset no-outline">
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Issue Type</label>
+                    Electrical
+                </div>
+                <div class="hoo-field stretched" role="group">
+                    <label class="hoo-label " for="toggle-45">Location</label>
+                    A104 - Breakout Space - Casual
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Equipment/Asset ID</label>
+                    ACME-2049-0819
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Priority Level</label>
+                    Low
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Issue Description</label>
+                    Late last night, the coffee machine decided to take a vacation. It now only dispenses lukewarm water and
+                    stares blankly at anyone who dares approach.
+                    <br>
+                    <br>
+                    The ‘Brew’ button is still intact, but no amount of button-mashing seems to convince it to do its job.
+                    Please send help before we resort to using the office kettle and turning into tea drinkers.
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Reported By</label>
+                    Dwight Schrute
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Date/Time Reported</label>
+                    <time id="current-time" datetime=""></time>
+                </div>
+            </fieldset>
+
+        </div>
+    </details>
+    <section class="review">
+        <h2>Review and verify</h2>
+            <fieldset id="issue-verification" class="hoo-fieldset no-outline">
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Assign To</label>
+                    <input class="hoo-input-text" id="toggle-45"  type="text"  
+                        placeholder=""  size='30'>
+                    <p class="hoo-input-description" id="assigned-to-input-45">
+                        Enter the name of the person responsible for resolving the issue.
+                    </p>
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Verification Date</label>
+                    <input type="datetime-local" class="hoo-input-date" name="verification-date-input-name" value="2024-11-21T15:56" min="2018-01-01" max="2030-12-31"    >
+                </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Comments</label>
+                    <p class="hoo-input-description" >
+                        Additional information or notes about the issue. Include any relevant details or observations that may help in resolving the issue. If there are any special instructions or considerations, please include them here.
+                    </p>
+                    <textarea class="hoo-input-text" id="toggle-45"   maxlength='500' minlength='500' style='max-width: 65ch; width: 100%; height: 5lh;'></textarea>        </div>
+                <div class="hoo-field" role="group">
+                    <label class="hoo-label " for="toggle-45">Estimated Time to Resolve</label>
+                    <div class="hoo-input-group">
+                        <input class="hoo-input-text" type="number"  id="toggle-45" 
+                            placeholder="" data-suffix="hours"  aria-labelledby="suffix-label-toggle-45" size='10' min='0' max='100'>
+                        <div id="suffix-label-toggle-45" class="hoo-input-suffix">hours</div>
+                    </div>
+                    <p class="hoo-input-description" id="estimate-time-to-resolve-input-45">
+                        Estimated time in hours it would take for the issue to be resolved. This should be based on the current state of the asset and the estimated effort required to fix the issue.
+                    </p>
+                </div>
+                <div class="actions">
+                    <button class="hoo-button">
+                        <span class="hoo-button-label">Invalid report</span>
+                    </button>
+                    <button class="hoo-button-primary">
+                        <span class="hoo-button-label">Report verified</span>
+                    </button>
+                </div>
+            </fieldset>
+    </section>
+</section>
+<script>
+    // Get the current date and time
+    const now = new Date();
+
+    // Format the date and time based on the user's locale
+    const formattedDateTime = now.toLocaleString();  // Automatically uses the system's locale
+
+    // Insert the current date and time into the first <time> field
+    document.getElementById('current-time').setAttribute('datetime', now.toISOString());
+    document.getElementById('current-time').textContent = formattedDateTime;
+
+    // Calculate the next time (one hour later)
+    const nextTime = new Date(now.getTime() + 60 * 60 * 1000);  // Adds one hour (60 minutes * 60 seconds * 1000 ms)
+
+    // Format the next time based on the user's locale
+    const formattedNextTime = nextTime.toLocaleString();
+
+    // Insert the next time into the second <time> field
+    document.getElementById('next-time').setAttribute('datetime', nextTime.toISOString());
+    document.getElementById('next-time').textContent = formattedNextTime;
+</script><!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-new-disp-step1","lineagePath":"../../patterns/molecules-form-samples-new-disp-step1/molecules-form-samples-new-disp-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-new-disp-step1","lineagePath":"../../patterns/molecules-form-samples-new-disp-step1/molecules-form-samples-new-disp-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<ul>\n<li></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"form-sample"},"patternExtension":"hbs","patternName":"Form Flow Step 2 - Reviewing Issue","patternPartial":"organism-form-flow-2","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-new-disp-step1","lineagePath":"../../patterns/molecules-form-samples-new-disp-step1/molecules-form-samples-new-disp-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-new-disp-step1","lineagePath":"../../patterns/molecules-form-samples-new-disp-step1/molecules-form-samples-new-disp-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<ul>\n<li></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"form-sample"},"patternExtension":"hbs","patternName":"Form Flow Step 2 - Reviewing Issue","patternPartial":"organism-form-flow-2","patternState":"","patternEngineName":"handlebars","extraOutput":{}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1732820376846">
+  (function() {
+    if (self != top) {
+      var cb = '1732820376846';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1732820376846" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module"></script>
+<script src="../../js/themeswitch/index.js" type="module"></script>
+<script>
+
+    var layoutMode = null;
+
+    // changing logo accordingly
+    var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
+
+        let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
+
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
+            console.log("Layout is not vertical");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
+        }
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
+            console.log("Layout is not horizontal");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
+            console.log("IMAGE ", image);
+        }
+
+        layoutMode = patternlab.app.layoutMode;
+
+    }
+    // register event listener
+    window.addEventListener('storage', evtLocationStorageUpdates);
+    // on first run detect layout
+    evtLocationStorageUpdates();
+</script>
+<script src="../../js/_util.js" type="module"></script>
+</body>
+
+</html>
