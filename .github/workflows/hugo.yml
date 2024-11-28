@@ -3,6 +3,7 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: 
+      - main
       - docs
   pull_request:
     branches:
@@ -26,7 +27,6 @@ defaults:
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true || github.ref == 'refs/heads/docs'
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
@@ -37,10 +37,13 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
-      - name: Checkout
+      - name: Checkout docs branch
         uses: actions/checkout@v4
         with:
+          ref: docs
           submodules: recursive
+      - name: Fetch main branch
+        run: git fetch origin main:main
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -111,7 +114,7 @@ jobs:
           fi
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/upload-artifact@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: site
+          name: htwoo-site
+          path: ./public
