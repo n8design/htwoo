@@ -2,6 +2,126 @@
 
 Changes in hTWOo core as they happen
 
+## [2.7.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.6.0...htwoo-core-v2.7.0) (2024-11-28)
+
+### Bug Fixes
+
+* **CSS:** fixes [#157](https://github.com/n8design/htwoo/issues/157) - Upate style for error oand descriptuon ([8e1206c](https://github.com/n8design/htwoo/commit/8e1206cde7806e03f26007ed5b2b7403c0a96267))
+* **CSS:** Fixes padding jumping on focus within on number fields ([82b7a37](https://github.com/n8design/htwoo/commit/82b7a374d165238a7c672d9c408d618068f2c014))
+* **CSS:** Prevent input fields in hoo-field to grow 100%; ([6ab621e](https://github.com/n8design/htwoo/commit/6ab621eacb879ed68aabc7251935ea89b0088e2a))
+* **CSS:** Refactoring specificity on input styles ([3980657](https://github.com/n8design/htwoo/commit/3980657307d1203c04ee101fdff227059fcbb9c1))
+* **HTML:** Added dynamic types to prefix and suffixed inputs ([ba3d5f0](https://github.com/n8design/htwoo/commit/ba3d5f0c18cdf3c61a19d175650752ca1958c14a))
+* **HTML:** Allow to pass HTML code to the label of radio Buttons and checkbox Button to allow passing in for example <abbr/> abbrivation tags ([ba04156](https://github.com/n8design/htwoo/commit/ba041569326cff588bd17fd6e50e5412c7989d29))
+* **HTML:** Allow to pass html markup into field description ([2b244b5](https://github.com/n8design/htwoo/commit/2b244b5e3fcf7245ce667cdda3e6f6681ccf74fd))
+* **JS:** Fixes removal of empty groups from drop down ([95a6188](https://github.com/n8design/htwoo/commit/95a6188fa440557d54297af12517214d25249462))
+* **JS:** Fixing open menu issue on hoo-select drop downs ([6db61b8](https://github.com/n8design/htwoo/commit/6db61b8df69a427ecf51e5935e5faea2981626d9))
+* padding issues ([c8b72ab](https://github.com/n8design/htwoo/commit/c8b72ab6b3cdf2f722fd539179de3615c5a97ff0))
+* refactoring of form ([ab272b0](https://github.com/n8design/htwoo/commit/ab272b09de3819a5023d9f676ce634ef252a6c41))
+* refactoring of form ([346c8cd](https://github.com/n8design/htwoo/commit/346c8cd7054d191b2ef5246e3fbb3e54c0f1a563))
+
+
+### Features
+
+* **Core:** Handlebars `dynamicPartial` funtion added to core functionality ([2928577](https://github.com/n8design/htwoo/commit/29285779e803e2aa8a52f78aaaca5bbf6112df5b))
+* **CSS:** Readonly styles added for input fields ([f76ced9](https://github.com/n8design/htwoo/commit/f76ced95276e635ddfc678cced21ac9c5b630854))
+* **CSS:** readonly styles for .hoo-input-time and .hoo-input-date ([b3d6a21](https://github.com/n8design/htwoo/commit/b3d6a2118efb2e2f16a9ab4d3e889a23c933b3dc))
+* **demo:** Select mentu with grouped entries ([7b57f6a](https://github.com/n8design/htwoo/commit/7b57f6abd289dafd388398ead23426a29c5c48a2))
+* **fieldset:** HTML fieldset support added - style modifier includes default, no-outline and raised ([46e4ad3](https://github.com/n8design/htwoo/commit/46e4ad3e778ec3ad2032c0450ada9dd6003195ba))
+* **HTML:** Facility management - New Form ([0353bfc](https://github.com/n8design/htwoo/commit/0353bfcb09e8d4be92d6733338e231d8487c543a))
+* **HTML:** HTML legend element support added ([53c70d4](https://github.com/n8design/htwoo/commit/53c70d49b5cd9300326e6fecbd06cb2536d1237a))
+* **HTML:** input[type="file"] support added, inclusive drag and drop files ([146f96a](https://github.com/n8design/htwoo/commit/146f96a555d6a194fdd657d363fc47b7f7a18099))
+
+
+
+## [2.6.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.5.2...htwoo-core-v2.6.0) (2024-11-07)
+
+
+### Bug Fixes
+
+* border outline styles for dialogs ([0362d36](https://github.com/n8design/htwoo/commit/0362d36af07c370ec7393e29e55eee73b9b887c6))
+* Changes in mixing height to use lh (lineheight) unit instead of rem based height ([43702fa](https://github.com/n8design/htwoo/commit/43702fa1223f058d0f0a666376d39025e2447a92))
+* **CSS:** [#151](https://github.com/n8design/htwoo/issues/151) Color update on hover and documentation ([674e943](https://github.com/n8design/htwoo/commit/674e94326a211760b1dfc5069a3fe1b3e0f6cc06))
+* **CSS:** Fix extend issue for SharePoint Framework ([072ec48](https://github.com/n8design/htwoo/commit/072ec48084145d8402167ceb97edfaff02adbf6c))
+* Fixed references ([463b44e](https://github.com/n8design/htwoo/commit/463b44e85240a0312146b659dc2371cb91b2ef7c))
+* Fixes getId and lastId handlebar helper function ([3d35efd](https://github.com/n8design/htwoo/commit/3d35efd01965efaa975f6ff4187c6ec34967b983))
+* **hbs:** Fixed check for getLasId ([2d50e6e](https://github.com/n8design/htwoo/commit/2d50e6ed3cc3634f6a762618e5eae071ed7f8111))
+* **HTML:** Refactored Quick Links <div> to <article> ([13d159b](https://github.com/n8design/htwoo/commit/13d159bb68c44f8d52a9f5af66356bcc257ce438))
+
+
+### Features
+
+* added pivot bar tester ([46d60cc](https://github.com/n8design/htwoo/commit/46d60ccc802fc3f74e8beb907aa2dd1086eef796))
+* **alpha:** Code for input masking added. currently early alpha version just for testing for now ([142a448](https://github.com/n8design/htwoo/commit/142a4485e4e05f6fb72c6016050a547a243fbd81))
+* **CSS:** [#154](https://github.com/n8design/htwoo/issues/154) Command Button as link styling ([a92c50a](https://github.com/n8design/htwoo/commit/a92c50a2d8a21ea6e0fe318c2846af734d42fcde))
+* **css:** Added styles for form field, input description and validation message ([298dba8](https://github.com/n8design/htwoo/commit/298dba83405e5f8a956ff1e1b4b9de2240caeaa0))
+* **CSS:** Command Button as link styling ([583018c](https://github.com/n8design/htwoo/commit/583018c848e940d9246d884ece9faaebb5401ad6))
+* **data:** Update json properties for label, input, description and error message ([34a144d](https://github.com/n8design/htwoo/commit/34a144da9e7b73fde6def7f3ec7326c4f1e3b9f7))
+* **HTML:** [#154](https://github.com/n8design/htwoo/issues/154) Command Button as link ([646b5aa](https://github.com/n8design/htwoo/commit/646b5aae76e3ad6aa5f47fb373f9c43291db9c11))
+* **HTML:** Added input description and validation message ([604a686](https://github.com/n8design/htwoo/commit/604a686fb2bfa1f3def3d482b51d233c43b76af0))
+* **HTML:** Command Button as link ([bdd0319](https://github.com/n8design/htwoo/commit/bdd0319f3ecaa877d61651afce0d3c2228ea1e4b))
+* **HTML:** Molecule form field added ([db548bd](https://github.com/n8design/htwoo/commit/db548bd86af56cfd718b1268444ae25a1f4b1e75))
+* Make input field, label, description and validation message connectable via ids ([2c4be98](https://github.com/n8design/htwoo/commit/2c4be9823b12eee89af5f929d140af91e674bb36))
+* Update design for valiadation and description ([6e0cbd1](https://github.com/n8design/htwoo/commit/6e0cbd19f441d851d0a9d79ab9c92188e3018382))
+
+## [2.5.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.4.0...htwoo-core-v2.5.0) (2024-06-14)
+
+
+### Bug Fixes
+
+* **CSS:** [#114](https://github.com/n8design/htwoo/issues/114) Style update to support 5 levels of depth ([c792d1c](https://github.com/n8design/htwoo/commit/c792d1c784a956273cc3a7b80f2ca7b7dca4a9b4))
+* **CSS:** [#117](https://github.com/n8design/htwoo/issues/117) transparent border over command bar removed ([38be681](https://github.com/n8design/htwoo/commit/38be681f89d894bfd1dd4bc0bdbd045b5567c506))
+* **CSS:** [#129](https://github.com/n8design/htwoo/issues/129) added dark mode support for dialogs and input fields ([7bf9c33](https://github.com/n8design/htwoo/commit/7bf9c33f01ad18db0c5d541a23eb67c9d404b5d6))
+* **CSS:** [#130](https://github.com/n8design/htwoo/issues/130) fix hover styles for vertical nav ([e87c368](https://github.com/n8design/htwoo/commit/e87c368b06fbec744e105988ced867f66f74e540))
+* **CSS:** [#131](https://github.com/n8design/htwoo/issues/131) Update to hover behaviour when radio button and checkbox is disabled ([84447d2](https://github.com/n8design/htwoo/commit/84447d2a63b56439f942363134602c3e2b74474f))
+* **css:** [#132](https://github.com/n8design/htwoo/issues/132) - Search box icon misalignment ([65a7853](https://github.com/n8design/htwoo/commit/65a78535ad3a3c44ba7d7063e3863d9970e8714b))
+* **CSS:** [#134](https://github.com/n8design/htwoo/issues/134) style update on load indicator ([acb35fe](https://github.com/n8design/htwoo/commit/acb35fe2c2d6e1fcd678fca26ec2871a31467923))
+* **css:** [#137](https://github.com/n8design/htwoo/issues/137) Add min-height to hoo-meta-list ([9770e26](https://github.com/n8design/htwoo/commit/9770e26cb91bc92c55ec83f28581296bc9628162))
+* **CSS:** [#140](https://github.com/n8design/htwoo/issues/140) fix wrong font on buttons ([19ca4d4](https://github.com/n8design/htwoo/commit/19ca4d498458b53b8637679eb748048165f5b38e))
+* **CSS:** [#141](https://github.com/n8design/htwoo/issues/141) disabled button flyout style ([452beae](https://github.com/n8design/htwoo/commit/452beae483f29199e65c942d7a55cc0ccb84313d))
+* **CSS:** Designtoken update for molecules-nav ([bd824f7](https://github.com/n8design/htwoo/commit/bd824f77c1d959b337b70378815ddf68efe18a8c))
+* **css:** Height and widht handling optimisation for mobile dialogs ([023759d](https://github.com/n8design/htwoo/commit/023759d0458b03732fece8524c51bc959e64c79a))
+* **CSS:** hoo-dialog block content height ([17fdee8](https://github.com/n8design/htwoo/commit/17fdee871f47ea5bb8a9735d1a3aa29da3d66688))
+* **CSS:** hoo-nav style fixing ([b9d9035](https://github.com/n8design/htwoo/commit/b9d90358f46cb168141a7bd736089c492a0ff7d0))
+* **css:** max-height on dialog box fixed ([0079eea](https://github.com/n8design/htwoo/commit/0079eea812e49ddc8d0bff8f63c5d8f4fa494d19))
+* **HTML:** [#114](https://github.com/n8design/htwoo/issues/114) Current vertial navigation now support up to five levels of depth ([9b8cf0d](https://github.com/n8design/htwoo/commit/9b8cf0d979d69cd719242b3cade9379aa3213771))
+* **HTML:** Breadcrumb aria label added ([a294132](https://github.com/n8design/htwoo/commit/a294132f7c29d353afcd92bb5d69f5fab7d90513))
+* **js:** hoo-nav accessiblity behaviour update ([93aab90](https://github.com/n8design/htwoo/commit/93aab908954d310d0101ce90a5621998eac7854d))
+
+
+### Features
+
+* **CSS:** Updated vertical nav to use CSS variables ([66bc5b8](https://github.com/n8design/htwoo/commit/66bc5b8faa0ab39386f6a33784b56d199f9fdd3e))
+* **HTML:** Icon button with menu added ([59aea91](https://github.com/n8design/htwoo/commit/59aea91fcc8e54097c0b56cbaf8be996c04ef630))
+
+
+
+## [2.4.0](https://github.com/n8design/htwoo/compare/htwoo-core-v2.3.2...htwoo-core-v2.4.0) (2024-04-09)
+
+
+### Bug Fixes
+
+* **css:** [#124](https://github.com/n8design/htwoo/issues/124) Updated width on cmdbar overflow ([4c00657](https://github.com/n8design/htwoo/commit/4c00657f31ef39530aeab175e5b968823d75f8a0))
+* **css:** [#125](https://github.com/n8design/htwoo/issues/125) - Updated font-weight on table headers ([07ba1f7](https://github.com/n8design/htwoo/commit/07ba1f71d3e6db65411b82b7efc7894caddbfa3c))
+* **HTML,SVG:** Added <title> field to label svg icons properly ([8becca5](https://github.com/n8design/htwoo/commit/8becca5aaf52a5ac64008e9aed740cd9e20ce47b))
+* **html:** [#123](https://github.com/n8design/htwoo/issues/123) revert back from menu to regular div and added additional role ([ca034c6](https://github.com/n8design/htwoo/commit/ca034c64586f5da2e42daca30497c75b8bf3e5a7))
+* **html:** Changed select drop down and group ([d00b664](https://github.com/n8design/htwoo/commit/d00b66445d5a51bd054a30a1ba354b173dd0e5dd))
+
+
+
+## [2.3.2](https://github.com/n8design/htwoo/compare/htwoo-core-v2.3.0...htwoo-core-v2.3.2) (2024-03-04)
+
+
+### Bug Fixes
+
+* Additional update to issue 104 ([bd459a4](https://github.com/n8design/htwoo/commit/bd459a47b9f71781d9e8803715e725aaf14a971e))
+
+
+### Features
+
+* Added <h1> title to rendered pages ([6ced6d4](https://github.com/n8design/htwoo/commit/6ced6d47c3bf46c7d24bff5f6250050d2700fca6))
+
+
+
 ## [2.3.0](https://github.com/n8design/htwoo/commit/) (2023-12-20)
 
 

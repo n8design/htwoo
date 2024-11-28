@@ -1,11 +1,12 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s --config ./changelog.config.js --release-count 10000",
     "release": "standard-version",
-    "cl:update": "standard-version --changelog --skip.bump --skip.tag",
+    "cl:update": "npx conventional-changelog -p angular -i CHANGELOG.md -s --tag-prefix htwoo-core-v",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-public.json",
