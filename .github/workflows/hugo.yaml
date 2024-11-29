@@ -81,9 +81,8 @@ jobs:
           name: site
           path: ./public
 
-           # Deployment job
-
            
+  # Deployment job         
   deploy:
     environment:
       name: github-pages
@@ -91,16 +90,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download GitHub Pages artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: site  # Ensure this matches the name in the upload step
-          path: ./public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: ./public
   # deploy:
   #   environment:
   #     name: github-pages
