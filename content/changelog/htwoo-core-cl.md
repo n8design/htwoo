@@ -1,3 +1,8 @@
+---
+title: hTWOo Changelog
+draft: false
+---
+
 # hTWOo Core - Changelog
 
 Changes in hTWOo core as they happend
