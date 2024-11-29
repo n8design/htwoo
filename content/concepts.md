@@ -21,7 +21,7 @@ Creating a versatile framework is one of the essential concepts of HTWOo. Inclus
 
 With ReactJS in 2022 and possibly 2003 as a dominant web development framework, There are other frameworks and technology decisions made by companies that like to implement the Fluent Design System into their technology stack.
 
-{{< figure src="/images/front_end_frameworks_experience_ranking.png" caption="[State of Javascript 2022 - Result](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/#front_end_frameworks_experience_linechart)" >}}
+{{< figure src="../images/front_end_frameworks_experience_ranking.png" caption="[State of Javascript 2022 - Result](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/#front_end_frameworks_experience_linechart)" >}}
 
 
 hTWOo closes this gap that [Fluent UI Web](https://developer.microsoft.com/en-us/fluentui#/) has; instead of being React JS-only implementation, hTWOo can get adopted in any framework, now and in the future.
