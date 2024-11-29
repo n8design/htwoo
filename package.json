@@ -32,18 +32,18 @@
     "Opera >= 30"
   ],
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@swup/a11y-plugin": "^3.0.0",
-    "autoprefixer": "^10.4.14",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "@swup/a11y-plugin": "^5.0.0",
+    "autoprefixer": "^10.4.20",
     "hugo": "^0.0.3",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
-    "postcss-loader": "^7.0.2",
-    "sass": "^1.59.2",
-    "sass-embedded": "^1.59.2",
-    "stylelint-semantic-groups": "^1.2.0",
-    "swup": "^3.0.5",
-    "typescript": "^4.9.5"
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.81.0",
+    "sass-embedded": "^1.81.0",
+    "stylelint-semantic-groups": "^1.2.1",
+    "swup": "^4.8.1",
+    "typescript": "^5.7.2"
   }
 }
