@@ -82,7 +82,6 @@ jobs:
           path: ./public
 
            
-  # Deployment job         
   deploy:
     environment:
       name: github-pages
@@ -90,52 +89,33 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: ./public
+      - name: Cleanup symbolic links in public directory
+        run: find ./public -type l -exec rm -f {} \;
+      - name: Cleanup hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            find ./public -type f -links +1 -exec rm -f {} \;
+          fi
+      - name: Verify no symbolic links in public directory
+        run: |
+          if find ./public -type l | grep -q .; then
+            echo "Error: Symbolic links found in the public directory."
+            exit 1
+          fi
+      - name: Verify no hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v4
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Download artifact
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: site
-  #         path: ./public
-  #     - name: Cleanup symbolic links in public directory
-  #       run: find ./public -type l -exec rm -f {} \;
-  #     - name: Cleanup hard links in public directory
-  #       run: |
-  #         if find ./public -type f -links +1 | grep -q .; then
-  #           find ./public -type f -links +1 -exec rm -f {} \;
-  #         fi
-  #     - name: Verify no symbolic links in public directory
-  #       run: |
-  #         if find ./public -type l | grep -q .; then
-  #           echo "Error: Symbolic links found in the public directory."
-  #           exit 1
-  #         fi
-  #     - name: Verify no hard links in public directory
-  #       run: |
-  #         if find ./public -type f -links +1 | grep -q .; then
-  #           echo "Error: Hard links found in the public directory."
-  #           exit 1
-  #         fi
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: htwoo-site
-  #         path: ./public
+        uses: actions/upload-artifact@v4
+        with:
+          # name: htwoo-site
+          path: ./public
