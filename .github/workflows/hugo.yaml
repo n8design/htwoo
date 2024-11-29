@@ -32,8 +32,15 @@ jobs:
       HUGO_VERSION: 0.108.0
     steps:
       # Clean workspace to ensure no artifacts from previous builds
-      - name: Clean workspace
-        run: git clean -fdx
+      - name: Clean old build artifacts
+        run: |
+          rm -rf public  # Remove the previous build artifacts (public folder)
+
+      # Generate a text file with the latest build info (e.g., commit hash, date)
+      - name: Create build info file
+        run: |
+          echo "Build Date: $(date)" > public/build_info.txt
+          echo "Commit Hash: $(git rev-parse HEAD)" >> public/build_info.txt
 
       - name: Install Hugo CLI
         run: |
