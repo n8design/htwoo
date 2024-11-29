@@ -65,6 +65,8 @@ jobs:
         run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
       - name: Copy hTWOo React style guide
         run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
+      - name: Show Deployment folder
+        run: ls -la public
       - name: Verify artifact size and content
         run: |
           find ./public -type l -exec rm -f {} \;  # Remove symlinks
