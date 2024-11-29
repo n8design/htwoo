@@ -54,7 +54,7 @@ Please feel free to [ask](https://github.com/n8design/htwoo/discussions) any que
 
 ## Maintaind by 
 
-[Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner) and You ❤️
+[Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner) and You ❤️❤️❤️
 
 
 
