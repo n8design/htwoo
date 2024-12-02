@@ -1,0 +1,18 @@
+{{#input.file-upload}}
+<section class="hoo-input-file">
+    <label class="hoo-infile-label" name="file-upload" tabIndex="-1" for="{{ getId "file-upload" }}" draggable="true">
+        <div class="hoo-infile-icon">
+            {{> atoms-icon }}
+        </div>
+        <div>
+            {{label}}
+            {{#description }}
+            <p class="hoo-infile-description">{{ this }}
+            </p>
+            {{/description }}
+        </div>
+    </label>
+    <input type="file" id="{{ getLastId }}" name="{{name}}" class="hoo-infile-context" multiple aria-describedby="{{ getLastId }}-content" />
+    <output class="hoo-infile-output" id="{{ getLastNumericId }}-content" aria-live="polite" title="Current selection"></output>
+{{/input.file-upload}}
+</section>

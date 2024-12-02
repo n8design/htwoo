@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@use '00-variables' as variables;
 
 /*------------------------------------*\
     #ANNOTATIONS
@@ -13,9 +13,9 @@
  */
 .pl-has-annotation {
   cursor: help !important;
-  outline: 1px dotted $pl-color-gray-50;
+  outline: 1px dotted variables.$pl-color-gray-50;
   outline-offset: -4px;
-  transition: box-shadow $pl-animate-quick ease;
+  transition: box-shadow variables.$pl-animate-quick ease;
 
   a,
   input {
@@ -23,12 +23,12 @@
   }
 
   &:hover {
-    box-shadow: 0 0 3px $pl-color-gray-50;
+    box-shadow: 0 0 3px variables.$pl-color-gray-50;
   }
 
   &.active {
-    box-shadow: inset 0 0 6px $pl-color-gray-70;
-    outline: 1px dotted $pl-color-gray-50;
+    box-shadow: inset 0 0 6px variables.$pl-color-gray-70;
+    outline: 1px dotted variables.$pl-color-gray-50;
     outline-offset: -1px;
   }
 }
@@ -49,9 +49,9 @@
   margin-top: 6px !important;
   margin-left: 6px !important;
   border-radius: 50% !important;
-  background-color: $pl-color-gray-87 !important;
+  background-color: variables.$pl-color-gray-87 !important;
   background-color: var(--themePrimary) !important;
-  color: $pl-color-white !important;
+  color: variables.$pl-color-white !important;
   font-size: 16px !important;
   position: absolute;
   z-index: 100;

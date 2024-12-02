@@ -14,9 +14,9 @@ You will find a complete list of assets in the [Style Guide](https://lab.n8d.stu
 
 ### How To Use HTWOO-CORE
 
-* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html.html)
-* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react.html) 
-* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements.html)
+* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html/)
+* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react/) 
+* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements/)
 * more to come
 
 ### Why just HTML and CSS
@@ -48,5 +48,8 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 **Maintainers:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
 **Contributors:** You ❤️
+
+This project is tested with BrowserStack
+
 
 [logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"

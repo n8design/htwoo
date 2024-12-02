@@ -85,7 +85,8 @@
         "label": {
             "label": "Label for field x",
             "stateStyle": null,
-            "aria-tags": ""
+            "aria-tags": "",
+            "for": "field-x-label"
         },
         "toggle": {
             "name": "toggleName",
@@ -95,6 +96,20 @@
                 "unchecked": "Off"
             },
             "aria-tags": ""
+        },
+        "description": {
+            "descRef": "field-x-description",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "error": {
+            "errorRef": "field-x-error",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "file-upload": {
+            "label": "Click or drag and drop files here to upload filed",
+            "description": "Max file size: 10MB, Types: jpg, png, pdf",
+            "iconname": "icon-arrow-upload-filled",
+            "title": "Upload"
         }
     },
     "checkbox-group": {

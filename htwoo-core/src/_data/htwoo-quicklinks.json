@@ -6,6 +6,7 @@
         "src": "../../images/icons.svg#icon-ninjacat"
     },
     "quick-link": {
+        "href": "#",
         "qlimg": {
             "src": "../../images/placeholders/ph-16by9.png"
         },
@@ -16,6 +17,7 @@
     },
     "quick-links": [
         {
+            "href": "#",
             "qlimg": {
                 "src": "../../images/placeholders/ph-16by9.png"
             },
@@ -25,6 +27,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlsvg": {
                 "src": "../../images/icons.svg#icon-ninjacat"
             },
@@ -34,6 +37,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlimg": {
                 "src": "../../images/placeholders/ph-16by9.png"
             },
@@ -43,6 +47,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlsvg": {
                 "src": "../../images/icons.svg#icon-ninjacat"
             },
@@ -52,6 +57,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlimg": {
                 "src": "../../images/placeholders/ph-16by9.png"
             },
@@ -61,6 +67,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlsvg": {
                 "src": "../../images/icons.svg#icon-ninjacat"
             },
@@ -70,6 +77,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlimg": {
                 "src": "../../images/placeholders/ph-16by9.png"
             },
@@ -79,6 +87,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlsvg": {
                 "src": "../../images/icons.svg#icon-ninjacat"
             },
@@ -88,6 +97,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlimg": {
                 "src": "../../images/placeholders/ph-16by9.png"
             },
@@ -97,6 +107,7 @@
             "icon-move": ""
         },
         {
+            "href": "#",
             "qlsvg": {
                 "src": "../../images/icons.svg#icon-ninjacat"
             },

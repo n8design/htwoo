@@ -1,0 +1,47 @@
+{{#form-flow}}
+{{#form}}
+    <fieldset id="issue-verification" class="hoo-fieldset no-outline">
+        <div class="hoo-field" role="group">
+            {{#assigned-to}}
+            {{> atoms-label }}
+            {{> atoms-input-text }}
+            {{> atoms-input-description }}
+            {{/assigned-to}}
+        </div>
+        <div class="hoo-field" role="group">
+            {{#verification-date}}
+            {{> atoms-label }}
+            {{> atoms-input-datetime-local }}
+            {{/verification-date}}
+        </div>
+        {{!-- <div class="hoo-field" role="group">
+            {{#status}}
+            {{> atoms-label }}
+            {{> molecules-radio-button-group}}
+            {{/status}}
+        </div> --}}
+        <div class="hoo-field" role="group">
+            {{#comments}}
+            {{> atoms-label }}
+            {{> atoms-input-description }}
+            {{> atoms-input-textarea }}
+            {{/comments}}
+        </div>
+        <div class="hoo-field" role="group">
+            {{#estimate-time-to-resolve}}
+            {{> atoms-label }}
+            {{> atoms-input-text-suffixed }}
+            {{> atoms-input-description }}
+            {{/estimate-time-to-resolve}}
+        </div>
+        <div class="actions">
+            {{#btn-report-invalid}}
+            {{> atoms-button-standard }}
+            {{/btn-report-invalid}}
+            {{#btn-report-verified}}
+            {{> atoms-button-primary }}
+            {{/btn-report-verified}}
+        </div>
+    </fieldset>
+    {{/form}}
+{{/form-flow}}

@@ -1,5 +1,4 @@
-import { HOODialog }
-    from './dialog.js';
+import { HOODialog } from './dialog.js';
 
 import {
     ariaSelect
@@ -18,8 +17,12 @@ import {
     initMenu
 } from './nav.js';
 
+import { FileUploadHandler } from './file.js';
+
+// import InputMask from './vendor/estelle/input-mask.js';
+
 /** Overflow */
-import * as overflow from './overflow.js'
+import * as overflow from './overflow.js';
 
 const splitButtonReg = (classSelector, handleWith) => {
 
@@ -144,12 +147,22 @@ const registerAnimation = (classname, handleWith) => {
 
 }
 
+const registerInputHandler = (classname) => {
+    const allFileHandler = document.querySelectorAll(classname);
+    allFileHandler.forEach(fileHandler => {
+        new FileUploadHandler(fileHandler);
+    });
+}
+
 const registerAriaSelect = () => {
 
     let selects = document.querySelectorAll('.hoo-select');
 
+    console.debug('ALL SELECTED', selects)
+
     if (selects) {
         selects.forEach((item, idx) => {
+            console.debug(item, idx);
             ariaSelect(item);
         });
     }
@@ -183,6 +196,7 @@ const afterLoaded = () => {
 
     registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
     registerAnimation('.anim-addNslide', animateAddAndSlide);
+    registerInputHandler('.hoo-input-file');
 
     // registerDialog();
     registerAriaSelect();
@@ -195,6 +209,8 @@ const afterLoaded = () => {
     initMenu();
 
     overflow.init();
+
+    // new InputMask();
 
     setTimeout(() => {
         let tmpHidden = document.querySelectorAll('.tmp-hidden');

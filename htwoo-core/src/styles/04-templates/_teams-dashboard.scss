@@ -3,9 +3,12 @@
 @use "../00-base/mixin/grid.mixin";
 
 .hoo-teamsdb{
-	@include grid.gridBase();
 
 	margin: core.px2rem(20px);
+	&{
+		@include grid.gridBase();
+	}
+
 	& > *{
 		@include elevation.elevation(4);
 	}

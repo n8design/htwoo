@@ -89,6 +89,7 @@
 		position: absolute;
 		z-index: 100;
 		top: 100%;
+		// display: none;
 	}
 }
 
@@ -105,6 +106,9 @@
     overflow: hidden;
     overflow-y: auto;
     position: relative;
+	// &:has(:not(.hoo-optgroup-items)) {
+	// 	display: none;
+	// }
 }
 
 .hoo-option {

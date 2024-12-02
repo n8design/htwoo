@@ -1,10 +1,12 @@
 {
   "name": "@n8d/htwoo-core-styleguide",
-  "version": "2.5.2",
+  "version": "2.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cl:update": "standard-version --changelog --skip.bump --skip.tag",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s --config ./changelog.config.js --release-count 10000",
+    "release": "standard-version",
+    "cl:update": "npx conventional-changelog -p angular -i CHANGELOG.md -s --tag-prefix htwoo-core-v",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-public.json",
@@ -17,7 +19,7 @@
     "hoo:buildlib": "gulp build:lib",
     "hoo:exportpatterns": "gulp build:pllib",
     "update:docs": "./docs.sh",
-    "postversion": "git tag htwoo-core-v$npm_package_version && npx conventional-changelog-cli -i CHANGELOG.md -s -a -p conventionalcommits -t htwoo-core-v -u -v",
+    "postversion": "git tag htwoo-core-v$npm_package_version && npx standard-version --skip.commit --skip.tag",
     "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
     "start": "run-p gulp:serve pl:serve"
   },
@@ -46,12 +48,12 @@
     "@pattern-lab/core": "^6.1.0",
     "@pattern-lab/engine-handlebars": "^6.1.0",
     "@pattern-lab/uikit-workshop": "^6.1.0",
-    "caniuse-lite": "^1.0.30001636",
-    "conventional-changelog": "^6.0.0"
+    "caniuse-lite": "^1.0.30001680",
+    "standard-version": "^9.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-if": "^3.0.0",
@@ -62,9 +64,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.4.38",
-    "rollup": "^4.18.0",
-    "sass": "^1.77.6",
+    "postcss": "^8.4.49",
+    "rollup": "^4.27.3",
+    "sass": "^1.81.0",
     "sitemap": "^8.0.0",
     "yargs": "^17.7.2"
   }

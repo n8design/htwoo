@@ -1,0 +1,8 @@
+{{#fieldset}}
+<fieldset class="hoo-fieldset {{ modifier }}" {{{ html-props }}}>
+    {{> atoms-legend}}
+    {{#each fields}}
+        {{dynamicPartial this.type this}}
+    {{/each}}    
+</fieldset>
+{{/fieldset}}

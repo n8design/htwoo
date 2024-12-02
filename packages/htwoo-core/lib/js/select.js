@@ -6,6 +6,8 @@
 // assign names to things we'll need to use more than once
 
 export const ariaSelect = (listItem) => {
+
+  console.debug('ariaSelect', listItem);
   // console.log('listItem',listItem);
   const csSelector = listItem; // the input, svg and ul as a group
   console.log('csSelector', csSelector);
@@ -38,6 +40,7 @@ export const ariaSelect = (listItem) => {
   })
   // set up a message to keep screen reader users informed of what the custom input is for/doing
   csStatus.textContent = csOptions.length + " options available. Arrow down to browse or start typing to filter."
+  toggleList('Shut');
 
   // EVENTS
   // /////////////////////////////////
@@ -296,5 +299,35 @@ export const ariaSelect = (listItem) => {
         break
     }
   }
+}
 
+function updateOptgroupVisibility() {
+  const optgroups = document.querySelectorAll('.hoo-optgroup');
+
+  optgroups.forEach(optgroup => {
+    const options = optgroup.querySelectorAll('.hoo-option');
+    const hasVisibleOption = Array.from(options).some(option =>
+      option.style.display !== 'none'
+    );
+
+    // Hide or show the optgroup based on visibility of its options
+    optgroup.style.display = hasVisibleOption ? '' : 'none';
+  });
+}
+
+// Run initially to set visibility
+updateOptgroupVisibility();
+
+// Example: Attach to a mutation observer to handle dynamic changes
+const observer = new MutationObserver(() => {
+  updateOptgroupVisibility();
+});
+
+if (document.querySelector('.hoo-select-dropdown')) {
+  observer.observe(document.querySelector('.hoo-select-dropdown'), {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style'] // Monitor only style changes
+  });
 }

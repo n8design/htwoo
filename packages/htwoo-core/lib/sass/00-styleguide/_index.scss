@@ -1,6 +1,6 @@
-@import '00-variables';
-@import '00-annotations';
-@import '00-icon-grid';
-@import '00-styleguide';
+@forward '00-variables';
+@forward '00-annotations';
+@forward '00-icon-grid';
+@forward '00-styleguide';
 
 
