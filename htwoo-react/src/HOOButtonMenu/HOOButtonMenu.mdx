@@ -1,0 +1,32 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOButtonMenu from './HOOButtonMenu';
+import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
+import { symset } from '../SymbolSet';
+import * as HooButtonMenuStories from './HOOButtonMenu.stories';
+
+<Meta of={HooButtonMenuStories} />
+
+# HOOButtonMenu
+
+## Flyout Menu Items
+
+This depicts using `HOOButtonMenu`.
+
+## Arguments
+
+<ArgTypes of={HOOButtonMenu} />
+
+export const OverflowTemplate = (args) => <HOOButtonMenu {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooButtonMenuStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooButtonMenuStories.Extending} />
+</Canvas>

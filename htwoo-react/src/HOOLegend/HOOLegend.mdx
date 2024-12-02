@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOLegend from './HOOLegend';
+import * as HooLegendStories from './HOOLegend.stories';
+
+<Meta of={HooLegendStories} />
+
+# HOOLegend
+
+## Arguments
+
+<ArgTypes of={HOOLegend} />
+
+export const Template = (args) => <HOOLegend {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooLegendStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooLegendStories.Extending} />
+</Canvas>

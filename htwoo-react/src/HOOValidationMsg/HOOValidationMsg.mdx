@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOValidationMsg from './HOOValidationMsg';
+import * as HooValidationMsgStories from './HOOValidationMsg.stories';
+
+<Meta of={HooValidationMsgStories} />
+
+# HOOValidationMsg
+
+## Arguments
+
+<ArgTypes of={HOOValidationMsg} />
+
+export const Template = (args) => <HOOValidationMsg {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooValidationMsgStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooValidationMsgStories.Extending} />
+</Canvas>

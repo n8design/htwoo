@@ -1,0 +1,34 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOIconSplit from './HOOIconSplit';
+import * as HooIconSplitStories from './HOOIconSplit.stories';
+
+<Meta of={HooIconSplitStories} />
+
+# HOOIconSplit
+
+## Arguments
+
+<ArgTypes of={HOOIconSplit} />
+
+export const DefaultParams = {
+  label: "Button",
+  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
+  flyoutContextItemsClicked: (event, item) => {
+    console.alert(item.label);
+  }
+}
+export const Template = (args) => <HOOIconSplit {...args} />;
+
+## Icon
+
+<Canvas>
+  <Story of={HooIconSplitStories.Icon} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooIconSplitStories.Extending} />
+</Canvas>

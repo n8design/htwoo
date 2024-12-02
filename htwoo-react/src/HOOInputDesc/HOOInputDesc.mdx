@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOInputDesc from './HOOInputDesc';
+import * as HooInputDescStories from './HOOInputDesc.stories';
+
+<Meta of={HooInputDescStories} />
+
+# HOOInputDesc
+
+## Arguments
+
+<ArgTypes of={HOOInputDesc} />
+
+export const Template = (args) => <HOOInputDesc {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooInputDescStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooInputDescStories.Extending} />
+</Canvas>

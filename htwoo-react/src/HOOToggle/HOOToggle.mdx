@@ -1,0 +1,32 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOToggle from './HOOToggle';
+import * as HooToggleStories from './HOOToggle.stories';
+
+<Meta of={HooToggleStories} />
+
+# HOOToggle
+
+## Arguments
+
+<ArgTypes of={HOOToggle} />
+
+export const Template = (args) => <HOOToggle {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooToggleStories.Basic} />
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story of={HooToggleStories.Disabled} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooToggleStories.Extending} />
+</Canvas>

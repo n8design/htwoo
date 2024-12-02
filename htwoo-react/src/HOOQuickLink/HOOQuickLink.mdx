@@ -1,0 +1,103 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOQuickLink, {HOOQuickLinkType, HOOQuickLinkStyle, HOOQuickLinkAlignment, HOOQuickLinkButtonLines, HOOQuickLinkImageSize} from './HOOQuickLink';
+import * as HooQuickLinkStories from './HOOQuickLink.stories';
+
+<Meta of={HooQuickLinkStories} />
+
+# HOOQuickLink
+
+Predefined enum defined for the supported button types:
+
+```ts
+export enum HOOQuickLinkType {
+  "Link",
+  "Compact",
+  "Grid",
+  "Button",
+  "Tile"
+}
+```
+
+Style options for the Quick Link Button type component:
+
+```ts
+export enum HOOQuickLinkStyle{ 
+  "Outline"="",
+  "Filled"="filled",
+  "None"="no-outline"
+}
+
+export enum HOOQuickLinkAlignment{
+  "Left"="",
+  "Center"="center"
+}
+
+export enum HOOQuickLinkButtonLines{
+  "Normal"="",
+  "One"="one-line",
+}
+```
+
+Image Size options for teh Quick Link Tile type component:
+
+```ts
+export enum HOOQuickLinkImageSize{
+  "Small"="",
+  "Medium"="img-m",
+  "Large"="img-l",
+  "XLarge"="img-xl",
+  "Fill"="img-fill",
+}
+```
+
+When the Quick Link element is not going to be hosted in a SharePoint page and you are using this component in conjunction with the `HOOQuickLinkGrid`, you need to add the columnSpan element to tell the grid how many columns the element will span.
+
+## Arguments
+
+<ArgTypes of={HOOQuickLink} />
+
+export const Template = (args) => <HOOQuickLink {...args} />;
+
+## Quick Link - Standard
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkStandard} />
+</Canvas>
+
+## Quick Link - Compact
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkCompact} />
+</Canvas>
+
+## Quick Link - Standard Edit Mode
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkStandardEditMode} />
+</Canvas>
+
+## Quick Link - Button
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkButton} />
+</Canvas>
+
+## Quick Link - Tile
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkTile} />
+</Canvas>
+
+## Quick Link - Grid
+
+<Canvas>
+  <Story of={HooQuickLinkStories.QuickLinkGrid} />
+</Canvas>
+
+## Extending the Quick Link component
+
+<Canvas>
+  <Story of={HooQuickLinkStories.Extending} />
+</Canvas>

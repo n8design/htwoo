@@ -1,0 +1,38 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOPresence, {HOOPresenceStatus} from './HOOPresence';
+import * as HooPresenceStories from './HOOPresence.stories';
+
+<Meta of={HooPresenceStories} />
+
+# HOOPresence
+
+Predefined enum defined for the supported avatar presence:
+
+```ts
+export enum HOOPresenceStatus {
+  Away = "away",
+  DoNotDisturb = "dnd",
+  Online = "online",
+  Invisible = "invisible",
+  OutOfOffice = "off"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOPresence} />
+
+export const Template = (args) => <HOOPresence {...args}/>
+
+## Online
+
+<Canvas>
+  <Story of={HooPresenceStories.Online} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooPresenceStories.Extending} />
+</Canvas>

@@ -1,0 +1,77 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Advanced/Using Dialogs in SPFx" />
+
+# Using Dialogs in SPFx
+
+> As of HTWOO version 2.1.x all dialogs are rendered using the HTML Dialog element and therefore this guidance is not needed. Dialogs can be rendered inline and will overlay the page properly.
+
+Because of how SharePoint applies styles to it's UI, we cannot consistently, and in some cases at all, support CSS that will allow dialogs added inline to the DOM where an extension or webpart is being rendered to properly overlay the SharePoint page. The safest work around for this issue, although a subtil use of DOM manipulation, is to add a DIV element to the bottom of the BODY of the page to then render and apply styling that will overlay the page successfully.  The following is a bit of sample code that provides a generic way to implement that DIV element and what's required to have it use the styling properly.
+
+The method can be called from some type of user interaction (like a button) where you would pass a local variable
+
+```typescript
+import {spfxThemes} from "@n8d/htwoo-react/SPFxThemes";
+import MyDialogContentComponent from "./MyDialogContentComponent";
+
+export default class MyComponent extends React.PureComponent<IMyComponentProps, IMyComponentState> {
+  private _myDialogElement: HTMLDivElement = null;
+  private _myDialogId = "MyDialogCont";
+
+  private _myButtonOnClick = (event) => {
+    //The properties for your component, you should includes a method property to handle the closeDialog event.
+    const props: IMyDialogContentComponent = {ADD YOUR PROPS HERE};
+    //Call the generic _openDialog method passing in the dialog component you want to load into the page.
+    this._openDialog(this._myDialogElement, this._myDialogId, MyDialogContentComponent, props);
+  }
+
+  //Generic method that allows you to add any dialog component to the page
+  private _openDialog = (element: HTMLDivElement, id: string, dialogElement: any, dialogProps: any): void => {
+    try {
+      if (element == undefined) {
+        //create approval container div
+        element = document.createElement("DIV") as HTMLDivElement;
+        element.setAttribute("id", id);
+        //Make sure you add `root-40` to support the font, and the root class (namespacing class) so that the htwoo styles are available to your dialog
+        element.className = `root-40 ${styles.myComponent}`;
+        //Give the div a high z-index so when it's shown we make sure it overlays the whole page.
+        element.style["z-index"] = 1000;
+        element.style.position = "relative";
+        element.style.display = "block";
+
+        //Add themes to this element since it's not "inline" with the root DOM element of the SPFx solution
+        //In this instance we're using the global spfxThemes constant that was defined in SPFxThemes class
+        //The last boolean `true` indicates that the theme applied should use the page theme, this allows
+        //proper styling of the dialog when the source theme is in an inverted section. If the solution doesn't
+        //support inverted themes then you can ignore that property.
+        //For more information on other ways to utilize the SPFxThemes class please see the `Adavanced/SPFxThemes Class` docs.
+        spfxThemes.initThemeHandler(element, undefined, undefined, true);
+
+        //bind to top placeholder
+        document.body.appendChild(element);
+      }
+      //Add keyup event listener to handle closing the dialog when the user presses the Escape key.
+      document.addEventListener("keyup", (ev) => { if (ev.key === "Escape") { this._closeDialog(element) } });
+      
+      //Assign the closeDialog property of the properties to the generic _closeDialog handler
+      dialogProps.closeDialog = () => {
+        this._closeDialog(element);
+        //Remove keyup event listener to handle closing the dialog when the user presses the Escape key.
+        document.removeEventListener("keyup", (ev) => { if (ev.key === "Escape") { this._closeDialog(element) } });
+      }
+
+      const dialogCont: React.ReactElement<{}> = React.createElement(dialogElement, dialogProps);
+      ReactDOM.render(dialogCont, element);
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_openDialog) - ${err}`);
+    }
+  }
+
+  //Generic method that allows you to close any dialog component to the page
+  private _closeDialog = (element: HTMLDivElement) => {
+    if (element !== undefined) {
+      ReactDOM.unmountComponentAtNode(element);
+    }
+  }
+}
+```

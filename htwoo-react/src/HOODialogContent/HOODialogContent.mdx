@@ -1,0 +1,32 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOODialogContent from './HOODialogContent';
+import HOOLabel from '../HOOLabel';
+import * as HooDialogContentStories from './HOODialogContent.stories';
+
+<Meta of={HooDialogContentStories} />
+
+# HOODialogContent
+
+This example shows using a `HOOLabel` component as the child(children) of the `HOODialogContent` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+## Arguments
+
+<ArgTypes of={HOODialogContent} />
+
+export const Template = (args) => <HOODialogContent {...args} >
+  <HOOLabel label="Contents of Dialog" />
+</HOODialogContent>;
+
+## Basic
+
+<Canvas>
+  <Story of={HooDialogContentStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooDialogContentStories.Extending} />
+</Canvas>

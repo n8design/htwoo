@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOCardLocation from './HOOCardLocation';
+import * as HooCardLocationStories from './HOOCardLocation.stories';
+
+<Meta of={HooCardLocationStories} />
+
+# HOOCardLocation
+
+## Arguments
+
+<ArgTypes of={HOOCardLocation} />
+
+export const Template = (args) => <HOOCardLocation {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooCardLocationStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooCardLocationStories.Extending} />
+</Canvas>

@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOLoading from './HOOLoading';
+import * as HooLoadingStories from './HOOLoading.stories';
+
+<Meta of={HooLoadingStories} />
+
+# HOOLabel
+
+## Arguments
+
+<ArgTypes of={HOOLoading} />
+
+export const Template = (args) => <HOOLoading {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooLoadingStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooLoadingStories.Extending} />
+</Canvas>

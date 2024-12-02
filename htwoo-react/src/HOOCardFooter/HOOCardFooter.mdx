@@ -1,0 +1,31 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOCardFooter from './HOOCardFooter';
+import { HOOAvatarSize } from '../HOOAvatar';
+import * as HooCardFooterStories from './HOOCardFooter.stories';
+
+<Meta of={HooCardFooterStories} />
+
+# HOOCardFooter
+
+See more information about the properties for the sub components:
+
+* [HOOAvatar](?path=/docs/atoms-avatar-hooavatar--standard-32-px)
+
+## Arguments
+
+<ArgTypes of={HOOCardFooter} />
+
+export const Template = (args) => <HOOCardFooter {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooCardFooterStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooCardFooterStories.Extending} />
+</Canvas>

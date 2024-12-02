@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOSearch from './HOOSearch';
+import * as HooSearchStories from './HOOSearch.stories';
+
+<Meta of={HooSearchStories} />
+
+# HOOSearch
+
+## Arguments
+
+<ArgTypes of={HOOSearch} />
+
+export const Template = (args) => <HOOSearch {...args}/>
+
+## Basic
+
+<Canvas>
+  <Story of={HooSearchStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooSearchStories.Extending} />
+</Canvas>

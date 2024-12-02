@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOPivotButton from './HOOPivotButton';
+import * as HooPivotButtonStories from './HOOPivotButton.stories';
+
+<Meta of={HooPivotButtonStories} />
+
+# HOOPivotButton
+
+## Arguments
+
+<ArgTypes of={HOOPivotButton} />
+
+export const Template = (args) => <HOOPivotButton {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooPivotButtonStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooPivotButtonStories.Extending} />
+</Canvas>

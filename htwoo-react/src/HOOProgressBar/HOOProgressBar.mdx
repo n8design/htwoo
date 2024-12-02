@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOProgressBar from './HOOProgressBar';
+import * as HooProgressBarStories from './HOOProgressBar.stories';
+
+<Meta of={HooProgressBarStories} />
+
+# HOOProgressBar
+
+## Arguments
+
+<ArgTypes of={HOOProgressBar} />
+
+export const Template = (args) => <HOOProgressBar {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooProgressBarStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooProgressBarStories.Extending} />
+</Canvas>

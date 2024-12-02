@@ -1,0 +1,34 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOIconOverflow from './HOOIconOverflow';
+import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
+import * as HooIconOverflowStories from './HOOIconOverflow.stories';
+
+<Meta of={HooIconOverflowStories} />
+
+# HOOIconOverflow
+
+## Flyout Menu Items
+
+Enabling flyout menu depends on passing an instance of `HOOFlyoutMenu` as a child
+
+## Arguments
+
+<ArgTypes of={HOOIconOverflow} />
+
+export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
+    <HOOFlyoutMenu contextItems={[{ iconName: 'hoo-icon-ninjacat', label: 'First Element' }, { iconName: 'hoo-icon-ninjacat', label: 'Second Element' }]} 
+    contextItemClicked={(ev, contextItem) => { alert(JSON.stringify(contextItem)) }}/>
+  </HOOIconOverflow>;
+
+## Basic
+
+<Canvas>
+  <Story of={HooIconOverflowStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooIconOverflowStories.Extending} />
+</Canvas>

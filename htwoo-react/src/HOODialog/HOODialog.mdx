@@ -1,0 +1,147 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { useArgs } from '@storybook/preview-api';
+import { symset } from '../SymbolSet';
+import HOODialog, { HOODialogType } from './HOODialog';
+import HOODialogHeader from '../HOODialogHeader';
+import HOODialogContent from '../HOODialogContent';
+import HOODialogActions from '../HOODialogActions';
+import HOOLabel from '../HOOLabel';
+import HOOButton, { HOOButtonType } from '../HOOButton';
+import HOOIcon from '../HOOIcon';
+import * as HooDialogStories from './HOODialog.stories';
+
+<Meta of={HooDialogStories} />
+
+# HOODialog
+
+This example shows using a `HOOLabel` component as the child(children) of the `HOODialogContent` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+Predefined enum defined for the supported dialog types:
+
+```ts
+export enum HOODialogType {
+  "Standard",
+  "StandardError",
+  "StandardSuccess",
+  "StandardWarning",
+  "SidebarLeft",
+  "SidebarRight",
+  "Topbar",
+  "Bottombar",
+  "Fullscreen",
+  "Center"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOODialog} />
+
+export const TemplateMessage = (args) => {
+  const [_, updateArgs] = useArgs();
+  const onClick = () => {
+    const args = JSON.parse(JSON.stringify(_));
+    args.visible = !args.visible;
+    updateArgs(args);
+  }
+  symset.initSymbols();
+  return <div>
+    <HOOButton type={HOOButtonType.Primary} label={`${(args.visible) ? "Hide Dialog" : "Show Dialog"}`} onClick={onClick} />
+    <HOODialog changeVisibility={onClick} {...args}>
+      <HOOIcon iconName='hoo-icon-smile' />
+      <HOODialogContent>This is the status message in the dialog box.</HOODialogContent>
+      <HOODialogActions>
+        <HOOButton type={HOOButtonType.Icon} iconName='hoo-icon-close' onClick={onClick} />
+      </HOODialogActions>
+    </HOODialog>
+  </div>;
+};
+
+export const TemplateModal = (args) => {
+  const [_, updateArgs] = useArgs();
+  const onClick = () => {
+    const args = JSON.parse(JSON.stringify(_));
+    args.visible = !args.visible;
+    updateArgs(args);
+  }
+  symset.initSymbols();
+  return <div>
+    <HOOButton type={HOOButtonType.Primary} label={`${(args.visible) ? "Hide Dialog" : "Show Dialog"}`} onClick={onClick} />
+    <HOODialog changeVisibility={onClick} {...args}>
+      <HOODialogHeader title="Dialog Header" closeIconName="hoo-icon-close" closeDisabled={false} closeOnClick={onClick} />
+      <HOODialogContent>
+        <HOOLabel label="Content of Dialog" />
+      </HOODialogContent>
+    </HOODialog>
+  </div>;
+};
+
+## Standard - Info
+
+Message/Status bar dialog - showing information. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.Standard} />
+</Canvas>
+
+## Standard - Success
+
+Message/Status bar dialog - showing success message. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.StandardSuccess} />
+</Canvas>
+
+## Standard - Error
+
+Message/Status bar dialog - showing error message. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.StandardError} />
+</Canvas>
+
+## Modal Dialog - Sidebar Left
+
+Sidebar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.SidebarLeft} />
+</Canvas>
+
+## Modal Dialog - Sidebar Right - Specify Width
+
+Sidebar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Width can be specified in pixels or percentage or viewport width.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.SidebarRightSpecifyWidth} />
+</Canvas>
+
+## Modal Dialog - Topbar - Specify Height
+
+Topbar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Height can be specified in pixels or percentage or viewport height.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.TopbarSpecifyHeight} />
+</Canvas>
+
+## Modal Dialog - Fullscreen
+
+Fullscreen modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.Fullscreen} />
+</Canvas>
+
+## Extending
+
+Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
+
+## Modal Dialog - Center (Extending)
+
+Topbar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Height can be specified in pixels or percentage or viewport height.
+
+<Canvas layout="fullscreen">
+  <Story of={HooDialogStories.CenterExtending} />
+</Canvas>

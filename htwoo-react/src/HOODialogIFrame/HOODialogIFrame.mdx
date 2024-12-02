@@ -1,0 +1,61 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOODialogIFrame, {HOOIFrameRatio} from './HOODialogIFrame';
+import HOOLabel from '../HOOLabel';
+import * as HooDialogIFrameStories from './HOODialogIFrame.stories';
+
+<Meta of={HooDialogIFrameStories} />
+
+# HOODialogIFrame
+
+Predefined enum defined for the supported IFrame ratios:
+
+```ts
+export enum HOOIFrameRatio {
+  "3by4" = "3by4",
+  "squared" = "squared",
+  "16by9" = "16by9"
+}
+```
+
+## HOODialogContent
+
+See more information about the properties for the parent component:
+
+* [HOODialogContent](?path=/docs/molecules-dialog-hoodialogcontent--basic)
+
+## Arguments
+
+<ArgTypes of={HOODialogIFrame} />
+
+export const Template = (args) => <HOODialogIFrame {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooDialogIFrameStories.Basic} />
+</Canvas>
+
+## 3:4 Ratio
+
+<Canvas>
+  <Story of={HooDialogIFrameStories.$34Ratio} />
+</Canvas>
+
+## Square Ratio
+
+<Canvas>
+  <Story of={HooDialogIFrameStories.SquareRatio} />
+</Canvas>
+
+## 16:9 Ratio
+
+<Canvas>
+  <Story of={HooDialogIFrameStories.$169Ratio} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooDialogIFrameStories.Extending} />
+</Canvas>

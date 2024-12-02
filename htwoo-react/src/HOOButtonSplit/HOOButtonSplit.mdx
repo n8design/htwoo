@@ -1,0 +1,52 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOButtonSplit, {
+  IHOOButtonSplitProps,
+  HOOButtonSplitType
+} from './HOOButtonSplit';
+import * as HooButtonSplitStories from './HOOButtonSplit.stories';
+
+<Meta of={HooButtonSplitStories} />
+
+# HOOButtonSplit
+
+Predefined enum defined for the supported split button types:
+
+```ts
+export enum HOOButtonSplitType {
+  "Standard",
+  "Primary"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOButtonSplit} />
+
+export const DefaultParams = {
+  label: "Button",
+  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
+  flyoutContextItemsClicked: (event, item) => {
+    console.alert(item.label);
+  }
+}
+export const Template = (args) => <HOOButtonSplit {...args} />;
+
+## Standard
+
+<Canvas>
+  <Story of={HooButtonSplitStories.Standard} />
+</Canvas>
+
+## Primary
+
+<Canvas>
+  <Story of={HooButtonSplitStories.Primary} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooButtonSplitStories.Extending} />
+</Canvas>

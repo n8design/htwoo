@@ -1,0 +1,32 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOCardImage from './HOOCardImage';
+import * as HooCardImageStories from './HOOCardImage.stories';
+
+<Meta of={HooCardImageStories} />
+
+# HOOCardImage
+
+## Arguments
+
+<ArgTypes of={HOOCardImage} />
+
+export const Template = (args) => <HOOCardImage {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooCardImageStories.Basic} />
+</Canvas>
+
+## Image Caption
+
+<Canvas>
+  <Story of={HooCardImageStories.ImageCaption} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooCardImageStories.Extending} />
+</Canvas>

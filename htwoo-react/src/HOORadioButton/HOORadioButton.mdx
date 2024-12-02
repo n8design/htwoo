@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOORadioButton from './HOORadioButton';
+import * as HooRadioButtonStories from './HOORadioButton.stories';
+
+<Meta of={HooRadioButtonStories} />
+
+# HOORadioButton
+
+## Arguments
+
+<ArgTypes of={HOORadioButton} />
+
+export const Template = (args) => <HOORadioButton {...args}/>
+
+## Basic
+
+<Canvas>
+  <Story of={HooRadioButtonStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooRadioButtonStories.Extending} />
+</Canvas>

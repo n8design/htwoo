@@ -1,0 +1,22 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOCheckbox from './HOOCheckbox.tsx';
+import * as HooCheckboxStories from './HOOCheckbox.stories';
+
+<Meta of={HooCheckboxStories} />
+
+# HOOCheckbox
+
+## Arguments
+
+<ArgTypes of={HOOCheckbox} />
+
+export const Template = (args) => <HOOCheckbox {...args} />;
+
+<Canvas>
+  <Story of={HooCheckboxStories.Standard} />
+</Canvas>
+
+<Canvas>
+  <Story of={HooCheckboxStories.Disbled} />
+</Canvas>

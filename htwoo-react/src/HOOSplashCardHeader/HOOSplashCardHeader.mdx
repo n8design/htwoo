@@ -1,0 +1,26 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOSplashCardHeader from './HOOSplashCardHeader';
+import * as HooSplashCardHeaderStories from './HOOSplashCardHeader.stories';
+
+<Meta of={HooSplashCardHeaderStories} />
+
+# HOOSplashCardHeader
+
+## Arguments
+
+<ArgTypes of={HOOSplashCardHeader} />
+
+export const Template = (args) => <HOOSplashCardHeader {...args} />;
+
+## Basic
+
+<Canvas>
+  <Story of={HooSplashCardHeaderStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooSplashCardHeaderStories.Extending} />
+</Canvas>

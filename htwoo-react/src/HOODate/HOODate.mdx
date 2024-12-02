@@ -1,0 +1,40 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOODate from './HOODate';
+import * as HooDateStories from './HOODate.stories';
+
+<Meta of={HooDateStories} />
+
+# HOODate
+
+## Arguments
+
+Format value as YYYY-MM-DD. e.g. `(new Date()).toISOString().split('T')[0]`
+
+<ArgTypes of={HOODate} />
+
+export const Template = (args) => <HOODate {...args} />;
+
+## Standard
+
+<Canvas>
+  <Story of={HooDateStories.Standard} />
+</Canvas>
+
+## With Min/Max values set
+
+<Canvas>
+  <Story of={HooDateStories.MinMaxValues} />
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story of={HooDateStories.Disabled} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooDateStories.Extending} />
+</Canvas>

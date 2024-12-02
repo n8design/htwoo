@@ -1,0 +1,39 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOODialogActions from './HOODialogActions';
+import HOOButton, {HOOButtonType} from '../HOOButton';
+import * as HooDialogActionsStories from './HOODialogActions.stories';
+
+<Meta of={HooDialogActionsStories} />
+
+# HOODialogActions
+
+This example shows using a `HOOButton` component as the child(children) of the `HOODialogActions` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+## Arguments
+
+<ArgTypes of={HOODialogActions} />
+
+export const Template = (args) => {
+  const onClick = () => {
+    alert("Clicked");
+  }
+  symset.initSymbols();
+  return <HOODialogActions {...args} >
+    <HOOButton type={HOOButtonType.Icon} iconName='hoo-icon-close' onClick={onClick} />
+  </HOODialogActions>;
+};
+
+## Basic
+
+<Canvas>
+  <Story of={HooDialogActionsStories.Basic} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooDialogActionsStories.Extending} />
+</Canvas>

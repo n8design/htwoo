@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/blocks';
+import HOOAvatar, { HOOAvatarSize } from './HOOAvatar';
+import * as HooAvatarStories from './HOOAvatar.stories';
+
+<Meta of={HooAvatarStories} />
+
+# HOOAvatar
+
+Predefined enum defined for the supported avatar sizes:
+
+```ts
+export enum HOOAvatarSize {
+  Px16 = "16",
+  Px24 = "24",
+  Px32 = "32",
+  Px40 = "40",
+  Px48 = "48",
+  Px64 = "64",
+  Px72 = "72",
+  Px96 = "96",
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOAvatar} />
+
+export const Template = (args) => <HOOAvatar {...args} />;
+
+## Small - 16px
+
+<Canvas>
+  <Story of={HooAvatarStories.Small} />
+</Canvas>
+
+## Medium - 32px
+
+<Canvas>
+  <Story of={HooAvatarStories.Medium} />
+</Canvas>
+
+## Large - 64px
+
+<Canvas>
+  <Story of={HooAvatarStories.Large} />
+</Canvas>
+
+## Max - 96px
+
+<Canvas>
+  <Story of={HooAvatarStories.Max} />
+</Canvas>
+
+## Extending
+
+<Canvas>
+  <Story of={HooAvatarStories.Extending} />
+</Canvas>
