@@ -1,0 +1,37 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOInputDesc from './HOOInputDesc';
+
+<Meta title="Components/Inputs/HOOInputDesc" component={HOOInputDesc} />
+
+# HOOInputDesc
+
+
+## Arguments
+
+<ArgTypes of={HOOInputDesc} />
+
+export const Template = (args) => <HOOInputDesc {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { description: "My text input description" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      { description: "My text input description",
+        rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

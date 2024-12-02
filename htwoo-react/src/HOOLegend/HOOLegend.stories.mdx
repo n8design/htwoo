@@ -1,0 +1,37 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOLegend from './HOOLegend';
+
+<Meta title="Components/Inputs/HOOLegend" component={HOOLegend} />
+
+# HOOLegend
+
+
+## Arguments
+
+<ArgTypes of={HOOLegend} />
+
+export const Template = (args) => <HOOLegend {...args} />;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic"
+    args = { 
+      { legendText: "My Legend" }
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      { legendText: "My Legend",
+        rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

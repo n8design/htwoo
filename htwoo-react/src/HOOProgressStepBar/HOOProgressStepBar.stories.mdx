@@ -1,0 +1,42 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import HOOProgressStepBar from './HOOProgressStepBar';
+import HOOProgressBar from '../HOOProgressBar';
+import HOOProgressStep from '../HOOProgressStep';
+
+<Meta title="Components/Output/HOOProgressStepBar" component={HOOProgressStepBar} />
+
+# HOOProgressStepBar
+
+A HOOProgressStepBar component will isolate the child components passed to it looking for a HOOProgressBar and all instances of HOOProgressStep. The HOOProgressBar will be rendered and then the array of HOOProgressStep components below it. All other child components will be ignored.
+
+## Arguments
+
+<ArgTypes of={HOOProgressStepBar} />
+
+export const Template = (args) => <HOOProgressStepBar {...args}>
+  <HOOProgressBar value="25"/>
+  <HOOProgressStep label="Step 1" offsetPercent="20" />
+  <HOOProgressStep label="Step 2" offsetPercent="40" />
+  <HOOProgressStep label="Step 3" offsetPercent="60" />
+  <HOOProgressStep label="Step 4" offsetPercent="80" />
+</HOOProgressStepBar>;
+
+## Basic
+<Canvas>
+  <Story 
+    name="Basic">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Extending
+<Canvas>
+  <Story 
+    name="Extending"
+    args = { 
+      { rootElementAttributes: { style: { backgroundColor: "pink" } }}
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

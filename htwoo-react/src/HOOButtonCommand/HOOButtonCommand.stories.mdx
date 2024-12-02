@@ -2,7 +2,7 @@ import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { useArgs } from "@storybook/client-api";
 import { symset } from '../SymbolSet';
-import HOOButtonCommand from './HOOButtonCommand';
+import HOOButtonCommand, {HOOButtonCommandType} from './HOOButtonCommand';
 import HOOAvatar, {HOOAvatarSize} from '../HOOAvatar';
 
 <Meta title="Components/Buttons/HOOButtonCommand" component={HOOButtonCommand} />
@@ -15,6 +15,15 @@ import HOOAvatar, {HOOAvatarSize} from '../HOOAvatar';
 
 export const DefaultParams = {
   label: "Button",
+  flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
+  flyoutMenuItemClicked: (event, item) => {
+    console.alert(item.label);
+  }
+}
+export const HyperlinkParams = {
+  type: HOOButtonCommandType.Hyperlink,
+  label: "Hyperlink",
+  href: "https://lab.n8d.studio/htwoo",
   flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
   flyoutMenuItemClicked: (event, item) => {
     console.alert(item.label);
@@ -102,6 +111,21 @@ export const CustomTemplate = (args) => {
         const mergedArgs = JSON.parse(JSON.stringify(IconParams));
         mergedArgs["flyoutMenuItems"] = [];
         delete mergedArgs["flyoutMenuItemClicked"];
+        return mergedArgs;
+      })()
+    }>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Hyperlink
+<Canvas>
+  <Story 
+    name="Hyperlink"
+    args = { 
+      (function () {
+        symset.initSymbols();
+        const mergedArgs = JSON.parse(JSON.stringify(HyperlinkParams));
         return mergedArgs;
       })()
     }>
