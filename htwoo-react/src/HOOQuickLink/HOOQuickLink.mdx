@@ -1,0 +1,87 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOQuickLink, {HOOQuickLinkType, HOOQuickLinkStyle, HOOQuickLinkAlignment, HOOQuickLinkButtonLines, HOOQuickLinkImageSize} from './HOOQuickLink';
+import * as HooQuickLinkStories from './HOOQuickLink.stories';
+
+<Meta of={HooQuickLinkStories} />
+
+# HOOQuickLink
+
+Predefined enum defined for the supported button types:
+
+```ts
+export enum HOOQuickLinkType {
+  "Link",
+  "Compact",
+  "Grid",
+  "Button",
+  "Tile"
+}
+```
+
+Style options for the Quick Link Button type component:
+
+```ts
+export enum HOOQuickLinkStyle{ 
+  "Outline"="",
+  "Filled"="filled",
+  "None"="no-outline"
+}
+
+export enum HOOQuickLinkAlignment{
+  "Left"="",
+  "Center"="center"
+}
+
+export enum HOOQuickLinkButtonLines{
+  "Normal"="",
+  "One"="one-line",
+}
+```
+
+Image Size options for teh Quick Link Tile type component:
+
+```ts
+export enum HOOQuickLinkImageSize{
+  "Small"="",
+  "Medium"="img-m",
+  "Large"="img-l",
+  "XLarge"="img-xl",
+  "Fill"="img-fill",
+}
+```
+
+When the Quick Link element is not going to be hosted in a SharePoint page and you are using this component in conjunction with the `HOOQuickLinkGrid`, you need to add the columnSpan element to tell the grid how many columns the element will span.
+
+## Arguments
+
+<ArgTypes of={HOOQuickLink} />
+
+## Quick Link - Standard
+
+<Canvas of={HooQuickLinkStories.QuickLinkStandard} />
+
+## Quick Link - Compact
+
+<Canvas of={HooQuickLinkStories.QuickLinkCompact} />
+
+## Quick Link - Standard Edit Mode
+
+<Canvas of={HooQuickLinkStories.QuickLinkStandardEditMode} />
+
+## Quick Link - Button
+
+<Canvas of={HooQuickLinkStories.QuickLinkButton} />
+
+## Quick Link - Tile
+
+<Canvas of={HooQuickLinkStories.QuickLinkTile} />
+
+## Quick Link - Grid
+
+<Canvas of={HooQuickLinkStories.QuickLinkGrid} />
+
+## Extending the Quick Link component
+
+<Canvas of={HooQuickLinkStories.Extending} />

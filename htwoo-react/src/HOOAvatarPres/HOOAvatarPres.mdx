@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/blocks';
+import HOOAvatarPres from './HOOAvatarPres';
+import { HOOAvatarSize } from '../HOOAvatar';
+import { HOOPresenceStatus } from '../HOOPresence';
+import * as HooAvatarPresStories from './HOOAvatarPres.stories';
+
+<Meta of={HooAvatarPresStories} />
+
+# HOOAvatarPres
+
+See more information about the properties for the sub components:
+
+* [HOOAvatar](?path=/docs/atoms-avatar-hooavatar--standard-32-px)
+* [HOOPresence](?path=/docs/atoms-avatar-hoopresence--online)
+
+## Arguments
+
+<ArgTypes of={HOOAvatarPres} />
+
+## Basic - 32px
+
+<Canvas of={HooAvatarPresStories.Basic} />
+
+## Larger - 64px
+
+<Canvas of={HooAvatarPresStories.Larger} />
+
+## Extending
+
+<Canvas of={HooAvatarPresStories.Extending} />

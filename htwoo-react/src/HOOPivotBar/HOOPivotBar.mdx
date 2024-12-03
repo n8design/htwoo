@@ -1,0 +1,35 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { useArgs } from "@storybook/preview-api";
+import HOOPivotBar, {HOOPivotBarType} from './HOOPivotBar';
+import HOOLabel from '../HOOLabel';
+import * as HooPivotBarStories from './HOOPivotBar.stories';
+
+<Meta of={HooPivotBarStories} />
+
+# HOOPivotBar
+
+The `options` property requires an array of items of type `IHOOPivotItem`.
+
+```ts
+export interface IHOOPivotItem {
+  key: number | string;
+  text: string;
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOPivotBar} />
+
+## Basic
+
+<Canvas of={HooPivotBarStories.Basic} />
+
+## Overflow
+
+<Canvas of={HooPivotBarStories.Overflow} />
+
+## Extending
+
+<Canvas of={HooPivotBarStories.Extending} />

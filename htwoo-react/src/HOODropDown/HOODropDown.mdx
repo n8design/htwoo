@@ -1,0 +1,46 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOODropDown, {
+  IHOODropDownGroup,
+  IHOODropDownItem
+} from './HOODropDown';
+import * as HooDropDownStories from './HOODropDown.stories';
+
+<Meta of={HooDropDownStories} />
+
+# HOODropDown
+
+## Item Interface
+
+The `options` property should be of type `IHOODropDownItem`, or `IHOODropDownGroup` which then contains
+groupItems which is an array of `IHOODropDownItem` values. See defintions below:
+
+```ts
+export interface IHOODropDownItem {
+  key: string | number;
+  text: string;
+  disabled: boolean;
+}
+
+export interface IHOODropDownGroup {
+  groupName: string;
+  groupItems: IHOODropDownItem[];
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOODropDown} />
+
+## Standard
+
+<Canvas of={HooDropDownStories.Standard} />
+
+## Grouped
+
+<Canvas of={HooDropDownStories.Grouped} />
+
+## TypeAhead Feature
+
+<Canvas of={HooDropDownStories.TypeAheadFeature} />

@@ -1,0 +1,27 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOFlyoutMenu from './HOOFlyoutMenu';
+import * as HooFlyoutMenuStories from './HOOFlyoutMenu.stories';
+
+<Meta of={HooFlyoutMenuStories} />
+
+# HOOFlyoutMenu
+
+## Flyout Menu Items
+
+Context items can be passed to the component with as an array for IFlyoutMenuItems as defined:
+
+```ts
+export interface IHOOFlyoutMenuItem {
+  iconName: string;
+  label: string;
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOFlyoutMenu} />
+
+## Standard
+
+<Canvas of={HooFlyoutMenuStories.Standard} />

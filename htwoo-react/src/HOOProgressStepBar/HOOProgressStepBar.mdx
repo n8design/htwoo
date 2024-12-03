@@ -1,0 +1,24 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOProgressStepBar from './HOOProgressStepBar';
+import HOOProgressBar from '../HOOProgressBar';
+import HOOProgressStep from '../HOOProgressStep';
+import * as HooProgressStepBarStories from './HOOProgressStepBar.stories';
+
+<Meta of={HooProgressStepBarStories} />
+
+# HOOProgressStepBar
+
+A HOOProgressStepBar component will isolate the child components passed to it looking for a HOOProgressBar and all instances of HOOProgressStep. The HOOProgressBar will be rendered and then the array of HOOProgressStep components below it. All other child components will be ignored.
+
+## Arguments
+
+<ArgTypes of={HOOProgressStepBar} />
+
+## Basic
+
+<Canvas of={HooProgressStepBarStories.Basic} />
+
+## Extending
+
+<Canvas of={HooProgressStepBarStories.Extending} />

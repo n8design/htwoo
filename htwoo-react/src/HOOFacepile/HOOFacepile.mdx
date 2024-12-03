@@ -1,0 +1,31 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOFacepile from "./HOOFacepile"
+import HOOAvatarPres from '../HOOAvatarPres';
+import { HOOAvatarSize } from '../HOOAvatar';
+import { HOOPresenceStatus } from '../HOOPresence';
+import * as HooFacepileStories from './HOOFacepile.stories';
+
+<Meta of={HooFacepileStories} />
+
+# HOOFacepile
+
+[![Available in v1.7](https://img.shields.io/badge/💦%20Added%20Version-1.7-blue.svg?style=for-the-badge)](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)
+
+Pass in instances of `HOOAvatarPres` or `HOOAvatar` as children elements.
+
+See more information about the properties for the child components:
+
+* [HOOAvatarPres](?path=/docs/molecules-persona-hooavatarpres--basic)
+
+## Arguments
+
+<ArgTypes of={HOOFacepile} />
+
+### Basic
+
+<Canvas of={HooFacepileStories.Basic} />
+
+### Extending
+
+<Canvas of={HooFacepileStories.Extending} />

@@ -1,0 +1,61 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOShimmer, {
+  IHOOShimmerProps, HOOShimmerTheme, HOOShimmerShape
+} from './HOOShimmer';
+import * as HooShimmerStories from './HOOShimmer.stories';
+
+<Meta of={HooShimmerStories} />
+
+# HOOShimmer
+
+## Item Interface
+
+The `theme` property and the `shape` property have exported enums to help set the values. See defintions below:
+
+```ts
+export enum HOOShimmerTheme {
+  "None",
+  "Neutral",
+  "Primary",
+  "Fancy"
+}
+
+export enum HOOShimmerShape {
+  "Container",
+  "Circle",
+  "Row",
+  "Square",
+  "Image1:1",
+  "Image16:9",
+  "Image16:10"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOShimmer} />
+
+## Circle
+
+<Canvas of={HooShimmerStories.Circle} />
+
+## Row
+
+<Canvas of={HooShimmerStories.Row} />
+
+## Square
+
+<Canvas of={HooShimmerStories.Square} />
+
+## Image 16x9
+
+<Canvas of={HooShimmerStories.Image16X9} />
+
+## Multiple Shapes
+
+<Canvas of={HooShimmerStories.MultipleShapes} />
+
+## Extending
+
+<Canvas of={HooShimmerStories.Extending} />

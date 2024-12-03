@@ -1,0 +1,36 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOODocumentCard from './HOODocumentCard';
+import HOOCardImage from '../HOOCardImage';
+import HOOCardLocation from '../HOOCardLocation';
+import HOOCardTitle from '../HOOCardTitle';
+import HOOCardFooter from '../HOOCardFooter';
+import { HOOAvatarSize } from '../HOOAvatar';
+import * as HooDocumentCardStories from './HOODocumentCard.stories';
+
+<Meta of={HooDocumentCardStories} />
+
+# HOODocumentCard
+
+This example shows using a `HOOCardImage`, `HOOCardLocation`, `HOOCardTitle`, and `HOOCardFooter` components as the children of the `HOODocumentCard` component.
+
+## Children
+
+See more information about the properties for the sub components:
+
+* [HOOCardImage](?path=/docs/molecules-card-elements-hoocardimage--basic)
+* [HOOCardLocation](?path=/docs/molecules-card-elements-hoocardlocation--basic)
+* [HOOCardTitle](?path=/docs/molecules-card-elements-hoocardtitle--basic)
+* [HOOCardFooter](?path=/docs/molecules-card-elements-hoocardfooter--basic)
+
+## Arguments
+
+<ArgTypes of={HOODocumentCard} />
+
+## Basic
+
+<Canvas of={HooDocumentCardStories.Basic} />
+
+## Extending
+
+<Canvas of={HooDocumentCardStories.Extending} />

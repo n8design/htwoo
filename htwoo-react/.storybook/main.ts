@@ -2,14 +2,41 @@ import { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.stories.@(mdx)"
+    "../src/**/*.@(mdx)",
+    "../src/**/*.stories.js"
   ],
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     '@storybook/addon-a11y',
+    '@storybook/addon-webpack5-compiler-swc',
+    '@chromatic-com/storybook'
   ],
-  framework: { name: '@storybook/react-webpack5', options: {} }
+
+  framework: {
+    name: '@storybook/react-webpack5', options: {
+      builder: {
+        useSWC: true
+      }
+    }
+  },
+
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
+  
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 }
 export default config;
 

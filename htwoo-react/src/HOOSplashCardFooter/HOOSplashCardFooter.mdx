@@ -1,0 +1,24 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOSplashCardFooter from './HOOSplashCardFooter';
+import HOOButton, { HOOButtonType } from '../HOOButton';
+import * as HooSplashCardFooterStories from './HOOSplashCardFooter.stories';
+
+<Meta of={HooSplashCardFooterStories} />
+
+# HOOSplashCardFooter
+
+This example shows using two `HOOButton` components as the child(children) of the `HOOSplashCardFooter` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+## Arguments
+
+<ArgTypes of={HOOSplashCardFooter} />
+
+## Basic
+
+<Canvas of={HooSplashCardFooterStories.Basic} />
+
+## Extending
+
+<Canvas of={HooSplashCardFooterStories.Extending} />
