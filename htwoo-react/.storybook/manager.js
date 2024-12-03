@@ -1,4 +1,4 @@
-import { addons } from '@storybook/preview-api';
+import { addons } from '@storybook/manager-api';
 import hooTheme from './hootheme.js';
 
 addons.setConfig({

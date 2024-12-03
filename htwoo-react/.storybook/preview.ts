@@ -1,6 +1,11 @@
 import { Preview } from '@storybook/react';
+import hooTheme from './hootheme.js';
+
 const preview: Preview = {
   parameters: {
+    docs:{
+      theme: hooTheme,
+    },
     controls: {
       expanded: true
     },
