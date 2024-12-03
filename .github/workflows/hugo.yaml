@@ -121,5 +121,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v3
         with:
-          artifact_name: github-pages
+          artifact_name: site
           path: ./public
