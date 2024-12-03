@@ -37,7 +37,8 @@ export default class HOOProgressStep extends React.PureComponent<IHOOProgressSte
 
   public render(): React.ReactElement<IHOOProgressStepProps> {
     try {
-      let styleblock: React.CSSProperties = {"--step-offset": `${this.props.offsetPercent}%`};
+      let styleblock: React.CSSProperties = {};
+      styleblock["--step-offset"] = `${this.props.offsetPercent}%`;
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
