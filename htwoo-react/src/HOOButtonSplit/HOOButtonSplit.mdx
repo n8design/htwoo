@@ -24,29 +24,14 @@ export enum HOOButtonSplitType {
 
 <ArgTypes of={HOOButtonSplit} />
 
-export const DefaultParams = {
-  label: "Button",
-  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutContextItemsClicked: (event, item) => {
-    console.alert(item.label);
-  }
-}
-export const Template = (args) => <HOOButtonSplit {...args} />;
-
 ## Standard
 
-<Canvas>
-  <Story of={HooButtonSplitStories.Standard} />
-</Canvas>
+<Canvas of={HooButtonSplitStories.Standard} />
 
 ## Primary
 
-<Canvas>
-  <Story of={HooButtonSplitStories.Primary} />
-</Canvas>
+<Canvas of={HooButtonSplitStories.Primary} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooButtonSplitStories.Extending} />
-</Canvas>
+<Canvas of={HooButtonSplitStories.Extending} />

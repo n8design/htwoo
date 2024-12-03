@@ -15,22 +15,10 @@ A HOOProgressStepBar component will isolate the child components passed to it lo
 
 <ArgTypes of={HOOProgressStepBar} />
 
-export const Template = (args) => <HOOProgressStepBar {...args}>
-  <HOOProgressBar value="25"/>
-  <HOOProgressStep label="Step 1" offsetPercent="20" />
-  <HOOProgressStep label="Step 2" offsetPercent="40" />
-  <HOOProgressStep label="Step 3" offsetPercent="60" />
-  <HOOProgressStep label="Step 4" offsetPercent="80" />
-</HOOProgressStepBar>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooProgressStepBarStories.Basic} />
-</Canvas>
+<Canvas of={HooProgressStepBarStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooProgressStepBarStories.Extending} />
-</Canvas>
+<Canvas of={HooProgressStepBarStories.Extending} />

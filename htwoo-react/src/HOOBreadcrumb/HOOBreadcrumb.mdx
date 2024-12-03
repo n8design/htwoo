@@ -12,30 +12,18 @@ import * as HooBreadcrumbStories from './HOOBreadcrumb.stories';
 
 <ArgTypes of={HOOBreadcrumb} />
 
-export const buttonOptions = [{ key: 1, text: "Value 1" }, { key: 2, text: "Value 2" }, { key: 3, text: "Value 3" }];
-export const hyperlinkOptions = [{ key: 1, text: "Value 1", href: "#" }, { key: 2, text: "Value 2", href: "#" }, { key: 3, text: "Value 3", href: "#" }];
-export const Template = (args) => <HOOBreadcrumb {...args} />;
-
 ## Buttons
 
-<Canvas>
-  <Story of={HooBreadcrumbStories.Buttons} />
-</Canvas>
+<Canvas of={HooBreadcrumbStories.Buttons} />
 
 ## Buttons: Seperated
 
-<Canvas>
-  <Story of={HooBreadcrumbStories.ButtonsSeperated} />
-</Canvas>
+<Canvas of={HooBreadcrumbStories.ButtonsSeperated} />
 
 ## Hyperlink: Seperated
 
-<Canvas>
-  <Story of={HooBreadcrumbStories.HyperlinkSeperated} />
-</Canvas>
+<Canvas of={HooBreadcrumbStories.HyperlinkSeperated} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooBreadcrumbStories.Extending} />
-</Canvas>
+<Canvas of={HooBreadcrumbStories.Extending} />

@@ -12,23 +12,10 @@ import * as HooIconSplitStories from './HOOIconSplit.stories';
 
 <ArgTypes of={HOOIconSplit} />
 
-export const DefaultParams = {
-  label: "Button",
-  flyoutContextItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutContextItemsClicked: (event, item) => {
-    console.alert(item.label);
-  }
-}
-export const Template = (args) => <HOOIconSplit {...args} />;
-
 ## Icon
 
-<Canvas>
-  <Story of={HooIconSplitStories.Icon} />
-</Canvas>
+<Canvas of={HooIconSplitStories.Icon} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooIconSplitStories.Extending} />
-</Canvas>
+<Canvas of={HooIconSplitStories.Extending} />

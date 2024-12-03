@@ -29,35 +29,18 @@ See more information about the properties for the child components:
 
 <ArgTypes of={HOOTagList} />
 
-export const DefaultParams = {
-  tags: [
-    {text: "Tag A", linkUrl: "https://google.com", linkTarget: "_blank", onClick: () => {alert("Clicked Tag A")}},
-    {text: "Tag B", linkUrl: "https://google.com", linkTarget: "_blank", onClick: () => {alert("Clicked Tag B")}},
-    {text: "Tag C", linkUrl: "https://google.com", linkTarget: "_blank", onClick: () => {alert("Clicked Tag C")}}
-  ]
-};
-export const Template = (args) => <HOOTagList {...args} />;
-
 ### Primary - Button
 
-<Canvas>
-  <Story of={HooTagListStories.PrimaryButton} />
-</Canvas>
+<Canvas of={HooTagListStories.PrimaryButton} />
 
 ### Primary - Link
 
-<Canvas>
-  <Story of={HooTagListStories.PrimaryLink} />
-</Canvas>
+<Canvas of={HooTagListStories.PrimaryLink} />
 
 ### Static: Standard
 
-<Canvas>
-  <Story of={HooTagListStories.StaticStandard} />
-</Canvas>
+<Canvas of={HooTagListStories.StaticStandard} />
 
 ### Extending
 
-<Canvas>
-  <Story of={HooTagListStories.Extending} />
-</Canvas>
+<Canvas of={HooTagListStories.Extending} />

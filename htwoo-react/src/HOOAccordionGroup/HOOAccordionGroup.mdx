@@ -16,23 +16,10 @@ Accordion element that expands when the user clicks on the icon. Icon is automat
 
 <ArgTypes of={HOOAccordionGroup} />
 
-export const Template = (args) => <HOOAccordionGroup {...args} >
-  <HOOAccordion header="My Simple Accordion" iconName="hoo-icon-arrow-right" content="My Accordion details." />
-  <HOOAccordion header="Accordion with Children" iconName="hoo-icon-arrow-right">
-    <HOOLabel label="My Child Content"/>
-  </HOOAccordion>
-  <HOOAccordion header="Accordion No Icon" content="My Accordion details." />
-  <HOOAccordion header="Accordion Extended" content="My Accordion details." rootElementAttributes={{style: {backgroundColor: "lemonchiffon"}}} />
-</HOOAccordionGroup>;
-
 ## Simple
 
-<Canvas>
-  <Story of={HooAccordionGroupStories.Simple} />
-</Canvas>
+<Canvas of={HooAccordionGroupStories.Simple} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooAccordionGroupStories.Extending} />
-</Canvas>
+<Canvas of={HooAccordionGroupStories.Extending} />

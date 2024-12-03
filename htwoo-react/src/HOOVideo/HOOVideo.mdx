@@ -12,18 +12,10 @@ import * as HooVideoStories from './HOOVideo.stories';
 
 <ArgTypes of={HOOVideo} />
 
-export const Template = (args) => <HOOVideo {...args}>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si&#x3D;jNRCpQW6ukJ1Zunl&amp;autoplay&#x3D;1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</HOOVideo>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooVideoStories.Basic} />
-</Canvas>
+<Canvas of={HooVideoStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooVideoStories.Extending} />
-</Canvas>
+<Canvas of={HooVideoStories.Extending} />

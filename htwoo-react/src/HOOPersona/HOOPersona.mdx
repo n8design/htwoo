@@ -20,30 +20,18 @@ See more information about the properties for the child components:
 
 <ArgTypes of={HOOPersona} />
 
-export const Template = (args) => <HOOPersona {...args.root}>
-    <HOOAvatarPres imageSource={args.imageUrl} imageAlt="Placeholder Image" status={HOOPresenceStatus.Online}/>
-  </HOOPersona>;
-
 ## Basic - 32px
 
-<Canvas>
-  <Story of={HooPersonaStories.Basic} />
-</Canvas>
+<Canvas of={HooPersonaStories.Basic} />
 
 ## Larger - 48px
 
-<Canvas>
-  <Story of={HooPersonaStories.Larger} />
-</Canvas>
+<Canvas of={HooPersonaStories.Larger} />
 
 ## Full Size - 96px
 
-<Canvas>
-  <Story of={HooPersonaStories.FullSize} />
-</Canvas>
+<Canvas of={HooPersonaStories.FullSize} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooPersonaStories.Extending} />
-</Canvas>
+<Canvas of={HooPersonaStories.Extending} />

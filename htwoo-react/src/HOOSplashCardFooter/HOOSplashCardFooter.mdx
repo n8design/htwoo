@@ -15,19 +15,10 @@ In reality you can put whatever DOM elements you want inside it the component th
 
 <ArgTypes of={HOOSplashCardFooter} />
 
-export const Template = (args) => <HOOSplashCardFooter {...args}>
-  <HOOButton type={HOOButtonType.Primary} label="Create Something" onClick={() => { alert("Clicked"); }} />
-  <HOOButton type={HOOButtonType.Standard} label="Call to Action" onClick={() => { alert("Clicked"); }} />
-</HOOSplashCardFooter>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooSplashCardFooterStories.Basic} />
-</Canvas>
+<Canvas of={HooSplashCardFooterStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooSplashCardFooterStories.Extending} />
-</Canvas>
+<Canvas of={HooSplashCardFooterStories.Extending} />

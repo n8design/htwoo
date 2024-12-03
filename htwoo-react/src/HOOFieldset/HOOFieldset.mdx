@@ -18,41 +18,18 @@ A HOOFieldset component will create a HOOLegend component and then render all ch
 
 <ArgTypes of={HOOFieldset} />
 
-export const Template = (args) => <HOOFieldset {...args}>
-<HOOField>
-  <HOOLabel label='My Field A' />
-  <HOOInputDesc description='My field A description' />
-  <HOOText value="Temp"/>
-  <HOOValidationMsg validationMsg='My Validation Message'/>
-</HOOField>
-<HOOField>
-  <HOOLabel label='My Field B' />
-  <HOOInputDesc description='My field B description' />
-  <HOOText value="Temp"/>
-  <HOOValidationMsg validationMsg='My Validation Message'/>
-</HOOField>
-</HOOFieldset>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooFieldsetStories.Basic} />
-</Canvas>
+<Canvas of={HooFieldsetStories.Basic} />
 
 ## No Outline
 
-<Canvas>
-  <Story of={HooFieldsetStories.NoOutline} />
-</Canvas>
+<Canvas of={HooFieldsetStories.NoOutline} />
 
 ## Raised
 
-<Canvas>
-  <Story of={HooFieldsetStories.Raised} />
-</Canvas>
+<Canvas of={HooFieldsetStories.Raised} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooFieldsetStories.Extending} />
-</Canvas>
+<Canvas of={HooFieldsetStories.Extending} />

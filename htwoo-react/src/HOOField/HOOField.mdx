@@ -17,21 +17,10 @@ A HOOField component will isolate the child components passed to it looking for 
 
 <ArgTypes of={HOOField} />
 
-export const Template = (args) => <HOOField {...args}>
-  <HOOLabel label='My Field' />
-  <HOOInputDesc description='My field description' />
-  <HOOText value="Temp"/>
-  <HOOValidationMsg validationMsg='My Validation Message'/>
-</HOOField>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooFieldStories.Basic} />
-</Canvas>
+<Canvas of={HooFieldStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooFieldStories.Extending} />
-</Canvas>
+<Canvas of={HooFieldStories.Extending} />

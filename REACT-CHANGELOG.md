@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 2.5.13 - 2024-Dec-XX
+## 2.6.0 - 2024-Dec-XX
+
+>In support of HTWOO-CORE v2.7.0
 
 - HOOButtonCommand - Added optional Hyperlink button type.
 - HOOInputDesc - Added new atom for field types, used to add a description for an input element.
@@ -17,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - HOOProgressBar - Added new atom for progress bar, used to show progress to completion.
 - HOOProgressStep - Added as a component of the HOOProgressStepBar, to show markers for steps in progress.
 - HOOProgressStepBar - Added a new molecule for a progress bar broken into steps of various sizes based on number of HOOProgressStep components included as children.
+- HOOFile - Added new file upload molecule for handling drag/drop file uploads.
 
 ## 2.5.12 - 2024-Nov-01
 

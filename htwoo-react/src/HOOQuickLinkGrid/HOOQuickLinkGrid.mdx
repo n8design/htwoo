@@ -22,36 +22,14 @@ export enum HOOQuickLinkType {
 
 <ArgTypes of={HOOQuickLinkGrid} />
 
-export const Template = (args) => <HOOQuickLinkGrid {...args}>
-  <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 1' description="Details about my quick link item" columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 2' description="Details about my quick link item" columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 3' description="Details about my quick link item" columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 4' description="Details about my quick link item" columnSpan= "auto / span 4"/>  
-  <HOOQuickLink type={HOOQuickLinkType.Link} iconName="hoo-icon-ninjacat" title='Quick Link Item 5' description="Details about my quick link item" columnSpan= "auto / span 4" rootElementAttributes={{style: { backgroundColor: "lemonchiffon" }}}/>
-</HOOQuickLinkGrid>;
-
-export const Template2 = (args) => <HOOQuickLinkGrid {...args}>
-  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" title='Quick Link Item 1' columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" title='Quick Link Item 2' columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" title='Quick Link Item 3' columnSpan= "auto / span 4"/>
-  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" title='Quick Link Item 4' columnSpan= "auto / span 4"/>  
-  <HOOQuickLink type={HOOQuickLinkType.Grid} iconSrc="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" title='Quick Link Item 5' columnSpan= "auto / span 4" rootElementAttributes={{style: { backgroundColor: "lemonchiffon" }}}/>
-</HOOQuickLinkGrid>;
-
 ## Quick Link Grid - Links
 
-<Canvas>
-  <Story of={HooQuickLinkGridStories.QuickLinkGridLinks} />
-</Canvas>
+<Canvas of={HooQuickLinkGridStories.QuickLinkGridLinks} />
 
 ## Quick Link Grid - Grid
 
-<Canvas>
-  <Story of={HooQuickLinkGridStories.QuickLinkGridGrid} />
-</Canvas>
+<Canvas of={HooQuickLinkGridStories.QuickLinkGridGrid} />
 
 ## Extending the Quick Link Grid component
 
-<Canvas>
-  <Story of={HooQuickLinkGridStories.Extending} />
-</Canvas>
+<Canvas of={HooQuickLinkGridStories.Extending} />

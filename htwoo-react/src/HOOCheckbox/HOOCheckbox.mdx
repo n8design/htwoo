@@ -11,12 +11,6 @@ import * as HooCheckboxStories from './HOOCheckbox.stories';
 
 <ArgTypes of={HOOCheckbox} />
 
-export const Template = (args) => <HOOCheckbox {...args} />;
+<Canvas of={HooCheckboxStories.Standard} />
 
-<Canvas>
-  <Story of={HooCheckboxStories.Standard} />
-</Canvas>
-
-<Canvas>
-  <Story of={HooCheckboxStories.Disbled} />
-</Canvas>
+<Canvas of={HooCheckboxStories.Disbled} />

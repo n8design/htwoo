@@ -1,4 +1,4 @@
-import { useArgs } from "@storybook/client-api";
+import { useArgs } from "@storybook/preview-api";
 import { symset } from "../SymbolSet";
 import HOOButtonCommand, { HOOButtonCommandType } from "./HOOButtonCommand";
 import HOOAvatar, { HOOAvatarSize } from "../HOOAvatar";

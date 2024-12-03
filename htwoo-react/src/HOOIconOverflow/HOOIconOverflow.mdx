@@ -16,19 +16,10 @@ Enabling flyout menu depends on passing an instance of `HOOFlyoutMenu` as a chil
 
 <ArgTypes of={HOOIconOverflow} />
 
-export const OverflowTemplate = (args) => <HOOIconOverflow {...args}>
-    <HOOFlyoutMenu contextItems={[{ iconName: 'hoo-icon-ninjacat', label: 'First Element' }, { iconName: 'hoo-icon-ninjacat', label: 'Second Element' }]} 
-    contextItemClicked={(ev, contextItem) => { alert(JSON.stringify(contextItem)) }}/>
-  </HOOIconOverflow>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooIconOverflowStories.Basic} />
-</Canvas>
+<Canvas of={HooIconOverflowStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooIconOverflowStories.Extending} />
-</Canvas>
+<Canvas of={HooIconOverflowStories.Extending} />

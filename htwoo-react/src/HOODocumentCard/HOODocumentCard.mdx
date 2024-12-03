@@ -27,26 +27,10 @@ See more information about the properties for the sub components:
 
 <ArgTypes of={HOODocumentCard} />
 
-export const Template = (args) => <HOODocumentCard {...args}>
-  <HOOCardImage imageSource="https://lab.n8d.studio/htwoo/htwoo-core/images/card-images/coffee-image.jpg" imageAlt="Kitten" />
-  <HOOCardLocation location="My Location Card" />
-  <HOOCardTitle title="My Card Title" />
-  <HOOCardFooter
-    avatarImage="https://lab.n8d.studio/htwoo/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg"
-    avatarImageAlt="Kitty"
-    avatarImageSize={HOOAvatarSize.Px32}
-    name="Mr. Bigglesworth"
-    modified="December 31, 2021" />
-</HOODocumentCard>;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooDocumentCardStories.Basic} />
-</Canvas>
+<Canvas of={HooDocumentCardStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooDocumentCardStories.Extending} />
-</Canvas>
+<Canvas of={HooDocumentCardStories.Extending} />

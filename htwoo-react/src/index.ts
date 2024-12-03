@@ -36,6 +36,7 @@ export * from './HOODropDown';
 export * from './HOOFacepile';
 export * from './HOOField';
 export * from './HOOFieldset';
+export * from './HOOFile';
 export * from './HOOFlyoutMenu';
 export * from './HOOIcon';
 export * from './HOOIconOverflow';

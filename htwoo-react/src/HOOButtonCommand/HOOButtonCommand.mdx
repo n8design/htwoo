@@ -1,7 +1,5 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/blocks';
-import { useArgs } from "@storybook/client-api";
-import { symset } from '../SymbolSet';
 import HOOButtonCommand, {HOOButtonCommandType} from './HOOButtonCommand';
 import HOOAvatar, {HOOAvatarSize} from '../HOOAvatar';
 import * as HooButtonCommandStories from './HOOButtonCommand.stories';
@@ -14,84 +12,30 @@ import * as HooButtonCommandStories from './HOOButtonCommand.stories';
 
 <ArgTypes of={HOOButtonCommand} />
 
-export const DefaultParams = {
-  label: "Button",
-  flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutMenuItemClicked: (event, item) => {
-    console.alert(item.label);
-  }
-}
-export const HyperlinkParams = {
-  type: HOOButtonCommandType.Hyperlink,
-  label: "Hyperlink",
-  href: "https://lab.n8d.studio/htwoo",
-  flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutMenuItemClicked: (event, item) => {
-    console.alert(item.label);
-  }
-}
-export const IconParams = {
-  iconName: 'hoo-icon-plus',
-  onClick: (event) => {
-    console.alert("Clicked");
-  },
-  flyoutMenuItems: [{ iconName: 'hoo-icon-plus', label: 'First Element' }, { iconName: 'hoo-icon-plus', label: 'Second Element' }],
-  flyoutMenuItemClicked: (event, item) => {
-    console.alert(item.label);
-  }
-}
-export const CustomParams = {}
-
-export const Template = (args) => <HOOButtonCommand {...args} />;
-export const CustomTemplate = (args) => {
-  const [_, updateArgs] = useArgs();
-
-  const handle = (ev) => {
-    alert(`Custom event clicked`);
-    updateArgs({ ...args });
-  };
-
-  return <HOOButtonCommand {...args}><HOOAvatar size={HOOAvatarSize.Px32} imageSource="https://lab.n8d.studio/htwoo/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg" imageAlt="Placeholder Image" onClick={handle} /></HOOButtonCommand>;
-};
-
 ## Standard
 
-<Canvas>
-  <Story of={HooButtonCommandStories.Standard} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.Standard} />
 
 ## No Flyout Menu
 
-<Canvas>
-  <Story of={HooButtonCommandStories.StandardNoFlyoutMenu} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.StandardNoFlyoutMenu} />
 
 ## Icon Command Button - With Flyout
 
-<Canvas>
-  <Story of={HooButtonCommandStories.IconCommand} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.IconCommand} />
 
 ## Icon Command Button - No Flyout
 
-<Canvas>
-  <Story of={HooButtonCommandStories.IconCommandNoFlyoutMenu} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.IconCommandNoFlyoutMenu} />
 
 ## Hyperlink
 
-<Canvas>
-  <Story of={HooButtonCommandStories.Hyperlink} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.Hyperlink} />
 
 ## Custom Command Button
 
-<Canvas>
-  <Story of={HooButtonCommandStories.CustomCommandButton} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.CustomCommandButton} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooButtonCommandStories.Extending} />
-</Canvas>
+<Canvas of={HooButtonCommandStories.Extending} />

@@ -13,28 +13,18 @@ Format value as hh:mm:ss. e.g. `(new Date()).toISOString().split('T')[1]`
 
 <ArgTypes of={HOOTime} />
 
-export const Template = (args) => <HOOTime {...args} />;
-
 ## Basic
 
-<Canvas>
-  <Story of={HooTimeStories.Basic} />
-</Canvas>
+<Canvas of={HooTimeStories.Basic} />
 
 ## With Min/Max values set
 
-<Canvas>
-  <Story of={HooTimeStories.MinMaxValues} />
-</Canvas>
+<Canvas of={HooTimeStories.MinMaxValues} />
 
 ## Disabled
 
-<Canvas>
-  <Story of={HooTimeStories.Disabled} />
-</Canvas>
+<Canvas of={HooTimeStories.Disabled} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooTimeStories.Extending} />
-</Canvas>
+<Canvas of={HooTimeStories.Extending} />

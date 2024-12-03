@@ -1,6 +1,6 @@
 import { ArgTypes } from '@storybook/blocks';
 import { Meta, Story, Canvas } from '@storybook/blocks';
-import { useArgs } from "@storybook/client-api";
+import { useArgs } from "@storybook/preview-api";
 import HOOPivotBar, {HOOPivotBarType} from './HOOPivotBar';
 import HOOLabel from '../HOOLabel';
 import * as HooPivotBarStories from './HOOPivotBar.stories';
@@ -22,32 +22,14 @@ export interface IHOOPivotItem {
 
 <ArgTypes of={HOOPivotBar} />
 
-export const options = [{ key: 1, text: "Menu 1" }, { key: 2, text: "Menu 2" }, { key: 3, text: "Menu 3" }, { key: 4, text: "Menu 4" }, { key: 5, text: "Menu 5" }];
-export const Template = (args) => {
-  const [_, updateArgs] = useArgs();
-
-  const handle = (ev, key) => {
-    args.selectedKey = key;
-    updateArgs({ ...args });
-  };
-
-  return <HOOPivotBar {...args} onClick={handle} />;
-};
-
 ## Basic
 
-<Canvas>
-  <Story of={HooPivotBarStories.Basic} />
-</Canvas>
+<Canvas of={HooPivotBarStories.Basic} />
 
 ## Overflow
 
-<Canvas>
-  <Story of={HooPivotBarStories.Overflow} />
-</Canvas>
+<Canvas of={HooPivotBarStories.Overflow} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooPivotBarStories.Extending} />
-</Canvas>
+<Canvas of={HooPivotBarStories.Extending} />

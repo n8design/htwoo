@@ -16,24 +16,10 @@ In reality you can put whatever DOM elements you want inside it the component th
 
 <ArgTypes of={HOODialogActions} />
 
-export const Template = (args) => {
-  const onClick = () => {
-    alert("Clicked");
-  }
-  symset.initSymbols();
-  return <HOODialogActions {...args} >
-    <HOOButton type={HOOButtonType.Icon} iconName='hoo-icon-close' onClick={onClick} />
-  </HOODialogActions>;
-};
-
 ## Basic
 
-<Canvas>
-  <Story of={HooDialogActionsStories.Basic} />
-</Canvas>
+<Canvas of={HooDialogActionsStories.Basic} />
 
 ## Extending
 
-<Canvas>
-  <Story of={HooDialogActionsStories.Extending} />
-</Canvas>
+<Canvas of={HooDialogActionsStories.Extending} />
