@@ -121,5 +121,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          name: github-pages
+          name: site
           path: ./public
