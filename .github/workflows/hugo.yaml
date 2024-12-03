@@ -119,7 +119,7 @@ jobs:
         run: ls -la ./public
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/upload-artifact@v4
+        uses: actions/deploy-pages@v4
         with:
-          # name: htwoo-site
+          name: htwoo-site
           path: ./public
