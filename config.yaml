@@ -31,6 +31,7 @@ params:
 #     parser:
 #       wrapStandAloneImageWithinParagraph: false
 
+
 mount:
   - source: static
     target: static
