@@ -121,5 +121,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          name: htwoo-site
-          path: ./public
+          publish_dir: ./public
