@@ -23,7 +23,6 @@ params:
   dateFormat: "January 2, 2006"
   localSVGPath: "static"
   
-
 # enable full markup
 # markup:
 #   goldemark:
@@ -48,3 +47,4 @@ markup:
       hardWraps: false
       unsafe: true
       xhtml: false
+      
