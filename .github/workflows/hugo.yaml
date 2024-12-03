@@ -121,5 +121,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          name: site
+          artifact_name: site
           path: ./public
