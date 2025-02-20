@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.7.0 - 2025-Feb-19
+
+- HOODate - new optional boolean property `supportTime`, when set to tru will make type of input `datetime-local` instead of `date`. If unset, value is false.
+- SPFxThemes - Support for TeamsJS SDK v2+ reference to Microsoft Teams theme.
+
 ## 2.6.0 - 2024-Dec-03
 
 >In support of HTWOO-CORE v2.7.0

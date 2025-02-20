@@ -83,7 +83,9 @@ export class SPFxThemes implements ISPFxThemes {
 
       //Support Microsoft Teams context
       if (this._microsoftTeams) {
-        switch (this._microsoftTeams.context.theme) {
+        // Add support for TeamsJS v2
+        const themeName = this._microsoftTeams.context?.theme || this._microsoftTeams.app?.theme;
+        switch (themeName) {
           case "dark": {
             this._domElement.classList.add("dark-mode");
             this.setCSSVariables(darkModeTheme);
