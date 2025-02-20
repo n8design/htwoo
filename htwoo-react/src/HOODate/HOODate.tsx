@@ -24,6 +24,10 @@ export interface IHOODateProps extends IHOOStandardProps {
   */
   forId?: string;
   /**
+   * (Optional) Add support date and time in local format, default false.
+  */
+  supportTime?: boolean;
+  /**
    * Change event handler
   */
   onChange: React.ChangeEventHandler<HTMLInputElement>;
@@ -73,7 +77,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
           id={this._dateId}
           {...this._rootProps}
           {...this.props.rootElementAttributes}
-          type="date"
+          type={(this.props.supportTime == null || this.props.supportTime == false)?"date":"datetime-local"}
           value={this.props.value}
           className={className}
           min={minValue}
