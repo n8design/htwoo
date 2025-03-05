@@ -1,4 +1,5 @@
 export interface IHOOTheme {
+  'hoo-theme': string;
   accentButtonBackground: string;
   accentButtonText: string;
   actionLink: string;

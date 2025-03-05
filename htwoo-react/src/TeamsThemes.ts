@@ -1,6 +1,7 @@
 import { IHOOTheme } from "./common/IHOOTheme";
 
 export const lightModeTheme: IHOOTheme = {
+  'hoo-theme': "teams-light",
   primaryBackground: "#ffffff",
   primaryText: "#323130",
   themeDarker: "#4b3867",
@@ -159,6 +160,7 @@ export const lightModeTheme: IHOOTheme = {
 };
 
 export const darkModeTheme: IHOOTheme = {
+  'hoo-theme': "teams-dark ",
   themeDarker: "#37385d",
   themeDark: "#4a4c7e",
   themeDarkAlt: "#585a95",
@@ -317,6 +319,7 @@ export const darkModeTheme: IHOOTheme = {
 };
 
 export const highContrastTheme: IHOOTheme = {
+  'hoo-theme': "teams-high-contrast ",
   themeDarker: "#ffe092",
   themeDark: "#ffd56c",
   themeDarkAlt: "#ffce51",
