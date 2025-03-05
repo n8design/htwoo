@@ -102,6 +102,7 @@ export class SPFxThemes implements ISPFxThemes {
           }
         }
       }
+
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (initThemeHandler) - ${err}`);
     }
