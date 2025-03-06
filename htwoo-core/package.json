@@ -54,7 +54,7 @@
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
     "autoprefixer": "^10.4.20",
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-if": "^3.0.0",
     "gulp-load-plugins": "^2.0.8",

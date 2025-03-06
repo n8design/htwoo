@@ -16,4 +16,6 @@ for file in *.scss; do
     sass --style=compressed --no-source-map $file ../output/$newFile
     echo "-------"
 done
-
+PWD
+sass --style=compressed --no-source-map ../sass/_htwoo-core.scss ../output/htwoo-core.css
+sass --style=compressed --no-source-map ../sass/htwoo.min.scss ../output/htwoo-core.min.css
