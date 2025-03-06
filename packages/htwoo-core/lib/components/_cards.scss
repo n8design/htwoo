@@ -1,8 +1,8 @@
 // MOLECULES
-@use "../sass/02-molecules/card-elements/index";
+@use "../sass/02-molecules/card-elements/index" as card-elements;
 // ORGANISMS
-@use "../sass/03-organism/cards/index";
+@use "../sass/03-organism/cards/index" as cards;
 // TEMPLATES
-@use "../sass/04-templates/card-grid";
-@use "../sass/04-templates/teams-dashboard";
-@use "../sass/04-templates/teams-splash";
+@use "../sass/04-templates/card-grid" as card-grid;
+@use "../sass/04-templates/teams-dashboard" as teams-dashboard;
+@use "../sass/04-templates/teams-splash" as teams-splash;
