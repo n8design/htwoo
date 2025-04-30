@@ -17,7 +17,7 @@ export interface IHOOAccordionProps extends IHOOStandardProps {
   */
   content?: string;
   /** 
-   * (Optional) Should accordion be forced open 
+   * (Optional) Should accordion be forced open
    * */
   open?: boolean;
   /**
@@ -48,11 +48,9 @@ export default class HOOAccordion extends React.PureComponent<IHOOAccordionProps
   public render(): React.ReactElement<IHOOAccordionProps> {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-      const open = {};
-      if (this.props.open) { open["open"] = true; }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <details data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} {...open} className={className}>
+        <details data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} open={this.props.open} className={className}>
           <summary className="hoo-accordion-header">
             <div className="hoo-accordion-summary">
               {this.props.iconName &&
