@@ -9,6 +9,7 @@ const Template = (args) => (
       header="My Simple Accordion"
       iconName="hoo-icon-arrow-right"
       content="My Accordion details."
+      open={true}
     />
     <HOOAccordion
       header="Accordion with Children"
