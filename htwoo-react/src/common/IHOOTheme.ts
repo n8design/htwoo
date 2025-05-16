@@ -131,8 +131,6 @@ export interface IHOOTheme {
   orange: string;
   orangeLight: string;
   orangeLighter: string;
-  primaryBackground: string;
-  primaryText: string;
   purple: string;
   purpleDark: string;
   purpleLight: string;
