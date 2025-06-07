@@ -1,0 +1,7 @@
+{
+    "name": "htwoo",
+    "private": true,
+    "workspaces": [
+        "htwoo-*"
+    ]
+}
