@@ -1,1 +1,0 @@
-<input type="time" class="hoo-input-time" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} name="{{ name }}" value="{{ value }}" min="{{ min-value }}" max="{{ max-value }}" {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}} {{{ html-props }}}>
