@@ -1,0 +1,36 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { useArgs } from "@storybook/preview-api";
+import { symset } from '../SymbolSet';
+import HOOCommandBar, {HOOCommandBarType} from './HOOCommandBar';
+import HOOLabel from '../HOOLabel';
+import * as HooCommandBarStories from './HOOCommandBar.stories';
+
+<Meta of={HooCommandBarStories} />
+
+# HOOCommandBar
+
+The `options` property requires an array of items of type `IHOOCommandItem`.
+
+```ts
+export interface IHOOCommandItem {
+  key: number | string;
+  text: string;
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOCommandBar} />
+
+## Basic
+
+<Canvas of={HooCommandBarStories.Basic} />
+
+## Overflow
+
+<Canvas of={HooCommandBarStories.Overflow} />
+
+## Extending
+
+<Canvas of={HooCommandBarStories.Extending} />

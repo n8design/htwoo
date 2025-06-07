@@ -1,0 +1,24 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOONumber from './HOONumber';
+import * as HooNumberStories from './HOONumber.stories';
+
+<Meta of={HooNumberStories} />
+
+# HOONumber
+
+## Arguments
+
+<ArgTypes of={HOONumber} />
+
+## Basic
+
+<Canvas of={HooNumberStories.Basic} />
+
+## Disabled
+
+<Canvas of={HooNumberStories.Disabled} />
+
+## Extending
+
+<Canvas of={HooNumberStories.Extending} />

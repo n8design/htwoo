@@ -1,0 +1,35 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOFieldset, { HOOFieldsetType } from './HOOFieldset';
+import HOOField from '../HOOField';
+import HOOLabel from '../HOOLabel';
+import HOOInputDesc from '../HOOInputDesc';
+import HOOText from '../HOOText';
+import HOOValidationMsg from '../HOOValidationMsg';
+import * as HooFieldsetStories from './HOOFieldset.stories';
+
+<Meta of={HooFieldsetStories} />
+
+# HOOFieldset
+
+A HOOFieldset component will create a HOOLegend component and then render all child elements below it.
+
+## Arguments
+
+<ArgTypes of={HOOFieldset} />
+
+## Basic
+
+<Canvas of={HooFieldsetStories.Basic} />
+
+## No Outline
+
+<Canvas of={HooFieldsetStories.NoOutline} />
+
+## Raised
+
+<Canvas of={HooFieldsetStories.Raised} />
+
+## Extending
+
+<Canvas of={HooFieldsetStories.Extending} />

@@ -1,0 +1,32 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOAccordion from './HOOAccordion';
+import HOOLabel from '../HOOLabel';
+import * as HooAccordionStories from './HOOAccordion.stories';
+
+<Meta of={HooAccordionStories} />
+
+# HOOAccordion
+
+Accordion element that expands when the user clicks on the header. If the icon is present it is rotated 90deg when item is expanded.
+
+## Arguments
+
+<ArgTypes of={HOOAccordion} />
+
+## Simple
+
+<Canvas of={HooAccordionStories.Simple} />
+
+## Content Children
+
+<Canvas of={HooAccordionStories.ContentWChildrenElements} />
+
+## No Icon
+
+<Canvas of={HooAccordionStories.NoIcon} />
+
+## Extending
+
+<Canvas of={HooAccordionStories.Extending} />

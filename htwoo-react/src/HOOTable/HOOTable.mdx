@@ -1,0 +1,39 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOTable, {
+  IHOOTableProps, HOOTableStyle
+} from './HOOTable';
+import * as HooTableStories from './HOOTable.stories';
+
+<Meta of={HooTableStories} />
+
+# HOOTable
+
+## Item Interface
+
+The `tableStyle` property has an exported enum to help set the values. See defintions below:
+
+```ts
+export enum HOOTableStyle {
+  "Normal",
+  "Compact"
+}
+```
+
+To use, include table layout as children of the HOOTable component.
+
+## Arguments
+
+<ArgTypes of={HOOTable} />
+
+## Normal
+
+<Canvas of={HooTableStories.Normal} />
+
+## Compact
+
+<Canvas of={HooTableStories.Compact} />
+
+## Extending
+
+<Canvas of={HooTableStories.Extending} />

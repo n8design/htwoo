@@ -1,0 +1,45 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOTag, {HOOTagType, HOOTagStyle} from './HOOTag';
+import * as HooTagStories from './HOOTag.stories';
+
+<Meta of={HooTagStories} />
+
+# HOOTag
+
+[![Available in v1.1](https://img.shields.io/badge/💦%20Added%20Version-1.1-blue.svg?style=for-the-badge)](https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md)
+
+Predefined enum defined for the supported tag types and styles:
+
+```ts
+export enum HOOTagType {
+  Button = "button",
+  Link = "link",
+  Static = "static"
+}
+
+export enum HOOTagStyle {
+  Primary = "primary",
+  Standard = "standard"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOTag} />
+
+### Primary - Button
+
+<Canvas of={HooTagStories.PrimaryButton} />
+
+### Primary - Link
+
+<Canvas of={HooTagStories.PrimaryLink} />
+
+### Static: Standard
+
+<Canvas of={HooTagStories.StaticStandard} />
+
+### Extending
+
+<Canvas of={HooTagStories.Extending} />

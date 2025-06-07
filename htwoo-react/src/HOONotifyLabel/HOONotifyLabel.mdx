@@ -1,0 +1,35 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOONotifyLabel, {
+  HOONotifyType
+} from './HOONotifyLabel';
+import * as HooNotifyLabelStories from './HOONotifyLabel.stories';
+
+<Meta of={HooNotifyLabelStories} />
+
+# HOONotifyLabel
+
+Predefined enum defined for the supported notification types:
+
+```ts
+export enum HOONotifyType {
+  "Success",
+  "Error"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOONotifyLabel} />
+
+## Success
+
+<Canvas of={HooNotifyLabelStories.Success} />
+
+## Error
+
+<Canvas of={HooNotifyLabelStories.Error} />
+
+## Extending
+
+<Canvas of={HooNotifyLabelStories.Extending} />

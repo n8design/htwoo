@@ -1,0 +1,37 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { symset } from '../SymbolSet';
+import HOOButtonSplit, {
+  IHOOButtonSplitProps,
+  HOOButtonSplitType
+} from './HOOButtonSplit';
+import * as HooButtonSplitStories from './HOOButtonSplit.stories';
+
+<Meta of={HooButtonSplitStories} />
+
+# HOOButtonSplit
+
+Predefined enum defined for the supported split button types:
+
+```ts
+export enum HOOButtonSplitType {
+  "Standard",
+  "Primary"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOButtonSplit} />
+
+## Standard
+
+<Canvas of={HooButtonSplitStories.Standard} />
+
+## Primary
+
+<Canvas of={HooButtonSplitStories.Primary} />
+
+## Extending
+
+<Canvas of={HooButtonSplitStories.Extending} />

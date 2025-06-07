@@ -1,0 +1,47 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOText from './HOOText';
+import * as HooTextStories from './HOOText.stories';
+
+<Meta of={HooTextStories} />
+
+# HOOText
+
+Supports html input types:
+
+* text (default)
+* email
+* phone
+* url
+
+## Arguments
+
+<ArgTypes of={HOOText} />
+
+## Basic
+
+<Canvas of={HooTextStories.Basic} />
+
+## Disabled
+
+<Canvas of={HooTextStories.Disabled} />
+
+## Prefix
+
+<Canvas of={HooTextStories.Prefix} />
+
+## Suffix
+
+<Canvas of={HooTextStories.Suffix} />
+
+## Prefix/Suffix
+
+<Canvas of={HooTextStories.PrefixSuffix} />
+
+## Multiline
+
+<Canvas of={HooTextStories.MultilineTextbox} />
+
+## Extending
+
+<Canvas of={HooTextStories.Extending} />

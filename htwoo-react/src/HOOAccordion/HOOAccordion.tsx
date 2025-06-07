@@ -1,6 +1,7 @@
 import * as React from "react";
 import { IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon";
+import { isEqual } from "../common/Common";
 
 export interface IHOOAccordionProps extends IHOOStandardProps {
   /**
@@ -15,6 +16,10 @@ export interface IHOOAccordionProps extends IHOOStandardProps {
    * (Optional) Accordion item content as a string of text. If omitted child elements will be rendered.
   */
   content?: string;
+  /** 
+   * (Optional) Should accordion be forced open
+   * */
+  open?: boolean;
   /**
    * (Optional) HTMLDetailsElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-accordion {rootElementAttributes.class}
@@ -45,7 +50,7 @@ export default class HOOAccordion extends React.PureComponent<IHOOAccordionProps
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       return (
-        <details data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} className={className}>
+        <details data-component={this.LOG_SOURCE} {...this.props.rootElementAttributes} open={this.props.open} className={className}>
           <summary className="hoo-accordion-header">
             <div className="hoo-accordion-summary">
               {this.props.iconName &&

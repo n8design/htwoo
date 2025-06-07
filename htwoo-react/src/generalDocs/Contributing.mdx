@@ -1,0 +1,25 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Contributing/Getting Started" />
+
+# Getting Started Contributing to HTWOO-REACT
+
+We have tried to standardize to make it easier for members of the community to contribute to HTWOO-React.
+To that end we're providing a VSCode [snippets file](https://github.com/n8design/htwoo/blob/main/HTWOO-Snippets.code-snippets) that will make it easier to create the components and documentation stories that are needed for a complete submission.
+
+Although we are very happy to have any of your contributions, we would encourage you to submit your enhancement ideas first so that we can discuss their implementation before you put in a lot of effort to make sure it conforms to the goals of the library.
+
+## How to contribute a new component
+
+*Note: It's always a good idea to see what other's did and copy the pattern, so feel free to start from an existing component.*
+
+1. Create a new folder for your component and name it using the naming convention 'HOO\{myComponent}' (e.g. HOOButton).
+2. Create a new `tsx` file that will be the component, naming it the same as the parent folder. *e.g. HOOButton.tsx*
+   1. Using the snippets, start your component.tsx file out by utilizing the `HOOComponent` snippet.
+   2. Code your component and test it making sure it works as intended.
+3. Create a new `stories.mdx` file in the same parent folder. *e.g. HOOButton.stories.mdx*
+   1. Using the snippets, start your component.stories.mdx file out by utilizing the `HOOStory` snippet.
+   2. Create appropriate documentation for your component, creating at least two stories (Basic and Extending) to highlight how to use your component.
+4. Create an index.ts file in the same parent folder to export classes and types that will be neccessary for the use of the component. This allows for selective imports.
+5. Add a reference to your components folder in the `index.ts` file (try to maintain alphabetical order) to include the component in the global import.
+6. Submit a PR with your new component.

@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/blocks';
+import HOOAction, { HOOActionType } from './HOOAction';
+import { symset } from '../SymbolSet';
+import * as HooActionStories from './HOOAction.stories';
+
+<Meta of={HooActionStories} />
+
+# HOOAction
+
+Predefined enum defined for the supported actions:
+
+```ts
+export enum HOOActionType {
+  "Action",
+  "Command",
+  "Context"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOAction} />
+
+## Action
+
+<Canvas of={HooActionStories.Action} />
+
+## Extending
+
+<Canvas of={HooActionStories.Extending} />
+

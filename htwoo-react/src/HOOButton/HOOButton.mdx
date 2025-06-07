@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/blocks';
+import HOOButton, {HOOButtonType} from './HOOButton';
+import { symset } from '../SymbolSet';
+import * as HooButtonStories from './HOOButton.stories';
+
+<Meta of={HooButtonStories} />
+
+# HOOButton
+
+Predefined enum defined for the supported button types:
+
+```ts
+export enum HOOButtonType {
+  "Icon",
+  "Primary",
+  "Standard",
+  "HyperlinkPrimary",
+  "HyperlinkStandard",
+  "CompoundPrimary",
+  "CompoundStandard"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOButton} />
+
+## Primary Button
+
+<Canvas of={HooButtonStories.Primary} />
+
+## Primary Button - Left Icon
+
+<Canvas of={HooButtonStories.PrimaryLeftIcon} />
+
+## Primary Button - Right Icon
+
+<Canvas of={HooButtonStories.PrimaryRightIcon} />
+
+## Primary Button - Disabled
+
+<Canvas of={HooButtonStories.PrimaryDisabled} />
+
+## Standard Button
+
+<Canvas of={HooButtonStories.Standard} />
+
+## Icon Button
+
+<Canvas of={HooButtonStories.Icon} />
+
+## Primary: Hyperlink Button
+
+<Canvas of={HooButtonStories.PrimaryHyperlink} />
+
+## Standard: Hyperlink Button
+
+<Canvas of={HooButtonStories.StandardHyperlink} />
+
+## Primary: Compound Button
+
+<Canvas of={HooButtonStories.PrimaryCompound} />
+
+## Standard: Compound Button
+
+<Canvas of={HooButtonStories.StandardCompound} />
+
+## Extending the HOOButton component
+
+<Canvas of={HooButtonStories.Extending} />

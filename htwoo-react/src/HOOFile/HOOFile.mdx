@@ -1,0 +1,20 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOFile from './HOOFile';
+import * as HOOFileStories from './HOOFile.stories';
+
+<Meta of={HOOFileStories} />
+
+# HOOFile
+
+## Arguments
+
+<ArgTypes of={HOOFile} />
+
+## Basic
+
+<Canvas of={HOOFileStories.Basic} />
+
+## Extending
+
+<Canvas of={HOOFileStories.Extending} />

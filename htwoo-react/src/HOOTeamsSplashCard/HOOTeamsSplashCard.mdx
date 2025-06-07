@@ -1,0 +1,37 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOTeamsSplashCard from './HOOTeamsSplashCard';
+import HOOSplashCardHeader from '../HOOSplashCardHeader';
+import HOOSplashCardTitle from '../HOOSplashCardTitle';
+import HOOSplashCardDesc from '../HOOSplashCardDesc';
+import HOOSplashCardFooter from '../HOOSplashCardFooter';
+import HOOButton, { HOOButtonType } from '../HOOButton';
+import * as HooTeamsSplashCardStories from './HOOTeamsSplashCard.stories';
+
+<Meta of={HooTeamsSplashCardStories} />
+
+# HOOTeamsSplashCard
+
+This example shows using a `HOOSplashCardHeader`, `HOOSplashCardTitle`, `HOOSplashCardDesc`, and `HOOSplashCardFooter` (`HOOButton`) components as the children of the `HOOTeamsSplashCard` component.
+
+## Children
+
+See more information about the properties for the sub components:
+
+* [HOOSplashCardHeader](?path=/docs/molecules-card-elements-hoosplashcardheader--basic)
+* [HOOSplashCardTitle](?path=/docs/molecules-card-elements-hoosplashcardtitle--basic)
+* [HOOSplashCardDesc](?path=/docs/molecules-card-elements-hoosplashcarddesc--basic)
+* [HOOSplashCardFooter](?path=/docs/molecules-card-elements-hoosplashcardfooter--basic)
+* [HOOButton](?path=/docs/atoms-buttons-hoobutton--primary)
+
+## Arguments
+
+<ArgTypes of={HOOTeamsSplashCard} />
+
+## Basic
+
+<Canvas of={HooTeamsSplashCardStories.Basic} />
+
+## Extending
+
+<Canvas of={HooTeamsSplashCardStories.Extending} />

@@ -154,7 +154,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
 
       return (
         <a data-component={this.LOG_SOURCE} {...rea} className={className} href={this.props.url || ""} >
-          <div className={linkClassValue}>
+          <article className={linkClassValue}>
             {this.props.iconSrc && this.props.iconSrc.length > 0 &&
               <figure className="hoo-ql-media">
                 <img src={this.props.iconSrc} className="hoo-ql-img" alt="" loading="lazy" />
@@ -187,7 +187,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
                 }
               </menu>
             }
-          </div>
+          </article>
         </a>
       );
     } catch (err) {

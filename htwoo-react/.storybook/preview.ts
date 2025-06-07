@@ -1,8 +1,10 @@
 import { Preview } from '@storybook/react';
+import hooTheme from './hootheme.js';
+
 const preview: Preview = {
   parameters: {
-    actions: {
-      argTypesRegex: "^on[A-Z].*"
+    docs:{
+      theme: hooTheme,
     },
     controls: {
       expanded: true
@@ -23,7 +25,9 @@ const preview: Preview = {
         transcludeMarkdown: true,
       },
     },],
-  }
+  },
+
+  tags: ['autodocs']
 }
 
 export default preview;

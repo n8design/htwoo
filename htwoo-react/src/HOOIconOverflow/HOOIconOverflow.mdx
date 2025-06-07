@@ -1,0 +1,25 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOIconOverflow from './HOOIconOverflow';
+import HOOFlyoutMenu from "../HOOFlyoutMenu/HOOFlyoutMenu";
+import * as HooIconOverflowStories from './HOOIconOverflow.stories';
+
+<Meta of={HooIconOverflowStories} />
+
+# HOOIconOverflow
+
+## Flyout Menu Items
+
+Enabling flyout menu depends on passing an instance of `HOOFlyoutMenu` as a child
+
+## Arguments
+
+<ArgTypes of={HOOIconOverflow} />
+
+## Basic
+
+<Canvas of={HooIconOverflowStories.Basic} />
+
+## Extending
+
+<Canvas of={HooIconOverflowStories.Extending} />

@@ -1,0 +1,92 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { useArgs } from '@storybook/preview-api';
+import { symset } from '../SymbolSet';
+import HOODialog, { HOODialogType } from './HOODialog';
+import HOODialogHeader from '../HOODialogHeader';
+import HOODialogContent from '../HOODialogContent';
+import HOODialogActions from '../HOODialogActions';
+import HOOLabel from '../HOOLabel';
+import HOOButton, { HOOButtonType } from '../HOOButton';
+import HOOIcon from '../HOOIcon';
+import * as HooDialogStories from './HOODialog.stories';
+
+<Meta of={HooDialogStories} />
+
+# HOODialog
+
+This example shows using a `HOOLabel` component as the child(children) of the `HOODialogContent` component.
+In reality you can put whatever DOM elements you want inside it the component the component simply injects all the children into the DOM.
+
+Predefined enum defined for the supported dialog types:
+
+```ts
+export enum HOODialogType {
+  "Standard",
+  "StandardError",
+  "StandardSuccess",
+  "StandardWarning",
+  "SidebarLeft",
+  "SidebarRight",
+  "Topbar",
+  "Bottombar",
+  "Fullscreen",
+  "Center"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOODialog} />
+
+## Standard - Info
+
+Message/Status bar dialog - showing information. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen" of={HooDialogStories.Standard} />
+
+## Standard - Success
+
+Message/Status bar dialog - showing success message. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen" of={HooDialogStories.StandardSuccess} />
+
+## Standard - Error
+
+Message/Status bar dialog - showing error message. Visibility is changed by controling the visible property.
+
+<Canvas layout="fullscreen" of={HooDialogStories.StandardError} />
+
+## Modal Dialog - Sidebar Left
+
+Sidebar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog.
+
+<Canvas layout="fullscreen" of={HooDialogStories.SidebarLeft} />
+
+## Modal Dialog - Sidebar Right - Specify Width
+
+Sidebar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Width can be specified in pixels or percentage or viewport width.
+
+<Canvas layout="fullscreen" of={HooDialogStories.SidebarRightSpecifyWidth} />
+
+## Modal Dialog - Topbar - Specify Height
+
+Topbar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Height can be specified in pixels or percentage or viewport height.
+
+<Canvas layout="fullscreen" of={HooDialogStories.TopbarSpecifyHeight} />
+
+## Modal Dialog - Fullscreen
+
+Fullscreen modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header.
+
+<Canvas layout="fullscreen" of={HooDialogStories.Fullscreen} />
+
+## Extending
+
+Showing and hiding the dialog requires manipulation of a state variable for the visible property. In the example below it's set to false.
+
+## Modal Dialog - Center (Extending)
+
+Topbar modal dialog. Visibility is changed by controling the visible property. Modal is closed with dialog header, escape key or clicking outside the dialog. Height can be specified in pixels or percentage or viewport height.
+
+<Canvas layout="fullscreen" of={HooDialogStories.CenterExtending} />

@@ -1,0 +1,30 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOTime from './HOOTime';
+import * as HooTimeStories from './HOOTime.stories';
+
+<Meta of={HooTimeStories} />
+
+# HOOTime
+
+## Arguments
+
+Format value as hh:mm:ss. e.g. `(new Date()).toISOString().split('T')[1]`
+
+<ArgTypes of={HOOTime} />
+
+## Basic
+
+<Canvas of={HooTimeStories.Basic} />
+
+## With Min/Max values set
+
+<Canvas of={HooTimeStories.MinMaxValues} />
+
+## Disabled
+
+<Canvas of={HooTimeStories.Disabled} />
+
+## Extending
+
+<Canvas of={HooTimeStories.Extending} />

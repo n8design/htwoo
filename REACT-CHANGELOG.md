@@ -5,7 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 2.5.12 - 2024-Nov-xx
+## 2.7.3 - 2025-May-16
+
+- Teams Themes: Updated the teams themes to align with htwoo-core and fix dark more theme bugs.
+
+## 2.7.2 - 2025-Apr-28
+
+- HOOAccordion - Add open property to force state for accordion
+
+## 2.7.1 - 2025-Mar-05
+
+- SPFxThemes/TeamsThemes - Added new css variable to trigger theme settings to optimize for Microsoft Teams
+
+## 2.7.0 - 2025-Feb-19
+
+- HOODate - new optional boolean property `supportTime`, when set to tru will make type of input `datetime-local` instead of `date`. If unset, value is false.
+- SPFxThemes - Support for TeamsJS SDK v2+ reference to Microsoft Teams theme.
+
+## 2.6.0 - 2024-Dec-03
+
+>In support of HTWOO-CORE v2.7.0
+
+- HOOButtonCommand - Added optional Hyperlink button type.
+- HOOInputDesc - Added new atom for field types, used to add a description for an input element.
+- HOOValidationMsg - Added new atom for field types, used to add validation text to input element.
+- HOOField - Added new molecule to collect individual atom's into a form field.
+- HOOFieldset - Added new molecule to collect HOOFields into a field set.
+- HOOCommandBar - Reverted change in component so root element is now `div` not `menu` element.
+- HOOPivotBar - Reverted change in component so root element is now `div` not `menu` element.
+- HOOProgressBar - Added new atom for progress bar, used to show progress to completion.
+- HOOProgressStep - Added as a component of the HOOProgressStepBar, to show markers for steps in progress.
+- HOOProgressStepBar - Added a new molecule for a progress bar broken into steps of various sizes based on number of HOOProgressStep components included as children.
+- HOOFile - Added new file upload molecule for handling drag/drop file uploads.
+
+## 2.5.12 - 2024-Nov-01
 
 - HOOLabel - Make 'label' property optional and allow for children
 - HOODropdown - Updated IHOODropdownItem to make disabled be optional, defaults to false.
