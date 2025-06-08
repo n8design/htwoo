@@ -1,21 +1,6 @@
-export class HOODialog {
-    /** Options for modal dialog */
-    static options: {
-        closer: any;
-        backdropCloser: boolean;
-        escCloser: boolean;
-    };
-    /**
-     * Enum of available dialog types
-     */
-    static dialogType: {
-        DIALOG: string;
-        MODAL: string;
-    };
-    constructor(launcher: any, dialog: any, dialogType?: string, options?: {
-        closer: any;
-        backdropCloser: boolean;
-        escCloser: boolean;
-    });
-    #private;
-}
+/**
+ * Dialog functionality for HTWOO
+ */
+export declare function initDialogs(): void;
+export declare function openDialog(dialogId: string): void;
+export declare function closeDialog(dialogId: string): void;

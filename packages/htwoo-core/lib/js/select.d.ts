@@ -1,1 +1,4 @@
-export function ariaSelect(listItem: any): void;
+/**
+ * Select functionality for HTWOO
+ */
+export declare function initSelect(): void;

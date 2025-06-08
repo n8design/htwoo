@@ -175,6 +175,8 @@
     // assign names to things we'll need to use more than once
 
     const ariaSelect = (listItem) => {
+
+      console.debug('ariaSelect', listItem);
       // console.log('listItem',listItem);
       const csSelector = listItem; // the input, svg and ul as a group
       console.log('csSelector', csSelector);
@@ -182,7 +184,7 @@
       // console.log('csInput', csInput);
       const csList = csSelector.querySelector('ul');
       // console.log('csList', csList);
-      const csOptions = csList.querySelectorAll('li');
+      const csOptions = csList.querySelectorAll('li.hoo-option');
       // console.log('csOptions', csOptions);
       csSelector.querySelectorAll('svg');
       // console.log('csIcons', csIcons);
@@ -207,6 +209,7 @@
       });
       // set up a message to keep screen reader users informed of what the custom input is for/doing
       csStatus.textContent = csOptions.length + " options available. Arrow down to browse or start typing to filter.";
+      toggleList('Shut');
 
       // EVENTS
       // /////////////////////////////////
@@ -335,6 +338,7 @@
             return true
           }
         });
+        console.debug(aFilteredOptions);
         csOptions.forEach(option => option.style.display = "none");
         aFilteredOptions.forEach(function (option) {
           option.style.display = "";
@@ -464,8 +468,38 @@
             break
         }
       }
-
     };
+
+    function updateOptgroupVisibility() {
+      const optgroups = document.querySelectorAll('.hoo-optgroup');
+
+      optgroups.forEach(optgroup => {
+        const options = optgroup.querySelectorAll('.hoo-option');
+        const hasVisibleOption = Array.from(options).some(option =>
+          option.style.display !== 'none'
+        );
+
+        // Hide or show the optgroup based on visibility of its options
+        optgroup.style.display = hasVisibleOption ? '' : 'none';
+      });
+    }
+
+    // Run initially to set visibility
+    updateOptgroupVisibility();
+
+    // Example: Attach to a mutation observer to handle dynamic changes
+    const observer = new MutationObserver(() => {
+      updateOptgroupVisibility();
+    });
+
+    if (document.querySelector('.hoo-select-dropdown')) {
+      observer.observe(document.querySelector('.hoo-select-dropdown'), {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style'] // Monitor only style changes
+      });
+    }
 
     const collapseAndExpand = (event) => {
 
@@ -558,11 +592,7 @@
     };
 
     const position = {
-        "left": "left",
-        "right": "right",
-        "top": "top",
-        "bottom": "bottom"
-    };
+        "left": "left"};
 
     const stickyOffsetFixup = (parent, selector, offset) => {
 
@@ -572,17 +602,8 @@
 
             const innerElement = innerDefinition[j];
 
-            if (offset === position.left) {
+            {
                 innerElement.style[offset] = innerElement.offsetLeft + "px";
-            }
-            if (offset === position.right) {
-                innerElement.style[offset] = innerElement.offsetRight + "px";
-            }
-            if (offset === position.top) {
-                innerElement.style[offset] = innerElement.offsetTop + "px";
-            }
-            if (offset === position.bottom) {
-                innerElement.style[offset] = innerElement.offsetBottom + "px";
             }
 
         }
@@ -651,39 +672,144 @@
 
     /** MENU ITEM */
 
-    const handleMenuItems = (event) => {
+    const resetCurrentPage = (allNavItems) => {
 
-        let curNavItem = event.target;
-        let curNavMenu = curNavItem.closest('.hoo-navitem');
+        allNavItems.forEach((item) => {
 
-        // console.log(curNavMenu);
-        // console.log(curNavMenu.getAttribute('aria-expanded'));
-        // console.log(typeof curNavMenu.getAttribute('aria-expanded'));
+            item.removeAttribute('aria-current');
 
-        if (curNavMenu.getAttribute('aria-expanded') === 'false') {
+        });
 
-            curNavMenu.setAttribute('aria-expanded', true);
+    };
 
-        } else {
+    const handleNavItemClick = (event) => {
 
-            curNavMenu.setAttribute('aria-expanded', false);
+        let curClickItem = event.target;
 
+        if (!curClickItem.classList.contains('hoo-buttonitem') && !curClickItem.classList.contains('hoo-icon')) {
+            let curNavItem = curClickItem.closest('.hoo-navitem');
+
+            if (curNavItem) {
+
+                let curNav = curClickItem.closest('.hoo-nav');
+                let allNavItems = curNav.querySelectorAll('* .hoo-navitem');
+
+                resetCurrentPage(allNavItems);
+
+                curNavItem.setAttribute('aria-current', true);
+
+            }
         }
+
+    };
+
+    const handleIconClick = (event) => {
+
+        let curIcon = event.target;
+        let subMenu = curIcon.closest('.hoo-navitem');
+
+        if (subMenu.getAttribute('aria-expanded') === 'true') {
+            subMenu.setAttribute('aria-expanded', false);
+        } else {
+            subMenu.setAttribute('aria-expanded', true);
+        }
+
+
 
     };
 
     const initMenu = () => {
 
-        let menuItems = document.querySelectorAll('.hoo-navitem[aria-expanded]');
+        let navMenus = document.querySelectorAll('.hoo-nav');
 
-        menuItems.forEach(item => {
+        navMenus.forEach(nav => {
 
-            item.addEventListener('click', handleMenuItems);
+            let navItems = nav.querySelectorAll('.hoo-navitem');
+            navItems.forEach(navItem => {
+
+                navItem.addEventListener('click', handleNavItemClick);
+
+            });
+
+            let navIcons = nav.querySelectorAll('.hoo-buttonicon');
+            navIcons.forEach(navIcon => {
+                navIcon.addEventListener('click', handleIconClick);
+            });
 
         });
 
-
     };
+
+    class FileUploadHandler {
+        _files = [];
+        _fileLable = null;
+        _fileControl = null;
+        _originalFileControl = null;
+        _infileOutput = null;
+
+        dragOver = (event) => {
+            event.preventDefault();
+            this._fileLabel.classList.add('drag-over'); // Visual feedback
+        }
+
+        dragLeave = (event) => {
+            event.preventDefault();
+            this._fileLabel.classList.remove('drag-over');
+        };
+
+        dragDrop = (event) => {
+            event.preventDefault();
+            this._fileLabel.classList.remove('drag-over');
+
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                console.log('Files dropped:', files);
+                this.fileChangedEvent({ target: { files } });
+            }
+        }
+
+        fileChangedEvent = (event) => {
+            let files;
+            console.debug('FileUploadHandler.fileChanged', event);
+
+            if (event.target.files.length === 0) {
+                this._infileOutput.innerHTML = "";
+                return;
+            }
+
+            files = Array.from(event.target.files);
+
+            const fileOutput = document.createElement('ul');
+            fileOutput.classList.add('hoo-infile-list');
+            console.debug('FileUploadHandler', files);
+            files.forEach(file => {
+                const fileItem = document.createElement('li');
+                fileItem.innerText = file.name;
+                fileOutput.appendChild(fileItem);
+            });
+
+            this._infileOutput.innerHTML = `<div class='hoo-infile-selection'>${this._infileOutput.title || 'Files Selected'}</div>${fileOutput.outerHTML}`;
+        }
+
+        constructor(htmlElement) {
+            this._fileControl = htmlElement;
+            console.debug('FileUploadHandler', this._fileControl);
+            this._fileLabel = htmlElement.querySelector('.hoo-infile-label');
+            this._fileLabel.addEventListener('dragover', this.dragOver);
+            this._fileLabel.addEventListener('dragleave', this.dragLeave);
+            this._fileLabel.addEventListener('drop', this.dragDrop);
+
+            this._originalFileControl = this._fileControl.querySelector('.hoo-infile-context');
+            console.debug('FileUploadHandler', this._originalFileControl, this._originalFileControl.getAttribute('aria-describedby'));
+            this._originalFileControl.addEventListener('change', this.fileChangedEvent);
+
+            let describedBy = this._originalFileControl.getAttribute('aria-describedby');
+            console.debug('FileUploadHandler', describedBy, this._infileOutput, `#${describedBy.trim()}`);
+
+            this._infileOutput = document.querySelector(`#${describedBy.trim()}`);
+            console.debug('Infile Output:', this._infileOutput);
+        }
+    }
 
     const overflowItems = [];
     const defaultOffset = 40; // Default offset for overflow width
@@ -990,12 +1116,22 @@
 
     };
 
+    const registerInputHandler = (classname) => {
+        const allFileHandler = document.querySelectorAll(classname);
+        allFileHandler.forEach(fileHandler => {
+            new FileUploadHandler(fileHandler);
+        });
+    };
+
     const registerAriaSelect = () => {
 
         let selects = document.querySelectorAll('.hoo-select');
 
+        console.debug('ALL SELECTED', selects);
+
         if (selects) {
             selects.forEach((item, idx) => {
+                console.debug(item, idx);
                 ariaSelect(item);
             });
         }
@@ -1028,6 +1164,7 @@
 
         registerAnimation('.anim-deleteNslide', animateDeleteAndSlide);
         registerAnimation('.anim-addNslide', animateAddAndSlide);
+        registerInputHandler('.hoo-input-file');
 
         // registerDialog();
         registerAriaSelect();
@@ -1040,6 +1177,8 @@
         initMenu();
 
         init();
+
+        // new InputMask();
 
         setTimeout(() => {
             let tmpHidden = document.querySelectorAll('.tmp-hidden');

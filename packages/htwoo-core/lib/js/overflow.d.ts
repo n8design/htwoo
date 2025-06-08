@@ -1,1 +1,4 @@
-export function init(): void;
+/**
+ * Overflow functionality for HTWOO
+ */
+export declare function initOverflowElements(): void;

@@ -1,1 +1,4 @@
-export function initMenu(): void;
+/**
+ * Navigation functionality for HTWOO
+ */
+export declare function initNav(): void;

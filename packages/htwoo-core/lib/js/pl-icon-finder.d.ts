@@ -1,20 +1,4 @@
-declare let filledIcons: HTMLElement;
-declare let regularIcons: HTMLElement;
-declare let iconGrid: Element;
-declare const domParser: DOMParser;
-declare const svgNamespace: "http://www.w3.org/2000/svg";
-declare const info: Element;
-declare const btnDownload: Element;
-declare let files: NodeListOf<Element>;
-declare function toggleChange(evt: any): void;
-declare function toTitleCase(str: any): any;
-declare function searchItems(event: any): void;
-declare function showIconDetails(event: any): void;
-declare function clearIconDetails(event: any): void;
-declare function addToSelection(event: any): void;
-declare function removeFormSelection(event: any): void;
-declare const currentSelection: Element;
-declare function performSearch(curValue: any, iconType: any): void;
-declare const searchField: Element;
-declare let toggle: NodeListOf<HTMLElement>;
-declare function createSymbolSet(): SVGSVGElement;
+/**
+ * Icon finder functionality
+ */
+export {};

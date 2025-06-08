@@ -91,11 +91,7 @@ const initCollapsability = () => {
 };
 
 const position = {
-    "left": "left",
-    "right": "right",
-    "top": "top",
-    "bottom": "bottom"
-};
+    "left": "left"};
 
 const stickyOffsetFixup = (parent, selector, offset) => {
 
@@ -105,17 +101,8 @@ const stickyOffsetFixup = (parent, selector, offset) => {
 
         const innerElement = innerDefinition[j];
 
-        if (offset === position.left) {
+        {
             innerElement.style[offset] = innerElement.offsetLeft + "px";
-        }
-        if (offset === position.right) {
-            innerElement.style[offset] = innerElement.offsetRight + "px";
-        }
-        if (offset === position.top) {
-            innerElement.style[offset] = innerElement.offsetTop + "px";
-        }
-        if (offset === position.bottom) {
-            innerElement.style[offset] = innerElement.offsetBottom + "px";
         }
 
     }

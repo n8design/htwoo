@@ -1,1 +1,4 @@
-export function initPivot(): void;
+/**
+ * Pivot functionality for HTWOO
+ */
+export declare function initPivotElements(): void;
