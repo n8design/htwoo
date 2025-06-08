@@ -12,20 +12,22 @@
     "pl:version": "patternlab --version",
     "--- /// Ice Commands /// ---": "",
     "ice:build": "ice-build watch --config ./ice.config.js",
-
     "--- /// NodeJS script /// ---": "",
     "prestart": "npx shx mkdir -p public/plugins/ && npx shx cp -r src/plugins/plugin-design/ public/plugins/ && npx shx cp -r src/styleguide/images/ public/styleguide/",
     "start": "npm-run-all --parallel ice:build pl:serve",
-
-
-    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s --config ./changelog.config.js --release-count 10000",
-    "release": "standard-version",
-    "cl:update": "npx conventional-changelog -p angular -i CHANGELOG.md -s --tag-prefix htwoo-core-v",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:docs": "ice-build --target docs",
-
-    "update:docs": "./docs.sh",
-    "postversion": "git tag htwoo-core-v$npm_package_version && npx standard-version --skip.commit --skip.tag",
+    "--- /// Package Build Commands /// ---": "",
+    "clean:package": "shx rm -rf ../packages/htwoo-core/lib ../packages/htwoo-core/dist",
+    "build:css-prod": "ice-build build",
+    "copy:css": "shx mkdir -p ../packages/htwoo-core/dist/css && shx cp -r public/css/htwoo.min.css ../packages/htwoo-core/dist/css/",
+    "copy:scss": "shx mkdir -p ../packages/htwoo-core/lib/sass && shx cp -r src/styles/* ../packages/htwoo-core/lib/sass/ && shx rm -rf ../packages/htwoo-core/lib/sass/00-base/fonts",
+    "copy:components": "shx mkdir -p ../packages/htwoo-core/lib/components && shx cp -r src/components/* ../packages/htwoo-core/lib/components/",
+    "copy:js": "shx mkdir -p ../packages/htwoo-core/lib/js && shx cp -r src/js/* ../packages/htwoo-core/lib/js/",
+    "build:js": "rollup -c rollup.config.mjs",
+    "build:typings": "bash ./enhanced-typings.sh",
+  "copy:docs": "shx cp -r LICENSE README.md ../packages/htwoo-core/",
+  "build:package": "npm-run-all clean:package build:css-prod copy:css copy:scss copy:components copy:js build:js build:typings copy:docs",
+  "build:optimized": "bash ./asset-pipeline.sh",
+  "validate:package": "node -e \"require('./validate-package.js')\""
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
@@ -52,21 +54,23 @@
     "@pattern-lab/core": "^6.1.0",
     "@pattern-lab/engine-handlebars": "^6.1.0",
     "@pattern-lab/uikit-workshop": "^6.1.0",
-    "caniuse-lite": "^1.0.30001680",
+    "caniuse-lite": "^1.0.30001721",
     "standard-version": "^9.5.0"
   },
   "devDependencies": {
-    "@n8d/ice-build": "^0.4.8",
+    "@n8d/ice-build": "^0.5.2",
     "@n8d/ice-hotreloader": "^0.0.1-alpha.18",
     "@rollup/plugin-json": "^6.1.0",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "npm-run-all": "^4.1.5",
     "plugin-design": "file:helpers/node/plugin-design",
-    "postcss": "^8.4.49",
-    "rollup": "^4.27.3",
-    "sass": "^1.81.0",
-    "shx": "^0.3.4",
+    "postcss": "^8.5.4",
+    "rollup": "^4.42.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.89.1",
+    "shx": "^0.4.0",
     "sitemap": "^8.0.0",
-    "yargs": "^17.7.2"
+    "typescript": "^5.8.3",
+    "yargs": "^18.0.0"
   }
 }

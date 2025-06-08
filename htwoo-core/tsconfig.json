@@ -1,6 +1,7 @@
 {
     // Change this to match your project
-    "include": ["src/**/*"],
+    "include": ["src/js/**/*.js"],
+    "exclude": ["src/js/vendor/**/*", "src/js/prismjs/**/*", "src/js/legacy/**/*", "src/js/themeswitch/**/*"],
     "compilerOptions": {
       // Tells TypeScript to read JS files, as
       // normally they are ignored as source files
@@ -11,12 +12,20 @@
       // only output d.ts files
       "emitDeclarationOnly": true,
       // Types should go into this directory.
-      // Removing this would place the .d.ts files
-      // next to the .js files
       "outDir": "../packages/htwoo-core/lib/js/",
-      // go to js file when using IDE functions like
-      // "Go to Definition" in VSCode
-      "declarationMap": true
+      // Skip type checking to avoid errors with dependencies
+      "skipLibCheck": true,
+      // Set target to ES6 for better compatibility
+      "target": "ES6",
+      // Module settings
+      "module": "ESNext",
+      "moduleResolution": "node",
+      // Turn off strict mode for easier generation
+      "strict": false,
+      // Allow synthetic default imports
+      "esModuleInterop": true,
+      // Use this lib to avoid JSX errors
+      "lib": ["DOM", "ES2015", "ES2016", "ES2017"]
     }
   }
   

@@ -70,7 +70,7 @@
       "js": "public/js",
       "images": "public/images",
       "fonts": "public/fonts",
-      "css": "public/css/"
+      "css": "public/css"
     }
   },
   "patternExtension": "hbs",
@@ -91,6 +91,10 @@
   },
   "starterkitSubDir": "dist",
   "styleGuideExcludes": [],
+  "transformedAssetTypes": [
+    "scss",
+    "ts"
+  ],
   "theme": {
     "color": "light",
     "density": "compact",
