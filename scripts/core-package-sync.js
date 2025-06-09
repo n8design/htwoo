@@ -403,7 +403,6 @@ function main() {
         case 'check-sync':
             const isSync = checkSync();
             process.exit(isSync ? 0 : 1);
-            break;
             
         case 'plan-sync':
             planSync(options.version);
@@ -412,7 +411,6 @@ function main() {
         case 'sync-core':
             const success = syncCore(options.version);
             process.exit(success ? 0 : 1);
-            break;
             
         case 'bump-core':
             const releaseType = options.type || 'patch';
@@ -422,7 +420,6 @@ function main() {
             }
             const bumpSuccess = bumpCore(releaseType);
             process.exit(bumpSuccess ? 0 : 1);
-            break;
             
         default:
             if (command) {
