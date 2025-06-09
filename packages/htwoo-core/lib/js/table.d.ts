@@ -1,2 +1,4 @@
-export function initTables(): void;
-//# sourceMappingURL=table.d.ts.map
+/**
+ * Table functionality for HTWOO
+ */
+export declare function initTable(): void;

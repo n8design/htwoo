@@ -271,7 +271,8 @@
               "cwd": "htwoo-react"
             },
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
           "prepublish": {
             "executor": "nx:run-commands",
@@ -285,6 +286,272 @@
             "outputs": [
               "{workspaceRoot}/packages/htwoo-react"
             ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "serve": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npm run storybook",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "test": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "echo 'No tests configured for htwoo-react'",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "cache": true
+          },
+          "typecheck": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "tsc --noEmit",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "cache": true
+          },
+          "validate": {
+            "executor": "nx:run-commands",
+            "dependsOn": [
+              "typecheck"
+            ],
+            "options": {
+              "command": "echo 'Validation completed for htwoo-react'",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "cache": true
+          },
+          "htwoo-changelog": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/generate-changelog.js",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-changelog:preview": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-release:patch": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump patch",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-release:minor": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump minor",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-release:major": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump major",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-release:dry-run": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump patch --dry-run",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-release:check": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js check",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-version:check": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js check",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-version:sync": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js sync",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-version:bump": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-version:bump:minor": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump minor",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-version:bump:major": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump major",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-version:set": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js set",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "htwoo-version:tag": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js tag",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "htwoo-version:list-tags": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js list-tags",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "pre-release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "echo 'Running pre-release checks for htwoo-react...' && npm run validate:package && node scripts/sync-versions.js check",
+              "cwd": "htwoo-react"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "post-release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "echo 'htwoo-react release completed successfully!' && git status",
+              "cwd": "htwoo-react"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release-pipeline": {
+            "executor": "nx:run-commands",
+            "options": {
+              "commands": [
+                "nx run htwoo-react:pre-release",
+                "nx run htwoo-react:htwoo-release",
+                "nx run htwoo-react:post-release"
+              ],
+              "parallel": false
+            },
             "configurations": {},
             "parallelism": true
           }
@@ -331,13 +598,14 @@
               "build:package",
               "validate:package",
               "--- /// Changelog Commands /// ---",
+              "changelog",
               "changelog:htwoo-core",
               "--- /// Version Sync Commands /// ---",
               "--- /// Release Commands /// ---",
-              "release:test",
-              "release:build",
-              "release:legacy",
-              "release:legacy:dry-run"
+              "htwoo-release:test",
+              "htwoo-release:build",
+              "htwoo-release:legacy",
+              "htwoo-release:legacy:dry-run"
             ]
           },
           "description": "",
@@ -612,6 +880,19 @@
             "configurations": {},
             "parallelism": true
           },
+          "changelog": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "changelog"
+            },
+            "metadata": {
+              "scriptContent": "conventional-changelog -p angular -i CHANGELOG.md -s --config ./changelog.config.js",
+              "runCommand": "npm run changelog"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
           "changelog:htwoo-core": {
             "executor": "nx:run-script",
             "options": {
@@ -648,50 +929,50 @@
             "configurations": {},
             "parallelism": true
           },
-          "release:test": {
+          "htwoo-release:test": {
             "executor": "nx:run-script",
             "options": {
-              "script": "release:test"
+              "script": "htwoo-release:test"
             },
             "metadata": {
               "scriptContent": "node ./scripts/release.js test",
-              "runCommand": "npm run release:test"
+              "runCommand": "npm run htwoo-release:test"
             },
             "configurations": {},
             "parallelism": true
           },
-          "release:build": {
+          "htwoo-release:build": {
             "executor": "nx:run-script",
             "options": {
-              "script": "release:build"
+              "script": "htwoo-release:build"
             },
             "metadata": {
               "scriptContent": "node ./scripts/release.js build",
-              "runCommand": "npm run release:build"
+              "runCommand": "npm run htwoo-release:build"
             },
             "configurations": {},
             "parallelism": true
           },
-          "release:legacy": {
+          "htwoo-release:legacy": {
             "executor": "nx:run-script",
             "options": {
-              "script": "release:legacy"
+              "script": "htwoo-release:legacy"
             },
             "metadata": {
               "scriptContent": "standard-version --config ./changelog.config.js",
-              "runCommand": "npm run release:legacy"
+              "runCommand": "npm run htwoo-release:legacy"
             },
             "configurations": {},
             "parallelism": true
           },
-          "release:legacy:dry-run": {
+          "htwoo-release:legacy:dry-run": {
             "executor": "nx:run-script",
             "options": {
-              "script": "release:legacy:dry-run"
+              "script": "htwoo-release:legacy:dry-run"
             },
             "metadata": {
               "scriptContent": "standard-version --config ./changelog.config.js --dry-run",
-              "runCommand": "npm run release:legacy:dry-run"
+              "runCommand": "npm run htwoo-release:legacy:dry-run"
             },
             "configurations": {},
             "parallelism": true
@@ -756,7 +1037,8 @@
               "cwd": "htwoo-core"
             },
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
           "validate": {
             "executor": "nx:run-commands",
@@ -765,19 +1047,19 @@
               "cwd": "htwoo-core"
             },
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": true
           },
-          "changelog": {
+          "htwoo-changelog": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/generate-changelog.js",
               "cwd": "htwoo-core"
             },
             "configurations": {},
-            "parallelism": true,
-            "cache": false
+            "parallelism": true
           },
-          "changelog:preview": {
+          "htwoo-changelog:preview": {
             "executor": "nx:run-commands",
             "options": {
               "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
@@ -786,7 +1068,7 @@
             "configurations": {},
             "parallelism": true
           },
-          "release": {
+          "htwoo-release": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js release",
@@ -800,7 +1082,7 @@
             "parallelism": true,
             "cache": false
           },
-          "release:patch": {
+          "htwoo-release:patch": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js release --bump patch",
@@ -811,9 +1093,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "release:minor": {
+          "htwoo-release:minor": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js release --bump minor",
@@ -824,9 +1107,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "release:major": {
+          "htwoo-release:major": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js release --bump major",
@@ -837,9 +1121,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "release:dry-run": {
+          "htwoo-release:dry-run": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js release --bump patch --dry-run",
@@ -850,9 +1135,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "release:check": {
+          "htwoo-release:check": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/release.js check",
@@ -861,7 +1147,7 @@
             "configurations": {},
             "parallelism": true
           },
-          "version:check": {
+          "htwoo-version:check": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js check",
@@ -870,7 +1156,7 @@
             "configurations": {},
             "parallelism": true
           },
-          "version:sync": {
+          "htwoo-version:sync": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js sync",
@@ -879,7 +1165,7 @@
             "configurations": {},
             "parallelism": true
           },
-          "version:bump": {
+          "htwoo-version:bump": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js bump",
@@ -890,9 +1176,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "version:bump:minor": {
+          "htwoo-version:bump:minor": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js bump minor",
@@ -903,9 +1190,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "version:bump:major": {
+          "htwoo-version:bump:major": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js bump major",
@@ -916,9 +1204,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "version:set": {
+          "htwoo-version:set": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js set",
@@ -929,9 +1218,10 @@
               "test"
             ],
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "cache": false
           },
-          "version:tag": {
+          "htwoo-version:tag": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js tag",
@@ -940,11 +1230,46 @@
             "configurations": {},
             "parallelism": true
           },
-          "version:list-tags": {
+          "htwoo-version:list-tags": {
             "executor": "nx:run-commands",
             "options": {
               "command": "node scripts/sync-versions.js list-tags",
               "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "pre-release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "echo 'Running pre-release checks...' && npm run validate:package && node scripts/sync-versions.js check",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "post-release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "echo 'Release completed successfully!' && git status",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release-pipeline": {
+            "executor": "nx:run-commands",
+            "options": {
+              "commands": [
+                "nx run htwoo-core-styleguide:pre-release",
+                "nx run htwoo-core-styleguide:htwoo-release",
+                "nx run htwoo-core-styleguide:post-release"
+              ],
+              "parallel": false
             },
             "configurations": {},
             "parallelism": true
@@ -33873,5 +34198,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1749462166014
+  "computedAt": 1749467889689
 }

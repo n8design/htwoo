@@ -36,21 +36,25 @@ class HtwooReleaseManager {
   /**
    * Check prerequisites before release
    */
-  checkPrerequisites() {
+  checkPrerequisites(skipGitCheck = false) {
     console.log('🔍 Checking prerequisites...');
     
     // Check git status
-    try {
-      const gitStatus = execSync('git status --porcelain', {
-        cwd: this.repoRoot,
-        encoding: 'utf8'
-      });
-      if (gitStatus.trim() !== '') {
-        throw new Error('Git working directory is not clean. Please commit or stash changes first.');
+    if (!skipGitCheck) {
+      try {
+        const gitStatus = execSync('git status --porcelain', {
+          cwd: this.repoRoot,
+          encoding: 'utf8'
+        });
+        if (gitStatus.trim() !== '') {
+          throw new Error('Git working directory is not clean. Please commit or stash changes first.');
+        }
+      } catch (error) {
+        console.error('❌ Git status check failed:', error.message);
+        throw error;
       }
-    } catch (error) {
-      console.error('❌ Git status check failed:', error.message);
-      throw error;
+    } else {
+      console.log('⚠️  Skipping git status check');
     }
 
     // Check if on main branch
@@ -175,7 +179,7 @@ class HtwooReleaseManager {
       console.log('🚀 Starting htwoo-core release process...\n');
 
       // 1. Check prerequisites
-      this.checkPrerequisites();
+      this.checkPrerequisites(options.skipGitCheck);
 
       // 2. Run tests
       if (!options.skipTests) {
@@ -267,6 +271,11 @@ const argv = yargs(process.argv.slice(2))
     },
     'skip-git': {
       describe: 'Skip git push',
+      type: 'boolean',
+      default: false
+    },
+    'skip-git-check': {
+      describe: 'Skip git status check',
       type: 'boolean',
       default: false
     }

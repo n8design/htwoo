@@ -57,6 +57,182 @@
       "outputs": [
         "{workspaceRoot}/packages/htwoo-react"
       ]
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run storybook",
+        "cwd": "htwoo-react"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'No tests configured for htwoo-react'",
+        "cwd": "htwoo-react"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit",
+        "cwd": "htwoo-react"
+      }
+    },
+    "validate": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["typecheck"],
+      "options": {
+        "command": "echo 'Validation completed for htwoo-react'",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-changelog": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-changelog.js",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-changelog:preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:patch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump patch",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump minor",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump major",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:dry-run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump patch --dry-run",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js check",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-version:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js check",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-version:sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js sync",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-version:bump": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:bump:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump minor",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:bump:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump major",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:set": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js set",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:tag": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js tag",
+        "cwd": "htwoo-react"
+      }
+    },
+    "htwoo-version:list-tags": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js list-tags",
+        "cwd": "htwoo-react"
+      }
+    },
+    "pre-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'Running pre-release checks for htwoo-react...' && npm run validate:package && node scripts/sync-versions.js check",
+        "cwd": "htwoo-react"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "post-release": {
+      "executor": "nx:run-commands", 
+      "options": {
+        "command": "echo 'htwoo-react release completed successfully!' && git status",
+        "cwd": "htwoo-react"
+      }
+    },
+    "release-pipeline": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run htwoo-react:pre-release",
+          "nx run htwoo-react:htwoo-release",
+          "nx run htwoo-react:post-release"
+        ],
+        "parallel": false
+      }
     }
   },
   "tags": ["scope:react", "type:library"]

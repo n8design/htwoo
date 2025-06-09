@@ -1,2 +1,4 @@
-export function initPivot(): void;
-//# sourceMappingURL=pivot.d.ts.map
+/**
+ * Pivot functionality for HTWOO
+ */
+export declare function initPivotElements(): void;

@@ -57,21 +57,21 @@
         "cwd": "htwoo-core"
       }
     },
-    "changelog": {
+    "htwoo-changelog": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/generate-changelog.js",
         "cwd": "htwoo-core"
       }
     },
-    "changelog:preview": {
+    "htwoo-changelog:preview": {
       "executor": "nx:run-commands",
       "options": {
         "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
         "cwd": "htwoo-core"
       }
     },
-    "release": {
+    "htwoo-release": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js release",
@@ -79,7 +79,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "release:patch": {
+    "htwoo-release:patch": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js release --bump patch",
@@ -87,7 +87,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "release:minor": {
+    "htwoo-release:minor": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js release --bump minor",
@@ -95,7 +95,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "release:major": {
+    "htwoo-release:major": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js release --bump major",
@@ -103,7 +103,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "release:dry-run": {
+    "htwoo-release:dry-run": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js release --bump patch --dry-run",
@@ -111,28 +111,28 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "release:check": {
+    "htwoo-release:check": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/release.js check",
         "cwd": "htwoo-core"
       }
     },
-    "version:check": {
+    "htwoo-version:check": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js check",
         "cwd": "htwoo-core"
       }
     },
-    "version:sync": {
+    "htwoo-version:sync": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js sync",
         "cwd": "htwoo-core"
       }
     },
-    "version:bump": {
+    "htwoo-version:bump": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js bump",
@@ -140,7 +140,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "version:bump:minor": {
+    "htwoo-version:bump:minor": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js bump minor",
@@ -148,7 +148,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "version:bump:major": {
+    "htwoo-version:bump:major": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js bump major",
@@ -156,7 +156,7 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "version:set": {
+    "htwoo-version:set": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js set",
@@ -164,18 +164,44 @@
       },
       "dependsOn": ["build", "test"]
     },
-    "version:tag": {
+    "htwoo-version:tag": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js tag",
         "cwd": "htwoo-core"
       }
     },
-    "version:list-tags": {
+    "htwoo-version:list-tags": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node scripts/sync-versions.js list-tags",
         "cwd": "htwoo-core"
+      }
+    },
+    "pre-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'Running pre-release checks...' && npm run validate:package && node scripts/sync-versions.js check",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "post-release": {
+      "executor": "nx:run-commands", 
+      "options": {
+        "command": "echo 'Release completed successfully!' && git status",
+        "cwd": "htwoo-core"
+      }
+    },
+    "release-pipeline": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run htwoo-core-styleguide:pre-release",
+          "nx run htwoo-core-styleguide:htwoo-release",
+          "nx run htwoo-core-styleguide:post-release"
+        ],
+        "parallel": false
       }
     }
   },

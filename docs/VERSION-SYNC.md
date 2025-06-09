@@ -85,19 +85,24 @@ node scripts/sync-versions.js list-tags
 
 1. **Check Synchronization**: Always start by checking if versions are synchronized
    ```bash
-   npm run version:check
+   nx run htwoo-core-styleguide:htwoo-version:check
+   # or using npm scripts:
+   npm run htwoo-version:check
    ```
 
 2. **Bump Version**: Use the appropriate bump command based on the type of changes
    ```bash
    # For bug fixes
-   npm run version:bump
+   nx run htwoo-core-styleguide:htwoo-version:bump
+   # or: npm run htwoo-version:bump
    
    # For new features
-   npm run version:bump:minor
+   nx run htwoo-core-styleguide:htwoo-version:bump:minor
+   # or: npm run htwoo-version:bump:minor
    
    # For breaking changes
-   npm run version:bump:major
+   nx run htwoo-core-styleguide:htwoo-version:bump:major
+   # or: npm run htwoo-version:bump:major
    ```
 
 3. **Generate Changelog**: After version bump, generate the changelog
@@ -169,10 +174,10 @@ The system includes comprehensive error handling for:
 
 ```bash
 # 1. Check current status
-npm run version:check
+npm run htwoo-version:check
 
 # 2. Bump patch version (2.7.0 → 2.7.1)
-npm run version:bump
+npm run htwoo-version:bump
 
 # 3. Generate updated changelog
 npm run changelog:htwoo-core
@@ -185,7 +190,7 @@ git push origin main --follow-tags
 
 ```bash
 # Set version to 3.0.0 with custom message
-npm run version:set -- 3.0.0 "Major release: New design system"
+npm run htwoo-version:set -- 3.0.0 "Major release: New design system"
 
 # Generate changelog
 npm run changelog:htwoo-core
@@ -199,7 +204,7 @@ git push origin main --follow-tags
 If you need to create a tag for the current version without changing anything:
 
 ```bash
-npm run version:tag -- "Emergency patch release"
+npm run htwoo-version:tag -- "Emergency patch release"
 ```
 
 ## Integration with Existing Systems
@@ -226,7 +231,7 @@ While the system can work alongside `standard-version`, the custom synchronizati
 If versions become out of sync, use the sync command:
 
 ```bash
-npm run version:sync -- 2.7.0
+npm run htwoo-version:sync -- 2.7.0
 ```
 
 ### Missing Tags
@@ -234,7 +239,7 @@ npm run version:sync -- 2.7.0
 If a version exists but doesn't have a corresponding tag:
 
 ```bash
-npm run version:tag
+npm run htwoo-version:tag
 ```
 
 ### Git Issues
@@ -248,3 +253,60 @@ Make sure the script is executable:
 ```bash
 chmod +x htwoo-core/scripts/sync-versions.js
 ```
+
+## Nx Workspace Integration
+
+For use within the Nx workspace, all tasks are prefixed with `htwoo-` for clarity:
+
+### Version Management Commands
+
+```bash
+# Check version synchronization
+nx run htwoo-core-styleguide:htwoo-version:check
+
+# Bump versions
+nx run htwoo-core-styleguide:htwoo-version:bump        # patch
+nx run htwoo-core-styleguide:htwoo-version:bump:minor  # minor
+nx run htwoo-core-styleguide:htwoo-version:bump:major  # major
+
+# Set specific version
+nx run htwoo-core-styleguide:htwoo-version:set
+
+# Sync versions manually
+nx run htwoo-core-styleguide:htwoo-version:sync
+
+# Tag operations
+nx run htwoo-core-styleguide:htwoo-version:tag
+nx run htwoo-core-styleguide:htwoo-version:list-tags
+```
+
+### Release Management Commands
+
+```bash
+# Complete release workflows
+nx run htwoo-core-styleguide:htwoo-release:patch
+nx run htwoo-core-styleguide:htwoo-release:minor
+nx run htwoo-core-styleguide:htwoo-release:major
+
+# Dry run testing
+nx run htwoo-core-styleguide:htwoo-release:dry-run
+
+# Release checks
+nx run htwoo-core-styleguide:htwoo-release:check
+
+# Changelog generation
+nx run htwoo-core-styleguide:htwoo-changelog
+nx run htwoo-core-styleguide:htwoo-changelog:preview
+```
+
+### NPM Scripts (Convenience)
+
+The NPM scripts use the prefixed naming convention for consistency:
+
+```bash
+npm run htwoo-version:check
+npm run htwoo-version:bump
+npm run htwoo-release:patch
+```
+
+These NPM scripts provide a convenient interface while the Nx tasks offer explicit workspace-aware execution.

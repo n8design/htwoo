@@ -1,18 +1,18 @@
 {
   "run": {
-    "command": "nx run htwoo-core-styleguide:version:list-tags",
-    "startTime": "2025-06-09T09:14:52.093Z",
-    "endTime": "2025-06-09T09:14:52.276Z",
+    "command": "nx run htwoo-core-styleguide:build --dry-run",
+    "startTime": "2025-06-09T11:14:10.872Z",
+    "endTime": "2025-06-09T11:14:19.762Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "htwoo-core-styleguide:version:list-tags",
-      "target": "version:list-tags",
+      "taskId": "htwoo-core-styleguide:build",
+      "target": "build",
       "projectName": "htwoo-core-styleguide",
-      "hash": "217625449774759484",
-      "startTime": "2025-06-09T09:14:52.216Z",
-      "endTime": "2025-06-09T09:14:52.274Z",
+      "hash": "14258584803905536182",
+      "startTime": "2025-06-09T11:14:10.972Z",
+      "endTime": "2025-06-09T11:14:19.673Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

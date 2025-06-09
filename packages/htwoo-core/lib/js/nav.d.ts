@@ -1,2 +1,4 @@
-export function initMenu(): void;
-//# sourceMappingURL=nav.d.ts.map
+/**
+ * Navigation functionality for HTWOO
+ */
+export declare function initNav(): void;

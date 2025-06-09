@@ -27,8 +27,8 @@ echo "🔍 Attempting automated extraction using TypeScript compiler..."
 npx tsc --project "/Volumes/Code/n8design/projects/htwoo/htwoo-core/tsconfig.json"
 
 # Check if the automated extraction was successful
-if [ "$(find "$TARGET_DIR" -name "*.d.ts" | wc -l)" -eq 0 ]; then
-  echo "⚠️  Automated extraction didn't produce any declaration files."
+if [ "$(find "$TARGET_DIR" -name "*.d.ts" | wc -l)" -eq 0 ] || [ "$(grep -l 'export {};' "$TARGET_DIR"/*.d.ts 2>/dev/null | wc -l)" -gt 0 ]; then
+  echo "⚠️  Automated extraction didn't produce proper declaration files."
   echo "📝 Falling back to manual declaration creation..."
   
   # Create _util.d.ts

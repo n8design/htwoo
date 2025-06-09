@@ -1,2 +1,4 @@
-export function ariaSelect(listItem: any): void;
-//# sourceMappingURL=select.d.ts.map
+/**
+ * Select functionality for HTWOO
+ */
+export declare function initSelect(): void;

@@ -1,2 +1,4 @@
-export function init(): void;
-//# sourceMappingURL=overflow.d.ts.map
+/**
+ * Overflow functionality for HTWOO
+ */
+export declare function initOverflowElements(): void;

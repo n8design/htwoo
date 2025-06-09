@@ -24,6 +24,48 @@
     "release": {
       "dependsOn": ["build", "test"],
       "cache": false
+    },
+    "htwoo-release": {
+      "dependsOn": ["build", "test", "validate"],
+      "cache": false
+    },
+    "htwoo-release:patch": {
+      "dependsOn": ["build", "test", "validate"],
+      "cache": false
+    },
+    "htwoo-release:minor": {
+      "dependsOn": ["build", "test", "validate"],
+      "cache": false
+    },
+    "htwoo-release:major": {
+      "dependsOn": ["build", "test", "validate"],
+      "cache": false
+    },
+    "htwoo-release:dry-run": {
+      "dependsOn": ["build", "test", "validate"],
+      "cache": false
+    },
+    "htwoo-version:bump": {
+      "dependsOn": ["build", "test"],
+      "cache": false
+    },
+    "htwoo-version:bump:minor": {
+      "dependsOn": ["build", "test"],
+      "cache": false
+    },
+    "htwoo-version:bump:major": {
+      "dependsOn": ["build", "test"],
+      "cache": false
+    },
+    "htwoo-version:set": {
+      "dependsOn": ["build", "test"],
+      "cache": false
+    },
+    "validate": {
+      "cache": true
+    },
+    "clean": {
+      "cache": false
     }
   },
   "release": {
@@ -38,9 +80,23 @@
       }
     },
     "version": {
-      "conventionalCommits": true,
-      "generatorOptions": {
-        "fallbackCurrentVersionResolver": "git-tag"
+      "conventionalCommits": true
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json"
+    ],
+    "sharedGlobals": []
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint", "typecheck", "validate"]
       }
     }
   }
