@@ -1,0 +1,44 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin" as core;
+@use "../../00-base/mixin/elevation.mixin" as elevate;
+
+.hoo-fieldset{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    border-radius: .5rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    &.no-outline{
+        border-color: transparent;
+    }
+    &.raised{
+        border: 1px solid colors.$neutral-200;
+        @include elevate.elevation(12);
+        .hoo-legend{
+            position: relative;
+            top: 1.5rem;
+            left: 0;
+            padding-left: 0;
+        }
+        
+        &:has(.hoo-legend){
+            padding-block-start: 2rem;
+        }
+    }
+}
+
+.hoo-legend{
+    font-weight: 600;
+}
+
+.hoo-field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
+    &[class*="hoo-input"]{
+        flex-grow: 0;
+        width: auto;
+    }
+}

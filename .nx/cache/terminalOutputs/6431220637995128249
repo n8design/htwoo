@@ -1,0 +1,224 @@
+> npm run build:package
+
+[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 build:package
+> npm-run-all clean:package build:css-prod copy:css copy:scss copy:components copy:js build:js build:typings copy:docs
+
+[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 clean:package
+> shx rm -rf ../packages/htwoo-core/lib ../packages/htwoo-core/dist
+
+[1G[0K[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 build:css-prod
+> ice-build build
+
+[1G[0K🧊 [36m[CLI][39m Starting build
+[33m⚠️[39m [36m[Builder][39m HTML builder module not found, will use fallback
+🧊 [36m[Config][39m Loading config from: /Volumes/Code/n8design/projects/htwoo/htwoo-core/ice.config.js
+🧊 [36m[Config][39m Final merged config: {
+  "input": {
+    "ts": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "scss": [
+      "src/**/*.scss",
+      "src/**/*.sass"
+    ],
+    "html": []
+  },
+  "output": {
+    "path": "public"
+  },
+  "scss": {
+    "sourceMap": true,
+    "outDir": "public/css",
+    "includePaths": [
+      "node_modules"
+    ]
+  }
+}
+🧊 [36m[Builder][39m Starting full build
+🧊 [36m[TypeScript][39m Building TypeScript files
+🧊 [36m[scss][39m Building all SCSS files
+🧊 [36m[Builder][39m HTML builder fallback - no action taken
+(node:43773) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Volumes/Code/n8design/projects/htwoo/htwoo-core/ice.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Volumes/Code/n8design/projects/htwoo/htwoo-core/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+🧊 [36m[TypeScript][39m Found 0 TypeScript entry points
+[33m⚠️[39m [36m[TypeScript][39m No TypeScript files found to build
+🧊 [36m[scss][39m Found 8 main SCSS files to build: /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/style.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/style.prod.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/pattern-scaffolding.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/htwoo.min.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/00-base/colors/TeamsThemeHighContrast.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/00-base/colors/TeamsThemeDarkMode.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/00-base/colors/TeamsThemeDarkMode-fixed.scss, /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/styles/00-base/colors/TeamsTheme.scss
+🧊 [36m[scss][39m Building SCSS dependency graph
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/webparts/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/webparts/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/typography/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/tooltip/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/table/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/quicklinks/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/03-organism/quick-links-grid/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/03-organism/pnp-search-grid/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/meta/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/meta-list/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/menu/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/loading/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/icons/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/input/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/output/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/inputs/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/dialogs/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/03-organism/dialog/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/card-elements/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/03-organism/cards/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/04-templates/card-grid" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/04-templates/teams-dashboard" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/04-templates/teams-splash" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/buttons/index.scss" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/00-base/colors/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/00-base/fonts/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/00-base/mixin/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/01-atoms/avatar/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/avatar-w-presence/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/persona/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/03-organism/facepile/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/htwoo-core" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+[33m⚠️[39m [36m[scss][39m Could not resolve import: "../sass/02-molecules/quicklinks/index" from /Volumes/Code/n8design/projects/htwoo/htwoo-core/src/components
+🧊 [36m[scss][39m Built dependency graph with 140 nodes and 252 relationships
+[32m✅[39m [36m[scss][39m Dependency graph built with 140 nodes
+🧊 [36m[scss][39m Processing SCSS: style.scss -> public/css/style.css
+🧊 [36m[scss][39m SCSS: Compiled style.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/style.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/style.css
+🧊 [36m[scss][39m Processing SCSS: style.prod.scss -> public/css/style.prod.css
+🧊 [36m[scss][39m SCSS: Compiled style.prod.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/style.prod.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/style.prod.css
+🧊 [36m[scss][39m Processing SCSS: pattern-scaffolding.scss -> public/css/pattern-scaffolding.css
+🧊 [36m[scss][39m SCSS: Compiled pattern-scaffolding.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/pattern-scaffolding.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/pattern-scaffolding.css
+🧊 [36m[scss][39m Processing SCSS: htwoo.min.scss -> public/css/htwoo.min.css
+🧊 [36m[scss][39m SCSS: Compiled htwoo.min.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/htwoo.min.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/htwoo.min.css
+🧊 [36m[scss][39m Processing SCSS: TeamsThemeHighContrast.scss -> public/css/00-base/colors/TeamsThemeHighContrast.css
+🧊 [36m[scss][39m SCSS: Compiled TeamsThemeHighContrast.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/00-base/colors/TeamsThemeHighContrast.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/00-base/colors/TeamsThemeHighContrast.css
+🧊 [36m[scss][39m Processing SCSS: TeamsThemeDarkMode.scss -> public/css/00-base/colors/TeamsThemeDarkMode.css
+🧊 [36m[scss][39m SCSS: Compiled TeamsThemeDarkMode.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/00-base/colors/TeamsThemeDarkMode.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/00-base/colors/TeamsThemeDarkMode.css
+🧊 [36m[scss][39m Processing SCSS: TeamsThemeDarkMode-fixed.scss -> public/css/00-base/colors/TeamsThemeDarkMode-fixed.css
+🧊 [36m[scss][39m SCSS: Compiled TeamsThemeDarkMode-fixed.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/00-base/colors/TeamsThemeDarkMode-fixed.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/00-base/colors/TeamsThemeDarkMode-fixed.css
+🧊 [36m[scss][39m Processing SCSS: TeamsTheme.scss -> public/css/00-base/colors/TeamsTheme.css
+🧊 [36m[scss][39m SCSS: Compiled TeamsTheme.scss to CSS. Output target: /Volumes/Code/n8design/projects/htwoo/htwoo-core/public/css/00-base/colors/TeamsTheme.css
+[32m✅[39m [36m[scss][39m Built CSS: public/css/00-base/colors/TeamsTheme.css
+🧊 [36m[scss][39m SCSS build complete
+[32m✅[39m [36m[Builder][39m Full build completed in 0.83s
+[32m✅[39m [36m[CLI][39m Build complete
+[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 copy:css
+> shx mkdir -p ../packages/htwoo-core/dist/css && shx cp -r public/css/htwoo.min.css ../packages/htwoo-core/dist/css/
+
+[1G[0K[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 copy:scss
+> shx mkdir -p ../packages/htwoo-core/lib/sass && shx cp -r src/styles/* ../packages/htwoo-core/lib/sass/ && shx rm -rf ../packages/htwoo-core/lib/sass/00-base/fonts
+
+[1G[0K[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 copy:components
+> shx mkdir -p ../packages/htwoo-core/lib/components && shx cp -r src/components/* ../packages/htwoo-core/lib/components/
+
+[1G[0K[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 copy:js
+> shx mkdir -p ../packages/htwoo-core/lib/js && shx cp -r src/js/* ../packages/htwoo-core/lib/js/
+
+[1G[0K[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 build:js
+> rollup -c rollup.config.mjs
+
+[1G[0K[36m
+[1msrc/js/main.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.js, ../packages/htwoo-core/dist/js/umd/htwoo.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.js, ../packages/htwoo-core/dist/js/umd/htwoo.min.js[22m in [1m240ms[22m[39m
+[36m
+[1msrc/js/dialog.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.dialog.js, ../packages/htwoo-core/dist/js/umd/htwoo.dialog.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.dialog.js, ../packages/htwoo-core/dist/js/umd/htwoo.dialog.min.js[22m in [1m104ms[22m[39m
+[36m
+[1msrc/js/nav.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.nav.js, ../packages/htwoo-core/dist/js/umd/htwoo.nav.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.nav.js, ../packages/htwoo-core/dist/js/umd/htwoo.nav.min.js[22m in [1m89ms[22m[39m
+[36m
+[1msrc/js/overflow.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.overflow.js, ../packages/htwoo-core/dist/js/umd/htwoo.overflow.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.overflow.js, ../packages/htwoo-core/dist/js/umd/htwoo.overflow.min.js[22m in [1m100ms[22m[39m
+[36m
+[1msrc/js/pivot.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.pivot.js, ../packages/htwoo-core/dist/js/umd/htwoo.pivot.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.pivot.js, ../packages/htwoo-core/dist/js/umd/htwoo.pivot.min.js[22m in [1m83ms[22m[39m
+[36m
+[1msrc/js/select.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.select.js, ../packages/htwoo-core/dist/js/umd/htwoo.select.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.select.js, ../packages/htwoo-core/dist/js/umd/htwoo.select.min.js[22m in [1m107ms[22m[39m
+[36m
+[1msrc/js/table.js[22m → [1m../packages/htwoo-core/dist/js/umd/htwoo.table.js, ../packages/htwoo-core/dist/js/umd/htwoo.table.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/umd/htwoo.table.js, ../packages/htwoo-core/dist/js/umd/htwoo.table.min.js[22m in [1m94ms[22m[39m
+[36m
+[1msrc/js/main.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.js, ../packages/htwoo-core/dist/js/cjs/htwoo.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.js, ../packages/htwoo-core/dist/js/cjs/htwoo.min.js[22m in [1m148ms[22m[39m
+[36m
+[1msrc/js/dialog.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.dialog.js, ../packages/htwoo-core/dist/js/cjs/htwoo.dialog.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.dialog.js, ../packages/htwoo-core/dist/js/cjs/htwoo.dialog.min.js[22m in [1m89ms[22m[39m
+[36m
+[1msrc/js/nav.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.nav.js, ../packages/htwoo-core/dist/js/cjs/htwoo.nav.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.nav.js, ../packages/htwoo-core/dist/js/cjs/htwoo.nav.min.js[22m in [1m77ms[22m[39m
+[36m
+[1msrc/js/overflow.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.overflow.js, ../packages/htwoo-core/dist/js/cjs/htwoo.overflow.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.overflow.js, ../packages/htwoo-core/dist/js/cjs/htwoo.overflow.min.js[22m in [1m92ms[22m[39m
+[36m
+[1msrc/js/pivot.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.pivot.js, ../packages/htwoo-core/dist/js/cjs/htwoo.pivot.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.pivot.js, ../packages/htwoo-core/dist/js/cjs/htwoo.pivot.min.js[22m in [1m80ms[22m[39m
+[36m
+[1msrc/js/select.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.select.js, ../packages/htwoo-core/dist/js/cjs/htwoo.select.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.select.js, ../packages/htwoo-core/dist/js/cjs/htwoo.select.min.js[22m in [1m102ms[22m[39m
+[36m
+[1msrc/js/table.js[22m → [1m../packages/htwoo-core/dist/js/cjs/htwoo.table.js, ../packages/htwoo-core/dist/js/cjs/htwoo.table.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/cjs/htwoo.table.js, ../packages/htwoo-core/dist/js/cjs/htwoo.table.min.js[22m in [1m86ms[22m[39m
+[36m
+[1msrc/js/main.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.js, ../packages/htwoo-core/dist/js/amd/htwoo.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.js, ../packages/htwoo-core/dist/js/amd/htwoo.min.js[22m in [1m146ms[22m[39m
+[36m
+[1msrc/js/dialog.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.dialog.js, ../packages/htwoo-core/dist/js/amd/htwoo.dialog.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.dialog.js, ../packages/htwoo-core/dist/js/amd/htwoo.dialog.min.js[22m in [1m86ms[22m[39m
+[36m
+[1msrc/js/nav.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.nav.js, ../packages/htwoo-core/dist/js/amd/htwoo.nav.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.nav.js, ../packages/htwoo-core/dist/js/amd/htwoo.nav.min.js[22m in [1m81ms[22m[39m
+[36m
+[1msrc/js/overflow.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.overflow.js, ../packages/htwoo-core/dist/js/amd/htwoo.overflow.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.overflow.js, ../packages/htwoo-core/dist/js/amd/htwoo.overflow.min.js[22m in [1m98ms[22m[39m
+[36m
+[1msrc/js/pivot.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.pivot.js, ../packages/htwoo-core/dist/js/amd/htwoo.pivot.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.pivot.js, ../packages/htwoo-core/dist/js/amd/htwoo.pivot.min.js[22m in [1m80ms[22m[39m
+[36m
+[1msrc/js/select.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.select.js, ../packages/htwoo-core/dist/js/amd/htwoo.select.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.select.js, ../packages/htwoo-core/dist/js/amd/htwoo.select.min.js[22m in [1m102ms[22m[39m
+[36m
+[1msrc/js/table.js[22m → [1m../packages/htwoo-core/dist/js/amd/htwoo.table.js, ../packages/htwoo-core/dist/js/amd/htwoo.table.min.js[22m...[39m
+[32mcreated [1m../packages/htwoo-core/dist/js/amd/htwoo.table.js, ../packages/htwoo-core/dist/js/amd/htwoo.table.min.js[22m in [1m80ms[22m[39m
+[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 build:typings
+> bash ./enhanced-typings.sh
+
+[1G[0K📝 Enhanced TypeScript Declaration Generator
+-------------------------------------------
+🧹 Cleaning up existing declaration files...
+🔍 Attempting automated extraction using TypeScript compiler...
+[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K📦 Creating declarations for bundled modules...
+✅ TypeScript declaration files created successfully
+📊 Stats:       10 declaration files for approximately       14 source files
+[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+
+> @n8d/htwoo-core-styleguide@2.7.0 copy:docs
+> shx cp -r LICENSE README.md ../packages/htwoo-core/
+
+[1G[0K[1G[0K⠙[1G[0K[1G[0K⠙[1G[0K

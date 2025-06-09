@@ -1,18 +1,35 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
+    // Override for core package and testing
     "jsx": "react-jsx",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vitest/globals", "node", "jsdom"]
+    "outDir": "lib",
+    "rootDir": ".",
+    "noEmit": false,
+    
+    // Test-specific types
+    "types": ["vitest/globals", "node", "jsdom", "@testing-library/dom"],
+    
+    // Enable for Vitest
+    "allowImportingTsExtensions": false,
+    
+    // Project reference settings
+    "composite": true,
+    "tsBuildInfoFile": "./lib/.tsbuildinfo"
   },
-  "include": ["src", "test", "*.ts", "vitest.config.ts"],
-  "exclude": ["node_modules", "dist", "lib"]
+  
+  "include": [
+    "src/**/*",
+    "test/**/*", 
+    "*.ts",
+    "vitest.config.ts",
+    "index.d.ts"
+  ],
+  
+  "exclude": [
+    "node_modules", 
+    "dist", 
+    "lib/**/*.js",
+    "legacy"
+  ]
 }

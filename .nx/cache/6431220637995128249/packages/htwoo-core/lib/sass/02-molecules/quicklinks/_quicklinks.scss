@@ -1,0 +1,216 @@
+@use "../../00-base/mixin/core.mixin";
+@use "../../00-base/mixin/line-clamp.mixin";
+@use "../../00-base/colors/colors";
+
+.hoo-qllink {
+    display: block;
+
+	text-decoration: none;
+
+	color: colors.$neutral-700;
+	&:hover{
+		color: colors.$neutral-700;
+	}
+}
+
+
+.hoo-qlinfo {
+	display: flex;
+	flex-direction: column;
+
+	margin-right: core.px2rem(12px);
+
+	align-content: center;
+}
+
+.hoo-ql-media {
+	display: flex;
+	justify-content: center;
+
+	width: core.px2rem(48px);
+	height: core.px2rem(48px);
+
+	background-color: colors.$neutral-050;
+	// JT Fix
+	background-color: transparent;
+
+	align-items: center;
+	
+	overflow: hidden;
+	flex-shrink: 0;
+	&>*{
+		flex: 0 1 50%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 50%;
+	}
+
+	.hoo-media-svg {
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+.hoo-qlcompact {
+	font-size: core.px2rem(14px);
+
+	position: relative;
+
+	display: flex;
+	overflow: hidden;
+	flex-direction: row;
+
+	height: core.px2rem(48px);
+
+	cursor: pointer;
+
+	color: colors.$neutral-700;
+	border: 1px transparent solid;
+	// border-style: inset;
+	border-radius: core.px2rem(2px);
+
+	align-content: center;
+	align-items: stretch;
+	gap: core.px2rem(12px);
+
+	border-radius: core.px2rem(4px);
+
+	&:active {
+		border: 1px colors.$neutral-700 solid;
+	}
+	
+	.hoo-qlinfo {
+		flex-direction: row;
+		align-items: center;
+	}
+	&:hover {
+		border-color: colors.$theme-900;
+	}
+
+	.hoo-qltitle {
+		@include line-clamp.lineClamp(2, core.px2rem(21px));
+	}
+
+	.hoo-ql-media{
+		border-radius: core.px2rem(4px);
+	}
+
+	&.mode-edit {
+		&:hover {
+			border-color: colors.$neutral-350;
+
+			.hoo-qlmenu {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.hoo-qlabout {
+				display: none;
+			}
+		}
+	}
+
+}
+
+.hoo-qltitle {
+	font-weight: 400;
+	line-height: core.px2rem(20px);
+
+	margin-bottom: core.px2rem(2px);
+
+	text-decoration: inherit;
+
+	block-size: min-content;
+}
+
+.hoo-qllist {
+	font-size: core.px2rem(14px);
+
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+
+	box-sizing: border-box;
+	height: 100%;
+	min-height: core.px2rem(40px);
+	padding: core.px2rem(10px);
+	padding-left: 0;
+	padding-left: .75rem;
+
+	cursor: pointer;
+
+	color: colors.$neutral-700;
+	border: 1px transparent solid;
+
+	align-items: flex-start;
+	border-radius: core.px2rem(4px);
+
+	@supports (gap: core.px2rem(3px)) {
+		gap: core.px2rem(3px);
+	}
+
+	.hoo-ql-media {
+		width: core.px2rem(24px);
+		height: core.px2rem(24px);
+		margin-right: core.px2rem(12px);
+
+		.hoo-icon-svg {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+		}
+	}
+
+	.hoo-qltitle {
+		@include line-clamp.lineClamp(1, core.px2rem(20px));
+	}
+
+	.hoo-qldesc {
+		@include line-clamp.lineClamp(2, core.px2rem(20px));
+	}
+
+	&.mode-edit {
+		&:hover {
+			border-color: colors.$neutral-350;
+
+			.hoo-qlmenu {
+				display: flex;
+			}
+
+			.hoo-qlabout {
+				display: none;
+			}
+		}
+	}
+
+	&:hover {
+		color: colors.$theme-900;
+		border-color: colors.$theme-900;
+
+		.hoo-qlabout {
+			display: flex;
+		}
+	}
+}
+
+.hoo-qlmenu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	display: none;
+	flex-direction: column;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+}
+
+.hoo-qlabout {
+	@extend .hoo-qlmenu;
+}

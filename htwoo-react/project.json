@@ -1,0 +1,63 @@
+{
+  "name": "htwoo-react",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "htwoo-react/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["htwoo-core:build"],
+      "options": {
+        "command": "npx gulp build",
+        "cwd": "htwoo-react"
+      },
+      "outputs": [
+        "{workspaceRoot}/htwoo-react/lib"
+      ]
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npm run build-storybook",
+        "cwd": "htwoo-react"
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-react"
+      ]
+    },
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run storybook",
+        "cwd": "htwoo-react"
+      }
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx gulp watch",
+        "cwd": "htwoo-react"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx gulp clean",
+        "cwd": "htwoo-react"
+      }
+    },
+    "prepublish": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npx gulp prepublish",
+        "cwd": "htwoo-react"
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/htwoo-react"
+      ]
+    }
+  },
+  "tags": ["scope:react", "type:library"]
+}

@@ -1,0 +1,85 @@
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-overflow {
+    white-space: wrap;
+    max-height: core.px2rem(48px);
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+}
+
+.has-overflow {
+    position: relative;
+
+    min-height: core.px2rem(46px);
+
+    // &>.hoo-overflow {
+    //     position: fixed;
+    // }
+
+
+    .is-hidden,
+    .is-overflow-item {
+        visibility: hidden;
+    }
+
+    .hoo-buttonicon-overflow {
+        // position: absolute;
+        // right: 0;
+        order: 999;
+        height: core.px2rem(44px);
+        visibility: hidden;
+
+        &.is-active {
+            visibility: visible;
+
+            .hoo-buttonicon-overflow {
+                visibility: inherit;
+            }
+        }
+
+        &:hover {
+            &>.hoo-buttonflyout {
+                display: block;
+                right: 0;
+                left: unset;
+            }
+
+            .hoo-button-pivot {
+                &:hover {
+                    padding-left: .25rem;
+                }
+            }
+
+        }
+
+    }
+
+    &>.hoo-overflow {
+        &>.show-flyout {
+            &.hoo-buttonicon-overflow {
+                &>.hoo-buttonflyout {
+                    display: block;
+                    right: 0;
+                    left: unset;
+                }
+            }
+
+            .hoo-button-pivot {
+                &:hover {
+                    padding-left: .25rem;
+                }
+            }
+        }
+    }
+
+    .hoo-buttonflyout {
+        padding-bottom: .25rem;
+    }
+}
+
+// .hoo-overflow{
+//     display: flex;
+//     flex-wrap: nowrap;
+//     overflow: hidden;
+// }

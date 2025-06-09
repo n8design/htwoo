@@ -2,6 +2,25 @@
     "name": "htwoo",
     "private": true,
     "workspaces": [
-        "htwoo-*"
-    ]
+        "htwoo-core",
+        "htwoo-react",
+        "packages/htwoo-core"
+    ],
+    "scripts": {
+        "build": "nx run-many -t build",
+        "build:clean": "tsc --build --clean",
+        "build:force": "tsc --build --force",
+        "typecheck": "nx run-many -t typecheck",
+        "typecheck:watch": "tsc --noEmit --watch",
+        "test": "nx run-many -t test",
+        "graph": "nx graph",
+        "affected:build": "nx affected -t build",
+        "affected:test": "nx affected -t test",
+        "affected:typecheck": "nx affected -t typecheck"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.18",
+        "nx": "^21.1.3",
+        "typescript": "^5.1.6"
+    }
 }

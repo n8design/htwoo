@@ -1,28 +1,39 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es2019",
-    "module": "esnext",
-    "moduleResolution": "node",
+    // Override specific settings for React
     "jsx": "react",
-    "sourceMap": true,
-    "experimentalDecorators": false,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
+    "outDir": "lib",
+    "rootDir": "src",
     "removeComments": true,
-    "typeRoots": [
-      "./node_modules/@types",
-    ],
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "outDir": "lib"
+    
+    // React-specific libraries
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "types": ["react", "react-dom"],
+    
+    // Ensure compatibility with React ecosystem
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    
+    // Project reference settings
+    "composite": true,
+    "tsBuildInfoFile": "./lib/.tsbuildinfo"
   },
+  
   "include": [
-    "./src/**/*"
+    "src/**/*"
   ],
+  
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib",
+    "**/*.test.*",
+    "**/__tests__/**",
+    "**/*.stories.*"
+  ],
+  
+  // Reference dependencies
+  "references": [
+    { "path": "../packages/htwoo-core" }
   ]
 }

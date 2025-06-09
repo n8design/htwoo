@@ -1,0 +1,53 @@
+{
+  "name": "htwoo-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/htwoo-core/lib",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["htwoo-core-styleguide:build"],
+      "options": {
+        "command": "echo 'Package built by htwoo-core-styleguide'"
+      },
+      "inputs": [
+        "{workspaceRoot}/htwoo-core/src/**/*",
+        "{workspaceRoot}/htwoo-core/patternlab-config.json",
+        "{workspaceRoot}/htwoo-core/ice.config.js"
+      ],
+      "outputs": [
+        "{workspaceRoot}/packages/htwoo-core/lib",
+        "{workspaceRoot}/packages/htwoo-core/dist"
+      ]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run typecheck",
+        "cwd": "packages/htwoo-core"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm test",
+        "cwd": "packages/htwoo-core"
+      }
+    },
+    "test:watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:watch",
+        "cwd": "packages/htwoo-core"
+      }
+    },
+    "test:coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:coverage",
+        "cwd": "packages/htwoo-core"
+      }
+    }
+  },
+  "tags": ["scope:core", "type:library"]
+}

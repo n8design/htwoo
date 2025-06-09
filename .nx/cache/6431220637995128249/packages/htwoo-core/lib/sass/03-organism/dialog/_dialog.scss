@@ -1,0 +1,211 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-dialog {
+    &::backdrop {
+        opacity: 0.75;
+
+    }
+}
+
+// ** Void legacy styles ** //
+
+.hoo-dlg {
+    // ** Void legacy styles ** //
+
+    .hoo-dlgheader {
+        padding: 0;
+    }
+
+    .hoo-dlgcontent {
+        margin-top: 0.5rem;
+        padding: 0;
+
+        &>*:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+}
+
+.hoo-dlg {
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: var(--hoo-dlg-width, revert);
+    max-width: 100vw;
+    max-width: 100svw;
+    height: var(--hoo-dlg-height, revert);
+    max-height: 100vh;
+    max-height: 100svh;
+    padding: 1.5rem;
+
+    transition: all 0.5s ease-in-out;
+
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: colors.$neutral-000;
+    color: colors.$neutral-700;
+
+    .hoo-dlgcontent {
+        width: 100%;
+    }
+
+    .hoo-dlg-iframe {
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &::backdrop {
+        backdrop-filter: blur(5px) saturate( 150%);
+    }
+
+    &.msg {
+        padding: 0.5rem;
+
+        background-color: white;
+    }
+
+    &.sidebar {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: unset;
+
+        height: 100vh;
+        height: 100svh;
+        max-height: unset;
+        margin: 0;
+
+        &.right {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &.left {
+            right: unset;
+            left: 0;
+
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &.topbar {
+        top: 0;
+        bottom: unset;
+
+        width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
+        max-width: unset;
+        height: var(--hoo-dlg-height, revert);
+        margin: 0;
+
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &.bottombar {
+        top: unset;
+        bottom: 0;
+
+        width: var(--hoo-dlg-width, 100vw);
+        width: var(--hoo-dlg-width, 100svw);
+        max-width: unset;
+        height: var(--hoo-dlg-height, revert);
+        margin: 0;
+
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &.fullscreen {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 100vw;
+        max-width: unset;
+        height: 100vh;
+        max-height: unset;
+        margin: 0;
+    }
+
+    &.statusbar {
+        font-size: core.px2rem(14px);
+
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        line-height: 1.5;
+
+        color: colors.$info-text;
+        border: 1px colors.$info-border solid;
+        border-radius: core.px2rem(4px);
+        background-color: colors.$info-background;
+
+        gap: 0.25rem;
+
+        svg {
+            width: core.px2rem(20px);
+            height: core.px2rem(20px);
+
+            fill: colors.$info-icon;
+        }
+
+        .hoo-icon {
+            flex-grow: 0;
+        }
+
+        &[open] {
+            display: flex;
+        }
+
+        .hoo-dlgcontent {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        &.error {
+            color: colors.$error-text;
+            border: 1px colors.$error-border solid;
+            background-color: colors.$error-background;
+            outline-color: colors.$error-border;
+            svg {
+                fill: colors.$error-icon;
+            }
+        }
+
+        &.warning {
+            color: colors.$warning-text;
+            border: 1px colors.$warning-border solid;
+            background-color: colors.$warning-background;
+            outline-color: colors.$warning-border;
+            svg {
+                fill: colors.$warning-icon;
+            }
+        }
+
+        &.success {
+            color: colors.$success-text;
+            border: 1px colors.$success-border solid;
+            background-color: colors.$success-background;
+            outline-color: colors.$success-border;
+
+            svg {
+                fill: colors.$success-icon;
+            }
+        }
+    }
+}
+
+.hoo-dlg-actions {
+    justify-self: flex-end;
+}

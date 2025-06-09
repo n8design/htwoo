@@ -1,0 +1,9 @@
+@use "../../00-base/mixin/grid.mixin";
+
+.hoo-grid{
+	box-sizing: border-box;
+
+	border: 1px silver solid;
+
+	@include grid.gridBase();
+}

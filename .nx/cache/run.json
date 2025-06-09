@@ -1,0 +1,43 @@
+{
+  "run": {
+    "command": "nx run-many --target=build --all --parallel",
+    "startTime": "2025-06-08T21:50:58.705Z",
+    "endTime": "2025-06-08T21:51:02.371Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "htwoo-core-styleguide:build",
+      "target": "build",
+      "projectName": "htwoo-core-styleguide",
+      "hash": "6431220637995128249",
+      "startTime": "2025-06-08T21:50:58.840Z",
+      "endTime": "2025-06-08T21:50:59.460Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "htwoo-core:build",
+      "target": "build",
+      "projectName": "htwoo-core",
+      "hash": "16661151215502504251",
+      "startTime": "2025-06-08T21:50:59.486Z",
+      "endTime": "2025-06-08T21:50:59.841Z",
+      "params": "",
+      "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "htwoo-react:build",
+      "target": "build",
+      "projectName": "htwoo-react",
+      "hash": "12317921990687246105",
+      "startTime": "2025-06-08T21:50:59.863Z",
+      "endTime": "2025-06-08T21:51:02.233Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

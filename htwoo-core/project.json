@@ -1,0 +1,62 @@
+{
+  "name": "htwoo-core-styleguide",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "htwoo-core/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build:package",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/htwoo-core/lib",
+        "{workspaceRoot}/packages/htwoo-core/dist"
+      ]
+    },
+    "build:optimized": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build:optimized",
+        "cwd": "htwoo-core"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm start",
+        "cwd": "htwoo-core"
+      }
+    },
+    "pl:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run pl:build",
+        "cwd": "htwoo-core"
+      }
+    },
+    "pl:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run pl:serve",
+        "cwd": "htwoo-core"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run clean:package",
+        "cwd": "htwoo-core"
+      }
+    },
+    "validate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run validate:package",
+        "cwd": "htwoo-core"
+      }
+    }
+  },
+  "tags": ["scope:styleguide", "type:application"]
+}

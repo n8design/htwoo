@@ -1,0 +1,15 @@
+> npx gulp build
+
+[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
+[1G[0K⠙[1G[0K[[90m23:51:01[39m] Using gulpfile [35m/Volumes/Code/n8design/projects/htwoo/htwoo-react/gulpfile.js[39m
+[[90m23:51:01[39m] Starting '[36mbuild[39m'...
+[[90m23:51:01[39m] Starting '[36mclean[39m'...
+[[90m23:51:01[39m] Finished '[36mclean[39m' after [35m40 ms[39m
+[[90m23:51:01[39m] Starting '[36mtsCompile[39m'...
+(node:45545) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[[90m23:51:02[39m] Finished '[36mtsCompile[39m' after [35m905 ms[39m
+[[90m23:51:02[39m] Starting '[36mcopyIcons[39m'...
+[[90m23:51:02[39m] Finished '[36mcopyIcons[39m' after [35m1.26 ms[39m
+[[90m23:51:02[39m] Finished '[36mbuild[39m' after [35m947 ms[39m
+[1G[0K⠙[1G[0K

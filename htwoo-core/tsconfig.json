@@ -1,31 +1,39 @@
 {
-    // Change this to match your project
-    "include": ["src/js/**/*.js"],
-    "exclude": ["src/js/vendor/**/*", "src/js/prismjs/**/*", "src/js/legacy/**/*", "src/js/themeswitch/**/*"],
+    "extends": "../tsconfig.json",
     "compilerOptions": {
-      // Tells TypeScript to read JS files, as
-      // normally they are ignored as source files
+      // Tells TypeScript to read JS files for declaration generation
       "allowJs": true,
-      // Generate d.ts files
+      
+      // Generate d.ts files only
       "declaration": true,
-      // This compiler run should
-      // only output d.ts files
       "emitDeclarationOnly": true,
-      // Types should go into this directory.
+      
+      // Output to the packages directory (monorepo-aware path)
       "outDir": "../packages/htwoo-core/lib/js/",
-      // Skip type checking to avoid errors with dependencies
-      "skipLibCheck": true,
-      // Set target to ES6 for better compatibility
-      "target": "ES6",
-      // Module settings
-      "module": "ESNext",
-      "moduleResolution": "node",
-      // Turn off strict mode for easier generation
+      "rootDir": "./src/js",
+      
+      // Relaxed settings for JS-to-TS conversion
       "strict": false,
-      // Allow synthetic default imports
-      "esModuleInterop": true,
-      // Use this lib to avoid JSX errors
-      "lib": ["DOM", "ES2015", "ES2016", "ES2017"]
-    }
+      "skipLibCheck": true,
+      
+      // Module settings compatible with the monorepo
+      "target": "ES2020",
+      "module": "ESNext",
+      
+      // Project reference settings
+      "composite": false,
+      "tsBuildInfoFile": "./lib/.tsbuildinfo"
+    },
+    
+    "include": ["src/js/**/*.js"],
+    "exclude": [
+      "src/js/vendor/**/*", 
+      "src/js/prismjs/**/*", 
+      "src/js/legacy/**/*", 
+      "src/js/themeswitch/**/*"
+    ],
+    
+    // No references since this is just declaration generation
+    "references": []
   }
   
