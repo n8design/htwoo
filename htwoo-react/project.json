@@ -26,6 +26,35 @@
         "{workspaceRoot}/docs/htwoo-react"
       ]
     },
+    "docs": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-storybook"],
+      "options": {
+        "command": "echo 'hTWOo React documentation generated via Storybook'",
+        "cwd": "htwoo-react"
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-react"
+      ]
+    },
+    "docs:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run storybook",
+        "cwd": "htwoo-react"
+      }
+    },
+    "docs:build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npm run build-storybook",
+        "cwd": "htwoo-react"
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-react"
+      ]
+    },
     "storybook": {
       "executor": "nx:run-commands",
       "options": {

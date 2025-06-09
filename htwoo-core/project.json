@@ -43,6 +43,51 @@
         "cwd": "htwoo-core"
       }
     },
+    "docs": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "bash docs.sh",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-core"
+      ]
+    },
+    "docs:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm start",
+        "cwd": "htwoo-core"
+      }
+    },
+    "docs:build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npm run pl:build",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/htwoo-core/public"
+      ]
+    },
+    "docs:publish": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["docs:build"],
+      "options": {
+        "commands": [
+          "cp -r ./src/plugins/* ../docs/htwoo-core/plugins/",
+          "cp -r ./src/styleguide/images/* ../docs/htwoo-core/styleguide/images/",
+          "node helpers/tools/sitemap.js"
+        ],
+        "cwd": "htwoo-core",
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-core"
+      ]
+    },
     "clean": {
       "executor": "nx:run-commands",
       "options": {

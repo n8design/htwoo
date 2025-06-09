@@ -9,7 +9,7 @@ function filenameToSitename(filename) {
     return `?${queryParam}`;
 }
 
-let files = fs.readdirSync(path.join(process.cwd(), 'public/patterns'), { recursive: true });
+let files = fs.readdirSync(path.join(process.cwd(), '../docs/htwoo-core/patterns'), { recursive: true });
 
 if (files) {
     files = files.filter(file => file.endsWith('.rendered.html'));

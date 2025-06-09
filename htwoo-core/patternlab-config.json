@@ -59,18 +59,18 @@
       "js": "./src/js",
       "images": "./src/images",
       "fonts": "./src/fonts",
-      "css": "./src/css"
+      "css": "../docs/htwoo-core/css"
     },
     "public": {
-      "root": "public/",
-      "patterns": "public/patterns/",
-      "data": "public/styleguide/data/",
-      "annotations": "public/annotations/",
-      "styleguide": "public/styleguide/",
-      "js": "public/js",
-      "images": "public/images",
-      "fonts": "public/fonts",
-      "css": "public/css"
+      "root": "../docs/htwoo-core/",
+      "patterns": "../docs/htwoo-core/patterns/",
+      "data": "../docs/htwoo-core/styleguide/data/",
+      "annotations": "../docs/htwoo-core/annotations/",
+      "styleguide": "../docs/htwoo-core/styleguide/",
+      "js": "../docs/htwoo-core/js",
+      "images": "../docs/htwoo-core/images",
+      "fonts": "../docs/htwoo-core/fonts",
+      "css": "../docs/htwoo-core/css"
     }
   },
   "patternExtension": "hbs",

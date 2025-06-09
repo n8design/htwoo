@@ -1,0 +1,44 @@
+{{#form-flow}}
+{{#form}}
+<fieldset id="issue-verification" class="hoo-fieldset no-outline">
+    <div class="hoo-field" role="group">
+        {{#assigned-to}}
+        {{> atoms-label }}
+        Jim Halpert
+        {{/assigned-to}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#verification-date}}
+        {{> atoms-label }}
+        <time id="next-time" datetime=""></time>
+        {{/verification-date}}
+    </div>
+    {{!-- <div class="hoo-field" role="group">
+        {{#status}}
+        {{> atoms-label }}
+        {{> molecules-radio-button-group}}
+        {{/status}}
+    </div> --}}
+    <div class="hoo-field" role="group">
+        {{#comments}}
+        {{> atoms-label }}
+        Upon investigation, the issue is likely related to a failure in the heating element or a malfunction in the
+        machine’s brewing cycle, both common problems for this type of coffee machine. To resolve the issue, a
+        technician will need to inspect the internal components, particularly the heating element, water pump, and
+        circuit board responsible for activating the brewing process.
+        <br><br>
+        In cases where this fault has occurred
+        previously, a reset procedure or replacement of the faulty components has successfully restored normal
+        operation. If the issue is more severe, a full machine replacement may be necessary. Regular maintenance and
+        occasional cleaning of the internal mechanisms are recommended to prevent similar occurrences in the future.
+        {{/comments}}
+    </div>
+    <div class="hoo-field" role="group">
+        {{#estimate-time-to-resolve}}
+        {{> atoms-label }}
+        5 hours
+        {{/estimate-time-to-resolve}}
+    </div>
+</fieldset>
+{{/form}}
+{{/form-flow}}

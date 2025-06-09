@@ -18,6 +18,17 @@
       "dependsOn": ["build"],
       "cache": true
     },
+    "docs": {
+      "dependsOn": ["build"],
+      "cache": true
+    },
+    "docs:serve": {
+      "cache": false
+    },
+    "docs:build": {
+      "dependsOn": ["build"],
+      "cache": true
+    },
     "changelog": {
       "cache": false
     },
@@ -96,7 +107,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "test", "lint", "typecheck", "validate"]
+        "cacheableOperations": ["build", "test", "lint", "typecheck", "validate", "docs", "docs:build", "build-storybook"]
       }
     }
   }

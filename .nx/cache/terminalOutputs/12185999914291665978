@@ -1,8 +1,0 @@
-> npm run clean:package
-
-[1mnpm[22m [33mwarn[39m [94mconfig[39m dev Please use --include=dev instead.
-
-> @n8d/htwoo-core-styleguide@2.7.0 clean:package
-> shx rm -rf ../packages/htwoo-core/lib ../packages/htwoo-core/dist
-
-[1G[0K[1G[0K⠙[1G[0K

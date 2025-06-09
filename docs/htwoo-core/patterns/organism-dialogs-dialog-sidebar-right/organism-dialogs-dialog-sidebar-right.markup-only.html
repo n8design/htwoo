@@ -1,0 +1,83 @@
+<dialog id="dlgsbright" class="hoo-dlg sidebar right">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a sidebar on the right. That automatically scales with the content.</p>
+        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='width-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='width-20vw'>
+            <span class="hoo-button-label">20% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-50vw'>
+            <span class="hoo-button-label">50% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-75vw'>
+            <span class="hoo-button-label">75% width</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+
+    let dlg = document.querySelector('#dlgsbright');
+
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+
+        dlg ? dlg.showModal() : dlg;
+
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+
+</script>
