@@ -1,4 +1,4 @@
-import { useArgs } from "@storybook/preview-api";
+import { useArgs } from "storybook/preview-api";
 import HOOPivotBar, { HOOPivotBarType } from "./HOOPivotBar";
 import HOOLabel from "../HOOLabel";
 

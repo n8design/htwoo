@@ -1,4 +1,8 @@
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import { StorybookConfig } from '@storybook/react-webpack5';
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: [
@@ -7,15 +11,15 @@ const config: StorybookConfig = {
   ],
 
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    '@storybook/addon-a11y',
-    '@storybook/addon-webpack5-compiler-swc',
-    '@chromatic-com/storybook'
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    getAbsolutePath("@storybook/addon-webpack5-compiler-swc"),
+    getAbsolutePath("@chromatic-com/storybook"),
+    getAbsolutePath("@storybook/addon-docs")
   ],
 
   framework: {
-    name: '@storybook/react-webpack5', options: {
+    name: getAbsolutePath("@storybook/react-webpack5"), options: {
       builder: {
         useSWC: true
       }
@@ -24,6 +28,13 @@ const config: StorybookConfig = {
 
   swc: () => ({
     jsc: {
+      parser: {
+        syntax: 'typescript',
+        tsx: true,
+        jsx: true,
+        decorators: false,
+        dynamicImport: false
+      },
       transform: {
         react: {
           runtime: 'automatic'
@@ -53,4 +64,8 @@ export function enumOptions(someEnum) {
       ),
     },
   }
+}
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
 }

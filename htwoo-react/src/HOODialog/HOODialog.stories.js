@@ -1,4 +1,4 @@
-import { useArgs } from "@storybook/preview-api";
+import { useArgs } from "storybook/preview-api";
 import { symset } from "../SymbolSet";
 import HOODialog, { HOODialogType } from "./HOODialog";
 import HOODialogHeader from "../HOODialogHeader";
