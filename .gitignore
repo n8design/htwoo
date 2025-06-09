@@ -120,3 +120,5 @@ __report__/a11y_report.md
 ./htwoo-react/lib
 .documentation
 reference
+.nx/cache
+.nx/workspace-data

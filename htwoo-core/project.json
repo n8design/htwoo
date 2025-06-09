@@ -56,6 +56,35 @@
         "command": "npm run validate:package",
         "cwd": "htwoo-core"
       }
+    },
+    "changelog": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-changelog.js",
+        "cwd": "htwoo-core"
+      }
+    },
+    "changelog:preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
+        "cwd": "htwoo-core"
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "standard-version --config ./changelog.config.js",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "release:dry-run": {
+      "executor": "nx:run-commands", 
+      "options": {
+        "command": "standard-version --config ./changelog.config.js --dry-run",
+        "cwd": "htwoo-core"
+      }
     }
   },
   "tags": ["scope:styleguide", "type:application"]

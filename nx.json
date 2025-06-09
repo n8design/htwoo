@@ -17,6 +17,31 @@
     "build-storybook": {
       "dependsOn": ["build"],
       "cache": true
+    },
+    "changelog": {
+      "cache": false
+    },
+    "release": {
+      "dependsOn": ["build", "test"],
+      "cache": false
+    }
+  },
+  "release": {
+    "projects": ["htwoo-core"],
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": {
+        "htwoo-core": {
+          "file": "htwoo-core/CHANGELOG.md",
+          "createRelease": "github"
+        }
+      }
+    },
+    "version": {
+      "conventionalCommits": true,
+      "generatorOptions": {
+        "fallbackCurrentVersionResolver": "git-tag"
+      }
     }
   }
 }
