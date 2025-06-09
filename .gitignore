@@ -122,3 +122,11 @@ __report__/a11y_report.md
 reference
 .nx/cache
 .nx/workspace-data
+
+# Storybook generated files
+**/project.json
+docs/**/project.json
+
+# Temporary build files
+temp-*.html
+*-graph.html
