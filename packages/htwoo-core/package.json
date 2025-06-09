@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
   "main": "dist/js/cjs/htwoo.js",
   "module": "dist/js/amd/htwoo.js",
@@ -12,7 +12,10 @@
     "test:compile": "test/compile.test.sh",
     "typecheck": "tsc --noEmit",
     "test:ts": "vitest run test/**/*.test.ts",
-    "convert:js-to-ts": "./convert-tests-to-ts.sh"
+    "convert:js-to-ts": "./convert-tests-to-ts.sh",
+    "prepack": "node ../../htwoo-core/scripts/sync-versions.js check",
+    "version": "node ../../htwoo-core/scripts/sync-versions.js sync",
+    "postversion": "node ../../htwoo-core/scripts/sync-versions.js tag && git push origin main --follow-tags"
   },
   "exports": {
     ".": {

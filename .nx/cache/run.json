@@ -1,40 +1,18 @@
 {
   "run": {
-    "command": "nx run-many --target=build --all --parallel",
-    "startTime": "2025-06-08T21:50:58.705Z",
-    "endTime": "2025-06-08T21:51:02.371Z",
+    "command": "nx run htwoo-core-styleguide:version:list-tags",
+    "startTime": "2025-06-09T09:14:52.093Z",
+    "endTime": "2025-06-09T09:14:52.276Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "htwoo-core-styleguide:build",
-      "target": "build",
+      "taskId": "htwoo-core-styleguide:version:list-tags",
+      "target": "version:list-tags",
       "projectName": "htwoo-core-styleguide",
-      "hash": "6431220637995128249",
-      "startTime": "2025-06-08T21:50:58.840Z",
-      "endTime": "2025-06-08T21:50:59.460Z",
-      "params": "",
-      "cacheStatus": "local-cache-hit",
-      "status": 0
-    },
-    {
-      "taskId": "htwoo-core:build",
-      "target": "build",
-      "projectName": "htwoo-core",
-      "hash": "16661151215502504251",
-      "startTime": "2025-06-08T21:50:59.486Z",
-      "endTime": "2025-06-08T21:50:59.841Z",
-      "params": "",
-      "cacheStatus": "local-cache-hit",
-      "status": 0
-    },
-    {
-      "taskId": "htwoo-react:build",
-      "target": "build",
-      "projectName": "htwoo-react",
-      "hash": "12317921990687246105",
-      "startTime": "2025-06-08T21:50:59.863Z",
-      "endTime": "2025-06-08T21:51:02.233Z",
+      "hash": "217625449774759484",
+      "startTime": "2025-06-09T09:14:52.216Z",
+      "endTime": "2025-06-09T09:14:52.274Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

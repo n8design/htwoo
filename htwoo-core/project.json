@@ -74,15 +74,107 @@
     "release": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "standard-version --config ./changelog.config.js",
+        "command": "node scripts/release.js release",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "release:patch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump patch",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "release:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump minor",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "release:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump major",
         "cwd": "htwoo-core"
       },
       "dependsOn": ["build", "test"]
     },
     "release:dry-run": {
-      "executor": "nx:run-commands", 
+      "executor": "nx:run-commands",
       "options": {
-        "command": "standard-version --config ./changelog.config.js --dry-run",
+        "command": "node scripts/release.js release --bump patch --dry-run",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "release:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js check",
+        "cwd": "htwoo-core"
+      }
+    },
+    "version:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js check",
+        "cwd": "htwoo-core"
+      }
+    },
+    "version:sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js sync",
+        "cwd": "htwoo-core"
+      }
+    },
+    "version:bump": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "version:bump:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump minor",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "version:bump:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump major",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "version:set": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js set",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "version:tag": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js tag",
+        "cwd": "htwoo-core"
+      }
+    },
+    "version:list-tags": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js list-tags",
         "cwd": "htwoo-core"
       }
     }

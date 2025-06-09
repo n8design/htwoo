@@ -108,6 +108,38 @@
       "htwoo-core/package.json",
       "nx/core/package-json"
     ],
+    "metadata.targetGroups.NPM Scripts.21": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.22": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.23": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.24": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.25": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.26": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.27": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.28": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
     "metadata.description": [
       "htwoo-core/package.json",
       "nx/core/package-json"
@@ -720,6 +752,230 @@
       "htwoo-core/package.json",
       "nx/core/package-json"
     ],
+    "targets.--- /// Changelog Commands /// ---": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Changelog Commands /// ---.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.changelog:htwoo-core.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Version Sync Commands /// ---.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.--- /// Release Commands /// ---.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:test.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:build.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.executor": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.options": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.metadata": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.options.script": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.metadata.scriptContent": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:legacy:dry-run.metadata.runCommand": [
+      "htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
     "$schema": [
       "htwoo-core/project.json",
       "nx/core/project-json"
@@ -884,6 +1140,362 @@
       "htwoo-core/project.json",
       "nx/core/project-json"
     ],
+    "targets.changelog": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog:preview": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog:preview.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog:preview.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog:preview.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.changelog:preview.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:patch.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:minor.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:major.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:dry-run.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:check": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:check.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:check.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:check.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.release:check.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:check": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:check.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:check.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:check.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:check.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:sync": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:sync.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:sync.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:sync.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:sync.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:minor.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:bump:major.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set.dependsOn": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:set.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:tag": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:tag.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:tag.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:tag.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:tag.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:list-tags": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:list-tags.executor": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:list-tags.options": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:list-tags.options.command": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.version:list-tags.options.cwd": [
+      "htwoo-core/project.json",
+      "nx/core/project-json"
+    ],
     "targets.build.dependsOn": [
       "nx.json",
       "nx/target-defaults"
@@ -893,6 +1505,22 @@
       "nx/target-defaults"
     ],
     "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.changelog.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.changelog.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.release.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.release.parallelism": [
       "nx.json",
       "nx/target-defaults"
     ]
@@ -1224,6 +1852,18 @@
       "packages/htwoo-core/package.json",
       "nx/core/package-json"
     ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.4": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.5": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
     "metadata.description": [
       "packages/htwoo-core/package.json",
       "nx/core/package-json"
@@ -1333,6 +1973,90 @@
       "nx/core/package-json"
     ],
     "targets.convert:js-to-ts.metadata.runCommand": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.executor": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.options": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.metadata": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.options.script": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.metadata.scriptContent": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prepack.metadata.runCommand": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.executor": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.options": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.metadata": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.options.script": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.metadata.scriptContent": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version.metadata.runCommand": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.executor": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.options": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.metadata": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.options.script": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.metadata.scriptContent": [
+      "packages/htwoo-core/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.postversion.metadata.runCommand": [
       "packages/htwoo-core/package.json",
       "nx/core/package-json"
     ],

@@ -24,7 +24,10 @@
             "NPM Scripts": [
               "test:compile",
               "test:ts",
-              "convert:js-to-ts"
+              "convert:js-to-ts",
+              "prepack",
+              "version",
+              "postversion"
             ]
           },
           "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
@@ -76,6 +79,42 @@
             "metadata": {
               "scriptContent": "./convert-tests-to-ts.sh",
               "runCommand": "npm run convert:js-to-ts"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "prepack": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prepack"
+            },
+            "metadata": {
+              "scriptContent": "node ../../htwoo-core/scripts/sync-versions.js check",
+              "runCommand": "npm run prepack"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "version": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version"
+            },
+            "metadata": {
+              "scriptContent": "node ../../htwoo-core/scripts/sync-versions.js sync",
+              "runCommand": "npm run version"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "postversion": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "postversion"
+            },
+            "metadata": {
+              "scriptContent": "node ../../htwoo-core/scripts/sync-versions.js tag && git push origin main --follow-tags",
+              "runCommand": "npm run postversion"
             },
             "configurations": {},
             "parallelism": true
@@ -290,7 +329,15 @@
               "build:typings",
               "copy:docs",
               "build:package",
-              "validate:package"
+              "validate:package",
+              "--- /// Changelog Commands /// ---",
+              "changelog:htwoo-core",
+              "--- /// Version Sync Commands /// ---",
+              "--- /// Release Commands /// ---",
+              "release:test",
+              "release:build",
+              "release:legacy",
+              "release:legacy:dry-run"
             ]
           },
           "description": "",
@@ -553,6 +600,102 @@
             "configurations": {},
             "parallelism": true
           },
+          "--- /// Changelog Commands /// ---": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "--- /// Changelog Commands /// ---"
+            },
+            "metadata": {
+              "scriptContent": "",
+              "runCommand": "npm run --- /// Changelog Commands /// ---"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "changelog:htwoo-core": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "changelog:htwoo-core"
+            },
+            "metadata": {
+              "scriptContent": "node ./scripts/generate-changelog.js",
+              "runCommand": "npm run changelog:htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "--- /// Version Sync Commands /// ---": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "--- /// Version Sync Commands /// ---"
+            },
+            "metadata": {
+              "scriptContent": "",
+              "runCommand": "npm run --- /// Version Sync Commands /// ---"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "--- /// Release Commands /// ---": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "--- /// Release Commands /// ---"
+            },
+            "metadata": {
+              "scriptContent": "",
+              "runCommand": "npm run --- /// Release Commands /// ---"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "release:test"
+            },
+            "metadata": {
+              "scriptContent": "node ./scripts/release.js test",
+              "runCommand": "npm run release:test"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:build": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "release:build"
+            },
+            "metadata": {
+              "scriptContent": "node ./scripts/release.js build",
+              "runCommand": "npm run release:build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:legacy": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "release:legacy"
+            },
+            "metadata": {
+              "scriptContent": "standard-version --config ./changelog.config.js",
+              "runCommand": "npm run release:legacy"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:legacy:dry-run": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "release:legacy:dry-run"
+            },
+            "metadata": {
+              "scriptContent": "standard-version --config ./changelog.config.js --dry-run",
+              "runCommand": "npm run release:legacy:dry-run"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
           "build": {
             "executor": "nx:run-commands",
             "options": {
@@ -619,6 +762,188 @@
             "executor": "nx:run-commands",
             "options": {
               "command": "npm run validate:package",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "changelog": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/generate-changelog.js",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "changelog:preview": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "release": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true,
+            "cache": false
+          },
+          "release:patch": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump patch",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:minor": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump minor",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:major": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump major",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:dry-run": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js release --bump patch --dry-run",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "release:check": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/release.js check",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:check": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js check",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:sync": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js sync",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:bump": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:bump:minor": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump minor",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:bump:major": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js bump major",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:set": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js set",
+              "cwd": "htwoo-core"
+            },
+            "dependsOn": [
+              "build",
+              "test"
+            ],
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:tag": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js tag",
+              "cwd": "htwoo-core"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "version:list-tags": {
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "node scripts/sync-versions.js list-tags",
               "cwd": "htwoo-core"
             },
             "configurations": {},
@@ -1290,6 +1615,15 @@
         "hash": "12856443355529890528"
       }
     },
+    "npm:@hutson/parse-repository-url": {
+      "type": "npm",
+      "name": "npm:@hutson/parse-repository-url",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "@hutson/parse-repository-url",
+        "hash": "sha512-e5+YUKENATs1JgYHMzTr2MW/NDcXGfYFAuOQU8gJgF/kEh4EqKgfGrfLI67bMD4tbhZVlkigz/9YYwWcbOFthg=="
+      }
+    },
     "npm:@pattern-lab/cli@6.1.0": {
       "type": "npm",
       "name": "npm:@pattern-lab/cli@6.1.0",
@@ -1389,15 +1723,6 @@
         "hash": "10609547444599462536"
       }
     },
-    "npm:@types/normalize-package-data@2.4.4": {
-      "type": "npm",
-      "name": "npm:@types/normalize-package-data@2.4.4",
-      "data": {
-        "version": "2.4.4",
-        "packageName": "@types/normalize-package-data",
-        "hash": "15887161972557074984"
-      }
-    },
     "npm:@types/sax@1.2.7": {
       "type": "npm",
       "name": "npm:@types/sax@1.2.7",
@@ -1450,15 +1775,6 @@
         "version": "8.14.0",
         "packageName": "acorn",
         "hash": "12729296815543296705"
-      }
-    },
-    "npm:add-stream@1.0.0": {
-      "type": "npm",
-      "name": "npm:add-stream@1.0.0",
-      "data": {
-        "version": "1.0.0",
-        "packageName": "add-stream",
-        "hash": "7021062124313192545"
       }
     },
     "npm:ansi-align@3.0.1": {
@@ -1522,6 +1838,15 @@
         "version": "0.20.2",
         "packageName": "type-fest",
         "hash": "9730135684333406087"
+      }
+    },
+    "npm:type-fest@4.41.0": {
+      "type": "npm",
+      "name": "npm:type-fest@4.41.0",
+      "data": {
+        "version": "4.41.0",
+        "packageName": "type-fest",
+        "hash": "sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA=="
       }
     },
     "npm:type-fest": {
@@ -1639,15 +1964,6 @@
         "version": "1.0.0",
         "packageName": "array-differ",
         "hash": "11355020153783355615"
-      }
-    },
-    "npm:array-ify@1.0.0": {
-      "type": "npm",
-      "name": "npm:array-ify@1.0.0",
-      "data": {
-        "version": "1.0.0",
-        "packageName": "array-ify",
-        "hash": "5309260580846187298"
       }
     },
     "npm:array-union@1.0.2": {
@@ -2019,15 +2335,6 @@
         "hash": "8893412909855235975"
       }
     },
-    "npm:compare-func@2.0.0": {
-      "type": "npm",
-      "name": "npm:compare-func@2.0.0",
-      "data": {
-        "version": "2.0.0",
-        "packageName": "compare-func",
-        "hash": "8667432853378649278"
-      }
-    },
     "npm:compress-commons@4.1.1": {
       "type": "npm",
       "name": "npm:compress-commons@4.1.1",
@@ -2100,6 +2407,15 @@
         "hash": "3309656793812829154"
       }
     },
+    "npm:conventional-changelog": {
+      "type": "npm",
+      "name": "npm:conventional-changelog",
+      "data": {
+        "version": "6.0.0",
+        "packageName": "conventional-changelog",
+        "hash": "sha512-tuUH8H/19VjtD9Ig7l6TQRh+Z0Yt0NZ6w/cCkkyzUbGQTnUEmKfGtkC9gGfVgCfOL1Rzno5NgNF4KY8vR+Jo3w=="
+      }
+    },
     "npm:conventional-changelog-angular@5.0.13": {
       "type": "npm",
       "name": "npm:conventional-changelog-angular@5.0.13",
@@ -2107,6 +2423,15 @@
         "version": "5.0.13",
         "packageName": "conventional-changelog-angular",
         "hash": "3661618972212974651"
+      }
+    },
+    "npm:conventional-changelog-angular": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-angular",
+      "data": {
+        "version": "8.0.0",
+        "packageName": "conventional-changelog-angular",
+        "hash": "sha512-CLf+zr6St0wIxos4bmaKHRXWAcsCXrJU6F4VdNDrGRK3B8LDLKoX3zuMV5GhtbGkVR/LohZ6MT6im43vZLSjmA=="
       }
     },
     "npm:conventional-changelog-atom@2.0.8": {
@@ -2118,6 +2443,15 @@
         "hash": "18187053686207764527"
       }
     },
+    "npm:conventional-changelog-atom": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-atom",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-atom",
+        "hash": "sha512-WfzCaAvSCFPkznnLgLnfacRAzjgqjLUjvf3MftfsJzQdDICqkOOpcMtdJF3wTerxSpv2IAAjX8doM3Vozqle3g=="
+      }
+    },
     "npm:conventional-changelog-codemirror@2.0.8": {
       "type": "npm",
       "name": "npm:conventional-changelog-codemirror@2.0.8",
@@ -2125,6 +2459,15 @@
         "version": "2.0.8",
         "packageName": "conventional-changelog-codemirror",
         "hash": "82694743691580113"
+      }
+    },
+    "npm:conventional-changelog-codemirror": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-codemirror",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-codemirror",
+        "hash": "sha512-8gsBDI5Y3vrKUCxN6Ue8xr6occZ5nsDEc4C7jO/EovFGozx8uttCAyfhRrvoUAWi2WMm3OmYs+0mPJU7kQdYWQ=="
       }
     },
     "npm:conventional-changelog-config-spec@2.1.0": {
@@ -2145,6 +2488,15 @@
         "hash": "8294914043450222582"
       }
     },
+    "npm:conventional-changelog-conventionalcommits": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-conventionalcommits",
+      "data": {
+        "version": "8.0.0",
+        "packageName": "conventional-changelog-conventionalcommits",
+        "hash": "sha512-eOvlTO6OcySPyyyk8pKz2dP4jjElYunj9hn9/s0OB+gapTO8zwS9UQWrZ1pmF2hFs3vw1xhonOLGcGjy/zgsuA=="
+      }
+    },
     "npm:conventional-changelog-core@4.2.4": {
       "type": "npm",
       "name": "npm:conventional-changelog-core@4.2.4",
@@ -2152,6 +2504,15 @@
         "version": "4.2.4",
         "packageName": "conventional-changelog-core",
         "hash": "2927868827478265233"
+      }
+    },
+    "npm:conventional-changelog-core": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-core",
+      "data": {
+        "version": "8.0.0",
+        "packageName": "conventional-changelog-core",
+        "hash": "sha512-EATUx5y9xewpEe10UEGNpbSHRC6cVZgO+hXQjofMqpy+gFIrcGvH3Fl6yk2VFKh7m+ffenup2N7SZJYpyD9evw=="
       }
     },
     "npm:hosted-git-info@4.1.0": {
@@ -2172,6 +2533,15 @@
         "hash": "18309763793641034624"
       }
     },
+    "npm:hosted-git-info": {
+      "type": "npm",
+      "name": "npm:hosted-git-info",
+      "data": {
+        "version": "7.0.2",
+        "packageName": "hosted-git-info",
+        "hash": "sha512-puUZAUKT5m8Zzvs72XWy3HtvVbTWljRE66cP60bxJzAqf2DgICo7lYTY2IHUmLnNpjYvw5bvmoHvPc0QO2a62w=="
+      }
+    },
     "npm:normalize-package-data@3.0.3": {
       "type": "npm",
       "name": "npm:normalize-package-data@3.0.3",
@@ -2188,6 +2558,15 @@
         "version": "2.5.0",
         "packageName": "normalize-package-data",
         "hash": "11266521254790254052"
+      }
+    },
+    "npm:normalize-package-data": {
+      "type": "npm",
+      "name": "npm:normalize-package-data",
+      "data": {
+        "version": "6.0.2",
+        "packageName": "normalize-package-data",
+        "hash": "sha512-V6gygoYb/5EmNI+MEGrWkC+e6+Rr7mTmfHrxDbLzxQogBkgzo76rkok0Am6thgSF7Mv2nLOajAJj5vDJZEFn7g=="
       }
     },
     "npm:yallist@4.0.0": {
@@ -2226,6 +2605,15 @@
         "hash": "17302520708645431092"
       }
     },
+    "npm:conventional-changelog-ember": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-ember",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-ember",
+        "hash": "sha512-RPflVfm5s4cSO33GH/Ey26oxhiC67akcxSKL8CLRT3kQX2W3dbE19sSOM56iFqUJYEwv9mD9r6k79weWe1urfg=="
+      }
+    },
     "npm:conventional-changelog-eslint@3.0.9": {
       "type": "npm",
       "name": "npm:conventional-changelog-eslint@3.0.9",
@@ -2233,6 +2621,15 @@
         "version": "3.0.9",
         "packageName": "conventional-changelog-eslint",
         "hash": "494482740900122084"
+      }
+    },
+    "npm:conventional-changelog-eslint": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-eslint",
+      "data": {
+        "version": "6.0.0",
+        "packageName": "conventional-changelog-eslint",
+        "hash": "sha512-eiUyULWjzq+ybPjXwU6NNRflApDWlPEQEHvI8UAItYW/h22RKkMnOAtfCZxMmrcMO1OKUWtcf2MxKYMWe9zJuw=="
       }
     },
     "npm:conventional-changelog-express@2.0.6": {
@@ -2244,6 +2641,15 @@
         "hash": "5397901505169451895"
       }
     },
+    "npm:conventional-changelog-express": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-express",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-express",
+        "hash": "sha512-D8Q6WctPkQpvr2HNCCmwU5GkX22BVHM0r4EW8vN0230TSyS/d6VQJDAxGb84lbg0dFjpO22MwmsikKL++Oo/oQ=="
+      }
+    },
     "npm:conventional-changelog-jquery@3.0.11": {
       "type": "npm",
       "name": "npm:conventional-changelog-jquery@3.0.11",
@@ -2251,6 +2657,15 @@
         "version": "3.0.11",
         "packageName": "conventional-changelog-jquery",
         "hash": "6498586310543853968"
+      }
+    },
+    "npm:conventional-changelog-jquery": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-jquery",
+      "data": {
+        "version": "6.0.0",
+        "packageName": "conventional-changelog-jquery",
+        "hash": "sha512-2kxmVakyehgyrho2ZHBi90v4AHswkGzHuTaoH40bmeNqUt20yEkDOSpw8HlPBfvEQBwGtbE+5HpRwzj6ac2UfA=="
       }
     },
     "npm:conventional-changelog-jshint@2.0.9": {
@@ -2262,6 +2677,15 @@
         "hash": "3978276171191456180"
       }
     },
+    "npm:conventional-changelog-jshint": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-jshint",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-jshint",
+        "hash": "sha512-gGNphSb/opc76n2eWaO6ma4/Wqu3tpa2w7i9WYqI6Cs2fncDSI2/ihOfMvXveeTTeld0oFvwMVNV+IYQIk3F3g=="
+      }
+    },
     "npm:conventional-changelog-preset-loader@2.3.4": {
       "type": "npm",
       "name": "npm:conventional-changelog-preset-loader@2.3.4",
@@ -2271,6 +2695,15 @@
         "hash": "17900252316772156335"
       }
     },
+    "npm:conventional-changelog-preset-loader": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-preset-loader",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-preset-loader",
+        "hash": "sha512-SetDSntXLk8Jh1NOAl1Gu5uLiCNSYenB5tm0YVeZKePRIgDW9lQImromTwLa3c/Gae298tsgOM+/CYT9XAl0NA=="
+      }
+    },
     "npm:conventional-changelog-writer@5.0.1": {
       "type": "npm",
       "name": "npm:conventional-changelog-writer@5.0.1",
@@ -2278,6 +2711,15 @@
         "version": "5.0.1",
         "packageName": "conventional-changelog-writer",
         "hash": "7644053900344394302"
+      }
+    },
+    "npm:conventional-changelog-writer": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-writer",
+      "data": {
+        "version": "8.1.0",
+        "packageName": "conventional-changelog-writer",
+        "hash": "sha512-dpC440QnORNCO81XYuRRFOLCsjKj4W7tMkUIn3lR6F/FAaJcWLi7iCj6IcEvSQY2zw6VUgwUKd5DEHKEWrpmEQ=="
       }
     },
     "npm:semver@6.3.1": {
@@ -2343,6 +2785,15 @@
         "hash": "13920734294659740013"
       }
     },
+    "npm:conventional-commits-filter": {
+      "type": "npm",
+      "name": "npm:conventional-commits-filter",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-commits-filter",
+        "hash": "sha512-tQMagCOC59EVgNZcC5zl7XqO30Wki9i9J3acbUvkaosCT6JX3EeFwJD7Qqp4MCikRnzS18WXV3BLIQ66ytu6+Q=="
+      }
+    },
     "npm:conventional-commits-parser@3.2.4": {
       "type": "npm",
       "name": "npm:conventional-commits-parser@3.2.4",
@@ -2350,6 +2801,15 @@
         "version": "3.2.4",
         "packageName": "conventional-commits-parser",
         "hash": "14467560063532985312"
+      }
+    },
+    "npm:conventional-commits-parser": {
+      "type": "npm",
+      "name": "npm:conventional-commits-parser",
+      "data": {
+        "version": "6.1.0",
+        "packageName": "conventional-commits-parser",
+        "hash": "sha512-5nxDo7TwKB5InYBl4ZC//1g9GRwB/F3TXOGR9hgUjMGfvSP4Vu5NkpNro2+1+TIEy1vwxApl5ircECr2ri5JIw=="
       }
     },
     "npm:conventional-recommended-bump@6.1.0": {
@@ -2611,15 +3071,6 @@
         "version": "0.5.0",
         "packageName": "dive",
         "hash": "8002231829865367874"
-      }
-    },
-    "npm:dot-prop@5.3.0": {
-      "type": "npm",
-      "name": "npm:dot-prop@5.3.0",
-      "data": {
-        "version": "5.3.0",
-        "packageName": "dot-prop",
-        "hash": "479682028845703920"
       }
     },
     "npm:dotgitignore@2.1.0": {
@@ -3288,6 +3739,15 @@
         "hash": "9996071571091221291"
       }
     },
+    "npm:git-raw-commits": {
+      "type": "npm",
+      "name": "npm:git-raw-commits",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "git-raw-commits",
+        "hash": "sha512-I2ZXrXeOc0KrCvC7swqtIFXFN+rbjnC7b2T943tvemIOVNl+XP8YnA9UVwqFhzzLClnSA60KR/qEjLpXzs73Qg=="
+      }
+    },
     "npm:git-remote-origin-url@2.0.0": {
       "type": "npm",
       "name": "npm:git-remote-origin-url@2.0.0",
@@ -3304,6 +3764,15 @@
         "version": "4.1.1",
         "packageName": "git-semver-tags",
         "hash": "6337864978442991325"
+      }
+    },
+    "npm:git-semver-tags": {
+      "type": "npm",
+      "name": "npm:git-semver-tags",
+      "data": {
+        "version": "8.0.0",
+        "packageName": "git-semver-tags",
+        "hash": "sha512-N7YRIklvPH3wYWAR2vysaqGLPRcpwQ0GKdlqTiVN5w1UmCdaeY3K8s6DMKRCh54DDdzyt/OAB6C8jgVtb7Y2Fg=="
       }
     },
     "npm:gitconfiglocal@1.0.0": {
@@ -3412,15 +3881,6 @@
         "version": "2.1.8",
         "packageName": "graphlib",
         "hash": "8328120915070870049"
-      }
-    },
-    "npm:handlebars@4.7.7": {
-      "type": "npm",
-      "name": "npm:handlebars@4.7.7",
-      "data": {
-        "version": "4.7.7",
-        "packageName": "handlebars",
-        "hash": "14666314908803166642"
       }
     },
     "npm:hard-rejection@2.1.0": {
@@ -3727,15 +4187,6 @@
         "version": "1.0.7",
         "packageName": "is-number-object",
         "hash": "1242762388721892545"
-      }
-    },
-    "npm:is-obj@2.0.0": {
-      "type": "npm",
-      "name": "npm:is-obj@2.0.0",
-      "data": {
-        "version": "2.0.0",
-        "packageName": "is-obj",
-        "hash": "15642769820312719829"
       }
     },
     "npm:is-path-cwd@1.0.0": {
@@ -4152,6 +4603,15 @@
         "hash": "5272213512233164371"
       }
     },
+    "npm:meow": {
+      "type": "npm",
+      "name": "npm:meow",
+      "data": {
+        "version": "13.2.0",
+        "packageName": "meow",
+        "hash": "sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA=="
+      }
+    },
     "npm:parse-json": {
       "type": "npm",
       "name": "npm:parse-json",
@@ -4179,6 +4639,15 @@
         "hash": "1737288562831254488"
       }
     },
+    "npm:parse-json@8.3.0": {
+      "type": "npm",
+      "name": "npm:parse-json@8.3.0",
+      "data": {
+        "version": "8.3.0",
+        "packageName": "parse-json",
+        "hash": "sha512-ybiGyvspI+fAoRQbIPRddCcSTV9/LsJbf0e/S85VLowVGzRmokfneg2kwVW/KU5rOXrPSbF1qAKPMgNTqqROQQ=="
+      }
+    },
     "npm:read-pkg@5.2.0": {
       "type": "npm",
       "name": "npm:read-pkg@5.2.0",
@@ -4204,6 +4673,15 @@
         "version": "1.1.0",
         "packageName": "read-pkg",
         "hash": "12559419975334852596"
+      }
+    },
+    "npm:read-pkg": {
+      "type": "npm",
+      "name": "npm:read-pkg",
+      "data": {
+        "version": "9.0.1",
+        "packageName": "read-pkg",
+        "hash": "sha512-9viLL4/n1BJUCT1NXVTdS1jtm80yDEgR5T4yCelII49Mbj0v1rZdKqj7zCiYdbB0CuCgdrvHcNogAKTFPBocFA=="
       }
     },
     "npm:read-pkg-up@7.0.1": {
@@ -5115,69 +5593,6 @@
         "hash": "15958143422907483241"
       }
     },
-    "npm:spdx-correct@3.1.1": {
-      "type": "npm",
-      "name": "npm:spdx-correct@3.1.1",
-      "data": {
-        "version": "3.1.1",
-        "packageName": "spdx-correct",
-        "hash": "4681374506821215916"
-      }
-    },
-    "npm:spdx-correct@3.2.0": {
-      "type": "npm",
-      "name": "npm:spdx-correct@3.2.0",
-      "data": {
-        "version": "3.2.0",
-        "packageName": "spdx-correct",
-        "hash": "5441723641692029835"
-      }
-    },
-    "npm:spdx-exceptions@2.3.0": {
-      "type": "npm",
-      "name": "npm:spdx-exceptions@2.3.0",
-      "data": {
-        "version": "2.3.0",
-        "packageName": "spdx-exceptions",
-        "hash": "7642298428353548034"
-      }
-    },
-    "npm:spdx-exceptions@2.5.0": {
-      "type": "npm",
-      "name": "npm:spdx-exceptions@2.5.0",
-      "data": {
-        "version": "2.5.0",
-        "packageName": "spdx-exceptions",
-        "hash": "16065799231354507309"
-      }
-    },
-    "npm:spdx-expression-parse@3.0.1": {
-      "type": "npm",
-      "name": "npm:spdx-expression-parse@3.0.1",
-      "data": {
-        "version": "3.0.1",
-        "packageName": "spdx-expression-parse",
-        "hash": "1415946028849809017"
-      }
-    },
-    "npm:spdx-license-ids@3.0.12": {
-      "type": "npm",
-      "name": "npm:spdx-license-ids@3.0.12",
-      "data": {
-        "version": "3.0.12",
-        "packageName": "spdx-license-ids",
-        "hash": "8065313408605119023"
-      }
-    },
-    "npm:spdx-license-ids@3.0.20": {
-      "type": "npm",
-      "name": "npm:spdx-license-ids@3.0.20",
-      "data": {
-        "version": "3.0.20",
-        "packageName": "spdx-license-ids",
-        "hash": "12031607805161001789"
-      }
-    },
     "npm:split2@3.2.2": {
       "type": "npm",
       "name": "npm:split2@3.2.2",
@@ -5493,15 +5908,6 @@
         "hash": "1691942812731305609"
       }
     },
-    "npm:uglify-js@3.17.4": {
-      "type": "npm",
-      "name": "npm:uglify-js@3.17.4",
-      "data": {
-        "version": "3.17.4",
-        "packageName": "uglify-js",
-        "hash": "7363258740826113914"
-      }
-    },
     "npm:unbox-primitive@1.0.2": {
       "type": "npm",
       "name": "npm:unbox-primitive@1.0.2",
@@ -5592,15 +5998,6 @@
         "hash": "9922529201106489442"
       }
     },
-    "npm:validate-npm-package-license@3.0.4": {
-      "type": "npm",
-      "name": "npm:validate-npm-package-license@3.0.4",
-      "data": {
-        "version": "3.0.4",
-        "packageName": "validate-npm-package-license",
-        "hash": "14893158163252173577"
-      }
-    },
     "npm:vary@1.1.2": {
       "type": "npm",
       "name": "npm:vary@1.1.2",
@@ -5680,15 +6077,6 @@
         "version": "3.1.0",
         "packageName": "widest-line",
         "hash": "15185589782103576701"
-      }
-    },
-    "npm:wordwrap@1.0.0": {
-      "type": "npm",
-      "name": "npm:wordwrap@1.0.0",
-      "data": {
-        "version": "1.0.0",
-        "packageName": "wordwrap",
-        "hash": "11382477946659505658"
       }
     },
     "npm:wrap-ansi@7.0.0": {
@@ -9786,6 +10174,15 @@
         "hash": "9483452246389569001"
       }
     },
+    "npm:@conventional-changelog/git-client": {
+      "type": "npm",
+      "name": "npm:@conventional-changelog/git-client",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "@conventional-changelog/git-client",
+        "hash": "sha512-PJEqBwAleffCMETaVm/fUgHldzBE35JFk3/9LL6NUA5EXa3qednu+UT6M7E5iBu3zIQZCULYIiZ90fBYHt6xUw=="
+      }
+    },
     "npm:@cspotcode/source-map-support": {
       "type": "npm",
       "name": "npm:@cspotcode/source-map-support",
@@ -11307,6 +11704,15 @@
         "hash": "11659938348646490810"
       }
     },
+    "npm:@types/normalize-package-data": {
+      "type": "npm",
+      "name": "npm:@types/normalize-package-data",
+      "data": {
+        "version": "2.4.4",
+        "packageName": "@types/normalize-package-data",
+        "hash": "sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA=="
+      }
+    },
     "npm:@types/parse-json": {
       "type": "npm",
       "name": "npm:@types/parse-json",
@@ -11802,6 +12208,15 @@
         "hash": "sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g=="
       }
     },
+    "npm:add-stream": {
+      "type": "npm",
+      "name": "npm:add-stream",
+      "data": {
+        "version": "1.0.0",
+        "packageName": "add-stream",
+        "hash": "sha512-qQLMr+8o0WC4FZGQTcJiKBVC59JylcPSrTtk6usvmIDFUOCKegapy1VHQwRbFMOFyb/inzUVqHs+eMYKDM1YeQ=="
+      }
+    },
     "npm:agent-base": {
       "type": "npm",
       "name": "npm:agent-base",
@@ -11854,6 +12269,15 @@
         "version": "5.3.0",
         "packageName": "aria-query",
         "hash": "7692698364372725371"
+      }
+    },
+    "npm:array-ify": {
+      "type": "npm",
+      "name": "npm:array-ify",
+      "data": {
+        "version": "1.0.0",
+        "packageName": "array-ify",
+        "hash": "sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng=="
       }
     },
     "npm:assertion-error": {
@@ -12198,6 +12622,15 @@
         "hash": "397491925313429427"
       }
     },
+    "npm:compare-func": {
+      "type": "npm",
+      "name": "npm:compare-func",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "compare-func",
+        "hash": "sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA=="
+      }
+    },
     "npm:concat-map": {
       "type": "npm",
       "name": "npm:concat-map",
@@ -12214,6 +12647,15 @@
         "version": "1.0.0",
         "packageName": "constants-browserify",
         "hash": "1485597802142955593"
+      }
+    },
+    "npm:conventional-changelog-cli": {
+      "type": "npm",
+      "name": "npm:conventional-changelog-cli",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "conventional-changelog-cli",
+        "hash": "sha512-9Y8fucJe18/6ef6ZlyIlT2YQUbczvoQZZuYmDLaGvcSBP+M6h+LAvf7ON7waRxKJemcCII8Yqu5/8HEfskTxJQ=="
       }
     },
     "npm:create-require": {
@@ -12484,6 +12926,15 @@
         "version": "3.0.4",
         "packageName": "dot-case",
         "hash": "13761628878144388752"
+      }
+    },
+    "npm:dot-prop": {
+      "type": "npm",
+      "name": "npm:dot-prop",
+      "data": {
+        "version": "5.3.0",
+        "packageName": "dot-prop",
+        "hash": "sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q=="
       }
     },
     "npm:dotenv": {
@@ -12828,6 +13279,15 @@
         "hash": "4801273125473330256"
       }
     },
+    "npm:find-up-simple": {
+      "type": "npm",
+      "name": "npm:find-up-simple",
+      "data": {
+        "version": "1.0.1",
+        "packageName": "find-up-simple",
+        "hash": "sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ=="
+      }
+    },
     "npm:flat": {
       "type": "npm",
       "name": "npm:flat",
@@ -13071,6 +13531,15 @@
         "hash": "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag=="
       }
     },
+    "npm:handlebars": {
+      "type": "npm",
+      "name": "npm:handlebars",
+      "data": {
+        "version": "4.7.8",
+        "packageName": "handlebars",
+        "hash": "sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ=="
+      }
+    },
     "npm:has-property-descriptors": {
       "type": "npm",
       "name": "npm:has-property-descriptors",
@@ -13233,6 +13702,15 @@
         "hash": "12074249740005085009"
       }
     },
+    "npm:index-to-position": {
+      "type": "npm",
+      "name": "npm:index-to-position",
+      "data": {
+        "version": "1.1.0",
+        "packageName": "index-to-position",
+        "hash": "sha512-XPdx9Dq4t9Qk1mTMbWONJqU7boCoumEH7fRET37HX5+khDUl3J2W6PdALxhILYlIYx2amlwYcRPp28p0tSiojg=="
+      }
+    },
     "npm:inflight": {
       "type": "npm",
       "name": "npm:inflight",
@@ -13321,6 +13799,15 @@
         "version": "1.0.0",
         "packageName": "is-interactive",
         "hash": "sha512-2HvIEKRoqS62guEC+qBjpvRubdX910WCMuJTZ+I9yvqKU2/12eSL549HMwtabb4oupdj2sMP50k+XJfB/8JE6w=="
+      }
+    },
+    "npm:is-obj": {
+      "type": "npm",
+      "name": "npm:is-obj",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "is-obj",
+        "hash": "sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w=="
       }
     },
     "npm:is-potential-custom-element-name": {
@@ -14313,6 +14800,15 @@
         "hash": "13496196294031012337"
       }
     },
+    "npm:read-package-up": {
+      "type": "npm",
+      "name": "npm:read-package-up",
+      "data": {
+        "version": "11.0.0",
+        "packageName": "read-package-up",
+        "hash": "sha512-MbgfoNPANMdb4oRBNg5eqLbB2t2r+o5Ua1pNt8BqGp4I0FJZhuVSOj3PaBPni4azWuSzEdNn2evevzVmEk1ohQ=="
+      }
+    },
     "npm:recast": {
       "type": "npm",
       "name": "npm:recast",
@@ -14655,6 +15151,42 @@
         "hash": "5167176163004294738"
       }
     },
+    "npm:spdx-correct": {
+      "type": "npm",
+      "name": "npm:spdx-correct",
+      "data": {
+        "version": "3.2.0",
+        "packageName": "spdx-correct",
+        "hash": "sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA=="
+      }
+    },
+    "npm:spdx-exceptions": {
+      "type": "npm",
+      "name": "npm:spdx-exceptions",
+      "data": {
+        "version": "2.5.0",
+        "packageName": "spdx-exceptions",
+        "hash": "sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w=="
+      }
+    },
+    "npm:spdx-expression-parse": {
+      "type": "npm",
+      "name": "npm:spdx-expression-parse",
+      "data": {
+        "version": "3.0.1",
+        "packageName": "spdx-expression-parse",
+        "hash": "sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q=="
+      }
+    },
+    "npm:spdx-license-ids": {
+      "type": "npm",
+      "name": "npm:spdx-license-ids",
+      "data": {
+        "version": "3.0.21",
+        "packageName": "spdx-license-ids",
+        "hash": "sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg=="
+      }
+    },
     "npm:sprintf-js": {
       "type": "npm",
       "name": "npm:sprintf-js",
@@ -14770,6 +15302,24 @@
         "version": "2.2.0",
         "packageName": "tar-stream",
         "hash": "sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ=="
+      }
+    },
+    "npm:temp-dir": {
+      "type": "npm",
+      "name": "npm:temp-dir",
+      "data": {
+        "version": "3.0.0",
+        "packageName": "temp-dir",
+        "hash": "sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw=="
+      }
+    },
+    "npm:tempfile": {
+      "type": "npm",
+      "name": "npm:tempfile",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "tempfile",
+        "hash": "sha512-bX655WZI/F7EoTDw9JvQURqAXiPHi8o8+yFxPF2lWYyz1aHnmMRuXWqL6YB6GmeO0o4DIYWHLgGNi/X64T+X4Q=="
       }
     },
     "npm:terser": {
@@ -14952,6 +15502,15 @@
         "hash": "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="
       }
     },
+    "npm:uglify-js": {
+      "type": "npm",
+      "name": "npm:uglify-js",
+      "data": {
+        "version": "3.19.3",
+        "packageName": "uglify-js",
+        "hash": "sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ=="
+      }
+    },
     "npm:undici-types": {
       "type": "npm",
       "name": "npm:undici-types",
@@ -14959,6 +15518,15 @@
         "version": "5.26.5",
         "packageName": "undici-types",
         "hash": "sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA=="
+      }
+    },
+    "npm:unicorn-magic": {
+      "type": "npm",
+      "name": "npm:unicorn-magic",
+      "data": {
+        "version": "0.1.0",
+        "packageName": "unicorn-magic",
+        "hash": "sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ=="
       }
     },
     "npm:unplugin": {
@@ -15040,6 +15608,15 @@
         "version": "3.0.1",
         "packageName": "v8-compile-cache-lib",
         "hash": "sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg=="
+      }
+    },
+    "npm:validate-npm-package-license": {
+      "type": "npm",
+      "name": "npm:validate-npm-package-license",
+      "data": {
+        "version": "3.0.4",
+        "packageName": "validate-npm-package-license",
+        "hash": "sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew=="
       }
     },
     "npm:vite": {
@@ -15184,6 +15761,15 @@
         "version": "1.2.5",
         "packageName": "word-wrap",
         "hash": "sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA=="
+      }
+    },
+    "npm:wordwrap": {
+      "type": "npm",
+      "name": "npm:wordwrap",
+      "data": {
+        "version": "1.0.0",
+        "packageName": "wordwrap",
+        "hash": "sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q=="
       }
     },
     "npm:wrap-ansi-cjs": {
@@ -15455,6 +16041,11 @@
       {
         "source": "htwoo-core-styleguide",
         "target": "npm:autoprefixer",
+        "type": "static"
+      },
+      {
+        "source": "htwoo-core-styleguide",
+        "target": "npm:conventional-changelog-cli",
         "type": "static"
       },
       {
@@ -15927,7 +16518,7 @@
       },
       {
         "source": "npm:@pattern-lab/engine-handlebars@6.1.0",
-        "target": "npm:handlebars@4.7.7",
+        "target": "npm:handlebars",
         "type": "static"
       }
     ],
@@ -16407,18 +16998,6 @@
         "type": "static"
       }
     ],
-    "npm:compare-func@2.0.0": [
-      {
-        "source": "npm:compare-func@2.0.0",
-        "target": "npm:array-ify@1.0.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:compare-func@2.0.0",
-        "target": "npm:dot-prop@5.3.0",
-        "type": "static"
-      }
-    ],
     "npm:compress-commons@4.1.1": [
       {
         "source": "npm:compress-commons@4.1.1",
@@ -16478,7 +17057,7 @@
     "npm:configstore@5.0.1": [
       {
         "source": "npm:configstore@5.0.1",
-        "target": "npm:dot-prop@5.3.0",
+        "target": "npm:dot-prop",
         "type": "static"
       },
       {
@@ -16589,7 +17168,7 @@
     "npm:conventional-changelog-angular@5.0.13": [
       {
         "source": "npm:conventional-changelog-angular@5.0.13",
-        "target": "npm:compare-func@2.0.0",
+        "target": "npm:compare-func",
         "type": "static"
       },
       {
@@ -16615,7 +17194,7 @@
     "npm:conventional-changelog-conventionalcommits@4.6.3": [
       {
         "source": "npm:conventional-changelog-conventionalcommits@4.6.3",
-        "target": "npm:compare-func@2.0.0",
+        "target": "npm:compare-func",
         "type": "static"
       },
       {
@@ -16632,7 +17211,7 @@
     "npm:conventional-changelog-core@4.2.4": [
       {
         "source": "npm:conventional-changelog-core@4.2.4",
-        "target": "npm:add-stream@1.0.0",
+        "target": "npm:add-stream",
         "type": "static"
       },
       {
@@ -16733,7 +17312,7 @@
       },
       {
         "source": "npm:normalize-package-data@3.0.3",
-        "target": "npm:validate-npm-package-license@3.0.4",
+        "target": "npm:validate-npm-package-license",
         "type": "static"
       }
     ],
@@ -16768,7 +17347,7 @@
     "npm:conventional-changelog-jshint@2.0.9": [
       {
         "source": "npm:conventional-changelog-jshint@2.0.9",
-        "target": "npm:compare-func@2.0.0",
+        "target": "npm:compare-func",
         "type": "static"
       },
       {
@@ -16790,7 +17369,7 @@
       },
       {
         "source": "npm:conventional-changelog-writer@5.0.1",
-        "target": "npm:handlebars@4.7.7",
+        "target": "npm:handlebars",
         "type": "static"
       },
       {
@@ -17020,13 +17599,6 @@
       {
         "source": "npm:rimraf@2.7.1",
         "target": "npm:glob@7.1.6",
-        "type": "static"
-      }
-    ],
-    "npm:dot-prop@5.3.0": [
-      {
-        "source": "npm:dot-prop@5.3.0",
-        "target": "npm:is-obj@2.0.0",
         "type": "static"
       }
     ],
@@ -18049,33 +18621,6 @@
         "type": "static"
       }
     ],
-    "npm:handlebars@4.7.7": [
-      {
-        "source": "npm:handlebars@4.7.7",
-        "target": "npm:minimist",
-        "type": "static"
-      },
-      {
-        "source": "npm:handlebars@4.7.7",
-        "target": "npm:neo-async",
-        "type": "static"
-      },
-      {
-        "source": "npm:handlebars@4.7.7",
-        "target": "npm:source-map",
-        "type": "static"
-      },
-      {
-        "source": "npm:handlebars@4.7.7",
-        "target": "npm:wordwrap@1.0.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:handlebars@4.7.7",
-        "target": "npm:uglify-js@3.17.4",
-        "type": "static"
-      }
-    ],
     "npm:has@1.0.3": [
       {
         "source": "npm:has@1.0.3",
@@ -18609,7 +19154,7 @@
     "npm:read-pkg@5.2.0": [
       {
         "source": "npm:read-pkg@5.2.0",
-        "target": "npm:@types/normalize-package-data@2.4.4",
+        "target": "npm:@types/normalize-package-data",
         "type": "static"
       },
       {
@@ -18663,7 +19208,7 @@
       },
       {
         "source": "npm:normalize-package-data@2.5.0",
-        "target": "npm:validate-npm-package-license@3.0.4",
+        "target": "npm:validate-npm-package-license",
         "type": "static"
       },
       {
@@ -19375,40 +19920,6 @@
         "type": "static"
       }
     ],
-    "npm:spdx-correct@3.1.1": [
-      {
-        "source": "npm:spdx-correct@3.1.1",
-        "target": "npm:spdx-expression-parse@3.0.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:spdx-correct@3.1.1",
-        "target": "npm:spdx-license-ids@3.0.12",
-        "type": "static"
-      }
-    ],
-    "npm:spdx-expression-parse@3.0.1": [
-      {
-        "source": "npm:spdx-expression-parse@3.0.1",
-        "target": "npm:spdx-exceptions@2.3.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:spdx-expression-parse@3.0.1",
-        "target": "npm:spdx-license-ids@3.0.12",
-        "type": "static"
-      },
-      {
-        "source": "npm:spdx-expression-parse@3.0.1",
-        "target": "npm:spdx-exceptions@2.5.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:spdx-expression-parse@3.0.1",
-        "target": "npm:spdx-license-ids@3.0.20",
-        "type": "static"
-      }
-    ],
     "npm:split@0.3.3": [
       {
         "source": "npm:split@0.3.3",
@@ -19762,23 +20273,6 @@
       {
         "source": "npm:url-parse-lax@3.0.0",
         "target": "npm:prepend-http@2.0.0",
-        "type": "static"
-      }
-    ],
-    "npm:validate-npm-package-license@3.0.4": [
-      {
-        "source": "npm:validate-npm-package-license@3.0.4",
-        "target": "npm:spdx-correct@3.1.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:validate-npm-package-license@3.0.4",
-        "target": "npm:spdx-expression-parse@3.0.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:validate-npm-package-license@3.0.4",
-        "target": "npm:spdx-correct@3.2.0",
         "type": "static"
       }
     ],
@@ -25219,18 +25713,6 @@
         "type": "static"
       }
     ],
-    "npm:spdx-correct@3.2.0": [
-      {
-        "source": "npm:spdx-correct@3.2.0",
-        "target": "npm:spdx-expression-parse@3.0.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:spdx-correct@3.2.0",
-        "target": "npm:spdx-license-ids@3.0.20",
-        "type": "static"
-      }
-    ],
     "npm:split-string@3.1.0": [
       {
         "source": "npm:split-string@3.1.0",
@@ -26043,6 +26525,28 @@
       {
         "source": "npm:strip-ansi@7.1.0",
         "target": "npm:ansi-regex@6.1.0",
+        "type": "static"
+      }
+    ],
+    "npm:@conventional-changelog/git-client": [
+      {
+        "source": "npm:@conventional-changelog/git-client",
+        "target": "npm:conventional-commits-filter",
+        "type": "static"
+      },
+      {
+        "source": "npm:@conventional-changelog/git-client",
+        "target": "npm:conventional-commits-parser",
+        "type": "static"
+      },
+      {
+        "source": "npm:@conventional-changelog/git-client",
+        "target": "npm:@types/semver",
+        "type": "static"
+      },
+      {
+        "source": "npm:@conventional-changelog/git-client",
+        "target": "npm:semver",
         "type": "static"
       }
     ],
@@ -28808,6 +29312,199 @@
         "type": "static"
       }
     ],
+    "npm:compare-func": [
+      {
+        "source": "npm:compare-func",
+        "target": "npm:array-ify",
+        "type": "static"
+      },
+      {
+        "source": "npm:compare-func",
+        "target": "npm:dot-prop",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog": [
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-angular",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-atom",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-codemirror",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-conventionalcommits",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-core",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-ember",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-express",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-jquery",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-jshint",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog",
+        "target": "npm:conventional-changelog-preset-loader",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-angular": [
+      {
+        "source": "npm:conventional-changelog-angular",
+        "target": "npm:compare-func",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-cli": [
+      {
+        "source": "npm:conventional-changelog-cli",
+        "target": "npm:add-stream",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-cli",
+        "target": "npm:conventional-changelog",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-cli",
+        "target": "npm:meow",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-cli",
+        "target": "npm:tempfile",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-conventionalcommits": [
+      {
+        "source": "npm:conventional-changelog-conventionalcommits",
+        "target": "npm:compare-func",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-core": [
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:@hutson/parse-repository-url",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:add-stream",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:conventional-changelog-writer",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:conventional-commits-parser",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:git-raw-commits",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:git-semver-tags",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:hosted-git-info",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:normalize-package-data",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:read-package-up",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-core",
+        "target": "npm:read-pkg",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-jshint": [
+      {
+        "source": "npm:conventional-changelog-jshint",
+        "target": "npm:compare-func",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-changelog-writer": [
+      {
+        "source": "npm:conventional-changelog-writer",
+        "target": "npm:conventional-commits-filter",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-writer",
+        "target": "npm:handlebars",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-writer",
+        "target": "npm:meow",
+        "type": "static"
+      },
+      {
+        "source": "npm:conventional-changelog-writer",
+        "target": "npm:semver",
+        "type": "static"
+      }
+    ],
+    "npm:conventional-commits-parser": [
+      {
+        "source": "npm:conventional-commits-parser",
+        "target": "npm:meow",
+        "type": "static"
+      }
+    ],
     "npm:cross-spawn": [
       {
         "source": "npm:cross-spawn",
@@ -29025,6 +29722,13 @@
       {
         "source": "npm:dot-case",
         "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:dot-prop": [
+      {
+        "source": "npm:dot-prop",
+        "target": "npm:is-obj",
         "type": "static"
       }
     ],
@@ -29936,6 +30640,30 @@
         "type": "static"
       }
     ],
+    "npm:git-raw-commits": [
+      {
+        "source": "npm:git-raw-commits",
+        "target": "npm:@conventional-changelog/git-client",
+        "type": "static"
+      },
+      {
+        "source": "npm:git-raw-commits",
+        "target": "npm:meow",
+        "type": "static"
+      }
+    ],
+    "npm:git-semver-tags": [
+      {
+        "source": "npm:git-semver-tags",
+        "target": "npm:@conventional-changelog/git-client",
+        "type": "static"
+      },
+      {
+        "source": "npm:git-semver-tags",
+        "target": "npm:meow",
+        "type": "static"
+      }
+    ],
     "npm:glob": [
       {
         "source": "npm:glob",
@@ -30014,6 +30742,33 @@
         "type": "static"
       }
     ],
+    "npm:handlebars": [
+      {
+        "source": "npm:handlebars",
+        "target": "npm:minimist",
+        "type": "static"
+      },
+      {
+        "source": "npm:handlebars",
+        "target": "npm:neo-async",
+        "type": "static"
+      },
+      {
+        "source": "npm:handlebars",
+        "target": "npm:source-map",
+        "type": "static"
+      },
+      {
+        "source": "npm:handlebars",
+        "target": "npm:wordwrap",
+        "type": "static"
+      },
+      {
+        "source": "npm:handlebars",
+        "target": "npm:uglify-js",
+        "type": "static"
+      }
+    ],
     "npm:has-property-descriptors": [
       {
         "source": "npm:has-property-descriptors",
@@ -30032,6 +30787,13 @@
       {
         "source": "npm:hasown",
         "target": "npm:function-bind",
+        "type": "static"
+      }
+    ],
+    "npm:hosted-git-info": [
+      {
+        "source": "npm:hosted-git-info",
+        "target": "npm:lru-cache@10.4.3",
         "type": "static"
       }
     ],
@@ -30667,6 +31429,23 @@
       {
         "source": "npm:no-case",
         "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:normalize-package-data": [
+      {
+        "source": "npm:normalize-package-data",
+        "target": "npm:hosted-git-info",
+        "type": "static"
+      },
+      {
+        "source": "npm:normalize-package-data",
+        "target": "npm:semver",
+        "type": "static"
+      },
+      {
+        "source": "npm:normalize-package-data",
+        "target": "npm:validate-npm-package-license",
         "type": "static"
       }
     ],
@@ -31341,6 +32120,67 @@
         "type": "static"
       }
     ],
+    "npm:read-package-up": [
+      {
+        "source": "npm:read-package-up",
+        "target": "npm:find-up-simple",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-package-up",
+        "target": "npm:read-pkg",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-package-up",
+        "target": "npm:type-fest@4.41.0",
+        "type": "static"
+      }
+    ],
+    "npm:read-pkg": [
+      {
+        "source": "npm:read-pkg",
+        "target": "npm:@types/normalize-package-data",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-pkg",
+        "target": "npm:normalize-package-data",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-pkg",
+        "target": "npm:parse-json@8.3.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-pkg",
+        "target": "npm:type-fest@4.41.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:read-pkg",
+        "target": "npm:unicorn-magic",
+        "type": "static"
+      }
+    ],
+    "npm:parse-json@8.3.0": [
+      {
+        "source": "npm:parse-json@8.3.0",
+        "target": "npm:@babel/code-frame",
+        "type": "static"
+      },
+      {
+        "source": "npm:parse-json@8.3.0",
+        "target": "npm:index-to-position",
+        "type": "static"
+      },
+      {
+        "source": "npm:parse-json@8.3.0",
+        "target": "npm:type-fest@4.41.0",
+        "type": "static"
+      }
+    ],
     "npm:readable-stream": [
       {
         "source": "npm:readable-stream",
@@ -31906,6 +32746,30 @@
         "type": "static"
       }
     ],
+    "npm:spdx-correct": [
+      {
+        "source": "npm:spdx-correct",
+        "target": "npm:spdx-expression-parse",
+        "type": "static"
+      },
+      {
+        "source": "npm:spdx-correct",
+        "target": "npm:spdx-license-ids",
+        "type": "static"
+      }
+    ],
+    "npm:spdx-expression-parse": [
+      {
+        "source": "npm:spdx-expression-parse",
+        "target": "npm:spdx-exceptions",
+        "type": "static"
+      },
+      {
+        "source": "npm:spdx-expression-parse",
+        "target": "npm:spdx-license-ids",
+        "type": "static"
+      }
+    ],
     "npm:storybook": [
       {
         "source": "npm:storybook",
@@ -32030,6 +32894,13 @@
       {
         "source": "npm:tar-stream",
         "target": "npm:readable-stream",
+        "type": "static"
+      }
+    ],
+    "npm:tempfile": [
+      {
+        "source": "npm:tempfile",
+        "target": "npm:temp-dir",
         "type": "static"
       }
     ],
@@ -32379,6 +33250,18 @@
       {
         "source": "npm:util",
         "target": "npm:which-typed-array",
+        "type": "static"
+      }
+    ],
+    "npm:validate-npm-package-license": [
+      {
+        "source": "npm:validate-npm-package-license",
+        "target": "npm:spdx-correct",
+        "type": "static"
+      },
+      {
+        "source": "npm:validate-npm-package-license",
+        "target": "npm:spdx-expression-parse",
         "type": "static"
       }
     ],
@@ -32990,5 +33873,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1749419563459
+  "computedAt": 1749462166014
 }
