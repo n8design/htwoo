@@ -1,0 +1,2 @@
+# Skip pre-commit for now - just validate commit messages
+echo "Skipping pre-commit checks..."
