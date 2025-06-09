@@ -8,9 +8,7 @@ const path = require('path');
 const _ = require('lodash');
 
 function writeConfigToOutput(patternlab, pluginConfig) {
-
   var pluginConfigPathName = path.resolve(patternlab.config.paths.public.root, 'plugin');
-  console.log("pluginConfigPathName", pluginConfigPathName);
   // try {
   //   fs.outputFileSync(pluginConfigPathName + '/' + pluginName + '.json', JSON.stringify(pluginConfig, null, 2));
   // } catch (ex) {

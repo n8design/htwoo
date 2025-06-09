@@ -13,7 +13,7 @@ export default {
   scss: {
     outDir: '../docs/htwoo-core/css',         // CSS goes directly to docs folder
     includePaths: ['node_modules'],
-    sourceMap: true,
+    sourceMap: false,
   },
 
   typescript: {},

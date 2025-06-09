@@ -59,18 +59,17 @@
       "js": "./src/js",
       "images": "./src/images",
       "fonts": "./src/fonts",
-      "css": "../docs/htwoo-core/css"
+      "css": "./src/css"
     },
     "public": {
-      "root": "../docs/htwoo-core/",
-      "patterns": "../docs/htwoo-core/patterns/",
-      "data": "../docs/htwoo-core/styleguide/data/",
-      "annotations": "../docs/htwoo-core/annotations/",
-      "styleguide": "../docs/htwoo-core/styleguide/",
-      "js": "../docs/htwoo-core/js",
-      "images": "../docs/htwoo-core/images",
-      "fonts": "../docs/htwoo-core/fonts",
-      "css": "../docs/htwoo-core/css"
+      "root": "./public/",
+      "patterns": "./public/patterns/",
+      "data": "./public/styleguide/data/",
+      "annotations": "./public/annotations/",
+      "styleguide": "./public/styleguide/",
+      "js": "./public/js",
+      "images": "./public/images",
+      "fonts": "./public/fonts"
     }
   },
   "patternExtension": "hbs",
@@ -91,10 +90,6 @@
   },
   "starterkitSubDir": "dist",
   "styleGuideExcludes": [],
-  "transformedAssetTypes": [
-    "scss",
-    "ts"
-  ],
   "theme": {
     "color": "light",
     "density": "compact",

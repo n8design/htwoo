@@ -112,8 +112,7 @@
     "core:sync": "node scripts/core-package-sync.js sync-core",
     "core:bump:patch": "node scripts/core-package-sync.js bump-core --type=patch",
     "core:bump:minor": "node scripts/core-package-sync.js bump-core --type=minor",
-    "core:bump:major": "node scripts/core-package-sync.js bump-core --type=major",
-    "prepare": "husky"
+    "core:bump:major": "node scripts/core-package-sync.js bump-core --type=major"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

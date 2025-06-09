@@ -331,7 +331,7 @@ function bumpCore(releaseType = 'patch') {
     
     return syncCore(newVersion);
 }
-}
+
 
 /**
  * Sync htwoo-react to match htwoo-core version
@@ -474,7 +474,6 @@ function main() {
         case 'check-sync':
             const isSync = checkSync();
             process.exit(isSync ? 0 : 1);
-            break;
             
         case 'plan-sync':
             planSync(options.version);
@@ -483,17 +482,14 @@ function main() {
         case 'sync-both':
             const success = syncBoth(options.version);
             process.exit(success ? 0 : 1);
-            break;
             
         case 'sync-react':
             const reactSync = syncReactToCore();
             process.exit(reactSync ? 0 : 1);
-            break;
             
         case 'sync-deps':
             const depSync = syncDependencies();
             process.exit(depSync ? 0 : 1);
-            break;
             
         case 'bump-both':
             const releaseType = options.type || 'patch';
@@ -503,7 +499,6 @@ function main() {
             }
             const bumpSuccess = bumpBoth(releaseType);
             process.exit(bumpSuccess ? 0 : 1);
-            break;
             
         default:
             if (command) {
