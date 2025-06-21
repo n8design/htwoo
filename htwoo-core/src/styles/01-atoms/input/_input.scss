@@ -62,6 +62,7 @@
 	&[readonly] {
 		border-color: transparent;
 		padding-inline: 0;
+
     }
 }
 
@@ -149,6 +150,25 @@ input[type="color"].hoo-input-color {
 
 .hoo-input-group {
 	display: flex;
+
+	&:has([readonly]){
+
+		.hoo-input-suffix,
+		.hoo-input-prefix{
+			background-color: transparent;
+			border-color: transparent;
+			width: fit-content;
+			padding-left: 0;
+			padding-right: 0;
+			pointer-events: none;
+		}
+
+		.hoo-input-text{
+			width: fit-content;
+			pointer-events: none;
+		}
+
+	}
 
 	&:focus-within {
 		&>* {

@@ -1,0 +1,213 @@
+{
+    "button": {
+        "iconname": "icon-arrow-left",
+        "label": "Button",
+        "description": "Primary with description",
+        "aria-label": "Button",
+        "disabled": true
+    },
+    "checkbox": {
+        "label": "Checkbox Label",
+        "id": "checkbox-readonly",
+        "disabled": true,
+        "checked": true
+    },
+    "radiobutton": {
+        "label": "Radio Button Label",
+        "id": "radiobutton-readonly",
+        "disabled": true,
+        "checked": true
+    },
+    "input": {
+        "date": {
+            "id": "my-date-picker-readonly",
+            "name": "my-date-picker-name",
+            "value": "2021-10-26",
+            "min-value": "2021-10-25",
+            "max-value": "2030-10-25",
+            "aria-tags": "",
+            "readonly": true
+        },
+        "number": {
+            "min": 0,
+            "max": 100,
+            "aria-tags": "",
+            "value": "42",
+            "readonly": true
+        },
+        "text": {
+            "inputPrefix": "https://",
+            "inputSuffix": ".com",
+            "placeholder": "A placeholder text",
+            "aria-tags": "",
+            "value": "example",
+            "readonly": true
+        },
+        "email": {
+            "placeholder": "John.Doe@example.com",
+            "aria-tags": "",
+            "value": "user@example.com",
+            "readonly": true
+        },
+        "phone": {
+            "placeholder": "555-8039",
+            "aria-tags": "",
+            "value": "555-1234",
+            "readonly": true
+        },
+        "url": {
+            "placeholder": "https://example.com",
+            "aria-tags": "",
+            "value": "https://mysite.com",
+            "readonly": true
+        },
+        "label": {
+            "label": "Label for field x",
+            "stateStyle": null,
+            "aria-tags": "",
+            "for": "field-x-label"
+        },
+        "toggle": {
+            "name": "toggleName",
+            "id": "toggle-readonly",
+            "label": {
+                "checked": "On",
+                "unchecked": "Off"
+            },
+            "aria-tags": "",
+            "disabled": true,
+            "checked": true
+        },
+        "description": {
+            "descRef": "field-x-description",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "error": {
+            "errorRef": "field-x-error",
+            "text": "lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        "file-upload": {
+            "label": "Click or drag and drop files here to upload filed",
+            "description": "Max file size: 10MB, Types: jpg, png, pdf",
+            "iconname": "icon-arrow-upload-filled",
+            "title": "Upload",
+            "disabled": true
+        }
+    },
+    "checkbox-group": {
+        "items": [
+            {
+                "checkbox": {
+                    "label": "Apple",
+                    "id": "chbg1-readonly",
+                    "name": "checkbox-group-readonly",
+                    "value": "apple",
+                    "disabled": true,
+                    "checked": true
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Avocado",
+                    "id": "chbg2-readonly",
+                    "name": "checkbox-group-readonly",
+                    "value": "avocado",
+                    "disabled": true
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Banana",
+                    "id": "chbg3-readonly",
+                    "name": "checkbox-group-readonly",
+                    "value": "banana",
+                    "disabled": true,
+                    "checked": true
+                }
+            },
+            {
+                "checkbox": {
+                    "label": "Citrus",
+                    "id": "chbg4-readonly",
+                    "name": "checkbox-group-readonly",
+                    "value": "citrus",
+                    "disabled": true
+                }
+            }
+        ],
+        "cols": null
+    },
+    "radiobutton-group": {
+        "items": [
+            {
+                "radiobutton": {
+                    "label": "Apple",
+                    "id": "rbg1-readonly",
+                    "name": "radio-button-group-readonly",
+                    "value": "apple",
+                    "disabled": true,
+                    "checked": true
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Avocado",
+                    "id": "rbg2-readonly",
+                    "name": "radio-button-group-readonly",
+                    "value": "avocado",
+                    "disabled": true
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Banana",
+                    "id": "rbg3-readonly",
+                    "name": "radio-button-group-readonly",
+                    "value": "banana",
+                    "disabled": true
+                }
+            },
+            {
+                "radiobutton": {
+                    "label": "Citrus",
+                    "id": "rbg4-readonly",
+                    "name": "radio-button-group-readonly",
+                    "value": "citrus",
+                    "disabled": true
+                }
+            }
+        ]
+    },
+    "searchbox": {
+        "iconname": "icon-search",
+        "placeholder": "Search",
+        "ddToggleClass": "",
+        "value": "sample search",
+        "readonly": true
+    },
+    "select-options": {
+        "options": [
+            {
+                "key": "banana",
+                "value": "Banana",
+                "disabled": "disabled",
+                "selected": true
+            },
+            {
+                "key": "apple",
+                "value": "Apple",
+                "disabled": "disabled"
+            },
+            {
+                "key": "orange",
+                "value": "Orange",
+                "disabled": "disabled"
+            },
+            {
+                "key": "lime",
+                "value": "Lime",
+                "disabled": "disabled"
+            }
+        ]
+    }
+}

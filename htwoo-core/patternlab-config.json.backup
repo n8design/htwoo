@@ -1,6 +1,6 @@
 {
   "cacheBust": true,
-  "cleanPublic": true,
+  "cleanPublic": false,
   "defaultPattern": "all",
   "defaultShowPatternInfo": true,
   "defaultInitialViewportWidth": true,
@@ -58,8 +58,7 @@
       },
       "js": "./src/js",
       "images": "./src/images",
-      "fonts": "./src/fonts",
-      "css": "./src/css"
+      "fonts": "./src/fonts"
     },
     "public": {
       "root": "./public/",
@@ -86,13 +85,7 @@
   "patternMergeVariantArrays": true,
   "renderFlatPatternsOnViewAllPages": false,
   "serverOptions": {
-    "wait": 1000,
-    "mount": [
-      [
-        "/ice-hotreloader",
-        "../node_modules/@n8d/ice-hotreloader/"
-      ]
-    ]
+    "wait": 1000
   },
   "starterkitSubDir": "dist",
   "styleGuideExcludes": [],
@@ -110,12 +103,7 @@
       "height": "88px"
     }
   },
-  "plugins": {
-    "plugin-design": {
-      "enabled": true,
-      "initialized": false
-    }
-  },
+  "plugins": {},
   "uikits": [
     {
       "name": "uikit-workshop",

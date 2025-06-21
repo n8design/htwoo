@@ -23,7 +23,7 @@ export default {
 
   hotreload: {
     enabled: true,
-    port: 3002,
+    port: 3001,
     host: 'localhost',
     excludeExtensions: ['.map', '.d.ts', '.html', '.htm', '.hbs'],
   },
