@@ -1,0 +1,31 @@
+{
+    "teamName": "Project Alpha Team",
+    "lastUpdated": "June 25, 2025 at 10:30 AM",
+    "dashboardCards": [
+        {
+            "title": "Team Overview",
+            "content": "<div class=\"metric-display\"><span class=\"metric-number\">12</span><span class=\"metric-label\">Active Members</span></div>",
+            "span": 1
+        },
+        {
+            "title": "Recent Activity",
+            "content": "<div class=\"activity-feed\"><p>Latest team activities and updates</p></div>",
+            "span": 2
+        },
+        {
+            "title": "Upcoming Deadlines",
+            "content": "<div class=\"deadline-list\"><p>Important deadlines this week</p></div>",
+            "span": 1
+        },
+        {
+            "title": "Team Performance",
+            "content": "<div class=\"performance-chart\"><p>Team performance metrics and analytics</p></div>",
+            "span": 4
+        },
+        {
+            "title": "Quick Actions",
+            "content": "<div class=\"quick-actions-grid\"><p>Frequently used team actions</p></div>",
+            "span": 2
+        }
+    ]
+}

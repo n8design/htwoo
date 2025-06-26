@@ -14,12 +14,6 @@ Classes can be used directly:
 
 For custom elevations the base style also provides a mixin:
 
-```scss
-.my-custom-class{
-    @include elevation(32);
-}
-```
-
 Elevation only takes unit-less values in this case it uses `32px`:
 
 ### SCSS Imports
