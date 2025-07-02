@@ -1,0 +1,569 @@
+{
+  "summary": {
+    "timestamp": "2025-07-01T10:12:24.431Z",
+    "totalPatterns": 34,
+    "successfulTests": 0,
+    "failedTests": 34,
+    "totalViolations": 0,
+    "totalPasses": 0,
+    "averageViolations": 0,
+    "successRate": 0,
+    "performance": {
+      "testDurationSeconds": 5,
+      "testDurationMinutes": 0,
+      "patternsPerSecond": 6.8,
+      "averageTimePerPattern": 0.14,
+      "workers": "default",
+      "isParallel": true,
+      "testMode": "sample"
+    },
+    "topViolations": []
+  },
+  "results": [
+    {
+      "pattern": "atoms-avatar-avatar",
+      "url": "http://localhost:3000/public/patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.685Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-avatar-avatar/atoms-avatar-avatar.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-avatar-presence-all",
+      "url": "http://localhost:3000/public/patterns/atoms-avatar-presence-all/atoms-avatar-presence-all.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.859Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-avatar-presence-all/atoms-avatar-presence-all.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-avatar-presence-all/atoms-avatar-presence-all.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-buttons-button-icon-disabled",
+      "url": "http://localhost:3000/public/patterns/atoms-buttons-button-icon-disabled/atoms-buttons-button-icon-disabled.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.018Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-buttons-button-icon-disabled/atoms-buttons-button-icon-disabled.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-buttons-button-icon-disabled/atoms-buttons-button-icon-disabled.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-buttons-button-split-primary-disabled",
+      "url": "http://localhost:3000/public/patterns/atoms-buttons-button-split-primary-disabled/atoms-buttons-button-split-primary-disabled.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.160Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-buttons-button-split-primary-disabled/atoms-buttons-button-split-primary-disabled.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-buttons-button-split-primary-disabled/atoms-buttons-button-split-primary-disabled.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-global-colors",
+      "url": "http://localhost:3000/public/patterns/atoms-global-colors/atoms-global-colors.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.311Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-global-colors/atoms-global-colors.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-global-colors/atoms-global-colors.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-input-checkbox",
+      "url": "http://localhost:3000/public/patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.685Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-input-input-prensufix",
+      "url": "http://localhost:3000/public/patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.877Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-input-input-text-suffixed",
+      "url": "http://localhost:3000/public/patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.020Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-input-searchbox",
+      "url": "http://localhost:3000/public/patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.177Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-loading-shimmer-circle",
+      "url": "http://localhost:3000/public/patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.313Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-loading-shimmer-theme-inline-notheme",
+      "url": "http://localhost:3000/public/patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.684Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-meta-tag",
+      "url": "http://localhost:3000/public/patterns/atoms-meta-tag/atoms-meta-tag.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.862Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-meta-tag/atoms-meta-tag.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-meta-tag/atoms-meta-tag.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-table-table-collapsible",
+      "url": "http://localhost:3000/public/patterns/atoms-table-table-collapsible/atoms-table-table-collapsible.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.017Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-table-table-collapsible/atoms-table-table-collapsible.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-table-table-collapsible/atoms-table-table-collapsible.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-tooltip-tooltip-left-top",
+      "url": "http://localhost:3000/public/patterns/atoms-tooltip-tooltip-left-top/atoms-tooltip-tooltip-left-top.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.159Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-tooltip-tooltip-left-top/atoms-tooltip-tooltip-left-top.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-tooltip-tooltip-left-top/atoms-tooltip-tooltip-left-top.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "atoms-typography-font-sizes",
+      "url": "http://localhost:3000/public/patterns/atoms-typography-font-sizes/atoms-typography-font-sizes.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.312Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/atoms-typography-font-sizes/atoms-typography-font-sizes.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/atoms-typography-font-sizes/atoms-typography-font-sizes.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "design-tokens-colors-magenta",
+      "url": "http://localhost:3000/public/patterns/design-tokens-colors-magenta/design-tokens-colors-magenta.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.684Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/design-tokens-colors-magenta/design-tokens-colors-magenta.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/design-tokens-colors-magenta/design-tokens-colors-magenta.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "design-tokens-elevations-elevation",
+      "url": "http://localhost:3000/public/patterns/design-tokens-elevations-elevation/design-tokens-elevations-elevation.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.863Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/design-tokens-elevations-elevation/design-tokens-elevations-elevation.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/design-tokens-elevations-elevation/design-tokens-elevations-elevation.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-avatar-with-presence-avatar-presence-16",
+      "url": "http://localhost:3000/public/patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.020Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-avatar-with-presence-avatar-presence-16/molecules-avatar-with-presence-avatar-presence-16.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-cards-elements-card-image",
+      "url": "http://localhost:3000/public/patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.159Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-dialogs-dialog-iframe",
+      "url": "http://localhost:3000/public/patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.290Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-form-samples-new-form-step3",
+      "url": "http://localhost:3000/public/patterns/molecules-form-samples-new-form-step3/molecules-form-samples-new-form-step3.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.684Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-form-samples-new-form-step3/molecules-form-samples-new-form-step3.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-form-samples-new-form-step3/molecules-form-samples-new-form-step3.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-forms-radio-button-group-cols",
+      "url": "http://localhost:3000/public/patterns/molecules-forms-radio-button-group-cols/molecules-forms-radio-button-group-cols.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.870Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-forms-radio-button-group-cols/molecules-forms-radio-button-group-cols.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-forms-radio-button-group-cols/molecules-forms-radio-button-group-cols.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-menus-cmdbar",
+      "url": "http://localhost:3000/public/patterns/molecules-menus-cmdbar/molecules-menus-cmdbar.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.017Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-menus-cmdbar/molecules-menus-cmdbar.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-menus-cmdbar/molecules-menus-cmdbar.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-meta-tag-list-button-primary",
+      "url": "http://localhost:3000/public/patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.162Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-persona-persona-72",
+      "url": "http://localhost:3000/public/patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.312Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-persona-persona-72/molecules-persona-persona-72.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-quick-links-ql-list-button-outline",
+      "url": "http://localhost:3000/public/patterns/molecules-quick-links-ql-list-button-outline/molecules-quick-links-ql-list-button-outline.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.686Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-quick-links-ql-list-button-outline/molecules-quick-links-ql-list-button-outline.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-quick-links-ql-list-button-outline/molecules-quick-links-ql-list-button-outline.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "molecules-quick-links-ql-tiles-xlarge",
+      "url": "http://localhost:3000/public/patterns/molecules-quick-links-ql-tiles-xlarge/molecules-quick-links-ql-tiles-xlarge.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.861Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/molecules-quick-links-ql-tiles-xlarge/molecules-quick-links-ql-tiles-xlarge.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/molecules-quick-links-ql-tiles-xlarge/molecules-quick-links-ql-tiles-xlarge.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-dialogs-dialog-iframe-3by4",
+      "url": "http://localhost:3000/public/patterns/organism-dialogs-dialog-iframe-3by4/organism-dialogs-dialog-iframe-3by4.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.021Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-dialogs-dialog-iframe-3by4/organism-dialogs-dialog-iframe-3by4.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-dialogs-dialog-iframe-3by4/organism-dialogs-dialog-iframe-3by4.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-dialogs-modal-dialog-iframe-4by3",
+      "url": "http://localhost:3000/public/patterns/organism-dialogs-modal-dialog-iframe-4by3/organism-dialogs-modal-dialog-iframe-4by3.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.162Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-dialogs-modal-dialog-iframe-4by3/organism-dialogs-modal-dialog-iframe-4by3.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-dialogs-modal-dialog-iframe-4by3/organism-dialogs-modal-dialog-iframe-4by3.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-facepiles-facepile-32",
+      "url": "http://localhost:3000/public/patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.314Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-facepiles-facepile-32/organism-facepiles-facepile-32.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-media-video-html",
+      "url": "http://localhost:3000/public/patterns/organism-media-video-html/organism-media-video-html.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.687Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-media-video-html/organism-media-video-html.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-media-video-html/organism-media-video-html.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-quick-links-grid-quick-links-button-no-outline-grid",
+      "url": "http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-button-no-outline-grid/organism-quick-links-grid-quick-links-button-no-outline-grid.rendered.html",
+      "timestamp": "2025-07-01T10:12:19.862Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-button-no-outline-grid/organism-quick-links-grid-quick-links-button-no-outline-grid.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-button-no-outline-grid/organism-quick-links-grid-quick-links-button-no-outline-grid.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "organism-quick-links-grid-quick-links-tiles-fill-grid",
+      "url": "http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-tiles-fill-grid/organism-quick-links-grid-quick-links-tiles-fill-grid.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.020Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-tiles-fill-grid/organism-quick-links-grid-quick-links-tiles-fill-grid.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/organism-quick-links-grid-quick-links-tiles-fill-grid/organism-quick-links-grid-quick-links-tiles-fill-grid.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    },
+    {
+      "pattern": "templates-teams-teams-dashboard",
+      "url": "http://localhost:3000/public/patterns/templates-teams-teams-dashboard/templates-teams-teams-dashboard.rendered.html",
+      "timestamp": "2025-07-01T10:12:20.172Z",
+      "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/public/patterns/templates-teams-teams-dashboard/templates-teams-teams-dashboard.rendered.html\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/public/patterns/templates-teams-teams-dashboard/templates-teams-teams-dashboard.rendered.html\", waiting until \"networkidle\"\u001b[22m\n",
+      "violations": [],
+      "passes": [],
+      "incomplete": [],
+      "inapplicable": [],
+      "summary": {
+        "violationCount": 0,
+        "passCount": 0,
+        "incompleteCount": 0,
+        "inapplicableCount": 0
+      }
+    }
+  ],
+  "generatedAt": "2025-07-01T10:12:24.431Z"
+}

@@ -248,6 +248,46 @@
         ],
         "parallel": false
       }
+    },
+    "test:a11y": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:all",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:sample": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:sample",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:with-server": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:with-server",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:sample:with-server": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:sample:with-server",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
     }
   },
   "tags": ["scope:styleguide", "type:application"]

@@ -1,0 +1,117 @@
+name: Accessibility Testing
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'htwoo-core/**'
+      - '.github/workflows/accessibility.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'htwoo-core/**'
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of accessibility test to run'
+        required: true
+        default: 'quick'
+        type: choice
+        options:
+          - 'quick'
+          - 'full'
+
+jobs:
+  accessibility-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+        working-directory: htwoo-core
+
+      - name: Build hTWOo Core
+        run: npm run build:package
+        working-directory: htwoo-core
+
+      - name: Build PatternLab documentation
+        run: npm run pl:build
+        working-directory: htwoo-core
+
+      - name: Run quick accessibility tests
+        if: github.event.inputs.test_type == 'quick' || github.event.inputs.test_type == ''
+        run: npm run test:a11y
+        working-directory: htwoo-core
+
+      - name: Run full accessibility tests
+        if: github.event.inputs.test_type == 'full'
+        run: npm run test:a11y:full
+        working-directory: htwoo-core
+
+      - name: Upload accessibility test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-test-results
+          path: |
+            htwoo-core/test-results/
+          retention-days: 30
+
+      - name: Comment PR with accessibility results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            try {
+              const reportPath = path.join('htwoo-core', 'test-results', 'accessibility-report.md');
+              if (fs.existsSync(reportPath)) {
+                const report = fs.readFileSync(reportPath, 'utf8');
+                
+                github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: `## 🔍 Accessibility Test Results\n\n${report}`
+                });
+              }
+            } catch (error) {
+              console.log('Could not post accessibility results:', error.message);
+            }
+
+  accessibility-summary:
+    runs-on: ubuntu-latest
+    needs: accessibility-tests
+    if: always()
+    
+    steps:
+      - name: Download test results
+        uses: actions/download-artifact@v4
+        with:
+          name: accessibility-test-results
+          path: ./test-results
+
+      - name: Generate accessibility summary
+        run: |
+          echo "# 🔍 Accessibility Test Summary" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "./test-results/accessibility-report.md" ]; then
+            cat ./test-results/accessibility-report.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ No accessibility test results found" >> $GITHUB_STEP_SUMMARY
+          fi
