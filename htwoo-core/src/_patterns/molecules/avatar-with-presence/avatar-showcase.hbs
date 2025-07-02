@@ -1,7 +1,9 @@
+{{#generateAvatarShowcase}}
 <div class="sg-item-showcase">
-{{#each avatar-showcase}}
-    {{#this}}
-    {{>molecules-avatar-presence}}
-    {{/this}}
-{{/each}}
+    {{#each showcaseAvatars}}
+    {{#avatarWithPresence ../status}}
+        {{>molecules-avatar-presence}}
+    {{/avatarWithPresence}}
+    {{/each}}
 </div>
+{{/generateAvatarShowcase}}

@@ -1,4 +1,5 @@
 {
-    "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+    "type": "astronaut",
+    "index": 0,
     "size": 64
 }

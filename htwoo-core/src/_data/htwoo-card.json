@@ -1,4 +1,27 @@
 {
+    "card-images": {
+        "default": "../../images/card-images/coffee-image.jpg",
+        "splash": [
+            "../../images/card-images/htwoo-gm-001.svg",
+            "../../images/card-images/htwoo-gm-002.svg",
+            "../../images/card-images/htwoo-gm-003.svg"
+        ]
+    },
+    "card-templates": {
+        "default": {
+            "title": "Default Card Title",
+            "description": "Default card description that can be used as a template.",
+            "location": "Marketing"
+        },
+        "article": {
+            "title": "Article Card Title",
+            "description": "This is a template for article-style cards."
+        },
+        "product": {
+            "title": "Product Card Title",
+            "description": "Template for product-related cards."
+        }
+    },
     "card": {
         "footer": {
             "name": "Man on the moon",
@@ -25,5 +48,19 @@
                 "label": "Call for action"
             }
         }
-    }
+    },
+    "splash-card-variants": [
+        {
+            "title": "First splash card with custom title",
+            "description": "Custom description for first card variant."
+        },
+        {
+            "title": "Second splash card with another title",
+            "description": "Different description for second card variant."
+        },
+        {
+            "title": "Third splash card title variation",
+            "description": "Yet another description for the third card variant."
+        }
+    ]
 }

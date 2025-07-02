@@ -1,5 +1,7 @@
+{{#generateFacepile count size}}
 <div class="hoo-facepile">
-    {{#each items}}
-    {{>molecules-avatar-presence }}
+    {{#each avatars}}
+        {{>molecules-avatar-presence}}
     {{/each}}
 </div>
+{{/generateFacepile}}

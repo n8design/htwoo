@@ -5,6 +5,28 @@
         "status": "online",
         "title": "Online"
     },
+    "avatar-sizes": [16, 24, 32, 40, 48, 64, 72, 96],
+    "mugshot-patterns": {
+        "astronaut": "../../images/mug-shots/astronaut-mugshot-001.jpg",
+        "dog": "../../images/mug-shots/dog-mugshot-001.jpg",
+        "female": [
+            "../../images/mug-shots/female-mugshot-001.jpg",
+            "../../images/mug-shots/female-mugshot-002.jpg",
+            "../../images/mug-shots/female-mugshot-003.jpg",
+            "../../images/mug-shots/female-mugshot-004.jpg",
+            "../../images/mug-shots/female-mugshot-005.jpg",
+            "../../images/mug-shots/female-mugshot-006.jpg",
+            "../../images/mug-shots/female-mugshot-007.jpg"
+        ],
+        "male": [
+            "../../images/mug-shots/male-mugshot-001.jpg",
+            "../../images/mug-shots/male-mugshot-002.jpg",
+            "../../images/mug-shots/male-mugshot-003.jpg",
+            "../../images/mug-shots/male-mugshot-004.jpg",
+            "../../images/mug-shots/male-mugshot-005.jpg",
+            "../../images/mug-shots/male-mugshot-006.jpg"
+        ]
+    },
     "avatars": [
         {
             "mugshot": "../../images/mug-shots/astronaut-mugshot-001.jpg",

@@ -145,4 +145,86 @@ module.exports = function (Handlebars) {
     return new Handlebars.SafeString(template(context));
   });
 
+  Handlebars.registerHelper('avatarWithSize', function (size, options) {
+    // If this is already an avatar object from iteration, use it
+    const baseAvatar = this.mugshot ? this : (this.avatar || {});
+    const sizedAvatar = Object.assign({}, baseAvatar, { size: size });
+    return options.fn({ avatar: sizedAvatar });
+  });
+
+  Handlebars.registerHelper('extendObject', function (baseObject, overrides, options) {
+    const extended = Object.assign({}, baseObject, overrides);
+    return options.fn(extended);
+  });
+
+  Handlebars.registerHelper('repeatWithBase', function (baseData, count, options) {
+    let result = '';
+    for (let i = 0; i < count; i++) {
+      result += options.fn(baseData);
+    }
+    return result;
+  });
+
+  Handlebars.registerHelper('lt', function (a, b) {
+    return a < b;
+  });
+
+  // Helper to create splash card with different image and optional overrides
+  Handlebars.registerHelper('splashCardWithImage', function(imageIndex, baseSplashCard, rootContext) {
+    const imageMap = {
+      0: '../../images/card-images/htwoo-gm-001.svg',
+      1: '../../images/card-images/htwoo-gm-002.svg',
+      2: '../../images/card-images/htwoo-gm-003.svg'
+    };
+    
+    // Get the variant data if it exists
+    const variants = rootContext && rootContext['splash-card-variants'] ? rootContext['splash-card-variants'] : [];
+    const variant = variants[imageIndex] || {};
+    
+    // Create the merged card object
+    const result = {
+      ...baseSplashCard,
+      ...variant,
+      headerImage: imageMap[imageIndex] || baseSplashCard.headerImage
+    };
+    
+    return result;
+  });
+
+  // Helper to apply readonly/disabled states to input showcases
+  Handlebars.registerHelper('inputWithState', function(inputType, state, options) {
+    const globalInputs = this.input || {};
+    const baseInput = globalInputs[inputType] || {};
+    
+    // Apply state overrides (readonly, disabled, etc.)
+    const stateOverrides = state || {};
+    const result = {
+      ...baseInput,
+      ...stateOverrides
+    };
+    
+    return options.fn({ input: result });
+  });
+
+  // Helper to apply state to all inputs in a collection
+  Handlebars.registerHelper('inputShowcase', function(showcaseType, options) {
+    const globalInputs = this.input || {};
+    const showcaseStates = this['input-states'] || {};
+    
+    const result = {};
+    
+    // Apply showcase states to each input type
+    Object.keys(globalInputs).forEach(inputType => {
+      const baseInput = globalInputs[inputType];
+      const stateOverride = showcaseStates[inputType] || {};
+      
+      result[inputType] = {
+        ...baseInput,
+        ...stateOverride
+      };
+    });
+    
+    return options.fn({ input: result, 'showcase-type': showcaseType });
+  });
+
 };
