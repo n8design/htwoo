@@ -18,6 +18,13 @@ This directory contains comprehensive documentation for the hTWOo Core accessibi
 - CI/CD integration examples (GitHub Actions, Azure DevOps, Jenkins)
 - Advanced configuration and customization
 - Troubleshooting and debugging
+
+### [wcag-accessibility-specifications.md](./wcag-accessibility-specifications.md)
+**Detailed WCAG specifications reference** with links to official documentation
+- Complete list of 65+ accessibility rules tested
+- Links to official W3C WCAG specification documents
+- Organized by WCAG level (A, AA) and category
+- Component-specific considerations and disabled rules
 - Extension and plugin development
 
 ## 🚀 Quick Navigation
