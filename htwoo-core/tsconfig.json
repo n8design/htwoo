@@ -6,11 +6,11 @@
       
       // Generate d.ts files only
       "declaration": true,
-      "emitDeclarationOnly": true,
+      "emitDeclarationOnly": false, // Changed to false to generate JS files
       
       // Output to the packages directory (monorepo-aware path)
       "outDir": "../packages/htwoo-core/lib/js/",
-      "rootDir": "./src/js",
+      "rootDirs": ["./src/js", "./src/ts"],
       
       // Relaxed settings for JS-to-TS conversion
       "strict": false,
@@ -25,7 +25,7 @@
       "tsBuildInfoFile": "./lib/.tsbuildinfo"
     },
     
-    "include": ["src/js/**/*.js"],
+    "include": ["src/js/**/*.js", "src/ts/**/*.ts"],
     "exclude": [
       "src/js/vendor/**/*", 
       "src/js/prismjs/**/*", 
