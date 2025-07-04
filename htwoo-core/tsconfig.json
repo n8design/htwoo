@@ -4,12 +4,15 @@
       // Tells TypeScript to read JS files for declaration generation
       "allowJs": true,
       
-      // Generate d.ts files only
+      // Generate d.ts files and JS files
       "declaration": true,
-      "emitDeclarationOnly": false, // Changed to false to generate JS files
+      "emitDeclarationOnly": false,
       
-      // Output to the packages directory (monorepo-aware path)
-      "outDir": "../packages/htwoo-core/lib/js/",
+      // Two output paths:
+      // 1. For development - output to public directory for ice-build
+      "outDir": "./public/js/",
+      
+      // Source directories
       "rootDirs": ["./src/js", "./src/ts"],
       
       // Relaxed settings for JS-to-TS conversion
@@ -22,7 +25,7 @@
       
       // Project reference settings
       "composite": false,
-      "tsBuildInfoFile": "./lib/.tsbuildinfo"
+      "tsBuildInfoFile": "./public/.tsbuildinfo"
     },
     
     "include": ["src/js/**/*.js", "src/ts/**/*.ts"],
