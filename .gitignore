@@ -127,6 +127,9 @@ reference
 **/project.json
 docs/**/project.json
 
+# Generated documentation files
+docs/htwoo-core/
+
 # Temporary build files
 temp-*.html
 *-graph.html
