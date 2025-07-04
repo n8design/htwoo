@@ -1,0 +1,52 @@
+{
+  "select-options-person": {
+    "ddToggleClass": "hoo-show",
+    "options": [
+      {
+        "groupname": "Team Alpha",
+        "options": [
+          {
+            "key": "john_doe",
+            "value": "John Doe",
+            "disabled": ""
+          },
+          {
+            "key": "jane_smith",
+            "value": "Jane Smith",
+            "disabled": ""
+          },
+          {
+            "key": "alex_johnson",
+            "value": "Alex Johnson",
+            "disabled": ""
+          }
+        ]
+      },
+      {
+        "groupname": "Team Beta",
+        "options": [
+          {
+            "key": "sarah_wilson",
+            "value": "Sarah Wilson",
+            "disabled": ""
+          },
+          {
+            "key": "mike_brown",
+            "value": "Mike Brown",
+            "disabled": "hoo-disabled"
+          },
+          {
+            "key": "lisa_garcia",
+            "value": "Lisa Garcia",
+            "disabled": ""
+          }
+        ]
+      },
+      {
+        "key": "guest_user",
+        "value": "Guest User",
+        "disabled": ""
+      }
+    ]
+  }
+}

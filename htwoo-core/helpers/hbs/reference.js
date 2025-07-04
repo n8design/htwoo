@@ -128,14 +128,4 @@ module.exports = function (Handlebars) {
     // Execute the block with the merged context
     return options.fn(context);
   });
-  
-  // Helper for select-options-person block context
-  Handlebars.registerHelper('select-options-person', function(options) {
-    // Get the select options person data from the global data context
-    const selectOptionsPerson = options.data.root['select-options-person'] || {};
-    // Merge with the current context
-    const context = Object.assign({}, this, selectOptionsPerson);
-    // Execute the block with the merged context
-    return options.fn(context);
-  });
 };

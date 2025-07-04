@@ -32,6 +32,26 @@ module.exports = function (Handlebars) {
     return options.fn(context);
   });
 
+  // Helper for select-options-person block
+  Handlebars.registerHelper('select-options-person', function(options) {
+    // Get select options person data from the context
+    let context = this;
+    
+    // Check if we have select-options-person in the root data
+    if (options.data && options.data.root && options.data.root['select-options-person']) {
+      // Merge with the current context
+      context = Object.assign({}, context, options.data.root['select-options-person']);
+    }
+    
+    // If we're in a pattern context with select-options-person as a direct property
+    if (this['select-options-person']) {
+      context = Object.assign({}, context, this['select-options-person']);
+    }
+    
+    // Execute the block with the context
+    return options.fn(context);
+  });
+
   // Helper to directly render select options
   Handlebars.registerHelper('renderSelectOptions', function(options) {
     const items = options.hash.items || [];
