@@ -69,7 +69,8 @@
       "styleguide": "./public/styleguide/",
       "js": "./public/js",
       "images": "./public/images",
-      "fonts": "./public/fonts"
+      "fonts": "./public/fonts",
+      "css": "./public/css"
     }
   },
   "patternExtension": "hbs",

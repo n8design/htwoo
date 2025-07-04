@@ -11,6 +11,7 @@
     "pl:install": "patternlab install --config ./patternlab-config.json",
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-config.json",
+    "pl:publish-docs": "patternlab build --config ./patternlab-public.json",
     "pl:version": "patternlab --version",
     "--- /// Ice Commands /// ---": "",
     "ice:build": "ice-build watch --config ./ice.config.js",
