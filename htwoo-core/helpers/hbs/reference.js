@@ -118,4 +118,24 @@ module.exports = function (Handlebars) {
     
     return options.fn(categories[categoryName]);
   });
+  
+  // Helper for select-options block context
+  Handlebars.registerHelper('select-options', function(options) {
+    // Get the select options data from the global data context
+    const selectOptions = options.data.root['select-options'] || {};
+    // Merge with the current context
+    const context = Object.assign({}, this, selectOptions);
+    // Execute the block with the merged context
+    return options.fn(context);
+  });
+  
+  // Helper for select-options-person block context
+  Handlebars.registerHelper('select-options-person', function(options) {
+    // Get the select options person data from the global data context
+    const selectOptionsPerson = options.data.root['select-options-person'] || {};
+    // Merge with the current context
+    const context = Object.assign({}, this, selectOptionsPerson);
+    // Execute the block with the merged context
+    return options.fn(context);
+  });
 };
