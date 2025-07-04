@@ -1,4 +1,0 @@
-/**
- * Icon finder functionality
- */
-export {};

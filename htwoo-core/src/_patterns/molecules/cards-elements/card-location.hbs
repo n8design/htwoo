@@ -1,3 +1,5 @@
-{{#card}}
+{{#if card}}
+<div class="hoo-cardlocation">{{ card.location }}</div>
+{{else}}
 <div class="hoo-cardlocation">{{ location }}</div>
-{{/card}}
+{{/if}}

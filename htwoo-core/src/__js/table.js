@@ -43,6 +43,7 @@ const collapseAndExpand = (event) => {
 
     if (section === "all") {
 
+        // Fix selector to match the class used in the HTML template
         let subSection = document.querySelectorAll("tbody tr.collapsible");
 
         if (parentRow.getAttribute('aria-expanded') === "true") {

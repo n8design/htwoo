@@ -57,8 +57,29 @@ module.exports = function (Handlebars) {
                     cardData["card-templates"]?.default || 
                     { "title": "Card Title", "description": "Card description" };
     
-    // Apply any overrides passed in
-    const mergedCard = Object.assign({}, template, overrides || {});
+    // Get default card data
+    const defaultCardMedia = cardData.card?.media || {
+      image: "../../images/card-images/coffee-image.jpg"
+    };
+    
+    const defaultCardFooter = cardData.card?.footer || {
+      name: "Man on the moon",
+      modified: "Created a seconds ago",
+      mugshot: "../../images/mug-shots/astronaut-mugshot-001.jpg",
+      size: 32
+    };
+    
+    // Apply any overrides passed in, ensuring media and footer are preserved
+    const mergedCard = {
+      ...template,
+      media: overrides?.media || defaultCardMedia,
+      footer: overrides?.footer || defaultCardFooter,
+      ...(overrides || {}),
+      card: {
+        media: overrides?.media || defaultCardMedia,
+        footer: overrides?.footer || defaultCardFooter
+      }
+    };
     
     return options.fn(mergedCard);
   });
@@ -127,6 +148,12 @@ module.exports = function (Handlebars) {
     return options.fn(result);
   });
   
+  // Helper for splash-card block context
+  Handlebars.registerHelper('splash-card', function(options) {
+    // Just execute the block with the current context
+    return options.fn(this);
+  });
+  
   // Helper to generate a grid of cards
   Handlebars.registerHelper('generateCardGrid', function(count, templateName, options) {
     const cardData = getGlobalCardData(options);
@@ -138,14 +165,42 @@ module.exports = function (Handlebars) {
       description: "Card description"
     };
     
+    // Get default media and footer data
+    const defaultMedia = cardData.card?.media || {
+      image: "../../images/card-images/coffee-image.jpg"
+    };
+    
+    const defaultFooter = cardData.card?.footer || {
+      name: "Man on the moon",
+      modified: "Created a seconds ago",
+      mugshot: "../../images/mug-shots/astronaut-mugshot-001.jpg",
+      size: 32
+    };
+    
     // Generate the cards
     const cards = [];
     for (let i = 0; i < count; i++) {
-      // Create a slight variation for each card
+      // Create a slight variation for each card with proper context structure
       cards.push({
         title: `${template.title || 'Card'} ${i+1}`,
         description: template.description,
-        index: i
+        location: template.location || "Default Location",
+        index: i,
+        // Include data in the format expected by components
+        media: {
+          image: defaultMedia.image
+        },
+        footer: defaultFooter,
+        // Also include card nested structure for components that expect it
+        card: {
+          title: `${template.title || 'Card'} ${i+1}`,
+          description: template.description,
+          location: template.location || "Default Location",
+          media: {
+            image: defaultMedia.image
+          },
+          footer: defaultFooter
+        }
       });
     }
     
