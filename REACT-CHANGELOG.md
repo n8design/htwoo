@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.7.4 - 2025-Jul-7
+
+- HOOCommandBar - flyoutMenuItems is now optional on IHOOCommandItem
+- Input controls that support input html element now support root readonly property.
+- HOONumber - added support for input prefix and input suffix, similar to HOOText
+
 ## 2.7.3 - 2025-May-16
 
 - Teams Themes: Updated the teams themes to align with htwoo-core and fix dark more theme bugs.

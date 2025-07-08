@@ -10,7 +10,11 @@ export interface IHOODateProps extends IHOOStandardProps {
   /**
   * (Optional) Is checkbox disabled - default false.
   */
-  disabled?: boolean;
+  disabled?: boolean;  
+  /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
   /**
   * (Optional) Minimum value of date selector. Must be in format "YYYY-MM-DD".
   */
@@ -83,6 +87,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
           min={minValue}
           max={maxValue}
           disabled={this.props.disabled || false}
+          readOnly={this.props.readonly || false}
           onChange={this.props.onChange} />
       );
     } catch (err) {

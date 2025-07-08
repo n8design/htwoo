@@ -11,6 +11,14 @@ export interface IHOONumberProps extends IHOOStandardProps {
    * Change event handler
   */
   onChange: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Input Prefix.
+  */
+  inputPrefix?: string;
+  /**
+    * (Optional) Input Suffix.
+   */
+  inputSuffix?: string;
   //TODO: (Stefan) Invalid input has not been completed in core
   /**
    * (Optional) Is Input Invalid - default false.
@@ -20,6 +28,10 @@ export interface IHOONumberProps extends IHOOStandardProps {
    * (Optional) Is Input Disabled - default false.
   */
   disabled?: boolean;
+  /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
   /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
@@ -64,14 +76,21 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
       const inputClassName = (this.props.inputElementAttributes?.className) ? `${this._inputClass} ${this.props.inputElementAttributes?.className}` : this._inputClass;
       return (
         <div {...this._rootProps} {...this.props.rootElementAttributes} className={rootClassName}>
+          {this.props.inputPrefix &&
+            <div className="hoo-input-prefix">{this.props.inputPrefix}</div>
+          }
           <input type="number"
             id={this._numberInputId}
             {...this.props.inputElementAttributes}
             value={this.props.value}
             disabled={this.props.disabled || false}
+            readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             className={inputClassName}
             onChange={this.props.onChange} />
+          {this.props.inputSuffix &&
+            <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
+          }
         </div>
       );
     } catch (err) {

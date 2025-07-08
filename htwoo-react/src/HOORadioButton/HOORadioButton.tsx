@@ -24,6 +24,10 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
   forId?: string;
@@ -72,6 +76,7 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
             value={this.props.value}
             className={className}
             disabled={this.props.disabled || false}
+            readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             onChange={this.props.onChange} />
           <label htmlFor={this._radioId} {...this.props.labelElementAttributes}>

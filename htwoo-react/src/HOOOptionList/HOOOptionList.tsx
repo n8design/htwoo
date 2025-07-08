@@ -41,6 +41,10 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
   forId?: string;
@@ -177,11 +181,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       switch (this.props.type) {
         case HOOOptionListType.Checkbox:
           checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
-          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
           break;
         case HOOOptionListType.RadioButton:
           checked = this.props.value === option.key;
-          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
           break;
       }
     } catch (err) {
