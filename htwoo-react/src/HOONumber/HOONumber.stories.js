@@ -26,6 +26,37 @@ export const Disabled = {
   },
 };
 
+export const Prefix = {
+  render: Template.bind({}),
+  name: "Prefix",
+
+  args: {
+    value: "2.00",
+    inputPrefix: "$",
+  },
+};
+
+export const Suffix = {
+  render: Template.bind({}),
+  name: "Suffix",
+
+  args: {
+    value: "200",
+    inputSuffix: "lbs",
+  },
+};
+
+export const PrefixSuffix = {
+  render: Template.bind({}),
+  name: "Prefix/Suffix",
+
+  args: {
+    value: "2.00",
+    inputPrefix: "$",
+    inputSuffix: "per pound",
+  },
+};
+
 export const Extending = {
   render: Template.bind({}),
   name: "Extending",

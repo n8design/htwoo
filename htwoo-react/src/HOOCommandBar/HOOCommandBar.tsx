@@ -10,7 +10,7 @@ export interface IHOOCommandItem {
   key: number | string;
   iconName?: string;
   text?: string;
-  flyoutMenuItems: IHOOFlyoutMenuItem[];
+  flyoutMenuItems?: IHOOFlyoutMenuItem[];
 }
 
 export interface IHOOCommandBarProps extends IHOOStandardProps {

@@ -66,6 +66,10 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
@@ -468,7 +472,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             autoComplete="off"
             aria-controls={`${this._dropdownId}-list`}
             onChange={this._onChangeInput}
-            readOnly={this.props.containsTypeAhead == null ? true : false}
+            readOnly={(this.props.containsTypeAhead == null || this.props.readonly) ? true : false}
           />
           <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false} >
             <HOOIcon iconName="hoo-icon-arrow-down" />

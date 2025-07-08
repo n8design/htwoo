@@ -12,6 +12,10 @@ export interface IHOOTimeProps extends IHOOStandardProps {
   */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
   * (Optional) Minimum value of time selector. Must be in format "hh:mm:ss.ms".
   */
   minValue?: string;
@@ -73,6 +77,7 @@ export default class HOOTime extends React.PureComponent<IHOOTimeProps, IHOOTime
           min={minValue}
           max={maxValue}
           disabled={this.props.disabled || false}
+          readOnly={this.props.readonly || false}
           onChange={this.props.onChange} />
       );
     } catch (err) {

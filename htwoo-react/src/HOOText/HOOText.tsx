@@ -21,6 +21,10 @@ export interface IHOOTextProps extends IHOOStandardProps {
   */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
    * (Optional) Input Prefix.
   */
   inputPrefix?: string;
@@ -90,6 +94,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
                 type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}
+            readOnly={this.props.readonly || false}
                 aria-disabled={this.props.disabled || false}
                 data-suffix={this.props.inputSuffix || null}
                 data-prefix={this.props.inputPrefix || null}
