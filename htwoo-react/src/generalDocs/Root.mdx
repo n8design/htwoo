@@ -16,7 +16,7 @@ Please feel free to submit your questions, enhancement ideas, and feedback to th
 
 ### 1. Install package in your solution.
 
-*This package has a peer dependency on the correspoinding version of @n8d/htwoo-core so that will be added automatically for you.*
+*This package has a peer dependency on the corresponding version of @n8d/htwoo-core so that will be added automatically for you.*
 
 ```cmd
 npm i @n8d/htwoo-react
@@ -24,7 +24,7 @@ npm i @n8d/htwoo-react
 
 ### 2. Import htwoo-core styles
 
-Add a `@use` statement at the top of your solutions root .scss file and then add an `@include` reference to the `htwoo-core.scss` file. Put the `@include` reference inside of the webparts base class so that the styles are scoped to the instance of this webpart:
+Add a `@use` statement at the top of your solutions root .scss file and then add an `@include` reference to the `htwoo-core.scss` file. Put the `@include` reference inside of the web parts base class so that the styles are scoped to the instance of this web part:
 
 *Note: The import is wrapped in :global so that the class names will not be modified with a namespace.*
 
@@ -57,7 +57,7 @@ public render(): React.ReactElement<IMyComponentProps> {
 
 ### 3. Initialze Basic SVG Icons
 
-To initilize the basic SVG icons, used by some of the more complex components, add the following line to your project starting method. In Microsoft SharePoint Framework (SPFx) that would be in the project's main ts file's onInit method.
+To initialize the basic SVG icons, used by some of the more complex components, add the following line to your project starting method. In Microsoft SharePoint Framework (SPFx) that would be in the project's main ts file's onInit method.
 
 *For more detailed information on using the SymbolSet see the [Advanced/SymbolSet Class](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/advanced-symbolset-class--page) documentation.*
 
@@ -71,6 +71,8 @@ public async onInit(): Promise<void> {
   await symset.initSymbols();
 }
 ```
+
+*For a listing of the icons currently included in the library see [Advanced/Built In Icons](http://lab.n8d.studio/htwoo/htwoo-react/?path=/docs/advanced-built-in-icons--docs)
 
 #### Add more icons from a custom symbolset file
 

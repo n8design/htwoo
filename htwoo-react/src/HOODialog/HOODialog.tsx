@@ -61,6 +61,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   private _rootProps = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlg";
   private _modal: boolean = false;
+  private _updateType: boolean = false;
   private _updateShow: boolean = false;
   private _updateStyle: boolean = false;
   private _dialogElement: React.RefObject<HTMLDialogElement>;
@@ -68,44 +69,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   constructor(props: IHOODialogProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODialog";
-    switch (props.type) {
-      case HOODialogType.Standard:
-        this._componentClass = `${this._componentClass} statusbar`;
-        break;
-      case HOODialogType.StandardError:
-        this._componentClass = `${this._componentClass} statusbar error`;
-        break;
-      case HOODialogType.StandardSuccess:
-        this._componentClass = `${this._componentClass} statusbar success`;
-        break;
-      case HOODialogType.StandardWarning:
-        this._componentClass = `${this._componentClass} statusbar warning`;
-        break;
-      case HOODialogType.SidebarLeft:
-        this._componentClass = `${this._componentClass} sidebar left`;
-        this._modal = true;
-        break;
-      case HOODialogType.SidebarRight:
-        this._componentClass = `${this._componentClass} sidebar right`;
-        this._modal = true;
-        break;
-      case HOODialogType.Topbar:
-        this._componentClass = `${this._componentClass} topbar`;
-        this._modal = true;
-        break;
-      case HOODialogType.Bottombar:
-        this._componentClass = `${this._componentClass} bottombar`;
-        this._modal = true;
-        break;
-      case HOODialogType.Fullscreen:
-        this._componentClass = `${this._componentClass} fullscreen`;
-        this._modal = true;
-        break;
-      case HOODialogType.Center:
-        this._componentClass = `${this._componentClass}`;
-        this._modal = true;
-        break;
-    }
+    this._setType(props.type);
     let styleblock: React.CSSProperties = undefined;
     if (this.props.rootElementAttributes?.style) {
       styleblock = { ...this.props.rootElementAttributes?.style };
@@ -125,6 +89,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   }
 
   public shouldComponentUpdate(nextProps: Readonly<IHOODialogProps>, nextState: Readonly<IHOODialogState>) {
+    if (nextProps.type != this.props.type) { this._updateType = true; }
     if (nextProps.visible != this.props.visible) { this._updateShow = true; }
     if (nextProps.width != this.props.width) { this._updateStyle = true; }
     if (nextProps.height != this.props.height) { this._updateStyle = true; }
@@ -149,6 +114,9 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
 
   public componentDidUpdate(prevProps: Readonly<IHOODialogProps>, prevState: Readonly<IHOODialogState>, snapshot?: any): void {
     try {
+      if(this._updateType){
+        this._setType(this.props.type);
+      }
       if (this._updateShow) {
         this._updateShow = false;
         if (this._dialogElement != null && this._dialogElement.current != null) {
@@ -181,6 +149,51 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
       }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (componentDidUpdate) - ${err}`);
+    }
+  }
+
+  private _setType(type: HOODialogType): void {
+    try {
+      switch (type) {
+        case HOODialogType.Standard:
+          this._componentClass = `${this._componentClass} statusbar`;
+          break;
+        case HOODialogType.StandardError:
+          this._componentClass = `${this._componentClass} statusbar error`;
+          break;
+        case HOODialogType.StandardSuccess:
+          this._componentClass = `${this._componentClass} statusbar success`;
+          break;
+        case HOODialogType.StandardWarning:
+          this._componentClass = `${this._componentClass} statusbar warning`;
+          break;
+        case HOODialogType.SidebarLeft:
+          this._componentClass = `${this._componentClass} sidebar left`;
+          this._modal = true;
+          break;
+        case HOODialogType.SidebarRight:
+          this._componentClass = `${this._componentClass} sidebar right`;
+          this._modal = true;
+          break;
+        case HOODialogType.Topbar:
+          this._componentClass = `${this._componentClass} topbar`;
+          this._modal = true;
+          break;
+        case HOODialogType.Bottombar:
+          this._componentClass = `${this._componentClass} bottombar`;
+          this._modal = true;
+          break;
+        case HOODialogType.Fullscreen:
+          this._componentClass = `${this._componentClass} fullscreen`;
+          this._modal = true;
+          break;
+        case HOODialogType.Center:
+          this._componentClass = `${this._componentClass}`;
+          this._modal = true;
+          break;
+      }
+    } catch (err) {
+      console.error(this.LOG_SOURCE, "(_setType)", err);
     }
   }
 

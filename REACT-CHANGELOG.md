@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 2.7.4 - 2025-Jul-7
+## 2.8.1 - 2025-Jul-30
+
+- HOODialog - fix issue where changing type property doesn't update style
+- HOODropdown - added new noOptionsChangeEvent boolean property that in combination with containsTypeAhead = true, allows the user to add custom values to the input and have the change event fire when they press enter.
+
+## 2.8.0 - 2025-Jul-7
 
 - HOOCommandBar - flyoutMenuItems is now optional on IHOOCommandItem
 - Input controls that support input html element now support root readonly property.
