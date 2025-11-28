@@ -4,7 +4,8 @@
   "workspaces": [
     "htwoo-core",
     "htwoo-react",
-    "packages/htwoo-core"
+    "packages/htwoo-core",
+    "tools/*"
   ],
   "scripts": {
     "prepare": "husky",
@@ -115,11 +116,11 @@
     "core:bump:major": "node scripts/core-package-sync.js bump-core --type=major"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@types/node": "^18.11.18",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@types/node": "^24.10.1",
     "husky": "^9.1.7",
-    "nx": "^21.1.3",
-    "typescript": "^5.1.6"
+    "nx": "22.1.3",
+    "typescript": "^5.9.3"
   }
 }

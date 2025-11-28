@@ -2,7 +2,9 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true
     },
     "typecheck": {
@@ -15,61 +17,102 @@
       "cache": true
     },
     "build-storybook": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "cache": true
     },
     "docs": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "cache": true
     },
     "docs:serve": {
       "cache": false
     },
     "docs:build": {
-      "dependsOn": ["build"],
+      "dependsOn": [
+        "build"
+      ],
       "cache": true
     },
     "changelog": {
       "cache": false
     },
     "release": {
-      "dependsOn": ["build", "test"],
+      "dependsOn": [
+        "build",
+        "test"
+      ],
       "cache": false
     },
     "htwoo-release": {
-      "dependsOn": ["build", "test", "validate"],
+      "dependsOn": [
+        "build",
+        "test",
+        "validate"
+      ],
       "cache": false
     },
     "htwoo-release:patch": {
-      "dependsOn": ["build", "test", "validate"],
+      "dependsOn": [
+        "build",
+        "test",
+        "validate"
+      ],
       "cache": false
     },
     "htwoo-release:minor": {
-      "dependsOn": ["build", "test", "validate"],
+      "dependsOn": [
+        "build",
+        "test",
+        "validate"
+      ],
       "cache": false
     },
     "htwoo-release:major": {
-      "dependsOn": ["build", "test", "validate"],
+      "dependsOn": [
+        "build",
+        "test",
+        "validate"
+      ],
       "cache": false
     },
     "htwoo-release:dry-run": {
-      "dependsOn": ["build", "test", "validate"],
+      "dependsOn": [
+        "build",
+        "test",
+        "validate"
+      ],
       "cache": false
     },
     "htwoo-version:bump": {
-      "dependsOn": ["build", "test"],
+      "dependsOn": [
+        "build",
+        "test"
+      ],
       "cache": false
     },
     "htwoo-version:bump:minor": {
-      "dependsOn": ["build", "test"],
+      "dependsOn": [
+        "build",
+        "test"
+      ],
       "cache": false
     },
     "htwoo-version:bump:major": {
-      "dependsOn": ["build", "test"],
+      "dependsOn": [
+        "build",
+        "test"
+      ],
       "cache": false
     },
     "htwoo-version:set": {
-      "dependsOn": ["build", "test"],
+      "dependsOn": [
+        "build",
+        "test"
+      ],
       "cache": false
     },
     "validate": {
@@ -80,7 +123,9 @@
     }
   },
   "release": {
-    "projects": ["htwoo-core"],
+    "projects": [
+      "htwoo-core"
+    ],
     "changelog": {
       "workspaceChangelog": false,
       "projectChangelogs": {
@@ -95,7 +140,10 @@
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -107,7 +155,16 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "test", "lint", "typecheck", "validate", "docs", "docs:build", "build-storybook"]
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "typecheck",
+          "validate",
+          "docs",
+          "docs:build",
+          "build-storybook"
+        ]
       }
     }
   }

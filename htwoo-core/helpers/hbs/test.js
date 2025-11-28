@@ -40,8 +40,38 @@ module.exports = function (Handlebars) {
     return lastId;
   });
 
+  Handlebars.registerHelper('default', function(value, defaultValue) {
+    return value != null ? value : defaultValue;
+  });
+
+  Handlebars.registerHelper('defaultValue', function(value, defaultValue) {
+    return value != null ? value : defaultValue;
+  });
+
   Handlebars.registerHelper('getLastNumericId', function (value) {
     return lastIdClean;
+  });
+  
+  Handlebars.registerHelper('avatar', function(options) {
+    // If this context already has avatar properties, use them
+    if (this.mugshot || this.size || this.status || this.title) {
+      return options.fn(this);
+    }
+    
+    // Otherwise, if there's an avatar property, use that
+    if (this.avatar) {
+      return options.fn(this.avatar);
+    }
+    
+    // Fallback to a default avatar if nothing is provided
+    const defaultAvatar = {
+      mugshot: "../../images/mug-shots/astronaut-mugshot-001.jpg",
+      size: 32,
+      status: "online",
+      title: "Online"
+    };
+    
+    return options.fn(defaultAvatar);
   });
 
   Handlebars.registerHelper('seoTitle', function (value) {

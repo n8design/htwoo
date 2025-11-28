@@ -31,12 +31,15 @@ module.exports = function (Handlebars) {
       options.data?.root?.["htwoo-avatar"],
       options.data?.root?.data?.["htwoo-avatar"],
       options.data?.global?.["htwoo-avatar"],
-      options._parent?.data?.root?.["htwoo-avatar"]
+      options._parent?.data?.root?.["htwoo-avatar"],
+      // Also try direct access to the root for the avatars
+      options.data?.root,
+      options.data?.global
     ];
     
     for (let location of possibleLocations) {
-      if (location) {
-        avatarData = location;
+      if (location && (location.avatars || location["htwoo-avatar"])) {
+        avatarData = location["htwoo-avatar"] || location;
         break;
       }
     }
@@ -139,7 +142,7 @@ module.exports = function (Handlebars) {
     const avatarData = getGlobalAvatarData(options);
     
     // Use avatars from global data or default to a basic set
-    let baseAvatars = avatarData.avatars || [
+    let baseAvatars = avatarData && avatarData.avatars ? avatarData.avatars : [
       { mugshot: "../../images/mug-shots/astronaut-mugshot-001.jpg" },
       { mugshot: "../../images/mug-shots/female-mugshot-001.jpg" },
       { mugshot: "../../images/mug-shots/male-mugshot-001.jpg" },
