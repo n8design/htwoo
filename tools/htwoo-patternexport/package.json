@@ -1,0 +1,64 @@
+{
+  "name": "@n8d/htwoo-pattern-export",
+  "version": "1.0.0",
+  "description": "CLI tool for exporting and comparing Pattern Lab patterns for the htwoo design system",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "htwoo-pattern-export": "./dist/cli.js",
+    "pattern-export": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "tsx src/cli.ts",
+    "start": "tsx src/cli.ts",
+    "clean": "rm -rf dist",
+    "export": "tsx src/cli.ts --source ../../htwoo-core/src/_patterns --output ../../packages/htwoo-patterns",
+    "export:verbose": "tsx src/cli.ts --source ../../htwoo-core/src/_patterns --output ../../packages/htwoo-patterns --verbose",
+    "test": "npm run test:build && npm run test:export && npm run test:verify && echo '\n✅ All tests passed!'",
+    "test:build": "echo '\n=== Building TypeScript ===' && npm run build && echo '✓ Build successful'",
+    "test:export": "echo '\n=== Testing Export ===' && rm -rf ./test-result/htwoo-core && tsx src/cli.ts --source ../../htwoo-core/src/_patterns --output ./test-result/htwoo-core && echo '✓ Export successful'",
+    "test:verify": "echo '\n=== Verifying Structure ===' && test -f ./test-result/htwoo-core/manifest.json && echo '✓ Manifest created' && test -d ./test-result/htwoo-core/_patterns && echo '✓ Patterns exported' && test -d ./test-result/htwoo-core/_data && echo '✓ Data exported' && test -d ./test-result/htwoo-core/images && echo '✓ Images exported' && ./verify-structure.sh",
+    "test:clean": "rm -rf ./test-result && echo '✓ Cleaned test directories'"
+  },
+  "keywords": [
+    "pattern-lab",
+    "design-system",
+    "htwoo",
+    "patterns",
+    "export",
+    "compare",
+    "handlebars"
+  ],
+  "author": "n8design",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8design/htwoo.git"
+  },
+  "homepage": "https://github.com/n8design/htwoo#readme",
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1",
+    "chalk": "^5.6.2",
+    "glob": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3",
+    "tsx": "^4.20.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
