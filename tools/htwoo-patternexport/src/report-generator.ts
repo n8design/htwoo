@@ -119,23 +119,30 @@ export function displaySummary(
 ): void {
     console.log(chalk.bold('\n📊 Summary:'));
 
+    // Show file counts even when there are no changes
+    if (results.totalFiles) {
+        console.log(chalk.blue(`  Total files checked:`));
+        console.log(chalk.gray(`    - Patterns (.hbs/.md): ${results.totalFiles.patterns}`));
+        console.log(chalk.gray(`    - Data files (.json): ${results.totalFiles.data}`));
+        console.log(chalk.gray(`    - Images: ${results.totalFiles.images}`));
+    }
+
     if (results.differences.length === 0) {
-        console.log(chalk.green('✓ No changes detected. All patterns are up to date.'));
-        return;
-    }
+        console.log(chalk.green('  ✓ No changes detected. All patterns are up to date.'));
+    } else {
+        console.log(chalk.blue(`\n  Total changes: ${results.differences.length}`));
 
-    console.log(chalk.blue(`  Total changes: ${results.differences.length}`));
+        if (results.newPatterns.length > 0) {
+            console.log(chalk.green(`  ✓ New files: ${results.newPatterns.length}`));
+        }
 
-    if (results.newPatterns.length > 0) {
-        console.log(chalk.green(`  ✓ New files: ${results.newPatterns.length}`));
-    }
+        if (results.modifiedPatterns.length > 0) {
+            console.log(chalk.yellow(`  ⚠ Modified files: ${results.modifiedPatterns.length}`));
+        }
 
-    if (results.modifiedPatterns.length > 0) {
-        console.log(chalk.yellow(`  ⚠ Modified files: ${results.modifiedPatterns.length}`));
-    }
-
-    if (results.removedPatterns.length > 0) {
-        console.log(chalk.red(`  ✗ Removed files: ${results.removedPatterns.length}`));
+        if (results.removedPatterns.length > 0) {
+            console.log(chalk.red(`  ✗ Removed files: ${results.removedPatterns.length}`));
+        }
     }
 
     if (config.dryRun) {

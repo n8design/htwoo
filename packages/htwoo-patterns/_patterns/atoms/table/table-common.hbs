@@ -1,0 +1,31 @@
+<table class="{{ tableClass }}">
+    <thead {{#if (eq variant "sticky")}}class="is-sticky top"{{/if}}>
+        <tr>
+            <th {{#if (eq variant "compact-colgroup")}}class="is-sticky top left"{{/if}}>Icon</th>
+            <th {{#if (eq variant "compact-colgroup")}}class="is-sticky top left"{{/if}}>Name</th>
+            <th>Date Modifed</th>
+            <th>Modified by</th>
+            <th>File Size</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataSet }}
+        <tr>
+            <td {{#if (eq ../variant "compact-colgroup")}}class="is-sticky left"{{/if}}><img src="{{ Icon }}"></td>
+            <td {{#if (eq ../variant "compact-colgroup")}}class="is-sticky left"{{/if}}>{{ Filename }}</td>
+            <td {{#if (eq ../variant "compact-colgroup")}}class="align-center"{{/if}}>{{ ModifiedBy}}</td>
+            <td {{#if (eq ../variant "compact-colgroup")}}class="align-right"{{/if}}>{{ Modified }}</td>
+            <td>{{ FileSize }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>Date Modifed</th>
+            <th>Modified by</th>
+            <th>File Size</th>
+        </tr>
+    </tfoot>
+</table>

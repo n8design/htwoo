@@ -1,7 +1,9 @@
 <div class="hoo-splashscr">
     <div class="hoo-splashscr-content">
-        {{#each cards }}
-        {{> organism-teams-splash-card this }}
-        {{/each }}
+        {{#each splash-card-variants}}
+        {{#with (splashCardWithImage @index ../splash-card this) }}
+        {{> organism-teams-splash-card }}
+        {{/with}}
+        {{/each}}
     </div>
 </div>

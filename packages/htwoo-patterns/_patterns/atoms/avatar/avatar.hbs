@@ -1,3 +1,11 @@
+{{#if mugshot}}
 <div class="hoo-avatar{{#if size }}-{{ size }}{{/if}}">
     <img src="{{ mugshot }}" alt="" class="hoo-avatar-img" {{#if size }}height="{{ size }}"{{/if}} {{#if size }}width="{{ size }}"{{/if}} loading="lazy">
 </div>
+{{else}}
+{{#avatarWithImage type index}}
+<div class="hoo-avatar{{#if ../size }}-{{ ../size }}{{/if}}">
+    <img src="{{ mugshot }}" alt="" class="hoo-avatar-img" {{#if ../size }}height="{{ ../size }}"{{/if}} {{#if ../size }}width="{{ ../size }}"{{/if}} loading="lazy">
+</div>
+{{/avatarWithImage}}
+{{/if}}

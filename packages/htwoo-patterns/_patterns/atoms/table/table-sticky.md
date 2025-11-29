@@ -1,37 +1,31 @@
 ---
-title: Header Column Sticky
+title: Sticky Table
+order: 30
 ---
-This table has a sticky header defined just by using an additional class on `tbody`. The class name is `header-sticky`.
 
-You can define where the table header should be sticky by applying the following additional classes.
+## Overview
+The Sticky Table variant enables headers, footers, and/or columns to remain visible during scrolling, improving usability for large datasets that require horizontal or vertical scrolling.
 
-* top - sticky on top
-* left - sticky on the left side
-* right - sticky on the right side
-* bottom - stick on bottom
+## Position Modifier Classes
 
-The classes can be also freely combined for example:
+You can define where the table cells should be sticky by applying the following additional classes:
+
+* `top` - Sticky on top during vertical scrolling
+* `left` - Sticky on the left side during horizontal scrolling
+* `right` - Sticky on the right side during horizontal scrolling
+* `bottom` - Sticky on bottom during vertical scrolling
+
+These classes can be freely combined for corner elements, for example:
 
 ```html
-<th class="is-stick top left">
-    ...
+<th class="is-sticky top left">
+    <!-- Content -->
 </th>
 ```
 
 To support multiple columns make sure you include the [table.js](../../js/table) in your code. From the htwoo-core package `node_modules/htwoo-core/lib/js/table`.
 
 To init the sticky behaviout call the following function.
-
-```javascript
-/** Table Helper */
-import {
-    initTables
-} from './table.js';
-
-window.onload = () => {
-    initTables();
-};
-```
 
 ### SCSS Imports
 

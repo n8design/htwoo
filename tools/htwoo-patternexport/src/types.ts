@@ -82,6 +82,11 @@ export interface ComparisonResult {
     newPatterns: string[];
     modifiedPatterns: string[];
     removedPatterns: string[];
+    totalFiles?: {
+        patterns: number;
+        data: number;
+        images: number;
+    };
 }
 
 /**

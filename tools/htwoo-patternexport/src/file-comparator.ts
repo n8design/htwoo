@@ -148,7 +148,12 @@ export async function compareFiles(
         differences,
         newPatterns,
         modifiedPatterns,
-        removedPatterns
+        removedPatterns,
+        totalFiles: {
+            patterns: files.patterns.length,
+            data: files.dataFiles.length,
+            images: files.images.length
+        }
     };
 }
 

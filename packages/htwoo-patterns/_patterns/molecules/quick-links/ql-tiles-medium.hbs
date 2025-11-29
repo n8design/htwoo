@@ -1,0 +1,31 @@
+{{#quick-link}}
+{{#if href }}
+<a class="hoo-qllink" href="?">
+{{/if}}
+    <article class="hoo-qltiles img-m{{#if mode}} mode-edit{{/if}}">
+        {{#if qlimg}}
+        {{> atoms-ql-icon }}
+        {{/if}}
+        {{#if qlsvg}}
+        {{> atoms-ql-icon-svg }}
+        {{/if}}
+        <div class="hoo-qlinfo">
+            <div class="hoo-qltitle">
+                {{ title}}
+            </div>
+        </div>
+        {{#if mode }}
+        <menu class="hoo-qllink-menu">
+            <li class="hoo-qllink-menuitem">
+                {{> atoms-button-icon iconAction="icon-close"}}
+            </li>
+            {{!-- <li class="sh-ql-menuiterm"> --}}
+                {{!-- {{> atoms-button-icon iconAction="icon-move"}} --}}
+                {{!-- </li> --}}
+            </meuu>
+            {{/if}}
+    </article>
+{{#if href }}
+</a>
+{{/if}}
+{{/quick-link}}
