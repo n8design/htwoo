@@ -1,4 +1,4 @@
-baseURL: 'http://lab.n8d.studio/htwoo/'
+baseURL: 'https://htwoo.io/'
 languageCode: 'en-us'
 title: 'hTWOo'
 
@@ -17,7 +17,7 @@ params:
   author: "Stefan Bauer / N8D"
   github: "https://github.com/stfbauer"
   facebook: "https://www.facebook.com/n8dstudio"
-  ogimage: "/htwoo/images/launch-img.jpg"
+  ogimage: "/images/launch-img.jpg"
   sitename: "hTWOo by N8D"
   twitter: "@stfbauer"
   dateFormat: "January 2, 2006"

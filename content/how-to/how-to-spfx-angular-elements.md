@@ -225,7 +225,7 @@ Move to the `src/app/{webpartname-web-part}/{webpartname-web-part.componenent.ht
     <hr>
 ```
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
 ## HTWOO and theming
 

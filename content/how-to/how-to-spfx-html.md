@@ -231,7 +231,7 @@ This should give you the following result in your browser.
 
 You can now add additional functionalities and other buttons to your code or just simply change it to a primary button by toggle only the style sheet class from `.hoo-button` to `.hoo-primary`.
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
 ## HTWOO and theming
 

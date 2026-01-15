@@ -281,7 +281,7 @@ export default class HooButton extends React.Component<IButtonProps, IButtonStat
 }
 ```
 
-Now you have a basic reusable [hTWOo Standard button](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-button-standard) in your solution.
+Now you have a basic reusable [hTWOo Standard button](https://htwoo.io/htwoo-core/?p=atoms-button-standard) in your solution.
 
 ## Add button to the web part.
 
@@ -307,7 +307,7 @@ export default class HTwOoReactSpFx extends React.Component<IHTwOoReactSpFxProps
 
 Now the webpart shows the button. The same method also works with the primary button.
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
 ## HTWOO and theming
 
