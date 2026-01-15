@@ -8,6 +8,9 @@ services:
   googleAnalytics:
     id: G-279ZFL8MMG
 
+sitemap:
+  filename: sitemap-pages.xml
+
 relativeURLs: true
 canonifyURLs: true
 
