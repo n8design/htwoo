@@ -1,0 +1,114 @@
+{
+  "cacheBust": true,
+  "cleanPublic": true,
+  "defaultPattern": "all",
+  "defaultShowPatternInfo": true,
+  "defaultInitialViewportWidth": true,
+  "ishControlsHide": {
+    "s": false,
+    "m": false,
+    "l": false,
+    "full": false,
+    "random": false,
+    "disco": false,
+    "hay": true,
+    "mqs": false,
+    "find": false,
+    "views-all": false,
+    "views-annotations": true,
+    "views-code": false,
+    "views-new": false,
+    "tools-all": false,
+    "tools-docs": false
+  },
+  "ishViewportRange": {
+    "s": [240, 500],
+    "m": [500, 800],
+    "l": [800, 2600]
+  },
+  "logLevel": "info",
+  "outputFileSuffixes": {
+    "rendered": ".rendered",
+    "rawTemplate": "",
+    "markupOnly": ".markup-only"
+  },
+  "paths": {
+    "source": {
+      "root": "./source/",
+      "patterns": "./source/_patterns/",
+      "data": "./source/_data/",
+      "meta": "./source/_meta/",
+      "annotations": "./source/_annotations/",
+      "styleguide": "./dist/",
+      "js": "./source/js",
+      "images": "./source/images",
+      "fonts": "./source/fonts",
+      "css": "./source/css",
+      "favicon": "./source/favicon.ico"
+    },
+    "public": {
+      "root": "./public/",
+      "patterns": "./public/patterns/",
+      "data": "./public/styleguide/data/",
+      "annotations": "./public/annotations/",
+      "styleguide": "./public/styleguide/",
+      "js": "./public/js",
+      "images": "./public/images",
+      "fonts": "./public/fonts",
+      "css": "./public/css"
+    }
+  },
+  "patternExtension": "hbs",
+  "patternStateCascade": ["inprogress", "inreview", "complete"],
+  "patternExportAll": false,
+  "patternExportDirectory": "pattern_exports",
+  "patternExportPatternPartials": [],
+  "patternExportPreserveDirectoryStructure": true,
+  "patternExportRaw": false,
+  "patternMergeVariantArrays": true,
+  "renderFlatPatternsOnViewAllPages": false,
+  "serverOptions": {
+    "wait": 1000,
+    "mount": [
+      ["/ice-hotreloader", "../node_modules/@n8d/ice-hotreloader/"]
+    ]
+  },
+  "starterkitSubDir": "dist",
+  "styleGuideExcludes": [],
+  "theme": {
+    "color": "light",
+    "density": "compact",
+    "layout": "vertical",
+    "logo": {
+      "text": "",
+      "altText": "Style Guide",
+      "url": "/",
+      "srcLight": "styleguide/images/logo.svg",
+      "srcDark": "styleguide/images/logo.svg",
+      "width": "255px",
+      "height": "88px"
+    }
+  },
+  "plugins": {
+    "plugin-design": {
+      "enabled": true,
+      "initialized": false
+    }
+  },
+  "uikits": [
+    {
+      "name": "uikit-workshop",
+      "package": "@pattern-lab/uikit-workshop",
+      "outputDir": "",
+      "enabled": true,
+      "excludedPatternStates": [],
+      "excludedTags": []
+    }
+  ],
+  "engines": {
+    "handlebars": {
+      "package": "@pattern-lab/engine-handlebars",
+      "extend": "helpers/hbs/*.js"
+    }
+  }
+}

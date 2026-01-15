@@ -57,11 +57,34 @@ After installation, patterns are available in your Pattern Lab project:
 
 Refer to the [hTWOo documentation](https://lab.n8d.studio/htwoo/) for detailed pattern usage.
 
+### Toggling Pattern Visibility
+
+Control which patterns are visible in Pattern Lab by toggling the `hidden` property:
+
+```bash
+# Toggle visibility for all patterns (true <-> false)
+npx htwoo-toggle-patterns toggle
+
+# Hide all patterns (set hidden: true)
+npx htwoo-toggle-patterns hide
+
+# Show all patterns (set hidden: false)
+npx htwoo-toggle-patterns show
+
+# Preview changes without modifying files
+npx htwoo-toggle-patterns toggle --dry-run
+npx htwoo-toggle-patterns hide --dry-run --verbose
+```
+
+This modifies the YAML frontmatter in your Pattern Lab's `_patterns/**/*.md` files. The `hidden` property controls visibility in the Pattern Lab interface.
+
 ## Development Workflow
 
 This package uses `@n8d/htwoo-pattern-export` to manage pattern synchronization from htwoo-core.
 
 ### Available Scripts
+
+#### Pattern Export
 
 ```bash
 # Export patterns from htwoo-core to this package
@@ -76,6 +99,29 @@ npm run export:dry-run
 # Compare current patterns with htwoo-core (same as export:verbose)
 npm run compare
 ```
+
+#### Pattern Visibility Control
+
+Toggle the `hidden` property in YAML frontmatter of all `.md` files:
+
+```bash
+# Toggle hidden property (false -> true, true -> false)
+npm run toggle-hidden
+npm run toggle-hidden:dry-run  # Preview changes
+
+# Hide all patterns (set hidden: true)
+npm run hide-all
+npm run hide-all:dry-run       # Preview changes
+
+# Show all patterns (set hidden: false)
+npm run show-all
+npm run show-all:dry-run       # Preview changes
+```
+
+These commands modify the YAML frontmatter in all markdown files:
+- Adds `hidden: true` or `hidden: false` to the frontmatter
+- Creates frontmatter if it doesn't exist
+- Useful for controlling pattern visibility in Pattern Lab
 
 ### Exporting Patterns
 

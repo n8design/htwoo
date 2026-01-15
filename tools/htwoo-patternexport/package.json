@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-pattern-export",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "CLI tool for exporting and comparing Pattern Lab patterns for the htwoo design system",
   "type": "module",
   "main": "dist/index.js",

@@ -260,12 +260,18 @@ async function copyFile(
 
     let content: string | Buffer;
     let encoding: BufferEncoding | undefined = 'utf-8';
+
     // For data files, read and write as binary (Buffer)
     if (fileType === 'data' || sourcePath.endsWith('.json')) {
         content = await readFile(sourcePath);
         encoding = undefined;
     } else {
         content = await readFile(sourcePath, 'utf-8');
+
+        // Special handling for .md files: preserve the 'hidden' property from destination
+        if (sourcePath.endsWith('.md') && existsSync(exportPath)) {
+            content = await preserveHiddenProperty(content as string, exportPath);
+        }
     }
 
     // Write the file only if not in dry run mode
@@ -286,6 +292,40 @@ async function copyFile(
     if (!isDryRun) {
         manifest[manifestKey] = sourceHash;
     }
+}
+
+/**
+ * Preserves the 'hidden' property from the destination file when updating markdown
+ */
+async function preserveHiddenProperty(sourceContent: string, exportPath: string): Promise<string> {
+    try {
+        // Read the existing destination file
+        const existingContent = await readFile(exportPath, 'utf-8');
+
+        // Parse both source and destination frontmatter
+        const source = await processMarkdownContent(sourceContent);
+        const existing = await processMarkdownContent(existingContent);
+
+        // If existing file has a 'hidden' property, preserve it in the source
+        if (existing.frontmatter.hidden !== undefined) {
+            source.frontmatter.hidden = existing.frontmatter.hidden;
+
+            // Rebuild the content with preserved hidden property
+            const yamlContent = yaml.dump(source.frontmatter, {
+                indent: 2,
+                lineWidth: -1,
+                noRefs: true,
+                sortKeys: false
+            }).trim();
+
+            return `---\n${yamlContent}\n---\n${source.content}`;
+        }
+    } catch (error) {
+        // If anything fails, return original content
+        // This handles cases where the file doesn't exist or can't be parsed
+    }
+
+    return sourceContent;
 }
 
 /**

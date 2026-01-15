@@ -1,0 +1,26 @@
+# Development files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Testing
+test/
+*.test.js
+coverage/
+
+# Documentation (keep README.md)
+docs/
+
+# Node modules (never publish)
+node_modules/

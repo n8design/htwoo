@@ -1,18 +1,35 @@
 {
   "name": "@n8d/htwoo-patterns",
-  "version": "2.0.1",
+  "version": "2.2.3",
   "description": "hTWOo Patterns to setup custom style guide",
   "private": false,
+  "bin": {
+    "htwoo-toggle-patterns": "./lib/toggle-patterns.js"
+  },
+  "files": [
+    "_patterns",
+    "_data",
+    "images",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "node ./lib/move-patterns.js",
     "export": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output .",
     "export:verbose": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --verbose",
     "export:dry-run": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --dry-run --verbose",
-    "compare": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --verbose"
+    "compare": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --verbose",
+    "toggle-hidden": "pattern-export toggle-hidden --source _patterns",
+    "toggle-hidden:dry-run": "pattern-export toggle-hidden --source _patterns --dry-run --verbose",
+    "hide-all": "pattern-export hide-all --source _patterns",
+    "hide-all:dry-run": "pattern-export hide-all --source _patterns --dry-run --verbose",
+    "show-all": "pattern-export show-all --source _patterns",
+    "show-all:dry-run": "pattern-export show-all --source _patterns --dry-run --verbose"
   },
-  "devDependencies": {
-    "@n8d/htwoo-pattern-export": "file:../../tools/htwoo-patternexport"
+  "dependencies": {
+    "@n8d/htwoo-pattern-export": "^1.0.2"
   },
   "repository": {
     "type": "git",

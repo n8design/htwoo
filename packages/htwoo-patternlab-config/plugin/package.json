@@ -1,0 +1,13 @@
+{
+  "name": "plugin-design",
+  "version": "1.0.0",
+  "description": "Provide a simple PL chrome customization path versus forking styleguide-assets-default",
+  "main": "index.js",
+  "dependencies": {
+    "fs-extra": "^11.0.0",
+    "glob": "^10.0.0",
+    "lodash": "^4.17.21"
+  },
+  "author": "Stefan Bauer",
+  "license": "MIT"
+}
