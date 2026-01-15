@@ -4,6 +4,10 @@ title: 'hTWOo'
 
 theme: 'h2o'
 
+services:
+  googleAnalytics:
+    id: G-279ZFL8MMG
+
 relativeURLs: true
 canonifyURLs: true
 
