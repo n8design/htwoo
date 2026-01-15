@@ -109,6 +109,7 @@ typings/
 # App Specific
 .DS_Store
 .tmp
+.claude
 
 ./htwoo-core/public
 ./htwoo-core/dependencyGraph.json
