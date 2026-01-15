@@ -1,0 +1,19 @@
+@use "../../01-atoms/buttons/button-command";
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-cmdbar{
+	@extend .hoo-buttoncmd;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	height: core.px2rem(44px);
+
+	// border: 1px transparent solid;
+
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	
+}

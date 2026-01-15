@@ -1,0 +1,8 @@
+public
+htwoo-core/dependencyGraph.json
+node_modules
+.npmrc
+
+# Test results - consolidated in test-results/
+test-results/
+!test-results/.gitkeep

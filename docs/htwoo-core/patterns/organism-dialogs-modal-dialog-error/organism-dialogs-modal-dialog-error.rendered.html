@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Organism -  Modal Dialog Error - Fluent UI / Fluent Design by hTWOo UI Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/style.css?1732824153115" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1732824153115" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1732824153115" media="all" />
+    <link rel="canonical" href="https://lab.n8d.studio/htwoo/htwoo-core/?p=organism-modal-dialog-error">
+    <meta name="keywords" content="Organism, ModalDialogError, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
+     <base target="_top">
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="">
+  <h1>Organism -  Modal Dialog Error</h1><div class="tmp-hidden">
+    <!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ -->
+    <div
+        style="height: 100vh; width: 100vw; background: url(../../images/background-2.jpg) no-repeat center center fixed; background-size: cover;">
+        <!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ -->
+        <dialog class="hoo-mdldialog-outer is-error is-visible">
+            <div class="hoo-mdldialog" style="--lqdDialogHeight: 30vh; --lqdDialogWidth: 40vw;">
+                <div class="hoo-dlgheader">
+                    <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+                    <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-close"></use>
+                        </svg>
+                    </span></button>
+                </div>
+                </div>
+<div class="hoo-dlgcontent">
+    This is the modal dialog content
+                        This is the modal dialog content
+</div>            </div>
+        </dialog>
+        <!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ -->
+    </div>
+    <!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ -->
+</div><!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/dialog</p>\n<p><strong>Close Button</strong><br>\n@n8d/htwoo-core/components/button</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Modal Dialog for Errors","patternPartial":"organism-modal-dialog-error","patternState":"","patternEngineName":"handlebars","extraOutput":{"tags":"Modal Dialog, Error","hidden":true}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/dialog</p>\n<p><strong>Close Button</strong><br>\n@n8d/htwoo-core/components/button</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Modal Dialog for Errors","patternPartial":"organism-modal-dialog-error","patternState":"","patternEngineName":"handlebars","extraOutput":{"tags":"Modal Dialog, Error","hidden":true}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1732824153115">
+  (function() {
+    if (self != top) {
+      var cb = '1732824153115';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1732824153115" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module"></script>
+<script src="../../js/themeswitch/index.js" type="module"></script>
+<script>
+
+    var layoutMode = null;
+
+    // changing logo accordingly
+    var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
+
+        let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
+
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
+            console.log("Layout is not vertical");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
+        }
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
+            console.log("Layout is not horizontal");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
+            console.log("IMAGE ", image);
+        }
+
+        layoutMode = patternlab.app.layoutMode;
+
+    }
+    // register event listener
+    window.addEventListener('storage', evtLocationStorageUpdates);
+    // on first run detect layout
+    evtLocationStorageUpdates();
+</script>
+<script src="../../js/_util.js" type="module"></script>
+</body>
+
+</html>

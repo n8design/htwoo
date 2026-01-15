@@ -1,0 +1,77 @@
+{
+    "bodyClass": "sg-center",
+    "tooltips": [
+        {
+            "tooltip": {
+                "arrow": "top-left",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "top-center",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "top-right",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "right-top",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "right-center",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "right-bottom",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "bottom-left",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "bottom-center",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "bottom-right",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "left-top",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "left-center",
+                "content": "Tooltip"
+            }
+        },
+        {
+            "tooltip": {
+                "arrow": "left-bottom",
+                "content": "Tooltip"
+            }
+        }
+    ]
+}

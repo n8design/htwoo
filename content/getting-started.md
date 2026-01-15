@@ -21,9 +21,9 @@ Once installed you can import the SASS files from your node_modules folder.
 
 ### How to use
 
-* [Use hTWOo in SPFx no-framework web part](./how-to/how-to-spfx-html)
-* [Use hTWOo in SPFx ReactJS web part](./how-to/how-to-spfx-react)
-* [Use hTWOo in SPFx Angular Elements web part](./how-to/how-to-spfx-angular-elements)
+* [Use hTWOo in SPFx no-framework web part](/how-to/how-to-spfx-html/)
+* [Use hTWOo in SPFx ReactJS web part](/how-to/how-to-spfx-react/)
+* [Use hTWOo in SPFx Angular Elements web part](/how-to/how-to-spfx-angular-elements/)
 
 ### CDN Support
 

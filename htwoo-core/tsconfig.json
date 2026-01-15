@@ -1,0 +1,42 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      // Tells TypeScript to read JS files for declaration generation
+      "allowJs": true,
+      
+      // Generate d.ts files and JS files
+      "declaration": true,
+      "emitDeclarationOnly": false,
+      
+      // Two output paths:
+      // 1. For development - output to public directory for ice-build
+      "outDir": "./public/js/",
+      
+      // Source directories
+      "rootDirs": ["./src/js", "./src/ts"],
+      
+      // Relaxed settings for JS-to-TS conversion
+      "strict": false,
+      "skipLibCheck": true,
+      
+      // Module settings compatible with the monorepo
+      "target": "ES2020",
+      "module": "ESNext",
+      
+      // Project reference settings
+      "composite": false,
+      "tsBuildInfoFile": "./public/.tsbuildinfo"
+    },
+    
+    "include": ["src/js/**/*.js", "src/ts/**/*.ts"],
+    "exclude": [
+      "src/js/vendor/**/*", 
+      "src/js/prismjs/**/*", 
+      "src/js/legacy/**/*", 
+      "src/js/themeswitch/**/*"
+    ],
+    
+    // No references since this is just declaration generation
+    "references": []
+  }
+  

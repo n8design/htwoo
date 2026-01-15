@@ -1,0 +1,23 @@
+@use "00-base/colors/colors" as colors;
+
+/***** Color converted to SCSS variables *****/
+@use '00-base/colors/index.scss';
+@use "00-base/fonts/typography.fixup"; // Only needed for displaying the content in patternlabs
+
+@use "00-base/global.vars";
+/**** REQURIED FOR STYLE GUIDE ****/
+@use "00-styleguide/00-styleguide" as styleguide;
+
+/*** All Core references of hTWOo ***/
+@use "_htwoo-core";
+
+@use "03-organism/form-sample/index" as forms;
+
+body{
+    font-family: colors.$mediumFontFamily;
+    background-color: var(--bodyBackground);
+    color: var(--bodyText);
+    margin: 0;
+}
+
+

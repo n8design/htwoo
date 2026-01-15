@@ -1,0 +1,5 @@
+{
+    "template": "default",
+    "count": 9,
+    "_comment": "This will use the generateCardGrid helper with the default template"
+}

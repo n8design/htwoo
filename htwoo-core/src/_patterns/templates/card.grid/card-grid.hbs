@@ -1,0 +1,9 @@
+{{#generateCardGrid count template}}
+<div class="hoo-cardgrid {{grid-layout}}">
+    {{#each cards}}
+        {{#cardFromTemplate ../template this}}
+            {{> organism-document-card card=this}}
+        {{/cardFromTemplate}}
+    {{/each}}
+</div>
+{{/generateCardGrid}}

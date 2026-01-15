@@ -2,6 +2,7 @@
 title: Why hTWOo is better than Fluent UI Web
 description: hTWOo is a set of Fluent Design UI components and utilities resulting from an effort to converge the set of HTML and ReactJS based component libraries.
 coverImage: /images/header-img.jpg
+coveralt: "hTWOo UI Framework - Fluent Design for everyone"
 coverContent: Welcome to hTWOo <span class="o-cover-sub">Fluent Design for everyone and Microsoft 365 Applications</span>
 preview: /images/launch-img.jpg
 tags:

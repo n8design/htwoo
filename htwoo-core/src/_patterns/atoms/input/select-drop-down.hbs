@@ -1,0 +1,8 @@
+<ul class="hoo-select-dropdown">
+    {{#select-options.options}}
+    <li data-value="{{key}}" class="hoo-option {{disabled}}" aria-disabled="{{#if disabled}}true{{else}}false{{/if}}">
+        {{value}}
+    </li>
+    {{/select-options.options}}
+</ul>
+

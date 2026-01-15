@@ -2,6 +2,9 @@ main:
 - name: Introduction
   pageRef: /
   weight: 10
+- name: Getting Started
+  pageRef: /getting-started
+  weight: 15
 - name: Concepts
   pageRef: /concepts
   weight: 20

@@ -1,0 +1,3 @@
+{{#input.email}}
+<input class="hoo-input-text" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} type="email" {{#if diabled}} disabled="{{ disabled }}"  aria-disabled="{{ disabled }}" {{/if}} placeholder="{{ placeholder }}" {{#if disabled}} disabled="{{ disabled }}"  aria-disabled="{{ disabled }}"  {{/if}} {{#if readonly}} readonly="{{ readonly }}" {{/if}} {{#ifCond descRef '||' errorRef}} aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"{{/ifCond}} {{{ html-props }}}>
+{{/input.email}}

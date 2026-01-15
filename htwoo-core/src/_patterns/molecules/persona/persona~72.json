@@ -1,0 +1,13 @@
+{
+    "avatar": {
+        "size": 72,
+        "mugshot": "../../images//mug-shots/female-mugshot-001.jpg"
+    },
+    "size": 72,
+    "status": "dnd",
+    "title": "Online",
+    "name": "Jane Doeminica",
+    "function": "Lead Fluent Designer",
+    "status-text": "In a meeting",
+    "available": "Call me yesterday"
+}

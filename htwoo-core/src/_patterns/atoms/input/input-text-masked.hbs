@@ -1,0 +1,15 @@
+<label for="zipca">Canadian Zip Code</label>
+<input placeholder="XXX XXX" pattern="\w\d\w \d\w\d" class="masked" data-charset="_X_ X_X" id="zipca" type="text"
+    name="zipcodeca" title="6-character alphanumeric zip code in the format of A1A 1A1">
+<br>
+<label for="phone1">Phone Number</label>
+<input id="phone1" type="tel" placeholder="+1 (555) 555-5555" class="masked"
+    pattern="(\+\d{1,3})?[-.\s]?(\d{1,3})?[-.\s]?(\(?\d{3}\)?)[-.\s]?\d{3}[-.\s]?\d{4}"
+    data-valid-example="+1 (555) 555-5555"
+    title="Phone number in formats like +1 (555) 555-5555, +1-555-555-5555, or +15555555555">
+<br>
+
+<label for="tel">Telephone</label>
+<input aria-describedby="mask-hidden-helper-msg helper1" id="tel" type="text" inputmode="numeric" data-charset="+__-___-___-____" name="phone" placeholder="+_--___-____" 
+       pattern="(\+\d{1,3}[-.\s]?)?(\(?\d{1,3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}" 
+       class="masked" title="Phone number in formats like +1-234-567-8901 or 234-567-8901">

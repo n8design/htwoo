@@ -1,0 +1,15 @@
+{{#if card.media}}
+<figure class="hoo-cardimage">
+    <img src="{{card.media.image}}" width="320" height="180" alt="">
+    {{#if card.media.caption}}
+    <figcaption>{{ card.media.caption}}</figcaption>
+    {{/if}}
+</figure>
+{{else if media}}
+<figure class="hoo-cardimage">
+    <img src="{{media.image}}" width="320" height="180" alt="">
+    {{#if media.caption}}
+    <figcaption>{{ media.caption}}</figcaption>
+    {{/if}}
+</figure>
+{{/if}}

@@ -1,0 +1,18 @@
+{{#select-options-grouped}}
+<ul class="hoo-select-dropdown {{ ddToggleClass }}">
+    {{#each options}}
+    {{#if this.groupname}}
+    <li class="hoo-optgroup">
+        <div class="hoo-optgroup-name">{{ this.groupname }}</div>
+        <ul class="hoo-optgroup-items">
+            {{#each this.options}}
+            <li data-value="{{ this.key }}" class="hoo-option {{this.disabled}}" aria-disabled="{{#if this.disabled}}true{{else}}false{{/if}}">{{ this.value }}</li>
+            {{/each}}
+        </ul>
+    </li>
+    {{else}}
+    <li data-value="{{ this.key }}" class="hoo-option {{this.disabled}}" aria-disabled="{{#if this.disabled}}true{{else}}false{{/if}}">{{ this.value }}</li>
+    {{/if}}
+    {{/each}}
+</ul>
+{{/select-options-grouped}}

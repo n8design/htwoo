@@ -1,0 +1,8 @@
+{
+    "button-variants": [
+        { "class": "hoo-buttonsplit", "label": "Standard", "disabled": null },
+        { "class": "hoo-buttonsplit-primary", "label": "Primary", "disabled": null },
+        { "class": "hoo-buttonsplit", "label": "Standard", "disabled": true },
+        { "class": "hoo-buttonsplit-primary", "label": "Primary", "disabled": true }
+    ]
+}

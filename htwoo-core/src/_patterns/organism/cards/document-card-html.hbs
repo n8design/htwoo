@@ -1,0 +1,14 @@
+<article class="hoo-doccard">
+    {{> molecules-card-image-html }}
+    {{> molecules-card-location location=card-location }}
+    {{> molecules-card-title title=card-title }}
+    <footer class="hoo-cardfooter">
+      <div class="hoo-avatar-32">
+        <img src="{{mugshot}}" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+      </div>
+      <div class="hoo-cardfooter-data">
+        <div class="hoo-cardfooter-name">{{card-footer-name}}</div>
+        <div class="hoo-cardfooter-modified">{{card-footer-modified}}</div>
+      </div>
+    </footer>
+</article>

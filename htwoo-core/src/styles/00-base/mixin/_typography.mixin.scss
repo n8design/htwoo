@@ -1,0 +1,112 @@
+@use "../colors/colors";
+@use "core.mixin";
+
+%baseFontFamily{
+	font-family: var(--xxLargeFontFamily);
+}
+
+%baseHeadline{
+	@extend %baseFontFamily;
+
+	font-weight: 600;
+	line-height: 1.3;
+
+	margin-top: core.px2rem(8px);
+	margin-bottom: core.px2rem(8px);
+
+	color: colors.$bodyText;
+}
+
+%baseParagraph{
+	@extend %baseFontFamily;
+
+	font-size: 18px;
+
+	overflow-wrap: break-word;
+}
+
+%blockquote{
+	font-family: colors.$font-base-light;
+	font-size: core.px2rem(20px);
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.4;
+
+	margin: core.px2rem(28px) 0;
+	padding: core.px2rem(32px);
+
+	text-align: center;
+
+	color: rgb(96, 94, 92);
+	border-top: 1px solid rgb(237, 235, 233);
+	border-bottom: 1px solid rgb(237, 235, 233);
+}
+
+%monospace{
+	font-family: monospace;
+	font-size: core.px2rem(14px);
+
+	overflow: auto;
+
+	box-sizing: border-box;
+	margin: core.px2rem(28px) 0;
+	padding: 2rem;
+
+	white-space: pre-wrap;
+
+	color: colors.$BodyText;
+	background-color: var(--bodyStandoutBackground);
+
+	overflow-wrap: break-word;
+}
+
+%baseLineHeight{
+	line-height: 1.2;
+}
+
+@mixin typography($typographyStyle){
+	@if $typographyStyle==h1{
+		@extend %baseHeadline;
+
+		font-size: core.px2rem(28px);
+	}
+
+	@else if $typographyStyle==h2{
+		@extend %baseHeadline;
+
+		font-size: core.px2rem(24px);
+		line-height: 1.5;
+	}
+
+	@else if $typographyStyle==h3{
+		@extend %baseHeadline;
+
+		font-size: core.px2rem(20px);
+	}
+
+	@else if $typographyStyle==p{
+		@extend %baseParagraph;
+
+		font-size: core.px2rem(18px);
+	}
+
+	@else if $typographyStyle==blockquote or $typographyStyle==quote{
+		@extend %blockquote;
+	}
+
+	@else if $typographyStyle==pre{
+		@extend %monospace;
+
+		font-size: core.px2rem(20px);
+	}
+
+	@else{
+		@error "Invalid Headline style only h1, h2, h3 are supported";
+	}
+}
+
+@mixin fontsize($pxValue){
+	@extend %baseLineHeight;
+
+	font-size: core.px2rem($pxValue);
+}

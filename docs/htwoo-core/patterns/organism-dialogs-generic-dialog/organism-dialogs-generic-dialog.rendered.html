@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Organism -  Generic Dialog - Fluent UI / Fluent Design by hTWOo UI Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/style.css?1732824153115" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1732824153115" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1732824153115" media="all" />
+    <link rel="canonical" href="https://lab.n8d.studio/htwoo/htwoo-core/?p=organism-generic-dialog">
+    <meta name="keywords" content="Organism, GenericDialog, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
+     <base target="_top">
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="dlg-preview">
+  <h1>Organism -  Generic Dialog</h1><h1>Dialog</h1>
+
+<p>The following buttons launch both possible option of Dialogs.</p>
+
+<button class="hoo-button-primary" id="btn-dialog">
+    <span class="hoo-button-label">Show Dialog</span>
+</button>
+<button class="hoo-button-primary" id="btn-modal-dialog">
+    <span class="hoo-button-label">Show Modal Dialog</span>
+</button>
+
+<ul>
+    <li><strong>Dialog:</strong> Shows an absolute positioned dialog on the screen</li>
+    <li><strong>Modal:</strong> Shows an absolute fixed dialog on the screen, which has a backdrop to chancel any
+        interference with the underlying content</li>
+</ul>
+
+Through the change to regular <code>&lt;dialog&gt;</code> elements greater flexibility could be achieved.
+See <a href="">MDN Dialog</a>
+
+<dialog id="myDialog" class="hoo-dlg statusbar">
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-info-filled" aria-hidden="true">
+            <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+            <use xlink:href="../../images/icons.svg#icon-info-filled"></use>
+        </svg>
+    </span>    <div class="hoo-dlg-content">This dialog comes without a backdrop and can be used for a
+        statusbar for example.</div>
+    <div class="hoo-dlg-actions">
+        <button id="closer-dlg" autofocus>Close</button>
+    </div>
+</dialog>
+<dialog id="myDialog-1" class="hoo-dlg" resize="true">
+    <button id="closer-mdl" autofocus>Close</button>
+<div class="hoo-dlgcontent">
+    
+        <p>By clicking on the buttons you get a demonstation of possible options of the dialog.</p>
+        <p>To change the dialog appearance you can pass in the following css variables via the style attribute:</p>
+    
+        <ul>
+            <li>
+                <code>style="--hoo-dlg-height: 30vh"</code> - result in the dialog with 30% of the viewport height
+            </li>
+            <li>
+                <code>style="--hoo-dlg-width: 30vw"</code> - result in the dialog with 30% of the viewport width
+            </li>
+        </ul>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; margin: 1rem;">
+            <button class="hoo-button" id="btn-sidebar-left">
+                <span class="hoo-button-label">Sidebar Left</span>
+            </button>
+            <button class="hoo-button" id="btn-sidebar-right">
+                <span class="hoo-button-label">Sidebar Right</span>
+            </button>
+            <button class="hoo-button" id="btn-topbar">
+                <span class="hoo-button-label">Top Bar</span>
+            </button>
+            <button class="hoo-button" id="btn-bottombar">
+                <span class="hoo-button-label">Bottom Bar</span>
+            </button>
+            <button class="hoo-button" id="btn-fullscreen">
+                <span class="hoo-button-label">Full Screen</span>
+            </button>
+        </div>
+</div></dialog>
+<script>
+    if (window.location !== window.parent.location) {
+    let sidebarLeft = document.querySelector('#btn-sidebar-left');
+
+    sidebarLeft.addEventListener('click', (event) => {
+
+        let dialog = event.target.closest('.hoo-dlg');
+
+        dialog.classList = "hoo-dlg";
+        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+        dialog.classList.add('sidebar', 'left');
+
+        event.preventDefault();
+
+    })
+
+    let sidebarRight = document.querySelector('#btn-sidebar-right');
+
+    sidebarRight.addEventListener('click', (event) => {
+
+        let dialog = event.target.closest('.hoo-dlg');
+        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+        dialog.classList.add('sidebar', 'right');
+
+        event.preventDefault();
+
+    })
+
+    let topbar = document.querySelector('#btn-topbar');
+    topbar.addEventListener('click', (event) => {
+
+        let dialog = event.target.closest('.hoo-dlg');
+
+        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+        dialog.classList.add('topbar');
+
+        event.preventDefault();
+
+    })
+
+    let bottombar = document.querySelector('#btn-bottombar');
+
+    bottombar.addEventListener('click', (event) => {
+
+        let dialog = event.target.closest('.hoo-dlg');
+
+        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+        dialog.classList.add('bottombar');
+
+        event.preventDefault();
+
+    })
+
+    let fullscreen = document.querySelector('#btn-fullscreen');
+
+    fullscreen.addEventListener('click', (event) => {
+
+        let dialog = event.target.closest('.hoo-dlg');
+
+        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+        dialog.classList.add('fullscreen');
+
+        event.preventDefault();
+
+    })
+    }
+
+</script><!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Dialog Basics","patternPartial":"organism-generic-dialog","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":1}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Dialog Basics","patternPartial":"organism-generic-dialog","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":1}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1732824153115">
+  (function() {
+    if (self != top) {
+      var cb = '1732824153115';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1732824153115" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module"></script>
+<script src="../../js/themeswitch/index.js" type="module"></script>
+<script>
+
+    var layoutMode = null;
+
+    // changing logo accordingly
+    var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
+
+        let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
+
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
+            console.log("Layout is not vertical");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
+        }
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
+            console.log("Layout is not horizontal");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
+            console.log("IMAGE ", image);
+        }
+
+        layoutMode = patternlab.app.layoutMode;
+
+    }
+    // register event listener
+    window.addEventListener('storage', evtLocationStorageUpdates);
+    // on first run detect layout
+    evtLocationStorageUpdates();
+</script>
+<script src="../../js/_util.js" type="module"></script>
+</body>
+
+</html>

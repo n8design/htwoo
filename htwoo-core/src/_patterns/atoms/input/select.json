@@ -1,0 +1,12 @@
+{
+    "button": {
+        "iconname": "icon-arrow-down"
+    },
+    "dropdown": {
+        "select-options": {
+            "ddToggleClass": "hidden-all",
+            "useOptionsFrom": "fruit-icons",
+            "disableFirst": true
+        }
+    }
+}

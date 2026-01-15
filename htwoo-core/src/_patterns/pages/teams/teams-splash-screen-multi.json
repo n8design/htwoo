@@ -1,0 +1,15 @@
+{
+    "splash-card-count": 3,
+    "splash-card-variants": [
+        { "title": "This is the first splash card" },
+        { "title": "This is the second splash card" },
+        { 
+            "title": "This is the third splash card",
+            "primary-button": {
+                "button": {
+                    "label": "Third Primary Action"
+                }
+            }
+        }
+    ]
+}
