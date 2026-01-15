@@ -19,7 +19,7 @@ if (files) {
 
 
     // Create sitemap stream
-    const stream = new SitemapStream({ hostname: 'https://lab.n8d.studio/htwoo/htwoo-core/' }); // Replace 'example.com' with your actual domain
+    const stream = new SitemapStream({ hostname: 'https://htwoo.io/htwoo-core/' });
 
     // Add URLs to sitemap stream
     fileBaseNames.forEach(filepath => {
