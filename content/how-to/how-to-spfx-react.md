@@ -6,7 +6,7 @@ description: This article describes the requirements to enable hTWOo in your cus
 group: how-to
 ---
 
-This documentation covers using the hTWOo-core html/css only implementation in your ReactJS project. We also have a component library implemented for ReactJS that you can alternatively use called `hTWOo React`, check out the [documentation](/htwoo/htwoo-react).
+This documentation covers using the hTWOo-core html/css only implementation in your ReactJS project. We also have a component library implemented for ReactJS that you can alternatively use called `hTWOo React`, check out the [documentation](/htwoo-react/).
 
 ## Install hTWOo UI
 
