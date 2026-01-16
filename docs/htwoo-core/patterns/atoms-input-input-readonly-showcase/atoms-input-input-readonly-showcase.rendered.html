@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Atoms -  Input Readonly Showcase - Fluent UI / Fluent Design by hTWOo UI Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/style.css?1751618502839" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1751618502839" media="all" />
+    <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-lab-overrides.css?1751618502839" media="all" />
+    <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=atoms-input-readonly-showcase">
+    <meta name="keywords" content="Atoms, InputReadonlyShowcase, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
+     <base target="_top">
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="">
+  <h1>Atoms -  Input Readonly Showcase</h1><h2>Text Input Types</h2>
+<div>
+    <input class="hoo-input-text" id="file-upload-69"  type="text"  
+        placeholder="A placeholder text"  >
+</div>
+<div>
+    <input class="hoo-input-text" id="file-upload-69"  type="email"  placeholder="John.Doe@example.com"    >
+</div>
+<div>
+    <input class="hoo-input-text" type="password" id="file-upload-69"   placeholder="https://example.com"  >
+</div>
+<div>
+    <input class="hoo-input-text" type="phone" id="file-upload-69"   placeholder="555-8039"  >
+</div>
+<div>
+    <input class="hoo-input-text" type="url" id="file-upload-69"   placeholder="https://example.com"  >
+</div>
+<div>
+    <label for="zipca">Canadian Zip Code</label>
+    <input placeholder="XXX XXX" pattern="\w\d\w \d\w\d" class="masked" data-charset="_X_ X_X" id="zipca" type="text"
+        name="zipcodeca" title="6-character alphanumeric zip code in the format of A1A 1A1">
+    <br>
+    <label for="phone1">Phone Number</label>
+    <input id="phone1" type="tel" placeholder="+1 (555) 555-5555" class="masked"
+        pattern="(\+\d{1,3})?[-.\s]?(\d{1,3})?[-.\s]?(\(?\d{3}\)?)[-.\s]?\d{3}[-.\s]?\d{4}"
+        data-valid-example="+1 (555) 555-5555"
+        title="Phone number in formats like +1 (555) 555-5555, +1-555-555-5555, or +15555555555">
+    <br>
+    
+    <label for="tel">Telephone</label>
+    <input aria-describedby="mask-hidden-helper-msg helper1" id="tel" type="text" inputmode="numeric" data-charset="+__-___-___-____" name="phone" placeholder="+_--___-____" 
+           pattern="(\+\d{1,3}[-.\s]?)?(\(?\d{1,3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}" 
+           class="masked" title="Phone number in formats like +1-234-567-8901 or 234-567-8901"></div>
+<div>
+    <div class="hoo-input-group">
+        <div id="suffix-label-file-upload-69" class="hoo-input-prefix">https://</div>
+        <input class="hoo-input-text"  id="file-upload-69" 
+            placeholder="A placeholder text"  >
+    </div>
+</div>
+<div>
+    <div class="hoo-input-group">
+        <input class="hoo-input-text"  id="file-upload-69" 
+            placeholder="A placeholder text" data-suffix=".com"  aria-labelledby="suffix-label-file-upload-69" >
+        <div id="suffix-label-file-upload-69" class="hoo-input-suffix">.com</div>
+    </div>
+</div>
+<div>
+    <p>Invalid style can be assigned using a CSS class:</p>
+    <input class="hoo-input-text " type="text" placeholder="This is just a placehoder">
+    <p>Or just with default pseudo selector `:invalid`</p>
+    <input class="hoo-input-text" type="text" placeholder="This is just a placehoder" value="" required>
+    <p>The empty field is required there for at its current state invalid<br>
+    To avoid showing up as invalid add the '.is-empty' class to the styles</p>
+    <input class="hoo-input-text is-empty" type="text" placeholder="This is just a placehoder" value="" required>
+    <p>Invalid fields can be also defined by using patter</p>
+    <input class="hoo-input-text" type="text" placeholder="This is just a placehoder" value="ABC" pattern="[a-z]{4,8}">
+    <p>The previous input only allows lowercase characters and a length of 4-8 characters</p></div>
+<div>
+    <div class="hoo-input-group">
+        <div class="hoo-input-prefix">https://</div>
+        <input class="hoo-input-text" id="file-upload-69"  type="text" placeholder="A placeholder text" data-suffix=".com" data-prefix="https://"   >
+        <div class="hoo-input-suffix">.com</div>
+    </div>
+</div>
+<div>
+    <div class="hoo-input-search">
+        <svg class="hoo-icon icon-search">
+            <use xlink:href="../../images/icons.svg#icon-search"></use>
+        </svg><input class="hoo-input-text" type="search" placeholder="Search" >
+    </div>
+</div>
+
+<h2>Number Input Types</h2>
+<div>
+    <input class="hoo-input-text" type="number" min="0" max="100"    >
+</div>
+
+<h2>Date and Time Input Types</h2>
+<div>
+    <input type="date" class="hoo-input-date" id="file-upload-69"  name="my-date-picker-name" value="2021-10-26" min="2018-01-01" max="2030-12-31"    >
+</div>
+<div>
+    <input type="month" class="hoo-input-date" id="file-upload-69"  name="my-date-picker-name" value="2021-10-26" min="2018-01-01" max="2030-12-31"    >
+</div>
+<div>
+    <input type="week" class="hoo-input-date" id="file-upload-69"  name="my-date-picker-name" value="2021-10-26" min="2018-01-01" max="2030-12-31"    >
+</div>
+<div>
+    <input type="datetime-local" class="hoo-input-date" name="my-date-picker-name" value="2021-10-26" min="2018-01-01" max="2030-12-31"    >
+</div>
+<div>
+    <input type="time" class="hoo-input-time" id="file-upload-69"  name="" value="" min="" max=""  ></div>
+
+<h2>Special Input Types</h2>
+<div>
+    <input class="hoo-input-color" type="color" value="#000" hsla ></div>
+<div>
+    <section class="hoo-input-file">
+        <label class="hoo-infile-label" name="file-upload" tabIndex="-1" for="file-upload-31" draggable="true">
+            <div class="hoo-infile-icon">
+                <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-arrow-upload-filled" aria-hidden="true">
+                        <title>Upload</title>
+                        <use xlink:href="../../images/icons.svg#icon-arrow-upload-filled"></use>
+                    </svg>
+                </span>        </div>
+            <div>
+                Click or drag and drop files here to upload filed
+                <p class="hoo-infile-description">Max file size: 10MB, Types: jpg, png, pdf
+                </p>
+            </div>
+        </label>
+        <input type="file" id="file-upload-31" name="" class="hoo-infile-context" multiple aria-describedby="file-upload-31-content" />
+        <output class="hoo-infile-output" id="NaN-content" aria-live="polite" title="Current selection"></output>
+    </section>
+</div>
+
+<h2>Form Controls</h2>
+<div>
+    <textarea class="hoo-input-text" id="file-upload-31"   ></textarea></div>
+<div>
+    <input type="checkbox" name="checkbox-1234" id="checkbox-1234" value="" class="hoo-checkbox" ><label for="checkbox-1234">Checkbox Label</label>
+</div>
+<div>
+        <input type="radio" name="" id="checkbox-1234" value="" class="hoo-radio"><label for="checkbox-1234" >Radio Button Label</label>
+</div>
+<div>
+    <input type="radio" name="checkbox-1234" id="checkbox-1234" value="" class="hoo-radio" disabled=""  aria-disabled="" ><label for="checkbox-1234" >Radio Button Label</label>
+</div>
+<div>
+    <div class="hoo-toggle">
+        <input type="checkbox" class="hoo-toggle-cb" name="toggleName" id="toggle-63" ><label for="toggle-63" class="hoo-toggle-label"><span class="hoo-toggle-slider"></span><span class="hoo-toggle-checked">On</span><span class="hoo-toggle-unchecked">Off</span></label>
+    </div>
+</div>
+<!--DO NOT REMOVE-->
+<script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-input-text","lineagePath":"../../patterns/atoms-input-input-text/atoms-input-input-text.rendered.html"},{"lineagePattern":"atoms-input-text-email","lineagePath":"../../patterns/atoms-input-input-text-email/atoms-input-input-text-email.rendered.html"},{"lineagePattern":"atoms-input-text-password","lineagePath":"../../patterns/atoms-input-input-text-password/atoms-input-input-text-password.rendered.html"},{"lineagePattern":"atoms-input-text-phone","lineagePath":"../../patterns/atoms-input-input-text-phone/atoms-input-input-text-phone.rendered.html"},{"lineagePattern":"atoms-input-text-url","lineagePath":"../../patterns/atoms-input-input-text-url/atoms-input-input-text-url.rendered.html"},{"lineagePattern":"atoms-input-text-masked","lineagePath":"../../patterns/atoms-input-input-text-masked/atoms-input-input-text-masked.rendered.html"},{"lineagePattern":"atoms-input-text-prefixed","lineagePath":"../../patterns/atoms-input-input-text-prefixed/atoms-input-input-text-prefixed.rendered.html"},{"lineagePattern":"atoms-input-text-suffixed","lineagePath":"../../patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html"},{"lineagePattern":"atoms-input-text-invalid","lineagePath":"../../patterns/atoms-input-input-text-invalid/atoms-input-input-text-invalid.rendered.html"},{"lineagePattern":"atoms-input-prensufix","lineagePath":"../../patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"},{"lineagePattern":"atoms-input-number","lineagePath":"../../patterns/atoms-input-input-number/atoms-input-input-number.rendered.html"},{"lineagePattern":"atoms-input-date","lineagePath":"../../patterns/atoms-input-input-date/atoms-input-input-date.rendered.html"},{"lineagePattern":"atoms-input-date-month","lineagePath":"../../patterns/atoms-input-input-date-month/atoms-input-input-date-month.rendered.html"},{"lineagePattern":"atoms-input-date-week","lineagePath":"../../patterns/atoms-input-input-date-week/atoms-input-input-date-week.rendered.html"},{"lineagePattern":"atoms-input-datetime-local","lineagePath":"../../patterns/atoms-input-input-datetime-local/atoms-input-input-datetime-local.rendered.html"},{"lineagePattern":"atoms-input-time","lineagePath":"../../patterns/atoms-input-input-time/atoms-input-input-time.rendered.html"},{"lineagePattern":"atoms-input-color","lineagePath":"../../patterns/atoms-input-input-color/atoms-input-input-color.rendered.html"},{"lineagePattern":"atoms-input-file","lineagePath":"../../patterns/atoms-input-input-file/atoms-input-input-file.rendered.html"},{"lineagePattern":"atoms-input-textarea","lineagePath":"../../patterns/atoms-input-input-textarea/atoms-input-input-textarea.rendered.html"},{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"},{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"},{"lineagePattern":"atoms-radiobutton-disabled","lineagePath":"../../patterns/atoms-input-radiobutton-disabled/atoms-input-radiobutton-disabled.rendered.html"},{"lineagePattern":"atoms-toggle","lineagePath":"../../patterns/atoms-input-toggle/atoms-input-toggle.rendered.html"}],"lineage":[{"lineagePattern":"atoms-input-text","lineagePath":"../../patterns/atoms-input-input-text/atoms-input-input-text.rendered.html"},{"lineagePattern":"atoms-input-text-email","lineagePath":"../../patterns/atoms-input-input-text-email/atoms-input-input-text-email.rendered.html"},{"lineagePattern":"atoms-input-text-password","lineagePath":"../../patterns/atoms-input-input-text-password/atoms-input-input-text-password.rendered.html"},{"lineagePattern":"atoms-input-text-phone","lineagePath":"../../patterns/atoms-input-input-text-phone/atoms-input-input-text-phone.rendered.html"},{"lineagePattern":"atoms-input-text-url","lineagePath":"../../patterns/atoms-input-input-text-url/atoms-input-input-text-url.rendered.html"},{"lineagePattern":"atoms-input-text-masked","lineagePath":"../../patterns/atoms-input-input-text-masked/atoms-input-input-text-masked.rendered.html"},{"lineagePattern":"atoms-input-text-prefixed","lineagePath":"../../patterns/atoms-input-input-text-prefixed/atoms-input-input-text-prefixed.rendered.html"},{"lineagePattern":"atoms-input-text-suffixed","lineagePath":"../../patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html"},{"lineagePattern":"atoms-input-text-invalid","lineagePath":"../../patterns/atoms-input-input-text-invalid/atoms-input-input-text-invalid.rendered.html"},{"lineagePattern":"atoms-input-prensufix","lineagePath":"../../patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"},{"lineagePattern":"atoms-input-number","lineagePath":"../../patterns/atoms-input-input-number/atoms-input-input-number.rendered.html"},{"lineagePattern":"atoms-input-date","lineagePath":"../../patterns/atoms-input-input-date/atoms-input-input-date.rendered.html"},{"lineagePattern":"atoms-input-date-month","lineagePath":"../../patterns/atoms-input-input-date-month/atoms-input-input-date-month.rendered.html"},{"lineagePattern":"atoms-input-date-week","lineagePath":"../../patterns/atoms-input-input-date-week/atoms-input-input-date-week.rendered.html"},{"lineagePattern":"atoms-input-datetime-local","lineagePath":"../../patterns/atoms-input-input-datetime-local/atoms-input-input-datetime-local.rendered.html"},{"lineagePattern":"atoms-input-time","lineagePath":"../../patterns/atoms-input-input-time/atoms-input-input-time.rendered.html"},{"lineagePattern":"atoms-input-color","lineagePath":"../../patterns/atoms-input-input-color/atoms-input-input-color.rendered.html"},{"lineagePattern":"atoms-input-file","lineagePath":"../../patterns/atoms-input-input-file/atoms-input-input-file.rendered.html"},{"lineagePattern":"atoms-input-textarea","lineagePath":"../../patterns/atoms-input-input-textarea/atoms-input-input-textarea.rendered.html"},{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"},{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"},{"lineagePattern":"atoms-radiobutton-disabled","lineagePath":"../../patterns/atoms-input-radiobutton-disabled/atoms-input-radiobutton-disabled.rendered.html"},{"lineagePattern":"atoms-toggle","lineagePath":"../../patterns/atoms-input-toggle/atoms-input-toggle.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Input Readonly Showcase","patternPartial":"atoms-input-readonly-showcase","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":61}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-input-text","lineagePath":"../../patterns/atoms-input-input-text/atoms-input-input-text.rendered.html"},{"lineagePattern":"atoms-input-text-email","lineagePath":"../../patterns/atoms-input-input-text-email/atoms-input-input-text-email.rendered.html"},{"lineagePattern":"atoms-input-text-password","lineagePath":"../../patterns/atoms-input-input-text-password/atoms-input-input-text-password.rendered.html"},{"lineagePattern":"atoms-input-text-phone","lineagePath":"../../patterns/atoms-input-input-text-phone/atoms-input-input-text-phone.rendered.html"},{"lineagePattern":"atoms-input-text-url","lineagePath":"../../patterns/atoms-input-input-text-url/atoms-input-input-text-url.rendered.html"},{"lineagePattern":"atoms-input-text-masked","lineagePath":"../../patterns/atoms-input-input-text-masked/atoms-input-input-text-masked.rendered.html"},{"lineagePattern":"atoms-input-text-prefixed","lineagePath":"../../patterns/atoms-input-input-text-prefixed/atoms-input-input-text-prefixed.rendered.html"},{"lineagePattern":"atoms-input-text-suffixed","lineagePath":"../../patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html"},{"lineagePattern":"atoms-input-text-invalid","lineagePath":"../../patterns/atoms-input-input-text-invalid/atoms-input-input-text-invalid.rendered.html"},{"lineagePattern":"atoms-input-prensufix","lineagePath":"../../patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"},{"lineagePattern":"atoms-input-number","lineagePath":"../../patterns/atoms-input-input-number/atoms-input-input-number.rendered.html"},{"lineagePattern":"atoms-input-date","lineagePath":"../../patterns/atoms-input-input-date/atoms-input-input-date.rendered.html"},{"lineagePattern":"atoms-input-date-month","lineagePath":"../../patterns/atoms-input-input-date-month/atoms-input-input-date-month.rendered.html"},{"lineagePattern":"atoms-input-date-week","lineagePath":"../../patterns/atoms-input-input-date-week/atoms-input-input-date-week.rendered.html"},{"lineagePattern":"atoms-input-datetime-local","lineagePath":"../../patterns/atoms-input-input-datetime-local/atoms-input-input-datetime-local.rendered.html"},{"lineagePattern":"atoms-input-time","lineagePath":"../../patterns/atoms-input-input-time/atoms-input-input-time.rendered.html"},{"lineagePattern":"atoms-input-color","lineagePath":"../../patterns/atoms-input-input-color/atoms-input-input-color.rendered.html"},{"lineagePattern":"atoms-input-file","lineagePath":"../../patterns/atoms-input-input-file/atoms-input-input-file.rendered.html"},{"lineagePattern":"atoms-input-textarea","lineagePath":"../../patterns/atoms-input-input-textarea/atoms-input-input-textarea.rendered.html"},{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"},{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"},{"lineagePattern":"atoms-radiobutton-disabled","lineagePath":"../../patterns/atoms-input-radiobutton-disabled/atoms-input-radiobutton-disabled.rendered.html"},{"lineagePattern":"atoms-toggle","lineagePath":"../../patterns/atoms-input-toggle/atoms-input-toggle.rendered.html"}],"lineage":[{"lineagePattern":"atoms-input-text","lineagePath":"../../patterns/atoms-input-input-text/atoms-input-input-text.rendered.html"},{"lineagePattern":"atoms-input-text-email","lineagePath":"../../patterns/atoms-input-input-text-email/atoms-input-input-text-email.rendered.html"},{"lineagePattern":"atoms-input-text-password","lineagePath":"../../patterns/atoms-input-input-text-password/atoms-input-input-text-password.rendered.html"},{"lineagePattern":"atoms-input-text-phone","lineagePath":"../../patterns/atoms-input-input-text-phone/atoms-input-input-text-phone.rendered.html"},{"lineagePattern":"atoms-input-text-url","lineagePath":"../../patterns/atoms-input-input-text-url/atoms-input-input-text-url.rendered.html"},{"lineagePattern":"atoms-input-text-masked","lineagePath":"../../patterns/atoms-input-input-text-masked/atoms-input-input-text-masked.rendered.html"},{"lineagePattern":"atoms-input-text-prefixed","lineagePath":"../../patterns/atoms-input-input-text-prefixed/atoms-input-input-text-prefixed.rendered.html"},{"lineagePattern":"atoms-input-text-suffixed","lineagePath":"../../patterns/atoms-input-input-text-suffixed/atoms-input-input-text-suffixed.rendered.html"},{"lineagePattern":"atoms-input-text-invalid","lineagePath":"../../patterns/atoms-input-input-text-invalid/atoms-input-input-text-invalid.rendered.html"},{"lineagePattern":"atoms-input-prensufix","lineagePath":"../../patterns/atoms-input-input-prensufix/atoms-input-input-prensufix.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"},{"lineagePattern":"atoms-input-number","lineagePath":"../../patterns/atoms-input-input-number/atoms-input-input-number.rendered.html"},{"lineagePattern":"atoms-input-date","lineagePath":"../../patterns/atoms-input-input-date/atoms-input-input-date.rendered.html"},{"lineagePattern":"atoms-input-date-month","lineagePath":"../../patterns/atoms-input-input-date-month/atoms-input-input-date-month.rendered.html"},{"lineagePattern":"atoms-input-date-week","lineagePath":"../../patterns/atoms-input-input-date-week/atoms-input-input-date-week.rendered.html"},{"lineagePattern":"atoms-input-datetime-local","lineagePath":"../../patterns/atoms-input-input-datetime-local/atoms-input-input-datetime-local.rendered.html"},{"lineagePattern":"atoms-input-time","lineagePath":"../../patterns/atoms-input-input-time/atoms-input-input-time.rendered.html"},{"lineagePattern":"atoms-input-color","lineagePath":"../../patterns/atoms-input-input-color/atoms-input-input-color.rendered.html"},{"lineagePattern":"atoms-input-file","lineagePath":"../../patterns/atoms-input-input-file/atoms-input-input-file.rendered.html"},{"lineagePattern":"atoms-input-textarea","lineagePath":"../../patterns/atoms-input-input-textarea/atoms-input-input-textarea.rendered.html"},{"lineagePattern":"atoms-checkbox","lineagePath":"../../patterns/atoms-input-checkbox/atoms-input-checkbox.rendered.html"},{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"},{"lineagePattern":"atoms-radiobutton-disabled","lineagePath":"../../patterns/atoms-input-radiobutton-disabled/atoms-input-radiobutton-disabled.rendered.html"},{"lineagePattern":"atoms-toggle","lineagePath":"../../patterns/atoms-input-toggle/atoms-input-toggle.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Input Readonly Showcase","patternPartial":"atoms-input-readonly-showcase","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":61}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1751618502839">
+  (function() {
+    if (self != top) {
+      var cb = '1751618502839';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1751618502839" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+
+<script src="../../js/prismjs/prism.js"></script>
+<script src="../../js/main.js" type="module"></script>
+<script src="../../js/themeswitch/index.js" type="module"></script>
+<script>
+
+    var layoutMode = null;
+
+    // changing logo accordingly
+    var evtLocationStorageUpdates = () => {
+
+        console.debug("Storage Event Fired");
+
+        let patternlab = JSON.parse(window.localStorage.getItem('patternlab'));
+
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "vertical") {
+            console.log("Layout is not vertical");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-vertical.jpg";
+            }
+        }
+        if (patternlab.app.layoutMode !== layoutMode && patternlab.app.layoutMode === "horizontal") {
+            console.log("Layout is not horizontal");
+            let image = window.parent.document.querySelector(".pl-c-logo__img");
+            if (image) {
+                image.src = "styleguide/images/htwoo-logo-horizontal.png";
+            }
+            console.log("IMAGE ", image);
+        }
+
+        layoutMode = patternlab.app.layoutMode;
+
+    }
+    // register event listener
+    window.addEventListener('storage', evtLocationStorageUpdates);
+    // on first run detect layout
+    evtLocationStorageUpdates();
+</script>
+<script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
+</body>
+
+</html>
