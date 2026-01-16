@@ -228,22 +228,6 @@ const afterLoaded = () => {
         })
     }, 1000);
 
-    // SEO: Redirect human users from .rendered.html to SPA
-    // Bots see the SEO-friendly static HTML, humans get the interactive SPA
-    (function() {
-        // Only redirect if we're on a .rendered.html page
-        if (window.location.pathname.includes('.rendered.html')) {
-            // Skip redirect for common bots/crawlers
-            var botPattern = /bot|crawl|spider|slurp|bing|yahoo|baidu|duckduck|yandex|sogou|exabot|facebot|ia_archiver|ahrefs|semrush|moz|screaming/i;
-            if (!botPattern.test(navigator.userAgent)) {
-                // Get pattern partial from window.patternData
-                var patternPartial = window.patternData && window.patternData.patternPartial;
-                if (patternPartial) {
-                    window.location.replace('/htwoo-core/?p=' + patternPartial);
-                }
-            }
-        }
-    })();
 
 }
 

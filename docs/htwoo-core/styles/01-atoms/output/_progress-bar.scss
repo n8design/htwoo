@@ -1,0 +1,89 @@
+@use '../../00-base/mixin/core.mixin' as var;
+@use '../../00-base/colors/colors' as colors;
+
+@mixin progressStyleIndicator() {
+    background-image:
+        linear-gradient(-0deg, transparent 0%, rgb(255, 255, 255, .2) 42%, rgb(255, 255, 255, .3) 50%, rgb(255, 255, 255, .2) 58%, transparent 100%),
+        linear-gradient(-45deg, colors.$theme-400 20%, colors.$theme-800),
+        linear-gradient(-90deg, transparent, colors.$theme-100 40%, colors.$theme-100 60%, transparent);
+    background-size: 100% 100%;
+    border-color: black .25em solid;
+
+    border-radius: .5em;
+    border: 1px colors.$theme-100 solid;
+    overflow: hidden;
+}
+
+.hoo-progress-bar {
+    block-size: 1em;
+    inline-size: 100%;
+    font-size: 1rem;
+    border: 0.0625em colors.$theme-600 solid;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+    box-sizing: border-box;
+
+    &[value]::-webkit-progress-bar {
+        background-color: colors.$neutral-050;
+    }
+
+    &[value]::-webkit-progress-value {
+        @include progressStyleIndicator();
+    }
+
+    &::-moz-progress-bar {
+        @include progressStyleIndicator();
+    }
+}
+
+.hoo-progress-stepbar {
+    .hoo-progress-bar {
+        margin-top: .5rem;
+    }
+}
+
+.hoo-progress-step {
+
+    --indicator-offset: initial;
+    --step-offset: initial;
+
+    top: 0;
+    left: var(--step-offset);
+    z-index: -1;
+
+    .inner {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: -50%;
+    }
+
+}
+
+.hoo-progress-step-indicator {
+    display: block;
+    content: ' ';
+    width: 2px;
+    background-color: colors.$theme-600;
+    height: var(--indicator-offset, 2.5em);
+}
+
+.hoo-progress-step-label {
+    display: block;
+    padding: .25em .5em .35em;
+    font-size: 0.8em;
+    border: 2px colors.$theme-600 solid;
+    border-radius: 0.5em;
+    font-weight: 500;
+    color: colors.$neutral-900;
+}
+
+.hoo-progress-stepbar {
+    position: relative;
+
+    .hoo-progress-step {
+        position: absolute;
+    }
+}

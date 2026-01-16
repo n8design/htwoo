@@ -1,0 +1,75 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-breadcrumb{
+	ol{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+
+		align-items: center;
+
+		// Styling the last element
+		.hoo-breadcrumb-item{
+			&:last-of-type{
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.hoo-breadcrumb-item{
+	font-size: 1rem;
+
+	display: inline-block;
+
+	width: auto;
+}
+
+.hoo-breadcrumb-link{
+	line-height: core.px2rem(32px);
+
+	display: inline-block;
+
+	box-sizing: border-box;
+	padding-right: .5rem;
+	padding-left: .5rem;
+
+	text-decoration: none;
+
+	color: colors.$bodyText;
+
+	&:hover{
+
+		color: colors.$bodyText;
+		background-color: colors.$buttonBackgroundHovered;
+	}
+}
+
+button{
+	&.hoo-breadcrumb-link{
+		font-size: 1rem;
+
+		cursor: pointer;
+
+		border: none;
+		background-color: transparent;
+		font-weight: inherit;
+	}
+}
+
+
+
+.hoo-breadcrumb-separator{
+	line-height: 2lh;
+
+	svg{
+		width: core.px2rem(12px);
+		height: core.px2rem(12px);
+	}
+}

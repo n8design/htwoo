@@ -129,6 +129,30 @@ module.exports = function (Handlebars) {
     }
   });
 
+  Handlebars.registerHelper('seoDescription', function (value) {
+
+    if (value) {
+
+      let seoJunks = value.split('-');
+
+      if (seoJunks.length > 1) {
+
+        let firstEntry = seoJunks.shift();
+        let componentType = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1);
+
+        let componentName = seoJunks.map(element =>
+          element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
+        ).join(' ');
+
+        return `${componentName} ${componentType}`;
+
+      }
+
+      return value;
+    }
+    return '';
+  });
+
   Handlebars.registerHelper('dynamicPartial', function(partialName, context) {
 
     // console.debug('🤟🤟', partialName, context);

@@ -1,0 +1,44 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "button-action";
+
+.hoo-buttonicon-split{
+	@extend %flyoutDropDown;
+
+	display: flex;
+
+	height: 2rem;
+
+	button{
+		@extend .hoo-buttonaction;
+
+		height: 2rem;
+		margin-right: 0;
+		cursor: pointer;
+		&:active{
+			background-color: colors.$neutral-350;
+		}
+
+		&:hover{
+			background-color: colors.$neutral-200;
+		}
+	}
+
+	.hoo-buttonchevron{
+		border-left: 1px colors.$neutral-450 solid;
+		cursor: pointer;
+		.hoo-icon{
+			width: 1rem;
+			height: 1rem;
+			padding: .5rem;
+		}
+	}
+	.hoo-buttonicon-flyout{
+		height: 2rem;
+		margin-left: 0;
+		padding-left: 0;
+		& > *{
+			pointer-events: none;
+		}
+	}
+}

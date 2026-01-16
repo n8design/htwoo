@@ -1,0 +1,103 @@
+/**
+ * Avatar Component Styles
+ * 
+ * Provides styling for user avatars in various sizes.
+ * Default size is 64px with round borders.
+ * Uses SCSS placeholder %hoo-avatar for consistent base styling.
+ * 
+ * Usage:
+ * <div class="hoo-avatar-64">
+ *   <img class="hoo-avatar-img" src="avatar.jpg" alt="User Name" />
+ * </div>
+ * 
+ * Available sizes: 8px, 16px, 24px, 32px, 40px, 48px, 64px, 72px, 96px
+ */
+
+@use "../../00-base/mixin/core.mixin";
+
+// Base avatar placeholder - provides common styling for all avatar sizes
+%hoo-avatar{
+	display: inline-block;
+
+	width: core.px2rem(64px);
+	height: core.px2rem(64px);
+}
+
+// Avatar image styling - handles the actual image display
+.hoo-avatar-img{
+	width: 100%;
+	height: auto;
+
+	border-radius: 50%;
+	border-collapse: collapse;
+	img.hoo-avatar{
+		width: 100%;
+		height: auto;
+		aspect-ratio: auto 1/1;
+	}
+}
+
+// Base avatar class - inherits dimensions from parent
+.hoo-avatar{
+	@extend %hoo-avatar;
+
+	width: inherit;
+	height: inherit;
+}
+
+// Avatar size variants
+.hoo-avatar-96{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(96px);
+	height: core.px2rem(96px);
+
+}
+.hoo-avatar-72{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(72px);
+	height: core.px2rem(72px);
+
+}
+
+.hoo-avatar-64{
+	@extend %hoo-avatar;
+	// Default 64px size - uses the base placeholder dimensions
+}
+.hoo-avatar-48{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(48px);
+	height: core.px2rem(48px);
+}
+.hoo-avatar-40{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(40px);
+	height: core.px2rem(40px);
+}
+.hoo-avatar-32{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(32px);
+	height: core.px2rem(32px);
+}
+.hoo-avatar-24{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(24px);
+	height: core.px2rem(24px);
+}
+.hoo-avatar-16{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(16px);
+	height: core.px2rem(16px);
+}
+.hoo-avatar-8{
+	@extend %hoo-avatar;
+
+	width: core.px2rem(8px);
+	height: core.px2rem(8px);
+}
