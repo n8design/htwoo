@@ -41,7 +41,7 @@
     {{ range .Sections }}
     <a href="{{ .Permalink }}" class="category-card">
       <h3>{{ .Title }}</h3>
-      <p>{{ len .Pages }} components</p>
+      <p>{{ len .RegularPagesRecursive }} components</p>
     </a>
     {{ end }}
   </div>
