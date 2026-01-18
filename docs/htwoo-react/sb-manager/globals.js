@@ -11,24 +11,6 @@ var _ = {
   "react-dom": "__REACT_DOM__",
   "react-dom/client": "__REACT_DOM_CLIENT__",
   "@storybook/icons": "__STORYBOOK_ICONS__",
-<<<<<<< HEAD
-  "storybook/manager-api": "__STORYBOOK_API__",
-  "storybook/test": "__STORYBOOK_TEST__",
-  "storybook/theming": "__STORYBOOK_THEMING__",
-  "storybook/theming/create": "__STORYBOOK_THEMING_CREATE__",
-  "storybook/internal/channels": "__STORYBOOK_CHANNELS__",
-  "storybook/internal/client-logger": "__STORYBOOK_CLIENT_LOGGER__",
-  "storybook/internal/components": "__STORYBOOK_COMPONENTS__",
-  "storybook/internal/core-errors": "__STORYBOOK_CORE_EVENTS__",
-  "storybook/internal/core-events": "__STORYBOOK_CORE_EVENTS__",
-  "storybook/internal/manager-errors": "__STORYBOOK_CORE_EVENTS_MANAGER_ERRORS__",
-  "storybook/internal/router": "__STORYBOOK_ROUTER__",
-  "storybook/internal/types": "__STORYBOOK_TYPES__",
-  // @deprecated TODO: delete in 9.1
-  "storybook/internal/manager-api": "__STORYBOOK_API__",
-  "storybook/internal/theming": "__STORYBOOK_THEMING__",
-  "storybook/internal/theming/create": "__STORYBOOK_THEMING_CREATE__"
-=======
   "storybook/internal/manager-api": "__STORYBOOK_API__",
   "@storybook/manager-api": "__STORYBOOK_API__",
   "@storybook/core/manager-api": "__STORYBOOK_API__",
@@ -59,7 +41,6 @@ var _ = {
   "storybook/internal/types": "__STORYBOOK_TYPES__",
   "@storybook/types": "__STORYBOOK_TYPES__",
   "@storybook/core/types": "__STORYBOOK_TYPES__"
->>>>>>> main
 }, o = Object.keys(_);
 export {
   o as globalPackages,

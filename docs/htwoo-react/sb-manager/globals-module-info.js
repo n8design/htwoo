@@ -6,11 +6,7 @@ const __dirname = ESM_COMPAT_dirname(__filename);
 const require = ESM_COMPAT_Module.createRequire(import.meta.url);
 
 // src/manager/globals/exports.ts
-<<<<<<< HEAD
-var n = {
-=======
 var t = {
->>>>>>> main
   react: [
     "Children",
     "Component",
@@ -20,10 +16,6 @@ var t = {
     "StrictMode",
     "Suspense",
     "__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED",
-<<<<<<< HEAD
-    "act",
-=======
->>>>>>> main
     "cloneElement",
     "createContext",
     "createElement",
@@ -315,9 +307,6 @@ var t = {
     "ZoomResetIcon",
     "iconList"
   ],
-<<<<<<< HEAD
-  "storybook/manager-api": [
-=======
   "storybook/internal/components": [
     "A",
     "ActionBar",
@@ -532,7 +521,6 @@ var t = {
     "withReset"
   ],
   "storybook/internal/manager-api": [
->>>>>>> main
     "ActiveTabs",
     "Consumer",
     "ManagerContext",
@@ -546,21 +534,8 @@ var t = {
     "eventToShortcut",
     "experimental_MockUniversalStore",
     "experimental_UniversalStore",
-<<<<<<< HEAD
-    "experimental_getStatusStore",
-    "experimental_getTestProviderStore",
-    "experimental_requestResponse",
-    "experimental_useStatusStore",
-    "experimental_useTestProviderStore",
-    "experimental_useUniversalStore",
-    "internal_fullStatusStore",
-    "internal_fullTestProviderStore",
-    "internal_universalStatusStore",
-    "internal_universalTestProviderStore",
-=======
     "experimental_requestResponse",
     "experimental_useUniversalStore",
->>>>>>> main
     "isMacLike",
     "isShortcutTaken",
     "keyToSymbol",
@@ -582,9 +557,6 @@ var t = {
     "useStorybookApi",
     "useStorybookState"
   ],
-<<<<<<< HEAD
-  "storybook/theming": [
-=======
   "@storybook/manager-api": [
     "ActiveTabs",
     "Consumer",
@@ -708,7 +680,6 @@ var t = {
     "useNavigate"
   ],
   "storybook/internal/theming": [
->>>>>>> main
     "CacheProvider",
     "ClassNames",
     "Global",
@@ -734,95 +705,6 @@ var t = {
     "useTheme",
     "withTheme"
   ],
-<<<<<<< HEAD
-  "storybook/theming/create": ["create", "themes"],
-  "storybook/test": [
-    "buildQueries",
-    "clearAllMocks",
-    "configure",
-    "createEvent",
-    "expect",
-    "findAllByAltText",
-    "findAllByDisplayValue",
-    "findAllByLabelText",
-    "findAllByPlaceholderText",
-    "findAllByRole",
-    "findAllByTestId",
-    "findAllByText",
-    "findAllByTitle",
-    "findByAltText",
-    "findByDisplayValue",
-    "findByLabelText",
-    "findByPlaceholderText",
-    "findByRole",
-    "findByTestId",
-    "findByText",
-    "findByTitle",
-    "fireEvent",
-    "fn",
-    "getAllByAltText",
-    "getAllByDisplayValue",
-    "getAllByLabelText",
-    "getAllByPlaceholderText",
-    "getAllByRole",
-    "getAllByTestId",
-    "getAllByText",
-    "getAllByTitle",
-    "getByAltText",
-    "getByDisplayValue",
-    "getByLabelText",
-    "getByPlaceholderText",
-    "getByRole",
-    "getByTestId",
-    "getByText",
-    "getByTitle",
-    "getConfig",
-    "getDefaultNormalizer",
-    "getElementError",
-    "getNodeText",
-    "getQueriesForElement",
-    "getRoles",
-    "getSuggestedQuery",
-    "isInaccessible",
-    "isMockFunction",
-    "logDOM",
-    "logRoles",
-    "mocked",
-    "mocks",
-    "onMockCall",
-    "prettyDOM",
-    "prettyFormat",
-    "queries",
-    "queryAllByAltText",
-    "queryAllByAttribute",
-    "queryAllByDisplayValue",
-    "queryAllByLabelText",
-    "queryAllByPlaceholderText",
-    "queryAllByRole",
-    "queryAllByTestId",
-    "queryAllByText",
-    "queryAllByTitle",
-    "queryByAltText",
-    "queryByAttribute",
-    "queryByDisplayValue",
-    "queryByLabelText",
-    "queryByPlaceholderText",
-    "queryByRole",
-    "queryByTestId",
-    "queryByText",
-    "queryByTitle",
-    "queryHelpers",
-    "resetAllMocks",
-    "restoreAllMocks",
-    "screen",
-    "spyOn",
-    "uninstrumentedUserEvent",
-    "userEvent",
-    "waitFor",
-    "waitForElementToBeRemoved",
-    "within"
-  ],
-=======
   "@storybook/theming": [
     "CacheProvider",
     "ClassNames",
@@ -878,7 +760,6 @@ var t = {
   "storybook/internal/theming/create": ["create", "themes"],
   "@storybook/theming/create": ["create", "themes"],
   "@storybook/core/theming/create": ["create", "themes"],
->>>>>>> main
   "storybook/internal/channels": [
     "Channel",
     "HEARTBEAT_INTERVAL",
@@ -887,76 +768,6 @@ var t = {
     "WebsocketTransport",
     "createBrowserChannel"
   ],
-<<<<<<< HEAD
-  "storybook/internal/client-logger": ["deprecate", "logger", "once", "pretty"],
-  "storybook/internal/components": [
-    "A",
-    "ActionBar",
-    "AddonPanel",
-    "Badge",
-    "Bar",
-    "Blockquote",
-    "Button",
-    "Checkbox",
-    "ClipboardCode",
-    "Code",
-    "DL",
-    "Div",
-    "DocumentWrapper",
-    "EmptyTabContent",
-    "ErrorFormatter",
-    "FlexBar",
-    "Form",
-    "H1",
-    "H2",
-    "H3",
-    "H4",
-    "H5",
-    "H6",
-    "HR",
-    "IconButton",
-    "Img",
-    "LI",
-    "Link",
-    "ListItem",
-    "Loader",
-    "Modal",
-    "OL",
-    "P",
-    "Placeholder",
-    "Pre",
-    "ProgressSpinner",
-    "ResetWrapper",
-    "ScrollArea",
-    "Separator",
-    "Spaced",
-    "Span",
-    "StorybookIcon",
-    "StorybookLogo",
-    "SyntaxHighlighter",
-    "TT",
-    "TabBar",
-    "TabButton",
-    "TabWrapper",
-    "Table",
-    "Tabs",
-    "TabsState",
-    "TooltipLinkList",
-    "TooltipMessage",
-    "TooltipNote",
-    "UL",
-    "WithTooltip",
-    "WithTooltipPure",
-    "Zoom",
-    "codeCommon",
-    "components",
-    "createCopyToClipboardFunction",
-    "getStoryHref",
-    "interleaveSeparators",
-    "nameSpaceClassNames",
-    "resetComponents",
-    "withReset"
-=======
   "@storybook/channels": [
     "Channel",
     "HEARTBEAT_INTERVAL",
@@ -972,7 +783,6 @@ var t = {
     "PostMessageTransport",
     "WebsocketTransport",
     "createBrowserChannel"
->>>>>>> main
   ],
   "storybook/internal/core-errors": [
     "ARGTYPES_INFO_REQUEST",
@@ -1017,10 +827,6 @@ var t = {
     "STORY_CHANGED",
     "STORY_ERRORED",
     "STORY_FINISHED",
-<<<<<<< HEAD
-    "STORY_HOT_UPDATED",
-=======
->>>>>>> main
     "STORY_INDEX_INVALIDATED",
     "STORY_MISSING",
     "STORY_PREPARED",
@@ -1030,26 +836,19 @@ var t = {
     "STORY_THREW_EXCEPTION",
     "STORY_UNCHANGED",
     "TELEMETRY_ERROR",
-<<<<<<< HEAD
-=======
     "TESTING_MODULE_CANCEL_TEST_RUN_REQUEST",
     "TESTING_MODULE_CANCEL_TEST_RUN_RESPONSE",
     "TESTING_MODULE_CRASH_REPORT",
     "TESTING_MODULE_PROGRESS_REPORT",
     "TESTING_MODULE_RUN_ALL_REQUEST",
     "TESTING_MODULE_RUN_REQUEST",
->>>>>>> main
     "TOGGLE_WHATS_NEW_NOTIFICATIONS",
     "UNHANDLED_ERRORS_WHILE_PLAYING",
     "UPDATE_GLOBALS",
     "UPDATE_QUERY_PARAMS",
     "UPDATE_STORY_ARGS"
   ],
-<<<<<<< HEAD
-  "storybook/internal/core-events": [
-=======
   "@storybook/core-events": [
->>>>>>> main
     "ARGTYPES_INFO_REQUEST",
     "ARGTYPES_INFO_RESPONSE",
     "CHANNEL_CREATED",
@@ -1092,10 +891,6 @@ var t = {
     "STORY_CHANGED",
     "STORY_ERRORED",
     "STORY_FINISHED",
-<<<<<<< HEAD
-    "STORY_HOT_UPDATED",
-=======
->>>>>>> main
     "STORY_INDEX_INVALIDATED",
     "STORY_MISSING",
     "STORY_PREPARED",
@@ -1105,122 +900,18 @@ var t = {
     "STORY_THREW_EXCEPTION",
     "STORY_UNCHANGED",
     "TELEMETRY_ERROR",
-<<<<<<< HEAD
-=======
     "TESTING_MODULE_CANCEL_TEST_RUN_REQUEST",
     "TESTING_MODULE_CANCEL_TEST_RUN_RESPONSE",
     "TESTING_MODULE_CRASH_REPORT",
     "TESTING_MODULE_PROGRESS_REPORT",
     "TESTING_MODULE_RUN_ALL_REQUEST",
     "TESTING_MODULE_RUN_REQUEST",
->>>>>>> main
     "TOGGLE_WHATS_NEW_NOTIFICATIONS",
     "UNHANDLED_ERRORS_WHILE_PLAYING",
     "UPDATE_GLOBALS",
     "UPDATE_QUERY_PARAMS",
     "UPDATE_STORY_ARGS"
   ],
-<<<<<<< HEAD
-  "storybook/internal/manager-errors": [
-    "Category",
-    "ProviderDoesNotExtendBaseProviderError",
-    "StatusTypeIdMismatchError",
-    "UncaughtManagerError"
-  ],
-  "storybook/internal/router": [
-    "BaseLocationProvider",
-    "DEEPLY_EQUAL",
-    "Link",
-    "Location",
-    "LocationProvider",
-    "Match",
-    "Route",
-    "buildArgsParam",
-    "deepDiff",
-    "getMatch",
-    "parsePath",
-    "queryFromLocation",
-    "stringifyQuery",
-    "useNavigate"
-  ],
-  "storybook/internal/types": ["Addon_TypesEnum"],
-  "storybook/internal/manager-api": [
-    "ActiveTabs",
-    "Consumer",
-    "ManagerContext",
-    "Provider",
-    "RequestResponseError",
-    "addons",
-    "combineParameters",
-    "controlOrMetaKey",
-    "controlOrMetaSymbol",
-    "eventMatchesShortcut",
-    "eventToShortcut",
-    "experimental_MockUniversalStore",
-    "experimental_UniversalStore",
-    "experimental_getStatusStore",
-    "experimental_getTestProviderStore",
-    "experimental_requestResponse",
-    "experimental_useStatusStore",
-    "experimental_useTestProviderStore",
-    "experimental_useUniversalStore",
-    "internal_fullStatusStore",
-    "internal_fullTestProviderStore",
-    "internal_universalStatusStore",
-    "internal_universalTestProviderStore",
-    "isMacLike",
-    "isShortcutTaken",
-    "keyToSymbol",
-    "merge",
-    "mockChannel",
-    "optionOrAltSymbol",
-    "shortcutMatchesShortcut",
-    "shortcutToHumanString",
-    "types",
-    "useAddonState",
-    "useArgTypes",
-    "useArgs",
-    "useChannel",
-    "useGlobalTypes",
-    "useGlobals",
-    "useParameter",
-    "useSharedState",
-    "useStoryPrepared",
-    "useStorybookApi",
-    "useStorybookState"
-  ],
-  "storybook/internal/theming": [
-    "CacheProvider",
-    "ClassNames",
-    "Global",
-    "ThemeProvider",
-    "background",
-    "color",
-    "convert",
-    "create",
-    "createCache",
-    "createGlobal",
-    "createReset",
-    "css",
-    "darken",
-    "ensure",
-    "ignoreSsrWarning",
-    "isPropValid",
-    "jsx",
-    "keyframes",
-    "lighten",
-    "styled",
-    "themes",
-    "typography",
-    "useTheme",
-    "withTheme"
-  ],
-  "storybook/internal/theming/create": ["create", "themes"]
-};
-
-// src/manager/globals/globals.ts
-var o = {
-=======
   "@storybook/core/core-events": [
     "ARGTYPES_INFO_REQUEST",
     "ARGTYPES_INFO_RESPONSE",
@@ -1310,43 +1001,10 @@ var o = {
 
 // src/manager/globals/globals.ts
 var e = {
->>>>>>> main
   react: "__REACT__",
   "react-dom": "__REACT_DOM__",
   "react-dom/client": "__REACT_DOM_CLIENT__",
   "@storybook/icons": "__STORYBOOK_ICONS__",
-<<<<<<< HEAD
-  "storybook/manager-api": "__STORYBOOK_API__",
-  "storybook/test": "__STORYBOOK_TEST__",
-  "storybook/theming": "__STORYBOOK_THEMING__",
-  "storybook/theming/create": "__STORYBOOK_THEMING_CREATE__",
-  "storybook/internal/channels": "__STORYBOOK_CHANNELS__",
-  "storybook/internal/client-logger": "__STORYBOOK_CLIENT_LOGGER__",
-  "storybook/internal/components": "__STORYBOOK_COMPONENTS__",
-  "storybook/internal/core-errors": "__STORYBOOK_CORE_EVENTS__",
-  "storybook/internal/core-events": "__STORYBOOK_CORE_EVENTS__",
-  "storybook/internal/manager-errors": "__STORYBOOK_CORE_EVENTS_MANAGER_ERRORS__",
-  "storybook/internal/router": "__STORYBOOK_ROUTER__",
-  "storybook/internal/types": "__STORYBOOK_TYPES__",
-  // @deprecated TODO: delete in 9.1
-  "storybook/internal/manager-api": "__STORYBOOK_API__",
-  "storybook/internal/theming": "__STORYBOOK_THEMING__",
-  "storybook/internal/theming/create": "__STORYBOOK_THEMING_CREATE__"
-}, r = Object.keys(o);
-
-// src/manager/globals/globals-module-info.ts
-var E = r.reduce(
-  (t, e) => (t[e] = {
-    type: "esm",
-    varName: o[e],
-    namedExports: n[e],
-    defaultExport: !0
-  }, t),
-  {}
-);
-export {
-  E as globalsModuleInfoMap
-=======
   "storybook/internal/manager-api": "__STORYBOOK_API__",
   "@storybook/manager-api": "__STORYBOOK_API__",
   "@storybook/core/manager-api": "__STORYBOOK_API__",
@@ -1391,5 +1049,4 @@ var S = n.reduce(
 );
 export {
   S as globalsModuleInfoMap
->>>>>>> main
 };

@@ -8,21 +8,6 @@ const require = ESM_COMPAT_Module.createRequire(import.meta.url);
 // src/preview/globals/globals.ts
 var _ = {
   "@storybook/global": "__STORYBOOK_MODULE_GLOBAL__",
-<<<<<<< HEAD
-  "storybook/test": "__STORYBOOK_MODULE_TEST__",
-  "storybook/actions": "__STORYBOOK_MODULE_ACTIONS__",
-  "storybook/preview-api": "__STORYBOOK_MODULE_PREVIEW_API__",
-  "storybook/internal/channels": "__STORYBOOK_MODULE_CHANNELS__",
-  "storybook/internal/client-logger": "__STORYBOOK_MODULE_CLIENT_LOGGER__",
-  "storybook/internal/core-events": "__STORYBOOK_MODULE_CORE_EVENTS__",
-  "storybook/internal/preview-errors": "__STORYBOOK_MODULE_CORE_EVENTS_PREVIEW_ERRORS__",
-  "storybook/internal/types": "__STORYBOOK_MODULE_TYPES__",
-  // @deprecated TODO: Remove in 9.1
-  "storybook/internal/preview-api": "__STORYBOOK_MODULE_PREVIEW_API__"
-}, o = Object.keys(_);
-export {
-  o as globalPackages,
-=======
   "storybook/internal/channels": "__STORYBOOK_MODULE_CHANNELS__",
   "@storybook/channels": "__STORYBOOK_MODULE_CHANNELS__",
   "@storybook/core/channels": "__STORYBOOK_MODULE_CHANNELS__",
@@ -44,6 +29,5 @@ export {
 }, O = Object.keys(_);
 export {
   O as globalPackages,
->>>>>>> main
   _ as globalsNameReferenceMap
 };
