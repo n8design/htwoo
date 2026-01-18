@@ -153,6 +153,11 @@ class HtwooComponentPreview extends HTMLElement {
       html = html.replace(/src=["']\.\/+images\/+/g, 'src="/htwoo-core/images/');
       html = html.replace(/src=["']images\/+/g, 'src="/htwoo-core/images/');
 
+      // Fix xlink:href for SVG icons (e.g., <use xlink:href="../../images/icons.svg#icon-name">)
+      html = html.replace(/xlink:href=["'](?:\.\.\/+)+images\/+/g, 'xlink:href="/htwoo-core/images/');
+      html = html.replace(/xlink:href=["']\.\/+images\/+/g, 'xlink:href="/htwoo-core/images/');
+      html = html.replace(/xlink:href=["']images\/+/g, 'xlink:href="/htwoo-core/images/');
+
       contentEl.innerHTML = html;
 
       // Initialize interactive components if needed

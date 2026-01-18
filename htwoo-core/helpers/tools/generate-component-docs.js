@@ -216,6 +216,11 @@ function fixMarkupPaths(markup) {
   fixed = fixed.replace(/href=["'](?:\.\.\/+)+images\/+/g, 'href="/htwoo-core/images/');
   fixed = fixed.replace(/href=["']\.\/+images\/+/g, 'href="/htwoo-core/images/');
 
+  // Handle xlink:href attributes for SVG icons (e.g., <use xlink:href="../../images/icons.svg#icon-name">)
+  fixed = fixed.replace(/xlink:href=["'](?:\.\.\/+)+images\/+/g, 'xlink:href="/htwoo-core/images/');
+  fixed = fixed.replace(/xlink:href=["']\.\/+images\/+/g, 'xlink:href="/htwoo-core/images/');
+  fixed = fixed.replace(/xlink:href=["']images\/+/g, 'xlink:href="/htwoo-core/images/');
+
   return fixed;
 }
 
