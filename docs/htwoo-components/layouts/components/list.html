@@ -3,6 +3,12 @@
 {{ partial "component-styles.html" . }}
 <!-- component list template -->
 <article id="content" class="t-component-list">
+  <!-- Under Construction Notice -->
+  <div class="under-construction">
+    <strong>🚧 Under Construction</strong>
+    <p>This component documentation is currently being developed. Some features may be incomplete.</p>
+  </div>
+
   <!-- Breadcrumb (only for subcategories, not for root components page) -->
   {{ if .Params.category }}
   <nav class="breadcrumb" aria-label="Breadcrumb">

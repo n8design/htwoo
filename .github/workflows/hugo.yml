@@ -100,8 +100,13 @@ jobs:
       - name: Copy hTWOo React style guide
         run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
         working-directory: docs-site
-      - name: Copy component sitemap
-        run: cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
+      - name: Remove old sitemaps and use component sitemap
+        run: |
+          # Remove htwoo-core and htwoo-react sitemaps (Pattern Lab and Storybook)
+          rm -f public/htwoo-core/sitemap.xml
+          rm -f public/htwoo-react/sitemap.xml
+          # Copy component documentation sitemap as the main sitemap for components
+          cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
         working-directory: docs-site
       - name: Verify artifact size and content
         run: |
