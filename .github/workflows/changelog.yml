@@ -67,10 +67,14 @@ jobs:
       - name: Generate changelog (Dry Run)
         if: ${{ inputs.dry_run == true || github.event_name == 'push' }}
         run: |
-          if [ "${{ inputs.project }}" = "all" ] || [ -z "${{ inputs.project }}" ]; then
-            npx nx run htwoo-core:changelog:preview
-          else
-            npx nx run ${{ inputs.project }}:changelog:preview
+          # Map input project names to nx project names
+          # htwoo-core -> htwoo-core-styleguide, htwoo-react -> htwoo-react
+          if [ "${{ inputs.project }}" = "htwoo-core" ] || [ -z "${{ inputs.project }}" ]; then
+            npx nx run htwoo-core-styleguide:htwoo-changelog:preview
+          elif [ "${{ inputs.project }}" = "htwoo-react" ]; then
+            npx nx run htwoo-react:htwoo-changelog:preview
+          elif [ "${{ inputs.project }}" = "all" ]; then
+            npx nx run htwoo-core-styleguide:htwoo-changelog:preview
           fi
 
       - name: Generate changelog and create release
@@ -78,10 +82,12 @@ jobs:
         run: |
           if [ "${{ inputs.project }}" = "all" ]; then
             node scripts/workspace-changelog.js
-          elif [ -n "${{ inputs.project }}" ]; then
-            npx nx run ${{ inputs.project }}:changelog
+          elif [ "${{ inputs.project }}" = "htwoo-core" ]; then
+            npx nx run htwoo-core-styleguide:htwoo-changelog
+          elif [ "${{ inputs.project }}" = "htwoo-react" ]; then
+            npx nx run htwoo-react:htwoo-changelog
           else
-            npx nx run htwoo-core:changelog
+            npx nx run htwoo-core-styleguide:htwoo-changelog
           fi
 
       - name: Create Release PR
