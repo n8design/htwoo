@@ -1,0 +1,294 @@
+{
+  "name": "htwoo-core-styleguide",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "htwoo-core/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build:package",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/htwoo-core/lib",
+        "{workspaceRoot}/packages/htwoo-core/dist"
+      ]
+    },
+    "build:optimized": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build:optimized",
+        "cwd": "htwoo-core"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm start",
+        "cwd": "htwoo-core"
+      }
+    },
+    "pl:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run pl:build",
+        "cwd": "htwoo-core"
+      }
+    },
+    "pl:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run pl:serve",
+        "cwd": "htwoo-core"
+      }
+    },
+    "docs": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "bash docs.sh",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-core"
+      ]
+    },
+    "docs:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm start",
+        "cwd": "htwoo-core"
+      }
+    },
+    "docs:build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npm run pl:build",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/htwoo-core/public"
+      ]
+    },
+    "docs:publish": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["docs:build"],
+      "options": {
+        "commands": [
+          "cp -r ./src/plugins/* ../docs/htwoo-core/plugins/",
+          "cp -r ./src/styleguide/images/* ../docs/htwoo-core/styleguide/images/",
+          "node helpers/tools/sitemap.js"
+        ],
+        "cwd": "htwoo-core",
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-core"
+      ]
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run clean:package",
+        "cwd": "htwoo-core"
+      }
+    },
+    "validate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run validate:package",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-changelog": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-changelog.js",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-changelog:preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx conventional-changelog -p angular -u --config ./changelog.config.js",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:patch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump patch",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump minor",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump major",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:dry-run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js release --bump patch --dry-run",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-release:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/release.js check",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-version:check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js check",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-version:sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js sync",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-version:bump": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:bump:minor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump minor",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:bump:major": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js bump major",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:set": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js set",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "htwoo-version:tag": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js tag",
+        "cwd": "htwoo-core"
+      }
+    },
+    "htwoo-version:list-tags": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-versions.js list-tags",
+        "cwd": "htwoo-core"
+      }
+    },
+    "pre-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'Running pre-release checks...' && npm run validate:package && node scripts/sync-versions.js check",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["build", "test"]
+    },
+    "post-release": {
+      "executor": "nx:run-commands", 
+      "options": {
+        "command": "echo 'Release completed successfully!' && git status",
+        "cwd": "htwoo-core"
+      }
+    },
+    "release-pipeline": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run htwoo-core-styleguide:pre-release",
+          "nx run htwoo-core-styleguide:htwoo-release",
+          "nx run htwoo-core-styleguide:post-release"
+        ],
+        "parallel": false
+      }
+    },
+    "test:a11y": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:all",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:sample": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:sample",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:with-server": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:with-server",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    },
+    "test:a11y:sample:with-server": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test:a11y:sample:with-server",
+        "cwd": "htwoo-core"
+      },
+      "dependsOn": ["docs:build"]
+    }
+  },
+  "tags": ["scope:styleguide", "type:application"]
+}

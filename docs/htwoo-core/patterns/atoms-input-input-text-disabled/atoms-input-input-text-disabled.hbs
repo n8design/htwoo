@@ -1,7 +1,0 @@
-{{#input.text}}
-<input class="hoo-input-text" {{#if (getLastId)}}id="{{ getLastId }}" {{/if}} type="text" {{#if disabled}}
-    disabled="{{ disabled }}" aria-disabled="{{ disabled }}" {{/if}} {{#if readonly}} readonly="{{ readonly }}" {{/if}}
-    placeholder="{{ placeholder }}" {{#ifCond descRef '||' errorRef}}
-    aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"
-    {{/ifCond}} {{{ html-props }}}>
-{{/input.text}}

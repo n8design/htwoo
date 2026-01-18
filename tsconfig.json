@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    // Base configuration for the entire monorepo
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    
+    // Monorepo-specific settings
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Path mapping for cross-package imports
+    "baseUrl": ".",
+    "paths": {
+      "@n8d/htwoo-core": ["./packages/htwoo-core/src"],
+      "@n8d/htwoo-core/*": ["./packages/htwoo-core/src/*"],
+      "@n8d/htwoo-react": ["./htwoo-react/src"],
+      "@n8d/htwoo-react/*": ["./htwoo-react/src/*"]
+    }
+  },
+  
+  // Project references for incremental compilation
+  "references": [
+    { "path": "./packages/htwoo-core" },
+    { "path": "./htwoo-react" }
+  ],
+  
+  "files": [],
+  "include": [],
+  "exclude": [
+    "**/node_modules",
+    "**/dist",
+    "**/lib",
+    "**/public",
+    "**/*.test.*",
+    "**/__tests__/**"
+  ]
+}

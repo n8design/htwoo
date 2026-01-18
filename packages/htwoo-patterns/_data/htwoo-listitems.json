@@ -1,3 +1,23 @@
 {
-    "title": "hTWOo UI Framework"
+    "meta-list-items": [
+        {
+            "meta-label": "hTWOo"
+        }
+        ,
+        {
+            "meta-label": "Fluent"
+        },
+        {
+            "meta-label": "Design"
+        },
+        {
+            "meta-label": "at"
+        },
+        {
+            "meta-label": "its"
+        },
+        {
+            "meta-label": "best"
+        }
+    ]
 }

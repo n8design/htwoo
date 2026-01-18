@@ -1,0 +1,57 @@
+{
+  "select-options-grouped": {
+    "ddToggleClass": "hoo-show",
+    "options": [
+      {
+        "groupname": "Fruits",
+        "options": [
+          {
+            "key": "apple",
+            "value": "Apple",
+            "disabled": ""
+          },
+          {
+            "key": "banana",
+            "value": "Banana",
+            "disabled": ""
+          },
+          {
+            "key": "orange",
+            "value": "Orange",
+            "disabled": ""
+          }
+        ]
+      },
+      {
+        "groupname": "Vegetables",
+        "options": [
+          {
+            "key": "carrot",
+            "value": "Carrot",
+            "disabled": ""
+          },
+          {
+            "key": "broccoli",
+            "value": "Broccoli",
+            "disabled": "hoo-disabled"
+          },
+          {
+            "key": "spinach",
+            "value": "Spinach",
+            "disabled": ""
+          }
+        ]
+      },
+      {
+        "groupname": "Other",
+        "options": [
+          {
+            "key": "other",
+            "value": "Other Items",
+            "disabled": ""
+          }
+        ]
+      }
+    ]
+  }
+}

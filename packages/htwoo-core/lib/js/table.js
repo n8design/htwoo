@@ -43,7 +43,7 @@ const collapseAndExpand = (event) => {
 
     if (section === "all") {
 
-        let subSection = document.querySelectorAll("tbody tr.collapsable");
+        let subSection = document.querySelectorAll("tbody tr.collapsible");
 
         if (parentRow.getAttribute('aria-expanded') === "true") {
 
@@ -75,10 +75,10 @@ const collapseAndExpand = (event) => {
 
 const initCollapsability = () => {
 
-    const collapseTable = document.querySelectorAll('.hoo-table.is-collapsable');
+    const collapseTable = document.querySelectorAll('.hoo-table.is-collapsible');
     collapseTable.forEach(table => {
 
-        const collapseRow = table.querySelectorAll('.collapsable');
+        const collapseRow = table.querySelectorAll('.collapsible');
 
         collapseRow.forEach(tableRow => {
             tableRow.addEventListener('click', collapseAndExpand);

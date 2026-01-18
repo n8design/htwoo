@@ -1,0 +1,12 @@
+{
+  "prestart": "npm run copy:plugin",
+  "start": "npm-run-all --parallel ice:watch pl:serve",
+  "copy:plugin": "node -e \"require('fs-extra').copySync('helpers/node/plugin-design', 'public/plugins/plugin-design')\"",
+  "pl:serve": "patternlab serve --config ./patternlab-config.json",
+  "pl:build": "patternlab build --config ./patternlab-config.json",
+  "pl:help": "patternlab --help",
+  "pl:version": "patternlab --version",
+  "ice:build": "ice-build build --config ./ice.config.js",
+  "ice:watch": "ice-build watch --config ./ice.config.js",
+  "build": "npm-run-all copy:plugin ice:build pl:build"
+}

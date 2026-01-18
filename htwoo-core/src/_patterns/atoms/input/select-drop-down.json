@@ -1,0 +1,31 @@
+{
+    "select-options": {
+        "options": [
+            {
+                "key": "apple",
+                "value": "Apple",
+                "disabled": ""
+            },
+            {
+                "key": "banana",
+                "value": "Banana",
+                "disabled": ""
+            },
+            {
+                "key": "cherry",
+                "value": "Cherry",
+                "disabled": ""
+            },
+            {
+                "key": "orange",
+                "value": "Orange",
+                "disabled": ""
+            },
+            {
+                "key": "grape",
+                "value": "Grape",
+                "disabled": ""
+            }
+        ]
+    }
+}

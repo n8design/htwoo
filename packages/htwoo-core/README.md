@@ -1,38 +1,72 @@
-# hTWOo UI framework
+# hTWOo UI Framework - Core
 
-hTWOo (H₂0) UI is an open source, community driven alternative UI Framework for Microsoft's Fluent UI Design experiences. It is built based on state-of-the-art web technologies.
+![HTMLx](https://img.shields.io/badge/100%25-HTML-orange) ![HTMLx](https://img.shields.io/badge/100%25-CSS-blue) ![Code Style](https://img.shields.io/badge/code%20style-atomic-ff69b4) ![license](https://img.shields.io/github/license/n8design/liquid)
 
-Main focus of this project is to be used in SharePoint Framework, Microsoft Teams customisations or any other of your used cases. 
+hTWOo UI Core is built on the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) to provide a flexible build system of new components.
 
-[![Fluent](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
-
-![Be like water][logo]
+* Nothing but HTML/CSS
+* Built using [Pattern Labs - Atomic Design](https://patternlab.io)
 
 ## Installation
 
+No NPM package bas been published yet.
+
+## Development installation
+
+Global dependencies for running stylguide and gulp task site by side the following global dependency is recommended.
+
 ```sh
-npm install --save-dev @n8d/htwoo-core
+npm install -g npm-run-all
 ```
 
-## Usage
+Start style guide development:
 
-* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html.html)
-* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react.html) 
-* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements.html)
+```sh
+run-p pl:serve gulp:serve
+```
+
+**pl:serve** start pattern lab web server
+**gulp:serve** watches for SASS style changes and updates the style guide.
+
+More to come soon
 
 ## Documentation
 
-* [General Documentation](https://lab.n8d.studio/htwoo/)
-* [Pattern Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/)
+For detailed documentation about version management and releases, see:
+- [Version Synchronization Guide](../docs/VERSION-SYNC.md) - How to manage versions and releases
+- [Changelog Management](../docs/CHANGELOG-MANAGEMENT.md) - How changelogs are generated
+- [Development Guidelines](../docs/guidelines/) - Development and contribution guidelines
 
-## other Resource
+## Version Management
 
-* [hTWOo React](https://www.npmjs.com/package/@n8d/htwoo-react) - ReactJS implementation of hTWOo components - [Documentation](https://lab.n8d.studio/htwoo/htwoo-react/?path=/story/introduction-getting-started--page)
-* [hTWOo Icons](https://www.npmjs.com/package/@n8d/htwoo-icons) - A set of all Fluent Design Icons
+This project uses an automated version synchronization system that ensures both the styleguide (`@n8d/htwoo-core-styleguide`) and the core package (`@n8d/htwoo-core`) maintain the same version number.
 
-> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
+### Quick Commands
 
+```bash
+# Check if versions are synchronized
+npm run version:check
 
-**Contributor:** You ❤️
+# Bump patch version (e.g., 2.7.0 → 2.7.1)
+npm run version:bump
 
-[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adopt fast"
+# Bump minor version (e.g., 2.7.0 → 2.8.0)
+npm run version:bump:minor
+
+# Bump major version (e.g., 2.7.0 → 3.0.0)
+npm run version:bump:major
+
+# Set specific version
+npm run version:set -- 2.8.0
+
+# List existing releases
+npm run version:list-tags
+```
+
+All version operations automatically:
+- Update both package.json files
+- Create git commits
+- Create git tags in `htwoo-core-v*` format
+- Ensure version synchronization
+
+For complete documentation, see the [Version Synchronization Guide](../docs/VERSION-SYNC.md).

@@ -1,0 +1,17 @@
+{
+    "showcase-type": "readonly",
+    "input-states": {
+        "button": { "disabled": true },
+        "checkbox": { "disabled": true, "checked": true },
+        "radiobutton": { "disabled": true, "checked": true },
+        "date": { "readonly": true },
+        "number": { "readonly": true, "value": "42" },
+        "text": { "readonly": true, "value": "example" },
+        "email": { "readonly": true, "value": "user@example.com" },
+        "phone": { "readonly": true, "value": "555-1234" },
+        "url": { "readonly": true, "value": "https://mysite.com" },
+        "toggle": { "disabled": true, "checked": true },
+        "select": { "disabled": true, "selectedOption": "apple" }
+    },
+    "_comment": "This is already well optimized, using the inputShowcase helper effectively"
+}

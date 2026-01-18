@@ -1,0 +1,102 @@
+{
+    "legend": {
+        "text": "Personal Information",
+        "aria-tags": "",
+        "html-props": "",
+        "modified": ""
+    },
+    "fieldset": {
+        "legend": {
+            "text": "Personal Information",
+            "aria-tags": "",
+            "html-props": "",
+            "modified": ""
+        },
+        "fields": [
+            {
+                "type": "molecules-field",
+                "field": {
+                    "input": {
+                        "label": {
+                            "label": "First Name",
+                            "stateStyle": null,
+                            "aria-tags": "",
+                            "for": "firstname"
+                        },
+                        "text": {
+                            "inputPrefix": "https://",
+                            "inputSuffix": ".com",
+                            "placeholder": "A placeholder text",
+                            "aria-tags": "",
+                            "descRef": "firstname-desc",
+                            "errorRef": "firstname-error"
+                        },
+                        "description": {
+                            "descRef": "firstname-desc",
+                            "text": "Please enter your first name with only alphabetic characters"
+                        },
+                        "error": {
+                            "errorRef": "firstname-error",
+                            "text": "This is an error message"
+                        }
+                    }
+                }
+            },{
+                "type": "molecules-field",
+                "field": {
+                    
+                    "input": {
+                        "label": {
+                            "label": "Last Name",
+                            "stateStyle": null,
+                            "aria-tags": "",
+                            "for": "lastname"
+                        },
+                        "text": {
+                            "inputPrefix": "https://",
+                            "inputSuffix": ".com",
+                            "placeholder": "A placeholder text",
+                            "aria-tags": "",
+                            "descRef": "lastname-desc",
+                            "errorRef": "lastname-error"
+                        },
+                        "description": {
+                            "descRef": "lastname-desc",
+                            "text": "Please enter your last name with only alphabetic characters"
+                        },
+                        "error": {
+                            "errorRef": "lastname-error",
+                            "text": "This is an error message"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "field": {
+        "input": {
+            "label": {
+                "label": "First Name",
+                "stateStyle": null,
+                "aria-tags": "",
+                "for": "firstname"
+            },
+            "text": {
+                "inputPrefix": "https://",
+                "inputSuffix": ".com",
+                "placeholder": "A placeholder text",
+                "aria-tags": "",
+                "descRef": "firstname-desc",
+                "errorRef": "firstname-error"
+            },
+            "description": {
+                "descRef": "firstname-desc",
+                "text": "Please enter your first name with only alphabetic characters"
+            },
+            "error": {
+                "errorRef": "firstname-error",
+                "text": "This is an error message"
+            }
+        }
+    }
+}

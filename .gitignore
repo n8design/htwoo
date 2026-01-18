@@ -109,6 +109,7 @@ typings/
 # App Specific
 .DS_Store
 .tmp
+.claude
 
 ./htwoo-core/public
 ./htwoo-core/dependencyGraph.json
@@ -118,3 +119,20 @@ packages/htwoo-core/lib/sass/pattern-scaffolding.scss
 packages/htwoo-core/lib/js/themeswitch/
 __report__/a11y_report.md
 ./htwoo-react/lib
+.documentation
+reference
+.nx/cache
+.nx/workspace-data
+
+# Storybook generated files
+**/project.json
+docs/**/project.json
+
+# Generated documentation files
+docs/htwoo-core/
+
+# Temporary build files
+temp-*.html
+*-graph.html
+# Build output
+static/

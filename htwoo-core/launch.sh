@@ -8,4 +8,4 @@ export NVM_DIR="$HOME/.nvm"
 nvm use
 cp ./src/plugins/* ./public/plugins
 cp ./src/styleguide/images/* ./public/styleguide/images/
-run-p gulp:serve pl:serve
+run-p ice:build pl:serve

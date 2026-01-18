@@ -1,6 +1,9 @@
 {{#input.text}}
 <div class="hoo-input-group">
-    <input class="hoo-input-text" type="text" placeholder="{{ placeholder }}" data-suffix="{{inputSuffix}}">
-    <div class="hoo-input-suffix">{{inputSuffix}}</div>
+    <input class="hoo-input-text" {{#type}}type="{{this}}" {{/type}} {{#if (getLastId)}}id="{{ getLastId }}" {{/if}}
+        placeholder="{{ placeholder }}" data-suffix="{{inputSuffix}}" {{#ifCond descRef '||' errorRef}}
+        aria-describedby="{{#if descRef}}{{descRef}}-{{getLastId}}{{/if}} {{#if errorRef}}{{errorRef}}-{{ getLastId }}{{/if}}"
+        {{/ifCond}} aria-labelledby="suffix-label-{{getLastId}}" {{{ html-props }}}>
+    <div id="suffix-label-{{getLastId}}" class="hoo-input-suffix">{{inputSuffix}}</div>
 </div>
 {{/input.text}}

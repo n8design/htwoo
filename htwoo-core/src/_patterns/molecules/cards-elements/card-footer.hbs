@@ -1,9 +1,21 @@
-{{#card.footer}}
+{{#if card.footer}}
 <footer class="hoo-cardfooter">
-    {{>atoms-avatar avatar }}
+    <div class="hoo-avatar">
+        <img src="{{card.footer.mugshot}}" alt="" class="hoo-avatar-img" loading="lazy">
+    </div>
     <div class="hoo-cardfooter-data">
-        <div class="hoo-cardfooter-name">{{ name }}</div>
-        <div class="hoo-cardfooter-modified">{{ modified }}</div>
+        <div class="hoo-cardfooter-name">{{ card.footer.name }}</div>
+        <div class="hoo-cardfooter-modified">{{ card.footer.modified }}</div>
     </div>
 </footer>
-{{/card.footer}}
+{{else if footer}}
+<footer class="hoo-cardfooter">
+    <div class="hoo-avatar">
+        <img src="{{footer.mugshot}}" alt="" class="hoo-avatar-img" loading="lazy">
+    </div>
+    <div class="hoo-cardfooter-data">
+        <div class="hoo-cardfooter-name">{{ footer.name }}</div>
+        <div class="hoo-cardfooter-modified">{{ footer.modified }}</div>
+    </div>
+</footer>
+{{/if}}

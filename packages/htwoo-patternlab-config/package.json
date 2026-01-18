@@ -1,0 +1,61 @@
+{
+  "name": "@n8d/htwoo-patternlab-config",
+  "version": "0.0.4",
+  "description": "Pattern Lab configuration package with Ice Build, Ice Hotreloader, and custom plugin system",
+  "main": "index.js",
+  "bin": {
+    "htwoo-patternlab-init": "./bin/init.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "plugin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "patternlab",
+    "pattern-lab",
+    "ice-build",
+    "htwoo",
+    "design-system",
+    "styleguide",
+    "configuration"
+  ],
+  "author": "Stefan Bauer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8design/htwoo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n8design/htwoo/issues"
+  },
+  "homepage": "https://lab.n8d.studio/htwoo/",
+  "peerDependencies": {
+    "@pattern-lab/cli": "^6.1.0",
+    "@pattern-lab/core": "^6.1.0",
+    "@pattern-lab/engine-handlebars": "^6.1.0",
+    "@pattern-lab/uikit-workshop": "^6.1.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.0.0",
+    "glob": "^10.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {},
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/StfBauer"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/n8design"
+    }
+  ]
+}

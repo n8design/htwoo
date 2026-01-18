@@ -1,0 +1,29 @@
+{
+    "dropdown-items": [
+        {
+            "label": "Email message",
+            "icon": "icon-ninjacat"
+        },
+        {
+            "label": "Callendar Event",
+            "icon": "icon-plus"
+        }
+    ],
+    "split-button-base": {
+        "ddItems": [
+            {
+                "label": "Email message",
+                "icon": "icon-ninjacat"
+            },
+            {
+                "label": "Callendar Event",
+                "icon": "icon-plus"
+            }
+        ]
+    },
+    "cmdbar-base-button": {
+        "iconAction": "icon-plus",
+        "iconDown": "icon-arrow-down",
+        "label": "New Item"
+    }
+}

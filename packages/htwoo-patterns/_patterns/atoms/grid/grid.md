@@ -10,21 +10,9 @@ order: 5
 
 Through a mixing you can turn any container into a grid system.
 
-```css
-.demo-item{
-	@include gridSpan(4);
-}
-```
-
 ### Placing elements on the grid
 
 The placement of elements can be accomplished with the following SASS mixin.
-
-```scss
-.demo-item2{
-	@include gridSpan(6, 7, 2);
-}
-```
 
 The SASS mixing has the following input:
 

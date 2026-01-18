@@ -1,5 +1,11 @@
 {
     "button": {
         "iconname": "icon-arrow-down"
+    },
+    "dropdown": {
+        "select-options": {
+            "ddToggleClass": "hidden-all",
+            "useGroupedOptions": true
+        }
     }
 }

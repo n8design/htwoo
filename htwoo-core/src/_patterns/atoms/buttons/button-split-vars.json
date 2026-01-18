@@ -1,64 +1,8 @@
 {
-    "items": [
-        {
-            "classname": "hoo-buttonsplit",
-            "label": "Standard",
-            "disabled": null,
-            "ddItems": [
-                {
-                    "label": "Email message",
-                    "icon": "icon-ninjacat"
-                },
-                {
-                    "label": "Callendar Event",
-                    "icon": "icon-plus"
-                }
-            ]
-        },
-        {
-            "classname": "hoo-buttonsplit-primary",
-            "label": "Primary",
-            "disabled": null,
-            "ddItems": [
-                {
-                    "label": "Email message",
-                    "icon": "icon-ninjacat"
-                },
-                {
-                    "label": "Callendar Event",
-                    "icon": "icon-plus"
-                }
-            ]
-        },
-        {
-            "classname": "hoo-buttonsplit",
-            "label": "Standard",
-            "disabled": true,
-            "ddItems": [
-                {
-                    "label": "Email message",
-                    "icon": "icon-ninjacat"
-                },
-                {
-                    "label": "Callendar Event",
-                    "icon": "icon-plus"
-                }
-            ]
-        },
-        {
-            "classname": "hoo-buttonsplit-primary",
-            "label": "Primary",
-            "disabled": true,
-            "ddItems": [
-                {
-                    "label": "Email message",
-                    "icon": "icon-ninjacat"
-                },
-                {
-                    "label": "Callendar Event",
-                    "icon": "icon-plus"
-                }
-            ]
-        }
+    "button-variants": [
+        { "class": "hoo-buttonsplit", "label": "Standard", "disabled": null },
+        { "class": "hoo-buttonsplit-primary", "label": "Primary", "disabled": null },
+        { "class": "hoo-buttonsplit", "label": "Standard", "disabled": true },
+        { "class": "hoo-buttonsplit-primary", "label": "Primary", "disabled": true }
     ]
 }

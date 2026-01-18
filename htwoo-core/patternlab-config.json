@@ -62,15 +62,15 @@
       "css": "./src/css"
     },
     "public": {
-      "root": "public/",
-      "patterns": "public/patterns/",
-      "data": "public/styleguide/data/",
-      "annotations": "public/annotations/",
-      "styleguide": "public/styleguide/",
-      "js": "public/js",
-      "images": "public/images",
-      "fonts": "public/fonts",
-      "css": "public/css/"
+      "root": "./public/",
+      "patterns": "./public/patterns/",
+      "data": "./public/styleguide/data/",
+      "annotations": "./public/annotations/",
+      "styleguide": "./public/styleguide/",
+      "js": "./public/js",
+      "images": "./public/images",
+      "fonts": "./public/fonts",
+      "css": "./public/css"
     }
   },
   "patternExtension": "hbs",
@@ -87,7 +87,13 @@
   "patternMergeVariantArrays": true,
   "renderFlatPatternsOnViewAllPages": false,
   "serverOptions": {
-    "wait": 1000
+    "wait": 1000,
+    "mount": [
+      [
+        "/ice-hotreloader",
+        "../node_modules/@n8d/ice-hotreloader/"
+      ]
+    ]
   },
   "starterkitSubDir": "dist",
   "styleGuideExcludes": [],

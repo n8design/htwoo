@@ -1,5 +1,21 @@
+/**
+ * Avatar Component Styles
+ * 
+ * Provides styling for user avatars in various sizes.
+ * Default size is 64px with round borders.
+ * Uses SCSS placeholder %hoo-avatar for consistent base styling.
+ * 
+ * Usage:
+ * <div class="hoo-avatar-64">
+ *   <img class="hoo-avatar-img" src="avatar.jpg" alt="User Name" />
+ * </div>
+ * 
+ * Available sizes: 8px, 16px, 24px, 32px, 40px, 48px, 64px, 72px, 96px
+ */
+
 @use "../../00-base/mixin/core.mixin";
 
+// Base avatar placeholder - provides common styling for all avatar sizes
 %hoo-avatar{
 	display: inline-block;
 
@@ -7,6 +23,7 @@
 	height: core.px2rem(64px);
 }
 
+// Avatar image styling - handles the actual image display
 .hoo-avatar-img{
 	width: 100%;
 	height: auto;
@@ -20,12 +37,15 @@
 	}
 }
 
+// Base avatar class - inherits dimensions from parent
 .hoo-avatar{
 	@extend %hoo-avatar;
 
 	width: inherit;
 	height: inherit;
 }
+
+// Avatar size variants
 .hoo-avatar-96{
 	@extend %hoo-avatar;
 
@@ -43,6 +63,7 @@
 
 .hoo-avatar-64{
 	@extend %hoo-avatar;
+	// Default 64px size - uses the base placeholder dimensions
 }
 .hoo-avatar-48{
 	@extend %hoo-avatar;

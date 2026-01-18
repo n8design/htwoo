@@ -1,0 +1,25 @@
+<div class="teams-dashboard-page">
+    <header class="teams-dashboard-header">
+        <div class="dashboard-branding">
+            <h1 class="dashboard-title">{{teamName}} Dashboard</h1>
+            <div class="dashboard-context">
+                <span class="team-name">{{teamName}}</span>
+                <span class="last-updated">Last updated: {{lastUpdated}}</span>
+            </div>
+        </div>
+        <div class="dashboard-actions">
+            <button class="hoo-button" id="refresh-dashboard">
+                <span class="hoo-button-label">Refresh</span>
+            </button>
+            <button class="hoo-button-icon" id="dashboard-settings" aria-label="Dashboard settings">
+                <svg class="hoo-icon-svg">
+                    <use xlink:href="#icon-settings"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+    
+    <main role="main" class="teams-dashboard-main">
+        {{> templates-teams-dashboard }}
+    </main>
+</div>

@@ -1,0 +1,22 @@
+# Include manifest.json in npm package
+# (It's excluded from git via .gitignore, but should be published to npm)
+!manifest.json
+
+# Exclude development files
+.gitignore
+.git/
+node_modules/
+
+# Exclude pattern reports (generated during development)
+pattern-report.md
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

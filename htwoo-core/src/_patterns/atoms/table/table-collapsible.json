@@ -1,7 +1,9 @@
 {
     "closer":{
         "button": {
-            "iconname": "icon-arrow-down"
+            "iconname": "icon-arrow-down",
+            "arialabel": "Toggle section visibility",
+            "role": "button"
         }
     }
 }

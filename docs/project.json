@@ -1,0 +1,80 @@
+{
+  "name": "docs",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "docs",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["htwoo-core-styleguide:docs", "htwoo-react:docs"],
+      "options": {
+        "commands": [
+          "echo 'Building all documentation...'",
+          "echo 'All documentation built successfully!'"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/docs/htwoo-core",
+        "{workspaceRoot}/docs/htwoo-react"
+      ]
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "echo 'Starting documentation servers...'",
+          "echo 'hTWOo Core docs will be available at http://localhost:3000'",
+          "echo 'hTWOo React docs will be available at http://localhost:6006'",
+          "nx run htwoo-core-styleguide:docs:serve & nx run htwoo-react:docs:serve"
+        ],
+        "parallel": false
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "rm -rf htwoo-core",
+          "rm -rf htwoo-react",
+          "echo 'Documentation directories cleaned'"
+        ],
+        "cwd": "docs"
+      }
+    },
+    "validate": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "commands": [
+          "test -d docs/htwoo-core && echo '✓ hTWOo Core docs exist' || echo '✗ hTWOo Core docs missing'",
+          "test -d docs/htwoo-react && echo '✓ hTWOo React docs exist' || echo '✗ hTWOo React docs missing'",
+          "find docs/htwoo-core -name '*.html' | wc -l | xargs echo 'hTWOo Core HTML files:'",
+          "find docs/htwoo-react -name '*.html' | wc -l | xargs echo 'hTWOo React HTML files:'"
+        ],
+        "parallel": false
+      }
+    },
+    "hugo:build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "commands": [
+          "hugo --minify --baseURL 'https://lab.n8d.studio/htwoo/'"
+        ],
+        "cwd": "."
+      },
+      "outputs": [
+        "{workspaceRoot}/public"
+      ]
+    },
+    "hugo:serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "hugo serve",
+        "cwd": "."
+      }
+    }
+  },
+  "tags": ["scope:docs", "type:application"]
+}
