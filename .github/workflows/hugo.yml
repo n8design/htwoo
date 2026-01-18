@@ -53,6 +53,16 @@ jobs:
           node-version: '20'
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Checkout main branch for builds
+        run: |
+          git fetch origin main
+          git checkout origin/main -- htwoo-core htwoo-react package.json package-lock.json
+      - name: Install main branch dependencies
+        run: npm ci
+      - name: Build hTWOo Core Pattern Lab
+        run: npm run pl:build -w htwoo-core
+      - name: Build hTWOo React Storybook
+        run: npm run build-storybook -w htwoo-react
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -62,9 +72,9 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: git checkout main -- docs/htwoo-core/* && mv -f docs/htwoo-core public/htwoo-core/
+        run: mv -f htwoo-core/public public/htwoo-core/
       - name: Copy hTWOo React style guide
-        run: git checkout main -- docs/htwoo-react/* && mv -f docs/htwoo-react public/htwoo-react/
+        run: mv -f docs/htwoo-react public/htwoo-react/
       - name: Verify artifact size and content
         run: |
           find ./public -type l -exec rm -f {} \;  # Remove symlinks
