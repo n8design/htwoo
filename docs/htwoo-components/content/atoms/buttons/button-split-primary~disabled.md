@@ -1,6 +1,6 @@
 ---
 title: "Primary Split Button - disabled"
-description: "**Main Component**\ @n8d/htwoo-core/components/buttons"
+description: "**Main Component**\\ @n8d/htwoo-core/components/buttons"
 type: "components"
 layout: "single"
 patternId: "atoms-buttons-button-split-primary~disabled"

@@ -1,6 +1,6 @@
 ---
 title: "Bottombar Dialog"
-description: ""The Bottombar Dialog component provides a horizontal panel that appears from the bottom of the screen. It's useful for action bars, command panels, or notifications that need to be accessible but not ""
+description: "The Bottombar Dialog component provides a horizontal panel that appears from the bottom of the screen. It's useful for action bars, command panels, or notifications that need to be accessible but not "
 type: "components"
 layout: "single"
 patternId: "organism-dialogs-dialog-bottombar"

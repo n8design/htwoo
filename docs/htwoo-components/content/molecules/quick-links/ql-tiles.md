@@ -1,6 +1,6 @@
 ---
 title: "Quick Link Tiles"
-description: ""Quick link tiles provide a visually prominent way to display navigation options using square or rectangular cards. They're ideal for application launchers, featured content, and dashboard interfaces w""
+description: "Quick link tiles provide a visually prominent way to display navigation options using square or rectangular cards. They're ideal for application launchers, featured content, and dashboard interfaces w"
 type: "components"
 layout: "single"
 patternId: "molecules-quick-links-ql-tiles"

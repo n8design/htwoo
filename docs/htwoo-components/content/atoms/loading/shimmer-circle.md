@@ -1,6 +1,6 @@
 ---
 title: "Shimmer Circle"
-description: ""A circular shimmer placeholder for avatar, icon, or circular image content that's still loading.""
+description: "A circular shimmer placeholder for avatar, icon, or circular image content that's still loading."
 type: "components"
 layout: "single"
 patternId: "atoms-loading-shimmer-circle"

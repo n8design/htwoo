@@ -1,6 +1,6 @@
 ---
 title: "Standard w/ icon - Right"
-description: ""Standard button with an icon on the right side provides visual reinforcement for the button's action while maintaining the default button styling. The icon is positioned to the right of the button tex""
+description: "Standard button with an icon on the right side provides visual reinforcement for the button's action while maintaining the default button styling. The icon is positioned to the right of the button tex"
 type: "components"
 layout: "single"
 patternId: "atoms-buttons-button-standard-icon-reversed"

@@ -1,6 +1,6 @@
 ---
 title: "Avatar with Presence"
-description: ""The Avatar with Presence component combines a user avatar with a status indicator to show the user's availability. This is the default 128px size variant.""
+description: "The Avatar with Presence component combines a user avatar with a status indicator to show the user's availability. This is the default 128px size variant."
 type: "components"
 layout: "single"
 patternId: "molecules-avatar-with-presence-avatar-presence"

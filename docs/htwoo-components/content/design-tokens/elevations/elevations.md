@@ -1,6 +1,6 @@
 ---
 title: "Elevations"
-description: ""Classes can be used directly:""
+description: "Classes can be used directly:"
 type: "components"
 layout: "single"
 patternId: "design-tokens-elevations-elevations"

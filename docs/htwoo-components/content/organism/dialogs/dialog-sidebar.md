@@ -1,6 +1,6 @@
 ---
 title: "Sidebar Dialog"
-description: ""The Sidebar Dialog component provides a panel that slides in from either the left or right side of the screen. It's ideal for displaying supplementary content, forms, or navigation options without nav""
+description: "The Sidebar Dialog component provides a panel that slides in from either the left or right side of the screen. It's ideal for displaying supplementary content, forms, or navigation options without nav"
 type: "components"
 layout: "single"
 patternId: "organism-dialogs-dialog-sidebar"

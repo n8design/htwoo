@@ -1,6 +1,6 @@
 ---
 title: "Presence"
-description: ""This prescence bubble is used to indicate a persons availability status expecially on avatars. The following status are defined:""
+description: "This prescence bubble is used to indicate a persons availability status expecially on avatars. The following status are defined:"
 type: "components"
 layout: "single"
 patternId: "atoms-avatar-presence"

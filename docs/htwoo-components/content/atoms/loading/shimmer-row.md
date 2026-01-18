@@ -1,6 +1,6 @@
 ---
 title: "Shimmer Row"
-description: ""A horizontal shimmer placeholder for text content that's still loading.""
+description: "A horizontal shimmer placeholder for text content that's still loading."
 type: "components"
 layout: "single"
 patternId: "atoms-loading-shimmer-row"

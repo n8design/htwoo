@@ -1,6 +1,6 @@
 ---
 title: "Facepile"
-description: ""The facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or ""
+description: "The facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or "
 type: "components"
 layout: "single"
 patternId: "organism-facepiles-facepile"

@@ -1,6 +1,6 @@
 ---
 title: "IFrame Dialog"
-description: ""The IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating awa""
+description: "The IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating awa"
 type: "components"
 layout: "single"
 patternId: "organism-dialogs-dialog-iframe"

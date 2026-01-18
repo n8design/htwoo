@@ -1,6 +1,6 @@
 ---
 title: "Standard w/ icon - Left"
-description: ""Standard button with an icon on the left side provides visual reinforcement for the button's action while maintaining the default button styling. The icon is positioned to the left of the button text ""
+description: "Standard button with an icon on the left side provides visual reinforcement for the button's action while maintaining the default button styling. The icon is positioned to the left of the button text "
 type: "components"
 layout: "single"
 patternId: "atoms-buttons-button-standard-icon"

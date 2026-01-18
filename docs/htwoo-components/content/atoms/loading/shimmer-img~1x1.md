@@ -1,6 +1,6 @@
 ---
 title: "Shimmer Image 1:1"
-description: ""A square (1:1 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.""
+description: "A square (1:1 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect."
 type: "components"
 layout: "single"
 patternId: "atoms-loading-shimmer-img~1x1"

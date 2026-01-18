@@ -1,6 +1,6 @@
 ---
 title: "Font sizes"
-description: "**Main Component**\ @n8d/htwoo-core/components/base"
+description: "**Main Component**\\ @n8d/htwoo-core/components/base"
 type: "components"
 layout: "single"
 patternId: "atoms-typography-font-sizes"

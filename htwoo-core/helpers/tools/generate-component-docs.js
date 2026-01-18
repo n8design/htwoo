@@ -108,14 +108,14 @@ function parseFrontmatter(content) {
   return { frontmatter, content: markdownContent };
 }
 
-// Escape special characters for YAML
+// Escape special characters for YAML string values (assumes will be wrapped in double quotes)
 function escapeYaml(text) {
   if (!text) return '';
-  // If contains special chars, wrap in quotes
-  if (text.includes(':') || text.includes('#') || text.includes('"') || text.includes("'") || text.includes('\n')) {
-    return `"${text.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`;
-  }
-  return text;
+  // Escape backslashes first, then double quotes, then newlines
+  return text
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, '\\n');
 }
 
 // Escape HTML for code blocks

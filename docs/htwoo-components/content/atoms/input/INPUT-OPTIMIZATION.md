@@ -1,6 +1,6 @@
 ---
 title: "INPUT-OPTIMIZATION"
-description: ""This document describes the approach used to optimize the input components' data structure in the HTWOO-Core project.""
+description: "This document describes the approach used to optimize the input components' data structure in the HTWOO-Core project."
 type: "components"
 layout: "single"
 patternId: "atoms-input-INPUT-OPTIMIZATION"

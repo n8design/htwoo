@@ -1,6 +1,6 @@
 ---
 title: "Secondary"
-description: ""Note: The standard button (`.hoo-button`) serves as the secondary button in this design system. For a more prominent button, use the primary button (`.hoo-button-primary`).""
+description: "Note: The standard button (`.hoo-button`) serves as the secondary button in this design system. For a more prominent button, use the primary button (`.hoo-button-primary`)."
 type: "components"
 layout: "single"
 patternId: "atoms-buttons-button-secondary"

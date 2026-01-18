@@ -1,6 +1,6 @@
 ---
 title: "Add and slide"
-description: "**Main Component**\ @n8d/htwoo-core/components/base"
+description: "**Main Component**\\ @n8d/htwoo-core/components/base"
 type: "components"
 layout: "single"
 patternId: "design-tokens-motion-add-n-slide"

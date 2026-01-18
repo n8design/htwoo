@@ -1,6 +1,6 @@
 ---
 title: "Presence all"
-description: ""Show the presence information in the following order:""
+description: "Show the presence information in the following order:"
 type: "components"
 layout: "single"
 patternId: "atoms-avatar-presence-all"

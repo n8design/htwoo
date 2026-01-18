@@ -1,6 +1,6 @@
 ---
 title: "Compound Standard"
-description: ""Compound buttons include both a label and a description, allowing for more detailed context on the button's action. The standard compound button uses the default button styling with additional structu""
+description: "Compound buttons include both a label and a description, allowing for more detailed context on the button's action. The standard compound button uses the default button styling with additional structu"
 type: "components"
 layout: "single"
 patternId: "atoms-buttons-button-compound-standard"

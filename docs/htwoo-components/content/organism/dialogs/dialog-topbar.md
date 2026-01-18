@@ -1,6 +1,6 @@
 ---
 title: "Topbar Dialog"
-description: ""The Topbar Dialog component provides a horizontal panel that appears from the top of the screen. It's ideal for notifications, alerts, or global actions that need to be prominently displayed across th""
+description: "The Topbar Dialog component provides a horizontal panel that appears from the top of the screen. It's ideal for notifications, alerts, or global actions that need to be prominently displayed across th"
 type: "components"
 layout: "single"
 patternId: "organism-dialogs-dialog-topbar"

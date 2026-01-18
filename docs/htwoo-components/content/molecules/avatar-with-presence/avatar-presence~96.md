@@ -1,6 +1,6 @@
 ---
 title: "Avatar /w presence - 96px"
-description: ""The 96px Avatar with Presence is a jumbo size variant that provides maximum visibility and detail, designed for prominent interface elements where the user's identity and status should be emphasized.""
+description: "The 96px Avatar with Presence is a jumbo size variant that provides maximum visibility and detail, designed for prominent interface elements where the user's identity and status should be emphasized."
 type: "components"
 layout: "single"
 patternId: "molecules-avatar-with-presence-avatar-presence~96"

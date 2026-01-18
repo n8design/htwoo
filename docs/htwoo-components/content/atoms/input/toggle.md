@@ -1,6 +1,6 @@
 ---
 title: "Toggle Switch"
-description: ""A toggle switch is a visual control that allows users to switch between two states: on and off.""
+description: "A toggle switch is a visual control that allows users to switch between two states: on and off."
 type: "components"
 layout: "single"
 patternId: "atoms-input-toggle"

@@ -1,6 +1,6 @@
 ---
 title: "Persona Overflow"
-description: ""The persona overflow component provides a compact way to indicate additional users when there isn't enough space to display all personas in a list or grid. It shows a count of remaining users in a cir""
+description: "The persona overflow component provides a compact way to indicate additional users when there isn't enough space to display all personas in a list or grid. It shows a count of remaining users in a cir"
 type: "components"
 layout: "single"
 patternId: "molecules-persona-persona-overflow"

@@ -1,6 +1,6 @@
 ---
 title: "Modal Dialog"
-description: ""The Modal Dialog component provides a focused overlay interface that interrupts the user's workflow to capture attention or gather input. Modal dialogs display content on top of the main application w""
+description: "The Modal Dialog component provides a focused overlay interface that interrupts the user's workflow to capture attention or gather input. Modal dialogs display content on top of the main application w"
 type: "components"
 layout: "single"
 patternId: "organism-dialogs-modal-dialog"
