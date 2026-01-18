@@ -1,0 +1,60 @@
+{{ define "main" }}
+<!-- Component page styles -->
+{{ partial "component-styles.html" . }}
+<!-- component single template -->
+<article id="content" class="t-component">
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="{{ .Site.BaseURL }}components/">Components</a></li>
+      {{ if .Params.category }}
+      <li><a href="{{ .Site.BaseURL }}components/{{ .Params.category }}/">{{ .Params.category | title }}</a></li>
+      {{ end }}
+      {{ if .Params.subcategory }}
+      <li><a href="{{ .Site.BaseURL }}components/{{ .Params.category }}/{{ .Params.subcategory }}/">{{ .Params.subcategory | title }}</a></li>
+      {{ end }}
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </nav>
+
+  <!-- Component Header -->
+  <header class="component-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.patternId }}
+    <a href="{{ .Site.BaseURL }}htwoo-core/?p={{ .Params.patternId }}" class="btn-patternlab">View in Pattern Lab</a>
+    {{ end }}
+  </header>
+
+  <!-- Component Preview -->
+  <section class="component-preview">
+    <div class="preview-container">
+      {{ if .Params.patternId }}
+      <htwoo-component-preview pattern="{{ .Params.patternId }}"></htwoo-component-preview>
+      {{ end }}
+    </div>
+
+    {{ if .Params.markup }}
+    <div class="markup-section">
+      <div class="markup-header">
+        <h3>HTML Markup</h3>
+        <button class="copy-btn" data-clipboard-target="#markup-code">Copy</button>
+      </div>
+      <pre><code id="markup-code" class="language-html">{{ .Params.markup | safeHTML }}</code></pre>
+    </div>
+    {{ end }}
+  </section>
+
+  <!-- Component Documentation -->
+  <section class="component-docs">
+    {{ .Content }}
+  </section>
+</article>
+
+<!-- Load component preview web component -->
+<script src="{{ .Site.BaseURL }}htwoo-components/js/htwoo-component-preview.js"></script>
+<!-- Prism.js for code highlighting -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}htwoo-core/js/prismjs/prism.css">
+<script src="{{ .Site.BaseURL }}htwoo-core/js/prismjs/prism.js"></script>
+<script src="{{ .Site.BaseURL }}htwoo-components/js/components.js"></script>
+<!-- component single template -->
+{{ end }}

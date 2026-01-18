@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: 
+    branches:
       - main
       - docs
   pull_request:
@@ -61,9 +61,27 @@ jobs:
       - name: Build hTWOo Core Pattern Lab for docs
         run: npm run pl:publish-docs -w htwoo-core
         working-directory: main-build
+      - name: Generate component documentation
+        run: npm run docs:components -w htwoo-core
+        working-directory: main-build
       - name: Build hTWOo React Storybook
         run: npm run build-storybook -w htwoo-react
         working-directory: main-build
+      # Integrate component docs with Hugo BEFORE build
+      - name: Copy component content to Hugo
+        run: |
+          mkdir -p content/components
+          cp -r ../main-build/docs/htwoo-components/content/* content/components/
+        working-directory: docs-site
+      - name: Copy component layouts to Hugo
+        run: |
+          cp -r ../main-build/docs/htwoo-components/layouts/* layouts/
+        working-directory: docs-site
+      - name: Copy component assets to Hugo static
+        run: |
+          mkdir -p static/htwoo-components
+          cp -r ../main-build/docs/htwoo-components/assets/* static/htwoo-components/
+        working-directory: docs-site
       - name: Install docs dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
         working-directory: docs-site
@@ -81,6 +99,9 @@ jobs:
         working-directory: docs-site
       - name: Copy hTWOo React style guide
         run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
+        working-directory: docs-site
+      - name: Copy component sitemap
+        run: cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
         working-directory: docs-site
       - name: Verify artifact size and content
         run: |

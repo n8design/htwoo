@@ -1,0 +1,67 @@
+{{ define "main" }}
+<!-- Component page styles -->
+{{ partial "component-styles.html" . }}
+<!-- component list template -->
+<article id="content" class="t-component-list">
+  <!-- Breadcrumb (only for subcategories, not for root components page) -->
+  {{ if .Params.category }}
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="{{ .Site.BaseURL }}components/">Components</a></li>
+      {{ if and .Params.category (not .Params.subcategory) }}
+      <li aria-current="page">{{ .Params.category | title }}</li>
+      {{ else if .Params.subcategory }}
+      <li><a href="{{ .Site.BaseURL }}components/{{ .Params.category }}/">{{ .Params.category | title }}</a></li>
+      <li aria-current="page">{{ .Params.subcategory | title }}</li>
+      {{ end }}
+    </ol>
+  </nav>
+  {{ end }}
+
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="intro">{{ .Description }}</p>
+    {{ end }}
+  </header>
+
+  {{ .Content }}
+
+  <!-- Search (only on main components page) -->
+  {{ if not .Params.category }}
+  <div class="search-container">
+    <input type="search" id="search-input" placeholder="Search components..." autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  {{ end }}
+
+  <!-- List sections or components -->
+  {{ if .Sections }}
+  <div class="category-grid">
+    {{ range .Sections }}
+    <a href="{{ .Permalink }}" class="category-card">
+      <h3>{{ .Title }}</h3>
+      <p>{{ len .Pages }} components</p>
+    </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <!-- List individual components -->
+  <div class="component-grid">
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="component-card">
+      <h3>{{ .Title }}</h3>
+      {{ if .Description }}
+      <p>{{ .Description | truncate 100 }}</p>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</article>
+
+{{ if not .Params.category }}
+<script src="{{ .Site.BaseURL }}htwoo-components/js/components.js"></script>
+{{ end }}
+<!-- component list template -->
+{{ end }}

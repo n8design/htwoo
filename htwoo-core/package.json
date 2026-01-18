@@ -82,7 +82,11 @@
     "htwoo-release:test": "node ./scripts/release.js test",
     "htwoo-release:build": "node ./scripts/release.js build",
     "htwoo-release:legacy": "standard-version --config ./changelog.config.js",
-    "htwoo-release:legacy:dry-run": "standard-version --config ./changelog.config.js --dry-run"
+    "htwoo-release:legacy:dry-run": "standard-version --config ./changelog.config.js --dry-run",
+    "--- /// Component Documentation /// ---": "",
+    "docs:components": "node helpers/tools/generate-component-docs.js",
+    "docs:components:serve": "npm run docs:components && npx serve ../docs -p 3030",
+    "docs:components:watch": "npx nodemon --watch src/_patterns --ext md,hbs,json --exec 'npm run docs:components'"
   },
   "keywords": [],
   "author": "Stefan Bauer (@stfbauer)",
