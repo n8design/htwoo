@@ -58,8 +58,8 @@ jobs:
       - name: Install main branch dependencies
         run: npm ci
         working-directory: main-build
-      - name: Build hTWOo Core Pattern Lab
-        run: npm run pl:build -w htwoo-core
+      - name: Build hTWOo Core Pattern Lab for docs
+        run: npm run pl:publish-docs -w htwoo-core
         working-directory: main-build
       - name: Build hTWOo React Storybook
         run: npm run build-storybook -w htwoo-react
@@ -77,7 +77,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: mv -f ../main-build/htwoo-core/public public/htwoo-core/
+        run: mv -f ../main-build/docs/htwoo-core public/htwoo-core/
         working-directory: docs-site
       - name: Copy hTWOo React style guide
         run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
