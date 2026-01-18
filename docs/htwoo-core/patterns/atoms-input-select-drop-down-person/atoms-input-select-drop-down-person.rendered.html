@@ -4,10 +4,10 @@
     <title>Atoms -  Select Drop Down Person - Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=atoms-select-drop-down-person">
     <meta name="description" content="Select Drop Down Person Atoms - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content="Atoms, SelectDropDownPerson, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
@@ -18,13 +18,32 @@
 
   </head>
   <body class="">
-  <h1>Atoms -  Select Drop Down Person</h1><!--DO NOT REMOVE-->
+  <h1>Atoms -  Select Drop Down Person</h1><ul class="hoo-select-dropdown hoo-show">
+    <li class="hoo-optgroup">
+        <div class="hoo-optgroup-name">Team Alpha</div>
+        <ul class="hoo-optgroup-items">
+            <li data-value="john_doe" class="hoo-option " aria-disabled="false">John Doe</li>
+            <li data-value="jane_smith" class="hoo-option " aria-disabled="false">Jane Smith</li>
+            <li data-value="alex_johnson" class="hoo-option " aria-disabled="false">Alex Johnson</li>
+        </ul>
+    </li>
+    <li class="hoo-optgroup">
+        <div class="hoo-optgroup-name">Team Beta</div>
+        <ul class="hoo-optgroup-items">
+            <li data-value="sarah_wilson" class="hoo-option " aria-disabled="false">Sarah Wilson</li>
+            <li data-value="mike_brown" class="hoo-option hoo-disabled" aria-disabled="true">Mike Brown</li>
+            <li data-value="lisa_garcia" class="hoo-option " aria-disabled="false">Lisa Garcia</li>
+        </ul>
+    </li>
+    <li data-value="guest_user" class="hoo-option " aria-disabled="false">Guest User</li>
+</ul>
+<!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/forms</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Select Drop Down - Person","patternPartial":"atoms-select-drop-down-person","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Person Select Dropdown</h1>\n<p>A specialized dropdown component designed specifically for selecting people, featuring avatars and user information.</p>\n<h2>Overview</h2>\n<p>The person select dropdown extends the custom select dropdown with visual elements tailored for person selection. It includes avatars, names, and potentially additional user information like roles or departments.</p>\n<h2>Usage</h2>\n<p>Person select dropdowns should be used when:</p>\n<ul>\n<li>Users need to select a person from a list</li>\n<li>Visual identification through avatars is helpful</li>\n<li>Additional person information assists in selection</li>\n<li>The dropdown is part of assignment, mention, or people-focused functionality</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Normal closed state</li>\n<li><strong>Open</strong> - When the dropdown menu is expanded</li>\n<li><strong>Focus</strong> - When the component has keyboard focus</li>\n<li><strong>Disabled</strong> - When the dropdown cannot be interacted with</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-select-dropdown</code> - Base container for the dropdown</li>\n<li><code>.hoo-select-dropdown-person</code> - Modifier for person selection styling</li>\n<li><code>.hoo-select-dropdown-button</code> - The button that triggers the dropdown</li>\n<li><code>.hoo-select-dropdown-text</code> - The selected option text</li>\n<li><code>.hoo-select-dropdown-icon</code> - The dropdown indicator icon</li>\n<li><code>.hoo-select-dropdown-menu</code> - The dropdown menu container</li>\n<li><code>.hoo-select-dropdown-option</code> - Individual option in the dropdown</li>\n<li><code>.hoo-avatar</code> - Avatar component within the option</li>\n<li><code>.hoo-person-info</code> - Container for person text information</li>\n<li><code>.hoo-person-name</code> - Person's name</li>\n<li><code>.hoo-person-details</code> - Additional person details</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Use appropriate ARIA roles and attributes</li>\n<li>Ensure keyboard navigation works for all options</li>\n<li>Implement proper focus management</li>\n<li>Support screen readers with appropriate person information</li>\n<li>When disabled, include <code>aria-disabled=&quot;true&quot;</code></li>\n<li>Ensure avatars have appropriate alt text or are marked as decorative</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Person Select Dropdown","patternPartial":"atoms-select-drop-down-person","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":31.2}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/forms</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Select Drop Down - Person","patternPartial":"atoms-select-drop-down-person","patternState":"","patternEngineName":"handlebars","extraOutput":{}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Person Select Dropdown</h1>\n<p>A specialized dropdown component designed specifically for selecting people, featuring avatars and user information.</p>\n<h2>Overview</h2>\n<p>The person select dropdown extends the custom select dropdown with visual elements tailored for person selection. It includes avatars, names, and potentially additional user information like roles or departments.</p>\n<h2>Usage</h2>\n<p>Person select dropdowns should be used when:</p>\n<ul>\n<li>Users need to select a person from a list</li>\n<li>Visual identification through avatars is helpful</li>\n<li>Additional person information assists in selection</li>\n<li>The dropdown is part of assignment, mention, or people-focused functionality</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Normal closed state</li>\n<li><strong>Open</strong> - When the dropdown menu is expanded</li>\n<li><strong>Focus</strong> - When the component has keyboard focus</li>\n<li><strong>Disabled</strong> - When the dropdown cannot be interacted with</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-select-dropdown</code> - Base container for the dropdown</li>\n<li><code>.hoo-select-dropdown-person</code> - Modifier for person selection styling</li>\n<li><code>.hoo-select-dropdown-button</code> - The button that triggers the dropdown</li>\n<li><code>.hoo-select-dropdown-text</code> - The selected option text</li>\n<li><code>.hoo-select-dropdown-icon</code> - The dropdown indicator icon</li>\n<li><code>.hoo-select-dropdown-menu</code> - The dropdown menu container</li>\n<li><code>.hoo-select-dropdown-option</code> - Individual option in the dropdown</li>\n<li><code>.hoo-avatar</code> - Avatar component within the option</li>\n<li><code>.hoo-person-info</code> - Container for person text information</li>\n<li><code>.hoo-person-name</code> - Person's name</li>\n<li><code>.hoo-person-details</code> - Additional person details</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Use appropriate ARIA roles and attributes</li>\n<li>Ensure keyboard navigation works for all options</li>\n<li>Implement proper focus management</li>\n<li>Support screen readers with appropriate person information</li>\n<li>When disabled, include <code>aria-disabled=&quot;true&quot;</code></li>\n<li>Ensure avatars have appropriate alt text or are marked as decorative</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"input"},"patternExtension":"hbs","patternName":"Person Select Dropdown","patternPartial":"atoms-select-drop-down-person","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":31.2}};
 </script>
 
 <script>
@@ -60,10 +79,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -76,7 +95,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -124,6 +143,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

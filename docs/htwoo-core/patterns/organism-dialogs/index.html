@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,18 +31,1197 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Dialog Organisms</h1>
+<p>The Dialog organism collection provides a comprehensive set of modal, sidebar, and notification interface components designed for displaying content, gathering user input, and managing user focus within applications. These components leverage the HTML5 <code>&lt;dialog&gt;</code> element to create accessible, flexible, and performant dialog experiences.</p>
+<h2>Overview</h2>
+<p>Dialog organisms represent the highest level of dialog implementation in the HTWOO design system. They combine molecular-level dialog components (header, content, actions) into complete dialog interfaces that handle various user interaction patterns, from simple notifications to complex modal workflows.</p>
+<h2>Components</h2>
+<h3>Primary Dialogs</h3>
+<ul>
+<li><strong><a href="./generic-dialog">Generic Dialog</a></strong>: Standard centered dialog for general content display</li>
+<li><strong><a href="./modal-dialog">Modal Dialog</a></strong>: Full-screen overlay with backdrop for focused interactions</li>
+<li><strong><a href="./status-dialogs">Status Dialogs</a></strong>: Contextual messaging for error, warning, success, and info states</li>
+</ul>
+<h3>Positioned Dialogs</h3>
+<ul>
+<li><strong><a href="./dialog-sidebar">Sidebar Dialog</a></strong>: Left or right-aligned panels for additional content</li>
+<li><strong><a href="./dialog-topbar">Topbar Dialog</a></strong>: Fixed-position notification bar at viewport top</li>
+<li><strong><a href="./dialog-bottombar">Bottombar Dialog</a></strong>: Fixed-position notification bar at viewport bottom</li>
+</ul>
+<h3>Content Dialogs</h3>
+<ul>
+<li><strong><a href="./dialog-iframe">IFrame Dialog</a></strong>: Container for embedded web content and external applications</li>
+<li><strong><a href="./msgbars">Message Bars</a></strong>: Lightweight notification bars for status messages</li>
+</ul>
+<h3>Legacy Components</h3>
+<ul>
+<li><strong><a href="./legacy/">Legacy Dialogs</a></strong>: Backward compatibility components for existing implementations</li>
+</ul>
+<h2>Architecture</h2>
+<h3>Component Hierarchy</h3>
+<pre><code>Dialog Organisms
+├── Dialog Container (HTML5 &lt;dialog&gt;)
+│   ├── Dialog Header (Molecule)
+│   │   ├── Title Text (Atom)
+│   │   └── Close Button (Atom)
+│   ├── Dialog Content (Molecule)
+│   │   └── Content Area (Atom)
+│   └── Dialog Actions (Molecule)
+│       └── Action Buttons (Atom)
+</code></pre>
+<h2>Key Features</h2>
+<h3>HTML5 Dialog Foundation</h3>
+<ul>
+<li><strong>Native Element</strong>: Built on HTML5 <code>&lt;dialog&gt;</code> for optimal accessibility</li>
+<li><strong>Browser Support</strong>: Leverages native browser dialog functionality</li>
+<li><strong>Focus Management</strong>: Automatic focus trapping and restoration</li>
+<li><strong>Keyboard Navigation</strong>: Built-in keyboard support (Escape to close)</li>
+</ul>
+<h3>Flexible Positioning</h3>
+<ul>
+<li><strong>Modal</strong>: Center-screen with backdrop overlay</li>
+<li><strong>Sidebar</strong>: Left or right-aligned panel layouts</li>
+<li><strong>Topbar/Bottombar</strong>: Fixed-position notification bars</li>
+<li><strong>Custom</strong>: Configurable positioning through CSS variables</li>
+</ul>
+<h3>Responsive Design</h3>
+<ul>
+<li><strong>Container Adaptation</strong>: Adapts to viewport and container constraints</li>
+<li><strong>Mobile Optimization</strong>: Touch-friendly interactions and sizing</li>
+<li><strong>Viewport Units</strong>: Uses modern viewport units (svh, svw) for consistency</li>
+<li><strong>Flexible Dimensions</strong>: CSS custom properties for width and height control</li>
+</ul>
+<h3>Advanced Interactions</h3>
+<ul>
+<li><strong>Backdrop Control</strong>: Optional backdrop clicking to close</li>
+<li><strong>Escape Key</strong>: Configurable Escape key handling</li>
+<li><strong>Focus Management</strong>: Automatic focus trapping within dialog</li>
+<li><strong>Animation Support</strong>: Smooth transitions and backdrop effects</li>
+</ul>
+<h2>JavaScript Integration</h2>
+<h3>HOODialog Class</h3>
+<p>The HTWOO system includes a JavaScript class for enhanced dialog management:</p>
+<h3>Manual Dialog Control</h3>
+<h2>Styling Architecture</h2>
+<h3>CSS Custom Properties</h3>
+<h3>Dialog Variants</h3>
+<h3>Visual Properties</h3>
+<ul>
+<li><strong>Background</strong>: Neutral-000 (#ffffff) with transparency support</li>
+<li><strong>Border Radius</strong>: 0.5rem for modern appearance</li>
+<li><strong>Padding</strong>: 1.5rem standard, 0.5rem for message bars</li>
+<li><strong>Backdrop</strong>: Blur effect with 75% opacity</li>
+<li><strong>Transition</strong>: 0.5s ease-in-out for smooth animations</li>
+</ul>
+<h2>Use Cases</h2>
+<h3>Application Workflows</h3>
+<ul>
+<li><strong>Confirmation Dialogs</strong>: User action confirmations and warnings</li>
+<li><strong>Form Dialogs</strong>: Data input and editing interfaces</li>
+<li><strong>Settings Panels</strong>: Configuration and preference interfaces</li>
+<li><strong>Help Systems</strong>: Contextual help and documentation</li>
+</ul>
+<h3>Content Display</h3>
+<ul>
+<li><strong>Media Viewers</strong>: Image, video, and document preview</li>
+<li><strong>Detail Views</strong>: Expanded item information and metadata</li>
+<li><strong>Embedded Content</strong>: External web content and applications</li>
+<li><strong>Reports</strong>: Data visualization and analytics displays</li>
+</ul>
+<h3>Notifications and Messaging</h3>
+<ul>
+<li><strong>Status Updates</strong>: System status and progress indicators</li>
+<li><strong>Error Handling</strong>: Error messages and resolution guidance</li>
+<li><strong>Success Feedback</strong>: Completion confirmations and next steps</li>
+<li><strong>Information Alerts</strong>: Important announcements and updates</li>
+</ul>
+<h3>Navigation and Layout</h3>
+<ul>
+<li><strong>Side Panels</strong>: Additional navigation and context</li>
+<li><strong>Tool Palettes</strong>: Design and editing tool collections</li>
+<li><strong>Filter Panels</strong>: Search and filter controls</li>
+<li><strong>Property Inspectors</strong>: Object and selection properties</li>
+</ul>
+<h2>Accessibility Features</h2>
+<h3>Native HTML5 Benefits</h3>
+<ul>
+<li><strong>Focus Trapping</strong>: Automatic focus management within dialog</li>
+<li><strong>Keyboard Support</strong>: Built-in Escape key handling</li>
+<li><strong>Screen Reader</strong>: Native dialog semantics and announcements</li>
+<li><strong>ARIA Integration</strong>: Automatic ARIA states and properties</li>
+</ul>
+<h3>Enhanced Accessibility</h3>
+<ul>
+<li><strong>Focus Restoration</strong>: Returns focus to launching element on close</li>
+<li><strong>High Contrast</strong>: Compatible with high contrast display modes</li>
+<li><strong>Keyboard Navigation</strong>: Full keyboard operation without mouse</li>
+<li><strong>Screen Reader Labels</strong>: Descriptive labels and instructions</li>
+</ul>
+<h3>Visual Accessibility</h3>
+<ul>
+<li><strong>Color Contrast</strong>: High contrast ratios for all text and controls</li>
+<li><strong>Focus Indicators</strong>: Clear visual focus states</li>
+<li><strong>Text Scaling</strong>: Responsive to user font size preferences</li>
+<li><strong>Motion Sensitivity</strong>: Respectful animation and transition timing</li>
+</ul>
+<h2>Performance Optimization</h2>
+<h3>Loading and Rendering</h3>
+<ul>
+<li><strong>Lazy Loading</strong>: Defer dialog content until needed</li>
+<li><strong>Virtual Scrolling</strong>: Efficient rendering of large content lists</li>
+<li><strong>Image Optimization</strong>: Appropriate sizing and loading strategies</li>
+<li><strong>Memory Management</strong>: Proper cleanup of event listeners and resources</li>
+</ul>
+<h3>Animation Performance</h3>
+<ul>
+<li><strong>GPU Acceleration</strong>: Hardware-accelerated transitions</li>
+<li><strong>Efficient Animations</strong>: CSS transforms over layout changes</li>
+<li><strong>Reduced Motion</strong>: Respect user motion preferences</li>
+<li><strong>Frame Rate</strong>: Smooth 60fps animations</li>
+</ul>
+<h2>Best Practices</h2>
+<h3>Content Strategy</h3>
+<ul>
+<li><strong>Clear Purpose</strong>: Each dialog should have a single, clear purpose</li>
+<li><strong>Concise Content</strong>: Keep dialog content focused and scannable</li>
+<li><strong>Action Clarity</strong>: Use clear, action-oriented button labels</li>
+<li><strong>Progressive Disclosure</strong>: Show information in logical progression</li>
+</ul>
+<h3>User Experience</h3>
+<ul>
+<li><strong>Non-Intrusive</strong>: Don't interrupt critical user workflows</li>
+<li><strong>Escape Routes</strong>: Always provide clear ways to close or cancel</li>
+<li><strong>Responsive Feedback</strong>: Provide immediate feedback for user actions</li>
+<li><strong>Context Preservation</strong>: Maintain user context when possible</li>
+</ul>
+<h3>Development</h3>
+<ul>
+<li><strong>Progressive Enhancement</strong>: Ensure basic functionality without JavaScript</li>
+<li><strong>Error Handling</strong>: Graceful handling of content loading failures</li>
+<li><strong>Testing Strategy</strong>: Test with keyboard users and screen readers</li>
+<li><strong>Performance Monitoring</strong>: Monitor dialog loading and interaction performance</li>
+</ul>
+<h2>Integration Examples</h2>
+<h3>SharePoint Framework (SPFx)</h3>
+<h3>React Integration</h3>
+<p>For React applications, use the <code>@n8d/htwoo-react</code> package which provides dialog components with the same design system styling. Dialog components are available in Storybook for interactive examples and documentation.</p>
+<h2>Browser Support</h2>
+<ul>
+<li><strong>Modern Browsers</strong>: Full support in Chrome 37+, Firefox 98+, Safari 15.4+</li>
+<li><strong>HTML5 Dialog</strong>: Requires native <code>&lt;dialog&gt;</code> element support</li>
+<li><strong>CSS Features</strong>: Modern CSS features (custom properties, backdrop-filter)</li>
+<li><strong>JavaScript</strong>: ES6+ features for enhanced functionality</li>
+<li><strong>Polyfills</strong>: Available for older browser support</li>
+</ul>
+<h2>SCSS Files</h2>
+<p><strong>Dialog Organism Styles:</strong></p>
+<ul>
+<li><code>lib/sass/03-organism/dialog/</code></li>
+</ul>
+<p><strong>Dialog Molecule Styles:</strong></p>
+<ul>
+<li><code>lib/sass/02-molecules/dialogs/</code></li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
-					<div id="organism-generic-dialog" class="pl-c-pattern">
+					<div id="organism-dialog-sidebar" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-sidebar&#x2F;organism-dialogs-dialog-sidebar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-sidebar" title="Link to Pattern">
+						Sidebar Dialog
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-sidebar" data-patternpartial="organism-dialog-sidebar" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-sidebar">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgsb" class="hoo-dlg sidebar ">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a sidebar on the . That automatically scales with the content.</p>
+        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='width-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='width-20vw'>
+            <span class="hoo-button-label">20% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-50vw'>
+            <span class="hoo-button-label">50% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-75vw'>
+            <span class="hoo-button-label">75% width</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+
+    let dlg = document.querySelector('#dlgsb');
+
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+
+        dlg ? dlg.showModal() : dlg;
+
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-sidebar" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Sidebar Dialog</h1>\n<p>The Sidebar Dialog component provides a panel that slides in from either the left or right side of the screen. It's ideal for displaying supplementary content, forms, or navigation options without navigating away from the current view.</p>\n<h2>Overview</h2>\n<p>Sidebar dialogs in HTWOO UI leverage the HTML5 <code>&lt;dialog&gt;</code> element with special positioning to create panels that appear from the side of the screen. They can be positioned on either the left or right side and can take up the full height of the viewport.</p>\n<h2>Features</h2>\n<ul>\n<li>Left or right side positioning</li>\n<li>Full-height viewport display</li>\n<li>Customizable width via CSS variables</li>\n<li>Support for resizing through user interaction</li>\n<li>Smooth animation transitions</li>\n<li>Optional dialog header with title and close button</li>\n<li>Dialog content area for main information</li>\n<li>Optional backdrop when opened modally</li>\n</ul>\n<h2>Usage</h2>\n<p>The Sidebar Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;!-- Right Sidebar --&gt;\n&lt;dialog id=&quot;mySidebarRight&quot; class=&quot;hoo-dlg sidebar right&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;Sidebar Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- Dialog content --&gt;\n  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;\n    &lt;p&gt;Sidebar content goes here&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n\n&lt;!-- Left Sidebar --&gt;\n&lt;dialog id=&quot;mySidebarLeft&quot; class=&quot;hoo-dlg sidebar left&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;Sidebar Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- Dialog content --&gt;\n  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;\n    &lt;p&gt;Sidebar content goes here&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Width</h3>\n<p>Sidebar dialog width can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg sidebar right&quot; style=&quot;--hoo-dlg-width: 25vw&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>src/styles/03-organism/dialog/_dialog.scss</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>Proper focus management with autofocus attribute</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Sidebar Dialog","patternPartial":"organism-dialog-sidebar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":3}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-sidebar-left" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-sidebar-left&#x2F;organism-dialogs-dialog-sidebar-left.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-sidebar-left" title="Link to Pattern">
+						Sidebar Left
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-sidebar-left" data-patternpartial="organism-dialog-sidebar-left" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-sidebar-left">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgsbleft" class="hoo-dlg sidebar left">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a sidebar on the left. That automatically scales with the content.</p>
+        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='width-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='width-20vw'>
+            <span class="hoo-button-label">20% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-50vw'>
+            <span class="hoo-button-label">50% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-75vw'>
+            <span class="hoo-button-label">75% width</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+
+    let dlg = document.querySelector('#dlgsbleft');
+
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+
+        dlg ? dlg.showModal() : dlg;
+
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-sidebar-left" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Sidebar Left","patternPartial":"organism-dialog-sidebar-left","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":3}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-sidebar-right" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-sidebar-right&#x2F;organism-dialogs-dialog-sidebar-right.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-sidebar-right" title="Link to Pattern">
+						Sidebar Right
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-sidebar-right" data-patternpartial="organism-dialog-sidebar-right" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-sidebar-right">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgsbright" class="hoo-dlg sidebar right">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a sidebar on the right. That automatically scales with the content.</p>
+        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='width-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='width-20vw'>
+            <span class="hoo-button-label">20% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-50vw'>
+            <span class="hoo-button-label">50% width</span>
+        </button>
+        <button class="hoo-button-primary" id='width-75vw'>
+            <span class="hoo-button-label">75% width</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+
+    let dlg = document.querySelector('#dlgsbright');
+
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+
+        dlg ? dlg.showModal() : dlg;
+
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'width-unset':
+                    break;
+                case 'width-20vw':
+                    newSize = '20vw';
+                    break;
+                case 'width-50vw':
+                    newSize = '50vw';
+                    break;
+                case 'width-75vw':
+                    newSize = '75vw';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-width', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-width', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='width']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-sidebar-right" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Sidebar Right","patternPartial":"organism-dialog-sidebar-right","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":3}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-topbar" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-topbar&#x2F;organism-dialogs-dialog-topbar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-topbar" title="Link to Pattern">
+						Topbar Dialog
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-topbar" data-patternpartial="organism-dialog-topbar" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-topbar">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgtopbar" class="hoo-dlg topbar">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a topbar . That automatically scales with the content.</p>
+        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-height</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='height-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='height-20vw'>
+            <span class="hoo-button-label">20% height</span>
+        </button>
+        <button class="hoo-button-primary" id='height-50vw'>
+            <span class="hoo-button-label">50% height</span>
+        </button>
+        <button class="hoo-button-primary" id='height-75vw'>
+            <span class="hoo-button-label">75% height</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    let dlg = document.querySelector('#dlgtopbar');
+
+    // Hide background
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+
+        dlg ? dlg.showModal() : dlg;
+        
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'height-unset':
+                    break;
+                case 'height-20vw':
+                    newSize = '20vh';
+                    break;
+                case 'height-50vw':
+                    newSize = '50vh';
+                    break;
+                case 'height-75vw':
+                    newSize = '75vh';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-height', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-height', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='height']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-topbar" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Topbar Dialog</h1>\n<p>The Topbar Dialog component provides a horizontal panel that appears from the top of the screen. It's ideal for notifications, alerts, or global actions that need to be prominently displayed across the top of the application.</p>\n<h2>Overview</h2>\n<p>Topbar dialogs in HTWOO UI extend the HTML5 <code>&lt;dialog&gt;</code> element with special positioning to create a horizontal panel at the top of the viewport. They span the full width of the screen and can have a customizable height.</p>\n<h2>Features</h2>\n<ul>\n<li>Fixed positioning at the top of the viewport</li>\n<li>Full-width display</li>\n<li>Customizable height via CSS variables</li>\n<li>Support for resizing through user interaction</li>\n<li>Smooth animation transitions</li>\n<li>Optional dialog header with title and close button</li>\n<li>Dialog content area for main information</li>\n<li>Optional backdrop when opened modally</li>\n</ul>\n<h2>Usage</h2>\n<p>The Topbar Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;dialog id=&quot;myTopbar&quot; class=&quot;hoo-dlg topbar&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;Topbar Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- Dialog content --&gt;\n  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;\n    &lt;p&gt;Topbar content goes here&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Height</h3>\n<p>Topbar dialog height can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg topbar&quot; style=&quot;--hoo-dlg-height: 20vh&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>src/styles/03-organism/dialog/_dialog.scss</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>Proper focus management with autofocus attribute</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Topbar Dialog","patternPartial":"organism-dialog-topbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":4}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-bottombar" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-bottombar&#x2F;organism-dialogs-dialog-bottombar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-bottombar" title="Link to Pattern">
+						Bottombar Dialog
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-bottombar" data-patternpartial="organism-dialog-bottombar" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-bottombar">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgbottombar" class="hoo-dlg bottombar">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+<div class="hoo-dlgcontent">
+    
+        <p>This dialog is a topbar . That automatically scales with the content.</p>
+        <p>To make the height fixed add the CSS variable <code>--hoo-dlg-height</code></p>
+        <h2>Try to resize the sidebar</h2>
+        <button class="hoo-button-primary" id='height-unset'>
+            <span class="hoo-button-label">Unset / reset</span>
+        </button>
+        <button class="hoo-button-primary" id='height-20vw'>
+            <span class="hoo-button-label">20% height</span>
+        </button>
+        <button class="hoo-button-primary" id='height-50vw'>
+            <span class="hoo-button-label">50% height</span>
+        </button>
+        <button class="hoo-button-primary" id='height-75vw'>
+            <span class="hoo-button-label">75% height</span>
+        </button>
+</div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+
+    let dlg = document.querySelector('#dlgbottombar');
+
+    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
+        
+        dlg.showModal()
+
+        const resize = (event) => {
+
+            console.debug(event.currentTarget.id);
+
+            let newSize = null;
+
+            switch (event.currentTarget.id) {
+                case 'height-unset':
+                    break;
+                case 'height-20vw':
+                    newSize = '20vh';
+                    break;
+                case 'height-50vw':
+                    newSize = '50vh';
+                    break;
+                case 'height-75vw':
+                    newSize = '75vh';
+                    break;
+                default:
+                    break;
+            }
+
+            console.debug(dlg, newSize);
+
+            if (dlg && newSize) {
+
+                console.debug(' --- Update ....')
+                dlg.style.setProperty('--hoo-dlg-height', newSize);
+
+            } else {
+                if (newSize === null) {
+                    dlg.style.setProperty('--hoo-dlg-height', null);
+                }
+            }
+        }
+
+        let resizers = document.querySelectorAll("button[id^='height']");
+
+        console.debug(resizers);
+
+        resizers.forEach(resizer => resizer.addEventListener('click', resize));
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-bottombar" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Bottombar Dialog</h1>\n<p>The Bottombar Dialog component provides a horizontal panel that appears from the bottom of the screen. It's useful for action bars, command panels, or notifications that need to be accessible but not interfere with the main content view.</p>\n<h2>Overview</h2>\n<p>Bottombar dialogs in HTWOO UI extend the HTML5 <code>&lt;dialog&gt;</code> element with special positioning to create a horizontal panel at the bottom of the viewport. They span the full width of the screen and can have a customizable height.</p>\n<h2>Features</h2>\n<ul>\n<li>Fixed positioning at the bottom of the viewport</li>\n<li>Full-width display</li>\n<li>Customizable height via CSS variables</li>\n<li>Support for resizing through user interaction</li>\n<li>Smooth animation transitions</li>\n<li>Optional dialog header with title and close button</li>\n<li>Dialog content area for main information</li>\n<li>Optional backdrop when opened modally</li>\n</ul>\n<h2>Usage</h2>\n<p>The Bottombar Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;dialog id=&quot;myBottombar&quot; class=&quot;hoo-dlg bottombar&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;Bottombar Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- Dialog content --&gt;\n  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;\n    &lt;p&gt;Bottombar content goes here&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Height</h3>\n<p>Bottombar dialog height can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg bottombar&quot; style=&quot;--hoo-dlg-height: 20vh&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>src/styles/03-organism/dialog/_dialog.scss</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>Proper focus management with autofocus attribute</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Bottombar Dialog","patternPartial":"organism-dialog-bottombar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":5}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe&#x2F;organism-dialogs-dialog-iframe.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe" title="Link to Pattern">
+						IFrame Dialog
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe" data-patternpartial="organism-dialog-iframe" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>IFrame Dialog</h1>\n<p>The IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating away from the current context.</p>\n<h2>Overview</h2>\n<p>IFrame dialogs in HTWOO UI combine the HTML5 <code>&lt;dialog&gt;</code> element with an embedded <code>&lt;iframe&gt;</code> to create a window for displaying external content. They can be configured with different aspect ratios and sizes to accommodate various types of content.</p>\n<h2>Features</h2>\n<ul>\n<li>External content embedding via <code>&lt;iframe&gt;</code></li>\n<li>Default 16:9 aspect ratio (configurable to other ratios)</li>\n<li>Customizable dimensions via CSS variables</li>\n<li>Responsive design that adapts to viewport size</li>\n<li>Optional dialog header with title and close button</li>\n<li>Variants for different aspect ratios (16:9, 4:3, 1:1)</li>\n<li>Optional modal backdrop</li>\n</ul>\n<h2>Usage</h2>\n<p>The IFrame Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;dialog id=&quot;myIframeDialog&quot; class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 50vw;&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;IFrame Dialog Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- IFrame content --&gt;\n  &lt;div class=&quot;hoo-dlg-iframe&quot;&gt;\n    &lt;iframe src=&quot;https://example.com&quot; title=&quot;Embedded content&quot;&gt;&lt;/iframe&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Dimensions</h3>\n<p>IFrame dialog dimensions can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 75vw; --hoo-dlg-height: auto&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>Aspect Ratio Variants</h2>\n<p>The IFrame Dialog comes in several aspect ratio variants:</p>\n<ul>\n<li><strong>Default (16:9)</strong>: Optimal for video content</li>\n<li><strong>4:3</strong>: Traditional presentation format</li>\n<li><strong>1:1 (Squared)</strong>: Equal width and height</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>lib/sass/03-organism/dialog/</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Proper iframe title attribute for screen readers</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"IFrame Dialog","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"This dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-msgbars" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-msgbars&#x2F;organism-dialogs-msgbars.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-msgbars" title="Link to Pattern">
+						Message Bars
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-msgbars" data-patternpartial="organism-msgbars" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-msgbars">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="myDialog" class="hoo-dlg statusbar" open>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-info-filled" aria-hidden="true">
+            <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+            <use xlink:href="../../images/icons.svg#icon-info-filled"></use>
+        </svg>
+    </span>    <div class="hoo-dlgcontent">This dialog comes without a backdrop and can be used for a
+        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
+            Element on MDN documentation</a></div>
+    <div class="hoo-dlg-actions">
+        <button class="hoo-buttonicon" 
+    
+    
+      autofocus>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-close"></use>
+        </svg>
+    </span></button>
+
+    </div>
+</dialog>
+<dialog id="myDialog" class="hoo-dlg statusbar warning" open>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-warning-filled" aria-hidden="true">
+            <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+            <use xlink:href="../../images/icons.svg#icon-warning-filled"></use>
+        </svg>
+    </span>    <div class="hoo-dlgcontent">This dialog comes without a backdrop and can be used for a
+        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
+            Element on MDN documentation</a></div>
+    <div class="hoo-dlg-actions">
+        <button class="hoo-buttonicon" 
+    
+    
+      autofocus>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-close"></use>
+        </svg>
+    </span></button>
+
+    </div>
+</dialog>
+<dialog id="myDialog" class="hoo-dlg statusbar error" open>
+    <span class="hoo-icon">
+    <svg class="hoo-icon-svg icon-info-filled" aria-hidden="true">
+        <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+        <use xlink:href="../../images/icons.svg#icon-info-filled"></use>
+    </svg>
+</span><div class="hoo-dlgcontent">This dialog comes without a backdrop and
+        can be used for a
+        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
+            Element on MDN documentation</a></div>
+    <div class="hoo-dlg-actions">
+        <button class="hoo-buttonicon" 
+    
+    
+      autofocus>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-close"></use>
+        </svg>
+    </span></button>
+
+    </div>
+</dialog>
+<dialog id="myDialog" class="hoo-dlg statusbar success" open>
+    <span class="hoo-icon">
+    <svg class="hoo-icon-svg icon-checkmark-circle-filled" aria-hidden="true">
+        <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+        <use xlink:href="../../images/icons.svg#icon-checkmark-circle-filled"></use>
+    </svg>
+</span><div class="hoo-dlgcontent">This dialog comes without a
+        backdrop and can be used
+        for a statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The
+            Dialog Element on MDN documentation</a></div>
+    <div class="hoo-dlg-actions">
+        <button class="hoo-buttonicon" 
+    
+    
+      autofocus>
+    <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-close"></use>
+        </svg>
+    </span></button>
+
+    </div>
+</dialog>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-msgbars" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Message Bars / Status Bars</h1>\n<p>Message bars (also known as status bars) are lightweight notification dialogs that provide contextual feedback to users. Built on the HTML5 <code>&lt;dialog&gt;</code> element with the <code>.statusbar</code> modifier, they display status messages, alerts, and system notifications in an unobtrusive manner.</p>\n<h2>Overview</h2>\n<p>Message bars in HTWOO provide a consistent way to communicate different types of status information to users. They appear as horizontal bars with distinctive colors, icons, and messaging that clearly indicate the nature of the information being conveyed.</p>\n<h2>Features</h2>\n<h3>Status Types</h3>\n<ul>\n<li><strong>Info</strong>: Default blue styling for general information and neutral messages</li>\n<li><strong>Success</strong>: Green styling with checkmark icon for positive outcomes</li>\n<li><strong>Warning</strong>: Yellow/orange styling with warning icon for cautionary messages</li>\n<li><strong>Error</strong>: Red styling with error icon for critical issues and failures</li>\n</ul>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Compact Layout</strong>: Horizontal bar design optimized for minimal space usage</li>\n<li><strong>Icon Integration</strong>: Status-appropriate icons to reinforce message type</li>\n<li><strong>Color Coding</strong>: Distinctive backgrounds and borders for immediate recognition</li>\n<li><strong>Action Support</strong>: Optional close buttons and action links</li>\n</ul>\n<h3>Accessibility</h3>\n<ul>\n<li><strong>High Contrast</strong>: Strong color contrasts for accessibility compliance</li>\n<li><strong>Screen Reader</strong>: Proper ARIA labels and semantic structure</li>\n<li><strong>Keyboard Navigation</strong>: Full keyboard support for dismissal and actions</li>\n<li><strong>Focus Management</strong>: Appropriate focus handling for interactive elements</li>\n</ul>\n<h2>Structure</h2>\n<p>Message bars consist of:</p>\n<ol>\n<li><strong>Status Icon</strong>: Visual indicator matching the message type</li>\n<li><strong>Content Area</strong>: Text content and optional action links</li>\n<li><strong>Actions</strong>: Optional close button and additional actions</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;bodyClass&quot;: &quot;dlg-preview-flex&quot;,\n    &quot;btn-closer&quot;: {\n        &quot;button&quot;: {\n            &quot;iconname&quot;: &quot;icon-close&quot;,\n            &quot;aria-label&quot;: &quot;Close&quot;,\n            &quot;props&quot;: &quot; autofocus&quot;\n        }\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Base Classes</h3>\n<ul>\n<li><strong><code>.hoo-dlg</code></strong>: Main dialog container</li>\n<li><strong><code>.statusbar</code></strong>: Modifier for status bar styling</li>\n<li><strong><code>.hoo-dlgcontent</code></strong>: Content area container</li>\n<li><strong><code>.hoo-dlg-actions</code></strong>: Actions container for buttons</li>\n</ul>\n<h3>Status Modifier Classes</h3>\n<ul>\n<li><strong><code>.success</code></strong>: Green styling for success messages</li>\n<li><strong><code>.warning</code></strong>: Yellow/orange styling for warnings</li>\n<li><strong><code>.error</code></strong>: Red styling for error messages</li>\n<li><strong>(default)</strong>: Blue styling for info messages</li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Properties</h3>\n<ul>\n<li><strong>Background</strong>: Status-appropriate background colors with transparency</li>\n<li><strong>Border</strong>: Left border accent in status color</li>\n<li><strong>Padding</strong>: 0.75rem for compact appearance</li>\n<li><strong>Typography</strong>: 14px font size with medium weight for content</li>\n</ul>\n<h3>Status Colors</h3>\n<ul>\n<li><strong>Info</strong>: Blue theme colors (<code>#0078d4</code> family)</li>\n<li><strong>Success</strong>: Green theme colors (<code>#107c10</code> family)</li>\n<li><strong>Warning</strong>: Yellow/orange theme colors (<code>#ff8c00</code> family)</li>\n<li><strong>Error</strong>: Red theme colors (<code>#d13438</code> family)</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<h3>Manual Control</h3>\n<h3>Dynamic Creation</h3>\n<h2>Use Cases</h2>\n<h3>System Notifications</h3>\n<ul>\n<li>Application status updates</li>\n<li>Background process completion</li>\n<li>System maintenance alerts</li>\n<li>Feature announcements</li>\n</ul>\n<h3>User Feedback</h3>\n<ul>\n<li>Form validation summaries</li>\n<li>Action confirmations</li>\n<li>Progress updates</li>\n<li>Error reporting</li>\n</ul>\n<h3>Contextual Information</h3>\n<ul>\n<li>Help tips and guidance</li>\n<li>Promotional messages</li>\n<li>Feature availability notices</li>\n<li>Temporary status information</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Screen Reader Support</h3>\n<ul>\n<li><strong>Semantic Structure</strong>: Proper dialog semantics</li>\n<li><strong>Status Communication</strong>: Live regions for dynamic content</li>\n<li><strong>Descriptive Text</strong>: Clear, concise messaging</li>\n<li><strong>Icon Alternative</strong>: Text alternatives for status icons</li>\n</ul>\n<h3>Keyboard Navigation</h3>\n<ul>\n<li><strong>Focus Management</strong>: Logical tab order through interactive elements</li>\n<li><strong>Escape Key</strong>: Close functionality via Escape key</li>\n<li><strong>Action Access</strong>: Keyboard access to all interactive elements</li>\n<li><strong>Focus Return</strong>: Appropriate focus restoration after dismissal</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>Color Contrast</strong>: High contrast ratios for all text</li>\n<li><strong>Color Independence</strong>: Status communicated through icons and text, not color alone</li>\n<li><strong>Focus Indicators</strong>: Clear visual focus states</li>\n<li><strong>Size Flexibility</strong>: Responsive to user font size preferences</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Content Guidelines</h3>\n<ul>\n<li><strong>Concise Messaging</strong>: Keep messages brief and actionable</li>\n<li><strong>Clear Language</strong>: Use plain language and avoid technical jargon</li>\n<li><strong>Action-Oriented</strong>: Include clear next steps when appropriate</li>\n<li><strong>Context-Specific</strong>: Tailor messages to the specific situation</li>\n</ul>\n<h3>UX Guidelines</h3>\n<ul>\n<li><strong>Appropriate Timing</strong>: Show messages at relevant moments</li>\n<li><strong>Non-Intrusive</strong>: Don't interrupt critical user workflows</li>\n<li><strong>Dismissible</strong>: Always provide a way to dismiss messages</li>\n<li><strong>Consistent Positioning</strong>: Use consistent placement across the application</li>\n</ul>\n<h3>Technical Guidelines</h3>\n<ul>\n<li><strong>Performance</strong>: Minimize DOM manipulation for frequent messages</li>\n<li><strong>Memory Management</strong>: Clean up dismissed message bars</li>\n<li><strong>Responsive Design</strong>: Ensure messages work across all device sizes</li>\n<li><strong>Testing</strong>: Test with screen readers and keyboard navigation</li>\n</ul>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Message Bars","patternPartial":"organism-msgbars","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe-3by4" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe-3by4&#x2F;organism-dialogs-dialog-iframe-3by4.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-3by4" title="Link to Pattern">
+						with IFrame - 3:4
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-3by4" data-patternpartial="organism-dialog-iframe-3by4" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-3by4">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe ratio-3by4" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-3by4" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - 3:4","patternPartial":"organism-dialog-iframe-3by4","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-dialog-iframe-squared" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/organism-dialogs-dialog-iframe-squared&#x2F;organism-dialogs-dialog-iframe-squared.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-squared" title="Link to Pattern">
+						with IFrame - squared
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-squared" data-patternpartial="organism-dialog-iframe-squared" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-squared">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
+    <div class="hoo-dlgheader">
+        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-close"></use>
+            </svg>
+        </span></button>
+    </div>
+    </div>
+    <div class="hoo-dlgcontent">
+        <iframe class="hoo-dlg-iframe ratio-squared" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
+        </iframe>
+    </div></dialog>
+<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
+<script>
+    console.debug(location.href);
+    let dlgiframe = document.querySelector('#dlgiframe');
+
+    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
+        
+        dlgiframe.showModal();
+    }
+</script>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-squared" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - squared","patternPartial":"organism-dialog-iframe-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="organism-generic-dialog" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-dialogs-generic-dialog&#x2F;organism-dialogs-generic-dialog.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-generic-dialog" title="Link to Pattern">
-						Dialog Basics
+						Generic Dialog
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -206,834 +1385,7 @@ See <a href="">MDN Dialog</a>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-generic-dialog" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Dialog Basics","patternPartial":"organism-generic-dialog","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":1}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-msgbars" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-msgbars&#x2F;organism-dialogs-msgbars.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-msgbars" title="Link to Pattern">
-						Message Bars &#x2F; Status Bar
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-msgbars" data-patternpartial="organism-msgbars" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-msgbars">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="myDialog" class="hoo-dlg statusbar" open>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-info-filled" aria-hidden="true">
-            <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
-            <use xlink:href="../../images/icons.svg#icon-info-filled"></use>
-        </svg>
-    </span>    <div class="hoo-dlgcontent">This dialog comes without a backdrop and can be used for a
-        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
-            Element on MDN documentation</a></div>
-    <div class="hoo-dlg-actions">
-        <button class="hoo-buttonicon" aria-label="Close"  autofocus>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-close"></use>
-        </svg>
-    </span></button>
-
-    </div>
-</dialog>
-<dialog id="myDialog" class="hoo-dlg statusbar warning" open>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-warning-filled" aria-hidden="true">
-            <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
-            <use xlink:href="../../images/icons.svg#icon-warning-filled"></use>
-        </svg>
-    </span>    <div class="hoo-dlgcontent">This dialog comes without a backdrop and can be used for a
-        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
-            Element on MDN documentation</a></div>
-    <div class="hoo-dlg-actions">
-        <button class="hoo-buttonicon" aria-label="Close"  autofocus>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-close"></use>
-        </svg>
-    </span></button>
-
-    </div>
-</dialog>
-<dialog id="myDialog" class="hoo-dlg statusbar error" open>
-    <span class="hoo-icon">
-    <svg class="hoo-icon-svg icon-info-filled" aria-hidden="true">
-        <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
-        <use xlink:href="../../images/icons.svg#icon-info-filled"></use>
-    </svg>
-</span><div class="hoo-dlgcontent">This dialog comes without a backdrop and
-        can be used for a
-        statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The Dialog
-            Element on MDN documentation</a></div>
-    <div class="hoo-dlg-actions">
-        <button class="hoo-buttonicon" aria-label="Close"  autofocus>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-close"></use>
-        </svg>
-    </span></button>
-
-    </div>
-</dialog>
-<dialog id="myDialog" class="hoo-dlg statusbar success" open>
-    <span class="hoo-icon">
-    <svg class="hoo-icon-svg icon-checkmark-circle-filled" aria-hidden="true">
-        <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
-        <use xlink:href="../../images/icons.svg#icon-checkmark-circle-filled"></use>
-    </svg>
-</span><div class="hoo-dlgcontent">This dialog comes without a
-        backdrop and can be used
-        for a statusbar for example. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">The
-            Dialog Element on MDN documentation</a></div>
-    <div class="hoo-dlg-actions">
-        <button class="hoo-buttonicon" aria-label="Close"  autofocus>
-    <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-close"></use>
-        </svg>
-    </span></button>
-
-    </div>
-</dialog>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-msgbars" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Message Bars / Status Bar","patternPartial":"organism-msgbars","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":2}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-sidebar-left" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-sidebar-left&#x2F;organism-dialogs-dialog-sidebar-left.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-sidebar-left" title="Link to Pattern">
-						Sidebar Left
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-sidebar-left" data-patternpartial="organism-dialog-sidebar-left" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-sidebar-left">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgsbleft" class="hoo-dlg sidebar left">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-<div class="hoo-dlgcontent">
-    
-        <p>This dialog is a sidebar on the left. That automatically scales with the content.</p>
-        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
-        <h2>Try to resize the sidebar</h2>
-        <button class="hoo-button-primary" id='width-unset'>
-            <span class="hoo-button-label">Unset / reset</span>
-        </button>
-        <button class="hoo-button-primary" id='width-20vw'>
-            <span class="hoo-button-label">20% width</span>
-        </button>
-        <button class="hoo-button-primary" id='width-50vw'>
-            <span class="hoo-button-label">50% width</span>
-        </button>
-        <button class="hoo-button-primary" id='width-75vw'>
-            <span class="hoo-button-label">75% width</span>
-        </button>
-</div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-
-    let dlg = document.querySelector('#dlgsbleft');
-
-    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
-
-        dlg ? dlg.showModal() : dlg;
-
-        const resize = (event) => {
-
-            console.debug(event.currentTarget.id);
-
-            let newSize = null;
-
-            switch (event.currentTarget.id) {
-                case 'width-unset':
-                    break;
-                case 'width-20vw':
-                    newSize = '20vw';
-                    break;
-                case 'width-50vw':
-                    newSize = '50vw';
-                    break;
-                case 'width-75vw':
-                    newSize = '75vw';
-                    break;
-                default:
-                    break;
-            }
-
-            console.debug(dlg, newSize);
-
-            if (dlg && newSize) {
-
-                console.debug(' --- Update ....')
-                dlg.style.setProperty('--hoo-dlg-width', newSize);
-
-            } else {
-                if (newSize === null) {
-                    dlg.style.setProperty('--hoo-dlg-width', null);
-                }
-            }
-        }
-
-        let resizers = document.querySelectorAll("button[id^='width']");
-
-        console.debug(resizers);
-
-        resizers.forEach(resizer => resizer.addEventListener('click', resize));
-    }
-
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-sidebar-left" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Sidebar Left","patternPartial":"organism-dialog-sidebar-left","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":3}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-sidebar-right" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-sidebar-right&#x2F;organism-dialogs-dialog-sidebar-right.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-sidebar-right" title="Link to Pattern">
-						Sidebar Right
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-sidebar-right" data-patternpartial="organism-dialog-sidebar-right" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-sidebar-right">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgsbright" class="hoo-dlg sidebar right">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-<div class="hoo-dlgcontent">
-    
-        <p>This dialog is a sidebar on the right. That automatically scales with the content.</p>
-        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-width</code></p>
-        <h2>Try to resize the sidebar</h2>
-        <button class="hoo-button-primary" id='width-unset'>
-            <span class="hoo-button-label">Unset / reset</span>
-        </button>
-        <button class="hoo-button-primary" id='width-20vw'>
-            <span class="hoo-button-label">20% width</span>
-        </button>
-        <button class="hoo-button-primary" id='width-50vw'>
-            <span class="hoo-button-label">50% width</span>
-        </button>
-        <button class="hoo-button-primary" id='width-75vw'>
-            <span class="hoo-button-label">75% width</span>
-        </button>
-</div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-
-    let dlg = document.querySelector('#dlgsbright');
-
-    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
-
-        dlg ? dlg.showModal() : dlg;
-
-        const resize = (event) => {
-
-            console.debug(event.currentTarget.id);
-
-            let newSize = null;
-
-            switch (event.currentTarget.id) {
-                case 'width-unset':
-                    break;
-                case 'width-20vw':
-                    newSize = '20vw';
-                    break;
-                case 'width-50vw':
-                    newSize = '50vw';
-                    break;
-                case 'width-75vw':
-                    newSize = '75vw';
-                    break;
-                default:
-                    break;
-            }
-
-            console.debug(dlg, newSize);
-
-            if (dlg && newSize) {
-
-                console.debug(' --- Update ....')
-                dlg.style.setProperty('--hoo-dlg-width', newSize);
-
-            } else {
-                if (newSize === null) {
-                    dlg.style.setProperty('--hoo-dlg-width', null);
-                }
-            }
-        }
-
-        let resizers = document.querySelectorAll("button[id^='width']");
-
-        console.debug(resizers);
-
-        resizers.forEach(resizer => resizer.addEventListener('click', resize));
-    }
-
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-sidebar-right" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-vert","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-vert/molecules-dialogs-helper-dlg-resize-vert.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Sidebar Right","patternPartial":"organism-dialog-sidebar-right","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":3}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-topbar" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-topbar&#x2F;organism-dialogs-dialog-topbar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-topbar" title="Link to Pattern">
-						Top Bar
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-topbar" data-patternpartial="organism-dialog-topbar" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-topbar">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgtopbar" class="hoo-dlg topbar">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-<div class="hoo-dlgcontent">
-    
-        <p>This dialog is a topbar . That automatically scales with the content.</p>
-        <p>To make the width fixed add the CSS variable <code>--hoo-dlg-height</code></p>
-        <h2>Try to resize the sidebar</h2>
-        <button class="hoo-button-primary" id='height-unset'>
-            <span class="hoo-button-label">Unset / reset</span>
-        </button>
-        <button class="hoo-button-primary" id='height-20vw'>
-            <span class="hoo-button-label">20% height</span>
-        </button>
-        <button class="hoo-button-primary" id='height-50vw'>
-            <span class="hoo-button-label">50% height</span>
-        </button>
-        <button class="hoo-button-primary" id='height-75vw'>
-            <span class="hoo-button-label">75% height</span>
-        </button>
-</div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-    let dlg = document.querySelector('#dlgtopbar');
-
-    // Hide background
-    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
-
-        dlg ? dlg.showModal() : dlg;
-        
-        const resize = (event) => {
-
-            console.debug(event.currentTarget.id);
-
-            let newSize = null;
-
-            switch (event.currentTarget.id) {
-                case 'height-unset':
-                    break;
-                case 'height-20vw':
-                    newSize = '20vh';
-                    break;
-                case 'height-50vw':
-                    newSize = '50vh';
-                    break;
-                case 'height-75vw':
-                    newSize = '75vh';
-                    break;
-                default:
-                    break;
-            }
-
-            console.debug(dlg, newSize);
-
-            if (dlg && newSize) {
-
-                console.debug(' --- Update ....')
-                dlg.style.setProperty('--hoo-dlg-height', newSize);
-
-            } else {
-                if (newSize === null) {
-                    dlg.style.setProperty('--hoo-dlg-height', null);
-                }
-            }
-        }
-
-        let resizers = document.querySelectorAll("button[id^='height']");
-
-        console.debug(resizers);
-
-        resizers.forEach(resizer => resizer.addEventListener('click', resize));
-    }
-
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-topbar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Top Bar","patternPartial":"organism-dialog-topbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":4}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-bottombar" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-bottombar&#x2F;organism-dialogs-dialog-bottombar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-bottombar" title="Link to Pattern">
-						Bottom Bar
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-bottombar" data-patternpartial="organism-dialog-bottombar" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-bottombar">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgbottombar" class="hoo-dlg bottombar">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-<div class="hoo-dlgcontent">
-    
-        <p>This dialog is a topbar . That automatically scales with the content.</p>
-        <p>To make the height fixed add the CSS variable <code>--hoo-dlg-height</code></p>
-        <h2>Try to resize the sidebar</h2>
-        <button class="hoo-button-primary" id='height-unset'>
-            <span class="hoo-button-label">Unset / reset</span>
-        </button>
-        <button class="hoo-button-primary" id='height-20vw'>
-            <span class="hoo-button-label">20% height</span>
-        </button>
-        <button class="hoo-button-primary" id='height-50vw'>
-            <span class="hoo-button-label">50% height</span>
-        </button>
-        <button class="hoo-button-primary" id='height-75vw'>
-            <span class="hoo-button-label">75% height</span>
-        </button>
-</div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-
-    let dlg = document.querySelector('#dlgbottombar');
-
-    if (dlg !== undefined && dlg.parentElement.className === 'dlg-background') {
-        
-        dlg.showModal()
-
-        const resize = (event) => {
-
-            console.debug(event.currentTarget.id);
-
-            let newSize = null;
-
-            switch (event.currentTarget.id) {
-                case 'height-unset':
-                    break;
-                case 'height-20vw':
-                    newSize = '20vh';
-                    break;
-                case 'height-50vw':
-                    newSize = '50vh';
-                    break;
-                case 'height-75vw':
-                    newSize = '75vh';
-                    break;
-                default:
-                    break;
-            }
-
-            console.debug(dlg, newSize);
-
-            if (dlg && newSize) {
-
-                console.debug(' --- Update ....')
-                dlg.style.setProperty('--hoo-dlg-height', newSize);
-
-            } else {
-                if (newSize === null) {
-                    dlg.style.setProperty('--hoo-dlg-height', null);
-                }
-            }
-        }
-
-        let resizers = document.querySelectorAll("button[id^='height']");
-
-        console.debug(resizers);
-
-        resizers.forEach(resizer => resizer.addEventListener('click', resize));
-    }
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-bottombar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"molecules-helper-dlg-resize-hor","lineagePath":"../../patterns/molecules-dialogs-helper-dlg-resize-hor/molecules-dialogs-helper-dlg-resize-hor.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Bottom Bar","patternPartial":"organism-dialog-bottombar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":5}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-iframe" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-iframe&#x2F;organism-dialogs-dialog-iframe.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe" title="Link to Pattern">
-						with IFrame
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe" data-patternpartial="organism-dialog-iframe" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-    <div class="hoo-dlgcontent">
-        <iframe class="hoo-dlg-iframe" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
-        </iframe>
-    </div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-    console.debug(location.href);
-    let dlgiframe = document.querySelector('#dlgiframe');
-
-    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
-        
-        dlgiframe.showModal();
-    }
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-iframe-3by4" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-iframe-3by4&#x2F;organism-dialogs-dialog-iframe-3by4.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-3by4" title="Link to Pattern">
-						with IFrame - 3:4
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-3by4" data-patternpartial="organism-dialog-iframe-3by4" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-3by4">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-    <div class="hoo-dlgcontent">
-        <iframe class="hoo-dlg-iframe ratio-3by4" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
-        </iframe>
-    </div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-    console.debug(location.href);
-    let dlgiframe = document.querySelector('#dlgiframe');
-
-    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
-        
-        dlgiframe.showModal();
-    }
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-3by4" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - 3:4","patternPartial":"organism-dialog-iframe-3by4","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="organism-dialog-iframe-squared" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/organism-dialogs-dialog-iframe-squared&#x2F;organism-dialogs-dialog-iframe-squared.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-dialog-iframe-squared" title="Link to Pattern">
-						with IFrame - squared
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-dialog-iframe-squared" data-patternpartial="organism-dialog-iframe-squared" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-dialog-iframe-squared">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
-    <div class="hoo-dlgheader">
-        <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-close"></use>
-            </svg>
-        </span></button>
-    </div>
-    </div>
-    <div class="hoo-dlgcontent">
-        <iframe class="hoo-dlg-iframe ratio-squared" src="../pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html" name="testIframe" title="testIframe" loading="lazy">
-        </iframe>
-    </div></dialog>
-<!--- ⬇️ Script below is just for demo purposes ⬇️ -->
-<script>
-    console.debug(location.href);
-    let dlgiframe = document.querySelector('#dlgiframe');
-
-    if (dlgiframe !== undefined && dlgiframe.parentElement.className === 'dlg-background') {
-        
-        dlgiframe.showModal();
-    }
-</script>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-organism-dialog-iframe-squared" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame - squared","patternPartial":"organism-dialog-iframe-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-primary","lineagePath":"../../patterns/atoms-buttons-button-primary/atoms-buttons-button-primary.rendered.html"},{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"},{"lineagePattern":"molecules-dialog-content","lineagePath":"../../patterns/molecules-dialogs-dialog-content/molecules-dialogs-dialog-content.rendered.html"},{"lineagePattern":"atoms-button-standard","lineagePath":"../../patterns/atoms-buttons-button-standard/atoms-buttons-button-standard.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Generic Dialog</h1>\n<p>The Generic Dialog provides the foundational dialog implementation in the HTWOO design system. Built on the HTML5 <code>&lt;dialog&gt;</code> element, it offers a flexible, accessible container for displaying content, gathering user input, and managing user interactions in both modal and non-modal contexts.</p>\n<h2>Overview</h2>\n<p>The Generic Dialog serves as the base component for all dialog variants in HTWOO. It provides essential dialog functionality including positioning, sizing, content management, and accessibility features while remaining flexible enough to support various use cases and customization needs.</p>\n<h2>Features</h2>\n<h3>HTML5 Foundation</h3>\n<ul>\n<li><strong>Native Dialog Element</strong>: Built on HTML5 <code>&lt;dialog&gt;</code> for optimal accessibility</li>\n<li><strong>Browser Support</strong>: Leverages native browser dialog functionality</li>\n<li><strong>Focus Management</strong>: Automatic focus trapping and restoration</li>\n<li><strong>Keyboard Navigation</strong>: Built-in Escape key support for closing</li>\n</ul>\n<h3>Flexible Configuration</h3>\n<ul>\n<li><strong>Modal and Non-Modal</strong>: Supports both <code>show()</code> and <code>showModal()</code> methods</li>\n<li><strong>Custom Dimensions</strong>: Configurable width and height via CSS variables</li>\n<li><strong>Content Areas</strong>: Header, content, and action sections</li>\n<li><strong>Resize Support</strong>: Optional resize functionality for user control</li>\n</ul>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Modern Styling</strong>: Rounded corners (0.5rem) and smooth transitions</li>\n<li><strong>Backdrop Effects</strong>: Blur and saturation effects for modal dialogs</li>\n<li><strong>Responsive Layout</strong>: Adapts to viewport constraints</li>\n<li><strong>Theme Integration</strong>: Inherits HTWOO theme colors and typography</li>\n</ul>\n<h2>Structure</h2>\n<p>The Generic Dialog consists of three main areas:</p>\n<ol>\n<li><strong><a href=\"../molecules/dialogs/dialog-header\">Dialog Header</a></strong>: Optional title bar with close button</li>\n<li><strong><a href=\"../molecules/dialogs/dialog-content\">Dialog Content</a></strong>: Main content area</li>\n<li><strong>Dialog Actions</strong>: Optional button area for user actions</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;dialog&quot;: {\n        &quot;button&quot;: {\n            &quot;label&quot;: &quot;Show Dialog&quot;,\n            &quot;props&quot;: &quot;id=\\&quot;btn-dialog\\&quot;&quot;\n        }\n    },\n    &quot;modal-dialog&quot;: {\n        &quot;button&quot;: {\n            &quot;label&quot;: &quot;Show Modal Dialog&quot;, \n            &quot;props&quot;: &quot;id=\\&quot;btn-modal-dialog\\&quot;&quot;\n        }\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Container Classes</h3>\n<ul>\n<li><strong><code>.hoo-dlg</code></strong>: Main dialog container with base styling</li>\n<li><strong><code>.hoo-dlgheader</code></strong>: Header section with title and close button</li>\n<li><strong><code>.hoo-dlgcontent</code></strong>: Content area with padding and overflow handling</li>\n<li><strong><code>.hoo-dlg-actions</code></strong>: Footer area for action buttons</li>\n</ul>\n<h3>Modifier Classes</h3>\n<ul>\n<li><strong><code>.statusbar</code></strong>: Converts dialog to status bar appearance</li>\n<li><strong><code>.msg</code></strong>: Lightweight message bar styling</li>\n<li><strong><code>[resize=&quot;true&quot;]</code></strong>: Enables user resizing functionality</li>\n</ul>\n<h2>Styling</h2>\n<h3>Base Dimensions</h3>\n<h3>Visual Properties</h3>\n<ul>\n<li><strong>Background</strong>: Neutral-000 (#ffffff) for clean appearance</li>\n<li><strong>Border</strong>: None (relies on backdrop and shadow)</li>\n<li><strong>Border Radius</strong>: 0.5rem for modern appearance</li>\n<li><strong>Color</strong>: Neutral-700 (#323130) for text content</li>\n<li><strong>Transition</strong>: 0.5s ease-in-out for smooth animations</li>\n</ul>\n<h3>Backdrop Effects</h3>\n<h2>JavaScript Integration</h2>\n<h3>Basic Dialog Control</h3>\n<h3>Using HOODialog Class</h3>\n<h3>Event Handling</h3>\n<h2>Use Cases</h2>\n<h3>Content Display</h3>\n<ul>\n<li><strong>Information Dialogs</strong>: Displaying detailed information or help content</li>\n<li><strong>Media Viewers</strong>: Image, video, or document preview interfaces</li>\n<li><strong>Detail Views</strong>: Expanded views of list items or cards</li>\n<li><strong>Report Displays</strong>: Charts, graphs, and data visualizations</li>\n</ul>\n<h3>User Input</h3>\n<ul>\n<li><strong>Form Dialogs</strong>: Data entry and editing interfaces</li>\n<li><strong>Confirmation Dialogs</strong>: User action confirmations</li>\n<li><strong>Settings Panels</strong>: Configuration and preference interfaces</li>\n<li><strong>Wizard Interfaces</strong>: Multi-step processes and workflows</li>\n</ul>\n<h3>Application Features</h3>\n<ul>\n<li><strong>About Dialogs</strong>: Application information and credits</li>\n<li><strong>Help Systems</strong>: Contextual help and documentation</li>\n<li><strong>Tool Palettes</strong>: Design and editing tools</li>\n<li><strong>Search Interfaces</strong>: Advanced search and filter options</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Native HTML5 Benefits</h3>\n<ul>\n<li><strong>Focus Trapping</strong>: Automatic focus management within dialog</li>\n<li><strong>Keyboard Support</strong>: Built-in Escape key handling for closing</li>\n<li><strong>Screen Reader</strong>: Native dialog semantics and state announcements</li>\n<li><strong>ARIA Integration</strong>: Automatic ARIA attributes and roles</li>\n</ul>\n<h3>Enhanced Accessibility</h3>\n<ul>\n<li><strong>Focus Restoration</strong>: Returns focus to launching element on close</li>\n<li><strong>Tab Order</strong>: Logical tab order within dialog content</li>\n<li><strong>Close Methods</strong>: Multiple ways to close (button, Escape, backdrop)</li>\n<li><strong>Clear Labels</strong>: Descriptive button labels and instructions</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>High Contrast</strong>: Compatible with high contrast display modes</li>\n<li><strong>Focus Indicators</strong>: Clear visual focus states for keyboard navigation</li>\n<li><strong>Text Scaling</strong>: Responsive to user font size preferences</li>\n<li><strong>Color Independence</strong>: Doesn't rely solely on color for information</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Content Strategy</h3>\n<ul>\n<li><strong>Single Purpose</strong>: Each dialog should have one clear purpose</li>\n<li><strong>Concise Content</strong>: Keep content focused and scannable</li>\n<li><strong>Clear Actions</strong>: Use descriptive, action-oriented button labels</li>\n<li><strong>Logical Flow</strong>: Organize content in logical reading order</li>\n</ul>\n<h3>User Experience</h3>\n<ul>\n<li><strong>Non-Intrusive Timing</strong>: Don't interrupt critical user workflows</li>\n<li><strong>Clear Escape Routes</strong>: Always provide obvious ways to close</li>\n<li><strong>Responsive Feedback</strong>: Show immediate feedback for user actions</li>\n<li><strong>Context Preservation</strong>: Maintain user context when appropriate</li>\n</ul>\n<h3>Development</h3>\n<ul>\n<li><strong>Progressive Enhancement</strong>: Ensure basic functionality without JavaScript</li>\n<li><strong>Error Handling</strong>: Graceful handling of content loading failures</li>\n<li><strong>Performance</strong>: Optimize for fast loading and smooth interactions</li>\n<li><strong>Testing</strong>: Test with keyboard users and screen readers</li>\n</ul>\n<h2>Variants and Extensions</h2>\n<h3>Status Bar Mode</h3>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg statusbar&quot;&gt;\n    &lt;div class=&quot;hoo-icon&quot;&gt;\n        &lt;svg&gt;&lt;!-- Status icon --&gt;&lt;/svg&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;hoo-dlg-content&quot;&gt;Status message&lt;/div&gt;\n    &lt;div class=&quot;hoo-dlg-actions&quot;&gt;\n        &lt;button&gt;Dismiss&lt;/button&gt;\n    &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Message Bar Mode</h3>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg msg&quot;&gt;\n    &lt;div class=&quot;hoo-dlg-content&quot;&gt;\n        Brief message content with minimal padding\n    &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome 37+, Firefox 98+, Safari 15.4+</li>\n<li><strong>HTML5 Dialog</strong>: Requires native <code>&lt;dialog&gt;</code> element support</li>\n<li><strong>CSS Features</strong>: Modern CSS (custom properties, backdrop-filter)</li>\n<li><strong>JavaScript</strong>: ES6+ features for enhanced functionality</li>\n<li><strong>Polyfills</strong>: dialog-polyfill available for older browser support</li>\n</ul>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"Generic Dialog","patternPartial":"organism-generic-dialog","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":11}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -1084,10 +1436,10 @@ See <a href="">MDN Dialog</a>
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -1100,7 +1452,7 @@ See <a href="">MDN Dialog</a>
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -1148,6 +1500,7 @@ See <a href="">MDN Dialog</a>
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

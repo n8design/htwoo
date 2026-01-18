@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,30 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Images</h1>
+<p>Images in the HTWOO UI library provide flexible, responsive image components with support for different aspect ratios to maintain consistent layouts across the interface. Images are used in various components like cards, avatars, and media elements.</p>
+<h2>Image Types</h2>
+<ul>
+<li><strong>Default Image</strong> - Base image component with lazy loading</li>
+<li><strong>1:1 Aspect Ratio</strong> - Perfect square images (used for avatars, profile pictures)</li>
+<li><strong>16:9 Aspect Ratio</strong> - Widescreen format (used for video thumbnails, card images)</li>
+<li><strong>16:10 Aspect Ratio</strong> - Alternative widescreen format (used for Teams splash cards)</li>
+</ul>
+<h2>Usage</h2>
+<p>Basic image implementation:</p>
+<pre><code class="language-html">&lt;img src=&quot;path/to/image.jpg&quot; alt=&quot;Description of image&quot; loading=&quot;lazy&quot;&gt;
+</code></pre>
+<p>Different aspect ratios are typically handled by the parent container (like cards, avatars, or media components) rather than the image itself.</p>
+<h2>Accessibility</h2>
+<p>When using images, consider the following accessibility guidelines:</p>
+<ul>
+<li>Always provide descriptive <code>alt</code> text for informative images</li>
+<li>Use empty <code>alt=&quot;&quot;</code> for decorative images</li>
+<li>Use the <code>loading=&quot;lazy&quot;</code> attribute for performance optimization</li>
+<li>Ensure sufficient contrast between text and image backgrounds when text overlays images</li>
+<li>Consider users with reduced motion preferences</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -42,7 +65,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-images-image-1by1&#x2F;atoms-images-image-1by1.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-image-1by1" title="Link to Pattern">
-						Squared Image
+						1:1 Aspect Ratio Image
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -74,7 +97,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-image-1by1" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Squared Image for example for avatar images</p>\n<p><strong>Used in</strong> <a href=\"?p=viewall-molecules-avatar\">avatar pictures</a> and <a href=\"?p=viewall-molecules-persona\">personas</a></p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"Squared Image","patternPartial":"atoms-image-1by1","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":1,"hidden":false}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>1:1 (Square) Image</h1>\n<p>Perfect square images commonly used for avatars and profile pictures.</p>\n<h2>Overview</h2>\n<p>The 1:1 aspect ratio image maintains a perfect square shape, ensuring consistency in profile images, avatar displays, and other content requiring equal width and height.</p>\n<h2>Usage</h2>\n<p>The 1:1 image aspect ratio is primarily used in:</p>\n<ul>\n<li>Avatar components</li>\n<li>Profile pictures</li>\n<li>Thumbnail displays where consistent dimensions are required</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Always provide descriptive <code>alt</code> text for profile images</li>\n<li>When used in UI components like avatars, follow the accessibility guidelines of those components</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"1:1 Aspect Ratio Image","patternPartial":"atoms-image-1by1","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":1,"hidden":false}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -85,7 +108,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-images-image-16by9&#x2F;atoms-images-image-16by9.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-image-16by9" title="Link to Pattern">
-						16:9 aspect ratio
+						16:9 Aspect Ratio Image
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -117,7 +140,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-image-16by9" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Image with aspect ration 16:9</p>\n<p><strong>Used:</strong> in <a href=\"?p=molecules-card-image\">Cards</a></p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"16:9 aspect ratio","patternPartial":"atoms-image-16by9","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":2,"hidden":false}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>16:9 Aspect Ratio Image</h1>\n<p>Widescreen aspect ratio commonly used for video thumbnails and featured media.</p>\n<h2>Overview</h2>\n<p>The 16:9 aspect ratio image maintains the standard widescreen format commonly used for videos, presentations, and featured content areas.</p>\n<h2>Usage</h2>\n<p>The 16:9 image aspect ratio is primarily used in:</p>\n<ul>\n<li>Card image components</li>\n<li>Video thumbnails</li>\n<li>Featured content areas</li>\n<li>Media gallery items</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Provide descriptive <code>alt</code> text that explains the content and context of the image</li>\n<li>When used in cards or media components, consider how the image conveys meaning in its context</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"16:9 Aspect Ratio Image","patternPartial":"atoms-image-16by9","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":2,"hidden":false}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -128,7 +151,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-images-image-16by10&#x2F;atoms-images-image-16by10.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-image-16by10" title="Link to Pattern">
-						16:10 aspect ratio
+						16:10 Aspect Ratio Image
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -160,7 +183,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-image-16by10" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Image with aspect ration 16:9</p>\n<p><strong>Used:</strong> in <a href=\"?p=molecules-card-splash-header\">Teams Spalsh Cards Headers</a></p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"16:10 aspect ratio","patternPartial":"atoms-image-16by10","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":3,"hidden":false}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>16:10 Aspect Ratio Image</h1>\n<p>Slightly taller widescreen format used for specific card layouts.</p>\n<h2>Overview</h2>\n<p>The 16:10 aspect ratio image provides a more vertical space compared to 16:9 while still maintaining a widescreen appearance. This aspect ratio is especially useful for content that benefits from the additional vertical space.</p>\n<h2>Usage</h2>\n<p>The 16:10 image aspect ratio is primarily used in:</p>\n<ul>\n<li>Teams splash card headers</li>\n<li>Dashboard panels</li>\n<li>Presentation slides</li>\n<li>Specific UI components requiring a slightly taller widescreen format</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Provide descriptive <code>alt</code> text that explains the content and context of the image</li>\n<li>When used as background or hero images, ensure text overlaid has sufficient contrast</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"images"},"patternExtension":"hbs","patternName":"16:10 Aspect Ratio Image","patternPartial":"atoms-image-16by10","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":3,"hidden":false}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -211,10 +234,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -227,7 +250,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -275,6 +298,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

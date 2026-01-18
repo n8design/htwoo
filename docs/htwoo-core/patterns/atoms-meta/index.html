@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,57 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Meta Components</h1>
+<p>Meta components are used to display metadata, tags, categories, or other supplementary information in a compact, visually distinct format.</p>
+<h2>Meta Tag Types</h2>
+<ul>
+<li><strong>Button Tag</strong> - Interactive tag that can be clicked to trigger an action</li>
+<li><strong>Link Tag</strong> - Interactive tag that navigates to another page</li>
+<li><strong>Static Tag</strong> - Non-interactive tag for display purposes only</li>
+<li><strong>Primary Style</strong> - Tag with primary theme color styling</li>
+</ul>
+<h2>SCSS Imports</h2>
+<p><strong>Main Component</strong></p>
+<p><strong>SCSS Partial Location</strong></p>
+<h2>Usage</h2>
+<p>Meta tags should be used when:</p>
+<ul>
+<li>Displaying categories, tags, or keywords</li>
+<li>Showing metadata attributes like status, type, or classification</li>
+<li>Creating filterable or clickable tag interfaces</li>
+<li>Displaying compact labels that need visual distinction from regular text</li>
+</ul>
+<h2>Best Practices</h2>
+<ul>
+<li>Keep tag text short and concise</li>
+<li>Use consistent tag types for similar functionality</li>
+<li>Consider accessibility when choosing between button, link, and static tags</li>
+<li>Use primary styling sparingly for emphasizing important tags</li>
+<li>Group related tags together using the tag list component</li>
+<li>Avoid overloading interfaces with too many tags</li>
+<li>Consider using icons with tags for enhanced visual cues</li>
+</ul>
+<h2>CSS Classes</h2>
+<ul>
+<li><code>.hoo-mtag</code> - Base tag class for standard color theme</li>
+<li><code>.hoo-mtag-primary</code> - Primary color themed tag</li>
+<li><code>.hoo-mtag-lbl</code> - Inner text container for the tag</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Use appropriate semantic elements based on functionality:
+<ul>
+<li><code>&lt;button&gt;</code> for actionable tags</li>
+<li><code>&lt;a&gt;</code> for navigational tags</li>
+<li><code>&lt;span&gt;</code> for static display tags</li>
+</ul>
+</li>
+<li>Ensure sufficient color contrast between tag background and text</li>
+<li>Consider adding descriptive title attributes for tags with truncated text</li>
+<li>For clickable tags, ensure they have appropriate focus states</li>
+<li>For tags representing status or state, consider using appropriate ARIA attributes</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -42,7 +92,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-meta-tag&#x2F;atoms-meta-tag.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag" title="Link to Pattern">
-						Tag
+						Tag (Button)
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -76,97 +126,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tag" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-button","lineagePath":"../../patterns/molecules-meta-tag-list-button/molecules-meta-tag-list-button.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-button","lineagePath":"../../patterns/molecules-meta-tag-list-button/molecules-meta-tag-list-button.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag","patternPartial":"atoms-tag","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-tag-link" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-meta-tag-link&#x2F;atoms-meta-tag-link.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-link" title="Link to Pattern">
-						Tag Link
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-tag-link" data-patternpartial="atoms-tag-link" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-tag-link">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<a href="?" class="hoo-mtag">
-    <span class="hoo-mtag-lbl">hTWOo</span>
-</a>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-tag-link" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-link","lineagePath":"../../patterns/molecules-meta-tag-list-link/molecules-meta-tag-list-link.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-link","lineagePath":"../../patterns/molecules-meta-tag-list-link/molecules-meta-tag-list-link.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Link","patternPartial":"atoms-tag-link","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-tag-link-primary" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-meta-tag-link-primary&#x2F;atoms-meta-tag-link-primary.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-link-primary" title="Link to Pattern">
-						Tag Link Primary
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-tag-link-primary" data-patternpartial="atoms-tag-link-primary" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-tag-link-primary">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<a href="?" class="hoo-mtag-primary">
-    <span class="hoo-mtag-lbl">hTWOo</span>
-</a>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-tag-link-primary" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-link-primary","lineagePath":"../../patterns/molecules-meta-tag-list-link-primary/molecules-meta-tag-list-link-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-link-primary","lineagePath":"../../patterns/molecules-meta-tag-list-link-primary/molecules-meta-tag-list-link-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Link Primary","patternPartial":"atoms-tag-link-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-button","lineagePath":"../../patterns/molecules-meta-tag-list-button/molecules-meta-tag-list-button.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-button","lineagePath":"../../patterns/molecules-meta-tag-list-button/molecules-meta-tag-list-button.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag (Button)</h1>\n<p>A clickable tag component implemented as a button for triggering actions.</p>\n<h2>Overview</h2>\n<p>The button tag is an interactive meta component used when the tag needs to trigger an action like filtering content, toggling visibility, or other non-navigational interactions.</p>\n<h2>Usage</h2>\n<p>Button tags should be used when:</p>\n<ul>\n<li>The tag needs to perform an action when clicked</li>\n<li>The tag interaction doesn't change the current page</li>\n<li>The tag needs to toggle a state or filter</li>\n<li>You need to capture click events on the tag</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Standard appearance</li>\n<li><strong>Hover</strong> - Visual feedback when mouse is over the tag</li>\n<li><strong>Focus</strong> - When the tag receives keyboard focus</li>\n<li><strong>Active</strong> - When the tag is being clicked</li>\n<li><strong>Disabled</strong> - When the tag is not interactive (add <code>disabled</code> attribute)</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag</code> - Base tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Events</h2>\n<p>Button tags support standard button events:</p>\n<ul>\n<li><code>click</code> - Fired when the user clicks the tag</li>\n<li><code>focus</code> - Fired when the tag receives focus</li>\n<li><code>blur</code> - Fired when the tag loses focus</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Button tags have built-in keyboard accessibility</li>\n<li>They can be focused using the Tab key</li>\n<li>They can be activated using the Space or Enter key</li>\n<li>Consider adding appropriate <code>aria-pressed=&quot;true|false&quot;</code> for toggle-style tags</li>\n<li>For disabled tags, include both the <code>disabled</code> attribute and <code>aria-disabled=&quot;true&quot;</code></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag (Button)","patternPartial":"atoms-tag","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -177,7 +137,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-meta-tag-primary&#x2F;atoms-meta-tag-primary.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-primary" title="Link to Pattern">
-						Tag Primary
+						Tag Primary (Button)
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -211,7 +171,97 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tag-primary" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-button-primary","lineagePath":"../../patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-button-primary","lineagePath":"../../patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Primary","patternPartial":"atoms-tag-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-button-primary","lineagePath":"../../patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-button-primary","lineagePath":"../../patterns/molecules-meta-tag-list-button-primary/molecules-meta-tag-list-button-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag Primary (Button)</h1>\n<p>A clickable tag component with primary theme styling, implemented as a button for triggering actions.</p>\n<h2>Overview</h2>\n<p>The primary button tag is an interactive meta component with enhanced visual emphasis using the primary theme colors. It's used for highlighting important or frequently used tag actions.</p>\n<h2>Usage</h2>\n<p>Primary button tags should be used when:</p>\n<ul>\n<li>The tag action is of primary importance</li>\n<li>You want to highlight specific tags among a group of tags</li>\n<li>The tag represents a featured category or state</li>\n<li>The action deserves visual emphasis</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Primary themed appearance</li>\n<li><strong>Hover</strong> - Visual feedback when mouse is over the tag</li>\n<li><strong>Focus</strong> - When the tag receives keyboard focus</li>\n<li><strong>Active</strong> - When the tag is being clicked</li>\n<li><strong>Disabled</strong> - When the tag is not interactive (add <code>disabled</code> attribute)</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag-primary</code> - Primary theme tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Events</h2>\n<p>Primary button tags support standard button events:</p>\n<ul>\n<li><code>click</code> - Fired when the user clicks the tag</li>\n<li><code>focus</code> - Fired when the tag receives focus</li>\n<li><code>blur</code> - Fired when the tag loses focus</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Button tags have built-in keyboard accessibility</li>\n<li>They can be focused using the Tab key</li>\n<li>They can be activated using the Space or Enter key</li>\n<li>Consider adding appropriate <code>aria-pressed=&quot;true|false&quot;</code> for toggle-style tags</li>\n<li>For disabled tags, include both the <code>disabled</code> attribute and <code>aria-disabled=&quot;true&quot;</code></li>\n<li>Ensure sufficient color contrast with the primary theme colors</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Primary (Button)","patternPartial":"atoms-tag-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":21}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-tag-link" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-meta-tag-link&#x2F;atoms-meta-tag-link.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-link" title="Link to Pattern">
+						Tag (Link)
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-tag-link" data-patternpartial="atoms-tag-link" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-tag-link">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<a href="?" class="hoo-mtag">
+    <span class="hoo-mtag-lbl">hTWOo</span>
+</a>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-tag-link" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-link","lineagePath":"../../patterns/molecules-meta-tag-list-link/molecules-meta-tag-list-link.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-link","lineagePath":"../../patterns/molecules-meta-tag-list-link/molecules-meta-tag-list-link.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag (Link)</h1>\n<p>A clickable tag component implemented as a link for navigation.</p>\n<h2>Overview</h2>\n<p>The link tag is an interactive meta component used when the tag needs to navigate to another page, view, or external resource.</p>\n<h2>Usage</h2>\n<p>Link tags should be used when:</p>\n<ul>\n<li>The tag needs to navigate to another page or view</li>\n<li>The tag represents a clickable category or filter that changes page content</li>\n<li>The tag links to a collection of related content</li>\n<li>The tag links to an external resource</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Standard appearance</li>\n<li><strong>Hover</strong> - Visual feedback when mouse is over the tag</li>\n<li><strong>Focus</strong> - When the tag receives keyboard focus</li>\n<li><strong>Active</strong> - When the tag is being clicked</li>\n<li><strong>Visited</strong> - After the link has been visited (if styled)</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag</code> - Base tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Attributes</h2>\n<ul>\n<li><code>href</code> - The URL that the link points to</li>\n<li><code>target</code> - Optional target window (e.g., <code>_blank</code> for new tab)</li>\n<li><code>rel</code> - Relationship attributes, use <code>rel=&quot;noopener noreferrer&quot;</code> with <code>target=&quot;_blank&quot;</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Link tags have built-in keyboard accessibility</li>\n<li>They can be focused using the Tab key</li>\n<li>They can be activated using the Enter key</li>\n<li>If opening in a new window, consider adding an indicator and appropriate aria attributes</li>\n<li>For external links, consider adding <code>aria-label</code> with additional context</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag (Link)","patternPartial":"atoms-tag-link","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":22}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-tag-link-primary" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-meta-tag-link-primary&#x2F;atoms-meta-tag-link-primary.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-link-primary" title="Link to Pattern">
+						Tag Primary (Link)
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-tag-link-primary" data-patternpartial="atoms-tag-link-primary" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-tag-link-primary">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<a href="?" class="hoo-mtag-primary">
+    <span class="hoo-mtag-lbl">hTWOo</span>
+</a>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-tag-link-primary" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-link-primary","lineagePath":"../../patterns/molecules-meta-tag-list-link-primary/molecules-meta-tag-list-link-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-link-primary","lineagePath":"../../patterns/molecules-meta-tag-list-link-primary/molecules-meta-tag-list-link-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag Primary (Link)</h1>\n<p>A clickable tag component with primary theme styling, implemented as a link for navigation.</p>\n<h2>Overview</h2>\n<p>The primary link tag is an interactive meta component with enhanced visual emphasis using the primary theme colors. It's used for highlighting important navigational tags.</p>\n<h2>Usage</h2>\n<p>Primary link tags should be used when:</p>\n<ul>\n<li>The tag navigation is of primary importance</li>\n<li>You want to highlight specific navigational tags</li>\n<li>The tag represents a featured category or section</li>\n<li>The link deserves visual emphasis</li>\n</ul>\n<h2>States</h2>\n<ul>\n<li><strong>Default</strong> - Primary themed appearance</li>\n<li><strong>Hover</strong> - Visual feedback when mouse is over the tag</li>\n<li><strong>Focus</strong> - When the tag receives keyboard focus</li>\n<li><strong>Active</strong> - When the tag is being clicked</li>\n<li><strong>Visited</strong> - After the link has been visited (if styled)</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag-primary</code> - Primary theme tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Attributes</h2>\n<ul>\n<li><code>href</code> - The URL that the link points to</li>\n<li><code>target</code> - Optional target window (e.g., <code>_blank</code> for new tab)</li>\n<li><code>rel</code> - Relationship attributes, use <code>rel=&quot;noopener noreferrer&quot;</code> with <code>target=&quot;_blank&quot;</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Link tags have built-in keyboard accessibility</li>\n<li>They can be focused using the Tab key</li>\n<li>They can be activated using the Enter key</li>\n<li>If opening in a new window, consider adding an indicator and appropriate aria attributes</li>\n<li>For external links, consider adding <code>aria-label</code> with additional context</li>\n<li>Ensure sufficient color contrast with the primary theme colors</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Primary (Link)","patternPartial":"atoms-tag-link-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":23}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -222,7 +272,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-meta-tag-static&#x2F;atoms-meta-tag-static.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-static" title="Link to Pattern">
-						Tag Static
+						Tag (Static)
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -256,7 +306,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tag-static" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-static","lineagePath":"../../patterns/molecules-meta-tag-list-static/molecules-meta-tag-list-static.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-static","lineagePath":"../../patterns/molecules-meta-tag-list-static/molecules-meta-tag-list-static.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Static","patternPartial":"atoms-tag-static","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-static","lineagePath":"../../patterns/molecules-meta-tag-list-static/molecules-meta-tag-list-static.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-static","lineagePath":"../../patterns/molecules-meta-tag-list-static/molecules-meta-tag-list-static.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag (Static)</h1>\n<p>A non-interactive tag component for display purposes.</p>\n<h2>Overview</h2>\n<p>The static tag is a non-clickable meta component used when the tag is purely informational and doesn't require any interaction.</p>\n<h2>Usage</h2>\n<p>Static tags should be used when:</p>\n<ul>\n<li>The tag is purely informational</li>\n<li>The tag doesn't need to be clickable</li>\n<li>The tag represents a status or state</li>\n<li>The tag is used for visual grouping or categorization</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag</code> - Base tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Since static tags are not interactive, they don't receive focus</li>\n<li>Use appropriate ARIA attributes for tags that convey state information:\n<ul>\n<li>For status tags: <code>role=&quot;status&quot;</code> or appropriate ARIA live regions</li>\n<li>For tags representing important metadata: consider <code>aria-label</code> on the container</li>\n</ul>\n</li>\n<li>Ensure sufficient color contrast for readability</li>\n</ul>\n<h2>Customization</h2>\n<p>Static tags can be customized with additional classes or styles for specific use cases:</p>\n<ul>\n<li>Add custom background colors for status indicators</li>\n<li>Use with icons for enhanced visual meaning</li>\n<li>Apply additional classes for specific styling needs</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag (Static)","patternPartial":"atoms-tag-static","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":24}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -267,7 +317,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-meta-tag-static-primary&#x2F;atoms-meta-tag-static-primary.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tag-static-primary" title="Link to Pattern">
-						Tag Static Primary
+						Tag Primary (Static)
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -301,7 +351,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tag-static-primary" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-static-primary","lineagePath":"../../patterns/molecules-meta-tag-list-static-primary/molecules-meta-tag-list-static-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-static-primary","lineagePath":"../../patterns/molecules-meta-tag-list-static-primary/molecules-meta-tag-list-static-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Static Primary","patternPartial":"atoms-tag-static-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-tag-list-static-primary","lineagePath":"../../patterns/molecules-meta-tag-list-static-primary/molecules-meta-tag-list-static-primary.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-tag-list-static-primary","lineagePath":"../../patterns/molecules-meta-tag-list-static-primary/molecules-meta-tag-list-static-primary.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Tag Primary (Static)</h1>\n<p>A non-interactive tag component with primary theme styling for display purposes.</p>\n<h2>Overview</h2>\n<p>The primary static tag is a non-clickable meta component with enhanced visual emphasis using the primary theme colors. It's used for highlighting important information or statuses.</p>\n<h2>Usage</h2>\n<p>Primary static tags should be used when:</p>\n<ul>\n<li>The tag information is of primary importance</li>\n<li>You want to highlight specific metadata</li>\n<li>The tag represents a featured or important status</li>\n<li>The information deserves visual emphasis</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-mtag-primary</code> - Primary theme tag class</li>\n<li><code>.hoo-mtag-lbl</code> - Inner text container</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Since static tags are not interactive, they don't receive focus</li>\n<li>Use appropriate ARIA attributes for tags that convey state information:\n<ul>\n<li>For status tags: <code>role=&quot;status&quot;</code> or appropriate ARIA live regions</li>\n<li>For tags representing important metadata: consider <code>aria-label</code> on the container</li>\n</ul>\n</li>\n<li>Ensure sufficient color contrast for readability with the primary theme colors</li>\n</ul>\n<h2>Customization</h2>\n<p>Primary static tags maintain the primary theme color but can be customized with:</p>\n<ul>\n<li>Additional classes for specific styling needs</li>\n<li>Combined with icons for enhanced visual meaning</li>\n<li>Custom padding or sizing for specific layout requirements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"meta"},"patternExtension":"hbs","patternName":"Tag Primary (Static)","patternPartial":"atoms-tag-static-primary","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":25}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -352,10 +402,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -368,7 +418,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -416,6 +466,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

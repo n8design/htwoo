@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -35,14 +35,532 @@
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
-					<div id="atoms-shimmer-theming-support" class="pl-c-pattern">
+					<div id="atoms-loading" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-loading&#x2F;atoms-loading-loading.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-loading" title="Link to Pattern">
+						Loading Components
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-loading" data-patternpartial="atoms-loading" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-loading">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+    <div class="hoo-progress-indicator"></div>
+</div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-loading" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Loading Components</h1>\n<p>Loading components in the HTWOO UI library provide visual indicators that content is being loaded or an operation is in progress. These components help improve user experience by providing feedback during wait times.</p>\n<h2>Loading Types</h2>\n<ul>\n<li><strong>Progress Bar</strong> - Linear indicator showing progress or indeterminate loading state</li>\n<li><strong>Spinner</strong> - Circular loading animation for general loading states</li>\n<li><strong>Shimmer</strong> - Content placeholder animations for loading specific UI elements</li>\n</ul>\n<h2>SCSS Imports</h2>\n<p><strong>Main Component</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>Usage</h2>\n<p>Loading indicators should be used when:</p>\n<ul>\n<li>Content or data is being fetched from a server</li>\n<li>A process is running that takes time to complete</li>\n<li>The system needs to provide visual feedback during wait states</li>\n<li>The UI needs to indicate that it's not frozen during long operations</li>\n</ul>\n<h3>Component Selection Guide</h3>\n<ul>\n<li><strong>Progress Bar</strong>: Use for operations with a known duration or progress percentage</li>\n<li><strong>Spinner</strong>: Use for indeterminate wait times when you don't know how long the process will take</li>\n<li><strong>Shimmer</strong>: Use as content placeholders to show layout before content loads (skeleton screens)</li>\n</ul>\n<h2>Best Practices</h2>\n<ul>\n<li>Use appropriate loading component based on context and available space</li>\n<li>Provide text alternatives for screen readers</li>\n<li>Consider using timeouts to show loading indicators only for longer operations (&gt;300ms)</li>\n<li>For known-duration operations, prefer progress bars with accurate progress indicators</li>\n<li>For unknown-duration operations, use indeterminate indicators like spinners</li>\n<li>Shimmer components should match the layout of the content they're replacing</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-progress</code> - Base class for progress bar container</li>\n<li><code>.hoo-progress-indicator</code> - The animated progress indicator element</li>\n<li><code>.hoo-spinner</code> - Base spinner class with various size modifiers (xsmall, small, large)</li>\n<li><code>.hoo-ph-squared</code> - Shimmer placeholder for squared/rectangular content</li>\n<li><code>.hoo-ph-circle</code> - Shimmer placeholder for circular content</li>\n<li><code>.hoo-ph-row</code> - Shimmer placeholder for text row content</li>\n</ul>\n<h3>Theming Classes</h3>\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring for shimmer</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring for shimmer</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme for shimmer</li>\n</ul>\n<h2>Accessibility</h2>\n<p>When implementing loading indicators, follow these accessibility guidelines:</p>\n<ul>\n<li>Use appropriate ARIA attributes:\n<ul>\n<li><code>role=&quot;progressbar&quot;</code> for progress bars</li>\n<li><code>role=&quot;status&quot;</code> for spinners</li>\n<li><code>aria-busy=&quot;true&quot;</code> for regions that are loading</li>\n</ul>\n</li>\n<li>Include text that explains what's loading or processing (e.g., &quot;Loading content...&quot;)</li>\n<li>Ensure loading indicators have sufficient color contrast</li>\n<li>Consider adding approximate time estimates for longer operations when possible</li>\n<li>Use <code>aria-live</code> regions to announce when loading is complete</li>\n<li>For spinners, include <code>aria-label=&quot;Loading&quot;</code> or similar descriptive text</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Loading Components","patternPartial":"atoms-loading","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-spinner" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-spinner&#x2F;atoms-loading-spinner.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner" title="Link to Pattern">
+						Spinner
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner" data-patternpartial="atoms-spinner" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-spinner"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-spinner" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Spinner</h1>\n<p>A circular loading indicator that provides visual feedback during processes with indeterminate duration.</p>\n<h2>Overview</h2>\n<p>The spinner is an animated loading indicator that rotates continuously to indicate that an operation is in progress. It's ideal for scenarios where the duration of the loading operation is unknown or variable.</p>\n<h2>Usage</h2>\n<p>Spinners should be used when:</p>\n<ul>\n<li>The duration of the operation is unknown</li>\n<li>Space is limited and a compact loading indicator is needed</li>\n<li>A general &quot;loading&quot; or &quot;processing&quot; state needs to be indicated</li>\n<li>The loading indicator might appear in various contexts throughout the application</li>\n</ul>\n<h2>Variants</h2>\n<ul>\n<li><strong>Default</strong> - Standard size for most use cases</li>\n<li><strong>XSmall</strong> - Extra small spinner for inline or compact UI elements</li>\n<li><strong>Small</strong> - Smaller spinner for more compact UI areas</li>\n<li><strong>Large</strong> - Larger spinner for more prominent loading states</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-spinner</code> - Base spinner class</li>\n<li><code>.xsmall</code> - Modifier for extra small spinner</li>\n<li><code>.small</code> - Modifier for small spinner</li>\n<li><code>.large</code> - Modifier for large spinner</li>\n</ul>\n<h2>Customization</h2>\n<p>The spinner uses CSS variables for theming:</p>\n<ul>\n<li><code>--themePrimary</code> - Primary color for the spinner (active segment)</li>\n<li><code>--themeLight</code> - Light color for the inactive segments</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Include <code>role=&quot;status&quot;</code> to indicate a status message to screen readers</li>\n<li>Add a descriptive <code>aria-label</code> to explain what is loading</li>\n<li>Consider using <code>aria-live=&quot;polite&quot;</code> for dynamic updates</li>\n<li>For spinners that block interaction, use <code>aria-busy=&quot;true&quot;</code> on the container</li>\n</ul>\n<h2>Animation</h2>\n<p>The spinner uses a continuous rotation animation with a cubic-bezier timing function for a smooth, natural-feeling rotation. The animation runs indefinitely until the spinner is removed from the DOM.</p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Spinner","patternPartial":"atoms-spinner","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-spinner-large" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-spinner-large&#x2F;atoms-loading-spinner-large.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-large" title="Link to Pattern">
+						Large Spinner
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-large" data-patternpartial="atoms-spinner-large" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-large">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-spinner large"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-spinner-large" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Large Spinner</h1>\n<p>A larger variant of the circular loading indicator for high-visibility loading states.</p>\n<h2>Overview</h2>\n<p>The large spinner is an enlarged version of the standard spinner component, designed for scenarios where loading states need more prominence or visibility on the page.</p>\n<h2>Usage</h2>\n<p>Large spinners should be used when:</p>\n<ul>\n<li>The loading operation is the primary focus of the viewport</li>\n<li>More visibility is needed for the loading state</li>\n<li>Loading affects a large portion of the UI</li>\n<li>The spinner needs to be seen from a distance or at a glance</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-spinner</code> - Base spinner class</li>\n<li><code>.large</code> - Modifier class for the large size variant</li>\n</ul>\n<h2>Dimensions</h2>\n<p>The large spinner has a width and height of 1.75rem (28px), making it approximately 40% larger than the standard spinner.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>Include <code>role=&quot;status&quot;</code> to indicate a status message to screen readers</li>\n<li>Add a descriptive <code>aria-label</code> to explain what is loading</li>\n<li>Consider using <code>aria-live=&quot;polite&quot;</code> for dynamic updates</li>\n<li>For spinners that block interaction, use <code>aria-busy=&quot;true&quot;</code> on the container</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Large Spinner","patternPartial":"atoms-spinner-large","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":31}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-spinner-small" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-spinner-small&#x2F;atoms-loading-spinner-small.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-small" title="Link to Pattern">
+						Small Spinner
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-small" data-patternpartial="atoms-spinner-small" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-small">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-spinner small"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-spinner-small" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Small Spinner</h1>\n<p>A smaller variant of the circular loading indicator for compact UI elements.</p>\n<h2>Overview</h2>\n<p>The small spinner is a reduced-size version of the standard spinner component, designed for scenarios where space is limited but loading state feedback is still needed.</p>\n<h2>Usage</h2>\n<p>Small spinners should be used when:</p>\n<ul>\n<li>Space is constrained in the UI</li>\n<li>Loading occurs within a smaller component or element</li>\n<li>The loading indicator needs to be subtle or less prominent</li>\n<li>Inline with text or other compact UI elements</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-spinner</code> - Base spinner class</li>\n<li><code>.small</code> - Modifier class for the small size variant</li>\n</ul>\n<h2>Dimensions</h2>\n<p>The small spinner has a width and height of 1rem (16px), making it 20% smaller than the standard spinner.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>Include <code>role=&quot;status&quot;</code> to indicate a status message to screen readers</li>\n<li>Add a descriptive <code>aria-label</code> to explain what is loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative small spinners</li>\n<li>Ensure the spinner has sufficient contrast even at smaller sizes</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Small Spinner","patternPartial":"atoms-spinner-small","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":32}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-spinner-xsmall" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-spinner-xsmall&#x2F;atoms-loading-spinner-xsmall.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-xsmall" title="Link to Pattern">
+						XSmall Spinner
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-xsmall" data-patternpartial="atoms-spinner-xsmall" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-xsmall">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-spinner xsmall"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-spinner-xsmall" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>XSmall Spinner</h1>\n<p>The smallest variant of the circular loading indicator for highly compact UI elements.</p>\n<h2>Overview</h2>\n<p>The extra small spinner is the most compact version of the spinner component, designed for very limited spaces where a loading indicator is still needed but must be extremely subtle.</p>\n<h2>Usage</h2>\n<p>XSmall spinners should be used when:</p>\n<ul>\n<li>Space is extremely constrained in the UI</li>\n<li>Loading occurs within tiny UI elements</li>\n<li>The loading indicator needs to be very subtle or minimally intrusive</li>\n<li>Inline within dense text or compact controls</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-spinner</code> - Base spinner class</li>\n<li><code>.xsmall</code> - Modifier class for the extra small size variant</li>\n</ul>\n<h2>Dimensions</h2>\n<p>The XSmall spinner has a width and height of 0.75rem (12px), making it 40% smaller than the standard spinner.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>Include <code>role=&quot;status&quot;</code> to indicate a status message to screen readers</li>\n<li>Add a descriptive <code>aria-label</code> to explain what is loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative XSmall spinners</li>\n<li>Ensure the spinner has sufficient contrast even at this smallest size</li>\n<li>Consider adding a tooltip or additional label for context at this small size</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"XSmall Spinner","patternPartial":"atoms-spinner-xsmall","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":33}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-circle" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-circle&#x2F;atoms-loading-shimmer-circle.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-circle" title="Link to Pattern">
+						Shimmer Circle
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-circle" data-patternpartial="atoms-shimmer-circle" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-circle">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-ph-circle"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-circle" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Shimmer Circle</h1>\n<p>A circular shimmer placeholder for avatar, icon, or circular image content that's still loading.</p>\n<h2>Overview</h2>\n<p>The shimmer circle provides an animated loading state for circular UI elements. It's designed to represent the loading state of avatars, profile pictures, circular icons, or other circular content until the actual content is ready to be displayed.</p>\n<h2>Usage</h2>\n<p>Shimmer circles should be used when:</p>\n<ul>\n<li>Loading circular content like user avatars or profile images</li>\n<li>Maintaining UI layout consistency during loading states</li>\n<li>Providing visual feedback for loading circular elements</li>\n<li>Replacing circular images or icons that are still being fetched</li>\n</ul>\n<h2>Variants</h2>\n<p>Shimmer circles can be styled with different theme classes:</p>\n<ul>\n<li><strong>Default</strong> - Standard neutral shimmer effect</li>\n<li><strong>Primary</strong> - Primary theme colored shimmer</li>\n<li><strong>Neutral</strong> - Explicitly neutral shimmer</li>\n<li><strong>Fancy</strong> - Multi-colored gradient shimmer effect</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-ph-circle</code> - Base circle shimmer class</li>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n<h2>Animation</h2>\n<p>The shimmer effect uses a background gradient animation that moves from left to right, creating a shimmering effect that indicates content is loading. The animation runs continuously until the actual content is loaded and the shimmer is replaced.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>When replacing content with shimmer placeholders, maintain the same layout and spacing</li>\n<li>Use <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Avoid conveying essential information solely through the shimmer effect</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> on purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Circle","patternPartial":"atoms-shimmer-circle","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":40}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-row" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-row&#x2F;atoms-loading-shimmer-row.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-row" title="Link to Pattern">
+						Shimmer Row
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-row" data-patternpartial="atoms-shimmer-row" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-row">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-ph-row"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-row" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Shimmer Row</h1>\n<p>A horizontal shimmer placeholder for text content that's still loading.</p>\n<h2>Overview</h2>\n<p>The shimmer row provides an animated loading state for lines of text or horizontal content elements. It's designed to represent the loading state of text, labels, headings, or other linear content until the actual content is ready to be displayed.</p>\n<h2>Usage</h2>\n<p>Shimmer rows should be used when:</p>\n<ul>\n<li>Loading text content like headings, paragraphs, or labels</li>\n<li>Maintaining UI layout consistency during loading states</li>\n<li>Providing visual feedback for loading text elements</li>\n<li>Creating skeleton screens for content-heavy interfaces</li>\n</ul>\n<h2>Variants</h2>\n<p>Shimmer rows can be styled with different theme classes:</p>\n<ul>\n<li><strong>Default</strong> - Standard neutral shimmer effect</li>\n<li><strong>Primary</strong> - Primary theme colored shimmer</li>\n<li><strong>Neutral</strong> - Explicitly neutral shimmer</li>\n<li><strong>Fancy</strong> - Multi-colored gradient shimmer effect</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-ph-row</code> - Base row shimmer class</li>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n<h2>Animation</h2>\n<p>The shimmer effect uses a background gradient animation that moves from left to right, creating a shimmering effect that indicates content is loading. The animation runs continuously until the actual content is loaded and the shimmer is replaced.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>When replacing text with shimmer placeholders, maintain the same layout and spacing</li>\n<li>Use <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Avoid conveying essential information solely through the shimmer effect</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> on purely decorative shimmer elements</li>\n<li>Use multiple row shimmers to mimic paragraph structure when appropriate</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Row","patternPartial":"atoms-shimmer-row","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":50}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-squared" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-squared&#x2F;atoms-loading-shimmer-squared.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-squared" title="Link to Pattern">
+						Shimmer Squared
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-squared" data-patternpartial="atoms-shimmer-squared" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-squared">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-ph-squared"></div>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-squared" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Shimmer Squared</h1>\n<p>A rectangular shimmer placeholder for content blocks that are still loading.</p>\n<h2>Overview</h2>\n<p>The shimmer squared provides an animated loading state for rectangular UI elements. It's designed to represent the loading state of cards, buttons, images, or other rectangular content until the actual content is ready to be displayed.</p>\n<h2>Usage</h2>\n<p>Shimmer squared elements should be used when:</p>\n<ul>\n<li>Loading rectangular content like cards, images, or buttons</li>\n<li>Maintaining UI layout consistency during loading states</li>\n<li>Providing visual feedback for loading rectangular elements</li>\n<li>Creating skeleton screens for component-heavy interfaces</li>\n</ul>\n<h2>Variants</h2>\n<p>Shimmer squared elements can be styled with different theme classes:</p>\n<ul>\n<li><strong>Default</strong> - Standard neutral shimmer effect</li>\n<li><strong>Primary</strong> - Primary theme colored shimmer</li>\n<li><strong>Neutral</strong> - Explicitly neutral shimmer</li>\n<li><strong>Fancy</strong> - Multi-colored gradient shimmer effect</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-ph-squared</code> - Base squared shimmer class</li>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n<h2>Animation</h2>\n<p>The shimmer effect uses a background gradient animation that moves from left to right, creating a shimmering effect that indicates content is loading. The animation runs continuously until the actual content is loaded and the shimmer is replaced.</p>\n<h2>Customization</h2>\n<p>The size of the shimmer squared element can be adjusted using standard CSS properties:</p>\n<ul>\n<li><code>width</code> - Specify the width of the rectangular area</li>\n<li><code>height</code> - Specify the height of the rectangular area</li>\n<li><code>border-radius</code> - Add rounded corners for specific UI elements</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>When replacing content with shimmer placeholders, maintain the same layout and spacing</li>\n<li>Use <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Avoid conveying essential information solely through the shimmer effect</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> on purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Squared","patternPartial":"atoms-shimmer-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":60}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-img&#x2F;atoms-loading-shimmer-img.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img" title="Link to Pattern">
+						Shimmer Image
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img" data-patternpartial="atoms-shimmer-img" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="" width="" height="">
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Shimmer Image</h1>\n<p>A placeholder for image content that's still loading, displayed with a shimmer effect.</p>\n<h2>Overview</h2>\n<p>The shimmer image provides an animated loading state for image elements. It uses a transparent placeholder image with CSS classes to create a shimmer effect, maintaining layout consistency while the actual image is loading.</p>\n<h2>Usage</h2>\n<p>Shimmer images should be used when:</p>\n<ul>\n<li>Loading actual image content that may take time to fetch</li>\n<li>Maintaining layout stability during image loading</li>\n<li>Providing visual feedback for image loading states</li>\n<li>Creating skeleton screens for image-heavy interfaces</li>\n</ul>\n<h2>Variants</h2>\n<ul>\n<li><strong>Default/Standard</strong> - Basic rectangular image placeholder</li>\n<li><strong>1:1</strong> - Square aspect ratio image placeholder</li>\n<li><strong>16:9</strong> - Widescreen aspect ratio image placeholder</li>\n<li><strong>16:10</strong> - Common screen aspect ratio image placeholder</li>\n</ul>\n<p>Shimmer images can also be styled with different theme classes:</p>\n<ul>\n<li><strong>Default</strong> - Standard neutral shimmer effect</li>\n<li><strong>Primary</strong> - Primary theme colored shimmer</li>\n<li><strong>Neutral</strong> - Explicitly neutral shimmer</li>\n<li><strong>Fancy</strong> - Multi-colored gradient shimmer effect</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li>\n<p>Base class (apply one of the following):</p>\n<ul>\n<li><code>.hoo-ph-squared</code> - Standard rectangle shimmer effect</li>\n<li><code>.hoo-ph-circle</code> - Circle shimmer effect (for round images)</li>\n</ul>\n</li>\n<li>\n<p>Theme classes (optional):</p>\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Always include appropriate <code>width</code> and <code>height</code> attributes to prevent layout shifts</li>\n<li>Use <code>alt=&quot;&quot;</code> for decorative shimmer images</li>\n<li>Use appropriate <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image","patternPartial":"atoms-shimmer-img","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":70}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-1x1" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-img-1x1&#x2F;atoms-loading-shimmer-img-1x1.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-1x1" title="Link to Pattern">
+						Shimmer Image 1:1
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-1x1" data-patternpartial="atoms-shimmer-img-1x1" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-1x1">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img1x1" width="320px" height="320px">
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-1x1" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Shimmer Image 1:1</h1>\n<p>A square (1:1 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.</p>\n<h2>Overview</h2>\n<p>The 1:1 shimmer image provides an animated loading state specifically for square images like profile pictures, thumbnails, or other square-format images. It maintains the layout while the actual image is loading.</p>\n<h2>Usage</h2>\n<p>The 1:1 shimmer image should be used when:</p>\n<ul>\n<li>Loading square format images that may take time to fetch</li>\n<li>Maintaining layout stability during image loading</li>\n<li>Providing visual feedback for square image loading states</li>\n<li>Creating skeleton screens for avatar or profile images</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li>\n<p>Base class:</p>\n<ul>\n<li><code>.hoo-ph-squared</code> - Standard rectangle shimmer effect</li>\n</ul>\n</li>\n<li>\n<p>Theme classes (optional):</p>\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Always include equal <code>width</code> and <code>height</code> attributes to maintain square aspect ratio</li>\n<li>Use <code>alt=&quot;&quot;</code> for decorative shimmer images</li>\n<li>Use appropriate <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 1:1","patternPartial":"atoms-shimmer-img-1x1","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":71}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-16x9" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-img-16x9&#x2F;atoms-loading-shimmer-img-16x9.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-16x9" title="Link to Pattern">
+						Shimmer Image 16:9
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x9" data-patternpartial="atoms-shimmer-img-16x9" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-16x9">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img16x10" width="320px" height="200px">
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-16x9" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Shimmer Image 16:9</h1>\n<p>A widescreen (16:9 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.</p>\n<h2>Overview</h2>\n<p>The 16:9 shimmer image provides an animated loading state specifically for widescreen images commonly used in videos, banners, and modern photography. It maintains the layout while the actual image is loading.</p>\n<h2>Usage</h2>\n<p>The 16:9 shimmer image should be used when:</p>\n<ul>\n<li>Loading widescreen format images that may take time to fetch</li>\n<li>Maintaining layout stability for video thumbnails or widescreen images</li>\n<li>Providing visual feedback for banner or hero image loading states</li>\n<li>Creating skeleton screens for media-rich interfaces</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li>\n<p>Base class:</p>\n<ul>\n<li><code>.hoo-ph-squared</code> - Standard rectangle shimmer effect</li>\n</ul>\n</li>\n<li>\n<p>Theme classes (optional):</p>\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n</li>\n</ul>\n<h2>Dimensions</h2>\n<p>For a proper 16:9 aspect ratio, ensure the width:height ratio is 16:9. Some common 16:9 dimensions:</p>\n<ul>\n<li>320×180 pixels</li>\n<li>640×360 pixels</li>\n<li>1280×720 pixels (720p)</li>\n<li>1920×1080 pixels (1080p)</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Always include appropriate <code>width</code> and <code>height</code> attributes to maintain the 16:9 aspect ratio</li>\n<li>Use <code>alt=&quot;&quot;</code> for decorative shimmer images</li>\n<li>Use appropriate <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:9","patternPartial":"atoms-shimmer-img-16x9","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":72}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-img-16x10" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-loading-shimmer-img-16x10&#x2F;atoms-loading-shimmer-img-16x10.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-16x10" title="Link to Pattern">
+						Shimmer Image 16:10
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x10" data-patternpartial="atoms-shimmer-img-16x10" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-16x10">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img16x9" width="320px" height="180px">
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-16x10" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h1>Shimmer Image 16:10</h1>\n<p>A 16:10 aspect ratio placeholder for image content that's still loading, displayed with a shimmer effect.</p>\n<h2>Overview</h2>\n<p>The 16:10 shimmer image provides an animated loading state specifically for images with a 16:10 aspect ratio, commonly used in computer displays and certain photography formats. It maintains the layout while the actual image is loading.</p>\n<h2>Usage</h2>\n<p>The 16:10 shimmer image should be used when:</p>\n<ul>\n<li>Loading images with 16:10 aspect ratio that may take time to fetch</li>\n<li>Maintaining layout stability for specific image formats</li>\n<li>Providing visual feedback for screen-optimized image loading states</li>\n<li>Creating skeleton screens for document previews or computer display optimized content</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li>\n<p>Base class:</p>\n<ul>\n<li><code>.hoo-ph-squared</code> - Standard rectangle shimmer effect</li>\n</ul>\n</li>\n<li>\n<p>Theme classes (optional):</p>\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n</li>\n</ul>\n<h2>Dimensions</h2>\n<p>For a proper 16:10 aspect ratio, ensure the width:height ratio is 16:10 (or 8:5). Some common 16:10 dimensions:</p>\n<ul>\n<li>320×200 pixels</li>\n<li>640×400 pixels</li>\n<li>1280×800 pixels</li>\n<li>1920×1200 pixels</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Always include appropriate <code>width</code> and <code>height</code> attributes to maintain the 16:10 aspect ratio</li>\n<li>Use <code>alt=&quot;&quot;</code> for decorative shimmer images</li>\n<li>Use appropriate <code>aria-busy=&quot;true&quot;</code> on container elements during loading</li>\n<li>Consider using <code>aria-hidden=&quot;true&quot;</code> for purely decorative shimmer elements</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:10","patternPartial":"atoms-shimmer-img-16x10","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":73}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-shimmer-theming-support" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-loading-shimmer-theming-support&#x2F;atoms-loading-shimmer-theming-support.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-theming-support" title="Link to Pattern">
-						How shimmer &#x2F; Loading works
+						Shimmer Theming Support
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -112,482 +630,7 @@ Apply any of the theming classes on the placeholder element.
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-shimmer-theming-support" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"lineage":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Theming support for shimmer</h2>\n<p>Shimmer also supports theming based on the SharePoint theme. This can be accomplished in two ways.\nThe following three themes are supported.</p>\n<ul>\n<li>No theme or <code>hoo-ph-neutral</code> - use for the neutral based background color gradient.</li>\n<li><code>hoo-ph-primary</code> - use for the primary theme base background colors;</li>\n<li><code>hoo-ph-fancy</code> - use for the fancy gradients based background color gradient.</li>\n</ul>\n<p>This style sheet classes can be added to a complete block as well es directly on the placeholder container.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"How shimmer / Loading works","patternPartial":"atoms-shimmer-theming-support","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":0}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-loading" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-loading&#x2F;atoms-loading-loading.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-loading" title="Link to Pattern">
-						Loading
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-loading" data-patternpartial="atoms-loading" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-loading">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-    <div class="hoo-progress-indicator"></div>
-</div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-loading" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Loading","patternPartial":"atoms-loading","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-circle" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-circle&#x2F;atoms-loading-shimmer-circle.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-circle" title="Link to Pattern">
-						Shimmer Circle
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-circle" data-patternpartial="atoms-shimmer-circle" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-circle">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-ph-circle"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-circle" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Circle","patternPartial":"atoms-shimmer-circle","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-row" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-row&#x2F;atoms-loading-shimmer-row.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-row" title="Link to Pattern">
-						Shimmer Row
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-row" data-patternpartial="atoms-shimmer-row" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-row">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-ph-row"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-row" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Row","patternPartial":"atoms-shimmer-row","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-squared" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-squared&#x2F;atoms-loading-shimmer-squared.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-squared" title="Link to Pattern">
-						Shimmer squared
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-squared" data-patternpartial="atoms-shimmer-squared" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-squared">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-ph-squared"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-squared" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"organism-document-card-shimmer","lineagePath":"../../patterns/organism-cards-document-card-shimmer/organism-cards-document-card-shimmer.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer squared","patternPartial":"atoms-shimmer-squared","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-img-16x10" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-img-16x10&#x2F;atoms-loading-shimmer-img-16x10.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-16x10" title="Link to Pattern">
-						Shimmer Image 16:9
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x10" data-patternpartial="atoms-shimmer-img-16x10" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-16x10">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img16x9" width="320px" height="180px">
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-16x10" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Shimmer effect on an image. The image src on the image <code>&lt;img&gt;</code> is just a transparent image of an aspect ration of 16:9. Once the original image location is know the source needs to get replaces with the url of the image.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:9","patternPartial":"atoms-shimmer-img-16x10","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20,"hidden":false}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-img-16x9" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-img-16x9&#x2F;atoms-loading-shimmer-img-16x9.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-16x9" title="Link to Pattern">
-						Shimmer Image 16:10
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-16x9" data-patternpartial="atoms-shimmer-img-16x9" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-16x9">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img16x10" width="320px" height="200px">
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-16x9" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Shimmer effect on an image. The image src on the image <code>&lt;img&gt;</code> is just a transparent image of an aspect ration of 16:10. Once the original image location is know the source needs to get replaces with the url of the image.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 16:10","patternPartial":"atoms-shimmer-img-16x9","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20,"hidden":false}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-shimmer-img-1x1" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-shimmer-img-1x1&#x2F;atoms-loading-shimmer-img-1x1.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-shimmer-img-1x1" title="Link to Pattern">
-						Shimmer Image 1:1
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-shimmer-img-1x1" data-patternpartial="atoms-shimmer-img-1x1" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-shimmer-img-1x1">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="hoo-ph-img1x1" width="320px" height="320px">
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-shimmer-img-1x1" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<p>Shimmer effect on an image. The image src on the image <code>&lt;img&gt;</code> is just a transparent squared image. Once the original image location is know the source needs to get replaces with the url of the image.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Image 1:1","patternPartial":"atoms-shimmer-img-1x1","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20,"hidden":false}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-spinner" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-spinner&#x2F;atoms-loading-spinner.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner" title="Link to Pattern">
-						Spinner
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner" data-patternpartial="atoms-spinner" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-spinner"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-spinner" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Spinner","patternPartial":"atoms-spinner","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-spinner-large" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-spinner-large&#x2F;atoms-loading-spinner-large.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-large" title="Link to Pattern">
-						Spinner Large
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-large" data-patternpartial="atoms-spinner-large" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-large">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-spinner large"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-spinner-large" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Spinner Large","patternPartial":"atoms-spinner-large","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-spinner-small" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-spinner-small&#x2F;atoms-loading-spinner-small.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-small" title="Link to Pattern">
-						Spinner Small
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-small" data-patternpartial="atoms-spinner-small" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-small">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-spinner small"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-spinner-small" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Spinner Small","patternPartial":"atoms-spinner-small","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="atoms-spinner-xsmall" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/atoms-loading-spinner-xsmall&#x2F;atoms-loading-spinner-xsmall.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-spinner-xsmall" title="Link to Pattern">
-						Spinner Xsmall
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-spinner-xsmall" data-patternpartial="atoms-spinner-xsmall" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-spinner-xsmall">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-spinner xsmall"></div>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-atoms-spinner-xsmall" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Spinner Xsmall","patternPartial":"atoms-spinner-xsmall","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"lineage":[{"lineagePattern":"atoms-shimmer-theme-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-notheme/atoms-loading-shimmer-theme-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-neutral/atoms-loading-shimmer-theme-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-primary/atoms-loading-shimmer-theme-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-fancy/atoms-loading-shimmer-theme-fancy.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-notheme","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-notheme/atoms-loading-shimmer-theme-inline-notheme.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-neutral","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-neutral/atoms-loading-shimmer-theme-inline-neutral.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-primary","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-primary/atoms-loading-shimmer-theme-inline-primary.rendered.html"},{"lineagePattern":"atoms-shimmer-theme-inline-fancy","lineagePath":"../../patterns/atoms-loading-shimmer-theme-inline-fancy/atoms-loading-shimmer-theme-inline-fancy.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Shimmer Theming Support</h1>\n<p>Guidelines for applying theme variations to shimmer loading components.</p>\n<h2>Overview</h2>\n<p>Shimmer components support multiple theming options to match the overall design system. Theming can be applied in two ways: either by adding a theme class to the shimmer element itself or by applying a theme class to the parent container.</p>\n<h2>Supported Theme Variants</h2>\n<ul>\n<li><strong>Default/Neutral</strong> (<code>hoo-ph-neutral</code>) - Uses a neutral gray-based background gradient</li>\n<li><strong>Primary</strong> (<code>hoo-ph-primary</code>) - Uses the primary theme colors for the background gradient</li>\n<li><strong>Fancy</strong> (<code>hoo-ph-fancy</code>) - Uses a multi-colored gradient for a more vibrant effect</li>\n</ul>\n<h2>SCSS</h2>\n<p><strong>Component Import</strong></p>\n<p><strong>SCSS Partial Location</strong></p>\n<h2>CSS Classes</h2>\n<ul>\n<li>Theme classes:\n<ul>\n<li><code>.hoo-ph-primary</code> - Primary theme coloring</li>\n<li><code>.hoo-ph-neutral</code> - Neutral theme coloring (also the default)</li>\n<li><code>.hoo-ph-fancy</code> - Fancy gradient theme</li>\n</ul>\n</li>\n</ul>\n<h2>Best Practices</h2>\n<ul>\n<li>Use consistent theming across related shimmer elements</li>\n<li>Choose theme variants that match or complement your application's color scheme</li>\n<li>Use the fancy theme sparingly and only when it aligns with your brand's visual style</li>\n<li>Consider using the primary theme for greater visual connection to your brand</li>\n<li>Use the neutral theme for general-purpose loading states or when subtlety is preferred</li>\n</ul>\n<h2>Animation</h2>\n<p>All shimmer variants use the same animation timing and style, only the colors of the gradients differ. The animation is a continuous left-to-right movement of the background gradient.</p>\n<h2>Accessibility</h2>\n<ul>\n<li>Ensure sufficient contrast between the shimmer gradient colors and the background</li>\n<li>Consider users with motion sensitivity when using shimmer effects extensively</li>\n<li>Do not rely on color alone to convey the meaning of different shimmer themes</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"loading"},"patternExtension":"hbs","patternName":"Shimmer Theming Support","patternPartial":"atoms-shimmer-theming-support","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":80}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -638,10 +681,10 @@ Apply any of the theming classes on the placeholder element.
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -654,7 +697,7 @@ Apply any of the theming classes on the placeholder element.
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -702,6 +745,7 @@ Apply any of the theming classes on the placeholder element.
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,347 +31,105 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Menu Components</h1>
+<p>HTWOO UI provides a comprehensive set of menu and navigation components for creating consistent navigation experiences.</p>
+<h2>Overview</h2>
+<p>Menu components in HTWOO UI enable the creation of various navigation patterns including vertical navigation, breadcrumbs, command bars, and pivot navigation. These components are designed to be accessible, interactive, and consistent with the HTWOO design language.</p>
+<h2>Components</h2>
+<h3>Navigation Components</h3>
+<p>HTWOO includes several navigation components for different use cases:</p>
+<ul>
+<li><strong><a href="./nav.html">Vertical Navigation</a></strong>: Multi-level tree navigation with expandable items</li>
+<li><strong><a href="./breadcrumb.html">Breadcrumb Navigation</a></strong>: Hierarchical path navigation</li>
+<li><strong><a href="./breadcrumb-buttons.html">Breadcrumb with Buttons</a></strong>: Interactive breadcrumb with button functionality</li>
+</ul>
+<h3>Command &amp; Action Bars</h3>
+<p>Components for displaying commands and actions:</p>
+<ul>
+<li><strong><a href="./cmdbar.html">Command Bar</a></strong>: Toolbar with action buttons</li>
+<li><strong><a href="./cmdbar-overflow.html">Command Bar Overflow</a></strong>: Command bar with overflow menu</li>
+<li><strong><a href="./pivotbar.html">Pivot Bar</a></strong>: Tab-style navigation for content sections</li>
+<li><strong><a href="./pivotbar-overflow.html">Pivot Bar Overflow</a></strong>: Pivot navigation with overflow handling</li>
+</ul>
+<h3>Specialized Menus</h3>
+<p>Additional menu components for specific contexts:</p>
+<ul>
+<li><strong><a href="./teams-toolbar.html">Teams Toolbar</a></strong>: Microsoft Teams-style toolbar</li>
+</ul>
+<h2>Features</h2>
+<ul>
+<li>Multi-level vertical navigation (up to 5 levels)</li>
+<li>Expandable/collapsible menu items with smooth transitions</li>
+<li>Current page indicators and aria-current support</li>
+<li>Interactive JavaScript behavior for menu state management</li>
+<li>Responsive design that adapts to container width</li>
+<li>Keyboard navigation support</li>
+<li>Screen reader accessibility with proper ARIA attributes</li>
+<li>Consistent styling across all menu types</li>
+<li>Icon support for menu items and actions</li>
+<li>Overflow handling for limited space scenarios</li>
+</ul>
+<h2>JavaScript Integration</h2>
+<p>Menu components include JavaScript functionality for interactive behavior:</p>
+<h3>Navigation Menu JavaScript</h3>
+<p>The navigation menu includes the following interactive features:</p>
+<ul>
+<li><strong>Current item highlighting</strong>: Automatically sets <code>aria-current</code> on clicked items</li>
+<li><strong>Expand/collapse functionality</strong>: Toggle menu items with child navigation</li>
+<li><strong>Event handling</strong>: Click events for navigation and icon buttons</li>
+</ul>
+<h4>Key JavaScript Classes</h4>
+<ul>
+<li><code>.hoo-nav</code> - Main navigation container</li>
+<li><code>.hoo-navitem</code> - Individual navigation items</li>
+<li><code>.hoo-navitem-link</code> - Navigation links</li>
+<li><code>.hoo-buttonicon</code> - Expandable menu icons</li>
+</ul>
+<h4>Usage</h4>
+<h2>Component Structure</h2>
+<p>Menu components in HTWOO UI follow a consistent structure:</p>
+<ol>
+<li><strong>Container</strong>: Main wrapper element (e.g., <code>.hoo-nav</code>, <code>.hoo-breadcrumb</code>, <code>.hoo-cmdbar</code>)</li>
+<li><strong>List/Menu Elements</strong>: Semantic <code>&lt;nav&gt;</code>, <code>&lt;menu&gt;</code>, <code>&lt;ol&gt;</code>, or <code>&lt;ul&gt;</code> elements</li>
+<li><strong>Items</strong>: Individual menu items with appropriate roles and attributes</li>
+<li><strong>Links/Buttons</strong>: Interactive elements within menu items</li>
+<li><strong>Icons</strong>: Optional icons for visual enhancement and functionality</li>
+</ol>
+<h2>Usage Guidelines</h2>
+<ul>
+<li>Use semantic HTML elements (<code>&lt;nav&gt;</code>, <code>&lt;menu&gt;</code>, <code>&lt;ol&gt;</code>) for proper accessibility</li>
+<li>Include proper ARIA attributes for screen reader support</li>
+<li>Ensure keyboard navigation is functional across all menu types</li>
+<li>Use consistent icon placement and sizing</li>
+<li>Implement proper focus management for keyboard users</li>
+<li>Consider mobile responsiveness and touch interaction</li>
+<li>Test with screen readers to ensure accessibility compliance</li>
+</ul>
+<h2>SCSS</h2>
+<h2>Accessibility Considerations</h2>
+<ul>
+<li>Use proper semantic HTML elements for navigation</li>
+<li>Include ARIA attributes (<code>role</code>, <code>aria-expanded</code>, <code>aria-current</code>)</li>
+<li>Ensure keyboard navigation works correctly</li>
+<li>Provide clear focus indicators</li>
+<li>Support screen reader navigation</li>
+<li>Use meaningful link text and labels</li>
+<li>Consider color contrast for all interactive elements</li>
+<li>Test with assistive technologies</li>
+</ul>
+<h2>Browser Compatibility</h2>
+<p>All menu components are compatible with modern browsers and include:</p>
+<ul>
+<li>Progressive enhancement for JavaScript functionality</li>
+<li>Fallback styling for non-JavaScript environments</li>
+<li>Consistent behavior across different browsers</li>
+<li>Support for touch and mouse interactions</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
-					<div id="molecules-breadcrumb" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-menus-breadcrumb&#x2F;molecules-menus-breadcrumb.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-breadcrumb" title="Link to Pattern">
-						Breadcrumb
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-breadcrumb" data-patternpartial="molecules-breadcrumb" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-breadcrumb">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<nav class="hoo-breadcrumb">
-    <ol>
-        <li class="hoo-breadcrumb-item">
-            <a href="#" class="hoo-breadcrumb-link">Item 1</a>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <a href="#" class="hoo-breadcrumb-link">Item 2</a>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <a href="#" class="hoo-breadcrumb-link">Item 3</a>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <a href="#" class="hoo-breadcrumb-link" aria-current="location">Item 4</a>
-        </li>
-    </ol>
-</nav>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-breadcrumb" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Information for accessible <a href=\"https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html\">breadcrumb</a></p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Breadcrumb","patternPartial":"molecules-breadcrumb","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-breadcrumb-buttons" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-menus-breadcrumb-buttons&#x2F;molecules-menus-breadcrumb-buttons.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-breadcrumb-buttons" title="Link to Pattern">
-						Breadcrumb &#x2F;w Butons
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-breadcrumb-buttons" data-patternpartial="molecules-breadcrumb-buttons" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-breadcrumb-buttons">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<nav class="hoo-breadcrumb" aria-label="Breadcrumb" tabindex="0">
-    <ol>
-        <li class="hoo-breadcrumb-item">
-            <button class="hoo-breadcrumb-link">Item 1</button>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <button class="hoo-breadcrumb-link">Item 2</button>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <button class="hoo-breadcrumb-link">Item 3</button>
-            <span class="hoo-breadcrumb-separator">
-                <svg class="icon icon-arrow-right">
-                    
-                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                </svg>
-            </span>
-        </li>
-        <li class="hoo-breadcrumb-item">
-            <button class="hoo-breadcrumb-link" aria-current="location">Item 4</button>
-        </li>
-    </ol>
-</nav>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-breadcrumb-buttons" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Information for accessible <a href=\"https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html\">breadcrumb</a></p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Breadcrumb /w Butons","patternPartial":"molecules-breadcrumb-buttons","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-nav" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-menus-nav&#x2F;molecules-menus-nav.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-nav" title="Link to Pattern">
-						Vertical Navigation
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-nav" data-patternpartial="molecules-nav" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-nav">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<nav class="hoo-nav">
-    <menu role="tree" class="hoo-nav-list" role="tree">
-        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-            <div class="hoo-navitem-text">
-                <button class="hoo-buttonicon" >
-                    <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                        </svg>
-                    </span></button>
-                <a href="#" class="hoo-navitem-link">Item 1</a>
-            </div>
-            <menu class="hoo-nav-listsub" role="group">
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <button class="hoo-buttonicon" >
-                            <span class="hoo-icon">
-                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                                    
-                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                                </svg>
-                            </span></button>
-                        <a href="#" class="hoo-navitem-link">Item 1.1</a>
-                    </div>
-                    <menu class="hoo-nav-listsub" role="group">
-                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                            <div class="hoo-navitem-text">
-                                <button class="hoo-buttonicon" >
-                                    <span class="hoo-icon">
-                                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                                            
-                                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                                        </svg>
-                                    </span></button>
-                                <a href="#" class="hoo-navitem-link">Item 1.1.1</a>
-                            </div>
-                            <menu class="hoo-nav-listsub" role="group">
-                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                    <div class="hoo-navitem-text">
-                                        <a href="#" class="hoo-navitem-link">Item 1.1.1.1</a>
-                                    </div>
-                                </li>
-                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                    <div class="hoo-navitem-text">
-                                        <button class="hoo-buttonicon" >
-                                            <span class="hoo-icon">
-                                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                                                    
-                                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                                                </svg>
-                                            </span></button>
-                                        <a href="#" class="hoo-navitem-link">Item 1.2.1.1</a>
-                                    </div>
-                                    <menu class="hoo-nav-listsub" role="group">
-                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                            <div class="hoo-navitem-text">
-                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.1</a>
-                                            </div>
-                                        </li>
-                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                            <div class="hoo-navitem-text">
-                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.2</a>
-                                            </div>
-                                        </li>
-                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                            <div class="hoo-navitem-text">
-                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.3</a>
-                                            </div>
-                                        </li>
-                                    </menu>    </li>
-                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                                    <div class="hoo-navitem-text">
-                                        <a href="#" class="hoo-navitem-link">Item 1.3.1.1</a>
-                                    </div>
-                                </li>
-                            </menu>    </li>
-                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                            <div class="hoo-navitem-text">
-                                <a href="#" class="hoo-navitem-link">Item 1.2.1</a>
-                            </div>
-                        </li>
-                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                            <div class="hoo-navitem-text">
-                                <a href="#" class="hoo-navitem-link">Item 1.3.1</a>
-                            </div>
-                        </li>
-                    </menu>    </li>
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <a href="#" class="hoo-navitem-link">Item 1.2</a>
-                    </div>
-                </li>
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <a href="#" class="hoo-navitem-link">Item 1.3</a>
-                    </div>
-                </li>
-            </menu>        </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="false" aria-current="page" >
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 2</a>
-            </div>
-            <menu class="hoo-nav-listsub" role="group">
-            </menu>        </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-            <div class="hoo-navitem-text">
-                <button class="hoo-buttonicon" >
-                    <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-                        </svg>
-                    </span></button>
-                <a href="#" class="hoo-navitem-link">Item 3</a>
-            </div>
-            <menu class="hoo-nav-listsub" role="group">
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <a href="#" class="hoo-navitem-link">Item 3.1</a>
-                    </div>
-                </li>
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <a href="#" class="hoo-navitem-link">Item 3.2</a>
-                    </div>
-                </li>
-                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-                    <div class="hoo-navitem-text">
-                        <a href="#" class="hoo-navitem-link">Item 3.3</a>
-                    </div>
-                </li>
-            </menu>        </li>
-        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
-            <div class="hoo-navitem-text">
-                <a href="#" class="hoo-navitem-link">Item 4</a>
-            </div>
-            <menu class="hoo-nav-listsub" role="group">
-            </menu>        </li>
-        </ul>
-</nav>
-
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-nav" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Vertical navigation support up to a maximum of five levels.</p>\n<p>Accessibility information on <a href=\"https://www.w3.org/WAI/tutorials/menus/structure/\">structure menu</a><br>\n\\</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Vertical Navigation","patternPartial":"molecules-nav","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-pivot-tester" class="pl-c-pattern">
+					<div id="molecules-pivot-tester" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -511,6 +269,765 @@
 			</script>
 		
 		</div><!--end pl-c-pattern-->
+		<div id="molecules-nav" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-nav&#x2F;molecules-menus-nav.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-nav" title="Link to Pattern">
+						Vertical Navigation
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-nav" data-patternpartial="molecules-nav" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-nav">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<nav class="hoo-nav">
+    <menu role="tree" class="hoo-nav-list" role="tree">
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+            <div class="hoo-navitem-text">
+                <button class="hoo-buttonicon" 
+                    
+                    
+                    >
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                        </svg>
+                    </span></button>
+                <a href="#" class="hoo-navitem-link">Item 1</a>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <button class="hoo-buttonicon" 
+                            
+                            
+                            >
+                            <span class="hoo-icon">
+                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                    
+                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                </svg>
+                            </span></button>
+                        <a href="#" class="hoo-navitem-link">Item 1.1</a>
+                    </div>
+                    <menu class="hoo-nav-listsub" role="group">
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <button class="hoo-buttonicon" 
+                                    
+                                    
+                                    >
+                                    <span class="hoo-icon">
+                                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                            
+                                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                        </svg>
+                                    </span></button>
+                                <a href="#" class="hoo-navitem-link">Item 1.1.1</a>
+                            </div>
+                            <menu class="hoo-nav-listsub" role="group">
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <a href="#" class="hoo-navitem-link">Item 1.1.1.1</a>
+                                    </div>
+                                </li>
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <button class="hoo-buttonicon" 
+                                            
+                                            
+                                            >
+                                            <span class="hoo-icon">
+                                                <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                                                    
+                                                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                                                </svg>
+                                            </span></button>
+                                        <a href="#" class="hoo-navitem-link">Item 1.2.1.1</a>
+                                    </div>
+                                    <menu class="hoo-nav-listsub" role="group">
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.1</a>
+                                            </div>
+                                        </li>
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.2</a>
+                                            </div>
+                                        </li>
+                                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                            <div class="hoo-navitem-text">
+                                                <a href="#" class="hoo-navitem-link">Item 1.2.1.1.3</a>
+                                            </div>
+                                        </li>
+                                    </menu>    </li>
+                                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                                    <div class="hoo-navitem-text">
+                                        <a href="#" class="hoo-navitem-link">Item 1.3.1.1</a>
+                                    </div>
+                                </li>
+                            </menu>    </li>
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <a href="#" class="hoo-navitem-link">Item 1.2.1</a>
+                            </div>
+                        </li>
+                        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                            <div class="hoo-navitem-text">
+                                <a href="#" class="hoo-navitem-link">Item 1.3.1</a>
+                            </div>
+                        </li>
+                    </menu>    </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 1.2</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 1.3</a>
+                    </div>
+                </li>
+            </menu>        </li>
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" aria-current="page" >
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 2</a>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+            </menu>        </li>
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+            <div class="hoo-navitem-text">
+                <button class="hoo-buttonicon" 
+                    
+                    
+                    >
+                    <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                        </svg>
+                    </span></button>
+                <a href="#" class="hoo-navitem-link">Item 3</a>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.1</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.2</a>
+                    </div>
+                </li>
+                <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+                    <div class="hoo-navitem-text">
+                        <a href="#" class="hoo-navitem-link">Item 3.3</a>
+                    </div>
+                </li>
+            </menu>        </li>
+        <li role="treeitem" class="hoo-navitem" aria-expanded="false" >
+            <div class="hoo-navitem-text">
+                <a href="#" class="hoo-navitem-link">Item 4</a>
+            </div>
+            <menu class="hoo-nav-listsub" role="group">
+            </menu>        </li>
+        </ul>
+</nav>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-nav" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"},{"lineagePattern":"molecules-nav-recursion","lineagePath":"../../patterns/molecules-menus-nav-recursion/molecules-menus-nav-recursion.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Vertical Navigation</h1>\n<p>The Vertical Navigation component provides a multi-level tree navigation system with expandable menu items.</p>\n<h2>Overview</h2>\n<p>The Vertical Navigation supports hierarchical navigation structures up to five levels deep. It includes interactive functionality for expanding/collapsing menu items and highlighting the current page location.</p>\n<h2>Features</h2>\n<ul>\n<li>Multi-level navigation support (up to 5 levels)</li>\n<li>Expandable/collapsible menu items with smooth visual feedback</li>\n<li>Current page indication via <code>aria-current</code> attribute</li>\n<li>Interactive JavaScript behavior for state management</li>\n<li>Proper semantic HTML structure using <code>&lt;nav&gt;</code> and <code>&lt;menu&gt;</code> elements</li>\n<li>ARIA tree navigation pattern for accessibility</li>\n<li>Visual hierarchy with indented sub-navigation levels</li>\n<li>Hover states for improved user interaction</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-nav</code> - Main navigation container with border styling</li>\n<li><code>.hoo-nav-list</code> - Primary navigation list (role=&quot;tree&quot;)</li>\n<li><code>.hoo-nav-listsub</code> - Sub-navigation lists (role=&quot;group&quot;)</li>\n<li><code>.hoo-navitem</code> - Individual navigation items with expand/collapse state</li>\n<li><code>.hoo-navitem-text</code> - Container for item content with flex layout</li>\n<li><code>.hoo-navitem-link</code> - Navigation links with proper padding and hover states</li>\n<li><code>.hoo-buttonicon</code> - Expandable menu icons that rotate when expanded</li>\n</ul>\n<h2>JavaScript Functionality</h2>\n<p>The navigation component includes interactive JavaScript for:</p>\n<h3>Current Item Management</h3>\n<h3>Expand/Collapse Behavior</h3>\n<h3>Event Handling</h3>\n<ul>\n<li>Click events on <code>.hoo-navitem</code> for current page highlighting</li>\n<li>Click events on <code>.hoo-buttonicon</code> for expand/collapse functionality</li>\n<li>Proper event delegation to handle dynamically added items</li>\n</ul>\n<h2>Multi-Level Structure</h2>\n<p>The navigation supports nested levels with automatic indentation:</p>\n<ul>\n<li><strong>Level 1</strong>: Base padding and margin</li>\n<li><strong>Level 2</strong>: Additional left margin via CSS custom properties</li>\n<li><strong>Level 3</strong>: Further increased indentation</li>\n<li><strong>Level 4 &amp; 5</strong>: Progressive indentation up to maximum depth</li>\n</ul>\n<h3>CSS Custom Properties for Levels</h3>\n<h2>States and Attributes</h2>\n<h3>ARIA Attributes</h3>\n<ul>\n<li><code>aria-expanded=&quot;true|false&quot;</code> - Indicates if menu item is expanded</li>\n<li><code>aria-current=&quot;page&quot;</code> - Identifies the current page/location</li>\n<li><code>role=&quot;tree&quot;</code> - Main navigation semantic role</li>\n<li><code>role=&quot;treeitem&quot;</code> - Individual navigation items</li>\n<li><code>role=&quot;group&quot;</code> - Sub-navigation containers</li>\n</ul>\n<h3>Visual States</h3>\n<ul>\n<li><strong>Default</strong>: Standard menu item appearance</li>\n<li><strong>Hover</strong>: Background color change and link color change</li>\n<li><strong>Current</strong>: Left border highlight and background color</li>\n<li><strong>Expanded</strong>: Rotated arrow icon and visible sub-menu</li>\n<li><strong>Collapsed</strong>: Standard arrow icon and hidden sub-menu</li>\n</ul>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Initialize JavaScript functionality using <code>initMenu()</code></li>\n<li>Use meaningful link text for accessibility</li>\n<li>Provide proper href attributes for all navigation links</li>\n<li>Limit navigation depth to 5 levels maximum</li>\n<li>Include expand/collapse icons only for items with child navigation</li>\n<li>Test keyboard navigation and screen reader compatibility</li>\n</ul>\n<h2>Integration</h2>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses semantic <code>&lt;nav&gt;</code> and <code>&lt;menu&gt;</code> elements</li>\n<li>Implements ARIA tree navigation pattern</li>\n<li>Supports keyboard navigation (Tab, Enter, Space)</li>\n<li>Provides clear focus indicators</li>\n<li>Uses proper ARIA attributes for state management</li>\n<li>Maintains logical tab order through navigation hierarchy</li>\n<li>Ensures sufficient color contrast for all states</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Vertical Navigation","patternPartial":"molecules-nav","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-breadcrumb" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-breadcrumb&#x2F;molecules-menus-breadcrumb.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-breadcrumb" title="Link to Pattern">
+						Breadcrumb Navigation
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-breadcrumb" data-patternpartial="molecules-breadcrumb" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-breadcrumb">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<nav class="hoo-breadcrumb">
+    <ol>
+        <li class="hoo-breadcrumb-item">
+            <a href="#" class="hoo-breadcrumb-link">Item 1</a>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <a href="#" class="hoo-breadcrumb-link">Item 2</a>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <a href="#" class="hoo-breadcrumb-link">Item 3</a>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <a href="#" class="hoo-breadcrumb-link" aria-current="location">Item 4</a>
+        </li>
+    </ol>
+</nav>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-breadcrumb" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Breadcrumb Navigation</h1>\n<p>The Breadcrumb Navigation component provides hierarchical path navigation to help users understand their location within the application.</p>\n<h2>Overview</h2>\n<p>Breadcrumbs show the path from the current page back to the top level of the site hierarchy. They help users understand where they are and provide easy navigation back to parent levels.</p>\n<h2>Features</h2>\n<ul>\n<li>Semantic HTML structure using <code>&lt;nav&gt;</code> and <code>&lt;ol&gt;</code> elements</li>\n<li>Hierarchical path representation with arrow separators</li>\n<li>Current location indication via <code>aria-current=&quot;location&quot;</code></li>\n<li>Hover states for interactive links</li>\n<li>Consistent spacing and typography</li>\n<li>Flexible layout that adapts to content length</li>\n<li>Support for both link and button elements</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-breadcrumb</code> - Main breadcrumb container</li>\n<li><code>.hoo-breadcrumb-item</code> - Individual breadcrumb items with last-child styling</li>\n<li><code>.hoo-breadcrumb-link</code> - Breadcrumb links with hover states and padding</li>\n<li><code>.hoo-breadcrumb-separator</code> - Arrow separators between breadcrumb items</li>\n</ul>\n<h2>Visual Structure</h2>\n<h3>Layout</h3>\n<p>The breadcrumb uses a horizontal flexbox layout:</p>\n<ul>\n<li><strong>Container</strong>: Flex row with items aligned to the left</li>\n<li><strong>Items</strong>: Inline-block elements with auto width</li>\n<li><strong>Links</strong>: Inline-block with consistent padding and line height</li>\n<li><strong>Separators</strong>: Inline elements with arrow icons</li>\n</ul>\n<h3>Typography</h3>\n<ul>\n<li><strong>Font size</strong>: 1rem (16px) for consistent readability</li>\n<li><strong>Line height</strong>: 32px for proper vertical alignment</li>\n<li><strong>Font weight</strong>: Bold for the current (last) item</li>\n</ul>\n<h3>Spacing</h3>\n<ul>\n<li><strong>Link padding</strong>: 0.5rem left and right</li>\n<li><strong>Item spacing</strong>: Controlled by separator placement</li>\n<li><strong>Vertical alignment</strong>: Center-aligned within container</li>\n</ul>\n<h2>Button Variant</h2>\n<p>Breadcrumb items can also use buttons instead of links:</p>\n<pre><code class=\"language-html\">&lt;nav class=&quot;hoo-breadcrumb&quot;&gt;\n  &lt;ol&gt;\n    &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;\n      &lt;button type=&quot;button&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Home&lt;/button&gt;\n      &lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;\n        &lt;svg class=&quot;hoo-icon-svg&quot;&gt;&lt;!-- Arrow right icon --&gt;&lt;/svg&gt;\n      &lt;/span&gt;\n    &lt;/li&gt;\n  &lt;/ol&gt;\n&lt;/nav&gt;\n</code></pre>\n<p>Button breadcrumbs include:</p>\n<ul>\n<li>Transparent background</li>\n<li>No border styling</li>\n<li>Cursor pointer on hover</li>\n<li>Inherited font properties</li>\n</ul>\n<h2>States</h2>\n<h3>Default State</h3>\n<ul>\n<li>Standard link color and background</li>\n<li>Arrow separators between items</li>\n</ul>\n<h3>Hover State</h3>\n<ul>\n<li>Background color change to neutral hover state</li>\n<li>Maintains link color consistency</li>\n</ul>\n<h3>Current Location</h3>\n<ul>\n<li>Bold font weight for the final item</li>\n<li><code>aria-current=&quot;location&quot;</code> attribute</li>\n<li>No separator after the last item</li>\n</ul>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Always use <code>&lt;nav&gt;</code> element for semantic navigation</li>\n<li>Use <code>&lt;ol&gt;</code> (ordered list) to represent the hierarchical path</li>\n<li>Include <code>aria-current=&quot;location&quot;</code> on the current page item</li>\n<li>Provide meaningful link text that clearly indicates the destination</li>\n<li>Don't make the current page item clickable (no href)</li>\n<li>Include separators between items except after the last item</li>\n<li>Keep breadcrumb paths reasonable in length (typically 3-7 levels)</li>\n</ul>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses semantic <code>&lt;nav&gt;</code> element for proper landmark identification</li>\n<li>Implements ordered list (<code>&lt;ol&gt;</code>) to show hierarchical relationship</li>\n<li>Includes <code>aria-current=&quot;location&quot;</code> for current page identification</li>\n<li>Provides clear focus indicators for keyboard navigation</li>\n<li>Maintains proper tab order through breadcrumb items</li>\n<li>Uses meaningful link text for screen reader users</li>\n<li>Follows <a href=\"https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html\">WAI-ARIA breadcrumb pattern</a></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Breadcrumb Navigation","patternPartial":"molecules-breadcrumb","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":15}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-breadcrumb-buttons" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-breadcrumb-buttons&#x2F;molecules-menus-breadcrumb-buttons.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-breadcrumb-buttons" title="Link to Pattern">
+						Breadcrumb with Buttons
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-breadcrumb-buttons" data-patternpartial="molecules-breadcrumb-buttons" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-breadcrumb-buttons">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<nav class="hoo-breadcrumb" aria-label="Breadcrumb" tabindex="0">
+    <ol>
+        <li class="hoo-breadcrumb-item">
+            <button class="hoo-breadcrumb-link">Item 1</button>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <button class="hoo-breadcrumb-link">Item 2</button>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <button class="hoo-breadcrumb-link">Item 3</button>
+            <span class="hoo-breadcrumb-separator">
+                <svg class="icon icon-arrow-right">
+                    
+                    <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+                </svg>
+            </span>
+        </li>
+        <li class="hoo-breadcrumb-item">
+            <button class="hoo-breadcrumb-link" aria-current="location">Item 4</button>
+        </li>
+    </ol>
+</nav>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-breadcrumb-buttons" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon-svg","lineagePath":"../../patterns/atoms-icons-icon-svg/atoms-icons-icon-svg.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Breadcrumb with Buttons</h1>\n<p>The Breadcrumb with Buttons component provides hierarchical navigation using interactive buttons instead of links.</p>\n<h2>Overview</h2>\n<p>This variant of the breadcrumb navigation uses buttons for each breadcrumb item, making it ideal for single-page applications or scenarios where navigation requires JavaScript interaction rather than traditional page navigation.</p>\n<h2>Features</h2>\n<ul>\n<li>Interactive button-based navigation</li>\n<li>Semantic HTML structure using <code>&lt;nav&gt;</code> and <code>&lt;ol&gt;</code> elements</li>\n<li>Hierarchical path representation with arrow separators</li>\n<li>Current location indication via <code>aria-current=&quot;location&quot;</code></li>\n<li>Keyboard navigation support with proper focus management</li>\n<li>Consistent styling with standard breadcrumb links</li>\n<li>Accessible labeling with <code>aria-label</code> and <code>tabindex</code></li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-breadcrumb</code> - Main breadcrumb container</li>\n<li><code>.hoo-breadcrumb-item</code> - Individual breadcrumb items</li>\n<li><code>.hoo-breadcrumb-link</code> - Breadcrumb buttons with consistent styling</li>\n<li><code>.hoo-breadcrumb-separator</code> - Arrow separators between items</li>\n</ul>\n<h2>Button Styling</h2>\n<p>Button breadcrumbs inherit the same visual styling as link breadcrumbs but include additional properties:</p>\n<ul>\n<li><strong>Background</strong>: Transparent background</li>\n<li><strong>Border</strong>: No border styling</li>\n<li><strong>Font</strong>: Inherits font properties from parent</li>\n<li><strong>Cursor</strong>: Pointer cursor on hover</li>\n<li><strong>Padding</strong>: Same padding as link variants (0.5rem)</li>\n<li><strong>Size</strong>: Same font size as link variants (1rem)</li>\n</ul>\n<h2>Differences from Link Breadcrumbs</h2>\n<table>\n<thead>\n<tr>\n<th>Feature</th>\n<th>Links</th>\n<th>Buttons</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Navigation</td>\n<td>Page-based (href)</td>\n<td>JavaScript-based (onclick)</td>\n</tr>\n<tr>\n<td>Accessibility</td>\n<td>Standard link navigation</td>\n<td>Button role with custom handlers</td>\n</tr>\n<tr>\n<td>Use Case</td>\n<td>Multi-page applications</td>\n<td>Single-page applications</td>\n</tr>\n<tr>\n<td>Keyboard</td>\n<td>Enter key follows link</td>\n<td>Enter/Space activates button</td>\n</tr>\n</tbody>\n</table>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Use buttons when navigation requires JavaScript processing</li>\n<li>Ideal for single-page applications or dynamic content switching</li>\n<li>Include <code>aria-label=&quot;Breadcrumb&quot;</code> on the nav element</li>\n<li>Add <code>tabindex=&quot;0&quot;</code> to the nav element for keyboard accessibility</li>\n<li>Provide meaningful button text that indicates the destination</li>\n<li>Use <code>aria-current=&quot;location&quot;</code> on the current page button</li>\n<li>Include click handlers for all button interactions</li>\n<li>Test keyboard navigation (Tab, Enter, Space)</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>Button breadcrumbs typically require JavaScript for functionality:</p>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses semantic <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Breadcrumb&quot;</code></li>\n<li>Implements ordered list (<code>&lt;ol&gt;</code>) for hierarchical structure</li>\n<li>Includes <code>tabindex=&quot;0&quot;</code> for keyboard accessibility</li>\n<li>Uses <code>aria-current=&quot;location&quot;</code> for current page identification</li>\n<li>Provides clear focus indicators for keyboard navigation</li>\n<li>Maintains proper tab order through breadcrumb buttons</li>\n<li>Supports Enter and Space key activation</li>\n<li>Follows <a href=\"https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html\">WAI-ARIA breadcrumb pattern</a></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Breadcrumb with Buttons","patternPartial":"molecules-breadcrumb-buttons","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":21}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-cmdbar" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-cmdbar&#x2F;molecules-menus-cmdbar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-cmdbar" title="Link to Pattern">
+						Command Bar
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-cmdbar" data-patternpartial="molecules-cmdbar" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-cmdbar">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-cmdbar" role="toolbar">
+    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
+    <div class="hoo-buttoncmd"  >
+        <button class="hoo-buttoncmd" >
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+        </button>
+    </div>
+    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
+    <div class="hoo-buttoncmd"  >
+        <button class="hoo-buttoncmd" >
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+        </button>
+    </div>
+    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+        <button class="hoo-buttoncmd" aria-haspopup="true">
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg " aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+        </svg>
+    </span> </span>
+        </button>
+        <menu class="hoo-buttonflyout">
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Email message </span>
+                </button>
+            </li>
+            <li class="hoo-buttonflyout-item">
+                <button class="hoo-buttonaction">
+                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                        
+                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                    </svg>
+                </span> </span>
+                    <span class="hoo-button-label"> Calendar Event </span>
+                </button>
+            </li>
+        </menu></div>
+    <div class="hoo-buttoncmd"  >
+        <button class="hoo-buttoncmd" >
+            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+            
+            <use xlink:href="../../images/icons.svg#icon-plus"></use>
+        </svg>
+    </span> </span>
+            <span class="hoo-button-label"> New Item </span>
+        </button>
+    </div>
+</div>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-cmdbar" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Command Bar</h1>\n<p>The Command Bar component provides a horizontal toolbar for displaying action buttons and commands.</p>\n<h2>Overview</h2>\n<p>The Command Bar is a flexible toolbar that displays command buttons in a horizontal layout. It supports various button types and can adapt to different content lengths and screen sizes.</p>\n<h2>Features</h2>\n<ul>\n<li>Horizontal flexbox layout for command buttons</li>\n<li>Consistent height (44px) across all toolbar instances</li>\n<li>Support for various command button types</li>\n<li>Automatic spacing and alignment of buttons</li>\n<li>Responsive behavior for different screen sizes</li>\n<li>Proper semantic structure with <code>role=&quot;toolbar&quot;</code></li>\n<li>Integration with command button variants</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-cmdbar</code> - Main command bar container with flexbox layout</li>\n<li>Uses command button classes from atoms layer:\n<ul>\n<li><code>.hoo-buttoncmd</code> - Individual command buttons</li>\n<li><code>.hoo-buttoncmd-icon</code> - Button icons</li>\n<li><code>.hoo-buttoncmd-label</code> - Button text labels</li>\n<li><code>.hoo-buttoncmd-caret</code> - Dropdown indicators</li>\n</ul>\n</li>\n</ul>\n<h2>Layout Properties</h2>\n<h3>Container Structure</h3>\n<ul>\n<li><strong>Display</strong>: Flex row layout</li>\n<li><strong>Height</strong>: 44px fixed height</li>\n<li><strong>Alignment</strong>: Items centered vertically, justified to the left</li>\n<li><strong>Spacing</strong>: No margin or padding on container</li>\n<li><strong>Direction</strong>: Row (horizontal)</li>\n</ul>\n<h3>Button Integration</h3>\n<p>The command bar extends the command button styling and provides:</p>\n<ul>\n<li>Consistent button heights within the toolbar</li>\n<li>Proper spacing between adjacent buttons</li>\n<li>Unified visual appearance across button types</li>\n</ul>\n<h2>Button Variants</h2>\n<p>Command bars support different button configurations:</p>\n<h3>Standard Command Button</h3>\n<pre><code class=\"language-html\">&lt;button type=&quot;button&quot; class=&quot;hoo-buttoncmd&quot;&gt;\n  &lt;div class=&quot;hoo-buttoncmd-icon&quot;&gt;&lt;!-- Icon --&gt;&lt;/div&gt;\n  &lt;div class=&quot;hoo-buttoncmd-label&quot;&gt;Label&lt;/div&gt;\n&lt;/button&gt;\n</code></pre>\n<h3>Command Button with Dropdown</h3>\n<pre><code class=\"language-html\">&lt;button type=&quot;button&quot; class=&quot;hoo-buttoncmd&quot;&gt;\n  &lt;div class=&quot;hoo-buttoncmd-icon&quot;&gt;&lt;!-- Icon --&gt;&lt;/div&gt;\n  &lt;div class=&quot;hoo-buttoncmd-label&quot;&gt;Label&lt;/div&gt;\n  &lt;div class=&quot;hoo-buttoncmd-caret&quot;&gt;&lt;!-- Chevron --&gt;&lt;/div&gt;\n&lt;/button&gt;\n</code></pre>\n<h3>Icon-Only Command Button</h3>\n<pre><code class=\"language-html\">&lt;button type=&quot;button&quot; class=&quot;hoo-buttoncmd&quot;&gt;\n  &lt;div class=&quot;hoo-buttoncmd-icon&quot;&gt;&lt;!-- Icon --&gt;&lt;/div&gt;\n&lt;/button&gt;\n</code></pre>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Use <code>role=&quot;toolbar&quot;</code> on the command bar container for accessibility</li>\n<li>Group related commands together logically</li>\n<li>Place primary actions on the left, secondary actions on the right</li>\n<li>Include dropdown carets only when the button has a dropdown menu</li>\n<li>Provide meaningful labels and icons for all command buttons</li>\n<li>Consider responsive behavior for mobile devices</li>\n<li>Test keyboard navigation through toolbar buttons</li>\n</ul>\n<h2>Responsive Considerations</h2>\n<ul>\n<li>Command bars should adapt gracefully to smaller screens</li>\n<li>Consider using overflow menus for limited space scenarios</li>\n<li>Icons may be more important than labels on narrow screens</li>\n<li>Maintain proper touch targets (minimum 44px) on mobile devices</li>\n</ul>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses <code>role=&quot;toolbar&quot;</code> for proper semantic identification</li>\n<li>Supports keyboard navigation (Tab, Enter, Space, Arrow keys)</li>\n<li>Provides clear focus indicators for all interactive elements</li>\n<li>Maintains logical tab order through toolbar buttons</li>\n<li>Includes proper ARIA attributes when dropdowns are present</li>\n<li>Ensures sufficient color contrast for all button states</li>\n<li>Supports screen reader navigation with meaningful button labels</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar","patternPartial":"molecules-cmdbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-cmdbar-overflow" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-menus-cmdbar-overflow&#x2F;molecules-menus-cmdbar-overflow.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-cmdbar-overflow" title="Link to Pattern">
+						Command Bar Overflow
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-cmdbar-overflow" data-patternpartial="molecules-cmdbar-overflow" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-cmdbar-overflow">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-cmdbar has-overflow" role="toolbar">
+    <div class="hoo-overflow">
+        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
+        <div class="hoo-buttoncmd"  >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
+        <div class="hoo-buttoncmd"  >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
+            <button class="hoo-buttoncmd" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg " aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Email message </span>
+                    </button>
+                </li>
+                <li class="hoo-buttonflyout-item">
+                    <button class="hoo-buttonaction">
+                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
+                            
+                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
+                        </svg>
+                    </span> </span>
+                        <span class="hoo-button-label"> Calendar Event </span>
+                    </button>
+                </li>
+            </menu></div>
+        <div class="hoo-buttoncmd"  >
+            <button class="hoo-buttoncmd" >
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-plus"></use>
+            </svg>
+        </span> </span>
+                <span class="hoo-button-label"> New Item </span>
+            </button>
+        </div>
+        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
+            <button class="hoo-buttonicon-flyout" aria-haspopup="true">
+                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
+                
+                <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
+            </svg>
+        </span> </span>
+            </button>
+            <menu class="hoo-buttonflyout">
+            </menu></div>    </div>
+</div>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-cmdbar-overflow" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-teams-toolbar","lineagePath":"../../patterns/molecules-menus-teams-toolbar/molecules-menus-teams-toolbar.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-teams-toolbar","lineagePath":"../../patterns/molecules-menus-teams-toolbar/molecules-menus-teams-toolbar.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Command Bar Overflow</h1>\n<p>The Command Bar Overflow component provides a responsive command bar that handles limited space by moving items to an overflow menu.</p>\n<h2>Overview</h2>\n<p>When screen space is limited, the Command Bar Overflow automatically hides less important commands in an overflow menu, ensuring the most critical actions remain visible while maintaining accessibility and usability.</p>\n<h2>Features</h2>\n<ul>\n<li>Responsive behavior that adapts to available space</li>\n<li>Automatic overflow handling for commands that don't fit</li>\n<li>Overflow menu with &quot;More&quot; button trigger</li>\n<li>Proper ARIA attributes for accessibility</li>\n<li>Hidden items marked with <code>aria-hidden=&quot;true&quot;</code></li>\n<li>CSS class <code>.is-overflow-item</code> for styling hidden items</li>\n<li>Support for all command button variants</li>\n<li>Consistent visual design with standard command bar</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-cmdbar</code> - Main command bar container</li>\n<li><code>.hoo-buttoncmd</code> - Command buttons (visible and hidden)</li>\n<li><code>.hoo-overflow-button</code> - Overflow menu trigger button</li>\n<li><code>.is-overflow-item</code> - Hidden command items in overflow</li>\n</ul>\n<h2>Overflow Behavior</h2>\n<h3>Responsive Strategy</h3>\n<ol>\n<li><strong>Available Space</strong>: Commands display normally in horizontal layout</li>\n<li><strong>Limited Space</strong>: Less critical commands move to overflow menu</li>\n<li><strong>Very Limited Space</strong>: Only most important commands remain visible</li>\n<li><strong>Overflow Menu</strong>: Hidden commands accessible via &quot;More&quot; button</li>\n</ol>\n<h3>Priority System</h3>\n<p>Commands typically overflow in this order (least to most important):</p>\n<ol>\n<li>Secondary actions (Share, Print)</li>\n<li>Editing actions (Format, Style)</li>\n<li>Primary actions (New, Save, Edit)</li>\n</ol>\n<h2>States and Attributes</h2>\n<h3>ARIA Attributes</h3>\n<ul>\n<li><code>role=&quot;toolbar&quot;</code> - Command bar semantic role</li>\n<li><code>aria-haspopup=&quot;menu&quot;</code> - Indicates overflow button opens a menu</li>\n<li><code>aria-expanded=&quot;false|true&quot;</code> - Overflow menu state</li>\n<li><code>aria-hidden=&quot;true&quot;</code> - Hidden overflow items</li>\n</ul>\n<h3>CSS Classes</h3>\n<ul>\n<li><code>.is-overflow-item</code> - Applied to hidden commands</li>\n<li><code>.hoo-overflow-button</code> - Overflow menu trigger styling</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>Overflow behavior typically requires JavaScript for:</p>\n<ul>\n<li><strong>Responsive calculations</strong>: Measuring available space</li>\n<li><strong>Dynamic overflow</strong>: Moving items in/out of overflow menu</li>\n<li><strong>Menu management</strong>: Opening/closing overflow menu</li>\n<li><strong>Accessibility updates</strong>: Managing ARIA attributes</li>\n</ul>\n<h3>Example JavaScript Pattern</h3>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Prioritize commands based on user importance and frequency</li>\n<li>Use meaningful labels for the overflow menu trigger (&quot;More&quot;, &quot;Additional actions&quot;)</li>\n<li>Include proper ARIA attributes for overflow menu interaction</li>\n<li>Test responsive behavior at different screen sizes</li>\n<li>Ensure keyboard navigation works through visible and overflow commands</li>\n<li>Consider touch targets on mobile devices</li>\n<li>Implement proper focus management when overflow menu opens/closes</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses <code>role=&quot;toolbar&quot;</code> for semantic toolbar identification</li>\n<li>Implements proper ARIA attributes for overflow menu</li>\n<li>Includes <code>aria-hidden=&quot;true&quot;</code> for hidden overflow items</li>\n<li>Supports keyboard navigation (Tab, Enter, Space, Escape)</li>\n<li>Provides clear focus indicators for all interactive elements</li>\n<li>Maintains logical tab order through visible commands</li>\n<li>Announces overflow menu state changes to screen readers</li>\n</ul>\n<h2>SCSS</h2>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar Overflow","patternPartial":"molecules-cmdbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":31}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
 		<div id="molecules-pivotbar" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
@@ -584,7 +1101,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-pivotbar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>To make the pivot bar responsive please checkout the overflow enabled version of this <a href=\"?p=molecules-pivotbar-overflow\">pivot bar</a>.</p>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar","patternPartial":"molecules-pivotbar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Pivot Bar</h1>\n<p>The Pivot Bar component provides tab-style navigation for switching between different content sections or views.</p>\n<h2>Overview</h2>\n<p>The Pivot Bar displays navigation tabs in a horizontal layout, allowing users to switch between different content areas. It's commonly used for sectioned content, filters, or view switching within applications.</p>\n<h2>Features</h2>\n<ul>\n<li>Horizontal tab-style navigation layout</li>\n<li>Support for active/selected state indication</li>\n<li>Semantic <code>&lt;menu&gt;</code> element with proper ARIA roles</li>\n<li>Responsive design that adapts to content</li>\n<li>Integration with pivot button components</li>\n<li>Clean, minimal visual design</li>\n<li>Keyboard navigation support</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-pivotbar</code> - Main pivot bar container with flexbox layout</li>\n<li>Uses pivot button classes from atoms layer:\n<ul>\n<li><code>.hoo-buttonpivot</code> - Individual pivot buttons/tabs</li>\n<li><code>.hoo-buttonpivot-label</code> - Button text labels</li>\n</ul>\n</li>\n</ul>\n<h2>Layout Properties</h2>\n<h3>Container Structure</h3>\n<ul>\n<li><strong>Display</strong>: Flex row layout</li>\n<li><strong>Direction</strong>: Row (horizontal)</li>\n<li><strong>Spacing</strong>: No margin or padding on container</li>\n<li><strong>Alignment</strong>: Natural flow of flex items</li>\n</ul>\n<h3>Button Integration</h3>\n<p>The pivot bar works with pivot buttons to provide:</p>\n<ul>\n<li>Consistent spacing between tabs</li>\n<li>Proper visual hierarchy</li>\n<li>Active state indication through <code>aria-pressed</code> attribute</li>\n<li>Hover and focus states</li>\n</ul>\n<h2>States and Attributes</h2>\n<h3>ARIA Attributes</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> - Indicates the pivot bar as a menu container</li>\n<li><code>role=&quot;menuitem&quot;</code> - Individual pivot buttons as menu items</li>\n<li><code>aria-pressed=&quot;true|false&quot;</code> - Indicates active/selected state</li>\n</ul>\n<h3>Visual States</h3>\n<ul>\n<li><strong>Default</strong>: Standard pivot button appearance</li>\n<li><strong>Active</strong>: Visual indication of current selection (via <code>aria-pressed=&quot;true&quot;</code>)</li>\n<li><strong>Hover</strong>: Interactive feedback on mouse over</li>\n<li><strong>Focus</strong>: Clear focus indicators for keyboard navigation</li>\n</ul>\n<h2>Responsive Behavior</h2>\n<p>For responsive scenarios with limited space, consider using the <a href=\"./pivotbar-overflow.html\">Pivot Bar Overflow</a> variant which includes:</p>\n<ul>\n<li>Overflow menu for hidden items</li>\n<li>Dynamic hiding/showing of tabs based on available space</li>\n<li><code>aria-hidden</code> attributes for hidden items</li>\n</ul>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Use <code>role=&quot;menubar&quot;</code> on the pivot bar container</li>\n<li>Include <code>role=&quot;menuitem&quot;</code> on each pivot button</li>\n<li>Use <code>aria-pressed</code> to indicate the currently selected tab</li>\n<li>Provide clear, concise labels for each pivot option</li>\n<li>Ensure only one pivot is active at a time</li>\n<li>Consider overflow handling for responsive layouts</li>\n<li>Test keyboard navigation (Tab, Enter, Arrow keys)</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>While the pivot bar itself is primarily CSS-driven, interactive behavior typically includes:</p>\n<ul>\n<li>Click handlers to switch between pivot states</li>\n<li>Management of <code>aria-pressed</code> attributes</li>\n<li>Content switching based on selected pivot</li>\n<li>Overflow menu handling (in overflow variant)</li>\n</ul>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses semantic <code>&lt;menu&gt;</code> element with <code>role=&quot;menubar&quot;</code></li>\n<li>Implements proper ARIA attributes for state management</li>\n<li>Supports keyboard navigation (Tab, Enter, Space, Arrow keys)</li>\n<li>Provides clear focus indicators</li>\n<li>Maintains logical tab order through pivot items</li>\n<li>Uses <code>aria-pressed</code> for screen reader state announcement</li>\n<li>Ensures sufficient color contrast for all states</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar","patternPartial":"molecules-pivotbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":40}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -595,7 +1112,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/molecules-menus-pivotbar-overflow&#x2F;molecules-menus-pivotbar-overflow.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-pivotbar-overflow" title="Link to Pattern">
-						Pivot Bar with Overflow
+						Pivot Bar Overflow
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -674,7 +1191,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-pivotbar-overflow" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-pivot-tester","lineagePath":"../../patterns/molecules-menus-pivot-tester/molecules-menus-pivot-tester.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-pivot-tester","lineagePath":"../../patterns/molecules-menus-pivot-tester/molecules-menus-pivot-tester.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>To make this overflow work. Add the class <code>.has-overflow</code> on the pivot container. Also make sure you wrap all buttons in a <code>.hoo-overflow</code> container and add an overflow button.</p>\n<p>The overflow handling happen in the file <a href=\"../../js/js/overflow.js\">overflow.js</a>.\nThe menu of that contains all overflow items will be cloned when the right CSS classing in place directly in the <a href=\"../../js/pivot.js\">pivot.js</a></p>\n<h3>Links:</h3>\n<ul>\n<li><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver\">ResizeObserver</a> on MDN</li>\n</ul>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar with Overflow","patternPartial":"molecules-pivotbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-pivot","lineagePath":"../../patterns/atoms-buttons-button-pivot/atoms-buttons-button-pivot.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-pivot-tester","lineagePath":"../../patterns/molecules-menus-pivot-tester/molecules-menus-pivot-tester.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-pivot-tester","lineagePath":"../../patterns/molecules-menus-pivot-tester/molecules-menus-pivot-tester.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Pivot Bar Overflow</h1>\n<p>The Pivot Bar Overflow component provides a responsive pivot navigation that handles limited space by moving tabs to an overflow menu.</p>\n<h2>Overview</h2>\n<p>When horizontal space is limited, the Pivot Bar Overflow automatically hides pivot tabs that don't fit and provides access to them through an overflow menu, ensuring all navigation options remain accessible.</p>\n<h2>Features</h2>\n<ul>\n<li>Responsive behavior using ResizeObserver API</li>\n<li>Automatic overflow handling for tabs that don't fit</li>\n<li>Overflow menu with dropdown functionality</li>\n<li>Proper ARIA attributes for accessibility</li>\n<li>Hidden items marked with <code>aria-hidden=&quot;true&quot;</code></li>\n<li>CSS class <code>.has-overflow</code> to enable overflow behavior</li>\n<li>JavaScript-driven responsive calculations</li>\n<li>Consistent styling with standard pivot bar</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-pivotbar</code> - Main pivot bar container</li>\n<li><code>.has-overflow</code> - Enables overflow functionality</li>\n<li><code>.hoo-overflow</code> - Wrapper container for overflow items</li>\n<li><code>.hoo-buttonpivot</code> - Pivot buttons (visible and hidden)</li>\n<li><code>.hoo-overflow-button</code> - Overflow menu trigger</li>\n<li><code>.is-overflow-item</code> - Hidden pivot items</li>\n</ul>\n<h2>Overflow Configuration</h2>\n<h3>Required Structure</h3>\n<ol>\n<li><strong>Container</strong>: <code>.hoo-pivotbar.has-overflow</code></li>\n<li><strong>Wrapper</strong>: <code>.hoo-overflow</code> around all pivot buttons</li>\n<li><strong>Overflow Button</strong>: Button with overflow menu functionality</li>\n<li><strong>Hidden Items</strong>: Buttons with <code>.is-overflow-item</code> class</li>\n</ol>\n<h3>CSS Classes for Overflow</h3>\n<ul>\n<li><code>.has-overflow</code> - Enables overflow behavior on the pivot bar</li>\n<li><code>.hoo-overflow</code> - Required wrapper for overflow calculation</li>\n<li><code>.is-overflow-item</code> - Applied to hidden pivot items</li>\n<li><code>.hoo-overflow-button</code> - Overflow menu trigger styling</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>The overflow functionality requires JavaScript files:</p>\n<ul>\n<li><strong>overflow.js</strong>: Handles ResizeObserver and overflow calculations</li>\n<li><strong>pivot.js</strong>: Manages pivot state and overflow menu cloning</li>\n</ul>\n<h3>Key JavaScript Features</h3>\n<ul>\n<li><strong>ResizeObserver</strong>: Monitors container size changes</li>\n<li><strong>Dynamic Overflow</strong>: Moves tabs in/out of overflow menu</li>\n<li><strong>Menu Cloning</strong>: Clones overflow items into dropdown menu</li>\n<li><strong>State Management</strong>: Maintains pivot selection across overflow</li>\n</ul>\n<h3>Initialization</h3>\n<h2>Responsive Behavior</h2>\n<h3>Overflow Strategy</h3>\n<ol>\n<li><strong>Full Width</strong>: All pivot tabs display normally</li>\n<li><strong>Reduced Width</strong>: Less important tabs move to overflow</li>\n<li><strong>Narrow Width</strong>: Only critical tabs remain visible</li>\n<li><strong>Overflow Menu</strong>: Hidden tabs accessible via dropdown</li>\n</ol>\n<h3>ResizeObserver Integration</h3>\n<p>The component uses the <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver\">ResizeObserver API</a> to:</p>\n<ul>\n<li>Monitor container width changes</li>\n<li>Trigger overflow calculations on resize</li>\n<li>Respond to dynamic content changes</li>\n<li>Handle browser zoom and viewport changes</li>\n</ul>\n<h2>States and Attributes</h2>\n<h3>ARIA Attributes</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> - Pivot bar semantic role</li>\n<li><code>role=&quot;menuitem&quot;</code> - Individual pivot buttons</li>\n<li><code>aria-pressed=&quot;true|false&quot;</code> - Active pivot state</li>\n<li><code>aria-haspopup=&quot;menu&quot;</code> - Overflow button has dropdown</li>\n<li><code>aria-expanded=&quot;false|true&quot;</code> - Overflow menu state</li>\n<li><code>aria-hidden=&quot;true&quot;</code> - Hidden overflow items</li>\n</ul>\n<h3>Visual States</h3>\n<ul>\n<li><strong>Visible</strong>: Standard pivot button display</li>\n<li><strong>Hidden</strong>: Overflow items with <code>aria-hidden=&quot;true&quot;</code></li>\n<li><strong>Active</strong>: Selected pivot with <code>aria-pressed=&quot;true&quot;</code></li>\n<li><strong>Overflow Menu</strong>: Dropdown containing hidden items</li>\n</ul>\n<h2>Usage Guidelines</h2>\n<ul>\n<li>Add <code>.has-overflow</code> class to enable overflow functionality</li>\n<li>Wrap pivot buttons in <code>.hoo-overflow</code> container</li>\n<li>Include overflow button with proper ARIA attributes</li>\n<li>Test responsive behavior at different screen sizes</li>\n<li>Ensure overflow menu is keyboard accessible</li>\n<li>Prioritize pivot tabs based on importance</li>\n<li>Consider mobile touch targets and interaction</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>ResizeObserver</strong>: Modern browsers (IE11+ with polyfill)</li>\n<li><strong>Flexbox</strong>: All modern browsers</li>\n<li><strong>CSS Grid</strong>: Used for overflow calculations</li>\n<li><strong>JavaScript</strong>: ES6+ features</li>\n</ul>\n<h2>SCSS</h2>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses <code>role=&quot;menubar&quot;</code> for semantic identification</li>\n<li>Implements proper ARIA attributes for overflow menu</li>\n<li>Includes <code>aria-hidden=&quot;true&quot;</code> for hidden items</li>\n<li>Supports keyboard navigation (Tab, Enter, Space, Arrow keys)</li>\n<li>Provides clear focus indicators</li>\n<li>Maintains logical tab order through visible pivots</li>\n<li>Announces overflow menu state to screen readers</li>\n<li>Follows responsive design accessibility principles</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Pivot Bar Overflow","patternPartial":"molecules-pivotbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":41}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -885,415 +1402,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-teams-toolbar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"}],"lineage":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Teams Toolbar","patternPartial":"molecules-teams-toolbar","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-cmdbar" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-menus-cmdbar&#x2F;molecules-menus-cmdbar.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-cmdbar" title="Link to Pattern">
-						Command Bar
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-cmdbar" data-patternpartial="molecules-cmdbar" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-cmdbar">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-cmdbar" role="toolbar">
-    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-        <button class="hoo-buttoncmd" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-        </svg>
-    </span> </span>
-        </button>
-        <menu class="hoo-buttonflyout">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>
-            </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>
-            </li>
-        </menu></div>
-    <div class="hoo-buttoncmd"  >
-        <button class="hoo-buttoncmd" >
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-        </button>
-    </div>
-    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-        <button class="hoo-buttoncmd" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-        </svg>
-    </span> </span>
-        </button>
-        <menu class="hoo-buttonflyout">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>
-            </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>
-            </li>
-        </menu></div>
-    <div class="hoo-buttoncmd"  >
-        <button class="hoo-buttoncmd" >
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-        </button>
-    </div>
-    <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-        <button class="hoo-buttoncmd" aria-haspopup="true">
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg " aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-            <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-        </svg>
-    </span> </span>
-        </button>
-        <menu class="hoo-buttonflyout">
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Email message </span>
-                </button>
-            </li>
-            <li class="hoo-buttonflyout-item">
-                <button class="hoo-buttonaction">
-                    <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                    <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                        
-                        <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                    </svg>
-                </span> </span>
-                    <span class="hoo-button-label"> Calendar Event </span>
-                </button>
-            </li>
-        </menu></div>
-    <div class="hoo-buttoncmd"  >
-        <button class="hoo-buttoncmd" >
-            <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-        <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-            
-            <use xlink:href="../../images/icons.svg#icon-plus"></use>
-        </svg>
-    </span> </span>
-            <span class="hoo-button-label"> New Item </span>
-        </button>
-    </div>
-</div>
-
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-cmdbar" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Command bar use different variants of the command buttom, for example the first button has defined a drop down. The second buttom has no drop down defined. In this case the chevron won't show up.</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar","patternPartial":"molecules-cmdbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-cmdbar-overflow" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-menus-cmdbar-overflow&#x2F;molecules-menus-cmdbar-overflow.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-cmdbar-overflow" title="Link to Pattern">
-						Command Bar Overflow
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-cmdbar-overflow" data-patternpartial="molecules-cmdbar-overflow" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-cmdbar-overflow">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-cmdbar has-overflow" role="toolbar">
-    <div class="hoo-overflow">
-        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <menu class="hoo-buttonflyout">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>
-                </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>
-                </li>
-            </menu></div>
-        <div class="hoo-buttoncmd"  >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>
-        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <menu class="hoo-buttonflyout">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>
-                </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>
-                </li>
-            </menu></div>
-        <div class="hoo-buttoncmd"  >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>
-        <div class="hoo-buttoncmd"  aria-haspopup="true"  >
-            <button class="hoo-buttoncmd" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg " aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-                <span class="hoo-button-icon hoo-buttonchevron"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-arrow-down"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <menu class="hoo-buttonflyout">
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-ninjacat" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-ninjacat"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Email message </span>
-                    </button>
-                </li>
-                <li class="hoo-buttonflyout-item">
-                    <button class="hoo-buttonaction">
-                        <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-                        <svg class="hoo-icon-svg icon-minus" aria-hidden="true">
-                            
-                            <use xlink:href="../../images/icons.svg#icon-minus"></use>
-                        </svg>
-                    </span> </span>
-                        <span class="hoo-button-label"> Calendar Event </span>
-                    </button>
-                </li>
-            </menu></div>
-        <div class="hoo-buttoncmd"  >
-            <button class="hoo-buttoncmd" >
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-plus" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-plus"></use>
-            </svg>
-        </span> </span>
-                <span class="hoo-button-label"> New Item </span>
-            </button>
-        </div>
-        <div class="hoo-buttonicon-overflow" aria-haspopup="true">
-            <button class="hoo-buttonicon-flyout" aria-haspopup="true">
-                <span class="hoo-button-icon" aria-hidden="true"> <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-ellipses" aria-hidden="true">
-                
-                <use xlink:href="../../images/icons.svg#icon-ellipses"></use>
-            </svg>
-        </span> </span>
-            </button>
-            <menu class="hoo-buttonflyout">
-            </menu></div>    </div>
-</div>
-
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-cmdbar-overflow" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-cmd","lineagePath":"../../patterns/atoms-buttons-button-cmd/atoms-buttons-button-cmd.rendered.html"},{"lineagePattern":"atoms-button-icon-overflow","lineagePath":"../../patterns/atoms-buttons-button-icon-overflow/atoms-buttons-button-icon-overflow.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-teams-toolbar","lineagePath":"../../patterns/molecules-menus-teams-toolbar/molecules-menus-teams-toolbar.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-teams-toolbar","lineagePath":"../../patterns/molecules-menus-teams-toolbar/molecules-menus-teams-toolbar.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>To make the pivot bar responsive please checkout the overflow enabled version of this <a href=\"?p=molecules-pivotbar-overflow\">pivot bar</a>.</p>\n<h3>Accessibility:</h3>\n<ul>\n<li><code>role=&quot;menubar&quot;</code> .... gives the user a clear indication on how many buttons are in the current menu</li>\n<li><code>aria-hidden</code> ....... items that are hidden also have beside the CSS class <code>.is-overflow-item</code> the aria-hidden attribute set</li>\n</ul>\n<p><em><strong>Currently the overflow shown here is only static</strong></em></p>\n<p>Command bar use different variants of the command buttom, for example the first button has defined a drop down. The second buttom has no drop down defined. In this case the chevron won't show up.</p>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Command Bar Overflow","patternPartial":"molecules-cmdbar-overflow","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":99}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"}],"lineage":[{"lineagePattern":"molecules-cmdbar-overflow","lineagePath":"../../patterns/molecules-menus-cmdbar-overflow/molecules-menus-cmdbar-overflow.rendered.html"},{"lineagePattern":"atoms-searchbox","lineagePath":"../../patterns/atoms-input-searchbox/atoms-input-searchbox.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Teams Toolbar</h1>\n<p>The Teams Toolbar component provides a Microsoft Teams-style toolbar that combines command bar functionality with search capabilities. This specialized molecular component creates a unified interface for application commands and content discovery, maintaining consistency with Microsoft Teams design language.</p>\n<h2>Overview</h2>\n<p>The Teams Toolbar is a composite molecular component that integrates a command bar with overflow functionality and a search box, providing a familiar interface experience similar to Microsoft Teams applications. It balances powerful functionality with clean design, offering users both quick actions and search capabilities within a single interface element.</p>\n<h2>Features</h2>\n<h3>Design Integration</h3>\n<ul>\n<li><strong>Microsoft Teams Styling</strong>: Authentic Teams visual design language</li>\n<li><strong>Elevated Surface</strong>: Subtle elevation (level 4) for prominence</li>\n<li><strong>Consistent Height</strong>: Standard 48px height for interface consistency</li>\n<li><strong>Flexible Layout</strong>: Responsive flex container adapting to content needs</li>\n</ul>\n<h3>Functional Components</h3>\n<ul>\n<li><strong>Command Bar Integration</strong>: Full command bar with overflow behavior</li>\n<li><strong>Search Integration</strong>: Seamless search box with Teams styling</li>\n<li><strong>Responsive Behavior</strong>: Intelligent adaptation to container constraints</li>\n<li><strong>Action Prioritization</strong>: Smart overflow management for secondary commands</li>\n</ul>\n<h3>Layout Characteristics</h3>\n<ul>\n<li><strong>Horizontal Flow</strong>: Left-aligned commands, right-aligned search</li>\n<li><strong>Space Distribution</strong>: Equal flex growth for balanced spacing</li>\n<li><strong>Edge Padding</strong>: Consistent 20px horizontal padding</li>\n<li><strong>Centered Alignment</strong>: Vertically centered content for visual balance</li>\n</ul>\n<h2>Structure</h2>\n<p>The Teams Toolbar consists of two main molecular components:</p>\n<ol>\n<li><strong><a href=\"./cmdbar-overflow.html\">Command Bar with Overflow</a></strong> - Action commands with responsive overflow</li>\n<li><strong><a href=\"../../atoms/inputs/\">Search Box</a></strong> - Integrated search functionality</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;cmdBarButtons&quot;: [\n        {\n            &quot;iconAction&quot;: &quot;icon-plus&quot;,\n            &quot;label&quot;: &quot;New Item&quot;,\n            &quot;ddItems&quot;: [\n                {\n                    &quot;label&quot;: &quot;Document&quot;,\n                    &quot;icon&quot;: &quot;icon-document&quot;\n                },\n                {\n                    &quot;label&quot;: &quot;Folder&quot;, \n                    &quot;icon&quot;: &quot;icon-folder&quot;\n                }\n            ]\n        },\n        {\n            &quot;iconAction&quot;: &quot;icon-upload&quot;,\n            &quot;label&quot;: &quot;Upload&quot;,\n            &quot;ddItems&quot;: [\n                {\n                    &quot;label&quot;: &quot;Files&quot;,\n                    &quot;icon&quot;: &quot;icon-document&quot;\n                },\n                {\n                    &quot;label&quot;: &quot;Folder&quot;,\n                    &quot;icon&quot;: &quot;icon-folder&quot;\n                }\n            ]\n        },\n        {\n            &quot;iconAction&quot;: &quot;icon-share&quot;,\n            &quot;label&quot;: &quot;Share&quot;\n        }\n    ],\n    &quot;searchbox&quot;: {\n        &quot;placeholder&quot;: &quot;Search files, people, and messages...&quot;,\n        &quot;ariaLabel&quot;: &quot;Search application content&quot;\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Container Classes</h3>\n<ul>\n<li><code>.hoo-teams-toolbar</code>: Main Teams toolbar container with elevation and layout</li>\n</ul>\n<h3>Inherited Classes</h3>\n<p>From child components:</p>\n<ul>\n<li><strong>Command Bar</strong>: <code>.hoo-cmdbar</code>, <code>.hoo-buttoncmd</code>, <code>.hoo-overflow-button</code></li>\n<li><strong>Search Box</strong>: <code>.hoo-searchbox</code>, <code>.hoo-searchbox-input</code>, <code>.hoo-search-icon</code></li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Background</strong>: Inherits from theme, typically white or Teams surface color</li>\n<li><strong>Elevation</strong>: Level 4 shadow for subtle depth and separation</li>\n<li><strong>Height</strong>: Fixed 48px height maintaining interface consistency</li>\n<li><strong>Padding</strong>: 20px horizontal padding for adequate spacing</li>\n</ul>\n<h3>Layout Behavior</h3>\n<ul>\n<li><strong>Display</strong>: Flex row with space-between justification</li>\n<li><strong>Flex Growth</strong>: Each child component grows equally (flex: 1)</li>\n<li><strong>Alignment</strong>: Vertically centered items with consistent baseline</li>\n<li><strong>Overflow</strong>: Command bar handles overflow, search maintains minimum width</li>\n</ul>\n<h3>Responsive Characteristics</h3>\n<ul>\n<li><strong>Large Screens</strong>: Full command bar with extended search box</li>\n<li><strong>Medium Screens</strong>: Prioritized commands with compact search</li>\n<li><strong>Small Screens</strong>: Essential commands only with minimal search box</li>\n<li><strong>Mobile</strong>: Touch-optimized button sizes with accessible search</li>\n</ul>\n<h2>Integration Patterns</h2>\n<h3>Application Header</h3>\n<pre><code class=\"language-html\">&lt;header class=&quot;app-header&quot;&gt;\n    &lt;div class=&quot;app-branding&quot;&gt;\n        &lt;img src=&quot;logo.svg&quot; alt=&quot;Application name&quot;&gt;\n    &lt;/div&gt;\n    {{&gt; molecules-teams-toolbar }}\n    &lt;div class=&quot;app-user-menu&quot;&gt;\n        {{&gt; molecules-user-menu }}\n    &lt;/div&gt;\n&lt;/header&gt;\n</code></pre>\n<h3>Content Area Toolbar</h3>\n<pre><code class=\"language-html\">&lt;main class=&quot;content-area&quot;&gt;\n    &lt;section class=&quot;content-toolbar&quot;&gt;\n        {{&gt; molecules-teams-toolbar }}\n    &lt;/section&gt;\n    &lt;section class=&quot;content-body&quot;&gt;\n        &lt;!-- Main content --&gt;\n    &lt;/section&gt;\n&lt;/main&gt;\n</code></pre>\n<h3>Dashboard Integration</h3>\n<pre><code class=\"language-html\">&lt;div class=&quot;dashboard-container&quot;&gt;\n    {{&gt; molecules-teams-toolbar }}\n    &lt;div class=&quot;dashboard-content&quot;&gt;\n        {{&gt; organism-dashboard-grid }}\n    &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>JavaScript Integration</h2>\n<h3>Initialization</h3>\n<h3>Event Handling</h3>\n<h2>Use Cases</h2>\n<h3>Microsoft Teams Applications</h3>\n<ul>\n<li><strong>File Management</strong>: Document libraries with search and action capabilities</li>\n<li><strong>Channel Interfaces</strong>: Team content management with integrated search</li>\n<li><strong>Application Dashboards</strong>: Unified command and search interface</li>\n</ul>\n<h3>SharePoint Online</h3>\n<ul>\n<li><strong>Modern Pages</strong>: Site content management interfaces</li>\n<li><strong>Document Libraries</strong>: File and folder management with search</li>\n<li><strong>List Views</strong>: Data management with filtering and actions</li>\n</ul>\n<h3>Office 365 Applications</h3>\n<ul>\n<li><strong>Web Applications</strong>: Consistent interface across Office 365 suite</li>\n<li><strong>Power Platform</strong>: Custom applications with professional interface</li>\n<li><strong>Teams Apps</strong>: Tab applications requiring command and search</li>\n</ul>\n<h3>Enterprise Applications</h3>\n<ul>\n<li><strong>Line of Business</strong>: Custom enterprise applications</li>\n<li><strong>Productivity Tools</strong>: Internal tools requiring unified interface</li>\n<li><strong>Collaboration Platforms</strong>: Team-focused applications</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Keyboard Navigation</h3>\n<ul>\n<li><strong>Tab Order</strong>: Logical progression through commands then search</li>\n<li><strong>Arrow Keys</strong>: Command bar navigation with arrow key support</li>\n<li><strong>Enter/Space</strong>: Command activation with standard key support</li>\n<li><strong>Escape</strong>: Close overflow menus and clear search focus</li>\n</ul>\n<h3>Screen Reader Support</h3>\n<ul>\n<li><strong>Toolbar Role</strong>: Proper toolbar landmark with descriptive label</li>\n<li><strong>Search Role</strong>: Search landmark for content discovery</li>\n<li><strong>Button Labels</strong>: Clear, descriptive labels for all commands</li>\n<li><strong>State Announcements</strong>: Dynamic state changes announced properly</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>Focus Indicators</strong>: Clear visual focus states for all interactive elements</li>\n<li><strong>High Contrast</strong>: Support for high contrast themes and Teams themes</li>\n<li><strong>Color Independence</strong>: No color-only information conveyance</li>\n<li><strong>Text Scaling</strong>: Support for browser zoom up to 200%</li>\n</ul>\n<h3>Touch Accessibility</h3>\n<ul>\n<li><strong>Touch Targets</strong>: Minimum 44px touch target size maintained</li>\n<li><strong>Gesture Support</strong>: Standard touch gestures for mobile interaction</li>\n<li><strong>Spacing</strong>: Adequate spacing between interactive elements</li>\n<li><strong>Responsive Touch</strong>: Touch-optimized layouts for mobile devices</li>\n</ul>\n<h2>Performance Considerations</h2>\n<h3>Rendering Optimization</h3>\n<ul>\n<li><strong>CSS Grid/Flexbox</strong>: Efficient layout with modern CSS features</li>\n<li><strong>Component Isolation</strong>: Independent component initialization</li>\n<li><strong>Event Delegation</strong>: Efficient event handling for dynamic content</li>\n<li><strong>Lazy Loading</strong>: Progressive enhancement for advanced features</li>\n</ul>\n<h3>Search Performance</h3>\n<ul>\n<li><strong>Debounced Input</strong>: Debounced search input to prevent excessive queries</li>\n<li><strong>Caching</strong>: Client-side caching of search results and suggestions</li>\n<li><strong>Progressive Loading</strong>: Incremental search result loading</li>\n<li><strong>Offline Support</strong>: Cached search capability for offline scenarios</li>\n</ul>\n<h3>Memory Management</h3>\n<ul>\n<li><strong>Event Cleanup</strong>: Proper event listener cleanup on component destruction</li>\n<li><strong>Reference Management</strong>: Avoid memory leaks with proper reference handling</li>\n<li><strong>Dynamic Content</strong>: Efficient handling of dynamic toolbar content</li>\n</ul>\n<h2>Browser Support</h2>\n<h3>Modern Browsers</h3>\n<ul>\n<li><strong>Chrome 87+</strong>: Full feature support including container queries</li>\n<li><strong>Firefox 110+</strong>: Complete compatibility with all features</li>\n<li><strong>Safari 16+</strong>: Full support including advanced CSS features</li>\n<li><strong>Edge 87+</strong>: Complete modern feature support</li>\n</ul>\n<h3>Teams Client Support</h3>\n<ul>\n<li><strong>Teams Desktop</strong>: Full integration with Teams desktop application</li>\n<li><strong>Teams Web</strong>: Complete web client compatibility</li>\n<li><strong>Teams Mobile</strong>: Mobile-optimized experience and touch support</li>\n</ul>\n<h3>Fallback Support</h3>\n<ul>\n<li><strong>IE 11</strong>: Graceful degradation with limited functionality</li>\n<li><strong>Older Browsers</strong>: Progressive enhancement approach</li>\n<li><strong>No JavaScript</strong>: Core functionality maintained without JavaScript</li>\n</ul>\n<h2>Teams Theme Integration</h2>\n<h3>Theme System</h3>\n<ul>\n<li><strong>Teams Light</strong>: Default light theme matching Teams visual design</li>\n<li><strong>Teams Dark</strong>: Dark theme for low-light environments</li>\n<li><strong>Teams High Contrast</strong>: Accessibility-focused high contrast theme</li>\n</ul>\n<h3>CSS Custom Properties</h3>\n<h3>Dynamic Theming</h3>\n<h3>Molecular Components</h3>\n<ul>\n<li><a href=\"./cmdbar-overflow.html\">Command Bar with Overflow</a> - Core command functionality</li>\n<li><a href=\"../../atoms/inputs/\">Search Box</a> - Integrated search capabilities</li>\n<li><a href=\"./cmdbar.html\">Command Bar</a> - Basic command bar functionality</li>\n</ul>\n<h3>Template Components</h3>\n<ul>\n<li><a href=\"../../templates/teams/\">Teams Dashboard</a> - Complete Teams dashboard layout</li>\n<li><a href=\"../../templates/teams/\">Teams Splash Screen</a> - Teams application welcome screens</li>\n</ul>\n<h3>Theme Components</h3>\n<ul>\n<li>Teams Light Theme - Default Teams light appearance</li>\n<li>Teams Dark Theme - Teams dark mode support</li>\n<li>Teams High Contrast Theme - Accessibility-focused theming</li>\n</ul>\n<h2>SCSS Import</h2>\n<p>// Initialize search functionality\nimport { initSearch } from '@n8d/htwoo-core/js/search.js';</p>\n<p>document.addEventListener('DOMContentLoaded', () =&gt; {\n// Initialize both components\ninitMenu();\ninitSearch();\n});</p>\n<pre><code>\n## Responsive Behavior\n\nThe Teams Toolbar adapts to different screen sizes by:\n\n- Utilizing command bar overflow for limited space\n- Adjusting search box width based on available space\n- Maintaining usability on mobile devices\n- Preserving important commands while hiding less critical ones\n\n## SCSS\n\n## Accessibility\n\n- Inherits accessibility features from child components\n- Maintains logical tab order through toolbar and search\n- Provides proper semantic structure with landmarks\n- Supports keyboard navigation (Tab, Enter, Space)\n- Includes appropriate ARIA attributes from component parts\n- Ensures search input has proper labeling\n- Maintains focus management between toolbar sections\n</code></pre>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"menus"},"patternExtension":"hbs","patternName":"Teams Toolbar","patternPartial":"molecules-teams-toolbar","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":50}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -1344,10 +1453,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -1360,7 +1469,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -1408,6 +1517,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

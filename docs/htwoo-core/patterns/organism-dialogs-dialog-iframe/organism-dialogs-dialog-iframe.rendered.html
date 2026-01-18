@@ -4,10 +4,10 @@
     <title>Organism -  Dialog Iframe - Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=organism-dialog-iframe">
     <meta name="description" content="Dialog Iframe Organism - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content="Organism, DialogIframe, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
@@ -21,7 +21,10 @@
   <h1>Organism -  Dialog Iframe</h1><dialog id="dlgiframe" class="hoo-dlg" style="--hoo-dlg-width: 50vw;">
     <div class="hoo-dlgheader">
         <div class="hoo-dlgheader-title"><h2>Dialog Header</h2></div>
-        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" >
+        <div class="hoo-dlgheader-closer"><button class="hoo-buttonicon" 
+        
+        
+        >
         <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-close" aria-hidden="true">
                 
@@ -45,11 +48,11 @@
     }
 </script><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>IFrame Dialog</h1>\n<p>The IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating away from the current context.</p>\n<h2>Overview</h2>\n<p>IFrame dialogs in HTWOO UI combine the HTML5 <code>&lt;dialog&gt;</code> element with an embedded <code>&lt;iframe&gt;</code> to create a window for displaying external content. They can be configured with different aspect ratios and sizes to accommodate various types of content.</p>\n<h2>Features</h2>\n<ul>\n<li>External content embedding via <code>&lt;iframe&gt;</code></li>\n<li>Default 16:9 aspect ratio (configurable to other ratios)</li>\n<li>Customizable dimensions via CSS variables</li>\n<li>Responsive design that adapts to viewport size</li>\n<li>Optional dialog header with title and close button</li>\n<li>Variants for different aspect ratios (16:9, 4:3, 1:1)</li>\n<li>Optional modal backdrop</li>\n</ul>\n<h2>Usage</h2>\n<p>The IFrame Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;dialog id=&quot;myIframeDialog&quot; class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 50vw;&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;IFrame Dialog Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- IFrame content --&gt;\n  &lt;div class=&quot;hoo-dlg-iframe&quot;&gt;\n    &lt;iframe src=&quot;https://example.com&quot; title=&quot;Embedded content&quot;&gt;&lt;/iframe&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Dimensions</h3>\n<p>IFrame dialog dimensions can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 75vw; --hoo-dlg-height: auto&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>Aspect Ratio Variants</h2>\n<p>The IFrame Dialog comes in several aspect ratio variants:</p>\n<ul>\n<li><strong>Default (16:9)</strong>: Optimal for video content</li>\n<li><strong>4:3</strong>: Traditional presentation format</li>\n<li><strong>1:1 (Squared)</strong>: Equal width and height</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>lib/sass/03-organism/dialog/</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Proper iframe title attribute for screen readers</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"IFrame Dialog","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"This dialog is set to 16 by 9 aspect ratio by default","order":10}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"with IFrame","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"THis dialog is set to 16 by 9 aspect ratio by default","order":10}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"lineage":[{"lineagePattern":"molecules-dialog-header","lineagePath":"../../patterns/molecules-dialogs-dialog-header/molecules-dialogs-dialog-header.rendered.html"},{"lineagePattern":"molecules-dialog-iframe","lineagePath":"../../patterns/molecules-dialogs-dialog-iframe/molecules-dialogs-dialog-iframe.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>IFrame Dialog</h1>\n<p>The IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating away from the current context.</p>\n<h2>Overview</h2>\n<p>IFrame dialogs in HTWOO UI combine the HTML5 <code>&lt;dialog&gt;</code> element with an embedded <code>&lt;iframe&gt;</code> to create a window for displaying external content. They can be configured with different aspect ratios and sizes to accommodate various types of content.</p>\n<h2>Features</h2>\n<ul>\n<li>External content embedding via <code>&lt;iframe&gt;</code></li>\n<li>Default 16:9 aspect ratio (configurable to other ratios)</li>\n<li>Customizable dimensions via CSS variables</li>\n<li>Responsive design that adapts to viewport size</li>\n<li>Optional dialog header with title and close button</li>\n<li>Variants for different aspect ratios (16:9, 4:3, 1:1)</li>\n<li>Optional modal backdrop</li>\n</ul>\n<h2>Usage</h2>\n<p>The IFrame Dialog can be implemented with the following structure:</p>\n<pre><code class=\"language-html\">&lt;dialog id=&quot;myIframeDialog&quot; class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 50vw;&quot;&gt;\n  &lt;!-- Dialog header --&gt;\n  &lt;div class=&quot;hoo-dlgheader&quot;&gt;\n    &lt;h2&gt;IFrame Dialog Title&lt;/h2&gt;\n    &lt;button class=&quot;hoo-button-icon&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;\n  &lt;/div&gt;\n  \n  &lt;!-- IFrame content --&gt;\n  &lt;div class=&quot;hoo-dlg-iframe&quot;&gt;\n    &lt;iframe src=&quot;https://example.com&quot; title=&quot;Embedded content&quot;&gt;&lt;/iframe&gt;\n  &lt;/div&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h3>Opening the Dialog</h3>\n<h3>Customizing Dimensions</h3>\n<p>IFrame dialog dimensions can be customized using CSS variables:</p>\n<pre><code class=\"language-html\">&lt;dialog class=&quot;hoo-dlg&quot; style=&quot;--hoo-dlg-width: 75vw; --hoo-dlg-height: auto&quot;&gt;\n  &lt;!-- Dialog content --&gt;\n&lt;/dialog&gt;\n</code></pre>\n<h2>Aspect Ratio Variants</h2>\n<p>The IFrame Dialog comes in several aspect ratio variants:</p>\n<ul>\n<li><strong>Default (16:9)</strong>: Optimal for video content</li>\n<li><strong>4:3</strong>: Traditional presentation format</li>\n<li><strong>1:1 (Squared)</strong>: Equal width and height</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Dialog Styles:</strong></p>\n<ul>\n<li><code>lib/sass/03-organism/dialog/</code></li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses the native HTML5 <code>&lt;dialog&gt;</code> element</li>\n<li>Proper iframe title attribute for screen readers</li>\n<li>Ensures focus is trapped within the dialog when open</li>\n<li>ESC key closes the dialog by default</li>\n<li>ARIA attributes for screen reader compatibility</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"dialogs"},"patternExtension":"hbs","patternName":"IFrame Dialog","patternPartial":"organism-dialog-iframe","patternState":"","patternEngineName":"handlebars","extraOutput":{"description":"This dialog is set to 16 by 9 aspect ratio by default","order":10}};
 </script>
 
 <script>
@@ -85,10 +88,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -101,7 +104,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -149,6 +152,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

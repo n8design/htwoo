@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,57 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Tooltip Components</h1>
+<p>Tooltips in HTWOO provide contextual information or additional details when a user hovers over or focuses on an element. They appear in a small overlay with a directional arrow indicating the related element.</p>
+<h2>Overview</h2>
+<p>Tooltips enhance usability by providing supplementary information without cluttering the interface. They appear on hover or focus states and can be positioned in various ways around the triggering element.</p>
+<h2>Positioning Options</h2>
+<p>HTWOO tooltips can be positioned in 12 different ways around the target element:</p>
+<ul>
+<li><strong>Top</strong>: top-left, top-center, top-right</li>
+<li><strong>Right</strong>: right-top, right-center, right-bottom</li>
+<li><strong>Bottom</strong>: bottom-left, bottom-center, bottom-right</li>
+<li><strong>Left</strong>: left-top, left-center, left-bottom</li>
+</ul>
+<h2>SCSS Imports</h2>
+<p><strong>Main Component</strong></p>
+<p><strong>SCSS Partial Location</strong></p>
+<h2>Position Classes</h2>
+<p>The position class determines where the arrow appears and affects the tooltip's placement:</p>
+<ul>
+<li><code>.top-center</code>: Arrow on top, centered</li>
+<li><code>.top-left</code>: Arrow on top, aligned left</li>
+<li><code>.top-right</code>: Arrow on top, aligned right</li>
+<li><code>.bottom-center</code>: Arrow on bottom, centered</li>
+<li><code>.bottom-left</code>: Arrow on bottom, aligned left</li>
+<li><code>.bottom-right</code>: Arrow on bottom, aligned right</li>
+<li><code>.left-top</code>: Arrow on left, aligned top</li>
+<li><code>.left-center</code>: Arrow on left, centered vertically</li>
+<li><code>.left-bottom</code>: Arrow on left, aligned bottom</li>
+<li><code>.right-top</code>: Arrow on right, aligned top</li>
+<li><code>.right-center</code>: Arrow on right, centered vertically</li>
+<li><code>.right-bottom</code>: Arrow on right, aligned bottom</li>
+</ul>
+<h2>Accessibility</h2>
+<p>For accessible tooltips, follow these guidelines:</p>
+<ul>
+<li>Use <code>role=&quot;tooltip&quot;</code> on the tooltip element</li>
+<li>Connect the tooltip to its trigger using <code>aria-describedby</code> on the trigger element</li>
+<li>Make tooltips visible on both hover and focus for keyboard navigation</li>
+<li>Ensure tooltip content is concise and helpful</li>
+<li>Use sufficient color contrast between text and background</li>
+<li>Avoid using tooltips for essential information that should be directly visible</li>
+</ul>
+<h2>Usage Best Practices</h2>
+<ul>
+<li>Use tooltips for supplementary information only</li>
+<li>Keep tooltip content brief and focused</li>
+<li>Position tooltips to avoid obscuring important content</li>
+<li>Consider the trigger element's position relative to screen edges</li>
+<li>Test tooltip display on touch devices</li>
+<li>Ensure tooltips don't interfere with form completion</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -70,47 +120,57 @@
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			    <div class="hoo-tooltip top-left" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip top-center" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip top-right" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip right-top" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip right-center" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip right-bottom" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip bottom-left" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip bottom-center" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip bottom-right" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip left-top" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip left-center" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-    <div class="hoo-tooltip left-bottom" role="tooltip">
-        <div class="hoo-tooltip-content">Tooltip</div>
-    </div>
-
+			
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tooltips" class="pl-js-pattern-data">
 			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"lineage":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"All Tooltips","patternPartial":"atoms-tooltips","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":0}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="atoms-tooltip" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/atoms-tooltip-tooltip&#x2F;atoms-tooltip-tooltip.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tooltip" title="Link to Pattern">
+						Basic Tooltip
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-atoms-tooltip" data-patternpartial="atoms-tooltip" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-atoms-tooltip">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-tooltip" role="tooltip">
+    <div class="hoo-tooltip-content">Tooltip</div>
+</div>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-atoms-tooltip" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-tooltip-tryout","lineagePath":"../../patterns/atoms-tooltip-tooltip-tryout/atoms-tooltip-tooltip-tryout.rendered.html"},{"lineagePattern":"atoms-tooltips","lineagePath":"../../patterns/atoms-tooltip-tooltips/atoms-tooltip-tooltips.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-tooltip-tryout","lineagePath":"../../patterns/atoms-tooltip-tooltip-tryout/atoms-tooltip-tooltip-tryout.rendered.html"},{"lineagePattern":"atoms-tooltips","lineagePath":"../../patterns/atoms-tooltip-tooltips/atoms-tooltip-tooltips.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>The Basic Tooltip component provides additional information or context when a user hovers over or focuses on an interactive element. Tooltips help improve usability without cluttering the interface with permanently visible help text.</p>\n<h2>Usage</h2>\n<p>The tooltip component should be used with interactive elements to provide additional context. The tooltip requires both the outer container (<code>hoo-tooltip</code>) with positioning class and the inner content container (<code>hoo-tooltip-content</code>).</p>\n<p>Example:</p>\n<pre><code class=\"language-html\">&lt;button aria-describedby=&quot;tooltip1&quot;&gt;Help&lt;/button&gt;\n&lt;div id=&quot;tooltip1&quot; class=&quot;hoo-tooltip top-center&quot; role=&quot;tooltip&quot;&gt;\n    &lt;div class=&quot;hoo-tooltip-content&quot;&gt;This is help text&lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>Accessibility</h2>\n<ul>\n<li>Use <code>role=&quot;tooltip&quot;</code> on the tooltip element</li>\n<li>Connect to the target element with <code>aria-describedby</code></li>\n<li>Ensure tooltip is visible on both hover and focus states</li>\n<li>Keep content concise and helpful</li>\n<li>Test with screen readers and keyboard navigation</li>\n</ul>\n<h2>SCSS Imports</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/tooltip</p>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Basic Tooltip","patternPartial":"atoms-tooltip","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":5}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -340,7 +400,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tooltip-left-center" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Left Center","patternPartial":"atoms-tooltip-left-center","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":10}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h2>Overview</h2>\n<p>The Left-Center tooltip variant displays a tooltip with the arrow pointing to the left and centered vertically. This positioning is ideal when the tooltip should appear to the right of the target element.</p>\n<h2>Usage</h2>\n<p>Use left-center tooltips when:</p>\n<ul>\n<li>The tooltip should appear to the right of the element</li>\n<li>There is limited vertical space above or below the element</li>\n<li>There is sufficient horizontal space to the right of the element</li>\n<li>The content is better displayed with a vertical orientation</li>\n</ul>\n<h2>Accessibility</h2>\n<p>For left-aligned tooltips, ensure they don't extend beyond the viewable area of the screen, especially on smaller devices.</p>\n<p>Example:</p>\n<pre><code class=\"language-html\">&lt;span aria-describedby=&quot;definition&quot; class=&quot;term&quot;&gt;Technical term&lt;/span&gt;\n&lt;div id=&quot;definition&quot; class=&quot;hoo-tooltip left-center&quot; role=&quot;tooltip&quot;&gt;\n    &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Definition of the technical term&lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Left Center","patternPartial":"atoms-tooltip-left-center","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -570,7 +630,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tooltip-top-center" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Top Center","patternPartial":"atoms-tooltip-top-center","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":10}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h2>Overview</h2>\n<p>The Top-Center tooltip variant displays a tooltip with the arrow pointing upward and centered horizontally. This positioning is ideal when the tooltip should appear directly above the target element.</p>\n<h2>Usage</h2>\n<p>Use top-center tooltips when:</p>\n<ul>\n<li>The tooltip should appear directly above the element</li>\n<li>There is sufficient space above the element</li>\n<li>Centering the tooltip provides the best visual connection to the element</li>\n</ul>\n<h2>Accessibility</h2>\n<p>Remember to maintain proper accessibility by associating the tooltip with its target element using <code>aria-describedby</code>.</p>\n<p>Example:</p>\n<pre><code class=\"language-html\">&lt;button aria-describedby=&quot;help-tooltip&quot;&gt;Help&lt;/button&gt;\n&lt;div id=&quot;help-tooltip&quot; class=&quot;hoo-tooltip top-center&quot; role=&quot;tooltip&quot;&gt;\n    &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Additional help information&lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Top Center","patternPartial":"atoms-tooltip-top-center","patternState":"","patternEngineName":"handlebars","extraOutput":{"hidden":false,"order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -673,7 +733,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-tooltip-tooltip-tryout&#x2F;atoms-tooltip-tooltip-tryout.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-tooltip-tryout" title="Link to Pattern">
-						Tooltip Tryout
+						Tooltip with Form Element
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -731,7 +791,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-tooltip-tryout" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"lineage":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Tooltip Tryout","patternPartial":"atoms-tooltip-tryout","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"lineage":[{"lineagePattern":"atoms-tooltip","lineagePath":"../../patterns/atoms-tooltip-tooltip/atoms-tooltip-tooltip.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>This example demonstrates a practical implementation of a tooltip associated with a form input. The tooltip appears when the user hovers over or focuses on the password field, providing guidance on password requirements.</p>\n<h2>Usage</h2>\n<p>This pattern is particularly useful for:</p>\n<ul>\n<li>Providing password requirements or validation rules</li>\n<li>Explaining input format requirements</li>\n<li>Offering help text for complex form fields</li>\n<li>Providing contextual guidance without cluttering the form</li>\n</ul>\n<h2>Accessibility</h2>\n<p>This implementation follows accessibility best practices by:</p>\n<ul>\n<li>Using <code>aria-describedby</code> to associate the tooltip with its input</li>\n<li>Making the tooltip visible on both hover AND focus states</li>\n<li>Using proper positioning to ensure the tooltip doesn't obscure other form elements</li>\n<li>Using the <code>role=&quot;tooltip&quot;</code> attribute</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"tooltip"},"patternExtension":"hbs","patternName":"Tooltip with Form Element","patternPartial":"atoms-tooltip-tryout","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -782,10 +842,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -798,7 +858,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -846,6 +906,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

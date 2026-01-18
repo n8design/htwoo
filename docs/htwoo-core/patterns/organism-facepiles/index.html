@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,227 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Facepiles</h1>
+<p>Facepile components provide efficient layouts for displaying multiple user avatars with presence indicators. These organism-level components are designed for showing teams, collaborators, and user collections in compact, visually appealing arrangements.</p>
+<h2>Overview</h2>
+<p>Facepiles combine multiple avatar-with-presence components into organized layouts that efficiently use space while maintaining visual clarity. They're essential for user-centric interfaces where multiple people need to be represented simultaneously, such as collaboration tools, team management systems, and social applications.</p>
+<h2>Components</h2>
+<h3>Size Variants</h3>
+<ul>
+<li><strong><a href="./facepile">Facepile</a></strong>: Base component (24px avatars)</li>
+<li><strong><a href="./facepile~32">Facepile 32px</a></strong>: Compact size for navigation and sidebar elements</li>
+<li><strong><a href="./facepile~40">Facepile 40px</a></strong>: Standard size for most applications</li>
+<li><strong><a href="./facepile~48">Facepile 48px</a></strong>: Prominent size for featured content</li>
+<li><strong><a href="./facepile~64">Facepile 64px</a></strong>: Large size for hero sections and main displays</li>
+</ul>
+<h2>Architecture</h2>
+<h3>Component Structure</h3>
+<pre><code>Facepile (Organism)
+├── Avatar with Presence (Molecule) × N
+│   ├── Avatar (Atom)
+│   └── Presence Indicator (Atom)
+└── Overflow Indicator (Optional)
+</code></pre>
+<h2>Key Features</h2>
+<h3>Multi-User Display</h3>
+<ul>
+<li><strong>Horizontal Layout</strong>: Efficiently arranges multiple avatars in rows</li>
+<li><strong>Flexible Wrapping</strong>: Adapts to container constraints with intelligent overflow</li>
+<li><strong>Consistent Spacing</strong>: Maintains uniform spacing between avatars (1.118rem)</li>
+<li><strong>Responsive Design</strong>: Automatically adjusts to available space</li>
+</ul>
+<h3>Presence Integration</h3>
+<ul>
+<li><strong>Real-time Status</strong>: Each avatar includes live presence indicators</li>
+<li><strong>Status Types</strong>: Online, away, busy, offline, and custom statuses</li>
+<li><strong>Visual Clarity</strong>: Clear, color-coded presence indicators</li>
+<li><strong>Accessibility</strong>: Screen reader compatible status announcements</li>
+</ul>
+<h3>Size Flexibility</h3>
+<ul>
+<li><strong>16px</strong>: Ultra-compact for dense layouts</li>
+<li><strong>24px</strong>: Compact for minimal space requirements</li>
+<li><strong>32px</strong>: Standard compact for navigation elements</li>
+<li><strong>40px</strong>: Balanced size for most applications</li>
+<li><strong>48px</strong>: Prominent for featured content</li>
+<li><strong>64px</strong>: Large for hero sections and main displays</li>
+<li><strong>72px</strong>: Extra large for special presentations</li>
+<li><strong>96px</strong>: Maximum size for showcase displays</li>
+</ul>
+<h2>Data Structure</h2>
+<h3>Standard Facepile Data</h3>
+<pre><code class="language-json">{
+    &quot;items&quot;: [
+        {
+            &quot;avatar&quot;: {
+                &quot;mugshot&quot;: &quot;../../images/mug-shots/user1.jpg&quot;,
+                &quot;status&quot;: &quot;online&quot;,
+                &quot;size&quot;: 40,
+                &quot;initials&quot;: &quot;JD&quot;,
+                &quot;displayName&quot;: &quot;John Doe&quot;
+            },
+            &quot;size&quot;: 40
+        },
+        {
+            &quot;avatar&quot;: {
+                &quot;mugshot&quot;: &quot;../../images/mug-shots/user2.jpg&quot;,
+                &quot;status&quot;: &quot;away&quot;,
+                &quot;size&quot;: 40,
+                &quot;initials&quot;: &quot;JS&quot;,
+                &quot;displayName&quot;: &quot;Jane Smith&quot;
+            },
+            &quot;size&quot;: 40
+        }
+    ]
+}
+</code></pre>
+<h3>With Overflow Data</h3>
+<pre><code class="language-json">{
+    &quot;visibleUsers&quot;: [
+        {
+            &quot;avatar&quot;: {
+                &quot;mugshot&quot;: &quot;../../images/mug-shots/user1.jpg&quot;,
+                &quot;status&quot;: &quot;online&quot;,
+                &quot;size&quot;: 32
+            }
+        }
+    ],
+    &quot;hasOverflow&quot;: true,
+    &quot;overflowCount&quot;: 8,
+    &quot;totalUsers&quot;: 12
+}
+</code></pre>
+<h2>Use Cases</h2>
+<h3>Collaboration Platforms</h3>
+<ul>
+<li><strong>Document Editing</strong>: Show active editors and reviewers</li>
+<li><strong>Real-time Collaboration</strong>: Display current participants</li>
+<li><strong>Shared Workspaces</strong>: Indicate team members and guests</li>
+<li><strong>Project Management</strong>: Show task assignees and stakeholders</li>
+</ul>
+<h3>Social and Communication</h3>
+<ul>
+<li><strong>Chat Participants</strong>: Display conversation members</li>
+<li><strong>Group Activities</strong>: Show event attendees or participants</li>
+<li><strong>Social Connections</strong>: Display mutual friends or connections</li>
+<li><strong>Community Features</strong>: Show group members or followers</li>
+</ul>
+<h3>Team and Organization</h3>
+<ul>
+<li><strong>Department Displays</strong>: Show team structure and hierarchy</li>
+<li><strong>Project Teams</strong>: Display cross-functional team members</li>
+<li><strong>Reporting Lines</strong>: Show management and direct reports</li>
+<li><strong>Skill Groups</strong>: Display experts and specialists</li>
+</ul>
+<h3>Content and Media</h3>
+<ul>
+<li><strong>Content Contributors</strong>: Show authors and editors</li>
+<li><strong>Media Sharing</strong>: Display viewers and collaborators</li>
+<li><strong>Review Processes</strong>: Show approvers and reviewers</li>
+<li><strong>Version Control</strong>: Display contributors and committers</li>
+</ul>
+<h2>Styling and Layout</h2>
+<h3>CSS Classes</h3>
+<ul>
+<li><strong><code>.hoo-facepile</code></strong>: Main container with flexbox layout</li>
+<li><strong><code>.hoo-avatar-pres-{size}</code></strong>: Individual avatar-presence containers</li>
+<li><strong>Size-specific classes</strong>: Applied automatically based on avatar size</li>
+</ul>
+<h3>Layout Properties</h3>
+<ul>
+<li><strong>Display</strong>: Flexbox layout for efficient avatar arrangement</li>
+<li><strong>Direction</strong>: Horizontal flow (left-to-right by default)</li>
+<li><strong>Alignment</strong>: Flex-start positioning with wrap capability</li>
+<li><strong>Spacing</strong>: Consistent gaps between avatar elements</li>
+<li><strong>Transitions</strong>: Smooth animations for dynamic updates</li>
+</ul>
+<h3>Responsive Behavior</h3>
+<ul>
+<li><strong>Horizontal Flow</strong>: Avatars arrange left-to-right by default</li>
+<li><strong>Flexible Wrapping</strong>: Content wraps to new lines when space is constrained</li>
+<li><strong>Consistent Spacing</strong>: Maintains uniform gaps between avatars</li>
+<li><strong>Smooth Transitions</strong>: Animated changes for dynamic updates</li>
+</ul>
+<h2>Performance Optimization</h2>
+<h3>Loading Strategies</h3>
+<ul>
+<li><strong>Lazy Loading</strong>: Defer avatar image loading until needed</li>
+<li><strong>Progressive Loading</strong>: Load visible avatars first, then off-screen ones</li>
+<li><strong>Image Optimization</strong>: Use appropriate formats and sizes</li>
+<li><strong>Caching</strong>: Implement effective caching strategies for user images</li>
+</ul>
+<h3>Large Collections</h3>
+<ul>
+<li><strong>Virtualization</strong>: Use virtual scrolling for very large user sets</li>
+<li><strong>Pagination</strong>: Implement pagination for extensive user lists</li>
+<li><strong>Overflow Management</strong>: Show limited avatars with overflow indicators</li>
+<li><strong>Search and Filter</strong>: Provide search capabilities for large collections</li>
+</ul>
+<h3>Memory Management</h3>
+<ul>
+<li><strong>Image Cleanup</strong>: Properly dispose of unused avatar images</li>
+<li><strong>Event Listeners</strong>: Clean up event listeners when components unmount</li>
+<li><strong>Data Structures</strong>: Use efficient data structures for user collections</li>
+<li><strong>Update Optimization</strong>: Minimize re-renders for presence updates</li>
+</ul>
+<h2>Accessibility</h2>
+<h3>Screen Reader Support</h3>
+<ul>
+<li><strong>Individual Navigation</strong>: Each avatar is individually navigable</li>
+<li><strong>Descriptive Labels</strong>: Clear names and status descriptions</li>
+<li><strong>Live Updates</strong>: Presence changes announced appropriately</li>
+<li><strong>Group Context</strong>: Facepile purpose clearly communicated</li>
+</ul>
+<h3>Keyboard Navigation</h3>
+<ul>
+<li><strong>Tab Order</strong>: Logical tab sequence through avatars</li>
+<li><strong>Interactive Elements</strong>: Keyboard access to clickable avatars</li>
+<li><strong>Focus Management</strong>: Clear focus indicators and states</li>
+<li><strong>Skip Links</strong>: Ability to skip large facepiles when needed</li>
+</ul>
+<h3>Visual Accessibility</h3>
+<ul>
+<li><strong>High Contrast</strong>: Strong color contrast for all elements</li>
+<li><strong>Color Independence</strong>: Status communicated through multiple methods</li>
+<li><strong>Size Flexibility</strong>: Scales with user font size preferences</li>
+<li><strong>Focus Indicators</strong>: Clear visual focus states</li>
+</ul>
+<h2>Integration Examples</h2>
+<h3>SharePoint Framework (SPFx)</h3>
+<p>For SPFx development, use the hTWOo design system classes with your web part implementations. Refer to SPFx documentation and Storybook for integration patterns.</p>
+<h3>React Integration</h3>
+<p>For React applications, use the <code>@n8d/htwoo-react</code> package which provides facepile components with the same design system styling. Facepile components are available in Storybook for interactive examples and documentation.</p>
+<h3>JavaScript Integration</h3>
+<p>For vanilla JavaScript implementations, refer to:</p>
+<ul>
+<li><strong>Storybook</strong>: Interactive examples with live code demos</li>
+<li><strong>PatternLab</strong>: Working pattern examples with actual markup</li>
+<li><strong>Source Code</strong>: Check the actual implementation files for current patterns</li>
+</ul>
+<h2>Best Practices</h2>
+<h3>Design Guidelines</h3>
+<ul>
+<li><strong>Consistent Sizing</strong>: Use the same avatar size within a single facepile</li>
+<li><strong>Logical Ordering</strong>: Order users by relevance, status, or alphabetically</li>
+<li><strong>Visual Hierarchy</strong>: Use size to indicate importance or role</li>
+<li><strong>Space Management</strong>: Implement overflow handling for large user sets</li>
+</ul>
+<h3>User Experience</h3>
+<ul>
+<li><strong>Performance</strong>: Optimize for quick loading and smooth interactions</li>
+<li><strong>Responsiveness</strong>: Ensure facepiles work well across all device sizes</li>
+<li><strong>Accessibility</strong>: Maintain full keyboard and screen reader support</li>
+<li><strong>Context</strong>: Provide clear context for who the users are and their role</li>
+</ul>
+<h2>SCSS Files</h2>
+<p><strong>Styles:</strong></p>
+<ul>
+<li><code>lib/sass/organisms/facepile.scss</code></li>
+<li><code>lib/sass/molecules/avatar-with-presence.scss</code></li>
+<li><code>lib/sass/atoms/avatar.scss</code></li>
+<li><code>lib/sass/atoms/presence.scss</code></li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -42,7 +262,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-facepiles-facepile&#x2F;organism-facepiles-facepile.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-facepile" title="Link to Pattern">
-						Facepile with 24px Avatars
+						Facepile
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -71,67 +291,72 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-facepile">
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-away" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-24">
-        <div class="hoo-avatar-24">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-24">
+            <div class="hoo-avatar-24">
+                <img src="../../images/mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="24" width="24" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-facepile" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile with 24px Avatars","patternPartial":"organism-facepile","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":-1}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Facepile</h1>\n<p>The facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or participants in a compact, visually appealing format.</p>\n<h2>Overview</h2>\n<p>Facepile provides a space-efficient way to display multiple users by showing their avatars in a row with flexible wrapping. It leverages the avatar-with-presence molecular component to maintain consistency with other persona representations throughout the application while supporting various layout contexts and user interaction patterns.</p>\n<h2>Features</h2>\n<h3>Layout and Display</h3>\n<ul>\n<li><strong>Horizontal Arrangement</strong>: Displays avatars in left-to-right flow with intelligent wrapping</li>\n<li><strong>Flexible Spacing</strong>: Maintains consistent 1.118rem margins between avatars</li>\n<li><strong>Responsive Design</strong>: Adapts to container width with automatic line wrapping</li>\n<li><strong>Smooth Transitions</strong>: 1-second ease-in-out transitions for dynamic updates</li>\n</ul>\n<h3>User Representation</h3>\n<ul>\n<li><strong>Avatar Integration</strong>: Each user represented by avatar with optional image or initials</li>\n<li><strong>Presence Status</strong>: Real-time presence indicators (online, away, busy, offline)</li>\n<li><strong>User Information</strong>: Support for display names, roles, and additional metadata</li>\n<li><strong>Interactive Elements</strong>: Optional click handlers for user selection or profile viewing</li>\n</ul>\n<h3>Size Variants</h3>\n<p>The component supports multiple avatar sizes for different contexts:</p>\n<ul>\n<li><strong>24px</strong>: Ultra-compact for dense layouts and minimal space</li>\n<li><strong>32px</strong>: Compact for navigation elements and sidebar displays</li>\n<li><strong>40px</strong>: Standard size for most application contexts</li>\n<li><strong>48px</strong>: Prominent display for featured content areas</li>\n<li><strong>64px</strong>: Large display for hero sections and main content</li>\n</ul>\n<h2>Structure</h2>\n<p>The facepile consists of:</p>\n<ol>\n<li><strong>Container</strong>: <code>.hoo-facepile</code> - Main flexbox container</li>\n<li><strong>Avatar-Presence Items</strong>: Individual avatar-with-presence components</li>\n<li><strong>Optional Overflow</strong>: Overflow indicator for large user sets</li>\n</ol>\n<h2>Data Structure</h2>\n<h3>Standard Data Format</h3>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/user1.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 32,\n                &quot;initials&quot;: &quot;JD&quot;,\n                &quot;displayName&quot;: &quot;John Doe&quot;,\n                &quot;title&quot;: &quot;Software Engineer&quot;\n            },\n            &quot;size&quot;: 32\n        },\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/user2.jpg&quot;,\n                &quot;status&quot;: &quot;away&quot;,\n                &quot;size&quot;: 32,\n                &quot;initials&quot;: &quot;JS&quot;,\n                &quot;displayName&quot;: &quot;Jane Smith&quot;,\n                &quot;title&quot;: &quot;Product Manager&quot;\n            },\n            &quot;size&quot;: 32\n        }\n    ]\n}\n</code></pre>\n<h3>With Metadata</h3>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;user1.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 40,\n                &quot;initials&quot;: &quot;AB&quot;,\n                &quot;displayName&quot;: &quot;Alice Brown&quot;,\n                &quot;title&quot;: &quot;Team Lead&quot;,\n                &quot;department&quot;: &quot;Engineering&quot;,\n                &quot;email&quot;: &quot;alice.brown@company.com&quot;\n            },\n            &quot;size&quot;: 40,\n            &quot;role&quot;: &quot;owner&quot;,\n            &quot;lastActive&quot;: &quot;2024-01-15T10:30:00Z&quot;\n        }\n    ]\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Container Classes</h3>\n<ul>\n<li><strong><code>.hoo-facepile</code></strong>: Main flexbox container with wrapping and spacing</li>\n</ul>\n<h3>Avatar-Presence Classes</h3>\n<ul>\n<li><strong><code>.hoo-avatar-pres-{size}</code></strong>: Individual avatar-presence containers</li>\n<li><strong><code>.hoo-avatar-{size}</code></strong>: Avatar image containers</li>\n<li><strong><code>.hoo-presence-{size}</code></strong>: Presence indicator elements</li>\n</ul>\n<h3>Size-Specific Classes</h3>\n<ul>\n<li><strong><code>.hoo-avatar-pres-24</code></strong>: 24px avatar-presence container</li>\n<li><strong><code>.hoo-avatar-pres-32</code></strong>: 32px avatar-presence container</li>\n<li><strong><code>.hoo-avatar-pres-40</code></strong>: 40px avatar-presence container</li>\n<li><strong><code>.hoo-avatar-pres-48</code></strong>: 48px avatar-presence container</li>\n<li><strong><code>.hoo-avatar-pres-64</code></strong>: 64px avatar-presence container</li>\n</ul>\n<h2>Styling</h2>\n<h3>Layout Properties</h3>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Background</strong>: Transparent, relies on individual avatar styling</li>\n<li><strong>Spacing</strong>: 1.118rem margins between avatars (accounts for presence indicator positioning)</li>\n<li><strong>Alignment</strong>: Flex-start alignment for consistent left-to-right flow</li>\n<li><strong>Transitions</strong>: Smooth 1-second transitions for dynamic content changes</li>\n</ul>\n<h3>Responsive Behavior</h3>\n<ul>\n<li><strong>Flexible Width</strong>: Adapts to container width constraints</li>\n<li><strong>Intelligent Wrapping</strong>: Automatically wraps to new lines when needed</li>\n<li><strong>Consistent Spacing</strong>: Maintains uniform gaps regardless of line breaks</li>\n<li><strong>Smooth Updates</strong>: Animated transitions for adding/removing users</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Team and Collaboration</h3>\n<ul>\n<li><strong>Project Teams</strong>: Display team members in project management interfaces</li>\n<li><strong>Document Collaboration</strong>: Show active editors and reviewers</li>\n<li><strong>Meeting Participants</strong>: Display attendees in video conference interfaces</li>\n<li><strong>Workspace Members</strong>: Show team members in shared workspaces</li>\n</ul>\n<h3>Social and Community</h3>\n<ul>\n<li><strong>Group Membership</strong>: Display members of groups or communities</li>\n<li><strong>Event Attendance</strong>: Show event attendees or RSVP lists</li>\n<li><strong>Social Connections</strong>: Display mutual friends or followers</li>\n<li><strong>Discussion Participants</strong>: Show contributors to conversations</li>\n</ul>\n<h3>Content and Media</h3>\n<ul>\n<li><strong>Content Contributors</strong>: Display authors, editors, and reviewers</li>\n<li><strong>Media Collaborators</strong>: Show people with access to shared media</li>\n<li><strong>Version History</strong>: Display contributors to document versions</li>\n<li><strong>Approval Workflows</strong>: Show approvers and reviewers in workflows</li>\n</ul>\n<h3>System and Administration</h3>\n<ul>\n<li><strong>User Management</strong>: Display system users and administrators</li>\n<li><strong>Permission Groups</strong>: Show members of permission or security groups</li>\n<li><strong>Department Views</strong>: Display organizational structure and reporting</li>\n<li><strong>Activity Logs</strong>: Show users involved in recent activities</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Screen Reader Support</h3>\n<ul>\n<li><strong>Individual Focus</strong>: Each avatar is individually focusable and navigable</li>\n<li><strong>Descriptive Labels</strong>: Clear names and status descriptions for each user</li>\n<li><strong>Group Context</strong>: Container provides context for the collection of users</li>\n<li><strong>Live Updates</strong>: Presence changes announced appropriately via ARIA live regions</li>\n</ul>\n<h3>Keyboard Navigation</h3>\n<ul>\n<li><strong>Tab Order</strong>: Logical tab sequence through interactive avatars</li>\n<li><strong>Focus Management</strong>: Clear focus indicators and consistent focus states</li>\n<li><strong>Interactive Elements</strong>: Keyboard access to clickable avatars and actions</li>\n<li><strong>Skip Navigation</strong>: Ability to skip large facepiles for efficient navigation</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>High Contrast</strong>: Strong color contrast for all text and status indicators</li>\n<li><strong>Color Independence</strong>: Status communicated through multiple visual methods</li>\n<li><strong>Size Flexibility</strong>: Scales appropriately with user font size preferences</li>\n<li><strong>Focus Indicators</strong>: Clear visual focus states for keyboard users</li>\n</ul>\n<h2>Performance Considerations</h2>\n<h3>Image Loading</h3>\n<ul>\n<li><strong>Lazy Loading</strong>: Implement lazy loading for avatar images in large collections</li>\n<li><strong>Progressive Loading</strong>: Load visible avatars first, then off-screen ones</li>\n<li><strong>Image Optimization</strong>: Use appropriate formats (WebP, AVIF) and sizes</li>\n<li><strong>Fallback Handling</strong>: Graceful fallback to initials when images fail to load</li>\n</ul>\n<h3>Large Collections</h3>\n<ul>\n<li><strong>Virtualization</strong>: Use virtual scrolling for very large user sets (100+ users)</li>\n<li><strong>Pagination</strong>: Implement pagination or &quot;load more&quot; for extensive lists</li>\n<li><strong>Overflow Indicators</strong>: Show limited avatars with overflow count for space efficiency</li>\n<li><strong>Search and Filter</strong>: Provide search capabilities for large user collections</li>\n</ul>\n<h3>Dynamic Updates</h3>\n<ul>\n<li><strong>Efficient Re-renders</strong>: Minimize DOM manipulation for presence updates</li>\n<li><strong>Batch Updates</strong>: Group multiple changes to reduce layout thrashing</li>\n<li><strong>Memory Management</strong>: Properly clean up event listeners and image references</li>\n<li><strong>Caching</strong>: Implement effective caching for user data and avatar images</li>\n</ul>\n<h2>Integration with Overflow</h2>\n<p>For large user collections, combine with overflow indicators:</p>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;user-collection&quot;&gt;\n    &lt;div class=&quot;hoo-facepile&quot;&gt;\n        {{#each visibleUsers}}\n        {{&gt; molecules-avatar-presence }}\n        {{/each}}\n    &lt;/div&gt;\n    {{#if hasOverflow}}\n    {{&gt; molecules-persona-overflow number=&quot;+{{overflowCount}}&quot; }}\n    {{/if}}\n&lt;/div&gt;\n</code></pre>\n<h3>JavaScript Overflow Management</h3>\n<h2>React Integration</h2>\n<p>For React applications, use the <code>@n8d/htwoo-react</code> package which provides facepile components with the same design system styling. Facepile components are available in Storybook for interactive examples and documentation.</p>\n<h2>Integration Examples</h2>\n<h3>SharePoint Framework (SPFx)</h3>\n<h2>Best Practices</h2>\n<h3>Design Guidelines</h3>\n<ul>\n<li><strong>Consistent Sizing</strong>: Use the same avatar size throughout a single facepile</li>\n<li><strong>Logical Ordering</strong>: Order users by relevance, status, activity, or alphabetically</li>\n<li><strong>Visual Hierarchy</strong>: Use size and positioning to indicate importance or roles</li>\n<li><strong>Overflow Management</strong>: Implement clear overflow indicators for large user sets</li>\n</ul>\n<h3>User Experience</h3>\n<ul>\n<li><strong>Performance</strong>: Optimize for quick loading and smooth interactions</li>\n<li><strong>Responsiveness</strong>: Ensure facepiles work well across all device sizes</li>\n<li><strong>Context</strong>: Provide clear context for who the users are and their relationship</li>\n<li><strong>Interactivity</strong>: Consider tooltips or click actions for additional user information</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile","patternPartial":"organism-facepile","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -142,7 +367,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-facepiles-facepile-32&#x2F;organism-facepiles-facepile-32.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-facepile-32" title="Link to Pattern">
-						Facepile with 32px Avatars
+						Facepile 32px
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -171,67 +396,62 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-facepile">
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-away" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-32">
-        <div class="hoo-avatar-32">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-32">
+            <div class="hoo-avatar-32">
+                <img src="../../images/mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-facepile-32" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile with 32px Avatars","patternPartial":"organism-facepile-32","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Facepile (32px)</h1>\n<p>A compact variant of the <a href=\"./facepile\">Facepile</a> component using 32px avatars, optimized for navigation elements, sidebar displays, and space-constrained layouts where user representation is needed without overwhelming the interface.</p>\n<h2>Overview</h2>\n<p>The 32px facepile provides an ideal balance between visibility and space efficiency, making it perfect for secondary navigation areas, sidebar components, and compact team displays where space is at a premium but user identification remains important.</p>\n<h2>Size Specifications</h2>\n<ul>\n<li><strong>Avatar Size</strong>: 32px circular avatars</li>\n<li><strong>Presence Size</strong>: 10px presence indicators</li>\n<li><strong>Container Height</strong>: ~38px (including presence overlap)</li>\n<li><strong>Spacing</strong>: 1.118rem margins between avatars</li>\n<li><strong>Total Footprint</strong>: Compact, suitable for tight layouts</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Navigation Elements</h3>\n<ul>\n<li>Secondary navigation with team context</li>\n<li>Sidebar user lists and team rosters</li>\n<li>Compact toolbar user indicators</li>\n<li>Mobile navigation with user presence</li>\n</ul>\n<h3>Content Areas</h3>\n<ul>\n<li>Comment sections with author avatars</li>\n<li>Small team cards and project tiles</li>\n<li>Notification panels with user context</li>\n<li>Compact collaboration indicators</li>\n</ul>\n<h3>Interface Components</h3>\n<ul>\n<li>Dropdown user lists</li>\n<li>Small modal dialogs</li>\n<li>Popup user selectors</li>\n<li>Condensed team displays</li>\n</ul>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/user1.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 32,\n                &quot;initials&quot;: &quot;JD&quot;,\n                &quot;displayName&quot;: &quot;John Doe&quot;\n            },\n            &quot;size&quot;: 32\n        }\n    ]\n}\n</code></pre>\n<h2>Visual Design</h2>\n<ul>\n<li><strong>Compact Profile</strong>: Clear user identification in minimal space</li>\n<li><strong>Readable Presence</strong>: Presence indicators remain clearly visible</li>\n<li><strong>Clean Spacing</strong>: Appropriate margins prevent visual crowding</li>\n<li><strong>Scalable Layout</strong>: Works well with both few and many users</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Maintains full keyboard navigation support</li>\n<li>Screen reader compatible with clear user identification</li>\n<li>High contrast presence indicators</li>\n<li>Appropriate touch targets for interactive elements (minimum 44px)</li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li>Reduced image size requirements (32×32px)</li>\n<li>Faster loading with smaller image footprint</li>\n<li>Efficient for large user collections</li>\n<li>Minimal memory usage for presence updates</li>\n</ul>\n<h2>Related</h2>\n<ul>\n<li><strong><a href=\"./facepile\">Facepile - Main Documentation</a></strong>: Complete implementation guide</li>\n<li><strong><a href=\"./\">All Facepile Variants</a></strong>: Size comparison and selection guide</li>\n<li><strong><a href=\"../molecules/avatar-with-presence/\">Avatar with Presence</a></strong>: Core component details</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile 32px","patternPartial":"organism-facepile-32","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":11}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -242,7 +462,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-facepiles-facepile-40&#x2F;organism-facepiles-facepile-40.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-facepile-40" title="Link to Pattern">
-						Facepile with 40px Avatars
+						Facepile 40px
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -271,67 +491,62 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-facepile">
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-away" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-40">
-        <div class="hoo-avatar-40">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-40">
+            <div class="hoo-avatar-40">
+                <img src="../../images/mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="40" width="40" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-facepile-40" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile with 40px Avatars","patternPartial":"organism-facepile-40","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Facepile (40px)</h1>\n<p>The standard variant of the <a href=\"./facepile\">Facepile</a> component using 40px avatars, providing the optimal balance between visibility and space efficiency for most application contexts and general-purpose user displays.</p>\n<h2>Overview</h2>\n<p>The 40px facepile serves as the recommended default size for most applications, offering clear user identification while maintaining reasonable space usage. This size works excellently across desktop and tablet interfaces and provides sufficient detail for user recognition without dominating the layout.</p>\n<h2>Size Specifications</h2>\n<ul>\n<li><strong>Avatar Size</strong>: 40px circular avatars</li>\n<li><strong>Presence Size</strong>: 12px presence indicators</li>\n<li><strong>Container Height</strong>: ~46px (including presence overlap)</li>\n<li><strong>Spacing</strong>: 1.118rem margins between avatars</li>\n<li><strong>Total Footprint</strong>: Balanced for general use</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Primary Content Areas</h3>\n<ul>\n<li>Document headers with collaborator lists</li>\n<li>Project cards showing team members</li>\n<li>Main content areas with user context</li>\n<li>Dashboard team displays</li>\n</ul>\n<h3>Application Headers</h3>\n<ul>\n<li>Application navigation with team context</li>\n<li>Toolbar user indicators</li>\n<li>Feature headers with contributor lists</li>\n<li>Main page team representations</li>\n</ul>\n<h3>Collaboration Features</h3>\n<ul>\n<li>Real-time collaboration indicators</li>\n<li>Shared workspace displays</li>\n<li>Team-based feature interfaces</li>\n<li>Multi-user content displays</li>\n</ul>\n<h3>Content Management</h3>\n<ul>\n<li>Content contributor displays</li>\n<li>Review and approval workflows</li>\n<li>Version control interfaces</li>\n<li>Editorial team representations</li>\n</ul>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/sarah-johnson.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 40,\n                &quot;initials&quot;: &quot;SJ&quot;,\n                &quot;displayName&quot;: &quot;Sarah Johnson&quot;,\n                &quot;title&quot;: &quot;Project Manager&quot;\n            },\n            &quot;size&quot;: 40\n        },\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/mike-chen.jpg&quot;,\n                &quot;status&quot;: &quot;busy&quot;,\n                &quot;size&quot;: 40,\n                &quot;initials&quot;: &quot;MC&quot;,\n                &quot;displayName&quot;: &quot;Mike Chen&quot;,\n                &quot;title&quot;: &quot;Senior Developer&quot;\n            },\n            &quot;size&quot;: 40\n        }\n    ]\n}\n</code></pre>\n<h2>Visual Design</h2>\n<ul>\n<li><strong>Optimal Clarity</strong>: Clear user identification with readable details</li>\n<li><strong>Balanced Presence</strong>: Presence indicators are prominently visible</li>\n<li><strong>Professional Appearance</strong>: Suitable for business and professional contexts</li>\n<li><strong>Flexible Layout</strong>: Works well in various container sizes and orientations</li>\n</ul>\n<h2>Device Compatibility</h2>\n<ul>\n<li><strong>Desktop</strong>: Ideal size for desktop applications and web interfaces</li>\n<li><strong>Tablet</strong>: Excellent for tablet interfaces and responsive designs</li>\n<li><strong>Mobile</strong>: Suitable for mobile when space allows (may prefer 32px for very constrained mobile layouts)</li>\n<li><strong>High DPI</strong>: Scales well on high-resolution displays</li>\n</ul>\n<h2>Performance Characteristics</h2>\n<ul>\n<li><strong>Image Requirements</strong>: 40×40px base images (recommend 80×80px for retina)</li>\n<li><strong>Loading Performance</strong>: Good balance between quality and file size</li>\n<li><strong>Memory Usage</strong>: Moderate memory footprint suitable for most applications</li>\n<li><strong>Rendering</strong>: Smooth performance with reasonable DOM complexity</li>\n</ul>\n<h2>Integration Patterns</h2>\n<h3>With Overflow Management</h3>\n<h3>Dynamic Updates</h3>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Standard Touch Targets</strong>: 40px avatars meet minimum touch target guidelines</li>\n<li><strong>Clear Visual Hierarchy</strong>: Appropriate size for screen reader navigation</li>\n<li><strong>High Contrast</strong>: Presence indicators maintain visibility across themes</li>\n<li><strong>Keyboard Navigation</strong>: Smooth tab progression through interactive elements</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>When to Use 40px</h3>\n<ul>\n<li><strong>General Applications</strong>: Default choice for most application contexts</li>\n<li><strong>Team Displays</strong>: Ideal for showing project teams and collaborators</li>\n<li><strong>Document Interfaces</strong>: Perfect for document headers and collaboration indicators</li>\n<li><strong>Dashboard Elements</strong>: Appropriate for dashboard team sections</li>\n</ul>\n<h3>Design Considerations</h3>\n<ul>\n<li><strong>Container Width</strong>: Ensure adequate container width for multiple 40px avatars</li>\n<li><strong>Responsive Breakpoints</strong>: Consider switching to 32px on smaller screens</li>\n<li><strong>Content Priority</strong>: Use when user identification is important but not the primary focus</li>\n<li><strong>Performance</strong>: Monitor loading performance with large user sets</li>\n</ul>\n<h2>Related</h2>\n<ul>\n<li><strong><a href=\"./facepile\">Facepile - Main Documentation</a></strong>: Complete implementation guide</li>\n<li><strong><a href=\"./\">All Facepile Variants</a></strong>: Size comparison and selection guide</li>\n<li><strong><a href=\"../molecules/avatar-with-presence/\">Avatar with Presence</a></strong>: Core component details</li>\n<li><strong><a href=\"./facepile~32\">Facepile 32px</a></strong>: Compact alternative</li>\n<li><strong><a href=\"./facepile~48\">Facepile 48px</a></strong>: Larger alternative</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile 40px","patternPartial":"organism-facepile-40","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":12}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -342,7 +557,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-facepiles-facepile-48&#x2F;organism-facepiles-facepile-48.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-facepile-48" title="Link to Pattern">
-						Facepile with 48px Avatars
+						Facepile 48px
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -371,67 +586,62 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-facepile">
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-away" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-48">
-        <div class="hoo-avatar-48">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-48">
+            <div class="hoo-avatar-48">
+                <img src="../../images/mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-facepile-48" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile with 48px Avatars","patternPartial":"organism-facepile-48","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Facepile (48px)</h1>\n<p>A prominent variant of the <a href=\"./facepile\">Facepile</a> component using 48px avatars, designed for featured content areas, main page headers, and contexts where user representation should be visually prominent and easily recognizable.</p>\n<h2>Overview</h2>\n<p>The 48px facepile provides enhanced visibility and user recognition, making it ideal for featured content areas, hero sections, and interfaces where the user collection is a primary focal point. This size works excellently for showcasing important teams or highlighting key contributors.</p>\n<h2>Size Specifications</h2>\n<ul>\n<li><strong>Avatar Size</strong>: 48px circular avatars</li>\n<li><strong>Presence Size</strong>: 14px presence indicators</li>\n<li><strong>Container Height</strong>: ~54px (including presence overlap)</li>\n<li><strong>Spacing</strong>: 1.118rem margins between avatars</li>\n<li><strong>Total Footprint</strong>: Prominent, suitable for featured content</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Featured Content</h3>\n<ul>\n<li>Hero sections with team showcases</li>\n<li>Featured project displays</li>\n<li>Main page team introductions</li>\n<li>Spotlight team presentations</li>\n</ul>\n<h3>Important User Groups</h3>\n<ul>\n<li>Executive team displays</li>\n<li>Key stakeholder presentations</li>\n<li>Featured contributor showcases</li>\n<li>VIP user representations</li>\n</ul>\n<h3>Main Interface Elements</h3>\n<ul>\n<li>Primary navigation with user context</li>\n<li>Main dashboard team displays</li>\n<li>Featured collaboration sections</li>\n<li>Important announcement headers</li>\n</ul>\n<h3>Marketing and Presentation</h3>\n<ul>\n<li>About page team sections</li>\n<li>Company overview displays</li>\n<li>Client testimonial sections</li>\n<li>Partner showcase areas</li>\n</ul>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/alex-thompson.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 48,\n                &quot;initials&quot;: &quot;AT&quot;,\n                &quot;displayName&quot;: &quot;Alex Thompson&quot;,\n                &quot;title&quot;: &quot;Chief Executive Officer&quot;\n            },\n            &quot;size&quot;: 48\n        },\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/jordan-martinez.jpg&quot;,\n                &quot;status&quot;: &quot;away&quot;,\n                &quot;size&quot;: 48,\n                &quot;initials&quot;: &quot;JM&quot;,\n                &quot;displayName&quot;: &quot;Jordan Martinez&quot;,\n                &quot;title&quot;: &quot;Chief Technology Officer&quot;\n            },\n            &quot;size&quot;: 48\n        }\n    ]\n}\n</code></pre>\n<h2>Visual Design</h2>\n<ul>\n<li><strong>Enhanced Visibility</strong>: Clear, prominent user identification</li>\n<li><strong>Professional Impact</strong>: Strong visual presence suitable for important contexts</li>\n<li><strong>Rich Detail</strong>: Sufficient size for facial recognition and detail visibility</li>\n<li><strong>Commanding Presence</strong>: Draws appropriate attention to user representation</li>\n</ul>\n<h2>Device Considerations</h2>\n<ul>\n<li><strong>Desktop</strong>: Excellent for desktop hero sections and featured content</li>\n<li><strong>Tablet</strong>: Good for tablet interfaces in landscape orientation</li>\n<li><strong>Mobile</strong>: Consider reducing to 40px or 32px for mobile displays</li>\n<li><strong>Large Screens</strong>: Works well on larger displays and presentation screens</li>\n</ul>\n<h2>Performance Considerations</h2>\n<ul>\n<li><strong>Image Requirements</strong>: 48×48px base images (recommend 96×96px for retina)</li>\n<li><strong>File Size</strong>: Larger images require attention to optimization</li>\n<li><strong>Loading Strategy</strong>: Consider lazy loading for large collections</li>\n<li><strong>Memory Usage</strong>: Monitor memory usage with many 48px avatars</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Excellent Touch Targets</strong>: 48px avatars exceed minimum touch target requirements</li>\n<li><strong>High Visibility</strong>: Easy to see and recognize for users with visual impairments</li>\n<li><strong>Clear Navigation</strong>: Prominent size aids in keyboard and screen reader navigation</li>\n<li><strong>Strong Presence Indicators</strong>: Large enough for clear status communication</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>When to Use 48px</h3>\n<ul>\n<li><strong>Featured Content</strong>: When users are the primary focus of the section</li>\n<li><strong>Important Teams</strong>: For showcasing key personnel or important groups</li>\n<li><strong>Hero Sections</strong>: Main page introductions and team showcases</li>\n<li><strong>Executive Displays</strong>: Leadership teams and important stakeholders</li>\n</ul>\n<h3>Design Considerations</h3>\n<ul>\n<li><strong>Space Planning</strong>: Ensure adequate container width for multiple 48px avatars</li>\n<li><strong>Content Hierarchy</strong>: Use when user representation is a primary focus</li>\n<li><strong>Performance</strong>: Optimize images and consider loading strategies</li>\n<li><strong>Responsive Design</strong>: Plan for smaller sizes on constrained displays</li>\n</ul>\n<h2>Related</h2>\n<ul>\n<li><strong><a href=\"./facepile\">Facepile - Main Documentation</a></strong>: Complete implementation guide</li>\n<li><strong><a href=\"./\">All Facepile Variants</a></strong>: Size comparison and selection guide</li>\n<li><strong><a href=\"../molecules/avatar-with-presence/\">Avatar with Presence</a></strong>: Core component details</li>\n<li><strong><a href=\"./facepile~40\">Facepile 40px</a></strong>: Standard alternative</li>\n<li><strong><a href=\"./facepile~64\">Facepile 64px</a></strong>: Larger alternative</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile 48px","patternPartial":"organism-facepile-48","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":13}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -442,7 +652,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-facepiles-facepile-64&#x2F;organism-facepiles-facepile-64.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-facepile-64" title="Link to Pattern">
-						Facepile with 64px Avatars
+						Facepile 64px
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -471,67 +681,62 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-facepile">
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-away" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-oof" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-dnd" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
-    <div class="hoo-avatar-pres-64">
-        <div class="hoo-avatar-64">
-            <img src="../../images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
-        </div>    <div class="hoo-presence is-online" title=""></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
+        <div class="hoo-avatar-pres-64">
+            <div class="hoo-avatar-64">
+                <img src="../../images/mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="64" width="64" loading="lazy">
+            </div>
+            <div class="hoo-presence is-online" title="Online"></div></div>
 </div>
+
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-facepile-64" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile with 64px Avatars","patternPartial":"organism-facepile-64","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"lineage":[{"lineagePattern":"molecules-avatar-presence","lineagePath":"../../patterns/molecules-avatar-with-presence-avatar-presence/molecules-avatar-with-presence-avatar-presence.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Facepile (64px)</h1>\n<p>The largest standard variant of the <a href=\"./facepile\">Facepile</a> component using 64px avatars, designed for hero sections, featured team displays, and contexts where maximum visual impact and user recognition are essential.</p>\n<h2>Overview</h2>\n<p>The 64px facepile provides the highest level of visual prominence and user recognition, making it ideal for hero sections, main landing pages, and showcase displays where the user collection serves as a primary visual element. This size is particularly effective for marketing contexts and executive presentations.</p>\n<h2>Size Specifications</h2>\n<ul>\n<li><strong>Avatar Size</strong>: 64px circular avatars</li>\n<li><strong>Presence Size</strong>: 18px presence indicators</li>\n<li><strong>Container Height</strong>: ~72px (including presence overlap)</li>\n<li><strong>Spacing</strong>: 1.118rem margins between avatars</li>\n<li><strong>Total Footprint</strong>: Large, commanding visual presence</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Hero and Landing Pages</h3>\n<ul>\n<li>Main page hero sections with team showcases</li>\n<li>Landing page introductions</li>\n<li>Company overview displays</li>\n<li>Primary brand presentations</li>\n</ul>\n<h3>Executive and Leadership</h3>\n<ul>\n<li>C-suite executive presentations</li>\n<li>Board member displays</li>\n<li>Leadership team showcases</li>\n<li>Founder and key personnel highlights</li>\n</ul>\n<h3>Marketing and Branding</h3>\n<ul>\n<li>About page team sections</li>\n<li>Company culture displays</li>\n<li>Brand ambassador showcases</li>\n<li>Client and partner highlights</li>\n</ul>\n<h3>Special Presentations</h3>\n<ul>\n<li>Conference speaker lineups</li>\n<li>Award recipient displays</li>\n<li>Featured expert showcases</li>\n<li>Special recognition sections</li>\n</ul>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;items&quot;: [\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/sam-rivera.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 64,\n                &quot;initials&quot;: &quot;SR&quot;,\n                &quot;displayName&quot;: &quot;Sam Rivera&quot;,\n                &quot;title&quot;: &quot;Founder &amp; CEO&quot;,\n                &quot;bio&quot;: &quot;Visionary leader with 15+ years in tech innovation&quot;\n            },\n            &quot;size&quot;: 64\n        },\n        {\n            &quot;avatar&quot;: {\n                &quot;mugshot&quot;: &quot;../../images/mug-shots/casey-wong.jpg&quot;,\n                &quot;status&quot;: &quot;online&quot;,\n                &quot;size&quot;: 64,\n                &quot;initials&quot;: &quot;CW&quot;,\n                &quot;displayName&quot;: &quot;Casey Wong&quot;,\n                &quot;title&quot;: &quot;Lead Architect&quot;,\n                &quot;bio&quot;: &quot;Technical expert driving our platform architecture&quot;\n            },\n            &quot;size&quot;: 64\n        }\n    ]\n}\n</code></pre>\n<h2>Visual Design</h2>\n<ul>\n<li><strong>Maximum Impact</strong>: Commanding visual presence and immediate recognition</li>\n<li><strong>Premium Quality</strong>: High-resolution display suitable for professional contexts</li>\n<li><strong>Strong Branding</strong>: Effective for brand building and team showcasing</li>\n<li><strong>Memorable Presentation</strong>: Size ensures users are memorable and recognizable</li>\n</ul>\n<h2>Device and Context Considerations</h2>\n<h3>Desktop and Large Screens</h3>\n<ul>\n<li><strong>Ideal Context</strong>: Perfect for desktop hero sections and large displays</li>\n<li><strong>Professional Presentations</strong>: Excellent for boardroom and presentation contexts</li>\n<li><strong>Marketing Materials</strong>: Suitable for high-impact marketing displays</li>\n</ul>\n<h3>Responsive Considerations</h3>\n<ul>\n<li><strong>Tablet</strong>: Good for tablet interfaces in landscape, consider 48px for portrait</li>\n<li><strong>Mobile</strong>: Recommend scaling down to 40px or 32px for mobile displays</li>\n<li><strong>Performance</strong>: Monitor loading performance and consider progressive loading</li>\n</ul>\n<h2>Performance Optimization</h2>\n<h3>Image Management</h3>\n<ul>\n<li><strong>High Resolution</strong>: 64×64px base images (recommend 128×128px for retina)</li>\n<li><strong>File Optimization</strong>: Critical to optimize image files for web delivery</li>\n<li><strong>Loading Strategy</strong>: Implement lazy loading and progressive enhancement</li>\n<li><strong>Caching</strong>: Use effective caching strategies for frequently displayed users</li>\n</ul>\n<h3>Memory and Performance</h3>\n<ul>\n<li><strong>Resource Usage</strong>: Monitor memory usage with large collections</li>\n<li><strong>DOM Complexity</strong>: Consider virtualization for very large user sets</li>\n<li><strong>Animation Performance</strong>: Ensure smooth transitions with larger elements</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Exceptional Usability</h3>\n<ul>\n<li><strong>Superior Touch Targets</strong>: 64px avatars provide excellent touch accessibility</li>\n<li><strong>High Visibility</strong>: Maximum visibility for users with visual impairments</li>\n<li><strong>Clear Recognition</strong>: Size enables clear facial recognition and identification</li>\n<li><strong>Strong Presence Indicators</strong>: Large presence indicators are highly visible</li>\n</ul>\n<h3>React Executive Display</h3>\n<p>For React applications, use the <code>@n8d/htwoo-react</code> package which provides facepile and avatar components with the same design system styling. Facepile components are available in Storybook for interactive examples and documentation.</p>\n<h3>Marketing Landing Page</h3>\n<h2>Best Practices</h2>\n<h3>When to Use 64px</h3>\n<ul>\n<li><strong>Hero Sections</strong>: Main landing page introductions and showcases</li>\n<li><strong>Executive Displays</strong>: Leadership teams and key personnel</li>\n<li><strong>Brand Building</strong>: When team representation is central to brand identity</li>\n<li><strong>Special Recognition</strong>: Awards, achievements, and featured expert displays</li>\n</ul>\n<h3>Design Guidelines</h3>\n<ul>\n<li><strong>Limit Quantity</strong>: Use sparingly - typically 3-8 avatars maximum</li>\n<li><strong>Quality Images</strong>: Ensure high-quality, professional avatar images</li>\n<li><strong>Strategic Placement</strong>: Reserve for primary focal points and important contexts</li>\n<li><strong>Performance Planning</strong>: Implement optimization strategies for loading and performance</li>\n</ul>\n<h3>Content Strategy</h3>\n<ul>\n<li><strong>Curated Selection</strong>: Choose the most important and recognizable team members</li>\n<li><strong>Professional Context</strong>: Ensure appropriate for formal and professional settings</li>\n<li><strong>Brand Alignment</strong>: Align with overall brand strategy and messaging</li>\n<li><strong>Update Strategy</strong>: Plan for regular updates to maintain current representation</li>\n</ul>\n<h2>Related</h2>\n<ul>\n<li><strong><a href=\"./facepile\">Facepile - Main Documentation</a></strong>: Complete implementation guide</li>\n<li><strong><a href=\"./\">All Facepile Variants</a></strong>: Size comparison and selection guide</li>\n<li><strong><a href=\"../molecules/avatar-with-presence/\">Avatar with Presence</a></strong>: Core component details</li>\n<li><strong><a href=\"./facepile~48\">Facepile 48px</a></strong>: Smaller prominent alternative</li>\n<li><strong><a href=\"./facepile~40\">Facepile 40px</a></strong>: Standard alternative</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"facepiles"},"patternExtension":"hbs","patternName":"Facepile 64px","patternPartial":"organism-facepile-64","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":14}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -582,10 +787,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -598,7 +803,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -646,6 +851,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

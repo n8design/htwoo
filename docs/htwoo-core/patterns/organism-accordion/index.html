@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,149 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Accordion Organism</h1>
+<p>The Accordion organism provides a complete implementation of collapsible content sections organized into logical groups. It combines multiple accordion items into a cohesive interface pattern commonly used for FAQ sections, content organization, and progressive disclosure.</p>
+<h2>Overview</h2>
+<p>The Accordion organism represents the highest level of accordion implementation in the HTWOO design system. It manages collections of related accordion items, providing semantic structure and consistent behavior for complex content hierarchies.</p>
+<h2>Components</h2>
+<h3>Organism Level</h3>
+<ul>
+<li><strong><a href="./accordion-group">Accordion Group</a></strong>: Container for multiple related accordion items</li>
+</ul>
+<h2>Key Features</h2>
+<h3>Semantic Structure</h3>
+<ul>
+<li><strong>Native HTML Elements</strong>: Built with <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for accessibility</li>
+<li><strong>Proper Heading Hierarchy</strong>: Uses semantic heading tags (<code>&lt;h3&gt;</code>) for structure</li>
+<li><strong>ARIA Compliance</strong>: Native browser ARIA support through HTML5 elements</li>
+<li><strong>Screen Reader Support</strong>: Built-in accessibility features</li>
+</ul>
+<h3>Interactive Behavior</h3>
+<ul>
+<li><strong>Independent Operation</strong>: Each accordion can be opened/closed independently</li>
+<li><strong>Smooth Animations</strong>: Icon rotation transitions for visual feedback</li>
+<li><strong>Keyboard Support</strong>: Full keyboard navigation and activation</li>
+<li><strong>Focus Management</strong>: Proper focus indicators and management</li>
+</ul>
+<h3>Visual Design</h3>
+<ul>
+<li><strong>Consistent Styling</strong>: Unified appearance across all accordion items</li>
+<li><strong>Icon Feedback</strong>: Directional icons that rotate to indicate state</li>
+<li><strong>Spacing Optimization</strong>: Proper margins and padding for readability</li>
+<li><strong>Theme Integration</strong>: Inherits theme colors and typography</li>
+</ul>
+<h2>Architecture</h2>
+<h3>Component Hierarchy</h3>
+<pre><code>Accordion Group (Organism)
+├── Accordion Item (Molecule)
+    ├── Accordion Header (Molecule)
+    │   ├── Icon (Atom)
+    │   └── Heading Text (Atom)
+    └── Accordion Content (Molecule)
+        └── Content Text (Atom)
+</code></pre>
+<h3>Structure Flow</h3>
+<ol>
+<li><strong>Group Container</strong>: Semantic <code>&lt;section&gt;</code> with accordion role</li>
+<li><strong>Individual Items</strong>: Each accordion item as a <code>&lt;details&gt;</code> element</li>
+<li><strong>Headers</strong>: Clickable <code>&lt;summary&gt;</code> elements with icons and titles</li>
+<li><strong>Content</strong>: Collapsible content areas with rich text support</li>
+</ol>
+<h2>Use Cases</h2>
+<h3>Content Organization</h3>
+<ul>
+<li><strong>FAQ Sections</strong>: Frequently asked questions with expandable answers</li>
+<li><strong>Product Information</strong>: Categorized product details and specifications</li>
+<li><strong>Documentation</strong>: Technical documentation with collapsible sections</li>
+<li><strong>Help Systems</strong>: Progressive disclosure of help content</li>
+</ul>
+<h3>Interface Design</h3>
+<ul>
+<li><strong>Settings Panels</strong>: Grouped configuration options</li>
+<li><strong>Navigation Menus</strong>: Hierarchical navigation with subcategories</li>
+<li><strong>Form Sections</strong>: Large forms organized into logical sections</li>
+<li><strong>Dashboard Widgets</strong>: Collapsible information panels</li>
+</ul>
+<h3>Content Management</h3>
+<ul>
+<li><strong>Editorial Content</strong>: Article sections with expandable details</li>
+<li><strong>E-commerce</strong>: Product features and specifications</li>
+<li><strong>Educational Content</strong>: Course materials with expandable modules</li>
+<li><strong>News Articles</strong>: Story sections with additional details</li>
+</ul>
+<h2>Styling Architecture</h2>
+<h3>CSS Classes</h3>
+<ul>
+<li><strong><code>.hoo-accordion-group</code></strong>: Main container styling and layout</li>
+<li><strong><code>.hoo-accordion</code></strong>: Individual accordion item container</li>
+<li><strong><code>.hoo-accordion-summary</code></strong>: Header styling and interactive states</li>
+<li><strong><code>.hoo-accordion-content</code></strong>: Content area styling and spacing</li>
+<li><strong><code>.hoo-icon</code></strong>: Icon styling and animation</li>
+</ul>
+<h3>Visual Properties</h3>
+<ul>
+<li><strong>Typography</strong>: 20px headings with proper line height</li>
+<li><strong>Spacing</strong>: Consistent margins and padding throughout</li>
+<li><strong>Animations</strong>: Smooth icon rotation (0.2s ease transition)</li>
+<li><strong>Focus States</strong>: Clear focus indicators for accessibility</li>
+</ul>
+<h2>Accessibility Features</h2>
+<h3>Keyboard Navigation</h3>
+<ul>
+<li><strong>Tab Navigation</strong>: Focus moves between accordion headers</li>
+<li><strong>Enter/Space</strong>: Toggles accordion open/closed state</li>
+<li><strong>Arrow Keys</strong>: Optional navigation between accordion items</li>
+<li><strong>Focus Indicators</strong>: Clear visual focus states</li>
+</ul>
+<h3>Screen Reader Support</h3>
+<ul>
+<li><strong>Semantic Structure</strong>: Proper heading hierarchy and landmarks</li>
+<li><strong>State Announcements</strong>: Open/closed states announced automatically</li>
+<li><strong>Content Structure</strong>: Logical reading order and content flow</li>
+<li><strong>Role Attribution</strong>: Proper ARIA roles and attributes</li>
+</ul>
+<h3>Visual Accessibility</h3>
+<ul>
+<li><strong>Color Contrast</strong>: Sufficient contrast ratios for all text</li>
+<li><strong>Focus Management</strong>: Clear focus indicators</li>
+<li><strong>Interactive Feedback</strong>: Visual state changes for user actions</li>
+<li><strong>Text Scaling</strong>: Responsive to user font size preferences</li>
+</ul>
+<h2>Best Practices</h2>
+<h3>Content Strategy</h3>
+<ul>
+<li><strong>Logical Grouping</strong>: Group related accordion items together</li>
+<li><strong>Clear Titles</strong>: Use descriptive, scannable heading text</li>
+<li><strong>Concise Content</strong>: Keep individual sections focused and concise</li>
+<li><strong>Progressive Disclosure</strong>: Show most important information first</li>
+</ul>
+<h3>User Experience</h3>
+<ul>
+<li><strong>Default States</strong>: Consider which accordions should be open by default</li>
+<li><strong>Content Length</strong>: Balance between too much and too little content</li>
+<li><strong>Visual Hierarchy</strong>: Use consistent styling across all items</li>
+<li><strong>Loading States</strong>: Handle dynamic content loading gracefully</li>
+</ul>
+<h3>Development</h3>
+<ul>
+<li><strong>Semantic HTML</strong>: Always use proper HTML5 elements</li>
+<li><strong>Progressive Enhancement</strong>: Ensure functionality without JavaScript</li>
+<li><strong>Performance</strong>: Optimize for large numbers of accordion items</li>
+<li><strong>Testing</strong>: Test with keyboard and screen reader users</li>
+</ul>
+<h2>Browser Support</h2>
+<ul>
+<li><strong>Modern Browsers</strong>: Full support in all modern browsers</li>
+<li><strong>HTML5 Details</strong>: Requires <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> support</li>
+<li><strong>CSS Animations</strong>: Progressive enhancement for transition effects</li>
+<li><strong>Keyboard Support</strong>: Native keyboard support through HTML5 elements</li>
+</ul>
+<h2>SCSS Files</h2>
+<p><strong>Accordion Styles:</strong></p>
+<ul>
+<li><code>lib/sass/02-molecules/accordion/</code></li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -120,7 +262,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-accordion-group" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"lineage":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Group","patternPartial":"organism-accordion-group","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"lineage":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Accordion Group</h1>\n<p>The Accordion Group component serves as a semantic container for multiple related accordion items, creating a cohesive set of collapsible content sections. It provides proper structure, accessibility features, and consistent behavior for grouped accordion interfaces.</p>\n<h2>Overview</h2>\n<p>The Accordion Group organizes multiple accordion items into a logical collection, typically used for FAQ sections, content categorization, or any interface requiring multiple collapsible sections. It maintains semantic relationships between accordion items while allowing independent operation of each section.</p>\n<h2>Features</h2>\n<h3>Semantic Structure</h3>\n<ul>\n<li><strong>Section Element</strong>: Uses <code>&lt;section&gt;</code> with <code>role=&quot;accordion&quot;</code> for proper semantics</li>\n<li><strong>Grouped Content</strong>: Provides logical grouping for related accordion items</li>\n<li><strong>Accessibility</strong>: Built-in ARIA support through semantic HTML</li>\n<li><strong>Navigation</strong>: Enables keyboard navigation between related sections</li>\n</ul>\n<h3>Independent Operation</h3>\n<ul>\n<li><strong>Multi-Open</strong>: Multiple accordions can be open simultaneously by default</li>\n<li><strong>Individual Control</strong>: Each accordion operates independently</li>\n<li><strong>State Management</strong>: No automatic closing when others open</li>\n<li><strong>Flexible Behavior</strong>: Can be extended for exclusive operation if needed</li>\n</ul>\n<h3>Responsive Design</h3>\n<ul>\n<li><strong>Container Adaptation</strong>: Adapts to parent container width</li>\n<li><strong>Content Flow</strong>: Maintains proper content flow on all screen sizes</li>\n<li><strong>Touch Friendly</strong>: Optimized for touch interactions on mobile devices</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Container</strong>: <code>&lt;section class=&quot;hoo-accordion-group&quot; role=&quot;accordion&quot;&gt;</code> - Main group container</li>\n<li><strong>Items</strong>: Multiple <code>{{&gt; molecules-accordion-item}}</code> - Individual accordion sections</li>\n<li><strong>Loop</strong>: <code>{{#each accordion-group}}</code> - Data iteration for multiple items</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;accordion-group&quot;: [\n        {\n            &quot;accordion&quot;: {\n                &quot;header&quot;: {\n                    &quot;text&quot;: &quot;Frequently Asked Questions&quot;,\n                    &quot;iconname&quot;: &quot;icon-arrow-right&quot;\n                },\n                &quot;content&quot;: &quot;Here are the most common questions and answers about our product...&quot;\n            }\n        },\n        {\n            &quot;accordion&quot;: {\n                &quot;header&quot;: {\n                    &quot;text&quot;: &quot;Technical Specifications&quot;,\n                    &quot;iconname&quot;: &quot;icon-arrow-right&quot;\n                },\n                &quot;content&quot;: &quot;Detailed technical information about features and capabilities...&quot;\n            }\n        },\n        {\n            &quot;accordion&quot;: {\n                &quot;header&quot;: {\n                    &quot;text&quot;: &quot;Installation Guide&quot;,\n                    &quot;iconname&quot;: &quot;icon-arrow-right&quot;\n                },\n                &quot;content&quot;: &quot;Step-by-step instructions for installing and configuring...&quot;\n            }\n        }\n    ]\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><strong><code>.hoo-accordion-group</code></strong>: Main container styling</li>\n<li><strong><code>.hoo-accordion</code></strong>: Individual accordion item (inherited from molecules)</li>\n<li><strong><code>.hoo-accordion-summary</code></strong>: Header styling (inherited from molecules)</li>\n<li><strong><code>.hoo-accordion-content</code></strong>: Content area styling (inherited from molecules)</li>\n<li><strong><code>.hoo-icon</code></strong>: Icon styling and animations (inherited from molecules)</li>\n</ul>\n<h2>Styling</h2>\n<h3>Container Layout</h3>\n<ul>\n<li><strong>Display</strong>: Block-level container element</li>\n<li><strong>Margins</strong>: Inherits default section margins</li>\n<li><strong>Role</strong>: Semantic <code>role=&quot;accordion&quot;</code> for accessibility</li>\n</ul>\n<h3>Item Spacing</h3>\n<ul>\n<li><strong>Item Margins</strong>: 0.25rem vertical spacing between accordion items</li>\n<li><strong>Content Indentation</strong>: 2rem left margin for content areas</li>\n<li><strong>Header Alignment</strong>: Flex layout for icon and text alignment</li>\n</ul>\n<h3>Visual Hierarchy</h3>\n<ul>\n<li><strong>Typography</strong>: 20px headings for consistent hierarchy</li>\n<li><strong>Icon Size</strong>: 1.5rem icons with proper alignment</li>\n<li><strong>Content Flow</strong>: Proper spacing for readability</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Content Organization</h3>\n<ul>\n<li><strong>FAQ Sections</strong>: Multiple questions with expandable answers</li>\n<li><strong>Product Information</strong>: Features, specifications, and details</li>\n<li><strong>Documentation</strong>: Technical guides with collapsible sections</li>\n<li><strong>Help Systems</strong>: Support content with progressive disclosure</li>\n</ul>\n<h3>Interface Design</h3>\n<ul>\n<li><strong>Settings Panels</strong>: Grouped configuration options</li>\n<li><strong>Dashboard Widgets</strong>: Collapsible information sections</li>\n<li><strong>Form Organization</strong>: Large forms divided into logical sections</li>\n<li><strong>Navigation Menus</strong>: Hierarchical menus with subcategories</li>\n</ul>\n<h3>Educational Content</h3>\n<ul>\n<li><strong>Course Materials</strong>: Lessons with expandable modules</li>\n<li><strong>Training Guides</strong>: Step-by-step instructions</li>\n<li><strong>Reference Materials</strong>: Categorized information</li>\n<li><strong>Tutorials</strong>: Progressive learning content</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Semantic Structure</h3>\n<ul>\n<li><strong>Role Attribution</strong>: <code>role=&quot;accordion&quot;</code> identifies component type</li>\n<li><strong>Section Element</strong>: Provides semantic grouping for screen readers</li>\n<li><strong>Heading Hierarchy</strong>: Maintains proper heading structure (<code>&lt;h3&gt;</code>)</li>\n<li><strong>Landmark Navigation</strong>: Allows users to navigate to accordion sections</li>\n</ul>\n<h3>Keyboard Navigation</h3>\n<ul>\n<li><strong>Tab Order</strong>: Logical tab order through accordion headers</li>\n<li><strong>Enter/Space</strong>: Toggle accordion open/closed state</li>\n<li><strong>Arrow Keys</strong>: Navigate between accordion items (with additional JS)</li>\n<li><strong>Focus Management</strong>: Clear focus indicators on all interactive elements</li>\n</ul>\n<h3>Screen Reader Support</h3>\n<ul>\n<li><strong>State Announcements</strong>: Open/closed states announced automatically</li>\n<li><strong>Content Structure</strong>: Logical reading order through grouped content</li>\n<li><strong>Label Association</strong>: Headers properly associated with content</li>\n<li><strong>Context Information</strong>: Group context provided to users</li>\n</ul>\n<h2>Behavior Patterns</h2>\n<h3>Default Behavior</h3>\n<ul>\n<li><strong>Independent Operation</strong>: Each accordion operates independently</li>\n<li><strong>Multi-Open</strong>: Multiple sections can be open simultaneously</li>\n<li><strong>State Persistence</strong>: States maintained during user interaction</li>\n<li><strong>No Auto-Close</strong>: Opening one doesn't close others</li>\n</ul>\n<h3>Enhanced Behaviors (with JavaScript)</h3>\n<ul>\n<li><strong>Exclusive Mode</strong>: Only one accordion open at a time</li>\n<li><strong>Keyboard Navigation</strong>: Arrow key navigation between items</li>\n<li><strong>Animation Control</strong>: Enhanced opening/closing animations</li>\n<li><strong>State Management</strong>: Programmatic control of accordion states</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Content Strategy</h3>\n<ul>\n<li><strong>Logical Grouping</strong>: Group only related content together</li>\n<li><strong>Clear Headings</strong>: Use descriptive, scannable titles</li>\n<li><strong>Consistent Voice</strong>: Maintain consistent tone across sections</li>\n<li><strong>Progressive Disclosure</strong>: Show most important information first</li>\n</ul>\n<h3>User Experience</h3>\n<ul>\n<li><strong>Reasonable Defaults</strong>: Consider which sections should be open initially</li>\n<li><strong>Content Balance</strong>: Avoid overly long or short content sections</li>\n<li><strong>Visual Consistency</strong>: Maintain consistent styling across all items</li>\n<li><strong>Loading States</strong>: Handle dynamic content gracefully</li>\n</ul>\n<h3>Development</h3>\n<ul>\n<li><strong>Semantic HTML</strong>: Always use proper HTML5 elements</li>\n<li><strong>Progressive Enhancement</strong>: Ensure functionality without JavaScript</li>\n<li><strong>Performance</strong>: Optimize for large numbers of accordion items</li>\n<li><strong>Testing</strong>: Test with keyboard users and screen readers</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>HTML5 Details</strong>: Requires <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> element support</li>\n<li><strong>CSS Features</strong>: Basic CSS support for styling and animations</li>\n<li><strong>Accessibility</strong>: Works with modern screen readers and assistive technologies</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Accordion Styles:</strong></p>\n<ul>\n<li><code>lib/sass/02-molecules/accordion/</code></li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Group","patternPartial":"organism-accordion-group","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -171,10 +313,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -187,7 +329,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -235,6 +377,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

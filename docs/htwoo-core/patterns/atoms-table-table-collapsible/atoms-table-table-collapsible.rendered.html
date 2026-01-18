@@ -4,10 +4,10 @@
     <title>Atoms -  Table Collapsible - Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=atoms-table-collapsible">
     <meta name="description" content="Table Collapsible Atoms - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content="Atoms, TableCollapsible, Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
@@ -20,9 +20,12 @@
   <body class="">
   <h1>Atoms -  Table Collapsible</h1><table class="hoo-table is-collapsible">
     <thead>
-        <tr class="collapsible" data-sectionHeader="all">
+        <tr class="collapsible" data-sectionHeader="all" aria-expanded="false">
             <th class="hoo-table-iconcell" scope="col">
-                <button class="hoo-buttonicon" >
+                <button class="hoo-buttonicon" 
+                    aria-label="Toggle section visibility"
+                    role="button"
+                    >
                     <span class="hoo-icon">
                         <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
                             
@@ -37,9 +40,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="collapsible" data-sectionHeader="section1">
+        <tr class="collapsible" data-sectionHeader="section1" aria-expanded="false">
             <th class="hoo-table-iconcell">
-                <button class="hoo-buttonicon" >
+                <button class="hoo-buttonicon" 
+                    aria-label="Toggle section visibility"
+                    role="button"
+                    >
                     <span class="hoo-icon">
                         <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
                             
@@ -52,37 +58,40 @@
                         dolor.</span></div>
             </th>
         </tr>
-        <tr data-section="section1">
+        <tr data-section="section1" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section1">
+        <tr data-section="section1" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section1">
+        <tr data-section="section1" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section1">
+        <tr data-section="section1" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr class="collapsible" data-sectionHeader="section2">
+        <tr class="collapsible" data-sectionHeader="section2" aria-expanded="false">
             <th class="hoo-table-iconcell">
-                <button class="hoo-buttonicon" >
+                <button class="hoo-buttonicon" 
+                    aria-label="Toggle section visibility"
+                    role="button"
+                    >
                     <span class="hoo-icon">
                         <svg class="hoo-icon-svg icon-arrow-down" aria-hidden="true">
                             
@@ -95,28 +104,28 @@
                         dolor.</span></div>
             </th>
         </tr>
-        <tr data-section="section2">
+        <tr data-section="section2" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section2">
+        <tr data-section="section2" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section2">
+        <tr data-section="section2" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
             <td>Velit, blanditiis?</td>
             <td>Placeat, quidem.</td>
         </tr>
-        <tr data-section="section2">
+        <tr data-section="section2" class="is-hidden" aria-hidden="true">
             <td></td>
             <td>Lorem, ipsum.</td>
             <td>Deserunt, ipsa?</td>
@@ -127,11 +136,11 @@
     <tfoot></tfoot>
 </table><!--DO NOT REMOVE-->
 <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
-  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Accessibility Documentation</h2>\n<ul>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/\">Tables</a></li>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/multi-level/\">Multi Level Tables</a></li>\n</ul>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/table</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Collapsed","patternPartial":"atoms-table-collapsible","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>The Collapsible Table variant provides an interactive table with expandable and collapsible sections, allowing users to show or hide groups of related rows. This is particularly useful for organizing complex datasets into logical sections.</p>\n<h2>Features</h2>\n<ul>\n<li>Interactive section headers that can be expanded and collapsed</li>\n<li>Visual indicators showing the current state (expanded/collapsed)</li>\n<li>Support for nested sections</li>\n<li>Smooth icon rotation animations for state transitions</li>\n<li>Compatible with both standard and compact table styles</li>\n</ul>\n<h2>Data Attributes</h2>\n<ul>\n<li><code>data-sectionHeader</code>: Identifies a row as a section header (collapsible trigger)</li>\n<li><code>data-section</code>: Associates content rows with their section header</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>The collapsible table functionality requires JavaScript for interactive behavior:</p>\n<h3>Required JavaScript</h3>\n<h3>Key JavaScript Features</h3>\n<ul>\n<li><strong>Section Collapse/Expand</strong>: Click handlers for section headers</li>\n<li><strong>ARIA State Management</strong>: Automatic <code>aria-expanded</code> and <code>aria-hidden</code> attributes</li>\n<li><strong>Nested Section Support</strong>: Handles multiple levels of collapsible sections</li>\n<li><strong>Keyboard Accessibility</strong>: Maintains focus management for keyboard users</li>\n</ul>\n<h3>Manual Initialization</h3>\n<h2>Accessibility</h2>\n<p>The collapsible table implementation follows these accessibility guidelines:</p>\n<ul>\n<li>Use <code>aria-expanded</code> attributes to indicate the current state</li>\n<li>Ensure keyboard navigation works for expanding/collapsing sections</li>\n<li>Provide clear visual indicators of expandable sections</li>\n<li>Follow proper table structure with appropriate ARIA roles</li>\n</ul>\n<h3>Reference Documentation</h3>\n<ul>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/\">W3C WAI Tables</a></li>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/multi-level/\">W3C WAI Multi-Level Tables</a></li>\n</ul>\n<h3>SCSS Imports</h3>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Collapsible Table","patternPartial":"atoms-table-collapsible","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":40}}
 </script>
 
 <script>
-  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Accessibility Documentation</h2>\n<ul>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/\">Tables</a></li>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/multi-level/\">Multi Level Tables</a></li>\n</ul>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/table</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Collapsed","patternPartial":"atoms-table-collapsible","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}};
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-button-icon","lineagePath":"../../patterns/atoms-buttons-button-icon/atoms-buttons-button-icon.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>The Collapsible Table variant provides an interactive table with expandable and collapsible sections, allowing users to show or hide groups of related rows. This is particularly useful for organizing complex datasets into logical sections.</p>\n<h2>Features</h2>\n<ul>\n<li>Interactive section headers that can be expanded and collapsed</li>\n<li>Visual indicators showing the current state (expanded/collapsed)</li>\n<li>Support for nested sections</li>\n<li>Smooth icon rotation animations for state transitions</li>\n<li>Compatible with both standard and compact table styles</li>\n</ul>\n<h2>Data Attributes</h2>\n<ul>\n<li><code>data-sectionHeader</code>: Identifies a row as a section header (collapsible trigger)</li>\n<li><code>data-section</code>: Associates content rows with their section header</li>\n</ul>\n<h2>JavaScript Integration</h2>\n<p>The collapsible table functionality requires JavaScript for interactive behavior:</p>\n<h3>Required JavaScript</h3>\n<h3>Key JavaScript Features</h3>\n<ul>\n<li><strong>Section Collapse/Expand</strong>: Click handlers for section headers</li>\n<li><strong>ARIA State Management</strong>: Automatic <code>aria-expanded</code> and <code>aria-hidden</code> attributes</li>\n<li><strong>Nested Section Support</strong>: Handles multiple levels of collapsible sections</li>\n<li><strong>Keyboard Accessibility</strong>: Maintains focus management for keyboard users</li>\n</ul>\n<h3>Manual Initialization</h3>\n<h2>Accessibility</h2>\n<p>The collapsible table implementation follows these accessibility guidelines:</p>\n<ul>\n<li>Use <code>aria-expanded</code> attributes to indicate the current state</li>\n<li>Ensure keyboard navigation works for expanding/collapsing sections</li>\n<li>Provide clear visual indicators of expandable sections</li>\n<li>Follow proper table structure with appropriate ARIA roles</li>\n</ul>\n<h3>Reference Documentation</h3>\n<ul>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/\">W3C WAI Tables</a></li>\n<li><a href=\"https://www.w3.org/WAI/tutorials/tables/multi-level/\">W3C WAI Multi-Level Tables</a></li>\n</ul>\n<h3>SCSS Imports</h3>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"table"},"patternExtension":"hbs","patternName":"Collapsible Table","patternPartial":"atoms-table-collapsible","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":40}};
 </script>
 
 <script>
@@ -167,10 +176,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -183,7 +192,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -231,6 +240,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

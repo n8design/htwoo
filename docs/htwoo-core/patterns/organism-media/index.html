@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,149 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Organism Media Components</h1>
+<p>HTWOO UI organism-level media components combine multiple molecular components to create complete, interactive video experiences. These components provide a user-friendly interface where users can preview video content via thumbnails and expand to view the full video player.</p>
+<h2>Overview</h2>
+<p>Organism media components in HTWOO UI use HTML5's <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements to create collapsible video players. They compose three molecular-level components:</p>
+<ul>
+<li><strong>Video Overlay</strong>: Play button with duration display</li>
+<li><strong>Video Thumbnail</strong>: Preview image with caption</li>
+<li><strong>Video Player</strong>: The actual video player (HTML5, YouTube, or Vimeo)</li>
+</ul>
+<p>This pattern provides a clean, space-efficient way to display video content while giving users control over when to load and play videos.</p>
+<h2>Components</h2>
+<h3>HTML5 Video Component (<code>organism-video-html</code>)</h3>
+<p><strong>File</strong>: <code>video-html.hbs</code>
+<strong>Pattern</strong>: <code>organism-video-html</code></p>
+<p>Interactive video component for HTML5 video content with native browser controls.</p>
+<h4>Structure</h4>
+<pre><code class="language-handlebars">{{#video}}
+&lt;details class=&quot;hoo-video&quot;&gt;
+    &lt;summary class=&quot;hoo-thumbnail&quot;&gt;
+        {{&gt; molecules-video-overlay}}
+        {{&gt; molecules-video-thumb}}
+    &lt;/summary&gt;
+    {{&gt; molecules-video-player-html}}
+&lt;/details&gt;
+{{/video}}
+</code></pre>
+<h4>Features</h4>
+<ul>
+<li>Collapsible interface using HTML5 <code>&lt;details&gt;</code> element</li>
+<li>Native HTML5 video player with standard browser controls</li>
+<li>Thumbnail preview with play button overlay</li>
+<li>Duration display on thumbnail</li>
+<li>Automatic video playback when expanded</li>
+<li>Lazy loading support for performance</li>
+<li>Supports multiple video formats (MP4, WebM, etc.)</li>
+</ul>
+<h4>Usage</h4>
+<p>Best for self-hosted video content where you have full control over the video files and want to use native browser functionality.</p>
+<h3>YouTube Video Component (<code>organism-video-youtube</code>)</h3>
+<p><strong>File</strong>: <code>video-youtube.hbs</code><br>
+<strong>Pattern</strong>: <code>organism-video-youtube</code></p>
+<p>Interactive video component for YouTube content using YouTube's privacy-enhanced embed player.</p>
+<h4>Structure</h4>
+<pre><code class="language-handlebars">{{#video-yt}}
+&lt;details class=&quot;hoo-video&quot;&gt;
+    &lt;summary class=&quot;hoo-thumbnail&quot;&gt;
+        {{&gt; molecules-video-overlay}}
+        {{&gt; molecules-video-thumb}}
+    &lt;/summary&gt;
+    {{&gt; molecules-video-player-youtube}}
+&lt;/details&gt;
+{{/video-yt}}
+</code></pre>
+<h4>Features</h4>
+<ul>
+<li>YouTube privacy-enhanced embedding (<code>youtube-nocookie.com</code>)</li>
+<li>Collapsible interface with thumbnail preview</li>
+<li>Custom thumbnail support</li>
+<li>Automatic autoplay when expanded</li>
+<li>Full YouTube player functionality</li>
+<li>Responsive iframe container</li>
+<li>Support for YouTube's privacy features</li>
+</ul>
+<h4>Usage</h4>
+<p>Ideal for embedding YouTube videos while maintaining user privacy and providing a consistent interface with other video types.</p>
+<h3>Vimeo Video Component (<code>organism-video-vimeo</code>)</h3>
+<p><strong>File</strong>: <code>video-vimeo.hbs</code>
+<strong>Pattern</strong>: <code>organism-video-vimeo</code></p>
+<p>Interactive video component for Vimeo content using Vimeo's embed player.</p>
+<h4>Structure</h4>
+<pre><code class="language-handlebars">{{#video-vimeo}}
+&lt;details class=&quot;hoo-video&quot;&gt;
+    &lt;summary class=&quot;hoo-thumbnail&quot;&gt;
+        {{&gt; molecules-video-overlay}}
+        {{&gt; molecules-video-thumb}}
+    &lt;/summary&gt;
+    {{&gt; molecules-video-player-vimeo}}
+&lt;/details&gt;
+{{/video-vimeo}}
+</code></pre>
+<h4>Features</h4>
+<ul>
+<li>Vimeo player embedding with full functionality</li>
+<li>Collapsible interface with custom thumbnails</li>
+<li>Automatic autoplay when expanded</li>
+<li>Support for Vimeo's privacy and sharing controls</li>
+<li>Responsive iframe container</li>
+<li>Professional video hosting integration</li>
+</ul>
+<h4>Usage</h4>
+<p>Perfect for professional video content hosted on Vimeo, offering high-quality playback and advanced video features.</p>
+<h2>Common Features</h2>
+<p>All organism-level media components share these characteristics:</p>
+<h3>Interactive Disclosure</h3>
+<ul>
+<li>Uses HTML5 <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements for progressive disclosure</li>
+<li>Thumbnail acts as a clickable summary to reveal the full video player</li>
+<li>Semantic HTML structure for better accessibility</li>
+</ul>
+<h3>Composed Architecture</h3>
+<p>Each component combines three molecular components:</p>
+<ol>
+<li><strong>molecules-video-overlay</strong>: Play button and duration display</li>
+<li><strong>molecules-video-thumb</strong>: Thumbnail image with figure caption</li>
+<li><strong>molecules-video-player-[type]</strong>: Type-specific video player</li>
+</ol>
+<h3>Consistent Styling</h3>
+<ul>
+<li>All components use the <code>.hoo-video</code> container class</li>
+<li>Thumbnail section uses <code>.hoo-thumbnail</code> class</li>
+<li>Player section uses <code>.hoo-video-player</code> class</li>
+<li>Inherits styling from molecular-level components</li>
+</ul>
+<h3>Performance Optimization</h3>
+<ul>
+<li>Lazy loading support for video content</li>
+<li>Thumbnail images load immediately for quick preview</li>
+<li>Video players only load when user chooses to expand</li>
+<li>Preload settings optimized for performance</li>
+</ul>
+<h2>Accessibility Considerations</h2>
+<ul>
+<li>Semantic HTML structure with proper heading hierarchy</li>
+<li>Keyboard accessible disclosure controls</li>
+<li>Alt text support for thumbnail images</li>
+<li>Video caption support through underlying player components</li>
+<li>Focus management for expanded/collapsed states</li>
+</ul>
+<h2>Configuration</h2>
+<p>Each component uses a JSON configuration file (<code>video-[type].json</code>) with:</p>
+<pre><code class="language-json">{
+    &quot;bodyClass&quot;: &quot;medium&quot;
+}
+</code></pre>
+<p>This configuration applies styling context to the component for proper display sizing.</p>
+<h2>Browser Support</h2>
+<ul>
+<li>Modern browsers supporting HTML5 <code>&lt;details&gt;</code> element</li>
+<li>Fallback graceful degradation for older browsers</li>
+<li>Cross-browser video player compatibility</li>
+<li>Responsive design for mobile and desktop</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -274,10 +416,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -290,7 +432,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -338,6 +480,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

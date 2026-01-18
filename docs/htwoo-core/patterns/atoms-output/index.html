@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,44 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Output Components</h1>
+<p>Output components are used to display feedback, progress, or status information to users.</p>
+<h2>Output Types</h2>
+<ul>
+<li><strong>Progress Bar</strong> - Standard linear progress indicator</li>
+<li><strong>Progress Bar with Steps</strong> - Linear progress indicator with labeled steps</li>
+</ul>
+<h2>SCSS Imports</h2>
+<p><strong>Main Component</strong></p>
+<p><strong>SCSS Partial Location</strong></p>
+<h2>Usage</h2>
+<p>Output components should be used when:</p>
+<ul>
+<li>Displaying progress of an ongoing process</li>
+<li>Showing completion percentage of a task</li>
+<li>Indicating progress through a multi-step process</li>
+<li>Providing visual feedback on task completion status</li>
+</ul>
+<h2>Best Practices</h2>
+<ul>
+<li>Use progress indicators for operations that take more than a second to complete</li>
+<li>Provide appropriate labels or context for progress indicators</li>
+<li>For step-based processes, clearly identify the current step</li>
+<li>Consider accessibility needs when implementing output components</li>
+<li>Use determinate progress bars when the completion percentage is known</li>
+<li>Use indeterminate progress bars or spinners when the completion time is unknown</li>
+</ul>
+<h2>Accessibility</h2>
+<p>When implementing output components, follow these accessibility guidelines:</p>
+<ul>
+<li>Use semantic elements like the HTML5 <code>&lt;progress&gt;</code> element</li>
+<li>Include text alternatives for users with screen readers</li>
+<li>Ensure sufficient color contrast for all visual indicators</li>
+<li>Use appropriate ARIA attributes where needed (<code>aria-valuenow</code>, <code>aria-valuemin</code>, <code>aria-valuemax</code>)</li>
+<li>For multi-step processes, clearly communicate the current step and total steps</li>
+<li>Announce important status changes using ARIA live regions</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -87,7 +124,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/atoms-output-progress-bar-steps&#x2F;atoms-output-progress-bar-steps.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="atoms-progress-bar-steps" title="Link to Pattern">
-						Progress Bar Steps
+						Progress Step Bar
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -153,7 +190,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-progress-bar-steps" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-progress-step","lineagePath":"../../patterns/atoms-output-progress-step/atoms-output-progress-step.rendered.html"}],"lineage":[{"lineagePattern":"atoms-progress-step","lineagePath":"../../patterns/atoms-output-progress-step/atoms-output-progress-step.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"output"},"patternExtension":"hbs","patternName":"Progress Bar Steps","patternPartial":"atoms-progress-bar-steps","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-progress-step","lineagePath":"../../patterns/atoms-output-progress-step/atoms-output-progress-step.rendered.html"}],"lineage":[{"lineagePattern":"atoms-progress-step","lineagePath":"../../patterns/atoms-output-progress-step/atoms-output-progress-step.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>The Progress Step Bar component combines a standard progress bar with step indicators, creating a visual representation of progress through a multi-step process. This component is ideal for wizards, onboarding flows, and any multi-stage user journey.</p>\n<h2>Usage</h2>\n<p>Use the Progress Step Bar when you need to provide users with a clear visual representation of their progress through a multi-step process, where each step is distinctly labeled.</p>\n<p>Example:</p>\n<pre><code class=\"language-html\">&lt;div class=&quot;hoo-progress-stepbar&quot;&gt;\n    &lt;progress class=&quot;hoo-progress-bar&quot; value=&quot;50&quot; max=&quot;100&quot;&gt;\n        50%\n    &lt;/progress&gt;\n    &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 0%;&quot;&gt;\n        &lt;div class=&quot;inner&quot;&gt;\n            &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n            &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Start&lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 50%;&quot;&gt;\n        &lt;div class=&quot;inner&quot;&gt;\n            &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n            &lt;div class=&quot;hoo-progress-step-label&quot;&gt;In Progress&lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 100%;&quot;&gt;\n        &lt;div class=&quot;inner&quot;&gt;\n            &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n            &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Complete&lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-progress-stepbar</code>: The main container that holds the progress bar and step indicators</li>\n<li><code>.hoo-progress-bar</code>: The actual progress bar element</li>\n<li><code>.hoo-progress-step</code>: Individual step indicators (see Progress Step component)</li>\n</ul>\n<h2>Customization</h2>\n<p>The Progress Step Bar can be customized by:</p>\n<ul>\n<li>Setting the <code>value</code> and <code>max</code> attributes of the progress bar</li>\n<li>Positioning steps using the <code>--step-offset</code> CSS variable</li>\n<li>Adjusting the height of step indicators using the <code>--indicator-offset</code> CSS variable</li>\n</ul>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/atoms/output/progress-bar</p>\n<h2>Accessibility</h2>\n<ul>\n<li>The progress bar should use the native <code>&lt;progress&gt;</code> element for proper screen reader support</li>\n<li>Each step should have a descriptive label</li>\n<li>Ensure sufficient color contrast between the progress bar, steps, and background</li>\n<li>The current step should be clearly indicated both visually and to screen readers</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"output"},"patternExtension":"hbs","patternName":"Progress Step Bar","patternPartial":"atoms-progress-bar-steps","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -206,7 +243,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-atoms-progress-step" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-progress-bar-steps","lineagePath":"../../patterns/atoms-output-progress-bar-steps/atoms-output-progress-bar-steps.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-progress-bar-steps","lineagePath":"../../patterns/atoms-output-progress-bar-steps/atoms-output-progress-bar-steps.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"output"},"patternExtension":"hbs","patternName":"Progress Step","patternPartial":"atoms-progress-step","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"atoms-progress-bar-steps","lineagePath":"../../patterns/atoms-output-progress-bar-steps/atoms-output-progress-bar-steps.rendered.html"}],"lineageR":[{"lineagePattern":"atoms-progress-bar-steps","lineagePath":"../../patterns/atoms-output-progress-bar-steps/atoms-output-progress-bar-steps.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h2>Overview</h2>\n<p>Progress Step is an individual step indicator within a stepbar interface. It displays a vertical line connecting to a labeled indicator that marks specific points of progress in a multi-step process.</p>\n<h2>Usage</h2>\n<p>Progress Steps are typically used within a Progress Stepbar component to indicate various stages of a multi-step process. Each step shows a label and is positioned along a progress bar based on its relative position in the sequence.</p>\n<p>Example:</p>\n<pre><code class=\"language-html\">&lt;div class=&quot;hoo-progress-stepbar&quot;&gt;\n  &lt;progress class=&quot;hoo-progress-bar&quot; value=&quot;50&quot; max=&quot;100&quot;&gt;50%&lt;/progress&gt;\n  &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 25%;&quot;&gt;\n    &lt;div class=&quot;inner&quot;&gt;\n      &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n      &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 1&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 50%;&quot;&gt;\n    &lt;div class=&quot;inner&quot;&gt;\n      &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n      &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 2&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=&quot;hoo-progress-step&quot; style=&quot;--step-offset: 75%;&quot;&gt;\n    &lt;div class=&quot;inner&quot;&gt;\n      &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;&lt;/div&gt;\n      &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 3&lt;/div&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>Customization</h2>\n<p>The Progress Step component can be customized using the following CSS variables:</p>\n<ul>\n<li><code>--indicator-offset</code>: Controls the height of the vertical indicator line</li>\n<li><code>--step-offset</code>: Controls the horizontal positioning of the step as a percentage of the progress bar width</li>\n</ul>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-progress-step</code>: The main container for the step</li>\n<li><code>.hoo-progress-step-indicator</code>: The vertical line connecting to the progress bar</li>\n<li><code>.hoo-progress-step-label</code>: The label for the step</li>\n</ul>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/atoms/output/progress-bar</p>\n<h2>Accessibility</h2>\n<ul>\n<li>Progress steps should have clear, descriptive labels</li>\n<li>The overall progress should be communicated through both visual means and to screen readers</li>\n<li>The relationship between steps should be visually clear</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"atoms","patternSubgroup":"output"},"patternExtension":"hbs","patternName":"Progress Step","patternPartial":"atoms-progress-step","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -257,10 +294,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -273,7 +310,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -321,6 +358,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

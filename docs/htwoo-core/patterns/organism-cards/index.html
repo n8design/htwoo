@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,7 +31,199 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<hr>
+<p>title: Card Components
+order: └── Teams Splash Card
+├── Card Splash Header (Molecule)
+├── Card Splash Title (Molecule)
+├── Card Splash Description (Molecule)
+└── Card Splash Footer (Molecule)</p>
+<pre><code>
+## Key Featuresrganisms
+
+The Card organism collection provides a comprehensive set of card-based UI components designed for displaying content in structured, visually appealing formats. These components combine multiple molecular-level card elements to create complete, functional card interfaces for various content types and use cases.
+
+## Overview
+
+Card organisms represent the highest level of card implementation in the HTWOO design system. They combine card elements (image, title, location, footer, etc.) into complete, self-contained content containers that adapt to different layout contexts and content requirements.
+
+## Components
+
+### Document Cards
+- **[Document Card](./document-card)**: Standard document/content card with image, title, location, and footer
+- **[Document Card Click](./document-card-click)**: Clickable variant with enhanced interaction
+- **[Document Card HTML](./document-card-html)**: HTML content variant for rich content display
+- **[Document Card Shimmer](./document-card-shimmer)**: Loading state variant with shimmer effect
+
+### Specialty Cards
+- **[Teams Splash Card](./teams-splash-card)**: Feature-rich promotional card for Microsoft Teams integration
+
+## Architecture
+
+### Component Hierarchy
+</code></pre>
+<p>Card Organisms
+├── Document Card Family
+│   ├── Card Image (Molecule)
+│   ├── Card Location (Molecule)
+│   ├── Card Title (Molecule)
+│   └── Card Footer (Molecule)
+└── Teams Splash Card
+├── Card Splash Header (Molecule)
+├── Card Splash Title (Molecule)
+├── Card Splash Description (Molecule)
+└── Card Splash Footer (Molecule)</p>
+<pre><code>
+### Molecular Dependencies
+All card organisms depend on molecular-level card elements:
+- **[Card Elements](../molecules/cards-elements/)**: Individual card building blocks
+- **[Button Components](../molecules/buttons/)**: Footer action buttons
+- **[Avatar Components](../molecules/avatar/)**: Author/user representation
+- **[Typography](../atoms/typography/)**: Text styling and hierarchy
+
+## Key Features
+
+### Adaptive Layout
+- **Flexible Width**: Cards adapt to parent container dimensions
+- **Responsive Design**: Optimal display across different screen sizes
+- **Grid Compatibility**: Works seamlessly with CSS Grid and Flexbox layouts
+- **Container Queries**: Adapts to container dimensions, not just viewport
+
+### Visual Design
+- **Elevation**: Box shadow for visual hierarchy (elevation level 4)
+- **Border Styling**: Subtle borders for content separation
+- **Consistent Spacing**: Uniform padding and margins throughout
+- **Theme Integration**: Inherits HTWOO theme colors and typography
+
+### Interactive Features
+- **Clickable Containers**: Full card click areas for navigation
+- **Hover States**: Visual feedback for interactive elements
+- **Focus Management**: Keyboard navigation support
+- **Link Preservation**: Maintains proper link semantics and styling
+
+### Content Flexibility
+- **Multi-format Support**: Images, text, metadata, and actions
+- **Rich Content**: HTML content support for complex layouts
+- **Loading States**: Shimmer effects for asynchronous content
+- **Customizable Elements**: Modular composition of card elements
+
+## Use Cases
+
+### Content Management
+- **Document Libraries**: File and document collections
+- **Media Galleries**: Image and video content organization
+- **Article Collections**: Blog posts and news articles
+- **Product Catalogs**: E-commerce product displays
+
+### Business Applications
+- **Dashboard Widgets**: Key information display
+- **Team Directories**: Employee and contact information
+- **Project Portfolios**: Work samples and case studies
+- **Resource Centers**: Tools and application launchers
+
+### Microsoft 365 Integration
+- **SharePoint Lists**: Document and list item display
+- **Teams Apps**: Application cards and feature highlights
+- **Power Platform**: Custom application interfaces
+- **Viva Connections**: Dashboard card components
+
+## Styling Architecture
+
+### Document Card Styling
+
+### Teams Splash Card Styling
+
+## Accessibility Features
+
+### Semantic Structure
+- **Article Elements**: Cards use `&lt;article&gt;` for semantic content containers
+- **Heading Hierarchy**: Proper heading structure for card titles
+- **Link Semantics**: Maintains proper link structure for navigation
+- **Landmark Roles**: Clear content boundaries for screen readers
+
+### Keyboard Navigation
+- **Focusable Elements**: All interactive elements are keyboard accessible
+- **Tab Order**: Logical tab order through card elements
+- **Link Navigation**: Proper link activation with Enter key
+- **Focus Indicators**: Clear visual focus states
+
+### Screen Reader Support
+- **Alternative Text**: Images include descriptive alt text
+- **Content Structure**: Logical reading order for card information
+- **Link Context**: Meaningful link text and context
+- **State Announcements**: Interactive state changes announced
+
+### Visual Accessibility
+- **Color Contrast**: Sufficient contrast ratios for all text
+- **Focus Management**: Clear focus indicators
+- **Text Scaling**: Responsive to user font size preferences
+- **High Contrast**: Compatible with high contrast modes
+
+## Performance Optimization
+
+### Rendering Efficiency
+- **Minimal DOM**: Lightweight card structure for fast rendering
+- **CSS Grid**: Efficient layout with CSS Grid and Flexbox
+- **Image Loading**: Optimized image loading with proper sizing
+- **Lazy Loading**: Support for deferred content loading
+
+### Loading States
+- **Shimmer Effects**: Visual feedback during content loading
+- **Progressive Enhancement**: Core functionality without JavaScript
+- **Skeleton Screens**: Content placeholder patterns
+- **Async Content**: Graceful handling of dynamic content
+
+### Memory Management
+- **Event Handling**: Efficient event delegation
+- **Image Optimization**: Proper image sizing and formats
+- **CSS Optimization**: Minimal CSS specificity and reuse
+- **Resource Cleanup**: Proper cleanup of dynamic content
+
+## Best Practices
+
+### Content Strategy
+- **Clear Hierarchy**: Use consistent visual hierarchy across cards
+- **Meaningful Titles**: Descriptive, scannable card titles
+- **Relevant Metadata**: Include useful contextual information
+- **Action Clarity**: Clear, action-oriented button labels
+
+### Visual Design
+- **Consistent Spacing**: Uniform spacing patterns across card types
+- **Image Quality**: High-quality, properly sized images
+- **Typography Scale**: Consistent font sizes and line heights
+- **Color Usage**: Appropriate use of theme colors
+
+### User Experience
+- **Loading Feedback**: Clear loading states for dynamic content
+- **Error Handling**: Graceful error states and fallbacks
+- **Touch Targets**: Adequate touch target sizes for mobile
+- **Navigation Flow**: Logical navigation patterns
+
+### Development
+- **Component Reuse**: Leverage shared card elements
+- **Progressive Enhancement**: Ensure basic functionality without JavaScript
+- **Testing Strategy**: Test across different content types and lengths  
+- **Performance Monitoring**: Monitor rendering performance with many cards
+
+## Integration Examples
+
+### SharePoint Framework (SPFx)
+
+### React Integration
+For React applications, use the `@n8d/htwoo-react` package which provides card components with the same design system styling. Card components are available in Storybook for interactive examples and documentation.
+
+## Browser Support
+
+- **Modern Browsers**: Full support in Chrome, Firefox, Safari, Edge
+- **CSS Grid**: Requires CSS Grid support for optimal layout
+- **Flexbox**: Uses Flexbox for internal card layout
+- **CSS Custom Properties**: Theme integration through CSS variables
+- **HTML5 Semantic Elements**: Uses modern HTML5 semantic elements
+
+## SCSS Import
+
+</code></pre>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
@@ -79,8 +271,9 @@
         <div class="hoo-cardtitle"></div>
         <footer class="hoo-cardfooter">
             <div class="hoo-avatar">
-                <img src="" alt="" class="hoo-avatar-img"   loading="lazy">
-            </div>    <div class="hoo-cardfooter-data">
+                <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" loading="lazy">
+            </div>
+            <div class="hoo-cardfooter-data">
                 <div class="hoo-cardfooter-name">Man on the moon</div>
                 <div class="hoo-cardfooter-modified">Created a seconds ago</div>
             </div>
@@ -90,25 +283,25 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-document-card" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-card-grid","lineagePath":"../../patterns/templates-card.grid-card-grid/templates-card.grid-card-grid.rendered.html"}],"lineageR":[{"lineagePattern":"templates-card-grid","lineagePath":"../../patterns/templates-card.grid-card-grid/templates-card.grid-card-grid.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>Automatically adjust itself to the parent container. To make this possible no pre-define width was specified here to avoid the need to overwrite styles.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card","patternPartial":"organism-document-card","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-card-grid","lineagePath":"../../patterns/templates-card.grid-card-grid/templates-card.grid-card-grid.rendered.html"}],"lineageR":[{"lineagePattern":"templates-card-grid","lineagePath":"../../patterns/templates-card.grid-card-grid/templates-card.grid-card-grid.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Document Card</h1>\n<p>The Document Card is a flexible, self-contained content container designed for displaying documents, files, and content items in a structured, visually appealing format. It automatically adapts to its parent container and provides a consistent interface for content preview and navigation.</p>\n<h2>Overview</h2>\n<p>The Document Card serves as the primary card component for content libraries, file repositories, and document management interfaces. It combines visual preview capabilities with essential metadata display, creating an intuitive browsing experience for users working with document collections.</p>\n<h2>Features</h2>\n<h3>Adaptive Layout</h3>\n<ul>\n<li><strong>Flexible Width</strong>: Automatically adjusts to parent container without predefined width</li>\n<li><strong>Responsive Design</strong>: Optimizes display across different screen sizes and containers</li>\n<li><strong>Grid Compatible</strong>: Works seamlessly with CSS Grid and Flexbox layouts</li>\n<li><strong>Container Queries</strong>: Adapts to container dimensions rather than just viewport</li>\n</ul>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Elevation</strong>: Box shadow (elevation level 4) for visual hierarchy</li>\n<li><strong>Border Styling</strong>: Subtle 1px border in neutral-200 for content separation</li>\n<li><strong>Consistent Spacing</strong>: Uniform padding and margins throughout card structure</li>\n<li><strong>Theme Integration</strong>: Inherits HTWOO theme colors and typography</li>\n</ul>\n<h3>Interactive Features</h3>\n<ul>\n<li><strong>Full Card Click</strong>: Entire card serves as clickable navigation area</li>\n<li><strong>Link Semantics</strong>: Maintains proper link structure and accessibility</li>\n<li><strong>Hover States</strong>: Visual feedback for interactive elements</li>\n<li><strong>Focus Management</strong>: Keyboard navigation support with clear focus indicators</li>\n</ul>\n<h3>Content Structure</h3>\n<ul>\n<li><strong>Image Preview</strong>: Visual representation of document or content</li>\n<li><strong>Location Context</strong>: Source or category information</li>\n<li><strong>Title Display</strong>: Clear, readable document name or headline</li>\n<li><strong>Metadata Footer</strong>: Author, date, and additional context information</li>\n</ul>\n<h2>Structure</h2>\n<p>The Document Card consists of four main molecular components:</p>\n<ol>\n<li><strong><a href=\"../molecules/cards-elements/card-image\">Card Image</a></strong>: Visual preview or thumbnail</li>\n<li><strong><a href=\"../molecules/cards-elements/card-location\">Card Location</a></strong>: Source or path information</li>\n<li><strong><a href=\"../molecules/cards-elements/card-title\">Card Title</a></strong>: Document name or headline</li>\n<li><strong><a href=\"../molecules/cards-elements/card-footer\">Card Footer</a></strong>: Author, date, and metadata</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;card-title&quot;: &quot;New Marketing Strategy Document with Extended Title&quot;,\n    &quot;card-location&quot;: &quot;Marketing Department&quot;,\n    &quot;mugshot&quot;: &quot;../../images/avatars/author-001.jpg&quot;,\n    &quot;card-footer-name&quot;: &quot;Jane Rodriguez&quot;,\n    &quot;card-footer-modified&quot;: &quot;Created 3 hours ago&quot;,\n    &quot;card-image-url&quot;: &quot;../../images/previews/document-preview.jpg&quot;\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Container Classes</h3>\n<ul>\n<li><strong><code>.hoo-doccard-link</code></strong>: Link wrapper with proper link styling</li>\n<li><strong><code>.hoo-doccard</code></strong>: Main card container with elevation and layout</li>\n<li><strong><code>.hoo-cardimg</code></strong>: Image container with responsive sizing</li>\n<li><strong><code>.hoo-cardlocation</code></strong>: Location/category text styling</li>\n</ul>\n<h3>Content Classes</h3>\n<ul>\n<li><strong><code>.hoo-cardtitle</code></strong>: Title styling with proper hierarchy</li>\n<li><strong><code>.hoo-cardfooter</code></strong>: Footer container with metadata layout</li>\n<li><strong><code>.hoo-avatar</code></strong>: Author avatar styling</li>\n<li><strong><code>.hoo-cardmeta</code></strong>: Metadata text container</li>\n</ul>\n<h2>Styling</h2>\n<h3>Container Styling</h3>\n<h3>Link Behavior</h3>\n<h3>Layout Properties</h3>\n<ul>\n<li><strong>Display</strong>: <code>inline-flex</code> with column direction</li>\n<li><strong>Width</strong>: <code>auto</code> for container adaptation</li>\n<li><strong>Border</strong>: 1px solid neutral-200 (#e1e1e1)</li>\n<li><strong>Elevation</strong>: Box shadow level 4 for visual hierarchy</li>\n<li><strong>Flex Direction</strong>: Column layout for vertical content stacking</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Document Management</h3>\n<ul>\n<li><strong>SharePoint Libraries</strong>: Document and file collections</li>\n<li><strong>File Repositories</strong>: Organizational file storage browsing</li>\n<li><strong>Content Management</strong>: CMS article and page previews</li>\n<li><strong>Media Libraries</strong>: Image and video content organization</li>\n</ul>\n<h3>Business Applications</h3>\n<ul>\n<li><strong>Project Portfolios</strong>: Work samples and case study displays</li>\n<li><strong>Team Resources</strong>: Shared document and tool collections</li>\n<li><strong>Knowledge Bases</strong>: Help articles and documentation</li>\n<li><strong>Report Dashboards</strong>: Business report and analytics previews</li>\n</ul>\n<h3>E-commerce</h3>\n<ul>\n<li><strong>Product Catalogs</strong>: Product information and specification sheets</li>\n<li><strong>Digital Downloads</strong>: Software, templates, and digital products</li>\n<li><strong>Resource Centers</strong>: Manuals, guides, and support documents</li>\n<li><strong>Marketing Materials</strong>: Brochures, presentations, and assets</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Semantic Structure</h3>\n<ul>\n<li><strong>Article Element</strong>: Uses <code>&lt;article&gt;</code> for semantic content container</li>\n<li><strong>Heading Hierarchy</strong>: Proper heading structure with <code>&lt;h3&gt;</code> for titles</li>\n<li><strong>Link Structure</strong>: Maintains proper link semantics for navigation</li>\n<li><strong>Alt Text</strong>: Images include descriptive alternative text</li>\n</ul>\n<h3>Keyboard Navigation</h3>\n<ul>\n<li><strong>Full Card Focus</strong>: Entire card is focusable and activatable</li>\n<li><strong>Tab Order</strong>: Logical tab order through card elements</li>\n<li><strong>Enter Activation</strong>: Enter key activates card navigation</li>\n<li><strong>Focus Indicators</strong>: Clear visual focus states for keyboard users</li>\n</ul>\n<h3>Screen Reader Support</h3>\n<ul>\n<li><strong>Content Structure</strong>: Logical reading order for card information</li>\n<li><strong>Link Context</strong>: Meaningful link text and destination context</li>\n<li><strong>Image Descriptions</strong>: Descriptive alt text for visual content</li>\n<li><strong>Metadata Labels</strong>: Clear labeling for author and date information</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>Color Contrast</strong>: Sufficient contrast ratios for all text elements</li>\n<li><strong>Focus Management</strong>: Clear focus indicators with proper contrast</li>\n<li><strong>Text Scaling</strong>: Responsive to user font size preferences</li>\n<li><strong>High Contrast</strong>: Compatible with high contrast display modes</li>\n</ul>\n<h2>Variants</h2>\n<h3>Document Card Click</h3>\n<p>Enhanced version with additional click handling and interaction features.</p>\n<h3>Document Card HTML</h3>\n<p>Variant supporting rich HTML content display within card structure.</p>\n<h3>Document Card Shimmer</h3>\n<p>Loading state variant with shimmer animation effects for async content loading.</p>\n<h2>Best Practices</h2>\n<h3>Content Guidelines</h3>\n<ul>\n<li><strong>Clear Titles</strong>: Use descriptive, scannable document names</li>\n<li><strong>Relevant Images</strong>: Include meaningful previews or thumbnails</li>\n<li><strong>Contextual Location</strong>: Provide helpful source or category information</li>\n<li><strong>Current Metadata</strong>: Display accurate author and modification information</li>\n</ul>\n<h3>Layout Considerations</h3>\n<ul>\n<li><strong>Grid Integration</strong>: Design for consistent grid-based layouts</li>\n<li><strong>Container Adaptation</strong>: Allow cards to adapt to various container sizes</li>\n<li><strong>Spacing Consistency</strong>: Maintain uniform spacing in card collections</li>\n<li><strong>Visual Hierarchy</strong>: Ensure consistent visual weight across cards</li>\n</ul>\n<h3>Performance</h3>\n<ul>\n<li><strong>Image Optimization</strong>: Use appropriately sized thumbnails and previews</li>\n<li><strong>Loading States</strong>: Implement shimmer or skeleton loading patterns</li>\n<li><strong>Lazy Loading</strong>: Consider deferred loading for large card collections</li>\n<li><strong>Event Handling</strong>: Use efficient event delegation for card interactions</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Flexbox</strong>: Requires CSS Flexbox support for layout</li>\n<li><strong>CSS Box Shadow</strong>: Uses box-shadow for elevation effects</li>\n<li><strong>HTML5 Semantic Elements</strong>: Uses modern HTML5 article element</li>\n<li><strong>CSS Border</strong>: Standard border properties for visual separation</li>\n</ul>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card","patternPartial":"organism-document-card","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
-		<div id="organism-document-card-click" class="pl-c-pattern">
+		<div id="organism-teams-splash-card" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
 				<h3 class="pl-c-pattern__title">
 		
-					<a href="../../patterns/organism-cards-document-card-click&#x2F;organism-cards-document-card-click.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-document-card-click" title="Link to Pattern">
-						Document Card - clickable
+					<a href="../../patterns/organism-cards-teams-splash-card&#x2F;organism-cards-teams-splash-card.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-teams-splash-card" title="Link to Pattern">
+						Teams Splash Card
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-document-card-click" data-patternpartial="organism-document-card-click" title="View Pattern Info" type="button">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-teams-splash-card" data-patternpartial="organism-teams-splash-card" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
@@ -125,29 +318,27 @@
 		
 			</div><!--end pl-c-pattern__header-->
 		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-document-card-click">
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-teams-splash-card">
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<article class="hoo-doccard">
-    <figure class="hoo-cardimage">
-        <img src="../../images/card-images/coffee-image.jpg" width="320" height="180" alt="">
-    </figure>
-    <div class="hoo-cardlocation">Marketing</div>
-    <div class="hoo-cardtitle"></div>
-    <footer class="hoo-cardfooter">
-        <div class="hoo-avatar">
-            <img src="" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-cardfooter-data">
-            <div class="hoo-cardfooter-name">Man on the moon</div>
-            <div class="hoo-cardfooter-modified">Created a seconds ago</div>
-        </div>
+			<article class="hoo-splashcard">
+    <header class="hoo-splashcard-header" role="presentation">
+        <img src="../../images/card-images/htwoo-gm-001.svg" class="hoo-splashcard-img">
+    </header>
+    <h1 class="hoo-splashcard-title">
+        Fluent UI / Fluent Design by hTWOo UI Framework
+    </h1>
+        <p class="hoo-splashcard-desc">
+           This shows the base setup of a teams splash card setup and I&#x27;am out of futher text here 
+        </p>
+    <footer class="hoo-splashcard-footer">
     </footer>
-</div>
+</article>
 			</div><!--end pl-js-pattern-example-->
 		
-			<script type="text/json" id="pl-pattern-data-organism-document-card-click" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Automatically adjust itself to the parent container. To make this possible no pre-define width was specified here to avoid the need to overwrite styles.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card - clickable","patternPartial":"organism-document-card-click","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			<script type="text/json" id="pl-pattern-data-organism-teams-splash-card" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-splash-header","lineagePath":"../../patterns/molecules-cards-elements-card-splash-header/molecules-cards-elements-card-splash-header.rendered.html"},{"lineagePattern":"molecules-card-splash-title","lineagePath":"../../patterns/molecules-cards-elements-card-splash-title/molecules-cards-elements-card-splash-title.rendered.html"},{"lineagePattern":"molecules-card-splash-desc","lineagePath":"../../patterns/molecules-cards-elements-card-splash-desc/molecules-cards-elements-card-splash-desc.rendered.html"},{"lineagePattern":"molecules-card-splash-footer","lineagePath":"../../patterns/molecules-cards-elements-card-splash-footer/molecules-cards-elements-card-splash-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-splash-header","lineagePath":"../../patterns/molecules-cards-elements-card-splash-header/molecules-cards-elements-card-splash-header.rendered.html"},{"lineagePattern":"molecules-card-splash-title","lineagePath":"../../patterns/molecules-cards-elements-card-splash-title/molecules-cards-elements-card-splash-title.rendered.html"},{"lineagePattern":"molecules-card-splash-desc","lineagePath":"../../patterns/molecules-cards-elements-card-splash-desc/molecules-cards-elements-card-splash-desc.rendered.html"},{"lineagePattern":"molecules-card-splash-footer","lineagePath":"../../patterns/molecules-cards-elements-card-splash-footer/molecules-cards-elements-card-splash-footer.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"pages-teams-splash-screen-multi","lineagePath":"../../patterns/pages-teams-teams-splash-screen-multi/pages-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"pages-teams-splash-screen","lineagePath":"../../patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html"},{"lineagePattern":"templates-teams-splash-screen-multi","lineagePath":"../../patterns/templates-teams-teams-splash-screen-multi/templates-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"templates-teams-splash-screen","lineagePath":"../../patterns/templates-teams-teams-splash-screen/templates-teams-teams-splash-screen.rendered.html"}],"lineageR":[{"lineagePattern":"pages-teams-splash-screen-multi","lineagePath":"../../patterns/pages-teams-teams-splash-screen-multi/pages-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"pages-teams-splash-screen","lineagePath":"../../patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html"},{"lineagePattern":"templates-teams-splash-screen-multi","lineagePath":"../../patterns/templates-teams-teams-splash-screen-multi/templates-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"templates-teams-splash-screen","lineagePath":"../../patterns/templates-teams-teams-splash-screen/templates-teams-teams-splash-screen.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Teams Splash Card</h1>\n<p>The Teams Splash Card is a feature-rich, promotional card component designed for highlighting content with maximum visual impact. It provides a prominent presentation style with centered content layout and dedicated areas for images, descriptive text, and call-to-action buttons, making it ideal for Microsoft Teams applications and welcome interfaces.</p>\n<h2>Overview</h2>\n<p>The Teams Splash Card serves as a high-impact content presentation component, specifically designed for feature highlights, application introductions, and promotional content. It combines visual elements with compelling messaging and clear action paths to guide user engagement and adoption.</p>\n<h2>Features</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Centered Layout</strong>: All content centered for maximum visual impact</li>\n<li><strong>Generous Spacing</strong>: Large padding (3rem 1.25rem) for breathing room</li>\n<li><strong>Maximum Width</strong>: Constrained to 33rem (≈528px) for optimal readability</li>\n<li><strong>Elevation Effects</strong>: Footer buttons with box shadow for emphasis</li>\n<li><strong>Image Optimization</strong>: Centered images with maximum width of 320px</li>\n</ul>\n<h3>Content Structure</h3>\n<ul>\n<li><strong>Header Section</strong>: Optional top section for branding or context</li>\n<li><strong>Hero Image</strong>: Large, centered visual element</li>\n<li><strong>Title Display</strong>: Prominent heading (18px) for primary messaging</li>\n<li><strong>Description Area</strong>: Supporting text content with proper typography</li>\n<li><strong>Action Footer</strong>: Button collection with elevated styling</li>\n</ul>\n<h3>Layout Flexibility</h3>\n<ul>\n<li><strong>Container Adaptation</strong>: Flexible width within maximum constraints</li>\n<li><strong>Vertical Flow</strong>: Logical content progression from top to bottom</li>\n<li><strong>Responsive Behavior</strong>: Adapts gracefully to different container sizes</li>\n<li><strong>Touch Optimization</strong>: Adequate spacing and touch targets for mobile</li>\n</ul>\n<h2>Structure</h2>\n<p>The Teams Splash Card consists of four main sections:</p>\n<ol>\n<li><strong><a href=\"../molecules/cards-elements/card-splash-header\">Card Splash Header</a></strong>: Optional branding or icon area</li>\n<li><strong><a href=\"../molecules/cards-elements/card-splash-title\">Card Splash Title</a></strong>: Primary heading and messaging</li>\n<li><strong><a href=\"../molecules/cards-elements/card-splash-desc\">Card Splash Description</a></strong>: Supporting descriptive content</li>\n<li><strong><a href=\"../molecules/cards-elements/card-splash-footer\">Card Splash Footer</a></strong>: Action buttons with elevation</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;headerImage&quot;: &quot;../../images/branding/welcome-graphic.svg&quot;,\n    &quot;cardtitle&quot;: &quot;Welcome to Your Enhanced Workspace Experience&quot;,\n    &quot;description&quot;: &quot;Explore new features and capabilities designed to streamline your workflow and enhance team collaboration with powerful, intuitive tools.&quot;,\n    &quot;prim-btn&quot;: {\n        &quot;button&quot;: {\n            &quot;label&quot;: &quot;Start Exploring&quot;\n        }\n    },\n    &quot;sec-btn&quot;: {\n        &quot;button&quot;: {\n            &quot;label&quot;: &quot;View Tutorial&quot;\n        }\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<h3>Container Classes</h3>\n<ul>\n<li><strong><code>.hoo-splashcard</code></strong>: Main card container with centered layout</li>\n<li><strong><code>.hoo-splashcard-header</code></strong>: Header section with optional branding</li>\n<li><strong><code>.hoo-splashcard-img</code></strong>: Image styling with responsive behavior</li>\n<li><strong><code>.hoo-splashcard-title</code></strong>: Title styling with prominent typography</li>\n</ul>\n<h3>Content Classes</h3>\n<ul>\n<li><strong><code>.hoo-splashcard-desc</code></strong>: Description text with proper spacing</li>\n<li><strong><code>.hoo-splashcard-footer</code></strong>: Action button container with elevation</li>\n</ul>\n<h2>Styling</h2>\n<h3>Container Layout</h3>\n<h3>Typography Hierarchy</h3>\n<h3>Interactive Elements</h3>\n<h3>Visual Properties</h3>\n<ul>\n<li><strong>Max Width</strong>: 33rem (528px) for optimal readability</li>\n<li><strong>Padding</strong>: 3rem vertical, 1.25rem horizontal for generous spacing</li>\n<li><strong>Image Size</strong>: Maximum 320px width for hero images</li>\n<li><strong>Button Width</strong>: 290px consistent width for action buttons</li>\n<li><strong>Gap Spacing</strong>: 0.5rem between footer buttons</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Application Onboarding</h3>\n<ul>\n<li><strong>Welcome Screens</strong>: First-time user introduction and orientation</li>\n<li><strong>Feature Announcements</strong>: New feature highlights and explanations</li>\n<li><strong>Getting Started</strong>: Initial setup and configuration guidance</li>\n<li><strong>Tutorial Introductions</strong>: Learning path entry points</li>\n</ul>\n<h3>Marketing and Promotion</h3>\n<ul>\n<li><strong>Product Features</strong>: Key benefit and capability highlights</li>\n<li><strong>Service Promotion</strong>: New service or offering announcements</li>\n<li><strong>Event Marketing</strong>: Conference, webinar, and event promotion</li>\n<li><strong>Campaign Landing</strong>: Marketing campaign entry points</li>\n</ul>\n<h3>Microsoft Teams Integration</h3>\n<ul>\n<li><strong>Teams Apps</strong>: Application introduction and feature highlights</li>\n<li><strong>Bot Interfaces</strong>: Welcome messages and capability overviews</li>\n<li><strong>Tab Applications</strong>: Feature introduction and navigation</li>\n<li><strong>Connector Cards</strong>: Service integration and status updates</li>\n</ul>\n<h3>Dashboard and Portal</h3>\n<ul>\n<li><strong>Admin Interfaces</strong>: Feature announcements and system updates</li>\n<li><strong>User Dashboards</strong>: New capability introductions</li>\n<li><strong>Portal Landing</strong>: Department or team-specific welcome content</li>\n<li><strong>Resource Centers</strong>: Tool and service introductions</li>\n</ul>\n<h2>Accessibility</h2>\n<h3>Semantic Structure</h3>\n<ul>\n<li><strong>Article Element</strong>: Uses <code>&lt;article&gt;</code> for self-contained content</li>\n<li><strong>Heading Hierarchy</strong>: Proper heading structure with <code>&lt;h2&gt;</code> for titles</li>\n<li><strong>Image Alt Text</strong>: Descriptive alternative text for all images</li>\n<li><strong>Button Labels</strong>: Clear, action-oriented button text</li>\n</ul>\n<h3>Visual Accessibility</h3>\n<ul>\n<li><strong>Text Contrast</strong>: High contrast ratios for all text content</li>\n<li><strong>Font Sizing</strong>: Appropriate font sizes for readability (18px title, 14px body)</li>\n<li><strong>Spacing</strong>: Adequate white space for visual clarity</li>\n<li><strong>Focus Indicators</strong>: Clear focus states for interactive elements</li>\n</ul>\n<h3>Interaction Design</h3>\n<ul>\n<li><strong>Touch Targets</strong>: Minimum 44px touch target sizes for buttons</li>\n<li><strong>Button Spacing</strong>: 0.5rem gap between action buttons</li>\n<li><strong>Keyboard Navigation</strong>: Full keyboard support for all interactive elements</li>\n<li><strong>Screen Reader</strong>: Logical reading order and meaningful content structure</li>\n</ul>\n<h2>Behavior and Interaction</h2>\n<h3>Layout Adaptation</h3>\n<ul>\n<li><strong>Container Response</strong>: Adapts to parent container dimensions</li>\n<li><strong>Content Flow</strong>: Maintains vertical content progression</li>\n<li><strong>Image Scaling</strong>: Responsive image sizing within constraints</li>\n<li><strong>Button Stacking</strong>: Vertical button layout for mobile optimization</li>\n</ul>\n<h3>Interactive Feedback</h3>\n<ul>\n<li><strong>Button Elevation</strong>: Box shadow effects on footer buttons</li>\n<li><strong>Hover States</strong>: Visual feedback for interactive elements</li>\n<li><strong>Focus Management</strong>: Clear focus indicators and logical tab order</li>\n<li><strong>Touch Response</strong>: Optimized for touch interactions</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Content Strategy</h3>\n<ul>\n<li><strong>Clear Messaging</strong>: Use concise, compelling titles and descriptions</li>\n<li><strong>Action-Oriented</strong>: Include clear, specific call-to-action buttons</li>\n<li><strong>Visual Hierarchy</strong>: Maintain consistent information architecture</li>\n<li><strong>Brand Alignment</strong>: Use imagery and messaging aligned with brand voice</li>\n</ul>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Image Quality</strong>: Use high-resolution, professional imagery</li>\n<li><strong>Consistent Spacing</strong>: Maintain uniform spacing patterns</li>\n<li><strong>Color Integration</strong>: Leverage theme colors for consistency</li>\n<li><strong>Typography Hierarchy</strong>: Use consistent font sizing and line heights</li>\n</ul>\n<h3>User Experience</h3>\n<ul>\n<li><strong>Progressive Disclosure</strong>: Present information in logical order</li>\n<li><strong>Clear Actions</strong>: Provide obvious next steps for users</li>\n<li><strong>Loading States</strong>: Consider loading animations for dynamic content</li>\n<li><strong>Error Handling</strong>: Graceful handling of missing or failed content</li>\n</ul>\n<h3>Development</h3>\n<ul>\n<li><strong>Performance</strong>: Optimize images and assets for web delivery</li>\n<li><strong>Responsiveness</strong>: Test across different container sizes</li>\n<li><strong>Accessibility</strong>: Ensure keyboard and screen reader compatibility</li>\n<li><strong>Testing</strong>: Validate with real content and various content lengths</li>\n</ul>\n<h2>Integration Examples</h2>\n<h3>Microsoft Teams Tab App</h3>\n<h3>SharePoint SPFx Web Part</h3>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Flexbox</strong>: Requires CSS Flexbox support for layout</li>\n<li><strong>CSS Box Shadow</strong>: Uses box-shadow for button elevation</li>\n<li><strong>CSS Custom Properties</strong>: Theme integration through CSS variables</li>\n<li><strong>HTML5 Semantic Elements</strong>: Uses modern HTML5 article element</li>\n</ul>\n<h2>SCSS Import</h2>\n<h2>SCSS Imports</h2>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Teams Splash Card","patternPartial":"organism-teams-splash-card","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":11}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -190,18 +381,19 @@
     <div class="hoo-cardhtml"></div>    <div class="hoo-cardlocation">Marketing</div>
     <div class="hoo-cardtitle"></div>
     <footer class="hoo-cardfooter">
-        <div class="hoo-avatar">
-            <img src="" alt="" class="hoo-avatar-img"   loading="lazy">
-        </div>    <div class="hoo-cardfooter-data">
-            <div class="hoo-cardfooter-name">Man on the moon</div>
-            <div class="hoo-cardfooter-modified">Created a seconds ago</div>
-        </div>
+      <div class="hoo-avatar-32">
+        <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="32" width="32" loading="lazy">
+      </div>
+      <div class="hoo-cardfooter-data">
+        <div class="hoo-cardfooter-name">Man on the moon</div>
+        <div class="hoo-cardfooter-modified">Created a seconds ago</div>
+      </div>
     </footer>
 </article>
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-document-card-html" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image-html","lineagePath":"../../patterns/molecules-cards-elements-card-image-html/molecules-cards-elements-card-image-html.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image-html","lineagePath":"../../patterns/molecules-cards-elements-card-image-html/molecules-cards-elements-card-image-html.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-card-grid-html","lineagePath":"../../patterns/templates-card.grid-card-grid-html/templates-card.grid-card-grid-html.rendered.html"}],"lineageR":[{"lineagePattern":"templates-card-grid-html","lineagePath":"../../patterns/templates-card.grid-card-grid-html/templates-card.grid-card-grid-html.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<p>Automatically adjust itself to the parent container. To make this possible no pre-define width was specified here to avoid the need to overwrite styles.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card HTML","patternPartial":"organism-document-card-html","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image-html","lineagePath":"../../patterns/molecules-cards-elements-card-image-html/molecules-cards-elements-card-image-html.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image-html","lineagePath":"../../patterns/molecules-cards-elements-card-image-html/molecules-cards-elements-card-image-html.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-card-grid-html","lineagePath":"../../patterns/templates-card.grid-card-grid-html/templates-card.grid-card-grid-html.rendered.html"}],"lineageR":[{"lineagePattern":"templates-card-grid-html","lineagePath":"../../patterns/templates-card.grid-card-grid-html/templates-card.grid-card-grid-html.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Document Card - HTML</h1>\n<p>The Document Card HTML variant supports rich HTML content display within the card structure, enabling more complex content layouts while maintaining the consistent visual design and adaptive behavior of the standard Document Card system.</p>\n<h2>Overview</h2>\n<p>This variant extends the Document Card to support rich HTML content, allowing for formatted text, embedded media, and complex layouts within the card structure. It maintains the same responsive behavior and accessibility features while enabling enhanced content presentation.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Rich HTML Content</strong>: Support for formatted HTML content and embedded elements</li>\n<li><strong>Adaptive Layout</strong>: Maintains flexible width and container adaptation</li>\n<li><strong>Enhanced Content</strong>: Complex layouts with mixed media and formatted text</li>\n<li><strong>Standard Structure</strong>: Builds on the same molecular component foundation</li>\n<li><strong>Theme Integration</strong>: Inherits HTWOO theme styling and color schemes</li>\n</ul>\n<h2>Usage</h2>\n<p>Ideal for scenarios requiring:</p>\n<ul>\n<li>Formatted text content with HTML markup</li>\n<li>Embedded media within card content</li>\n<li>Complex content layouts beyond simple text</li>\n<li>Rich content previews and presentations</li>\n</ul>\n<h2>Structure</h2>\n<p>Extends the standard Document Card structure to accommodate HTML content:</p>\n<ol>\n<li><strong>Card Image</strong>: Visual preview or thumbnail (standard)</li>\n<li><strong>Card Location</strong>: Source or category information (standard)</li>\n<li><strong>Card Title</strong>: Document name or headline (standard)</li>\n<li><strong>Card Content</strong>: Rich HTML content area (enhanced)</li>\n<li><strong>Card Footer</strong>: Author, date, and metadata (standard)</li>\n</ol>\n<h2>Content Guidelines</h2>\n<h3>HTML Content</h3>\n<ul>\n<li>Use semantic HTML elements for proper structure</li>\n<li>Maintain consistent typography hierarchy</li>\n<li>Ensure accessibility with proper ARIA labels</li>\n<li>Test content with various lengths and formats</li>\n</ul>\n<h3>Media Integration</h3>\n<ul>\n<li>Optimize images and media for card dimensions</li>\n<li>Provide appropriate alt text for accessibility</li>\n<li>Consider loading performance with rich content</li>\n<li>Maintain responsive behavior across screen sizes</li>\n</ul>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card HTML","patternPartial":"organism-document-card-html","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":12}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -212,7 +404,7 @@
 				<h3 class="pl-c-pattern__title">
 		
 					<a href="../../patterns/organism-cards-document-card-shimmer&#x2F;organism-cards-document-card-shimmer.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-document-card-shimmer" title="Link to Pattern">
-						Document Card
+						Document Card Shimmer
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
@@ -261,25 +453,25 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-organism-document-card-shimmer" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-shimmer-squared","lineagePath":"../../patterns/atoms-loading-shimmer-squared/atoms-loading-shimmer-squared.rendered.html"},{"lineagePattern":"atoms-shimmer-row","lineagePath":"../../patterns/atoms-loading-shimmer-row/atoms-loading-shimmer-row.rendered.html"},{"lineagePattern":"atoms-shimmer-circle","lineagePath":"../../patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html"}],"lineage":[{"lineagePattern":"atoms-shimmer-squared","lineagePath":"../../patterns/atoms-loading-shimmer-squared/atoms-loading-shimmer-squared.rendered.html"},{"lineagePattern":"atoms-shimmer-row","lineagePath":"../../patterns/atoms-loading-shimmer-row/atoms-loading-shimmer-row.rendered.html"},{"lineagePattern":"atoms-shimmer-circle","lineagePath":"../../patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<p>Automatically adjust itself to the parent container. To make this possible no pre-define width was specified here to avoid the need to overwrite styles.</p>\n<h3>SCSS Imports</h3>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<p><strong>Shimmer Effect:</strong><br>\n@n8d/htwoo-core/components/loading</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card","patternPartial":"organism-document-card-shimmer","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-shimmer-squared","lineagePath":"../../patterns/atoms-loading-shimmer-squared/atoms-loading-shimmer-squared.rendered.html"},{"lineagePattern":"atoms-shimmer-row","lineagePath":"../../patterns/atoms-loading-shimmer-row/atoms-loading-shimmer-row.rendered.html"},{"lineagePattern":"atoms-shimmer-circle","lineagePath":"../../patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html"}],"lineage":[{"lineagePattern":"atoms-shimmer-squared","lineagePath":"../../patterns/atoms-loading-shimmer-squared/atoms-loading-shimmer-squared.rendered.html"},{"lineagePattern":"atoms-shimmer-row","lineagePath":"../../patterns/atoms-loading-shimmer-row/atoms-loading-shimmer-row.rendered.html"},{"lineagePattern":"atoms-shimmer-circle","lineagePath":"../../patterns/atoms-loading-shimmer-circle/atoms-loading-shimmer-circle.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Document Card - Shimmer</h1>\n<p>The Document Card Shimmer variant provides an animated loading state that maintains the visual structure of the Document Card while content loads asynchronously. It uses shimmer animations to indicate loading progress and enhance perceived performance.</p>\n<h2>Overview</h2>\n<p>This variant creates a skeleton loading state with animated shimmer effects that match the Document Card layout. It provides visual feedback to users during content loading while maintaining the expected card structure and dimensions.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Shimmer Animation</strong>: Subtle animated loading indicators</li>\n<li><strong>Structural Consistency</strong>: Maintains Document Card layout during loading</li>\n<li><strong>Performance Enhancement</strong>: Improves perceived loading performance</li>\n<li><strong>Adaptive Layout</strong>: Same responsive behavior as standard Document Card</li>\n<li><strong>Smooth Transitions</strong>: Seamless transition from loading to loaded state</li>\n</ul>\n<h2>Usage</h2>\n<p>Ideal for scenarios with:</p>\n<ul>\n<li>Asynchronous content loading</li>\n<li>Network-dependent content</li>\n<li>Large document collections</li>\n<li>Progressive loading patterns</li>\n<li>Performance-sensitive interfaces</li>\n</ul>\n<h2>Structure</h2>\n<p>Maintains the same visual structure as Document Card with shimmer placeholders:</p>\n<ol>\n<li><strong>Image Placeholder</strong>: Shimmer animation for image loading</li>\n<li><strong>Location Placeholder</strong>: Animated placeholder for location text</li>\n<li><strong>Title Placeholder</strong>: Shimmer effect for title loading</li>\n<li><strong>Footer Placeholder</strong>: Animated placeholders for metadata</li>\n</ol>\n<h2>Animation Behavior</h2>\n<h3>Shimmer Effect</h3>\n<ul>\n<li><strong>Gradient Animation</strong>: Subtle animated gradient overlay</li>\n<li><strong>Timing</strong>: Smooth, continuous animation loop</li>\n<li><strong>Performance</strong>: GPU-accelerated animations for smooth performance</li>\n<li><strong>Duration</strong>: Appropriate timing for loading perception</li>\n</ul>\n<h3>Transition Handling</h3>\n<ul>\n<li><strong>Fade-in</strong>: Smooth transition from shimmer to actual content</li>\n<li><strong>Layout Preservation</strong>: Maintains card dimensions during transition</li>\n<li><strong>Content Replacement</strong>: Seamless content substitution</li>\n<li><strong>State Management</strong>: Clear loading state indicators</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>User Experience</h3>\n<ul>\n<li><strong>Loading Duration</strong>: Don't show shimmer for very short loading times</li>\n<li><strong>Content Priority</strong>: Load critical content first</li>\n<li><strong>Error States</strong>: Transition to error states when loading fails</li>\n<li><strong>Progressive Loading</strong>: Load content progressively as it becomes available</li>\n</ul>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card Shimmer","patternPartial":"organism-document-card-shimmer","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":13}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
-		<div id="organism-teams-splash-card" class="pl-c-pattern">
+		<div id="organism-document-card-click" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
 				<h3 class="pl-c-pattern__title">
 		
-					<a href="../../patterns/organism-cards-teams-splash-card&#x2F;organism-cards-teams-splash-card.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-teams-splash-card" title="Link to Pattern">
-						Teams Splash Cards
+					<a href="../../patterns/organism-cards-document-card-click&#x2F;organism-cards-document-card-click.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="organism-document-card-click" title="Link to Pattern">
+						Document Card Click
 		
 		
 					</a><!--end pl-c-pattern__title-link-->
 		
 				</h3><!--end pl-c-pattern__title-->
 		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-teams-splash-card" data-patternpartial="organism-teams-splash-card" title="View Pattern Info" type="button">
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-organism-document-card-click" data-patternpartial="organism-document-card-click" title="View Pattern Info" type="button">
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
 					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
 						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
@@ -296,33 +488,30 @@
 		
 			</div><!--end pl-c-pattern__header-->
 		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-teams-splash-card">
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-organism-document-card-click">
 		    </div><!--end pl-c-pattern__extra-->
 		
 			<div class="pl-js-pattern-example">
-			<article class="hoo-splashcard">
-    <header class="hoo-splashcard-header" role="presentation">
-        <img src="../../images/card-images/htwoo-gm-001.svg" class="hoo-splashcard-img">
-    </header>
-    <h1 class="hoo-splashcard-title">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.
-    </h1>
-        <p class="hoo-splashcard-desc">
-           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit. 
-        </p>
-    <footer class="hoo-splashcard-footer">
-        <button class="hoo-button-primary">
-            <span class="hoo-button-label">Create something</span>
-        </button>
-        <button class="hoo-button">
-            <span class="hoo-button-label">Call for action</span>
-        </button>
+			<article class="hoo-doccard">
+    <figure class="hoo-cardimage">
+        <img src="../../images/card-images/coffee-image.jpg" width="320" height="180" alt="">
+    </figure>
+    <div class="hoo-cardlocation">Marketing</div>
+    <div class="hoo-cardtitle"></div>
+    <footer class="hoo-cardfooter">
+        <div class="hoo-avatar">
+            <img src="../../images/mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" loading="lazy">
+        </div>
+        <div class="hoo-cardfooter-data">
+            <div class="hoo-cardfooter-name">Man on the moon</div>
+            <div class="hoo-cardfooter-modified">Created a seconds ago</div>
+        </div>
     </footer>
-</article>
+</div>
 			</div><!--end pl-js-pattern-example-->
 		
-			<script type="text/json" id="pl-pattern-data-organism-teams-splash-card" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-splash-header","lineagePath":"../../patterns/molecules-cards-elements-card-splash-header/molecules-cards-elements-card-splash-header.rendered.html"},{"lineagePattern":"molecules-card-splash-title","lineagePath":"../../patterns/molecules-cards-elements-card-splash-title/molecules-cards-elements-card-splash-title.rendered.html"},{"lineagePattern":"molecules-card-splash-desc","lineagePath":"../../patterns/molecules-cards-elements-card-splash-desc/molecules-cards-elements-card-splash-desc.rendered.html"},{"lineagePattern":"molecules-card-splash-footer","lineagePath":"../../patterns/molecules-cards-elements-card-splash-footer/molecules-cards-elements-card-splash-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-splash-header","lineagePath":"../../patterns/molecules-cards-elements-card-splash-header/molecules-cards-elements-card-splash-header.rendered.html"},{"lineagePattern":"molecules-card-splash-title","lineagePath":"../../patterns/molecules-cards-elements-card-splash-title/molecules-cards-elements-card-splash-title.rendered.html"},{"lineagePattern":"molecules-card-splash-desc","lineagePath":"../../patterns/molecules-cards-elements-card-splash-desc/molecules-cards-elements-card-splash-desc.rendered.html"},{"lineagePattern":"molecules-card-splash-footer","lineagePath":"../../patterns/molecules-cards-elements-card-splash-footer/molecules-cards-elements-card-splash-footer.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"templates-teams-splash-screen-multi","lineagePath":"../../patterns/templates-teams-teams-splash-screen-multi/templates-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"templates-teams-splash-screen","lineagePath":"../../patterns/templates-teams-teams-splash-screen/templates-teams-teams-splash-screen.rendered.html"},{"lineagePattern":"pages-teams-splash-screen-multi","lineagePath":"../../patterns/pages-teams-teams-splash-screen-multi/pages-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"pages-teams-splash-screen","lineagePath":"../../patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html"}],"lineageR":[{"lineagePattern":"templates-teams-splash-screen-multi","lineagePath":"../../patterns/templates-teams-teams-splash-screen-multi/templates-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"templates-teams-splash-screen","lineagePath":"../../patterns/templates-teams-teams-splash-screen/templates-teams-teams-splash-screen.rendered.html"},{"lineagePattern":"pages-teams-splash-screen-multi","lineagePath":"../../patterns/pages-teams-teams-splash-screen-multi/pages-teams-teams-splash-screen-multi.rendered.html"},{"lineagePattern":"pages-teams-splash-screen","lineagePath":"../../patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h3>SCSS Imports</h3>\n<p><strong>Main Component:</strong><br>\n@n8d/htwoo-core/components/cards</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Teams Splash Cards","patternPartial":"organism-teams-splash-card","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			<script type="text/json" id="pl-pattern-data-organism-document-card-click" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"lineage":[{"lineagePattern":"molecules-card-image","lineagePath":"../../patterns/molecules-cards-elements-card-image/molecules-cards-elements-card-image.rendered.html"},{"lineagePattern":"molecules-card-location","lineagePath":"../../patterns/molecules-cards-elements-card-location/molecules-cards-elements-card-location.rendered.html"},{"lineagePattern":"molecules-card-title","lineagePath":"../../patterns/molecules-cards-elements-card-title/molecules-cards-elements-card-title.rendered.html"},{"lineagePattern":"molecules-card-footer","lineagePath":"../../patterns/molecules-cards-elements-card-footer/molecules-cards-elements-card-footer.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"<h1>Document Card - Clickable</h1>\n<p>The Document Card Clickable variant provides enhanced click handling and interaction features while maintaining the core structure and functionality of the standard Document Card. This variant is optimized for scenarios requiring additional click behavior or custom interaction patterns.</p>\n<h2>Overview</h2>\n<p>This variant extends the basic Document Card with enhanced click handling capabilities, allowing for more sophisticated interaction patterns while preserving the adaptive layout and accessibility features of the standard card.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Enhanced Click Handling</strong>: Additional click event processing and feedback</li>\n<li><strong>Custom Interaction</strong>: Support for complex interaction patterns</li>\n<li><strong>Adaptive Layout</strong>: Maintains flexible width and container adaptation</li>\n<li><strong>Standard Structure</strong>: Uses the same molecular components as base Document Card</li>\n<li><strong>Accessibility</strong>: Preserves keyboard navigation and screen reader support</li>\n</ul>\n<h2>Usage</h2>\n<p>Ideal for scenarios requiring:</p>\n<ul>\n<li>Custom click analytics or tracking</li>\n<li>Multi-action card interfaces</li>\n<li>Specialized navigation patterns</li>\n<li>Enhanced user feedback</li>\n</ul>\n<h2>Structure</h2>\n<p>Uses the same structure as the standard Document Card:</p>\n<ol>\n<li><strong>Card Image</strong>: Visual preview or thumbnail</li>\n<li><strong>Card Location</strong>: Source or category information</li>\n<li><strong>Card Title</strong>: Document name or headline</li>\n<li><strong>Card Footer</strong>: Author, date, and metadata</li>\n</ol>\n<h2>SCSS Import</h2>\n","patternBreadcrumb":{"patternGroup":"organism","patternSubgroup":"cards"},"patternExtension":"hbs","patternName":"Document Card Click","patternPartial":"organism-document-card-click","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":14}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -373,10 +562,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -389,7 +578,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -437,6 +626,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>

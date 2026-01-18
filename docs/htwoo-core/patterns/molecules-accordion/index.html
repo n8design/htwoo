@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768594470661" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768594470661" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768594470661" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -31,109 +31,64 @@
 			</h2><!--end pl-c-category__title-->
 		
 			<div class="pl-c-category__description pl-c-text-passage">
-				
+				<h1>Accordion Components</h1>
+<p>Accordions in HTWOO provide collapsible content panels that help manage space in the UI by showing and hiding content. They're implemented using the native HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements for better semantics and accessibility.</p>
+<h2>Components</h2>
+<p>The HTWOO accordion system consists of several components:</p>
+<ul>
+<li><strong>Accordion Item</strong> - The main container for a single collapsible section</li>
+<li><strong>Accordion Header</strong> - The clickable title bar with an icon that controls the expansion state</li>
+<li><strong>Accordion Content</strong> - The collapsible content area</li>
+<li><strong>Accordion Group</strong> - A container for multiple accordion items</li>
+</ul>
+<h2>Components</h2>
+<p>The HTWOO accordion system consists of several components:</p>
+<ul>
+<li><strong>Accordion Item</strong> - The main container for a single collapsible section</li>
+<li><strong>Accordion Header</strong> - The clickable title bar with an icon that controls the expansion state</li>
+<li><strong>Accordion Content</strong> - The collapsible content area</li>
+<li><strong>Accordion Group</strong> - A container for multiple accordion items</li>
+</ul>
+<h2>SCSS Imports</h2>
+<p><strong>Main Component</strong><br>
+@n8d/htwoo-core/components/menu/accordion</p>
+<p><strong>SCSS Partial Location</strong><br>
+/src/sass/02-molecules/menu/_accordion.scss</p>
+<h2>Features</h2>
+<ul>
+<li>Uses native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> elements for semantics and accessibility</li>
+<li>Smooth icon rotation animation to indicate state</li>
+<li>Customizable content area</li>
+<li>Proper heading structure with <code>&lt;h3&gt;</code> elements</li>
+<li>Margin and padding optimized for readability and hierarchy</li>
+</ul>
+<h2>Accessibility</h2>
+<p>Accordions implemented with <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements have built-in accessibility benefits:</p>
+<ul>
+<li>Native keyboard support (Enter or Space to toggle)</li>
+<li>Proper ARIA states managed by the browser</li>
+<li>Focus management for keyboard users</li>
+<li>Screen reader announcements of expanded/collapsed state</li>
+</ul>
+<p>For additional accessibility:</p>
+<ul>
+<li>The accordion group uses <code>role=&quot;accordion&quot;</code> to identify its purpose</li>
+<li>Each heading should be contextually relevant to its content</li>
+<li>Focus states are appropriately styled</li>
+</ul>
+<h2>Usage Best Practices</h2>
+<ul>
+<li>Use accordions to organize related content into manageable sections</li>
+<li>Keep headers concise and descriptive</li>
+<li>Avoid nesting accordions too deeply</li>
+<li>Consider whether users need to compare information across sections (in which case, accordions might not be ideal)</li>
+<li>Use consistent icons for state indication</li>
+</ul>
+
 			</div><!--end pl-c-category__description-->
 			
 		</div><!--end pl-c-category-->
-					<div id="molecules-accordion-content" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-accordion-accordion-content&#x2F;molecules-accordion-accordion-content.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-accordion-content" title="Link to Pattern">
-						Accordion Content
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-accordion-content" data-patternpartial="molecules-accordion-content" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-accordion-content">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<div class="hoo-accordion-content">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam similique delectus facilis, quae aspernatur ipsam eveniet commodi assumenda ipsa iure dolorem quidem enim illum perferendis amet nam suscipit unde dicta reiciendis eligendi ratione dignissimos? Aperiam hic vel quis ex consequuntur, possimus magnam rerum in officiis fugit non inventore voluptas earum minima iure! Et, eaque repellendus cumque optio nam odit. Voluptatibus nulla facere atque iusto veniam, explicabo voluptatum maxime praesentium quasi corrupti quia? Unde tempore officia esse deserunt praesentium ipsum accusantium hic expedita aliquid harum nobis doloribus necessitatibus cum facilis, temporibus laudantium rem quo tempora eius maiores ab veritatis. Unde, ex!
-</div>
-
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-accordion-content" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Content","patternPartial":"molecules-accordion-content","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-accordion-header" class="pl-c-pattern">
-		
-			<div class="pl-c-pattern__header">
-		
-				<h3 class="pl-c-pattern__title">
-		
-					<a href="../../patterns/molecules-accordion-accordion-header&#x2F;molecules-accordion-accordion-header.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-accordion-header" title="Link to Pattern">
-						Accordion Header
-		
-		
-					</a><!--end pl-c-pattern__title-link-->
-		
-				</h3><!--end pl-c-pattern__title-->
-		
-				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-accordion-header" data-patternpartial="molecules-accordion-header" title="View Pattern Info" type="button">
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
-					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
-						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
-							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-						</svg>
-		
-						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
-							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
-							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
-							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
-						</svg>
-				</button>
-		
-			</div><!--end pl-c-pattern__header-->
-		
-			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-accordion-header">
-		    </div><!--end pl-c-pattern__extra-->
-		
-			<div class="pl-js-pattern-example">
-			<summary class="hoo-accordion-header">
-    <div class="hoo-accordion-summary">
-        <span class="hoo-icon">
-            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
-                <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
-                <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
-            </svg>
-        </span>        <h3>Lorem ipsum dolor sit.</h3>
-    </div>
-</summary>
-			</div><!--end pl-js-pattern-example-->
-		
-			<script type="text/json" id="pl-pattern-data-molecules-accordion-header" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"organism-form-flow-4","lineagePath":"../../patterns/organism-form-sample-form-flow-4/organism-form-sample-form-flow-4.rendered.html"},{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"lineageR":[{"lineagePattern":"organism-form-flow-4","lineagePath":"../../patterns/organism-form-sample-form-flow-4/organism-form-sample-form-flow-4.rendered.html"},{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Header","patternPartial":"molecules-accordion-header","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
-			</script>
-		
-		</div><!--end pl-c-pattern-->
-		<div id="molecules-accordion-item" class="pl-c-pattern">
+					<div id="molecules-accordion-item" class="pl-c-pattern">
 		
 			<div class="pl-c-pattern__header">
 		
@@ -186,7 +141,105 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-accordion-item" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-accordion-header","lineagePath":"../../patterns/molecules-accordion-accordion-header/molecules-accordion-accordion-header.rendered.html"},{"lineagePattern":"molecules-accordion-content","lineagePath":"../../patterns/molecules-accordion-accordion-content/molecules-accordion-accordion-content.rendered.html"}],"lineage":[{"lineagePattern":"molecules-accordion-header","lineagePath":"../../patterns/molecules-accordion-accordion-header/molecules-accordion-accordion-header.rendered.html"},{"lineagePattern":"molecules-accordion-content","lineagePath":"../../patterns/molecules-accordion-accordion-content/molecules-accordion-accordion-content.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"organism-accordion-group","lineagePath":"../../patterns/organism-accordion-accordion-group/organism-accordion-accordion-group.rendered.html"}],"lineageR":[{"lineagePattern":"organism-accordion-group","lineagePath":"../../patterns/organism-accordion-accordion-group/organism-accordion-accordion-group.rendered.html"}],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Item","patternPartial":"molecules-accordion-item","patternState":"","patternEngineName":"handlebars","extraOutput":{}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"molecules-accordion-header","lineagePath":"../../patterns/molecules-accordion-accordion-header/molecules-accordion-accordion-header.rendered.html"},{"lineagePattern":"molecules-accordion-content","lineagePath":"../../patterns/molecules-accordion-accordion-content/molecules-accordion-accordion-content.rendered.html"}],"lineage":[{"lineagePattern":"molecules-accordion-header","lineagePath":"../../patterns/molecules-accordion-accordion-header/molecules-accordion-accordion-header.rendered.html"},{"lineagePattern":"molecules-accordion-content","lineagePath":"../../patterns/molecules-accordion-accordion-content/molecules-accordion-accordion-content.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"organism-accordion-group","lineagePath":"../../patterns/organism-accordion-accordion-group/organism-accordion-accordion-group.rendered.html"}],"lineageR":[{"lineagePattern":"organism-accordion-group","lineagePath":"../../patterns/organism-accordion-accordion-group/organism-accordion-accordion-group.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Accordion Item</h1>\n<p>A collapsible content container that uses the native HTML <code>&lt;details&gt;</code> element to provide expand/collapse functionality. The accordion item is the fundamental building block for creating progressive disclosure interfaces with optimal accessibility and performance.</p>\n<h2>Overview</h2>\n<p>The Accordion Item component provides a single collapsible section that can contain any type of content. Built on semantic HTML with the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements, it offers native keyboard support, screen reader compatibility, and smooth visual transitions. Each item can be used independently or combined into accordion groups.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Native HTML Semantics</strong>: Uses <code>&lt;details&gt;</code> element for built-in behavior</li>\n<li><strong>Keyboard Accessible</strong>: Full keyboard navigation support out of the box</li>\n<li><strong>Screen Reader Friendly</strong>: Proper ARIA semantics and announcements</li>\n<li><strong>Smooth Animations</strong>: CSS transitions for expand/collapse states</li>\n<li><strong>Flexible Content</strong>: Supports any content type in the collapsible area</li>\n<li><strong>Independent Operation</strong>: Works standalone or in groups</li>\n<li><strong>Focus Management</strong>: Clear focus indicators and logical tab order</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Details Container</strong>: <code>&lt;details&gt;</code> - Main collapsible wrapper</li>\n<li><strong>Summary Header</strong>: <code>&lt;summary&gt;</code> - Clickable header with title and icon</li>\n<li><strong>Content Area</strong>: <code>.accordion-content</code> - Collapsible content container</li>\n<li><strong>Toggle Icon</strong>: <code>.icon</code> - Visual indicator for expand/collapse state</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;accordion-item&quot;: {\n        &quot;title&quot;: &quot;Payment Methods&quot;,\n        &quot;content&quot;: &quot;&lt;p&gt;We accept all major credit cards, PayPal, and bank transfers.&lt;/p&gt;&quot;,\n        &quot;open&quot;: false\n    }\n}\n</code></pre>\n<h3>Rich Content Example</h3>\n<pre><code class=\"language-json\">{\n    &quot;accordion-item&quot;: {\n        &quot;title&quot;: &quot;Technical Specifications&quot;,\n        &quot;content&quot;: &quot;&lt;div class='spec-grid'&gt;&lt;div class='spec-item'&gt;&lt;strong&gt;Storage:&lt;/strong&gt; 256GB SSD&lt;/div&gt;&lt;div class='spec-item'&gt;&lt;strong&gt;Memory:&lt;/strong&gt; 16GB RAM&lt;/div&gt;&lt;/div&gt;&quot;,\n        &quot;open&quot;: true\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-accordion-item</code>: Main details container</li>\n<li><code>.hoo-accordion-summary</code>: Clickable header area</li>\n<li><code>.accordion-title</code>: Title text container</li>\n<li><code>.accordion-content</code>: Collapsible content area</li>\n<li><code>.icon</code>: Toggle icon (usually arrow)</li>\n<li><code>.hoo-icon-arrow-down</code>: Default closed state icon</li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Header Height</strong>: 48px minimum touch target</li>\n<li><strong>Padding</strong>: 16px horizontal, 12px vertical</li>\n<li><strong>Border</strong>: 1px solid border with subtle separator</li>\n<li><strong>Typography</strong>: 14px font size, medium weight for title</li>\n<li><strong>Icon</strong>: 16px chevron with smooth rotation transition</li>\n</ul>\n<h3>Interactive States</h3>\n<ul>\n<li><strong>Default</strong>: Clean header with subtle border</li>\n<li><strong>Hover</strong>: Light background color change</li>\n<li><strong>Focus</strong>: Blue focus outline following accessibility guidelines</li>\n<li><strong>Active</strong>: Slight background darkening on click</li>\n<li><strong>Open</strong>: Icon rotation 180° with content expansion</li>\n</ul>\n<h3>Animation</h3>\n<ul>\n<li><strong>Icon Rotation</strong>: 200ms ease-in-out transition</li>\n<li><strong>Content Expansion</strong>: Smooth height transition</li>\n<li><strong>Hover Effects</strong>: 150ms transition for background changes</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>FAQ Sections</h3>\n<pre><code class=\"language-handlebars\">&lt;section class=&quot;faq-section&quot;&gt;\n    &lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;\n    {{#each faq-items}}\n    {{&gt; molecules-accordion-item accordion-item=this}}\n    {{/each}}\n&lt;/section&gt;\n</code></pre>\n<h3>Settings Panels</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;settings-panel&quot;&gt;\n    &lt;h3&gt;Account Settings&lt;/h3&gt;\n    {{&gt; molecules-accordion-item}}\n&lt;/div&gt;\n</code></pre>\n<h3>Product Information</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;product-details&quot;&gt;\n    {{#each product-sections}}\n    {{&gt; molecules-accordion-item accordion-item=this}}\n    {{/each}}\n&lt;/div&gt;\n</code></pre>\n<h3>Help Documentation</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;help-docs&quot;&gt;\n    &lt;h2&gt;Help Topics&lt;/h2&gt;\n    {{#each help-topics}}\n    {{&gt; molecules-accordion-item accordion-item=this}}\n    {{/each}}\n&lt;/div&gt;\n</code></pre>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Semantic HTML</strong>: Uses native <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements</li>\n<li><strong>Keyboard Navigation</strong>: Space and Enter keys toggle expansion</li>\n<li><strong>Screen Reader Support</strong>: Proper announcements of expand/collapse states</li>\n<li><strong>Focus Management</strong>: Clear focus indicators and logical tab sequence</li>\n<li><strong>ARIA Labels</strong>: Automatic ARIA expanded states from native element</li>\n<li><strong>High Contrast</strong>: Focus and interactive states visible in high contrast mode</li>\n</ul>\n<h2>Keyboard Interactions</h2>\n<ul>\n<li><strong>Tab</strong>: Navigate to accordion item</li>\n<li><strong>Space/Enter</strong>: Toggle expand/collapse</li>\n<li><strong>Tab (within)</strong>: Navigate through content when expanded</li>\n<li><strong>Shift+Tab</strong>: Navigate backwards through interface</li>\n</ul>\n<h2>Content Guidelines</h2>\n<h3>Title Text</h3>\n<ul>\n<li><strong>Concise Descriptions</strong>: Use clear, descriptive titles</li>\n<li><strong>Action-Oriented</strong>: Suggest what users will find inside</li>\n<li><strong>Scannable</strong>: Keep titles short enough to scan quickly</li>\n<li><strong>Consistent Structure</strong>: Use parallel structure across items</li>\n</ul>\n<h3>Content Organization</h3>\n<ul>\n<li><strong>Logical Grouping</strong>: Group related information together</li>\n<li><strong>Progressive Disclosure</strong>: Start with most important information</li>\n<li><strong>Scannable Format</strong>: Use headers, lists, and formatting for clarity</li>\n<li><strong>Appropriate Length</strong>: Balance detail with usability</li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>Native Implementation</strong>: Leverages browser optimizations for <code>&lt;details&gt;</code></li>\n<li><strong>CSS-Only Animation</strong>: No JavaScript required for basic functionality</li>\n<li><strong>Efficient Rendering</strong>: Content hidden in DOM but not rendered when closed</li>\n<li><strong>Minimal Overhead</strong>: Lightweight CSS with no JavaScript dependencies</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Details Element</strong>: Excellent support in all modern browsers</li>\n<li><strong>Graceful Degradation</strong>: Falls back to always-expanded content</li>\n<li><strong>Screen Readers</strong>: Excellent support in NVDA, JAWS, VoiceOver</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Styles:</strong></p>\n<ul>\n<li><code>lib/sass/molecules/accordion.scss</code></li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Design Guidelines</h3>\n<ul>\n<li><strong>Consistent Styling</strong>: Maintain visual consistency across items</li>\n<li><strong>Clear Hierarchy</strong>: Use appropriate heading levels in content</li>\n<li><strong>Logical Grouping</strong>: Group related accordion items together</li>\n<li><strong>Content Preview</strong>: Consider including preview text in titles</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Item","patternPartial":"molecules-accordion-item","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":10}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-accordion-header" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-accordion-accordion-header&#x2F;molecules-accordion-accordion-header.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-accordion-header" title="Link to Pattern">
+						Accordion Header
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-accordion-header" data-patternpartial="molecules-accordion-header" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-accordion-header">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<summary class="hoo-accordion-header">
+    <div class="hoo-accordion-summary">
+        <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+                <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
+                <use xlink:href="../../images/icons.svg#icon-arrow-right"></use>
+            </svg>
+        </span>        <h3>Lorem ipsum dolor sit.</h3>
+    </div>
+</summary>
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-accordion-header" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"lineage":[{"lineagePattern":"atoms-icon","lineagePath":"../../patterns/atoms-icons-icon/atoms-icons-icon.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"},{"lineagePattern":"organism-form-flow-4","lineagePath":"../../patterns/organism-form-sample-form-flow-4/organism-form-sample-form-flow-4.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"},{"lineagePattern":"organism-form-flow-4","lineagePath":"../../patterns/organism-form-sample-form-flow-4/organism-form-sample-form-flow-4.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Accordion Header</h1>\n<p>The clickable header component for accordion items that provides the toggle functionality and visual feedback for expand/collapse states. Built as a <code>&lt;summary&gt;</code> element with semantic heading structure and animated state indicators.</p>\n<h2>Overview</h2>\n<p>The Accordion Header serves as the primary interaction point for accordion functionality. It combines a descriptive title with a state indicator icon to create an intuitive interface for progressive disclosure. The component ensures proper accessibility through semantic HTML and clear visual feedback for all interaction states.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Semantic HTML</strong>: Uses <code>&lt;summary&gt;</code> element for proper semantics</li>\n<li><strong>Interactive States</strong>: Hover, focus, and active state styling</li>\n<li><strong>Animated Feedback</strong>: Smooth icon rotation on state changes</li>\n<li><strong>Accessibility Ready</strong>: Proper focus management and ARIA support</li>\n<li><strong>Touch Optimized</strong>: 48px minimum touch target compliance</li>\n<li><strong>Flexible Sizing</strong>: Adapts to content length and container width</li>\n<li><strong>Keyboard Navigation</strong>: Full keyboard support for interaction</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Summary Element</strong>: <code>&lt;summary&gt;</code> - Semantic clickable header</li>\n<li><strong>Title Container</strong>: <code>.accordion-title</code> - Text content wrapper</li>\n<li><strong>Icon Container</strong>: <code>.icon</code> - State indicator with rotation animation</li>\n<li><strong>Focus Indicator</strong>: CSS outline for keyboard accessibility</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;accordion-header&quot;: {\n        &quot;title&quot;: &quot;Payment Information&quot;,\n        &quot;level&quot;: &quot;h3&quot;\n    }\n}\n</code></pre>\n<h3>With Subtitle</h3>\n<pre><code class=\"language-json\">{\n    &quot;accordion-header&quot;: {\n        &quot;title&quot;: &quot;Account Settings&quot;,\n        &quot;subtitle&quot;: &quot;Manage your profile and preferences&quot;,\n        &quot;level&quot;: &quot;h2&quot;\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-accordion-summary</code>: Main summary element</li>\n<li><code>.accordion-title</code>: Title text container</li>\n<li><code>.title-main</code>: Primary title text</li>\n<li><code>.title-subtitle</code>: Optional secondary text</li>\n<li><code>.icon</code>: State indicator icon</li>\n<li><code>.hoo-icon-arrow-down</code>: Default chevron icon</li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Height</strong>: 48px minimum for touch accessibility</li>\n<li><strong>Padding</strong>: 16px horizontal, 12px vertical</li>\n<li><strong>Typography</strong>: 14px font size, medium font weight</li>\n<li><strong>Icon Size</strong>: 16px with smooth transitions</li>\n<li><strong>Border</strong>: Bottom border for visual separation</li>\n</ul>\n<h3>Interactive States</h3>\n<ul>\n<li><strong>Default</strong>: Clean appearance with subtle hover affordance</li>\n<li><strong>Hover</strong>: Light background color change (#f8f8f8)</li>\n<li><strong>Focus</strong>: Blue focus outline (2px solid #0078d4)</li>\n<li><strong>Active</strong>: Slightly darker background on press</li>\n<li><strong>Expanded</strong>: Icon rotated 180° with content visible</li>\n</ul>\n<h3>Typography Hierarchy</h3>\n<ul>\n<li><strong>Title</strong>: 14px, font-weight 500, line-height 20px</li>\n<li><strong>Subtitle</strong>: 12px, font-weight 400, opacity 0.8</li>\n<li><strong>Color</strong>: Primary text color (#323130)</li>\n</ul>\n<h2>Animation</h2>\n<h3>Icon Rotation</h3>\n<h3>Hover Transition</h3>\n<h2>Use Cases</h2>\n<h3>FAQ Headers</h3>\n<pre><code class=\"language-handlebars\">&lt;details class=&quot;faq-item&quot;&gt;\n    {{&gt; molecules-accordion-header accordion-header=faq-question}}\n    &lt;div class=&quot;accordion-content&quot;&gt;{{ faq-answer }}&lt;/div&gt;\n&lt;/details&gt;\n</code></pre>\n<h3>Settings Categories</h3>\n<pre><code class=\"language-handlebars\">&lt;details class=&quot;settings-section&quot;&gt;\n    {{&gt; molecules-accordion-header accordion-header=setting-category}}\n    &lt;div class=&quot;accordion-content&quot;&gt;{{ setting-controls }}&lt;/div&gt;\n&lt;/details&gt;\n</code></pre>\n<h3>Product Details</h3>\n<pre><code class=\"language-handlebars\">&lt;details class=&quot;product-section&quot;&gt;\n    {{&gt; molecules-accordion-header accordion-header=product-spec}}\n    &lt;div class=&quot;accordion-content&quot;&gt;{{ specification-details }}&lt;/div&gt;\n&lt;/details&gt;\n</code></pre>\n<h3>Documentation Sections</h3>\n<pre><code class=\"language-handlebars\">&lt;details class=&quot;doc-section&quot;&gt;\n    {{&gt; molecules-accordion-header accordion-header=doc-topic}}\n    &lt;div class=&quot;accordion-content&quot;&gt;{{ documentation-content }}&lt;/div&gt;\n&lt;/details&gt;\n</code></pre>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Semantic Element</strong>: Uses <code>&lt;summary&gt;</code> for proper semantics</li>\n<li><strong>Keyboard Navigation</strong>: Space and Enter keys activate toggle</li>\n<li><strong>Focus Management</strong>: Clear focus indicators and logical progression</li>\n<li><strong>Screen Reader Support</strong>: Proper announcements of state changes</li>\n<li><strong>ARIA Attributes</strong>: Automatic ARIA expanded states from native element</li>\n<li><strong>Touch Targets</strong>: Minimum 48px touch target compliance</li>\n</ul>\n<h2>Content Guidelines</h2>\n<h3>Title Writing</h3>\n<ul>\n<li><strong>Clear and Descriptive</strong>: Make purpose immediately obvious</li>\n<li><strong>Concise Language</strong>: Keep titles scannable and brief</li>\n<li><strong>Active Voice</strong>: Use action-oriented language when appropriate</li>\n<li><strong>Consistent Structure</strong>: Maintain parallel structure across headers</li>\n</ul>\n<h3>Information Architecture</h3>\n<ul>\n<li><strong>Logical Grouping</strong>: Group related content under appropriate headers</li>\n<li><strong>Progressive Disclosure</strong>: Order by importance and user needs</li>\n<li><strong>Scannable Hierarchy</strong>: Use consistent heading levels</li>\n<li><strong>Predictable Content</strong>: Headers should accurately preview content</li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>Lightweight</strong>: Minimal CSS with no JavaScript requirements</li>\n<li><strong>Efficient Animations</strong>: CSS-only transitions for optimal performance</li>\n<li><strong>Native Behavior</strong>: Leverages browser optimizations for <code>&lt;summary&gt;</code></li>\n<li><strong>Minimal DOM</strong>: Clean, semantic markup structure</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Summary Element</strong>: Excellent support across all modern browsers</li>\n<li><strong>Graceful Degradation</strong>: Falls back to standard clickable element</li>\n<li><strong>Screen Readers</strong>: Full support in assistive technologies</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Styles:</strong></p>\n<ul>\n<li><code>lib/sass/molecules/accordion.scss</code></li>\n</ul>\n<h2>Customization Options</h2>\n<h3>Icon Variants</h3>\n<ul>\n<li>Different icon types (chevron, plus/minus, arrows)</li>\n<li>Custom icon sizes and positioning</li>\n<li>Alternative rotation directions</li>\n</ul>\n<h3>Typography Options</h3>\n<ul>\n<li>Different heading levels (h2, h3, h4)</li>\n<li>Font weight variations</li>\n<li>Custom spacing and sizing</li>\n</ul>\n<h3>Layout Variations</h3>\n<ul>\n<li>Left-aligned vs. centered text</li>\n<li>Icon positioning (left/right)</li>\n<li>Multiple line support for longer titles</li>\n<li>Removes default browser disclosure triangle</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Uses semantic HTML with the <code>&lt;summary&gt;</code> element</li>\n<li>Properly structured headings for screen reader navigation</li>\n<li>Visual indication of state through icon rotation</li>\n<li>Clickable area extends across the full width</li>\n<li>Cursor changes to pointer to indicate interactivity</li>\n</ul>\n<h2>SCSS Imports</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/menu/accordion</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Header","patternPartial":"molecules-accordion-header","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
+			</script>
+		
+		</div><!--end pl-c-pattern-->
+		<div id="molecules-accordion-content" class="pl-c-pattern">
+		
+			<div class="pl-c-pattern__header">
+		
+				<h3 class="pl-c-pattern__title">
+		
+					<a href="../../patterns/molecules-accordion-accordion-content&#x2F;molecules-accordion-accordion-content.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="molecules-accordion-content" title="Link to Pattern">
+						Accordion Content
+		
+		
+					</a><!--end pl-c-pattern__title-link-->
+		
+				</h3><!--end pl-c-pattern__title-->
+		
+				<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-molecules-accordion-content" data-patternpartial="molecules-accordion-content" title="View Pattern Info" type="button">
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--expand">Expand</span>
+					<span class="pl-c-pattern__extra-toggle-text pl-c-pattern__extra-toggle-text--collapse">Collapse</span>
+						<svg viewBox="0 0 16 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--expand">
+							<path fill="currentColor" d="M9 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+						</svg>
+		
+						<svg viewBox="0 0 20 16" width="20" height="20" class="pl-c-pattern__toggle-icon pl-c-pattern__toggle-icon--collapse">
+							<path fill="currentColor" d="M13 11.5l1.5 1.5 5-5-5-5-1.5 1.5 3.5 3.5z"></path>
+							<path fill="currentColor" d="M7 4.5l-1.5-1.5-5 5 5 5 1.5-1.5-3.5-3.5z"></path>
+							<path fill="currentColor" d="M10.958 2.352l1.085 0.296-3 11-1.085-0.296 3-11z"></path>
+						</svg>
+				</button>
+		
+			</div><!--end pl-c-pattern__header-->
+		
+			<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-molecules-accordion-content">
+		    </div><!--end pl-c-pattern__extra-->
+		
+			<div class="pl-js-pattern-example">
+			<div class="hoo-accordion-content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam similique delectus facilis, quae aspernatur ipsam eveniet commodi assumenda ipsa iure dolorem quidem enim illum perferendis amet nam suscipit unde dicta reiciendis eligendi ratione dignissimos? Aperiam hic vel quis ex consequuntur, possimus magnam rerum in officiis fugit non inventore voluptas earum minima iure! Et, eaque repellendus cumque optio nam odit. Voluptatibus nulla facere atque iusto veniam, explicabo voluptatum maxime praesentium quasi corrupti quia? Unde tempore officia esse deserunt praesentium ipsum accusantium hic expedita aliquid harum nobis doloribus necessitatibus cum facilis, temporibus laudantium rem quo tempora eius maiores ab veritatis. Unde, ex!
+</div>
+
+			</div><!--end pl-js-pattern-example-->
+		
+			<script type="text/json" id="pl-pattern-data-molecules-accordion-content" class="pl-js-pattern-data">
+			{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-accordion-item","lineagePath":"../../patterns/molecules-accordion-accordion-item/molecules-accordion-accordion-item.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Accordion Content</h1>\n<p>The collapsible content area within accordion items that houses the detailed information revealed when users expand an accordion section. Provides flexible content layout with optimized spacing and typography for enhanced readability.</p>\n<h2>Overview</h2>\n<p>The Accordion Content component serves as the container for all expandable content within accordion items. It features carefully designed spacing, typography, and layout options to ensure content remains readable and well-organized when revealed. The component supports rich content including text, media, forms, and nested components while maintaining visual consistency.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Flexible Content Support</strong>: Accommodates any HTML content type</li>\n<li><strong>Optimized Typography</strong>: Enhanced readability with appropriate line spacing</li>\n<li><strong>Consistent Spacing</strong>: Aligned margins and padding for visual harmony</li>\n<li><strong>Responsive Layout</strong>: Adapts to different screen sizes and content lengths</li>\n<li><strong>Rich Media Support</strong>: Handles images, videos, and interactive elements</li>\n<li><strong>Semantic Structure</strong>: Maintains proper content hierarchy</li>\n<li><strong>Animation Ready</strong>: Smooth reveal animations with height transitions</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Content Container</strong>: <code>.accordion-content</code> - Main content wrapper</li>\n<li><strong>Content Area</strong>: Inner content with optimized spacing</li>\n<li><strong>Typography Elements</strong>: Headings, paragraphs, and lists with proper styling</li>\n<li><strong>Media Containers</strong>: Optimized display for images and embedded content</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;accordion-content&quot;: {\n        &quot;content&quot;: &quot;&lt;p&gt;This is the main content that appears when the accordion is expanded.&lt;/p&gt;&quot;\n    }\n}\n</code></pre>\n<h3>Structured Content</h3>\n<pre><code class=\"language-json\">{\n    &quot;accordion-content&quot;: {\n        &quot;description&quot;: &quot;Detailed information about this topic.&quot;,\n        &quot;features&quot;: [\n            &quot;Feature one description&quot;,\n            &quot;Feature two description&quot;, \n            &quot;Feature three description&quot;\n        ],\n        &quot;image&quot;: {\n            &quot;src&quot;: &quot;/images/example.jpg&quot;,\n            &quot;alt&quot;: &quot;Descriptive image&quot;\n        }\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.accordion-content</code>: Main content container</li>\n<li><code>.content-form</code>: Form-specific styling within content</li>\n<li><code>.form-group</code>: Form field grouping</li>\n<li><code>.content-list</code>: Enhanced list styling</li>\n<li><code>.content-media</code>: Media element containers</li>\n</ul>\n<h2>Styling</h2>\n<h3>Layout and Spacing</h3>\n<ul>\n<li><strong>Padding</strong>: 16px top, 20px left/right, 24px bottom</li>\n<li><strong>Margin</strong>: Content aligned with header text</li>\n<li><strong>Max Width</strong>: Responsive width with optimal reading length</li>\n<li><strong>Line Height</strong>: 1.5 for enhanced readability</li>\n</ul>\n<h3>Typography</h3>\n<ul>\n<li><strong>Paragraph Spacing</strong>: 16px margin between paragraphs</li>\n<li><strong>Heading Margins</strong>: Appropriate spacing for content hierarchy</li>\n<li><strong>List Styling</strong>: Enhanced bullet points and numbering</li>\n<li><strong>Font Size</strong>: 14px base with responsive scaling</li>\n</ul>\n<h3>Content Elements</h3>\n<ul>\n<li><strong>Images</strong>: Responsive images with proper spacing</li>\n<li><strong>Tables</strong>: Enhanced table styling for data presentation</li>\n<li><strong>Code Blocks</strong>: Monospace font with background highlighting</li>\n<li><strong>Blockquotes</strong>: Styled quotations with left border</li>\n</ul>\n<h2>Animation</h2>\n<h3>Expand Animation</h3>\n<h3>Content Fade-In</h3>\n<h2>Use Cases</h2>\n<h3>FAQ Content</h3>\n<pre><code class=\"language-handlebars\">{{#accordion-content}}\n&lt;div class=&quot;accordion-content&quot;&gt;\n    &lt;p&gt;{{ answer }}&lt;/p&gt;\n    {{#if related-links}}\n    &lt;h5&gt;Related Information&lt;/h5&gt;\n    &lt;ul&gt;\n        {{#each related-links}}\n        &lt;li&gt;&lt;a href=&quot;{{ url }}&quot;&gt;{{ title }}&lt;/a&gt;&lt;/li&gt;\n        {{/each}}\n    &lt;/ul&gt;\n    {{/if}}\n&lt;/div&gt;\n{{/accordion-content}}\n</code></pre>\n<h3>Product Specifications</h3>\n<pre><code class=\"language-handlebars\">{{#accordion-content}}\n&lt;div class=&quot;accordion-content&quot;&gt;\n    &lt;table class=&quot;spec-table&quot;&gt;\n        &lt;thead&gt;\n            &lt;tr&gt;&lt;th&gt;Specification&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;\n        &lt;/thead&gt;\n        &lt;tbody&gt;\n            {{#each specifications}}\n            &lt;tr&gt;&lt;td&gt;{{ name }}&lt;/td&gt;&lt;td&gt;{{ value }}&lt;/td&gt;&lt;/tr&gt;\n            {{/each}}\n        &lt;/tbody&gt;\n    &lt;/table&gt;\n&lt;/div&gt;\n{{/accordion-content}}\n</code></pre>\n<h3>Settings Panel</h3>\n<pre><code class=\"language-handlebars\">{{#accordion-content}}\n&lt;div class=&quot;accordion-content&quot;&gt;\n    &lt;div class=&quot;settings-group&quot;&gt;\n        {{#each settings}}\n        &lt;div class=&quot;setting-item&quot;&gt;\n            &lt;label&gt;{{ label }}&lt;/label&gt;\n            &lt;input type=&quot;{{ type }}&quot; value=&quot;{{ value }}&quot; /&gt;\n        &lt;/div&gt;\n        {{/each}}\n    &lt;/div&gt;\n&lt;/div&gt;\n{{/accordion-content}}\n</code></pre>\n<h3>Help Documentation</h3>\n<pre><code class=\"language-handlebars\">{{#accordion-content}}\n&lt;div class=&quot;accordion-content&quot;&gt;\n    &lt;p&gt;{{ introduction }}&lt;/p&gt;\n    &lt;h4&gt;Step-by-Step Instructions&lt;/h4&gt;\n    &lt;ol&gt;\n        {{#each steps}}\n        &lt;li&gt;{{ this }}&lt;/li&gt;\n        {{/each}}\n    &lt;/ol&gt;\n    {{#if screenshot}}\n    &lt;img src=&quot;{{ screenshot }}&quot; alt=&quot;Step illustration&quot; /&gt;\n    {{/if}}\n&lt;/div&gt;\n{{/accordion-content}}\n</code></pre>\n<h2>Content Guidelines</h2>\n<h3>Text Content</h3>\n<ul>\n<li><strong>Clear Hierarchy</strong>: Use appropriate heading levels (h4, h5, h6)</li>\n<li><strong>Scannable Format</strong>: Break up long text with subheadings and lists</li>\n<li><strong>Concise Language</strong>: Write clearly and avoid unnecessary complexity</li>\n<li><strong>Actionable Information</strong>: Include specific, helpful details</li>\n</ul>\n<h3>Media Integration</h3>\n<ul>\n<li><strong>Responsive Images</strong>: Use appropriate image sizes and alt text</li>\n<li><strong>Video Embedding</strong>: Ensure videos are accessible and responsive</li>\n<li><strong>File Downloads</strong>: Clearly label downloadable resources</li>\n<li><strong>Interactive Elements</strong>: Test all interactive components within content</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Semantic HTML</strong>: Proper heading hierarchy within content</li>\n<li><strong>Alt Text</strong>: Descriptive alt text for all images</li>\n<li><strong>Focus Management</strong>: Logical tab order for interactive elements</li>\n<li><strong>Color Contrast</strong>: Sufficient contrast for all text elements</li>\n<li><strong>Screen Reader Support</strong>: Clear content structure for assistive technology</li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>Lazy Loading</strong>: Consider lazy loading for images and media</li>\n<li><strong>Content Optimization</strong>: Optimize large content for faster loading</li>\n<li><strong>Animation Performance</strong>: Use CSS transforms for smooth animations</li>\n<li><strong>Memory Efficiency</strong>: Clean up any dynamic content appropriately</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support across all contemporary browsers</li>\n<li><strong>Content Rendering</strong>: Consistent content display and formatting</li>\n<li><strong>Animation Support</strong>: Smooth transitions in supported browsers</li>\n<li><strong>Graceful Degradation</strong>: Content remains accessible without animations</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Styles:</strong></p>\n<ul>\n<li><code>lib/sass/molecules/accordion.scss</code></li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Content Organization</h3>\n<ul>\n<li><strong>Logical Structure</strong>: Organize content in a logical, scannable way</li>\n<li><strong>Progressive Disclosure</strong>: Present information in order of importance</li>\n<li><strong>Visual Hierarchy</strong>: Use headings and formatting to guide readers</li>\n<li><strong>Consistent Formatting</strong>: Maintain consistent styling across content</li>\n</ul>\n<h3>Performance Optimization</h3>\n<ul>\n<li><strong>Image Optimization</strong>: Compress images for web delivery</li>\n<li><strong>Content Length</strong>: Balance detail with usability</li>\n<li><strong>Loading States</strong>: Consider loading indicators for dynamic content</li>\n<li><strong>Responsive Design</strong>: Test content across different screen sizes</li>\n</ul>\n<h2>Accessibility</h2>\n<ul>\n<li>Content is only visible when the accordion is expanded</li>\n<li>Native HTML <code>&lt;details&gt;</code> element handles showing/hiding for assistive technologies</li>\n<li>Content is properly associated with its header</li>\n<li>Content indentation creates visual hierarchy</li>\n</ul>\n<h2>SCSS Imports</h2>\n<p><strong>Main Component</strong><br>\n@n8d/htwoo-core/components/menu/accordion</p>\n<hr>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"accordion"},"patternExtension":"hbs","patternName":"Accordion Content","patternPartial":"molecules-accordion-content","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":30}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -237,10 +290,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768594470661">
+<script id="pl-js-polyfill-insert-1768742771088">
   (function() {
     if (self != top) {
-      var cb = '1768594470661';
+      var cb = '1768742771088';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -253,7 +306,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768594470661" nomodule>
+<script id="pl-js-insert-1768742771088" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -301,6 +354,7 @@
     evtLocationStorageUpdates();
 </script>
 <script src="../../js/_util.js" type="module"></script>
+<script src="/ice-hotreloader/dist/browser.min.js"></script>
 </body>
 
 </html>
