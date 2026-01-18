@@ -68,9 +68,9 @@ jobs:
         if: ${{ inputs.dry_run == true || github.event_name == 'push' }}
         run: |
           if [ "${{ inputs.project }}" = "all" ] || [ -z "${{ inputs.project }}" ]; then
-            nx run htwoo-core:changelog:preview
+            npx nx run htwoo-core:changelog:preview
           else
-            nx run ${{ inputs.project }}:changelog:preview
+            npx nx run ${{ inputs.project }}:changelog:preview
           fi
 
       - name: Generate changelog and create release
@@ -79,9 +79,9 @@ jobs:
           if [ "${{ inputs.project }}" = "all" ]; then
             node scripts/workspace-changelog.js
           elif [ -n "${{ inputs.project }}" ]; then
-            nx run ${{ inputs.project }}:changelog
+            npx nx run ${{ inputs.project }}:changelog
           else
-            nx run htwoo-core:changelog
+            npx nx run htwoo-core:changelog
           fi
 
       - name: Create Release PR
