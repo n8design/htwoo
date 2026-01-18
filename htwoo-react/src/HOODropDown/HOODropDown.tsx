@@ -53,6 +53,12 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * Default is English "No options" / "No options match input"
    */
   noOptionsText?: [string, string];
+  /** 
+   * (Optional) Boolean to control if change event is called upon enter key being pressed for text in input field when no match
+   * exists in the options list. Requires containsTypeAhead = true.
+   * Default is False
+   */
+  noOptionsChangeEvent?: boolean;
   /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
@@ -65,6 +71,10 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * (Optional) For Non-Hyperlink style buttons only, Is button disabled.
    */
   disabled?: boolean;
+  /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
@@ -127,7 +137,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   private _onChange = (newValue: string | number) => {
     try {
-      this.props.onChange((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string): newValue);
+      this.props.onChange((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string) : newValue);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
     }
@@ -269,6 +279,15 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = false;
             ddState = DDState.Closed;
             this._moveFocus(document.activeElement, Focus.Input);
+          } else if (this.state.ddState === DDState.Filtered && 
+              focus === this._inputElement.current && 
+              (this.state.currentValue?.toString().length > 0) && 
+              (this.state.optionsLength < 1) && 
+              this.props.noOptionsChangeEvent === true) {
+            // if state = filtered and focus on input and no options match & the notOptionsChangeEvent is true and current value length > 0
+            this.props.onChange(this.state.currentValue);
+            open = false;
+            ddState = DDState.Closed;
           } else if (this.state.ddState === DDState.Filtered && focus === this._inputElement.current) {
             // if state = filtered and focus on input, set state to opened
             open = true;
@@ -468,7 +487,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             autoComplete="off"
             aria-controls={`${this._dropdownId}-list`}
             onChange={this._onChangeInput}
-            readOnly={this.props.containsTypeAhead == null ? true : false}
+            readOnly={(this.props.containsTypeAhead == null || this.props.readonly) ? true : false}
           />
           <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false} >
             <HOOIcon iconName="hoo-icon-arrow-down" />

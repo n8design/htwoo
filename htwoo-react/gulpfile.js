@@ -1,5 +1,5 @@
 /** dependency constants */
-const reactVer = ">=16 <=18.2";
+const reactVer = ">=16 <=19.1.0";
 
 /** general nodejs imports */
 const fs = require("fs");

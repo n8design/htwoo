@@ -1,5 +1,5 @@
-import { ArgTypes } from '@storybook/addon-docs/blocks';
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
 import HOONumber from './HOONumber';
 import * as HooNumberStories from './HOONumber.stories';
 
@@ -14,6 +14,18 @@ import * as HooNumberStories from './HOONumber.stories';
 ## Basic
 
 <Canvas of={HooNumberStories.Basic} />
+
+## Prefix
+
+<Canvas of={HooNumberStories.Prefix} />
+
+## Suffix
+
+<Canvas of={HooNumberStories.Suffix} />
+
+## Prefix/Suffix
+
+<Canvas of={HooNumberStories.PrefixSuffix} />
 
 ## Disabled
 

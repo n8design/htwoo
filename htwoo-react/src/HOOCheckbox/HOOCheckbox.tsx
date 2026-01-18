@@ -20,6 +20,10 @@ export interface IHOOCheckboxProps extends IHOOStandardProps {
    */
   disabled?: boolean;
   /**
+   * (Optional) Is Input Read Only - default false.
+  */
+  readonly?: boolean;
+  /**
    * (Optional) Id attribute for the input element; only valid if set in original component properties.
   */
   forId?: string;
@@ -66,6 +70,7 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
             type="checkbox"
             checked={this.props.checked}
             disabled={this.props.disabled || false}
+            readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             onChange={this.props.onChange}
             className={className} />

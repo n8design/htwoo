@@ -1,0 +1,92 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/animations";
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-button-pivot{
+
+	padding: 0;
+	margin: 0;
+
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	height: core.px2rem(44px);
+	text-rendering: optimizeLegibility;
+
+	&.is-active{
+		.hoo-pivot-inner{
+			position: relative;
+
+			&:after{
+				position: absolute;
+				top: 100%;
+				left: 8px;
+
+				display: block;
+
+				width: 100%;
+				max-width: calc(100% - 16px);
+				height: 2px;
+
+				content: "";
+				transition: all animations.$transition-timing ease-in-out;
+
+				background-color: colors.$theme-600;
+			}
+
+			&:hover{
+				&:after{
+					left: 0;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	&:hover{
+		padding: 0;
+	}
+	&[disabled],
+	&:disabled {
+		pointer-events: none;
+
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
+        .hoo-button-icon{
+            color: colors.$neutral-400;
+        }
+		.hoo-pivot-inner{
+			color: inherit;
+		}
+	}
+}
+
+.hoo-pivot-inner{
+	font-size: 1rem;
+	line-height: core.px2rem(44px);
+
+	position: relative;
+
+	color: colors.$neutral-500;
+
+	display: flex;
+
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 0 core.px2rem(8px);
+
+	transition: max-width .25s ease-in;
+	text-align: center;
+	white-space: nowrap;
+
+	text-shadow: 0 0 .65px rgba(white, 0), 0 0 .65px rgba(white, 0);
+
+	&:hover{
+		max-width: 110%;
+		// padding: 0 px2rem(8px);
+
+		text-shadow: 0 0 .65px currentColor, 0 0 .65px currentColor;
+	}
+
+}

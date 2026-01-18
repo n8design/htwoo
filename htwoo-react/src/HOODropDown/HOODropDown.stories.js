@@ -534,8 +534,47 @@ export const TypeAheadFeature = {
     return {
       value: 1,
       options: options,
-      containsTypeAhead: false,
+      containsTypeAhead: true,
 
+      onChange: (fieldValue) => {
+        console.log(`Dropdown value: ${fieldValue}`);
+      },
+    };
+  })(),
+};
+
+export const AllowNewFeature = {
+  render: Template.bind({}),
+  name: "Allow New Options Feature",
+
+  args: (function () {
+    symset.initSymbols();
+
+    const dropdownItems = [
+      {
+        key: 1,
+        text: "Apple",
+        disabled: false,
+      },
+      {
+        key: 2,
+        text: "Banana",
+        disabled: false,
+      },
+      {
+        key: 3,
+        text: "Cherry",
+        disabled: false,
+      }
+    ];
+
+    const options = dropdownItems;
+
+    return {
+      value: 1,
+      options: options,
+      containsTypeAhead: true,
+      noOptionsChangeEvent: true,
       onChange: (fieldValue) => {
         console.log(`Dropdown value: ${fieldValue}`);
       },

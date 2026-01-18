@@ -1,0 +1,73 @@
+@use "../../00-base/mixin/core.mixin";
+
+.hoo-avatar-pres{
+	position: relative;
+
+	display: inline-block;
+
+	width: core.px2rem(128px);
+	height: core.px2rem(128px);
+
+	transform: rotate(45deg);
+	transform-origin: center center;
+	div[class^=hoo-avatar]{
+		transform: rotate(-45deg);
+		transform-origin: center center;
+	}
+	.hoo-presence{
+		position: absolute;
+		top: calc(50% - .5rem);
+		left: calc(100% - .5rem);
+	}
+}
+
+.hoo-avatar-pres-16{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(16px);
+	height: core.px2rem(16px);
+}
+.hoo-avatar-pres-24{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(24px);
+	height: core.px2rem(24px);
+}
+.hoo-avatar-pres-32{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(32px);
+	height: core.px2rem(32px);
+}
+.hoo-avatar-pres-40{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(40px);
+	height: core.px2rem(40px);
+}
+.hoo-avatar-pres-48{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(48px);
+	height: core.px2rem(48px);
+}
+.hoo-avatar-pres-64{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(64px);
+	height: core.px2rem(64px);
+}
+
+.hoo-avatar-pres-72{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(72px);
+	height: core.px2rem(72px);
+}
+
+.hoo-avatar-pres-96{
+	@extend .hoo-avatar-pres;
+
+	width: core.px2rem(96px);
+	height: core.px2rem(96px);
+}

@@ -1,0 +1,116 @@
+<section class="facility-form-overview">
+    <fieldset id="new-item-form" class="hoo-fieldset no-outline">
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Issue Type</label>
+            Electrical
+        </div>
+        <div class="hoo-field stretched" role="group">
+            <label class="hoo-label " for="toggle-91">Location</label>
+            A104 - Breakout Space - Casual
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Equipment/Asset ID</label>
+            ACME-2049-0819
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Priority Level</label>
+            Low
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Issue Description</label>
+            Late last night, the coffee machine decided to take a vacation. It now only dispenses lukewarm water and
+            stares blankly at anyone who dares approach.
+            <br>
+            <br>
+            The ‘Brew’ button is still intact, but no amount of button-mashing seems to convince it to do its job.
+            Please send help before we resort to using the office kettle and turning into tea drinkers.
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Reported By</label>
+            Dwight Schrute
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Date/Time Reported</label>
+            <time id="current-time" datetime=""></time>
+        </div>
+    </fieldset>
+    <fieldset id="issue-verification" class="hoo-fieldset no-outline">
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Assign To</label>
+            Jim Halpert
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Verification Date</label>
+            <time id="next-time" datetime=""></time>
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Comments</label>
+            Upon investigation, the issue is likely related to a failure in the heating element or a malfunction in the
+            machine’s brewing cycle, both common problems for this type of coffee machine. To resolve the issue, a
+            technician will need to inspect the internal components, particularly the heating element, water pump, and
+            circuit board responsible for activating the brewing process.
+            <br><br>
+            In cases where this fault has occurred
+            previously, a reset procedure or replacement of the faulty components has successfully restored normal
+            operation. If the issue is more severe, a full machine replacement may be necessary. Regular maintenance and
+            occasional cleaning of the internal mechanisms are recommended to prevent similar occurrences in the future.
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Estimated Time to Resolve</label>
+            5 hours
+        </div>
+    </fieldset>
+    <fieldset id="resolution" class="hoo-fieldset no-outline">
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Resolution Description</label>
+            When the coffee machine refused to cooperate, the team implemented an interim solution by transitioning to
+            tea-making using the office kettle. This alternative required no technical intervention, leveraging existing
+            resources and allowing employees to maintain their caffeine intake with tea bags and hot water. While
+            unconventional for coffee enthusiasts, this workaround provided a temporary fix, sustaining morale until the
+            coffee machine could be repaired or replaced.
+            <br><br>
+            Feedback from the team suggests a newfound appreciation for Earl Grey, though calls for espresso have
+            increased in urgency.
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Parts/Materials used:</label>
+            Office Kettle - Existing equipment repurposed for boiling water.<br>
+            Tea Bags - A variety of flavors (e.g., Earl Grey, Green Tea, Peppermint) sourced from the breakroom or nearby
+            supply
+            closet.<br>
+            Mugs or Cups - Reused from the office coffee station for serving tea.<br>
+            Hot Water - Generated using the kettle as a substitute for the coffee machine’s water dispenser.<br>
+            Spoons/Stirrers - For mixing sugar, honey, or other additives into the tea.<br>
+            Optional Additives - Milk, sugar, honey, or lemon, depending on individual preferences.<br>
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Actual time to resolve</label>
+            1 hour
+        </div>
+        <div class="hoo-field" role="group">
+            <label class="hoo-label " for="toggle-91">Follow up Required?</label>
+            Yes
+        </div>
+    </fieldset>
+</section>
+<script>
+    // Get the current date and time
+    const now = new Date();
+
+    // Format the date and time based on the user's locale
+    const formattedDateTime = now.toLocaleString();  // Automatically uses the system's locale
+
+    // Insert the current date and time into the first <time> field
+    document.getElementById('current-time').setAttribute('datetime', now.toISOString());
+    document.getElementById('current-time').textContent = formattedDateTime;
+
+    // Calculate the next time (one hour later)
+    const nextTime = new Date(now.getTime() + 60 * 60 * 1000);  // Adds one hour (60 minutes * 60 seconds * 1000 ms)
+
+    // Format the next time based on the user's locale
+    const formattedNextTime = nextTime.toLocaleString();
+
+    // Insert the next time into the second <time> field
+    document.getElementById('next-time').setAttribute('datetime', nextTime.toISOString());
+    document.getElementById('next-time').textContent = formattedNextTime;
+</script>

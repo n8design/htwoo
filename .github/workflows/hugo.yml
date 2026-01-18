@@ -112,9 +112,12 @@ jobs:
             echo "Error: Hard links found in the public directory."
             exit 1
           fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/upload-artifact@v4
-        with:
-          name: htwoo-site
-          path: ./public
+        uses: actions/deploy-pages@v4

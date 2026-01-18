@@ -1,0 +1,92 @@
+@use "../../00-base/colors/colors";
+@use "button-action";
+
+div.hoo-buttoncmd {
+	position: relative;
+
+	display: inline-flex;
+
+	&:hover {
+
+		&>button.hoo-buttoncmd {
+			background-color: colors.$neutral-100;
+		}
+
+	}
+	
+	a.hoo-buttoncmd,
+	button.hoo-buttoncmd {
+		@extend .hoo-buttonaction;
+		cursor: pointer;
+		background-color: inherit;
+
+		.hoo-buttonchevron {
+			// color: $buttonText;
+			color: colors.$neutral-700;
+		}
+
+		// &>* {
+		// 	pointer-events: none;
+		// }
+
+		&:hover {
+			background-color: colors.$neutral-100;
+		}
+
+		&:active {
+			background-color: colors.$neutral-200;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+	}
+
+	a.hoo-buttoncmd{
+		text-decoration: none;
+	}
+
+	&[disabled],
+	&:disabled {
+		button.hoo-buttoncmd {
+			pointer-events: none;
+
+			color: colors.$neutral-400;
+			border-color: colors.$neutral-100;
+			background-color: colors.$neutral-100;
+
+			.hoo-button-icon {
+				color: colors.$neutral-400;
+			}
+
+			.hoo-pivot-inner {
+				color: inherit;
+			}
+		}
+	}
+
+
+	.hoo-buttonflyout {
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		display: none;
+
+		&>* {
+			pointer-events: all;
+		}
+
+		.hoo-buttoncontext {
+			display: flex;
+		}
+	}
+
+	&:not([disabled]):hover,
+	&.show-flyout {
+		&>.hoo-buttonflyout {
+			display: flex;
+		}
+	}
+}

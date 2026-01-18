@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-react",
-  "version": "2.7.3",
+  "version": "2.9.0",
   "description": "hTWOo React is a ReactJS implementation of hTWOo Core which is a Fluent Design Framework purely in HTML and CSS",
   "keywords": [
     "Fluent Design",
@@ -52,12 +52,18 @@
     "@babel/preset-env": "7.26.0",
     "@babel/preset-react": "7.25.9",
     "@babel/preset-typescript": "7.26.0",
-    "@chromatic-com/storybook": "^4.0.0",
-    "@storybook/addon-a11y": "^9.0.6",
-    "@storybook/addon-docs": "^9.0.6",
-    "@storybook/addon-links": "^9.0.6",
-    "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
-    "@storybook/react-webpack5": "^9.0.6",
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-a11y": "^8.4.6",
+    "@storybook/addon-actions": "^8.4.6",
+    "@storybook/addon-docs": "^8.4.6",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-links": "^8.4.6",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/manager-api": "^8.4.6",
+    "@storybook/preview-api": "^8.4.6",
+    "@storybook/react-webpack5": "^8.4.6",
+    "@storybook/theming": "^8.4.6",
     "@types/react": "17.*",
     "@types/react-dom": "17.*",
     "browser-sync": "^2.29.3",
@@ -66,10 +72,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^5.0.1",
     "rimraf": "^4.x",
-    "storybook": "^9.0.6",
+    "storybook": "^8.4.6",
     "typescript": "^4.x"
-  },
-  "overrides": {
-    "storybook": "$storybook"
   }
 }

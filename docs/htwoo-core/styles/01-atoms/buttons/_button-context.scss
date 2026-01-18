@@ -1,0 +1,86 @@
+@use "../../00-base/colors/colors";
+@use "../../00-base/mixin/flyouts.mixin";
+@use "../../00-base/mixin/core.mixin";
+
+div.hoo-buttoncontext-outer{
+	// @extend %flyoutDropDown;
+
+	position: relative;
+}
+
+.hoo-buttoncontext{
+	display: inline-flex;
+
+	box-sizing: border-box;
+	height: core.px2rem(32px);
+	margin: 0;
+	padding: 0 core.px2rem(16px);
+
+	white-space: nowrap;
+
+	border: none;
+	// border: 1px $buttonBorder solid;
+	border: 1px colors.$neutral-450 solid;
+	border-radius: 2px;
+	background-color: colors.$neutral-000;
+	color: colors.$neutral-700;
+
+	align-items: center;
+
+	cursor: pointer;
+	& > *{
+		pointer-events: none;
+	}
+
+	&-icon{
+		line-height: core.px2rem(36px);
+
+		display: flex;
+		justify-content: center;
+
+		box-sizing: border-box;
+		width: core.px2rem(24px);
+
+		align-items: center;
+
+		svg{
+			padding: 0 core.px2rem(4px);
+		}
+	}
+
+	&-label{
+		font-size: core.px2rem(14px);
+		line-height: core.px2rem(32px);
+
+		box-sizing: border-box;
+		padding: 0 core.px2rem(4px);
+
+		white-space: nowrap;
+	}
+
+	.hoo-buttonchevron{
+		padding: 0 core.px2rem(4px);
+
+		svg{
+			width: core.px2rem(12px);
+			height: core.px2rem(12px);
+		}
+	}
+
+	&:hover{
+		background-color: colors.$neutral-100;
+	}
+
+	&:active{
+		color: colors.$neutral-200;
+	}
+
+	&[disabled],
+	&:disabled {
+		pointer-events: none;
+
+		color: colors.$neutral-400;
+		border-color: colors.$neutral-100;
+		background-color: colors.$neutral-100;
+	}
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var oz = Object.create;
 var Di = Object.defineProperty;
 var iz = Object.getOwnPropertyDescriptor;
@@ -21,10 +22,35 @@ var v = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports), f
   return e;
 };
 var De = (e, t, r) => (r = e != null ? oz(az(e)) : {}, dx(
+=======
+var tl = Object.create;
+var et = Object.defineProperty;
+var ol = Object.getOwnPropertyDescriptor;
+var nl = Object.getOwnPropertyNames;
+var sl = Object.getPrototypeOf, il = Object.prototype.hasOwnProperty;
+var n = (r, e) => et(r, "name", { value: e, configurable: !0 }), cr = /* @__PURE__ */ ((r) => typeof require < "u" ? require : typeof Proxy <
+"u" ? new Proxy(r, {
+  get: (e, t) => (typeof require < "u" ? require : e)[t]
+}) : r)(function(r) {
+  if (typeof require < "u") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + r + '" is not supported');
+});
+var q = (r, e) => () => (e || r((e = { exports: {} }).exports, e), e.exports), _e = (r, e) => {
+  for (var t in e)
+    et(r, t, { get: e[t], enumerable: !0 });
+}, al = (r, e, t, o) => {
+  if (e && typeof e == "object" || typeof e == "function")
+    for (let s of nl(e))
+      !il.call(r, s) && s !== t && et(r, s, { get: () => e[s], enumerable: !(o = ol(e, s)) || o.enumerable });
+  return r;
+};
+var ue = (r, e, t) => (t = r != null ? tl(sl(r)) : {}, al(
+>>>>>>> main
   // If the importer is in node compatibility mode or this is not an ESM
   // file that has been converted to a CommonJS file using a Babel-
   // compatible transform (i.e. "__esModule" has not been set), then set
   // "default" to the CommonJS "module.exports" for node compatibility.
+<<<<<<< HEAD
   t || !e || !e.__esModule ? Di(r, "default", { value: e, enumerable: !0 }) : r,
   e
 )), cz = (e) => dx(Di({}, "__esModule", { value: !0 }), e);
@@ -139,12 +165,129 @@ var Gg = v((AC, zg) => {
         for (h = 0; h < y; h++) {
           for (m = !0, b = 0; b < f; b++)
             if (!c(d[h][b].arg, p[b].arg)) {
+=======
+  e || !r || !r.__esModule ? et(t, "default", { value: r, enumerable: !0 }) : t,
+  r
+));
+
+// ../node_modules/memoizerific/memoizerific.js
+var it = q((ys, So) => {
+  (function(r) {
+    if (typeof ys == "object" && typeof So < "u")
+      So.exports = r();
+    else if (typeof define == "function" && define.amd)
+      define([], r);
+    else {
+      var e;
+      typeof window < "u" ? e = window : typeof global < "u" ? e = global : typeof self < "u" ? e = self : e = this, e.memoizerific = r();
+    }
+  })(function() {
+    var r, e, t;
+    return (/* @__PURE__ */ n(function o(s, i, a) {
+      function c(u, d) {
+        if (!i[u]) {
+          if (!s[u]) {
+            var h = typeof cr == "function" && cr;
+            if (!d && h) return h(u, !0);
+            if (l) return l(u, !0);
+            var S = new Error("Cannot find module '" + u + "'");
+            throw S.code = "MODULE_NOT_FOUND", S;
+          }
+          var m = i[u] = { exports: {} };
+          s[u][0].call(m.exports, function(T) {
+            var y = s[u][1][T];
+            return c(y || T);
+          }, m, m.exports, o, s, i, a);
+        }
+        return i[u].exports;
+      }
+      n(c, "s");
+      for (var l = typeof cr == "function" && cr, p = 0; p < a.length; p++) c(a[p]);
+      return c;
+    }, "e"))({ 1: [function(o, s, i) {
+      s.exports = function(a) {
+        if (typeof Map != "function" || a) {
+          var c = o("./similar");
+          return new c();
+        } else
+          return /* @__PURE__ */ new Map();
+      };
+    }, { "./similar": 2 }], 2: [function(o, s, i) {
+      function a() {
+        return this.list = [], this.lastItem = void 0, this.size = 0, this;
+      }
+      n(a, "Similar"), a.prototype.get = function(c) {
+        var l;
+        if (this.lastItem && this.isEqual(this.lastItem.key, c))
+          return this.lastItem.val;
+        if (l = this.indexOf(c), l >= 0)
+          return this.lastItem = this.list[l], this.list[l].val;
+      }, a.prototype.set = function(c, l) {
+        var p;
+        return this.lastItem && this.isEqual(this.lastItem.key, c) ? (this.lastItem.val = l, this) : (p = this.indexOf(c), p >= 0 ? (this.lastItem =
+        this.list[p], this.list[p].val = l, this) : (this.lastItem = { key: c, val: l }, this.list.push(this.lastItem), this.size++, this));
+      }, a.prototype.delete = function(c) {
+        var l;
+        if (this.lastItem && this.isEqual(this.lastItem.key, c) && (this.lastItem = void 0), l = this.indexOf(c), l >= 0)
+          return this.size--, this.list.splice(l, 1)[0];
+      }, a.prototype.has = function(c) {
+        var l;
+        return this.lastItem && this.isEqual(this.lastItem.key, c) ? !0 : (l = this.indexOf(c), l >= 0 ? (this.lastItem = this.list[l], !0) :
+        !1);
+      }, a.prototype.forEach = function(c, l) {
+        var p;
+        for (p = 0; p < this.size; p++)
+          c.call(l || this, this.list[p].val, this.list[p].key, this);
+      }, a.prototype.indexOf = function(c) {
+        var l;
+        for (l = 0; l < this.size; l++)
+          if (this.isEqual(this.list[l].key, c))
+            return l;
+        return -1;
+      }, a.prototype.isEqual = function(c, l) {
+        return c === l || c !== c && l !== l;
+      }, s.exports = a;
+    }, {}], 3: [function(o, s, i) {
+      var a = o("map-or-similar");
+      s.exports = function(u) {
+        var d = new a(!1), h = [];
+        return function(S) {
+          var m = /* @__PURE__ */ n(function() {
+            var T = d, y, R, x = arguments.length - 1, g = Array(x + 1), b = !0, v;
+            if ((m.numArgs || m.numArgs === 0) && m.numArgs !== x + 1)
+              throw new Error("Memoizerific functions should always be called with the same number of arguments");
+            for (v = 0; v < x; v++) {
+              if (g[v] = {
+                cacheItem: T,
+                arg: arguments[v]
+              }, T.has(arguments[v])) {
+                T = T.get(arguments[v]);
+                continue;
+              }
+              b = !1, y = new a(!1), T.set(arguments[v], y), T = y;
+            }
+            return b && (T.has(arguments[x]) ? R = T.get(arguments[x]) : b = !1), b || (R = S.apply(null, arguments), T.set(arguments[x], R)),
+            u > 0 && (g[x] = {
+              cacheItem: T,
+              arg: arguments[x]
+            }, b ? c(h, g) : h.push(g), h.length > u && l(h.shift())), m.wasMemoized = b, m.numArgs = x + 1, R;
+          }, "memoizerific");
+          return m.limit = u, m.wasMemoized = !1, m.cache = d, m.lru = h, m;
+        };
+      };
+      function c(u, d) {
+        var h = u.length, S = d.length, m, T, y;
+        for (T = 0; T < h; T++) {
+          for (m = !0, y = 0; y < S; y++)
+            if (!p(u[T][y].arg, d[y].arg)) {
+>>>>>>> main
               m = !1;
               break;
             }
           if (m)
             break;
         }
+<<<<<<< HEAD
         d.push(d.splice(h, 1)[0]);
       }
       o(l, "moveToMostRecentLru");
@@ -158,10 +301,26 @@ var Gg = v((AC, zg) => {
         return d === p || d !== d && p !== p;
       }
       o(c, "isEqual");
+=======
+        u.push(u.splice(T, 1)[0]);
+      }
+      n(c, "moveToMostRecentLru");
+      function l(u) {
+        var d = u.length, h = u[d - 1], S, m;
+        for (h.cacheItem.delete(h.arg), m = d - 2; m >= 0 && (h = u[m], S = h.cacheItem.get(h.arg), !S || !S.size); m--)
+          h.cacheItem.delete(h.arg);
+      }
+      n(l, "removeCachedResult");
+      function p(u, d) {
+        return u === d || u !== u && d !== d;
+      }
+      n(p, "isEqual");
+>>>>>>> main
     }, { "map-or-similar": 1 }] }, {}, [3])(3);
   });
 });
 
+<<<<<<< HEAD
 // (disabled):../node_modules/util/util.js
 var hP = v(() => {
 });
@@ -16335,6 +16494,75 @@ var BS = v(($S) => {
   Object.defineProperty($S, "__esModule", { value: !0 });
   $S.encodeString = ySe;
   var yr = Array.from({ length: 256 }, (e, t) => "%" + ((t < 16 ? "0" : "") + t.toString(16)).toUpperCase()), hSe = new Int8Array([
+=======
+// ../node_modules/@ngard/tiny-isequal/index.js
+var wi = q((Tn) => {
+  Object.defineProperty(Tn, "__esModule", { value: !0 }), Tn.isEqual = /* @__PURE__ */ function() {
+    var r = Object.prototype.toString, e = Object.getPrototypeOf, t = Object.getOwnPropertySymbols ? function(o) {
+      return Object.keys(o).concat(Object.getOwnPropertySymbols(o));
+    } : Object.keys;
+    return function(o, s) {
+      return (/* @__PURE__ */ n(function i(a, c, l) {
+        var p, u, d, h = r.call(a), S = r.call(c);
+        if (a === c) return !0;
+        if (a == null || c == null) return !1;
+        if (l.indexOf(a) > -1 && l.indexOf(c) > -1) return !0;
+        if (l.push(a, c), h != S || (p = t(a), u = t(c), p.length != u.length || p.some(function(m) {
+          return !i(a[m], c[m], l);
+        }))) return !1;
+        switch (h.slice(8, -1)) {
+          case "Symbol":
+            return a.valueOf() == c.valueOf();
+          case "Date":
+          case "Number":
+            return +a == +c || +a != +a && +c != +c;
+          case "RegExp":
+          case "Function":
+          case "String":
+          case "Boolean":
+            return "" + a == "" + c;
+          case "Set":
+          case "Map":
+            p = a.entries(), u = c.entries();
+            do
+              if (!i((d = p.next()).value, u.next().value, l)) return !1;
+            while (!d.done);
+            return !0;
+          case "ArrayBuffer":
+            a = new Uint8Array(a), c = new Uint8Array(c);
+          case "DataView":
+            a = new Uint8Array(a.buffer), c = new Uint8Array(c.buffer);
+          case "Float32Array":
+          case "Float64Array":
+          case "Int8Array":
+          case "Int16Array":
+          case "Int32Array":
+          case "Uint8Array":
+          case "Uint16Array":
+          case "Uint32Array":
+          case "Uint8ClampedArray":
+          case "Arguments":
+          case "Array":
+            if (a.length != c.length) return !1;
+            for (d = 0; d < a.length; d++) if ((d in a || d in c) && (d in a != d in c || !i(a[d], c[d], l))) return !1;
+            return !0;
+          case "Object":
+            return i(e(a), e(c), l);
+          default:
+            return !1;
+        }
+      }, "n"))(o, s, []);
+    };
+  }();
+});
+
+// ../node_modules/picoquery/lib/string-util.js
+var qn = q((Gn) => {
+  "use strict";
+  Object.defineProperty(Gn, "__esModule", { value: !0 });
+  Gn.encodeString = mu;
+  var le = Array.from({ length: 256 }, (r, e) => "%" + ((e < 16 ? "0" : "") + e.toString(16)).toUpperCase()), yu = new Int8Array([
+>>>>>>> main
     0,
     0,
     0,
@@ -16464,6 +16692,7 @@ var BS = v(($S) => {
     1,
     0
   ]);
+<<<<<<< HEAD
   function ySe(e) {
     let t = e.length;
     if (t === 0)
@@ -16518,19 +16747,83 @@ var Qy = v((br) => {
   br.defaultShouldSerializeObject = gSe;
   var J3 = /* @__PURE__ */ o((e) => e, "identityFunc");
   br.defaultOptions = {
+=======
+  function mu(r) {
+    let e = r.length;
+    if (e === 0)
+      return "";
+    let t = "", o = 0, s = 0;
+    e: for (; s < e; s++) {
+      let i = r.charCodeAt(s);
+      for (; i < 128; ) {
+        if (yu[i] !== 1 && (o < s && (t += r.slice(o, s)), o = s + 1, t += le[i]), ++s === e)
+          break e;
+        i = r.charCodeAt(s);
+      }
+      if (o < s && (t += r.slice(o, s)), i < 2048) {
+        o = s + 1, t += le[192 | i >> 6] + le[128 | i & 63];
+        continue;
+      }
+      if (i < 55296 || i >= 57344) {
+        o = s + 1, t += le[224 | i >> 12] + le[128 | i >> 6 & 63] + le[128 | i & 63];
+        continue;
+      }
+      if (++s, s >= e)
+        throw new Error("URI malformed");
+      let a = r.charCodeAt(s) & 1023;
+      o = s + 1, i = 65536 + ((i & 1023) << 10 | a), t += le[240 | i >> 18] + le[128 | i >> 12 & 63] + le[128 | i >> 6 & 63] + le[128 | i & 63];
+    }
+    return o === 0 ? r : o < e ? t + r.slice(o) : t;
+  }
+  n(mu, "encodeString");
+});
+
+// ../node_modules/picoquery/lib/shared.js
+var It = q((ce) => {
+  "use strict";
+  Object.defineProperty(ce, "__esModule", { value: !0 });
+  ce.defaultOptions = ce.defaultShouldSerializeObject = ce.defaultValueSerializer = void 0;
+  var Bn = qn(), hu = /* @__PURE__ */ n((r) => {
+    switch (typeof r) {
+      case "string":
+        return (0, Bn.encodeString)(r);
+      case "bigint":
+      case "boolean":
+        return "" + r;
+      case "number":
+        if (Number.isFinite(r))
+          return r < 1e21 ? "" + r : (0, Bn.encodeString)("" + r);
+        break;
+    }
+    return r instanceof Date ? (0, Bn.encodeString)(r.toISOString()) : "";
+  }, "defaultValueSerializer");
+  ce.defaultValueSerializer = hu;
+  var gu = /* @__PURE__ */ n((r) => r instanceof Date, "defaultShouldSerializeObject");
+  ce.defaultShouldSerializeObject = gu;
+  var Zi = /* @__PURE__ */ n((r) => r, "identityFunc");
+  ce.defaultOptions = {
+>>>>>>> main
     nesting: !0,
     nestingSyntax: "dot",
     arrayRepeat: !1,
     arrayRepeatSyntax: "repeat",
     delimiter: 38,
+<<<<<<< HEAD
     valueDeserializer: J3,
     valueSerializer: br.defaultValueSerializer,
     keyDeserializer: J3,
     shouldSerializeObject: br.defaultShouldSerializeObject
+=======
+    valueDeserializer: Zi,
+    valueSerializer: ce.defaultValueSerializer,
+    keyDeserializer: Zi,
+    shouldSerializeObject: ce.defaultShouldSerializeObject
+>>>>>>> main
   };
 });
 
 // ../node_modules/picoquery/lib/object-util.js
+<<<<<<< HEAD
 var HS = v((eb) => {
   "use strict";
   Object.defineProperty(eb, "__esModule", { value: !0 });
@@ -16573,6 +16866,50 @@ var HS = v((eb) => {
 var rV = v((MXe, tV) => {
   "use strict";
   var Q3 = 12, CSe = 0, VS = [
+=======
+var Vn = q((Ft) => {
+  "use strict";
+  Object.defineProperty(Ft, "__esModule", { value: !0 });
+  Ft.getDeepObject = Tu;
+  Ft.stringifyObject = ea;
+  var Ge = It(), Su = qn();
+  function bu(r) {
+    return r === "__proto__" || r === "constructor" || r === "prototype";
+  }
+  n(bu, "isPrototypeKey");
+  function Tu(r, e, t, o, s) {
+    if (bu(e))
+      return r;
+    let i = r[e];
+    return typeof i == "object" && i !== null ? i : !o && (s || typeof t == "number" || typeof t == "string" && t * 0 === 0 && t.indexOf(".") ===
+    -1) ? r[e] = [] : r[e] = {};
+  }
+  n(Tu, "getDeepObject");
+  var Eu = 20, Ru = "[]", Au = "[", xu = "]", vu = ".";
+  function ea(r, e, t = 0, o, s) {
+    let { nestingSyntax: i = Ge.defaultOptions.nestingSyntax, arrayRepeat: a = Ge.defaultOptions.arrayRepeat, arrayRepeatSyntax: c = Ge.defaultOptions.
+    arrayRepeatSyntax, nesting: l = Ge.defaultOptions.nesting, delimiter: p = Ge.defaultOptions.delimiter, valueSerializer: u = Ge.defaultOptions.
+    valueSerializer, shouldSerializeObject: d = Ge.defaultOptions.shouldSerializeObject } = e, h = typeof p == "number" ? String.fromCharCode(
+    p) : p, S = s === !0 && a, m = i === "dot" || i === "js" && !s;
+    if (t > Eu)
+      return "";
+    let T = "", y = !0, R = !1;
+    for (let x in r) {
+      let g = r[x], b;
+      o ? (b = o, S ? c === "bracket" && (b += Ru) : m ? (b += vu, b += x) : (b += Au, b += x, b += xu)) : b = x, y || (T += h), typeof g ==
+      "object" && g !== null && !d(g) ? (R = g.pop !== void 0, (l || a && R) && (T += ea(g, e, t + 1, b, R))) : (T += (0, Su.encodeString)(b),
+      T += "=", T += u(g, x)), y && (y = !1);
+    }
+    return T;
+  }
+  n(ea, "stringifyObject");
+});
+
+// ../node_modules/fast-decode-uri-component/index.js
+var na = q((zb, oa) => {
+  "use strict";
+  var ra = 12, wu = 0, Hn = [
+>>>>>>> main
     // The first part of the table maps bytes to character to a transition.
     0,
     0,
@@ -16955,6 +17292,7 @@ var rV = v((MXe, tV) => {
     7,
     7
   ];
+<<<<<<< HEAD
   function PSe(e) {
     var t = e.indexOf("%");
     if (t === -1) return e;
@@ -16976,6 +17314,29 @@ var rV = v((MXe, tV) => {
   }
   o(PSe, "decodeURIComponent");
   var ASe = {
+=======
+  function _u(r) {
+    var e = r.indexOf("%");
+    if (e === -1) return r;
+    for (var t = r.length, o = "", s = 0, i = 0, a = e, c = ra; e > -1 && e < t; ) {
+      var l = ta(r[e + 1], 4), p = ta(r[e + 2], 0), u = l | p, d = Hn[u];
+      if (c = Hn[256 + c + d], i = i << 6 | u & Hn[364 + d], c === ra)
+        o += r.slice(s, a), o += i <= 65535 ? String.fromCharCode(i) : String.fromCharCode(
+          55232 + (i >> 10),
+          56320 + (i & 1023)
+        ), i = 0, s = e + 3, e = a = r.indexOf("%", s);
+      else {
+        if (c === wu)
+          return null;
+        if (e += 3, e < t && r.charCodeAt(e) === 37) continue;
+        return null;
+      }
+    }
+    return o + r.slice(s);
+  }
+  n(_u, "decodeURIComponent");
+  var Cu = {
+>>>>>>> main
     0: 0,
     1: 1,
     2: 2,
@@ -16999,6 +17360,7 @@ var rV = v((MXe, tV) => {
     f: 15,
     F: 15
   };
+<<<<<<< HEAD
   function eV(e, t) {
     var r = ASe[e];
     return r === void 0 ? 255 : r << t;
@@ -17114,6 +17476,123 @@ var nb = v((ar) => {
 // ../node_modules/entities/lib/maps/entities.json
 var KS = v((XXe, GSe) => {
   GSe.exports = { Aacute: "\xC1", aacute: "\xE1", Abreve: "\u0102", abreve: "\u0103", ac: "\u223E", acd: "\u223F", acE: "\u223E\u0333", Acirc: "\
+=======
+  function ta(r, e) {
+    var t = Cu[r];
+    return t === void 0 ? 255 : t << e;
+  }
+  n(ta, "hexCodeToInt");
+  oa.exports = _u;
+});
+
+// ../node_modules/picoquery/lib/parse.js
+var la = q((he) => {
+  "use strict";
+  var Pu = he && he.__importDefault || function(r) {
+    return r && r.__esModule ? r : { default: r };
+  };
+  Object.defineProperty(he, "__esModule", { value: !0 });
+  he.numberValueDeserializer = he.numberKeyDeserializer = void 0;
+  he.parse = Fu;
+  var Dt = Vn(), qe = It(), sa = Pu(na()), Ou = /* @__PURE__ */ n((r) => {
+    let e = Number(r);
+    return Number.isNaN(e) ? r : e;
+  }, "numberKeyDeserializer");
+  he.numberKeyDeserializer = Ou;
+  var Iu = /* @__PURE__ */ n((r) => {
+    let e = Number(r);
+    return Number.isNaN(e) ? r : e;
+  }, "numberValueDeserializer");
+  he.numberValueDeserializer = Iu;
+  var ia = /\+/g, aa = /* @__PURE__ */ n(function() {
+  }, "Empty");
+  aa.prototype = /* @__PURE__ */ Object.create(null);
+  function Nt(r, e, t, o, s) {
+    let i = r.substring(e, t);
+    return o && (i = i.replace(ia, " ")), s && (i = (0, sa.default)(i) || i), i;
+  }
+  n(Nt, "computeKeySlice");
+  function Fu(r, e) {
+    let { valueDeserializer: t = qe.defaultOptions.valueDeserializer, keyDeserializer: o = qe.defaultOptions.keyDeserializer, arrayRepeatSyntax: s = qe.
+    defaultOptions.arrayRepeatSyntax, nesting: i = qe.defaultOptions.nesting, arrayRepeat: a = qe.defaultOptions.arrayRepeat, nestingSyntax: c = qe.
+    defaultOptions.nestingSyntax, delimiter: l = qe.defaultOptions.delimiter } = e ?? {}, p = typeof l == "string" ? l.charCodeAt(0) : l, u = c ===
+    "js", d = new aa();
+    if (typeof r != "string")
+      return d;
+    let h = r.length, S = "", m = -1, T = -1, y = -1, R = d, x, g = "", b = "", v = !1, C = !1, F = !1, U = !1, B = !1, W = !1, se = !1, P = 0,
+    D = -1, M = -1, L = -1;
+    for (let N = 0; N < h + 1; N++) {
+      if (P = N !== h ? r.charCodeAt(N) : p, P === p) {
+        if (se = T > m, se || (T = N), y !== T - 1 && (b = Nt(r, y + 1, D > -1 ? D : T, F, v), g = o(b), x !== void 0 && (R = (0, Dt.getDeepObject)(
+        R, x, g, u && B, u && W))), se || g !== "") {
+          se && (S = r.slice(T + 1, N), U && (S = S.replace(ia, " ")), C && (S = (0, sa.default)(S) || S));
+          let H = t(S, g);
+          if (a) {
+            let re = R[g];
+            re === void 0 ? D > -1 ? R[g] = [H] : R[g] = H : re.pop ? re.push(H) : R[g] = [re, H];
+          } else
+            R[g] = H;
+        }
+        S = "", m = N, T = N, v = !1, C = !1, F = !1, U = !1, B = !1, W = !1, D = -1, y = N, R = d, x = void 0, g = "";
+      } else P === 93 ? (a && s === "bracket" && L === 91 && (D = M), i && (c === "index" || u) && T <= m && (y !== M && (b = Nt(r, y + 1, N,
+      F, v), g = o(b), x !== void 0 && (R = (0, Dt.getDeepObject)(R, x, g, void 0, u)), x = g, F = !1, v = !1), y = N, W = !0, B = !1)) : P ===
+      46 ? i && (c === "dot" || u) && T <= m && (y !== M && (b = Nt(r, y + 1, N, F, v), g = o(b), x !== void 0 && (R = (0, Dt.getDeepObject)(
+      R, x, g, u)), x = g, F = !1, v = !1), B = !0, W = !1, y = N) : P === 91 ? i && (c === "index" || u) && T <= m && (y !== M && (b = Nt(r,
+      y + 1, N, F, v), g = o(b), u && x !== void 0 && (R = (0, Dt.getDeepObject)(R, x, g, u)), x = g, F = !1, v = !1, B = !1, W = !0), y = N) :
+      P === 61 ? T <= m ? T = N : C = !0 : P === 43 ? T > m ? U = !0 : F = !0 : P === 37 && (T > m ? C = !0 : v = !0);
+      M = N, L = P;
+    }
+    return d;
+  }
+  n(Fu, "parse");
+});
+
+// ../node_modules/picoquery/lib/stringify.js
+var ca = q((zn) => {
+  "use strict";
+  Object.defineProperty(zn, "__esModule", { value: !0 });
+  zn.stringify = Nu;
+  var Du = Vn();
+  function Nu(r, e) {
+    if (r === null || typeof r != "object")
+      return "";
+    let t = e ?? {};
+    return (0, Du.stringifyObject)(r, t);
+  }
+  n(Nu, "stringify");
+});
+
+// ../node_modules/picoquery/lib/main.js
+var kt = q((ne) => {
+  "use strict";
+  var ku = ne && ne.__createBinding || (Object.create ? function(r, e, t, o) {
+    o === void 0 && (o = t);
+    var s = Object.getOwnPropertyDescriptor(e, t);
+    (!s || ("get" in s ? !e.__esModule : s.writable || s.configurable)) && (s = { enumerable: !0, get: /* @__PURE__ */ n(function() {
+      return e[t];
+    }, "get") }), Object.defineProperty(r, o, s);
+  } : function(r, e, t, o) {
+    o === void 0 && (o = t), r[o] = e[t];
+  }), Lu = ne && ne.__exportStar || function(r, e) {
+    for (var t in r) t !== "default" && !Object.prototype.hasOwnProperty.call(e, t) && ku(e, r, t);
+  };
+  Object.defineProperty(ne, "__esModule", { value: !0 });
+  ne.stringify = ne.parse = void 0;
+  var ju = la();
+  Object.defineProperty(ne, "parse", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ju.parse;
+  }, "get") });
+  var Mu = ca();
+  Object.defineProperty(ne, "stringify", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Mu.stringify;
+  }, "get") });
+  Lu(It(), ne);
+});
+
+// ../node_modules/ansi-to-html/node_modules/entities/lib/maps/entities.json
+var Kn = q((lT, zu) => {
+  zu.exports = { Aacute: "\xC1", aacute: "\xE1", Abreve: "\u0102", abreve: "\u0103", ac: "\u223E", acd: "\u223F", acE: "\u223E\u0333", Acirc: "\
+>>>>>>> main
 \xC2", acirc: "\xE2", acute: "\xB4", Acy: "\u0410", acy: "\u0430", AElig: "\xC6", aelig: "\xE6", af: "\u2061", Afr: "\u{1D504}", afr: "\u{1D51E}",
   Agrave: "\xC0", agrave: "\xE0", alefsym: "\u2135", aleph: "\u2135", Alpha: "\u0391", alpha: "\u03B1", Amacr: "\u0100", amacr: "\u0101", amalg: "\
 \u2A3F", amp: "&", AMP: "&", andand: "\u2A55", And: "\u2A53", and: "\u2227", andd: "\u2A5C", andslope: "\u2A58", andv: "\u2A5A", ang: "\u2220",
@@ -17393,12 +17872,21 @@ var KS = v((XXe, GSe) => {
   zwnj: "\u200C" };
 });
 
+<<<<<<< HEAD
 // ../node_modules/entities/lib/maps/legacy.json
 var mV = v((JXe, YSe) => {
   YSe.exports = { Aacute: "\xC1", aacute: "\xE1", Acirc: "\xC2", acirc: "\xE2", acute: "\xB4", AElig: "\xC6", aelig: "\xE6", Agrave: "\xC0",
   agrave: "\xE0", amp: "&", AMP: "&", Aring: "\xC5", aring: "\xE5", Atilde: "\xC3", atilde: "\xE3", Auml: "\xC4", auml: "\xE4", brvbar: "\xA6",
   Ccedil: "\xC7", ccedil: "\xE7", cedil: "\xB8", cent: "\xA2", copy: "\xA9", COPY: "\xA9", curren: "\xA4", deg: "\xB0", divide: "\xF7", Eacute: "\
 \xC9", eacute: "\xE9", Ecirc: "\xCA", ecirc: "\xEA", Egrave: "\xC8", egrave: "\xE8", ETH: "\xD0", eth: "\xF0", Euml: "\xCB", euml: "\xEB", frac12: "\
+=======
+// ../node_modules/ansi-to-html/node_modules/entities/lib/maps/legacy.json
+var ha = q((cT, Wu) => {
+  Wu.exports = { Aacute: "\xC1", aacute: "\xE1", Acirc: "\xC2", acirc: "\xE2", acute: "\xB4", AElig: "\xC6", aelig: "\xE6", Agrave: "\xC0", agrave: "\
+\xE0", amp: "&", AMP: "&", Aring: "\xC5", aring: "\xE5", Atilde: "\xC3", atilde: "\xE3", Auml: "\xC4", auml: "\xE4", brvbar: "\xA6", Ccedil: "\
+\xC7", ccedil: "\xE7", cedil: "\xB8", cent: "\xA2", copy: "\xA9", COPY: "\xA9", curren: "\xA4", deg: "\xB0", divide: "\xF7", Eacute: "\xC9",
+  eacute: "\xE9", Ecirc: "\xCA", ecirc: "\xEA", Egrave: "\xC8", egrave: "\xE8", ETH: "\xD0", eth: "\xF0", Euml: "\xCB", euml: "\xEB", frac12: "\
+>>>>>>> main
 \xBD", frac14: "\xBC", frac34: "\xBE", gt: ">", GT: ">", Iacute: "\xCD", iacute: "\xED", Icirc: "\xCE", icirc: "\xEE", iexcl: "\xA1", Igrave: "\
 \xCC", igrave: "\xEC", iquest: "\xBF", Iuml: "\xCF", iuml: "\xEF", laquo: "\xAB", lt: "<", LT: "<", macr: "\xAF", micro: "\xB5", middot: "\xB7",
   nbsp: "\xA0", not: "\xAC", Ntilde: "\xD1", ntilde: "\xF1", Oacute: "\xD3", oacute: "\xF3", Ocirc: "\xD4", ocirc: "\xF4", Ograve: "\xD2", ograve: "\
@@ -17408,6 +17896,7 @@ var mV = v((JXe, YSe) => {
   Ugrave: "\xD9", ugrave: "\xF9", uml: "\xA8", Uuml: "\xDC", uuml: "\xFC", Yacute: "\xDD", yacute: "\xFD", yen: "\xA5", yuml: "\xFF" };
 });
 
+<<<<<<< HEAD
 // ../node_modules/entities/lib/maps/xml.json
 var XS = v((ZXe, WSe) => {
   WSe.exports = { amp: "&", apos: "'", gt: ">", lt: "<", quot: '"' };
@@ -17416,10 +17905,21 @@ var XS = v((ZXe, WSe) => {
 // ../node_modules/entities/lib/maps/decode.json
 var hV = v((QXe, KSe) => {
   KSe.exports = { "0": 65533, "128": 8364, "130": 8218, "131": 402, "132": 8222, "133": 8230, "134": 8224, "135": 8225, "136": 710, "137": 8240,
+=======
+// ../node_modules/ansi-to-html/node_modules/entities/lib/maps/xml.json
+var Xn = q((pT, $u) => {
+  $u.exports = { amp: "&", apos: "'", gt: ">", lt: "<", quot: '"' };
+});
+
+// ../node_modules/ansi-to-html/node_modules/entities/lib/maps/decode.json
+var ga = q((dT, Yu) => {
+  Yu.exports = { "0": 65533, "128": 8364, "130": 8218, "131": 402, "132": 8222, "133": 8230, "134": 8224, "135": 8225, "136": 710, "137": 8240,
+>>>>>>> main
   "138": 352, "139": 8249, "140": 338, "142": 381, "145": 8216, "146": 8217, "147": 8220, "148": 8221, "149": 8226, "150": 8211, "151": 8212,
   "152": 732, "153": 8482, "154": 353, "155": 8250, "156": 339, "158": 382, "159": 376 };
 });
 
+<<<<<<< HEAD
 // ../node_modules/entities/lib/decode_codepoint.js
 var bV = v((Ja) => {
   "use strict";
@@ -17637,10 +18137,230 @@ var qV = v((se) => {
   }, "get") });
   Object.defineProperty(se, "decodeXMLStrict", { enumerable: !0, get: /* @__PURE__ */ o(function() {
     return wn.decodeXML;
+=======
+// ../node_modules/ansi-to-html/node_modules/entities/lib/decode_codepoint.js
+var ba = q((zr) => {
+  "use strict";
+  var Ku = zr && zr.__importDefault || function(r) {
+    return r && r.__esModule ? r : { default: r };
+  };
+  Object.defineProperty(zr, "__esModule", { value: !0 });
+  var Sa = Ku(ga()), Xu = (
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    String.fromCodePoint || function(r) {
+      var e = "";
+      return r > 65535 && (r -= 65536, e += String.fromCharCode(r >>> 10 & 1023 | 55296), r = 56320 | r & 1023), e += String.fromCharCode(r),
+      e;
+    }
+  );
+  function Ju(r) {
+    return r >= 55296 && r <= 57343 || r > 1114111 ? "\uFFFD" : (r in Sa.default && (r = Sa.default[r]), Xu(r));
+  }
+  n(Ju, "decodeCodePoint");
+  zr.default = Ju;
+});
+
+// ../node_modules/ansi-to-html/node_modules/entities/lib/decode.js
+var Qn = q((pe) => {
+  "use strict";
+  var Lt = pe && pe.__importDefault || function(r) {
+    return r && r.__esModule ? r : { default: r };
+  };
+  Object.defineProperty(pe, "__esModule", { value: !0 });
+  pe.decodeHTML = pe.decodeHTMLStrict = pe.decodeXML = void 0;
+  var Jn = Lt(Kn()), Qu = Lt(ha()), Zu = Lt(Xn()), Ta = Lt(ba()), ef = /&(?:[a-zA-Z0-9]+|#[xX][\da-fA-F]+|#\d+);/g;
+  pe.decodeXML = Ra(Zu.default);
+  pe.decodeHTMLStrict = Ra(Jn.default);
+  function Ra(r) {
+    var e = Aa(r);
+    return function(t) {
+      return String(t).replace(ef, e);
+    };
+  }
+  n(Ra, "getStrictDecoder");
+  var Ea = /* @__PURE__ */ n(function(r, e) {
+    return r < e ? 1 : -1;
+  }, "sorter");
+  pe.decodeHTML = function() {
+    for (var r = Object.keys(Qu.default).sort(Ea), e = Object.keys(Jn.default).sort(Ea), t = 0, o = 0; t < e.length; t++)
+      r[o] === e[t] ? (e[t] += ";?", o++) : e[t] += ";";
+    var s = new RegExp("&(?:" + e.join("|") + "|#[xX][\\da-fA-F]+;?|#\\d+;?)", "g"), i = Aa(Jn.default);
+    function a(c) {
+      return c.substr(-1) !== ";" && (c += ";"), i(c);
+    }
+    return n(a, "replacer"), function(c) {
+      return String(c).replace(s, a);
+    };
+  }();
+  function Aa(r) {
+    return /* @__PURE__ */ n(function(t) {
+      if (t.charAt(1) === "#") {
+        var o = t.charAt(2);
+        return o === "X" || o === "x" ? Ta.default(parseInt(t.substr(3), 16)) : Ta.default(parseInt(t.substr(2), 10));
+      }
+      return r[t.slice(1, -1)] || t;
+    }, "replace");
+  }
+  n(Aa, "getReplacer");
+});
+
+// ../node_modules/ansi-to-html/node_modules/entities/lib/encode.js
+var es = q((J) => {
+  "use strict";
+  var xa = J && J.__importDefault || function(r) {
+    return r && r.__esModule ? r : { default: r };
+  };
+  Object.defineProperty(J, "__esModule", { value: !0 });
+  J.escapeUTF8 = J.escape = J.encodeNonAsciiHTML = J.encodeHTML = J.encodeXML = void 0;
+  var rf = xa(Xn()), va = _a(rf.default), wa = Ca(va);
+  J.encodeXML = Ia(va);
+  var tf = xa(Kn()), Zn = _a(tf.default), of = Ca(Zn);
+  J.encodeHTML = sf(Zn, of);
+  J.encodeNonAsciiHTML = Ia(Zn);
+  function _a(r) {
+    return Object.keys(r).sort().reduce(function(e, t) {
+      return e[r[t]] = "&" + t + ";", e;
+    }, {});
+  }
+  n(_a, "getInverseObj");
+  function Ca(r) {
+    for (var e = [], t = [], o = 0, s = Object.keys(r); o < s.length; o++) {
+      var i = s[o];
+      i.length === 1 ? e.push("\\" + i) : t.push(i);
+    }
+    e.sort();
+    for (var a = 0; a < e.length - 1; a++) {
+      for (var c = a; c < e.length - 1 && e[c].charCodeAt(1) + 1 === e[c + 1].charCodeAt(1); )
+        c += 1;
+      var l = 1 + c - a;
+      l < 3 || e.splice(a, l, e[a] + "-" + e[c]);
+    }
+    return t.unshift("[" + e.join("") + "]"), new RegExp(t.join("|"), "g");
+  }
+  n(Ca, "getInverseReplacer");
+  var Pa = /(?:[\x80-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])/g,
+  nf = (
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    String.prototype.codePointAt != null ? (
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      function(r) {
+        return r.codePointAt(0);
+      }
+    ) : (
+      // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
+      function(r) {
+        return (r.charCodeAt(0) - 55296) * 1024 + r.charCodeAt(1) - 56320 + 65536;
+      }
+    )
+  );
+  function jt(r) {
+    return "&#x" + (r.length > 1 ? nf(r) : r.charCodeAt(0)).toString(16).toUpperCase() + ";";
+  }
+  n(jt, "singleCharReplacer");
+  function sf(r, e) {
+    return function(t) {
+      return t.replace(e, function(o) {
+        return r[o];
+      }).replace(Pa, jt);
+    };
+  }
+  n(sf, "getInverse");
+  var Oa = new RegExp(wa.source + "|" + Pa.source, "g");
+  function af(r) {
+    return r.replace(Oa, jt);
+  }
+  n(af, "escape");
+  J.escape = af;
+  function lf(r) {
+    return r.replace(wa, jt);
+  }
+  n(lf, "escapeUTF8");
+  J.escapeUTF8 = lf;
+  function Ia(r) {
+    return function(e) {
+      return e.replace(Oa, function(t) {
+        return r[t] || jt(t);
+      });
+    };
+  }
+  n(Ia, "getASCIIEncoder");
+});
+
+// ../node_modules/ansi-to-html/node_modules/entities/lib/index.js
+var Da = q((O) => {
+  "use strict";
+  Object.defineProperty(O, "__esModule", { value: !0 });
+  O.decodeXMLStrict = O.decodeHTML5Strict = O.decodeHTML4Strict = O.decodeHTML5 = O.decodeHTML4 = O.decodeHTMLStrict = O.decodeHTML = O.decodeXML =
+  O.encodeHTML5 = O.encodeHTML4 = O.escapeUTF8 = O.escape = O.encodeNonAsciiHTML = O.encodeHTML = O.encodeXML = O.encode = O.decodeStrict = O.
+  decode = void 0;
+  var Mt = Qn(), Fa = es();
+  function cf(r, e) {
+    return (!e || e <= 0 ? Mt.decodeXML : Mt.decodeHTML)(r);
+  }
+  n(cf, "decode");
+  O.decode = cf;
+  function pf(r, e) {
+    return (!e || e <= 0 ? Mt.decodeXML : Mt.decodeHTMLStrict)(r);
+  }
+  n(pf, "decodeStrict");
+  O.decodeStrict = pf;
+  function df(r, e) {
+    return (!e || e <= 0 ? Fa.encodeXML : Fa.encodeHTML)(r);
+  }
+  n(df, "encode");
+  O.encode = df;
+  var Ve = es();
+  Object.defineProperty(O, "encodeXML", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.encodeXML;
+  }, "get") });
+  Object.defineProperty(O, "encodeHTML", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.encodeHTML;
+  }, "get") });
+  Object.defineProperty(O, "encodeNonAsciiHTML", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.encodeNonAsciiHTML;
+  }, "get") });
+  Object.defineProperty(O, "escape", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.escape;
+  }, "get") });
+  Object.defineProperty(O, "escapeUTF8", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.escapeUTF8;
+  }, "get") });
+  Object.defineProperty(O, "encodeHTML4", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.encodeHTML;
+  }, "get") });
+  Object.defineProperty(O, "encodeHTML5", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return Ve.encodeHTML;
+  }, "get") });
+  var ve = Qn();
+  Object.defineProperty(O, "decodeXML", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeXML;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTML", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTML;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTMLStrict", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTMLStrict;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTML4", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTML;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTML5", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTML;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTML4Strict", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTMLStrict;
+  }, "get") });
+  Object.defineProperty(O, "decodeHTML5Strict", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeHTMLStrict;
+  }, "get") });
+  Object.defineProperty(O, "decodeXMLStrict", { enumerable: !0, get: /* @__PURE__ */ n(function() {
+    return ve.decodeXML;
+>>>>>>> main
   }, "get") });
 });
 
 // ../node_modules/ansi-to-html/lib/ansi_to_html.js
+<<<<<<< HEAD
 var UV = v((lJe, BV) => {
   "use strict";
   function pxe(e, t) {
@@ -17671,10 +18391,43 @@ var UV = v((lJe, BV) => {
         }, "n"), e: /* @__PURE__ */ o(function(c) {
           throw c;
         }, "e"), f: i };
+=======
+var Ha = q((TT, Va) => {
+  "use strict";
+  function uf(r, e) {
+    if (!(r instanceof e))
+      throw new TypeError("Cannot call a class as a function");
+  }
+  n(uf, "_classCallCheck");
+  function Na(r, e) {
+    for (var t = 0; t < e.length; t++) {
+      var o = e[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(r, o.key, o);
+    }
+  }
+  n(Na, "_defineProperties");
+  function ff(r, e, t) {
+    return e && Na(r.prototype, e), t && Na(r, t), r;
+  }
+  n(ff, "_createClass");
+  function Ga(r, e) {
+    var t = typeof Symbol < "u" && r[Symbol.iterator] || r["@@iterator"];
+    if (!t) {
+      if (Array.isArray(r) || (t = yf(r)) || e && r && typeof r.length == "number") {
+        t && (r = t);
+        var o = 0, s = /* @__PURE__ */ n(function() {
+        }, "F");
+        return { s, n: /* @__PURE__ */ n(function() {
+          return o >= r.length ? { done: !0 } : { done: !1, value: r[o++] };
+        }, "n"), e: /* @__PURE__ */ n(function(p) {
+          throw p;
+        }, "e"), f: s };
+>>>>>>> main
       }
       throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
     }
+<<<<<<< HEAD
     var s = !0, a = !1, l;
     return { s: /* @__PURE__ */ o(function() {
       r = r.call(e);
@@ -17709,15 +18462,58 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   o(MV, "_arrayLikeToArray");
   var hxe = qV(), NV = {
+=======
+    var i = !0, a = !1, c;
+    return { s: /* @__PURE__ */ n(function() {
+      t = t.call(r);
+    }, "s"), n: /* @__PURE__ */ n(function() {
+      var p = t.next();
+      return i = p.done, p;
+    }, "n"), e: /* @__PURE__ */ n(function(p) {
+      a = !0, c = p;
+    }, "e"), f: /* @__PURE__ */ n(function() {
+      try {
+        !i && t.return != null && t.return();
+      } finally {
+        if (a) throw c;
+      }
+    }, "f") };
+  }
+  n(Ga, "_createForOfIteratorHelper");
+  function yf(r, e) {
+    if (r) {
+      if (typeof r == "string") return ka(r, e);
+      var t = Object.prototype.toString.call(r).slice(8, -1);
+      if (t === "Object" && r.constructor && (t = r.constructor.name), t === "Map" || t === "Set") return Array.from(r);
+      if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return ka(r, e);
+    }
+  }
+  n(yf, "_unsupportedIterableToArray");
+  function ka(r, e) {
+    (e == null || e > r.length) && (e = r.length);
+    for (var t = 0, o = new Array(e); t < e; t++)
+      o[t] = r[t];
+    return o;
+  }
+  n(ka, "_arrayLikeToArray");
+  var mf = Da(), La = {
+>>>>>>> main
     fg: "#FFF",
     bg: "#000",
     newline: !1,
     escapeXML: !1,
     stream: !1,
+<<<<<<< HEAD
     colors: yxe()
   };
   function yxe() {
     var e = {
+=======
+    colors: hf()
+  };
+  function hf() {
+    var r = {
+>>>>>>> main
       0: "#000",
       1: "#A00",
       2: "#0A0",
@@ -17735,6 +18531,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       14: "#5FF",
       15: "#FFF"
     };
+<<<<<<< HEAD
     return ab(0, 5).forEach(function(t) {
       ab(0, 5).forEach(function(r) {
         ab(0, 5).forEach(function(n) {
@@ -17942,11 +18739,221 @@ e" : e === 9 ? t = "strike" : 29 < e && e < 38 || e === 39 || 89 < e && e < 98 ?
     }, {
       pattern: /^\x1b\[[34]8;2;\d+;\d+;\d+m/,
       sub: p
+=======
+    return Ut(0, 5).forEach(function(e) {
+      Ut(0, 5).forEach(function(t) {
+        Ut(0, 5).forEach(function(o) {
+          return gf(e, t, o, r);
+        });
+      });
+    }), Ut(0, 23).forEach(function(e) {
+      var t = e + 232, o = qa(e * 10 + 8);
+      r[t] = "#" + o + o + o;
+    }), r;
+  }
+  n(hf, "getDefaultColors");
+  function gf(r, e, t, o) {
+    var s = 16 + r * 36 + e * 6 + t, i = r > 0 ? r * 40 + 55 : 0, a = e > 0 ? e * 40 + 55 : 0, c = t > 0 ? t * 40 + 55 : 0;
+    o[s] = Sf([i, a, c]);
+  }
+  n(gf, "setStyleColor");
+  function qa(r) {
+    for (var e = r.toString(16); e.length < 2; )
+      e = "0" + e;
+    return e;
+  }
+  n(qa, "toHexString");
+  function Sf(r) {
+    var e = [], t = Ga(r), o;
+    try {
+      for (t.s(); !(o = t.n()).done; ) {
+        var s = o.value;
+        e.push(qa(s));
+      }
+    } catch (i) {
+      t.e(i);
+    } finally {
+      t.f();
+    }
+    return "#" + e.join("");
+  }
+  n(Sf, "toColorHexString");
+  function ja(r, e, t, o) {
+    var s;
+    return e === "text" ? s = Rf(t, o) : e === "display" ? s = Tf(r, t, o) : e === "xterm256Foreground" ? s = qt(r, o.colors[t]) : e === "xt\
+erm256Background" ? s = Bt(r, o.colors[t]) : e === "rgb" && (s = bf(r, t)), s;
+  }
+  n(ja, "generateOutput");
+  function bf(r, e) {
+    e = e.substring(2).slice(0, -1);
+    var t = +e.substr(0, 2), o = e.substring(5).split(";"), s = o.map(function(i) {
+      return ("0" + Number(i).toString(16)).substr(-2);
+    }).join("");
+    return Gt(r, (t === 38 ? "color:#" : "background-color:#") + s);
+  }
+  n(bf, "handleRgb");
+  function Tf(r, e, t) {
+    e = parseInt(e, 10);
+    var o = {
+      "-1": /* @__PURE__ */ n(function() {
+        return "<br/>";
+      }, "_"),
+      0: /* @__PURE__ */ n(function() {
+        return r.length && Ba(r);
+      }, "_"),
+      1: /* @__PURE__ */ n(function() {
+        return we(r, "b");
+      }, "_"),
+      3: /* @__PURE__ */ n(function() {
+        return we(r, "i");
+      }, "_"),
+      4: /* @__PURE__ */ n(function() {
+        return we(r, "u");
+      }, "_"),
+      8: /* @__PURE__ */ n(function() {
+        return Gt(r, "display:none");
+      }, "_"),
+      9: /* @__PURE__ */ n(function() {
+        return we(r, "strike");
+      }, "_"),
+      22: /* @__PURE__ */ n(function() {
+        return Gt(r, "font-weight:normal;text-decoration:none;font-style:normal");
+      }, "_"),
+      23: /* @__PURE__ */ n(function() {
+        return Ua(r, "i");
+      }, "_"),
+      24: /* @__PURE__ */ n(function() {
+        return Ua(r, "u");
+      }, "_"),
+      39: /* @__PURE__ */ n(function() {
+        return qt(r, t.fg);
+      }, "_"),
+      49: /* @__PURE__ */ n(function() {
+        return Bt(r, t.bg);
+      }, "_"),
+      53: /* @__PURE__ */ n(function() {
+        return Gt(r, "text-decoration:overline");
+      }, "_")
+    }, s;
+    return o[e] ? s = o[e]() : 4 < e && e < 7 ? s = we(r, "blink") : 29 < e && e < 38 ? s = qt(r, t.colors[e - 30]) : 39 < e && e < 48 ? s =
+    Bt(r, t.colors[e - 40]) : 89 < e && e < 98 ? s = qt(r, t.colors[8 + (e - 90)]) : 99 < e && e < 108 && (s = Bt(r, t.colors[8 + (e - 100)])),
+    s;
+  }
+  n(Tf, "handleDisplay");
+  function Ba(r) {
+    var e = r.slice(0);
+    return r.length = 0, e.reverse().map(function(t) {
+      return "</" + t + ">";
+    }).join("");
+  }
+  n(Ba, "resetStyles");
+  function Ut(r, e) {
+    for (var t = [], o = r; o <= e; o++)
+      t.push(o);
+    return t;
+  }
+  n(Ut, "range");
+  function Ef(r) {
+    return function(e) {
+      return (r === null || e.category !== r) && r !== "all";
+    };
+  }
+  n(Ef, "notCategory");
+  function Ma(r) {
+    r = parseInt(r, 10);
+    var e = null;
+    return r === 0 ? e = "all" : r === 1 ? e = "bold" : 2 < r && r < 5 ? e = "underline" : 4 < r && r < 7 ? e = "blink" : r === 8 ? e = "hid\
+e" : r === 9 ? e = "strike" : 29 < r && r < 38 || r === 39 || 89 < r && r < 98 ? e = "foreground-color" : (39 < r && r < 48 || r === 49 || 99 <
+    r && r < 108) && (e = "background-color"), e;
+  }
+  n(Ma, "categoryForCode");
+  function Rf(r, e) {
+    return e.escapeXML ? mf.encodeXML(r) : r;
+  }
+  n(Rf, "pushText");
+  function we(r, e, t) {
+    return t || (t = ""), r.push(e), "<".concat(e).concat(t ? ' style="'.concat(t, '"') : "", ">");
+  }
+  n(we, "pushTag");
+  function Gt(r, e) {
+    return we(r, "span", e);
+  }
+  n(Gt, "pushStyle");
+  function qt(r, e) {
+    return we(r, "span", "color:" + e);
+  }
+  n(qt, "pushForegroundColor");
+  function Bt(r, e) {
+    return we(r, "span", "background-color:" + e);
+  }
+  n(Bt, "pushBackgroundColor");
+  function Ua(r, e) {
+    var t;
+    if (r.slice(-1)[0] === e && (t = r.pop()), t)
+      return "</" + e + ">";
+  }
+  n(Ua, "closeTag");
+  function Af(r, e, t) {
+    var o = !1, s = 3;
+    function i() {
+      return "";
+    }
+    n(i, "remove");
+    function a(v, C) {
+      return t("xterm256Foreground", C), "";
+    }
+    n(a, "removeXterm256Foreground");
+    function c(v, C) {
+      return t("xterm256Background", C), "";
+    }
+    n(c, "removeXterm256Background");
+    function l(v) {
+      return e.newline ? t("display", -1) : t("text", v), "";
+    }
+    n(l, "newline");
+    function p(v, C) {
+      o = !0, C.trim().length === 0 && (C = "0"), C = C.trimRight(";").split(";");
+      var F = Ga(C), U;
+      try {
+        for (F.s(); !(U = F.n()).done; ) {
+          var B = U.value;
+          t("display", B);
+        }
+      } catch (W) {
+        F.e(W);
+      } finally {
+        F.f();
+      }
+      return "";
+    }
+    n(p, "ansiMess");
+    function u(v) {
+      return t("text", v), "";
+    }
+    n(u, "realText");
+    function d(v) {
+      return t("rgb", v), "";
+    }
+    n(d, "rgb");
+    var h = [{
+      pattern: /^\x08+/,
+      sub: i
+    }, {
+      pattern: /^\x1b\[[012]?K/,
+      sub: i
+    }, {
+      pattern: /^\x1b\[\(B/,
+      sub: i
+    }, {
+      pattern: /^\x1b\[[34]8;2;\d+;\d+;\d+m/,
+      sub: d
+>>>>>>> main
     }, {
       pattern: /^\x1b\[38;5;(\d+)m/,
       sub: a
     }, {
       pattern: /^\x1b\[48;5;(\d+)m/,
+<<<<<<< HEAD
       sub: l
     }, {
       pattern: /^\n/,
@@ -17960,6 +18967,21 @@ e" : e === 9 ? t = "strike" : 29 < e && e < 38 || e === 39 || 89 < e && e < 98 ?
     }, {
       pattern: /^\x1b\[((?:\d{1,3};?)+|)m/,
       sub: c
+=======
+      sub: c
+    }, {
+      pattern: /^\n/,
+      sub: l
+    }, {
+      pattern: /^\r+\n/,
+      sub: l
+    }, {
+      pattern: /^\r/,
+      sub: l
+    }, {
+      pattern: /^\x1b\[((?:\d{1,3};?)+|)m/,
+      sub: p
+>>>>>>> main
     }, {
       // CSI n J
       // ED - Erase in Display Clears part of the screen.
@@ -17969,16 +18991,28 @@ e" : e === 9 ? t = "strike" : 29 < e && e < 38 || e === 39 || 89 < e && e < 98 ?
       // If n is 3, clear entire screen and delete all lines saved in the scrollback buffer
       //   (this feature was added for xterm and is supported by other terminal applications).
       pattern: /^\x1b\[\d?J/,
+<<<<<<< HEAD
       sub: s
+=======
+      sub: i
+>>>>>>> main
     }, {
       // CSI n ; m f
       // HVP - Horizontal Vertical Position Same as CUP
       pattern: /^\x1b\[\d{0,3};\d{0,3}f/,
+<<<<<<< HEAD
       sub: s
     }, {
       // catch-all for CSI sequences?
       pattern: /^\x1b\[?[\d;]{0,3}/,
       sub: s
+=======
+      sub: i
+    }, {
+      // catch-all for CSI sequences?
+      pattern: /^\x1b\[?[\d;]{0,3}/,
+      sub: i
+>>>>>>> main
     }, {
       /**
        * extracts real text - not containing:
@@ -17988,6 +19022,7 @@ e" : e === 9 ? t = "strike" : 29 < e && e < 38 || e === 39 || 89 < e && e < 98 ?
        * - `\r` - Windows Carriage Return (CR)
        */
       pattern: /^(([^\x1b\x08\r\n])+)/,
+<<<<<<< HEAD
       sub: d
     }];
     function f(w, C) {
@@ -18340,17 +19375,396 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
   REJECTED: "REJECTED"
 }, Z = class Z {
   constructor(t, r) {
+=======
+      sub: u
+    }];
+    function S(v, C) {
+      C > s && o || (o = !1, r = r.replace(v.pattern, v.sub));
+    }
+    n(S, "process");
+    var m = [], T = r, y = T.length;
+    e: for (; y > 0; ) {
+      for (var R = 0, x = 0, g = h.length; x < g; R = ++x) {
+        var b = h[R];
+        if (S(b, R), r.length !== y) {
+          y = r.length;
+          continue e;
+        }
+      }
+      if (r.length === y)
+        break;
+      m.push(0), y = r.length;
+    }
+    return m;
+  }
+  n(Af, "tokenize");
+  function xf(r, e, t) {
+    return e !== "text" && (r = r.filter(Ef(Ma(t))), r.push({
+      token: e,
+      data: t,
+      category: Ma(t)
+    })), r;
+  }
+  n(xf, "updateStickyStack");
+  var vf = /* @__PURE__ */ function() {
+    function r(e) {
+      uf(this, r), e = e || {}, e.colors && (e.colors = Object.assign({}, La.colors, e.colors)), this.options = Object.assign({}, La, e), this.
+      stack = [], this.stickyStack = [];
+    }
+    return n(r, "Filter"), ff(r, [{
+      key: "toHtml",
+      value: /* @__PURE__ */ n(function(t) {
+        var o = this;
+        t = typeof t == "string" ? [t] : t;
+        var s = this.stack, i = this.options, a = [];
+        return this.stickyStack.forEach(function(c) {
+          var l = ja(s, c.token, c.data, i);
+          l && a.push(l);
+        }), Af(t.join(""), i, function(c, l) {
+          var p = ja(s, c, l, i);
+          p && a.push(p), i.stream && (o.stickyStack = xf(o.stickyStack, c, l));
+        }), s.length && a.push(Ba(s)), a.join("");
+      }, "toHtml")
+    }]), r;
+  }();
+  Va.exports = vf;
+});
+
+// ../node_modules/browser-dtector/browser-dtector.umd.min.js
+var Za = q((is, as) => {
+  (function(r, e) {
+    typeof is == "object" && typeof as < "u" ? as.exports = e() : typeof define == "function" && define.amd ? define(e) : (r = typeof globalThis <
+    "u" ? globalThis : r || self).BrowserDetector = e();
+  })(is, function() {
+    "use strict";
+    function r(a, c) {
+      for (var l = 0; l < c.length; l++) {
+        var p = c[l];
+        p.enumerable = p.enumerable || !1, p.configurable = !0, "value" in p && (p.writable = !0), Object.defineProperty(a, (u = p.key, d = void 0,
+        typeof (d = function(h, S) {
+          if (typeof h != "object" || h === null) return h;
+          var m = h[Symbol.toPrimitive];
+          if (m !== void 0) {
+            var T = m.call(h, S || "default");
+            if (typeof T != "object") return T;
+            throw new TypeError("@@toPrimitive must return a primitive value.");
+          }
+          return (S === "string" ? String : Number)(h);
+        }(u, "string")) == "symbol" ? d : String(d)), p);
+      }
+      var u, d;
+    }
+    n(r, "e");
+    var e = { chrome: "Google Chrome", brave: "Brave", crios: "Google Chrome", edge: "Microsoft Edge", edg: "Microsoft Edge", edgios: "Micro\
+soft Edge", fennec: "Mozilla Firefox", jsdom: "JsDOM", mozilla: "Mozilla Firefox", fxios: "Mozilla Firefox", msie: "Microsoft Internet Explo\
+rer", opera: "Opera", opios: "Opera", opr: "Opera", opt: "Opera", rv: "Microsoft Internet Explorer", safari: "Safari", samsungbrowser: "Sams\
+ung Browser", electron: "Electron" }, t = { android: "Android", androidTablet: "Android Tablet", cros: "Chrome OS", fennec: "Android Tablet",
+    ipad: "IPad", iphone: "IPhone", jsdom: "JsDOM", linux: "Linux", mac: "Macintosh", tablet: "Android Tablet", win: "Windows", "windows pho\
+ne": "Windows Phone", xbox: "Microsoft Xbox" }, o = /* @__PURE__ */ n(function(a) {
+      var c = new RegExp("^-?\\d+(?:.\\d{0,".concat(arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : -1, "})?")), l = Number(
+      a).toString().match(c);
+      return l ? l[0] : null;
+    }, "n"), s = /* @__PURE__ */ n(function() {
+      return typeof window < "u" ? window.navigator : null;
+    }, "i"), i = function() {
+      function a(u) {
+        var d;
+        (function(h, S) {
+          if (!(h instanceof S)) throw new TypeError("Cannot call a class as a function");
+        })(this, a), this.userAgent = u || ((d = s()) === null || d === void 0 ? void 0 : d.userAgent) || null;
+      }
+      n(a, "t");
+      var c, l, p;
+      return c = a, l = [{ key: "parseUserAgent", value: /* @__PURE__ */ n(function(u) {
+        var d, h, S, m = {}, T = u || this.userAgent || "", y = T.toLowerCase().replace(/\s\s+/g, " "), R = /(edge)\/([\w.]+)/.exec(y) || /(edg)[/]([\w.]+)/.
+        exec(y) || /(opr)[/]([\w.]+)/.exec(y) || /(opt)[/]([\w.]+)/.exec(y) || /(fxios)[/]([\w.]+)/.exec(y) || /(edgios)[/]([\w.]+)/.exec(y) ||
+        /(jsdom)[/]([\w.]+)/.exec(y) || /(samsungbrowser)[/]([\w.]+)/.exec(y) || /(electron)[/]([\w.]+)/.exec(y) || /(chrome)[/]([\w.]+)/.exec(
+        y) || /(crios)[/]([\w.]+)/.exec(y) || /(opios)[/]([\w.]+)/.exec(y) || /(version)(applewebkit)[/]([\w.]+).*(safari)[/]([\w.]+)/.exec(
+        y) || /(webkit)[/]([\w.]+).*(version)[/]([\w.]+).*(safari)[/]([\w.]+)/.exec(y) || /(applewebkit)[/]([\w.]+).*(safari)[/]([\w.]+)/.exec(
+        y) || /(webkit)[/]([\w.]+)/.exec(y) || /(opera)(?:.*version|)[/]([\w.]+)/.exec(y) || /(msie) ([\w.]+)/.exec(y) || /(fennec)[/]([\w.]+)/.
+        exec(y) || y.indexOf("trident") >= 0 && /(rv)(?::| )([\w.]+)/.exec(y) || y.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.
+        exec(y) || [], x = /(ipad)/.exec(y) || /(ipod)/.exec(y) || /(iphone)/.exec(y) || /(jsdom)/.exec(y) || /(windows phone)/.exec(y) || /(xbox)/.
+        exec(y) || /(win)/.exec(y) || /(tablet)/.exec(y) || /(android)/.test(y) && /(mobile)/.test(y) === !1 && ["androidTablet"] || /(android)/.
+        exec(y) || /(mac)/.exec(y) || /(linux)/.exec(y) || /(cros)/.exec(y) || [], g = R[5] || R[3] || R[1] || null, b = x[0] || null, v = R[4] ||
+        R[2] || null, C = s();
+        g === "chrome" && typeof (C == null || (d = C.brave) === null || d === void 0 ? void 0 : d.isBrave) == "function" && (g = "brave"), g &&
+        (m[g] = !0), b && (m[b] = !0);
+        var F = !!(m.tablet || m.android || m.androidTablet), U = !!(m.ipad || m.tablet || m.androidTablet), B = !!(m.android || m.androidTablet ||
+        m.tablet || m.ipad || m.ipod || m.iphone || m["windows phone"]), W = !!(m.cros || m.mac || m.linux || m.win), se = !!(m.brave || m.chrome ||
+        m.crios || m.opr || m.safari || m.edg || m.electron), P = !!(m.msie || m.rv);
+        return { name: (h = e[g]) !== null && h !== void 0 ? h : null, platform: (S = t[b]) !== null && S !== void 0 ? S : null, userAgent: T,
+        version: v, shortVersion: v ? o(parseFloat(v), 2) : null, isAndroid: F, isTablet: U, isMobile: B, isDesktop: W, isWebkit: se, isIE: P };
+      }, "value") }, { key: "getBrowserInfo", value: /* @__PURE__ */ n(function() {
+        var u = this.parseUserAgent();
+        return { name: u.name, platform: u.platform, userAgent: u.userAgent, version: u.version, shortVersion: u.shortVersion };
+      }, "value") }], p = [{ key: "VERSION", get: /* @__PURE__ */ n(function() {
+        return "3.4.0";
+      }, "get") }], l && r(c.prototype, l), p && r(c, p), Object.defineProperty(c, "prototype", { writable: !1 }), a;
+    }();
+    return i;
+  });
+});
+
+// ../node_modules/@storybook/global/dist/index.mjs
+var Ht = {};
+_e(Ht, {
+  global: () => E
+});
+var E = (() => {
+  let r;
+  return typeof window < "u" ? r = window : typeof globalThis < "u" ? r = globalThis : typeof global < "u" ? r = global : typeof self < "u" ?
+  r = self : r = {}, r;
+})();
+
+// src/core-events/index.ts
+var ge = {};
+_e(ge, {
+  ARGTYPES_INFO_REQUEST: () => fo,
+  ARGTYPES_INFO_RESPONSE: () => nt,
+  CHANNEL_CREATED: () => cl,
+  CHANNEL_WS_DISCONNECT: () => Wt,
+  CONFIG_ERROR: () => $t,
+  CREATE_NEW_STORYFILE_REQUEST: () => pl,
+  CREATE_NEW_STORYFILE_RESPONSE: () => dl,
+  CURRENT_STORY_WAS_SET: () => rt,
+  DOCS_PREPARED: () => Yt,
+  DOCS_RENDERED: () => pr,
+  FILE_COMPONENT_SEARCH_REQUEST: () => ul,
+  FILE_COMPONENT_SEARCH_RESPONSE: () => fl,
+  FORCE_REMOUNT: () => Kt,
+  FORCE_RE_RENDER: () => dr,
+  GLOBALS_UPDATED: () => Ce,
+  NAVIGATE_URL: () => yl,
+  PLAY_FUNCTION_THREW_EXCEPTION: () => Xt,
+  PRELOAD_ENTRIES: () => Qt,
+  PREVIEW_BUILDER_PROGRESS: () => ml,
+  PREVIEW_KEYDOWN: () => Zt,
+  REGISTER_SUBSCRIPTION: () => hl,
+  REQUEST_WHATS_NEW_DATA: () => wl,
+  RESET_STORY_ARGS: () => ur,
+  RESULT_WHATS_NEW_DATA: () => _l,
+  SAVE_STORY_REQUEST: () => Ol,
+  SAVE_STORY_RESPONSE: () => Il,
+  SELECT_STORY: () => gl,
+  SET_CONFIG: () => Sl,
+  SET_CURRENT_STORY: () => eo,
+  SET_FILTER: () => bl,
+  SET_GLOBALS: () => ro,
+  SET_INDEX: () => Tl,
+  SET_STORIES: () => El,
+  SET_WHATS_NEW_CACHE: () => Cl,
+  SHARED_STATE_CHANGED: () => Rl,
+  SHARED_STATE_SET: () => Al,
+  STORIES_COLLAPSE_ALL: () => xl,
+  STORIES_EXPAND_ALL: () => vl,
+  STORY_ARGS_UPDATED: () => to,
+  STORY_CHANGED: () => oo,
+  STORY_ERRORED: () => no,
+  STORY_FINISHED: () => ot,
+  STORY_INDEX_INVALIDATED: () => so,
+  STORY_MISSING: () => tt,
+  STORY_PREPARED: () => io,
+  STORY_RENDERED: () => We,
+  STORY_RENDER_PHASE_CHANGED: () => Pe,
+  STORY_SPECIFIED: () => ao,
+  STORY_THREW_EXCEPTION: () => lo,
+  STORY_UNCHANGED: () => co,
+  TELEMETRY_ERROR: () => uo,
+  TESTING_MODULE_CANCEL_TEST_RUN_REQUEST: () => Ll,
+  TESTING_MODULE_CANCEL_TEST_RUN_RESPONSE: () => jl,
+  TESTING_MODULE_CRASH_REPORT: () => Fl,
+  TESTING_MODULE_PROGRESS_REPORT: () => Dl,
+  TESTING_MODULE_RUN_ALL_REQUEST: () => kl,
+  TESTING_MODULE_RUN_REQUEST: () => Nl,
+  TOGGLE_WHATS_NEW_NOTIFICATIONS: () => Pl,
+  UNHANDLED_ERRORS_WHILE_PLAYING: () => Jt,
+  UPDATE_GLOBALS: () => fr,
+  UPDATE_QUERY_PARAMS: () => po,
+  UPDATE_STORY_ARGS: () => yr,
+  default: () => ll
+});
+var zt = /* @__PURE__ */ ((A) => (A.CHANNEL_WS_DISCONNECT = "channelWSDisconnect", A.CHANNEL_CREATED = "channelCreated", A.CONFIG_ERROR = "c\
+onfigError", A.STORY_INDEX_INVALIDATED = "storyIndexInvalidated", A.STORY_SPECIFIED = "storySpecified", A.SET_CONFIG = "setConfig", A.SET_STORIES =
+"setStories", A.SET_INDEX = "setIndex", A.SET_CURRENT_STORY = "setCurrentStory", A.CURRENT_STORY_WAS_SET = "currentStoryWasSet", A.FORCE_RE_RENDER =
+"forceReRender", A.FORCE_REMOUNT = "forceRemount", A.PRELOAD_ENTRIES = "preloadStories", A.STORY_PREPARED = "storyPrepared", A.DOCS_PREPARED =
+"docsPrepared", A.STORY_CHANGED = "storyChanged", A.STORY_UNCHANGED = "storyUnchanged", A.STORY_RENDERED = "storyRendered", A.STORY_FINISHED =
+"storyFinished", A.STORY_MISSING = "storyMissing", A.STORY_ERRORED = "storyErrored", A.STORY_THREW_EXCEPTION = "storyThrewException", A.STORY_RENDER_PHASE_CHANGED =
+"storyRenderPhaseChanged", A.PLAY_FUNCTION_THREW_EXCEPTION = "playFunctionThrewException", A.UNHANDLED_ERRORS_WHILE_PLAYING = "unhandledErro\
+rsWhilePlaying", A.UPDATE_STORY_ARGS = "updateStoryArgs", A.STORY_ARGS_UPDATED = "storyArgsUpdated", A.RESET_STORY_ARGS = "resetStoryArgs", A.
+SET_FILTER = "setFilter", A.SET_GLOBALS = "setGlobals", A.UPDATE_GLOBALS = "updateGlobals", A.GLOBALS_UPDATED = "globalsUpdated", A.REGISTER_SUBSCRIPTION =
+"registerSubscription", A.PREVIEW_KEYDOWN = "previewKeydown", A.PREVIEW_BUILDER_PROGRESS = "preview_builder_progress", A.SELECT_STORY = "sel\
+ectStory", A.STORIES_COLLAPSE_ALL = "storiesCollapseAll", A.STORIES_EXPAND_ALL = "storiesExpandAll", A.DOCS_RENDERED = "docsRendered", A.SHARED_STATE_CHANGED =
+"sharedStateChanged", A.SHARED_STATE_SET = "sharedStateSet", A.NAVIGATE_URL = "navigateUrl", A.UPDATE_QUERY_PARAMS = "updateQueryParams", A.
+REQUEST_WHATS_NEW_DATA = "requestWhatsNewData", A.RESULT_WHATS_NEW_DATA = "resultWhatsNewData", A.SET_WHATS_NEW_CACHE = "setWhatsNewCache", A.
+TOGGLE_WHATS_NEW_NOTIFICATIONS = "toggleWhatsNewNotifications", A.TELEMETRY_ERROR = "telemetryError", A.FILE_COMPONENT_SEARCH_REQUEST = "fil\
+eComponentSearchRequest", A.FILE_COMPONENT_SEARCH_RESPONSE = "fileComponentSearchResponse", A.SAVE_STORY_REQUEST = "saveStoryRequest", A.SAVE_STORY_RESPONSE =
+"saveStoryResponse", A.ARGTYPES_INFO_REQUEST = "argtypesInfoRequest", A.ARGTYPES_INFO_RESPONSE = "argtypesInfoResponse", A.CREATE_NEW_STORYFILE_REQUEST =
+"createNewStoryfileRequest", A.CREATE_NEW_STORYFILE_RESPONSE = "createNewStoryfileResponse", A.TESTING_MODULE_CRASH_REPORT = "testingModuleC\
+rashReport", A.TESTING_MODULE_PROGRESS_REPORT = "testingModuleProgressReport", A.TESTING_MODULE_RUN_REQUEST = "testingModuleRunRequest", A.TESTING_MODULE_RUN_ALL_REQUEST =
+"testingModuleRunAllRequest", A.TESTING_MODULE_CANCEL_TEST_RUN_REQUEST = "testingModuleCancelTestRunRequest", A.TESTING_MODULE_CANCEL_TEST_RUN_RESPONSE =
+"testingModuleCancelTestRunResponse", A))(zt || {}), ll = zt, {
+  CHANNEL_WS_DISCONNECT: Wt,
+  CHANNEL_CREATED: cl,
+  CONFIG_ERROR: $t,
+  CREATE_NEW_STORYFILE_REQUEST: pl,
+  CREATE_NEW_STORYFILE_RESPONSE: dl,
+  CURRENT_STORY_WAS_SET: rt,
+  DOCS_PREPARED: Yt,
+  DOCS_RENDERED: pr,
+  FILE_COMPONENT_SEARCH_REQUEST: ul,
+  FILE_COMPONENT_SEARCH_RESPONSE: fl,
+  FORCE_RE_RENDER: dr,
+  FORCE_REMOUNT: Kt,
+  GLOBALS_UPDATED: Ce,
+  NAVIGATE_URL: yl,
+  PLAY_FUNCTION_THREW_EXCEPTION: Xt,
+  UNHANDLED_ERRORS_WHILE_PLAYING: Jt,
+  PRELOAD_ENTRIES: Qt,
+  PREVIEW_BUILDER_PROGRESS: ml,
+  PREVIEW_KEYDOWN: Zt,
+  REGISTER_SUBSCRIPTION: hl,
+  RESET_STORY_ARGS: ur,
+  SELECT_STORY: gl,
+  SET_CONFIG: Sl,
+  SET_CURRENT_STORY: eo,
+  SET_FILTER: bl,
+  SET_GLOBALS: ro,
+  SET_INDEX: Tl,
+  SET_STORIES: El,
+  SHARED_STATE_CHANGED: Rl,
+  SHARED_STATE_SET: Al,
+  STORIES_COLLAPSE_ALL: xl,
+  STORIES_EXPAND_ALL: vl,
+  STORY_ARGS_UPDATED: to,
+  STORY_CHANGED: oo,
+  STORY_ERRORED: no,
+  STORY_INDEX_INVALIDATED: so,
+  STORY_MISSING: tt,
+  STORY_PREPARED: io,
+  STORY_RENDER_PHASE_CHANGED: Pe,
+  STORY_RENDERED: We,
+  STORY_FINISHED: ot,
+  STORY_SPECIFIED: ao,
+  STORY_THREW_EXCEPTION: lo,
+  STORY_UNCHANGED: co,
+  UPDATE_GLOBALS: fr,
+  UPDATE_QUERY_PARAMS: po,
+  UPDATE_STORY_ARGS: yr,
+  REQUEST_WHATS_NEW_DATA: wl,
+  RESULT_WHATS_NEW_DATA: _l,
+  SET_WHATS_NEW_CACHE: Cl,
+  TOGGLE_WHATS_NEW_NOTIFICATIONS: Pl,
+  TELEMETRY_ERROR: uo,
+  SAVE_STORY_REQUEST: Ol,
+  SAVE_STORY_RESPONSE: Il,
+  ARGTYPES_INFO_REQUEST: fo,
+  ARGTYPES_INFO_RESPONSE: nt,
+  TESTING_MODULE_CRASH_REPORT: Fl,
+  TESTING_MODULE_PROGRESS_REPORT: Dl,
+  TESTING_MODULE_RUN_REQUEST: Nl,
+  TESTING_MODULE_RUN_ALL_REQUEST: kl,
+  TESTING_MODULE_CANCEL_TEST_RUN_REQUEST: Ll,
+  TESTING_MODULE_CANCEL_TEST_RUN_RESPONSE: jl
+} = zt;
+
+// src/preview/globals/globals.ts
+var yo = {
+  "@storybook/global": "__STORYBOOK_MODULE_GLOBAL__",
+  "storybook/internal/channels": "__STORYBOOK_MODULE_CHANNELS__",
+  "@storybook/channels": "__STORYBOOK_MODULE_CHANNELS__",
+  "@storybook/core/channels": "__STORYBOOK_MODULE_CHANNELS__",
+  "storybook/internal/client-logger": "__STORYBOOK_MODULE_CLIENT_LOGGER__",
+  "@storybook/client-logger": "__STORYBOOK_MODULE_CLIENT_LOGGER__",
+  "@storybook/core/client-logger": "__STORYBOOK_MODULE_CLIENT_LOGGER__",
+  "storybook/internal/core-events": "__STORYBOOK_MODULE_CORE_EVENTS__",
+  "@storybook/core-events": "__STORYBOOK_MODULE_CORE_EVENTS__",
+  "@storybook/core/core-events": "__STORYBOOK_MODULE_CORE_EVENTS__",
+  "storybook/internal/preview-errors": "__STORYBOOK_MODULE_CORE_EVENTS_PREVIEW_ERRORS__",
+  "@storybook/core-events/preview-errors": "__STORYBOOK_MODULE_CORE_EVENTS_PREVIEW_ERRORS__",
+  "@storybook/core/preview-errors": "__STORYBOOK_MODULE_CORE_EVENTS_PREVIEW_ERRORS__",
+  "storybook/internal/preview-api": "__STORYBOOK_MODULE_PREVIEW_API__",
+  "@storybook/preview-api": "__STORYBOOK_MODULE_PREVIEW_API__",
+  "@storybook/core/preview-api": "__STORYBOOK_MODULE_PREVIEW_API__",
+  "storybook/internal/types": "__STORYBOOK_MODULE_TYPES__",
+  "@storybook/types": "__STORYBOOK_MODULE_TYPES__",
+  "@storybook/core/types": "__STORYBOOK_MODULE_TYPES__"
+}, cs = Object.keys(yo);
+
+// src/channels/index.ts
+var br = {};
+_e(br, {
+  Channel: () => ie,
+  HEARTBEAT_INTERVAL: () => Po,
+  HEARTBEAT_MAX_LATENCY: () => Oo,
+  PostMessageTransport: () => Qe,
+  WebsocketTransport: () => Ze,
+  createBrowserChannel: () => kd,
+  default: () => Nd
+});
+
+// ../node_modules/ts-dedent/esm/index.js
+function _(r) {
+  for (var e = [], t = 1; t < arguments.length; t++)
+    e[t - 1] = arguments[t];
+  var o = Array.from(typeof r == "string" ? [r] : r);
+  o[o.length - 1] = o[o.length - 1].replace(/\r?\n([\t ]*)$/, "");
+  var s = o.reduce(function(c, l) {
+    var p = l.match(/\n([\t ]+|(?!\s).)/g);
+    return p ? c.concat(p.map(function(u) {
+      var d, h;
+      return (h = (d = u.match(/[\t ]/g)) === null || d === void 0 ? void 0 : d.length) !== null && h !== void 0 ? h : 0;
+    })) : c;
+  }, []);
+  if (s.length) {
+    var i = new RegExp(`
+[	 ]{` + Math.min.apply(Math, s) + "}", "g");
+    o = o.map(function(c) {
+      return c.replace(i, `
+`);
+    });
+  }
+  o[0] = o[0].replace(/^\r?\n/, "");
+  var a = o[0];
+  return e.forEach(function(c, l) {
+    var p = a.match(/(?:^|\n)( *)$/), u = p ? p[1] : "", d = c;
+    typeof c == "string" && c.includes(`
+`) && (d = String(c).split(`
+`).map(function(h, S) {
+      return S === 0 ? h : "" + u + h;
+    }).join(`
+`)), a += d + o[l + 1];
+  }), a;
+}
+n(_, "dedent");
+var ps = _;
+
+// src/shared/universal-store/instances.ts
+var mo = /* @__PURE__ */ new Map();
+
+// src/shared/universal-store/index.ts
+var Ml = "UNIVERSAL_STORE:", ee = {
+  PENDING: "PENDING",
+  RESOLVED: "RESOLVED",
+  REJECTED: "REJECTED"
+}, w = class w {
+  constructor(e, t) {
+>>>>>>> main
     /** Enable debug logs for this store */
     this.debugging = !1;
     // TODO: narrow type of listeners based on event type
     this.listeners = /* @__PURE__ */ new Map([["*", /* @__PURE__ */ new Set()]]);
     /** Gets the current state */
+<<<<<<< HEAD
     this.getState = /* @__PURE__ */ o(() => (this.debug("getState", { state: this.state }), this.state), "getState");
+=======
+    this.getState = /* @__PURE__ */ n(() => (this.debug("getState", { state: this.state }), this.state), "getState");
+>>>>>>> main
     /**
      * Subscribes to store events
      *
      * @returns A function to unsubscribe
      */
+<<<<<<< HEAD
     this.subscribe = /* @__PURE__ */ o((t, r) => {
       let n = typeof t == "function", i = n ? "*" : t, s = n ? t : r;
       if (this.debug("subscribe", { eventType: i, listener: s }), !s)
@@ -18371,6 +19785,28 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
         ${JSON.stringify(
             {
               event: t,
+=======
+    this.subscribe = /* @__PURE__ */ n((e, t) => {
+      let o = typeof e == "function", s = o ? "*" : e, i = o ? e : t;
+      if (this.debug("subscribe", { eventType: s, listener: i }), !i)
+        throw new TypeError(
+          `Missing first subscribe argument, or second if first is the event type, when subscribing to a UniversalStore with id '${this.id}'`
+        );
+      return this.listeners.has(s) || this.listeners.set(s, /* @__PURE__ */ new Set()), this.listeners.get(s).add(i), () => {
+        this.debug("unsubscribe", { eventType: s, listener: i }), this.listeners.has(s) && (this.listeners.get(s).delete(i), this.listeners.
+        get(s)?.size === 0 && this.listeners.delete(s));
+      };
+    }, "subscribe");
+    /** Sends a custom event to the other stores */
+    this.send = /* @__PURE__ */ n((e) => {
+      if (this.debug("send", { event: e }), this.status !== w.Status.READY)
+        throw new TypeError(
+          _`Cannot send event before store is ready. You can get the current status with store.status,
+        or await store.readyPromise to wait for the store to be ready before sending events.
+        ${JSON.stringify(
+            {
+              event: e,
+>>>>>>> main
               id: this.id,
               actor: this.actor,
               environment: this.environment
@@ -18379,6 +19815,7 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
             2
           )}`
         );
+<<<<<<< HEAD
       this.emitToListeners(t, { actor: this.actor }), this.emitToChannel(t, { actor: this.actor });
     }, "send");
     if (this.debugging = t.debug ?? !1, !Z.isInternalConstructing)
@@ -18409,11 +19846,44 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
         promise: s,
         resolve: n,
         reject: i
+=======
+      this.emitToListeners(e, { actor: this.actor }), this.emitToChannel(e, { actor: this.actor });
+    }, "send");
+    if (this.debugging = e.debug ?? !1, !w.isInternalConstructing)
+      throw new TypeError(
+        "UniversalStore is not constructable - use UniversalStore.create() instead"
+      );
+    if (w.isInternalConstructing = !1, this.id = e.id, this.actorId = Date.now().toString(36) + Math.random().toString(36).substring(2), this.
+    actorType = e.leader ? w.ActorType.LEADER : w.ActorType.FOLLOWER, this.state = e.initialState, this.channelEventName = `${Ml}${this.id}`,
+    this.debug("constructor", {
+      options: e,
+      environmentOverrides: t,
+      channelEventName: this.channelEventName
+    }), this.actor.type === w.ActorType.LEADER)
+      this.syncing = {
+        state: ee.RESOLVED,
+        promise: Promise.resolve()
+      };
+    else {
+      let o, s, i = new Promise((a, c) => {
+        o = /* @__PURE__ */ n(() => {
+          this.syncing.state === ee.PENDING && (this.syncing.state = ee.RESOLVED, a());
+        }, "syncingResolve"), s = /* @__PURE__ */ n((l) => {
+          this.syncing.state === ee.PENDING && (this.syncing.state = ee.REJECTED, c(l));
+        }, "syncingReject");
+      });
+      this.syncing = {
+        state: ee.PENDING,
+        promise: i,
+        resolve: o,
+        reject: s
+>>>>>>> main
       };
     }
     this.getState = this.getState.bind(this), this.setState = this.setState.bind(this), this.subscribe = this.subscribe.bind(this), this.onStateChange =
     this.onStateChange.bind(this), this.send = this.send.bind(this), this.emitToChannel = this.emitToChannel.bind(this), this.prepareThis = this.
     prepareThis.bind(this), this.emitToListeners = this.emitToListeners.bind(this), this.handleChannelEvents = this.handleChannelEvents.bind(
+<<<<<<< HEAD
     this), this.debug = this.debug.bind(this), this.channel = r?.channel ?? Z.preparation.channel, this.environment = r?.environment ?? Z.preparation.
     environment, this.channel && this.environment ? (Z.preparation.resolve({ channel: this.channel, environment: this.environment }), this.prepareThis(
     { channel: this.channel, environment: this.environment })) : Z.preparation.promise.then(this.prepareThis);
@@ -18432,6 +19902,26 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       resolve: t,
       reject: r,
       promise: n
+=======
+    this), this.debug = this.debug.bind(this), this.channel = t?.channel ?? w.preparation.channel, this.environment = t?.environment ?? w.preparation.
+    environment, this.channel && this.environment ? this.prepareThis({ channel: this.channel, environment: this.environment }) : w.preparation.
+    promise.then(this.prepareThis);
+  }
+  static setupPreparationPromise() {
+    let e, t, o = new Promise(
+      (s, i) => {
+        e = /* @__PURE__ */ n((a) => {
+          s(a);
+        }, "resolveRef"), t = /* @__PURE__ */ n((...a) => {
+          i(a);
+        }, "rejectRef");
+      }
+    );
+    w.preparation = {
+      resolve: e,
+      reject: t,
+      promise: o
+>>>>>>> main
     };
   }
   /** The actor object representing the store instance with a unique ID and a type */
@@ -18439,7 +19929,11 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
     return Object.freeze({
       id: this.actorId,
       type: this.actorType,
+<<<<<<< HEAD
       environment: this.environment ?? Z.Environment.UNKNOWN
+=======
+      environment: this.environment ?? w.Environment.UNKNOWN
+>>>>>>> main
     });
   }
   /**
@@ -18448,6 +19942,7 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
    */
   get status() {
     if (!this.channel || !this.environment)
+<<<<<<< HEAD
       return Z.Status.UNPREPARED;
     switch (this.syncing?.state) {
       case Ot.PENDING:
@@ -18458,6 +19953,18 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       case Ot.RESOLVED:
       default:
         return Z.Status.READY;
+=======
+      return w.Status.UNPREPARED;
+    switch (this.syncing?.state) {
+      case ee.PENDING:
+      case void 0:
+        return w.Status.SYNCING;
+      case ee.REJECTED:
+        return w.Status.ERROR;
+      case ee.RESOLVED:
+      default:
+        return w.Status.READY;
+>>>>>>> main
     }
   }
   /**
@@ -18468,6 +19975,7 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
    * hundred milliseconds.
    */
   untilReady() {
+<<<<<<< HEAD
     return Promise.all([Z.preparation.promise, this.syncing?.promise]);
   }
   /** Creates a new instance of UniversalStore */
@@ -18486,6 +19994,26 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
     Z.isInternalConstructing = !0;
     let n = new Z(t);
     return jb.set(t.id, n), n;
+=======
+    return Promise.all([w.preparation.promise, this.syncing?.promise]);
+  }
+  /** Creates a new instance of UniversalStore */
+  static create(e) {
+    if (!e || typeof e?.id != "string")
+      throw new TypeError("id is required and must be a string, when creating a UniversalStore");
+    e.debug && console.debug(
+      _`[UniversalStore]
+        create`,
+      { options: e }
+    );
+    let t = mo.get(e.id);
+    if (t)
+      return console.warn(_`UniversalStore with id "${e.id}" already exists in this environment, re-using existing.
+        You should reuse the existing instance instead of trying to create a new one.`), t;
+    w.isInternalConstructing = !0;
+    let o = new w(e);
+    return mo.set(e.id, o), o;
+>>>>>>> main
   }
   /**
    * Used by Storybook to set the channel for all instances of UniversalStore in the given
@@ -18493,14 +20021,20 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
    *
    * @internal
    */
+<<<<<<< HEAD
   static __prepare(t, r) {
     Z.preparation.channel = t, Z.preparation.environment = r, Z.preparation.resolve({ channel: t, environment: r });
+=======
+  static __prepare(e, t) {
+    w.preparation.channel = e, w.preparation.environment = t, w.preparation.resolve({ channel: e, environment: t });
+>>>>>>> main
   }
   /**
    * Updates the store's state
    *
    * Either a new state or a state updater function can be passed to the method.
    */
+<<<<<<< HEAD
   setState(t) {
     let r = this.state, n = typeof t == "function" ? t(r) : t;
     if (this.debug("setState", { newState: n, previousState: r, updater: t }), this.status !== Z.Status.READY)
@@ -18510,6 +20044,17 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
         ${JSON.stringify(
           {
             newState: n,
+=======
+  setState(e) {
+    let t = this.state, o = typeof e == "function" ? e(t) : e;
+    if (this.debug("setState", { newState: o, previousState: t, updater: e }), this.status !== w.Status.READY)
+      throw new TypeError(
+        _`Cannot set state before store is ready. You can get the current status with store.status,
+        or await store.readyPromise to wait for the store to be ready before sending events.
+        ${JSON.stringify(
+          {
+            newState: o,
+>>>>>>> main
             id: this.id,
             actor: this.actor,
             environment: this.environment
@@ -18518,6 +20063,7 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
           2
         )}`
       );
+<<<<<<< HEAD
     this.state = n;
     let i = {
       type: Z.InternalEventType.SET_STATE,
@@ -18527,12 +20073,24 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       }
     };
     this.emitToChannel(i, { actor: this.actor }), this.emitToListeners(i, { actor: this.actor });
+=======
+    this.state = o;
+    let s = {
+      type: w.InternalEventType.SET_STATE,
+      payload: {
+        state: o,
+        previousState: t
+      }
+    };
+    this.emitToChannel(s, { actor: this.actor }), this.emitToListeners(s, { actor: this.actor });
+>>>>>>> main
   }
   /**
    * Subscribes to state changes
    *
    * @returns Unsubscribe function
    */
+<<<<<<< HEAD
   onStateChange(t) {
     return this.debug("onStateChange", { listener: t }), this.subscribe(
       Z.InternalEventType.SET_STATE,
@@ -18560,6 +20118,35 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       { actor: this.actor }
     ), this.emitToChannel(
       { type: Z.InternalEventType.EXISTING_STATE_REQUEST },
+=======
+  onStateChange(e) {
+    return this.debug("onStateChange", { listener: e }), this.subscribe(
+      w.InternalEventType.SET_STATE,
+      ({ payload: t }, o) => {
+        e(t.state, t.previousState, o);
+      }
+    );
+  }
+  emitToChannel(e, t) {
+    this.debug("emitToChannel", { event: e, eventInfo: t, channel: this.channel }), this.channel?.emit(this.channelEventName, {
+      event: e,
+      eventInfo: t
+    });
+  }
+  prepareThis({
+    channel: e,
+    environment: t
+  }) {
+    this.channel = e, this.environment = t, this.debug("prepared", { channel: e, environment: t }), this.channel.on(this.channelEventName, this.
+    handleChannelEvents), this.actor.type === w.ActorType.LEADER ? this.emitToChannel(
+      { type: w.InternalEventType.LEADER_CREATED },
+      { actor: this.actor }
+    ) : (this.emitToChannel(
+      { type: w.InternalEventType.FOLLOWER_CREATED },
+      { actor: this.actor }
+    ), this.emitToChannel(
+      { type: w.InternalEventType.EXISTING_STATE_REQUEST },
+>>>>>>> main
       { actor: this.actor }
     ), setTimeout(() => {
       this.syncing.reject(
@@ -18570,6 +20157,7 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       );
     }, 1e3));
   }
+<<<<<<< HEAD
   emitToListeners(t, r) {
     let n = this.listeners.get(t.type), i = this.listeners.get("*");
     this.debug("emitToListeners", {
@@ -18650,6 +20238,88 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
       JSON.stringify(
         {
           data: r,
+=======
+  emitToListeners(e, t) {
+    let o = this.listeners.get(e.type), s = this.listeners.get("*");
+    this.debug("emitToListeners", {
+      event: e,
+      eventInfo: t,
+      eventTypeListeners: o,
+      everythingListeners: s
+    }), [...o ?? [], ...s ?? []].forEach(
+      (i) => i(e, t)
+    );
+  }
+  handleChannelEvents(e) {
+    let { event: t, eventInfo: o } = e;
+    if ([o.actor.id, o.forwardingActor?.id].includes(this.actor.id)) {
+      this.debug("handleChannelEvents: Ignoring event from self", { channelEvent: e });
+      return;
+    } else if (this.syncing?.state === ee.PENDING && t.type !== w.InternalEventType.EXISTING_STATE_RESPONSE) {
+      this.debug("handleChannelEvents: Ignoring event while syncing", { channelEvent: e });
+      return;
+    }
+    if (this.debug("handleChannelEvents", { channelEvent: e }), this.actor.type === w.ActorType.LEADER) {
+      let s = !0;
+      switch (t.type) {
+        case w.InternalEventType.EXISTING_STATE_REQUEST:
+          s = !1;
+          let i = {
+            type: w.InternalEventType.EXISTING_STATE_RESPONSE,
+            payload: this.state
+          };
+          this.debug("handleChannelEvents: responding to existing state request", {
+            responseEvent: i
+          }), this.emitToChannel(i, { actor: this.actor });
+          break;
+        case w.InternalEventType.LEADER_CREATED:
+          s = !1, this.syncing.state = ee.REJECTED, this.debug("handleChannelEvents: erroring due to second leader being created", {
+            event: t
+          }), console.error(
+            _`Detected multiple UniversalStore leaders created with the same id "${this.id}".
+            Only one leader can exists at a time, your stores are now in an invalid state.
+            Leaders detected:
+            this: ${JSON.stringify(this.actor, null, 2)}
+            other: ${JSON.stringify(o.actor, null, 2)}`
+          );
+          break;
+      }
+      s && (this.debug("handleChannelEvents: forwarding event", { channelEvent: e }), this.emitToChannel(t, { actor: o.actor, forwardingActor: this.
+      actor }));
+    }
+    if (this.actor.type === w.ActorType.FOLLOWER)
+      switch (t.type) {
+        case w.InternalEventType.EXISTING_STATE_RESPONSE:
+          if (this.debug("handleChannelEvents: Setting state from leader's existing state response", {
+            event: t
+          }), this.syncing?.state !== ee.PENDING)
+            break;
+          this.syncing.resolve?.();
+          let s = {
+            type: w.InternalEventType.SET_STATE,
+            payload: {
+              state: t.payload,
+              previousState: this.state
+            }
+          };
+          this.state = t.payload, this.emitToListeners(s, o);
+          break;
+      }
+    switch (t.type) {
+      case w.InternalEventType.SET_STATE:
+        this.debug("handleChannelEvents: Setting state", { event: t }), this.state = t.payload.state;
+        break;
+    }
+    this.emitToListeners(t, { actor: o.actor });
+  }
+  debug(e, t) {
+    this.debugging && console.debug(
+      _`[UniversalStore::${this.id}::${this.environment ?? w.Environment.UNKNOWN}]
+        ${e}`,
+      JSON.stringify(
+        {
+          data: t,
+>>>>>>> main
           actor: this.actor,
           state: this.state,
           status: this.status
@@ -18665,15 +20335,26 @@ var Lz = "UNIVERSAL_STORE:", Ot = {
    * @internal
    */
   static __reset() {
+<<<<<<< HEAD
     Z.preparation.reject(new Error("reset")), Z.setupPreparationPromise(), Z.isInternalConstructing = !1;
   }
 };
 o(Z, "UniversalStore"), /**
+=======
+    w.preparation.reject(new Error("reset")), w.setupPreparationPromise(), w.isInternalConstructing = !1;
+  }
+};
+n(w, "UniversalStore"), /**
+>>>>>>> main
  * Defines the possible actor types in the store system
  *
  * @readonly
  */
+<<<<<<< HEAD
 Z.ActorType = {
+=======
+w.ActorType = {
+>>>>>>> main
   LEADER: "LEADER",
   FOLLOWER: "FOLLOWER"
 }, /**
@@ -18681,7 +20362,11 @@ Z.ActorType = {
  *
  * @readonly
  */
+<<<<<<< HEAD
 Z.Environment = {
+=======
+w.Environment = {
+>>>>>>> main
   SERVER: "SERVER",
   MANAGER: "MANAGER",
   PREVIEW: "PREVIEW",
@@ -18692,18 +20377,27 @@ Z.Environment = {
  *
  * @readonly
  */
+<<<<<<< HEAD
 Z.InternalEventType = {
+=======
+w.InternalEventType = {
+>>>>>>> main
   EXISTING_STATE_REQUEST: "__EXISTING_STATE_REQUEST",
   EXISTING_STATE_RESPONSE: "__EXISTING_STATE_RESPONSE",
   SET_STATE: "__SET_STATE",
   LEADER_CREATED: "__LEADER_CREATED",
   FOLLOWER_CREATED: "__FOLLOWER_CREATED"
+<<<<<<< HEAD
 }, Z.Status = {
+=======
+}, w.Status = {
+>>>>>>> main
   UNPREPARED: "UNPREPARED",
   SYNCING: "SYNCING",
   READY: "READY",
   ERROR: "ERROR"
 }, // This is used to check if constructor was called from the static factory create()
+<<<<<<< HEAD
 Z.isInternalConstructing = !1, Z.setupPreparationPromise();
 var To = Z;
 
@@ -18719,11 +20413,29 @@ nerateRandomId"), Lb = class Lb {
       r.setHandler((n) => this.handleEvent(n));
     })) : this.transports = t.transport ? [t.transport] : [], this.transports.forEach((r) => {
       r.setHandler((n) => this.handleEvent(n));
+=======
+w.isInternalConstructing = !1, w.setupPreparationPromise();
+var Q = w;
+
+// src/channels/main.ts
+var Ul = /* @__PURE__ */ n((r) => r.transports !== void 0, "isMulti"), Gl = /* @__PURE__ */ n(() => Math.random().toString(16).slice(2), "ge\
+nerateRandomId"), ho = class ho {
+  constructor(e = {}) {
+    this.sender = Gl();
+    this.events = {};
+    this.data = {};
+    this.transports = [];
+    this.isAsync = e.async || !1, Ul(e) ? (this.transports = e.transports || [], this.transports.forEach((t) => {
+      t.setHandler((o) => this.handleEvent(o));
+    })) : this.transports = e.transport ? [e.transport] : [], this.transports.forEach((t) => {
+      t.setHandler((o) => this.handleEvent(o));
+>>>>>>> main
     });
   }
   get hasTransport() {
     return this.transports.length > 0;
   }
+<<<<<<< HEAD
   addListener(t, r) {
     this.events[t] = this.events[t] || [], this.events[t].push(r);
   }
@@ -18739,10 +20451,28 @@ nerateRandomId"), Lb = class Lb {
   }
   last(t) {
     return this.data[t];
+=======
+  addListener(e, t) {
+    this.events[e] = this.events[e] || [], this.events[e].push(t);
+  }
+  emit(e, ...t) {
+    let o = { type: e, args: t, from: this.sender }, s = {};
+    t.length >= 1 && t[0] && t[0].options && (s = t[0].options);
+    let i = /* @__PURE__ */ n(() => {
+      this.transports.forEach((a) => {
+        a.send(o, s);
+      }), this.handleEvent(o);
+    }, "handler");
+    this.isAsync ? setImmediate(i) : i();
+  }
+  last(e) {
+    return this.data[e];
+>>>>>>> main
   }
   eventNames() {
     return Object.keys(this.events);
   }
+<<<<<<< HEAD
   listenerCount(t) {
     let r = this.listeners(t);
     return r ? r.length : 0;
@@ -18790,12 +20520,62 @@ ft(kb, {
   pretty: () => vt
 });
 var { LOGLEVEL: Dz } = k, kr = {
+=======
+  listenerCount(e) {
+    let t = this.listeners(e);
+    return t ? t.length : 0;
+  }
+  listeners(e) {
+    return this.events[e] || void 0;
+  }
+  once(e, t) {
+    let o = this.onceListener(e, t);
+    this.addListener(e, o);
+  }
+  removeAllListeners(e) {
+    e ? this.events[e] && delete this.events[e] : this.events = {};
+  }
+  removeListener(e, t) {
+    let o = this.listeners(e);
+    o && (this.events[e] = o.filter((s) => s !== t));
+  }
+  on(e, t) {
+    this.addListener(e, t);
+  }
+  off(e, t) {
+    this.removeListener(e, t);
+  }
+  handleEvent(e) {
+    let t = this.listeners(e.type);
+    t && t.length && t.forEach((o) => {
+      o.apply(e, e.args);
+    }), this.data[e.type] = e.args;
+  }
+  onceListener(e, t) {
+    let o = /* @__PURE__ */ n((...s) => (this.removeListener(e, o), t(...s)), "onceListener");
+    return o;
+  }
+};
+n(ho, "Channel");
+var ie = ho;
+
+// src/client-logger/index.ts
+var mr = {};
+_e(mr, {
+  deprecate: () => ae,
+  logger: () => I,
+  once: () => j,
+  pretty: () => X
+});
+var { LOGLEVEL: ql } = E, Se = {
+>>>>>>> main
   trace: 1,
   debug: 2,
   info: 3,
   warn: 4,
   error: 5,
   silent: 10
+<<<<<<< HEAD
 }, $z = Dz, wo = kr[$z] || kr.info, ue = {
   trace: /* @__PURE__ */ o((e, ...t) => {
     wo <= kr.trace && console.trace(e, ...t);
@@ -18860,6 +20640,68 @@ Vz = Object.prototype.hasOwnProperty, ne = /* @__PURE__ */ o((e, t) => /* @__PUR
   t || !e || !e.__esModule ? mx(r, "default", { value: e, enumerable: !0 }) : r,
   e
 )), "__toESM"), Gz = [
+=======
+}, Bl = ql, $e = Se[Bl] || Se.info, I = {
+  trace: /* @__PURE__ */ n((r, ...e) => {
+    $e <= Se.trace && console.trace(r, ...e);
+  }, "trace"),
+  debug: /* @__PURE__ */ n((r, ...e) => {
+    $e <= Se.debug && console.debug(r, ...e);
+  }, "debug"),
+  info: /* @__PURE__ */ n((r, ...e) => {
+    $e <= Se.info && console.info(r, ...e);
+  }, "info"),
+  warn: /* @__PURE__ */ n((r, ...e) => {
+    $e <= Se.warn && console.warn(r, ...e);
+  }, "warn"),
+  error: /* @__PURE__ */ n((r, ...e) => {
+    $e <= Se.error && console.error(r, ...e);
+  }, "error"),
+  log: /* @__PURE__ */ n((r, ...e) => {
+    $e < Se.silent && console.log(r, ...e);
+  }, "log")
+}, go = /* @__PURE__ */ new Set(), j = /* @__PURE__ */ n((r) => (e, ...t) => {
+  if (!go.has(e))
+    return go.add(e), I[r](e, ...t);
+}, "once");
+j.clear = () => go.clear();
+j.trace = j("trace");
+j.debug = j("debug");
+j.info = j("info");
+j.warn = j("warn");
+j.error = j("error");
+j.log = j("log");
+var ae = j("warn"), X = /* @__PURE__ */ n((r) => (...e) => {
+  let t = [];
+  if (e.length) {
+    let o = /<span\s+style=(['"])([^'"]*)\1\s*>/gi, s = /<\/span>/gi, i;
+    for (t.push(e[0].replace(o, "%c").replace(s, "%c")); i = o.exec(e[0]); )
+      t.push(i[2]), t.push("");
+    for (let a = 1; a < e.length; a++)
+      t.push(e[a]);
+  }
+  I[r].apply(I, t);
+}, "pretty");
+X.trace = X("trace");
+X.debug = X("debug");
+X.info = X("info");
+X.warn = X("warn");
+X.error = X("error");
+
+// ../node_modules/telejson/dist/chunk-465TF3XA.mjs
+var Vl = Object.create, ds = Object.defineProperty, Hl = Object.getOwnPropertyDescriptor, us = Object.getOwnPropertyNames, zl = Object.getPrototypeOf,
+Wl = Object.prototype.hasOwnProperty, Z = /* @__PURE__ */ n((r, e) => /* @__PURE__ */ n(function() {
+  return e || (0, r[us(r)[0]])((e = { exports: {} }).exports, e), e.exports;
+}, "__require"), "__commonJS"), $l = /* @__PURE__ */ n((r, e, t, o) => {
+  if (e && typeof e == "object" || typeof e == "function")
+    for (let s of us(e))
+      !Wl.call(r, s) && s !== t && ds(r, s, { get: /* @__PURE__ */ n(() => e[s], "get"), enumerable: !(o = Hl(e, s)) || o.enumerable });
+  return r;
+}, "__copyProps"), st = /* @__PURE__ */ n((r, e, t) => (t = r != null ? Vl(zl(r)) : {}, $l(
+  e || !r || !r.__esModule ? ds(t, "default", { value: r, enumerable: !0 }) : t,
+  r
+)), "__toESM"), Yl = [
+>>>>>>> main
   "bubbles",
   "cancelBubble",
   "cancelable",
@@ -18873,6 +20715,7 @@ Vz = Object.prototype.hasOwnProperty, ne = /* @__PURE__ */ o((e, t) => /* @__PUR
   "target",
   "timeStamp",
   "type"
+<<<<<<< HEAD
 ], Yz = ["detail"];
 function yx(e) {
   let t = Gz.filter((r) => e[r] !== void 0).reduce((r, n) => (r[n] = e[n], r), {});
@@ -19004,10 +20847,28 @@ var Tx = ne({
   "node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/shams.js"(e, t) {
     "use strict";
     t.exports = /* @__PURE__ */ o(function() {
+=======
+], Kl = ["detail"];
+function fs(r) {
+  let e = Yl.filter((t) => r[t] !== void 0).reduce((t, o) => ({ ...t, [o]: r[o] }), {});
+  return r instanceof CustomEvent && Kl.filter((t) => r[t] !== void 0).forEach((t) => {
+    e[t] = r[t];
+  }), e;
+}
+n(fs, "extractEventHiddenProperties");
+
+// ../node_modules/telejson/dist/index.mjs
+var Ps = ue(it(), 1);
+var Ts = Z({
+  "node_modules/has-symbols/shams.js"(r, e) {
+    "use strict";
+    e.exports = /* @__PURE__ */ n(function() {
+>>>>>>> main
       if (typeof Symbol != "function" || typeof Object.getOwnPropertySymbols != "function")
         return !1;
       if (typeof Symbol.iterator == "symbol")
         return !0;
+<<<<<<< HEAD
       var n = {}, i = Symbol("test"), s = Object(i);
       if (typeof i == "string" || Object.prototype.toString.call(i) !== "[object Symbol]" || Object.prototype.toString.call(s) !== "[object \
 Symbol]")
@@ -19028,11 +20889,31 @@ Symbol]")
           Object.getOwnPropertyDescriptor(n, i)
         );
         if (c.value !== a || c.enumerable !== !0)
+=======
+      var o = {}, s = Symbol("test"), i = Object(s);
+      if (typeof s == "string" || Object.prototype.toString.call(s) !== "[object Symbol]" || Object.prototype.toString.call(i) !== "[object \
+Symbol]")
+        return !1;
+      var a = 42;
+      o[s] = a;
+      for (s in o)
+        return !1;
+      if (typeof Object.keys == "function" && Object.keys(o).length !== 0 || typeof Object.getOwnPropertyNames == "function" && Object.getOwnPropertyNames(
+      o).length !== 0)
+        return !1;
+      var c = Object.getOwnPropertySymbols(o);
+      if (c.length !== 1 || c[0] !== s || !Object.prototype.propertyIsEnumerable.call(o, s))
+        return !1;
+      if (typeof Object.getOwnPropertyDescriptor == "function") {
+        var l = Object.getOwnPropertyDescriptor(o, s);
+        if (l.value !== a || l.enumerable !== !0)
+>>>>>>> main
           return !1;
       }
       return !0;
     }, "hasSymbols");
   }
+<<<<<<< HEAD
 }), Rx = ne({
   "node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/index.js"(e, t) {
     "use strict";
@@ -19216,11 +21097,109 @@ Symbol]")
       "%BigUint64Array%": typeof BigUint64Array > "u" ? r : BigUint64Array,
       "%Boolean%": Boolean,
       "%DataView%": typeof DataView > "u" ? r : DataView,
+=======
+}), Es = Z({
+  "node_modules/has-symbols/index.js"(r, e) {
+    "use strict";
+    var t = typeof Symbol < "u" && Symbol, o = Ts();
+    e.exports = /* @__PURE__ */ n(function() {
+      return typeof t != "function" || typeof Symbol != "function" || typeof t("foo") != "symbol" || typeof Symbol("bar") != "symbol" ? !1 :
+      o();
+    }, "hasNativeSymbols");
+  }
+}), Xl = Z({
+  "node_modules/function-bind/implementation.js"(r, e) {
+    "use strict";
+    var t = "Function.prototype.bind called on incompatible ", o = Array.prototype.slice, s = Object.prototype.toString, i = "[object Functi\
+on]";
+    e.exports = /* @__PURE__ */ n(function(c) {
+      var l = this;
+      if (typeof l != "function" || s.call(l) !== i)
+        throw new TypeError(t + l);
+      for (var p = o.call(arguments, 1), u, d = /* @__PURE__ */ n(function() {
+        if (this instanceof u) {
+          var y = l.apply(
+            this,
+            p.concat(o.call(arguments))
+          );
+          return Object(y) === y ? y : this;
+        } else
+          return l.apply(
+            c,
+            p.concat(o.call(arguments))
+          );
+      }, "binder"), h = Math.max(0, l.length - p.length), S = [], m = 0; m < h; m++)
+        S.push("$" + m);
+      if (u = Function("binder", "return function (" + S.join(",") + "){ return binder.apply(this,arguments); }")(d), l.prototype) {
+        var T = /* @__PURE__ */ n(function() {
+        }, "Empty2");
+        T.prototype = l.prototype, u.prototype = new T(), T.prototype = null;
+      }
+      return u;
+    }, "bind");
+  }
+}), To = Z({
+  "node_modules/function-bind/index.js"(r, e) {
+    "use strict";
+    var t = Xl();
+    e.exports = Function.prototype.bind || t;
+  }
+}), Jl = Z({
+  "node_modules/has/src/index.js"(r, e) {
+    "use strict";
+    var t = To();
+    e.exports = t.call(Function.call, Object.prototype.hasOwnProperty);
+  }
+}), Rs = Z({
+  "node_modules/get-intrinsic/index.js"(r, e) {
+    "use strict";
+    var t, o = SyntaxError, s = Function, i = TypeError, a = /* @__PURE__ */ n(function(P) {
+      try {
+        return s('"use strict"; return (' + P + ").constructor;")();
+      } catch {
+      }
+    }, "getEvalledConstructor"), c = Object.getOwnPropertyDescriptor;
+    if (c)
+      try {
+        c({}, "");
+      } catch {
+        c = null;
+      }
+    var l = /* @__PURE__ */ n(function() {
+      throw new i();
+    }, "throwTypeError"), p = c ? function() {
+      try {
+        return arguments.callee, l;
+      } catch {
+        try {
+          return c(arguments, "callee").get;
+        } catch {
+          return l;
+        }
+      }
+    }() : l, u = Es()(), d = Object.getPrototypeOf || function(P) {
+      return P.__proto__;
+    }, h = {}, S = typeof Uint8Array > "u" ? t : d(Uint8Array), m = {
+      "%AggregateError%": typeof AggregateError > "u" ? t : AggregateError,
+      "%Array%": Array,
+      "%ArrayBuffer%": typeof ArrayBuffer > "u" ? t : ArrayBuffer,
+      "%ArrayIteratorPrototype%": u ? d([][Symbol.iterator]()) : t,
+      "%AsyncFromSyncIteratorPrototype%": t,
+      "%AsyncFunction%": h,
+      "%AsyncGenerator%": h,
+      "%AsyncGeneratorFunction%": h,
+      "%AsyncIteratorPrototype%": h,
+      "%Atomics%": typeof Atomics > "u" ? t : Atomics,
+      "%BigInt%": typeof BigInt > "u" ? t : BigInt,
+      "%Boolean%": Boolean,
+      "%DataView%": typeof DataView > "u" ? t : DataView,
+>>>>>>> main
       "%Date%": Date,
       "%decodeURI%": decodeURI,
       "%decodeURIComponent%": decodeURIComponent,
       "%encodeURI%": encodeURI,
       "%encodeURIComponent%": encodeURIComponent,
+<<<<<<< HEAD
       "%Error%": i,
       "%eval%": eval,
       // eslint-disable-line no-eval
@@ -19307,6 +21286,71 @@ Symbol]")
       return M[ve] = it, it;
     }, "doEval2"), Q = {
       __proto__: null,
+=======
+      "%Error%": Error,
+      "%eval%": eval,
+      "%EvalError%": EvalError,
+      "%Float32Array%": typeof Float32Array > "u" ? t : Float32Array,
+      "%Float64Array%": typeof Float64Array > "u" ? t : Float64Array,
+      "%FinalizationRegistry%": typeof FinalizationRegistry > "u" ? t : FinalizationRegistry,
+      "%Function%": s,
+      "%GeneratorFunction%": h,
+      "%Int8Array%": typeof Int8Array > "u" ? t : Int8Array,
+      "%Int16Array%": typeof Int16Array > "u" ? t : Int16Array,
+      "%Int32Array%": typeof Int32Array > "u" ? t : Int32Array,
+      "%isFinite%": isFinite,
+      "%isNaN%": isNaN,
+      "%IteratorPrototype%": u ? d(d([][Symbol.iterator]())) : t,
+      "%JSON%": typeof JSON == "object" ? JSON : t,
+      "%Map%": typeof Map > "u" ? t : Map,
+      "%MapIteratorPrototype%": typeof Map > "u" || !u ? t : d((/* @__PURE__ */ new Map())[Symbol.iterator]()),
+      "%Math%": Math,
+      "%Number%": Number,
+      "%Object%": Object,
+      "%parseFloat%": parseFloat,
+      "%parseInt%": parseInt,
+      "%Promise%": typeof Promise > "u" ? t : Promise,
+      "%Proxy%": typeof Proxy > "u" ? t : Proxy,
+      "%RangeError%": RangeError,
+      "%ReferenceError%": ReferenceError,
+      "%Reflect%": typeof Reflect > "u" ? t : Reflect,
+      "%RegExp%": RegExp,
+      "%Set%": typeof Set > "u" ? t : Set,
+      "%SetIteratorPrototype%": typeof Set > "u" || !u ? t : d((/* @__PURE__ */ new Set())[Symbol.iterator]()),
+      "%SharedArrayBuffer%": typeof SharedArrayBuffer > "u" ? t : SharedArrayBuffer,
+      "%String%": String,
+      "%StringIteratorPrototype%": u ? d(""[Symbol.iterator]()) : t,
+      "%Symbol%": u ? Symbol : t,
+      "%SyntaxError%": o,
+      "%ThrowTypeError%": p,
+      "%TypedArray%": S,
+      "%TypeError%": i,
+      "%Uint8Array%": typeof Uint8Array > "u" ? t : Uint8Array,
+      "%Uint8ClampedArray%": typeof Uint8ClampedArray > "u" ? t : Uint8ClampedArray,
+      "%Uint16Array%": typeof Uint16Array > "u" ? t : Uint16Array,
+      "%Uint32Array%": typeof Uint32Array > "u" ? t : Uint32Array,
+      "%URIError%": URIError,
+      "%WeakMap%": typeof WeakMap > "u" ? t : WeakMap,
+      "%WeakRef%": typeof WeakRef > "u" ? t : WeakRef,
+      "%WeakSet%": typeof WeakSet > "u" ? t : WeakSet
+    }, T = /* @__PURE__ */ n(function P(D) {
+      var M;
+      if (D === "%AsyncFunction%")
+        M = a("async function () {}");
+      else if (D === "%GeneratorFunction%")
+        M = a("function* () {}");
+      else if (D === "%AsyncGeneratorFunction%")
+        M = a("async function* () {}");
+      else if (D === "%AsyncGenerator%") {
+        var L = P("%AsyncGeneratorFunction%");
+        L && (M = L.prototype);
+      } else if (D === "%AsyncIteratorPrototype%") {
+        var N = P("%AsyncGenerator%");
+        N && (M = d(N.prototype));
+      }
+      return m[D] = M, M;
+    }, "doEval2"), y = {
+>>>>>>> main
       "%ArrayBufferPrototype%": ["ArrayBuffer", "prototype"],
       "%ArrayPrototype%": ["Array", "prototype"],
       "%ArrayProto_entries%": ["Array", "prototype", "entries"],
@@ -19358,6 +21402,7 @@ Symbol]")
       "%URIErrorPrototype%": ["URIError", "prototype"],
       "%WeakMapPrototype%": ["WeakMap", "prototype"],
       "%WeakSetPrototype%": ["WeakSet", "prototype"]
+<<<<<<< HEAD
     }, te = ul(), fe = Ax(), F = te.call(B, Array.prototype.concat), j = te.call(L, Array.prototype.splice), Y = te.call(B, String.prototype.
     replace), z = te.call(B, String.prototype.slice), X = te.call(B, RegExp.prototype.exec), ce = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g,
     we = /\\(\\)?/g, Me = /* @__PURE__ */ o(function(ve) {
@@ -19612,11 +21657,267 @@ function aY(e) {
     }
     try {
       return e + "";
+=======
+    }, R = To(), x = Jl(), g = R.call(Function.call, Array.prototype.concat), b = R.call(Function.apply, Array.prototype.splice), v = R.call(
+    Function.call, String.prototype.replace), C = R.call(Function.call, String.prototype.slice), F = R.call(Function.call, RegExp.prototype.
+    exec), U = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g, B = /\\(\\)?/g, W = /* @__PURE__ */ n(
+    function(D) {
+      var M = C(D, 0, 1), L = C(D, -1);
+      if (M === "%" && L !== "%")
+        throw new o("invalid intrinsic syntax, expected closing `%`");
+      if (L === "%" && M !== "%")
+        throw new o("invalid intrinsic syntax, expected opening `%`");
+      var N = [];
+      return v(D, U, function(H, re, K, Kr) {
+        N[N.length] = K ? v(Kr, B, "$1") : re || H;
+      }), N;
+    }, "stringToPath3"), se = /* @__PURE__ */ n(function(D, M) {
+      var L = D, N;
+      if (x(y, L) && (N = y[L], L = "%" + N[0] + "%"), x(m, L)) {
+        var H = m[L];
+        if (H === h && (H = T(L)), typeof H > "u" && !M)
+          throw new i("intrinsic " + D + " exists, but is not available. Please file an issue!");
+        return {
+          alias: N,
+          name: L,
+          value: H
+        };
+      }
+      throw new o("intrinsic " + D + " does not exist!");
+    }, "getBaseIntrinsic2");
+    e.exports = /* @__PURE__ */ n(function(D, M) {
+      if (typeof D != "string" || D.length === 0)
+        throw new i("intrinsic name must be a non-empty string");
+      if (arguments.length > 1 && typeof M != "boolean")
+        throw new i('"allowMissing" argument must be a boolean');
+      if (F(/^%?[^%]*%?$/, D) === null)
+        throw new o("`%` may not be present anywhere but at the beginning and end of the intrinsic name");
+      var L = W(D), N = L.length > 0 ? L[0] : "", H = se("%" + N + "%", M), re = H.name, K = H.value, Kr = !1, Vt = H.alias;
+      Vt && (N = Vt[0], b(L, g([0, 1], Vt)));
+      for (var Xr = 1, lr = !0; Xr < L.length; Xr += 1) {
+        var de = L[Xr], Jr = C(de, 0, 1), Qr = C(de, -1);
+        if ((Jr === '"' || Jr === "'" || Jr === "`" || Qr === '"' || Qr === "'" || Qr === "`") && Jr !== Qr)
+          throw new o("property names with quotes must have matching quotes");
+        if ((de === "constructor" || !lr) && (Kr = !0), N += "." + de, re = "%" + N + "%", x(m, re))
+          K = m[re];
+        else if (K != null) {
+          if (!(de in K)) {
+            if (!M)
+              throw new i("base intrinsic for " + D + " exists, but the property is not available.");
+            return;
+          }
+          if (c && Xr + 1 >= L.length) {
+            var Zr = c(K, de);
+            lr = !!Zr, lr && "get" in Zr && !("originalValue" in Zr.get) ? K = Zr.get : K = K[de];
+          } else
+            lr = x(K, de), K = K[de];
+          lr && !Kr && (m[re] = K);
+        }
+      }
+      return K;
+    }, "GetIntrinsic");
+  }
+}), Ql = Z({
+  "node_modules/call-bind/index.js"(r, e) {
+    "use strict";
+    var t = To(), o = Rs(), s = o("%Function.prototype.apply%"), i = o("%Function.prototype.call%"), a = o("%Reflect.apply%", !0) || t.call(
+    i, s), c = o("%Object.getOwnPropertyDescriptor%", !0), l = o("%Object.defineProperty%", !0), p = o("%Math.max%");
+    if (l)
+      try {
+        l({}, "a", { value: 1 });
+      } catch {
+        l = null;
+      }
+    e.exports = /* @__PURE__ */ n(function(h) {
+      var S = a(t, i, arguments);
+      if (c && l) {
+        var m = c(S, "length");
+        m.configurable && l(
+          S,
+          "length",
+          { value: 1 + p(0, h.length - (arguments.length - 1)) }
+        );
+      }
+      return S;
+    }, "callBind");
+    var u = /* @__PURE__ */ n(function() {
+      return a(t, s, arguments);
+    }, "applyBind2");
+    l ? l(e.exports, "apply", { value: u }) : e.exports.apply = u;
+  }
+}), Zl = Z({
+  "node_modules/call-bind/callBound.js"(r, e) {
+    "use strict";
+    var t = Rs(), o = Ql(), s = o(t("String.prototype.indexOf"));
+    e.exports = /* @__PURE__ */ n(function(a, c) {
+      var l = t(a, !!c);
+      return typeof l == "function" && s(a, ".prototype.") > -1 ? o(l) : l;
+    }, "callBoundIntrinsic");
+  }
+}), ec = Z({
+  "node_modules/has-tostringtag/shams.js"(r, e) {
+    "use strict";
+    var t = Ts();
+    e.exports = /* @__PURE__ */ n(function() {
+      return t() && !!Symbol.toStringTag;
+    }, "hasToStringTagShams");
+  }
+}), rc = Z({
+  "node_modules/is-regex/index.js"(r, e) {
+    "use strict";
+    var t = Zl(), o = ec()(), s, i, a, c;
+    o && (s = t("Object.prototype.hasOwnProperty"), i = t("RegExp.prototype.exec"), a = {}, l = /* @__PURE__ */ n(function() {
+      throw a;
+    }, "throwRegexMarker"), c = {
+      toString: l,
+      valueOf: l
+    }, typeof Symbol.toPrimitive == "symbol" && (c[Symbol.toPrimitive] = l));
+    var l, p = t("Object.prototype.toString"), u = Object.getOwnPropertyDescriptor, d = "[object RegExp]";
+    e.exports = /* @__PURE__ */ n(o ? function(S) {
+      if (!S || typeof S != "object")
+        return !1;
+      var m = u(S, "lastIndex"), T = m && s(m, "value");
+      if (!T)
+        return !1;
+      try {
+        i(S, c);
+      } catch (y) {
+        return y === a;
+      }
+    } : function(S) {
+      return !S || typeof S != "object" && typeof S != "function" ? !1 : p(S) === d;
+    }, "isRegex");
+  }
+}), tc = Z({
+  "node_modules/is-function/index.js"(r, e) {
+    e.exports = o;
+    var t = Object.prototype.toString;
+    function o(s) {
+      if (!s)
+        return !1;
+      var i = t.call(s);
+      return i === "[object Function]" || typeof s == "function" && i !== "[object RegExp]" || typeof window < "u" && (s === window.setTimeout ||
+      s === window.alert || s === window.confirm || s === window.prompt);
+    }
+    n(o, "isFunction3");
+  }
+}), oc = Z({
+  "node_modules/is-symbol/index.js"(r, e) {
+    "use strict";
+    var t = Object.prototype.toString, o = Es()();
+    o ? (s = Symbol.prototype.toString, i = /^Symbol\(.*\)$/, a = /* @__PURE__ */ n(function(l) {
+      return typeof l.valueOf() != "symbol" ? !1 : i.test(s.call(l));
+    }, "isRealSymbolObject"), e.exports = /* @__PURE__ */ n(function(l) {
+      if (typeof l == "symbol")
+        return !0;
+      if (t.call(l) !== "[object Symbol]")
+        return !1;
+      try {
+        return a(l);
+      } catch {
+        return !1;
+      }
+    }, "isSymbol3")) : e.exports = /* @__PURE__ */ n(function(l) {
+      return !1;
+    }, "isSymbol3");
+    var s, i, a;
+  }
+}), nc = st(rc()), sc = st(tc()), ic = st(oc());
+function ac(r) {
+  return r != null && typeof r == "object" && Array.isArray(r) === !1;
+}
+n(ac, "isObject");
+var lc = typeof global == "object" && global && global.Object === Object && global, cc = lc, pc = typeof self == "object" && self && self.Object ===
+Object && self, dc = cc || pc || Function("return this")(), Eo = dc, uc = Eo.Symbol, Ye = uc, As = Object.prototype, fc = As.hasOwnProperty,
+yc = As.toString, hr = Ye ? Ye.toStringTag : void 0;
+function mc(r) {
+  var e = fc.call(r, hr), t = r[hr];
+  try {
+    r[hr] = void 0;
+    var o = !0;
+  } catch {
+  }
+  var s = yc.call(r);
+  return o && (e ? r[hr] = t : delete r[hr]), s;
+}
+n(mc, "getRawTag");
+var hc = mc, gc = Object.prototype, Sc = gc.toString;
+function bc(r) {
+  return Sc.call(r);
+}
+n(bc, "objectToString");
+var Tc = bc, Ec = "[object Null]", Rc = "[object Undefined]", ms = Ye ? Ye.toStringTag : void 0;
+function Ac(r) {
+  return r == null ? r === void 0 ? Rc : Ec : ms && ms in Object(r) ? hc(r) : Tc(r);
+}
+n(Ac, "baseGetTag");
+var xs = Ac;
+function xc(r) {
+  return r != null && typeof r == "object";
+}
+n(xc, "isObjectLike");
+var vc = xc, wc = "[object Symbol]";
+function _c(r) {
+  return typeof r == "symbol" || vc(r) && xs(r) == wc;
+}
+n(_c, "isSymbol");
+var Ro = _c;
+function Cc(r, e) {
+  for (var t = -1, o = r == null ? 0 : r.length, s = Array(o); ++t < o; )
+    s[t] = e(r[t], t, r);
+  return s;
+}
+n(Cc, "arrayMap");
+var Pc = Cc, Oc = Array.isArray, Ao = Oc, Ic = 1 / 0, hs = Ye ? Ye.prototype : void 0, gs = hs ? hs.toString : void 0;
+function vs(r) {
+  if (typeof r == "string")
+    return r;
+  if (Ao(r))
+    return Pc(r, vs) + "";
+  if (Ro(r))
+    return gs ? gs.call(r) : "";
+  var e = r + "";
+  return e == "0" && 1 / r == -Ic ? "-0" : e;
+}
+n(vs, "baseToString");
+var Fc = vs;
+function Dc(r) {
+  var e = typeof r;
+  return r != null && (e == "object" || e == "function");
+}
+n(Dc, "isObject2");
+var ws = Dc, Nc = "[object AsyncFunction]", kc = "[object Function]", Lc = "[object GeneratorFunction]", jc = "[object Proxy]";
+function Mc(r) {
+  if (!ws(r))
+    return !1;
+  var e = xs(r);
+  return e == kc || e == Lc || e == Nc || e == jc;
+}
+n(Mc, "isFunction");
+var Uc = Mc, Gc = Eo["__core-js_shared__"], bo = Gc, Ss = function() {
+  var r = /[^.]+$/.exec(bo && bo.keys && bo.keys.IE_PROTO || "");
+  return r ? "Symbol(src)_1." + r : "";
+}();
+function qc(r) {
+  return !!Ss && Ss in r;
+}
+n(qc, "isMasked");
+var Bc = qc, Vc = Function.prototype, Hc = Vc.toString;
+function zc(r) {
+  if (r != null) {
+    try {
+      return Hc.call(r);
+    } catch {
+    }
+    try {
+      return r + "";
+>>>>>>> main
     } catch {
     }
   }
   return "";
 }
+<<<<<<< HEAD
 o(aY, "toSource");
 var lY = aY, uY = /[\\^$.*+?()[\]{}|]/g, cY = /^\[object .+?Constructor\]$/, dY = Function.prototype, pY = Object.prototype, fY = dY.toString,
 mY = pY.hasOwnProperty, hY = RegExp(
@@ -19963,10 +22264,371 @@ var $4 = /* @__PURE__ */ o(function(t) {
         return s.push(l), i.unshift(p), r.set(u, JSON.stringify(s)), u !== p && n.set(u, p), p;
       }
       return `_duplicate_${d}`;
+=======
+n(zc, "toSource");
+var Wc = zc, $c = /[\\^$.*+?()[\]{}|]/g, Yc = /^\[object .+?Constructor\]$/, Kc = Function.prototype, Xc = Object.prototype, Jc = Kc.toString,
+Qc = Xc.hasOwnProperty, Zc = RegExp(
+  "^" + Jc.call(Qc).replace($c, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
+);
+function ep(r) {
+  if (!ws(r) || Bc(r))
+    return !1;
+  var e = Uc(r) ? Zc : Yc;
+  return e.test(Wc(r));
+}
+n(ep, "baseIsNative");
+var rp = ep;
+function tp(r, e) {
+  return r?.[e];
+}
+n(tp, "getValue");
+var op = tp;
+function np(r, e) {
+  var t = op(r, e);
+  return rp(t) ? t : void 0;
+}
+n(np, "getNative");
+var _s = np;
+function sp(r, e) {
+  return r === e || r !== r && e !== e;
+}
+n(sp, "eq");
+var ip = sp, ap = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, lp = /^\w*$/;
+function cp(r, e) {
+  if (Ao(r))
+    return !1;
+  var t = typeof r;
+  return t == "number" || t == "symbol" || t == "boolean" || r == null || Ro(r) ? !0 : lp.test(r) || !ap.test(r) || e != null && r in Object(
+  e);
+}
+n(cp, "isKey");
+var pp = cp, dp = _s(Object, "create"), gr = dp;
+function up() {
+  this.__data__ = gr ? gr(null) : {}, this.size = 0;
+}
+n(up, "hashClear");
+var fp = up;
+function yp(r) {
+  var e = this.has(r) && delete this.__data__[r];
+  return this.size -= e ? 1 : 0, e;
+}
+n(yp, "hashDelete");
+var mp = yp, hp = "__lodash_hash_undefined__", gp = Object.prototype, Sp = gp.hasOwnProperty;
+function bp(r) {
+  var e = this.__data__;
+  if (gr) {
+    var t = e[r];
+    return t === hp ? void 0 : t;
+  }
+  return Sp.call(e, r) ? e[r] : void 0;
+}
+n(bp, "hashGet");
+var Tp = bp, Ep = Object.prototype, Rp = Ep.hasOwnProperty;
+function Ap(r) {
+  var e = this.__data__;
+  return gr ? e[r] !== void 0 : Rp.call(e, r);
+}
+n(Ap, "hashHas");
+var xp = Ap, vp = "__lodash_hash_undefined__";
+function wp(r, e) {
+  var t = this.__data__;
+  return this.size += this.has(r) ? 0 : 1, t[r] = gr && e === void 0 ? vp : e, this;
+}
+n(wp, "hashSet");
+var _p = wp;
+function Ke(r) {
+  var e = -1, t = r == null ? 0 : r.length;
+  for (this.clear(); ++e < t; ) {
+    var o = r[e];
+    this.set(o[0], o[1]);
+  }
+}
+n(Ke, "Hash");
+Ke.prototype.clear = fp;
+Ke.prototype.delete = mp;
+Ke.prototype.get = Tp;
+Ke.prototype.has = xp;
+Ke.prototype.set = _p;
+var bs = Ke;
+function Cp() {
+  this.__data__ = [], this.size = 0;
+}
+n(Cp, "listCacheClear");
+var Pp = Cp;
+function Op(r, e) {
+  for (var t = r.length; t--; )
+    if (ip(r[t][0], e))
+      return t;
+  return -1;
+}
+n(Op, "assocIndexOf");
+var lt = Op, Ip = Array.prototype, Fp = Ip.splice;
+function Dp(r) {
+  var e = this.__data__, t = lt(e, r);
+  if (t < 0)
+    return !1;
+  var o = e.length - 1;
+  return t == o ? e.pop() : Fp.call(e, t, 1), --this.size, !0;
+}
+n(Dp, "listCacheDelete");
+var Np = Dp;
+function kp(r) {
+  var e = this.__data__, t = lt(e, r);
+  return t < 0 ? void 0 : e[t][1];
+}
+n(kp, "listCacheGet");
+var Lp = kp;
+function jp(r) {
+  return lt(this.__data__, r) > -1;
+}
+n(jp, "listCacheHas");
+var Mp = jp;
+function Up(r, e) {
+  var t = this.__data__, o = lt(t, r);
+  return o < 0 ? (++this.size, t.push([r, e])) : t[o][1] = e, this;
+}
+n(Up, "listCacheSet");
+var Gp = Up;
+function Xe(r) {
+  var e = -1, t = r == null ? 0 : r.length;
+  for (this.clear(); ++e < t; ) {
+    var o = r[e];
+    this.set(o[0], o[1]);
+  }
+}
+n(Xe, "ListCache");
+Xe.prototype.clear = Pp;
+Xe.prototype.delete = Np;
+Xe.prototype.get = Lp;
+Xe.prototype.has = Mp;
+Xe.prototype.set = Gp;
+var qp = Xe, Bp = _s(Eo, "Map"), Vp = Bp;
+function Hp() {
+  this.size = 0, this.__data__ = {
+    hash: new bs(),
+    map: new (Vp || qp)(),
+    string: new bs()
+  };
+}
+n(Hp, "mapCacheClear");
+var zp = Hp;
+function Wp(r) {
+  var e = typeof r;
+  return e == "string" || e == "number" || e == "symbol" || e == "boolean" ? r !== "__proto__" : r === null;
+}
+n(Wp, "isKeyable");
+var $p = Wp;
+function Yp(r, e) {
+  var t = r.__data__;
+  return $p(e) ? t[typeof e == "string" ? "string" : "hash"] : t.map;
+}
+n(Yp, "getMapData");
+var ct = Yp;
+function Kp(r) {
+  var e = ct(this, r).delete(r);
+  return this.size -= e ? 1 : 0, e;
+}
+n(Kp, "mapCacheDelete");
+var Xp = Kp;
+function Jp(r) {
+  return ct(this, r).get(r);
+}
+n(Jp, "mapCacheGet");
+var Qp = Jp;
+function Zp(r) {
+  return ct(this, r).has(r);
+}
+n(Zp, "mapCacheHas");
+var ed = Zp;
+function rd(r, e) {
+  var t = ct(this, r), o = t.size;
+  return t.set(r, e), this.size += t.size == o ? 0 : 1, this;
+}
+n(rd, "mapCacheSet");
+var td = rd;
+function Je(r) {
+  var e = -1, t = r == null ? 0 : r.length;
+  for (this.clear(); ++e < t; ) {
+    var o = r[e];
+    this.set(o[0], o[1]);
+  }
+}
+n(Je, "MapCache");
+Je.prototype.clear = zp;
+Je.prototype.delete = Xp;
+Je.prototype.get = Qp;
+Je.prototype.has = ed;
+Je.prototype.set = td;
+var Cs = Je, od = "Expected a function";
+function xo(r, e) {
+  if (typeof r != "function" || e != null && typeof e != "function")
+    throw new TypeError(od);
+  var t = /* @__PURE__ */ n(function() {
+    var o = arguments, s = e ? e.apply(this, o) : o[0], i = t.cache;
+    if (i.has(s))
+      return i.get(s);
+    var a = r.apply(this, o);
+    return t.cache = i.set(s, a) || i, a;
+  }, "memoized");
+  return t.cache = new (xo.Cache || Cs)(), t;
+}
+n(xo, "memoize");
+xo.Cache = Cs;
+var nd = xo, sd = 500;
+function id(r) {
+  var e = nd(r, function(o) {
+    return t.size === sd && t.clear(), o;
+  }), t = e.cache;
+  return e;
+}
+n(id, "memoizeCapped");
+var ad = id, ld = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g, cd = /\\(\\)?/g, pd = ad(
+function(r) {
+  var e = [];
+  return r.charCodeAt(0) === 46 && e.push(""), r.replace(ld, function(t, o, s, i) {
+    e.push(s ? i.replace(cd, "$1") : o || t);
+  }), e;
+}), dd = pd;
+function ud(r) {
+  return r == null ? "" : Fc(r);
+}
+n(ud, "toString");
+var fd = ud;
+function yd(r, e) {
+  return Ao(r) ? r : pp(r, e) ? [r] : dd(fd(r));
+}
+n(yd, "castPath");
+var md = yd, hd = 1 / 0;
+function gd(r) {
+  if (typeof r == "string" || Ro(r))
+    return r;
+  var e = r + "";
+  return e == "0" && 1 / r == -hd ? "-0" : e;
+}
+n(gd, "toKey");
+var Sd = gd;
+function bd(r, e) {
+  e = md(e, r);
+  for (var t = 0, o = e.length; r != null && t < o; )
+    r = r[Sd(e[t++])];
+  return t && t == o ? r : void 0;
+}
+n(bd, "baseGet");
+var Td = bd;
+function Ed(r, e, t) {
+  var o = r == null ? void 0 : Td(r, e);
+  return o === void 0 ? t : o;
+}
+n(Ed, "get");
+var Rd = Ed, at = ac, Ad = /* @__PURE__ */ n((r) => {
+  let e = null, t = !1, o = !1, s = !1, i = "";
+  if (r.indexOf("//") >= 0 || r.indexOf("/*") >= 0)
+    for (let a = 0; a < r.length; a += 1)
+      !e && !t && !o && !s ? r[a] === '"' || r[a] === "'" || r[a] === "`" ? e = r[a] : r[a] === "/" && r[a + 1] === "*" ? t = !0 : r[a] === "\
+/" && r[a + 1] === "/" ? o = !0 : r[a] === "/" && r[a + 1] !== "/" && (s = !0) : (e && (r[a] === e && r[a - 1] !== "\\" || r[a] === `
+` && e !== "`") && (e = null), s && (r[a] === "/" && r[a - 1] !== "\\" || r[a] === `
+`) && (s = !1), t && r[a - 1] === "/" && r[a - 2] === "*" && (t = !1), o && r[a] === `
+` && (o = !1)), !t && !o && (i += r[a]);
+  else
+    i = r;
+  return i;
+}, "removeCodeComments"), xd = (0, Ps.default)(1e4)(
+  (r) => Ad(r).replace(/\n\s*/g, "").trim()
+), vd = /* @__PURE__ */ n(function(e, t) {
+  let o = t.slice(0, t.indexOf("{")), s = t.slice(t.indexOf("{"));
+  if (o.includes("=>") || o.includes("function"))
+    return t;
+  let i = o;
+  return i = i.replace(e, "function"), i + s;
+}, "convertShorthandMethods2"), wd = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/, Sr = /* @__PURE__ */ n((r) => r.match(/^[\[\{\"\}].*[\]\}\"]$/),
+"isJSON");
+function Os(r) {
+  if (!at(r))
+    return r;
+  let e = r, t = !1;
+  return typeof Event < "u" && r instanceof Event && (e = fs(e), t = !0), e = Object.keys(e).reduce((o, s) => {
+    try {
+      e[s] && e[s].toJSON, o[s] = e[s];
+    } catch {
+      t = !0;
+    }
+    return o;
+  }, {}), t ? e : r;
+}
+n(Os, "convertUnconventionalData");
+var _d = /* @__PURE__ */ n(function(e) {
+  let t, o, s, i;
+  return /* @__PURE__ */ n(function(c, l) {
+    try {
+      if (c === "")
+        return i = [], t = /* @__PURE__ */ new Map([[l, "[]"]]), o = /* @__PURE__ */ new Map(), s = [], l;
+      let p = o.get(this) || this;
+      for (; s.length && p !== s[0]; )
+        s.shift(), i.pop();
+      if (typeof l == "boolean")
+        return l;
+      if (l === void 0)
+        return e.allowUndefined ? "_undefined_" : void 0;
+      if (l === null)
+        return null;
+      if (typeof l == "number")
+        return l === -1 / 0 ? "_-Infinity_" : l === 1 / 0 ? "_Infinity_" : Number.isNaN(l) ? "_NaN_" : l;
+      if (typeof l == "bigint")
+        return `_bigint_${l.toString()}`;
+      if (typeof l == "string")
+        return wd.test(l) ? e.allowDate ? `_date_${l}` : void 0 : l;
+      if ((0, nc.default)(l))
+        return e.allowRegExp ? `_regexp_${l.flags}|${l.source}` : void 0;
+      if ((0, sc.default)(l)) {
+        if (!e.allowFunction)
+          return;
+        let { name: d } = l, h = l.toString();
+        return h.match(
+          /(\[native code\]|WEBPACK_IMPORTED_MODULE|__webpack_exports__|__webpack_require__)/
+        ) ? `_function_${d}|${(() => {
+        }).toString()}` : `_function_${d}|${xd(vd(c, h))}`;
+      }
+      if ((0, ic.default)(l)) {
+        if (!e.allowSymbol)
+          return;
+        let d = Symbol.keyFor(l);
+        return d !== void 0 ? `_gsymbol_${d}` : `_symbol_${l.toString().slice(7, -1)}`;
+      }
+      if (s.length >= e.maxDepth)
+        return Array.isArray(l) ? `[Array(${l.length})]` : "[Object]";
+      if (l === this)
+        return `_duplicate_${JSON.stringify(i)}`;
+      if (l instanceof Error && e.allowError)
+        return {
+          __isConvertedError__: !0,
+          errorProperties: {
+            ...l.cause ? { cause: l.cause } : {},
+            ...l,
+            name: l.name,
+            message: l.message,
+            stack: l.stack,
+            "_constructor-name_": l.constructor.name
+          }
+        };
+      if (l.constructor && l.constructor.name && l.constructor.name !== "Object" && !Array.isArray(l) && !e.allowClass)
+        return;
+      let u = t.get(l);
+      if (!u) {
+        let d = Array.isArray(l) ? l : Os(l);
+        if (l.constructor && l.constructor.name && l.constructor.name !== "Object" && !Array.isArray(l) && e.allowClass)
+          try {
+            Object.assign(d, { "_constructor-name_": l.constructor.name });
+          } catch {
+          }
+        return i.push(c), s.unshift(d), t.set(l, JSON.stringify(i)), l !== d && o.set(l, d), d;
+      }
+      return `_duplicate_${u}`;
+>>>>>>> main
     } catch {
       return;
     }
   }, "replace");
+<<<<<<< HEAD
 }, "replacer2"), B4 = /* @__PURE__ */ o(function(t) {
   let r = [], n;
   return /* @__PURE__ */ o(function(s, a) {
@@ -20069,6 +22731,136 @@ var { document: Xb, location: Jb } = k, $x = "storybook-channel", V4 = { maxDept
   setHandler(t) {
     this.handler = (...r) => {
       t.apply(this, r), !this.connected && this.getLocalFrame().length && (this.flush(), this.connected = !0);
+=======
+}, "replacer2"), Cd = /* @__PURE__ */ n(function reviver(options) {
+  let refs = [], root;
+  return /* @__PURE__ */ n(function revive(key, value) {
+    if (key === "" && (root = value, refs.forEach(({ target: r, container: e, replacement: t }) => {
+      let o = Sr(t) ? JSON.parse(t) : t.split(".");
+      o.length === 0 ? e[r] = root : e[r] = Rd(root, o);
+    })), key === "_constructor-name_")
+      return value;
+    if (at(value) && value.__isConvertedError__) {
+      let { message: r, ...e } = value.errorProperties, t = new Error(r);
+      return Object.assign(t, e), t;
+    }
+    if (at(value) && value["_constructor-name_"] && options.allowFunction) {
+      let r = value["_constructor-name_"];
+      if (r !== "Object") {
+        let e = new Function(`return function ${r.replace(/[^a-zA-Z0-9$_]+/g, "")}(){}`)();
+        Object.setPrototypeOf(value, new e());
+      }
+      return delete value["_constructor-name_"], value;
+    }
+    if (typeof value == "string" && value.startsWith("_function_") && options.allowFunction) {
+      let [, name, source] = value.match(/_function_([^|]*)\|(.*)/) || [], sourceSanitized = source.replace(/[(\(\))|\\| |\]|`]*$/, "");
+      if (!options.lazyEval)
+        return eval(`(${sourceSanitized})`);
+      let result = /* @__PURE__ */ n((...args) => {
+        let f = eval(`(${sourceSanitized})`);
+        return f(...args);
+      }, "result");
+      return Object.defineProperty(result, "toString", {
+        value: /* @__PURE__ */ n(() => sourceSanitized, "value")
+      }), Object.defineProperty(result, "name", {
+        value: name
+      }), result;
+    }
+    if (typeof value == "string" && value.startsWith("_regexp_") && options.allowRegExp) {
+      let [, r, e] = value.match(/_regexp_([^|]*)\|(.*)/) || [];
+      return new RegExp(e, r);
+    }
+    return typeof value == "string" && value.startsWith("_date_") && options.allowDate ? new Date(value.replace("_date_", "")) : typeof value ==
+    "string" && value.startsWith("_duplicate_") ? (refs.push({ target: key, container: this, replacement: value.replace(/^_duplicate_/, "") }),
+    null) : typeof value == "string" && value.startsWith("_symbol_") && options.allowSymbol ? Symbol(value.replace("_symbol_", "")) : typeof value ==
+    "string" && value.startsWith("_gsymbol_") && options.allowSymbol ? Symbol.for(value.replace("_gsymbol_", "")) : typeof value == "string" &&
+    value === "_-Infinity_" ? -1 / 0 : typeof value == "string" && value === "_Infinity_" ? 1 / 0 : typeof value == "string" && value === "_\
+NaN_" ? NaN : typeof value == "string" && value.startsWith("_bigint_") && typeof BigInt == "function" ? BigInt(value.replace("_bigint_", "")) :
+    value;
+  }, "revive");
+}, "reviver"), Is = {
+  maxDepth: 10,
+  space: void 0,
+  allowFunction: !0,
+  allowRegExp: !0,
+  allowDate: !0,
+  allowClass: !0,
+  allowError: !0,
+  allowUndefined: !0,
+  allowSymbol: !0,
+  lazyEval: !0
+}, pt = /* @__PURE__ */ n((r, e = {}) => {
+  let t = { ...Is, ...e };
+  return JSON.stringify(Os(r), _d(t), e.space);
+}, "stringify"), Pd = /* @__PURE__ */ n(() => {
+  let r = /* @__PURE__ */ new Map();
+  return /* @__PURE__ */ n(function e(t) {
+    at(t) && Object.entries(t).forEach(([o, s]) => {
+      s === "_undefined_" ? t[o] = void 0 : r.get(s) || (r.set(s, !0), e(s));
+    }), Array.isArray(t) && t.forEach((o, s) => {
+      o === "_undefined_" ? (r.set(o, !0), t[s] = void 0) : r.get(o) || (r.set(o, !0), e(o));
+    });
+  }, "mutateUndefined");
+}, "mutator"), dt = /* @__PURE__ */ n((r, e = {}) => {
+  let t = { ...Is, ...e }, o = JSON.parse(r, Cd(t));
+  return Pd()(o), o;
+}, "parse");
+
+// ../node_modules/tiny-invariant/dist/esm/tiny-invariant.js
+var Od = !0, vo = "Invariant failed";
+function fe(r, e) {
+  if (!r) {
+    if (Od)
+      throw new Error(vo);
+    var t = typeof e == "function" ? e() : e, o = t ? "".concat(vo, ": ").concat(t) : vo;
+    throw new Error(o);
+  }
+}
+n(fe, "invariant");
+
+// src/channels/postmessage/getEventSourceUrl.ts
+var Fs = /* @__PURE__ */ n((r) => {
+  let e = Array.from(
+    document.querySelectorAll("iframe[data-is-storybook]")
+  ), [t, ...o] = e.filter((i) => {
+    try {
+      return i.contentWindow?.location.origin === r.source.location.origin && i.contentWindow?.location.pathname === r.source.location.pathname;
+    } catch {
+    }
+    try {
+      return i.contentWindow === r.source;
+    } catch {
+    }
+    let a = i.getAttribute("src"), c;
+    try {
+      if (!a)
+        return !1;
+      ({ origin: c } = new URL(a, document.location.toString()));
+    } catch {
+      return !1;
+    }
+    return c === r.origin;
+  }), s = t?.getAttribute("src");
+  if (s && o.length === 0) {
+    let { protocol: i, host: a, pathname: c } = new URL(s, document.location.toString());
+    return `${i}//${a}${c}`;
+  }
+  return o.length > 0 && I.error("found multiple candidates for event source"), null;
+}, "getEventSourceUrl");
+
+// src/channels/postmessage/index.ts
+var { document: wo, location: _o } = E, Ds = "storybook-channel", Id = { allowFunction: !1, maxDepth: 25 }, Co = class Co {
+  constructor(e) {
+    this.config = e;
+    this.connected = !1;
+    if (this.buffer = [], typeof E?.addEventListener == "function" && E.addEventListener("message", this.handleEvent.bind(this), !1), e.page !==
+    "manager" && e.page !== "preview")
+      throw new Error(`postmsg-channel: "config.page" cannot be "${e.page}"`);
+  }
+  setHandler(e) {
+    this.handler = (...t) => {
+      e.apply(this, t), !this.connected && this.getLocalFrame().length && (this.flush(), this.connected = !0);
+>>>>>>> main
     };
   }
   /**
@@ -20077,6 +22869,7 @@ var { document: Xb, location: Jb } = k, $x = "storybook-channel", V4 = { maxDept
    *
    * @param event
    */
+<<<<<<< HEAD
   send(t, r) {
     let {
       target: n,
@@ -20133,10 +22926,75 @@ var { document: Xb, location: Jb } = k, $x = "storybook-channel", V4 = { maxDept
       ).flatMap((i) => {
         try {
           return i.contentWindow && i.dataset.isStorybook !== void 0 && i.id === t ? [i.contentWindow] : [];
+=======
+  send(e, t) {
+    let {
+      target: o,
+      // telejson options
+      allowRegExp: s,
+      allowFunction: i,
+      allowSymbol: a,
+      allowDate: c,
+      allowError: l,
+      allowUndefined: p,
+      allowClass: u,
+      maxDepth: d,
+      space: h,
+      lazyEval: S
+    } = t || {}, m = Object.fromEntries(
+      Object.entries({
+        allowRegExp: s,
+        allowFunction: i,
+        allowSymbol: a,
+        allowDate: c,
+        allowError: l,
+        allowUndefined: p,
+        allowClass: u,
+        maxDepth: d,
+        space: h,
+        lazyEval: S
+      }).filter(([g, b]) => typeof b < "u")
+    ), T = {
+      ...Id,
+      ...E.CHANNEL_OPTIONS || {},
+      ...m
+    }, y = this.getFrames(o), R = new URLSearchParams(_o?.search || ""), x = pt(
+      {
+        key: Ds,
+        event: e,
+        refId: R.get("refId")
+      },
+      T
+    );
+    return y.length ? (this.buffer.length && this.flush(), y.forEach((g) => {
+      try {
+        g.postMessage(x, "*");
+      } catch {
+        I.error("sending over postmessage fail");
+      }
+    }), Promise.resolve(null)) : new Promise((g, b) => {
+      this.buffer.push({ event: e, resolve: g, reject: b });
+    });
+  }
+  flush() {
+    let { buffer: e } = this;
+    this.buffer = [], e.forEach((t) => {
+      this.send(t.event).then(t.resolve).catch(t.reject);
+    });
+  }
+  getFrames(e) {
+    if (this.config.page === "manager") {
+      let o = Array.from(
+        wo.querySelectorAll("iframe[data-is-storybook][data-is-loaded]")
+      ).flatMap((s) => {
+        try {
+          return s.contentWindow && s.dataset.isStorybook !== void 0 && s.id === e ? [s.contentWindow] : [];
+>>>>>>> main
         } catch {
           return [];
         }
       });
+<<<<<<< HEAD
       return n?.length ? n : this.getCurrentFrames();
     }
     return k && k.parent && k.parent !== k.self ? [k.parent] : [];
@@ -20181,10 +23039,57 @@ var Po = Zb;
 // src/channels/websocket/index.ts
 var { WebSocket: z4 } = k, Qb = 15e3, eg = 5e3, tg = class tg {
   constructor({ url: t, onError: r, page: n }) {
+=======
+      return o?.length ? o : this.getCurrentFrames();
+    }
+    return E && E.parent && E.parent !== E.self ? [E.parent] : [];
+  }
+  getCurrentFrames() {
+    return this.config.page === "manager" ? Array.from(
+      wo.querySelectorAll('[data-is-storybook="true"]')
+    ).flatMap((t) => t.contentWindow ? [t.contentWindow] : []) : E && E.parent ? [E.parent] : [];
+  }
+  getLocalFrame() {
+    return this.config.page === "manager" ? Array.from(
+      wo.querySelectorAll("#storybook-preview-iframe")
+    ).flatMap((t) => t.contentWindow ? [t.contentWindow] : []) : E && E.parent ? [E.parent] : [];
+  }
+  handleEvent(e) {
+    try {
+      let { data: t } = e, { key: o, event: s, refId: i } = typeof t == "string" && Sr(t) ? dt(t, E.CHANNEL_OPTIONS || {}) : t;
+      if (o === Ds) {
+        let a = this.config.page === "manager" ? '<span style="color: #37D5D3; background: black"> manager </span>' : '<span style="color: #\
+1EA7FD; background: black"> preview </span>', c = Object.values(ge).includes(s.type) ? `<span style="color: #FF4785">${s.type}</span>` : `<s\
+pan style="color: #FFAE00">${s.type}</span>`;
+        if (i && (s.refId = i), s.source = this.config.page === "preview" ? e.origin : Fs(e), !s.source) {
+          X.error(
+            `${a} received ${c} but was unable to determine the source of the event`
+          );
+          return;
+        }
+        let l = `${a} received ${c} (${t.length})`;
+        X.debug(
+          _o.origin !== s.source ? l : `${l} <span style="color: gray">(on ${_o.origin} from ${s.source})</span>`,
+          ...s.args
+        ), fe(this.handler, "ChannelHandler should be set"), this.handler(s);
+      }
+    } catch (t) {
+      I.error(t);
+    }
+  }
+};
+n(Co, "PostMessageTransport");
+var Qe = Co;
+
+// src/channels/websocket/index.ts
+var { WebSocket: Fd } = E, Po = 15e3, Oo = 5e3, Io = class Io {
+  constructor({ url: e, onError: t, page: o }) {
+>>>>>>> main
     this.buffer = [];
     this.isReady = !1;
     this.isClosed = !1;
     this.pingTimeout = 0;
+<<<<<<< HEAD
     this.socket = new z4(t), this.socket.onopen = () => {
       this.isReady = !0, this.heartbeat(), this.flush();
     }, this.socket.onmessage = ({ data: i }) => {
@@ -20198,12 +23103,28 @@ pong" }));
         type: mb,
         args: [{ reason: i.reason, code: i.code }],
         from: n || "preview"
+=======
+    this.socket = new Fd(e), this.socket.onopen = () => {
+      this.isReady = !0, this.heartbeat(), this.flush();
+    }, this.socket.onmessage = ({ data: s }) => {
+      let i = typeof s == "string" && Sr(s) ? dt(s) : s;
+      fe(this.handler, "WebsocketTransport handler should be set"), this.handler(i), i.type === "ping" && (this.heartbeat(), this.send({ type: "\
+pong" }));
+    }, this.socket.onerror = (s) => {
+      t && t(s);
+    }, this.socket.onclose = (s) => {
+      fe(this.handler, "WebsocketTransport handler should be set"), this.handler({
+        type: Wt,
+        args: [{ reason: s.reason, code: s.code }],
+        from: o || "preview"
+>>>>>>> main
       }), this.isClosed = !0, clearTimeout(this.pingTimeout);
     };
   }
   heartbeat() {
     clearTimeout(this.pingTimeout), this.pingTimeout = setTimeout(() => {
       this.socket.close(3008, "timeout");
+<<<<<<< HEAD
     }, Qb + eg);
   }
   setHandler(t) {
@@ -20286,6 +23207,700 @@ o(Bx, "parseErrorCode");
 var ml = class ml extends Error {
   constructor(r) {
     super(ml.getFullMessage(r));
+=======
+    }, Po + Oo);
+  }
+  setHandler(e) {
+    this.handler = e;
+  }
+  send(e) {
+    this.isClosed || (this.isReady ? this.sendNow(e) : this.sendLater(e));
+  }
+  sendLater(e) {
+    this.buffer.push(e);
+  }
+  sendNow(e) {
+    let t = pt(e, {
+      maxDepth: 15,
+      allowFunction: !1,
+      ...E.CHANNEL_OPTIONS
+    });
+    this.socket.send(t);
+  }
+  flush() {
+    let { buffer: e } = this;
+    this.buffer = [], e.forEach((t) => this.send(t));
+  }
+};
+n(Io, "WebsocketTransport");
+var Ze = Io;
+
+// src/channels/index.ts
+var { CONFIG_TYPE: Dd } = E, Nd = ie;
+function kd({ page: r, extraTransports: e = [] }) {
+  let t = [new Qe({ page: r }), ...e];
+  if (Dd === "DEVELOPMENT") {
+    let s = window.location.protocol === "http:" ? "ws" : "wss", { hostname: i, port: a } = window.location, c = `${s}://${i}:${a}/storybook\
+-server-channel`;
+    t.push(new Ze({ url: c, onError: /* @__PURE__ */ n(() => {
+    }, "onError"), page: r }));
+  }
+  let o = new ie({ transports: t });
+  return Q.__prepare(
+    o,
+    r === "manager" ? Q.Environment.MANAGER : Q.Environment.PREVIEW
+  ), o;
+}
+n(kd, "createBrowserChannel");
+
+// src/types/index.ts
+var Tr = {};
+_e(Tr, {
+  Addon_TypesEnum: () => Ns
+});
+
+// src/types/modules/addons.ts
+var Ns = /* @__PURE__ */ ((p) => (p.TAB = "tab", p.PANEL = "panel", p.TOOL = "tool", p.TOOLEXTRA = "toolextra", p.PREVIEW = "preview", p.experimental_PAGE =
+"page", p.experimental_SIDEBAR_BOTTOM = "sidebar-bottom", p.experimental_SIDEBAR_TOP = "sidebar-top", p.experimental_TEST_PROVIDER = "test-p\
+rovider", p))(Ns || {});
+
+// src/preview-api/index.ts
+var Yr = {};
+_e(Yr, {
+  DocsContext: () => me,
+  HooksContext: () => be,
+  Preview: () => Me,
+  PreviewWeb: () => Wr,
+  PreviewWithSelection: () => Ue,
+  ReporterAPI: () => Ee,
+  StoryStore: () => Le,
+  UrlStore: () => Be,
+  WebView: () => He,
+  addons: () => te,
+  applyHooks: () => ft,
+  combineArgs: () => tr,
+  combineParameters: () => Y,
+  composeConfigs: () => ke,
+  composeStepRunners: () => Ct,
+  composeStories: () => qi,
+  composeStory: () => Pn,
+  createPlaywrightTest: () => Bi,
+  decorateStory: () => xn,
+  defaultDecorateStory: () => vt,
+  definePreview: () => ks,
+  experimental_MockUniversalStore: () => gt,
+  experimental_UniversalStore: () => Q,
+  experimental_useUniversalStore: () => Si,
+  filterArgTypes: () => Mr,
+  getCsfFactoryAnnotations: () => Pt,
+  inferControls: () => ir,
+  makeDecorator: () => $s,
+  mockChannel: () => ut,
+  normalizeProjectAnnotations: () => Ne,
+  normalizeStory: () => De,
+  prepareMeta: () => wt,
+  prepareStory: () => sr,
+  sanitizeStoryContextUpdate: () => vn,
+  setDefaultProjectAnnotations: () => Ui,
+  setProjectAnnotations: () => Gi,
+  simulateDOMContentLoaded: () => $r,
+  simulatePageLoad: () => ss,
+  sortStoriesV7: () => Ki,
+  useArgs: () => zs,
+  useCallback: () => er,
+  useChannel: () => Vs,
+  useEffect: () => Er,
+  useGlobals: () => Ws,
+  useMemo: () => Ms,
+  useParameter: () => Hs,
+  useReducer: () => Bs,
+  useRef: () => Gs,
+  useState: () => mt,
+  useStoryContext: () => Rr,
+  userOrAutoTitle: () => Wi,
+  userOrAutoTitleFromSpecifier: () => Fn
+});
+
+// src/preview-api/modules/addons/storybook-channel-mock.ts
+function ut() {
+  let r = {
+    setHandler: /* @__PURE__ */ n(() => {
+    }, "setHandler"),
+    send: /* @__PURE__ */ n(() => {
+    }, "send")
+  };
+  return new ie({ transport: r });
+}
+n(ut, "mockChannel");
+
+// src/preview-api/modules/addons/main.ts
+var No = class No {
+  constructor() {
+    this.getChannel = /* @__PURE__ */ n(() => {
+      if (!this.channel) {
+        let e = ut();
+        return this.setChannel(e), e;
+      }
+      return this.channel;
+    }, "getChannel");
+    this.ready = /* @__PURE__ */ n(() => this.promise, "ready");
+    this.hasChannel = /* @__PURE__ */ n(() => !!this.channel, "hasChannel");
+    this.setChannel = /* @__PURE__ */ n((e) => {
+      this.channel = e, this.resolve();
+    }, "setChannel");
+    this.promise = new Promise((e) => {
+      this.resolve = () => e(this.getChannel());
+    });
+  }
+};
+n(No, "AddonStore");
+var Do = No, Fo = "__STORYBOOK_ADDONS_PREVIEW";
+function Ld() {
+  return E[Fo] || (E[Fo] = new Do()), E[Fo];
+}
+n(Ld, "getAddonsStore");
+var te = Ld();
+
+// src/preview-api/modules/addons/definePreview.ts
+function ks(r) {
+  return r;
+}
+n(ks, "definePreview");
+
+// src/preview-api/modules/addons/hooks.ts
+var Mo = class Mo {
+  constructor() {
+    this.hookListsMap = void 0;
+    this.mountedDecorators = void 0;
+    this.prevMountedDecorators = void 0;
+    this.currentHooks = void 0;
+    this.nextHookIndex = void 0;
+    this.currentPhase = void 0;
+    this.currentEffects = void 0;
+    this.prevEffects = void 0;
+    this.currentDecoratorName = void 0;
+    this.hasUpdates = void 0;
+    this.currentContext = void 0;
+    this.renderListener = /* @__PURE__ */ n((e) => {
+      e === this.currentContext?.id && (this.triggerEffects(), this.currentContext = null, this.removeRenderListeners());
+    }, "renderListener");
+    this.init();
+  }
+  init() {
+    this.hookListsMap = /* @__PURE__ */ new WeakMap(), this.mountedDecorators = /* @__PURE__ */ new Set(), this.prevMountedDecorators = /* @__PURE__ */ new Set(),
+    this.currentHooks = [], this.nextHookIndex = 0, this.currentPhase = "NONE", this.currentEffects = [], this.prevEffects = [], this.currentDecoratorName =
+    null, this.hasUpdates = !1, this.currentContext = null;
+  }
+  clean() {
+    this.prevEffects.forEach((e) => {
+      e.destroy && e.destroy();
+    }), this.init(), this.removeRenderListeners();
+  }
+  getNextHook() {
+    let e = this.currentHooks[this.nextHookIndex];
+    return this.nextHookIndex += 1, e;
+  }
+  triggerEffects() {
+    this.prevEffects.forEach((e) => {
+      !this.currentEffects.includes(e) && e.destroy && e.destroy();
+    }), this.currentEffects.forEach((e) => {
+      this.prevEffects.includes(e) || (e.destroy = e.create());
+    }), this.prevEffects = this.currentEffects, this.currentEffects = [];
+  }
+  addRenderListeners() {
+    this.removeRenderListeners(), te.getChannel().on(We, this.renderListener);
+  }
+  removeRenderListeners() {
+    te.getChannel().removeListener(We, this.renderListener);
+  }
+};
+n(Mo, "HooksContext");
+var be = Mo;
+function Ls(r) {
+  let e = /* @__PURE__ */ n((...t) => {
+    let { hooks: o } = typeof t[0] == "function" ? t[1] : t[0], s = o.currentPhase, i = o.currentHooks, a = o.nextHookIndex, c = o.currentDecoratorName;
+    o.currentDecoratorName = r.name, o.prevMountedDecorators.has(r) ? (o.currentPhase = "UPDATE", o.currentHooks = o.hookListsMap.get(r) || []) :
+    (o.currentPhase = "MOUNT", o.currentHooks = [], o.hookListsMap.set(r, o.currentHooks), o.prevMountedDecorators.add(r)), o.nextHookIndex =
+    0;
+    let l = E.STORYBOOK_HOOKS_CONTEXT;
+    E.STORYBOOK_HOOKS_CONTEXT = o;
+    let p = r(...t);
+    if (E.STORYBOOK_HOOKS_CONTEXT = l, o.currentPhase === "UPDATE" && o.getNextHook() != null)
+      throw new Error(
+        "Rendered fewer hooks than expected. This may be caused by an accidental early return statement."
+      );
+    return o.currentPhase = s, o.currentHooks = i, o.nextHookIndex = a, o.currentDecoratorName = c, p;
+  }, "hookified");
+  return e.originalFn = r, e;
+}
+n(Ls, "hookify");
+var ko = 0, jd = 25, ft = /* @__PURE__ */ n((r) => (e, t) => {
+  let o = r(
+    Ls(e),
+    t.map((s) => Ls(s))
+  );
+  return (s) => {
+    let { hooks: i } = s;
+    i.prevMountedDecorators ??= /* @__PURE__ */ new Set(), i.mountedDecorators = /* @__PURE__ */ new Set([e, ...t]), i.currentContext = s, i.
+    hasUpdates = !1;
+    let a = o(s);
+    for (ko = 1; i.hasUpdates; )
+      if (i.hasUpdates = !1, i.currentEffects = [], a = o(s), ko += 1, ko > jd)
+        throw new Error(
+          "Too many re-renders. Storybook limits the number of renders to prevent an infinite loop."
+        );
+    return i.addRenderListeners(), a;
+  };
+}, "applyHooks"), Md = /* @__PURE__ */ n((r, e) => r.length === e.length && r.every((t, o) => t === e[o]), "areDepsEqual"), Lo = /* @__PURE__ */ n(
+() => new Error("Storybook preview hooks can only be called inside decorators and story functions."), "invalidHooksError");
+function js() {
+  return E.STORYBOOK_HOOKS_CONTEXT || null;
+}
+n(js, "getHooksContextOrNull");
+function jo() {
+  let r = js();
+  if (r == null)
+    throw Lo();
+  return r;
+}
+n(jo, "getHooksContextOrThrow");
+function Ud(r, e, t) {
+  let o = jo();
+  if (o.currentPhase === "MOUNT") {
+    t != null && !Array.isArray(t) && I.warn(
+      `${r} received a final argument that is not an array (instead, received ${t}). When specified, the final argument must be an array.`
+    );
+    let s = { name: r, deps: t };
+    return o.currentHooks.push(s), e(s), s;
+  }
+  if (o.currentPhase === "UPDATE") {
+    let s = o.getNextHook();
+    if (s == null)
+      throw new Error("Rendered more hooks than during the previous render.");
+    return s.name !== r && I.warn(
+      `Storybook has detected a change in the order of Hooks${o.currentDecoratorName ? ` called by ${o.currentDecoratorName}` : ""}. This wi\
+ll lead to bugs and errors if not fixed.`
+    ), t != null && s.deps == null && I.warn(
+      `${r} received a final argument during this render, but not during the previous render. Even though the final argument is optional, it\
+s type cannot change between renders.`
+    ), t != null && s.deps != null && t.length !== s.deps.length && I.warn(`The final argument passed to ${r} changed size between renders. \
+The order and size of this array must remain constant.
+Previous: ${s.deps}
+Incoming: ${t}`), (t == null || s.deps == null || !Md(t, s.deps)) && (e(s), s.deps = t), s;
+  }
+  throw Lo();
+}
+n(Ud, "useHook");
+function yt(r, e, t) {
+  let { memoizedState: o } = Ud(
+    r,
+    (s) => {
+      s.memoizedState = e();
+    },
+    t
+  );
+  return o;
+}
+n(yt, "useMemoLike");
+function Ms(r, e) {
+  return yt("useMemo", r, e);
+}
+n(Ms, "useMemo");
+function er(r, e) {
+  return yt("useCallback", () => r, e);
+}
+n(er, "useCallback");
+function Us(r, e) {
+  return yt(r, () => ({ current: e }), []);
+}
+n(Us, "useRefLike");
+function Gs(r) {
+  return Us("useRef", r);
+}
+n(Gs, "useRef");
+function Gd() {
+  let r = js();
+  if (r != null && r.currentPhase !== "NONE")
+    r.hasUpdates = !0;
+  else
+    try {
+      te.getChannel().emit(dr);
+    } catch {
+      I.warn("State updates of Storybook preview hooks work only in browser");
+    }
+}
+n(Gd, "triggerUpdate");
+function qs(r, e) {
+  let t = Us(
+    r,
+    // @ts-expect-error S type should never be function, but there's no way to tell that to TypeScript
+    typeof e == "function" ? e() : e
+  ), o = /* @__PURE__ */ n((s) => {
+    t.current = typeof s == "function" ? s(t.current) : s, Gd();
+  }, "setState");
+  return [t.current, o];
+}
+n(qs, "useStateLike");
+function mt(r) {
+  return qs("useState", r);
+}
+n(mt, "useState");
+function Bs(r, e, t) {
+  let o = t != null ? () => t(e) : e, [s, i] = qs("useReducer", o);
+  return [s, /* @__PURE__ */ n((c) => i((l) => r(l, c)), "dispatch")];
+}
+n(Bs, "useReducer");
+function Er(r, e) {
+  let t = jo(), o = yt("useEffect", () => ({ create: r }), e);
+  t.currentEffects.includes(o) || t.currentEffects.push(o);
+}
+n(Er, "useEffect");
+function Vs(r, e = []) {
+  let t = te.getChannel();
+  return Er(() => (Object.entries(r).forEach(([o, s]) => t.on(o, s)), () => {
+    Object.entries(r).forEach(
+      ([o, s]) => t.removeListener(o, s)
+    );
+  }), [...Object.keys(r), ...e]), er(t.emit.bind(t), [t]);
+}
+n(Vs, "useChannel");
+function Rr() {
+  let { currentContext: r } = jo();
+  if (r == null)
+    throw Lo();
+  return r;
+}
+n(Rr, "useStoryContext");
+function Hs(r, e) {
+  let { parameters: t } = Rr();
+  if (r)
+    return t[r] ?? e;
+}
+n(Hs, "useParameter");
+function zs() {
+  let r = te.getChannel(), { id: e, args: t } = Rr(), o = er(
+    (i) => r.emit(yr, { storyId: e, updatedArgs: i }),
+    [r, e]
+  ), s = er(
+    (i) => r.emit(ur, { storyId: e, argNames: i }),
+    [r, e]
+  );
+  return [t, o, s];
+}
+n(zs, "useArgs");
+function Ws() {
+  let r = te.getChannel(), { globals: e } = Rr(), t = er(
+    (o) => r.emit(fr, { globals: o }),
+    [r]
+  );
+  return [e, t];
+}
+n(Ws, "useGlobals");
+
+// src/preview-api/modules/addons/make-decorator.ts
+var $s = /* @__PURE__ */ n(({
+  name: r,
+  parameterName: e,
+  wrapper: t,
+  skipIfNoParametersOrOptions: o = !1
+}) => {
+  let s = /* @__PURE__ */ n((i) => (a, c) => {
+    let l = c.parameters && c.parameters[e];
+    return l && l.disable || o && !i && !l ? a(c) : t(a, c, {
+      options: i,
+      parameters: l
+    });
+  }, "decorator");
+  return (...i) => typeof i[0] == "function" ? s()(...i) : (...a) => {
+    if (a.length > 1)
+      return i.length > 1 ? s(i)(...a) : s(...i)(...a);
+    throw new Error(
+      `Passing stories directly into ${r}() is not allowed,
+        instead use addDecorator(${r}) and pass options with the '${e}' parameter`
+    );
+  };
+}, "makeDecorator");
+
+// ../node_modules/es-toolkit/dist/object/omitBy.mjs
+function Uo(r, e) {
+  let t = {}, o = Object.entries(r);
+  for (let s = 0; s < o.length; s++) {
+    let [i, a] = o[s];
+    e(a, i) || (t[i] = a);
+  }
+  return t;
+}
+n(Uo, "omitBy");
+
+// ../node_modules/es-toolkit/dist/object/pick.mjs
+function Go(r, e) {
+  let t = {};
+  for (let o = 0; o < e.length; o++) {
+    let s = e[o];
+    Object.prototype.hasOwnProperty.call(r, s) && (t[s] = r[s]);
+  }
+  return t;
+}
+n(Go, "pick");
+
+// ../node_modules/es-toolkit/dist/object/pickBy.mjs
+function qo(r, e) {
+  let t = {}, o = Object.entries(r);
+  for (let s = 0; s < o.length; s++) {
+    let [i, a] = o[s];
+    e(a, i) && (t[i] = a);
+  }
+  return t;
+}
+n(qo, "pickBy");
+
+// ../node_modules/es-toolkit/dist/predicate/isPlainObject.mjs
+function $(r) {
+  if (typeof r != "object" || r == null)
+    return !1;
+  if (Object.getPrototypeOf(r) === null)
+    return !0;
+  if (r.toString() !== "[object Object]")
+    return !1;
+  let e = r;
+  for (; Object.getPrototypeOf(e) !== null; )
+    e = Object.getPrototypeOf(e);
+  return Object.getPrototypeOf(r) === e;
+}
+n($, "isPlainObject");
+
+// ../node_modules/es-toolkit/dist/object/mapValues.mjs
+function oe(r, e) {
+  let t = {}, o = Object.keys(r);
+  for (let s = 0; s < o.length; s++) {
+    let i = o[s], a = r[i];
+    t[i] = e(a, i, r);
+  }
+  return t;
+}
+n(oe, "mapValues");
+
+// ../node_modules/es-toolkit/dist/compat/_internal/tags.mjs
+var Ys = "[object RegExp]", Ks = "[object String]", Xs = "[object Number]", Js = "[object Boolean]", Bo = "[object Arguments]", Qs = "[objec\
+t Symbol]", Zs = "[object Date]", ei = "[object Map]", ri = "[object Set]", ti = "[object Array]", oi = "[object Function]", ni = "[object A\
+rrayBuffer]", ht = "[object Object]", si = "[object Error]", ii = "[object DataView]", ai = "[object Uint8Array]", li = "[object Uint8Clampe\
+dArray]", ci = "[object Uint16Array]", pi = "[object Uint32Array]", di = "[object BigUint64Array]", ui = "[object Int8Array]", fi = "[object\
+ Int16Array]", yi = "[object Int32Array]", mi = "[object BigInt64Array]", hi = "[object Float32Array]", gi = "[object Float64Array]";
+
+// ../node_modules/es-toolkit/dist/compat/_internal/getSymbols.mjs
+function Vo(r) {
+  return Object.getOwnPropertySymbols(r).filter((e) => Object.prototype.propertyIsEnumerable.call(r, e));
+}
+n(Vo, "getSymbols");
+
+// ../node_modules/es-toolkit/dist/compat/_internal/getTag.mjs
+function Ho(r) {
+  return r == null ? r === void 0 ? "[object Undefined]" : "[object Null]" : Object.prototype.toString.call(r);
+}
+n(Ho, "getTag");
+
+// ../node_modules/es-toolkit/dist/predicate/isEqual.mjs
+function Ar(r, e) {
+  if (typeof r == typeof e)
+    switch (typeof r) {
+      case "bigint":
+      case "string":
+      case "boolean":
+      case "symbol":
+      case "undefined":
+        return r === e;
+      case "number":
+        return r === e || Object.is(r, e);
+      case "function":
+        return r === e;
+      case "object":
+        return ye(r, e);
+    }
+  return ye(r, e);
+}
+n(Ar, "isEqual");
+function ye(r, e, t) {
+  if (Object.is(r, e))
+    return !0;
+  let o = Ho(r), s = Ho(e);
+  if (o === Bo && (o = ht), s === Bo && (s = ht), o !== s)
+    return !1;
+  switch (o) {
+    case Ks:
+      return r.toString() === e.toString();
+    case Xs: {
+      let c = r.valueOf(), l = e.valueOf();
+      return c === l || Number.isNaN(c) && Number.isNaN(l);
+    }
+    case Js:
+    case Zs:
+    case Qs:
+      return Object.is(r.valueOf(), e.valueOf());
+    case Ys:
+      return r.source === e.source && r.flags === e.flags;
+    case oi:
+      return r === e;
+  }
+  t = t ?? /* @__PURE__ */ new Map();
+  let i = t.get(r), a = t.get(e);
+  if (i != null && a != null)
+    return i === e;
+  t.set(r, e), t.set(e, r);
+  try {
+    switch (o) {
+      case ei: {
+        if (r.size !== e.size)
+          return !1;
+        for (let [c, l] of r.entries())
+          if (!e.has(c) || !ye(l, e.get(c), t))
+            return !1;
+        return !0;
+      }
+      case ri: {
+        if (r.size !== e.size)
+          return !1;
+        let c = Array.from(r.values()), l = Array.from(e.values());
+        for (let p = 0; p < c.length; p++) {
+          let u = c[p], d = l.findIndex((h) => ye(u, h, t));
+          if (d === -1)
+            return !1;
+          l.splice(d, 1);
+        }
+        return !0;
+      }
+      case ti:
+      case ai:
+      case li:
+      case ci:
+      case pi:
+      case di:
+      case ui:
+      case fi:
+      case yi:
+      case mi:
+      case hi:
+      case gi: {
+        if (typeof Buffer < "u" && Buffer.isBuffer(r) !== Buffer.isBuffer(e) || r.length !== e.length)
+          return !1;
+        for (let c = 0; c < r.length; c++)
+          if (!ye(r[c], e[c], t))
+            return !1;
+        return !0;
+      }
+      case ni:
+        return r.byteLength !== e.byteLength ? !1 : ye(new Uint8Array(r), new Uint8Array(e), t);
+      case ii:
+        return r.byteLength !== e.byteLength || r.byteOffset !== e.byteOffset ? !1 : ye(r.buffer, e.buffer, t);
+      case si:
+        return r.name === e.name && r.message === e.message;
+      case ht: {
+        if (!(ye(r.constructor, e.constructor, t) || $(r) && $(e)))
+          return !1;
+        let l = [...Object.keys(r), ...Vo(r)], p = [...Object.keys(e), ...Vo(e)];
+        if (l.length !== p.length)
+          return !1;
+        for (let u = 0; u < l.length; u++) {
+          let d = l[u], h = r[d];
+          if (!Object.prototype.hasOwnProperty.call(e, d))
+            return !1;
+          let S = e[d];
+          if (!ye(h, S, t))
+            return !1;
+        }
+        return !0;
+      }
+      default:
+        return !1;
+    }
+  } finally {
+    t.delete(r), t.delete(e);
+  }
+}
+n(ye, "areObjectsEqual");
+
+// src/shared/universal-store/use-universal-store-preview.ts
+var Si = /* @__PURE__ */ n((r, e) => {
+  let [t, o] = mt(
+    e ? e(r.getState()) : r.getState()
+  );
+  return Er(() => r.onStateChange((s, i) => {
+    if (!e) {
+      o(s);
+      return;
+    }
+    let a = e(s), c = e(i);
+    !Ar(a, c) && o(a);
+  }), [r, o, e]), [t, r.setState];
+}, "useUniversalStore");
+
+// src/shared/universal-store/mock.ts
+var St = class St extends Q {
+  constructor(e, t) {
+    Q.isInternalConstructing = !0, super(
+      { ...e, leader: !0 },
+      { channel: new ie({}), environment: Q.Environment.MOCK }
+    ), Q.isInternalConstructing = !1, typeof t?.fn == "function" && (this.testUtils = t, this.getState = t.fn(this.getState), this.setState =
+    t.fn(this.setState), this.subscribe = t.fn(this.subscribe), this.onStateChange = t.fn(this.onStateChange), this.send = t.fn(this.send));
+  }
+  /** Create a mock universal store. This is just an alias for the constructor */
+  static create(e, t) {
+    return new St(e, t);
+  }
+  unsubscribeAll() {
+    if (!this.testUtils)
+      throw new Error(
+        ps`Cannot call unsubscribeAll on a store that does not have testUtils.
+        Please provide testUtils as the second argument when creating the store.`
+      );
+    let e = /* @__PURE__ */ n((t) => {
+      try {
+        t.value();
+      } catch {
+      }
+    }, "callReturnedUnsubscribeFn");
+    this.subscribe.mock?.results.forEach(e), this.onStateChange.mock?.results.forEach(e);
+  }
+};
+n(St, "MockUniversalStore");
+var gt = St;
+
+// src/preview-errors.ts
+var kr = {};
+_e(kr, {
+  CalledExtractOnStoreError: () => vr,
+  CalledPreviewMethodBeforeInitializationError: () => V,
+  Category: () => Ti,
+  EmptyIndexError: () => Pr,
+  ImplicitActionsDuringRendering: () => zo,
+  MdxFileWithNoCsfReferencesError: () => Cr,
+  MissingRenderToCanvasError: () => wr,
+  MissingStoryAfterHmrError: () => xr,
+  MissingStoryFromCsfFileError: () => Ir,
+  MountMustBeDestructuredError: () => Oe,
+  NextJsSharpError: () => Wo,
+  NextjsRouterMocksNotAvailable: () => $o,
+  NoRenderFunctionError: () => Dr,
+  NoStoryMatchError: () => Or,
+  NoStoryMountedError: () => Nr,
+  StoryIndexFetchError: () => _r,
+  StoryStoreAccessedBeforeInitializationError: () => Fr,
+  UnknownArgTypesError: () => Yo,
+  UnsupportedViewportDimensionError: () => Ko
+});
+
+// src/storybook-error.ts
+function bi({
+  code: r,
+  category: e
+}) {
+  let t = String(r).padStart(4, "0");
+  return `SB_${e}_${t}`;
+}
+n(bi, "parseErrorCode");
+var bt = class bt extends Error {
+  constructor(t) {
+    super(bt.getFullMessage(t));
+>>>>>>> main
     /**
      * Data associated with the error. Used to provide additional information in the error message or
      * to be passed to telemetry.
@@ -20293,6 +23908,7 @@ var ml = class ml extends Error {
     this.data = {};
     /** Flag used to easily determine if the error originates from Storybook. */
     this.fromStorybook = !0;
+<<<<<<< HEAD
     this.category = r.category, this.documentation = r.documentation ?? !1, this.code = r.code;
   }
   get fullErrorCode() {
@@ -20315,11 +23931,36 @@ var ml = class ml extends Error {
     (a = `
 ${r.map((l) => `	- ${l}`).join(`
 `)}`), `${s}${a != null ? `
+=======
+    this.category = t.category, this.documentation = t.documentation ?? !1, this.code = t.code;
+  }
+  get fullErrorCode() {
+    return bi({ code: this.code, category: this.category });
+  }
+  /** Overrides the default `Error.name` property in the format: SB_<CATEGORY>_<CODE>. */
+  get name() {
+    let t = this.constructor.name;
+    return `${this.fullErrorCode} (${t})`;
+  }
+  /** Generates the error message along with additional documentation link (if applicable). */
+  static getFullMessage({
+    documentation: t,
+    code: o,
+    category: s,
+    message: i
+  }) {
+    let a;
+    return t === !0 ? a = `https://storybook.js.org/error/${bi({ code: o, category: s })}` : typeof t == "string" ? a = t : Array.isArray(t) &&
+    (a = `
+${t.map((c) => `	- ${c}`).join(`
+`)}`), `${i}${a != null ? `
+>>>>>>> main
 
 More info: ${a}
 ` : ""}`;
   }
 };
+<<<<<<< HEAD
 o(ml, "StorybookError");
 var Ne = ml;
 
@@ -20348,11 +23989,42 @@ w.FRAMEWORK_NEXTJS = "FRAMEWORK_NEXTJS", w.ADDON_VITEST = "ADDON_VITEST", w.ADDO
 o(cg, "MissingStoryAfterHmrError");
 var Ji = cg, dg = class dg extends Ne {
   constructor(r) {
+=======
+n(bt, "StorybookError");
+var G = bt;
+
+// src/preview-errors.ts
+var Ti = /* @__PURE__ */ ((b) => (b.BLOCKS = "BLOCKS", b.DOCS_TOOLS = "DOCS-TOOLS", b.PREVIEW_CLIENT_LOGGER = "PREVIEW_CLIENT-LOGGER", b.PREVIEW_CHANNELS =
+"PREVIEW_CHANNELS", b.PREVIEW_CORE_EVENTS = "PREVIEW_CORE-EVENTS", b.PREVIEW_INSTRUMENTER = "PREVIEW_INSTRUMENTER", b.PREVIEW_API = "PREVIEW\
+_API", b.PREVIEW_REACT_DOM_SHIM = "PREVIEW_REACT-DOM-SHIM", b.PREVIEW_ROUTER = "PREVIEW_ROUTER", b.PREVIEW_THEMING = "PREVIEW_THEMING", b.RENDERER_HTML =
+"RENDERER_HTML", b.RENDERER_PREACT = "RENDERER_PREACT", b.RENDERER_REACT = "RENDERER_REACT", b.RENDERER_SERVER = "RENDERER_SERVER", b.RENDERER_SVELTE =
+"RENDERER_SVELTE", b.RENDERER_VUE = "RENDERER_VUE", b.RENDERER_VUE3 = "RENDERER_VUE3", b.RENDERER_WEB_COMPONENTS = "RENDERER_WEB-COMPONENTS",
+b.FRAMEWORK_NEXTJS = "FRAMEWORK_NEXTJS", b.ADDON_VITEST = "ADDON_VITEST", b))(Ti || {}), Xo = class Xo extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 1,
+      message: _`
+        Couldn't find story matching id '${t.storyId}' after HMR.
+        - Did you just rename a story?
+        - Did you remove it from your CSF file?
+        - Are you sure a story with the id '${t.storyId}' exists?
+        - Please check the values in the stories field of your main.js config and see if they would match your CSF File.
+        - Also check the browser console and terminal for potential error messages.`
+    });
+    this.data = t;
+  }
+};
+n(Xo, "MissingStoryAfterHmrError");
+var xr = Xo, Jo = class Jo extends G {
+  constructor(t) {
+>>>>>>> main
     super({
       category: "PREVIEW_API",
       code: 2,
       documentation: "https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#using-implicit-actions-during-rendering-is-deprecated-\
 for-example-in-the-play-function",
+<<<<<<< HEAD
       message: ee`
         We detected that you use an implicit action arg while ${r.phase} of your story.  
         ${r.deprecated ? `
@@ -20370,24 +24042,56 @@ This is deprecated and won't work in Storybook 8 anymore.
 };
 o(dg, "ImplicitActionsDuringRendering");
 var Zi = dg, pg = class pg extends Ne {
+=======
+      message: _`
+        We detected that you use an implicit action arg while ${t.phase} of your story.  
+        ${t.deprecated ? `
+This is deprecated and won't work in Storybook 8 anymore.
+` : ""}
+        Please provide an explicit spy to your args like this:
+          import { fn } from '@storybook/test';
+          ... 
+          args: {
+           ${t.name}: fn()
+          }`
+    });
+    this.data = t;
+  }
+};
+n(Jo, "ImplicitActionsDuringRendering");
+var zo = Jo, Qo = class Qo extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "PREVIEW_API",
       code: 3,
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
         Cannot call \`storyStore.extract()\` without calling \`storyStore.cacheAllCsfFiles()\` first.
 
         You probably meant to call \`await preview.extract()\` which does the above for you.`
     });
   }
 };
+<<<<<<< HEAD
 o(pg, "CalledExtractOnStoreError");
 var Qi = pg, fg = class fg extends Ne {
+=======
+n(Qo, "CalledExtractOnStoreError");
+var vr = Qo, Zo = class Zo extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "PREVIEW_API",
       code: 4,
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
         Expected your framework's preset to export a \`renderToCanvas\` field.
 
         Perhaps it needs to be upgraded for Storybook 7.0?`,
@@ -20395,6 +24099,7 @@ var Qi = pg, fg = class fg extends Ne {
     });
   }
 };
+<<<<<<< HEAD
 o(fg, "MissingRenderToCanvasError");
 var es = fg, mg = class mg extends Ne {
   constructor(r) {
@@ -20406,10 +24111,24 @@ var es = fg, mg = class mg extends Ne {
         
         The preview needs to load the story index before most methods can be called. If you want
         to call \`${r.methodName}\`, try \`await preview.initializationPromise;\` first.
+=======
+n(Zo, "MissingRenderToCanvasError");
+var wr = Zo, en = class en extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 5,
+      message: _`
+        Called \`Preview.${t.methodName}()\` before initialization.
+        
+        The preview needs to load the story index before most methods can be called. If you want
+        to call \`${t.methodName}\`, try \`await preview.initializationPromise;\` first.
+>>>>>>> main
         
         If you didn't call the above code, then likely it was called by an addon that needs to
         do the above.`
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
@@ -20423,6 +24142,21 @@ var Ze = mg, hg = class hg extends Ne {
         Error fetching \`/index.json\`:
         
         ${r.text}
+=======
+    this.data = t;
+  }
+};
+n(en, "CalledPreviewMethodBeforeInitializationError");
+var V = en, rn = class rn extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 6,
+      message: _`
+        Error fetching \`/index.json\`:
+        
+        ${t.text}
+>>>>>>> main
 
         If you are in development, this likely indicates a problem with your Storybook process,
         check the terminal for errors.
@@ -20430,6 +24164,7 @@ var Ze = mg, hg = class hg extends Ne {
         If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
         build.`
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
@@ -20441,21 +24176,46 @@ var ts = hg, yg = class yg extends Ne {
       code: 7,
       message: ee`
         Tried to render docs entry ${r.storyId} but it is a MDX file that has no CSF
+=======
+    this.data = t;
+  }
+};
+n(rn, "StoryIndexFetchError");
+var _r = rn, tn = class tn extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 7,
+      message: _`
+        Tried to render docs entry ${t.storyId} but it is a MDX file that has no CSF
+>>>>>>> main
         references, or autodocs for a CSF file that some doesn't refer to itself.
         
         This likely is an internal error in Storybook's indexing, or you've attached the
         \`attached-mdx\` tag to an MDX file that is not attached.`
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
 o(yg, "MdxFileWithNoCsfReferencesError");
 var rs = yg, bg = class bg extends Ne {
+=======
+    this.data = t;
+  }
+};
+n(tn, "MdxFileWithNoCsfReferencesError");
+var Cr = tn, on = class on extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "PREVIEW_API",
       code: 8,
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
         Couldn't find any stories in your Storybook.
 
         - Please check your stories field of your main.js config: does it match correctly?
@@ -20463,6 +24223,7 @@ var rs = yg, bg = class bg extends Ne {
     });
   }
 };
+<<<<<<< HEAD
 o(bg, "EmptyIndexError");
 var ns = bg, gg = class gg extends Ne {
   constructor(r) {
@@ -20471,11 +24232,22 @@ var ns = bg, gg = class gg extends Ne {
       code: 9,
       message: ee`
         Couldn't find story matching '${r.storySpecifier}'.
+=======
+n(on, "EmptyIndexError");
+var Pr = on, nn = class nn extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 9,
+      message: _`
+        Couldn't find story matching '${t.storySpecifier}'.
+>>>>>>> main
 
         - Are you sure a story with that id exists?
         - Please check your stories field of your main.js config.
         - Also check the browser console and terminal for error messages.`
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
@@ -20487,6 +24259,19 @@ var os = gg, vg = class vg extends Ne {
       code: 10,
       message: ee`
         Couldn't find story matching id '${r.storyId}' after importing a CSF file.
+=======
+    this.data = t;
+  }
+};
+n(nn, "NoStoryMatchError");
+var Or = nn, sn = class sn extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 10,
+      message: _`
+        Couldn't find story matching id '${t.storyId}' after importing a CSF file.
+>>>>>>> main
 
         The file was indexed as if the story was there, but then after importing the file in the browser
         we didn't find the story. Possible reasons:
@@ -20495,16 +24280,28 @@ var os = gg, vg = class vg extends Ne {
 
         Please check your browser console and terminal for errors that may explain the issue.`
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
 o(vg, "MissingStoryFromCsfFileError");
 var is = vg, Eg = class Eg extends Ne {
+=======
+    this.data = t;
+  }
+};
+n(sn, "MissingStoryFromCsfFileError");
+var Ir = sn, an = class an extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "PREVIEW_API",
       code: 11,
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
         Cannot access the Story Store until the index is ready.
 
         It is not recommended to use methods directly on the Story Store anyway, in Storybook 9 we will
@@ -20512,6 +24309,7 @@ var is = vg, Eg = class Eg extends Ne {
     });
   }
 };
+<<<<<<< HEAD
 o(Eg, "StoryStoreAccessedBeforeInitializationError");
 var ss = Eg, _g = class _g extends Ne {
   constructor(r) {
@@ -20519,6 +24317,15 @@ var ss = Eg, _g = class _g extends Ne {
       category: "PREVIEW_API",
       code: 12,
       message: ee`
+=======
+n(an, "StoryStoreAccessedBeforeInitializationError");
+var Fr = an, ln = class ln extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 12,
+      message: _`
+>>>>>>> main
       Incorrect use of mount in the play function.
       
       To use mount in the play function, you must satisfy the following two requirements: 
@@ -20535,6 +24342,7 @@ var ss = Eg, _g = class _g extends Ne {
       More info: https://storybook.js.org/docs/writing-tests/interaction-testing#run-code-before-the-component-gets-rendered
       
       Received the following play function:
+<<<<<<< HEAD
       ${r.playFunction}`
     });
     this.data = r;
@@ -20555,11 +24363,37 @@ var xn = _g, Tg = class Tg extends Ne {
 };
 o(Tg, "NoRenderFunctionError");
 var as = Tg, wg = class wg extends Ne {
+=======
+      ${t.playFunction}`
+    });
+    this.data = t;
+  }
+};
+n(ln, "MountMustBeDestructuredError");
+var Oe = ln, cn = class cn extends G {
+  constructor(t) {
+    super({
+      category: "PREVIEW_API",
+      code: 14,
+      message: _`
+        No render function available for storyId '${t.id}'
+      `
+    });
+    this.data = t;
+  }
+};
+n(cn, "NoRenderFunctionError");
+var Dr = cn, pn = class pn extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "PREVIEW_API",
       code: 15,
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
         No component is mounted in your story.
         
         This usually occurs when you destructure mount in the play function, but forget to call it.
@@ -20578,6 +24412,7 @@ var as = Tg, wg = class wg extends Ne {
     });
   }
 };
+<<<<<<< HEAD
 o(wg, "NoStoryMountedError");
 var ls = wg, Rg = class Rg extends Ne {
   constructor(r) {
@@ -20595,12 +24430,20 @@ var ls = wg, Rg = class Rg extends Ne {
 };
 o(Rg, "StatusTypeIdMismatchError");
 var ng = Rg, Sg = class Sg extends Ne {
+=======
+n(pn, "NoStoryMountedError");
+var Nr = pn, dn = class dn extends G {
+>>>>>>> main
   constructor() {
     super({
       category: "FRAMEWORK_NEXTJS",
       code: 1,
       documentation: "https://storybook.js.org/docs/get-started/nextjs#faq",
+<<<<<<< HEAD
       message: ee`
+=======
+      message: _`
+>>>>>>> main
       You are importing avif images, but you don't have sharp installed.
 
       You have to install sharp in order to use image optimization features in Next.js.
@@ -20608,6 +24451,7 @@ var ng = Rg, Sg = class Sg extends Ne {
     });
   }
 };
+<<<<<<< HEAD
 o(Sg, "NextJsSharpError");
 var og = Sg, xg = class xg extends Ne {
   constructor(r) {
@@ -20624,13 +24468,37 @@ var og = Sg, xg = class xg extends Ne {
 o(xg, "NextjsRouterMocksNotAvailable");
 var ig = xg, Cg = class Cg extends Ne {
   constructor(r) {
+=======
+n(dn, "NextJsSharpError");
+var Wo = dn, un = class un extends G {
+  constructor(t) {
+    super({
+      category: "FRAMEWORK_NEXTJS",
+      code: 2,
+      message: _`
+        Tried to access router mocks from "${t.importType}" but they were not created yet. You might be running code in an unsupported environment.
+      `
+    });
+    this.data = t;
+  }
+};
+n(un, "NextjsRouterMocksNotAvailable");
+var $o = un, fn = class fn extends G {
+  constructor(t) {
+>>>>>>> main
     super({
       category: "DOCS-TOOLS",
       code: 1,
       documentation: "https://github.com/storybookjs/storybook/issues/26606",
+<<<<<<< HEAD
       message: ee`
         There was a failure when generating detailed ArgTypes in ${r.language} for:
         ${JSON.stringify(r.type, null, 2)} 
+=======
+      message: _`
+        There was a failure when generating detailed ArgTypes in ${t.language} for:
+        ${JSON.stringify(t.type, null, 2)} 
+>>>>>>> main
         
         Storybook will fall back to use a generic type description instead.
 
@@ -20638,19 +24506,33 @@ var ig = xg, Cg = class Cg extends Ne {
         If you think this is a bug, please detail it as much as possible in the Github issue.
       `
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
 o(Cg, "UnknownArgTypesError");
 var sg = Cg, Pg = class Pg extends Ne {
   constructor(r) {
+=======
+    this.data = t;
+  }
+};
+n(fn, "UnknownArgTypesError");
+var Yo = fn, yn = class yn extends G {
+  constructor(t) {
+>>>>>>> main
     super({
       category: "ADDON_VITEST",
       code: 1,
       // TODO: Add documentation about viewports support
       // documentation: '',
+<<<<<<< HEAD
       message: ee`
         Encountered an unsupported value "${r.value}" when setting the viewport ${r.dimension} dimension.
+=======
+      message: _`
+        Encountered an unsupported value "${t.value}" when setting the viewport ${t.dimension} dimension.
+>>>>>>> main
         
         The Storybook plugin only supports values in the following units:
         - px, vh, vw, em, rem and %.
@@ -20658,6 +24540,7 @@ var sg = Cg, Pg = class Pg extends Ne {
         You can either change the viewport for this story to use one of the supported units or skip the test by adding '!test' to the story's tags per https://storybook.js.org/docs/writing-stories/tags
       `
     });
+<<<<<<< HEAD
     this.data = r;
   }
 };
@@ -43043,10 +46926,122 @@ function BRe(e) {
 }
 o(BRe, "deleteUndefined");
 var bS = class bS {
+=======
+    this.data = t;
+  }
+};
+n(yn, "UnsupportedViewportDimensionError");
+var Ko = yn;
+
+// src/preview-api/modules/store/StoryStore.ts
+var Ot = ue(it(), 1);
+
+// src/preview-api/modules/store/args.ts
+var rr = Symbol("incompatible"), mn = /* @__PURE__ */ n((r, e) => {
+  let t = e.type;
+  if (r == null || !t || e.mapping)
+    return r;
+  switch (t.name) {
+    case "string":
+      return String(r);
+    case "enum":
+      return r;
+    case "number":
+      return Number(r);
+    case "boolean":
+      return String(r) === "true";
+    case "array":
+      return !t.value || !Array.isArray(r) ? rr : r.reduce((o, s, i) => {
+        let a = mn(s, { type: t.value });
+        return a !== rr && (o[i] = a), o;
+      }, new Array(r.length));
+    case "object":
+      return typeof r == "string" || typeof r == "number" ? r : !t.value || typeof r != "object" ? rr : Object.entries(r).reduce((o, [s, i]) => {
+        let a = mn(i, { type: t.value[s] });
+        return a === rr ? o : Object.assign(o, { [s]: a });
+      }, {});
+    default:
+      return rr;
+  }
+}, "map"), Ei = /* @__PURE__ */ n((r, e) => Object.entries(r).reduce((t, [o, s]) => {
+  if (!e[o])
+    return t;
+  let i = mn(s, e[o]);
+  return i === rr ? t : Object.assign(t, { [o]: i });
+}, {}), "mapArgsToTypes"), tr = /* @__PURE__ */ n((r, e) => Array.isArray(r) && Array.isArray(e) ? e.reduce(
+  (t, o, s) => (t[s] = tr(r[s], e[s]), t),
+  [...r]
+).filter((t) => t !== void 0) : !$(r) || !$(e) ? e : Object.keys({ ...r, ...e }).reduce((t, o) => {
+  if (o in e) {
+    let s = tr(r[o], e[o]);
+    s !== void 0 && (t[o] = s);
+  } else
+    t[o] = r[o];
+  return t;
+}, {}), "combineArgs"), Ri = /* @__PURE__ */ n((r, e) => Object.entries(e).reduce((t, [o, { options: s }]) => {
+  function i() {
+    return o in r && (t[o] = r[o]), t;
+  }
+  if (n(i, "allowArg"), !s)
+    return i();
+  if (!Array.isArray(s))
+    return j.error(_`
+        Invalid argType: '${o}.options' should be an array.
+
+        More info: https://storybook.js.org/docs/api/arg-types
+      `), i();
+  if (s.some((d) => d && ["object", "function"].includes(typeof d)))
+    return j.error(_`
+        Invalid argType: '${o}.options' should only contain primitives. Use a 'mapping' for complex values.
+
+        More info: https://storybook.js.org/docs/writing-stories/args#mapping-to-complex-arg-values
+      `), i();
+  let a = Array.isArray(r[o]), c = a && r[o].findIndex((d) => !s.includes(d)), l = a && c === -1;
+  if (r[o] === void 0 || s.includes(r[o]) || l)
+    return i();
+  let p = a ? `${o}[${c}]` : o, u = s.map((d) => typeof d == "string" ? `'${d}'` : String(d)).join(", ");
+  return j.warn(`Received illegal value for '${p}'. Supported options: ${u}`), t;
+}, {}), "validateOptions"), Ie = Symbol("Deeply equal"), or = /* @__PURE__ */ n((r, e) => {
+  if (typeof r != typeof e)
+    return e;
+  if (Ar(r, e))
+    return Ie;
+  if (Array.isArray(r) && Array.isArray(e)) {
+    let t = e.reduce((o, s, i) => {
+      let a = or(r[i], s);
+      return a !== Ie && (o[i] = a), o;
+    }, new Array(e.length));
+    return e.length >= r.length ? t : t.concat(new Array(r.length - e.length).fill(void 0));
+  }
+  return $(r) && $(e) ? Object.keys({ ...r, ...e }).reduce((t, o) => {
+    let s = or(r?.[o], e?.[o]);
+    return s === Ie ? t : Object.assign(t, { [o]: s });
+  }, {}) : e;
+}, "deepDiff"), hn = "UNTARGETED";
+function Ai({
+  args: r,
+  argTypes: e
+}) {
+  let t = {};
+  return Object.entries(r).forEach(([o, s]) => {
+    let { target: i = hn } = e[o] || {};
+    t[i] = t[i] || {}, t[i][o] = s;
+  }), t;
+}
+n(Ai, "groupArgsByTarget");
+
+// src/preview-api/modules/store/ArgsStore.ts
+function qd(r) {
+  return Object.keys(r).forEach((e) => r[e] === void 0 && delete r[e]), r;
+}
+n(qd, "deleteUndefined");
+var gn = class gn {
+>>>>>>> main
   constructor() {
     this.initialArgsByStoryId = {};
     this.argsByStoryId = {};
   }
+<<<<<<< HEAD
   get(t) {
     if (!(t in this.argsByStoryId))
       throw new Error(`No args known for ${t} -- has it been rendered yet?`);
@@ -43106,10 +47101,72 @@ var gS = class gS {
   updateFromPersisted(t) {
     let r = this.filterAllowedGlobals(t);
     this.globals = { ...this.globals, ...r };
+=======
+  get(e) {
+    if (!(e in this.argsByStoryId))
+      throw new Error(`No args known for ${e} -- has it been rendered yet?`);
+    return this.argsByStoryId[e];
+  }
+  setInitial(e) {
+    if (!this.initialArgsByStoryId[e.id])
+      this.initialArgsByStoryId[e.id] = e.initialArgs, this.argsByStoryId[e.id] = e.initialArgs;
+    else if (this.initialArgsByStoryId[e.id] !== e.initialArgs) {
+      let t = or(this.initialArgsByStoryId[e.id], this.argsByStoryId[e.id]);
+      this.initialArgsByStoryId[e.id] = e.initialArgs, this.argsByStoryId[e.id] = e.initialArgs, t !== Ie && this.updateFromDelta(e, t);
+    }
+  }
+  updateFromDelta(e, t) {
+    let o = Ri(t, e.argTypes);
+    this.argsByStoryId[e.id] = tr(this.argsByStoryId[e.id], o);
+  }
+  updateFromPersisted(e, t) {
+    let o = Ei(t, e.argTypes);
+    return this.updateFromDelta(e, o);
+  }
+  update(e, t) {
+    if (!(e in this.argsByStoryId))
+      throw new Error(`No args known for ${e} -- has it been rendered yet?`);
+    this.argsByStoryId[e] = qd({
+      ...this.argsByStoryId[e],
+      ...t
+    });
+  }
+};
+n(gn, "ArgsStore");
+var Tt = gn;
+
+// src/preview-api/modules/store/csf/getValuesFromArgTypes.ts
+var Et = /* @__PURE__ */ n((r = {}) => Object.entries(r).reduce((e, [t, { defaultValue: o }]) => (typeof o < "u" && (e[t] = o), e), {}), "ge\
+tValuesFromArgTypes");
+
+// src/preview-api/modules/store/GlobalsStore.ts
+var Sn = class Sn {
+  constructor({
+    globals: e = {},
+    globalTypes: t = {}
+  }) {
+    this.set({ globals: e, globalTypes: t });
+  }
+  set({ globals: e = {}, globalTypes: t = {} }) {
+    let o = this.initialGlobals && or(this.initialGlobals, this.globals);
+    this.allowedGlobalNames = /* @__PURE__ */ new Set([...Object.keys(e), ...Object.keys(t)]);
+    let s = Et(t);
+    this.initialGlobals = { ...s, ...e }, this.globals = this.initialGlobals, o && o !== Ie && this.updateFromPersisted(o);
+  }
+  filterAllowedGlobals(e) {
+    return Object.entries(e).reduce((t, [o, s]) => (this.allowedGlobalNames.has(o) ? t[o] = s : I.warn(
+      `Attempted to set a global (${o}) that is not defined in initial globals or globalTypes`
+    ), t), {});
+  }
+  updateFromPersisted(e) {
+    let t = this.filterAllowedGlobals(e);
+    this.globals = { ...this.globals, ...t };
+>>>>>>> main
   }
   get() {
     return this.globals;
   }
+<<<<<<< HEAD
   update(t) {
     this.globals = { ...this.globals, ...this.filterAllowedGlobals(t) };
     for (let r in t)
@@ -43231,11 +47288,133 @@ var ge = /* @__PURE__ */ o((e) => Array.isArray(e) ? e : e ? [e] : [], "normaliz
 
 // src/preview-api/modules/store/csf/normalizeStory.ts
 var YRe = ee`
+=======
+  update(e) {
+    this.globals = { ...this.globals, ...this.filterAllowedGlobals(e) };
+  }
+};
+n(Sn, "GlobalsStore");
+var Rt = Sn;
+
+// src/preview-api/modules/store/StoryIndexStore.ts
+var xi = ue(it(), 1);
+var Bd = (0, xi.default)(1)(
+  (r) => Object.values(r).reduce(
+    (e, t) => (e[t.importPath] = e[t.importPath] || t, e),
+    {}
+  )
+), bn = class bn {
+  constructor({ entries: e } = { v: 5, entries: {} }) {
+    this.entries = e;
+  }
+  entryFromSpecifier(e) {
+    let t = Object.values(this.entries);
+    if (e === "*")
+      return t[0];
+    if (typeof e == "string")
+      return this.entries[e] ? this.entries[e] : t.find((i) => i.id.startsWith(e));
+    let { name: o, title: s } = e;
+    return t.find((i) => i.name === o && i.title === s);
+  }
+  storyIdToEntry(e) {
+    let t = this.entries[e];
+    if (!t)
+      throw new xr({ storyId: e });
+    return t;
+  }
+  importPathToEntry(e) {
+    return Bd(this.entries)[e];
+  }
+};
+n(bn, "StoryIndexStore");
+var At = bn;
+
+// src/preview-api/modules/store/csf/normalizeInputTypes.ts
+var Vd = /* @__PURE__ */ n((r) => typeof r == "string" ? { name: r } : r, "normalizeType"), Hd = /* @__PURE__ */ n((r) => typeof r == "strin\
+g" ? { type: r } : r, "normalizeControl"), zd = /* @__PURE__ */ n((r, e) => {
+  let { type: t, control: o, ...s } = r, i = {
+    name: e,
+    ...s
+  };
+  return t && (i.type = Vd(t)), o ? i.control = Hd(o) : o === !1 && (i.control = { disable: !0 }), i;
+}, "normalizeInputType"), Fe = /* @__PURE__ */ n((r) => oe(r, zd), "normalizeInputTypes");
+
+// src/csf/toStartCaseStr.ts
+function vi(r) {
+  return r.replace(/_/g, " ").replace(/-/g, " ").replace(/\./g, " ").replace(/([^\n])([A-Z])([a-z])/g, (e, t, o, s) => `${t} ${o}${s}`).replace(
+  /([a-z])([A-Z])/g, (e, t, o) => `${t} ${o}`).replace(/([a-z])([0-9])/gi, (e, t, o) => `${t} ${o}`).replace(/([0-9])([a-z])/gi, (e, t, o) => `${t}\
+ ${o}`).replace(/(\s|^)(\w)/g, (e, t, o) => `${t}${o.toUpperCase()}`).replace(/ +/g, " ").trim();
+}
+n(vi, "toStartCaseStr");
+
+// src/csf/includeConditionalArg.ts
+var En = ue(wi(), 1);
+var _i = /* @__PURE__ */ n((r) => r.map((e) => typeof e < "u").filter(Boolean).length, "count"), Wd = /* @__PURE__ */ n((r, e) => {
+  let { exists: t, eq: o, neq: s, truthy: i } = r;
+  if (_i([t, o, s, i]) > 1)
+    throw new Error(`Invalid conditional test ${JSON.stringify({ exists: t, eq: o, neq: s })}`);
+  if (typeof o < "u")
+    return (0, En.isEqual)(e, o);
+  if (typeof s < "u")
+    return !(0, En.isEqual)(e, s);
+  if (typeof t < "u") {
+    let c = typeof e < "u";
+    return t ? c : !c;
+  }
+  return (typeof i > "u" ? !0 : i) ? !!e : !e;
+}, "testValue"), Rn = /* @__PURE__ */ n((r, e, t) => {
+  if (!r.if)
+    return !0;
+  let { arg: o, global: s } = r.if;
+  if (_i([o, s]) !== 1)
+    throw new Error(`Invalid conditional value ${JSON.stringify({ arg: o, global: s })}`);
+  let i = o ? e[o] : t[s];
+  return Wd(r.if, i);
+}, "includeConditionalArg");
+
+// src/csf/csf-factories.ts
+function nr(r) {
+  return r != null && typeof r == "object" && "_tag" in r && r?._tag === "Story";
+}
+n(nr, "isStory");
+
+// src/csf/index.ts
+var An = /* @__PURE__ */ n((r) => r.toLowerCase().replace(/[ ’–—―′¿'`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "-").replace(/-+/g,
+"-").replace(/^-+/, "").replace(/-+$/, ""), "sanitize"), Ci = /* @__PURE__ */ n((r, e) => {
+  let t = An(r);
+  if (t === "")
+    throw new Error(`Invalid ${e} '${r}', must include alphanumeric characters`);
+  return t;
+}, "sanitizeSafe"), Oi = /* @__PURE__ */ n((r, e) => `${Ci(r, "kind")}${e ? `--${Ci(e, "name")}` : ""}`, "toId"), Ii = /* @__PURE__ */ n((r) => vi(
+r), "storyNameFromExport");
+function Pi(r, e) {
+  return Array.isArray(e) ? e.includes(r) : r.match(e);
+}
+n(Pi, "matches");
+function Lr(r, { includeStories: e, excludeStories: t }) {
+  return (
+    // https://babeljs.io/docs/en/babel-plugin-transform-modules-commonjs
+    r !== "__esModule" && (!e || Pi(r, e)) && (!t || !Pi(r, t))
+  );
+}
+n(Lr, "isExportStory");
+var Fi = /* @__PURE__ */ n((...r) => {
+  let e = r.reduce((t, o) => (o.startsWith("!") ? t.delete(o.slice(1)) : t.add(o), t), /* @__PURE__ */ new Set());
+  return Array.from(e);
+}, "combineTags");
+
+// src/preview-api/modules/store/csf/normalizeArrays.ts
+var k = /* @__PURE__ */ n((r) => Array.isArray(r) ? r : r ? [r] : [], "normalizeArrays");
+
+// src/preview-api/modules/store/csf/normalizeStory.ts
+var $d = _`
+>>>>>>> main
 CSF .story annotations deprecated; annotate story functions directly:
 - StoryFn.story.name => StoryFn.storyName
 - StoryFn.story.(parameters|decorators) => StoryFn.(parameters|decorators)
 See https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#hoisted-csf-annotations for details and codemod.
 `;
+<<<<<<< HEAD
 function ro(e, t, r) {
   let n = t, i = typeof t == "function" ? t : null, { story: s } = n;
   s && (ue.debug("deprecated story", s), Yi(YRe));
@@ -43594,21 +47773,392 @@ o(Yy, "prepareContext");
 var xS = /* @__PURE__ */ o((e, t, r) => {
   let n = typeof e;
   switch (n) {
+=======
+function De(r, e, t) {
+  let o = e, s = typeof e == "function" ? e : null, { story: i } = o;
+  i && (I.debug("deprecated story", i), ae($d));
+  let a = Ii(r), c = typeof o != "function" && o.name || o.storyName || i?.name || a, l = [
+    ...k(o.decorators),
+    ...k(i?.decorators)
+  ], p = { ...i?.parameters, ...o.parameters }, u = { ...i?.args, ...o.args }, d = { ...i?.argTypes, ...o.argTypes }, h = [...k(o.loaders), ...k(
+  i?.loaders)], S = [
+    ...k(o.beforeEach),
+    ...k(i?.beforeEach)
+  ], m = [
+    ...k(o.experimental_afterEach),
+    ...k(i?.experimental_afterEach)
+  ], { render: T, play: y, tags: R = [], globals: x = {} } = o, g = p.__id || Oi(t.id, a);
+  return {
+    moduleExport: e,
+    id: g,
+    name: c,
+    tags: R,
+    decorators: l,
+    parameters: p,
+    args: u,
+    argTypes: Fe(d),
+    loaders: h,
+    beforeEach: S,
+    experimental_afterEach: m,
+    globals: x,
+    ...T && { render: T },
+    ...s && { userStoryFn: s },
+    ...y && { play: y }
+  };
+}
+n(De, "normalizeStory");
+
+// src/preview-api/modules/store/csf/normalizeComponentAnnotations.ts
+function jr(r, e = r.title, t) {
+  let { id: o, argTypes: s } = r;
+  return {
+    id: An(o || e),
+    ...r,
+    title: e,
+    ...s && { argTypes: Fe(s) },
+    parameters: {
+      fileName: t,
+      ...r.parameters
+    }
+  };
+}
+n(jr, "normalizeComponentAnnotations");
+
+// src/preview-api/modules/store/csf/processCSFFile.ts
+var Yd = /* @__PURE__ */ n((r) => {
+  let { globals: e, globalTypes: t } = r;
+  (e || t) && I.error(
+    "Global args/argTypes can only be set globally",
+    JSON.stringify({
+      globals: e,
+      globalTypes: t
+    })
+  );
+}, "checkGlobals"), Kd = /* @__PURE__ */ n((r) => {
+  let { options: e } = r;
+  e?.storySort && I.error("The storySort option parameter can only be set globally");
+}, "checkStorySort"), xt = /* @__PURE__ */ n((r) => {
+  r && (Yd(r), Kd(r));
+}, "checkDisallowedParameters");
+function Di(r, e, t) {
+  let { default: o, __namedExportsOrder: s, ...i } = r, a = Object.values(i)[0];
+  if (nr(a)) {
+    let p = jr(a.meta.input, t, e);
+    xt(p.parameters);
+    let u = { meta: p, stories: {}, moduleExports: r };
+    return Object.keys(i).forEach((d) => {
+      if (Lr(d, p)) {
+        let h = De(d, i[d].input, p);
+        xt(h.parameters), u.stories[h.id] = h;
+      }
+    }), u.projectAnnotations = a.meta.preview.composed, u;
+  }
+  let c = jr(
+    o,
+    t,
+    e
+  );
+  xt(c.parameters);
+  let l = { meta: c, stories: {}, moduleExports: r };
+  return Object.keys(i).forEach((p) => {
+    if (Lr(p, c)) {
+      let u = De(p, i[p], c);
+      xt(u.parameters), l.stories[u.id] = u;
+    }
+  }), l;
+}
+n(Di, "processCSFFile");
+
+// src/preview-api/modules/preview-web/render/mount-utils.ts
+function ki(r) {
+  return r != null && Xd(r).includes("mount");
+}
+n(ki, "mountDestructured");
+function Xd(r) {
+  let e = r.toString().match(/[^(]*\(([^)]*)/);
+  if (!e)
+    return [];
+  let t = Ni(e[1]);
+  if (!t.length)
+    return [];
+  let o = t[0];
+  return o.startsWith("{") && o.endsWith("}") ? Ni(o.slice(1, -1).replace(/\s/g, "")).map((i) => i.replace(/:.*|=.*/g, "")) : [];
+}
+n(Xd, "getUsedProps");
+function Ni(r) {
+  let e = [], t = [], o = 0;
+  for (let i = 0; i < r.length; i++)
+    if (r[i] === "{" || r[i] === "[")
+      t.push(r[i] === "{" ? "}" : "]");
+    else if (r[i] === t[t.length - 1])
+      t.pop();
+    else if (!t.length && r[i] === ",") {
+      let a = r.substring(o, i).trim();
+      a && e.push(a), o = i + 1;
+    }
+  let s = r.substring(o).trim();
+  return s && e.push(s), e;
+}
+n(Ni, "splitByComma");
+
+// src/preview-api/modules/store/decorators.ts
+function xn(r, e, t) {
+  let o = t(r);
+  return (s) => e(o, s);
+}
+n(xn, "decorateStory");
+function vn({
+  componentId: r,
+  title: e,
+  kind: t,
+  id: o,
+  name: s,
+  story: i,
+  parameters: a,
+  initialArgs: c,
+  argTypes: l,
+  ...p
+} = {}) {
+  return p;
+}
+n(vn, "sanitizeStoryContextUpdate");
+function vt(r, e) {
+  let t = {}, o = /* @__PURE__ */ n((i) => (a) => {
+    if (!t.value)
+      throw new Error("Decorated function called without init");
+    return t.value = {
+      ...t.value,
+      ...vn(a)
+    }, i(t.value);
+  }, "bindWithContext"), s = e.reduce(
+    (i, a) => xn(i, a, o),
+    r
+  );
+  return (i) => (t.value = i, s(i));
+}
+n(vt, "defaultDecorateStory");
+
+// src/preview-api/modules/store/parameters.ts
+var Y = /* @__PURE__ */ n((...r) => {
+  let e = {}, t = r.filter(Boolean), o = t.reduce((s, i) => (Object.entries(i).forEach(([a, c]) => {
+    let l = s[a];
+    Array.isArray(c) || typeof l > "u" ? s[a] = c : $(c) && $(l) ? e[a] = !0 : typeof c < "u" && (s[a] = c);
+  }), s), {});
+  return Object.keys(e).forEach((s) => {
+    let i = t.filter(Boolean).map((a) => a[s]).filter((a) => typeof a < "u");
+    i.every((a) => $(a)) ? o[s] = Y(...i) : o[s] = i[i.length - 1];
+  }), o;
+}, "combineParameters");
+
+// src/preview-api/modules/store/csf/prepareStory.ts
+function sr(r, e, t) {
+  let { moduleExport: o, id: s, name: i } = r || {}, a = Li(
+    r,
+    e,
+    t
+  ), c = /* @__PURE__ */ n(async (C) => {
+    let F = {};
+    for (let U of [
+      ..."__STORYBOOK_TEST_LOADERS__" in E && Array.isArray(E.__STORYBOOK_TEST_LOADERS__) ? [E.__STORYBOOK_TEST_LOADERS__] : [],
+      k(t.loaders),
+      k(e.loaders),
+      k(r.loaders)
+    ]) {
+      if (C.abortSignal.aborted)
+        return F;
+      let B = await Promise.all(U.map((W) => W(C)));
+      Object.assign(F, ...B);
+    }
+    return F;
+  }, "applyLoaders"), l = /* @__PURE__ */ n(async (C) => {
+    let F = new Array();
+    for (let U of [
+      ...k(t.beforeEach),
+      ...k(e.beforeEach),
+      ...k(r.beforeEach)
+    ]) {
+      if (C.abortSignal.aborted)
+        return F;
+      let B = await U(C);
+      B && F.push(B);
+    }
+    return F;
+  }, "applyBeforeEach"), p = /* @__PURE__ */ n(async (C) => {
+    let F = [
+      ...k(t.experimental_afterEach),
+      ...k(e.experimental_afterEach),
+      ...k(r.experimental_afterEach)
+    ].reverse();
+    for (let U of F) {
+      if (C.abortSignal.aborted)
+        return;
+      await U(C);
+    }
+  }, "applyAfterEach"), u = /* @__PURE__ */ n((C) => C.originalStoryFn(C.args, C), "undecoratedStoryFn"), { applyDecorators: d = vt, runStep: h } = t,
+  S = [
+    ...k(r?.decorators),
+    ...k(e?.decorators),
+    ...k(t?.decorators)
+  ], m = r?.userStoryFn || r?.render || e.render || t.render, T = ft(d)(u, S), y = /* @__PURE__ */ n((C) => T(C), "unboundStoryFn"), R = r?.
+  play ?? e?.play, x = ki(R);
+  if (!m && !x)
+    throw new Dr({ id: s });
+  let g = /* @__PURE__ */ n((C) => async () => (await C.renderToCanvas(), C.canvas), "defaultMount"), b = r.mount ?? e.mount ?? t.mount ?? g,
+  v = t.testingLibraryRender;
+  return {
+    storyGlobals: {},
+    ...a,
+    moduleExport: o,
+    id: s,
+    name: i,
+    story: i,
+    originalStoryFn: m,
+    undecoratedStoryFn: u,
+    unboundStoryFn: y,
+    applyLoaders: c,
+    applyBeforeEach: l,
+    applyAfterEach: p,
+    playFunction: R,
+    runStep: h,
+    mount: b,
+    testingLibraryRender: v,
+    renderToCanvas: t.renderToCanvas,
+    usesMount: x
+  };
+}
+n(sr, "prepareStory");
+function wt(r, e, t) {
+  return {
+    ...Li(void 0, r, e),
+    moduleExport: t
+  };
+}
+n(wt, "prepareMeta");
+function Li(r, e, t) {
+  let o = ["dev", "test"], s = E.DOCS_OPTIONS?.autodocs === !0 ? ["autodocs"] : [], i = Fi(
+    ...o,
+    ...s,
+    ...t.tags ?? [],
+    ...e.tags ?? [],
+    ...r?.tags ?? []
+  ), a = Y(
+    t.parameters,
+    e.parameters,
+    r?.parameters
+  ), { argTypesEnhancers: c = [], argsEnhancers: l = [] } = t, p = Y(
+    t.argTypes,
+    e.argTypes,
+    r?.argTypes
+  );
+  if (r) {
+    let R = r?.userStoryFn || r?.render || e.render || t.render;
+    a.__isArgsStory = R && R.length > 0;
+  }
+  let u = {
+    ...t.args,
+    ...e.args,
+    ...r?.args
+  }, d = {
+    ...e.globals,
+    ...r?.globals
+  }, h = {
+    componentId: e.id,
+    title: e.title,
+    kind: e.title,
+    // Back compat
+    id: r?.id || e.id,
+    // if there's no story name, we create a fake one since enhancers expect a name
+    name: r?.name || "__meta",
+    story: r?.name || "__meta",
+    // Back compat
+    component: e.component,
+    subcomponents: e.subcomponents,
+    tags: i,
+    parameters: a,
+    initialArgs: u,
+    argTypes: p,
+    storyGlobals: d
+  };
+  h.argTypes = c.reduce(
+    (R, x) => x({ ...h, argTypes: R }),
+    h.argTypes
+  );
+  let S = { ...u };
+  h.initialArgs = l.reduce(
+    (R, x) => ({
+      ...R,
+      ...x({
+        ...h,
+        initialArgs: R
+      })
+    }),
+    S
+  );
+  let { name: m, story: T, ...y } = h;
+  return y;
+}
+n(Li, "preparePartialAnnotations");
+function _t(r) {
+  let { args: e } = r, t = {
+    ...r,
+    allArgs: void 0,
+    argsByTarget: void 0
+  };
+  if (E.FEATURES?.argTypeTargetsV7) {
+    let i = Ai(r);
+    t = {
+      ...r,
+      allArgs: r.args,
+      argsByTarget: i,
+      args: i[hn] || {}
+    };
+  }
+  let o = Object.entries(t.args).reduce((i, [a, c]) => {
+    if (!t.argTypes[a]?.mapping)
+      return i[a] = c, i;
+    let l = /* @__PURE__ */ n((p) => {
+      let u = t.argTypes[a].mapping;
+      return u && p in u ? u[p] : p;
+    }, "mappingFn");
+    return i[a] = Array.isArray(c) ? c.map(l) : l(c), i;
+  }, {}), s = Object.entries(o).reduce((i, [a, c]) => {
+    let l = t.argTypes[a] || {};
+    return Rn(l, o, t.globals) && (i[a] = c), i;
+  }, {});
+  return { ...t, unmappedArgs: e, args: s };
+}
+n(_t, "prepareContext");
+
+// src/preview-api/modules/store/inferArgTypes.ts
+var wn = /* @__PURE__ */ n((r, e, t) => {
+  let o = typeof r;
+  switch (o) {
+>>>>>>> main
     case "boolean":
     case "string":
     case "number":
     case "function":
     case "symbol":
+<<<<<<< HEAD
       return { name: n };
     default:
       break;
   }
   return e ? r.has(e) ? (ue.warn(ee`
         We've detected a cycle in arg '${t}'. Args should be JSON-serializable.
+=======
+      return { name: o };
+    default:
+      break;
+  }
+  return r ? t.has(r) ? (I.warn(_`
+        We've detected a cycle in arg '${e}'. Args should be JSON-serializable.
+>>>>>>> main
 
         Consider using the mapping feature or fully custom args:
         - Mapping: https://storybook.js.org/docs/writing-stories/args#mapping-to-complex-arg-values
         - Custom args: https://storybook.js.org/docs/essentials/controls#fully-custom-args
+<<<<<<< HEAD
       `), { name: "other", value: "cyclic object" }) : (r.add(e), Array.isArray(e) ? { name: "array", value: e.length > 0 ? xS(e[0], t, new Set(
   r)) : { name: "other", value: "unknown" } } : { name: "object", value: _r(e, (s) => xS(s, t, new Set(r))) }) : { name: "object", value: {} };
 }, "inferType"), CS = /* @__PURE__ */ o((e) => {
@@ -43644,6 +48194,43 @@ var JRe = /* @__PURE__ */ o((e, t, r) => {
     if (r.date && r.date.test(t))
       return { control: { type: "date" } };
     switch (n.name) {
+=======
+      `), { name: "other", value: "cyclic object" }) : (t.add(r), Array.isArray(r) ? { name: "array", value: r.length > 0 ? wn(r[0], e, new Set(
+  t)) : { name: "other", value: "unknown" } } : { name: "object", value: oe(r, (i) => wn(i, e, new Set(t))) }) : { name: "object", value: {} };
+}, "inferType"), _n = /* @__PURE__ */ n((r) => {
+  let { id: e, argTypes: t = {}, initialArgs: o = {} } = r, s = oe(o, (a, c) => ({
+    name: c,
+    type: wn(a, `${e}.${c}`, /* @__PURE__ */ new Set())
+  })), i = oe(t, (a, c) => ({
+    name: c
+  }));
+  return Y(s, i, t);
+}, "inferArgTypes");
+_n.secondPass = !0;
+
+// src/preview-api/modules/store/filterArgTypes.ts
+var ji = /* @__PURE__ */ n((r, e) => Array.isArray(e) ? e.includes(r) : r.match(e), "matches"), Mr = /* @__PURE__ */ n((r, e, t) => !e && !t ?
+r : r && qo(r, (o, s) => {
+  let i = o.name || s.toString();
+  return !!(!e || ji(i, e)) && (!t || !ji(i, t));
+}), "filterArgTypes");
+
+// src/preview-api/modules/store/inferControls.ts
+var Jd = /* @__PURE__ */ n((r, e, t) => {
+  let { type: o, options: s } = r;
+  if (o) {
+    if (t.color && t.color.test(e)) {
+      let i = o.name;
+      if (i === "string")
+        return { control: { type: "color" } };
+      i !== "enum" && I.warn(
+        `Addon controls: Control of type color only supports string, received "${i}" instead`
+      );
+    }
+    if (t.date && t.date.test(e))
+      return { control: { type: "date" } };
+    switch (o.name) {
+>>>>>>> main
       case "array":
         return { control: { type: "object" } };
       case "boolean":
@@ -43653,13 +48240,19 @@ var JRe = /* @__PURE__ */ o((e, t, r) => {
       case "number":
         return { control: { type: "number" } };
       case "enum": {
+<<<<<<< HEAD
         let { value: s } = n;
         return { control: { type: s?.length <= 5 ? "radio" : "select" }, options: s };
+=======
+        let { value: i } = o;
+        return { control: { type: i?.length <= 5 ? "radio" : "select" }, options: i };
+>>>>>>> main
       }
       case "function":
       case "symbol":
         return null;
       default:
+<<<<<<< HEAD
         return { control: { type: i ? "select" : "object" } };
     }
   }
@@ -43730,10 +48323,79 @@ var L3 = /* @__PURE__ */ o((e) => async () => {
   return async () => {
     for (let r of t)
       await r();
+=======
+        return { control: { type: s ? "select" : "object" } };
+    }
+  }
+}, "inferControl"), ir = /* @__PURE__ */ n((r) => {
+  let {
+    argTypes: e,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    parameters: { __isArgsStory: t, controls: { include: o = null, exclude: s = null, matchers: i = {} } = {} }
+  } = r;
+  if (!t)
+    return e;
+  let a = Mr(e, o, s), c = oe(a, (l, p) => l?.type && Jd(l, p.toString(), i));
+  return Y(c, a);
+}, "inferControls");
+ir.secondPass = !0;
+
+// src/preview-api/modules/store/csf/normalizeProjectAnnotations.ts
+function Ne({
+  argTypes: r,
+  globalTypes: e,
+  argTypesEnhancers: t,
+  decorators: o,
+  loaders: s,
+  beforeEach: i,
+  experimental_afterEach: a,
+  globals: c,
+  initialGlobals: l,
+  ...p
+}) {
+  return c && Object.keys(c).length > 0 && ae(_`
+      The preview.js 'globals' field is deprecated and will be removed in Storybook 9.0.
+      Please use 'initialGlobals' instead. Learn more:
+
+      https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#previewjs-globals-renamed-to-initialglobals
+    `), {
+    ...r && { argTypes: Fe(r) },
+    ...e && { globalTypes: Fe(e) },
+    decorators: k(o),
+    loaders: k(s),
+    beforeEach: k(i),
+    experimental_afterEach: k(a),
+    argTypesEnhancers: [
+      ...t || [],
+      _n,
+      // inferControls technically should only run if the user is using the controls addon,
+      // and so should be added by a preset there. However, as it seems some code relies on controls
+      // annotations (in particular the angular implementation's `cleanArgsDecorator`), for backwards
+      // compatibility reasons, we will leave this in the store until 7.0
+      ir
+    ],
+    initialGlobals: Y(l, c),
+    ...p
+  };
+}
+n(Ne, "normalizeProjectAnnotations");
+
+// src/preview-api/modules/store/csf/beforeAll.ts
+var Mi = /* @__PURE__ */ n((r) => async () => {
+  let e = [];
+  for (let t of r) {
+    let o = await t();
+    o && e.unshift(o);
+  }
+  return async () => {
+    for (let t of e)
+      await t();
+>>>>>>> main
   };
 }, "composeBeforeAllHooks");
 
 // src/preview-api/modules/store/csf/stepRunners.ts
+<<<<<<< HEAD
 function Wy(e) {
   return async (t, r, n) => {
     await e.reduceRight(
@@ -44021,10 +48683,229 @@ function $3(e, t, r = rSe) {
       return !l && f && (l = f), Ua(d, l) ? Object.assign(c, {
         [d]: r(y, l, t, d)
       }) : c;
+=======
+function Ct(r) {
+  return async (e, t, o) => {
+    await r.reduceRight(
+      (i, a) => async () => a(e, i, o),
+      async () => t(o)
+    )();
+  };
+}
+n(Ct, "composeStepRunners");
+
+// src/preview-api/modules/store/csf/composeConfigs.ts
+function Gr(r, e) {
+  return r.map((t) => t.default?.[e] ?? t[e]).filter(Boolean);
+}
+n(Gr, "getField");
+function Te(r, e, t = {}) {
+  return Gr(r, e).reduce((o, s) => {
+    let i = k(s);
+    return t.reverseFileOrder ? [...i, ...o] : [...o, ...i];
+  }, []);
+}
+n(Te, "getArrayField");
+function Ur(r, e) {
+  return Object.assign({}, ...Gr(r, e));
+}
+n(Ur, "getObjectField");
+function ar(r, e) {
+  return Gr(r, e).pop();
+}
+n(ar, "getSingletonField");
+function ke(r) {
+  let e = Te(r, "argTypesEnhancers"), t = Gr(r, "runStep"), o = Te(r, "beforeAll");
+  return {
+    parameters: Y(...Gr(r, "parameters")),
+    decorators: Te(r, "decorators", {
+      reverseFileOrder: !(E.FEATURES?.legacyDecoratorFileOrder ?? !1)
+    }),
+    args: Ur(r, "args"),
+    argsEnhancers: Te(r, "argsEnhancers"),
+    argTypes: Ur(r, "argTypes"),
+    argTypesEnhancers: [
+      ...e.filter((s) => !s.secondPass),
+      ...e.filter((s) => s.secondPass)
+    ],
+    globals: Ur(r, "globals"),
+    initialGlobals: Ur(r, "initialGlobals"),
+    globalTypes: Ur(r, "globalTypes"),
+    loaders: Te(r, "loaders"),
+    beforeAll: Mi(o),
+    beforeEach: Te(r, "beforeEach"),
+    experimental_afterEach: Te(r, "experimental_afterEach"),
+    render: ar(r, "render"),
+    renderToCanvas: ar(r, "renderToCanvas"),
+    renderToDOM: ar(r, "renderToDOM"),
+    // deprecated
+    applyDecorators: ar(r, "applyDecorators"),
+    runStep: Ct(t),
+    tags: Te(r, "tags"),
+    mount: ar(r, "mount"),
+    testingLibraryRender: ar(r, "testingLibraryRender")
+  };
+}
+n(ke, "composeConfigs");
+
+// src/preview-api/modules/store/reporter-api.ts
+var Cn = class Cn {
+  constructor() {
+    this.reports = [];
+  }
+  async addReport(e) {
+    this.reports.push(e);
+  }
+};
+n(Cn, "ReporterAPI");
+var Ee = Cn;
+
+// src/preview-api/modules/store/csf/csf-factory-utils.ts
+function Pt(r, e, t) {
+  return nr(r) ? {
+    story: r.input,
+    meta: r.meta.input,
+    preview: r.meta.preview.composed
+  } : { story: r, meta: e, preview: t };
+}
+n(Pt, "getCsfFactoryAnnotations");
+
+// src/preview-api/modules/store/csf/portable-stories.ts
+function Ui(r) {
+  globalThis.defaultProjectAnnotations = r;
+}
+n(Ui, "setDefaultProjectAnnotations");
+var Qd = "ComposedStory", Zd = "Unnamed Story";
+function eu(r) {
+  return r ? ke([r]) : {};
+}
+n(eu, "extractAnnotation");
+function Gi(r) {
+  let e = Array.isArray(r) ? r : [r];
+  return globalThis.globalProjectAnnotations = ke([
+    globalThis.defaultProjectAnnotations ?? {},
+    ke(e.map(eu))
+  ]), globalThis.globalProjectAnnotations ?? {};
+}
+n(Gi, "setProjectAnnotations");
+var Re = [];
+function Pn(r, e, t, o, s) {
+  if (r === void 0)
+    throw new Error("Expected a story but received undefined.");
+  e.title = e.title ?? Qd;
+  let i = jr(e), a = s || r.storyName || r.story?.name || r.name || Zd, c = De(
+    a,
+    r,
+    i
+  ), l = Ne(
+    ke([
+      o ?? globalThis.globalProjectAnnotations ?? {},
+      t ?? {}
+    ])
+  ), p = sr(
+    c,
+    i,
+    l
+  ), d = {
+    // TODO: remove loading from globalTypes in 9.0
+    ...Et(l.globalTypes),
+    ...l.initialGlobals,
+    ...p.storyGlobals
+  }, h = new Ee(), S = /* @__PURE__ */ n(() => {
+    let g = _t({
+      hooks: new be(),
+      globals: d,
+      args: { ...p.initialArgs },
+      viewMode: "story",
+      reporting: h,
+      loaded: {},
+      abortSignal: new AbortController().signal,
+      step: /* @__PURE__ */ n((b, v) => p.runStep(b, v, g), "step"),
+      canvasElement: null,
+      canvas: {},
+      globalTypes: l.globalTypes,
+      ...p,
+      context: null,
+      mount: null
+    });
+    return g.parameters.__isPortableStory = !0, g.context = g, p.renderToCanvas && (g.renderToCanvas = async () => {
+      let b = await p.renderToCanvas?.(
+        {
+          componentId: p.componentId,
+          title: p.title,
+          id: p.id,
+          name: p.name,
+          tags: p.tags,
+          showMain: /* @__PURE__ */ n(() => {
+          }, "showMain"),
+          showError: /* @__PURE__ */ n((v) => {
+            throw new Error(`${v.title}
+${v.description}`);
+          }, "showError"),
+          showException: /* @__PURE__ */ n((v) => {
+            throw v;
+          }, "showException"),
+          forceRemount: !0,
+          storyContext: g,
+          storyFn: /* @__PURE__ */ n(() => p.unboundStoryFn(g), "storyFn"),
+          unboundStoryFn: p.unboundStoryFn
+        },
+        g.canvasElement
+      );
+      b && Re.push(b);
+    }), g.mount = p.mount(g), g;
+  }, "initializeContext"), m, T = /* @__PURE__ */ n(async (g) => {
+    let b = S();
+    return b.canvasElement ??= globalThis?.document?.body, m && (b.loaded = m.loaded), Object.assign(b, g), p.playFunction(b);
+  }, "play"), y = /* @__PURE__ */ n((g) => {
+    let b = S();
+    return Object.assign(b, g), tu(p, b);
+  }, "run"), R = p.playFunction ? T : void 0;
+  return Object.assign(
+    /* @__PURE__ */ n(function(b) {
+      let v = S();
+      return m && (v.loaded = m.loaded), v.args = {
+        ...v.initialArgs,
+        ...b
+      }, p.unboundStoryFn(v);
+    }, "storyFn"),
+    {
+      id: p.id,
+      storyName: a,
+      load: /* @__PURE__ */ n(async () => {
+        for (let b of [...Re].reverse())
+          await b();
+        Re.length = 0;
+        let g = S();
+        g.loaded = await p.applyLoaders(g), Re.push(...(await p.applyBeforeEach(g)).filter(Boolean)), m = g;
+      }, "load"),
+      globals: d,
+      args: p.initialArgs,
+      parameters: p.parameters,
+      argTypes: p.argTypes,
+      play: R,
+      run: y,
+      reporting: h,
+      tags: p.tags
+    }
+  );
+}
+n(Pn, "composeStory");
+var ru = /* @__PURE__ */ n((r, e, t, o) => Pn(r, e, t, {}, o), "defaultComposeStory");
+function qi(r, e, t = ru) {
+  let { default: o, __esModule: s, __namedExportsOrder: i, ...a } = r, c = o;
+  return Object.entries(a).reduce(
+    (p, [u, d]) => {
+      let { story: h, meta: S } = Pt(d);
+      return !c && S && (c = S), Lr(u, c) ? Object.assign(p, {
+        [u]: t(h, c, e, u)
+      }) : p;
+>>>>>>> main
     },
     {}
   );
 }
+<<<<<<< HEAD
 o($3, "composeStories");
 function B3(e) {
   return e.extend({
@@ -44032,6 +48913,15 @@ function B3(e) {
       await n(async (i, ...s) => {
         if (!("__pw_type" in i) || "__pw_type" in i && i.__pw_type !== "jsx")
           throw new Error(ee`
+=======
+n(qi, "composeStories");
+function Bi(r) {
+  return r.extend({
+    mount: /* @__PURE__ */ n(async ({ mount: e, page: t }, o) => {
+      await o(async (s, ...i) => {
+        if (!("__pw_type" in s) || "__pw_type" in s && s.__pw_type !== "jsx")
+          throw new Error(_`
+>>>>>>> main
               Portable stories in Playwright CT only work when referencing JSX elements.
               Please use JSX format for your components such as:
 
@@ -44043,6 +48933,7 @@ function B3(e) {
 
               More info: https://storybook.js.org/docs/api/portable-stories-playwright
             `);
+<<<<<<< HEAD
         await r.evaluate(async (l) => {
           let u = await globalThis.__pwUnwrapObject?.(l);
           return ("__pw_type" in u ? u.type : u)?.load?.();
@@ -44052,10 +48943,22 @@ function B3(e) {
           let u = await globalThis.__pwUnwrapObject?.(l), c = "__pw_type" in u ? u.type : u, d = document.querySelector("#root");
           return c?.play?.({ canvasElement: d });
         }, i), a;
+=======
+        await t.evaluate(async (c) => {
+          let l = await globalThis.__pwUnwrapObject?.(c);
+          return ("__pw_type" in l ? l.type : l)?.load?.();
+        }, s);
+        let a = await e(s, ...i);
+        return await t.evaluate(async (c) => {
+          let l = await globalThis.__pwUnwrapObject?.(c), p = "__pw_type" in l ? l.type : l, u = document.querySelector("#root");
+          return p?.play?.({ canvasElement: u });
+        }, s), a;
+>>>>>>> main
       });
     }, "mount")
   });
 }
+<<<<<<< HEAD
 o(B3, "createPlaywrightTest");
 async function nSe(e, t) {
   for (let s of [...En].reverse())
@@ -44095,12 +48998,78 @@ var U3 = 1e3, oSe = 1e4, OS = class OS {
     this.projectAnnotations = no(t);
     let { initialGlobals: r, globalTypes: n } = t;
     this.userGlobals.set({ globals: r, globalTypes: n });
+=======
+n(Bi, "createPlaywrightTest");
+async function tu(r, e) {
+  for (let s of [...Re].reverse())
+    await s();
+  if (Re.length = 0, !e.canvasElement) {
+    let s = document.createElement("div");
+    globalThis?.document?.body?.appendChild(s), e.canvasElement = s, Re.push(() => {
+      globalThis?.document?.body?.contains(s) && globalThis?.document?.body?.removeChild(s);
+    });
+  }
+  if (e.loaded = await r.applyLoaders(e), e.abortSignal.aborted)
+    return;
+  Re.push(...(await r.applyBeforeEach(e)).filter(Boolean));
+  let t = r.playFunction, o = r.usesMount;
+  o || await e.mount(), !e.abortSignal.aborted && (t && (o || (e.mount = async () => {
+    throw new Oe({ playFunction: t.toString() });
+  }), await t(e)), await r.applyAfterEach(e));
+}
+n(tu, "runStory");
+
+// src/preview-api/modules/store/StoryStore.ts
+function Vi(r, e) {
+  return Uo(Go(r, e), (t) => t === void 0);
+}
+n(Vi, "picky");
+var Hi = 1e3, ou = 1e4, On = class On {
+  constructor(e, t, o) {
+    this.importFn = t;
+    // TODO: Remove in 9.0
+    // NOTE: this is legacy `stories.json` data for the `extract` script.
+    // It is used to allow v7 Storybooks to be composed in v6 Storybooks, which expect a
+    // `stories.json` file with legacy fields (`kind` etc).
+    this.getStoriesJsonData = /* @__PURE__ */ n(() => {
+      let e = this.getSetStoriesPayload(), t = ["fileName", "docsOnly", "framework", "__id", "__isArgsStory"];
+      return {
+        v: 3,
+        stories: oe(e.stories, (s) => {
+          let { importPath: i } = this.storyIndex.entries[s.id];
+          return {
+            ...Vi(s, ["id", "name", "title"]),
+            importPath: i,
+            // These 3 fields were going to be dropped in v7, but instead we will keep them for the
+            // 7.x cycle so that v7 Storybooks can be composed successfully in v6 Storybook.
+            // In v8 we will (likely) completely drop support for `extract` and `getStoriesJsonData`
+            kind: s.title,
+            story: s.name,
+            parameters: {
+              ...Vi(s.parameters, t),
+              fileName: i
+            }
+          };
+        })
+      };
+    }, "getStoriesJsonData");
+    this.storyIndex = new At(e), this.projectAnnotations = Ne(o);
+    let { initialGlobals: s, globalTypes: i } = this.projectAnnotations;
+    this.args = new Tt(), this.userGlobals = new Rt({ globals: s, globalTypes: i }), this.hooks = {}, this.cleanupCallbacks = {}, this.processCSFFileWithCache =
+    (0, Ot.default)(Hi)(Di), this.prepareMetaWithCache = (0, Ot.default)(Hi)(wt), this.prepareStoryWithCache = (0, Ot.default)(ou)(sr);
+  }
+  setProjectAnnotations(e) {
+    this.projectAnnotations = Ne(e);
+    let { initialGlobals: t, globalTypes: o } = e;
+    this.userGlobals.set({ globals: t, globalTypes: o });
+>>>>>>> main
   }
   // This means that one of the CSF files has changed.
   // If the `importFn` has changed, we will invalidate both caches.
   // If the `storyIndex` data has changed, we may or may not invalidate the caches, depending
   // on whether we've loaded the relevant files yet.
   async onStoriesChanged({
+<<<<<<< HEAD
     importFn: t,
     storyIndex: r
   }) {
@@ -44126,12 +49095,40 @@ var U3 = 1e3, oSe = 1e4, OS = class OS {
       }))
     )).reduce(
       (n, { importPath: i, csfFile: s }) => (n[i] = s, n),
+=======
+    importFn: e,
+    storyIndex: t
+  }) {
+    e && (this.importFn = e), t && (this.storyIndex.entries = t.entries), this.cachedCSFFiles && await this.cacheAllCSFFiles();
+  }
+  // Get an entry from the index, waiting on initialization if necessary
+  async storyIdToEntry(e) {
+    return this.storyIndex.storyIdToEntry(e);
+  }
+  // To load a single CSF file to service a story we need to look up the importPath in the index
+  async loadCSFFileByStoryId(e) {
+    let { importPath: t, title: o } = this.storyIndex.storyIdToEntry(e), s = await this.importFn(t);
+    return this.processCSFFileWithCache(s, t, o);
+  }
+  async loadAllCSFFiles() {
+    let e = {};
+    return Object.entries(this.storyIndex.entries).forEach(([o, { importPath: s }]) => {
+      e[s] = o;
+    }), (await Promise.all(
+      Object.entries(e).map(async ([o, s]) => ({
+        importPath: o,
+        csfFile: await this.loadCSFFileByStoryId(s)
+      }))
+    )).reduce(
+      (o, { importPath: s, csfFile: i }) => (o[s] = i, o),
+>>>>>>> main
       {}
     );
   }
   async cacheAllCSFFiles() {
     this.cachedCSFFiles = await this.loadAllCSFFiles();
   }
+<<<<<<< HEAD
   preparedMetaFromCSFFile({ csfFile: t }) {
     let r = t.meta;
     return this.prepareMetaWithCache(
@@ -44144,10 +49141,25 @@ var U3 = 1e3, oSe = 1e4, OS = class OS {
   async loadStory({ storyId: t }) {
     let r = await this.loadCSFFileByStoryId(t);
     return this.storyFromCSFFile({ storyId: t, csfFile: r });
+=======
+  preparedMetaFromCSFFile({ csfFile: e }) {
+    let t = e.meta;
+    return this.prepareMetaWithCache(
+      t,
+      this.projectAnnotations,
+      e.moduleExports.default
+    );
+  }
+  // Load the CSF file for a story and prepare the story from it and the project annotations.
+  async loadStory({ storyId: e }) {
+    let t = await this.loadCSFFileByStoryId(e);
+    return this.storyFromCSFFile({ storyId: e, csfFile: t });
+>>>>>>> main
   }
   // This function is synchronous for convenience -- often times if you have a CSF file already
   // it is easier not to have to await `loadStory`.
   storyFromCSFFile({
+<<<<<<< HEAD
     storyId: t,
     csfFile: r
   }) {
@@ -44228,10 +49240,93 @@ var U3 = 1e3, oSe = 1e4, OS = class OS {
             }
           }
         )), n;
+=======
+    storyId: e,
+    csfFile: t
+  }) {
+    let o = t.stories[e];
+    if (!o)
+      throw new Ir({ storyId: e });
+    let s = t.meta, i = this.prepareStoryWithCache(
+      o,
+      s,
+      t.projectAnnotations ?? this.projectAnnotations
+    );
+    return this.args.setInitial(i), this.hooks[i.id] = this.hooks[i.id] || new be(), i;
+  }
+  // If we have a CSF file we can get all the stories from it synchronously
+  componentStoriesFromCSFFile({
+    csfFile: e
+  }) {
+    return Object.keys(this.storyIndex.entries).filter((t) => !!e.stories[t]).map((t) => this.storyFromCSFFile({ storyId: t, csfFile: e }));
+  }
+  async loadEntry(e) {
+    let t = await this.storyIdToEntry(e), o = t.type === "docs" ? t.storiesImports : [], [s, ...i] = await Promise.all([
+      this.importFn(t.importPath),
+      ...o.map((a) => {
+        let c = this.storyIndex.importPathToEntry(a);
+        return this.loadCSFFileByStoryId(c.id);
+      })
+    ]);
+    return { entryExports: s, csfFiles: i };
+  }
+  // A prepared story does not include args, globals or hooks. These are stored in the story store
+  // and updated separtely to the (immutable) story.
+  getStoryContext(e, { forceInitialArgs: t = !1 } = {}) {
+    let o = this.userGlobals.get(), { initialGlobals: s } = this.userGlobals, i = new Ee();
+    return _t({
+      ...e,
+      args: t ? e.initialArgs : this.args.get(e.id),
+      initialGlobals: s,
+      globalTypes: this.projectAnnotations.globalTypes,
+      userGlobals: o,
+      reporting: i,
+      globals: {
+        ...o,
+        ...e.storyGlobals
+      },
+      hooks: this.hooks[e.id]
+    });
+  }
+  addCleanupCallbacks(e, t) {
+    this.cleanupCallbacks[e.id] = t;
+  }
+  async cleanupStory(e) {
+    this.hooks[e.id].clean();
+    let t = this.cleanupCallbacks[e.id];
+    if (t)
+      for (let o of [...t].reverse())
+        await o();
+    delete this.cleanupCallbacks[e.id];
+  }
+  extract(e = { includeDocsOnly: !1 }) {
+    let { cachedCSFFiles: t } = this;
+    if (!t)
+      throw new vr();
+    return Object.entries(this.storyIndex.entries).reduce(
+      (o, [s, { type: i, importPath: a }]) => {
+        if (i === "docs")
+          return o;
+        let c = t[a], l = this.storyFromCSFFile({ storyId: s, csfFile: c });
+        return !e.includeDocsOnly && l.parameters.docsOnly || (o[s] = Object.entries(l).reduce(
+          (p, [u, d]) => u === "moduleExport" || typeof d == "function" ? p : Array.isArray(d) ? Object.assign(p, { [u]: d.slice().sort() }) :
+          Object.assign(p, { [u]: d }),
+          {
+            //
+            args: l.initialArgs,
+            globals: {
+              ...this.userGlobals.initialGlobals,
+              ...this.userGlobals.globals,
+              ...l.storyGlobals
+            }
+          }
+        )), o;
+>>>>>>> main
       },
       {}
     );
   }
+<<<<<<< HEAD
 };
 o(OS, "StoryStore");
 var so = OS;
@@ -44260,10 +49355,90 @@ o(H3, "pathJoin");
 var IS = /* @__PURE__ */ o((e, t, r) => {
   let { directory: n, importPathMatcher: i, titlePrefix: s = "" } = t || {};
   typeof e == "number" && Re.warn(ee`
+=======
+  // TODO: Remove in 9.0
+  getSetStoriesPayload() {
+    let e = this.extract({ includeDocsOnly: !0 }), t = Object.values(e).reduce(
+      (o, { title: s }) => (o[s] = {}, o),
+      {}
+    );
+    return {
+      v: 2,
+      globals: this.userGlobals.get(),
+      globalParameters: {},
+      kindParameters: t,
+      stories: e
+    };
+  }
+  raw() {
+    return ae(
+      "StoryStore.raw() is deprecated and will be removed in 9.0, please use extract() instead"
+    ), Object.values(this.extract()).map(({ id: e }) => this.fromId(e)).filter(Boolean);
+  }
+  fromId(e) {
+    if (ae(
+      "StoryStore.fromId() is deprecated and will be removed in 9.0, please use loadStory() instead"
+    ), !this.cachedCSFFiles)
+      throw new Error("Cannot call fromId/raw() unless you call cacheAllCSFFiles() first.");
+    let t;
+    try {
+      ({ importPath: t } = this.storyIndex.storyIdToEntry(e));
+    } catch {
+      return null;
+    }
+    let o = this.cachedCSFFiles[t], s = this.storyFromCSFFile({ storyId: e, csfFile: o });
+    return {
+      ...s,
+      storyFn: /* @__PURE__ */ n((i) => {
+        let a = {
+          ...this.getStoryContext(s),
+          abortSignal: new AbortController().signal,
+          canvasElement: null,
+          loaded: {},
+          step: /* @__PURE__ */ n((c, l) => s.runStep(c, l, a), "step"),
+          context: null,
+          mount: null,
+          canvas: {},
+          viewMode: "story"
+        };
+        return s.unboundStoryFn({ ...a, ...i });
+      }, "storyFn")
+    };
+  }
+};
+n(On, "StoryStore");
+var Le = On;
+
+// ../node_modules/slash/index.js
+function In(r) {
+  return r.startsWith("\\\\?\\") ? r : r.replace(/\\/g, "/");
+}
+n(In, "slash");
+
+// src/preview-api/modules/store/autoTitle.ts
+var nu = /* @__PURE__ */ n((r) => {
+  if (r.length === 0)
+    return r;
+  let e = r[r.length - 1], t = e?.replace(/(?:[.](?:story|stories))?([.][^.]+)$/i, "");
+  if (r.length === 1)
+    return [t];
+  let o = r[r.length - 2];
+  return t && o && t.toLowerCase() === o.toLowerCase() ? [...r.slice(0, -2), t] : t && (/^(story|stories)([.][^.]+)$/i.test(e) || /^index$/i.
+  test(t)) ? r.slice(0, -1) : [...r.slice(0, -1), t];
+}, "sanitize");
+function zi(r) {
+  return r.flatMap((e) => e.split("/")).filter(Boolean).join("/");
+}
+n(zi, "pathJoin");
+var Fn = /* @__PURE__ */ n((r, e, t) => {
+  let { directory: o, importPathMatcher: s, titlePrefix: i = "" } = e || {};
+  typeof r == "number" && j.warn(_`
+>>>>>>> main
       CSF Auto-title received a numeric fileName. This typically happens when
       webpack is mis-configured in production mode. To force webpack to produce
       filenames, set optimization.moduleIds = "named" in your webpack config.
     `);
+<<<<<<< HEAD
   let a = qS(String(e));
   if (i.exec(a)) {
     if (!r) {
@@ -44298,17 +49473,59 @@ var z3 = /\s*\/\s*/, G3 = /* @__PURE__ */ o((e = {}) => (t, r) => {
       let p = i.indexOf(u), y = i.indexOf(c), f = i.indexOf("*");
       return p !== -1 || y !== -1 ? (p === -1 && (f !== -1 ? p = f : p = i.length), y === -1 && (f !== -1 ? y = f : y = i.length), p - y) : n ===
       "configure" ? 0 : u.localeCompare(c, e.locales ? e.locales : void 0, {
+=======
+  let a = In(String(r));
+  if (s.exec(a)) {
+    if (!t) {
+      let c = a.replace(o, ""), l = zi([i, c]).split("/");
+      return l = nu(l), l.join("/");
+    }
+    return i ? zi([i, t]) : t;
+  }
+}, "userOrAutoTitleFromSpecifier"), Wi = /* @__PURE__ */ n((r, e, t) => {
+  for (let o = 0; o < e.length; o += 1) {
+    let s = Fn(r, e[o], t);
+    if (s)
+      return s;
+  }
+  return t || void 0;
+}, "userOrAutoTitle");
+
+// src/preview-api/modules/store/storySort.ts
+var $i = /\s*\/\s*/, Yi = /* @__PURE__ */ n((r = {}) => (e, t) => {
+  if (e.title === t.title && !r.includeNames)
+    return 0;
+  let o = r.method || "configure", s = r.order || [], i = e.title.trim().split($i), a = t.title.trim().split($i);
+  r.includeNames && (i.push(e.name), a.push(t.name));
+  let c = 0;
+  for (; i[c] || a[c]; ) {
+    if (!i[c])
+      return -1;
+    if (!a[c])
+      return 1;
+    let l = i[c], p = a[c];
+    if (l !== p) {
+      let d = s.indexOf(l), h = s.indexOf(p), S = s.indexOf("*");
+      return d !== -1 || h !== -1 ? (d === -1 && (S !== -1 ? d = S : d = s.length), h === -1 && (S !== -1 ? h = S : h = s.length), d - h) : o ===
+      "configure" ? 0 : l.localeCompare(p, r.locales ? r.locales : void 0, {
+>>>>>>> main
         numeric: !0,
         sensitivity: "accent"
       });
     }
+<<<<<<< HEAD
     let d = i.indexOf(u);
     d === -1 && (d = i.indexOf("*")), i = d !== -1 && Array.isArray(i[d + 1]) ? i[d + 1] : [], l += 1;
+=======
+    let u = s.indexOf(l);
+    u === -1 && (u = s.indexOf("*")), s = u !== -1 && Array.isArray(s[u + 1]) ? s[u + 1] : [], c += 1;
+>>>>>>> main
   }
   return 0;
 }, "storySort");
 
 // src/preview-api/modules/store/sortStories.ts
+<<<<<<< HEAD
 var sSe = /* @__PURE__ */ o((e, t, r) => {
   if (t) {
     let n;
@@ -44326,6 +49543,25 @@ var sSe = /* @__PURE__ */ o((e, t, r) => {
     Error sorting stories with sort parameter ${t}:
 
     > ${n.message}
+=======
+var su = /* @__PURE__ */ n((r, e, t) => {
+  if (e) {
+    let o;
+    typeof e == "function" ? o = e : o = Yi(e), r.sort(o);
+  } else
+    r.sort(
+      (o, s) => t.indexOf(o.importPath) - t.indexOf(s.importPath)
+    );
+  return r;
+}, "sortStoriesCommon"), Ki = /* @__PURE__ */ n((r, e, t) => {
+  try {
+    return su(r, e, t);
+  } catch (o) {
+    throw new Error(_`
+    Error sorting stories with sort parameter ${e}:
+
+    > ${o.message}
+>>>>>>> main
     
     Are you using a V6-style sort function in V7 mode?
 
@@ -44335,6 +49571,7 @@ var sSe = /* @__PURE__ */ o((e, t, r) => {
 }, "sortStoriesV7");
 
 // src/preview-api/modules/preview-web/render/Render.ts
+<<<<<<< HEAD
 var _n = new Error("prepareAborted");
 
 // src/preview-api/modules/preview-web/render/StoryRender.ts
@@ -44357,10 +49594,35 @@ var MS = class MS {
     this.id = s;
     this.viewMode = a;
     this.renderOptions = l;
+=======
+var Ae = new Error("prepareAborted");
+
+// src/preview-api/modules/preview-web/render/StoryRender.ts
+var { AbortController: Xi } = globalThis;
+function Ji(r) {
+  try {
+    let { name: e = "Error", message: t = String(r), stack: o } = r;
+    return { name: e, message: t, stack: o };
+  } catch {
+    return { name: "Error", message: String(r) };
+  }
+}
+n(Ji, "serializeError");
+var Dn = class Dn {
+  constructor(e, t, o, s, i, a, c = { autoplay: !0, forceInitialArgs: !1 }, l) {
+    this.channel = e;
+    this.store = t;
+    this.renderToScreen = o;
+    this.callbacks = s;
+    this.id = i;
+    this.viewMode = a;
+    this.renderOptions = c;
+>>>>>>> main
     this.type = "story";
     this.notYetRendered = !0;
     this.rerenderEnqueued = !1;
     this.disableKeyListeners = !1;
+<<<<<<< HEAD
     this.teardownRender = /* @__PURE__ */ o(() => {
     }, "teardownRender");
     this.torndown = !1;
@@ -44371,16 +49633,36 @@ var MS = class MS {
   }
   checkIfAborted(t) {
     return t.aborted ? (this.phase = "aborted", this.channel.emit(Ut, { newPhase: this.phase, storyId: this.id }), !0) : !1;
+=======
+    this.teardownRender = /* @__PURE__ */ n(() => {
+    }, "teardownRender");
+    this.torndown = !1;
+    this.abortController = new Xi(), l && (this.story = l, this.phase = "preparing");
+  }
+  async runPhase(e, t, o) {
+    this.phase = t, this.channel.emit(Pe, { newPhase: this.phase, storyId: this.id }), o && (await o(), this.checkIfAborted(e));
+  }
+  checkIfAborted(e) {
+    return e.aborted ? (this.phase = "aborted", this.channel.emit(Pe, { newPhase: this.phase, storyId: this.id }), !0) : !1;
+>>>>>>> main
   }
   async prepare() {
     if (await this.runPhase(this.abortController.signal, "preparing", async () => {
       this.story = await this.store.loadStory({ storyId: this.id });
     }), this.abortController.signal.aborted)
+<<<<<<< HEAD
       throw await this.store.cleanupStory(this.story), _n;
   }
   // The two story "renders" are equal and have both loaded the same story
   isEqual(t) {
     return !!(this.id === t.id && this.story && this.story === t.story);
+=======
+      throw await this.store.cleanupStory(this.story), Ae;
+  }
+  // The two story "renders" are equal and have both loaded the same story
+  isEqual(e) {
+    return !!(this.id === e.id && this.story && this.story === e.story);
+>>>>>>> main
   }
   isPreparing() {
     return ["preparing"].includes(this.phase);
@@ -44390,12 +49672,18 @@ var MS = class MS {
       this.phase
     );
   }
+<<<<<<< HEAD
   async renderToElement(t) {
     return this.canvasElement = t, this.render({ initial: !0, forceRemount: !0 });
+=======
+  async renderToElement(e) {
+    return this.canvasElement = e, this.render({ initial: !0, forceRemount: !0 });
+>>>>>>> main
   }
   storyContext() {
     if (!this.story)
       throw new Error("Cannot call storyContext before preparing");
+<<<<<<< HEAD
     let { forceInitialArgs: t } = this.renderOptions;
     return this.store.getStoryContext(this.story, { forceInitialArgs: t });
   }
@@ -44439,12 +49727,57 @@ var MS = class MS {
           let B = await this.renderToScreen(E, n);
           this.teardownRender = B || (() => {
           }), g = !0;
+=======
+    let { forceInitialArgs: e } = this.renderOptions;
+    return this.store.getStoryContext(this.story, { forceInitialArgs: e });
+  }
+  async render({
+    initial: e = !1,
+    forceRemount: t = !1
+  } = {}) {
+    let { canvasElement: o } = this;
+    if (!this.story)
+      throw new Error("cannot render when not prepared");
+    let s = this.story;
+    if (!o)
+      throw new Error("cannot render when canvasElement is unset");
+    let {
+      id: i,
+      componentId: a,
+      title: c,
+      name: l,
+      tags: p,
+      applyLoaders: u,
+      applyBeforeEach: d,
+      applyAfterEach: h,
+      unboundStoryFn: S,
+      playFunction: m,
+      runStep: T
+    } = s;
+    t && !e && (this.cancelRender(), this.abortController = new Xi());
+    let y = this.abortController.signal, R = !1, x = s.usesMount;
+    try {
+      let g = {
+        ...this.storyContext(),
+        viewMode: this.viewMode,
+        abortSignal: y,
+        canvasElement: o,
+        loaded: {},
+        step: /* @__PURE__ */ n((P, D) => T(P, D, g), "step"),
+        context: null,
+        canvas: {},
+        renderToCanvas: /* @__PURE__ */ n(async () => {
+          let P = await this.renderToScreen(b, o);
+          this.teardownRender = P || (() => {
+          }), R = !0;
+>>>>>>> main
         }, "renderToCanvas"),
         // The story provides (set in a renderer) a mount function that is a higher order function
         // (context) => (...args) => Canvas
         //
         // Before assigning it to the context, we resolve the context dependency,
         // so that a user can just call it as await mount(...args) in their play function.
+<<<<<<< HEAD
         mount: /* @__PURE__ */ o(async (...B) => {
           this.callbacks.showStoryDuringRender?.();
           let N = null;
@@ -44528,6 +49861,88 @@ var MS = class MS {
         "finished",
         async () => this.channel.emit(sl, {
           storyId: s,
+=======
+        mount: /* @__PURE__ */ n(async (...P) => {
+          this.callbacks.showStoryDuringRender?.();
+          let D = null;
+          return await this.runPhase(y, "rendering", async () => {
+            D = await s.mount(g)(...P);
+          }), x && await this.runPhase(y, "playing"), D;
+        }, "mount")
+      };
+      g.context = g;
+      let b = {
+        componentId: a,
+        title: c,
+        kind: c,
+        id: i,
+        name: l,
+        story: l,
+        tags: p,
+        ...this.callbacks,
+        showError: /* @__PURE__ */ n((P) => (this.phase = "errored", this.callbacks.showError(P)), "showError"),
+        showException: /* @__PURE__ */ n((P) => (this.phase = "errored", this.callbacks.showException(P)), "showException"),
+        forceRemount: t || this.notYetRendered,
+        storyContext: g,
+        storyFn: /* @__PURE__ */ n(() => S(g), "storyFn"),
+        unboundStoryFn: S
+      };
+      if (await this.runPhase(y, "loading", async () => {
+        g.loaded = await u(g);
+      }), y.aborted)
+        return;
+      let v = await d(g);
+      if (this.store.addCleanupCallbacks(s, v), this.checkIfAborted(y) || (!R && !x && await g.mount(), this.notYetRendered = !1, y.aborted))
+        return;
+      let C = this.story.parameters?.test?.dangerouslyIgnoreUnhandledErrors === !0, F = /* @__PURE__ */ new Set(), U = /* @__PURE__ */ n((P) => F.
+      add("error" in P ? P.error : P.reason), "onError");
+      if (this.renderOptions.autoplay && t && m && this.phase !== "errored") {
+        window.addEventListener("error", U), window.addEventListener("unhandledrejection", U), this.disableKeyListeners = !0;
+        try {
+          if (x ? await m(g) : (g.mount = async () => {
+            throw new Oe({ playFunction: m.toString() });
+          }, await this.runPhase(y, "playing", async () => m(g))), !R)
+            throw new Nr();
+          this.checkIfAborted(y), !C && F.size > 0 ? await this.runPhase(y, "errored") : await this.runPhase(y, "played");
+        } catch (P) {
+          if (this.callbacks.showStoryDuringRender?.(), await this.runPhase(y, "errored", async () => {
+            this.channel.emit(Xt, Ji(P));
+          }), this.story.parameters.throwPlayFunctionExceptions !== !1)
+            throw P;
+          console.error(P);
+        }
+        if (!C && F.size > 0 && this.channel.emit(
+          Jt,
+          Array.from(F).map(Ji)
+        ), this.disableKeyListeners = !1, window.removeEventListener("unhandledrejection", U), window.removeEventListener("error", U), y.aborted)
+          return;
+      }
+      await this.runPhase(
+        y,
+        "completed",
+        async () => this.channel.emit(We, i)
+      ), this.phase !== "errored" && await this.runPhase(y, "afterEach", async () => {
+        await h(g);
+      });
+      let B = !C && F.size > 0, W = g.reporting.reports.some(
+        (P) => P.status === "failed"
+      ), se = B || W;
+      await this.runPhase(
+        y,
+        "finished",
+        async () => this.channel.emit(ot, {
+          storyId: i,
+          status: se ? "error" : "success",
+          reporters: g.reporting.reports
+        })
+      );
+    } catch (g) {
+      this.phase = "errored", this.callbacks.showException(g), await this.runPhase(
+        y,
+        "finished",
+        async () => this.channel.emit(ot, {
+          storyId: i,
+>>>>>>> main
           status: "error",
           reporters: []
         })
@@ -44560,17 +49975,26 @@ var MS = class MS {
   }
   async teardown() {
     this.torndown = !0, this.cancelRender(), this.story && await this.store.cleanupStory(this.story);
+<<<<<<< HEAD
     for (let t = 0; t < 3; t += 1) {
+=======
+    for (let e = 0; e < 3; e += 1) {
+>>>>>>> main
       if (!this.isPending()) {
         await this.teardownRender();
         return;
       }
+<<<<<<< HEAD
       await new Promise((r) => setTimeout(r, 0));
+=======
+      await new Promise((t) => setTimeout(t, 0));
+>>>>>>> main
     }
     window.location.reload(), await new Promise(() => {
     });
   }
 };
+<<<<<<< HEAD
 o(MS, "StoryRender");
 var ao = MS;
 
@@ -44584,6 +50008,21 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
     this.storeInitializationPromise = new Promise((s, a) => {
       this.resolveStoreInitializationPromise = s, this.rejectStoreInitializationPromise = a;
     }), i && this.initialize();
+=======
+n(Dn, "StoryRender");
+var je = Dn;
+
+// src/preview-api/modules/preview-web/Preview.tsx
+var { fetch: iu } = E, au = "./index.json", Nn = class Nn {
+  constructor(e, t, o = te.getChannel(), s = !0) {
+    this.importFn = e;
+    this.getProjectAnnotations = t;
+    this.channel = o;
+    this.storyRenders = [];
+    this.storeInitializationPromise = new Promise((i, a) => {
+      this.resolveStoreInitializationPromise = i, this.rejectStoreInitializationPromise = a;
+    }), s && this.initialize();
+>>>>>>> main
   }
   // Create a proxy object for `__STORYBOOK_STORY_STORE__` and `__STORYBOOK_PREVIEW__.storyStore`
   // That proxies through to the store once ready, and errors beforehand. This means we can set
@@ -44594,10 +50033,17 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
     return new Proxy(
       {},
       {
+<<<<<<< HEAD
         get: /* @__PURE__ */ o((t, r) => {
           if (this.storyStoreValue)
             return Yi("Accessing the Story Store is deprecated and will be removed in 9.0"), this.storyStoreValue[r];
           throw new ss();
+=======
+        get: /* @__PURE__ */ n((e, t) => {
+          if (this.storyStoreValue)
+            return ae("Accessing the Story Store is deprecated and will be removed in 9.0"), this.storyStoreValue[t];
+          throw new Fr();
+>>>>>>> main
         }, "get")
       }
     );
@@ -44606,16 +50052,24 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
   async initialize() {
     this.setupListeners();
     try {
+<<<<<<< HEAD
       let t = await this.getProjectAnnotationsOrRenderError();
       await this.runBeforeAllHook(t), await this.initializeWithProjectAnnotations(t);
     } catch (t) {
       this.rejectStoreInitializationPromise(t);
+=======
+      let e = await this.getProjectAnnotationsOrRenderError();
+      await this.runBeforeAllHook(e), await this.initializeWithProjectAnnotations(e);
+    } catch (e) {
+      this.rejectStoreInitializationPromise(e);
+>>>>>>> main
     }
   }
   ready() {
     return this.storeInitializationPromise;
   }
   setupListeners() {
+<<<<<<< HEAD
     this.channel.on(Sb, this.onStoryIndexChanged.bind(this)), this.channel.on(zi, this.onUpdateGlobals.bind(this)), this.channel.on(Gi, this.
     onUpdateArgs.bind(this)), this.channel.on(Ib, this.onRequestArgTypesInfo.bind(this)), this.channel.on(Hi, this.onResetArgs.bind(this)), this.
     channel.on(Ui, this.onForceReRender.bind(this)), this.channel.on(vo, this.onForceRemount.bind(this));
@@ -44659,6 +50113,51 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
       throw new Error("Cannot call initializeWithStoryIndex until project annotations resolve");
     this.storyStoreValue = new so(
       t,
+=======
+    this.channel.on(so, this.onStoryIndexChanged.bind(this)), this.channel.on(fr, this.onUpdateGlobals.bind(this)), this.channel.on(yr, this.
+    onUpdateArgs.bind(this)), this.channel.on(fo, this.onRequestArgTypesInfo.bind(this)), this.channel.on(ur, this.onResetArgs.bind(this)), this.
+    channel.on(dr, this.onForceReRender.bind(this)), this.channel.on(Kt, this.onForceRemount.bind(this));
+  }
+  async getProjectAnnotationsOrRenderError() {
+    try {
+      let e = await this.getProjectAnnotations();
+      if (this.renderToCanvas = e.renderToCanvas, !this.renderToCanvas)
+        throw new wr();
+      return e;
+    } catch (e) {
+      throw this.renderPreviewEntryError("Error reading preview.js:", e), e;
+    }
+  }
+  // If initialization gets as far as project annotations, this function runs.
+  async initializeWithProjectAnnotations(e) {
+    this.projectAnnotationsBeforeInitialization = e;
+    try {
+      let t = await this.getStoryIndexFromServer();
+      return this.initializeWithStoryIndex(t);
+    } catch (t) {
+      throw this.renderPreviewEntryError("Error loading story index:", t), t;
+    }
+  }
+  async runBeforeAllHook(e) {
+    try {
+      await this.beforeAllCleanup?.(), this.beforeAllCleanup = await e.beforeAll?.();
+    } catch (t) {
+      throw this.renderPreviewEntryError("Error in beforeAll hook:", t), t;
+    }
+  }
+  async getStoryIndexFromServer() {
+    let e = await iu(au);
+    if (e.status === 200)
+      return e.json();
+    throw new _r({ text: await e.text() });
+  }
+  // If initialization gets as far as the story index, this function runs.
+  initializeWithStoryIndex(e) {
+    if (!this.projectAnnotationsBeforeInitialization)
+      throw new Error("Cannot call initializeWithStoryIndex until project annotations resolve");
+    this.storyStoreValue = new Le(
+      e,
+>>>>>>> main
       this.importFn,
       this.projectAnnotationsBeforeInitialization
     ), delete this.projectAnnotationsBeforeInitialization, this.setInitialGlobals(), this.resolveStoreInitializationPromise();
@@ -44668,16 +50167,26 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
   }
   emitGlobals() {
     if (!this.storyStoreValue)
+<<<<<<< HEAD
       throw new Ze({ methodName: "emitGlobals" });
     let t = {
       globals: this.storyStoreValue.userGlobals.get() || {},
       globalTypes: this.storyStoreValue.projectAnnotations.globalTypes || {}
     };
     this.channel.emit(_b, t);
+=======
+      throw new V({ methodName: "emitGlobals" });
+    let e = {
+      globals: this.storyStoreValue.userGlobals.get() || {},
+      globalTypes: this.storyStoreValue.projectAnnotations.globalTypes || {}
+    };
+    this.channel.emit(ro, e);
+>>>>>>> main
   }
   // EVENT HANDLERS
   // This happens when a config file gets reloaded
   async onGetProjectAnnotationsChanged({
+<<<<<<< HEAD
     getProjectAnnotations: t
   }) {
     delete this.previewEntryError, this.getProjectAnnotations = t;
@@ -44687,10 +50196,22 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
       return;
     }
     this.storyStoreValue.setProjectAnnotations(r), this.emitGlobals();
+=======
+    getProjectAnnotations: e
+  }) {
+    delete this.previewEntryError, this.getProjectAnnotations = e;
+    let t = await this.getProjectAnnotationsOrRenderError();
+    if (await this.runBeforeAllHook(t), !this.storyStoreValue) {
+      await this.initializeWithProjectAnnotations(t);
+      return;
+    }
+    this.storyStoreValue.setProjectAnnotations(t), this.emitGlobals();
+>>>>>>> main
   }
   async onStoryIndexChanged() {
     if (delete this.previewEntryError, !(!this.storyStoreValue && !this.projectAnnotationsBeforeInitialization))
       try {
+<<<<<<< HEAD
         let t = await this.getStoryIndexFromServer();
         if (this.projectAnnotationsBeforeInitialization) {
           this.initializeWithStoryIndex(t);
@@ -44699,10 +50220,21 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
         await this.onStoriesChanged({ storyIndex: t });
       } catch (t) {
         throw this.renderPreviewEntryError("Error loading story index:", t), t;
+=======
+        let e = await this.getStoryIndexFromServer();
+        if (this.projectAnnotationsBeforeInitialization) {
+          this.initializeWithStoryIndex(e);
+          return;
+        }
+        await this.onStoriesChanged({ storyIndex: e });
+      } catch (e) {
+        throw this.renderPreviewEntryError("Error loading story index:", e), e;
+>>>>>>> main
       }
   }
   // This happens when a glob gets HMR-ed
   async onStoriesChanged({
+<<<<<<< HEAD
     importFn: t,
     storyIndex: r
   }) {
@@ -44779,20 +50311,106 @@ var { fetch: aSe } = k, lSe = "./index.json", NS = class NS {
       ])
     ]).reduce((l, u) => (l[u] = i.initialArgs[u], l), {});
     await this.onUpdateArgs({ storyId: t, updatedArgs: a });
+=======
+    importFn: e,
+    storyIndex: t
+  }) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "onStoriesChanged" });
+    await this.storyStoreValue.onStoriesChanged({ importFn: e, storyIndex: t });
+  }
+  async onUpdateGlobals({
+    globals: e,
+    currentStory: t
+  }) {
+    if (this.storyStoreValue || await this.storeInitializationPromise, !this.storyStoreValue)
+      throw new V({ methodName: "onUpdateGlobals" });
+    if (this.storyStoreValue.userGlobals.update(e), t) {
+      let { initialGlobals: o, storyGlobals: s, userGlobals: i, globals: a } = this.storyStoreValue.getStoryContext(t);
+      this.channel.emit(Ce, {
+        initialGlobals: o,
+        userGlobals: i,
+        storyGlobals: s,
+        globals: a
+      });
+    } else {
+      let { initialGlobals: o, globals: s } = this.storyStoreValue.userGlobals;
+      this.channel.emit(Ce, {
+        initialGlobals: o,
+        userGlobals: s,
+        storyGlobals: {},
+        globals: s
+      });
+    }
+    await Promise.all(this.storyRenders.map((o) => o.rerender()));
+  }
+  async onUpdateArgs({ storyId: e, updatedArgs: t }) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "onUpdateArgs" });
+    this.storyStoreValue.args.update(e, t), await Promise.all(
+      this.storyRenders.filter((o) => o.id === e && !o.renderOptions.forceInitialArgs).map(
+        (o) => (
+          // We only run the play function, with in a force remount.
+          // But when mount is destructured, the rendering happens inside of the play function.
+          o.story && o.story.usesMount ? o.remount() : o.rerender()
+        )
+      )
+    ), this.channel.emit(to, {
+      storyId: e,
+      args: this.storyStoreValue.args.get(e)
+    });
+  }
+  async onRequestArgTypesInfo({ id: e, payload: t }) {
+    try {
+      await this.storeInitializationPromise;
+      let o = await this.storyStoreValue?.loadStory(t);
+      this.channel.emit(nt, {
+        id: e,
+        success: !0,
+        payload: { argTypes: o?.argTypes || {} },
+        error: null
+      });
+    } catch (o) {
+      this.channel.emit(nt, {
+        id: e,
+        success: !1,
+        error: o?.message
+      });
+    }
+  }
+  async onResetArgs({ storyId: e, argNames: t }) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "onResetArgs" });
+    let s = this.storyRenders.find((c) => c.id === e)?.story || await this.storyStoreValue.loadStory({ storyId: e }), a = (t || [
+      .../* @__PURE__ */ new Set([
+        ...Object.keys(s.initialArgs),
+        ...Object.keys(this.storyStoreValue.args.get(e))
+      ])
+    ]).reduce((c, l) => (c[l] = s.initialArgs[l], c), {});
+    await this.onUpdateArgs({ storyId: e, updatedArgs: a });
+>>>>>>> main
   }
   // ForceReRender does not include a story id, so we simply must
   // re-render all stories in case they are relevant
   async onForceReRender() {
+<<<<<<< HEAD
     await Promise.all(this.storyRenders.map((t) => t.rerender()));
   }
   async onForceRemount({ storyId: t }) {
     await Promise.all(this.storyRenders.filter((r) => r.id === t).map((r) => r.remount()));
+=======
+    await Promise.all(this.storyRenders.map((e) => e.rerender()));
+  }
+  async onForceRemount({ storyId: e }) {
+    await Promise.all(this.storyRenders.filter((t) => t.id === e).map((t) => t.remount()));
+>>>>>>> main
   }
   // Used by docs to render a story to a given element
   // Note this short-circuits the `prepare()` phase of the StoryRender,
   // main to be consistent with the previous behaviour. In the future,
   // we will change it to go ahead and load the story, which will end up being
   // "instant", although async.
+<<<<<<< HEAD
   renderStoryToElement(t, r, n, i) {
     if (!this.renderToCanvas || !this.storyStoreValue)
       throw new Ze({
@@ -44858,12 +50476,80 @@ var jS = class jS {
 mCSFFile");
     this.storyById = /* @__PURE__ */ o((t) => {
       if (!t) {
+=======
+  renderStoryToElement(e, t, o, s) {
+    if (!this.renderToCanvas || !this.storyStoreValue)
+      throw new V({
+        methodName: "renderStoryToElement"
+      });
+    let i = new je(
+      this.channel,
+      this.storyStoreValue,
+      this.renderToCanvas,
+      o,
+      e.id,
+      "docs",
+      s,
+      e
+    );
+    return i.renderToElement(t), this.storyRenders.push(i), async () => {
+      await this.teardownRender(i);
+    };
+  }
+  async teardownRender(e, { viewModeChanged: t } = {}) {
+    this.storyRenders = this.storyRenders.filter((o) => o !== e), await e?.teardown?.({ viewModeChanged: t });
+  }
+  // API
+  async loadStory({ storyId: e }) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "loadStory" });
+    return this.storyStoreValue.loadStory({ storyId: e });
+  }
+  getStoryContext(e, { forceInitialArgs: t = !1 } = {}) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "getStoryContext" });
+    return this.storyStoreValue.getStoryContext(e, { forceInitialArgs: t });
+  }
+  async extract(e) {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "extract" });
+    if (this.previewEntryError)
+      throw this.previewEntryError;
+    return await this.storyStoreValue.cacheAllCSFFiles(), this.storyStoreValue.extract(e);
+  }
+  // UTILITIES
+  renderPreviewEntryError(e, t) {
+    this.previewEntryError = t, I.error(e), I.error(t), this.channel.emit($t, t);
+  }
+};
+n(Nn, "Preview");
+var Me = Nn;
+
+// src/preview-api/modules/preview-web/docs-context/DocsContext.ts
+var kn = class kn {
+  constructor(e, t, o, s) {
+    this.channel = e;
+    this.store = t;
+    this.renderStoryToElement = o;
+    this.storyIdByName = /* @__PURE__ */ n((e) => {
+      let t = this.nameToStoryId.get(e);
+      if (t)
+        return t;
+      throw new Error(`No story found with that name: ${e}`);
+    }, "storyIdByName");
+    this.componentStories = /* @__PURE__ */ n(() => this.componentStoriesValue, "componentStories");
+    this.componentStoriesFromCSFFile = /* @__PURE__ */ n((e) => this.store.componentStoriesFromCSFFile({ csfFile: e }), "componentStoriesFro\
+mCSFFile");
+    this.storyById = /* @__PURE__ */ n((e) => {
+      if (!e) {
+>>>>>>> main
         if (!this.primaryStory)
           throw new Error(
             "No primary story defined for docs entry. Did you forget to use `<Meta>`?"
           );
         return this.primaryStory;
       }
+<<<<<<< HEAD
       let r = this.storyIdToCSFFile.get(t);
       if (!r)
         throw new Error(`Called \`storyById\` for story that was never loaded: ${t}`);
@@ -44879,11 +50565,29 @@ mCSFFile");
     exportsToCSFFile = /* @__PURE__ */ new Map(), this.nameToStoryId = /* @__PURE__ */ new Map(), this.attachedCSFFiles = /* @__PURE__ */ new Set(),
     i.forEach((s, a) => {
       this.referenceCSFFile(s);
+=======
+      let t = this.storyIdToCSFFile.get(e);
+      if (!t)
+        throw new Error(`Called \`storyById\` for story that was never loaded: ${e}`);
+      return this.store.storyFromCSFFile({ storyId: e, csfFile: t });
+    }, "storyById");
+    this.getStoryContext = /* @__PURE__ */ n((e) => ({
+      ...this.store.getStoryContext(e),
+      loaded: {},
+      viewMode: "docs"
+    }), "getStoryContext");
+    this.loadStory = /* @__PURE__ */ n((e) => this.store.loadStory({ storyId: e }), "loadStory");
+    this.componentStoriesValue = [], this.storyIdToCSFFile = /* @__PURE__ */ new Map(), this.exportToStory = /* @__PURE__ */ new Map(), this.
+    exportsToCSFFile = /* @__PURE__ */ new Map(), this.nameToStoryId = /* @__PURE__ */ new Map(), this.attachedCSFFiles = /* @__PURE__ */ new Set(),
+    s.forEach((i, a) => {
+      this.referenceCSFFile(i);
+>>>>>>> main
     });
   }
   // This docs entry references this CSF file and can synchronously load the stories, as well
   // as reference them by module export. If the CSF is part of the "component" stories, they
   // can also be referenced by name and are in the componentStories list.
+<<<<<<< HEAD
   referenceCSFFile(t) {
     this.exportsToCSFFile.set(t.moduleExports, t), this.exportsToCSFFile.set(t.moduleExports.default, t), this.store.componentStoriesFromCSFFile(
     { csfFile: t }).forEach((n) => {
@@ -44903,10 +50607,32 @@ mCSFFile");
   referenceMeta(t, r) {
     let n = this.resolveModuleExport(t);
     if (n.type !== "meta")
+=======
+  referenceCSFFile(e) {
+    this.exportsToCSFFile.set(e.moduleExports, e), this.exportsToCSFFile.set(e.moduleExports.default, e), this.store.componentStoriesFromCSFFile(
+    { csfFile: e }).forEach((o) => {
+      let s = e.stories[o.id];
+      this.storyIdToCSFFile.set(s.id, e), this.exportToStory.set(s.moduleExport, o);
+    });
+  }
+  attachCSFFile(e) {
+    if (!this.exportsToCSFFile.has(e.moduleExports))
+      throw new Error("Cannot attach a CSF file that has not been referenced");
+    if (this.attachedCSFFiles.has(e))
+      return;
+    this.attachedCSFFiles.add(e), this.store.componentStoriesFromCSFFile({ csfFile: e }).forEach((o) => {
+      this.nameToStoryId.set(o.name, o.id), this.componentStoriesValue.push(o), this.primaryStory || (this.primaryStory = o);
+    });
+  }
+  referenceMeta(e, t) {
+    let o = this.resolveModuleExport(e);
+    if (o.type !== "meta")
+>>>>>>> main
       throw new Error(
         "<Meta of={} /> must reference a CSF file module export or meta export. Did you mistakenly reference your component instead of your \
 CSF file?"
       );
+<<<<<<< HEAD
     r && this.attachCSFFile(n.csfFile);
   }
   get projectAnnotations() {
@@ -44917,6 +50643,18 @@ CSF file?"
   }
   resolveAttachedModuleExportType(t) {
     if (t === "story") {
+=======
+    t && this.attachCSFFile(o.csfFile);
+  }
+  get projectAnnotations() {
+    let { projectAnnotations: e } = this.store;
+    if (!e)
+      throw new Error("Can't get projectAnnotations from DocsContext before they are initialized");
+    return e;
+  }
+  resolveAttachedModuleExportType(e) {
+    if (e === "story") {
+>>>>>>> main
       if (!this.primaryStory)
         throw new Error(
           "No primary story attached to this docs file, did you forget to use <Meta of={} />?"
@@ -44927,6 +50665,7 @@ CSF file?"
       throw new Error(
         "No CSF file attached to this docs file, did you forget to use <Meta of={} />?"
       );
+<<<<<<< HEAD
     let r = Array.from(this.attachedCSFFiles)[0];
     if (t === "meta")
       return { type: "meta", csfFile: r };
@@ -44956,6 +50695,37 @@ CSF file?"
     if (r.length && !r.includes(n.type)) {
       let i = n.type === "component" ? "component or unknown" : n.type;
       throw new Error(ee`Invalid value passed to the 'of' prop. The value was resolved to a '${i}' type but the only types for this block are: ${r.
+=======
+    let t = Array.from(this.attachedCSFFiles)[0];
+    if (e === "meta")
+      return { type: "meta", csfFile: t };
+    let { component: o } = t.meta;
+    if (!o)
+      throw new Error(
+        "Attached CSF file does not defined a component, did you forget to export one?"
+      );
+    return { type: "component", component: o };
+  }
+  resolveModuleExport(e) {
+    let t = this.exportsToCSFFile.get(e);
+    if (t)
+      return { type: "meta", csfFile: t };
+    let o = this.exportToStory.get(
+      nr(e) ? e.input : e
+    );
+    return o ? { type: "story", story: o } : { type: "component", component: e };
+  }
+  resolveOf(e, t = []) {
+    let o;
+    if (["component", "meta", "story"].includes(e)) {
+      let s = e;
+      o = this.resolveAttachedModuleExportType(s);
+    } else
+      o = this.resolveModuleExport(e);
+    if (t.length && !t.includes(o.type)) {
+      let s = o.type === "component" ? "component or unknown" : o.type;
+      throw new Error(_`Invalid value passed to the 'of' prop. The value was resolved to a '${s}' type but the only types for this block are: ${t.
+>>>>>>> main
       join(
         ", "
       )}.
@@ -44963,14 +50733,22 @@ CSF file?"
         - ... or vice versa?
         - Did you pass a story, CSF file or meta to the 'of' prop that is not indexed, ie. is not targeted by the 'stories' globs in the main configuration?`);
     }
+<<<<<<< HEAD
     switch (n.type) {
       case "component":
         return {
           ...n,
+=======
+    switch (o.type) {
+      case "component":
+        return {
+          ...o,
+>>>>>>> main
           projectAnnotations: this.projectAnnotations
         };
       case "meta":
         return {
+<<<<<<< HEAD
           ...n,
           preparedMeta: this.store.preparedMetaFromCSFFile({ csfFile: n.csfFile })
         };
@@ -44990,18 +50768,44 @@ var LS = class LS {
     this.store = r;
     this.entry = n;
     this.callbacks = i;
+=======
+          ...o,
+          preparedMeta: this.store.preparedMetaFromCSFFile({ csfFile: o.csfFile })
+        };
+      case "story":
+      default:
+        return o;
+    }
+  }
+};
+n(kn, "DocsContext");
+var me = kn;
+
+// src/preview-api/modules/preview-web/render/CsfDocsRender.ts
+var Ln = class Ln {
+  constructor(e, t, o, s) {
+    this.channel = e;
+    this.store = t;
+    this.entry = o;
+    this.callbacks = s;
+>>>>>>> main
     this.type = "docs";
     this.subtype = "csf";
     this.torndown = !1;
     this.disableKeyListeners = !1;
     this.preparing = !1;
+<<<<<<< HEAD
     this.id = n.id;
+=======
+    this.id = o.id;
+>>>>>>> main
   }
   isPreparing() {
     return this.preparing;
   }
   async prepare() {
     this.preparing = !0;
+<<<<<<< HEAD
     let { entryExports: t, csfFiles: r = [] } = await this.store.loadEntry(this.id);
     if (this.torndown)
       throw _n;
@@ -45059,18 +50863,82 @@ var FS = class FS {
     this.store = r;
     this.entry = n;
     this.callbacks = i;
+=======
+    let { entryExports: e, csfFiles: t = [] } = await this.store.loadEntry(this.id);
+    if (this.torndown)
+      throw Ae;
+    let { importPath: o, title: s } = this.entry, i = this.store.processCSFFileWithCache(
+      e,
+      o,
+      s
+    ), a = Object.keys(i.stories)[0];
+    this.story = this.store.storyFromCSFFile({ storyId: a, csfFile: i }), this.csfFiles = [i, ...t], this.preparing = !1;
+  }
+  isEqual(e) {
+    return !!(this.id === e.id && this.story && this.story === e.story);
+  }
+  docsContext(e) {
+    if (!this.csfFiles)
+      throw new Error("Cannot render docs before preparing");
+    let t = new me(
+      this.channel,
+      this.store,
+      e,
+      this.csfFiles
+    );
+    return this.csfFiles.forEach((o) => t.attachCSFFile(o)), t;
+  }
+  async renderToElement(e, t) {
+    if (!this.story || !this.csfFiles)
+      throw new Error("Cannot render docs before preparing");
+    let o = this.docsContext(t), { docs: s } = this.story.parameters || {};
+    if (!s)
+      throw new Error(
+        "Cannot render a story in viewMode=docs if `@storybook/addon-docs` is not installed"
+      );
+    let i = await s.renderer(), { render: a } = i, c = /* @__PURE__ */ n(async () => {
+      try {
+        await a(o, s, e), this.channel.emit(pr, this.id);
+      } catch (l) {
+        this.callbacks.showException(l);
+      }
+    }, "renderDocs");
+    return this.rerender = async () => c(), this.teardownRender = async ({ viewModeChanged: l }) => {
+      !l || !e || i.unmount(e);
+    }, c();
+  }
+  async teardown({ viewModeChanged: e } = {}) {
+    this.teardownRender?.({ viewModeChanged: e }), this.torndown = !0;
+  }
+};
+n(Ln, "CsfDocsRender");
+var qr = Ln;
+
+// src/preview-api/modules/preview-web/render/MdxDocsRender.ts
+var jn = class jn {
+  constructor(e, t, o, s) {
+    this.channel = e;
+    this.store = t;
+    this.entry = o;
+    this.callbacks = s;
+>>>>>>> main
     this.type = "docs";
     this.subtype = "mdx";
     this.torndown = !1;
     this.disableKeyListeners = !1;
     this.preparing = !1;
+<<<<<<< HEAD
     this.id = n.id;
+=======
+    this.id = o.id;
+>>>>>>> main
   }
   isPreparing() {
     return this.preparing;
   }
   async prepare() {
     this.preparing = !0;
+<<<<<<< HEAD
     let { entryExports: t, csfFiles: r = [] } = await this.store.loadEntry(this.id);
     if (this.torndown)
       throw _n;
@@ -45161,11 +51029,107 @@ var DS = class DS extends lo {
   // If initialization gets as far as the story index, this function runs.
   async initializeWithStoryIndex(r) {
     return await super.initializeWithStoryIndex(r), this.selectSpecifiedStory();
+=======
+    let { entryExports: e, csfFiles: t = [] } = await this.store.loadEntry(this.id);
+    if (this.torndown)
+      throw Ae;
+    this.csfFiles = t, this.exports = e, this.preparing = !1;
+  }
+  isEqual(e) {
+    return !!(this.id === e.id && this.exports && this.exports === e.exports);
+  }
+  docsContext(e) {
+    if (!this.csfFiles)
+      throw new Error("Cannot render docs before preparing");
+    return new me(
+      this.channel,
+      this.store,
+      e,
+      this.csfFiles
+    );
+  }
+  async renderToElement(e, t) {
+    if (!this.exports || !this.csfFiles || !this.store.projectAnnotations)
+      throw new Error("Cannot render docs before preparing");
+    let o = this.docsContext(t), { docs: s } = this.store.projectAnnotations.parameters || {};
+    if (!s)
+      throw new Error(
+        "Cannot render a story in viewMode=docs if `@storybook/addon-docs` is not installed"
+      );
+    let i = { ...s, page: this.exports.default }, a = await s.renderer(), { render: c } = a, l = /* @__PURE__ */ n(async () => {
+      try {
+        await c(o, i, e), this.channel.emit(pr, this.id);
+      } catch (p) {
+        this.callbacks.showException(p);
+      }
+    }, "renderDocs");
+    return this.rerender = async () => l(), this.teardownRender = async ({ viewModeChanged: p } = {}) => {
+      !p || !e || (a.unmount(e), this.torndown = !0);
+    }, l();
+  }
+  async teardown({ viewModeChanged: e } = {}) {
+    this.teardownRender?.({ viewModeChanged: e }), this.torndown = !0;
+  }
+};
+n(jn, "MdxDocsRender");
+var Br = jn;
+
+// src/preview-api/modules/preview-web/PreviewWithSelection.tsx
+var lu = globalThis;
+function cu(r) {
+  let e = r.composedPath && r.composedPath()[0] || r.target;
+  return /input|textarea/i.test(e.tagName) || e.getAttribute("contenteditable") !== null;
+}
+n(cu, "focusInInput");
+var Qi = "attached-mdx", pu = "unattached-mdx";
+function du({ tags: r }) {
+  return r?.includes(pu) || r?.includes(Qi);
+}
+n(du, "isMdxEntry");
+function Mn(r) {
+  return r.type === "story";
+}
+n(Mn, "isStoryRender");
+function uu(r) {
+  return r.type === "docs";
+}
+n(uu, "isDocsRender");
+function fu(r) {
+  return uu(r) && r.subtype === "csf";
+}
+n(fu, "isCsfDocsRender");
+var Un = class Un extends Me {
+  constructor(t, o, s, i) {
+    super(t, o, void 0, !1);
+    this.importFn = t;
+    this.getProjectAnnotations = o;
+    this.selectionStore = s;
+    this.view = i;
+    this.initialize();
+  }
+  setupListeners() {
+    super.setupListeners(), lu.onkeydown = this.onKeydown.bind(this), this.channel.on(eo, this.onSetCurrentStory.bind(this)), this.channel.on(
+    po, this.onUpdateQueryParams.bind(this)), this.channel.on(Qt, this.onPreloadStories.bind(this));
+  }
+  async setInitialGlobals() {
+    if (!this.storyStoreValue)
+      throw new V({ methodName: "setInitialGlobals" });
+    let { globals: t } = this.selectionStore.selectionSpecifier || {};
+    t && this.storyStoreValue.userGlobals.updateFromPersisted(t), this.emitGlobals();
+  }
+  // If initialization gets as far as the story index, this function runs.
+  async initializeWithStoryIndex(t) {
+    return await super.initializeWithStoryIndex(t), this.selectSpecifiedStory();
+>>>>>>> main
   }
   // Use the selection specifier to choose a story, then render it
   async selectSpecifiedStory() {
     if (!this.storyStoreValue)
+<<<<<<< HEAD
       throw new Ze({
+=======
+      throw new V({
+>>>>>>> main
         methodName: "selectSpecifiedStory"
       });
     if (this.selectionStore.selection) {
@@ -45176,6 +51140,7 @@ var DS = class DS extends lo {
       this.renderMissingStory();
       return;
     }
+<<<<<<< HEAD
     let { storySpecifier: r, args: n } = this.selectionStore.selectionSpecifier, i = this.storyStoreValue.storyIndex.entryFromSpecifier(r);
     if (!i) {
       r === "*" ? this.renderStoryLoadingException(r, new ns()) : this.renderStoryLoadingException(
@@ -45187,10 +51152,24 @@ var DS = class DS extends lo {
     let { id: s, type: a } = i;
     this.selectionStore.setSelection({ storyId: s, viewMode: a }), this.channel.emit(Cb, this.selectionStore.selection), this.channel.emit(ol,
     this.selectionStore.selection), await this.renderSelection({ persistedArgs: n });
+=======
+    let { storySpecifier: t, args: o } = this.selectionStore.selectionSpecifier, s = this.storyStoreValue.storyIndex.entryFromSpecifier(t);
+    if (!s) {
+      t === "*" ? this.renderStoryLoadingException(t, new Pr()) : this.renderStoryLoadingException(
+        t,
+        new Or({ storySpecifier: t.toString() })
+      );
+      return;
+    }
+    let { id: i, type: a } = s;
+    this.selectionStore.setSelection({ storyId: i, viewMode: a }), this.channel.emit(ao, this.selectionStore.selection), this.channel.emit(rt,
+    this.selectionStore.selection), await this.renderSelection({ persistedArgs: o });
+>>>>>>> main
   }
   // EVENT HANDLERS
   // This happens when a config file gets reloaded
   async onGetProjectAnnotationsChanged({
+<<<<<<< HEAD
     getProjectAnnotations: r
   }) {
     await super.onGetProjectAnnotationsChanged({ getProjectAnnotations: r }), this.selectionStore.selection && this.renderSelection();
@@ -45228,6 +51207,45 @@ var DS = class DS extends lo {
   }
   async onPreloadStories({ ids: r }) {
     await this.storeInitializationPromise, this.storyStoreValue && await Promise.allSettled(r.map((n) => this.storyStoreValue?.loadEntry(n)));
+=======
+    getProjectAnnotations: t
+  }) {
+    await super.onGetProjectAnnotationsChanged({ getProjectAnnotations: t }), this.selectionStore.selection && this.renderSelection();
+  }
+  // This happens when a glob gets HMR-ed
+  async onStoriesChanged({
+    importFn: t,
+    storyIndex: o
+  }) {
+    await super.onStoriesChanged({ importFn: t, storyIndex: o }), this.selectionStore.selection ? await this.renderSelection() : await this.
+    selectSpecifiedStory();
+  }
+  onKeydown(t) {
+    if (!this.storyRenders.find((o) => o.disableKeyListeners) && !cu(t)) {
+      let { altKey: o, ctrlKey: s, metaKey: i, shiftKey: a, key: c, code: l, keyCode: p } = t;
+      this.channel.emit(Zt, {
+        event: { altKey: o, ctrlKey: s, metaKey: i, shiftKey: a, key: c, code: l, keyCode: p }
+      });
+    }
+  }
+  async onSetCurrentStory(t) {
+    this.selectionStore.setSelection({ viewMode: "story", ...t }), await this.storeInitializationPromise, this.channel.emit(rt, this.selectionStore.
+    selection), this.renderSelection();
+  }
+  onUpdateQueryParams(t) {
+    this.selectionStore.setQueryParams(t);
+  }
+  async onUpdateGlobals({ globals: t }) {
+    let o = this.currentRender instanceof je && this.currentRender.story || void 0;
+    super.onUpdateGlobals({ globals: t, currentStory: o }), (this.currentRender instanceof Br || this.currentRender instanceof qr) && await this.
+    currentRender.rerender?.();
+  }
+  async onUpdateArgs({ storyId: t, updatedArgs: o }) {
+    super.onUpdateArgs({ storyId: t, updatedArgs: o });
+  }
+  async onPreloadStories({ ids: t }) {
+    await this.storeInitializationPromise, this.storyStoreValue && await Promise.allSettled(t.map((o) => this.storyStoreValue?.loadEntry(o)));
+>>>>>>> main
   }
   // RENDERING
   // We can either have:
@@ -45235,6 +51253,7 @@ var DS = class DS extends lo {
   //     in which case we render it to the root element, OR
   // - a story selected in "docs" viewMode,
   //     in which case we render the docsPage for that story
+<<<<<<< HEAD
   async renderSelection({ persistedArgs: r } = {}) {
     let { renderToCanvas: n } = this;
     if (!this.storyStoreValue || !n)
@@ -45326,12 +51345,106 @@ var DS = class DS extends lo {
     }
     kS(c) ? (Rt(!!c.story), this.storyRenders.push(c), this.currentRender.renderToElement(
       this.view.prepareForStory(c.story)
+=======
+  async renderSelection({ persistedArgs: t } = {}) {
+    let { renderToCanvas: o } = this;
+    if (!this.storyStoreValue || !o)
+      throw new V({ methodName: "renderSelection" });
+    let { selection: s } = this.selectionStore;
+    if (!s)
+      throw new Error("Cannot call renderSelection as no selection was made");
+    let { storyId: i } = s, a;
+    try {
+      a = await this.storyStoreValue.storyIdToEntry(i);
+    } catch (S) {
+      this.currentRender && await this.teardownRender(this.currentRender), this.renderStoryLoadingException(i, S);
+      return;
+    }
+    let c = this.currentSelection?.storyId !== i, l = this.currentRender?.type !== a.type;
+    a.type === "story" ? this.view.showPreparingStory({ immediate: l }) : this.view.showPreparingDocs({ immediate: l }), this.currentRender?.
+    isPreparing() && await this.teardownRender(this.currentRender);
+    let p;
+    a.type === "story" ? p = new je(
+      this.channel,
+      this.storyStoreValue,
+      o,
+      this.mainStoryCallbacks(i),
+      i,
+      "story"
+    ) : du(a) ? p = new Br(
+      this.channel,
+      this.storyStoreValue,
+      a,
+      this.mainStoryCallbacks(i)
+    ) : p = new qr(
+      this.channel,
+      this.storyStoreValue,
+      a,
+      this.mainStoryCallbacks(i)
+    );
+    let u = this.currentSelection;
+    this.currentSelection = s;
+    let d = this.currentRender;
+    this.currentRender = p;
+    try {
+      await p.prepare();
+    } catch (S) {
+      d && await this.teardownRender(d), S !== Ae && this.renderStoryLoadingException(i, S);
+      return;
+    }
+    let h = !c && d && !p.isEqual(d);
+    if (t && Mn(p) && (fe(!!p.story), this.storyStoreValue.args.updateFromPersisted(p.story, t)), d && !d.torndown && !c && !h && !l) {
+      this.currentRender = d, this.channel.emit(co, i), this.view.showMain();
+      return;
+    }
+    if (d && await this.teardownRender(d, { viewModeChanged: l }), u && (c || l) && this.channel.emit(oo, i), Mn(p)) {
+      fe(!!p.story);
+      let {
+        parameters: S,
+        initialArgs: m,
+        argTypes: T,
+        unmappedArgs: y,
+        initialGlobals: R,
+        userGlobals: x,
+        storyGlobals: g,
+        globals: b
+      } = this.storyStoreValue.getStoryContext(p.story);
+      this.channel.emit(io, {
+        id: i,
+        parameters: S,
+        initialArgs: m,
+        argTypes: T,
+        args: y
+      }), this.channel.emit(Ce, { userGlobals: x, storyGlobals: g, globals: b, initialGlobals: R });
+    } else {
+      let { parameters: S } = this.storyStoreValue.projectAnnotations, { initialGlobals: m, globals: T } = this.storyStoreValue.userGlobals;
+      if (this.channel.emit(Ce, {
+        globals: T,
+        initialGlobals: m,
+        storyGlobals: {},
+        userGlobals: T
+      }), fu(p) || p.entry.tags?.includes(Qi)) {
+        if (!p.csfFiles)
+          throw new Cr({ storyId: i });
+        ({ parameters: S } = this.storyStoreValue.preparedMetaFromCSFFile({
+          csfFile: p.csfFiles[0]
+        }));
+      }
+      this.channel.emit(Yt, {
+        id: i,
+        parameters: S
+      });
+    }
+    Mn(p) ? (fe(!!p.story), this.storyRenders.push(p), this.currentRender.renderToElement(
+      this.view.prepareForStory(p.story)
+>>>>>>> main
     )) : this.currentRender.renderToElement(
       this.view.prepareForDocs(),
       // This argument is used for docs, which is currently only compatible with HTMLElements
       this.renderStoryToElement.bind(this)
     );
   }
+<<<<<<< HEAD
   async teardownRender(r, { viewModeChanged: n = !1 } = {}) {
     this.storyRenders = this.storyRenders.filter((i) => i !== r), await r?.teardown?.({ viewModeChanged: n });
   }
@@ -45381,6 +51494,57 @@ var lV = /^[a-zA-Z0-9 _-]*$/, cV = /^-?[0-9]+(\.[0-9]+)?$/, $Se = /^#([a-f0-9]{3
 GS = /* @__PURE__ */ o((e = "", t) => e === null || e === "" || !lV.test(e) ? !1 : t == null || t instanceof Date || typeof t == "number" ||
 typeof t == "boolean" ? !0 : typeof t == "string" ? lV.test(t) || cV.test(t) || $Se.test(t) || dV.test(t) : Array.isArray(t) ? t.every((r) => GS(
 e, r)) : mt(t) ? Object.entries(t).every(([r, n]) => GS(r, n)) : !1, "validateArgs"), BSe = {
+=======
+  async teardownRender(t, { viewModeChanged: o = !1 } = {}) {
+    this.storyRenders = this.storyRenders.filter((s) => s !== t), await t?.teardown?.({ viewModeChanged: o });
+  }
+  // UTILITIES
+  mainStoryCallbacks(t) {
+    return {
+      showStoryDuringRender: /* @__PURE__ */ n(() => this.view.showStoryDuringRender(), "showStoryDuringRender"),
+      showMain: /* @__PURE__ */ n(() => this.view.showMain(), "showMain"),
+      showError: /* @__PURE__ */ n((o) => this.renderError(t, o), "showError"),
+      showException: /* @__PURE__ */ n((o) => this.renderException(t, o), "showException")
+    };
+  }
+  renderPreviewEntryError(t, o) {
+    super.renderPreviewEntryError(t, o), this.view.showErrorDisplay(o);
+  }
+  renderMissingStory() {
+    this.view.showNoPreview(), this.channel.emit(tt);
+  }
+  renderStoryLoadingException(t, o) {
+    I.error(o), this.view.showErrorDisplay(o), this.channel.emit(tt, t);
+  }
+  // renderException is used if we fail to render the story and it is uncaught by the app layer
+  renderException(t, o) {
+    let { name: s = "Error", message: i = String(o), stack: a } = o;
+    this.channel.emit(lo, { name: s, message: i, stack: a }), this.channel.emit(Pe, { newPhase: "errored", storyId: t }), this.view.showErrorDisplay(
+    o), I.error(`Error rendering story '${t}':`), I.error(o);
+  }
+  // renderError is used by the various app layers to inform the user they have done something
+  // wrong -- for instance returned the wrong thing from a story
+  renderError(t, { title: o, description: s }) {
+    I.error(`Error rendering story ${o}: ${s}`), this.channel.emit(no, { title: o, description: s }), this.channel.emit(Pe, { newPhase: "err\
+ored", storyId: t }), this.view.showErrorDisplay({
+      message: o,
+      stack: s
+    });
+  }
+};
+n(Un, "PreviewWithSelection");
+var Ue = Un;
+
+// src/preview-api/modules/preview-web/UrlStore.ts
+var Hr = ue(kt(), 1);
+
+// src/preview-api/modules/preview-web/parseArgsParam.ts
+var da = ue(kt(), 1);
+var pa = /^[a-zA-Z0-9 _-]*$/, ua = /^-?[0-9]+(\.[0-9]+)?$/, Uu = /^#([a-f0-9]{3,4}|[a-f0-9]{6}|[a-f0-9]{8})$/i, fa = /^(rgba?|hsla?)\(([0-9]{1,3}),\s?([0-9]{1,3})%?,\s?([0-9]{1,3})%?,?\s?([0-9](\.[0-9]{1,2})?)?\)$/i,
+Wn = /* @__PURE__ */ n((r = "", e) => r === null || r === "" || !pa.test(r) ? !1 : e == null || e instanceof Date || typeof e == "number" ||
+typeof e == "boolean" ? !0 : typeof e == "string" ? pa.test(e) || ua.test(e) || Uu.test(e) || fa.test(e) : Array.isArray(e) ? e.every((t) => Wn(
+r, t)) : $(e) ? Object.entries(e).every(([t, o]) => Wn(t, o)) : !1, "validateArgs"), Gu = {
+>>>>>>> main
   delimiter: ";",
   // we're parsing a single query param
   nesting: !0,
@@ -45388,6 +51552,7 @@ e, r)) : mt(t) ? Object.entries(t).every(([r, n]) => GS(r, n)) : !1, "validateAr
   arrayRepeatSyntax: "bracket",
   nestingSyntax: "js",
   // objects are encoded using dot notation
+<<<<<<< HEAD
   valueDeserializer(e) {
     if (e.startsWith("!")) {
       if (e === "!undefined")
@@ -45484,11 +51649,110 @@ var fo = WS;
 var zV = De(UV(), 1), GV = De(nb(), 1);
 var { document: dt } = k, HV = 100, YV = /* @__PURE__ */ ((s) => (s.MAIN = "MAIN", s.NOPREVIEW = "NOPREVIEW", s.PREPARING_STORY = "PREPARING\
 _STORY", s.PREPARING_DOCS = "PREPARING_DOCS", s.ERROR = "ERROR", s))(YV || {}), tx = {
+=======
+  valueDeserializer(r) {
+    if (r.startsWith("!")) {
+      if (r === "!undefined")
+        return;
+      if (r === "!null")
+        return null;
+      if (r === "!true")
+        return !0;
+      if (r === "!false")
+        return !1;
+      if (r.startsWith("!date(") && r.endsWith(")"))
+        return new Date(r.replaceAll(" ", "+").slice(6, -1));
+      if (r.startsWith("!hex(") && r.endsWith(")"))
+        return `#${r.slice(5, -1)}`;
+      let e = r.slice(1).match(fa);
+      if (e)
+        return r.startsWith("!rgba") || r.startsWith("!RGBA") ? `${e[1]}(${e[2]}, ${e[3]}, ${e[4]}, ${e[5]})` : r.startsWith("!hsla") || r.startsWith(
+        "!HSLA") ? `${e[1]}(${e[2]}, ${e[3]}%, ${e[4]}%, ${e[5]})` : r.startsWith("!rgb") || r.startsWith("!RGB") ? `${e[1]}(${e[2]}, ${e[3]}\
+, ${e[4]})` : `${e[1]}(${e[2]}, ${e[3]}%, ${e[4]}%)`;
+    }
+    return ua.test(r) ? Number(r) : r;
+  }
+}, $n = /* @__PURE__ */ n((r) => {
+  let e = r.split(";").map((t) => t.replace("=", "~").replace(":", "="));
+  return Object.entries((0, da.parse)(e.join(";"), Gu)).reduce((t, [o, s]) => Wn(o, s) ? Object.assign(t, { [o]: s }) : (j.warn(_`
+      Omitted potentially unsafe URL args.
+
+      More info: https://storybook.js.org/docs/writing-stories/args#setting-args-through-the-url
+    `), t), {});
+}, "parseArgsParam");
+
+// src/preview-api/modules/preview-web/UrlStore.ts
+var { history: ya, document: xe } = E;
+function qu(r) {
+  let e = (r || "").match(/^\/story\/(.+)/);
+  if (!e)
+    throw new Error(`Invalid path '${r}',  must start with '/story/'`);
+  return e[1];
+}
+n(qu, "pathToId");
+var ma = /* @__PURE__ */ n(({
+  selection: r,
+  extraParams: e
+}) => {
+  let t = xe?.location.search.slice(1), { path: o, selectedKind: s, selectedStory: i, ...a } = (0, Hr.parse)(t);
+  return `?${(0, Hr.stringify)({
+    ...a,
+    ...e,
+    ...r && { id: r.storyId, viewMode: r.viewMode }
+  })}`;
+}, "getQueryString"), Bu = /* @__PURE__ */ n((r) => {
+  if (!r)
+    return;
+  let e = ma({ selection: r }), { hash: t = "" } = xe.location;
+  xe.title = r.storyId, ya.replaceState({}, "", `${xe.location.pathname}${e}${t}`);
+}, "setPath"), Vu = /* @__PURE__ */ n((r) => r != null && typeof r == "object" && Array.isArray(r) === !1, "isObject"), Vr = /* @__PURE__ */ n(
+(r) => {
+  if (r !== void 0) {
+    if (typeof r == "string")
+      return r;
+    if (Array.isArray(r))
+      return Vr(r[0]);
+    if (Vu(r))
+      return Vr(
+        Object.values(r).filter(Boolean)
+      );
+  }
+}, "getFirstString"), Hu = /* @__PURE__ */ n(() => {
+  if (typeof xe < "u") {
+    let r = xe.location.search.slice(1), e = (0, Hr.parse)(r), t = typeof e.args == "string" ? $n(e.args) : void 0, o = typeof e.globals == "\
+string" ? $n(e.globals) : void 0, s = Vr(e.viewMode);
+    (typeof s != "string" || !s.match(/docs|story/)) && (s = "story");
+    let i = Vr(e.path), a = i ? qu(i) : Vr(e.id);
+    if (a)
+      return { storySpecifier: a, args: t, globals: o, viewMode: s };
+  }
+  return null;
+}, "getSelectionSpecifierFromPath"), Yn = class Yn {
+  constructor() {
+    this.selectionSpecifier = Hu();
+  }
+  setSelection(e) {
+    this.selection = e, Bu(this.selection);
+  }
+  setQueryParams(e) {
+    let t = ma({ extraParams: e }), { hash: o = "" } = xe.location;
+    ya.replaceState({}, "", `${xe.location.pathname}${t}${o}`);
+  }
+};
+n(Yn, "UrlStore");
+var Be = Yn;
+
+// src/preview-api/modules/preview-web/WebView.ts
+var $a = ue(Ha(), 1), Ya = ue(kt(), 1);
+var { document: z } = E, za = 100, Ka = /* @__PURE__ */ ((i) => (i.MAIN = "MAIN", i.NOPREVIEW = "NOPREVIEW", i.PREPARING_STORY = "PREPARING_\
+STORY", i.PREPARING_DOCS = "PREPARING_DOCS", i.ERROR = "ERROR", i))(Ka || {}), rs = {
+>>>>>>> main
   PREPARING_STORY: "sb-show-preparing-story",
   PREPARING_DOCS: "sb-show-preparing-docs",
   MAIN: "sb-show-main",
   NOPREVIEW: "sb-show-nopreview",
   ERROR: "sb-show-errordisplay"
+<<<<<<< HEAD
 }, rx = {
   centered: "sb-main-centered",
   fullscreen: "sb-main-fullscreen",
@@ -45501,6 +51765,20 @@ _STORY", s.PREPARING_DOCS = "PREPARING_DOCS", s.ERROR = "ERROR", s))(YV || {}), 
     if (typeof dt < "u") {
       let { __SPECIAL_TEST_PARAMETER__: t } = (0, GV.parse)(dt.location.search.slice(1));
       switch (t) {
+=======
+}, ts = {
+  centered: "sb-main-centered",
+  fullscreen: "sb-main-fullscreen",
+  padded: "sb-main-padded"
+}, Wa = new $a.default({
+  escapeXML: !0
+}), os = class os {
+  constructor() {
+    this.testing = !1;
+    if (typeof z < "u") {
+      let { __SPECIAL_TEST_PARAMETER__: e } = (0, Ya.parse)(z.location.search.slice(1));
+      switch (e) {
+>>>>>>> main
         case "preparing-story": {
           this.showPreparingStory(), this.testing = !0;
           break;
@@ -45514,6 +51792,7 @@ _STORY", s.PREPARING_DOCS = "PREPARING_DOCS", s.ERROR = "ERROR", s))(YV || {}), 
     }
   }
   // Get ready to render a story, returning the element to render to
+<<<<<<< HEAD
   prepareForStory(t) {
     return this.showStory(), this.applyLayout(t.parameters.layout), dt.documentElement.scrollTop = 0, dt.documentElement.scrollLeft = 0, this.
     storyRoot();
@@ -45556,11 +51835,56 @@ _STORY", s.PREPARING_DOCS = "PREPARING_DOCS", s.ERROR = "ERROR", s))(YV || {}), 
     s.length > 1 && ([n] = s, i = s.slice(1).join(`
 `).replace(/^\n/, "")), dt.getElementById("error-message").innerHTML = VV.toHtml(n), dt.getElementById("error-stack").innerHTML = VV.toHtml(
     i), this.showMode("ERROR");
+=======
+  prepareForStory(e) {
+    return this.showStory(), this.applyLayout(e.parameters.layout), z.documentElement.scrollTop = 0, z.documentElement.scrollLeft = 0, this.
+    storyRoot();
+  }
+  storyRoot() {
+    return z.getElementById("storybook-root");
+  }
+  prepareForDocs() {
+    return this.showMain(), this.showDocs(), this.applyLayout("fullscreen"), z.documentElement.scrollTop = 0, z.documentElement.scrollLeft =
+    0, this.docsRoot();
+  }
+  docsRoot() {
+    return z.getElementById("storybook-docs");
+  }
+  applyLayout(e = "padded") {
+    if (e === "none") {
+      z.body.classList.remove(this.currentLayoutClass), this.currentLayoutClass = null;
+      return;
+    }
+    this.checkIfLayoutExists(e);
+    let t = ts[e];
+    z.body.classList.remove(this.currentLayoutClass), z.body.classList.add(t), this.currentLayoutClass = t;
+  }
+  checkIfLayoutExists(e) {
+    ts[e] || I.warn(
+      _`
+          The desired layout: ${e} is not a valid option.
+          The possible options are: ${Object.keys(ts).join(", ")}, none.
+        `
+    );
+  }
+  showMode(e) {
+    clearTimeout(this.preparingTimeout), Object.keys(Ka).forEach((t) => {
+      t === e ? z.body.classList.add(rs[t]) : z.body.classList.remove(rs[t]);
+    });
+  }
+  showErrorDisplay({ message: e = "", stack: t = "" }) {
+    let o = e, s = t, i = e.split(`
+`);
+    i.length > 1 && ([o] = i, s = i.slice(1).join(`
+`).replace(/^\n/, "")), z.getElementById("error-message").innerHTML = Wa.toHtml(o), z.getElementById("error-stack").innerHTML = Wa.toHtml(s),
+    this.showMode("ERROR");
+>>>>>>> main
   }
   showNoPreview() {
     this.testing || (this.showMode("NOPREVIEW"), this.storyRoot()?.setAttribute("hidden", "true"), this.docsRoot()?.setAttribute("hidden", "\
 true"));
   }
+<<<<<<< HEAD
   showPreparingStory({ immediate: t = !1 } = {}) {
     clearTimeout(this.preparingTimeout), t ? this.showMode("PREPARING_STORY") : this.preparingTimeout = setTimeout(
       () => this.showMode("PREPARING_STORY"),
@@ -45570,6 +51894,17 @@ true"));
   showPreparingDocs({ immediate: t = !1 } = {}) {
     clearTimeout(this.preparingTimeout), t ? this.showMode("PREPARING_DOCS") : this.preparingTimeout = setTimeout(() => this.showMode("PREPA\
 RING_DOCS"), HV);
+=======
+  showPreparingStory({ immediate: e = !1 } = {}) {
+    clearTimeout(this.preparingTimeout), e ? this.showMode("PREPARING_STORY") : this.preparingTimeout = setTimeout(
+      () => this.showMode("PREPARING_STORY"),
+      za
+    );
+  }
+  showPreparingDocs({ immediate: e = !1 } = {}) {
+    clearTimeout(this.preparingTimeout), e ? this.showMode("PREPARING_DOCS") : this.preparingTimeout = setTimeout(() => this.showMode("PREPA\
+RING_DOCS"), za);
+>>>>>>> main
   }
   showMain() {
     this.showMode("MAIN");
@@ -45581,6 +51916,7 @@ RING_DOCS"), HV);
     this.docsRoot().setAttribute("hidden", "true"), this.storyRoot().removeAttribute("hidden");
   }
   showStoryDuringRender() {
+<<<<<<< HEAD
     dt.body.classList.add(tx.MAIN);
   }
 };
@@ -45601,6 +51937,28 @@ var Za = ox;
 
 // src/preview-api/modules/preview-web/simulate-pageload.ts
 var { document: yo } = k, xxe = [
+=======
+    z.body.classList.add(rs.MAIN);
+  }
+};
+n(os, "WebView");
+var He = os;
+
+// src/preview-api/modules/preview-web/PreviewWeb.tsx
+var ns = class ns extends Ue {
+  constructor(t, o) {
+    super(t, o, new Be(), new He());
+    this.importFn = t;
+    this.getProjectAnnotations = o;
+    E.__STORYBOOK_PREVIEW__ = this;
+  }
+};
+n(ns, "PreviewWeb");
+var Wr = ns;
+
+// src/preview-api/modules/preview-web/simulate-pageload.ts
+var { document: ze } = E, wf = [
+>>>>>>> main
   "application/javascript",
   "application/ecmascript",
   "application/x-ecmascript",
@@ -45619,6 +51977,7 @@ var { document: yo } = k, xxe = [
   "text/x-javascript",
   // Support modern javascript
   "module"
+<<<<<<< HEAD
 ], Cxe = "script", WV = "scripts-root";
 function Qa() {
   let e = yo.createEvent("Event");
@@ -45930,4 +52289,95 @@ o(Fxe, "setup");
 Fxe();
 export {
   Fxe as setup
+=======
+], _f = "script", Xa = "scripts-root";
+function $r() {
+  let r = ze.createEvent("Event");
+  r.initEvent("DOMContentLoaded", !0, !0), ze.dispatchEvent(r);
+}
+n($r, "simulateDOMContentLoaded");
+function Cf(r, e, t) {
+  let o = ze.createElement("script");
+  o.type = r.type === "module" ? "module" : "text/javascript", r.src ? (o.onload = e, o.onerror = e, o.src = r.src) : o.textContent = r.innerText,
+  t ? t.appendChild(o) : ze.head.appendChild(o), r.parentNode.removeChild(r), r.src || e();
+}
+n(Cf, "insertScript");
+function Ja(r, e, t = 0) {
+  r[t](() => {
+    t++, t === r.length ? e() : Ja(r, e, t);
+  });
+}
+n(Ja, "insertScriptsSequentially");
+function ss(r) {
+  let e = ze.getElementById(Xa);
+  e ? e.innerHTML = "" : (e = ze.createElement("div"), e.id = Xa, ze.body.appendChild(e));
+  let t = Array.from(r.querySelectorAll(_f));
+  if (t.length) {
+    let o = [];
+    t.forEach((s) => {
+      let i = s.getAttribute("type");
+      (!i || wf.includes(i)) && o.push((a) => Cf(s, a, e));
+    }), o.length && Ja(o, $r, void 0);
+  } else
+    $r();
+}
+n(ss, "simulatePageLoad");
+
+// src/preview/globals/runtime.ts
+var Qa = {
+  "@storybook/global": Ht,
+  "storybook/internal/channels": br,
+  "@storybook/channels": br,
+  "@storybook/core/channels": br,
+  "storybook/internal/client-logger": mr,
+  "@storybook/client-logger": mr,
+  "@storybook/core/client-logger": mr,
+  "storybook/internal/core-events": ge,
+  "@storybook/core-events": ge,
+  "@storybook/core/core-events": ge,
+  "storybook/internal/preview-errors": kr,
+  "@storybook/core-events/preview-errors": kr,
+  "@storybook/core/preview-errors": kr,
+  "storybook/internal/preview-api": Yr,
+  "@storybook/preview-api": Yr,
+  "@storybook/core/preview-api": Yr,
+  "storybook/internal/types": Tr,
+  "@storybook/types": Tr,
+  "@storybook/core/types": Tr
+};
+
+// src/preview/utils.ts
+var el = ue(Za(), 1);
+var ls;
+function Pf() {
+  return ls || (ls = new el.default(E.navigator?.userAgent).getBrowserInfo()), ls;
+}
+n(Pf, "getBrowserInfo");
+function rl(r) {
+  return r.browserInfo = Pf(), r;
+}
+n(rl, "prepareForTelemetry");
+
+// src/preview/runtime.ts
+function Of(r) {
+  let e = r.error || r;
+  e.fromStorybook && E.sendTelemetryError(e);
+}
+n(Of, "errorListener");
+function If({ reason: r }) {
+  r.fromStorybook && E.sendTelemetryError(r);
+}
+n(If, "unhandledRejectionListener");
+function Ff() {
+  cs.forEach((r) => {
+    E[yo[r]] = Qa[r];
+  }), E.sendTelemetryError = (r) => {
+    E.__STORYBOOK_ADDONS_CHANNEL__.emit(uo, rl(r));
+  }, E.addEventListener("error", Of), E.addEventListener("unhandledrejection", If);
+}
+n(Ff, "setup");
+Ff();
+export {
+  Ff as setup
+>>>>>>> main
 };
