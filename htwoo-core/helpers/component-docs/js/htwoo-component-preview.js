@@ -13,6 +13,7 @@ class HtwooComponentPreview extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this.stylesLoaded = false;
   }
 
   static get observedAttributes() {
@@ -21,25 +22,23 @@ class HtwooComponentPreview extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    const patternPath = this.getAttribute('pattern');
-    if (patternPath) {
-      this.loadComponent(patternPath);
-    }
+    this.loadStyles().then(() => {
+      const patternPath = this.getAttribute('pattern');
+      if (patternPath) {
+        this.loadComponent(patternPath);
+      }
+    });
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'pattern' && oldValue !== newValue && newValue) {
+    if (name === 'pattern' && oldValue !== newValue && newValue && this.stylesLoaded) {
       this.loadComponent(newValue);
     }
   }
 
   render() {
     this.shadowRoot.innerHTML = `
-      <!-- Load hTWOo Core CSS inside shadow DOM for style isolation -->
-      <link rel="stylesheet" href="/htwoo-core/css/style.css">
-      <link rel="stylesheet" href="/htwoo-core/css/pattern-scaffolding.css">
-
-      <style>
+      <style id="base-styles">
         :host {
           display: block;
           padding: 2rem;
@@ -94,6 +93,42 @@ class HtwooComponentPreview extends HTMLElement {
         <div class="loading-indicator">Loading component...</div>
       </div>
     `;
+  }
+
+  async loadStyles() {
+    try {
+      // Fetch the main hTWOo CSS and transform :root to :host for Shadow DOM compatibility
+      const [styleResponse, scaffoldResponse] = await Promise.all([
+        fetch('/htwoo-core/css/style.css'),
+        fetch('/htwoo-core/css/pattern-scaffolding.css')
+      ]);
+
+      if (styleResponse.ok) {
+        let styleCSS = await styleResponse.text();
+        // Transform :root to :host for Shadow DOM - CSS custom properties need this
+        styleCSS = styleCSS.replace(/:root\s*\{/g, ':host {');
+
+        const styleEl = document.createElement('style');
+        styleEl.id = 'htwoo-styles';
+        styleEl.textContent = styleCSS;
+        this.shadowRoot.insertBefore(styleEl, this.shadowRoot.getElementById('base-styles'));
+      }
+
+      if (scaffoldResponse.ok) {
+        let scaffoldCSS = await scaffoldResponse.text();
+        scaffoldCSS = scaffoldCSS.replace(/:root\s*\{/g, ':host {');
+
+        const scaffoldEl = document.createElement('style');
+        scaffoldEl.id = 'scaffold-styles';
+        scaffoldEl.textContent = scaffoldCSS;
+        this.shadowRoot.insertBefore(scaffoldEl, this.shadowRoot.getElementById('base-styles'));
+      }
+
+      this.stylesLoaded = true;
+    } catch (error) {
+      console.error('Error loading hTWOo styles:', error);
+      this.stylesLoaded = true; // Continue anyway
+    }
   }
 
   async loadComponent(patternPath) {
