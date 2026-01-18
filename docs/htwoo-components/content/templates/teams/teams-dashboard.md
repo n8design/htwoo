@@ -356,12 +356,12 @@ The Teams Dashboard Template consists of:
 - **Teams Mobile**: Mobile-optimized dashboard layouts
 
 ### Core Components
-- [Teams Dashboard Card](../../molecules/cards-elements/teams-dashboard-card.html) - Individual card component
-- [Teams Toolbar](../../molecules/menus/teams-toolbar.html) - Dashboard toolbar integration
+- [Teams Dashboard Card](/components/../molecules/cards-elements/teams-dashboard-card.html/) - Individual card component
+- [Teams Toolbar](/components/../molecules/menus/teams-toolbar.html/) - Dashboard toolbar integration
 
 ### Layout Components
-- [Teams Splash Screen](./teams-splash-screen.html) - Welcome and onboarding screens
-- [Quick Links Grid](../../organism/quick-links-grid/) - Alternative grid layouts
+- [Teams Splash Screen](/components/templates/teams-splash-screen.html/) - Welcome and onboarding screens
+- [Quick Links Grid](/components/../organism/quick-links-grid/) - Alternative grid layouts
 
 ### Integration Components
 - Microsoft Teams Apps - Teams application integration

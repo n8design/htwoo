@@ -7,7 +7,7 @@
     "subcategory": "avatar",
     "href": "/components/atoms/avatar/avatar/",
     "content": "This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.\n\n   Supported Sizes:\n\n  8px - .hoo-avatar-8\n  16px - .hoo-avatar-16\n  24px - .hoo-avatar-24\n  32px - .hoo-avatar-32\n  40px - .hoo-avatar-40\n  48px - .hoo-avatar-48\n  64px - .hoo-avatar-64\n  72px - .hoo-avatar-72\n  96px - .hoo-avatar-96\n\n    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/avatar\n\n  SCSS Partial Location  \\\n /src/st",
-    "variantCount": 8
+    "variantCount": 0
   },
   {
     "id": "atoms-avatar-presence-all",
@@ -90,16 +90,6 @@
     "variantCount": 0
   },
   {
-    "id": "atoms-buttons-button-group",
-    "title": "Button Group",
-    "description": "A collection of related buttons presented as a unified interface element. Button groups provide visual cohesion for related actions while maintaining clear separation between individual button functio",
-    "category": "atoms",
-    "subcategory": "buttons",
-    "href": "/components/atoms/buttons/button-group/",
-    "content": "  Button Group\n\nA collection of related buttons presented as a unified interface element. Button groups provide visual cohesion for related actions while maintaining clear separation between individual button functions and states.\n\n   Overview\n\nThe Button Group component organizes multiple buttons into a cohesive unit, commonly used for related actions, toggle states, or segmented controls. It provides consistent spacing, alignment, and visual treatment while preserving individual button accessi",
-    "variantCount": 0
-  },
-  {
     "id": "atoms-buttons-button-hyperlink-primary",
     "title": "Hyperlink Primary",
     "description": "Primary hyperlink buttons combine the prominent styling of primary buttons with the functionality of hyperlinks (`<a>` tags), allowing navigation to other pages while highlighting the link as a primar",
@@ -167,7 +157,7 @@
     "subcategory": "buttons",
     "href": "/components/atoms/buttons/button-pivot/",
     "content": "    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/buttons\n\n   ",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-buttons-button-primary-icon-reversed",
@@ -200,16 +190,6 @@
     "variantCount": 0
   },
   {
-    "id": "atoms-buttons-button-secondary",
-    "title": "Secondary",
-    "description": "Note: The standard button (`.hoo-button`) serves as the secondary button in this design system. For a more prominent button, use the primary button (`.hoo-button-primary`).",
-    "category": "atoms",
-    "subcategory": "buttons",
-    "href": "/components/atoms/buttons/button-secondary/",
-    "content": "Note: The standard button ( .hoo-button ) serves as the secondary button in this design system. For a more prominent button, use the primary button ( .hoo-button-primary ).\n\nTo disable this button simply add the  disable=\"true\"  as well as the  aria-disabled=\"true\"  to it.\n\n   Supported States:\n\n  Default - Normal button state\n  Hover - Mouse over state\n  Active - Pressed state\n  Focus - Focused through keyboard navigation\n  Disabled - Non-interactive state\n\n   ",
-    "variantCount": 0
-  },
-  {
     "id": "atoms-buttons-button-split-primary",
     "title": "Primary Split Button",
     "description": "The Primary Split Button combines a primary action button with a dropdown menu trigger, allowing users to access the main action directly or choose from related actions via the dropdown.",
@@ -217,7 +197,7 @@
     "subcategory": "buttons",
     "href": "/components/atoms/buttons/button-split-primary/",
     "content": "  Primary Split Button\n\nThe Primary Split Button combines a primary action button with a dropdown menu trigger, allowing users to access the main action directly or choose from related actions via the dropdown.\n\n   Overview\n\nSplit buttons provide dual functionality - immediate access to a primary action while offering additional related options through a dropdown menu. The primary button side triggers the main action, while the dropdown arrow reveals secondary actions.\n\n   Features\n\n-   Primary ",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-buttons-button-split-standard",
@@ -227,7 +207,7 @@
     "subcategory": "buttons",
     "href": "/components/atoms/buttons/button-split-standard/",
     "content": "    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/buttons\n\n   ",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-buttons-button-standard-icon-reversed",
@@ -257,7 +237,7 @@
     "subcategory": "buttons",
     "href": "/components/atoms/buttons/button-standard/",
     "content": "Standard button is the default button style in the HTWOO UI library. It provides a neutral appearance that can be used for most general actions.\n\nTo disable this button simply add the  disable=\"true\"  as well as the  aria-disabled=\"true\"  to it.\n\n   Supported States:\n\n  Default - Normal button state\n  Hover - Mouse over state\n  Active - Pressed state\n  Focus - Focused through keyboard navigation\n  Disabled - Non-interactive state\n\n    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-buttons-buttons-disabled",
@@ -270,16 +250,6 @@
     "variantCount": 0
   },
   {
-    "id": "atoms-buttons-buttons",
-    "title": "Buttons",
-    "description": "The HTWOO UI library provides a versatile set of button components for various user interactions. These buttons support different styles, states, and variations.",
-    "category": "atoms",
-    "subcategory": "buttons",
-    "href": "/components/atoms/buttons/buttons/",
-    "content": "The HTWOO UI library provides a versatile set of button components for various user interactions. These buttons support different styles, states, and variations.\n\n   Button Types\n\n  Standard - Base button style (.hoo-button)\n  Primary - Prominent button for main actions (.hoo-button-primary)\n  Compound - Multi-line button with description (.hoo-buttoncomp)\n  Primary Compound - Multi-line primary button (.hoo-buttoncomp-primary)\n\n   Supported States\n\n  Default - Normal button state\n  Hover - Mous",
-    "variantCount": 0
-  },
-  {
     "id": "atoms-buttons-menu-flyouts",
     "title": "Flyout menu style",
     "description": "**Main Component**\\ @n8d/htwoo-core/components/buttons",
@@ -287,86 +257,6 @@
     "subcategory": "buttons",
     "href": "/components/atoms/buttons/menu-flyouts/",
     "content": "    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/buttons\n\n   ",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-date-time-inputs",
-    "title": "Date and Time Inputs",
-    "description": "HTWOO UI provides a range of date and time input elements for collecting temporal data in forms.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/date-time-inputs/",
-    "content": "  Date and Time Inputs\n\nHTWOO UI provides a range of date and time input elements for collecting temporal data in forms.\n\n   Overview\n\nDate and time inputs enable users to input chronological information in a structured format. These specialized input types provide built-in validation and native date/time pickers in most browsers, improving the user experience for temporal data entry.\n\n   Date Input\n\nStandard date picker for selecting a specific day.\n\n   html\n<label for=\"date-input\">Select a dat",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-file-input",
-    "title": "File Input",
-    "description": "HTWOO UI provides a file input component for uploading files in forms.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/file-input/",
-    "content": "  File Input\n\nHTWOO UI provides a file input component for uploading files in forms.\n\n   Overview\n\nThe file input component allows users to select and upload files from their device. It supports both single and multiple file selection and can be configured to accept specific file types.\n\n   Basic File Input\n\nStandard file input for selecting a single file.\n\n   html\n<div class=\"hoo-file-upload\">\n  <label for=\"file-input\">Choose a file</label>\n  <input type=\"file\" id=\"file-input\" name=\"file-input\"",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-form-validation",
-    "title": "Form Validation",
-    "description": "HTWOO UI provides validation states and messaging components to communicate input requirements and errors to users.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/form-validation/",
-    "content": "  Form Validation\n\nHTWOO UI provides validation states and messaging components to communicate input requirements and errors to users.\n\n   Overview\n\nForm validation helps users input data correctly by providing clear feedback about validation requirements and errors. HTWOO UI includes styling for both validation states and validation messages to guide users through form completion.\n\n   Validation States\n\nHTWOO form elements support the following validation states:\n\n    Invalid State\n\nIndicates t",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-prefixed-suffixed-inputs",
-    "title": "Prefixed & Suffixed Inputs",
-    "description": "HTWOO UI provides input components with prefixes and suffixes for displaying additional context or units with form inputs.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/prefixed-suffixed-inputs/",
-    "content": "  Prefixed & Suffixed Inputs\n\nHTWOO UI provides input components with prefixes and suffixes for displaying additional context or units with form inputs.\n\n   Overview\n\nPrefixed and suffixed inputs enhance text fields with additional context, units, or icons that help users understand the expected input format or provide supplementary information. These components maintain the same functionality as standard text inputs while adding visual enhancements.\n\n   Prefixed Input\n\nInput with content (text ",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-search-input",
-    "title": "Search Input",
-    "description": "HTWOO UI provides a specialized search input component for search functionality in forms and interfaces.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/search-input/",
-    "content": "  Search Input\n\nHTWOO UI provides a specialized search input component for search functionality in forms and interfaces.\n\n   Overview\n\nThe search input component is designed specifically for search functionality, featuring a distinct visual appearance with search icon and clear button. It enhances the user experience by making search fields immediately recognizable and easier to use.\n\n   Basic Search Input\n\n   html\n<div class=\"hoo-search\">\n  <input type=\"search\" id=\"search-input\" class=\"hoo-sear",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-select-dropdowns",
-    "title": "Select Dropdowns",
-    "description": "HTWOO UI provides select dropdown components for choosing from a list of options in forms.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/select-dropdowns/",
-    "content": "  Select Dropdowns\n\nHTWOO UI provides select dropdown components for choosing from a list of options in forms.\n\n   Overview\n\nSelect dropdowns allow users to choose one option (or multiple options) from a predefined list. They save space in forms by showing only the currently selected option until the user interacts with the element.\n\n   Basic Select Dropdown\n\nThe standard select dropdown for single option selection.\n\n   html\n<label for=\"basic-select\">Choose an option</label>\n<select class=\"hoo-s",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-selection-controls",
-    "title": "Selection Controls",
-    "description": "HTWOO UI provides a set of selection control elements for choosing options in forms, including checkboxes, radio buttons, and toggle switches.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/selection-controls/",
-    "content": "  Selection Controls\n\nHTWOO UI provides a set of selection control elements for choosing options in forms, including checkboxes, radio buttons, and toggle switches.\n\n   Overview\n\nSelection controls allow users to select from predefined options. Each type of control serves different purposes depending on the selection behavior needed: multiple selection (checkboxes), single selection from a set (radio buttons), or binary on/off states (toggle switches).\n\n   Checkbox\n\nCheckboxes allow users to sel",
-    "variantCount": 0
-  },
-  {
-    "id": "atoms-forms-text-inputs",
-    "title": "Text Input Elements",
-    "description": "HTWOO UI provides a variety of text input elements for collecting different types of text-based data from users.",
-    "category": "atoms",
-    "subcategory": "forms",
-    "href": "/components/atoms/forms/text-inputs/",
-    "content": "  Text Input Elements\n\nHTWOO UI provides a variety of text input elements for collecting different types of text-based data from users.\n\n   Overview\n\nText input elements are the foundation of form interfaces, allowing users to enter various types of text data. HTWOO UI offers a consistent styling approach across different specialized text inputs, ensuring a cohesive user experience while providing the right input type for each data need.\n\n   Text Input Types\n\n    Standard Text Input\n\nThe basic t",
     "variantCount": 0
   },
   {
@@ -410,16 +300,6 @@
     "variantCount": 0
   },
   {
-    "id": "atoms-input-INPUT-OPTIMIZATION",
-    "title": "INPUT-OPTIMIZATION",
-    "description": "This document describes the approach used to optimize the input components' data structure in the HTWOO-Core project.",
-    "category": "atoms",
-    "subcategory": "input",
-    "href": "/components/atoms/input/INPUT-OPTIMIZATION/",
-    "content": "  Input Component Data Optimization\n\nThis document describes the approach used to optimize the input components' data structure in the HTWOO-Core project.\n\n   Key Optimizations\n\n1.   Centralized Option Categories  \n   - Created reusable option categories for select components in the global  htwoo-input.json  file\n   - Removed duplicate option entries across the codebase\n   - Organized options by logical categories (fruits, vegetables, etc.)\n\n2.   Data Reference System  \n   - Added a  reference.j",
-    "variantCount": 0
-  },
-  {
     "id": "atoms-input-checkbox",
     "title": "Checkbox",
     "description": "Checkboxes allow users to select one or more items from a set of options.",
@@ -427,7 +307,7 @@
     "subcategory": "input",
     "href": "/components/atoms/input/checkbox/",
     "content": "  Checkbox\n\nCheckboxes allow users to select one or more items from a set of options.\n\n   Overview\n\nCheckboxes are selection controls that let users select multiple options from a set. They appear as squares that are filled when selected, and can be toggled on and off by the user.\n\n   Usage\n\nCheckboxes should be used when:\n  Multiple selection is allowed from a list of options\n  A single binary option needs to be toggled on or off\n  Independent options need to be selected\n\n   States\n\n    Uncheck",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-input-input-color",
@@ -607,7 +487,7 @@
     "subcategory": "input",
     "href": "/components/atoms/input/input-text/",
     "content": "  Text Input\n\nThe standard text input field used for single-line text entry in forms.\n\n   Overview\n\nText inputs are the most common form elements used for collecting user data in a single line. They allow users to enter alphanumeric information and can be customized for different validation requirements.\n\n   Usage\n\nText inputs should be used when:\n  The expected input is a single line of text\n  No special formatting or validation is required\n  A simple string value is needed\n\n   Variants\n\nThe te",
-    "variantCount": 1
+    "variantCount": 0
   },
   {
     "id": "atoms-input-input-textarea",
@@ -637,7 +517,7 @@
     "subcategory": "input",
     "href": "/components/atoms/input/label/",
     "content": "  Form Label\n\nLabels provide text descriptions for form inputs, ensuring users understand the purpose of each field.\n\n   Overview\n\nForm labels are essential for usability and accessibility, giving users clear information about what data is expected in an input field. They establish a programmatic connection between the label text and the form control.\n\n   Usage\n\nLabels should be used:\n  For every input field in a form\n  With appropriate text that clearly describes the purpose of the field\n  With",
-    "variantCount": 2
+    "variantCount": 0
   },
   {
     "id": "atoms-input-legend",
@@ -760,16 +640,6 @@
     "variantCount": 0
   },
   {
-    "id": "atoms-loading-progress-bar",
-    "title": "Progress Bar",
-    "description": "A linear indicator that shows the progress or loading state of an operation.",
-    "category": "atoms",
-    "subcategory": "loading",
-    "href": "/components/atoms/loading/progress-bar/",
-    "content": "  Progress Bar\n\nA linear indicator that shows the progress or loading state of an operation.\n\n   Overview\n\nThe progress bar is a horizontal visual indicator that shows the percentage completion of an operation. It can be used both for determinate progress (when the completion percentage is known) and indeterminate loading states (when the duration is unknown).\n\n   Usage\n\nProgress bars should be used when:\n  An operation's completion percentage can be determined\n  Users need to understand how muc",
-    "variantCount": 0
-  },
-  {
     "id": "atoms-loading-shimmer-circle",
     "title": "Shimmer Circle",
     "description": "A circular shimmer placeholder for avatar, icon, or circular image content that's still loading.",
@@ -787,7 +657,7 @@
     "subcategory": "loading",
     "href": "/components/atoms/loading/shimmer-img/",
     "content": "  Shimmer Image\n\nA placeholder for image content that's still loading, displayed with a shimmer effect.\n\n   Overview\n\nThe shimmer image provides an animated loading state for image elements. It uses a transparent placeholder image with CSS classes to create a shimmer effect, maintaining layout consistency while the actual image is loading.\n\n   Usage\n\nShimmer images should be used when:\n  Loading actual image content that may take time to fetch\n  Maintaining layout stability during image loading\n",
-    "variantCount": 3
+    "variantCount": 0
   },
   {
     "id": "atoms-loading-shimmer-row",
@@ -987,7 +857,7 @@
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip/",
     "content": "   Overview\nThe Basic Tooltip component provides additional information or context when a user hovers over or focuses on an interactive element. Tooltips help improve usability without cluttering the interface with permanently visible help text.\n\n   Usage\n\nThe tooltip component should be used with interactive elements to provide additional context. The tooltip requires both the outer container ( hoo-tooltip ) with positioning class and the inner content container ( hoo-tooltip-content ).\n\nExampl",
-    "variantCount": 12
+    "variantCount": 0
   },
   {
     "id": "atoms-tooltip-tooltips",
@@ -1117,7 +987,7 @@
     "subcategory": "avatar-with-presence",
     "href": "/components/molecules/avatar-with-presence/avatar-presence/",
     "content": "   Overview\n\nThe Avatar with Presence component combines a user avatar with a status indicator to show the user's availability. This is the default 128px size variant.\n\n   Usage\n\nThe Avatar with Presence component should be used in interfaces where it's important to display both a user's image and their current status. Common use cases include:\n\n- User profiles\n- Chat and messaging interfaces\n- Team member directories\n- Comment sections\n- Collaboration tools\n\n   Features\n\n- Displays user image i",
-    "variantCount": 8
+    "variantCount": 0
   },
   {
     "id": "molecules-avatar-with-presence-avatar-showcase",
@@ -1220,16 +1090,6 @@
     "variantCount": 0
   },
   {
-    "id": "molecules-cards-elements-teams-dashboard-card",
-    "title": "Teams Dashboard Card",
-    "description": "A specialized card component designed for Microsoft Teams dashboard layouts. The Teams Dashboard Card provides a clean, structured container for displaying dashboard content with consistent spacing, e",
-    "category": "molecules",
-    "subcategory": "cards-elements",
-    "href": "/components/molecules/cards-elements/teams-dashboard-card/",
-    "content": "  Teams Dashboard Card\n\nA specialized card component designed for Microsoft Teams dashboard layouts. The Teams Dashboard Card provides a clean, structured container for displaying dashboard content with consistent spacing, elevation, and Teams-inspired visual design.\n\n   Overview\n\nThe Teams Dashboard Card is a molecular component that creates visually cohesive content containers for Teams-style dashboards. It combines modern card design principles with Microsoft Teams aesthetics to create engagi",
-    "variantCount": 0
-  },
-  {
     "id": "molecules-dialogs-dialog-content",
     "title": "Dialog Content",
     "description": "The Dialog Content component provides a consistent container for the main content area within dialogs. It manages spacing, overflow, and presentation of information within dialog components.",
@@ -1307,16 +1167,6 @@
     "subcategory": "forms",
     "href": "/components/molecules/forms/fieldset/",
     "content": "  Fieldset\n\nA semantic HTML fieldset container that groups related form controls together with an optional legend. Provides accessible grouping of form fields with consistent styling and support for various visual states.\n\n   Overview\n\nThe fieldset component provides a semantic way to group related form controls, improving both accessibility and visual organization. It wraps multiple form fields with proper ARIA semantics and supports various styling modifiers for different use cases.\n\n   Featur",
-    "variantCount": 0
-  },
-  {
-    "id": "molecules-forms-form-layout",
-    "title": "Form Layout Components",
-    "description": "HTWOO UI provides layout components for organizing form elements into logical structures.",
-    "category": "molecules",
-    "subcategory": "forms",
-    "href": "/components/molecules/forms/form-layout/",
-    "content": "  Form Layout Components\n\nHTWOO UI provides layout components for organizing form elements into logical structures.\n\n   Overview\n\nForm layout components help organize form elements into cohesive groups and sections. These components improve the user experience by creating visual hierarchy, grouping related fields, and providing a consistent structure for form interaction.\n\n   Field Component\n\nThe field component is a container for individual form elements and their associated labels and messagin",
     "variantCount": 0
   },
   {
@@ -1837,7 +1687,7 @@
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-iframe/",
     "content": "  IFrame Dialog\n\nThe IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating away from the current context.\n\n   Overview\n\nIFrame dialogs in HTWOO UI combine the HTML5  <dialog>  element with an embedded  <iframe>  to create a window for displaying external content. They can be configured with different aspect ratios and sizes to accommodate various types of con",
-    "variantCount": 2
+    "variantCount": 0
   },
   {
     "id": "organism-dialogs-dialog-sidebar",
@@ -1847,7 +1697,7 @@
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-sidebar/",
     "content": "  Sidebar Dialog\n\nThe Sidebar Dialog component provides a panel that slides in from either the left or right side of the screen. It's ideal for displaying supplementary content, forms, or navigation options without navigating away from the current view.\n\n   Overview\n\nSidebar dialogs in HTWOO UI leverage the HTML5  <dialog>  element with special positioning to create panels that appear from the side of the screen. They can be positioned on either the left or right side and can take up the full he",
-    "variantCount": 2
+    "variantCount": 0
   },
   {
     "id": "organism-dialogs-dialog-topbar",
@@ -1870,16 +1720,6 @@
     "variantCount": 0
   },
   {
-    "id": "organism-dialogs-modal-dialog",
-    "title": "Modal Dialog",
-    "description": "The Modal Dialog component provides a focused overlay interface that interrupts the user's workflow to capture attention or gather input. Modal dialogs display content on top of the main application w",
-    "category": "organism",
-    "subcategory": "dialogs",
-    "href": "/components/organism/dialogs/modal-dialog/",
-    "content": "  Modal Dialog\n\nThe Modal Dialog component provides a focused overlay interface that interrupts the user's workflow to capture attention or gather input. Modal dialogs display content on top of the main application with a backdrop that blocks interaction with the underlying content.\n\n   Overview\n\nModal dialogs in HTWOO UI are implemented using the HTML5  <dialog>  element with the  modal  method for opening. They include a semi-transparent backdrop that blocks interaction with page content under",
-    "variantCount": 0
-  },
-  {
     "id": "organism-dialogs-msgbars",
     "title": "Message Bars",
     "description": "Message bars (also known as status bars) are lightweight notification dialogs that provide contextual feedback to users. Built on the HTML5 `<dialog>` element with the `.statusbar` modifier, they disp",
@@ -1890,16 +1730,6 @@
     "variantCount": 0
   },
   {
-    "id": "organism-dialogs-status-dialogs",
-    "title": "Status Dialogs",
-    "description": "Status Dialog components provide contextual notifications and feedback to users. They are specialized dialog variants that communicate different states such as information, success, warning, or error ",
-    "category": "organism",
-    "subcategory": "dialogs",
-    "href": "/components/organism/dialogs/status-dialogs/",
-    "content": "  Status Dialogs\n\nStatus Dialog components provide contextual notifications and feedback to users. They are specialized dialog variants that communicate different states such as information, success, warning, or error conditions.\n\n   Overview\n\nStatus dialogs in HTWOO UI extend the basic dialog component with specific styling and icons to convey different types of messages. They are designed to be immediately recognizable by color, icon, and positioning.\n\n   Features\n\n- Four contextual states: in",
-    "variantCount": 0
-  },
-  {
     "id": "organism-facepiles-facepile",
     "title": "Facepile",
     "description": "The facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or ",
@@ -1907,7 +1737,7 @@
     "subcategory": "facepiles",
     "href": "/components/organism/facepiles/facepile/",
     "content": "  Facepile\n\nThe facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or participants in a compact, visually appealing format.\n\n   Overview\n\nFacepile provides a space-efficient way to display multiple users by showing their avatars in a row with flexible wrapping. It leverages the avatar-with-presence molecular component to maintain consistency with other per",
-    "variantCount": 4
+    "variantCount": 0
   },
   {
     "id": "organism-form-sample-form-flow-1",
@@ -1957,7 +1787,7 @@
     "subcategory": "pnp-search-grid",
     "href": "/components/organism/pnp-search-grid/pnp-search-grid/",
     "content": "  PnP Search Grid\n\nA comprehensive grid layout system designed for displaying search results and quick links in Microsoft 365 and SharePoint environments. The PnP (Patterns and Practices) search grid provides flexible column layouts with responsive behavior optimized for various screen sizes and content densities.\n\n   Overview\n\nThe PnP Search Grid is an organism-level component that combines multiple quick link items into organized grid layouts. It supports both compact and list-style presentati",
-    "variantCount": 3
+    "variantCount": 0
   },
   {
     "id": "organism-quick-links-grid-quick-links-button-filled-grid",
@@ -2007,7 +1837,7 @@
     "subcategory": "quick-links-grid",
     "href": "/components/organism/quick-links-grid/quick-links-grid/",
     "content": "  Quick Links Grid\n\nA comprehensive demonstration component showcasing all available quick links grid variations. Provides examples and documentation for compact, list, button, and tile-style quick links in responsive grid layouts.\n\n   Overview\n\nThe quick links grid component serves as a demonstration and reference for all available quick links grid variations. It showcases different styling approaches including compact items, list format, button styles (outline, no-outline, filled), grid layout",
-    "variantCount": 4
+    "variantCount": 0
   },
   {
     "id": "organism-quick-links-grid-quick-links-list-grid",
@@ -2147,16 +1977,6 @@
     "subcategory": "colors",
     "href": "/components/design-tokens/colors/oranges/",
     "content": "All other colors by name",
-    "variantCount": 0
-  },
-  {
-    "id": "design-tokens-colors-other-colors",
-    "title": "other-colors",
-    "description": "Tokens Colors Other Colors Design",
-    "category": "design-tokens",
-    "subcategory": "colors",
-    "href": "/components/design-tokens/colors/other-colors/",
-    "content": "",
     "variantCount": 0
   },
   {

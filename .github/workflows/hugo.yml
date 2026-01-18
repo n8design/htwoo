@@ -100,13 +100,25 @@ jobs:
       - name: Copy hTWOo React style guide
         run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
         working-directory: docs-site
-      - name: Remove old sitemaps and use component sitemap
+      - name: Remove old sitemaps and update sitemap index
         run: |
           # Remove htwoo-core and htwoo-react sitemaps (Pattern Lab and Storybook)
           rm -f public/htwoo-core/sitemap.xml
           rm -f public/htwoo-react/sitemap.xml
-          # Copy component documentation sitemap as the main sitemap for components
+          # Copy component documentation sitemap
           cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
+          # Fix the main sitemap index - remove references to deleted sitemaps and add components sitemap
+          cat > public/sitemap.xml << 'SITEMAP_EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <sitemap>
+              <loc>https://htwoo.io/sitemap-pages.xml</loc>
+            </sitemap>
+            <sitemap>
+              <loc>https://htwoo.io/components-sitemap.xml</loc>
+            </sitemap>
+          </sitemapindex>
+          SITEMAP_EOF
         working-directory: docs-site
       - name: Generate robots.txt with correct sitemaps
         run: |

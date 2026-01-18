@@ -1,6 +1,6 @@
 ---
 title: "Organism"
-description: "Browse 27 Organism components in the hTWOo UI Framework."
+description: "Browse 25 Organism components in the hTWOo UI Framework."
 type: "components"
 layout: "list"
 category: "organism"

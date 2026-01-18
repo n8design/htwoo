@@ -1,6 +1,6 @@
 ---
 title: "Buttons"
-description: "Browse 26 Buttons components."
+description: "Browse 23 Buttons components."
 type: "components"
 layout: "list"
 category: "atoms"

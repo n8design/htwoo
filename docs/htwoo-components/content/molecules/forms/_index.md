@@ -1,6 +1,6 @@
 ---
 title: "Forms"
-description: "Browse 9 Forms components."
+description: "Browse 8 Forms components."
 type: "components"
 layout: "list"
 category: "molecules"

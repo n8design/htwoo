@@ -1,6 +1,6 @@
 ---
 title: "Design-tokens"
-description: "Browse 17 Design-tokens components in the hTWOo UI Framework."
+description: "Browse 16 Design-tokens components in the hTWOo UI Framework."
 type: "components"
 layout: "list"
 category: "design-tokens"

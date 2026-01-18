@@ -1,6 +1,6 @@
 ---
 title: "Molecules"
-description: "Browse 68 Molecules components in the hTWOo UI Framework."
+description: "Browse 66 Molecules components in the hTWOo UI Framework."
 type: "components"
 layout: "list"
 category: "molecules"

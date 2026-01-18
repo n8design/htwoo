@@ -97,12 +97,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-group/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/buttons/button-hyperlink-primary/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -163,12 +157,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-secondary/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/buttons/button-split-primary/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -205,61 +193,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/buttons/buttons/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/buttons/menu-flyouts/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/date-time-inputs/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/file-input/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/form-validation/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/prefixed-suffixed-inputs/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/search-input/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/select-dropdowns/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/selection-controls/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/forms/text-inputs/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -284,12 +218,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/icons/ql-icon/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/input/INPUT-OPTIMIZATION/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -494,12 +422,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/loading/loading/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/progress-bar/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -775,12 +697,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/molecules/cards-elements/teams-dashboard-card/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/molecules/dialogs/dialog-content/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -824,12 +740,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/molecules/forms/fieldset/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/forms/form-layout/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1165,19 +1075,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/organism/dialogs/modal-dialog/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/organism/dialogs/msgbars/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/dialogs/status-dialogs/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1328,12 +1226,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/design-tokens/colors/oranges/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/design-tokens/colors/other-colors/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

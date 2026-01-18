@@ -1,6 +1,6 @@
 ---
 title: "Cards-elements"
-description: "Browse 10 Cards-elements components."
+description: "Browse 9 Cards-elements components."
 type: "components"
 layout: "list"
 category: "molecules"

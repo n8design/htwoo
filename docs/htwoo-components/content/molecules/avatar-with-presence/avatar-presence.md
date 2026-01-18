@@ -9,7 +9,7 @@ subcategory: "avatar-with-presence"
 seoTitle: "Molecules - Avatar With Presence Avatar Presence"
 seoDescription: "Avatar With Presence Avatar Presence Molecules"
 weight: 999
-hasVariants: true
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
       &lt;div class=&quot;hoo-avatar&quot;&gt;
@@ -18,95 +18,6 @@ markup: |
       &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
       &lt;/div&gt;
   &lt;/div&gt;
-variants:
-  - id: "molecules-avatar-with-presence-avatar-presence-16"
-    title: "Avatar /w presence - 16px"
-    variantName: "16"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-24"
-    title: "Avatar /w presence - 24px"
-    variantName: "24"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-32"
-    title: "Avatar /w presence - 32px"
-    variantName: "32"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-40"
-    title: "Avatar /w presence - 40px"
-    variantName: "40"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-48"
-    title: "Avatar /w presence - 48px"
-    variantName: "48"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-64"
-    title: "Avatar /w presence - 64px"
-    variantName: "64"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-72"
-    title: "Avatar /w presence - 72px"
-    variantName: "72"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  - id: "molecules-avatar-with-presence-avatar-presence-96"
-    title: "Avatar /w presence - 96px"
-    variantName: "96"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
 ---
 
 ## Overview

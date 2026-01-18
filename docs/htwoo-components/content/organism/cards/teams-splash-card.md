@@ -55,10 +55,10 @@ The Teams Splash Card serves as a high-impact content presentation component, sp
 ## Structure
 
 The Teams Splash Card consists of four main sections:
-1. **[Card Splash Header](../molecules/cards-elements/card-splash-header)**: Optional branding or icon area
-2. **[Card Splash Title](../molecules/cards-elements/card-splash-title)**: Primary heading and messaging
-3. **[Card Splash Description](../molecules/cards-elements/card-splash-desc)**: Supporting descriptive content
-4. **[Card Splash Footer](../molecules/cards-elements/card-splash-footer)**: Action buttons with elevation
+1. **[Card Splash Header](/components/molecules/cards-elements/card-splash-header/)**: Optional branding or icon area
+2. **[Card Splash Title](/components/molecules/cards-elements/card-splash-title/)**: Primary heading and messaging
+3. **[Card Splash Description](/components/molecules/cards-elements/card-splash-desc/)**: Supporting descriptive content
+4. **[Card Splash Footer](/components/molecules/cards-elements/card-splash-footer/)**: Action buttons with elevation
 
 ## Data Structure
 

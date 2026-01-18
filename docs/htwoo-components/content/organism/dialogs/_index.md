@@ -1,6 +1,6 @@
 ---
 title: "Dialogs"
-description: "Browse 8 Dialogs components."
+description: "Browse 6 Dialogs components."
 type: "components"
 layout: "list"
 category: "organism"

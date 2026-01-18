@@ -9,7 +9,7 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Split Primary"
 seoDescription: "Buttons Button Split Primary Atoms"
 weight: 20
-hasVariants: true
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-buttonsplit-primary&quot;&gt;
       &lt;button class=&quot;hoo-buttonsplit-standard&quot;  &gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Standard&lt;/span&gt;
@@ -40,40 +40,6 @@ markup: |
   &lt;/li&gt;
   &lt;/menu&gt;
   &lt;/div&gt;
-variants:
-  - id: "atoms-buttons-button-split-primary-disabled"
-    title: "Primary Split Button - disabled"
-    variantName: "disabled"
-    markup: |
-      &lt;div class=&quot;hoo-buttonsplit-primary&quot;&gt;
-          &lt;button class=&quot;hoo-buttonsplit-standard&quot; disabled=&quot;true&quot; aria-disabled=&quot;true&quot; &gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Standard&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&quot;hoo-buttonsplit-carret&quot; disabled=&quot;true&quot; aria-disabled=&quot;true&quot; &gt;&lt;span class=&quot;hoo-button-label&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-down&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-          &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-              &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-                  &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
-                      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                      &lt;/use&gt;
-                  &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Email message&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;/li&gt;
-      &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-          &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-minus&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-minus&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Calendar Event&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;/li&gt;
-      &lt;/menu&gt;
-      &lt;/div&gt;
 ---
 
 # Primary Split Button

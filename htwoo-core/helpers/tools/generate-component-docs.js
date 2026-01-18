@@ -224,6 +224,31 @@ function fixMarkupPaths(markup) {
   return fixed;
 }
 
+// Fix relative links in markdown content to use absolute /components/ paths
+// Converts links like ../molecules/cards-elements/card-splash-header to /components/molecules/cards-elements/card-splash-header/
+function fixMarkdownLinks(markdown, currentCategory) {
+  if (!markdown) return '';
+
+  let fixed = markdown;
+
+  // Match markdown links with relative paths: [text](../path) or [text](./path)
+  // Convert to absolute /components/ paths
+  fixed = fixed.replace(/\]\(\.\.\/([^)]+)\)/g, (match, relativePath) => {
+    // Remove any trailing slashes and clean up the path
+    let cleanPath = relativePath.replace(/\/+$/, '');
+    // Build absolute path
+    return `](/components/${cleanPath}/)`;
+  });
+
+  // Also handle ./relative paths
+  fixed = fixed.replace(/\]\(\.\/([^)]+)\)/g, (match, relativePath) => {
+    let cleanPath = relativePath.replace(/\/+$/, '');
+    return `](/components/${currentCategory}/${cleanPath}/)`;
+  });
+
+  return fixed;
+}
+
 // Get first paragraph as description
 function getFirstParagraph(markdown) {
   if (!markdown) return '';
@@ -284,15 +309,22 @@ function scanDirectory(dirPath, category, patterns, subcategory = null) {
       // Recurse into subdirectory
       scanDirectory(fullPath, category, patterns, entry.name);
     } else if (entry.name.endsWith('.md') && !entry.name.startsWith('_')) {
+      // Check if there's a corresponding pattern template file (.hbs or .html)
+      const basename = entry.name.replace('.md', '');
+      const hbsPath = path.join(dirPath, basename + '.hbs');
+      const htmlPath = path.join(dirPath, basename + '.html');
+
+      // Skip markdown-only files (documentation without actual patterns)
+      if (!fs.existsSync(hbsPath) && !fs.existsSync(htmlPath)) {
+        return;
+      }
+
       // Parse markdown file
       const content = fs.readFileSync(fullPath, 'utf-8');
       const { frontmatter, content: markdown } = parseFrontmatter(content);
 
       // Skip hidden patterns
       if (frontmatter.hidden) return;
-
-      // Derive pattern ID from file path
-      const basename = entry.name.replace('.md', '');
       // Pattern Lab converts ~ to - in output folder names
       const patternLabId = subcategory
         ? `${category}-${subcategory}-${basename}`.replace(/~/g, '-')
@@ -415,7 +447,9 @@ ${variantsYaml}---
 // Generate Hugo markdown file for a component
 function generateComponentMarkdown(pattern, variants) {
   const frontmatter = generateComponentFrontmatter(pattern, variants);
-  return frontmatter + (pattern.markdown || '');
+  // Fix relative links in markdown content to use absolute /components/ paths
+  const fixedMarkdown = fixMarkdownLinks(pattern.markdown, pattern.category);
+  return frontmatter + (fixedMarkdown || '');
 }
 
 // Generate category _index.md

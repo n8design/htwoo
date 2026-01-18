@@ -174,8 +174,8 @@ The Teams Toolbar is a composite molecular component that integrates a command b
 ## Structure
 
 The Teams Toolbar consists of two main molecular components:
-1. **[Command Bar with Overflow](./cmdbar-overflow.html)** - Action commands with responsive overflow
-2. **[Search Box](../../atoms/inputs/)** - Integrated search functionality
+1. **[Command Bar with Overflow](/components/molecules/cmdbar-overflow.html/)** - Action commands with responsive overflow
+2. **[Search Box](/components/../atoms/inputs/)** - Integrated search functionality
 
 ## Data Structure
 
@@ -395,13 +395,13 @@ From child components:
 ### Dynamic Theming
 
 ### Molecular Components
-- [Command Bar with Overflow](./cmdbar-overflow.html) - Core command functionality
-- [Search Box](../../atoms/inputs/) - Integrated search capabilities
-- [Command Bar](./cmdbar.html) - Basic command bar functionality
+- [Command Bar with Overflow](/components/molecules/cmdbar-overflow.html/) - Core command functionality
+- [Search Box](/components/../atoms/inputs/) - Integrated search capabilities
+- [Command Bar](/components/molecules/cmdbar.html/) - Basic command bar functionality
 
 ### Template Components  
-- [Teams Dashboard](../../templates/teams/) - Complete Teams dashboard layout
-- [Teams Splash Screen](../../templates/teams/) - Teams application welcome screens
+- [Teams Dashboard](/components/../templates/teams/) - Complete Teams dashboard layout
+- [Teams Splash Screen](/components/../templates/teams/) - Teams application welcome screens
 
 ### Theme Components
 - Teams Light Theme - Default Teams light appearance

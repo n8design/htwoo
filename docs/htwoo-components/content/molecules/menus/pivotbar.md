@@ -91,7 +91,7 @@ The pivot bar works with pivot buttons to provide:
 
 ## Responsive Behavior
 
-For responsive scenarios with limited space, consider using the [Pivot Bar Overflow](./pivotbar-overflow.html) variant which includes:
+For responsive scenarios with limited space, consider using the [Pivot Bar Overflow](/components/molecules/pivotbar-overflow.html/) variant which includes:
 
 - Overflow menu for hidden items
 - Dynamic hiding/showing of tabs based on available space

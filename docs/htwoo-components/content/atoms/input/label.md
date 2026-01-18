@@ -9,20 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Label"
 seoDescription: "Input Label Atoms"
 weight: 1
-hasVariants: true
+hasVariants: false
 markup: |
   &lt;label class=&quot;hoo-label &quot; for=&quot;toggle-33&quot;&gt;Label for field x&lt;/label&gt;
-variants:
-  - id: "atoms-input-label-required"
-    title: "Required Form Label"
-    variantName: "required"
-    markup: |
-      &lt;label class=&quot;hoo-label is-required&quot; for=&quot;toggle-33&quot;&gt;Label for field x&lt;/label&gt;
-  - id: "atoms-input-label-disabled"
-    title: "Disabled Form Label"
-    variantName: "disabled"
-    markup: |
-      &lt;label class=&quot;hoo-label is-disabled&quot; for=&quot;toggle-33&quot;&gt;Label for field x&lt;/label&gt;
 ---
 
 # Form Label

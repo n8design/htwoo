@@ -156,8 +156,8 @@ The Generic Dialog serves as the base component for all dialog variants in HTWOO
 ## Structure
 
 The Generic Dialog consists of three main areas:
-1. **[Dialog Header](../molecules/dialogs/dialog-header)**: Optional title bar with close button
-2. **[Dialog Content](../molecules/dialogs/dialog-content)**: Main content area
+1. **[Dialog Header](/components/molecules/dialogs/dialog-header/)**: Optional title bar with close button
+2. **[Dialog Content](/components/molecules/dialogs/dialog-content/)**: Main content area
 3. **Dialog Actions**: Optional button area for user actions
 
 ## Data Structure

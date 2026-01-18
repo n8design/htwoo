@@ -1,6 +1,6 @@
 ---
 title: "Input"
-description: "Browse 34 Input components."
+description: "Browse 33 Input components."
 type: "components"
 layout: "list"
 category: "atoms"

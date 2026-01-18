@@ -1,6 +1,6 @@
 ---
 title: "Colors"
-description: "Browse 13 Colors components."
+description: "Browse 12 Colors components."
 type: "components"
 layout: "list"
 category: "design-tokens"

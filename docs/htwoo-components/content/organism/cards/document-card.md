@@ -68,10 +68,10 @@ The Document Card serves as the primary card component for content libraries, fi
 ## Structure
 
 The Document Card consists of four main molecular components:
-1. **[Card Image](../molecules/cards-elements/card-image)**: Visual preview or thumbnail
-2. **[Card Location](../molecules/cards-elements/card-location)**: Source or path information
-3. **[Card Title](../molecules/cards-elements/card-title)**: Document name or headline
-4. **[Card Footer](../molecules/cards-elements/card-footer)**: Author, date, and metadata
+1. **[Card Image](/components/molecules/cards-elements/card-image/)**: Visual preview or thumbnail
+2. **[Card Location](/components/molecules/cards-elements/card-location/)**: Source or path information
+3. **[Card Title](/components/molecules/cards-elements/card-title/)**: Document name or headline
+4. **[Card Footer](/components/molecules/cards-elements/card-footer/)**: Author, date, and metadata
 
 ## Data Structure
 

@@ -9,68 +9,11 @@ subcategory: "avatar"
 seoTitle: "Atoms - Avatar Avatar"
 seoDescription: "Avatar Avatar Atoms"
 weight: 999
-hasVariants: true
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-avatar-64&quot;&gt;
       &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;64&quot; width=&quot;64&quot; loading=&quot;lazy&quot;&gt;
   &lt;/div&gt;
-variants:
-  - id: "atoms-avatar-avatar-16"
-    title: "Avatar Sample 16 px"
-    variantName: "16"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-16&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;16&quot; width=&quot;16&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-24"
-    title: "Avatar Sample 24 px"
-    variantName: "24"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-24&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;24&quot; width=&quot;24&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-32"
-    title: "Avatar Sample 32 px"
-    variantName: "32"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-32&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;32&quot; width=&quot;32&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-40"
-    title: "Avatar Sample 40 px"
-    variantName: "40"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-40&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-48"
-    title: "Avatar Sample 48 px"
-    variantName: "48"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-48&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;48&quot; width=&quot;48&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-64"
-    title: "Avatar Sample 64 px"
-    variantName: "64"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-64&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;64&quot; width=&quot;64&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-72"
-    title: "Avatar Sample 72 px"
-    variantName: "72"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-72&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;72&quot; width=&quot;72&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-  - id: "atoms-avatar-avatar-96"
-    title: "Avatar Sample 96 px"
-    variantName: "96"
-    markup: |
-      &lt;div class=&quot;hoo-avatar-96&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;96&quot; width=&quot;96&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
 ---
 
 This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.
