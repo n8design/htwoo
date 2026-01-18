@@ -108,6 +108,22 @@ jobs:
           # Copy component documentation sitemap as the main sitemap for components
           cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
         working-directory: docs-site
+      - name: Generate robots.txt with correct sitemaps
+        run: |
+          cat > public/robots.txt << 'EOF'
+          User-agent: *
+          Allow: /
+
+          # Main Hugo sitemap
+          Sitemap: https://htwoo.io/sitemap.xml
+
+          # Component documentation sitemap
+          Sitemap: https://htwoo.io/components-sitemap.xml
+
+          # Note: htwoo-core/sitemap.xml and htwoo-react/sitemap.xml are deprecated
+          # and no longer available. Use the sitemaps listed above.
+          EOF
+        working-directory: docs-site
       - name: Verify artifact size and content
         run: |
           find ./public -type l -exec rm -f {} \;  # Remove symlinks
