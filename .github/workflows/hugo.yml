@@ -37,13 +37,17 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
         run: sudo snap install dart-sass-embedded
-      - name: Checkout docs branch
+      - name: Checkout main branch for builds
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-build
+      - name: Checkout docs branch for Hugo
         uses: actions/checkout@v4
         with:
           ref: docs
+          path: docs-site
           submodules: recursive
-      - name: Fetch main branch
-        run: git fetch origin main:main
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -51,19 +55,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Checkout main branch for builds
-        run: |
-          git fetch origin main
-          git checkout origin/main -- htwoo-core htwoo-react package.json package-lock.json
       - name: Install main branch dependencies
         run: npm ci
+        working-directory: main-build
       - name: Build hTWOo Core Pattern Lab
         run: npm run pl:build -w htwoo-core
+        working-directory: main-build
       - name: Build hTWOo React Storybook
         run: npm run build-storybook -w htwoo-react
+        working-directory: main-build
+      - name: Install docs dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        working-directory: docs-site
       - name: Build with Hugo
+        working-directory: docs-site
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
@@ -72,24 +77,28 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Copy hTWOo Core style guide
-        run: mv -f htwoo-core/public public/htwoo-core/
+        run: mv -f ../main-build/htwoo-core/public public/htwoo-core/
+        working-directory: docs-site
       - name: Copy hTWOo React style guide
-        run: mv -f docs/htwoo-react public/htwoo-react/
+        run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
+        working-directory: docs-site
       - name: Verify artifact size and content
         run: |
           find ./public -type l -exec rm -f {} \;  # Remove symlinks
           find ./public -type f -exec du -ch {} + | grep total$  # Check total size
+        working-directory: docs-site
       - name: Check for hard links
         run: |
           if find ./public -type f -links +1 | grep -q .; then
             echo "Error: Hard links found in the public directory."
             exit 1
           fi
+        working-directory: docs-site
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: site
-          path: ./public
+          path: docs-site/public
 
   deploy:
     environment:
