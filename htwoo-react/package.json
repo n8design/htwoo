@@ -62,7 +62,7 @@
     "@storybook/blocks": "^8.4.6",
     "@storybook/manager-api": "^8.4.6",
     "@storybook/preview-api": "^8.4.6",
-    "@storybook/react-webpack5": "^8.4.6",
+    "@storybook/react-webpack5": "^8.6.15",
     "@storybook/theming": "^8.4.6",
     "@types/react": "17.*",
     "@types/react-dom": "17.*",
