@@ -9,6 +9,7 @@ subcategory: "typography"
 seoTitle: "Atoms - Typography Paragraph"
 seoDescription: "Typography Paragraph Atoms"
 weight: 20
+hasVariants: false
 markup: |
   &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident minus officiis id, nemo ratione iusto porro magnam dolore omnis iste itaque voluptatum eum atque aliquid magni sequi perferendis voluptatibus. Enim nostrum tempora sint rerum. Delectus beatae maiores aspernatur doloremque veritatis, fuga sequi tempora ipsa voluptas totam alias placeat excepturi quos cumque consectetur laboriosam. Minima vitae tenetur fuga fugiat voluptatibus? Itaque?&lt;/p&gt;
 ---

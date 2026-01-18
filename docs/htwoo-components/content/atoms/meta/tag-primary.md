@@ -9,9 +9,9 @@ subcategory: "meta"
 seoTitle: "Atoms - Meta Tag Primary"
 seoDescription: "Meta Tag Primary Atoms"
 weight: 21
+hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;
+  &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;
   &lt;/button&gt;
 ---
 

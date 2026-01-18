@@ -9,26 +9,25 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input File"
 seoDescription: "Input Input File Atoms"
 weight: 17
+hasVariants: false
 markup: |
   &lt;section class=&quot;hoo-input-file&quot;&gt;
       &lt;label class=&quot;hoo-infile-label&quot; name=&quot;file-upload&quot; tabIndex=&quot;-1&quot; for=&quot;file-upload-82&quot; draggable=&quot;true&quot;&gt;
-          &lt;div class=&quot;hoo-infile-icon&quot;&gt;
-              &lt;span class=&quot;hoo-icon&quot;&gt;
-                  &lt;svg class=&quot;hoo-icon-svg icon-arrow-upload-filled&quot; aria-hidden=&quot;true&quot;&gt;
-                      &lt;title&gt;Upload&lt;/title&gt;
-                      &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-upload-filled&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/span&gt;        &lt;/div&gt;
-          &lt;div&gt;
-              Click or drag and drop files here to upload filed
-              &lt;p class=&quot;hoo-infile-description&quot;&gt;Max file size: 10MB, Types: jpg, png, pdf
-              &lt;/p&gt;
-          &lt;/div&gt;
-      &lt;/label&gt;
-      &lt;input type=&quot;file&quot; id=&quot;file-upload-82&quot; name=&quot;&quot; class=&quot;hoo-infile-context&quot; multiple aria-describedby=&quot;file-upload-82-content&quot; /&gt;
-      &lt;output class=&quot;hoo-infile-output&quot; id=&quot;NaN-content&quot; aria-live=&quot;polite&quot; title=&quot;Current selection&quot;&gt;&lt;/output&gt;
+          &lt;div class=&quot;hoo-infile-icon&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+              &lt;svg class=&quot;hoo-icon-svg icon-arrow-upload-filled&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;title&gt;Upload&lt;/title&gt;
+                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-upload-filled&quot;&gt;
+                  &lt;/use&gt;
+              &lt;/svg&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Click or drag and drop files here to upload filed
+          &lt;p class=&quot;hoo-infile-description&quot;&gt;Max file size: 10MB, Types: jpg, png, pdf&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/label&gt;
+  &lt;input type=&quot;file&quot; id=&quot;file-upload-82&quot; name=&quot;&quot; class=&quot;hoo-infile-context&quot; multiple aria-describedby=&quot;file-upload-82-content&quot; /&gt;
+  &lt;output class=&quot;hoo-infile-output&quot; id=&quot;NaN-content&quot; aria-live=&quot;polite&quot; title=&quot;Current selection&quot;&gt;
+  &lt;/output&gt;
   &lt;/section&gt;
-  
 ---
 
 # File Input

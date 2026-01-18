@@ -1,6 +1,6 @@
 ---
 title: "Loading"
-description: "Browse 14 Loading components."
+description: "Browse 8 Loading components."
 type: "components"
 layout: "list"
 category: "atoms"

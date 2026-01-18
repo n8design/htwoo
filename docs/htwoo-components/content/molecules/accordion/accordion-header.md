@@ -9,16 +9,17 @@ subcategory: "accordion"
 seoTitle: "Molecules - Accordion Accordion Header"
 seoDescription: "Accordion Accordion Header Molecules"
 weight: 20
+hasVariants: false
 markup: |
   &lt;summary class=&quot;hoo-accordion-header&quot;&gt;
-      &lt;div class=&quot;hoo-accordion-summary&quot;&gt;
-          &lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-                  &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/span&gt;        &lt;h3&gt;Lorem ipsum dolor sit.&lt;/h3&gt;
-      &lt;/div&gt;
+      &lt;div class=&quot;hoo-accordion-summary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+          &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+      &lt;h3&gt;Lorem ipsum dolor sit.&lt;/h3&gt;
+  &lt;/div&gt;
   &lt;/summary&gt;
 ---
 

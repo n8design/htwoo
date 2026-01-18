@@ -5,6 +5,11 @@
  * Generates Hugo markdown content files and layouts for component documentation.
  * These integrate with the h2o Hugo theme for consistent site-wide styling.
  *
+ * Features:
+ *   - Groups variants (files with ~) with their base component
+ *   - Fixes relative image paths to point to /htwoo-core/
+ *   - Generates SEO-optimized frontmatter
+ *
  * Output:
  *   - ../docs/htwoo-components/content/   - Hugo content files (markdown)
  *   - ../docs/htwoo-components/layouts/   - Hugo layout templates
@@ -55,20 +60,6 @@ function seoDescription(value) {
       element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
     ).join(' ');
     return `${componentName} ${componentType}`;
-  }
-  return value;
-}
-
-function seoKeyword(value) {
-  if (!value) return '';
-  const seoJunks = value.split('-');
-  if (seoJunks.length > 1) {
-    const firstEntry = seoJunks.shift();
-    let keyword = firstEntry.charAt(0).toUpperCase() + firstEntry.slice(1) + ', ';
-    seoJunks.forEach(element => {
-      keyword += element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
-    });
-    return keyword;
   }
   return value;
 }
@@ -130,6 +121,104 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, char => htmlEntities[char]);
 }
 
+// Format HTML with proper indentation for readability
+function formatHtml(html) {
+  if (!html) return '';
+
+  // Remove existing whitespace between tags
+  let formatted = html.replace(/>\s+</g, '><').trim();
+
+  // Self-closing and void elements (no closing tag)
+  const voidElements = [
+    'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+    'link', 'meta', 'param', 'source', 'track', 'wbr'
+  ];
+
+  // Inline elements that shouldn't force newlines
+  const inlineElements = [
+    'a', 'abbr', 'b', 'bdo', 'br', 'cite', 'code', 'dfn', 'em', 'i',
+    'kbd', 'mark', 'q', 's', 'samp', 'small', 'span', 'strong', 'sub',
+    'sup', 'time', 'u', 'var'
+  ];
+
+  const result = [];
+  let indent = 0;
+  const indentStr = '    '; // 4 spaces
+
+  // Split by tags while preserving the tags
+  const tokens = formatted.split(/(<[^>]+>)/g).filter(t => t);
+
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+
+    if (token.startsWith('</')) {
+      // Closing tag - decrease indent first
+      indent = Math.max(0, indent - 1);
+      const tagName = token.match(/<\/(\w+)/)?.[1]?.toLowerCase();
+
+      // Check if previous token was text or inline - don't add newline
+      const prevToken = result[result.length - 1];
+      if (prevToken && !prevToken.trim().startsWith('<') && !prevToken.endsWith('\n')) {
+        result.push(token);
+      } else if (tagName && inlineElements.includes(tagName)) {
+        result.push(token);
+      } else {
+        result.push('\n' + indentStr.repeat(indent) + token);
+      }
+    } else if (token.startsWith('<')) {
+      // Opening tag or self-closing
+      const tagMatch = token.match(/<(\w+)/);
+      const tagName = tagMatch ? tagMatch[1].toLowerCase() : '';
+      const isSelfClosing = token.endsWith('/>') || voidElements.includes(tagName);
+      const isInline = inlineElements.includes(tagName);
+
+      // Add the tag
+      if (result.length === 0) {
+        result.push(token);
+      } else if (isInline) {
+        result.push(token);
+      } else {
+        result.push('\n' + indentStr.repeat(indent) + token);
+      }
+
+      // Increase indent for non-void, non-inline opening tags
+      if (!isSelfClosing && !isInline) {
+        indent++;
+      }
+    } else {
+      // Text content
+      const trimmed = token.trim();
+      if (trimmed) {
+        result.push(trimmed);
+      }
+    }
+  }
+
+  return result.join('').trim();
+}
+
+// Fix relative paths in markup to point to /htwoo-core/
+function fixMarkupPaths(markup) {
+  if (!markup) return '';
+
+  // Fix relative image paths like ../../images/ or ../images/ or ../../images//
+  // Convert to absolute /htwoo-core/images/
+  let fixed = markup;
+
+  // Handle src attributes with relative paths (multiple ../ segments and double slashes from Pattern Lab)
+  // Pattern: src="../../images//subfolder/" or src="../images/subfolder/"
+  // (?:\.\.\/+)+ matches one or more occurrences of ../ (with possible multiple slashes)
+  fixed = fixed.replace(/src=["'](?:\.\.\/+)+images\/+/g, 'src="/htwoo-core/images/');
+  fixed = fixed.replace(/src=["']\.\/+images\/+/g, 'src="/htwoo-core/images/');
+  fixed = fixed.replace(/src=["']images\/+/g, 'src="/htwoo-core/images/');
+
+  // Handle href attributes with relative paths to images
+  fixed = fixed.replace(/href=["'](?:\.\.\/+)+images\/+/g, 'href="/htwoo-core/images/');
+  fixed = fixed.replace(/href=["']\.\/+images\/+/g, 'href="/htwoo-core/images/');
+
+  return fixed;
+}
+
 // Get first paragraph as description
 function getFirstParagraph(markdown) {
   if (!markdown) return '';
@@ -147,6 +236,23 @@ function getFirstParagraph(markdown) {
     paragraph += (paragraph ? ' ' : '') + trimmed;
   }
   return paragraph.substring(0, 200);
+}
+
+// Check if a filename is a variant (contains ~)
+function isVariant(filename) {
+  return filename.includes('~');
+}
+
+// Get the base component name from a variant filename
+function getBaseComponentName(filename) {
+  const tildeIndex = filename.indexOf('~');
+  return tildeIndex > 0 ? filename.substring(0, tildeIndex) : filename;
+}
+
+// Get the variant name from a filename
+function getVariantName(filename) {
+  const tildeIndex = filename.indexOf('~');
+  return tildeIndex > 0 ? filename.substring(tildeIndex + 1) : null;
 }
 
 // Scan for pattern files
@@ -192,6 +298,9 @@ function scanDirectory(dirPath, category, patterns, subcategory = null) {
         category,
         subcategory: subcategory || null,
         filename: basename,
+        baseFilename: getBaseComponentName(basename),
+        variantName: getVariantName(basename),
+        isVariant: isVariant(basename),
         title: frontmatter.title || basename,
         order: frontmatter.order || 999,
         markdown,
@@ -211,24 +320,76 @@ function loadComponentMarkup(patternId) {
   );
 
   if (fs.existsSync(markupPath)) {
-    return fs.readFileSync(markupPath, 'utf-8');
+    let markup = fs.readFileSync(markupPath, 'utf-8');
+    // Fix relative paths
+    markup = fixMarkupPaths(markup);
+    // Format HTML for readability
+    markup = formatHtml(markup);
+    return markup;
   }
   return null;
 }
 
-// Generate Hugo frontmatter for a component
-function generateComponentFrontmatter(pattern) {
+// Group patterns - base components with their variants
+function groupPatterns(patterns) {
+  const grouped = new Map();
+
+  patterns.forEach(pattern => {
+    const key = pattern.subcategory
+      ? `${pattern.category}-${pattern.subcategory}-${pattern.baseFilename}`
+      : `${pattern.category}-${pattern.baseFilename}`;
+
+    if (!grouped.has(key)) {
+      grouped.set(key, {
+        base: null,
+        variants: []
+      });
+    }
+
+    const group = grouped.get(key);
+    if (pattern.isVariant) {
+      group.variants.push(pattern);
+    } else {
+      group.base = pattern;
+    }
+  });
+
+  // Sort variants by order
+  grouped.forEach(group => {
+    group.variants.sort((a, b) => a.order - b.order);
+  });
+
+  return grouped;
+}
+
+// Generate Hugo frontmatter for a component with variants
+function generateComponentFrontmatter(pattern, variants) {
   const patternId = pattern.id;
   const seoTitleText = seoTitle(patternId);
   const seoDesc = seoDescription(patternId);
   const description = getFirstParagraph(pattern.markdown) || seoDesc;
 
-  // Load markup
+  // Load markup for base component
   const markup = loadComponentMarkup(patternId);
   const markupEscaped = markup ? escapeHtml(markup) : '';
 
+  // Build variants array for frontmatter
+  let variantsYaml = '';
+  if (variants && variants.length > 0) {
+    variantsYaml = 'variants:\n';
+    variants.forEach(variant => {
+      const variantMarkup = loadComponentMarkup(variant.id);
+      const variantMarkupEscaped = variantMarkup ? escapeHtml(variantMarkup) : '';
+      variantsYaml += `  - id: "${variant.id}"\n`;
+      variantsYaml += `    title: "${escapeYaml(variant.title)}"\n`;
+      variantsYaml += `    variantName: "${variant.variantName || ''}"\n`;
+      variantsYaml += `    markup: |\n`;
+      variantsYaml += variantMarkupEscaped.split('\n').map(line => '      ' + line).join('\n') + '\n';
+    });
+  }
+
   return `---
-title: "${pattern.title}"
+title: "${escapeYaml(pattern.title)}"
 description: "${escapeYaml(description)}"
 type: "components"
 layout: "single"
@@ -238,27 +399,33 @@ ${pattern.subcategory ? `subcategory: "${pattern.subcategory}"` : ''}
 seoTitle: "${seoTitleText}"
 seoDescription: "${seoDesc}"
 weight: ${pattern.order}
+hasVariants: ${variants && variants.length > 0}
 markup: |
 ${markupEscaped.split('\n').map(line => '  ' + line).join('\n')}
----
+${variantsYaml}---
 
 `;
 }
 
 // Generate Hugo markdown file for a component
-function generateComponentMarkdown(pattern) {
-  const frontmatter = generateComponentFrontmatter(pattern);
+function generateComponentMarkdown(pattern, variants) {
+  const frontmatter = generateComponentFrontmatter(pattern, variants);
   return frontmatter + (pattern.markdown || '');
 }
 
 // Generate category _index.md
-function generateCategoryIndex(category, patterns) {
-  const categoryPatterns = patterns.filter(p => p.category === category);
-  const subcategories = [...new Set(categoryPatterns.filter(p => p.subcategory).map(p => p.subcategory))];
+function generateCategoryIndex(category, groupedPatterns) {
+  // Count only base components (not variants)
+  let count = 0;
+  groupedPatterns.forEach((group, key) => {
+    if (key.startsWith(category + '-') && group.base) {
+      count++;
+    }
+  });
 
   return `---
 title: "${capitalize(category)}"
-description: "Browse ${categoryPatterns.length} ${capitalize(category)} components in the hTWOo UI Framework."
+description: "Browse ${count} ${capitalize(category)} components in the hTWOo UI Framework."
 type: "components"
 layout: "list"
 category: "${category}"
@@ -270,12 +437,18 @@ Explore the ${capitalize(category)} components available in hTWOo.
 }
 
 // Generate subcategory _index.md
-function generateSubcategoryIndex(category, subcategory, patterns) {
-  const subPatterns = patterns.filter(p => p.category === category && p.subcategory === subcategory);
+function generateSubcategoryIndex(category, subcategory, groupedPatterns) {
+  // Count only base components in this subcategory
+  let count = 0;
+  groupedPatterns.forEach((group, key) => {
+    if (key.startsWith(`${category}-${subcategory}-`) && group.base) {
+      count++;
+    }
+  });
 
   return `---
 title: "${capitalize(subcategory)}"
-description: "Browse ${subPatterns.length} ${capitalize(subcategory)} components."
+description: "Browse ${count} ${capitalize(subcategory)} components."
 type: "components"
 layout: "list"
 category: "${category}"
@@ -287,15 +460,21 @@ Explore the ${capitalize(subcategory)} components.
 }
 
 // Generate overview _index.md
-function generateOverviewIndex(patterns) {
+function generateOverviewIndex(groupedPatterns) {
+  // Count only base components
+  let count = 0;
+  groupedPatterns.forEach(group => {
+    if (group.base) count++;
+  });
+
   return `---
 title: "hTWOo Components"
-description: "Browse all ${patterns.length} hTWOo UI Framework components. Fluent Design components for SharePoint, Microsoft Teams, and web applications."
+description: "Browse all ${count} hTWOo UI Framework components. Fluent Design components for SharePoint, Microsoft Teams, and web applications."
 type: "components"
 layout: "list"
 ---
 
-Explore ${patterns.length} Fluent Design components for SharePoint, Microsoft Teams, and web applications.
+Explore ${count} Fluent Design components for SharePoint, Microsoft Teams, and web applications.
 `;
 }
 
@@ -303,23 +482,33 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Generate search index
-function generateSearchIndex(patterns) {
-  return patterns.map(p => ({
-    id: p.id,
-    title: p.title,
-    description: getFirstParagraph(p.markdown) || seoDescription(p.id),
-    category: p.category,
-    subcategory: p.subcategory || '',
-    href: p.subcategory
-      ? `/components/${p.category}/${p.subcategory}/${p.filename}/`
-      : `/components/${p.category}/${p.filename}/`,
-    content: p.markdown ? p.markdown.replace(/[#*`\[\]]/g, ' ').substring(0, 500) : ''
-  }));
+// Generate search index (only base components)
+function generateSearchIndex(groupedPatterns) {
+  const results = [];
+
+  groupedPatterns.forEach((group, key) => {
+    if (!group.base) return;
+
+    const p = group.base;
+    results.push({
+      id: p.id,
+      title: p.title,
+      description: getFirstParagraph(p.markdown) || seoDescription(p.id),
+      category: p.category,
+      subcategory: p.subcategory || '',
+      href: p.subcategory
+        ? `/components/${p.category}/${p.subcategory}/${p.baseFilename}/`
+        : `/components/${p.category}/${p.baseFilename}/`,
+      content: p.markdown ? p.markdown.replace(/[#*`\[\]]/g, ' ').substring(0, 500) : '',
+      variantCount: group.variants.length
+    });
+  });
+
+  return results;
 }
 
-// Generate sitemap
-function generateSitemap(patterns) {
+// Generate sitemap (only base components)
+function generateSitemap(groupedPatterns) {
   const buildDate = new Date().toISOString().split('T')[0];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -334,22 +523,30 @@ function generateSitemap(patterns) {
   </url>\n`;
 
   // Category pages
-  CATEGORIES.forEach(cat => {
-    if (patterns.some(p => p.category === cat)) {
-      xml += `  <url>
+  const categories = new Set();
+  groupedPatterns.forEach((group, key) => {
+    if (group.base) {
+      categories.add(group.base.category);
+    }
+  });
+
+  categories.forEach(cat => {
+    xml += `  <url>
     <loc>${CONFIG.baseUrl}/components/${cat}/</loc>
     <lastmod>${buildDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
-    }
   });
 
-  // Component pages
-  patterns.forEach(p => {
+  // Component pages (only base components)
+  groupedPatterns.forEach((group, key) => {
+    if (!group.base) return;
+
+    const p = group.base;
     const url = p.subcategory
-      ? `${CONFIG.baseUrl}/components/${p.category}/${p.subcategory}/${p.filename}/`
-      : `${CONFIG.baseUrl}/components/${p.category}/${p.filename}/`;
+      ? `${CONFIG.baseUrl}/components/${p.category}/${p.subcategory}/${p.baseFilename}/`
+      : `${CONFIG.baseUrl}/components/${p.category}/${p.baseFilename}/`;
 
     xml += `  <url>
     <loc>${url}</loc>
@@ -394,10 +591,17 @@ async function build() {
   // Scan for patterns
   console.log('Scanning patterns...');
   const patterns = scanPatterns();
-  console.log(`Found ${patterns.length} patterns\n`);
+  console.log(`Found ${patterns.length} patterns`);
 
-  if (patterns.length === 0) {
-    console.warn('No patterns found. Check the patterns directory.');
+  // Group patterns (base + variants)
+  const groupedPatterns = groupPatterns(patterns);
+  const baseCount = Array.from(groupedPatterns.values()).filter(g => g.base).length;
+  const variantCount = patterns.filter(p => p.isVariant).length;
+  console.log(`  - ${baseCount} base components`);
+  console.log(`  - ${variantCount} variants\n`);
+
+  if (baseCount === 0) {
+    console.warn('No base patterns found. Check the patterns directory.');
     return;
   }
 
@@ -417,46 +621,79 @@ async function build() {
   console.log('Generating Hugo content files...');
 
   // Overview _index.md
-  const overviewContent = generateOverviewIndex(patterns);
+  const overviewContent = generateOverviewIndex(groupedPatterns);
   fs.writeFileSync(path.join(contentDir, '_index.md'), overviewContent);
 
-  // Category and component content
-  let generated = 0;
-  CATEGORIES.forEach(category => {
-    const categoryPatterns = patterns.filter(p => p.category === category);
-    if (categoryPatterns.length === 0) return;
+  // Track categories and subcategories
+  const categoriesUsed = new Set();
+  const subcategoriesUsed = new Map();
 
+  // Generate component pages (only for base components, with variants embedded)
+  let generated = 0;
+  groupedPatterns.forEach((group, key) => {
+    if (!group.base) {
+      // Variant without a base component - create standalone page
+      if (group.variants.length > 0) {
+        const pattern = group.variants[0];
+        categoriesUsed.add(pattern.category);
+        if (pattern.subcategory) {
+          if (!subcategoriesUsed.has(pattern.category)) {
+            subcategoriesUsed.set(pattern.category, new Set());
+          }
+          subcategoriesUsed.get(pattern.category).add(pattern.subcategory);
+        }
+
+        const componentMd = generateComponentMarkdown(pattern, group.variants.slice(1));
+        const categoryDir = path.join(contentDir, pattern.category);
+        const mdPath = pattern.subcategory
+          ? path.join(categoryDir, pattern.subcategory, `${pattern.baseFilename}.md`)
+          : path.join(categoryDir, `${pattern.baseFilename}.md`);
+
+        ensureDir(path.dirname(mdPath));
+        fs.writeFileSync(mdPath, componentMd);
+        generated++;
+      }
+      return;
+    }
+
+    const pattern = group.base;
+    categoriesUsed.add(pattern.category);
+    if (pattern.subcategory) {
+      if (!subcategoriesUsed.has(pattern.category)) {
+        subcategoriesUsed.set(pattern.category, new Set());
+      }
+      subcategoriesUsed.get(pattern.category).add(pattern.subcategory);
+    }
+
+    const componentMd = generateComponentMarkdown(pattern, group.variants);
+    const categoryDir = path.join(contentDir, pattern.category);
+    const mdPath = pattern.subcategory
+      ? path.join(categoryDir, pattern.subcategory, `${pattern.baseFilename}.md`)
+      : path.join(categoryDir, `${pattern.baseFilename}.md`);
+
+    ensureDir(path.dirname(mdPath));
+    fs.writeFileSync(mdPath, componentMd);
+    generated++;
+  });
+
+  // Generate category index files
+  categoriesUsed.forEach(category => {
     const categoryDir = path.join(contentDir, category);
     ensureDir(categoryDir);
-
-    // Category _index.md
-    const categoryContent = generateCategoryIndex(category, patterns);
+    const categoryContent = generateCategoryIndex(category, groupedPatterns);
     fs.writeFileSync(path.join(categoryDir, '_index.md'), categoryContent);
+  });
 
-    // Subcategories
-    const subcategories = [...new Set(categoryPatterns.filter(p => p.subcategory).map(p => p.subcategory))];
-    subcategories.forEach(sub => {
-      const subDir = path.join(categoryDir, sub);
+  // Generate subcategory index files
+  subcategoriesUsed.forEach((subcategories, category) => {
+    subcategories.forEach(subcategory => {
+      const subDir = path.join(contentDir, category, subcategory);
       ensureDir(subDir);
-
-      // Subcategory _index.md
-      const subContent = generateSubcategoryIndex(category, sub, patterns);
+      const subContent = generateSubcategoryIndex(category, subcategory, groupedPatterns);
       fs.writeFileSync(path.join(subDir, '_index.md'), subContent);
     });
-
-    // Component markdown files
-    categoryPatterns.forEach(pattern => {
-      const componentMd = generateComponentMarkdown(pattern);
-
-      const mdPath = pattern.subcategory
-        ? path.join(categoryDir, pattern.subcategory, `${pattern.filename}.md`)
-        : path.join(categoryDir, `${pattern.filename}.md`);
-
-      ensureDir(path.dirname(mdPath));
-      fs.writeFileSync(mdPath, componentMd);
-      generated++;
-    });
   });
+
   console.log(`Generated ${generated} component content files\n`);
 
   // Copy Hugo layouts
@@ -469,7 +706,7 @@ async function build() {
 
   // Generate search index
   console.log('Generating search index...');
-  const searchIndex = generateSearchIndex(patterns);
+  const searchIndex = generateSearchIndex(groupedPatterns);
   const jsDir = path.join(assetsDir, 'js');
   ensureDir(jsDir);
   fs.writeFileSync(
@@ -488,7 +725,7 @@ async function build() {
 
   // Generate sitemap
   console.log('Generating sitemap...');
-  const sitemap = generateSitemap(patterns);
+  const sitemap = generateSitemap(groupedPatterns);
   fs.writeFileSync(path.join(CONFIG.outputDir, 'sitemap.xml'), sitemap);
 
   console.log('\nBuild complete!');

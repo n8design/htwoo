@@ -9,13 +9,14 @@ subcategory: "icons"
 seoTitle: "Atoms - Icons Icon"
 seoDescription: "Icons Icon Atoms"
 weight: 3
+hasVariants: false
 markup: |
   &lt;span class=&quot;hoo-icon&quot;&gt;
-      &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-          &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-plus&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt;
+  &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
+      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
+      &lt;/use&gt;
+  &lt;/svg&gt;&lt;/span&gt;
 ---
 
 Standard icons in HTWOO UI are SVG-based icons used throughout the interface for consistent visual representation. These icons are highly flexible, can be styled with CSS, and scale without loss of quality.

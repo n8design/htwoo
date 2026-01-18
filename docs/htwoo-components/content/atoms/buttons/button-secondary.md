@@ -9,6 +9,7 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Secondary"
 seoDescription: "Buttons Button Secondary Atoms"
 weight: 21
+hasVariants: false
 markup: |
   
 ---

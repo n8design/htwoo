@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Search Input"
 seoDescription: "Forms Search Input Atoms"
 weight: 55
+hasVariants: false
 markup: |
   
 ---

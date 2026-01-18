@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Validation Message"
 seoDescription: "Input Validation Message Atoms"
 weight: 90
+hasVariants: false
 markup: |
   &lt;output class=&quot;hoo-validation&quot; id=&quot;field-x-error-42&quot; &gt;lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/output&gt;
-  
 ---
 
 # Validation Message

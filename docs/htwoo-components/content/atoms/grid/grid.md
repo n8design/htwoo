@@ -9,6 +9,7 @@ subcategory: "grid"
 seoTitle: "Atoms - Grid Grid"
 seoDescription: "Grid Grid Atoms"
 weight: 5
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-grid&quot;&gt;
       &lt;div class=&quot;demo-item&quot;&gt;Demo Item&lt;/div&gt;

@@ -9,13 +9,13 @@ subcategory: "media"
 seoTitle: "Molecules - Media Video Player Html"
 seoDescription: "Media Video Player Html Molecules"
 weight: 10
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-video-player&quot;&gt;
       &lt;video controls autoplay class=&quot;hoo-video-player&quot; loading=&quot;lazy&quot; preload=&quot;meta&quot;&gt;
-          &lt;source src=&quot;../../images/videos/chemex.mp4&quot; type=&quot;video/mp4&quot;&gt;
+          &lt;source src=&quot;/htwoo-core/images/videos/chemex.mp4&quot; type=&quot;video/mp4&quot;&gt;
       &lt;/video&gt;
   &lt;/div&gt;
-  
 ---
 
 # HTML5 Video Player

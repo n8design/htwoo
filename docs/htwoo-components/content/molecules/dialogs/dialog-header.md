@@ -9,22 +9,24 @@ subcategory: "dialogs"
 seoTitle: "Molecules - Dialogs Dialog Header"
 seoDescription: "Dialogs Dialog Header Molecules"
 weight: 10
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-dlgheader&quot;&gt;
-      &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;&lt;h2&gt;Dialog Header&lt;/h2&gt;&lt;/div&gt;
-      &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;&lt;button class=&quot;hoo-buttonicon&quot; 
+      &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;
+          &lt;h2&gt;Dialog Header&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;
+          &lt;button class=&quot;hoo-buttonicon&quot; 
       
       
-      &gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
+      &gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+              &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+                  &lt;/use&gt;
+              &lt;/svg&gt;&lt;/span&gt;
+      &lt;/button&gt;
   &lt;/div&gt;
   &lt;/div&gt;
-  
 ---
 
 # Dialog Header

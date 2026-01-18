@@ -1,6 +1,6 @@
 ---
 title: "Images"
-description: "Browse 3 Images components."
+description: "Browse 0 Images components."
 type: "components"
 layout: "list"
 category: "atoms"

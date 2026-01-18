@@ -1,6 +1,6 @@
 ---
 title: "Avatar"
-description: "Browse 11 Avatar components."
+description: "Browse 3 Avatar components."
 type: "components"
 layout: "list"
 category: "atoms"

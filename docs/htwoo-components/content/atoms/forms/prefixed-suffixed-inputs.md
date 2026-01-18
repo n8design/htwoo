@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Prefixed Suffixed Inputs"
 seoDescription: "Forms Prefixed Suffixed Inputs Atoms"
 weight: 15
+hasVariants: false
 markup: |
   
 ---

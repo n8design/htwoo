@@ -9,6 +9,7 @@ subcategory: "tooltip"
 seoTitle: "Atoms - Tooltip Tooltips"
 seoDescription: "Tooltip Tooltips Atoms"
 weight: 999
+hasVariants: false
 markup: |
   
 ---

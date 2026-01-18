@@ -9,6 +9,7 @@ subcategory: "input"
 seoTitle: "Atoms - Input Select Drop Down Person"
 seoDescription: "Input Select Drop Down Person Atoms"
 weight: 31.2
+hasVariants: false
 markup: |
   &lt;ul class=&quot;hoo-select-dropdown hoo-show&quot;&gt;
       &lt;li class=&quot;hoo-optgroup&quot;&gt;
@@ -29,7 +30,6 @@ markup: |
       &lt;/li&gt;
       &lt;li data-value=&quot;guest_user&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Guest User&lt;/li&gt;
   &lt;/ul&gt;
-  
 ---
 
 # Person Select Dropdown

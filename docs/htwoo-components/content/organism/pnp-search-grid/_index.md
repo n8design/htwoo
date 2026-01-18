@@ -1,6 +1,6 @@
 ---
 title: "Pnp-search-grid"
-description: "Browse 4 Pnp-search-grid components."
+description: "Browse 1 Pnp-search-grid components."
 type: "components"
 layout: "list"
 category: "organism"

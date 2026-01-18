@@ -9,19 +9,16 @@ subcategory: "output"
 seoTitle: "Atoms - Output Progress Bar Steps"
 seoDescription: "Output Progress Bar Steps Atoms"
 weight: 999
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-progress-stepbar&quot;&gt;
-      &lt;progress class=&quot;hoo-progress-bar&quot; value=&quot;70&quot; max=&quot;100&quot;&gt;
-          70%
-      &lt;/progress&gt;
+      &lt;progress class=&quot;hoo-progress-bar&quot; value=&quot;70&quot; max=&quot;100&quot;&gt;70%&lt;/progress&gt;
       &lt;div class=&quot;hoo-progress-step&quot;
           style=&quot; --step-offset : 20%;&quot;&gt;
           &lt;div class=&quot;inner&quot;&gt;
               &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;
               &lt;/div&gt;
-              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;
-                  Step 1
-              &lt;/div&gt;
+              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 1&lt;/div&gt;
           &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;hoo-progress-step&quot;
@@ -29,9 +26,7 @@ markup: |
           &lt;div class=&quot;inner&quot;&gt;
               &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;
               &lt;/div&gt;
-              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;
-                  Step 2
-              &lt;/div&gt;
+              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 2&lt;/div&gt;
           &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;hoo-progress-step&quot;
@@ -39,9 +34,7 @@ markup: |
           &lt;div class=&quot;inner&quot;&gt;
               &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;
               &lt;/div&gt;
-              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;
-                  Step 3
-              &lt;/div&gt;
+              &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step 3&lt;/div&gt;
           &lt;/div&gt;
       &lt;/div&gt;
   &lt;/div&gt;

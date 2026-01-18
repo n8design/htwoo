@@ -9,18 +9,22 @@ subcategory: "cards"
 seoTitle: "Organism - Cards Document Card Html"
 seoDescription: "Cards Document Card Html Organism"
 weight: 12
+hasVariants: false
 markup: |
   &lt;article class=&quot;hoo-doccard&quot;&gt;
-      &lt;div class=&quot;hoo-cardhtml&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;hoo-cardlocation&quot;&gt;Marketing&lt;/div&gt;
-      &lt;div class=&quot;hoo-cardtitle&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;hoo-cardhtml&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;hoo-cardlocation&quot;&gt;Marketing&lt;/div&gt;
+      &lt;div class=&quot;hoo-cardtitle&quot;&gt;
+      &lt;/div&gt;
       &lt;footer class=&quot;hoo-cardfooter&quot;&gt;
-        &lt;div class=&quot;hoo-avatar-32&quot;&gt;
-          &lt;img src=&quot;../../images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;32&quot; width=&quot;32&quot; loading=&quot;lazy&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;hoo-cardfooter-data&quot;&gt;
-          &lt;div class=&quot;hoo-cardfooter-name&quot;&gt;Man on the moon&lt;/div&gt;
-          &lt;div class=&quot;hoo-cardfooter-modified&quot;&gt;Created a seconds ago&lt;/div&gt;
-        &lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-32&quot;&gt;
+              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;32&quot; width=&quot;32&quot; loading=&quot;lazy&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;hoo-cardfooter-data&quot;&gt;
+              &lt;div class=&quot;hoo-cardfooter-name&quot;&gt;Man on the moon&lt;/div&gt;
+              &lt;div class=&quot;hoo-cardfooter-modified&quot;&gt;Created a seconds ago&lt;/div&gt;
+          &lt;/div&gt;
       &lt;/footer&gt;
   &lt;/article&gt;
 ---

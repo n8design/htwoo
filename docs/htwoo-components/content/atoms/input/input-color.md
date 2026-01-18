@@ -9,6 +9,7 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Color"
 seoDescription: "Input Input Color Atoms"
 weight: 18
+hasVariants: false
 markup: |
   &lt;input class=&quot;hoo-input-color&quot; type=&quot;color&quot; value=&quot;#000&quot; hsla &gt;
 ---

@@ -9,27 +9,26 @@ subcategory: "input"
 seoTitle: "Atoms - Input Select"
 seoDescription: "Input Select Atoms"
 weight: 30
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-select&quot;&gt;
-      &lt;div id=&#39;custom-select-status&#39; class=&#39;hidden-visually&#39; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+      &lt;div id=&#39;custom-select-status&#39; class=&#39;hidden-visually&#39; aria-live=&quot;polite&quot;&gt;
+      &lt;/div&gt;
       &lt;input type=&quot;text&quot; id=&quot;hoo-select-input&quot; class=&quot;hoo-select-text&quot; aria-autocomplete=&quot;both&quot;
           aria-controls=&quot;custom-select-list&quot; autocomplete=&quot;off&quot; &gt;
       &lt;button class=&quot;hoo-buttonicon&quot; 
           
           
-          &gt;
-          &lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
-                  
-                  &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-down&quot;&gt;&lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/span&gt;&lt;/button&gt;
-      &lt;ul class=&quot;hoo-select-dropdown&quot;&gt;
-          &lt;li data-value=&quot;&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;
-              
-          &lt;/li&gt;
-      &lt;/ul&gt;
-      
+          &gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+          &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-down&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class=&quot;hoo-select-dropdown&quot;&gt;
+      &lt;li data-value=&quot;&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;
+      &lt;/li&gt;
+  &lt;/ul&gt;
   &lt;/div&gt;
 ---
 

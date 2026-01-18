@@ -9,13 +9,14 @@ subcategory: "media"
 seoTitle: "Molecules - Media Video Player Vimeo"
 seoDescription: "Media Video Player Vimeo Molecules"
 weight: 30
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-video-player&quot;&gt;
       &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://player.vimeo.com/video/307133457?h&amp;#x3D;7d6c76e92d&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot;
           allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen
-          loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;       
+          loading=&quot;lazy&quot;&gt;
+      &lt;/iframe&gt;
   &lt;/div&gt;
-  
 ---
 
 # Vimeo Video Player

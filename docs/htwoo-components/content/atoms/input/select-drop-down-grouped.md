@@ -9,6 +9,7 @@ subcategory: "input"
 seoTitle: "Atoms - Input Select Drop Down Grouped"
 seoDescription: "Input Select Drop Down Grouped Atoms"
 weight: 31.1
+hasVariants: false
 markup: |
   &lt;ul class=&quot;hoo-select-dropdown hoo-show&quot;&gt;
       &lt;li class=&quot;hoo-optgroup&quot;&gt;
@@ -34,7 +35,6 @@ markup: |
           &lt;/ul&gt;
       &lt;/li&gt;
   &lt;/ul&gt;
-  
 ---
 
 # Grouped Select Dropdown

@@ -9,16 +9,14 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Standard Icon Reversed"
 seoDescription: "Buttons Button Standard Icon Reversed Atoms"
 weight: 16
+hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button is-reversed&quot;&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+  &lt;button class=&quot;hoo-button is-reversed&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
       &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-          
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
   &lt;/button&gt;
-  
 ---
 
 Standard button with an icon on the right side provides visual reinforcement for the button's action while maintaining the default button styling. The icon is positioned to the right of the button text using the `.is-reversed` class.

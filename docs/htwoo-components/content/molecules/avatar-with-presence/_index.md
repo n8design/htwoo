@@ -1,6 +1,6 @@
 ---
 title: "Avatar-with-presence"
-description: "Browse 10 Avatar-with-presence components."
+description: "Browse 2 Avatar-with-presence components."
 type: "components"
 layout: "list"
 category: "molecules"

@@ -9,8 +9,10 @@ subcategory: "loading"
 seoTitle: "Atoms - Loading Shimmer Row"
 seoDescription: "Loading Shimmer Row Atoms"
 weight: 50
+hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-ph-row&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;hoo-ph-row&quot;&gt;
+  &lt;/div&gt;
 ---
 
 # Shimmer Row

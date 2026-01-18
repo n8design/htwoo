@@ -9,13 +9,13 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Suffixed"
 seoDescription: "Input Input Text Suffixed Atoms"
 weight: 11
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-input-group&quot;&gt;
       &lt;input class=&quot;hoo-input-text&quot;  id=&quot;toggle-33&quot; 
           placeholder=&quot;A placeholder text&quot; data-suffix=&quot;.com&quot;  aria-labelledby=&quot;suffix-label-toggle-33&quot; &gt;
       &lt;div id=&quot;suffix-label-toggle-33&quot; class=&quot;hoo-input-suffix&quot;&gt;.com&lt;/div&gt;
   &lt;/div&gt;
-  
 ---
 
 # Text Input with Suffix

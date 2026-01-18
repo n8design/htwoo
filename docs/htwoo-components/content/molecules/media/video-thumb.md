@@ -9,12 +9,12 @@ subcategory: "media"
 seoTitle: "Molecules - Media Video Thumb"
 seoDescription: "Media Video Thumb Molecules"
 weight: 50
+hasVariants: false
 markup: |
   &lt;figure class=&quot;hoo-thumbnail-figure&quot;&gt;
-      &lt;img src=&quot;../../images/videos/big-bug-bunny.webp&quot; alt=&quot;How to make the perfect coffee&quot; class=&quot;hoo-thumbnail-img&quot;&gt;
+      &lt;img src=&quot;/htwoo-core/images/videos/big-bug-bunny.webp&quot; alt=&quot;How to make the perfect coffee&quot; class=&quot;hoo-thumbnail-img&quot;&gt;
       &lt;figcaption class=&quot;hoo-thumbnail-cap&quot;&gt;How to make the perfect coffee&lt;/figcaption&gt;
   &lt;/figure&gt;
-  
 ---
 
 # Video Thumbnail

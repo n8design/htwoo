@@ -9,18 +9,17 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Icon"
 seoDescription: "Buttons Button Icon Atoms"
 weight: 50
+hasVariants: false
 markup: |
   &lt;button class=&quot;hoo-buttonicon&quot; 
       
       
-      &gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
-  
+      &gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+      &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
 ---
 
 Icon buttons display only an icon without text, providing a compact interface element for common actions. They use the standard button styling but are typically rendered in a square shape to accommodate the icon.

@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Url"
 seoDescription: "Input Input Text Url Atoms"
 weight: 10.3
+hasVariants: false
 markup: |
   &lt;input class=&quot;hoo-input-text&quot; type=&quot;url&quot; id=&quot;toggle-33&quot;   placeholder=&quot;https://example.com&quot;  &gt;
-  
 ---
 
 # URL Input

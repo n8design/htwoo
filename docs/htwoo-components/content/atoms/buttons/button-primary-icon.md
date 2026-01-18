@@ -9,16 +9,14 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Primary Icon"
 seoDescription: "Buttons Button Primary Icon Atoms"
 weight: 25
+hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button-primary&quot;&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+  &lt;button class=&quot;hoo-button-primary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
       &lt;svg class=&quot;hoo-icon-svg icon-arrow-left&quot; aria-hidden=&quot;true&quot;&gt;
-          
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-left&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-left&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
   &lt;/button&gt;
-  
 ---
 
 Primary button with an icon on the left side combines the prominence of primary styling with visual reinforcement using an icon. The icon is positioned to the left of the button text by default.

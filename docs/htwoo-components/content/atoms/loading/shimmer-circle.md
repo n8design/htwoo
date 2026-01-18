@@ -9,8 +9,10 @@ subcategory: "loading"
 seoTitle: "Atoms - Loading Shimmer Circle"
 seoDescription: "Loading Shimmer Circle Atoms"
 weight: 40
+hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-ph-circle&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;hoo-ph-circle&quot;&gt;
+  &lt;/div&gt;
 ---
 
 # Shimmer Circle

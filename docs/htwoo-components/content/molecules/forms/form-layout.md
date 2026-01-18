@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Molecules - Forms Form Layout"
 seoDescription: "Forms Form Layout Molecules"
 weight: 70
+hasVariants: false
 markup: |
   
 ---

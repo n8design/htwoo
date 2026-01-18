@@ -9,12 +9,10 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Compound Standard"
 seoDescription: "Buttons Button Compound Standard Atoms"
 weight: 30
+hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-buttoncomp&quot;&gt;
-      &lt;span class=&quot;hoo-buttoncomp-label&quot;&gt;Button&lt;/span&gt;
-      &lt;span class=&quot;hoo-buttoncomp-desc&quot;&gt;Primary with description&lt;/div&gt;
+  &lt;button class=&quot;hoo-buttoncomp&quot;&gt;&lt;span class=&quot;hoo-buttoncomp-label&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;hoo-buttoncomp-desc&quot;&gt;Primary with description&lt;/div&gt;
   &lt;/button&gt;
-  
 ---
 
 Compound buttons include both a label and a description, allowing for more detailed context on the button's action. The standard compound button uses the default button styling with additional structure for multi-line content.

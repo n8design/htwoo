@@ -9,22 +9,26 @@ subcategory: "forms"
 seoTitle: "Molecules - Forms Radio Button Group Horizontal"
 seoDescription: "Forms Radio Button Group Horizontal Molecules"
 weight: 21
+hasVariants: false
 markup: |
   &lt;menu class=&quot;hoo-radiobutton-group is-horizontal&quot; role=&quot;radiogroup&quot; tabindex=&quot;0&quot;&gt;
       &lt;li tabindex=&quot;-1&quot; role=&quot;radio&quot;&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg1&quot; value=&quot;apple&quot; class=&quot;hoo-radio&quot;&gt;&lt;label for=&quot;rbg1&quot; &gt;Apple&lt;/label&gt;
+          &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg1&quot; value=&quot;apple&quot; class=&quot;hoo-radio&quot;&gt;
+          &lt;label for=&quot;rbg1&quot; &gt;Apple&lt;/label&gt;
       &lt;/li&gt;
       &lt;li tabindex=&quot;-1&quot; role=&quot;radio&quot;&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg2&quot; value=&quot;banana&quot; class=&quot;hoo-radio&quot;&gt;&lt;label for=&quot;rbg2&quot; &gt;Avocado&lt;/label&gt;
+          &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg2&quot; value=&quot;banana&quot; class=&quot;hoo-radio&quot;&gt;
+          &lt;label for=&quot;rbg2&quot; &gt;Avocado&lt;/label&gt;
       &lt;/li&gt;
       &lt;li tabindex=&quot;-1&quot; role=&quot;radio&quot;&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg3&quot; value=&quot;citrus&quot; class=&quot;hoo-radio&quot;&gt;&lt;label for=&quot;rbg3&quot; &gt;Banana&lt;/label&gt;
+          &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg3&quot; value=&quot;citrus&quot; class=&quot;hoo-radio&quot;&gt;
+          &lt;label for=&quot;rbg3&quot; &gt;Banana&lt;/label&gt;
       &lt;/li&gt;
       &lt;li tabindex=&quot;-1&quot; role=&quot;radio&quot;&gt;
-              &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg4&quot; value=&quot;avocado&quot; class=&quot;hoo-radio&quot;&gt;&lt;label for=&quot;rbg4&quot; &gt;Citrus&lt;/label&gt;
+          &lt;input type=&quot;radio&quot; name=&quot;radio-button-group&quot; id=&quot;rbg4&quot; value=&quot;avocado&quot; class=&quot;hoo-radio&quot;&gt;
+          &lt;label for=&quot;rbg4&quot; &gt;Citrus&lt;/label&gt;
       &lt;/li&gt;
   &lt;/menu&gt;
-  
 ---
 
 # Radio Button Group - Horizontal

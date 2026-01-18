@@ -9,8 +9,29 @@ subcategory: "loading"
 seoTitle: "Atoms - Loading Spinner"
 seoDescription: "Loading Spinner Atoms"
 weight: 30
+hasVariants: true
 markup: |
-  &lt;div class=&quot;hoo-spinner&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;hoo-spinner&quot;&gt;
+  &lt;/div&gt;
+variants:
+  - id: "atoms-loading-spinner-large"
+    title: "Large Spinner"
+    variantName: "large"
+    markup: |
+      &lt;div class=&quot;hoo-spinner large&quot;&gt;
+      &lt;/div&gt;
+  - id: "atoms-loading-spinner-small"
+    title: "Small Spinner"
+    variantName: "small"
+    markup: |
+      &lt;div class=&quot;hoo-spinner small&quot;&gt;
+      &lt;/div&gt;
+  - id: "atoms-loading-spinner-xsmall"
+    title: "XSmall Spinner"
+    variantName: "xsmall"
+    markup: |
+      &lt;div class=&quot;hoo-spinner xsmall&quot;&gt;
+      &lt;/div&gt;
 ---
 
 # Spinner

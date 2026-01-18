@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Date Week"
 seoDescription: "Input Input Date Week Atoms"
 weight: 15.2
+hasVariants: false
 markup: |
   &lt;input type=&quot;week&quot; class=&quot;hoo-input-date&quot;  name=&quot;my-date-picker-name&quot; value=&quot;2021-10-26&quot; min=&quot;2018-01-01&quot; max=&quot;2030-12-31&quot;    &gt;
-  
 ---
 
 # Week Input

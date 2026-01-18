@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Phone"
 seoDescription: "Input Input Text Phone Atoms"
 weight: 10.4
+hasVariants: false
 markup: |
   &lt;input class=&quot;hoo-input-text&quot; type=&quot;phone&quot; id=&quot;toggle-33&quot;   placeholder=&quot;555-8039&quot;  &gt;
-  
 ---
 
 # Phone Input

@@ -9,13 +9,14 @@ subcategory: "media"
 seoTitle: "Molecules - Media Video Player Youtube"
 seoDescription: "Media Video Player Youtube Molecules"
 weight: 20
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-video-player&quot;&gt;
       &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ?si&amp;#x3D;jNRCpQW6ukJ1Zunl&amp;amp;&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot;
           allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
-          allowfullscreen loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
+          allowfullscreen loading=&quot;lazy&quot;&gt;
+      &lt;/iframe&gt;
   &lt;/div&gt;
-  
 ---
 
 # YouTube Video Player

@@ -9,11 +9,10 @@ subcategory: "persona"
 seoTitle: "Molecules - Persona Persona Overflow"
 seoDescription: "Persona Persona Overflow Molecules"
 weight: 11
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-persona-overflow&quot;&gt;
-      &lt;div class=&quot;hoo-persona-data&quot;&gt;
-          +21
-      &lt;/div&gt;
+      &lt;div class=&quot;hoo-persona-data&quot;&gt;+21&lt;/div&gt;
   &lt;/div&gt;
 ---
 

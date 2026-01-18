@@ -9,100 +9,97 @@ subcategory: "dialogs"
 seoTitle: "Organism - Dialogs Msgbars"
 seoDescription: "Dialogs Msgbars Organism"
 weight: 10
+hasVariants: false
 markup: |
-  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar&quot; open&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-info-filled&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-info-filled&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;    &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and can be used for a
-          statusbar for example. &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
-              Element on MDN documentation&lt;/a&gt;&lt;/div&gt;
-      &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
-          &lt;button class=&quot;hoo-buttonicon&quot; 
-      
-      
-        autofocus&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
-  
-      &lt;/div&gt;
-  &lt;/dialog&gt;
-  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar warning&quot; open&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-warning-filled&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-warning-filled&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;    &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and can be used for a
-          statusbar for example. &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
-              Element on MDN documentation&lt;/a&gt;&lt;/div&gt;
-      &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
-          &lt;button class=&quot;hoo-buttonicon&quot; 
-      
-      
-        autofocus&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
-  
-      &lt;/div&gt;
-  &lt;/dialog&gt;
-  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar error&quot; open&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar&quot; open&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
       &lt;svg class=&quot;hoo-icon-svg icon-info-filled&quot; aria-hidden=&quot;true&quot;&gt;
           &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-info-filled&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt;&lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and
-          can be used for a
-          statusbar for example. &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
-              Element on MDN documentation&lt;/a&gt;&lt;/div&gt;
-      &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
-          &lt;button class=&quot;hoo-buttonicon&quot; 
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-info-filled&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and can be used for a
+          statusbar for example.&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
+              Element on MDN documentation&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
+      &lt;button class=&quot;hoo-buttonicon&quot; 
       
       
-        autofocus&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+        autofocus&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
           &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
-  
-      &lt;/div&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
   &lt;/dialog&gt;
-  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar success&quot; open&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar warning&quot; open&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+      &lt;svg class=&quot;hoo-icon-svg icon-warning-filled&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-warning-filled&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and can be used for a
+          statusbar for example.&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
+              Element on MDN documentation&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
+      &lt;button class=&quot;hoo-buttonicon&quot; 
+      
+      
+        autofocus&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;/dialog&gt;
+  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar error&quot; open&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+      &lt;svg class=&quot;hoo-icon-svg icon-info-filled&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-info-filled&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a backdrop and
+          can be used for a
+          statusbar for example.&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The Dialog
+              Element on MDN documentation&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
+      &lt;button class=&quot;hoo-buttonicon&quot; 
+      
+      
+        autofocus&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;/dialog&gt;
+  &lt;dialog id=&quot;myDialog&quot; class=&quot;hoo-dlg statusbar success&quot; open&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
       &lt;svg class=&quot;hoo-icon-svg icon-checkmark-circle-filled&quot; aria-hidden=&quot;true&quot;&gt;
           &lt;title&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/title&gt;
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-checkmark-circle-filled&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt;&lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-checkmark-circle-filled&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This dialog comes without a
           backdrop and can be used
-          for a statusbar for example. &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The
-              Dialog Element on MDN documentation&lt;/a&gt;&lt;/div&gt;
-      &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
-          &lt;button class=&quot;hoo-buttonicon&quot; 
+          for a statusbar for example.&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog&quot; target=&quot;_blank&quot;&gt;The
+              Dialog Element on MDN documentation&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hoo-dlg-actions&quot;&gt;
+      &lt;button class=&quot;hoo-buttonicon&quot; 
       
       
-        autofocus&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
+        autofocus&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
           &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;&lt;/button&gt;
-  
-      &lt;/div&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
   &lt;/dialog&gt;
 ---
 

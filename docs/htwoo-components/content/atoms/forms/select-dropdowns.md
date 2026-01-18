@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Select Dropdowns"
 seoDescription: "Forms Select Dropdowns Atoms"
 weight: 30
+hasVariants: false
 markup: |
   
 ---

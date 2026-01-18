@@ -9,40 +9,31 @@ subcategory: "menus"
 seoTitle: "Molecules - Menus Breadcrumb"
 seoDescription: "Menus Breadcrumb Molecules"
 weight: 15
+hasVariants: false
 markup: |
   &lt;nav class=&quot;hoo-breadcrumb&quot;&gt;
       &lt;ol&gt;
-          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-              &lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 1&lt;/a&gt;
-              &lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-                  &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-                      
-                      &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-              &lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 2&lt;/a&gt;
-              &lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-                  &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-                      
-                      &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-              &lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 3&lt;/a&gt;
-              &lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-                  &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-                      
-                      &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-              &lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot; aria-current=&quot;location&quot;&gt;Item 4&lt;/a&gt;
-          &lt;/li&gt;
-      &lt;/ol&gt;
+          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 1&lt;/a&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
+          &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
+              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+              &lt;/use&gt;
+          &lt;/svg&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 2&lt;/a&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
+  &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
+      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+      &lt;/use&gt;
+  &lt;/svg&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot;&gt;Item 3&lt;/a&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
+  &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
+      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+      &lt;/use&gt;
+  &lt;/svg&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;hoo-breadcrumb-link&quot; aria-current=&quot;location&quot;&gt;Item 4&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;/ol&gt;
   &lt;/nav&gt;
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Quick-links-grid"
-description: "Browse 11 Quick-links-grid components."
+description: "Browse 7 Quick-links-grid components."
 type: "components"
 layout: "list"
 category: "organism"

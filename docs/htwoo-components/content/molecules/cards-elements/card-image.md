@@ -9,11 +9,11 @@ subcategory: "cards-elements"
 seoTitle: "Molecules - Cards Elements Card Image"
 seoDescription: "Cards Elements Card Image Molecules"
 weight: 20
+hasVariants: false
 markup: |
   &lt;figure class=&quot;hoo-cardimage&quot;&gt;
-      &lt;img src=&quot;../../images/card-images/coffee-image.jpg&quot; width=&quot;320&quot; height=&quot;180&quot; alt=&quot;&quot;&gt;
+      &lt;img src=&quot;/htwoo-core/images/card-images/coffee-image.jpg&quot; width=&quot;320&quot; height=&quot;180&quot; alt=&quot;&quot;&gt;
   &lt;/figure&gt;
-  
 ---
 
 # Card Image

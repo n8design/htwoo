@@ -9,44 +9,42 @@ subcategory: "dialogs"
 seoTitle: "Organism - Dialogs Dialog Bottombar"
 seoDescription: "Dialogs Dialog Bottombar Organism"
 weight: 5
+hasVariants: false
 markup: |
   &lt;dialog id=&quot;dlgbottombar&quot; class=&quot;hoo-dlg bottombar&quot;&gt;
       &lt;div class=&quot;hoo-dlgheader&quot;&gt;
-          &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;&lt;h2&gt;Dialog Header&lt;/h2&gt;&lt;/div&gt;
-          &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;&lt;button class=&quot;hoo-buttonicon&quot; 
+          &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;
+              &lt;h2&gt;Dialog Header&lt;/h2&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;
+              &lt;button class=&quot;hoo-buttonicon&quot; 
           
           
-          &gt;
-          &lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-                  
-                  &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/span&gt;&lt;/button&gt;
+          &gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+                  &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
+                      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+                      &lt;/use&gt;
+                  &lt;/svg&gt;&lt;/span&gt;
+          &lt;/button&gt;
       &lt;/div&gt;
-      &lt;/div&gt;
+  &lt;/div&gt;
   &lt;div class=&quot;hoo-dlgcontent&quot;&gt;
-      
-          &lt;p&gt;This dialog is a topbar . That automatically scales with the content.&lt;/p&gt;
-          &lt;p&gt;To make the height fixed add the CSS variable &lt;code&gt;--hoo-dlg-height&lt;/code&gt;&lt;/p&gt;
-          &lt;h2&gt;Try to resize the sidebar&lt;/h2&gt;
-          &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-unset&#39;&gt;
-              &lt;span class=&quot;hoo-button-label&quot;&gt;Unset / reset&lt;/span&gt;
-          &lt;/button&gt;
-          &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-20vw&#39;&gt;
-              &lt;span class=&quot;hoo-button-label&quot;&gt;20% height&lt;/span&gt;
-          &lt;/button&gt;
-          &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-50vw&#39;&gt;
-              &lt;span class=&quot;hoo-button-label&quot;&gt;50% height&lt;/span&gt;
-          &lt;/button&gt;
-          &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-75vw&#39;&gt;
-              &lt;span class=&quot;hoo-button-label&quot;&gt;75% height&lt;/span&gt;
-          &lt;/button&gt;
-  &lt;/div&gt;&lt;/dialog&gt;
+      &lt;p&gt;This dialog is a topbar . That automatically scales with the content.&lt;/p&gt;
+      &lt;p&gt;To make the height fixed add the CSS variable&lt;code&gt;--hoo-dlg-height&lt;/code&gt;
+  &lt;/p&gt;
+  &lt;h2&gt;Try to resize the sidebar&lt;/h2&gt;
+  &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-unset&#39;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Unset / reset&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-20vw&#39;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;20% height&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-50vw&#39;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;50% height&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-primary&quot; id=&#39;height-75vw&#39;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;75% height&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;/dialog&gt;
   &lt;!--- ⬇️ Script below is just for demo purposes ⬇️ --&gt;
-  &lt;script&gt;
-  
-      let dlg = document.querySelector(&#39;#dlgbottombar&#39;);
+      &lt;script&gt;let dlg = document.querySelector(&#39;#dlgbottombar&#39;);
   
       if (dlg !== undefined &amp;&amp; dlg.parentElement.className === &#39;dlg-background&#39;) {
           
@@ -93,8 +91,7 @@ markup: |
           console.debug(resizers);
   
           resizers.forEach(resizer =&gt; resizer.addEventListener(&#39;click&#39;, resize));
-      }
-  &lt;/script&gt;
+      }&lt;/script&gt;
 ---
 
 # Bottombar Dialog

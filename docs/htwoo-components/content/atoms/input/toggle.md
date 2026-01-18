@@ -9,11 +9,13 @@ subcategory: "input"
 seoTitle: "Atoms - Input Toggle"
 seoDescription: "Input Toggle Atoms"
 weight: 35
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-toggle&quot;&gt;
-      &lt;input type=&quot;checkbox&quot; class=&quot;hoo-toggle-cb&quot; name=&quot;toggleName&quot; id=&quot;toggle-42&quot; &gt;&lt;label for=&quot;toggle-42&quot; class=&quot;hoo-toggle-label&quot;&gt;&lt;span class=&quot;hoo-toggle-slider&quot;&gt;&lt;/span&gt;&lt;span class=&quot;hoo-toggle-checked&quot;&gt;On&lt;/span&gt;&lt;span class=&quot;hoo-toggle-unchecked&quot;&gt;Off&lt;/span&gt;&lt;/label&gt;
+      &lt;input type=&quot;checkbox&quot; class=&quot;hoo-toggle-cb&quot; name=&quot;toggleName&quot; id=&quot;toggle-42&quot; &gt;
+      &lt;label for=&quot;toggle-42&quot; class=&quot;hoo-toggle-label&quot;&gt;&lt;span class=&quot;hoo-toggle-slider&quot;&gt;&lt;/span&gt;&lt;span class=&quot;hoo-toggle-checked&quot;&gt;On&lt;/span&gt;&lt;span class=&quot;hoo-toggle-unchecked&quot;&gt;Off&lt;/span&gt;
+  &lt;/label&gt;
   &lt;/div&gt;
-  
 ---
 
 # Toggle Switch

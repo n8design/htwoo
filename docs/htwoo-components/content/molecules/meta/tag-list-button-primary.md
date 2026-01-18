@@ -9,26 +9,33 @@ subcategory: "meta"
 seoTitle: "Molecules - Meta Tag List Button Primary"
 seoDescription: "Meta Tag List Button Primary Molecules"
 weight: 21
+hasVariants: false
 markup: |
   &lt;ul class=&quot;hoo-meta-list&quot;&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Fluent&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Design&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;at&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;its&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;button class=&quot;hoo-mtag-primary&quot;&gt;
-      &lt;span class=&quot;hoo-mtag-lbl&quot;&gt;best&lt;/span&gt;
-  &lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;
+          &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;
+      &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Fluent&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Design&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;at&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;its&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;button class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;best&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;/li&gt;
   &lt;/ul&gt;
 ---
 

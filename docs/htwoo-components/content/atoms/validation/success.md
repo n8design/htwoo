@@ -9,6 +9,7 @@ subcategory: "validation"
 seoTitle: "Atoms - Validation Success"
 seoDescription: "Validation Success Atoms"
 weight: 999
+hasVariants: false
 markup: |
   &lt;span class=&quot;hoo-success&quot; id=&quot;&quot;&gt;Valid options added&lt;/span&gt;
 ---

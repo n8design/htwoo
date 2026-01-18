@@ -9,6 +9,7 @@ subcategory: "teams"
 seoTitle: "Templates - Teams Teams Splash Screen Multi"
 seoDescription: "Teams Teams Splash Screen Multi Templates"
 weight: 12
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-splashscr&quot;&gt;
       &lt;div class=&quot;hoo-splashscr-content&quot;&gt;

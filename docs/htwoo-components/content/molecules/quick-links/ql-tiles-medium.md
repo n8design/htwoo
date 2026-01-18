@@ -9,20 +9,17 @@ subcategory: "quick-links"
 seoTitle: "Molecules - Quick Links Ql Tiles Medium"
 seoDescription: "Quick Links Ql Tiles Medium Molecules"
 weight: 21
+hasVariants: false
 markup: |
   &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qltiles img-m&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;
-                  This is a really long title to get everything working lorem ipsum dolor sit amet
-              &lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;
-  &lt;/a&gt;
-  
+  &lt;article class=&quot;hoo-qltiles img-m&quot;&gt;
+      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+          &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+      &lt;/figure&gt;
+      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+          &lt;div class=&quot;hoo-qltitle&quot;&gt;This is a really long title to get everything working lorem ipsum dolor sit amet&lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/article&gt;&lt;/a&gt;
 ---
 
 # Quick Link Tiles - Medium

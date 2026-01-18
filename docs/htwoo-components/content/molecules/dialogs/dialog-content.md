@@ -9,11 +9,10 @@ subcategory: "dialogs"
 seoTitle: "Molecules - Dialogs Dialog Content"
 seoDescription: "Dialogs Dialog Content Molecules"
 weight: 20
+hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;
-      This is where the content of the modal Dialog lives
-      &amp;#123;{&gt; @partial-block }&amp;#125;
-  &lt;/div&gt;
+  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This is where the content of the modal Dialog lives
+      &amp;#123;{&gt; @partial-block }&amp;#125;&lt;/div&gt;
 ---
 
 # Dialog Content

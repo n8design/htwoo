@@ -9,10 +9,18 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text"
 seoDescription: "Input Input Text Atoms"
 weight: 10
+hasVariants: true
 markup: |
   &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;  type=&quot;text&quot;  
       placeholder=&quot;A placeholder text&quot;  &gt;
-  
+variants:
+  - id: "atoms-input-input-text-disabled"
+    title: "Disabled Text Input"
+    variantName: "disabled"
+    markup: |
+      &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;  type=&quot;text&quot; 
+          disabled=&quot;true&quot; aria-disabled=&quot;true&quot;  
+          placeholder=&quot;A placeholder text&quot;  &gt;
 ---
 
 # Text Input

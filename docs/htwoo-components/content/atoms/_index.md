@@ -1,6 +1,6 @@
 ---
 title: "Atoms"
-description: "Browse 145 Atoms components in the hTWOo UI Framework."
+description: "Browse 108 Atoms components in the hTWOo UI Framework."
 type: "components"
 layout: "list"
 category: "atoms"

@@ -9,6 +9,7 @@ subcategory: "cards-elements"
 seoTitle: "Molecules - Cards Elements Teams Dashboard Card"
 seoDescription: "Cards Elements Teams Dashboard Card Molecules"
 weight: 20
+hasVariants: false
 markup: |
   
 ---

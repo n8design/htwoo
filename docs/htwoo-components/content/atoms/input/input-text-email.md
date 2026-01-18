@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Email"
 seoDescription: "Input Input Text Email Atoms"
 weight: 10.1
+hasVariants: false
 markup: |
   &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;  type=&quot;email&quot;  placeholder=&quot;John.Doe@example.com&quot;    &gt;
-  
 ---
 
 # Email Input

@@ -9,6 +9,7 @@ subcategory: "loading"
 seoTitle: "Atoms - Loading Progress Bar"
 seoDescription: "Loading Progress Bar Atoms"
 weight: 20
+hasVariants: false
 markup: |
   
 ---

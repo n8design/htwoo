@@ -9,8 +9,25 @@ subcategory: "loading"
 seoTitle: "Atoms - Loading Shimmer Img"
 seoDescription: "Loading Shimmer Img Atoms"
 weight: 70
+hasVariants: true
 markup: |
   &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;
+variants:
+  - id: "atoms-loading-shimmer-img-1x1"
+    title: "Shimmer Image 1:1"
+    variantName: "1x1"
+    markup: |
+      &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;hoo-ph-img1x1&quot; width=&quot;320px&quot; height=&quot;320px&quot;&gt;
+  - id: "atoms-loading-shimmer-img-16x9"
+    title: "Shimmer Image 16:9"
+    variantName: "16x9"
+    markup: |
+      &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;hoo-ph-img16x10&quot; width=&quot;320px&quot; height=&quot;200px&quot;&gt;
+  - id: "atoms-loading-shimmer-img-16x10"
+    title: "Shimmer Image 16:10"
+    variantName: "16x10"
+    markup: |
+      &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;hoo-ph-img16x9&quot; width=&quot;320px&quot; height=&quot;180px&quot;&gt;
 ---
 
 # Shimmer Image

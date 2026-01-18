@@ -9,9 +9,18 @@ subcategory: "input"
 seoTitle: "Atoms - Input Checkbox"
 seoDescription: "Input Checkbox Atoms"
 weight: 20
+hasVariants: true
 markup: |
-  &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1234&quot; id=&quot;checkbox-1234&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;&lt;label for=&quot;checkbox-1234&quot;&gt;Checkbox Label&lt;/label&gt;
-  
+  &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1234&quot; id=&quot;checkbox-1234&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
+  &lt;label for=&quot;checkbox-1234&quot;&gt;Checkbox Label&lt;/label&gt;
+variants:
+  - id: "atoms-input-checkbox-disabled"
+    title: "Checkbox disabled"
+    variantName: "disabled"
+    markup: |
+      &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1234&quot; id=&quot;checkbox-1234&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot;  disabled=&quot;true&quot; 
+          aria-disabled=&quot;true&quot;  &gt;
+      &lt;label for=&quot;checkbox-1234&quot;&gt;Checkbox Label&lt;/label&gt;
 ---
 
 # Checkbox

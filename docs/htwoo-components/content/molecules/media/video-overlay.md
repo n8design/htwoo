@@ -9,16 +9,15 @@ subcategory: "media"
 seoTitle: "Molecules - Media Video Overlay"
 seoDescription: "Media Video Overlay Molecules"
 weight: 999
+hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-thumbnail-overlay&quot;&gt;
-      &lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-play-filled&quot; aria-hidden=&quot;true&quot;&gt;
-              
-              &lt;use xlink:href=&quot;../../images/icons.svg#icon-play-filled&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-      &lt;/span&gt;    &lt;div class=&quot;hoo-video-duration&quot;&gt;1:42&lt;/div&gt;
+  &lt;div class=&quot;hoo-thumbnail-overlay&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+      &lt;svg class=&quot;hoo-icon-svg icon-play-filled&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-play-filled&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;
+  &lt;div class=&quot;hoo-video-duration&quot;&gt;1:42&lt;/div&gt;
   &lt;/div&gt;
-  
 ---
 
 # Video Overlay

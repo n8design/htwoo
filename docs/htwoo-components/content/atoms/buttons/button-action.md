@@ -9,17 +9,14 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Action"
 seoDescription: "Buttons Button Action Atoms"
 weight: 80
+hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-buttonaction&quot;&gt;
-      &lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt; &lt;span class=&quot;hoo-icon&quot;&gt;
+  &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
       &lt;svg class=&quot;hoo-icon-svg icon-arrow-left&quot; aria-hidden=&quot;true&quot;&gt;
-          
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-left&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-  &lt;/span&gt; &lt;/span&gt;
-      &lt;span class=&quot;hoo-button-label&quot;&gt; Button &lt;/span&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-left&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
   &lt;/button&gt;
-  
 ---
 
 Action buttons are specialized buttons used within flyout menus and dropdown components. They provide a consistent style for interactive options within these expanded UI elements.

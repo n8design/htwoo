@@ -9,14 +9,14 @@ subcategory: "icons"
 seoTitle: "Atoms - Icons Ql Icon Svg"
 seoDescription: "Icons Ql Icon Svg Atoms"
 weight: 15
+hasVariants: false
 markup: |
   &lt;figure class=&quot;hoo-ql-media&quot;&gt;
       &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-          
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
+          &lt;/use&gt;
       &lt;/svg&gt;
   &lt;/figure&gt;
-  
 ---
 
 Quick Link SVG Icons provide vector-based icons optimized for use within quick link components. They combine the flexibility of SVG with the proper structure for quick link components.

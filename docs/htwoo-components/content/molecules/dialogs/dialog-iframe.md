@@ -9,6 +9,7 @@ subcategory: "dialogs"
 seoTitle: "Molecules - Dialogs Dialog Iframe"
 seoDescription: "Dialogs Dialog Iframe Molecules"
 weight: 30
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-dlgcontent&quot;&gt;
       &lt;iframe class=&quot;hoo-dlg-iframe&quot; src=&quot;../../patterns/pages-teams-teams-splash-screen/pages-teams-teams-splash-screen.rendered.html&quot; name=&quot;testIframe&quot; title=&quot;testIframe&quot; loading=&quot;lazy&quot;&gt;

@@ -1,6 +1,6 @@
 ---
 title: "Facepiles"
-description: "Browse 5 Facepiles components."
+description: "Browse 1 Facepiles components."
 type: "components"
 layout: "list"
 category: "organism"

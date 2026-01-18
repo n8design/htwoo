@@ -9,6 +9,7 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Button Group"
 seoDescription: "Buttons Button Group Atoms"
 weight: 50
+hasVariants: false
 markup: |
   
 ---

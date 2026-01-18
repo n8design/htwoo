@@ -9,22 +9,20 @@ subcategory: "accordion"
 seoTitle: "Molecules - Accordion Accordion Item"
 seoDescription: "Accordion Accordion Item Molecules"
 weight: 10
+hasVariants: false
 markup: |
   &lt;details class=&quot;hoo-accordion&quot;&gt;
       &lt;summary class=&quot;hoo-accordion-header&quot;&gt;
-          &lt;div class=&quot;hoo-accordion-summary&quot;&gt;
-              &lt;span class=&quot;hoo-icon&quot;&gt;
-                  &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-                      
-                      &lt;use xlink:href=&quot;../../images/icons.svg#icon-arrow-right&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/span&gt;        &lt;h3&gt;Lorem ipsum dolor sit.&lt;/h3&gt;
-          &lt;/div&gt;
-      &lt;/summary&gt;    &lt;div class=&quot;hoo-accordion-content&quot;&gt;
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam similique delectus facilis, quae aspernatur ipsam eveniet commodi assumenda ipsa iure dolorem quidem enim illum perferendis amet nam suscipit unde dicta reiciendis eligendi ratione dignissimos? Aperiam hic vel quis ex consequuntur, possimus magnam rerum in officiis fugit non inventore voluptas earum minima iure! Et, eaque repellendus cumque optio nam odit. Voluptatibus nulla facere atque iusto veniam, explicabo voluptatum maxime praesentium quasi corrupti quia? Unde tempore officia esse deserunt praesentium ipsum accusantium hic expedita aliquid harum nobis doloribus necessitatibus cum facilis, temporibus laudantium rem quo tempora eius maiores ab veritatis. Unde, ex!
+          &lt;div class=&quot;hoo-accordion-summary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+              &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
+                  &lt;/use&gt;
+              &lt;/svg&gt;&lt;/span&gt;
+          &lt;h3&gt;Lorem ipsum dolor sit.&lt;/h3&gt;
       &lt;/div&gt;
+  &lt;/summary&gt;
+  &lt;div class=&quot;hoo-accordion-content&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam similique delectus facilis, quae aspernatur ipsam eveniet commodi assumenda ipsa iure dolorem quidem enim illum perferendis amet nam suscipit unde dicta reiciendis eligendi ratione dignissimos? Aperiam hic vel quis ex consequuntur, possimus magnam rerum in officiis fugit non inventore voluptas earum minima iure! Et, eaque repellendus cumque optio nam odit. Voluptatibus nulla facere atque iusto veniam, explicabo voluptatum maxime praesentium quasi corrupti quia? Unde tempore officia esse deserunt praesentium ipsum accusantium hic expedita aliquid harum nobis doloribus necessitatibus cum facilis, temporibus laudantium rem quo tempora eius maiores ab veritatis. Unde, ex!&lt;/div&gt;
   &lt;/details&gt;
-  
 ---
 
 # Accordion Item

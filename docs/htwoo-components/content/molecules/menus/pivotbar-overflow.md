@@ -9,55 +9,39 @@ subcategory: "menus"
 seoTitle: "Molecules - Menus Pivotbar Overflow"
 seoDescription: "Menus Pivotbar Overflow Molecules"
 weight: 41
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-pivotbar has-overflow&quot; role=&quot;menubar&quot;&gt;
       &lt;div class=&quot;hoo-overflow&quot;&gt;
-          &lt;button class=&quot;hoo-button-pivot is-active&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Coffee&quot;&gt;
-                  Coffee
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Matcha&quot;&gt;
-                  Matcha
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Ice Tea&quot;&gt;
-                  Ice Tea
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Aqua Minerale&quot;&gt;
-                  Aqua Minerale
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Earl Grey&quot;&gt;
-                  Earl Grey
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Darjeeling tea&quot;&gt;
-                  Darjeeling tea
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Chai Latte&quot;&gt;
-                  Chai Latte
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;button class=&quot;hoo-button-pivot&quot;&gt;
-              &lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Gin Tonic&quot;&gt;
-                  Gin Tonic
-              &lt;/span&gt;
-          &lt;/button&gt;        &lt;!--- Fixed element to handle overflow buttons --&gt;
-          &lt;div class=&quot;hoo-buttonicon-overflow&quot; aria-haspopup=&quot;true&quot;&gt;
-              &lt;button class=&quot;hoo-buttonicon-flyout&quot; aria-haspopup=&quot;true&quot;&gt;
-                  &lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt; &lt;span class=&quot;hoo-icon&quot;&gt;
+          &lt;button class=&quot;hoo-button-pivot is-active&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Coffee&quot;&gt;Coffee&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Matcha&quot;&gt;Matcha&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Ice Tea&quot;&gt;Ice Tea&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Aqua Minerale&quot;&gt;Aqua Minerale&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Earl Grey&quot;&gt;Earl Grey&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Darjeeling tea&quot;&gt;Darjeeling tea&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Chai Latte&quot;&gt;Chai Latte&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Gin Tonic&quot;&gt;Gin Tonic&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;!--- Fixed element to handle overflow buttons --&gt;
+      &lt;div class=&quot;hoo-buttonicon-overflow&quot; aria-haspopup=&quot;true&quot;&gt;
+          &lt;button class=&quot;hoo-buttonicon-flyout&quot; aria-haspopup=&quot;true&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
               &lt;svg class=&quot;hoo-icon-svg icon-ellipses&quot; aria-hidden=&quot;true&quot;&gt;
-                  
-                  &lt;use xlink:href=&quot;../../images/icons.svg#icon-ellipses&quot;&gt;&lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/span&gt; &lt;/span&gt;
-              &lt;/button&gt;
-              &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-              &lt;/menu&gt;&lt;/div&gt;    &lt;/div&gt;
+                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ellipses&quot;&gt;
+                  &lt;/use&gt;
+              &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
+  &lt;/menu&gt;
   &lt;/div&gt;
-  
+  &lt;/div&gt;
+  &lt;/div&gt;
 ---
 
 # Pivot Bar Overflow

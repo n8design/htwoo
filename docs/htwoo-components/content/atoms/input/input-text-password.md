@@ -9,9 +9,9 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Password"
 seoDescription: "Input Input Text Password Atoms"
 weight: 10.2
+hasVariants: false
 markup: |
   &lt;input class=&quot;hoo-input-text&quot; type=&quot;password&quot; id=&quot;toggle-33&quot;   placeholder=&quot;https://example.com&quot;  &gt;
-  
 ---
 
 # Password Input

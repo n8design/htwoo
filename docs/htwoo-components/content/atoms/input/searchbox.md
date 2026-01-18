@@ -9,13 +9,15 @@ subcategory: "input"
 seoTitle: "Atoms - Input Searchbox"
 seoDescription: "Input Searchbox Atoms"
 weight: 40
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-input-search&quot;&gt;
       &lt;svg class=&quot;hoo-icon icon-search&quot;&gt;
-          &lt;use xlink:href=&quot;../../images/icons.svg#icon-search&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;&lt;input class=&quot;hoo-input-text&quot; type=&quot;search&quot; placeholder=&quot;Search&quot; &gt;
+          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-search&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;
+      &lt;input class=&quot;hoo-input-text&quot; type=&quot;search&quot; placeholder=&quot;Search&quot; &gt;
   &lt;/div&gt;
-  
 ---
 
 # Search Box

@@ -9,13 +9,13 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Text Prefixed"
 seoDescription: "Input Input Text Prefixed Atoms"
 weight: 10.7
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-input-group&quot;&gt;
       &lt;div id=&quot;suffix-label-toggle-33&quot; class=&quot;hoo-input-prefix&quot;&gt;https://&lt;/div&gt;
       &lt;input class=&quot;hoo-input-text&quot;  id=&quot;toggle-33&quot; 
           placeholder=&quot;A placeholder text&quot;  &gt;
   &lt;/div&gt;
-  
 ---
 
 # Text Input with Prefix

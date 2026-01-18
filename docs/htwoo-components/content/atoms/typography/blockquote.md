@@ -9,6 +9,7 @@ subcategory: "typography"
 seoTitle: "Atoms - Typography Blockquote"
 seoDescription: "Typography Blockquote Atoms"
 weight: 40
+hasVariants: false
 markup: |
   &lt;blockquote&gt;Blockquote Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos doloremque adipisci quas ut
       laudantium sed eligendi temporibus eos cupiditate quo ducimus molestias, odio consequatur quia repudiandae est

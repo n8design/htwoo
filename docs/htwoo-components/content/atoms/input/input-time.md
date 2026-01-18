@@ -9,6 +9,7 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Time"
 seoDescription: "Input Input Time Atoms"
 weight: 16
+hasVariants: false
 markup: |
   &lt;input type=&quot;time&quot; class=&quot;hoo-input-time&quot; id=&quot;toggle-33&quot;  name=&quot;my-timepicker-name&quot; value=&quot;09:45&quot; min=&quot;09:00&quot; max=&quot;18:00&quot;  &gt;
 ---

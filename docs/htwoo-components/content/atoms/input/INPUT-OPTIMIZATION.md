@@ -9,6 +9,7 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Optimization"
 seoDescription: "Input Input Optimization Atoms"
 weight: 999
+hasVariants: false
 markup: |
   
 ---

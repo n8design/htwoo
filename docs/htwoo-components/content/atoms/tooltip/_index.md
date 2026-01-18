@@ -1,6 +1,6 @@
 ---
 title: "Tooltip"
-description: "Browse 15 Tooltip components."
+description: "Browse 3 Tooltip components."
 type: "components"
 layout: "list"
 category: "atoms"

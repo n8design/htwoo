@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Form Validation"
 seoDescription: "Forms Form Validation Atoms"
 weight: 60
+hasVariants: false
 markup: |
   
 ---

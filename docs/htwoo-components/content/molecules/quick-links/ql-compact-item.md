@@ -9,24 +9,21 @@ subcategory: "quick-links"
 seoTitle: "Molecules - Quick Links Ql Compact Item"
 seoDescription: "Quick Links Ql Compact Item Molecules"
 weight: 11
+hasVariants: false
 markup: |
   &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;
-                  Quick-link title
-              &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;
-  &lt;/a&gt;
-  
+  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+          &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+      &lt;/figure&gt;
+      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+          &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+          &lt;/li&gt;
+      &lt;/menu&gt;
+  &lt;/article&gt;&lt;/a&gt;
 ---
 
 # Quick Link Compact Item

@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Text Inputs"
 seoDescription: "Forms Text Inputs Atoms"
 weight: 10
+hasVariants: false
 markup: |
   
 ---

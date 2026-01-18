@@ -9,6 +9,7 @@ subcategory: "buttons"
 seoTitle: "Atoms - Buttons Buttons"
 seoDescription: "Buttons Buttons Atoms"
 weight: 999
+hasVariants: false
 markup: |
   
 ---

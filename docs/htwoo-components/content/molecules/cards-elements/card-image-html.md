@@ -9,8 +9,10 @@ subcategory: "cards-elements"
 seoTitle: "Molecules - Cards Elements Card Image Html"
 seoDescription: "Cards Elements Card Image Html Molecules"
 weight: 20
+hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-cardhtml&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;hoo-cardhtml&quot;&gt;
+  &lt;/div&gt;
 ---
 
 ## Overview

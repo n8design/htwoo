@@ -9,10 +9,10 @@ subcategory: "cards-elements"
 seoTitle: "Molecules - Cards Elements Card Splash Footer"
 seoDescription: "Cards Elements Card Splash Footer Molecules"
 weight: 30
+hasVariants: false
 markup: |
   &lt;footer class=&quot;hoo-splashcard-footer&quot;&gt;
   &lt;/footer&gt;
-  
 ---
 
 ## Overview

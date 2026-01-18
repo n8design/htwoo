@@ -9,8 +9,10 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Textarea"
 seoDescription: "Input Input Textarea Atoms"
 weight: 13
+hasVariants: false
 markup: |
-  &lt;textarea class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;   &gt;&lt;/textarea&gt;
+  &lt;textarea class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;   &gt;
+  &lt;/textarea&gt;
 ---
 
 # Textarea Input

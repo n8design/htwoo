@@ -9,6 +9,7 @@ subcategory: "webpart-related"
 seoTitle: "Molecules - Webpart Related Webpart Title"
 seoDescription: "Webpart Related Webpart Title Molecules"
 weight: 10
+hasVariants: false
 markup: |
   &lt;h3 class=&quot;hoo-webpart-header&quot;&gt;
       &lt;div role=&quot;textbox&quot; placeholder=&quot;News&quot; aria-placeholder=&quot;News&quot; contenteditable=&quot;true&quot;&gt;This is just a sample web part title&lt;/div&gt;

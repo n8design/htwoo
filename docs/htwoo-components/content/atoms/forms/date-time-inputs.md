@@ -9,6 +9,7 @@ subcategory: "forms"
 seoTitle: "Atoms - Forms Date Time Inputs"
 seoDescription: "Forms Date Time Inputs Atoms"
 weight: 40
+hasVariants: false
 markup: |
   
 ---

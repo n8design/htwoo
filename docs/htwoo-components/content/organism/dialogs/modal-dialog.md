@@ -9,37 +9,39 @@ subcategory: "dialogs"
 seoTitle: "Organism - Dialogs Modal Dialog"
 seoDescription: "Dialogs Modal Dialog Organism"
 weight: 2
+hasVariants: false
 markup: |
   &lt;div class=&quot;tmp-hidden&quot;&gt;
       &lt;!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ --&gt;
-      &lt;div
+          &lt;div
           style=&quot;height: 100vh; width: 100vw; background: url(../../images/background-2.jpg) no-repeat center center fixed; background-size: cover;&quot;&gt;
-          &lt;!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ --&gt;
-          &lt;dialog class=&quot;hoo-mdldialog-outer is-visible&quot;&gt;
-              &lt;div class=&quot;hoo-mdldialog&quot; style=&quot;--lqdDialogHeight: 30vh; --lqdDialogWidth: 40vw;&quot;&gt;
-                  &lt;div class=&quot;hoo-dlgheader&quot;&gt;
-                      &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;&lt;h2&gt;Dialog Header&lt;/h2&gt;&lt;/div&gt;
-                      &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;&lt;button class=&quot;hoo-buttonicon&quot; 
+              &lt;!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ --&gt;
+                  &lt;dialog class=&quot;hoo-mdldialog-outer is-visible&quot;&gt;
+                      &lt;div class=&quot;hoo-mdldialog&quot; style=&quot;--lqdDialogHeight: 30vh; --lqdDialogWidth: 40vw;&quot;&gt;
+                          &lt;div class=&quot;hoo-dlgheader&quot;&gt;
+                              &lt;div class=&quot;hoo-dlgheader-title&quot;&gt;
+                                  &lt;h2&gt;Dialog Header&lt;/h2&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;hoo-dlgheader-closer&quot;&gt;
+                                  &lt;button class=&quot;hoo-buttonicon&quot; 
                       
                       
-                      &gt;
-                      &lt;span class=&quot;hoo-icon&quot;&gt;
-                          &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
-                              
-                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-close&quot;&gt;&lt;/use&gt;
-                          &lt;/svg&gt;
-                      &lt;/span&gt;&lt;/button&gt;
+                      &gt;&lt;span class=&quot;hoo-icon&quot;&gt;
+                                      &lt;svg class=&quot;hoo-icon-svg icon-close&quot; aria-hidden=&quot;true&quot;&gt;
+                                          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-close&quot;&gt;
+                                          &lt;/use&gt;
+                                      &lt;/svg&gt;&lt;/span&gt;
+                              &lt;/button&gt;
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class=&quot;hoo-dlgcontent&quot;&gt;This is the modal dialog content
+                      This is the modal dialog content&lt;/div&gt;
                   &lt;/div&gt;
-                  &lt;/div&gt;
-  &lt;div class=&quot;hoo-dlgcontent&quot;&gt;
-      This is the modal dialog content
-                      This is the modal dialog content
-  &lt;/div&gt;            &lt;/div&gt;
-          &lt;/dialog&gt;
-          &lt;!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ --&gt;
-      &lt;/div&gt;
-      &lt;!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ --&gt;
-  &lt;/div&gt;
+              &lt;/dialog&gt;
+              &lt;!--- ▼▼▼ This DIV below is just to show a background and is not part of the dialog framework ▼▼▼ --&gt;
+              &lt;/div&gt;
+              &lt;!--- ▲▲▲ This DIV below is just to show a background and is not part of the dialog framework ▲▲▲ --&gt;
+              &lt;/div&gt;
 ---
 
 # Modal Dialog

@@ -44,6 +44,34 @@
     {{ end }}
   </section>
 
+  <!-- Variants Section -->
+  {{ if .Params.hasVariants }}
+  {{ with .Params.variants }}
+  <section class="component-variants">
+    <h2>Variants</h2>
+    {{ range $index, $variant := . }}
+    <div class="variant-item">
+      <h3 class="variant-title">{{ $variant.title }}</h3>
+      <div class="component-preview">
+        <div class="preview-container">
+          <htwoo-component-preview pattern="{{ $variant.id }}"></htwoo-component-preview>
+        </div>
+        {{ if $variant.markup }}
+        <div class="markup-section">
+          <div class="markup-header">
+            <h4>HTML Markup</h4>
+            <button class="copy-btn" data-clipboard-target="#variant-markup-{{ $index }}">Copy</button>
+          </div>
+          <pre><code id="variant-markup-{{ $index }}" class="language-html">{{ $variant.markup | safeHTML }}</code></pre>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
   <!-- Component Documentation -->
   <section class="component-docs">
     {{ .Content }}

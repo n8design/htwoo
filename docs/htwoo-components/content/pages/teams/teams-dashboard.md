@@ -9,73 +9,61 @@ subcategory: "teams"
 seoTitle: "Pages - Teams Teams Dashboard"
 seoDescription: "Teams Teams Dashboard Pages"
 weight: 10
+hasVariants: false
 markup: |
   &lt;div class=&quot;teams-dashboard-page&quot;&gt;
       &lt;header class=&quot;teams-dashboard-header&quot;&gt;
           &lt;div class=&quot;dashboard-branding&quot;&gt;
               &lt;h1 class=&quot;dashboard-title&quot;&gt;Project Alpha Team Dashboard&lt;/h1&gt;
-              &lt;div class=&quot;dashboard-context&quot;&gt;
-                  &lt;span class=&quot;team-name&quot;&gt;Project Alpha Team&lt;/span&gt;
-                  &lt;span class=&quot;last-updated&quot;&gt;Last updated: June 25, 2025 at 10:30 AM&lt;/span&gt;
-              &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;dashboard-actions&quot;&gt;
-              &lt;button class=&quot;hoo-button&quot; id=&quot;refresh-dashboard&quot;&gt;
-                  &lt;span class=&quot;hoo-button-label&quot;&gt;Refresh&lt;/span&gt;
-              &lt;/button&gt;
-              &lt;button class=&quot;hoo-button-icon&quot; id=&quot;dashboard-settings&quot; aria-label=&quot;Dashboard settings&quot;&gt;
-                  &lt;svg class=&quot;hoo-icon-svg&quot;&gt;
-                      &lt;use xlink:href=&quot;#icon-settings&quot;&gt;&lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/button&gt;
-          &lt;/div&gt;
-      &lt;/header&gt;
-      
-      &lt;main role=&quot;main&quot; class=&quot;teams-dashboard-main&quot;&gt;
-          &lt;div class=&quot;hoo-teamsdb&quot;&gt;
-              &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-                  &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-                      &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 1&lt;/div&gt;
-                  &lt;/header&gt;
-                  &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.
-                  &lt;/div&gt;
-              &lt;/article&gt;
-              &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 4;&quot;&gt;
-                  &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-                      &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 2&lt;/div&gt;
-                  &lt;/header&gt;
-                  &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.
-                  &lt;/div&gt;
-              &lt;/article&gt;
-              &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 2;&quot;&gt;
-                  &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-                      &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 4&lt;/div&gt;
-                  &lt;/header&gt;
-                  &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.
-                  &lt;/div&gt;
-              &lt;/article&gt;
-              &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-                  &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-                      &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 5&lt;/div&gt;
-                  &lt;/header&gt;
-                  &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.
-                  &lt;/div&gt;
-              &lt;/article&gt;
-              &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-                  &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-                      &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 6&lt;/div&gt;
-                  &lt;/header&gt;
-                  &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.
-                  &lt;/div&gt;
-              &lt;/article&gt;
-          &lt;/div&gt;    &lt;/main&gt;
+              &lt;div class=&quot;dashboard-context&quot;&gt;&lt;span class=&quot;team-name&quot;&gt;Project Alpha Team&lt;/span&gt;&lt;span class=&quot;last-updated&quot;&gt;Last updated: June 25, 2025 at 10:30 AM&lt;/span&gt;
+      &lt;/div&gt;
   &lt;/div&gt;
-  
+  &lt;div class=&quot;dashboard-actions&quot;&gt;
+      &lt;button class=&quot;hoo-button&quot; id=&quot;refresh-dashboard&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Refresh&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;hoo-button-icon&quot; id=&quot;dashboard-settings&quot; aria-label=&quot;Dashboard settings&quot;&gt;
+      &lt;svg class=&quot;hoo-icon-svg&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-settings&quot;&gt;
+          &lt;/use&gt;
+      &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main role=&quot;main&quot; class=&quot;teams-dashboard-main&quot;&gt;
+      &lt;div class=&quot;hoo-teamsdb&quot;&gt;
+          &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
+              &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
+                  &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 1&lt;/div&gt;
+              &lt;/header&gt;
+              &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 4;&quot;&gt;
+              &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
+                  &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 2&lt;/div&gt;
+              &lt;/header&gt;
+              &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 2;&quot;&gt;
+              &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
+                  &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 4&lt;/div&gt;
+              &lt;/header&gt;
+              &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
+              &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
+                  &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 5&lt;/div&gt;
+              &lt;/header&gt;
+              &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
+          &lt;/article&gt;
+          &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
+              &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
+                  &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 6&lt;/div&gt;
+              &lt;/header&gt;
+              &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
+          &lt;/article&gt;
+      &lt;/div&gt;
+  &lt;/main&gt;
+  &lt;/div&gt;
 ---
 
 # Teams Dashboard Page

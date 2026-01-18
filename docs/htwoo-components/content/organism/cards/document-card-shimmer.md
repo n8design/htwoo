@@ -9,22 +9,35 @@ subcategory: "cards"
 seoTitle: "Organism - Cards Document Card Shimmer"
 seoDescription: "Cards Document Card Shimmer Organism"
 weight: 13
+hasVariants: false
 markup: |
   &lt;article class=&quot;hoo-doccard&quot;&gt;
       &lt;div class=&quot;hoo-cardimage&quot;&gt;
-          &lt;div class=&quot;hoo-ph-squared&quot;&gt;&lt;/div&gt;    &lt;/div&gt;
+          &lt;div class=&quot;hoo-ph-squared&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;hoo-cardlocation&quot;&gt;
-          &lt;div class=&quot;hoo-ph-row&quot;&gt;&lt;/div&gt;    &lt;/div&gt;
+          &lt;div class=&quot;hoo-ph-row&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;hoo-cardtitle&quot;&gt;
-          &lt;div class=&quot;hoo-ph-row&quot;&gt;&lt;/div&gt;    &lt;/div&gt;
+          &lt;div class=&quot;hoo-ph-row&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;hoo-cardfooter&quot;&gt;
           &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;div class=&quot;hoo-ph-circle&quot;&gt;&lt;/div&gt;        &lt;/div&gt;
+              &lt;div class=&quot;hoo-ph-circle&quot;&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
           &lt;div class=&quot;hoo-cardfooter-data&quot;&gt;
               &lt;div class=&quot;hoo-cardfooter-name&quot;&gt;
-                  &lt;div class=&quot;hoo-ph-row&quot;&gt;&lt;/div&gt;            &lt;/div&gt;
+                  &lt;div class=&quot;hoo-ph-row&quot;&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
               &lt;div class=&quot;hoo-cardfooter-modified&quot;&gt;
-                  &lt;div class=&quot;hoo-ph-row&quot;&gt;&lt;/div&gt;            &lt;/div&gt;
+                  &lt;div class=&quot;hoo-ph-row&quot;&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
           &lt;/div&gt;
       &lt;/div&gt;
   &lt;/article&gt;

@@ -9,19 +9,17 @@ subcategory: "forms"
 seoTitle: "Molecules - Forms Field"
 seoDescription: "Forms Field Molecules"
 weight: 40
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-field&quot; role=&quot;group&quot;&gt;
-    &lt;label class=&quot;hoo-label &quot; for=&quot;toggle-47&quot;&gt;First Name&lt;/label&gt;
-    &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-47&quot;  type=&quot;text&quot;  
+      &lt;label class=&quot;hoo-label &quot; for=&quot;toggle-47&quot;&gt;First Name&lt;/label&gt;
+      &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-47&quot;  type=&quot;text&quot;  
         placeholder=&quot;A placeholder text&quot; 
         aria-describedby=&quot;firstname-desc-toggle-47 firstname-error-toggle-47&quot;
          &gt;
-    &lt;p class=&quot;hoo-input-description&quot; id=&quot;firstname-desc-47&quot;&gt;
-        Please enter your first name with only alphabetic characters
-    &lt;/p&gt;
-    &lt;output class=&quot;hoo-validation&quot; id=&quot;firstname-error-47&quot; &gt;This is an error message&lt;/output&gt;
+      &lt;p class=&quot;hoo-input-description&quot; id=&quot;firstname-desc-47&quot;&gt;Please enter your first name with only alphabetic characters&lt;/p&gt;
+      &lt;output class=&quot;hoo-validation&quot; id=&quot;firstname-error-47&quot; &gt;This is an error message&lt;/output&gt;
   &lt;/div&gt;
-  
 ---
 
 # Form Field

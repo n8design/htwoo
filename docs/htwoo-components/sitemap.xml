@@ -49,54 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~16/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~24/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~32/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~40/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~48/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~64/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~72/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/avatar/avatar~96/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/avatar/presence-all/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -193,12 +145,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-pivot~active/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/buttons/button-primary-icon-reversed/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -229,19 +175,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-split-primary~disabled/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/buttons/button-split-standard/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-split-standard~disabled/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -260,12 +194,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/buttons/button-standard/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/buttons/button-standard~disabled/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -361,24 +289,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/images/image~16by10/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/images/image~16by9/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/images/image~1by1/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/input/INPUT-OPTIMIZATION/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -386,12 +296,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/input/checkbox/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/input/checkbox~disabled/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -511,12 +415,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/input/input-text~disabled/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/input/input-time/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -524,18 +422,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/input/label/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/input/label~disabled/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/input/label~required/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -631,24 +517,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/loading/shimmer-img~16x10/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/shimmer-img~16x9/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/shimmer-img~1x1/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/loading/shimmer-row/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -668,24 +536,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/atoms/loading/spinner/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/spinner~large/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/spinner~small/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/loading/spinner~xsmall/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -793,78 +643,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~bottom-center/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~bottom-left/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~bottom-right/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~left-bottom/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~left-center/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~left-top/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~right-bottom/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~right-center/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~right-top/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~top-center/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~top-left/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/atoms/tooltip/tooltip~top-right/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/atoms/typography/blockquote/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -932,54 +710,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~16/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~24/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~32/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~40/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~48/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~64/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~72/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/molecules/avatar-with-presence/avatar-presence~96/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1417,31 +1147,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/organism/dialogs/dialog-iframe~3by4/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/dialogs/dialog-iframe~squared/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/organism/dialogs/dialog-sidebar/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/dialogs/dialog-sidebar~left/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/dialogs/dialog-sidebar~right/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1483,30 +1189,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/organism/facepiles/facepile~32/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/facepiles/facepile~40/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/facepiles/facepile~48/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/facepiles/facepile~64/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/organism/form-sample/form-flow-1/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1537,24 +1219,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://htwoo.io/components/organism/pnp-search-grid/pnp-search-grid~4c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/pnp-search-grid/pnp-search-grid~6c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/pnp-search-grid/pnp-search-grid~8c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-button-filled-grid/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1580,30 +1244,6 @@
   </url>
   <url>
     <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-grid/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-grid~12c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-grid~4c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-grid~6c/</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://htwoo.io/components/organism/quick-links-grid/quick-links-grid~8c/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

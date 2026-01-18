@@ -9,13 +9,13 @@ subcategory: "input"
 seoTitle: "Atoms - Input Input Prensufix"
 seoDescription: "Input Input Prensufix Atoms"
 weight: 14
+hasVariants: false
 markup: |
   &lt;div class=&quot;hoo-input-group&quot;&gt;
       &lt;div class=&quot;hoo-input-prefix&quot;&gt;https://&lt;/div&gt;
       &lt;input class=&quot;hoo-input-text&quot; id=&quot;file-upload-82&quot;  type=&quot;text&quot; placeholder=&quot;A placeholder text&quot; data-suffix=&quot;.com&quot; data-prefix=&quot;https://&quot;   &gt;
       &lt;div class=&quot;hoo-input-suffix&quot;&gt;.com&lt;/div&gt;
   &lt;/div&gt;
-  
 ---
 
 # Input with Prefix and Suffix
