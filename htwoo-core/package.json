@@ -11,7 +11,7 @@
     "pl:install": "patternlab install --config ./patternlab-config.json",
     "pl:serve": "patternlab serve --config ./patternlab-config.json",
     "pl:publish": "patternlab build --config ./patternlab-config.json",
-    "prepl:publish-docs": "npx shx mkdir -p ../docs/htwoo-core/styleguide/images/ && npx shx cp -r src/styleguide/images/ ../docs/htwoo-core/styleguide/",
+    "prepl:publish-docs": "npx shx mkdir -p ../docs/htwoo-core/styleguide/images/ ../docs/htwoo-core/styleguide/css/ ../docs/htwoo-core/plugins/ ../docs/htwoo-core/js/ && npx shx cp -r src/styleguide/images/ ../docs/htwoo-core/styleguide/ && npx shx cp -r src/plugins/plugin-design/ ../docs/htwoo-core/plugins/ && npx shx cp -r src/__js/* ../docs/htwoo-core/js/ && npx shx touch ../docs/htwoo-core/styleguide/css/pattern-lab-overrides.css",
     "pl:publish-docs": "patternlab build --config ./patternlab-public.json",
     "pl:version": "patternlab --version",
     "--- /// Ice Commands /// ---": "",
