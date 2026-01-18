@@ -3,13 +3,65 @@ title: "Facepile 40px"
 description: "The standard variant of the [Facepile](./facepile) component using 40px avatars, providing the optimal balance between visibility and space efficiency for most application contexts and general-purpose"
 type: "components"
 layout: "single"
-patternId: "organism-facepiles-facepile~40"
+patternId: "organism-facepiles-facepile-40"
 category: "organism"
 subcategory: "facepiles"
-seoTitle: "Organism - Facepiles Facepile~40"
-seoDescription: "Facepiles Facepile~40 Organism"
+seoTitle: "Organism - Facepiles Facepile 40"
+seoDescription: "Facepiles Facepile 40 Organism"
 weight: 12
 markup: |
+  &lt;div class=&quot;hoo-facepile&quot;&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/dog-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/female-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/male-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/female-mugshot-002.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/male-mugshot-002.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/female-mugshot-003.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/male-mugshot-003.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/female-mugshot-004.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;div class=&quot;hoo-avatar-pres-40&quot;&gt;
+              &lt;div class=&quot;hoo-avatar-40&quot;&gt;
+                  &lt;img src=&quot;../../images/mug-shots/male-mugshot-004.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;40&quot; width=&quot;40&quot; loading=&quot;lazy&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
   
 ---
 

@@ -3,13 +3,14 @@ title: "Disabled Form Label"
 description: "Labels associated with disabled form inputs, visually indicating that the field is not interactive."
 type: "components"
 layout: "single"
-patternId: "atoms-input-label~disabled"
+patternId: "atoms-input-label-disabled"
 category: "atoms"
 subcategory: "input"
-seoTitle: "Atoms - Input Label~disabled"
-seoDescription: "Input Label~disabled Atoms"
+seoTitle: "Atoms - Input Label Disabled"
+seoDescription: "Input Label Disabled Atoms"
 weight: 1.2
 markup: |
+  &lt;label class=&quot;hoo-label is-disabled&quot; for=&quot;toggle-33&quot;&gt;Label for field x&lt;/label&gt;
   
 ---
 

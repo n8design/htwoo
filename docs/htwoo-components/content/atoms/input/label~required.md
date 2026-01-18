@@ -3,13 +3,14 @@ title: "Required Form Label"
 description: "Labels that indicate form fields which are mandatory for form submission."
 type: "components"
 layout: "single"
-patternId: "atoms-input-label~required"
+patternId: "atoms-input-label-required"
 category: "atoms"
 subcategory: "input"
-seoTitle: "Atoms - Input Label~required"
-seoDescription: "Input Label~required Atoms"
+seoTitle: "Atoms - Input Label Required"
+seoDescription: "Input Label Required Atoms"
 weight: 1.1
 markup: |
+  &lt;label class=&quot;hoo-label is-required&quot; for=&quot;toggle-33&quot;&gt;Label for field x&lt;/label&gt;
   
 ---
 

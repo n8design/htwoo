@@ -3,14 +3,14 @@ title: "16:9 Aspect Ratio Image"
 description: "Widescreen aspect ratio commonly used for video thumbnails and featured media."
 type: "components"
 layout: "single"
-patternId: "atoms-images-image~16by9"
+patternId: "atoms-images-image-16by9"
 category: "atoms"
 subcategory: "images"
-seoTitle: "Atoms - Images Image~16by9"
-seoDescription: "Images Image~16by9 Atoms"
+seoTitle: "Atoms - Images Image 16by9"
+seoDescription: "Images Image 16by9 Atoms"
 weight: 2
 markup: |
-  
+  &lt;img src=&quot;../../images/placeholders/16by9.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 ---
 
 # 16:9 Aspect Ratio Image

@@ -3,14 +3,14 @@ title: "Shimmer Image 16:9"
 description: "A widescreen (16:9 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect."
 type: "components"
 layout: "single"
-patternId: "atoms-loading-shimmer-img~16x9"
+patternId: "atoms-loading-shimmer-img-16x9"
 category: "atoms"
 subcategory: "loading"
-seoTitle: "Atoms - Loading Shimmer Img~16x9"
-seoDescription: "Loading Shimmer Img~16x9 Atoms"
+seoTitle: "Atoms - Loading Shimmer Img 16x9"
+seoDescription: "Loading Shimmer Img 16x9 Atoms"
 weight: 72
 markup: |
-  
+  &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;hoo-ph-img16x10&quot; width=&quot;320px&quot; height=&quot;200px&quot;&gt;
 ---
 
 # Shimmer Image 16:9

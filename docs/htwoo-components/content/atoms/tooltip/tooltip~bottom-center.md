@@ -1,15 +1,18 @@
 ---
 title: "Bottom Center"
-description: "Tooltip Tooltip~bottom Center Atoms"
+description: "Tooltip Tooltip Bottom Center Atoms"
 type: "components"
 layout: "single"
-patternId: "atoms-tooltip-tooltip~bottom-center"
+patternId: "atoms-tooltip-tooltip-bottom-center"
 category: "atoms"
 subcategory: "tooltip"
-seoTitle: "Atoms - Tooltip Tooltip~bottom Center"
-seoDescription: "Tooltip Tooltip~bottom Center Atoms"
+seoTitle: "Atoms - Tooltip Tooltip Bottom Center"
+seoDescription: "Tooltip Tooltip Bottom Center Atoms"
 weight: 10
 markup: |
+  &lt;div class=&quot;hoo-tooltip bottom-center&quot; role=&quot;tooltip&quot;&gt;
+      &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Tooltip&lt;/div&gt;
+  &lt;/div&gt;
   
 ---
 

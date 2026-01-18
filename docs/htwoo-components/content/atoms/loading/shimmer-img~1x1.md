@@ -3,14 +3,14 @@ title: "Shimmer Image 1:1"
 description: "A square (1:1 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect."
 type: "components"
 layout: "single"
-patternId: "atoms-loading-shimmer-img~1x1"
+patternId: "atoms-loading-shimmer-img-1x1"
 category: "atoms"
 subcategory: "loading"
-seoTitle: "Atoms - Loading Shimmer Img~1x1"
-seoDescription: "Loading Shimmer Img~1x1 Atoms"
+seoTitle: "Atoms - Loading Shimmer Img 1x1"
+seoDescription: "Loading Shimmer Img 1x1 Atoms"
 weight: 71
 markup: |
-  
+  &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;hoo-ph-img1x1&quot; width=&quot;320px&quot; height=&quot;320px&quot;&gt;
 ---
 
 # Shimmer Image 1:1

@@ -182,12 +182,13 @@ function scanDirectory(dirPath, category, patterns, subcategory = null) {
 
       // Derive pattern ID from file path
       const basename = entry.name.replace('.md', '');
-      const patternId = subcategory
-        ? `${category}-${subcategory}-${basename}`
-        : `${category}-${basename}`;
+      // Pattern Lab converts ~ to - in output folder names
+      const patternLabId = subcategory
+        ? `${category}-${subcategory}-${basename}`.replace(/~/g, '-')
+        : `${category}-${basename}`.replace(/~/g, '-');
 
       patterns.push({
-        id: patternId,
+        id: patternLabId,
         category,
         subcategory: subcategory || null,
         filename: basename,

@@ -3,13 +3,18 @@ title: "Avatar /w presence - 72px"
 description: "The 72px Avatar with Presence is an extra-large size variant that provides enhanced detail and prominence, making it suitable for featured user interface elements."
 type: "components"
 layout: "single"
-patternId: "molecules-avatar-with-presence-avatar-presence~72"
+patternId: "molecules-avatar-with-presence-avatar-presence-72"
 category: "molecules"
 subcategory: "avatar-with-presence"
-seoTitle: "Molecules - Avatar With Presence Avatar Presence~72"
-seoDescription: "Avatar With Presence Avatar Presence~72 Molecules"
+seoTitle: "Molecules - Avatar With Presence Avatar Presence 72"
+seoDescription: "Avatar With Presence Avatar Presence 72 Molecules"
 weight: 999
 markup: |
+  &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
+      &lt;div class=&quot;hoo-avatar&quot;&gt;
+          &lt;img src=&quot;../../images//mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;&lt;/div&gt;&lt;/div&gt;
   
 ---
 

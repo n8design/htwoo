@@ -9,7 +9,7 @@
     "content": "This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.\n\n   Supported Sizes:\n\n  8px - .hoo-avatar-8\n  16px - .hoo-avatar-16\n  24px - .hoo-avatar-24\n  32px - .hoo-avatar-32\n  40px - .hoo-avatar-40\n  48px - .hoo-avatar-48\n  64px - .hoo-avatar-64\n  72px - .hoo-avatar-72\n  96px - .hoo-avatar-96\n\n    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/avatar\n\n  SCSS Partial Location  \\\n /src/st"
   },
   {
-    "id": "atoms-avatar-avatar~16",
+    "id": "atoms-avatar-avatar-16",
     "title": "Avatar Sample 16 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -18,7 +18,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~24",
+    "id": "atoms-avatar-avatar-24",
     "title": "Avatar Sample 24 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -27,7 +27,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~32",
+    "id": "atoms-avatar-avatar-32",
     "title": "Avatar Sample 32 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -36,7 +36,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~40",
+    "id": "atoms-avatar-avatar-40",
     "title": "Avatar Sample 40 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -45,7 +45,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~48",
+    "id": "atoms-avatar-avatar-48",
     "title": "Avatar Sample 48 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -54,7 +54,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~64",
+    "id": "atoms-avatar-avatar-64",
     "title": "Avatar Sample 64 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -63,7 +63,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~72",
+    "id": "atoms-avatar-avatar-72",
     "title": "Avatar Sample 72 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -72,7 +72,7 @@
     "content": "Checkout  Avatar (/?p=atoms-avatar) for details."
   },
   {
-    "id": "atoms-avatar-avatar~96",
+    "id": "atoms-avatar-avatar-96",
     "title": "Avatar Sample 96 px",
     "description": "Checkout [Avatar](/?p=atoms-avatar) for details.",
     "category": "atoms",
@@ -225,7 +225,7 @@
     "content": "    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/buttons\n\n   "
   },
   {
-    "id": "atoms-buttons-button-pivot~active",
+    "id": "atoms-buttons-button-pivot-active",
     "title": "Pivot Button - active",
     "description": "* .is-active",
     "category": "atoms",
@@ -279,7 +279,7 @@
     "content": "  Primary Split Button\n\nThe Primary Split Button combines a primary action button with a dropdown menu trigger, allowing users to access the main action directly or choose from related actions via the dropdown.\n\n   Overview\n\nSplit buttons provide dual functionality - immediate access to a primary action while offering additional related options through a dropdown menu. The primary button side triggers the main action, while the dropdown arrow reveals secondary actions.\n\n   Features\n\n-   Primary "
   },
   {
-    "id": "atoms-buttons-button-split-primary~disabled",
+    "id": "atoms-buttons-button-split-primary-disabled",
     "title": "Primary Split Button - disabled",
     "description": "**Main Component**\\ @n8d/htwoo-core/components/buttons",
     "category": "atoms",
@@ -297,7 +297,7 @@
     "content": "    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/buttons\n\n   "
   },
   {
-    "id": "atoms-buttons-button-split-standard~disabled",
+    "id": "atoms-buttons-button-split-standard-disabled",
     "title": "Standard Split - disabled",
     "description": "**Main Component**\\ @n8d/htwoo-core/components/buttons",
     "category": "atoms",
@@ -333,7 +333,7 @@
     "content": "Standard button is the default button style in the HTWOO UI library. It provides a neutral appearance that can be used for most general actions.\n\nTo disable this button simply add the  disable=\"true\"  as well as the  aria-disabled=\"true\"  to it.\n\n   Supported States:\n\n  Default - Normal button state\n  Hover - Mouse over state\n  Active - Pressed state\n  Focus - Focused through keyboard navigation\n  Disabled - Non-interactive state\n\n    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/"
   },
   {
-    "id": "atoms-buttons-button-standard~disabled",
+    "id": "atoms-buttons-button-standard-disabled",
     "title": "Standard - disabled",
     "description": "Standard button also has on disabled state the correct color values.",
     "category": "atoms",
@@ -477,7 +477,7 @@
     "content": "Quick Link Icons provide image-based icons optimized for use within quick link components. These components typically display a visual representation alongside link text.\n\n   Description\n\nQuick Link Icons use the  <figure>  element with an  <img>  tag to display raster-based images. They're designed to work seamlessly within quick link components while maintaining proper aspect ratios.\n\n    SCSS Imports\n\n  Main Component  \\\n@n8d/htwoo-core/components/icons\n\n  SCSS Partial Location  \\\n /src/style"
   },
   {
-    "id": "atoms-images-image~16by10",
+    "id": "atoms-images-image-16by10",
     "title": "16:10 Aspect Ratio Image",
     "description": "Slightly taller widescreen format used for specific card layouts.",
     "category": "atoms",
@@ -486,7 +486,7 @@
     "content": "  16:10 Aspect Ratio Image\n\nSlightly taller widescreen format used for specific card layouts.\n\n   Overview\n\nThe 16:10 aspect ratio image provides a more vertical space compared to 16:9 while still maintaining a widescreen appearance. This aspect ratio is especially useful for content that benefits from the additional vertical space.\n\n   Usage\n\nThe 16:10 image aspect ratio is primarily used in:\n  Teams splash card headers\n  Dashboard panels\n  Presentation slides\n  Specific UI components requiring"
   },
   {
-    "id": "atoms-images-image~16by9",
+    "id": "atoms-images-image-16by9",
     "title": "16:9 Aspect Ratio Image",
     "description": "Widescreen aspect ratio commonly used for video thumbnails and featured media.",
     "category": "atoms",
@@ -495,7 +495,7 @@
     "content": "  16:9 Aspect Ratio Image\n\nWidescreen aspect ratio commonly used for video thumbnails and featured media.\n\n   Overview\n\nThe 16:9 aspect ratio image maintains the standard widescreen format commonly used for videos, presentations, and featured content areas.\n\n   Usage\n\nThe 16:9 image aspect ratio is primarily used in:\n  Card image components\n  Video thumbnails\n  Featured content areas\n  Media gallery items\n\n   Accessibility\n\n  Provide descriptive  alt  text that explains the content and context o"
   },
   {
-    "id": "atoms-images-image~1by1",
+    "id": "atoms-images-image-1by1",
     "title": "1:1 Aspect Ratio Image",
     "description": "Perfect square images commonly used for avatars and profile pictures.",
     "category": "atoms",
@@ -522,7 +522,7 @@
     "content": "  Checkbox\n\nCheckboxes allow users to select one or more items from a set of options.\n\n   Overview\n\nCheckboxes are selection controls that let users select multiple options from a set. They appear as squares that are filled when selected, and can be toggled on and off by the user.\n\n   Usage\n\nCheckboxes should be used when:\n  Multiple selection is allowed from a list of options\n  A single binary option needs to be toggled on or off\n  Independent options need to be selected\n\n   States\n\n    Uncheck"
   },
   {
-    "id": "atoms-input-checkbox~disabled",
+    "id": "atoms-input-checkbox-disabled",
     "title": "Checkbox disabled",
     "description": "**Main Component**\\ @n8d/htwoo-core/components/forms",
     "category": "atoms",
@@ -702,7 +702,7 @@
     "content": "  Textarea Input\n\nA multi-line text input field for longer text entries.\n\n   Overview\n\nThe textarea input provides a resizable, multi-line field for users to enter larger amounts of text, such as comments, descriptions, or other content that wouldn't fit in a standard text input.\n\n   Usage\n\nTextarea inputs should be used when:\n  The expected input is longer than a single line\n  Users need to enter paragraphs or formatted text\n  The content needs to be visible all at once (not truncated)\n  The am"
   },
   {
-    "id": "atoms-input-input-text~disabled",
+    "id": "atoms-input-input-text-disabled",
     "title": "Disabled Text Input",
     "description": "A text input in the disabled state, which prevents user interaction.",
     "category": "atoms",
@@ -729,7 +729,7 @@
     "content": "  Form Label\n\nLabels provide text descriptions for form inputs, ensuring users understand the purpose of each field.\n\n   Overview\n\nForm labels are essential for usability and accessibility, giving users clear information about what data is expected in an input field. They establish a programmatic connection between the label text and the form control.\n\n   Usage\n\nLabels should be used:\n  For every input field in a form\n  With appropriate text that clearly describes the purpose of the field\n  With"
   },
   {
-    "id": "atoms-input-label~disabled",
+    "id": "atoms-input-label-disabled",
     "title": "Disabled Form Label",
     "description": "Labels associated with disabled form inputs, visually indicating that the field is not interactive.",
     "category": "atoms",
@@ -738,7 +738,7 @@
     "content": "  Disabled Form Label\n\nLabels associated with disabled form inputs, visually indicating that the field is not interactive.\n\n   Overview\n\nDisabled form labels provide a visual indication that the associated form field is not currently available for user interaction. They typically appear grayed out or with reduced opacity to match the disabled state of their associated inputs.\n\n   Usage\n\nDisabled form labels should be used when:\n  The associated input field is disabled\n  The form field is not rel"
   },
   {
-    "id": "atoms-input-label~required",
+    "id": "atoms-input-label-required",
     "title": "Required Form Label",
     "description": "Labels that indicate form fields which are mandatory for form submission.",
     "category": "atoms",
@@ -882,7 +882,7 @@
     "content": "  Shimmer Image\n\nA placeholder for image content that's still loading, displayed with a shimmer effect.\n\n   Overview\n\nThe shimmer image provides an animated loading state for image elements. It uses a transparent placeholder image with CSS classes to create a shimmer effect, maintaining layout consistency while the actual image is loading.\n\n   Usage\n\nShimmer images should be used when:\n  Loading actual image content that may take time to fetch\n  Maintaining layout stability during image loading\n"
   },
   {
-    "id": "atoms-loading-shimmer-img~16x10",
+    "id": "atoms-loading-shimmer-img-16x10",
     "title": "Shimmer Image 16:10",
     "description": "A 16:10 aspect ratio placeholder for image content that's still loading, displayed with a shimmer effect.",
     "category": "atoms",
@@ -891,7 +891,7 @@
     "content": "  Shimmer Image 16:10\n\nA 16:10 aspect ratio placeholder for image content that's still loading, displayed with a shimmer effect.\n\n   Overview\n\nThe 16:10 shimmer image provides an animated loading state specifically for images with a 16:10 aspect ratio, commonly used in computer displays and certain photography formats. It maintains the layout while the actual image is loading.\n\n   Usage\n\nThe 16:10 shimmer image should be used when:\n  Loading images with 16:10 aspect ratio that may take time to f"
   },
   {
-    "id": "atoms-loading-shimmer-img~16x9",
+    "id": "atoms-loading-shimmer-img-16x9",
     "title": "Shimmer Image 16:9",
     "description": "A widescreen (16:9 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.",
     "category": "atoms",
@@ -900,7 +900,7 @@
     "content": "  Shimmer Image 16:9\n\nA widescreen (16:9 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.\n\n   Overview\n\nThe 16:9 shimmer image provides an animated loading state specifically for widescreen images commonly used in videos, banners, and modern photography. It maintains the layout while the actual image is loading.\n\n   Usage\n\nThe 16:9 shimmer image should be used when:\n  Loading widescreen format images that may take time to fetch\n  Maintaining layo"
   },
   {
-    "id": "atoms-loading-shimmer-img~1x1",
+    "id": "atoms-loading-shimmer-img-1x1",
     "title": "Shimmer Image 1:1",
     "description": "A square (1:1 aspect ratio) placeholder for image content that's still loading, displayed with a shimmer effect.",
     "category": "atoms",
@@ -945,7 +945,7 @@
     "content": "  Spinner\n\nA circular loading indicator that provides visual feedback during processes with indeterminate duration.\n\n   Overview\n\nThe spinner is an animated loading indicator that rotates continuously to indicate that an operation is in progress. It's ideal for scenarios where the duration of the loading operation is unknown or variable.\n\n   Usage\n\nSpinners should be used when:\n  The duration of the operation is unknown\n  Space is limited and a compact loading indicator is needed\n  A general \"lo"
   },
   {
-    "id": "atoms-loading-spinner~large",
+    "id": "atoms-loading-spinner-large",
     "title": "Large Spinner",
     "description": "A larger variant of the circular loading indicator for high-visibility loading states.",
     "category": "atoms",
@@ -954,7 +954,7 @@
     "content": "  Large Spinner\n\nA larger variant of the circular loading indicator for high-visibility loading states.\n\n   Overview\n\nThe large spinner is an enlarged version of the standard spinner component, designed for scenarios where loading states need more prominence or visibility on the page.\n\n   Usage\n\nLarge spinners should be used when:\n  The loading operation is the primary focus of the viewport\n  More visibility is needed for the loading state\n  Loading affects a large portion of the UI\n  The spinne"
   },
   {
-    "id": "atoms-loading-spinner~small",
+    "id": "atoms-loading-spinner-small",
     "title": "Small Spinner",
     "description": "A smaller variant of the circular loading indicator for compact UI elements.",
     "category": "atoms",
@@ -963,7 +963,7 @@
     "content": "  Small Spinner\n\nA smaller variant of the circular loading indicator for compact UI elements.\n\n   Overview\n\nThe small spinner is a reduced-size version of the standard spinner component, designed for scenarios where space is limited but loading state feedback is still needed.\n\n   Usage\n\nSmall spinners should be used when:\n  Space is constrained in the UI\n  Loading occurs within a smaller component or element\n  The loading indicator needs to be subtle or less prominent\n  Inline with text or other"
   },
   {
-    "id": "atoms-loading-spinner~xsmall",
+    "id": "atoms-loading-spinner-xsmall",
     "title": "XSmall Spinner",
     "description": "The smallest variant of the circular loading indicator for highly compact UI elements.",
     "category": "atoms",
@@ -1125,43 +1125,43 @@
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~bottom-center",
+    "id": "atoms-tooltip-tooltip-bottom-center",
     "title": "Bottom Center",
-    "description": "Tooltip Tooltip~bottom Center Atoms",
+    "description": "Tooltip Tooltip Bottom Center Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~bottom-center/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~bottom-left",
+    "id": "atoms-tooltip-tooltip-bottom-left",
     "title": "Bottom Left",
-    "description": "Tooltip Tooltip~bottom Left Atoms",
+    "description": "Tooltip Tooltip Bottom Left Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~bottom-left/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~bottom-right",
+    "id": "atoms-tooltip-tooltip-bottom-right",
     "title": "Bottom Right",
-    "description": "Tooltip Tooltip~bottom Right Atoms",
+    "description": "Tooltip Tooltip Bottom Right Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~bottom-right/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~left-bottom",
+    "id": "atoms-tooltip-tooltip-left-bottom",
     "title": "Left Bottom",
-    "description": "Tooltip Tooltip~left Bottom Atoms",
+    "description": "Tooltip Tooltip Left Bottom Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~left-bottom/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~left-center",
+    "id": "atoms-tooltip-tooltip-left-center",
     "title": "Left Center",
     "description": "The Left-Center tooltip variant displays a tooltip with the arrow pointing to the left and centered vertically. This positioning is ideal when the tooltip should appear to the right of the target elem",
     "category": "atoms",
@@ -1170,43 +1170,43 @@
     "content": "   Overview\nThe Left-Center tooltip variant displays a tooltip with the arrow pointing to the left and centered vertically. This positioning is ideal when the tooltip should appear to the right of the target element.\n\n   Usage\n\nUse left-center tooltips when:\n- The tooltip should appear to the right of the element\n- There is limited vertical space above or below the element\n- There is sufficient horizontal space to the right of the element\n- The content is better displayed with a vertical orienta"
   },
   {
-    "id": "atoms-tooltip-tooltip~left-top",
+    "id": "atoms-tooltip-tooltip-left-top",
     "title": "Left Top",
-    "description": "Tooltip Tooltip~left Top Atoms",
+    "description": "Tooltip Tooltip Left Top Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~left-top/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~right-bottom",
+    "id": "atoms-tooltip-tooltip-right-bottom",
     "title": "Right Bottom",
-    "description": "Tooltip Tooltip~right Bottom Atoms",
+    "description": "Tooltip Tooltip Right Bottom Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~right-bottom/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~right-center",
+    "id": "atoms-tooltip-tooltip-right-center",
     "title": "Right Center",
-    "description": "Tooltip Tooltip~right Center Atoms",
+    "description": "Tooltip Tooltip Right Center Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~right-center/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~right-top",
+    "id": "atoms-tooltip-tooltip-right-top",
     "title": "Right Top",
-    "description": "Tooltip Tooltip~right Top Atoms",
+    "description": "Tooltip Tooltip Right Top Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~right-top/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~top-center",
+    "id": "atoms-tooltip-tooltip-top-center",
     "title": "Top Center",
     "description": "The Top-Center tooltip variant displays a tooltip with the arrow pointing upward and centered horizontally. This positioning is ideal when the tooltip should appear directly above the target element.",
     "category": "atoms",
@@ -1215,18 +1215,18 @@
     "content": "   Overview\nThe Top-Center tooltip variant displays a tooltip with the arrow pointing upward and centered horizontally. This positioning is ideal when the tooltip should appear directly above the target element.\n\n   Usage\n\nUse top-center tooltips when:\n- The tooltip should appear directly above the element\n- There is sufficient space above the element\n- Centering the tooltip provides the best visual connection to the element\n\n   Accessibility\n\nRemember to maintain proper accessibility by associa"
   },
   {
-    "id": "atoms-tooltip-tooltip~top-left",
+    "id": "atoms-tooltip-tooltip-top-left",
     "title": "Top Left",
-    "description": "Tooltip Tooltip~top Left Atoms",
+    "description": "Tooltip Tooltip Top Left Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~top-left/",
     "content": ""
   },
   {
-    "id": "atoms-tooltip-tooltip~top-right",
+    "id": "atoms-tooltip-tooltip-top-right",
     "title": "Top Right",
-    "description": "Tooltip Tooltip~top Right Atoms",
+    "description": "Tooltip Tooltip Top Right Atoms",
     "category": "atoms",
     "subcategory": "tooltip",
     "href": "/components/atoms/tooltip/tooltip~top-right/",
@@ -1341,7 +1341,7 @@
     "content": "   Overview\n\nThe Avatar with Presence component combines a user avatar with a status indicator to show the user's availability. This is the default 128px size variant.\n\n   Usage\n\nThe Avatar with Presence component should be used in interfaces where it's important to display both a user's image and their current status. Common use cases include:\n\n- User profiles\n- Chat and messaging interfaces\n- Team member directories\n- Comment sections\n- Collaboration tools\n\n   Features\n\n- Displays user image i"
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~16",
+    "id": "molecules-avatar-with-presence-avatar-presence-16",
     "title": "Avatar /w presence - 16px",
     "description": "The 16px Avatar with Presence is the smallest size variant, ideal for compact UI elements like dense lists, tight navigation menus, or data tables where space is limited.",
     "category": "molecules",
@@ -1350,7 +1350,7 @@
     "content": "   Overview\n\nThe 16px Avatar with Presence is the smallest size variant, ideal for compact UI elements like dense lists, tight navigation menus, or data tables where space is limited.\n\n   Usage\n\nThis extra-small size is useful in:\n- Dense data tables\n- Compact chat interfaces\n- Notification badges\n- Mini user lists\n- Inline mentions in content\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   - Defines the "
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~24",
+    "id": "molecules-avatar-with-presence-avatar-presence-24",
     "title": "Avatar /w presence - 24px",
     "description": "The 24px Avatar with Presence is a small size variant that provides slightly more visibility than the 16px version while still being compact enough for space-constrained interfaces.",
     "category": "molecules",
@@ -1359,7 +1359,7 @@
     "content": "   Overview\n\nThe 24px Avatar with Presence is a small size variant that provides slightly more visibility than the 16px version while still being compact enough for space-constrained interfaces.\n\n   Usage\n\nThis small size works well in:\n- Conversation threads\n- Comment sections\n- Secondary navigation elements\n- Compact lists\n- Mobile interfaces\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   - Defines the"
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~32",
+    "id": "molecules-avatar-with-presence-avatar-presence-32",
     "title": "Avatar /w presence - 32px",
     "description": "The 32px Avatar with Presence is a medium-small size variant that balances visibility and space efficiency, making it suitable for standard interface components.",
     "category": "molecules",
@@ -1368,7 +1368,7 @@
     "content": "   Overview\n\nThe 32px Avatar with Presence is a medium-small size variant that balances visibility and space efficiency, making it suitable for standard interface components.\n\n   Usage\n\nThis medium-small size is effective in:\n- Standard chat interfaces\n- User listings\n- Team member displays\n- Active participant indicators\n- Collaborative interfaces\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   - Defines"
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~40",
+    "id": "molecules-avatar-with-presence-avatar-presence-40",
     "title": "Avatar /w presence - 40px",
     "description": "The 40px Avatar with Presence is a medium size variant that provides clear visibility while remaining compact enough for most standard interfaces.",
     "category": "molecules",
@@ -1377,7 +1377,7 @@
     "content": "   Overview\n\nThe 40px Avatar with Presence is a medium size variant that provides clear visibility while remaining compact enough for most standard interfaces.\n\n   Usage\n\nThis medium size works well in:\n- Primary message interfaces\n- User cards\n- Activity feeds\n- Participant listings\n- Main navigation elements\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   - Defines the  .hoo-avatar-40  class\n   - Sets d"
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~48",
+    "id": "molecules-avatar-with-presence-avatar-presence-48",
     "title": "Avatar /w presence - 48px",
     "description": "The 48px Avatar with Presence is a medium-large size variant that provides enhanced visibility in primary interface components where user identity and status should be prominent.",
     "category": "molecules",
@@ -1386,7 +1386,7 @@
     "content": "   Overview\n\nThe 48px Avatar with Presence is a medium-large size variant that provides enhanced visibility in primary interface components where user identity and status should be prominent.\n\n   Usage\n\nThis medium-large size is ideal for:\n- Main chat interfaces\n- User profile sections\n- Primary navigation with user status\n- Contact cards\n- Team directories\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   "
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~64",
+    "id": "molecules-avatar-with-presence-avatar-presence-64",
     "title": "Avatar /w presence - 64px",
     "description": "The 64px Avatar with Presence is a standard/large size variant that provides excellent visibility and detail. This is the default size for the base avatar component.",
     "category": "molecules",
@@ -1395,7 +1395,7 @@
     "content": "   Overview\n\nThe 64px Avatar with Presence is a standard/large size variant that provides excellent visibility and detail. This is the default size for the base avatar component.\n\n   Usage\n\nThis large size is suitable for:\n- Featured user profiles\n- Primary user interface elements\n- Video chat interfaces\n- Contact details pages\n- Header user information\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n   - De"
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~72",
+    "id": "molecules-avatar-with-presence-avatar-presence-72",
     "title": "Avatar /w presence - 72px",
     "description": "The 72px Avatar with Presence is an extra-large size variant that provides enhanced detail and prominence, making it suitable for featured user interface elements.",
     "category": "molecules",
@@ -1404,7 +1404,7 @@
     "content": "   Overview\n\nThe 72px Avatar with Presence is an extra-large size variant that provides enhanced detail and prominence, making it suitable for featured user interface elements.\n\n   Usage\n\nThis extra-large size works well in:\n- Featured profile sections\n- Large hero sections\n- Video conferencing interfaces\n- User detail pages\n- Speaker or presenter highlights\n\n   Style Files\n\nThe component uses the following SCSS files:\n\n1.   Base Avatar Styles    \n    /src/styles/01-atoms/avatar/_avatar.scss \n  "
   },
   {
-    "id": "molecules-avatar-with-presence-avatar-presence~96",
+    "id": "molecules-avatar-with-presence-avatar-presence-96",
     "title": "Avatar /w presence - 96px",
     "description": "The 96px Avatar with Presence is a jumbo size variant that provides maximum visibility and detail, designed for prominent interface elements where the user's identity and status should be emphasized.",
     "category": "molecules",
@@ -2061,18 +2061,18 @@
     "content": "  IFrame Dialog\n\nThe IFrame Dialog component provides a container for displaying external web content within a dialog. It's useful for embedding external websites, documents, or web applications without navigating away from the current context.\n\n   Overview\n\nIFrame dialogs in HTWOO UI combine the HTML5  <dialog>  element with an embedded  <iframe>  to create a window for displaying external content. They can be configured with different aspect ratios and sizes to accommodate various types of con"
   },
   {
-    "id": "organism-dialogs-dialog-iframe~3by4",
+    "id": "organism-dialogs-dialog-iframe-3by4",
     "title": "with IFrame - 3:4",
-    "description": "Dialogs Dialog Iframe~3by4 Organism",
+    "description": "Dialogs Dialog Iframe 3by4 Organism",
     "category": "organism",
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-iframe~3by4/",
     "content": ""
   },
   {
-    "id": "organism-dialogs-dialog-iframe~squared",
+    "id": "organism-dialogs-dialog-iframe-squared",
     "title": "with IFrame - squared",
-    "description": "Dialogs Dialog Iframe~squared Organism",
+    "description": "Dialogs Dialog Iframe Squared Organism",
     "category": "organism",
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-iframe~squared/",
@@ -2088,18 +2088,18 @@
     "content": "  Sidebar Dialog\n\nThe Sidebar Dialog component provides a panel that slides in from either the left or right side of the screen. It's ideal for displaying supplementary content, forms, or navigation options without navigating away from the current view.\n\n   Overview\n\nSidebar dialogs in HTWOO UI leverage the HTML5  <dialog>  element with special positioning to create panels that appear from the side of the screen. They can be positioned on either the left or right side and can take up the full he"
   },
   {
-    "id": "organism-dialogs-dialog-sidebar~left",
+    "id": "organism-dialogs-dialog-sidebar-left",
     "title": "Sidebar Left",
-    "description": "Dialogs Dialog Sidebar~left Organism",
+    "description": "Dialogs Dialog Sidebar Left Organism",
     "category": "organism",
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-sidebar~left/",
     "content": ""
   },
   {
-    "id": "organism-dialogs-dialog-sidebar~right",
+    "id": "organism-dialogs-dialog-sidebar-right",
     "title": "Sidebar Right",
-    "description": "Dialogs Dialog Sidebar~right Organism",
+    "description": "Dialogs Dialog Sidebar Right Organism",
     "category": "organism",
     "subcategory": "dialogs",
     "href": "/components/organism/dialogs/dialog-sidebar~right/",
@@ -2160,7 +2160,7 @@
     "content": "  Facepile\n\nThe facepile component is an organism-level layout that displays multiple user avatars with presence indicators in a horizontal arrangement. It's commonly used to show team members, collaborators, or participants in a compact, visually appealing format.\n\n   Overview\n\nFacepile provides a space-efficient way to display multiple users by showing their avatars in a row with flexible wrapping. It leverages the avatar-with-presence molecular component to maintain consistency with other per"
   },
   {
-    "id": "organism-facepiles-facepile~32",
+    "id": "organism-facepiles-facepile-32",
     "title": "Facepile 32px",
     "description": "A compact variant of the [Facepile](./facepile) component using 32px avatars, optimized for navigation elements, sidebar displays, and space-constrained layouts where user representation is needed wit",
     "category": "organism",
@@ -2169,7 +2169,7 @@
     "content": "  Facepile (32px)\n\nA compact variant of the  Facepile (./facepile) component using 32px avatars, optimized for navigation elements, sidebar displays, and space-constrained layouts where user representation is needed without overwhelming the interface.\n\n   Overview\n\nThe 32px facepile provides an ideal balance between visibility and space efficiency, making it perfect for secondary navigation areas, sidebar components, and compact team displays where space is at a premium but user identification r"
   },
   {
-    "id": "organism-facepiles-facepile~40",
+    "id": "organism-facepiles-facepile-40",
     "title": "Facepile 40px",
     "description": "The standard variant of the [Facepile](./facepile) component using 40px avatars, providing the optimal balance between visibility and space efficiency for most application contexts and general-purpose",
     "category": "organism",
@@ -2178,7 +2178,7 @@
     "content": "  Facepile (40px)\n\nThe standard variant of the  Facepile (./facepile) component using 40px avatars, providing the optimal balance between visibility and space efficiency for most application contexts and general-purpose user displays.\n\n   Overview\n\nThe 40px facepile serves as the recommended default size for most applications, offering clear user identification while maintaining reasonable space usage. This size works excellently across desktop and tablet interfaces and provides sufficient detai"
   },
   {
-    "id": "organism-facepiles-facepile~48",
+    "id": "organism-facepiles-facepile-48",
     "title": "Facepile 48px",
     "description": "A prominent variant of the [Facepile](./facepile) component using 48px avatars, designed for featured content areas, main page headers, and contexts where user representation should be visually promin",
     "category": "organism",
@@ -2187,7 +2187,7 @@
     "content": "  Facepile (48px)\n\nA prominent variant of the  Facepile (./facepile) component using 48px avatars, designed for featured content areas, main page headers, and contexts where user representation should be visually prominent and easily recognizable.\n\n   Overview\n\nThe 48px facepile provides enhanced visibility and user recognition, making it ideal for featured content areas, hero sections, and interfaces where the user collection is a primary focal point. This size works excellently for showcasing "
   },
   {
-    "id": "organism-facepiles-facepile~64",
+    "id": "organism-facepiles-facepile-64",
     "title": "Facepile 64px",
     "description": "The largest standard variant of the [Facepile](./facepile) component using 64px avatars, designed for hero sections, featured team displays, and contexts where maximum visual impact and user recogniti",
     "category": "organism",
@@ -2241,7 +2241,7 @@
     "content": "  PnP Search Grid\n\nA comprehensive grid layout system designed for displaying search results and quick links in Microsoft 365 and SharePoint environments. The PnP (Patterns and Practices) search grid provides flexible column layouts with responsive behavior optimized for various screen sizes and content densities.\n\n   Overview\n\nThe PnP Search Grid is an organism-level component that combines multiple quick link items into organized grid layouts. It supports both compact and list-style presentati"
   },
   {
-    "id": "organism-pnp-search-grid-pnp-search-grid~4c",
+    "id": "organism-pnp-search-grid-pnp-search-grid-4c",
     "title": "PnP Search Grid - 4 Columns",
     "description": "A 4-column variant of the PnP Search Grid optimized for narrow containers and focused content presentation. This configuration provides a compact, organized layout suitable for sidebars, small dashboa",
     "category": "organism",
@@ -2250,7 +2250,7 @@
     "content": "  PnP Search Grid - 4 Columns\n\nA 4-column variant of the PnP Search Grid optimized for narrow containers and focused content presentation. This configuration provides a compact, organized layout suitable for sidebars, small dashboard sections, and mobile-first interfaces.\n\n   Overview\n\nThe 4-column grid maximizes content visibility while maintaining usability in constrained spaces. Each grid item spans 2 columns, resulting in 2 visible items per row on desktop and falling back to a single column"
   },
   {
-    "id": "organism-pnp-search-grid-pnp-search-grid~6c",
+    "id": "organism-pnp-search-grid-pnp-search-grid-6c",
     "title": "PnP Search Grid - 6 Columns",
     "description": "A 6-column variant of the PnP Search Grid that provides a balanced layout between content density and readability. This configuration offers moderate information density suitable for medium-sized cont",
     "category": "organism",
@@ -2259,7 +2259,7 @@
     "content": "  PnP Search Grid - 6 Columns\n\nA 6-column variant of the PnP Search Grid that provides a balanced layout between content density and readability. This configuration offers moderate information density suitable for medium-sized containers and standard dashboard layouts.\n\n   Overview\n\nThe 6-column grid strikes an optimal balance between displaying sufficient content and maintaining visual clarity. Each grid item spans 2 columns, resulting in 3 visible items per row on desktop while maintaining res"
   },
   {
-    "id": "organism-pnp-search-grid-pnp-search-grid~8c",
+    "id": "organism-pnp-search-grid-pnp-search-grid-8c",
     "title": "PnP Search Grid - 8 Columns",
     "description": "An 8-column variant of the PnP Search Grid designed for high-density content presentation. This configuration maximizes information display while maintaining usability, making it ideal for wide contai",
     "category": "organism",
@@ -2313,7 +2313,7 @@
     "content": "  Quick Links Grid\n\nA comprehensive demonstration component showcasing all available quick links grid variations. Provides examples and documentation for compact, list, button, and tile-style quick links in responsive grid layouts.\n\n   Overview\n\nThe quick links grid component serves as a demonstration and reference for all available quick links grid variations. It showcases different styling approaches including compact items, list format, button styles (outline, no-outline, filled), grid layout"
   },
   {
-    "id": "organism-quick-links-grid-quick-links-grid~12c",
+    "id": "organism-quick-links-grid-quick-links-grid-12c",
     "title": "Quick Link Grid with 12 columns",
     "description": "The 12-column variant of the Quick Links Grid provides maximum content density and comprehensive navigation capabilities. This configuration is designed for complex interfaces, extensive application c",
     "category": "organism",
@@ -2322,7 +2322,7 @@
     "content": "  Quick Links Grid - 12 Columns\n\nThe 12-column variant of the Quick Links Grid provides maximum content density and comprehensive navigation capabilities. This configuration is designed for complex interfaces, extensive application catalogs, and scenarios requiring maximum information display within available space.\n\n   Overview\n\nThe 12-column grid offers the highest content density while maintaining usability and accessibility standards. It's ideal for comprehensive dashboards, application dire"
   },
   {
-    "id": "organism-quick-links-grid-quick-links-grid~4c",
+    "id": "organism-quick-links-grid-quick-links-grid-4c",
     "title": "Quick Link Grid with 4 columns",
     "description": "A 4-column variant of the Quick Links Grid optimized for large tiles and featured applications. This configuration provides prominent display of key navigation items with maximum visual impact and is ",
     "category": "organism",
@@ -2331,7 +2331,7 @@
     "content": "  Quick Links Grid - 4 Columns\n\nA 4-column variant of the Quick Links Grid optimized for large tiles and featured applications. This configuration provides prominent display of key navigation items with maximum visual impact and is ideal for executive dashboards, featured application launchers, and primary navigation hubs.\n\n   Overview\n\nThe 4-column grid maximizes visual impact by providing larger tiles and more prominent display of navigation items. It's designed for scenarios where fewer, more"
   },
   {
-    "id": "organism-quick-links-grid-quick-links-grid~6c",
+    "id": "organism-quick-links-grid-quick-links-grid-6c",
     "title": "Quick Link Grid with 6 columns",
     "description": "A 6-column variant of the Quick Links Grid that provides a balanced layout between content density and visual clarity. This configuration offers optimal balance for standard dashboard layouts, applica",
     "category": "organism",
@@ -2340,7 +2340,7 @@
     "content": "  Quick Links Grid - 6 Columns\n\nA 6-column variant of the Quick Links Grid that provides a balanced layout between content density and visual clarity. This configuration offers optimal balance for standard dashboard layouts, application directories, and comprehensive navigation interfaces.\n\n   Overview\n\nThe 6-column grid strikes the perfect balance between displaying sufficient content and maintaining visual clarity. It's the most versatile configuration, suitable for a wide range of application"
   },
   {
-    "id": "organism-quick-links-grid-quick-links-grid~8c",
+    "id": "organism-quick-links-grid-quick-links-grid-8c",
     "title": "Quick Link Grid with 8 columns",
     "description": "An 8-column variant of the Quick Links Grid designed for higher content density while maintaining usability. This configuration is ideal for comprehensive navigation interfaces, utility collections, a",
     "category": "organism",

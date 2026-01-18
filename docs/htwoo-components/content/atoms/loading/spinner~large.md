@@ -3,14 +3,14 @@ title: "Large Spinner"
 description: "A larger variant of the circular loading indicator for high-visibility loading states."
 type: "components"
 layout: "single"
-patternId: "atoms-loading-spinner~large"
+patternId: "atoms-loading-spinner-large"
 category: "atoms"
 subcategory: "loading"
-seoTitle: "Atoms - Loading Spinner~large"
-seoDescription: "Loading Spinner~large Atoms"
+seoTitle: "Atoms - Loading Spinner Large"
+seoDescription: "Loading Spinner Large Atoms"
 weight: 31
 markup: |
-  
+  &lt;div class=&quot;hoo-spinner large&quot;&gt;&lt;/div&gt;
 ---
 
 # Large Spinner

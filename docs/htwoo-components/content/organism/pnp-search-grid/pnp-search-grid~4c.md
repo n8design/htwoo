@@ -3,14 +3,401 @@ title: "PnP Search Grid - 4 Columns"
 description: "A 4-column variant of the PnP Search Grid optimized for narrow containers and focused content presentation. This configuration provides a compact, organized layout suitable for sidebars, small dashboa"
 type: "components"
 layout: "single"
-patternId: "organism-pnp-search-grid-pnp-search-grid~4c"
+patternId: "organism-pnp-search-grid-pnp-search-grid-4c"
 category: "organism"
 subcategory: "pnp-search-grid"
-seoTitle: "Organism - Pnp Search Grid Pnp Search Grid~4c"
-seoDescription: "Pnp Search Grid Pnp Search Grid~4c Organism"
+seoTitle: "Organism - Pnp Search Grid Pnp Search Grid 4c"
+seoDescription: "Pnp Search Grid Pnp Search Grid 4c Organism"
 weight: 999
 markup: |
-  
+  &lt;h2&gt;Quick Links Compact Items&lt;/h2&gt;
+  &lt;div class=&quot;CanvasSection-xl4&quot;&gt;
+      &lt;div class=&quot;hoo-pnpsearch-grid&quot;&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qlcompact&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
+                          &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
+                          &lt;/li&gt;
+                      &lt;/menu&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+      &lt;/div&gt;&lt;/div&gt;
+  &lt;h2&gt;Quick Links List Items&lt;/h2&gt;
+  &lt;div class=&quot;CanvasSection-xl4&quot;&gt;
+      &lt;div class=&quot;hoo-pnpsearch-grid&quot;&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;img src=&quot;../../images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+          &lt;pnp-select&gt;
+              &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
+                  &lt;article class=&quot;hoo-qllist&quot;&gt;
+                      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
+                          &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
+                              
+                              &lt;use xlink:href=&quot;../../images/icons.svg#icon-ninjacat&quot;&gt;&lt;/use&gt;
+                          &lt;/svg&gt;
+                      &lt;/figure&gt;
+                      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
+                          &lt;div class=&quot;hoo-qltitle&quot;&gt;
+                              Quick-link title
+                          &lt;/div&gt;
+                          &lt;div class=&quot;hoo-qldesc&quot;&gt;
+                              Quick-links description lorem ipsum dolor sit amet
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/article&gt;
+              &lt;/a&gt;
+          &lt;/pnp-select&gt;
+      &lt;/div&gt;&lt;/div&gt;
 ---
 
 # PnP Search Grid - 4 Columns

@@ -3,13 +3,16 @@ title: "Top Center"
 description: "The Top-Center tooltip variant displays a tooltip with the arrow pointing upward and centered horizontally. This positioning is ideal when the tooltip should appear directly above the target element."
 type: "components"
 layout: "single"
-patternId: "atoms-tooltip-tooltip~top-center"
+patternId: "atoms-tooltip-tooltip-top-center"
 category: "atoms"
 subcategory: "tooltip"
-seoTitle: "Atoms - Tooltip Tooltip~top Center"
-seoDescription: "Tooltip Tooltip~top Center Atoms"
+seoTitle: "Atoms - Tooltip Tooltip Top Center"
+seoDescription: "Tooltip Tooltip Top Center Atoms"
 weight: 10
 markup: |
+  &lt;div class=&quot;hoo-tooltip top-center&quot; role=&quot;tooltip&quot;&gt;
+      &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Tooltip&lt;/div&gt;
+  &lt;/div&gt;
   
 ---
 

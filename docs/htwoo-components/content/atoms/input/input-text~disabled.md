@@ -3,13 +3,16 @@ title: "Disabled Text Input"
 description: "A text input in the disabled state, which prevents user interaction."
 type: "components"
 layout: "single"
-patternId: "atoms-input-input-text~disabled"
+patternId: "atoms-input-input-text-disabled"
 category: "atoms"
 subcategory: "input"
-seoTitle: "Atoms - Input Input Text~disabled"
-seoDescription: "Input Input Text~disabled Atoms"
+seoTitle: "Atoms - Input Input Text Disabled"
+seoDescription: "Input Input Text Disabled Atoms"
 weight: 10.5
 markup: |
+  &lt;input class=&quot;hoo-input-text&quot; id=&quot;toggle-33&quot;  type=&quot;text&quot; 
+      disabled=&quot;true&quot; aria-disabled=&quot;true&quot;  
+      placeholder=&quot;A placeholder text&quot;  &gt;
   
 ---
 

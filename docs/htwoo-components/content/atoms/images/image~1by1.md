@@ -3,14 +3,14 @@ title: "1:1 Aspect Ratio Image"
 description: "Perfect square images commonly used for avatars and profile pictures."
 type: "components"
 layout: "single"
-patternId: "atoms-images-image~1by1"
+patternId: "atoms-images-image-1by1"
 category: "atoms"
 subcategory: "images"
-seoTitle: "Atoms - Images Image~1by1"
-seoDescription: "Images Image~1by1 Atoms"
+seoTitle: "Atoms - Images Image 1by1"
+seoDescription: "Images Image 1by1 Atoms"
 weight: 1
 markup: |
-  
+  &lt;img src=&quot;../../images/placeholders/1by1.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 ---
 
 # 1:1 (Square) Image

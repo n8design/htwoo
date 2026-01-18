@@ -3,13 +3,16 @@ title: "Left Center"
 description: "The Left-Center tooltip variant displays a tooltip with the arrow pointing to the left and centered vertically. This positioning is ideal when the tooltip should appear to the right of the target elem"
 type: "components"
 layout: "single"
-patternId: "atoms-tooltip-tooltip~left-center"
+patternId: "atoms-tooltip-tooltip-left-center"
 category: "atoms"
 subcategory: "tooltip"
-seoTitle: "Atoms - Tooltip Tooltip~left Center"
-seoDescription: "Tooltip Tooltip~left Center Atoms"
+seoTitle: "Atoms - Tooltip Tooltip Left Center"
+seoDescription: "Tooltip Tooltip Left Center Atoms"
 weight: 10
 markup: |
+  &lt;div class=&quot;hoo-tooltip left-center&quot; role=&quot;tooltip&quot;&gt;
+      &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Tooltip&lt;/div&gt;
+  &lt;/div&gt;
   
 ---
 

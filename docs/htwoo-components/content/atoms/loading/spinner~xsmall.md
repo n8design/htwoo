@@ -3,14 +3,14 @@ title: "XSmall Spinner"
 description: "The smallest variant of the circular loading indicator for highly compact UI elements."
 type: "components"
 layout: "single"
-patternId: "atoms-loading-spinner~xsmall"
+patternId: "atoms-loading-spinner-xsmall"
 category: "atoms"
 subcategory: "loading"
-seoTitle: "Atoms - Loading Spinner~xsmall"
-seoDescription: "Loading Spinner~xsmall Atoms"
+seoTitle: "Atoms - Loading Spinner Xsmall"
+seoDescription: "Loading Spinner Xsmall Atoms"
 weight: 33
 markup: |
-  
+  &lt;div class=&quot;hoo-spinner xsmall&quot;&gt;&lt;/div&gt;
 ---
 
 # XSmall Spinner

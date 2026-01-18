@@ -3,14 +3,14 @@ title: "Small Spinner"
 description: "A smaller variant of the circular loading indicator for compact UI elements."
 type: "components"
 layout: "single"
-patternId: "atoms-loading-spinner~small"
+patternId: "atoms-loading-spinner-small"
 category: "atoms"
 subcategory: "loading"
-seoTitle: "Atoms - Loading Spinner~small"
-seoDescription: "Loading Spinner~small Atoms"
+seoTitle: "Atoms - Loading Spinner Small"
+seoDescription: "Loading Spinner Small Atoms"
 weight: 32
 markup: |
-  
+  &lt;div class=&quot;hoo-spinner small&quot;&gt;&lt;/div&gt;
 ---
 
 # Small Spinner

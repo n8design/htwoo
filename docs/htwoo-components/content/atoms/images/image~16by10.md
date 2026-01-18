@@ -3,14 +3,14 @@ title: "16:10 Aspect Ratio Image"
 description: "Slightly taller widescreen format used for specific card layouts."
 type: "components"
 layout: "single"
-patternId: "atoms-images-image~16by10"
+patternId: "atoms-images-image-16by10"
 category: "atoms"
 subcategory: "images"
-seoTitle: "Atoms - Images Image~16by10"
-seoDescription: "Images Image~16by10 Atoms"
+seoTitle: "Atoms - Images Image 16by10"
+seoDescription: "Images Image 16by10 Atoms"
 weight: 3
 markup: |
-  
+  &lt;img src=&quot;../../images/placeholders/16by10.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 ---
 
 # 16:10 Aspect Ratio Image
