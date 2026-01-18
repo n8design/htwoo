@@ -145,7 +145,14 @@ class HtwooComponentPreview extends HTMLElement {
         throw new Error(`Component not found: ${patternPath}`);
       }
 
-      const html = await response.text();
+      let html = await response.text();
+
+      // Fix relative image paths from Pattern Lab output
+      // Pattern Lab uses paths like ../../images// which need to be absolute
+      html = html.replace(/src=["'](?:\.\.\/+)+images\/+/g, 'src="/htwoo-core/images/');
+      html = html.replace(/src=["']\.\/+images\/+/g, 'src="/htwoo-core/images/');
+      html = html.replace(/src=["']images\/+/g, 'src="/htwoo-core/images/');
+
       contentEl.innerHTML = html;
 
       // Initialize interactive components if needed

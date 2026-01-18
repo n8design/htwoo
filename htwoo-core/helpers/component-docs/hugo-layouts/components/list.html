@@ -45,6 +45,62 @@
     </a>
     {{ end }}
   </div>
+
+  <!-- A-Z Component Index (only on main components page) -->
+  {{ if not .Params.category }}
+  <section class="az-index">
+    <h2>All Components A-Z</h2>
+
+    <!-- Letter navigation -->
+    <nav class="az-nav" aria-label="Alphabetical navigation">
+      {{ $allPages := slice }}
+      {{ range .Sections }}
+        {{ range .RegularPagesRecursive }}
+          {{ $allPages = $allPages | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $letters := slice }}
+      {{ range $allPages }}
+        {{ $firstLetter := upper (substr .Title 0 1) }}
+        {{ if not (in $letters $firstLetter) }}
+          {{ $letters = $letters | append $firstLetter }}
+        {{ end }}
+      {{ end }}
+      {{ range (sort $letters) }}
+      <a href="#letter-{{ . }}" class="az-letter">{{ . }}</a>
+      {{ end }}
+    </nav>
+
+    <!-- Grouped component list -->
+    <div class="az-list">
+      {{ $allPages := slice }}
+      {{ range .Sections }}
+        {{ range .RegularPagesRecursive }}
+          {{ $allPages = $allPages | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $sortedPages := sort $allPages "Title" }}
+      {{ $currentLetter := "" }}
+      {{ range $sortedPages }}
+        {{ $firstLetter := upper (substr .Title 0 1) }}
+        {{ if ne $firstLetter $currentLetter }}
+          {{ if $currentLetter }}
+          </ul>
+          {{ end }}
+          {{ $currentLetter = $firstLetter }}
+          <h3 id="letter-{{ $firstLetter }}" class="az-letter-heading">{{ $firstLetter }}</h3>
+          <ul class="az-component-list">
+        {{ end }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <span class="az-category">{{ .Params.category }}{{ if .Params.subcategory }} / {{ .Params.subcategory }}{{ end }}</span>
+        </li>
+      {{ end }}
+      {{ if $currentLetter }}</ul>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
   {{ else }}
   <!-- List individual components -->
   <div class="component-grid">
