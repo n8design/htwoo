@@ -11,20 +11,7 @@ seoDescription: "Meta Tag List Link Primary Molecules"
 weight: 31
 hasVariants: false
 markup: |
-  &lt;ul class=&quot;hoo-meta-list&quot;&gt;
-      &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Fluent&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Design&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;at&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;its&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;best&lt;/span&gt;&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;/ul&gt;
+  
 ---
 
 # Primary Link Tag List

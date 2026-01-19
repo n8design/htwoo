@@ -11,7 +11,7 @@ seoDescription: "Cards Elements Card Splash Title Molecules"
 weight: 30
 hasVariants: false
 markup: |
-  &lt;h1 class=&quot;hoo-splashcard-title&quot;&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/h1&gt;
+  
 ---
 
 ## Overview

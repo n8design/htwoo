@@ -11,8 +11,7 @@ seoDescription: "Cards Elements Card Image Html Molecules"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-cardhtml&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 ## Overview

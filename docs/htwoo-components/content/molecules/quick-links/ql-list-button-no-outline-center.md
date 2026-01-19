@@ -11,16 +11,7 @@ seoDescription: "Quick Links Ql List Button No Outline Center Molecules"
 weight: 32
 hasVariants: false
 markup: |
-  &lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-  &lt;article class=&quot;hoo-qlbtn no-outline center&quot;&gt;
-      &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/figure&gt;
-      &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-          &lt;div class=&quot;hoo-qltitle&quot;&gt;This is a really long title to get everything working lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-      &lt;/div&gt;
-  &lt;/article&gt;&lt;/a&gt;
+  
 ---
 
 # Quick Link Button No Outline - Center Aligned

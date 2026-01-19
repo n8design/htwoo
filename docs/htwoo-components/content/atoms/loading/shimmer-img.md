@@ -11,7 +11,7 @@ seoDescription: "Loading Shimmer Img Atoms"
 weight: 70
 hasVariants: false
 markup: |
-  &lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=&quot; class=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;
+  
 ---
 
 # Shimmer Image

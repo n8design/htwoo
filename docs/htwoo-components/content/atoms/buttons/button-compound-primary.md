@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Compound Primary Atoms"
 weight: 40
 hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-buttoncomp-primary&quot;&gt;&lt;span class=&quot;hoo-buttoncomp-label&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;hoo-buttoncomp-desc&quot;&gt;Primary with description&lt;/span&gt;
-  &lt;/button&gt;
+  
 ---
 
 Primary compound buttons combine the prominence of a primary button with multi-line content, including both a label and a description. This component is ideal for important actions that require additional explanation.

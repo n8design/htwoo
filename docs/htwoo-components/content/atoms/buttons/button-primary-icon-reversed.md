@@ -11,12 +11,7 @@ seoDescription: "Buttons Button Primary Icon Reversed Atoms"
 weight: 26
 hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button-primary is-reversed&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-      &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-          &lt;/use&gt;
-      &lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
-  &lt;/button&gt;
+  
 ---
 
 Primary button with an icon on the right side combines the prominence of primary styling with visual reinforcement using an icon. The icon is positioned to the right of the button text using the `.is-reversed` class.

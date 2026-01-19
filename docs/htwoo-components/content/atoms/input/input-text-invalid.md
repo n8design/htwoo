@@ -11,15 +11,7 @@ seoDescription: "Input Input Text Invalid Atoms"
 weight: 10.6
 hasVariants: false
 markup: |
-  &lt;p&gt;Invalid style can be assigned using a CSS class:&lt;/p&gt;
-  &lt;input class=&quot;hoo-input-text is-invalid&quot; type=&quot;text&quot; placeholder=&quot;This is just a placehoder&quot;&gt;
-  &lt;p&gt;Or just with default pseudo selector `:invalid`&lt;/p&gt;
-  &lt;input class=&quot;hoo-input-text&quot; type=&quot;text&quot; placeholder=&quot;This is just a placehoder&quot; value=&quot;&quot; required&gt;
-  &lt;p&gt;The empty field is required there for at its current state invalid&lt;br&gt;To avoid showing up as invalid add the &#39;.is-empty&#39; class to the styles&lt;/p&gt;
-  &lt;input class=&quot;hoo-input-text is-empty&quot; type=&quot;text&quot; placeholder=&quot;This is just a placehoder&quot; value=&quot;&quot; required&gt;
-  &lt;p&gt;Invalid fields can be also defined by using patter&lt;/p&gt;
-  &lt;input class=&quot;hoo-input-text&quot; type=&quot;text&quot; placeholder=&quot;This is just a placehoder&quot; value=&quot;ABC&quot; pattern=&quot;[a-z]{4,8}&quot;&gt;
-  &lt;p&gt;The previous input only allows lowercase characters and a length of 4-8 characters&lt;/p&gt;
+  
 ---
 
 # Invalid Text Input

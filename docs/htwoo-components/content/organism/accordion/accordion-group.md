@@ -11,44 +11,7 @@ seoDescription: "Accordion Accordion Group Organism"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;section class=&quot;hoo-accordion-group&quot; role=&quot;accordion&quot;&gt;
-      &lt;details class=&quot;hoo-accordion&quot;&gt;
-          &lt;summary class=&quot;hoo-accordion-header&quot;&gt;
-              &lt;div class=&quot;hoo-accordion-summary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-                  &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-                      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-                      &lt;/use&gt;
-                  &lt;/svg&gt;&lt;/span&gt;
-              &lt;h3&gt;Lorem ipsum dolor sit.&lt;/h3&gt;
-          &lt;/div&gt;
-      &lt;/summary&gt;
-      &lt;div class=&quot;hoo-accordion-content&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam similique delectus facilis, quae aspernatur ipsam eveniet commodi assumenda ipsa iure dolorem quidem enim illum perferendis amet nam suscipit unde dicta reiciendis eligendi ratione dignissimos? Aperiam hic vel quis ex consequuntur, possimus magnam rerum in officiis fugit non inventore voluptas earum minima iure! Et, eaque repellendus cumque optio nam odit. Voluptatibus nulla facere atque iusto veniam, explicabo voluptatum maxime praesentium quasi corrupti quia? Unde tempore officia esse deserunt praesentium ipsum accusantium hic expedita aliquid harum nobis doloribus necessitatibus cum facilis, temporibus laudantium rem quo tempora eius maiores ab veritatis. Unde, ex!&lt;/div&gt;
-  &lt;/details&gt;
-  &lt;details class=&quot;hoo-accordion&quot;&gt;
-      &lt;summary class=&quot;hoo-accordion-header&quot;&gt;
-          &lt;div class=&quot;hoo-accordion-summary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;
-          &lt;h3&gt;Lorem ipsum dolor sit amet consectetur.&lt;/h3&gt;
-      &lt;/div&gt;
-  &lt;/summary&gt;
-  &lt;div class=&quot;hoo-accordion-content&quot;&gt;Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt quod ex perferendis recusandae, dolorem iure maxime delectus repellat fugit omnis unde necessitatibus quibusdam cupiditate, est deserunt reiciendis eius qui? Dolorem fugiat repellendus ipsum.&lt;/div&gt;
-  &lt;/details&gt;
-  &lt;details class=&quot;hoo-accordion&quot;&gt;
-      &lt;summary class=&quot;hoo-accordion-header&quot;&gt;
-          &lt;div class=&quot;hoo-accordion-summary&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-arrow-right&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;
-          &lt;h3&gt;Lorem, ipsum dolor.&lt;/h3&gt;
-      &lt;/div&gt;
-  &lt;/summary&gt;
-  &lt;div class=&quot;hoo-accordion-content&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nesciunt illum animi impedit voluptas corrupti explicabo dolores soluta dolor tempora deleniti qui nihil quo laborum, ducimus quia officia dicta? Perspiciatis placeat sit et eaque eius, ab molestiae eveniet nostrum! Animi, tempora. Magnam et architecto ex, nostrum vitae facere ad impedit repudiandae aliquam ratione quibusdam, aspernatur neque officiis fuga quo accusantium, eveniet eius. Aut, eos quaerat dolorem ad soluta commodi saepe similique eaque. Quisquam, incidunt voluptatum!&lt;/div&gt;
-  &lt;/details&gt;
-  &lt;/section&gt;
+  
 ---
 
 # Accordion Group

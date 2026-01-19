@@ -11,10 +11,7 @@ seoDescription: "Grid Grid Atoms"
 weight: 5
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-grid&quot;&gt;
-      &lt;div class=&quot;demo-item&quot;&gt;Demo Item&lt;/div&gt;
-      &lt;div class=&quot;demo-item2&quot;&gt;Demo Item&lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 ### Use Grid System with CSS classes

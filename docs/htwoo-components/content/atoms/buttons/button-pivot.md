@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Pivot Atoms"
 weight: 99
 hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Pivot Element&quot;&gt;Pivot Element&lt;/span&gt;
-  &lt;/button&gt;
+  
 ---
 
 ### SCSS Imports

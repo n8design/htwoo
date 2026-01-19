@@ -11,13 +11,7 @@ seoDescription: "Input Select Drop Down Atoms"
 weight: 31
 hasVariants: false
 markup: |
-  &lt;ul class=&quot;hoo-select-dropdown&quot;&gt;
-      &lt;li data-value=&quot;apple&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Apple&lt;/li&gt;
-      &lt;li data-value=&quot;banana&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Banana&lt;/li&gt;
-      &lt;li data-value=&quot;cherry&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Cherry&lt;/li&gt;
-      &lt;li data-value=&quot;orange&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Orange&lt;/li&gt;
-      &lt;li data-value=&quot;grape&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Grape&lt;/li&gt;
-  &lt;/ul&gt;
+  
 ---
 
 # Custom Select Dropdown

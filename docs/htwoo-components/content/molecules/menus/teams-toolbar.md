@@ -11,136 +11,7 @@ seoDescription: "Menus Teams Toolbar Molecules"
 weight: 50
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-teams-toolbar&quot;&gt;
-      &lt;div class=&quot;hoo-cmdbar has-overflow&quot; role=&quot;toolbar&quot;&gt;
-          &lt;div class=&quot;hoo-overflow&quot;&gt;
-              &lt;div class=&quot;hoo-buttoncmd&quot;  aria-haspopup=&quot;true&quot;  &gt;
-                  &lt;button class=&quot;hoo-buttoncmd&quot; aria-haspopup=&quot;true&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-                      &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-                          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
-                          &lt;/use&gt;
-                      &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;&lt;span class=&quot;hoo-button-icon hoo-buttonchevron&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-down&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-      &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-          &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Email message&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-      &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-minus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-minus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Calendar Event&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;/menu&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttoncmd&quot;  &gt;
-      &lt;button class=&quot;hoo-buttoncmd&quot; &gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttoncmd&quot;  aria-haspopup=&quot;true&quot;  &gt;
-      &lt;button class=&quot;hoo-buttoncmd&quot; aria-haspopup=&quot;true&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;&lt;span class=&quot;hoo-button-icon hoo-buttonchevron&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-  &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
-      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-down&quot;&gt;
-      &lt;/use&gt;
-  &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-      &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-          &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Email message&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-      &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-minus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-minus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Calendar Event&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;/menu&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttoncmd&quot;  &gt;
-      &lt;button class=&quot;hoo-buttoncmd&quot; &gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttoncmd&quot;  aria-haspopup=&quot;true&quot;  &gt;
-      &lt;button class=&quot;hoo-buttoncmd&quot; aria-haspopup=&quot;true&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg &quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;&lt;span class=&quot;hoo-button-icon hoo-buttonchevron&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-  &lt;svg class=&quot;hoo-icon-svg icon-arrow-down&quot; aria-hidden=&quot;true&quot;&gt;
-      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-down&quot;&gt;
-      &lt;/use&gt;
-  &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-      &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-          &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-              &lt;svg class=&quot;hoo-icon-svg icon-ninjacat&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Email message&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;hoo-buttonflyout-item&quot;&gt;
-      &lt;button class=&quot;hoo-buttonaction&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-minus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-minus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Calendar Event&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/li&gt;
-  &lt;/menu&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttoncmd&quot;  &gt;
-      &lt;button class=&quot;hoo-buttoncmd&quot; &gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-plus&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-plus&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;New Item&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-buttonicon-overflow&quot; aria-haspopup=&quot;true&quot;&gt;
-      &lt;button class=&quot;hoo-buttonicon-flyout&quot; aria-haspopup=&quot;true&quot;&gt;&lt;span class=&quot;hoo-button-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;hoo-icon&quot;&gt;
-          &lt;svg class=&quot;hoo-icon-svg icon-ellipses&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ellipses&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;menu class=&quot;hoo-buttonflyout&quot;&gt;
-  &lt;/menu&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Teams Toolbar
@@ -174,8 +45,8 @@ The Teams Toolbar is a composite molecular component that integrates a command b
 ## Structure
 
 The Teams Toolbar consists of two main molecular components:
-1. **[Command Bar with Overflow](/components/molecules/cmdbar-overflow.html/)** - Action commands with responsive overflow
-2. **[Search Box](/components/../atoms/inputs/)** - Integrated search functionality
+1. **[Command Bar with Overflow](/components/molecules/menus/cmdbar-overflow/)** - Action commands with responsive overflow
+2. **[Search Box](/components/atoms/inputs/)** - Integrated search functionality
 
 ## Data Structure
 
@@ -395,13 +266,13 @@ From child components:
 ### Dynamic Theming
 
 ### Molecular Components
-- [Command Bar with Overflow](/components/molecules/cmdbar-overflow.html/) - Core command functionality
-- [Search Box](/components/../atoms/inputs/) - Integrated search capabilities
-- [Command Bar](/components/molecules/cmdbar.html/) - Basic command bar functionality
+- [Command Bar with Overflow](/components/molecules/menus/cmdbar-overflow/) - Core command functionality
+- [Search Box](/components/atoms/inputs/) - Integrated search capabilities
+- [Command Bar](/components/molecules/menus/cmdbar/) - Basic command bar functionality
 
 ### Template Components  
-- [Teams Dashboard](/components/../templates/teams/) - Complete Teams dashboard layout
-- [Teams Splash Screen](/components/../templates/teams/) - Teams application welcome screens
+- [Teams Dashboard](/components/templates/teams/) - Complete Teams dashboard layout
+- [Teams Splash Screen](/components/templates/teams/) - Teams application welcome screens
 
 ### Theme Components
 - Teams Light Theme - Default Teams light appearance

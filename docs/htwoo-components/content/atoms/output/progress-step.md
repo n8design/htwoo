@@ -11,14 +11,7 @@ seoDescription: "Output Progress Step Atoms"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-progress-step&quot;
-      style=&quot; &quot;&gt;
-      &lt;div class=&quot;inner&quot;&gt;
-          &lt;div class=&quot;hoo-progress-step-indicator&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-progress-step-label&quot;&gt;Step x&lt;/div&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 ## Overview

@@ -11,13 +11,7 @@ seoDescription: "Tokens Motion Add N Slide Design"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;button onclick=&quot;javascript:location.reload()&quot;&gt;Reset&lt;/button&gt;&lt;br&gt;
-  &lt;div class=&quot;sg-anim-blocks anim-addNslide&quot; data-animation=anim-add-slide &gt;
-      &lt;div class=&quot;sg-anim-block&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sg-anim-block&quot;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 ### SCSS Imports

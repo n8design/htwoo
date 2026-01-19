@@ -11,7 +11,7 @@ seoDescription: "Meta Tag Static Primary Atoms"
 weight: 25
 hasVariants: false
 markup: |
-  &lt;span class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;&lt;/span&gt;
+  
 ---
 
 # Tag Primary (Static)

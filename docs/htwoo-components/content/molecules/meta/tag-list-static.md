@@ -11,20 +11,7 @@ seoDescription: "Meta Tag List Static Molecules"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;ul class=&quot;hoo-meta-list&quot;&gt;
-      &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Fluent&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;Design&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;at&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;its&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;best&lt;/span&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;/ul&gt;
+  
 ---
 
 # Static Tag List

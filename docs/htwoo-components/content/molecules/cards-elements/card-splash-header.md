@@ -11,9 +11,7 @@ seoDescription: "Cards Elements Card Splash Header Molecules"
 weight: 30
 hasVariants: false
 markup: |
-  &lt;header class=&quot;hoo-splashcard-header&quot; role=&quot;presentation&quot;&gt;
-      &lt;img src=&quot;&quot; class=&quot;hoo-splashcard-img&quot;&gt;
-  &lt;/header&gt;
+  
 ---
 
 ## Overview

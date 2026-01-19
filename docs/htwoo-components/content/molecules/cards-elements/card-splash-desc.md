@@ -11,8 +11,7 @@ seoDescription: "Cards Elements Card Splash Desc Molecules"
 weight: 30
 hasVariants: false
 markup: |
-  &lt;p class=&quot;hoo-splashcard-desc&quot;&gt;
-  &lt;/p&gt;
+  
 ---
 
 ## Overview

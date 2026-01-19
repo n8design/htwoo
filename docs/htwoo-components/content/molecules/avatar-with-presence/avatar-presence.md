@@ -11,13 +11,7 @@ seoDescription: "Avatar With Presence Avatar Presence Molecules"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-avatar-pres&quot;&gt;
-      &lt;div class=&quot;hoo-avatar&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot;   loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;hoo-presence is-&quot; title=&quot;Fluent UI / Fluent Design by hTWOo UI Framework&quot;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 ## Overview

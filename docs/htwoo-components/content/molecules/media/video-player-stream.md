@@ -11,10 +11,7 @@ seoDescription: "Media Video Player Stream Molecules"
 weight: 40
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-video-player&quot;&gt;
-      &lt;iframe src=&quot;&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowfullscreen title=&quot;chemex.mp4&quot;&gt;
-      &lt;/iframe&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Stream Video Player

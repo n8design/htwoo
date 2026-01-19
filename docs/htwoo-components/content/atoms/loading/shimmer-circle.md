@@ -11,8 +11,7 @@ seoDescription: "Loading Shimmer Circle Atoms"
 weight: 40
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-ph-circle&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Shimmer Circle

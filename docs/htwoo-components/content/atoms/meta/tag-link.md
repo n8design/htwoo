@@ -11,7 +11,7 @@ seoDescription: "Meta Tag Link Atoms"
 weight: 22
 hasVariants: false
 markup: |
-  &lt;a href=&quot;?&quot; class=&quot;hoo-mtag&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;&lt;/a&gt;
+  
 ---
 
 # Tag (Link)

@@ -11,8 +11,7 @@ seoDescription: "Avatar Presence Atoms"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-presence is-online&quot; title=&quot;Online&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 This prescence bubble is used to indicate a persons availability status expecially on avatars. The following status are defined:

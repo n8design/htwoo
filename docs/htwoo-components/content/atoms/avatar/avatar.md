@@ -11,9 +11,7 @@ seoDescription: "Avatar Avatar Atoms"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-avatar-64&quot;&gt;
-      &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;64&quot; width=&quot;64&quot; loading=&quot;lazy&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.

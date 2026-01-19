@@ -11,15 +11,7 @@ seoDescription: "Cards Elements Card Footer Molecules"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;footer class=&quot;hoo-cardfooter&quot;&gt;
-      &lt;div class=&quot;hoo-avatar&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; loading=&quot;lazy&quot;&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;hoo-cardfooter-data&quot;&gt;
-          &lt;div class=&quot;hoo-cardfooter-name&quot;&gt;Man on the moon&lt;/div&gt;
-          &lt;div class=&quot;hoo-cardfooter-modified&quot;&gt;Created a seconds ago&lt;/div&gt;
-      &lt;/div&gt;
-  &lt;/footer&gt;
+  
 ---
 
 ## Overview

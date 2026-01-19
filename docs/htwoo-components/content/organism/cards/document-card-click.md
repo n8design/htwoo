@@ -11,23 +11,7 @@ seoDescription: "Cards Document Card Click Organism"
 weight: 14
 hasVariants: false
 markup: |
-  &lt;article class=&quot;hoo-doccard&quot;&gt;
-      &lt;figure class=&quot;hoo-cardimage&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/card-images/coffee-image.jpg&quot; width=&quot;320&quot; height=&quot;180&quot; alt=&quot;&quot;&gt;
-      &lt;/figure&gt;
-      &lt;div class=&quot;hoo-cardlocation&quot;&gt;Marketing&lt;/div&gt;
-      &lt;div class=&quot;hoo-cardtitle&quot;&gt;
-      &lt;/div&gt;
-      &lt;footer class=&quot;hoo-cardfooter&quot;&gt;
-          &lt;div class=&quot;hoo-avatar&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-cardfooter-data&quot;&gt;
-              &lt;div class=&quot;hoo-cardfooter-name&quot;&gt;Man on the moon&lt;/div&gt;
-              &lt;div class=&quot;hoo-cardfooter-modified&quot;&gt;Created a seconds ago&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/footer&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Document Card - Clickable

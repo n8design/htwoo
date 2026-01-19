@@ -11,7 +11,7 @@ seoDescription: "Meta Tag Link Primary Atoms"
 weight: 23
 hasVariants: false
 markup: |
-  &lt;a href=&quot;?&quot; class=&quot;hoo-mtag-primary&quot;&gt;&lt;span class=&quot;hoo-mtag-lbl&quot;&gt;hTWOo&lt;/span&gt;&lt;/a&gt;
+  
 ---
 
 # Tag Primary (Link)

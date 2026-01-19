@@ -11,7 +11,7 @@ seoDescription: "Input Input Description Atoms"
 weight: 91
 hasVariants: false
 markup: |
-  &lt;p class=&quot;hoo-input-description&quot; id=&quot;field-x-description--1&quot;&gt;lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/p&gt;
+  
 ---
 
 # Input Description

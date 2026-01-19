@@ -11,8 +11,7 @@ seoDescription: "Input Radiobutton Atoms"
 weight: 25
 hasVariants: false
 markup: |
-  &lt;input type=&quot;radio&quot; name=&quot;RadioButton&quot; id=&quot;1305c43&quot; value=&quot;rb1&quot; class=&quot;hoo-radio&quot;&gt;
-  &lt;label for=&quot;1305c43&quot; &gt;Label Radio Button&lt;/label&gt;
+  
 ---
 
 # Radio Button

@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Hyperlink Primary Atoms"
 weight: 65
 hasVariants: false
 markup: |
-  &lt;a href=&quot;?&quot; class=&quot;hoo-button-primary&quot; role=&quot;button&quot;&gt;
-  &lt;div class=&quot;hoo-button-label&quot;&gt;Button&lt;/div&gt;&lt;/a&gt;
+  
 ---
 
 Primary hyperlink buttons combine the prominent styling of primary buttons with the functionality of hyperlinks (`<a>` tags), allowing navigation to other pages while highlighting the link as a primary call-to-action.

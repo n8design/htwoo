@@ -226,24 +226,90 @@ function fixMarkupPaths(markup) {
 
 // Fix relative links in markdown content to use absolute /components/ paths
 // Converts links like ../molecules/cards-elements/card-splash-header to /components/molecules/cards-elements/card-splash-header/
-function fixMarkdownLinks(markdown, currentCategory) {
+// currentPath should be the full path like "molecules/menus" or "organism/pnp-search-grid"
+function fixMarkdownLinks(markdown, currentPath) {
   if (!markdown) return '';
 
   let fixed = markdown;
 
-  // Match markdown links with relative paths: [text](../path) or [text](./path)
-  // Convert to absolute /components/ paths
-  fixed = fixed.replace(/\]\(\.\.\/([^)]+)\)/g, (match, relativePath) => {
-    // Remove any trailing slashes and clean up the path
-    let cleanPath = relativePath.replace(/\/+$/, '');
-    // Build absolute path
-    return `](/components/${cleanPath}/)`;
+  // Helper to clean up a path: remove .html suffix and trailing slashes
+  function cleanPath(p) {
+    return p
+      .replace(/\.html$/, '')  // Remove .html suffix
+      .replace(/\/+$/, '');     // Remove trailing slashes
+  }
+
+  // Known component categories
+  const KNOWN_CATEGORIES = ['atoms', 'molecules', 'organism', 'templates', 'design-tokens', 'pages'];
+
+  // Helper to resolve relative path from current directory
+  // currentPath: "molecules/menus" or "organism/pnp-search-grid"
+  // relativePath: "../cards-elements/card.html" or "../../atoms/inputs/"
+  function resolveRelativePath(currentPath, relativePath) {
+    const pathParts = currentPath.split('/').filter(p => p);
+    const relParts = relativePath.split('/').filter(p => p);
+
+    // First, check if after the ../ parts there's a known category name
+    // This handles cases like "../molecules/quick-links/..." from "organism/pnp-search-grid/"
+    // where the intent is to go to /components/molecules/quick-links/...
+    let dotDotCount = 0;
+    let firstRealPart = null;
+    for (const part of relParts) {
+      if (part === '..') {
+        dotDotCount++;
+      } else if (part !== '.') {
+        firstRealPart = part;
+        break;
+      }
+    }
+
+    // If the first non-.. part is a known category, treat the path as category-relative
+    // This handles malformed relative paths in the source markdown
+    if (firstRealPart && KNOWN_CATEGORIES.includes(firstRealPart)) {
+      // Build path from the category onwards, ignoring ../ parts
+      const categoryPath = relParts.filter(p => p !== '..' && p !== '.').map(p => cleanPath(p));
+      return categoryPath.join('/');
+    }
+
+    // Standard relative path resolution
+    for (const part of relParts) {
+      if (part === '..') {
+        // Go up one directory
+        pathParts.pop();
+      } else if (part !== '.') {
+        // Add the part (cleaned of .html)
+        pathParts.push(cleanPath(part));
+      }
+    }
+
+    return pathParts.join('/');
+  }
+
+  // Match markdown links with ../ relative paths: [text](../path)
+  // Need to properly resolve based on current directory
+  fixed = fixed.replace(/\]\((\.\.\/[^)]+)\)/g, (match, relativePath) => {
+    // Skip non-component paths like js/, css/, images/
+    if (relativePath.includes('/js/') || relativePath.includes('/css/') || relativePath.includes('/images/')) {
+      return match; // Don't modify these links
+    }
+    const resolvedPath = resolveRelativePath(currentPath, relativePath);
+    return `](/components/${resolvedPath}/)`;
   });
 
-  // Also handle ./relative paths
+  // Handle ./relative paths (same directory)
   fixed = fixed.replace(/\]\(\.\/([^)]+)\)/g, (match, relativePath) => {
-    let cleanPath = relativePath.replace(/\/+$/, '');
-    return `](/components/${currentCategory}/${cleanPath}/)`;
+    const cleanedPath = cleanPath(relativePath);
+    return `](/components/${currentPath}/${cleanedPath}/)`;
+  });
+
+  // Also fix any remaining .html extensions in component links
+  // Match links like [text](/components/path/file.html) or [text](path/file.html)
+  fixed = fixed.replace(/\]\(([^)]*?)\.html\)/g, (match, pathWithoutHtml) => {
+    // Only fix if it looks like a component path (not external URL)
+    if (pathWithoutHtml.startsWith('http') || pathWithoutHtml.startsWith('//')) {
+      return match; // Don't modify external URLs
+    }
+    return `](${pathWithoutHtml}/)`;
   });
 
   return fixed;
@@ -448,7 +514,11 @@ ${variantsYaml}---
 function generateComponentMarkdown(pattern, variants) {
   const frontmatter = generateComponentFrontmatter(pattern, variants);
   // Fix relative links in markdown content to use absolute /components/ paths
-  const fixedMarkdown = fixMarkdownLinks(pattern.markdown, pattern.category);
+  // Pass full path (category/subcategory) for correct relative link resolution
+  const currentPath = pattern.subcategory
+    ? `${pattern.category}/${pattern.subcategory}`
+    : pattern.category;
+  const fixedMarkdown = fixMarkdownLinks(pattern.markdown, currentPath);
   return frontmatter + (fixedMarkdown || '');
 }
 

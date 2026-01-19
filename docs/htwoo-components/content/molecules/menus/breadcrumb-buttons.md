@@ -11,34 +11,7 @@ seoDescription: "Menus Breadcrumb Buttons Molecules"
 weight: 21
 hasVariants: false
 markup: |
-  &lt;nav class=&quot;hoo-breadcrumb&quot; aria-label=&quot;Breadcrumb&quot; tabindex=&quot;0&quot;&gt;
-      &lt;ol&gt;
-          &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-              &lt;button class=&quot;hoo-breadcrumb-link&quot;&gt;Item 1&lt;/button&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-              &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;&lt;/span&gt;
-      &lt;/li&gt;
-      &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-          &lt;button class=&quot;hoo-breadcrumb-link&quot;&gt;Item 2&lt;/button&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-          &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-              &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-              &lt;/use&gt;
-          &lt;/svg&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-      &lt;button class=&quot;hoo-breadcrumb-link&quot;&gt;Item 3&lt;/button&gt;&lt;span class=&quot;hoo-breadcrumb-separator&quot;&gt;
-      &lt;svg class=&quot;icon icon-arrow-right&quot;&gt;
-          &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-arrow-right&quot;&gt;
-          &lt;/use&gt;
-      &lt;/svg&gt;&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;hoo-breadcrumb-item&quot;&gt;
-      &lt;button class=&quot;hoo-breadcrumb-link&quot; aria-current=&quot;location&quot;&gt;Item 4&lt;/button&gt;
-  &lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;/nav&gt;
+  
 ---
 
 # Breadcrumb with Buttons

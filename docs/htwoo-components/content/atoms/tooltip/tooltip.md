@@ -11,9 +11,7 @@ seoDescription: "Tooltip Tooltip Atoms"
 weight: 5
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-tooltip&quot; role=&quot;tooltip&quot;&gt;
-      &lt;div class=&quot;hoo-tooltip-content&quot;&gt;Tooltip&lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 ## Overview

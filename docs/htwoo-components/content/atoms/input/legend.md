@@ -11,7 +11,7 @@ seoDescription: "Input Legend Atoms"
 weight: 92
 hasVariants: false
 markup: |
-  &lt;legend class=&quot;hoo-legend &quot;  &gt;Personal Information&lt;/legend&gt;
+  
 ---
 
 # Legend

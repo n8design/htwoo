@@ -11,9 +11,7 @@ seoDescription: "Icons Ql Icon Atoms"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-      &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-  &lt;/figure&gt;
+  
 ---
 
 Quick Link Icons provide image-based icons optimized for use within quick link components. These components typically display a visual representation alongside link text.

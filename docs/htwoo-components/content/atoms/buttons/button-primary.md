@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Primary Atoms"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button-primary&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
-  &lt;/button&gt;
+  
 ---
 
 Primary button also has on disabled state the correct color values.

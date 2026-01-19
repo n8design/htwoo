@@ -11,7 +11,7 @@ seoDescription: "Input Input Number Atoms"
 weight: 12
 hasVariants: false
 markup: |
-  &lt;input class=&quot;hoo-input-text&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot;    &gt;
+  
 ---
 
 # Number Input

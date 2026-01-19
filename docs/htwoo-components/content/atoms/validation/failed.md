@@ -11,7 +11,7 @@ seoDescription: "Validation Failed Atoms"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;span class=&quot;hoo-error&quot; id=&quot;asdasd&quot;&gt;Invalid input&lt;/span&gt;
+  
 ---
 
 ## Overview

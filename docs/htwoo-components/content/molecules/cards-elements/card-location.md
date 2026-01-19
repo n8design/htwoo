@@ -11,7 +11,7 @@ seoDescription: "Cards Elements Card Location Molecules"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-cardlocation&quot;&gt;Marketing&lt;/div&gt;
+  
 ---
 
 ## Overview

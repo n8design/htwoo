@@ -11,30 +11,7 @@ seoDescription: "Input Select Drop Down Grouped Atoms"
 weight: 31.1
 hasVariants: false
 markup: |
-  &lt;ul class=&quot;hoo-select-dropdown hoo-show&quot;&gt;
-      &lt;li class=&quot;hoo-optgroup&quot;&gt;
-          &lt;div class=&quot;hoo-optgroup-name&quot;&gt;Fruits&lt;/div&gt;
-          &lt;ul class=&quot;hoo-optgroup-items&quot;&gt;
-              &lt;li data-value=&quot;apple&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Apple&lt;/li&gt;
-              &lt;li data-value=&quot;banana&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Banana&lt;/li&gt;
-              &lt;li data-value=&quot;orange&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Orange&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li class=&quot;hoo-optgroup&quot;&gt;
-          &lt;div class=&quot;hoo-optgroup-name&quot;&gt;Vegetables&lt;/div&gt;
-          &lt;ul class=&quot;hoo-optgroup-items&quot;&gt;
-              &lt;li data-value=&quot;carrot&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Carrot&lt;/li&gt;
-              &lt;li data-value=&quot;broccoli&quot; class=&quot;hoo-option hoo-disabled&quot; aria-disabled=&quot;true&quot;&gt;Broccoli&lt;/li&gt;
-              &lt;li data-value=&quot;spinach&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Spinach&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li class=&quot;hoo-optgroup&quot;&gt;
-          &lt;div class=&quot;hoo-optgroup-name&quot;&gt;Other&lt;/div&gt;
-          &lt;ul class=&quot;hoo-optgroup-items&quot;&gt;
-              &lt;li data-value=&quot;other&quot; class=&quot;hoo-option &quot; aria-disabled=&quot;false&quot;&gt;Other Items&lt;/li&gt;
-          &lt;/ul&gt;
-      &lt;/li&gt;
-  &lt;/ul&gt;
+  
 ---
 
 # Grouped Select Dropdown

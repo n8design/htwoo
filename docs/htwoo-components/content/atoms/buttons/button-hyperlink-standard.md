@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Hyperlink Standard Atoms"
 weight: 60
 hasVariants: false
 markup: |
-  &lt;a href=&quot;?&quot; class=&quot;hoo-button&quot; role=&quot;button&quot;&gt;
-  &lt;div class=&quot;hoo-button-label&quot;&gt;Button&lt;/div&gt;&lt;/a&gt;
+  
 ---
 
 Standard hyperlink buttons combine the styling of standard buttons with the functionality of hyperlinks (`<a>` tags), allowing navigation to other pages or resources while maintaining button appearance.

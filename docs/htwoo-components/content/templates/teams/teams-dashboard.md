@@ -11,38 +11,7 @@ seoDescription: "Teams Teams Dashboard Templates"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-teamsdb&quot;&gt;
-      &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-          &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-              &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 1&lt;/div&gt;
-          &lt;/header&gt;
-          &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
-      &lt;/article&gt;
-      &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 4;&quot;&gt;
-          &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-              &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 2&lt;/div&gt;
-          &lt;/header&gt;
-          &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
-      &lt;/article&gt;
-      &lt;article class=&quot;hoo-teamsdbcard&quot; style=&quot;grid-column: auto / span 2;&quot;&gt;
-          &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-              &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 4&lt;/div&gt;
-          &lt;/header&gt;
-          &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
-      &lt;/article&gt;
-      &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-          &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-              &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 5&lt;/div&gt;
-          &lt;/header&gt;
-          &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
-      &lt;/article&gt;
-      &lt;article class=&quot;hoo-teamsdbcard&quot;&gt;
-          &lt;header class=&quot;hoo-teamsdbcard-header&quot;&gt;
-              &lt;div class=&quot;hoo-teamsdbcard-title&quot;&gt;Card 6&lt;/div&gt;
-          &lt;/header&gt;
-          &lt;div class=&quot;hoo-teamsdbcard-content&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ipsam dicta quod architecto nisi quibusdam commodi consequatur harum enim, delectus officiis ducimus eum voluptatibus optio obcaecati ea, quisquam molestias? At eum aliquid, eius neque commodi hic dolor illo iste dolore.&lt;/div&gt;
-      &lt;/article&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Teams Dashboard Template
@@ -356,12 +325,12 @@ The Teams Dashboard Template consists of:
 - **Teams Mobile**: Mobile-optimized dashboard layouts
 
 ### Core Components
-- [Teams Dashboard Card](/components/../molecules/cards-elements/teams-dashboard-card.html/) - Individual card component
-- [Teams Toolbar](/components/../molecules/menus/teams-toolbar.html/) - Dashboard toolbar integration
+- [Teams Dashboard Card](/components/molecules/cards-elements/teams-dashboard-card/) - Individual card component
+- [Teams Toolbar](/components/molecules/menus/teams-toolbar/) - Dashboard toolbar integration
 
 ### Layout Components
-- [Teams Splash Screen](/components/templates/teams-splash-screen.html/) - Welcome and onboarding screens
-- [Quick Links Grid](/components/../organism/quick-links-grid/) - Alternative grid layouts
+- [Teams Splash Screen](/components/templates/teams/teams-splash-screen/) - Welcome and onboarding screens
+- [Quick Links Grid](/components/organism/quick-links-grid/) - Alternative grid layouts
 
 ### Integration Components
 - Microsoft Teams Apps - Teams application integration

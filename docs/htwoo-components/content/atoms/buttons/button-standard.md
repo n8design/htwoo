@@ -11,8 +11,7 @@ seoDescription: "Buttons Button Standard Atoms"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;button class=&quot;hoo-button&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Button&lt;/span&gt;
-  &lt;/button&gt;
+  
 ---
 
 Standard button is the default button style in the HTWOO UI library. It provides a neutral appearance that can be used for most general actions.

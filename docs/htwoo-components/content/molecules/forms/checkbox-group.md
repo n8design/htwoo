@@ -11,24 +11,7 @@ seoDescription: "Forms Checkbox Group Molecules"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;menu class=&quot;hoo-checkbox-group&quot; role=&quot;checkbox&quot; tabindex=&quot;0&quot;&gt;
-      &lt;li tabindex=&quot;-1&quot;&gt;
-          &lt;input type=&quot;checkbox&quot; name=&quot;chbg1&quot; id=&quot;chbg1&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
-          &lt;label for=&quot;chbg1&quot;&gt;Apple&lt;/label&gt;
-      &lt;/li&gt;
-      &lt;li tabindex=&quot;-1&quot;&gt;
-          &lt;input type=&quot;checkbox&quot; name=&quot;chbg2&quot; id=&quot;chbg2&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
-          &lt;label for=&quot;chbg2&quot;&gt;Avocado&lt;/label&gt;
-      &lt;/li&gt;
-      &lt;li tabindex=&quot;-1&quot;&gt;
-          &lt;input type=&quot;checkbox&quot; name=&quot;chbg3&quot; id=&quot;chbg3&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
-          &lt;label for=&quot;chbg3&quot;&gt;Banana&lt;/label&gt;
-      &lt;/li&gt;
-      &lt;li tabindex=&quot;-1&quot;&gt;
-          &lt;input type=&quot;checkbox&quot; name=&quot;chbg4&quot; id=&quot;chbg4&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
-          &lt;label for=&quot;chbg4&quot;&gt;Citrus&lt;/label&gt;
-      &lt;/li&gt;
-  &lt;/menu&gt;
+  
 ---
 
 # Checkbox Group

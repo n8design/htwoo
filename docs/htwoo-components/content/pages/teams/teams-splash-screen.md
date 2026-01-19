@@ -11,19 +11,7 @@ seoDescription: "Teams Teams Splash Screen Pages"
 weight: 11
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-splashscr&quot;&gt;
-      &lt;div class=&quot;hoo-splashscr-content&quot;&gt;
-          &lt;article class=&quot;hoo-splashcard&quot;&gt;
-              &lt;header class=&quot;hoo-splashcard-header&quot; role=&quot;presentation&quot;&gt;
-                  &lt;img src=&quot;/htwoo-core/images/card-images/htwoo-gm-001.svg&quot; class=&quot;hoo-splashcard-img&quot;&gt;
-              &lt;/header&gt;
-              &lt;h1 class=&quot;hoo-splashcard-title&quot;&gt;Fluent UI / Fluent Design by hTWOo UI Framework&lt;/h1&gt;
-              &lt;p class=&quot;hoo-splashcard-desc&quot;&gt;This shows the base setup of a teams splash card setup and I&amp;#x27;am out of futher text here&lt;/p&gt;
-              &lt;footer class=&quot;hoo-splashcard-footer&quot;&gt;
-              &lt;/footer&gt;
-          &lt;/article&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Teams Splash Screen Page

@@ -11,7 +11,7 @@ seoDescription: "Input Input Date Month Atoms"
 weight: 15.1
 hasVariants: false
 markup: |
-  &lt;input type=&quot;month&quot; class=&quot;hoo-input-date&quot;  name=&quot;my-date-picker-name&quot; value=&quot;2021-10-26&quot; min=&quot;2018-01-01&quot; max=&quot;2030-12-31&quot;    &gt;
+  
 ---
 
 # Month Input

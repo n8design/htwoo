@@ -11,8 +11,7 @@ seoDescription: "Cards Elements Card Title Molecules"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-cardtitle&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Card Title

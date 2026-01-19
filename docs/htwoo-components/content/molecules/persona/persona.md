@@ -11,24 +11,7 @@ seoDescription: "Persona Persona Molecules"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-persona-24&quot;&gt;
-      &lt;div class=&quot;hoo-avatar-pres-24&quot;&gt;
-          &lt;div class=&quot;hoo-avatar-24&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/mug-shots/astronaut-mugshot-001.jpg&quot; alt=&quot;&quot; class=&quot;hoo-avatar-img&quot; height=&quot;24&quot; width=&quot;24&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;hoo-presence is-dnd&quot; title=&quot;Online&quot;&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;hoo-persona-data&quot;&gt;
-          &lt;div class=&quot;hoo-persona-name&quot;&gt;Jane Doeminica&lt;/div&gt;
-          &lt;div class=&quot;hoo-persona-function&quot;&gt;&lt;span&gt;Lead Fluent Designer&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;hoo-persona-statustext&quot;&gt;&lt;span&gt;In a meeting&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hoo-persona-available&quot;&gt;&lt;span&gt;Call me yesterday&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Persona

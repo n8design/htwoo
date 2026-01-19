@@ -11,10 +11,7 @@ seoDescription: "Loading Loading Atoms"
 weight: 10
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-progress&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;20&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;&gt;
-      &lt;div class=&quot;hoo-progress-indicator&quot;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Loading Components

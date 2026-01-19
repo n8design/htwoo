@@ -11,296 +11,7 @@ seoDescription: "Pnp Search Grid Pnp Search Grid Organism"
 weight: 999
 hasVariants: false
 markup: |
-  &lt;h2&gt;Quick Links Compact Items&lt;/h2&gt;
-  &lt;div class=&quot;CanvasSection-xl12&quot;&gt;
-      &lt;div class=&quot;hoo-pnpsearch-grid&quot;&gt;
-          &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-              &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-                  &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-                      &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-                  &lt;/figure&gt;
-                  &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-                      &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-                  &lt;/div&gt;
-                  &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-                      &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-                      &lt;/li&gt;
-                  &lt;/menu&gt;
-              &lt;/article&gt;&lt;/a&gt;
-      &lt;/pnp-select&gt;
-      &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-          &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-              &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-                  &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                      &lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/figure&gt;
-              &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-                  &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;/div&gt;
-              &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-                  &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-                  &lt;/li&gt;
-              &lt;/menu&gt;
-          &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qlcompact&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;menu class=&quot;hoo-qlmenu&quot;&gt;
-              &lt;li class=&quot;hoo-qlmenuitem&quot;&gt;
-              &lt;/li&gt;
-          &lt;/menu&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;h2&gt;Quick Links List Items&lt;/h2&gt;
-  &lt;div class=&quot;CanvasSection-xl12&quot;&gt;
-      &lt;div class=&quot;hoo-pnpsearch-grid&quot;&gt;
-          &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-              &lt;article class=&quot;hoo-qllist&quot;&gt;
-                  &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-                      &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-                  &lt;/figure&gt;
-                  &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-                      &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-                      &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-                  &lt;/div&gt;
-              &lt;/article&gt;&lt;/a&gt;
-      &lt;/pnp-select&gt;
-      &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-          &lt;article class=&quot;hoo-qllist&quot;&gt;
-              &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-                  &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                      &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                      &lt;/use&gt;
-                  &lt;/svg&gt;
-              &lt;/figure&gt;
-              &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-                  &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-                  &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-              &lt;/div&gt;
-          &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;img src=&quot;/htwoo-core/images/placeholders/ph-16by9.png&quot; class=&quot;hoo-ql-img&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;pnp-select&gt;&lt;a class=&quot;hoo-qllink&quot; href=&quot;?&quot;&gt;
-      &lt;article class=&quot;hoo-qllist&quot;&gt;
-          &lt;figure class=&quot;hoo-ql-media&quot;&gt;
-              &lt;svg class=&quot;hoo-media-svg&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;use xlink:href=&quot;/htwoo-core/images/icons.svg#icon-ninjacat&quot;&gt;
-                  &lt;/use&gt;
-              &lt;/svg&gt;
-          &lt;/figure&gt;
-          &lt;div class=&quot;hoo-qlinfo&quot;&gt;
-              &lt;div class=&quot;hoo-qltitle&quot;&gt;Quick-link title&lt;/div&gt;
-              &lt;div class=&quot;hoo-qldesc&quot;&gt;Quick-links description lorem ipsum dolor sit amet&lt;/div&gt;
-          &lt;/div&gt;
-      &lt;/article&gt;&lt;/a&gt;
-  &lt;/pnp-select&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # PnP Search Grid
@@ -326,17 +37,17 @@ The PnP Search Grid is an organism-level component that combines multiple quick 
 
 The PnP Search Grid supports multiple column configurations:
 
-- **[12-Column Grid](/components/organism/pnp-search-grid.html/)** - Maximum density for wide displays
-- **[8-Column Grid](/components/organism/pnp-search-grid~8c.html/)** - Balanced layout for standard screens
-- **[6-Column Grid](/components/organism/pnp-search-grid~6c.html/)** - Moderate density for medium containers
-- **[4-Column Grid](/components/organism/pnp-search-grid~4c.html/)** - Minimal columns for narrow layouts
+- **[12-Column Grid](/components/organism/pnp-search-grid/pnp-search-grid/)** - Maximum density for wide displays
+- **[8-Column Grid](/components/organism/pnp-search-grid/pnp-search-grid~8c/)** - Balanced layout for standard screens
+- **[6-Column Grid](/components/organism/pnp-search-grid/pnp-search-grid~6c/)** - Moderate density for medium containers
+- **[4-Column Grid](/components/organism/pnp-search-grid/pnp-search-grid~4c/)** - Minimal columns for narrow layouts
 
 ### Display Modes
 
 Each grid supports two content presentation styles:
 
-- **[Compact Grid](/components/organism/pnp-search-compact-grid.html/)** - Space-efficient items with minimal height
-- **[List Grid](/components/organism/pnp-search-list-grid.html/)** - Detailed items with descriptions and extended content
+- **[Compact Grid](/components/organism/pnp-search-grid/pnp-search-compact-grid/)** - Space-efficient items with minimal height
+- **[List Grid](/components/organism/pnp-search-grid/pnp-search-list-grid/)** - Detailed items with descriptions and extended content
 
 ## Structure
 
@@ -468,12 +179,12 @@ The component consists of:
 - **Mobile Browsers**: Touch-optimized interactions and responsive layouts
 
 ### Molecular Components
-- [Quick Link Compact Item](/components/molecules/quick-links/ql-compact-item.html/) - Space-efficient grid items
-- [Quick Link List Item](/components/molecules/quick-links/ql-list-item.html/) - Detailed grid items with descriptions
+- [Quick Link Compact Item](/components/molecules/quick-links/ql-compact-item/) - Space-efficient grid items
+- [Quick Link List Item](/components/molecules/quick-links/ql-list-item/) - Detailed grid items with descriptions
 
 ### Other Grid Layouts
-- [Quick Links Grid](/components/quick-links-grid/) - Alternative grid system for quick links
-- [Cards Layout](/components/cards/) - Card-based grid alternatives
+- [Quick Links Grid](/components/organism/quick-links-grid/) - Alternative grid system for quick links
+- [Cards Layout](/components/organism/cards/) - Card-based grid alternatives
 
 ## SCSS Import
 

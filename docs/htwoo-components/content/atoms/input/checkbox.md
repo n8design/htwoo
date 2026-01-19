@@ -11,8 +11,7 @@ seoDescription: "Input Checkbox Atoms"
 weight: 20
 hasVariants: false
 markup: |
-  &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1234&quot; id=&quot;checkbox-1234&quot; value=&quot;&quot; class=&quot;hoo-checkbox&quot; &gt;
-  &lt;label for=&quot;checkbox-1234&quot;&gt;Checkbox Label&lt;/label&gt;
+  
 ---
 
 # Checkbox

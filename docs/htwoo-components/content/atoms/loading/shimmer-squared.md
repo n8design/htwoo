@@ -11,8 +11,7 @@ seoDescription: "Loading Shimmer Squared Atoms"
 weight: 60
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-ph-squared&quot;&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Shimmer Squared

@@ -11,49 +11,7 @@ seoDescription: "Teams Teams Splash Screen Multi Pages"
 weight: 12
 hasVariants: false
 markup: |
-  &lt;div class=&quot;hoo-splashscr&quot;&gt;
-      &lt;div class=&quot;hoo-splashscr-content&quot;&gt;
-          &lt;article class=&quot;hoo-splashcard&quot;&gt;
-              &lt;header class=&quot;hoo-splashcard-header&quot; role=&quot;presentation&quot;&gt;
-                  &lt;img src=&quot;/htwoo-core/images/card-images/htwoo-gm-001.svg&quot; class=&quot;hoo-splashcard-img&quot;&gt;
-              &lt;/header&gt;
-              &lt;h1 class=&quot;hoo-splashcard-title&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/h1&gt;
-              &lt;p class=&quot;hoo-splashcard-desc&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/p&gt;
-              &lt;footer class=&quot;hoo-splashcard-footer&quot;&gt;
-                  &lt;button class=&quot;hoo-button-primary&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Create something&lt;/span&gt;
-              &lt;/button&gt;
-              &lt;button class=&quot;hoo-button&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Call for action&lt;/span&gt;
-          &lt;/button&gt;
-      &lt;/footer&gt;
-  &lt;/article&gt;
-  &lt;article class=&quot;hoo-splashcard&quot;&gt;
-      &lt;header class=&quot;hoo-splashcard-header&quot; role=&quot;presentation&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/card-images/htwoo-gm-002.svg&quot; class=&quot;hoo-splashcard-img&quot;&gt;
-      &lt;/header&gt;
-      &lt;h1 class=&quot;hoo-splashcard-title&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/h1&gt;
-      &lt;p class=&quot;hoo-splashcard-desc&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/p&gt;
-      &lt;footer class=&quot;hoo-splashcard-footer&quot;&gt;
-          &lt;button class=&quot;hoo-button-primary&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Create something&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&quot;hoo-button&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Call for action&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/footer&gt;
-  &lt;/article&gt;
-  &lt;article class=&quot;hoo-splashcard&quot;&gt;
-      &lt;header class=&quot;hoo-splashcard-header&quot; role=&quot;presentation&quot;&gt;
-          &lt;img src=&quot;/htwoo-core/images/card-images/htwoo-gm-003.svg&quot; class=&quot;hoo-splashcard-img&quot;&gt;
-      &lt;/header&gt;
-      &lt;h1 class=&quot;hoo-splashcard-title&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/h1&gt;
-      &lt;p class=&quot;hoo-splashcard-desc&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, velit.&lt;/p&gt;
-      &lt;footer class=&quot;hoo-splashcard-footer&quot;&gt;
-          &lt;button class=&quot;hoo-button-primary&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Create something&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button class=&quot;hoo-button&quot;&gt;&lt;span class=&quot;hoo-button-label&quot;&gt;Call for action&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/footer&gt;
-  &lt;/article&gt;
-  &lt;/div&gt;
-  &lt;/div&gt;
+  
 ---
 
 # Teams Splash Screen Multi Page

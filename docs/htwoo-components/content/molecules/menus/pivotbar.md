@@ -11,24 +11,7 @@ seoDescription: "Menus Pivotbar Molecules"
 weight: 40
 hasVariants: false
 markup: |
-  &lt;menu class=&quot;hoo-pivotbar&quot;&gt;
-      &lt;button class=&quot;hoo-button-pivot is-active&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Coffee&quot;&gt;Coffee&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Matcha&quot;&gt;Matcha&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Ice Tea&quot;&gt;Ice Tea&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Aqua Minerale&quot;&gt;Aqua Minerale&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Earl Grey&quot;&gt;Earl Grey&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Darjeeling tea&quot;&gt;Darjeeling tea&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Chai Latte&quot;&gt;Chai Latte&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button class=&quot;hoo-button-pivot&quot;&gt;&lt;span class=&quot;hoo-pivot-inner&quot; title=&quot;Gin Tonic&quot;&gt;Gin Tonic&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;/menu&gt;
+  
 ---
 
 # Pivot Bar
@@ -91,7 +74,7 @@ The pivot bar works with pivot buttons to provide:
 
 ## Responsive Behavior
 
-For responsive scenarios with limited space, consider using the [Pivot Bar Overflow](/components/molecules/pivotbar-overflow.html/) variant which includes:
+For responsive scenarios with limited space, consider using the [Pivot Bar Overflow](/components/molecules/menus/pivotbar-overflow/) variant which includes:
 
 - Overflow menu for hidden items
 - Dynamic hiding/showing of tabs based on available space
