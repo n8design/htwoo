@@ -74,9 +74,9 @@ var PluginUIExtension = {
 
     if(matchMedia.matches) {
       console.debug('entering match media');
-      logoImg.setAttribute('src', "styleguide/images/htwoo-logo-horizontal-sm.png");
-      logoImg.setAttribute('srcset', `styleguide/images/htwoo-logo-horizontal-sm.png 200w, ${logoImg.src} 800w`);
-      logoImg.setAttribute('sizes', "(max-width: 768px) 200px, 800px");  
+      logoImg.setAttribute('src', "styleguide/images/htwoo-logo-horizontal.png");
+      logoImg.setAttribute('srcset', `styleguide/images/htwoo-logo-horizontal.png 200w, ${logoImg.src} 800w`);
+      logoImg.setAttribute('sizes', "(max-width: 768px) 200px, 800px");
     } else {
       console.debug('Do not match');
     }

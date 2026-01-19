@@ -4,16 +4,16 @@
     <title>Fluent UI / Fluent Design by hTWOo UI Framework</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../css/style.css?1768742771088" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1768815288036" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1768815288036" media="all" />
     <link rel="stylesheet" href="../../js/prismjs/prism.css" media="all" />
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768742771088" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab-overrides.css?1768815288036" media="all" />
     <link rel="canonical" href="https://htwoo.io/htwoo-core/?p=">
     <meta name="description" content=" - Fluent UI / Fluent Design component from the hTWOo UI Framework for SharePoint, Microsoft Teams, and web applications."/>
     <meta name="keywords" content=", Fluent Design, Fluent UI, Microsoft Design, Microsoft UX, Microsoft UX, SharePoint, Microsoft Teams, Microosoft Eco System, full-stack developer, SharePoint Framework, SPFx, Microsoft Teams Toolkit, Fluent UI 9, pattern library, style guide, design pattern"/>
      <base target="_top">
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768742771088" media="all">
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1768815288036" media="all">
     <!-- End Pattern Lab -->
 
   </head>
@@ -316,7 +316,7 @@
 			</div><!--end pl-js-pattern-example-->
 		
 			<script type="text/json" id="pl-pattern-data-molecules-radio-button-group" class="pl-js-pattern-data">
-			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"lineage":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-new-form-step1","lineagePath":"../../patterns/molecules-form-samples-new-form-step1/molecules-form-samples-new-form-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"},{"lineagePattern":"molecules-new-disp-step2","lineagePath":"../../patterns/molecules-form-samples-new-disp-step2/molecules-form-samples-new-disp-step2.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-new-form-step1","lineagePath":"../../patterns/molecules-form-samples-new-form-step1/molecules-form-samples-new-form-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"},{"lineagePattern":"molecules-new-disp-step2","lineagePath":"../../patterns/molecules-form-samples-new-disp-step2/molecules-form-samples-new-disp-step2.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Radio Button Group</h1>\n<p>A semantic container for grouping related radio button controls with proper accessibility semantics. Provides consistent styling and keyboard navigation for single-selection choices within forms.</p>\n<h2>Overview</h2>\n<p>The radio button group component creates an accessible collection of radio button controls using semantic HTML with proper ARIA roles. It enables users to select one option from a related set of choices while maintaining keyboard navigation and screen reader compatibility.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Semantic Structure</strong>: Uses <code>&lt;menu&gt;</code> element with <code>role=&quot;radiogroup&quot;</code></li>\n<li><strong>Keyboard Navigation</strong>: Full keyboard support with arrow key navigation</li>\n<li><strong>Single Selection</strong>: Enforces single selection within the group</li>\n<li><strong>Screen Reader Support</strong>: Proper announcements and group context</li>\n<li><strong>Mutual Exclusivity</strong>: Selecting one option deselects others</li>\n<li><strong>Flexible Layout</strong>: Supports vertical stacking and custom layouts</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Container</strong>: <code>&lt;menu&gt;</code> with <code>.hoo-radiobutton-group</code> class and <code>role=&quot;radiogroup&quot;</code></li>\n<li><strong>List Items</strong>: <code>&lt;li&gt;</code> elements with <code>role=&quot;radio&quot;</code> containing individual radio buttons</li>\n<li><strong>Radio Buttons</strong>: <code>{{&gt;atoms-radiobutton}}</code> components for each option</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;radiobutton-group&quot;: {\n        &quot;name&quot;: &quot;delivery-method&quot;,\n        &quot;items&quot;: [\n            {\n                &quot;id&quot;: &quot;delivery-standard&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;,\n                &quot;value&quot;: &quot;standard&quot;,\n                &quot;label&quot;: &quot;Standard Delivery (5-7 days)&quot;,\n                &quot;checked&quot;: true\n            },\n            {\n                &quot;id&quot;: &quot;delivery-express&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;, \n                &quot;value&quot;: &quot;express&quot;,\n                &quot;label&quot;: &quot;Express Delivery (2-3 days)&quot;,\n                &quot;checked&quot;: false\n            },\n            {\n                &quot;id&quot;: &quot;delivery-overnight&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;,\n                &quot;value&quot;: &quot;overnight&quot;, \n                &quot;label&quot;: &quot;Overnight Delivery&quot;,\n                &quot;checked&quot;: false\n            }\n        ]\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-radiobutton-group</code>: Main container styling</li>\n<li><code>.hoo-radiobutton-group.horizontal</code>: Horizontal layout variant</li>\n<li><code>.hoo-radiobutton-group.columns</code>: Multi-column layout variant</li>\n<li><code>.hoo-radiobutton-group.compact</code>: Compact spacing variant</li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Layout</strong>: Vertical stacking by default</li>\n<li><strong>Spacing</strong>: 12px gap between radio button items</li>\n<li><strong>Padding</strong>: Container padding for proper spacing</li>\n<li><strong>Alignment</strong>: Left-aligned radio buttons with proper label alignment</li>\n</ul>\n<h3>Interactive States</h3>\n<ul>\n<li><strong>Focus</strong>: Focus ring on the group container</li>\n<li><strong>Individual Focus</strong>: Each radio button maintains its own focus state</li>\n<li><strong>Hover</strong>: Subtle hover effects on radio button items</li>\n<li><strong>Selection</strong>: Clear visual indication of selected option</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Payment Method Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;fieldset class=&quot;hoo-fieldset&quot;&gt;\n    &lt;legend class=&quot;hoo-legend&quot;&gt;Payment Method&lt;/legend&gt;\n    {{#radiobutton-group}}\n    &lt;menu class=&quot;hoo-radiobutton-group&quot; role=&quot;radiogroup&quot; tabindex=&quot;0&quot;&gt;\n        &lt;!-- Credit card, PayPal, bank transfer options --&gt;\n    &lt;/menu&gt;\n    {{/radiobutton-group}}\n&lt;/fieldset&gt;\n</code></pre>\n<h3>Delivery Options</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;delivery-selector&quot;&gt;\n    &lt;h3&gt;Delivery Method&lt;/h3&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/div&gt;\n</code></pre>\n<h3>Priority Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;section class=&quot;priority-settings&quot;&gt;\n    &lt;h2&gt;Task Priority&lt;/h2&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/section&gt;\n</code></pre>\n<h3>Theme Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;theme-selector&quot;&gt;\n    &lt;h3&gt;Choose Theme&lt;/h3&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/div&gt;\n</code></pre>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Semantic HTML</strong>: Uses <code>&lt;menu&gt;</code> element with proper ARIA radiogroup role</li>\n<li><strong>ARIA Roles</strong>: <code>role=&quot;radiogroup&quot;</code> on container, <code>role=&quot;radio&quot;</code> on items</li>\n<li><strong>Keyboard Navigation</strong>: Arrow keys for navigation within group</li>\n<li><strong>Screen Reader</strong>: Clear group announcements and selection states</li>\n<li><strong>Focus Management</strong>: Proper focus indicators and roving tabindex</li>\n<li><strong>Label Association</strong>: Each radio button properly associated with its label</li>\n</ul>\n<h2>Keyboard Interactions</h2>\n<ul>\n<li><strong>Tab</strong>: Focus the radio button group (first or checked item)</li>\n<li><strong>Arrow Up/Down</strong>: Navigate between radio button options</li>\n<li><strong>Arrow Left/Right</strong>: Navigate between radio button options (alternative)</li>\n<li><strong>Space</strong>: Select the focused radio button</li>\n<li><strong>Tab (from group)</strong>: Move to next form element</li>\n</ul>\n<h2>Form Integration</h2>\n<h3>Within Fieldset</h3>\n<pre><code class=\"language-handlebars\">&lt;fieldset class=&quot;hoo-fieldset&quot;&gt;\n    &lt;legend class=&quot;hoo-legend&quot;&gt;Select One Option&lt;/legend&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/fieldset&gt;\n</code></pre>\n<h3>With Validation</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;hoo-field&quot; role=&quot;group&quot;&gt;\n    &lt;div class=&quot;field-label&quot;&gt;Preferred Contact Method *&lt;/div&gt;\n    {{&gt; molecules-radio-button-group}}\n    &lt;output class=&quot;hoo-validation&quot;&gt;Please select a contact method&lt;/output&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>JavaScript Integration</h2>\n<h3>Getting Selected Value</h3>\n<h3>Setting Value Programmatically</h3>\n<h3>Handling Change Events</h3>\n<h2>Validation</h2>\n<ul>\n<li><strong>Required Selection</strong>: Can enforce selection requirement</li>\n<li><strong>Custom Validation</strong>: Support for custom validation rules</li>\n<li><strong>Real-time Feedback</strong>: Validation updates as user makes selection</li>\n<li><strong>Group Validation</strong>: Validates entire group rather than individual items</li>\n</ul>\n<h2>Comparison with Checkbox Group</h2>\n<h3>Radio Button Group</h3>\n<ul>\n<li><strong>Single Selection</strong>: Only one option can be selected</li>\n<li><strong>Mutual Exclusivity</strong>: Selecting one deselects others</li>\n<li><strong>Use Case</strong>: When user must choose exactly one option</li>\n</ul>\n<h3>Checkbox Group</h3>\n<ul>\n<li><strong>Multiple Selection</strong>: Multiple options can be selected</li>\n<li><strong>Independent</strong>: Each checkbox is independent</li>\n<li><strong>Use Case</strong>: When user can choose zero or more options</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Legacy Support</strong>: Graceful degradation with standard radio button behavior</li>\n<li><strong>Screen Readers</strong>: Excellent support in NVDA, JAWS, VoiceOver</li>\n<li><strong>Mobile</strong>: Optimized for touch interfaces and mobile screen readers</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Atom Styles:</strong></p>\n<ul>\n<li><code>lib/sass/atoms/input.scss</code></li>\n</ul>\n<p><strong>Molecule Styles:</strong></p>\n<ul>\n<li><code>lib/sass/molecules/forms.scss</code></li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>Lightweight</strong>: Minimal CSS and HTML structure</li>\n<li><strong>No JavaScript</strong>: Pure HTML/CSS implementation</li>\n<li><strong>Efficient Rendering</strong>: Optimized for groups of radio buttons</li>\n<li><strong>Memory Efficient</strong>: Clean DOM structure with minimal overhead</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Radio Button Group","patternPartial":"molecules-radio-button-group","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
+			{"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"lineage":[{"lineagePattern":"atoms-radiobutton","lineagePath":"../../patterns/atoms-input-radiobutton/atoms-input-radiobutton.rendered.html"}],"patternLineageRExists":true,"patternLineagesR":[{"lineagePattern":"molecules-new-disp-step2","lineagePath":"../../patterns/molecules-form-samples-new-disp-step2/molecules-form-samples-new-disp-step2.rendered.html"},{"lineagePattern":"molecules-new-form-step1","lineagePath":"../../patterns/molecules-form-samples-new-form-step1/molecules-form-samples-new-form-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"lineageR":[{"lineagePattern":"molecules-new-disp-step2","lineagePath":"../../patterns/molecules-form-samples-new-disp-step2/molecules-form-samples-new-disp-step2.rendered.html"},{"lineagePattern":"molecules-new-form-step1","lineagePath":"../../patterns/molecules-form-samples-new-form-step1/molecules-form-samples-new-form-step1.rendered.html"},{"lineagePattern":"molecules-new-form-step2","lineagePath":"../../patterns/molecules-form-samples-new-form-step2/molecules-form-samples-new-form-step2.rendered.html"}],"patternLineageEExists":true,"patternDesc":"<h1>Radio Button Group</h1>\n<p>A semantic container for grouping related radio button controls with proper accessibility semantics. Provides consistent styling and keyboard navigation for single-selection choices within forms.</p>\n<h2>Overview</h2>\n<p>The radio button group component creates an accessible collection of radio button controls using semantic HTML with proper ARIA roles. It enables users to select one option from a related set of choices while maintaining keyboard navigation and screen reader compatibility.</p>\n<h2>Features</h2>\n<ul>\n<li><strong>Semantic Structure</strong>: Uses <code>&lt;menu&gt;</code> element with <code>role=&quot;radiogroup&quot;</code></li>\n<li><strong>Keyboard Navigation</strong>: Full keyboard support with arrow key navigation</li>\n<li><strong>Single Selection</strong>: Enforces single selection within the group</li>\n<li><strong>Screen Reader Support</strong>: Proper announcements and group context</li>\n<li><strong>Mutual Exclusivity</strong>: Selecting one option deselects others</li>\n<li><strong>Flexible Layout</strong>: Supports vertical stacking and custom layouts</li>\n</ul>\n<h2>Structure</h2>\n<p>The component consists of:</p>\n<ol>\n<li><strong>Container</strong>: <code>&lt;menu&gt;</code> with <code>.hoo-radiobutton-group</code> class and <code>role=&quot;radiogroup&quot;</code></li>\n<li><strong>List Items</strong>: <code>&lt;li&gt;</code> elements with <code>role=&quot;radio&quot;</code> containing individual radio buttons</li>\n<li><strong>Radio Buttons</strong>: <code>{{&gt;atoms-radiobutton}}</code> components for each option</li>\n</ol>\n<h2>Data Structure</h2>\n<pre><code class=\"language-json\">{\n    &quot;radiobutton-group&quot;: {\n        &quot;name&quot;: &quot;delivery-method&quot;,\n        &quot;items&quot;: [\n            {\n                &quot;id&quot;: &quot;delivery-standard&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;,\n                &quot;value&quot;: &quot;standard&quot;,\n                &quot;label&quot;: &quot;Standard Delivery (5-7 days)&quot;,\n                &quot;checked&quot;: true\n            },\n            {\n                &quot;id&quot;: &quot;delivery-express&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;, \n                &quot;value&quot;: &quot;express&quot;,\n                &quot;label&quot;: &quot;Express Delivery (2-3 days)&quot;,\n                &quot;checked&quot;: false\n            },\n            {\n                &quot;id&quot;: &quot;delivery-overnight&quot;,\n                &quot;name&quot;: &quot;delivery-method&quot;,\n                &quot;value&quot;: &quot;overnight&quot;, \n                &quot;label&quot;: &quot;Overnight Delivery&quot;,\n                &quot;checked&quot;: false\n            }\n        ]\n    }\n}\n</code></pre>\n<h2>CSS Classes</h2>\n<ul>\n<li><code>.hoo-radiobutton-group</code>: Main container styling</li>\n<li><code>.hoo-radiobutton-group.horizontal</code>: Horizontal layout variant</li>\n<li><code>.hoo-radiobutton-group.columns</code>: Multi-column layout variant</li>\n<li><code>.hoo-radiobutton-group.compact</code>: Compact spacing variant</li>\n</ul>\n<h2>Styling</h2>\n<h3>Visual Design</h3>\n<ul>\n<li><strong>Layout</strong>: Vertical stacking by default</li>\n<li><strong>Spacing</strong>: 12px gap between radio button items</li>\n<li><strong>Padding</strong>: Container padding for proper spacing</li>\n<li><strong>Alignment</strong>: Left-aligned radio buttons with proper label alignment</li>\n</ul>\n<h3>Interactive States</h3>\n<ul>\n<li><strong>Focus</strong>: Focus ring on the group container</li>\n<li><strong>Individual Focus</strong>: Each radio button maintains its own focus state</li>\n<li><strong>Hover</strong>: Subtle hover effects on radio button items</li>\n<li><strong>Selection</strong>: Clear visual indication of selected option</li>\n</ul>\n<h2>Use Cases</h2>\n<h3>Payment Method Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;fieldset class=&quot;hoo-fieldset&quot;&gt;\n    &lt;legend class=&quot;hoo-legend&quot;&gt;Payment Method&lt;/legend&gt;\n    {{#radiobutton-group}}\n    &lt;menu class=&quot;hoo-radiobutton-group&quot; role=&quot;radiogroup&quot; tabindex=&quot;0&quot;&gt;\n        &lt;!-- Credit card, PayPal, bank transfer options --&gt;\n    &lt;/menu&gt;\n    {{/radiobutton-group}}\n&lt;/fieldset&gt;\n</code></pre>\n<h3>Delivery Options</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;delivery-selector&quot;&gt;\n    &lt;h3&gt;Delivery Method&lt;/h3&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/div&gt;\n</code></pre>\n<h3>Priority Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;section class=&quot;priority-settings&quot;&gt;\n    &lt;h2&gt;Task Priority&lt;/h2&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/section&gt;\n</code></pre>\n<h3>Theme Selection</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;theme-selector&quot;&gt;\n    &lt;h3&gt;Choose Theme&lt;/h3&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/div&gt;\n</code></pre>\n<h2>Accessibility</h2>\n<ul>\n<li><strong>Semantic HTML</strong>: Uses <code>&lt;menu&gt;</code> element with proper ARIA radiogroup role</li>\n<li><strong>ARIA Roles</strong>: <code>role=&quot;radiogroup&quot;</code> on container, <code>role=&quot;radio&quot;</code> on items</li>\n<li><strong>Keyboard Navigation</strong>: Arrow keys for navigation within group</li>\n<li><strong>Screen Reader</strong>: Clear group announcements and selection states</li>\n<li><strong>Focus Management</strong>: Proper focus indicators and roving tabindex</li>\n<li><strong>Label Association</strong>: Each radio button properly associated with its label</li>\n</ul>\n<h2>Keyboard Interactions</h2>\n<ul>\n<li><strong>Tab</strong>: Focus the radio button group (first or checked item)</li>\n<li><strong>Arrow Up/Down</strong>: Navigate between radio button options</li>\n<li><strong>Arrow Left/Right</strong>: Navigate between radio button options (alternative)</li>\n<li><strong>Space</strong>: Select the focused radio button</li>\n<li><strong>Tab (from group)</strong>: Move to next form element</li>\n</ul>\n<h2>Form Integration</h2>\n<h3>Within Fieldset</h3>\n<pre><code class=\"language-handlebars\">&lt;fieldset class=&quot;hoo-fieldset&quot;&gt;\n    &lt;legend class=&quot;hoo-legend&quot;&gt;Select One Option&lt;/legend&gt;\n    {{&gt; molecules-radio-button-group}}\n&lt;/fieldset&gt;\n</code></pre>\n<h3>With Validation</h3>\n<pre><code class=\"language-handlebars\">&lt;div class=&quot;hoo-field&quot; role=&quot;group&quot;&gt;\n    &lt;div class=&quot;field-label&quot;&gt;Preferred Contact Method *&lt;/div&gt;\n    {{&gt; molecules-radio-button-group}}\n    &lt;output class=&quot;hoo-validation&quot;&gt;Please select a contact method&lt;/output&gt;\n&lt;/div&gt;\n</code></pre>\n<h2>JavaScript Integration</h2>\n<h3>Getting Selected Value</h3>\n<h3>Setting Value Programmatically</h3>\n<h3>Handling Change Events</h3>\n<h2>Validation</h2>\n<ul>\n<li><strong>Required Selection</strong>: Can enforce selection requirement</li>\n<li><strong>Custom Validation</strong>: Support for custom validation rules</li>\n<li><strong>Real-time Feedback</strong>: Validation updates as user makes selection</li>\n<li><strong>Group Validation</strong>: Validates entire group rather than individual items</li>\n</ul>\n<h2>Comparison with Checkbox Group</h2>\n<h3>Radio Button Group</h3>\n<ul>\n<li><strong>Single Selection</strong>: Only one option can be selected</li>\n<li><strong>Mutual Exclusivity</strong>: Selecting one deselects others</li>\n<li><strong>Use Case</strong>: When user must choose exactly one option</li>\n</ul>\n<h3>Checkbox Group</h3>\n<ul>\n<li><strong>Multiple Selection</strong>: Multiple options can be selected</li>\n<li><strong>Independent</strong>: Each checkbox is independent</li>\n<li><strong>Use Case</strong>: When user can choose zero or more options</li>\n</ul>\n<h2>Browser Support</h2>\n<ul>\n<li><strong>Modern Browsers</strong>: Full support in Chrome, Firefox, Safari, Edge</li>\n<li><strong>Legacy Support</strong>: Graceful degradation with standard radio button behavior</li>\n<li><strong>Screen Readers</strong>: Excellent support in NVDA, JAWS, VoiceOver</li>\n<li><strong>Mobile</strong>: Optimized for touch interfaces and mobile screen readers</li>\n</ul>\n<h2>SCSS Files</h2>\n<p><strong>Atom Styles:</strong></p>\n<ul>\n<li><code>lib/sass/atoms/input.scss</code></li>\n</ul>\n<p><strong>Molecule Styles:</strong></p>\n<ul>\n<li><code>lib/sass/molecules/forms.scss</code></li>\n</ul>\n<h2>Performance</h2>\n<ul>\n<li><strong>Lightweight</strong>: Minimal CSS and HTML structure</li>\n<li><strong>No JavaScript</strong>: Pure HTML/CSS implementation</li>\n<li><strong>Efficient Rendering</strong>: Optimized for groups of radio buttons</li>\n<li><strong>Memory Efficient</strong>: Clean DOM structure with minimal overhead</li>\n</ul>\n","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"forms"},"patternExtension":"hbs","patternName":"Radio Button Group","patternPartial":"molecules-radio-button-group","patternState":"","patternEngineName":"handlebars","extraOutput":{"order":20}}
 			</script>
 		
 		</div><!--end pl-c-pattern-->
@@ -417,27 +417,27 @@
         Personal Information
     </legend>
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">First Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">First Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="firstname-desc-toggle-47 firstname-error-toggle-47"
+      aria-describedby="firstname-desc-toggle-37 firstname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="firstname-desc-47">
+  <p class="hoo-input-description" id="firstname-desc-37">
       Please enter your first name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="firstname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="firstname-error-37" >This is an error message</output>
 </div>
 
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">Last Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">Last Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="lastname-desc-toggle-47 lastname-error-toggle-47"
+      aria-describedby="lastname-desc-toggle-37 lastname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="lastname-desc-47">
+  <p class="hoo-input-description" id="lastname-desc-37">
       Please enter your last name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="lastname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="lastname-error-37" >This is an error message</output>
 </div>
 
 </fieldset>
@@ -486,27 +486,27 @@
 			<div class="pl-js-pattern-example">
 			<fieldset class="hoo-fieldset " >
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">First Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">First Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="firstname-desc-toggle-47 firstname-error-toggle-47"
+      aria-describedby="firstname-desc-toggle-37 firstname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="firstname-desc-47">
+  <p class="hoo-input-description" id="firstname-desc-37">
       Please enter your first name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="firstname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="firstname-error-37" >This is an error message</output>
 </div>
 
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">Last Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">Last Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="lastname-desc-toggle-47 lastname-error-toggle-47"
+      aria-describedby="lastname-desc-toggle-37 lastname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="lastname-desc-47">
+  <p class="hoo-input-description" id="lastname-desc-37">
       Please enter your last name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="lastname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="lastname-error-37" >This is an error message</output>
 </div>
 
 </fieldset>
@@ -558,27 +558,27 @@
         Personal Information
     </legend>
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">First Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">First Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="firstname-desc-toggle-47 firstname-error-toggle-47"
+      aria-describedby="firstname-desc-toggle-37 firstname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="firstname-desc-47">
+  <p class="hoo-input-description" id="firstname-desc-37">
       Please enter your first name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="firstname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="firstname-error-37" >This is an error message</output>
 </div>
 
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">Last Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">Last Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="lastname-desc-toggle-47 lastname-error-toggle-47"
+      aria-describedby="lastname-desc-toggle-37 lastname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="lastname-desc-47">
+  <p class="hoo-input-description" id="lastname-desc-37">
       Please enter your last name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="lastname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="lastname-error-37" >This is an error message</output>
 </div>
 
 </fieldset>
@@ -630,27 +630,27 @@
         Personal Information
     </legend>
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">First Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">First Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="firstname-desc-toggle-47 firstname-error-toggle-47"
+      aria-describedby="firstname-desc-toggle-37 firstname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="firstname-desc-47">
+  <p class="hoo-input-description" id="firstname-desc-37">
       Please enter your first name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="firstname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="firstname-error-37" >This is an error message</output>
 </div>
 
         <div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">Last Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">Last Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="lastname-desc-toggle-47 lastname-error-toggle-47"
+      aria-describedby="lastname-desc-toggle-37 lastname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="lastname-desc-47">
+  <p class="hoo-input-description" id="lastname-desc-37">
       Please enter your last name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="lastname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="lastname-error-37" >This is an error message</output>
 </div>
 
 </fieldset>
@@ -698,15 +698,15 @@
 		
 			<div class="pl-js-pattern-example">
 			<div class="hoo-field" role="group">
-  <label class="hoo-label " for="toggle-47">First Name</label>
-  <input class="hoo-input-text" id="toggle-47"  type="text"  
+  <label class="hoo-label " for="toggle-37">First Name</label>
+  <input class="hoo-input-text" id="toggle-37"  type="text"  
       placeholder="A placeholder text" 
-      aria-describedby="firstname-desc-toggle-47 firstname-error-toggle-47"
+      aria-describedby="firstname-desc-toggle-37 firstname-error-toggle-37"
        >
-  <p class="hoo-input-description" id="firstname-desc-47">
+  <p class="hoo-input-description" id="firstname-desc-37">
       Please enter your first name with only alphabetic characters
   </p>
-  <output class="hoo-validation" id="firstname-error-47" >This is an error message</output>
+  <output class="hoo-validation" id="firstname-error-37" >This is an error message</output>
 </div>
 
 			</div><!--end pl-js-pattern-example-->
@@ -763,10 +763,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1768742771088">
+<script id="pl-js-polyfill-insert-1768815288036">
   (function() {
     if (self != top) {
-      var cb = '1768742771088';
+      var cb = '1768815288036';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
@@ -779,7 +779,7 @@
   import('../../styleguide/js/patternlab-pattern.modern.js');
 </script>
 
-<script id="pl-js-insert-1768742771088" nomodule>
+<script id="pl-js-insert-1768815288036" nomodule>
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
