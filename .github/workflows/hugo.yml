@@ -1,0 +1,196 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - main
+      - docs
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.108.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+      - name: Checkout main branch for builds
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-build
+      - name: Checkout docs branch for Hugo
+        uses: actions/checkout@v4
+        with:
+          ref: docs
+          path: docs-site
+          submodules: recursive
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install main branch dependencies
+        run: npm ci
+        working-directory: main-build
+      - name: Build hTWOo Core Pattern Lab for docs
+        run: npm run pl:publish-docs -w htwoo-core
+        working-directory: main-build
+      - name: Generate component documentation
+        run: npm run docs:components -w htwoo-core
+        working-directory: main-build
+      - name: Build hTWOo React Storybook
+        run: npm run build-storybook -w htwoo-react
+        working-directory: main-build
+      # Integrate component docs with Hugo BEFORE build
+      - name: Copy component content to Hugo
+        run: |
+          mkdir -p content/components
+          cp -r ../main-build/docs/htwoo-components/content/* content/components/
+        working-directory: docs-site
+      - name: Copy component layouts to Hugo
+        run: |
+          cp -r ../main-build/docs/htwoo-components/layouts/* layouts/
+        working-directory: docs-site
+      - name: Copy component assets to Hugo static
+        run: |
+          mkdir -p static/htwoo-components
+          cp -r ../main-build/docs/htwoo-components/assets/* static/htwoo-components/
+        working-directory: docs-site
+      - name: Install docs dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        working-directory: docs-site
+      - name: Build with Hugo
+        working-directory: docs-site
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Copy hTWOo Core style guide
+        run: mv -f ../main-build/docs/htwoo-core public/htwoo-core/
+        working-directory: docs-site
+      - name: Copy hTWOo React style guide
+        run: mv -f ../main-build/docs/htwoo-react public/htwoo-react/
+        working-directory: docs-site
+      - name: Remove old sitemaps and update sitemap index
+        run: |
+          # Remove htwoo-core and htwoo-react sitemaps (Pattern Lab and Storybook)
+          rm -f public/htwoo-core/sitemap.xml
+          rm -f public/htwoo-react/sitemap.xml
+          # Copy component documentation sitemap
+          cp ../main-build/docs/htwoo-components/sitemap.xml public/components-sitemap.xml
+          # Fix the main sitemap index - remove references to deleted sitemaps and add components sitemap
+          cat > public/sitemap.xml << 'SITEMAP_EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <sitemap>
+              <loc>https://htwoo.io/sitemap-pages.xml</loc>
+            </sitemap>
+            <sitemap>
+              <loc>https://htwoo.io/components-sitemap.xml</loc>
+            </sitemap>
+          </sitemapindex>
+          SITEMAP_EOF
+        working-directory: docs-site
+      - name: Generate robots.txt with correct sitemaps
+        run: |
+          cat > public/robots.txt << 'EOF'
+          User-agent: *
+          Allow: /
+
+          # Main Hugo sitemap
+          Sitemap: https://htwoo.io/sitemap.xml
+
+          # Component documentation sitemap
+          Sitemap: https://htwoo.io/components-sitemap.xml
+
+          # Note: htwoo-core/sitemap.xml and htwoo-react/sitemap.xml are deprecated
+          # and no longer available. Use the sitemaps listed above.
+          EOF
+        working-directory: docs-site
+      - name: Verify artifact size and content
+        run: |
+          find ./public -type l -exec rm -f {} \;  # Remove symlinks
+          find ./public -type f -exec du -ch {} + | grep total$  # Check total size
+        working-directory: docs-site
+      - name: Check for hard links
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
+        working-directory: docs-site
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: docs-site/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: ./public
+      - name: Cleanup symbolic links in public directory
+        run: find ./public -type l -exec rm -f {} \;
+      - name: Cleanup hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            find ./public -type f -links +1 -exec rm -f {} \;
+          fi
+      - name: Verify no symbolic links in public directory
+        run: |
+          if find ./public -type l | grep -q .; then
+            echo "Error: Symbolic links found in the public directory."
+            exit 1
+          fi
+      - name: Verify no hard links in public directory
+        run: |
+          if find ./public -type f -links +1 | grep -q .; then
+            echo "Error: Hard links found in the public directory."
+            exit 1
+          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
