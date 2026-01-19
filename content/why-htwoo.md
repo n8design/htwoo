@@ -7,6 +7,7 @@ nodate: true
 draft: false
 tags: ""
 categories: ""
+robots: "noindex, nofollow"
 ---
 
 hTWOo is 

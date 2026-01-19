@@ -1,3 +1,4 @@
 ---
-title:
+title: About
+robots: "noindex, nofollow"
 ---
