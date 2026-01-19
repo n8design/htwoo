@@ -4,7 +4,7 @@
     <loc>https://htwoo.io/sitemap-pages.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://htwoo.io/htwoo-core/sitemap.xml</loc>
+    <loc>https://htwoo.io/htwoo-components/sitemap.xml</loc>
   </sitemap>
   <sitemap>
     <loc>https://htwoo.io/htwoo-react/sitemap.xml</loc>
