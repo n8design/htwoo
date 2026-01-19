@@ -23,7 +23,7 @@ These classes can be freely combined for corner elements, for example:
 </th>
 ```
 
-To support multiple columns make sure you include the [table.js](../../js/table) in your code. From the htwoo-core package `node_modules/htwoo-core/lib/js/table`.
+To support multiple columns make sure you include `table.js` in your code. From the htwoo-core package: `node_modules/@aspect/htwoo-core/lib/js/table.js`.
 
 To init the sticky behaviout call the following function.
 

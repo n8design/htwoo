@@ -25,17 +25,17 @@ The PnP Search Grid is an organism-level component that combines multiple quick 
 
 The PnP Search Grid supports multiple column configurations:
 
-- **[12-Column Grid](./pnp-search-grid.html)** - Maximum density for wide displays
-- **[8-Column Grid](./pnp-search-grid~8c.html)** - Balanced layout for standard screens
-- **[6-Column Grid](./pnp-search-grid~6c.html)** - Moderate density for medium containers
-- **[4-Column Grid](./pnp-search-grid~4c.html)** - Minimal columns for narrow layouts
+- **12-Column Grid** - Maximum density for wide displays
+- **8-Column Grid** - Balanced layout for standard screens
+- **6-Column Grid** - Moderate density for medium containers
+- **4-Column Grid** - Minimal columns for narrow layouts
 
 ### Display Modes
 
 Each grid supports two content presentation styles:
 
-- **[Compact Grid](./pnp-search-compact-grid.html)** - Space-efficient items with minimal height
-- **[List Grid](./pnp-search-list-grid.html)** - Detailed items with descriptions and extended content
+- **Compact Grid** - Space-efficient items with minimal height
+- **List Grid** - Detailed items with descriptions and extended content
 
 ## Structure
 

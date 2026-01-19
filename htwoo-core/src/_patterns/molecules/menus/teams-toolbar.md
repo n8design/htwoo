@@ -35,7 +35,7 @@ The Teams Toolbar is a composite molecular component that integrates a command b
 
 The Teams Toolbar consists of two main molecular components:
 1. **[Command Bar with Overflow](./cmdbar-overflow.html)** - Action commands with responsive overflow
-2. **[Search Box](../../atoms/inputs/)** - Integrated search functionality
+2. **[Search Box](../../atoms/input/)** - Integrated search functionality
 
 ## Data Structure
 
@@ -256,7 +256,7 @@ From child components:
 
 ### Molecular Components
 - [Command Bar with Overflow](./cmdbar-overflow.html) - Core command functionality
-- [Search Box](../../atoms/inputs/) - Integrated search capabilities
+- [Search Box](../../atoms/input/) - Integrated search capabilities
 - [Command Bar](./cmdbar.html) - Basic command bar functionality
 
 ### Template Components  
