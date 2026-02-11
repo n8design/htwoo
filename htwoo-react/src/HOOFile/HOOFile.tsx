@@ -117,11 +117,11 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
           </label>
           <input type="file" id={this._fileId} {...this.props.inputElementAttributes} className={inputClassName} multiple aria-describedby={`${this._fileId}-content`} onChange={this._fileChangedEvent} />
           <output className="hoo-infile-output" id={`${this._fileId}-content`} aria-live="polite" title="Current selection">
-            {this.state.files && this.state.files.length > 0 &&
+            {this.state.files && this.state.files?.length > 0 &&
               <>
                 <div className='hoo-infile-selection'>Files Selected</div>
                 <ul className="hoo-infile-list">
-                  {this.state.files.map((file) => {
+                  {this.state.files?.map((file) => {
                     return <li>{file.name}</li>
                   })}
                 </ul>
