@@ -94,7 +94,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
                 type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}
-            readOnly={this.props.readonly || false}
+                readOnly={this.props.readonly || false}
                 aria-disabled={this.props.disabled || false}
                 data-suffix={this.props.inputSuffix || null}
                 data-prefix={this.props.inputPrefix || null}
@@ -110,6 +110,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>}
               className={inputClassName}
               rows={this.props.multiline}
+              readOnly={this.props.readonly || false}
               value={this.props.value}
               onChange={this.props.onChange} />
           }
