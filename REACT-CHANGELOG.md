@@ -5,9 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.9.3 - 2026-Apr-10
+
+- HOOText - Fixed bug with multiline text area not respecting the readOnly property.
+
 ## 2.9.2 - 2026-Feb-11
 
-- Fixed bug with class name for HOOAvatar
+- HOOAvatar - Fixed bug with class name.
 
 ## 2.9.1 - 2026-Feb-11
 
