@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react",
     "sourceMap": true,
     "skipLibCheck": true,
@@ -16,7 +16,8 @@
       "es6",
       "dom"
     ],
-    "outDir": "lib"
+    "outDir": "lib",
+    "rootDir": "./src"
   },
   "include": [
     "./src/**/*"

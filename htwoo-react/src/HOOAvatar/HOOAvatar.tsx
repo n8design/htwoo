@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOAvatarSize {
   Px16 = "16",
@@ -33,7 +33,7 @@ export interface IHOOAvatarProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-avatar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOAvatarState {
@@ -45,7 +45,7 @@ export class HOOAvatarState implements IHOOAvatarState {
 
 export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOOAvatarState> {
   private LOG_SOURCE: string = "💦HOOAvatar";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-avatar";
 
   constructor(props: IHOOAvatarProps) {
@@ -57,7 +57,7 @@ export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOO
     }
   }
 
-  public render(): React.ReactElement<IHOOAvatarProps> {
+  public render(): React.ReactElement<IHOOAvatarProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}`;
@@ -69,7 +69,7 @@ export default class HOOAvatar extends React.PureComponent<IHOOAvatarProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

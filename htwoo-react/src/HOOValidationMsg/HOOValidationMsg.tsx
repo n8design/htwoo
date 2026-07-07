@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOValidationMsgProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOValidationMsgProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-validation {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLOutputElement>, HTMLOutputElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLOutputElement>, HTMLOutputElement> & HOODataAttributes;
 }
 
 export interface IHOOValidationMsgState {
@@ -22,7 +22,7 @@ constructor() {}
 
 export default class HOOValidationMsg extends React.PureComponent<IHOOValidationMsgProps, IHOOValidationMsgState> {
   private LOG_SOURCE: string = "💦HOOValidationMsg";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-validation";
 
   constructor(props:IHOOValidationMsgProps){
@@ -31,7 +31,7 @@ export default class HOOValidationMsg extends React.PureComponent<IHOOValidation
     this.state = new HOOValidationMsgState();
   }
 
-  public render(): React.ReactElement<IHOOValidationMsgProps> {
+  public render(): React.ReactElement<IHOOValidationMsgProps> | undefined {
     try{
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -42,7 +42,7 @@ export default class HOOValidationMsg extends React.PureComponent<IHOOValidation
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

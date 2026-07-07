@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOOCSSCustomProperties, HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOProgressStepProps extends IHOOStandardProps {
   /**
@@ -14,7 +14,7 @@ export interface IHOOProgressStepProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-progress-step {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOProgressStepState {
@@ -26,7 +26,7 @@ export class HOOProgressStepState implements IHOOProgressStepState {
 
 export default class HOOProgressStep extends React.PureComponent<IHOOProgressStepProps, IHOOProgressStepState> {
   private LOG_SOURCE: string = "💦HOOProgressStep";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-progress-step";
 
   constructor(props: IHOOProgressStepProps) {
@@ -35,9 +35,9 @@ export default class HOOProgressStep extends React.PureComponent<IHOOProgressSte
     this.state = new HOOProgressStepState();
   }
 
-  public render(): React.ReactElement<IHOOProgressStepProps> {
+  public render(): React.ReactElement<IHOOProgressStepProps> | undefined {
     try {
-      let styleblock: React.CSSProperties = {};
+      let styleblock: HOOCSSCustomProperties = {};
       styleblock["--step-offset"] = `${this.props.offsetPercent}%`;
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -54,7 +54,7 @@ export default class HOOProgressStep extends React.PureComponent<IHOOProgressSte
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

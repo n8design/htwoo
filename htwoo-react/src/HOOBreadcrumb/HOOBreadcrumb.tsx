@@ -1,6 +1,6 @@
 import * as React from "react";
 import { symset } from "../SymbolSet";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOBreadcrumbType {
   "Hyperlink",
@@ -38,7 +38,7 @@ export interface IHOOBreadcrumbProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-breadcrumb {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOBreadcrumbState {
@@ -50,7 +50,7 @@ export class HOOBreadcrumbState implements IHOOBreadcrumbState {
 
 export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbProps, IHOOBreadcrumbState> {
   private LOG_SOURCE: string = "💦HOOBreadcrumb";
-  private _rootProps = { "data-component": this.LOG_SOURCE, "aria-label": "Breadcrumb", "tabindex": "0" };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE, "aria-label": "Breadcrumb", "tabindex": "0" };
   private _componentClass: string = "hoo-breadcrumb";
 
   constructor(props: IHOOBreadcrumbProps) {
@@ -59,7 +59,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
     this.state = new HOOBreadcrumbState();
   }
 
-  public render(): React.ReactElement<IHOOBreadcrumbProps> {
+  public render(): React.ReactElement<IHOOBreadcrumbProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -68,7 +68,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
         <nav {...this._rootProps} {...this.props.rootElementAttributes} className={className}>
           <ol>
             {this.props.breadcrumbItems && this.props.breadcrumbItems.map((i, idx) => {
-              const last: React.HTMLAttributes<HTMLElement> = (idx === this.props.breadcrumbItems.length - 1) ? { "aria-current": "location" } : null;
+              const last: React.HTMLAttributes<HTMLElement> | null = (idx === this.props.breadcrumbItems.length - 1) ? { "aria-current": "location" } : null;
               return (
                 <li key={i.key} className="hoo-breadcrumb-item">
                   {this.props.type === HOOBreadcrumbType.Hyperlink &&
@@ -77,7 +77,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
                     </a>
                   }
                   {this.props.type === HOOBreadcrumbType.Button &&
-                    <button className="hoo-breadcrumb-link" {...last} onClick={(event) => { this.props.onBreadcrumbClick(event, i.key); }}>
+                    <button className="hoo-breadcrumb-link" {...last} onClick={(event) => { this.props.onBreadcrumbClick?.(event, i.key); }}>
                       {i.text}
                     </button>
                   }
@@ -92,7 +92,7 @@ export default class HOOBreadcrumb extends React.PureComponent<IHOOBreadcrumbPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

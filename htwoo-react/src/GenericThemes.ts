@@ -10,8 +10,8 @@ export interface IGenericThemes {
 export class GenericThemes implements IGenericThemes {
   private LOG_SOURCE: string = "💦GenericThemes";
 
-  private _domElement: HTMLElement;
-  private _currentTheme: IHOOTheme;
+  private _domElement!: HTMLElement;
+  private _currentTheme!: IHOOTheme;
 
   constructor() {
   }
@@ -65,7 +65,7 @@ export class GenericThemes implements IGenericThemes {
         // loop over it
         themingKeys.forEach(key => {
           // add CSS variable to style property of the web part
-          workingDomElement.style.setProperty(`--${key}`, theme[key]);
+          workingDomElement.style.setProperty(`--${key}`, theme[key as keyof IHOOTheme]);
         });
       }
     } catch (err) {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOPivotButtonProps extends IHOOStandardProps {
   /**
@@ -18,7 +18,7 @@ export interface IHOOPivotButtonProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & HOODataAttributes;
 }
 
 export interface IHOOPivotButtonState {
@@ -30,7 +30,7 @@ export class HOOPivotButtonState implements IHOOPivotButtonState {
 
 export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonProps, IHOOPivotButtonState> {
   private LOG_SOURCE: string = "💦HOOPivotButton";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button-pivot";
 
   constructor(props: IHOOPivotButtonProps) {
@@ -39,7 +39,7 @@ export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonP
     this.state = new HOOPivotButtonState();
   }
 
-  public render(): React.ReactElement<IHOOPivotButtonProps> {
+  public render(): React.ReactElement<IHOOPivotButtonProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey.toString() }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -55,7 +55,7 @@ export default class HOOPivotButton extends React.PureComponent<IHOOPivotButtonP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

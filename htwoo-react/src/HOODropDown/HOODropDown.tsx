@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -79,7 +79,7 @@ export interface IHOODropDownProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLUListElement attributes that will be applied to the UL element of the component.
    * Class names will be appended to the end of the default class string - hoo-select-dropdown {ulElementAttributes.class}
@@ -102,11 +102,11 @@ export interface IHOODropDownState {
 
 export default class HOODropDown extends React.Component<IHOODropDownProps, IHOODropDownState> {
   private LOG_SOURCE: string = "💦HOODropDown";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-select";
   private _ulClass: string = "hoo-select-dropdown";
   private _dropdownId: string = "hoo-dropdown-";
-  private _optionElements = [];
+  private _optionElements: HTMLLIElement[] = [];
   private _inputElement: React.RefObject<HTMLInputElement>;
   private _valueChanged: boolean = false;
 
@@ -147,8 +147,8 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     let retVal: string = this.state.currentValue as string || "";
     try {
       if (this.state.grouped) {
-        this.props.options.some((g) => {
-          g.groupItems.some((item) => {
+        (this.props.options as IHOODropDownGroup[]).some((g) => {
+          g.groupItems.some((item: IHOODropDownItem) => {
             if (item.key === this.state.currentValue) {
               retVal = item.text;
               return true;
@@ -158,7 +158,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           return (retVal.length > 0);
         });
       } else {
-        this.props.options.some((item) => {
+        (this.props.options as IHOODropDownItem[]).some((item) => {
           if (item.key === this.state.currentValue) {
             retVal = item.text;
             return true;
@@ -198,7 +198,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   private _toggleDropdown = () => {
     try {
       if (this.props.disabled) { return; }
-      const focus = document.activeElement;
+      const focus = document.activeElement as Element;
       let ddState = this.state.ddState;
       let open = this.state.open;
       switch (this.state.ddState) {
@@ -212,21 +212,21 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             ddState = DDState.Initial;
           } else if (focus.tagName == "LI") {
             if (this.props.value != (focus as HTMLLIElement).dataset.value) {
-              this._onChange((focus as HTMLLIElement).dataset.value);
+              this._onChange((focus as HTMLLIElement).dataset.value as string);
             }
             open = false;
             ddState = DDState.Closed;
-            this._moveFocus(document.activeElement, Focus.Input);
+            this._moveFocus(document.activeElement as Element, Focus.Input);
           }
           break;
         case DDState.Filtered:
           if (focus.tagName == "LI") {
             if (this.props.value != (focus as HTMLLIElement).dataset.value) {
-              this._onChange((focus as HTMLLIElement).dataset.value);
+              this._onChange((focus as HTMLLIElement).dataset.value as string);
             }
             open = false;
             ddState = DDState.Closed;
-            this._moveFocus(document.activeElement, Focus.Input);
+            this._moveFocus(document.activeElement as Element, Focus.Input);
           } else if (focus.tagName == "BUTTON") {
             open = !open;
             ddState = (open) ? DDState.Filtered : DDState.Closed;
@@ -245,7 +245,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   private _keyUp = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (this.props.disabled) { return; }
-    const focus = document.activeElement;
+    const focus = document.activeElement as Element;
     const key = event.key;
     let currentValue = this.state.currentValue;
     let ddState = this.state.ddState;
@@ -258,28 +258,28 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             open = true;
             ddState = DDState.Open;
           } else if (this.state.ddState === DDState.Open && focus.tagName === 'LI') {
-            currentValue = (focus as HTMLLIElement).dataset.value;
+            currentValue = (focus as HTMLLIElement).dataset.value as string;
             // if state = opened and focus on list, makeChoice and set state to closed
             if (this.props.value != (focus as HTMLLIElement).dataset.value) {
-              this._onChange((focus as HTMLLIElement).dataset.value);
+              this._onChange((focus as HTMLLIElement).dataset.value as string);
             }
             open = false;
             ddState = DDState.Closed;
-            this._moveFocus(document.activeElement, Focus.Input);
+            this._moveFocus(document.activeElement as Element, Focus.Input);
           } else if (this.state.ddState === DDState.Open && focus === this._inputElement.current) {
             // if state = opened and focus on input, close it
             open = false;
             ddState = DDState.Closed;
           } else if (this.state.ddState === DDState.Filtered && focus.tagName === 'LI') {
-            currentValue = (focus as HTMLLIElement).dataset.value;
+            currentValue = (focus as HTMLLIElement).dataset.value as string;
             // if state = filtered and focus on list, makeChoice and set state to closed
             if (this.props.value != (focus as HTMLLIElement).dataset.value) {
-              this._onChange((focus as HTMLLIElement).dataset.value);
+              this._onChange((focus as HTMLLIElement).dataset.value as string);
             }
             open = false;
             ddState = DDState.Closed;
-            this._moveFocus(document.activeElement, Focus.Input);
-          } else if (this.state.ddState === DDState.Filtered && 
+            this._moveFocus(document.activeElement as Element, Focus.Input);
+          } else if (this.state.ddState === DDState.Filtered &&
               focus === this._inputElement.current && 
               (this.state.currentValue?.toString().length > 0) && 
               (this.state.optionsLength < 1) && 
@@ -312,14 +312,14 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             // if state = initial or closed, set state to opened and moveFocus to first
             open = true;
             ddState = DDState.Open;
-            this._moveFocus(this._inputElement.current, Focus.Forward);
+            this._moveFocus(this._inputElement.current as Element, Focus.Forward);
           } else {
             // if state = opened and focus on input, moveFocus to first
             // if state = opened and focus on list, moveFocus to next/first
             // if state = filtered and focus on input, moveFocus to first
             // if state = filtered and focus on list, moveFocus to next/first
             open = true;
-            this._moveFocus(document.activeElement, Focus.Forward);
+            this._moveFocus(document.activeElement as Element, Focus.Forward);
           }
           break;
         case 'ArrowUp':
@@ -328,13 +328,13 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             // if state = closed, set state to opened and moveFocus to last
             open = true;
             ddState = DDState.Open;
-            this._moveFocus(this._inputElement.current, Focus.Back);
+            this._moveFocus(this._inputElement.current as Element, Focus.Back);
           } else {
             // if state = opened and focus on input, moveFocus to last
             // if state = opened and focus on list, moveFocus to prev/last
             // if state = filtered and focus on input, moveFocus to last
             // if state = filtered and focus on list, moveFocus to prev/last
-            this._moveFocus(document.activeElement, Focus.Back);
+            this._moveFocus(document.activeElement as Element, Focus.Back);
           }
           break;
         default:
@@ -404,7 +404,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
         return;
       }
       if (toThere === Focus.Input) {
-        this._inputElement.current.focus();
+        this._inputElement.current!.focus();
       }
       // possible start points
       switch (fromHere) {
@@ -419,7 +419,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           if (toThere === Focus.Forward) {
             aCurrentOptions[1].focus();
           } else if (toThere === Focus.Back) {
-            this._inputElement.current.focus();
+            this._inputElement.current!.focus();
           }
           break;
         case this._optionElements[this._optionElements.length - 1]:
@@ -440,7 +440,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             const previousOne = aCurrentOptions[whichOne - 1];
             previousOne?.focus();
           } else { // if whichOne = 0
-            this._inputElement.current.focus();
+            this._inputElement.current!.focus();
           }
           break;
       }
@@ -449,7 +449,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
     }
   }
 
-  public render(): React.ReactElement<IHOODropDownProps> {
+  public render(): React.ReactElement<IHOODropDownProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -479,7 +479,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             {...this.props.inputElementAttributes}
             id={`${this._dropdownId}-input`}
             type="text"
-            placeholder={this.props.placeholder || null}
+            placeholder={this.props.placeholder || undefined}
             disabled={this.props.disabled || false}
             value={currentDisplay}
             className={inputClassName}
@@ -495,17 +495,18 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
           <ul role="listbox"
             {...this.props.ulElementAttributes}
             className={ulClassName}>
-            {this.props.options && this.props.options.map((g) => {
+            {this.props.options && this.props.options.map((g: IHOODropDownGroup | IHOODropDownItem) => {
               if (this.state.grouped) {
+                const group = g as IHOODropDownGroup;
                 return (
-                  <li className="hoo-optgroup" key={g.groupName}>
-                    {g.groupName.length > 0 &&
-                      <div className="hoo-optgroup-name">{g.groupName}</div>
+                  <li className="hoo-optgroup" key={group.groupName}>
+                    {group.groupName.length > 0 &&
+                      <div className="hoo-optgroup-name">{group.groupName}</div>
                     }
                     <ul className="hoo-optgroup-items">
-                      {g.groupItems && g.groupItems.map((i, index) => {
+                      {group.groupItems && group.groupItems.map((i: IHOODropDownItem, index: number) => {
                         return (
-                          <li ref={element => this._optionElements[index] = element}
+                          <li ref={element => { if (element) { this._optionElements[index] = element; } }}
                             key={i.key}
                             data-value={i.key}
                             className={`hoo-option ${i.disabled ? "is-disabled" : ""}`}
@@ -520,15 +521,16 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                   </li>
                 );
               } else {
+                const item = g as IHOODropDownItem;
                 return (
-                  <li ref={element => this._optionElements.push(element)}
-                    key={g.key}
-                    data-value={g.key}
-                    className={`hoo-option ${g.disabled ? "is-disabled" : ""}`}
-                    aria-disabled={g.disabled || false}
+                  <li ref={element => { if (element) { this._optionElements.push(element); } }}
+                    key={item.key}
+                    data-value={item.key}
+                    className={`hoo-option ${item.disabled ? "is-disabled" : ""}`}
+                    aria-disabled={item.disabled || false}
                     tabIndex={-1}
                   >
-                    {g.text}
+                    {item.text}
                   </li>
                 );
               }
@@ -547,7 +549,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

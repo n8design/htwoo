@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOPivotButton from "../HOOPivotButton";
 import HOOIconOverflow from "../HOOIconOverflow";
 import { IOverflowResizer, OverflowResizer } from "../common/OverflowObserver";
@@ -31,12 +31,12 @@ export interface IHOOPivotBarProps extends IHOOStandardProps {
   * (Optional) HTMLButtonElement attributes that will be applied to all Pivot Buttons.
   * Class names will be appended to the end of the default class string - hoo-button-pivot {rootElementAttributes.class}
  */
-  pivotButtonAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+  pivotButtonAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & HOODataAttributes;
   /**
    * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-pivotbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOPivotBarState {
@@ -45,7 +45,7 @@ export interface IHOOPivotBarState {
 
 export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, IHOOPivotBarState> {
   private LOG_SOURCE: string = "💦HOOPivotBar";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown; } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-pivotbar";
   private _overflowResizer: IOverflowResizer;
   private _overflowContainer: React.RefObject<HTMLDivElement>;
@@ -96,7 +96,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
     return retVal;
   }
 
-  public render(): React.ReactElement<IHOOPivotBarProps> {
+  public render(): React.ReactElement<IHOOPivotBarProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -121,7 +121,7 @@ export default class HOOPivotBar extends React.PureComponent<IHOOPivotBarProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOOTextProps extends IHOOStandardProps {
@@ -48,7 +48,7 @@ export interface IHOOTextProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
@@ -65,7 +65,7 @@ export class HOOTextState implements IHOOTextState {
 
 export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOTextState> {
   private LOG_SOURCE: string = "💦HOOText";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
   private _textId: string = "hoo-text-";
@@ -77,7 +77,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
     this.state = new HOOTextState();
   }
 
-  public render(): React.ReactElement<IHOOTextProps> {
+  public render(): React.ReactElement<IHOOTextProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -118,7 +118,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

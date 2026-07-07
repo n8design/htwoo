@@ -52,7 +52,7 @@ export class SymbolSet implements ISymbolSet {
       for (let i = 0; i < defs.length; i++) {
         const s = defs[i];
         const viewBoxString = `${s.viewBox.baseVal.x} ${s.viewBox.baseVal.y} ${s.viewBox.baseVal.width} ${s.viewBox.baseVal.height}`;
-        s.firstElementChild.removeAttribute("xmlns");
+        s.firstElementChild?.removeAttribute("xmlns");
         const svgElement = `<svg xmlns="http://www.w3.org/2000/svg" data-svgid="${s.id}" title="%title%" class="hoo-icon-svg" viewBox="${viewBoxString}">${s.innerHTML}</svg>`;
         this._symbolSetDictionary[s.id] = svgElement;
       }
@@ -74,7 +74,7 @@ export class SymbolSet implements ISymbolSet {
       return iconSVG || "<svg />";
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (Icon) - ${err}`);
-      return null;
+      return "<svg />";
     }
   }
 
@@ -89,7 +89,7 @@ export class SymbolSet implements ISymbolSet {
       return `data:image/svg+xml;base64,${window.btoa(iconSvg)}`;
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (IconBase64) - ${err}`);
-      return null;
+      return "";
     }
   }
 

@@ -1,12 +1,12 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOSplashCardFooterProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-footer {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOSplashCardFooterState {
@@ -18,7 +18,7 @@ export class HOOSplashCardFooterState implements IHOOSplashCardFooterState {
 
 export default class HOOSplashCardFooter extends React.PureComponent<IHOOSplashCardFooterProps, IHOOSplashCardFooterState> {
   private LOG_SOURCE: string = "💦HOOSplashCardFooter";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-footer";
 
   constructor(props: IHOOSplashCardFooterProps) {
@@ -27,7 +27,7 @@ export default class HOOSplashCardFooter extends React.PureComponent<IHOOSplashC
     this.state = new HOOSplashCardFooterState();
   }
 
-  public render(): React.ReactElement<IHOOSplashCardFooterProps> {
+  public render(): React.ReactElement<IHOOSplashCardFooterProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -38,7 +38,7 @@ export default class HOOSplashCardFooter extends React.PureComponent<IHOOSplashC
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -11,6 +11,7 @@ export function getRandomString(chars: number): string {
     return text.join("");
   } catch (err) {
     console.error(`${LOG_SOURCE} (getRandomString) - ${err}`);
+    return "";
   }
 }
 
@@ -47,5 +48,6 @@ export function isEqual(a: any, b: any, c: number = 0): boolean {
     return true;
   } catch (err) {
     console.error(`${LOG_SOURCE} (isEqual) - ${err}`);
+    return false;
   }
 }

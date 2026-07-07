@@ -1,6 +1,6 @@
 import * as React from "react";
 import { getRandomString } from "../common/Common";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { IOverflowResizer, OverflowResizer } from "../common/OverflowObserver";
 import HOOIconOverflow from "../HOOIconOverflow";
 
@@ -14,7 +14,7 @@ export interface IHOOFacepileProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-facepile {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOFacepileState {
@@ -23,7 +23,7 @@ export interface IHOOFacepileState {
 
 export default class HOOFacepile extends React.PureComponent<IHOOFacepileProps, IHOOFacepileState> {
   private LOG_SOURCE: string = "💦HOOFacepile";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-facepile";
   private _overflowResizer: IOverflowResizer;
   private _overflowContainer: React.RefObject<HTMLDivElement>;
@@ -51,7 +51,7 @@ export default class HOOFacepile extends React.PureComponent<IHOOFacepileProps, 
     this.setState({ showOverflow: overflow });
   }
 
-  public render(): React.ReactElement<IHOOFacepileProps> {
+  public render(): React.ReactElement<IHOOFacepileProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -68,7 +68,7 @@ export default class HOOFacepile extends React.PureComponent<IHOOFacepileProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

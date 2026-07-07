@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOSpinnerSize {
   "Standard" = "",
@@ -17,7 +17,7 @@ export interface IHOOSpinnerProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-spinner {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOSpinnerState {
@@ -29,7 +29,7 @@ export class HOOSpinnerState implements IHOOSpinnerState {
 
 export default class HOOSpinner extends React.PureComponent<IHOOSpinnerProps, IHOOSpinnerState> {
   private LOG_SOURCE: string = "💦HOOSpinner";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-spinner";
 
   constructor(props: IHOOSpinnerProps) {
@@ -39,7 +39,7 @@ export default class HOOSpinner extends React.PureComponent<IHOOSpinnerProps, IH
     this.state = new HOOSpinnerState();
   }
 
-  public render(): React.ReactElement<IHOOSpinnerProps> {
+  public render(): React.ReactElement<IHOOSpinnerProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -51,7 +51,7 @@ export default class HOOSpinner extends React.PureComponent<IHOOSpinnerProps, IH
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

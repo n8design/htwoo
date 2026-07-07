@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
@@ -45,7 +45,7 @@ export interface IHOOButtonCommandProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttoncmd {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOButtonCommandState {
@@ -54,7 +54,7 @@ export interface IHOOButtonCommandState {
 
 export default class HOOButtonCommand extends React.PureComponent<IHOOButtonCommandProps, IHOOButtonCommandState> {
   private LOG_SOURCE: string = "💦HOOButtonCommand";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttoncmd";
 
   constructor(props: IHOOButtonCommandProps) {
@@ -80,14 +80,14 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       if (this.props.flyoutMenuItems && this.props.flyoutMenuItems.length > 0) {
         this.setState({ showFlyout: !this.state.showFlyout });
       } else {
-        this.props.onClick(ev as React.MouseEvent<HTMLElement>);
+        this.props.onClick?.(ev as React.MouseEvent<HTMLElement>);
       }
     } catch (err) {
       console.error(this.LOG_SOURCE, "(_onClick)", err);
     }
   }
 
-  public renderButton(leftIcon: string, rightIcon: string): React.ReactElement {
+  public renderButton(leftIcon: string, rightIcon: string): React.ReactElement | undefined {
     try {
       return (
         <button className="hoo-buttoncmd" aria-haspopup="true" title={this.props.label || leftIcon || "Command Button"}>
@@ -108,10 +108,11 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       );
     } catch (err) {
       console.error(this.LOG_SOURCE, "(renderButton)", err);
+      return;
     }
   }
 
-  public renderHyperlink(leftIcon: string, rightIcon: string): React.ReactElement {
+  public renderHyperlink(leftIcon: string, rightIcon: string): React.ReactElement | undefined {
     try {
       return (
         <a href={this.props.href} className="hoo-buttoncmd" aria-haspopup="true">
@@ -132,10 +133,11 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       );
     } catch (err) {
       console.error(this.LOG_SOURCE, "(renderHyperlink)", err);
+      return;
     }
   }
 
-  public render(): React.ReactElement<IHOOButtonCommandProps> {
+  public render(): React.ReactElement<IHOOButtonCommandProps> | undefined {
     try {
       const type = (this.props.type == null) ? HOOButtonCommandType.Standard : this.props.type;
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
@@ -161,7 +163,7 @@ export default class HOOButtonCommand extends React.PureComponent<IHOOButtonComm
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

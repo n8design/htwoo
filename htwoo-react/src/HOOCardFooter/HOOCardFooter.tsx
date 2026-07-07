@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOAvatar, { HOOAvatarSize } from "../HOOAvatar";
 
 export interface IHOOCardFooterProps extends IHOOStandardProps {
@@ -27,11 +27,11 @@ export interface IHOOCardFooterProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cardfooter {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the HOOAvatar element of the component.
   */
-  avatarAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  avatarAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOCardFooterState {
@@ -43,7 +43,7 @@ export class HOOCardFooterState implements IHOOCardFooterState {
 
 export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterProps, IHOOCardFooterState> {
   private LOG_SOURCE: string = "💦HOOCardFooter";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cardfooter";
 
   constructor(props: IHOOCardFooterProps) {
@@ -52,7 +52,7 @@ export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterPro
     this.state = new HOOCardFooterState();
   }
 
-  public render(): React.ReactElement<IHOOCardFooterProps> {
+  public render(): React.ReactElement<IHOOCardFooterProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -72,7 +72,7 @@ export default class HOOCardFooter extends React.PureComponent<IHOOCardFooterPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

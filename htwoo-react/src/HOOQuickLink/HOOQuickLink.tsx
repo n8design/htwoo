@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import Button, { HOOButtonType } from "../HOOButton";
 import HOOIcon from "../HOOIcon";
 
@@ -96,12 +96,12 @@ export interface IHOOQuickLinkProps extends IHOOStandardProps {
    * (Optional) HTMLAnchorElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-qllink {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & HOODataAttributes;
   /**
    * (Optional) HTMLButtonElement attributes that will be applied to the edit menu's move button.
    * Use this property to specify drag/drop behavior
   */
-  moveElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+  moveElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & HOODataAttributes
 }
 
 export interface IHOOQuickLinkState {
@@ -109,7 +109,7 @@ export interface IHOOQuickLinkState {
 
 export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps, IHOOQuickLinkState> {
   private LOG_SOURCE: string = "💦HOOQuickLink";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-qllink";
   private _linkClass: string = "hoo-qllist";
 
@@ -139,7 +139,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
     return linkClass;
   }
 
-  public render(): React.ReactElement<IHOOQuickLinkProps> {
+  public render(): React.ReactElement<IHOOQuickLinkProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -148,6 +148,9 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
       if(this.props.columnSpan != null){
         if(rea == null){
           rea = { style: {}};
+        }
+        if(rea.style == null){
+          rea.style = {};
         }
         rea.style["gridColumn"] = this.props.columnSpan;
       }
@@ -192,7 +195,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

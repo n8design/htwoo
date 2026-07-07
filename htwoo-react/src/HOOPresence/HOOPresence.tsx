@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOPresenceStatus {
   Away = "away",
@@ -18,7 +18,7 @@ export interface IHOOPresenceProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-presence {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOPresenceState {
@@ -30,7 +30,7 @@ export class HOOPresenceState implements IHOOPresenceState {
 
 export default class HOOPresence extends React.PureComponent<IHOOPresenceProps, IHOOPresenceState> {
   private LOG_SOURCE: string = "💦HOOPresence";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-presence";
 
   constructor(props: IHOOPresenceProps) {
@@ -39,7 +39,7 @@ export default class HOOPresence extends React.PureComponent<IHOOPresenceProps, 
     this.state = new HOOPresenceState();
   }
 
-  public render(): React.ReactElement<IHOOPresenceProps> {
+  public render(): React.ReactElement<IHOOPresenceProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} is-${this.props.status} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} is-${this.props.status}`;
@@ -50,7 +50,7 @@ export default class HOOPresence extends React.PureComponent<IHOOPresenceProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }
