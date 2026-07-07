@@ -81,7 +81,7 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
 
   private _fileChangedEvent = (event: any): void => {
     try {
-      const files: File[] = event.target.files;
+      const files: File[] = Array.from(event.target.files);
       this.setState({ files }, () => {
         this.props.onChanged(files);
       });

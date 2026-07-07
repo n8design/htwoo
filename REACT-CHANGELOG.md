@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 2.9.4 - 2026-Jul-03
+## 2.9.5 - 2026-Jul-08
+
+- HOOFile: Bug in return object of files, needed to convert it to an array.
+
+## 2.9.4 - 2026-Jul-07
 
 - All Components - Support adding rootElementAttribute of 'data-*'
 - All Components - Support adding CSS custom properties (e.g. '--custom-prop') via rootElementAttributes.style
