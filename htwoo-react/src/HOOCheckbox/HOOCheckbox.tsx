@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOOCheckboxProps extends IHOOStandardProps {
@@ -31,7 +31,7 @@ export interface IHOOCheckboxProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-checkbox {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.InputHTMLAttributes<HTMLInputElement>;
+  rootElementAttributes?: React.InputHTMLAttributes<HTMLInputElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the label element of the component. Use to override for, class, and other attributes.
   */
@@ -47,7 +47,7 @@ export class HOOCheckboxState implements IHOOCheckboxState {
 
 export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, IHOOCheckboxState> {
   private LOG_SOURCE: string = "💦HOOCheckbox";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-checkbox";
   private _checkboxId: string = "hoo-checkbox-";
 
@@ -58,7 +58,7 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
     this.state = new HOOCheckboxState();
   }
 
-  public render(): React.ReactElement<IHOOCheckboxProps> {
+  public render(): React.ReactElement<IHOOCheckboxProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -86,7 +86,7 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

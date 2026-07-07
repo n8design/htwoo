@@ -1,6 +1,6 @@
 import * as React from "react";
 import HOOButton, { HOOButtonType } from "../HOOButton";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { IHOONavItem } from "../common/IHOONavItem";
 
 export interface IHOOVerticalNavProps extends IHOOStandardProps {
@@ -20,7 +20,7 @@ export interface IHOOVerticalNavProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-nav {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOVerticalNavState {
@@ -29,7 +29,7 @@ export interface IHOOVerticalNavState {
 
 export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavProps, IHOOVerticalNavState> {
   private LOG_SOURCE: string = "💦HOOVerticalNav";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-nav";
 
   constructor(props: IHOOVerticalNavProps) {
@@ -44,13 +44,14 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
     try {
       function addExpanded(ni: IHOONavItem[], level: number = 1): void {
         for (let i = 0; i < ni.length; i++) {
-          const idx = retVal.findIndex((o) => { return o === ni[i].key });
+          const item = ni[i];
+          const idx = retVal.findIndex((o) => { return o === item.key });
           if (idx === -1) {
-            retVal.push(ni[i].key);
+            retVal.push(item.key);
           }
           const nextLevel = level++;
-          if (ni[i].childNavItems != null && ni[i].childNavItems.length > 0 && nextLevel <= defaultExpandedLevel) {
-            addExpanded(ni[i].childNavItems);
+          if (item.childNavItems != null && item.childNavItems.length > 0 && nextLevel <= defaultExpandedLevel) {
+            addExpanded(item.childNavItems);
           }
         }
       }
@@ -79,22 +80,23 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
   }
 
   private _renderNav(navItems: IHOONavItem[]): React.ReactElement<IHOOVerticalNavProps>[] {
-    let retVal: React.ReactElement<IHOOVerticalNavProps>[] = (navItems != null) ? [] : null;
+    let retVal: React.ReactElement<IHOOVerticalNavProps>[] = [];
     try {
       for (let i = 0; i < navItems.length; i++) {
-        const ariaCurrent: React.LiHTMLAttributes<HTMLLIElement> = (navItems[i].key === this.props.selectedKey) ? { "aria-current": "true" } : null;
-        const hrefClick: React.AnchorHTMLAttributes<HTMLAnchorElement> = (navItems[i].onItemClick != null) ? { onClick: () => navItems[i].onItemClick(navItems[i].key) } : { href: navItems[i].href || "#", target: navItems[i].target || "_blank" };
-        const expanded: boolean = this.state.expanded.indexOf(navItems[i].key) > -1;
-        const navItem = <li key={navItems[i].key} role="treeitem" data-index={i} className="hoo-navitem" aria-expanded={expanded} {...ariaCurrent}>
+        const item = navItems[i];
+        const ariaCurrent: React.LiHTMLAttributes<HTMLLIElement> | null = (item.key === this.props.selectedKey) ? { "aria-current": "true" } : null;
+        const hrefClick: React.AnchorHTMLAttributes<HTMLAnchorElement> = (item.onItemClick != null) ? { onClick: () => item.onItemClick?.(item.key) } : { href: item.href || "#", target: item.target || "_blank" };
+        const expanded: boolean = this.state.expanded.indexOf(item.key) > -1;
+        const navItem = <li key={item.key} role="treeitem" data-index={i} className="hoo-navitem" aria-expanded={expanded} {...ariaCurrent}>
           <div className="hoo-navitem-text">
-            {navItems[i].childNavItems != null && navItems[i].childNavItems.length > 0 &&
-              <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-arrow-right" onClick={() => { this._expanded(navItems[i].key) }} />
+            {item.childNavItems != null && item.childNavItems.length > 0 &&
+              <HOOButton type={HOOButtonType.Icon} iconName="hoo-icon-arrow-right" onClick={() => { this._expanded(item.key) }} />
             }
-            <a className="hoo-navitem-link" {...hrefClick}>{navItems[i].text}</a>
+            <a className="hoo-navitem-link" {...hrefClick}>{item.text}</a>
           </div>
-          {navItems[i].childNavItems != null && navItems[i].childNavItems.length > 0 &&
-            <menu key={`child${navItems[i].key}`} className="hoo-nav-listsub" role="group">
-              {this._renderNav(navItems[i].childNavItems)}
+          {item.childNavItems != null && item.childNavItems.length > 0 &&
+            <menu key={`child${item.key}`} className="hoo-nav-listsub" role="group">
+              {this._renderNav(item.childNavItems)}
             </menu>
           }
         </li>
@@ -106,7 +108,7 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
     return retVal;
   }
 
-  public render(): React.ReactElement<IHOOVerticalNavProps> {
+  public render(): React.ReactElement<IHOOVerticalNavProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -119,7 +121,7 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

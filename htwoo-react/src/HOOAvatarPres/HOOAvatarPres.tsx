@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOAvatar, { HOOAvatarSize } from "../HOOAvatar";
 import HOOPresence, { HOOPresenceStatus } from "../HOOPresence";
 
@@ -29,15 +29,15 @@ export interface IHOOAvatarPresProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-avatar-pres {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the HOOAvatar element of the component.
   */
-  avatarAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  avatarAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the HOOPresence element of the component.
   */
-  presenceAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  presenceAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOAvatarPresState {
@@ -49,7 +49,7 @@ export class HOOAvatarPresState implements IHOOAvatarPresState {
 
 export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresProps, IHOOAvatarPresState> {
   private LOG_SOURCE: string = "💦HOOAvatarPres";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-avatar-pres";
 
   constructor(props: IHOOAvatarPresProps) {
@@ -61,7 +61,7 @@ export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresPro
     }
   }
 
-  public render(): React.ReactElement<IHOOAvatarPresProps> {
+  public render(): React.ReactElement<IHOOAvatarPresProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : `${this._componentClass}`;
@@ -73,7 +73,7 @@ export default class HOOAvatarPres extends React.PureComponent<IHOOAvatarPresPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

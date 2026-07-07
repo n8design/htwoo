@@ -1,12 +1,12 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOQuickLinkGridProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-ql-grid {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOQuickLinkGridState {
@@ -14,7 +14,7 @@ export interface IHOOQuickLinkGridState {
 
 export default class HOOQuickLinkGrid extends React.PureComponent<IHOOQuickLinkGridProps, IHOOQuickLinkGridState> {
   private LOG_SOURCE: string = "💦HOOQuickLinkGrid";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-ql-grid";
 
   constructor(props:IHOOQuickLinkGridProps){
@@ -23,7 +23,7 @@ export default class HOOQuickLinkGrid extends React.PureComponent<IHOOQuickLinkG
     this.state = {};
   }
 
-  public render(): React.ReactElement<IHOOQuickLinkGridProps> {
+  public render(): React.ReactElement<IHOOQuickLinkGridProps> | undefined {
     try{
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -34,7 +34,7 @@ export default class HOOQuickLinkGrid extends React.PureComponent<IHOOQuickLinkG
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

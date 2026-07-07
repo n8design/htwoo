@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOCardLocationProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOCardLocationProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cardlocation {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOCardLocationState {
@@ -22,7 +22,7 @@ export class HOOCardLocationState implements IHOOCardLocationState {
 
 export default class HOOCardLocation extends React.PureComponent<IHOOCardLocationProps, IHOOCardLocationState> {
   private LOG_SOURCE: string = "💦HOOCardLocation";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cardlocation";
 
   constructor(props: IHOOCardLocationProps) {
@@ -31,7 +31,7 @@ export default class HOOCardLocation extends React.PureComponent<IHOOCardLocatio
     this.state = new HOOCardLocationState();
   }
 
-  public render(): React.ReactElement<IHOOCardLocationProps> {
+  public render(): React.ReactElement<IHOOCardLocationProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -43,7 +43,7 @@ export default class HOOCardLocation extends React.PureComponent<IHOOCardLocatio
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

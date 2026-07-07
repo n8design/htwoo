@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOTagType {
   Button = "button",
@@ -42,7 +42,7 @@ export interface IHOOTagProps extends IHOOStandardProps {
     * (Optional) HTMLElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-mtag {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOTagState {
@@ -54,7 +54,7 @@ export class HOOTagState implements IHOOTagState {
 
 export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagState> {
   private LOG_SOURCE: string = "💦HOOTag";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-mtag";
 
   constructor(props: IHOOTagProps) {
@@ -64,7 +64,7 @@ export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagSta
     this._componentClass += (props.tagStyle === HOOTagStyle.Primary) ? "-primary" : "";
   }
 
-  public render(): React.ReactElement<IHOOTagProps> {
+  public render(): React.ReactElement<IHOOTagProps> | undefined {
     try {
       let retVal = null;
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
@@ -88,7 +88,7 @@ export default class HOOTag extends React.PureComponent<IHOOTagProps, IHOOTagSta
       return retVal;
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

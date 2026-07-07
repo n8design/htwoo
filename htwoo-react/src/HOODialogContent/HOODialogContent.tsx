@@ -1,12 +1,12 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOODialogContentProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-dlgcontent {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOODialogContentState {
@@ -19,7 +19,7 @@ export class HOODialogContentState implements IHOODialogContentState {
 //Must be a regular component or it can block update of contents
 export default class HOODialogContent extends React.Component<IHOODialogContentProps, IHOODialogContentState> {
   private LOG_SOURCE: string = "💦HOODialogContent";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlgcontent";
 
   constructor(props: IHOODialogContentProps) {
@@ -28,7 +28,7 @@ export default class HOODialogContent extends React.Component<IHOODialogContentP
     this.state = new HOODialogContentState();
   }
 
-  public render(): React.ReactElement<IHOODialogContentProps> {
+  public render(): React.ReactElement<IHOODialogContentProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -39,7 +39,7 @@ export default class HOODialogContent extends React.Component<IHOODialogContentP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

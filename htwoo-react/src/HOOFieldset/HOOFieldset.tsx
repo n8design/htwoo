@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOLegend from "../HOOLegend";
 
 export enum HOOFieldsetType {
@@ -21,7 +21,7 @@ export interface IHOOFieldsetProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-fieldset {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement> & HOODataAttributes;
 }
 
 export interface IHOOFieldsetState {
@@ -33,7 +33,7 @@ export class HOOFieldsetState implements IHOOFieldsetState {
 
 export default class HOOFieldset extends React.PureComponent<IHOOFieldsetProps, IHOOFieldsetState> {
   private LOG_SOURCE: string = "💦HOOFieldset";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-fieldset";
 
   constructor(props: IHOOFieldsetProps) {
@@ -47,7 +47,7 @@ export default class HOOFieldset extends React.PureComponent<IHOOFieldsetProps, 
     this.state = new HOOFieldsetState();
   }
 
-  public render(): React.ReactElement<IHOOFieldsetProps> {
+  public render(): React.ReactElement<IHOOFieldsetProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -61,7 +61,7 @@ export default class HOOFieldset extends React.PureComponent<IHOOFieldsetProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

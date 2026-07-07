@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOProgressBarProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOProgressBarProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-progress-bar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLProgressElement>, HTMLProgressElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLProgressElement>, HTMLProgressElement> & HOODataAttributes;
 }
 
 export interface IHOOProgressBarState {
@@ -22,7 +22,7 @@ constructor() {}
 
 export default class HOOProgressBar extends React.PureComponent<IHOOProgressBarProps, IHOOProgressBarState> {
   private LOG_SOURCE: string = "💦HOOProgressBar";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-progress-bar";
 
   constructor(props:IHOOProgressBarProps){
@@ -31,7 +31,7 @@ export default class HOOProgressBar extends React.PureComponent<IHOOProgressBarP
     this.state = new HOOProgressBarState();
   }
 
-  public render(): React.ReactElement<IHOOProgressBarProps> {
+  public render(): React.ReactElement<IHOOProgressBarProps> | undefined {
     try{
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -41,7 +41,7 @@ export default class HOOProgressBar extends React.PureComponent<IHOOProgressBarP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOWebPartTitleProps extends IHOOStandardProps {
   /**
@@ -22,7 +22,7 @@ export interface IHOOWebPartTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeaderElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-webpart-header {rootElementAttributes.class}
    */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & HOODataAttributes;
 }
 
 export interface IHOOWebPartTitleState {
@@ -34,7 +34,7 @@ export class HOOWebPartTitleState implements IHOOWebPartTitleState {
 
 export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitleProps, IHOOWebPartTitleState> {
   private LOG_SOURCE: string = "💦HOOWebPartTitle";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-webpart-header";
 
   constructor(props: IHOOWebPartTitleProps) {
@@ -49,7 +49,7 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
     this.props.updateTitle(title);
   }
 
-  public render(): React.ReactElement<IHOOWebPartTitleProps> {
+  public render(): React.ReactElement<IHOOWebPartTitleProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -73,7 +73,7 @@ export default class HOOWebPartTitle extends React.PureComponent<IHOOWebPartTitl
       );
     } catch (err) {
       console.error(`${err} - ${this.LOG_SOURCE} (render)`);
-      return null;
+      return;
     }
   }
 }

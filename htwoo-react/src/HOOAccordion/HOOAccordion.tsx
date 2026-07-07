@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon";
 import { isEqual } from "../common/Common";
 
@@ -24,7 +24,7 @@ export interface IHOOAccordionProps extends IHOOStandardProps {
    * (Optional) HTMLDetailsElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-accordion {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement> & HOODataAttributes;
 }
 
 export interface IHOOAccordionState {
@@ -36,7 +36,7 @@ export class HOOAccordionState implements IHOOAccordionState {
 
 export default class HOOAccordion extends React.PureComponent<IHOOAccordionProps, IHOOAccordionState> {
   private LOG_SOURCE: string = "💦HOOAccordion";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-accordion";
 
   constructor(props: IHOOAccordionProps) {
@@ -45,7 +45,7 @@ export default class HOOAccordion extends React.PureComponent<IHOOAccordionProps
     this.state = new HOOAccordionState();
   }
 
-  public render(): React.ReactElement<IHOOAccordionProps> {
+  public render(): React.ReactElement<IHOOAccordionProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -71,7 +71,7 @@ export default class HOOAccordion extends React.PureComponent<IHOOAccordionProps
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

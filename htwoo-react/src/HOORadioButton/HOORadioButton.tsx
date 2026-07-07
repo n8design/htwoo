@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOORadioButtonProps extends IHOOStandardProps {
@@ -35,7 +35,7 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component. Use to override id, name, and other attributes.
    * Class names will be appended to the end of the default class string - hoo-radio {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the label element of the component. Use to override for, class, and other attributes.
   */
@@ -51,7 +51,7 @@ export class HOORadioButtonState implements IHOORadioButtonState {
 
 export default class HOORadioButton extends React.PureComponent<IHOORadioButtonProps, IHOORadioButtonState> {
   private LOG_SOURCE: string = "💦HOORadioButton";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-radio";
   private _radioId: string = "hoo-radio-";
 
@@ -62,7 +62,7 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
     this.state = new HOORadioButtonState();
   }
 
-  public render(): React.ReactElement<IHOORadioButtonProps> {
+  public render(): React.ReactElement<IHOORadioButtonProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -91,7 +91,7 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

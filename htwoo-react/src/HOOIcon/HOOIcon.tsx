@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { symset } from "../SymbolSet";
 
 export interface IHOOIconProps extends IHOOStandardProps {
@@ -22,7 +22,7 @@ export interface IHOOIconProps extends IHOOStandardProps {
   /**
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & HOODataAttributes;
 }
 
 export interface IHOOIconState {
@@ -34,7 +34,7 @@ export class HOOIconState implements IHOOIconState {
 
 export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIconState> {
   private LOG_SOURCE: string = "💦HOOIcon";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private componentClass: string = "hoo-icon";
 
   constructor(props: IHOOIconProps) {
@@ -43,11 +43,11 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
     this.state = new HOOIconState();
   }
 
-  public render(): React.ReactElement<IHOOIconProps> {
+  public render(): React.ReactElement<IHOOIconProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this.componentClass} ${this.props.rootElementAttributes?.className}` : this.componentClass;
-      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName, this.props.title || "<span/>");
+      const iconSVG = this.props.iconSVG || symset.Icon(this.props.iconName || "", this.props.title || "<span/>");
       return (
         <>
           <span {...this._rootProps}
@@ -60,7 +60,7 @@ export default class HOOIcon extends React.PureComponent<IHOOIconProps, IHOOIcon
       );
     } catch (err) {
       console.error(`${err} - ${this.LOG_SOURCE} (render)`);
-      return null;
+      return;
     }
   }
 }

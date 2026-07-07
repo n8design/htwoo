@@ -1,6 +1,6 @@
 import * as React from "react";
 import { symset } from "../SymbolSet";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
 export enum HOOButtonType {
@@ -58,7 +58,7 @@ export interface IHOOButtonProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button-* {rootElementAttributes.class}
    */
-  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> | React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+  rootElementAttributes?: (React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> | React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) & HOODataAttributes;
 }
 
 export interface IHOOButtonState {
@@ -66,7 +66,7 @@ export interface IHOOButtonState {
 
 export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOOButtonState> {
   private LOG_SOURCE: string = "💦HOOButton";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _hyperlinkType: boolean = false;
   private _compoundType: boolean = false;
@@ -100,7 +100,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
     this.state = {};
   }
 
-  public render(): React.ReactElement<IHOOButtonProps> {
+  public render(): React.ReactElement<IHOOButtonProps> | undefined {
     if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     if (this.props.iconTitle) { this._rootProps["title"] = this.props.iconTitle }
     const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")} ${this.props.rootElementAttributes?.className}` : `${this._componentClass} ${(this.props.iconRight ? "is-reversed" : "")}`;
@@ -153,6 +153,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
       );
     } catch (err) {
       console.error(`${err} - ${this.LOG_SOURCE} (render)`);
+      return;
     }
   }
 }

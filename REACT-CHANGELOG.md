@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.9.4 - 2026-Jul-03
+
+- All Components - Support adding rootElementAttribute of 'data-*'
+- All Components - Support adding CSS custom properties (e.g. '--custom-prop') via rootElementAttributes.style
+- All Components - Cleanup of typing errors from updated packages (TypeScript 5) and strict mode.
+
 ## 2.9.3 - 2026-Apr-10
 
 - HOOText - Fixed bug with multiline text area not respecting the readOnly property.
