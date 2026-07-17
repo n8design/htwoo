@@ -8,9 +8,13 @@ export interface IHOOCheckboxProps extends IHOOStandardProps {
   */
   checked: boolean;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) Checkbox label. If omitted, children will be inserted.
   */
@@ -73,6 +77,7 @@ export default class HOOCheckbox extends React.PureComponent<IHOOCheckboxProps, 
             readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             onChange={this.props.onChange}
+            onBlur={this.props.onBlur}
             className={className} />
           <label htmlFor={this._checkboxId} {...this.props.labelElementAttributes}>
             {this.props.label &&

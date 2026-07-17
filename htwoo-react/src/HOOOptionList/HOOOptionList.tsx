@@ -33,9 +33,13 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   value: string | number | string[] | number[];
   /**
-   * Change event handler that receives the key and checked status of the option changed
+   * (Optional) Change event handler that receives the key and checked status of the option changed
   */
-  onChange: (key: string | number, checked: boolean) => void;
+  onChange?: (key: string | number, checked: boolean) => void;
+  /**
+   * (Optional) Blur event handler that receives the key of the option blurred
+  */
+  onBlur?: (key: string | number) => void;
   /**
    * (Optional) Is option list disabled
   */
@@ -167,9 +171,17 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
   private _onChange = (event: React.ChangeEvent<HTMLInputElement>, key: string | number) => {
     try {
       const checked = event.target.checked;
-      this.props.onChange(key, checked);
+      this.props.onChange?.(key, checked);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
+    }
+  }
+
+  private _onBlur = (event: React.FocusEvent<HTMLInputElement>, key: string | number) => {
+    try {
+      this.props.onBlur?.(key);
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_onBlur) - ${err}`);
     }
   }
 
@@ -181,11 +193,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       switch (this.props.type) {
         case HOOOptionListType.Checkbox:
           checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
-          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} onBlur={(e) => { this._onBlur(e, option.key); }} rootElementAttributes={elementAttributes} />;
           break;
         case HOOOptionListType.RadioButton:
           checked = this.props.value === option.key;
-          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} onBlur={(e) => { this._onBlur(e, option.key); }} rootElementAttributes={elementAttributes} />
           break;
       }
     } catch (err) {

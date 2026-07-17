@@ -32,9 +32,13 @@ export interface IHOODateProps extends IHOOStandardProps {
   */
   supportTime?: boolean;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-date {rootElementAttributes.class}
@@ -88,7 +92,8 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
           max={maxValue}
           disabled={this.props.disabled || false}
           readOnly={this.props.readonly || false}
-          onChange={this.props.onChange} />
+          onChange={this.props.onChange}
+          onBlur={this.props.onBlur} />
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);

@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.10.0 - 2026-Jul-17
+
+- Input controls that support a readonly state now have an optional `onChange` (previously required) and a new optional `onBlur` event handler, wired to the same element(s) `onChange` is bound to. Applies to HOOCheckbox, HOODate, HOODropDown, HOONumber, HOOOptionList, HOORadioButton, HOOText, HOOTime.
+
 ## 2.9.5 - 2026-Jul-08
 
 - HOOFile: Bug in return object of files, needed to convert it to an array.
