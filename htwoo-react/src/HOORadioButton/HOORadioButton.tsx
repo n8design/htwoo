@@ -12,9 +12,13 @@ export interface IHOORadioButtonProps extends IHOOStandardProps {
   */
   value: string | number;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) RadioButton label. If omitted, children will be inserted.
   */
@@ -78,7 +82,8 @@ export default class HOORadioButton extends React.PureComponent<IHOORadioButtonP
             disabled={this.props.disabled || false}
             readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
-            onChange={this.props.onChange} />
+            onChange={this.props.onChange}
+            onBlur={this.props.onBlur} />
           <label htmlFor={this._radioId} {...this.props.labelElementAttributes}>
             {this.props.label &&
               this.props.label

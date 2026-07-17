@@ -8,9 +8,13 @@ export interface IHOONumberProps extends IHOOStandardProps {
   */
   value: number;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) Input Prefix.
   */
@@ -87,7 +91,8 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
             readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             className={inputClassName}
-            onChange={this.props.onChange} />
+            onChange={this.props.onChange}
+            onBlur={this.props.onBlur} />
           {this.props.inputSuffix &&
             <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
           }

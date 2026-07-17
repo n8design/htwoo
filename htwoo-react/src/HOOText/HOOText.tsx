@@ -8,9 +8,13 @@ export interface IHOOTextProps extends IHOOStandardProps {
   */
   value: string;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   //TODO: (Stefan) Invalid input has not been completed in core
   /**
    * (Optional) Is Input Invalid - default false.
@@ -99,7 +103,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
                 data-suffix={this.props.inputSuffix || null}
                 data-prefix={this.props.inputPrefix || null}
                 className={inputClassName}
-                onChange={this.props.onChange} />
+                onChange={this.props.onChange}
+                onBlur={this.props.onBlur} />
               {this.props.inputSuffix &&
                 <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
               }
@@ -112,7 +117,8 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               rows={this.props.multiline}
               readOnly={this.props.readonly || false}
               value={this.props.value}
-              onChange={this.props.onChange} />
+              onChange={this.props.onChange}
+              onBlur={this.props.onBlur} />
           }
         </>
       );

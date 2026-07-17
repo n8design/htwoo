@@ -38,9 +38,13 @@ export interface IHOODropDownProps extends IHOOStandardProps {
   */
   options: IHOODropDownGroup[] | IHOODropDownItem[];
   /**
-   * Change event handler returns the new field value based on the selected items key
+   * (Optional) Change event handler returns the new field value based on the selected items key
   */
-  onChange: (fieldValue: string | number) => void;
+  onChange?: (fieldValue: string | number) => void;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) Type-ahead options for select drop down; default is null which disables typeahead
    *   If true, options are filtered for any items starting with the string in the input box
@@ -137,7 +141,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
 
   private _onChange = (newValue: string | number) => {
     try {
-      this.props.onChange((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string) : newValue);
+      this.props.onChange?.((/^-?\d+$/.test(newValue as string)) ? parseInt(newValue as string) : newValue);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
     }
@@ -285,7 +289,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
               (this.state.optionsLength < 1) && 
               this.props.noOptionsChangeEvent === true) {
             // if state = filtered and focus on input and no options match & the notOptionsChangeEvent is true and current value length > 0
-            this.props.onChange(this.state.currentValue);
+            this.props.onChange?.(this.state.currentValue);
             open = false;
             ddState = DDState.Closed;
           } else if (this.state.ddState === DDState.Filtered && focus === this._inputElement.current) {
@@ -487,6 +491,7 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
             autoComplete="off"
             aria-controls={`${this._dropdownId}-list`}
             onChange={this._onChangeInput}
+            onBlur={this.props.onBlur}
             readOnly={(this.props.containsTypeAhead == null || this.props.readonly) ? true : false}
           />
           <HOOButton type={HOOButtonType.Icon} disabled={this.props.disabled || false} >
