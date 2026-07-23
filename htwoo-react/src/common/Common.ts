@@ -41,7 +41,7 @@ export function isEqual(a: any, b: any, c: number = 0): boolean {
     }
 
     for (let key of keys1) {
-      if (!keys2.includes(key) || !isEqual(a[key], b[key], c++)) {
+      if (!keys2.includes(key) || !isEqual(a[key], b[key], c + 1)) {
         return false;
       }
     }
