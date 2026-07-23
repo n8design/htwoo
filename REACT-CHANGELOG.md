@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.10.1 - 2026-Jul-23
+
+- Common - Fixed bug in `isEqual` deep-equality helper where the recursion-depth guard was incremented per sibling property compared instead of per nesting level, causing it to falsely report objects as equal once 5 or more top-level properties were compared.
+- HOOOptionList - Fixed bug where selecting a RadioButton option did not update the visual selected state, caused by the `isEqual` defect above short-circuiting `shouldComponentUpdate` on the `value` property change.
+- Build - Updated `tsconfig.json` `lib` to `es2019` to match the compile `target` and resolve a TS2550 typing error on `Array.prototype.includes`.
+
 ## 2.10.0 - 2026-Jul-17
 
 - Input controls that support a readonly state now have an optional `onChange` (previously required) and a new optional `onBlur` event handler, wired to the same element(s) `onChange` is bound to. Applies to HOOCheckbox, HOODate, HOODropDown, HOONumber, HOOOptionList, HOORadioButton, HOOText, HOOTime.
