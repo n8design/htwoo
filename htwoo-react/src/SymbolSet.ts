@@ -11,9 +11,33 @@ export class SymbolSet implements ISymbolSet {
   private LOG_SOURCE: string = "💦SymbolSet";
 
   private defaultLoaded: boolean = false;
+  private _defaultLoadPromise?: Promise<void>;
   private _symbolSetDictionary: { [name: string]: string } = {};
 
   constructor() {
+  }
+
+  // shared by all initSymbols() callers so two calls fired back-to-back (unawaited) don't both start the default fetch
+  private _ensureDefaultLoaded(): Promise<void> {
+    if (this.defaultLoaded) return Promise.resolve();
+    if (!this._defaultLoadPromise) {
+      this._defaultLoadPromise = (async (): Promise<void> => {
+        try {
+          if (defaultSymbolSetFile != null) {
+            const defaultResult = await fetch(defaultSymbolSetFile);
+            const defaultSymbolSet = await defaultResult.text();
+            this.defaultLoaded = this.processSymbolSet(defaultSymbolSet);
+          }
+        } finally {
+          // Load didn't succeed (fetch threw, or the SVG failed to parse) - drop the cached
+          // promise so a later initSymbols() call retries instead of being stuck forever.
+          if (!this.defaultLoaded) {
+            this._defaultLoadPromise = undefined;
+          }
+        }
+      })();
+    }
+    return this._defaultLoadPromise;
   }
 
   /**
@@ -24,13 +48,7 @@ export class SymbolSet implements ISymbolSet {
    */
   public async initSymbols(symbolSetFile?: string): Promise<void> {
     try {
-      //Load Default if not already processed
-      if (!this.defaultLoaded && defaultSymbolSetFile != null) {
-        const defaultResult = await fetch(defaultSymbolSetFile);
-        const defaultSymbolSet = await defaultResult.text();
-        const loadedDefault = this.processSymbolSet(defaultSymbolSet);
-        this.defaultLoaded = loadedDefault;
-      }
+      await this._ensureDefaultLoaded();
 
       if (symbolSetFile !== undefined && symbolSetFile.length > 0) {
         const result = await fetch(symbolSetFile);

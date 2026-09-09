@@ -39,7 +39,7 @@ export default class HOOProgressStepBar extends React.PureComponent<IHOOProgress
       let progressBar: React.ReactNode = null;
       let progressStep: React.ReactNode[] = [];
 
-      (props.children as React.ReactNode[]).forEach((e) => {
+      React.Children.forEach(props.children, (e) => {
         if (React.isValidElement(e)) {
           const element = e as React.ReactElement;
           if (element.type === HOOProgressBar) {
@@ -51,7 +51,7 @@ export default class HOOProgressStepBar extends React.PureComponent<IHOOProgress
       });
       return { progressBar, progressStep };
     } catch (err) {
-      console.error("💦HOOField", "(getDerivedStateFromProps)", err);
+      console.error("💦HOOProgressStepBar", "(getDerivedStateFromProps)", err);
     }
   }
 

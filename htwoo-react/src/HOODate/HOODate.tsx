@@ -65,17 +65,16 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODate";
     this._dateId = props.forId || `${this._dateId}${getRandomString(10)}`;
+    // Computed once here, not in render() - `_maxValue != new Date()` was always true
+    // (different object references), so this used to re-apply the +/-10 year offset on
+    // every render and the bounds drifted further out with each re-render.
+    this._maxValue.setFullYear(this._maxValue.getFullYear() + 10);
+    this._minValue.setFullYear(this._minValue.getFullYear() - 10);
     this.state = new HOODateState();
   }
 
   public render(): React.ReactElement<IHOODateProps> | undefined {
     if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
-    if (!this.props.maxValue && this._maxValue != new Date()) {
-      this._maxValue.setFullYear(this._maxValue.getFullYear() + 10);
-    }
-    if (!this.props.minValue && this._minValue != new Date()) {
-      this._minValue.setFullYear(this._minValue.getFullYear() - 10);
-    }
     const maxValue: string = this.props.maxValue || this._maxValue.toISOString().split('T')[0];
     const minValue: string = this.props.minValue || this._minValue.toISOString().split('T')[0];
     try {

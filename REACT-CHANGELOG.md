@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.11.0 - 2026-Sep-09
+
+- HOOFile - add an optional property for `accept` to make it easier to set on the input element, still backward compatible for anyone setting via the `inputElementAttributes`.
+- HOOFile - fixed `inputElementAttributes` being typed as `React.HTMLAttributes<HTMLInputElement>` instead of `React.InputHTMLAttributes<HTMLInputElement>`, which meant input-specific attributes like `accept`, `multiple`, and `checked` were not assignable from a consuming project. Also typing fix on inputElementAttributes.
+- HOOFile - removed a leftover debug `console.log` from the drag/drop handler, and added a `key` to items in the selected-files list to avoid a React key warning and incorrect list reconciliation.
+- SymbolSet - fixed issue with race condition if multiple icon files are initialized without awaiting; a failed or unsuccessful load (network error, or a malformed SVG source) is no longer cached permanently and will now be retried on the next `initSymbols()` call.
+- HOODropDown - fixed bug where the internal list of option elements used for type-ahead filtering and keyboard navigation accumulated duplicate/stale entries on every re-render for ungrouped options, or collided across groups sharing the same index for grouped options - degrading filtering and arrow-key navigation the longer the dropdown was used.
+- HOODate - fixed bug where the default 10-year min/max date bounds were recalculated - and compounded - on every render instead of once, causing the allowed date range to drift wider with each re-render.
+- HOODialog - fixed bug where changing a mounted dialog's `type` prop more than once kept stacking every prior type's CSS classes onto the dialog and could leave modal behavior stuck from an earlier type.
+- HOODialog, HOOOptionList - fixed bug where cloning `rootElementAttributes` via a JSON round-trip silently dropped any function-valued attribute (e.g. an `onClick` handler) a consumer passed through it; now cloned with a shallow copy instead.
+- HOOField, HOOProgressStepBar - fixed bug where passing exactly one child (instead of multiple) threw internally and caused the component to render nothing; now uses `React.Children.forEach` so single-child and multi-child usage both work.
+- HOOVerticalNav - fixed bug where `defaultExpandedLevel` failed to bound expansion depth and instead expanded the entire navigation tree on first load regardless of the value provided.
+- HOOButtonMenu - fixed bug where a custom `menuElementAttributes.className` was ignored (and `rootElementAttributes.className` used in its place) when building the flyout menu's class list.
+- HOOQuickLink - fixed bug where setting `columnSpan` mutated the caller's own `rootElementAttributes`/`style` object instead of cloning it; also removed a stray `"true"` CSS class that was added whenever `editMode` was `true`.
+
 ## 2.10.1 - 2026-Jul-23
 
 - Common - Fixed bug in `isEqual` deep-equality helper where the recursion-depth guard was incremented per sibling property compared instead of per nesting level, causing it to falsely report objects as equal once 5 or more top-level properties were compared.

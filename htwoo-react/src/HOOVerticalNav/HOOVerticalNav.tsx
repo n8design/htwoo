@@ -42,21 +42,21 @@ export default class HOOVerticalNav extends React.PureComponent<IHOOVerticalNavP
   private _defaultExpandedFirstLoad = (navItems: IHOONavItem[], defaultExpandedLevel: number = 0): (number | string)[] => {
     let retVal: (number | string)[] = [];
     try {
-      function addExpanded(ni: IHOONavItem[], level: number = 1): void {
+      function addExpanded(ni: IHOONavItem[], level: number): void {
+        if (level > defaultExpandedLevel) { return; }
         for (let i = 0; i < ni.length; i++) {
           const item = ni[i];
           const idx = retVal.findIndex((o) => { return o === item.key });
           if (idx === -1) {
             retVal.push(item.key);
           }
-          const nextLevel = level++;
-          if (item.childNavItems != null && item.childNavItems.length > 0 && nextLevel <= defaultExpandedLevel) {
-            addExpanded(item.childNavItems);
+          if (item.childNavItems != null && item.childNavItems.length > 0) {
+            addExpanded(item.childNavItems, level + 1);
           }
         }
       }
       if (defaultExpandedLevel > 0) {
-        addExpanded(navItems);
+        addExpanded(navItems, 1);
       }
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_defaultExpandedFirstLoad) - ${err}`);

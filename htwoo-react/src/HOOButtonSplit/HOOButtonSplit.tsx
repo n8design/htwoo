@@ -16,7 +16,7 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
   /**
    * (Optional) Flyout menu items, if omitted, no flyout will be rendered.
    */
-  flyoutContextItems: IHOOFlyoutMenuItem[];
+  flyoutContextItems?: IHOOFlyoutMenuItem[];
   /**
    * (Optional) button label, if omitted, components children will be rendered.
    */

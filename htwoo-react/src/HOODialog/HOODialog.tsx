@@ -81,7 +81,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
     }
     let rea = undefined;
     if (this.props.rootElementAttributes) {
-      rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+      rea = { ...this.props.rootElementAttributes };
       delete rea.style;
     }
     this.state = new HOODialogState(rea, styleblock);
@@ -115,6 +115,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
   public componentDidUpdate(prevProps: Readonly<IHOODialogProps>, prevState: Readonly<IHOODialogState>, snapshot?: any): void {
     try {
       if(this._updateType){
+        this._updateType = false;
         this._setType(this.props.type);
       }
       if (this._updateShow) {
@@ -142,7 +143,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
         }
         let rea = undefined;
         if (this.props.rootElementAttributes) {
-          rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
+          rea = { ...this.props.rootElementAttributes };
           delete rea.style;
         }
         this.setState({ rea, styleblock });
@@ -154,6 +155,8 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
 
   private _setType(type: HOODialogType): void {
     try {
+      this._componentClass = "hoo-dlg";
+      this._modal = false;
       switch (type) {
         case HOODialogType.Standard:
           this._componentClass = `${this._componentClass} statusbar`;
