@@ -456,6 +456,8 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
   public render(): React.ReactElement<IHOODropDownProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
+      this._optionElements = [];
+      let optionIndex = 0;
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
       const ulClassName = (this.props.ulElementAttributes?.className) ? `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"} ${this.props.ulElementAttributes?.className}` : `${this._ulClass} ${(this.state.open) ? "" : "hidden-all"}`;
       const inputClassName = (this.props.inputElementAttributes?.className) ? `hoo-select-text ${this.props.inputElementAttributes?.className}` : "hoo-select-text";
@@ -509,7 +511,8 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                       <div className="hoo-optgroup-name">{group.groupName}</div>
                     }
                     <ul className="hoo-optgroup-items">
-                      {group.groupItems && group.groupItems.map((i: IHOODropDownItem, index: number) => {
+                      {group.groupItems && group.groupItems.map((i: IHOODropDownItem) => {
+                        const index = optionIndex++;
                         return (
                           <li ref={element => { if (element) { this._optionElements[index] = element; } }}
                             key={i.key}
@@ -527,8 +530,9 @@ export default class HOODropDown extends React.Component<IHOODropDownProps, IHOO
                 );
               } else {
                 const item = g as IHOODropDownItem;
+                const index = optionIndex++;
                 return (
-                  <li ref={element => { if (element) { this._optionElements.push(element); } }}
+                  <li ref={element => { if (element) { this._optionElements[index] = element; } }}
                     key={item.key}
                     data-value={item.key}
                     className={`hoo-option ${item.disabled ? "is-disabled" : ""}`}

@@ -70,7 +70,7 @@ export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuPro
         className += " show-flyout";
         buttonREA["aria-pressed"] = "true";
       }
-      const menuClassName = `hoo-buttonflyout ${(this.props.menuElementAttributes?.className) ? this.props.rootElementAttributes?.className : ""}`;
+      const menuClassName = `hoo-buttonflyout ${(this.props.menuElementAttributes?.className) ? this.props.menuElementAttributes?.className : ""}`;
       return (
         <div {...this._rootProps}
           {...this.props.rootElementAttributes}

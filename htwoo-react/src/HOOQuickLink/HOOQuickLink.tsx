@@ -131,7 +131,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
       }else if(this.props.type === HOOQuickLinkType.Grid){
         linkClass = "hoo-qlgrid";
       }
-      linkClass += ` ${this.props.style || ""} ${this.props.alignment || ""} ${this.props.buttonLines || ""} ${this.props.imageSize || ""} ${this.props.editMode || ""}`;
+      linkClass += ` ${this.props.style || ""} ${this.props.alignment || ""} ${this.props.buttonLines || ""} ${this.props.imageSize || ""}`;
       linkClass = linkClass.trim();
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_getLinkClass) - ${err}`);
@@ -146,13 +146,7 @@ export default class HOOQuickLink extends React.PureComponent<IHOOQuickLinkProps
       const linkClassValue = this._getLinkClass();
       let rea = this.props.rootElementAttributes;
       if(this.props.columnSpan != null){
-        if(rea == null){
-          rea = { style: {}};
-        }
-        if(rea.style == null){
-          rea.style = {};
-        }
-        rea.style["gridColumn"] = this.props.columnSpan;
+        rea = { ...rea, style: { ...rea?.style, gridColumn: this.props.columnSpan } };
       }
 
       return (

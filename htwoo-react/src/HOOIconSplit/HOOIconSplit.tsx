@@ -14,9 +14,9 @@ export interface IHOOIconSplitProps extends IHOOStandardProps {
    */
   leftIconTitle?: string;
   /**
-   * Flyout menu items, if omitted, no flyout will be rendered.
+   * (Optional) Flyout menu items, if omitted, no flyout will be rendered.
    */
-  flyoutContextItems: IHOOFlyoutMenuItem[];
+  flyoutContextItems?: IHOOFlyoutMenuItem[];
   /**
    * (Optional) icon name, if omitted, icon-arrow-down will be used.
    */

@@ -47,7 +47,7 @@ export default class HOOField extends React.PureComponent<IHOOFieldProps, IHOOFi
       let validation: React.ReactNode = null;
       let content: React.ReactNode[] = [];
       
-      (props.children as React.ReactNode[]).forEach((e) => {
+      React.Children.forEach(props.children, (e) => {
         if (React.isValidElement(e)) {
           const element = e as React.ReactElement;
           if (element.type === HOOLabel) {

@@ -20,11 +20,15 @@ export interface IHOOFileProps extends IHOOStandardProps {
    * Icon used for file upload; default to `hoo-icon-arrow-upload-filled`
   */
   fileIcon?: string;
+  /** 
+   * What file types to limit picker to
+   */
+  accept?: string;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the file upload input element of the component.
    * Note: Class names will be appended to the end of the default class string.
   */
-  inputElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  inputElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
   /**
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-file {rootElementAttributes.class}
@@ -74,7 +78,6 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
 
     const files = event.dataTransfer.files;
     if (files.length > 0) {
-      console.log('Files dropped:', files);
       this._fileChangedEvent({ target: { files } });
     }
   }
@@ -115,14 +118,14 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
               </p>
             </div>
           </label>
-          <input type="file" id={this._fileId} {...this.props.inputElementAttributes} className={inputClassName} multiple aria-describedby={`${this._fileId}-content`} onChange={this._fileChangedEvent} />
+          <input type="file" id={this._fileId} accept={this.props.accept || "*/*" } {...this.props.inputElementAttributes} className={inputClassName} multiple aria-describedby={`${this._fileId}-content`} onChange={this._fileChangedEvent} />
           <output className="hoo-infile-output" id={`${this._fileId}-content`} aria-live="polite" title="Current selection">
             {this.state.files && this.state.files?.length > 0 &&
               <>
                 <div className='hoo-infile-selection'>Files Selected</div>
                 <ul className="hoo-infile-list">
-                  {this.state.files?.map((file) => {
-                    return <li>{file.name}</li>
+                  {this.state.files?.map((file, index) => {
+                    return <li key={`${file.name}-${index}`}>{file.name}</li>
                   })}
                 </ul>
               </>

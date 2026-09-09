@@ -112,8 +112,8 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     }
     let rea = undefined;
     if (this.props.rootElementAttributes) {
-      rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
-      if (this.props.reactKey) { rea["key"] = this.props.reactKey } 
+      rea = { ...this.props.rootElementAttributes } as any;
+      if (this.props.reactKey) { rea["key"] = this.props.reactKey }
       if (this.props.type === HOOOptionListType.RadioButton) { 
         rea["tabindex"] = 0; rea["role"] = "radiogroup"; 
       } else { 
@@ -152,8 +152,8 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
         }
         let rea = undefined;
         if (this.props.rootElementAttributes) {
-          rea = JSON.parse(JSON.stringify(this.props.rootElementAttributes));
-          if (this.props.reactKey) { rea["key"] = this.props.reactKey } 
+          rea = { ...this.props.rootElementAttributes } as any;
+          if (this.props.reactKey) { rea["key"] = this.props.reactKey }
           if (this.props.type === HOOOptionListType.RadioButton) { 
             rea["tabindex"] = 0; rea["role"] = "radiogroup"; 
           } else { 

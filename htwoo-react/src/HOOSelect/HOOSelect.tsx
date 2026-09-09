@@ -3,6 +3,9 @@ import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProp
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
+/**
+ * @deprecated Use HOODropDown instead.
+ */
 export enum HOOSelectStatus {
   "Initial",
   "Open",
@@ -10,17 +13,26 @@ export enum HOOSelectStatus {
   "Closed"
 }
 
+/**
+ * @deprecated Use HOODropDown instead.
+ */
 export enum HOOSelectFocus {
   "Input",
   "Forward",
   "Back"
 }
 
+/**
+ * @deprecated Use HOODropDown instead.
+ */
 export interface IHOOSelectOption {
   key: string | number;
   text: string;
 }
 
+/**
+ * @deprecated Use HOODropDown instead.
+ */
 export interface IHOOSelectProps extends IHOOStandardProps {
   /**
    * Options for select drop down
@@ -62,6 +74,9 @@ export interface IHOOSelectProps extends IHOOStandardProps {
   inputElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
 
+/**
+ * @deprecated Use HOODropDown instead.
+ */
 export interface IHOOSelectState {
   currentValue: string | number | undefined;
   selectStatus: HOOSelectStatus;
@@ -70,8 +85,8 @@ export interface IHOOSelectState {
 }
 
 /**
-* @deprecated Use HOODropdown
-*/
+ * @deprecated Use HOODropDown instead.
+ */
 export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
   private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
