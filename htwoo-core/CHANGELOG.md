@@ -1,3 +1,26 @@
+## 2.8.0 (unreleased)
+
+
+### ⚠ BREAKING CHANGES
+
+* **@n8d/htwoo-patterns:** the `postinstall` script (`lib/move-patterns.js`) was removed. Installing the package no longer copies patterns into a Pattern Lab project. Copy `_patterns`, `_data` and `images` from `node_modules/@n8d/htwoo-patterns` yourself (see the package README).
+* **@n8d/htwoo-patterns:** now released together with `@n8d/htwoo-core` at the same version (2.2.3 → 2.8.0) and declares `@n8d/htwoo-core` as an exact peer dependency.
+* **patterns:** `atoms/loading/shimmer-theme~*` and `shimmer-theme-inline~*` were renamed to `shimmer-theme-*` / `shimmer-theme-inline-*`. The partial names (`atoms-shimmer-theme-notheme`, ...) stay the same in Pattern Lab.
+
+
+### Bug Fixes
+
+* **@n8d/htwoo-patterns:** the package is built from a clean copy of htwoo-core, so stale duplicate templates (flat `design-tokens/*`, old `organism/dialogs/*` next to `legacy/`) are no longer published; the build fails on pattern handle collisions
+* **@n8d/htwoo-patterns:** ships the Handlebars helpers (`helpers/hbs`) and declares their `lodash` dependency
+* **@n8d/htwoo-patterns / @n8d/htwoo-core:** added a `patternDump` manifest to `package.json`
+* **@n8d/htwoo-core:** ships `themes/` and the TypeScript sources in `lib/ts`
+* **patterns:** removed tooling and editor leftovers from `_patterns` (`add_yaml_frontmatter*.sh`, `PATTERN-OPTIMIZATION.md`, `*.new`, `*.tmp`) and the empty `_data/htwoo-persona.json`
+* **patterns:** shimmer-theming-support includes resolve outside Pattern Lab
+* **patterns:** dialog-iframe loads the hosted splash screen page instead of a Pattern Lab build output path
+* **patterns:** generic-dialog and form-flow-1/2 inline scripts no longer throw when their elements are missing
+* **ts:** removed dead input-mask import from `main.ts`
+
+
 ## 2.7.3 (2025-06-09)
 
 
