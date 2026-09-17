@@ -38,6 +38,7 @@
   ],
   "files": [
     "dist",
+    "legacy",
     "lib",
     "index.js",
     "index.d.ts"
