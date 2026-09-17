@@ -1,4 +1,26 @@
-## 2.9.0 (unreleased)
+## 2.9.1 (unreleased)
+
+
+### @n8d/htwoo-core
+
+#### Added
+
+* `lib/sass/themes/teams.dark.theme.scss` and `teams.dark.theme.json`, so all 12 themes register in Pattern Dump
+* `lib/sass/htwoo-document.scss`: an opt-in page layer, so the body background, text colour and font follow the active theme. `htwoo.scss` is unchanged and still sets no body styles.
+
+#### Deprecated (removed in 3.0)
+
+* `lib/sass/themes/teams.dark.scss` and `teams.dark.json` (without `.theme`)
+
+
+### @n8d/htwoo-patterns
+
+#### Fixed
+
+* 2.9.0 was published incomplete (100 of 903 files); 2.9.1 is the full package. The package check that runs before packing now compares the package with the htwoo-core sources, so an incomplete package can no longer be packed.
+
+
+## 2.9.0 (2026-09-17)
 
 An interim release that makes the hTWOo packages usable in Pattern Dump and fixes the published packages; the larger upgrade (Fluent UI 9) follows in 3.0.
 
