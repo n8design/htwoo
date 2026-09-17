@@ -12,8 +12,7 @@
       },
       "outputs": [
         "{workspaceRoot}/packages/htwoo-core/lib",
-        "{workspaceRoot}/packages/htwoo-core/dist",
-        "{workspaceRoot}/packages/htwoo-core/themes"
+        "{workspaceRoot}/packages/htwoo-core/dist"
       ]
     },
     "build:optimized": {

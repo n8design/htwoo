@@ -39,7 +39,6 @@
   "files": [
     "dist",
     "lib",
-    "themes",
     "index.js",
     "index.d.ts"
   ],
@@ -52,7 +51,7 @@
       ]
     },
     "themes": {
-      "dir": "themes",
+      "dir": "lib/sass/themes",
       "default": "blue",
       "switch": "stylesheet"
     },
