@@ -236,3 +236,6 @@ const afterLoaded = (): void => {
 
 // Initialize the application when the window loads
 window.onload = afterLoaded;
+
+// Public API of the package entry (lib/js/main.d.ts, the htwoo UMD global)
+export { HOODialog, DialogType, FileUploadHandler, ariaSelect, initTables, initPivot, initMenu, overflow };
