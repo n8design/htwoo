@@ -3,8 +3,12 @@
 /**
  * Build the @n8d/htwoo-patterns package from htwoo-core sources.
  *
- *   node scripts/build-patterns-package.js            clean copy + collision check
- *   node scripts/build-patterns-package.js --check <dir>   only run the collision check on a _patterns folder
+ *   node scripts/build-patterns-package.js                 clean copy + package check
+ *   node scripts/build-patterns-package.js --check <dir>   package check only (<dir> is the package's _patterns folder)
+ *
+ * The package check fails when the package is not a complete copy of the sources (every copied folder must
+ * contain exactly the source files, minus the excludes; _data and images must not be empty) or when two
+ * templates or data files share a pattern handle.
  *
  * The package folders are wiped first, so nothing from an earlier build can leak into a release.
  */
@@ -19,6 +23,9 @@ const packageRoot = path.resolve(projectRoot, '..', 'packages', 'htwoo-patterns'
 const PATTERN_EXCLUDES = ['**/*.sh', '**/*.new', '**/*.tmp', 'PATTERN-OPTIMIZATION.md'];
 
 // source (relative to htwoo-core) -> target (relative to packages/htwoo-patterns)
+// Package folders that must never be published empty
+const REQUIRED_NON_EMPTY = ['_patterns', '_data', 'images', 'helpers/hbs'];
+
 const COPIES = [
   { from: 'src/_patterns', to: '_patterns', excludes: PATTERN_EXCLUDES },
   { from: 'src/_data', to: '_data' },
@@ -99,6 +106,56 @@ function reportCollisions(patternsDir) {
   return false;
 }
 
+/** Relative forward-slash paths of the files a copy of `from` must contain. */
+function expectedFiles(from, excludes = []) {
+  const res = excludes.map(globToRegExp);
+  const files = [];
+  const walk = dir => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const abs = path.join(dir, entry.name);
+      const rel = path.relative(from, abs).split(path.sep).join('/');
+      if (res.some(r => r.test(rel))) continue;
+      if (entry.isDirectory()) walk(abs); else files.push(rel);
+    }
+  };
+  walk(from);
+  return files;
+}
+
+/** Compare the package folders with their sources: same file lists, and no required folder empty. */
+function reportCompleteness(pkgRoot) {
+  let ok = true;
+  for (const { from, to, excludes } of COPIES) {
+    const target = path.join(pkgRoot, to);
+    const expected = new Set(expectedFiles(path.join(projectRoot, from), excludes));
+    const actual = new Set(fs.existsSync(target)
+      ? listFiles(target).map(abs => path.relative(target, abs).split(path.sep).join('/'))
+      : []);
+    const missing = [...expected].filter(f => !actual.has(f));
+    const extra = [...actual].filter(f => !expected.has(f));
+    if (expected.size === 0 || (actual.size === 0 && REQUIRED_NON_EMPTY.includes(to))) {
+      console.error(`❌ ${to} is empty (source ${from} has ${expected.size} files)`);
+      ok = false;
+    }
+    if (missing.length || extra.length) {
+      console.error(`❌ ${to} does not match ${from}: ${actual.size} files, expected ${expected.size} (${missing.length} missing, ${extra.length} extra)`);
+      for (const f of missing.slice(0, 10)) console.error(`   missing: ${f}`);
+      for (const f of extra.slice(0, 10)) console.error(`   extra:   ${f}`);
+      ok = false;
+    } else if (expected.size > 0) {
+      console.log(`✅ ${to}: ${actual.size} files, matches ${from}`);
+    }
+  }
+  return ok;
+}
+
+function checkPackage(pkgRoot) {
+  const complete = reportCompleteness(pkgRoot);
+  const patternsDir = path.join(pkgRoot, '_patterns');
+  const noCollisions = fs.existsSync(patternsDir) && reportCollisions(patternsDir);
+  return complete && noCollisions;
+}
+
 function build() {
   for (const { to } of COPIES) {
     fs.rmSync(path.join(packageRoot, to.split('/')[0]), { recursive: true, force: true });
@@ -108,11 +165,11 @@ function build() {
     console.log(`📦 ${from} -> ${to}: ${copied} files${skipped.length ? `, excluded ${skipped.join(', ')}` : ''}`);
   }
   fs.copyFileSync(path.join(projectRoot, 'LICENSE'), path.join(packageRoot, 'LICENSE'));
-  return reportCollisions(path.join(packageRoot, '_patterns'));
+  return checkPackage(packageRoot);
 }
 
 const args = process.argv.slice(2);
 const ok = args[0] === '--check'
-  ? reportCollisions(path.resolve(args[1] || path.join(packageRoot, '_patterns')))
+  ? checkPackage(path.dirname(path.resolve(args[1] || path.join(packageRoot, '_patterns'))))
   : build();
 process.exit(ok ? 0 : 1);
