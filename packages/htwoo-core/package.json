@@ -39,9 +39,33 @@
   "files": [
     "dist",
     "lib",
+    "themes",
     "index.js",
     "index.d.ts"
   ],
+  "patternDump": {
+    "styles": {
+      "dir": "lib/sass",
+      "entry": "htwoo.scss",
+      "documentBase": [
+        "00-base"
+      ]
+    },
+    "themes": {
+      "dir": "themes",
+      "default": "blue",
+      "switch": "stylesheet"
+    },
+    "scripts": "lib/ts",
+    "globalScripts": [
+      "dialog",
+      "nav",
+      "pivot",
+      "overflow",
+      "select",
+      "table"
+    ]
+  },
   "author": "Stefan Bauer (@stfbauer)",
   "homepage": "https://lab.n8d.studio/htwoo/",
   "funding": "https://github.com/sponsors/StfBauer",

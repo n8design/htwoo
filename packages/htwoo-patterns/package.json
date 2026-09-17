@@ -1,7 +1,7 @@
 {
   "name": "@n8d/htwoo-patterns",
   "version": "2.8.0",
-  "description": "hTWOo Patterns to setup custom style guide",
+  "description": "hTWOo Handlebars patterns, data, helpers and images for style guides (PatternLab, Pattern Dump)",
   "private": false,
   "bin": {
     "htwoo-toggle-patterns": "./lib/toggle-patterns.js"
@@ -9,13 +9,13 @@
   "files": [
     "_patterns",
     "_data",
+    "helpers",
     "images",
     "lib",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "postinstall": "node ./lib/move-patterns.js",
     "build": "npm --prefix ../../htwoo-core run build:patterns-package",
     "check:collisions": "node ../../htwoo-core/scripts/build-patterns-package.js --check _patterns",
     "prepack": "node ../../htwoo-core/scripts/build-patterns-package.js --check _patterns && node ../../htwoo-core/scripts/sync-versions.js check",
@@ -30,7 +30,16 @@
     "@n8d/htwoo-core": "2.8.0"
   },
   "dependencies": {
-    "@n8d/htwoo-pattern-export": "^1.0.2"
+    "@n8d/htwoo-pattern-export": "^1.0.2",
+    "lodash": "^4.17.21"
+  },
+  "patternDump": {
+    "patterns": "_patterns",
+    "data": "_data",
+    "helpers": "helpers/hbs",
+    "assets": [
+      "images"
+    ]
   },
   "repository": {
     "type": "git",
