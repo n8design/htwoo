@@ -19,11 +19,19 @@ Styles, themes and scripts come from [`@n8d/htwoo-core`](https://www.npmjs.com/p
 npm install @n8d/htwoo-core @n8d/htwoo-patterns
 ```
 
-> **Breaking change in 2.8.0:** the package no longer runs a `postinstall` script, so installing it never copies files into your project.
+> **Changed in 2.9.0:** the package no longer runs a `postinstall` script, so installing it never copies files into your project.
 
-### Pattern Dump
+### Using with Pattern Dump
 
-The `patternDump` field in `package.json` describes where patterns, data, helpers and assets live. Add the package to `packages` in your Pattern Dump config; no paths are needed.
+Install both packages, then add `"@n8d/htwoo-patterns"` to `packages` in your Pattern Dump config:
+
+```bash
+npm install @n8d/htwoo-core @n8d/htwoo-patterns
+```
+
+```ts
+packages: ["@n8d/htwoo-patterns"],
+```
 
 ### Pattern Lab
 

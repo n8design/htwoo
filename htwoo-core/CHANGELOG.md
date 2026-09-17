@@ -1,31 +1,53 @@
-## 2.8.0 (unreleased)
+## 2.9.0 (unreleased)
+
+An interim release that makes the hTWOo packages usable in Pattern Dump and fixes the published packages; the larger upgrade (Fluent UI 9) follows in 3.0.
 
 
-### ⚠ BREAKING CHANGES
+### @n8d/htwoo-core
 
-* **@n8d/htwoo-patterns:** the `postinstall` script (`lib/move-patterns.js`) was removed. Installing the package no longer copies patterns into a Pattern Lab project. Copy `_patterns`, `_data` and `images` from `node_modules/@n8d/htwoo-patterns` yourself (see the package README).
-* **@n8d/htwoo-patterns:** now released together with `@n8d/htwoo-core` at the same version (2.2.3 → 2.8.0) and declares `@n8d/htwoo-core` as an exact peer dependency.
-* **patterns:** `atoms/loading/shimmer-theme~*` and `shimmer-theme-inline~*` were renamed to `shimmer-theme-*` / `shimmer-theme-inline-*`. The partial names (`atoms-shimmer-theme-notheme`, ...) stay the same in Pattern Lab.
-* **@n8d/htwoo-core:** `dist/js/cjs/*` is now real CommonJS. Most of these bundles were AMD before, even though the folder is named `cjs`; code that loaded them with an AMD loader must use `dist/js/amd/*` instead.
-* **@n8d/htwoo-core:** `lib/js` now holds the ES modules and declarations compiled from the TypeScript sources and no longer contains `legacy/`, `prismjs/`, `themeswitch/`, `vendor/` or `pl-icon-finder.js` (with its `.d.ts`). These were style guide assets, not part of the library.
+#### Fixed
+
+* `main` points at a real bundle (`dist/js/cjs/htwoo.js`); 2.7.1 pointed at an `index.js` that was not published
+* `dist/js/cjs/*` is real CommonJS (most bundles in that folder were AMD); the bundles are built from the TypeScript sources, and `lib/js/main.d.ts` declares the package API
+* the published README is the project README instead of the style guide's development notes
+* `package.json` carries a `patternDump` manifest (styles, themes, scripts), so Pattern Dump finds everything without configuration
+
+#### Added
+
+* the `htwoo` UMD global and the package entry export `HOODialog`, `DialogType`, `FileUploadHandler`, `ariaSelect`, `initTables`, `initPivot`, `initMenu` and `overflow`
+* `lib/ts`: the TypeScript sources of the behaviour scripts
+
+#### Removed
+
+* Pattern Lab development scripts from `lib/js` (`legacy/`, `prismjs/`, `themeswitch/`, `vendor/`, `pl-icon-finder.js`); they were never part of the design-system API
+
+#### Deprecated (removed in 3.0)
+
+* `legacy/`
+* `lib/sass/00-base/fonts/*`
+* `lib/sass/03-organism/dialog/_modal-dialog.scss` and `_sidebar.scss` (now forward to `dialog/legacy/`)
 
 
-### Features
+### @n8d/htwoo-patterns
 
-* **@n8d/htwoo-core:** the `htwoo` UMD global and the package entry now export `HOODialog`, `DialogType`, `FileUploadHandler`, `ariaSelect`, `initTables`, `initPivot`, `initMenu` and `overflow`; `lib/js/main.d.ts` declares them
+#### Changed
 
+* version aligned with `@n8d/htwoo-core`: 2.2.3 → 2.9.0, with an exact peer dependency on `@n8d/htwoo-core` 2.9.0
+* built as a clean copy of the htwoo-core sources: stale templates, duplicate handles and orphaned data files that were no longer in the sources are gone. Includes of removed handles map to:
 
-### Bug Fixes
+  | Old include | New include |
+  |---|---|
+  | `atoms-elevation`, `atoms-elevations` | `design-tokens-elevation`, `design-tokens-elevations` |
+  | `atoms-add-n-slide`, `atoms-animation-block`, `atoms-delete-n-slide` | `design-tokens-add-n-slide`, `design-tokens-animation-block`, `design-tokens-delete-n-slide` |
+  | `atoms-table-collapsable` | `atoms-table-collapsible` |
+  | `atoms-error` | `atoms-failed` |
+  | `atoms-button-pivot-active`, `atoms-checkbox-disabled`, `atoms-input-text-disabled`, `atoms-label-disabled`, `atoms-label-required` | variants of `atoms-button-pivot`, `atoms-checkbox`, `atoms-input-text`, `atoms-label` (`~active`, `~disabled`, `~required` data) |
 
-* **@n8d/htwoo-patterns:** the package is built from a clean copy of htwoo-core, so stale duplicate templates (flat `design-tokens/*`, old `organism/dialogs/*` next to `legacy/`) are no longer published; the build fails on pattern handle collisions
-* **@n8d/htwoo-patterns:** ships the Handlebars helpers (`helpers/hbs`) and declares their `lodash` dependency
-* **@n8d/htwoo-patterns / @n8d/htwoo-core:** added a `patternDump` manifest to `package.json`
-* **@n8d/htwoo-core:** ships `themes/` and the TypeScript sources in `lib/ts`
-* **patterns:** removed tooling and editor leftovers from `_patterns` (`add_yaml_frontmatter*.sh`, `PATTERN-OPTIMIZATION.md`, `*.new`, `*.tmp`) and the empty `_data/htwoo-persona.json`
-* **patterns:** shimmer-theming-support includes resolve outside Pattern Lab
-* **patterns:** dialog-iframe loads the hosted splash screen page instead of a Pattern Lab build output path
-* **patterns:** generic-dialog and form-flow-1/2 inline scripts no longer throw when their elements are missing
-* **ts:** removed dead input-mask import from `main.ts`
+* ships the Handlebars helpers (`helpers/hbs`) and declares their `lodash` dependency
+* the `postinstall` copy into Pattern Lab projects was removed; copy `_patterns`, `_data` and `images` manually (see the README)
+* `atoms/loading/shimmer-theme~*` and `shimmer-theme-inline~*` were renamed to `shimmer-theme-*` / `shimmer-theme-inline-*` (include names are unchanged)
+* dialog-iframe loads the hosted splash screen page instead of a Pattern Lab build path
+* the inline scripts of generic-dialog and form-flow-1/2 no longer throw when their elements are missing
 
 
 ## 2.7.3 (2025-06-09)
