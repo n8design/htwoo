@@ -15,12 +15,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "node ./lib/move-patterns.js",
-    "export": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output .",
-    "export:verbose": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --verbose",
-    "export:dry-run": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --dry-run --verbose",
-    "compare": "pattern-export --source ../../htwoo-core/src/_patterns --data ../../htwoo-core/src/_data --images ../../htwoo-core/src/images --output . --verbose",
+    "build": "npm --prefix ../../htwoo-core run build:patterns-package",
+    "check:collisions": "node ../../htwoo-core/scripts/build-patterns-package.js --check _patterns",
     "toggle-hidden": "pattern-export toggle-hidden --source _patterns",
     "toggle-hidden:dry-run": "pattern-export toggle-hidden --source _patterns --dry-run --verbose",
     "hide-all": "pattern-export hide-all --source _patterns",

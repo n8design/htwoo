@@ -163,6 +163,19 @@
         "cwd": "htwoo-core"
       }
     },
+    "build:patterns-package": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build:patterns-package",
+        "cwd": "htwoo-core"
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/htwoo-patterns/_patterns",
+        "{workspaceRoot}/packages/htwoo-patterns/_data",
+        "{workspaceRoot}/packages/htwoo-patterns/helpers",
+        "{workspaceRoot}/packages/htwoo-patterns/images"
+      ]
+    },
     "htwoo-version:check": {
       "executor": "nx:run-commands",
       "options": {

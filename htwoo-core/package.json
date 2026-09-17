@@ -36,6 +36,7 @@
     "build:typings": "bash ./enhanced-typings.sh",
     "copy:docs": "shx cp -r LICENSE README.md ../packages/htwoo-core/",
     "build:package": "npm-run-all clean:package build:css-prod copy:css copy:scss copy:components copy:js copy:ts build:js build:typings copy:docs",
+    "build:patterns-package": "node ./scripts/build-patterns-package.js",
     "build:optimized": "bash ./asset-pipeline.sh",
     "validate:package": "node -e \"require('./validate-package.js')\"",
     "--- /// Changelog Commands /// ---": "",
