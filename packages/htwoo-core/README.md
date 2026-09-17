@@ -1,72 +1,55 @@
-# hTWOo UI Framework - Core
+# HTWOO UI framework
 
-![HTMLx](https://img.shields.io/badge/100%25-HTML-orange) ![HTMLx](https://img.shields.io/badge/100%25-CSS-blue) ![Code Style](https://img.shields.io/badge/code%20style-atomic-ff69b4) ![license](https://img.shields.io/github/license/n8design/liquid)
+HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design system. [hTWOo Core](https://www.npmjs.com/package/@n8d/htwoo-core) is a pure HTML/CSS and JavaScript implementation that can be used in any project. In addition, [hTWOo React](https://www.npmjs.com/package/@n8d/htwoo-react) is a component based implementation that can be used in any ReactJS project (>= React 16).
 
-hTWOo UI Core is built on the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) to provide a flexible build system of new components.
+[![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
 
-* Nothing but HTML/CSS
-* Built using [Pattern Labs - Atomic Design](https://patternlab.io)
+> **Don't get set into one form, adapt it and build your own, and let it grow, be like water.** Empty your mind, be formless, shapeless — like water. Now you put water in a cup, it becomes the cup; You put water into a bottle it becomes the bottle; You put it in a teapot it becomes the teapot. Now water can flow or it can crash. Be water, my friend. - [Bruce Lee](https://www.youtube.com/watch?v=cJMwBwFj5nQ))
 
-## Installation
+![Be like water][logo]
 
-No NPM package bas been published yet.
+## HTWOO-Core
 
-## Development installation
+You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
 
-Global dependencies for running stylguide and gulp task site by side the following global dependency is recommended.
+### How To Use HTWOO-CORE
 
-```sh
-npm install -g npm-run-all
-```
+* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html/)
+* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react/) 
+* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements/)
+* more to come
 
-Start style guide development:
+### Why just HTML and CSS
 
-```sh
-run-p pl:serve gulp:serve
-```
+In the end it always comes down to HTML/CSS, no matter which framework you use for your development. HTML/CSS documented components serve no other longevity than any other framework. HTML and CSS can also be easily translated, included, and embedded in any other development framework.
 
-**pl:serve** start pattern lab web server
-**gulp:serve** watches for SASS style changes and updates the style guide.
+HTML/CSS UI components can also be more easily optimized, refactored, or visually enhanced.
 
-More to come soon
+## HTWOO-React
 
-## Documentation
+For ReactJS developers, we have an implementation of the htwoo-core library where we have provided a set of components compatible with Versions >=16 of [ReactJS](https://reactjs.org/).
 
-For detailed documentation about version management and releases, see:
-- [Version Synchronization Guide](../docs/VERSION-SYNC.md) - How to manage versions and releases
-- [Changelog Management](../docs/CHANGELOG-MANAGEMENT.md) - How changelogs are generated
-- [Development Guidelines](../docs/guidelines/) - Development and contribution guidelines
+A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://lab.n8d.studio/htwoo/htwoo-react/)
 
-## Version Management
+## Concepts
 
-This project uses an automated version synchronization system that ensures both the styleguide (`@n8d/htwoo-core-styleguide`) and the core package (`@n8d/htwoo-core`) maintain the same version number.
+The hTWOo style guide, documentation and building platform is based on [patternlab.io](https://patternlab.io/). To allow the most flexible implementation of designs and design patterns, it follows the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/) coined by Brad Frost around 2012 / 2013.
 
-### Quick Commands
+> We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
-```bash
-# Check if versions are synchronized
-npm run version:check
+## Project Configuration
 
-# Bump patch version (e.g., 2.7.0 → 2.7.1)
-npm run version:bump
+See the full [project configuration](./project.conf.md).
 
-# Bump minor version (e.g., 2.7.0 → 2.8.0)
-npm run version:bump:minor
+## Engage
 
-# Bump major version (e.g., 2.7.0 → 3.0.0)
-npm run version:bump:major
+Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 
-# Set specific version
-npm run version:set -- 2.8.0
+**Maintainers:** [Stefan Bauer (N8D)](https://github.com/StfBauer), [Julie Turner](https://github.com/juliemturner)
 
-# List existing releases
-npm run version:list-tags
-```
+**Contributors:** You ❤️
 
-All version operations automatically:
-- Update both package.json files
-- Create git commits
-- Create git tags in `htwoo-core-v*` format
-- Ensure version synchronization
+This project is tested with BrowserStack
 
-For complete documentation, see the [Version Synchronization Guide](../docs/VERSION-SYNC.md).
+
+[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"
