@@ -244,7 +244,7 @@ const argv = yargs(process.argv.slice(2))
       conflicts: 'version'
     },
     version: {
-      describe: 'Specific version to set (e.g., 2.8.0)',
+      describe: 'Specific version to set (e.g., 2.9.0)',
       type: 'string',
       conflicts: 'bump'
     },

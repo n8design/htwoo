@@ -117,17 +117,17 @@ This project uses an automated version synchronization system that ensures both 
 # Check if versions are synchronized
 npm run version:check
 
-# Bump patch version (e.g., 2.7.0 → 2.7.1)
+# Bump patch version (e.g., 2.9.0 → 2.9.1)
 npm run version:bump
 
-# Bump minor version (e.g., 2.7.0 → 2.8.0)
+# Bump minor version (e.g., 2.9.0 → 2.10.0)
 npm run version:bump:minor
 
-# Bump major version (e.g., 2.7.0 → 3.0.0)
+# Bump major version (e.g., 2.9.0 → 3.0.0)
 npm run version:bump:major
 
 # Set specific version
-npm run version:set -- 2.8.0
+npm run version:set -- 2.9.0
 
 # List existing releases
 npm run version:list-tags

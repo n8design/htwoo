@@ -41,9 +41,9 @@ COMMANDS:
     check           Run comprehensive pre-release checks
     plan            Plan release showing affected projects and dependencies
     release         Execute full release pipeline with Nx orchestration
-    release-patch   Release patch version (2.7.3 → 2.7.4)
-    release-minor   Release minor version (2.7.3 → 2.8.0)
-    release-major   Release major version (2.7.3 → 3.0.0)
+    release-patch   Release patch version (2.9.0 → 2.9.1)
+    release-minor   Release minor version (2.9.0 → 2.10.0)
+    release-major   Release major version (2.9.0 → 3.0.0)
     release-core    Release htwoo-core + htwoo-patterns (same version)
     release-react   Release only htwoo-react package
     release-both    Release both packages (coordinated)

@@ -315,7 +315,7 @@ function main() {
         const version = args[1];
         const message = args[2];
         if (!version) {
-          throw new Error('Please provide version: npm run sync-versions set 2.8.0');
+          throw new Error('Please provide version: npm run sync-versions set 2.9.0');
         }
         synchronizer.setVersion(version, true, message, isDryRun);
         break;
@@ -353,7 +353,7 @@ Examples:
   npm run sync-versions check
   npm run sync-versions bump minor "feat: new navigation component"
   npm run sync-versions bump patch --dry-run
-  npm run sync-versions set 2.8.0 "major: breaking changes" --dry-run
+  npm run sync-versions set 2.9.0 "major: breaking changes" --dry-run
   npm run sync-versions sync 2.7.1
   npm run sync-versions tag "release: stable version"
         `);

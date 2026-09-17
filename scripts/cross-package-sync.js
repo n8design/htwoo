@@ -427,7 +427,7 @@ OPTIONS:
 EXAMPLES:
     node scripts/cross-package-sync.js status
     node scripts/cross-package-sync.js check-sync
-    node scripts/cross-package-sync.js sync-both --version=2.8.0
+    node scripts/cross-package-sync.js sync-both --version=2.9.0
     node scripts/cross-package-sync.js bump-both --type=minor
     node scripts/cross-package-sync.js sync-react
 

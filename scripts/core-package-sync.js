@@ -357,7 +357,7 @@ OPTIONS:
 EXAMPLES:
     node scripts/core-package-sync.js status
     node scripts/core-package-sync.js check-sync
-    node scripts/core-package-sync.js sync-core --version=2.8.0
+    node scripts/core-package-sync.js sync-core --version=2.9.0
     node scripts/core-package-sync.js bump-core --type=minor
 
 WORKFLOW:
