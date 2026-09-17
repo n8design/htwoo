@@ -6,7 +6,8 @@ const { execSync } = require('child_process');
 
 /**
  * Version synchronization script for htwoo-core ecosystem
- * Ensures both htwoo-core-styleguide and htwoo-core package have the same version
+ * Ensures htwoo-core-styleguide, the htwoo-core package and the htwoo-patterns package have the same version,
+ * and that htwoo-patterns peers on exactly that htwoo-core version
  * Creates tags in the format htwoo-core-v*
  */
 
@@ -18,6 +19,7 @@ class VersionSynchronizer {
     // Paths to package.json files
     this.styleguidePackagePath = path.join(this.projectRoot, 'package.json');
     this.corePackagePath = path.join(this.repoRoot, 'packages', 'htwoo-core', 'package.json');
+    this.patternsPackagePath = path.join(this.repoRoot, 'packages', 'htwoo-patterns', 'package.json');
     
     console.log('🔄 Version Synchronizer for htwoo-core ecosystem');
     console.log(`📁 Project root: ${this.projectRoot}`);
@@ -55,6 +57,7 @@ class VersionSynchronizer {
   getCurrentVersions() {
     const styleguidePackage = this.readPackageJson(this.styleguidePackagePath);
     const corePackage = this.readPackageJson(this.corePackagePath);
+    const patternsPackage = this.readPackageJson(this.patternsPackagePath);
 
     return {
       styleguide: {
@@ -66,6 +69,12 @@ class VersionSynchronizer {
         version: corePackage.version,
         name: corePackage.name,
         package: corePackage
+      },
+      patterns: {
+        version: patternsPackage.version,
+        name: patternsPackage.name,
+        corePeer: (patternsPackage.peerDependencies || {})['@n8d/htwoo-core'],
+        package: patternsPackage
       }
     };
   }
@@ -75,10 +84,13 @@ class VersionSynchronizer {
    */
   areVersionsSynced() {
     const versions = this.getCurrentVersions();
-    const synced = versions.styleguide.version === versions.core.version;
+    const synced = versions.styleguide.version === versions.core.version
+      && versions.styleguide.version === versions.patterns.version
+      && versions.styleguide.version === versions.patterns.corePeer;
     
     console.log(`📦 Styleguide (${versions.styleguide.name}): ${versions.styleguide.version}`);
     console.log(`📦 Core Package (${versions.core.name}): ${versions.core.version}`);
+    console.log(`📦 Patterns Package (${versions.patterns.name}): ${versions.patterns.version} (peer @n8d/htwoo-core: ${versions.patterns.corePeer})`);
     
     if (synced) {
       console.log(`✅ Versions are synchronized: ${versions.styleguide.version}`);
@@ -105,7 +117,15 @@ class VersionSynchronizer {
     versions.core.package.version = targetVersion;
     this.writePackageJson(this.corePackagePath, versions.core.package);
     
-    console.log(`✅ Both packages synchronized to version ${targetVersion}`);
+    // Update patterns package.json and pin its core peer to the exact same version
+    versions.patterns.package.version = targetVersion;
+    versions.patterns.package.peerDependencies = {
+      ...versions.patterns.package.peerDependencies,
+      '@n8d/htwoo-core': targetVersion
+    };
+    this.writePackageJson(this.patternsPackagePath, versions.patterns.package);
+    
+    console.log(`✅ All packages synchronized to version ${targetVersion}`);
     return targetVersion;
   }
 
@@ -272,7 +292,9 @@ function main() {
   try {
     switch (command) {
       case 'check':
-        synchronizer.areVersionsSynced();
+        if (!synchronizer.areVersionsSynced().synced) {
+          process.exit(1);
+        }
         break;
         
       case 'sync':
@@ -318,7 +340,7 @@ Usage:
 
 Commands:
   check               Check if versions are synchronized
-  sync <version>      Sync both packages to specific version (no tag)
+  sync <version>      Sync styleguide, core and patterns to specific version (no tag)
   bump [type] [msg]   Bump version (patch|minor|major) and create tag
   set <version> [msg] Set specific version and create tag
   tag [message]       Create tag for current version

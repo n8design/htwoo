@@ -14,6 +14,7 @@ class HtwooReleaseManager {
     this.projectRoot = path.resolve(__dirname, '..');
     this.repoRoot = path.resolve(this.projectRoot, '..');
     this.corePackagePath = path.join(this.repoRoot, 'packages', 'htwoo-core');
+    this.patternsPackagePath = path.join(this.repoRoot, 'packages', 'htwoo-patterns');
   }
 
   /**
@@ -133,14 +134,15 @@ class HtwooReleaseManager {
   }
 
   /**
-   * Build final package
+   * Build final packages (@n8d/htwoo-core and @n8d/htwoo-patterns)
    */
   buildPackage() {
-    console.log('🏗️  Building final package...');
+    console.log('🏗️  Building final packages...');
     
     this.exec('npm run build:package');
+    this.exec('npm run build:patterns-package');
     
-    console.log('✅ Package built');
+    console.log('✅ Packages built');
   }
 
   /**
@@ -151,7 +153,9 @@ class HtwooReleaseManager {
     
     const publishCmd = dryRun ? 'npm publish --dry-run' : 'npm publish';
     
+    // Core first: htwoo-patterns peers on this exact htwoo-core version
     this.exec(publishCmd, { cwd: this.corePackagePath });
+    this.exec(publishCmd, { cwd: this.patternsPackagePath });
     
     if (dryRun) {
       console.log('✅ Dry run completed successfully');

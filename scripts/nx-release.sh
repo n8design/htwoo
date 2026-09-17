@@ -44,7 +44,7 @@ COMMANDS:
     release-patch   Release patch version (2.7.3 → 2.7.4)
     release-minor   Release minor version (2.7.3 → 2.8.0)
     release-major   Release major version (2.7.3 → 3.0.0)
-    release-core    Release only htwoo-core package
+    release-core    Release htwoo-core + htwoo-patterns (same version)
     release-react   Release only htwoo-react package
     release-both    Release both packages (coordinated)
     dry-run         Simulate release without making changes
