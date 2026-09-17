@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-patterns",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "hTWOo Handlebars patterns, data, helpers and images for style guides (PatternLab, Pattern Dump)",
   "private": false,
   "bin": {
@@ -28,7 +28,7 @@
     "show-all:dry-run": "pattern-export show-all --source _patterns --dry-run --verbose"
   },
   "peerDependencies": {
-    "@n8d/htwoo-core": "2.9.0"
+    "@n8d/htwoo-core": "2.9.1"
   },
   "dependencies": {
     "@n8d/htwoo-pattern-export": "^1.0.2",
