@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "npm --prefix ../../htwoo-core run build:patterns-package",
+    "test": "npm run check:collisions",
     "check:collisions": "node ../../htwoo-core/scripts/build-patterns-package.js --check _patterns",
     "prepack": "node ../../htwoo-core/scripts/build-patterns-package.js --check _patterns && node ../../htwoo-core/scripts/sync-versions.js check",
     "toggle-hidden": "pattern-export toggle-hidden --source _patterns",
