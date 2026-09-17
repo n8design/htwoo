@@ -13,9 +13,5 @@
 
 @use "03-organism/form-sample/index" as forms;
 
-body{
-    font-family: colors.$mediumFontFamily;
-    background-color: var(--bodyBackground);
-    color: var(--bodyText);
-    margin: 0;
-}
+// Page font, background and text colour from the theme
+@use "00-base/document";

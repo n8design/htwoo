@@ -36,7 +36,10 @@
   "patternDump": {
     "styles": {
       "dir": "lib/sass",
-      "entry": "htwoo.scss",
+      "entry": [
+        "htwoo.scss",
+        "htwoo-document.scss"
+      ],
       "documentBase": [
         "00-base"
       ]

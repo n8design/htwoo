@@ -1,0 +1,10 @@
+@use "colors/colors";
+
+// Document layer: page font, background and text colour follow the active theme.
+// Opt-in via htwoo-document.scss; never part of htwoo.scss, so hTWOo adds no global body styles in SPFx.
+body {
+    font-family: colors.$mediumFontFamily;
+    background-color: var(--bodyBackground);
+    color: var(--bodyText);
+    margin: 0;
+}
