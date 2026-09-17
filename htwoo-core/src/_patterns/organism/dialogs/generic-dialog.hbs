@@ -51,69 +51,28 @@ See <a href="">MDN Dialog</a>
 </dialog>
 <script>
     if (window.location !== window.parent.location) {
-    let sidebarLeft = document.querySelector('#btn-sidebar-left');
+        // button id -> dialog layout classes
+        const layouts = {
+            'btn-sidebar-left': ['sidebar', 'left'],
+            'btn-sidebar-right': ['sidebar', 'right'],
+            'btn-topbar': ['topbar'],
+            'btn-bottombar': ['bottombar'],
+            'btn-fullscreen': ['fullscreen']
+        };
 
-    sidebarLeft.addEventListener('click', (event) => {
+        Object.entries(layouts).forEach(([id, classes]) => {
+            const button = document.getElementById(id);
+            if (!button) return;
 
-        let dialog = event.target.closest('.hoo-dlg');
+            button.addEventListener('click', (event) => {
+                const dialog = event.target.closest('.hoo-dlg');
+                if (!dialog) return;
 
-        dialog.classList = "hoo-dlg";
-        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
-        dialog.classList.add('sidebar', 'left');
+                dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
+                dialog.classList.add(...classes);
 
-        event.preventDefault();
-
-    })
-
-    let sidebarRight = document.querySelector('#btn-sidebar-right');
-
-    sidebarRight.addEventListener('click', (event) => {
-
-        let dialog = event.target.closest('.hoo-dlg');
-        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
-        dialog.classList.add('sidebar', 'right');
-
-        event.preventDefault();
-
-    })
-
-    let topbar = document.querySelector('#btn-topbar');
-    topbar.addEventListener('click', (event) => {
-
-        let dialog = event.target.closest('.hoo-dlg');
-
-        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
-        dialog.classList.add('topbar');
-
-        event.preventDefault();
-
-    })
-
-    let bottombar = document.querySelector('#btn-bottombar');
-
-    bottombar.addEventListener('click', (event) => {
-
-        let dialog = event.target.closest('.hoo-dlg');
-
-        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
-        dialog.classList.add('bottombar');
-
-        event.preventDefault();
-
-    })
-
-    let fullscreen = document.querySelector('#btn-fullscreen');
-
-    fullscreen.addEventListener('click', (event) => {
-
-        let dialog = event.target.closest('.hoo-dlg');
-
-        dialog.classList.remove('topbar', 'bottombar', 'sidebar', 'fullscreen', 'left', 'right');
-        dialog.classList.add('fullscreen');
-
-        event.preventDefault();
-
-    })
+                event.preventDefault();
+            });
+        });
     }
-
 </script>

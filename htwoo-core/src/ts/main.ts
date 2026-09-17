@@ -7,7 +7,6 @@ import { initPivot } from './pivot.js';
 /** Menu Helpers */
 import { initMenu } from './nav.js';
 import { FileUploadHandler } from './file.js';
-// import InputMask from './vendor/estelle/input-mask.js';
 /** Overflow */
 import * as overflow from './overflow.js';
 
@@ -219,8 +218,6 @@ const afterLoaded = (): void => {
   initMenu();
 
   overflow.init();
-
-  // new InputMask();
 
   setTimeout(() => {
     const tmpHidden = document.querySelectorAll('.tmp-hidden');

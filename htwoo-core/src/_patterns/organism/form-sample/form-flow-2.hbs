@@ -17,23 +17,21 @@
     </section>
 </section>
 <script>
-    // Get the current date and time
-    const now = new Date();
+    (() => {
+        // Get the current date and time
+        const now = new Date();
+        // Calculate the next time (one hour later)
+        const nextTime = new Date(now.getTime() + 60 * 60 * 1000);
 
-    // Format the date and time based on the user's locale
-    const formattedDateTime = now.toLocaleString();  // Automatically uses the system's locale
+        // Insert a date into a <time> field, formatted based on the user's locale
+        const setTime = (id, date) => {
+            const time = document.getElementById(id);
+            if (!time) return;
+            time.setAttribute('datetime', date.toISOString());
+            time.textContent = date.toLocaleString();
+        };
 
-    // Insert the current date and time into the first <time> field
-    document.getElementById('current-time').setAttribute('datetime', now.toISOString());
-    document.getElementById('current-time').textContent = formattedDateTime;
-
-    // Calculate the next time (one hour later)
-    const nextTime = new Date(now.getTime() + 60 * 60 * 1000);  // Adds one hour (60 minutes * 60 seconds * 1000 ms)
-
-    // Format the next time based on the user's locale
-    const formattedNextTime = nextTime.toLocaleString();
-
-    // Insert the next time into the second <time> field
-    document.getElementById('next-time').setAttribute('datetime', nextTime.toISOString());
-    document.getElementById('next-time').textContent = formattedNextTime;
+        setTime('current-time', now);
+        setTime('next-time', nextTime);
+    })();
 </script>
