@@ -85,13 +85,12 @@ describe('Package structure', () => {
     expect(packageJson.name).toBe('@n8d/htwoo-core');
     expect(typeof packageJson.version).toBe('string');
     expect(packageJson.main).toBe('dist/js/cjs/htwoo.js');
-    expect(packageJson.module).toBe('dist/js/amd/htwoo.js');
     expect(packageJson.types).toBe('lib/js/main.d.ts');
     
-    // Check exports configuration
-    expect(packageJson.exports).toHaveProperty('.');
-    expect(packageJson.exports).toHaveProperty('./css');
-    expect(packageJson.exports).toHaveProperty('./sass');
+    // No module field and no exports map in 2.x: an exports map would block the deep imports
+    // 2.7.1 consumers use (lib/sass/..., lib/sass/themes/*.json). ESM + exports come with 3.0.
+    expect(packageJson).not.toHaveProperty('module');
+    expect(packageJson).not.toHaveProperty('exports');
     
     // Check files array
     expect(packageJson.files).toContain('dist');
