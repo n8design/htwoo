@@ -6,6 +6,13 @@
 * **@n8d/htwoo-patterns:** the `postinstall` script (`lib/move-patterns.js`) was removed. Installing the package no longer copies patterns into a Pattern Lab project. Copy `_patterns`, `_data` and `images` from `node_modules/@n8d/htwoo-patterns` yourself (see the package README).
 * **@n8d/htwoo-patterns:** now released together with `@n8d/htwoo-core` at the same version (2.2.3 → 2.8.0) and declares `@n8d/htwoo-core` as an exact peer dependency.
 * **patterns:** `atoms/loading/shimmer-theme~*` and `shimmer-theme-inline~*` were renamed to `shimmer-theme-*` / `shimmer-theme-inline-*`. The partial names (`atoms-shimmer-theme-notheme`, ...) stay the same in Pattern Lab.
+* **@n8d/htwoo-core:** `dist/js/cjs/*` is now real CommonJS. Most of these bundles were AMD before, even though the folder is named `cjs`; code that loaded them with an AMD loader must use `dist/js/amd/*` instead.
+* **@n8d/htwoo-core:** `lib/js` now holds the ES modules and declarations compiled from the TypeScript sources and no longer contains `legacy/`, `prismjs/`, `themeswitch/`, `vendor/` or `pl-icon-finder.js` (with its `.d.ts`). These were style guide assets, not part of the library.
+
+
+### Features
+
+* **@n8d/htwoo-core:** the `htwoo` UMD global and the package entry now export `HOODialog`, `DialogType`, `FileUploadHandler`, `ariaSelect`, `initTables`, `initPivot`, `initMenu` and `overflow`; `lib/js/main.d.ts` declares them
 
 
 ### Bug Fixes
