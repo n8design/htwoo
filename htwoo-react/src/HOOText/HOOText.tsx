@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOOTextProps extends IHOOStandardProps {
@@ -8,9 +8,13 @@ export interface IHOOTextProps extends IHOOStandardProps {
   */
   value: string;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   //TODO: (Stefan) Invalid input has not been completed in core
   /**
    * (Optional) Is Input Invalid - default false.
@@ -48,7 +52,7 @@ export interface IHOOTextProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
@@ -65,7 +69,7 @@ export class HOOTextState implements IHOOTextState {
 
 export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOTextState> {
   private LOG_SOURCE: string = "💦HOOText";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
   private _textId: string = "hoo-text-";
@@ -77,7 +81,7 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
     this.state = new HOOTextState();
   }
 
-  public render(): React.ReactElement<IHOOTextProps> {
+  public render(): React.ReactElement<IHOOTextProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -94,12 +98,13 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
                 type={this.props.inputType || "text"}
                 value={this.props.value}
                 disabled={this.props.disabled || false}
-            readOnly={this.props.readonly || false}
+                readOnly={this.props.readonly || false}
                 aria-disabled={this.props.disabled || false}
                 data-suffix={this.props.inputSuffix || null}
                 data-prefix={this.props.inputPrefix || null}
                 className={inputClassName}
-                onChange={this.props.onChange} />
+                onChange={this.props.onChange}
+                onBlur={this.props.onBlur} />
               {this.props.inputSuffix &&
                 <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
               }
@@ -110,14 +115,16 @@ export default class HOOText extends React.PureComponent<IHOOTextProps, IHOOText
               {...this.props.inputElementAttributes as React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>}
               className={inputClassName}
               rows={this.props.multiline}
+              readOnly={this.props.readonly || false}
               value={this.props.value}
-              onChange={this.props.onChange} />
+              onChange={this.props.onChange}
+              onBlur={this.props.onBlur} />
           }
         </>
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

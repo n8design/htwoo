@@ -11,6 +11,7 @@ export function getRandomString(chars: number): string {
     return text.join("");
   } catch (err) {
     console.error(`${LOG_SOURCE} (getRandomString) - ${err}`);
+    return "";
   }
 }
 
@@ -40,12 +41,13 @@ export function isEqual(a: any, b: any, c: number = 0): boolean {
     }
 
     for (let key of keys1) {
-      if (!keys2.includes(key) || !isEqual(a[key], b[key], c++)) {
+      if (!keys2.includes(key) || !isEqual(a[key], b[key], c + 1)) {
         return false;
       }
     }
     return true;
   } catch (err) {
     console.error(`${LOG_SOURCE} (isEqual) - ${err}`);
+    return false;
   }
 }

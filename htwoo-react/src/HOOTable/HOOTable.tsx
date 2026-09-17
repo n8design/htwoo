@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOTableStyle {
   "Normal",
@@ -15,7 +15,7 @@ export interface IHOOTableProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-table {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableElement>, HTMLTableElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableElement>, HTMLTableElement> & HOODataAttributes;
 }
 
 export interface IHOOTableState {
@@ -23,7 +23,7 @@ export interface IHOOTableState {
 
 export default class HOOTable extends React.PureComponent<IHOOTableProps, IHOOTableState> {
   private LOG_SOURCE: string = "💦HOOTable";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-table";
 
   constructor(props: IHOOTableProps) {
@@ -35,7 +35,7 @@ export default class HOOTable extends React.PureComponent<IHOOTableProps, IHOOTa
     this.state = {};
   }
 
-  public render(): React.ReactElement<IHOOTableProps> {
+  public render(): React.ReactElement<IHOOTableProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -49,7 +49,7 @@ export default class HOOTable extends React.PureComponent<IHOOTableProps, IHOOTa
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

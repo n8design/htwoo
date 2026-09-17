@@ -25,3 +25,17 @@ export const Disbled = {
     disabled: true,
   },
 };
+
+export const WithOnChange = {
+  render: Template.bind({}),
+  name: "With OnChange",
+
+  args: {
+    label: "My Checkbox",
+    checked: false,
+
+    onChange: () => {
+      alert("changed");
+    },
+  },
+};

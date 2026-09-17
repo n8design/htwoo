@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 import { symset } from "../SymbolSet";
 import HOOIcon from "../HOOIcon/HOOIcon";
@@ -37,7 +37,7 @@ export interface IHOOButtonSplitProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOButtonSplitState {
@@ -46,7 +46,7 @@ export interface IHOOButtonSplitState {
 
 export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitProps, IHOOButtonSplitState> {
   private LOG_SOURCE: string = "💦HOOButtonSplit";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
 
   constructor(props: IHOOButtonSplitProps) {
@@ -69,14 +69,14 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
     }
   }
 
-  private _flyoutItemClicked = (event, item) => {
+  private _flyoutItemClicked = (event: React.MouseEvent<HTMLButtonElement>, item: IHOOFlyoutMenuItem) => {
     this.setState({ showFlyout: false });
     if (typeof this.props.flyoutContextItemsClicked == "function") {
       this.props.flyoutContextItemsClicked(event, item);
     }
   }
 
-  public render(): React.ReactElement<IHOOButtonSplitProps> {
+  public render(): React.ReactElement<IHOOButtonSplitProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const buttonDisabled = (this.props.flyoutContextItems && this.props.flyoutContextItems.length > 0) ? false : true;
@@ -99,7 +99,7 @@ export default class HOOButtonSplit extends React.PureComponent<IHOOButtonSplitP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

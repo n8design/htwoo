@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOProgressBar from "../HOOProgressBar";
 import HOOProgressStep from "../HOOProgressStep/HOOProgressStep";
 
@@ -8,7 +8,7 @@ export interface IHOOProgressStepBarProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-progress-stepbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOProgressStepBarState {
@@ -25,7 +25,7 @@ export class HOOProgressStepBarState implements IHOOProgressStepBarState {
 
 export default class HOOProgressStepBar extends React.PureComponent<IHOOProgressStepBarProps, IHOOProgressStepBarState> {
   private LOG_SOURCE: string = "💦HOOProgressStepBar";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-progress-stepbar";
 
   constructor(props: IHOOProgressStepBarProps) {
@@ -34,7 +34,7 @@ export default class HOOProgressStepBar extends React.PureComponent<IHOOProgress
     this.state = new HOOProgressStepBarState();
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props: IHOOProgressStepBarProps, state: IHOOProgressStepBarState) {
     try {
       let progressBar: React.ReactNode = null;
       let progressStep: React.ReactNode[] = [];
@@ -55,7 +55,7 @@ export default class HOOProgressStepBar extends React.PureComponent<IHOOProgress
     }
   }
 
-  public render(): React.ReactElement<IHOOProgressStepBarProps> {
+  public render(): React.ReactElement<IHOOProgressStepBarProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -67,7 +67,7 @@ export default class HOOProgressStepBar extends React.PureComponent<IHOOProgress
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -1,6 +1,6 @@
 // TODO: On hold for core implementation
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOTipPosition {
   TopLeft="top-left",
@@ -34,7 +34,7 @@ export interface IHOOTooltipProps extends IHOOStandardProps {
     * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
     * Class names will be appended to the end of the default class string - hoo-tooltip {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOTooltipState {
@@ -46,7 +46,7 @@ export class HOOTooltipState implements IHOOTooltipState {
 
 export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTooltipState> {
   private LOG_SOURCE: string = "💦HOOTooltip";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-tooltip";
 
   constructor(props: IHOOTooltipProps) {
@@ -57,7 +57,7 @@ export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTo
     //this._componentClass += (props.visible) ? " show" : "";
   }
 
-  public render(): React.ReactElement<IHOOTooltipProps> {
+  public render(): React.ReactElement<IHOOTooltipProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const styleBlock = { "will-change": "transform" } as React.CSSProperties;
@@ -69,7 +69,7 @@ export default class HOOTooltip extends React.Component<IHOOTooltipProps, IHOOTo
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

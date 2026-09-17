@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import HOOIcon from "../HOOIcon/HOOIcon";
 
@@ -54,7 +54,7 @@ export interface IHOOSelectProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-select {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the Input element of the component.
    * Class names will be appended to the end of the default class string - hoo-select-text {inputElementAttributes.class}
@@ -63,7 +63,7 @@ export interface IHOOSelectProps extends IHOOStandardProps {
 }
 
 export interface IHOOSelectState {
-  currentValue: string | number;
+  currentValue: string | number | undefined;
   selectStatus: HOOSelectStatus;
   open: boolean;
   optionsLength: number;
@@ -74,9 +74,9 @@ export interface IHOOSelectState {
 */
 export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSelectState> {
   private LOG_SOURCE: string = "💦HOOSelect";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-select";
-  private _optionElements = [];
+  private _optionElements: HTMLLIElement[] = [];
   private _inputElement: React.RefObject<HTMLInputElement>;
   private _valueChanged: boolean = false;
 
@@ -132,7 +132,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
   private _toggleDropdown = () => {
     try {
       if (this.props.disabled) { return; }
-      const focus = document.activeElement;
+      const focus = document.activeElement as Element;
       let selectStatus = this.state.selectStatus;
       let open = this.state.open;
       switch (this.state.selectStatus) {
@@ -145,18 +145,18 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             open = false;
             selectStatus = HOOSelectStatus.Initial;
           } else if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value as string, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
-            this._moveFocus(document.activeElement, HOOSelectFocus.Input);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Input);
           }
           break;
         case HOOSelectStatus.Filtered:
           if (focus.tagName == "LI") {
-            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value as string, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
-            this._moveFocus(document.activeElement, HOOSelectFocus.Input);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Input);
           }
           break;
         case HOOSelectStatus.Closed:
@@ -172,7 +172,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
 
   private _keyUp = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (this.props.disabled) { return; }
-    const focus = document.activeElement;
+    const focus = document.activeElement as Element;
     const key = event.key;
     let selectStatus = this.state.selectStatus;
     let open = this.state.open;
@@ -185,20 +185,20 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             selectStatus = HOOSelectStatus.Open;
           } else if (this.state.selectStatus === HOOSelectStatus.Open && focus.tagName === 'LI') {
             // if state = opened and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value as string, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
-            this._moveFocus(document.activeElement, HOOSelectFocus.Input);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Input);
           } else if (this.state.selectStatus === HOOSelectStatus.Open && focus === this._inputElement.current) {
             // if state = opened and focus on input, close it
             open = false;
             selectStatus = HOOSelectStatus.Closed;
           } else if (this.state.selectStatus === HOOSelectStatus.Filtered && focus.tagName === 'LI') {
             // if state = filtered and focus on list, makeChoice and set state to closed
-            this.props.onChange((focus as HTMLLIElement).dataset.value, this.props.id);
+            this.props.onChange((focus as HTMLLIElement).dataset.value as string, this.props.id);
             open = false;
             selectStatus = HOOSelectStatus.Closed;
-            this._moveFocus(document.activeElement, HOOSelectFocus.Input);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Input);
           } else if (this.state.selectStatus === HOOSelectStatus.Filtered && focus === this._inputElement.current) {
             // if state = filtered and focus on input, set state to opened
             open = true;
@@ -223,14 +223,14 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             // if state = initial or closed, set state to opened and moveFocus to first
             open = true;
             selectStatus = HOOSelectStatus.Open;
-            this._moveFocus(this._inputElement.current, HOOSelectFocus.Forward);
+            this._moveFocus(this._inputElement.current as Element, HOOSelectFocus.Forward);
           } else {
             // if state = opened and focus on input, moveFocus to first
             // if state = opened and focus on list, moveFocus to next/first
             // if state = filtered and focus on input, moveFocus to first
             // if state = filtered and focus on list, moveFocus to next/first
             open = true;
-            this._moveFocus(document.activeElement, HOOSelectFocus.Forward);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Forward);
           }
           break;
         case 'ArrowUp':
@@ -239,13 +239,13 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             // if state = closed, set state to opened and moveFocus to last
             open = true;
             selectStatus = HOOSelectStatus.Open;
-            this._moveFocus(this._inputElement.current, HOOSelectFocus.Back);
+            this._moveFocus(this._inputElement.current as Element, HOOSelectFocus.Back);
           } else {
             // if state = opened and focus on input, moveFocus to last
             // if state = opened and focus on list, moveFocus to prev/last
             // if state = filtered and focus on input, moveFocus to last
             // if state = filtered and focus on list, moveFocus to prev/last
-            this._moveFocus(document.activeElement, HOOSelectFocus.Back);
+            this._moveFocus(document.activeElement as Element, HOOSelectFocus.Back);
           }
           break;
         default:
@@ -314,7 +314,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
         return;
       }
       if (toThere === HOOSelectFocus.Input) {
-        this._inputElement.current.focus();
+        this._inputElement.current!.focus();
       }
       // possible start points
       switch (fromHere) {
@@ -329,7 +329,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
           if (toThere === HOOSelectFocus.Forward) {
             aCurrentOptions[1].focus();
           } else if (toThere === HOOSelectFocus.Back) {
-            this._inputElement.current.focus();
+            this._inputElement.current!.focus();
           }
           break;
         case this._optionElements[this._optionElements.length - 1]:
@@ -349,7 +349,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             const previousOne = aCurrentOptions[whichOne - 1];
             previousOne.focus();
           } else { // if whichOne = 0
-            this._inputElement.current.focus();
+            this._inputElement.current!.focus();
           }
           break;
       }
@@ -358,7 +358,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
     }
   }
 
-  public render(): React.ReactElement<IHOOSelectProps> {
+  public render(): React.ReactElement<IHOOSelectProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -403,7 +403,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
             className={`hoo-select-dropdown ${(this.state.open) ? "" : "hidden-all"}`}>
             {this.props.options.map((o, index) => {
               return (
-                <li ref={element => this._optionElements[index] = element}
+                <li ref={element => { if (element) { this._optionElements[index] = element; } }}
                   key={o.key}
                   className="hoo-option"
                   role="option"
@@ -418,7 +418,7 @@ export default class HOOSelect extends React.Component<IHOOSelectProps, IHOOSele
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

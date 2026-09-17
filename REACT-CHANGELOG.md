@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.10.1 - 2026-Jul-23
+
+- Common - Fixed bug in `isEqual` deep-equality helper where the recursion-depth guard was incremented per sibling property compared instead of per nesting level, causing it to falsely report objects as equal once 5 or more top-level properties were compared.
+- HOOOptionList - Fixed bug where selecting a RadioButton option did not update the visual selected state, caused by the `isEqual` defect above short-circuiting `shouldComponentUpdate` on the `value` property change.
+- Build - Updated `tsconfig.json` `lib` to `es2019` to match the compile `target` and resolve a TS2550 typing error on `Array.prototype.includes`.
+
+## 2.10.0 - 2026-Jul-17
+
+- Input controls that support a readonly state now have an optional `onChange` (previously required) and a new optional `onBlur` event handler, wired to the same element(s) `onChange` is bound to. Applies to HOOCheckbox, HOODate, HOODropDown, HOONumber, HOOOptionList, HOORadioButton, HOOText, HOOTime.
+
+## 2.9.5 - 2026-Jul-08
+
+- HOOFile: Bug in return object of files, needed to convert it to an array.
+
+## 2.9.4 - 2026-Jul-07
+
+- All Components - Support adding rootElementAttribute of 'data-*'
+- All Components - Support adding CSS custom properties (e.g. '--custom-prop') via rootElementAttributes.style
+- All Components - Cleanup of typing errors from updated packages (TypeScript 5) and strict mode.
+
+## 2.9.3 - 2026-Apr-10
+
+- HOOText - Fixed bug with multiline text area not respecting the readOnly property.
+
+## 2.9.2 - 2026-Feb-11
+
+- HOOAvatar - Fixed bug with class name.
+
+## 2.9.1 - 2026-Feb-11
+
+- Fixed missing typings
+
+## 2.9.0 - 2026-Feb-11
+
+- HOOSpinner - added new component
+- HOOFile - fixed issue with empty files array throwing an error
+
 ## 2.8.1 - 2025-Jul-30
 
 - HOODialog - fix issue where changing type property doesn't update style

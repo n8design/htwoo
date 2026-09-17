@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOLegendProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOLegendProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-legend {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLLegendElement>, HTMLLegendElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLLegendElement>, HTMLLegendElement> & HOODataAttributes;
 }
 
 export interface IHOOLegendState {
@@ -22,7 +22,7 @@ constructor() {}
 
 export default class HOOLegend extends React.PureComponent<IHOOLegendProps, IHOOLegendState> {
   private LOG_SOURCE: string = "💦HOOLegend";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-legend";
 
   constructor(props:IHOOLegendProps){
@@ -31,7 +31,7 @@ export default class HOOLegend extends React.PureComponent<IHOOLegendProps, IHOO
     this.state = new HOOLegendState();
   }
 
-  public render(): React.ReactElement<IHOOLegendProps> {
+  public render(): React.ReactElement<IHOOLegendProps> | undefined {
     try{
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -42,7 +42,7 @@ export default class HOOLegend extends React.PureComponent<IHOOLegendProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

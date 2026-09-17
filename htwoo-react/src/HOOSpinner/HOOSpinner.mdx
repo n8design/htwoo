@@ -1,0 +1,45 @@
+import { ArgTypes } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import HOOSpinner from './HOOSpinner';
+import * as HOOSpinnerStories from './HOOSpinner.stories';
+
+<Meta of={HOOSpinnerStories} />
+
+# HOOSpinner
+
+## Item Interface
+
+The `size` property has an exported enum to help set the values. See definitions below:
+
+```ts
+export enum HOOSpinnerSize {
+  "Standard",
+  "XSmall",
+  "Small",
+  "Large"
+}
+```
+
+## Arguments
+
+<ArgTypes of={HOOSpinner} />
+
+## Standard
+
+<Canvas of={HOOSpinnerStories.Standard} />
+
+## XSmall
+
+<Canvas of={HOOSpinnerStories.XSmall} />
+
+## Small
+
+<Canvas of={HOOSpinnerStories.Small} />
+
+## Large
+
+<Canvas of={HOOSpinnerStories.Large} />
+
+## Extending
+
+<Canvas of={HOOSpinnerStories.Extending} />

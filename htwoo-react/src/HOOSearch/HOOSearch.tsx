@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
 import { getRandomString } from "../common/Common";
 
@@ -33,7 +33,7 @@ export interface IHOOSearchProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-search {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
@@ -50,7 +50,7 @@ export class HOOSearchState implements IHOOSearchState {
 
 export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOOSearchState> {
   private LOG_SOURCE: string = "💦HOOSearch";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-search";
   private _searchId: string = "hoo-search-";
 
@@ -71,7 +71,7 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
     }
   }
 
-  public render(): React.ReactElement<IHOOSearchProps> {
+  public render(): React.ReactElement<IHOOSearchProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -93,7 +93,7 @@ export default class HOOSearch extends React.PureComponent<IHOOSearchProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -15,12 +15,12 @@ export interface ISPFxThemes {
 export class SPFxThemes implements ISPFxThemes {
   private LOG_SOURCE: string = "💦SPFxThemes";
 
-  private _domElement: HTMLElement;
+  private _domElement!: HTMLElement;
   private _microsoftTeams: any;
   private _themeProvider: any;
   private _themeVariant: any;
-  private _isInverted: boolean;
-  private _currentTheme: IHOOTheme;
+  private _isInverted!: boolean;
+  private _currentTheme!: IHOOTheme;
 
   constructor() {
   }
@@ -73,9 +73,9 @@ export class SPFxThemes implements ISPFxThemes {
 
       if (this._themeVariant && !usePageTheme) {
         this._setThemeVariants();
-      } else if (usePageTheme && window["__themeState__"] != null) {
+      } else if (usePageTheme && (window as any)["__themeState__"] != null) {
         // Fallback to core theme state options applicable for Single Canvas Apps and Microsoft Teams
-        this.setCSSVariables(window["__themeState__"].theme);
+        this.setCSSVariables((window as any)["__themeState__"].theme);
       }
 
       // Register a handler to be notified if the theme variant changes
@@ -149,7 +149,7 @@ export class SPFxThemes implements ISPFxThemes {
         // loop over it
         themingKeys.forEach(key => {
           // add CSS variable to style property of the web part
-          workingDomElement.style.setProperty(`--${key}`, theme[key]);
+          workingDomElement.style.setProperty(`--${key}`, theme[key as keyof IHOOTheme]);
         });
       }
     } catch (err) {

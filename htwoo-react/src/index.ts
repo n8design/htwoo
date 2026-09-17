@@ -61,6 +61,7 @@ export * from './HOORadioButton';
 export * from './HOOSearch';
 export * from './HOOSelect';
 export * from './HOOShimmer';
+export * from './HOOSpinner';
 export * from './HOOSplashCardDesc';
 export * from './HOOSplashCardFooter';
 export * from './HOOSplashCardHeader';

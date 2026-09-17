@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOOIFrameRatio {
   "3by4" = "3by4",
@@ -24,7 +24,7 @@ export interface IHOODialogIFrameProps extends IHOOStandardProps {
    * (Optional) HTMLIFrameElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-dlg-iframe {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement> & HOODataAttributes;
 }
 
 export interface IHOODialogIFrameState {
@@ -36,7 +36,7 @@ export class HOODialogIFrameState implements IHOODialogIFrameState {
 
 export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFrameProps, IHOODialogIFrameState> {
   private LOG_SOURCE: string = "💦HOODialogIFrame";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlg-iframe";
 
   constructor(props: IHOODialogIFrameProps) {
@@ -45,7 +45,7 @@ export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFram
     this.state = new HOODialogIFrameState();
   }
 
-  public render(): React.ReactElement<IHOODialogIFrameProps> {
+  public render(): React.ReactElement<IHOODialogIFrameProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const ratio = (this.props.ratio) ? `ratio-${this.props.ratio}` : "";
@@ -61,7 +61,7 @@ export default class HOODialogIFrame extends React.PureComponent<IHOODialogIFram
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

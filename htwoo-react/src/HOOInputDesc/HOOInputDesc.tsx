@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOInputDescProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOInputDescProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-description {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & HOODataAttributes;
 }
 
 export interface IHOOInputDescState {
@@ -18,7 +18,7 @@ export interface IHOOInputDescState {
 
 export default class HOOInputDesc extends React.PureComponent<IHOOInputDescProps, IHOOInputDescState> {
   private LOG_SOURCE: string = "💦HOOHOOInputDesc";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-description";
 
   constructor(props: IHOOInputDescProps) {
@@ -27,7 +27,7 @@ export default class HOOInputDesc extends React.PureComponent<IHOOInputDescProps
     this.state = {};
   }
 
-  public render(): React.ReactElement<IHOOInputDescProps> {
+  public render(): React.ReactElement<IHOOInputDescProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -38,7 +38,7 @@ export default class HOOInputDesc extends React.PureComponent<IHOOInputDescProps
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

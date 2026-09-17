@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOONumberProps extends IHOOStandardProps {
@@ -8,9 +8,13 @@ export interface IHOONumberProps extends IHOOStandardProps {
   */
   value: number;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) Input Prefix.
   */
@@ -40,7 +44,7 @@ export interface IHOONumberProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-group {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the input element of the component.
    * Class names will be appended to the end of the default class string - "hoo-input-text {inputElementAttributes.class}"
@@ -57,7 +61,7 @@ export class HOONumberState implements IHOONumberState {
 
 export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOONumberState> {
   private LOG_SOURCE: string = "💦HOONumber";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-group";
   private _inputClass: string = "hoo-input-text";
   private _numberInputId: string = "hoo-number-";
@@ -69,7 +73,7 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
     this.state = new HOONumberState();
   }
 
-  public render(): React.ReactElement<IHOONumberProps> {
+  public render(): React.ReactElement<IHOONumberProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const rootClassName = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -87,7 +91,8 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
             readOnly={this.props.readonly || false}
             aria-disabled={this.props.disabled || false}
             className={inputClassName}
-            onChange={this.props.onChange} />
+            onChange={this.props.onChange}
+            onBlur={this.props.onBlur} />
           {this.props.inputSuffix &&
             <div className="hoo-input-suffix">{this.props.inputSuffix}</div>
           }
@@ -95,7 +100,7 @@ export default class HOONumber extends React.PureComponent<IHOONumberProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

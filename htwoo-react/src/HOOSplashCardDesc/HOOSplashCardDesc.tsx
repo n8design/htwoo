@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOSplashCardDescProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOSplashCardDescProps extends IHOOStandardProps {
    * (Optional) HTMLParagraphElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-desc {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> & HOODataAttributes;
 }
 
 export interface IHOOSplashCardDescState {
@@ -22,7 +22,7 @@ export class HOOSplashCardDescState implements IHOOSplashCardDescState {
 
 export default class HOOSplashCardDesc extends React.PureComponent<IHOOSplashCardDescProps, IHOOSplashCardDescState> {
   private LOG_SOURCE: string = "💦HOOSplashCardDesc";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-desc";
 
   constructor(props: IHOOSplashCardDescProps) {
@@ -31,7 +31,7 @@ export default class HOOSplashCardDesc extends React.PureComponent<IHOOSplashCar
     this.state = new HOOSplashCardDescState();
   }
 
-  public render(): React.ReactElement<IHOOSplashCardDescProps> {
+  public render(): React.ReactElement<IHOOSplashCardDescProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -47,7 +47,7 @@ export default class HOOSplashCardDesc extends React.PureComponent<IHOOSplashCar
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

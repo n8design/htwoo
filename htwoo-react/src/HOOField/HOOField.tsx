@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOLabel from "../HOOLabel";
 import HOOInputDesc from "../HOOInputDesc";
 import HOOValidationMsg from "../HOOValidationMsg";
@@ -9,7 +9,7 @@ export interface IHOOFieldProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-field {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOFieldState {
@@ -30,7 +30,7 @@ export class HOOFieldState implements IHOOFieldState {
 
 export default class HOOField extends React.PureComponent<IHOOFieldProps, IHOOFieldState> {
   private LOG_SOURCE: string = "💦HOOField";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-field";
 
 
@@ -40,7 +40,7 @@ export default class HOOField extends React.PureComponent<IHOOFieldProps, IHOOFi
     this.state = new HOOFieldState();
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props: IHOOFieldProps, state: IHOOFieldState) {
     try{
       let label: React.ReactNode = null;
       let description: React.ReactNode = null;
@@ -67,7 +67,7 @@ export default class HOOField extends React.PureComponent<IHOOFieldProps, IHOOFi
     }
   }
 
-  public render(): React.ReactElement<IHOOFieldProps> {
+  public render(): React.ReactElement<IHOOFieldProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -81,7 +81,7 @@ export default class HOOField extends React.PureComponent<IHOOFieldProps, IHOOFi
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

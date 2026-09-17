@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOOCSSCustomProperties, HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { isEqual } from "../common/Common";
 //import { isEqual } from "../common/Common";
 
@@ -41,24 +41,24 @@ export interface IHOODialogProps extends IHOOStandardProps {
    * (Optional) HTMLDialogElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-mdldialog-outer {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> & HOODataAttributes;
 }
 
 export interface IHOODialogState {
-  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement>;
-  styleblock: React.CSSProperties;
+  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> | undefined;
+  styleblock: HOOCSSCustomProperties | undefined;
 }
 
 export class HOODialogState implements IHOODialogState {
   constructor(
-    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> = undefined,
-    public styleblock: React.CSSProperties = {}
+    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDialogElement>, HTMLDialogElement> | undefined = undefined,
+    public styleblock: HOOCSSCustomProperties | undefined = {}
   ) { }
 }
 
 export default class HOODialog extends React.Component<IHOODialogProps, IHOODialogState> {
   private LOG_SOURCE: string = "💦HOODialog";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlg";
   private _modal: boolean = false;
   private _updateType: boolean = false;
@@ -70,7 +70,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOODialog";
     this._setType(props.type);
-    let styleblock: React.CSSProperties = undefined;
+    let styleblock: HOOCSSCustomProperties | undefined = undefined;
     if (this.props.rootElementAttributes?.style) {
       styleblock = { ...this.props.rootElementAttributes?.style };
     }
@@ -131,7 +131,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
       }
       if (this._updateStyle) {
         this._updateStyle = false;
-        let styleblock: React.CSSProperties = undefined;
+        let styleblock: HOOCSSCustomProperties | undefined = undefined;
         if (this.props.rootElementAttributes?.style) {
           styleblock = { ...this.props.rootElementAttributes?.style };
         }
@@ -223,7 +223,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
     }
   }
 
-  public render(): React.ReactElement<IHOODialogProps> {
+  public render(): React.ReactElement<IHOODialogProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -237,7 +237,7 @@ export default class HOODialog extends React.Component<IHOODialogProps, IHOODial
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

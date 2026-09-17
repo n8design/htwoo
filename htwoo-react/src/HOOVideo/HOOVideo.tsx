@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon";
 
 export interface IHOOVideoProps extends IHOOStandardProps {
@@ -23,7 +23,7 @@ export interface IHOOVideoProps extends IHOOStandardProps {
    * (Optional) HTMLDetailsElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-video {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement> & HOODataAttributes;
 }
 
 export interface IHOOVideoState {
@@ -35,7 +35,7 @@ export class HOOVideoState implements IHOOVideoState {
 
 export default class HOOVideo extends React.PureComponent<IHOOVideoProps, IHOOVideoState> {
   private LOG_SOURCE: string = "💦HOOVideo";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-video";
 
   constructor(props: IHOOVideoProps) {
@@ -44,7 +44,7 @@ export default class HOOVideo extends React.PureComponent<IHOOVideoProps, IHOOVi
     this.state = new HOOVideoState();
   }
 
-  public render(): React.ReactElement<IHOOVideoProps> {
+  public render(): React.ReactElement<IHOOVideoProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -67,7 +67,7 @@ export default class HOOVideo extends React.PureComponent<IHOOVideoProps, IHOOVi
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

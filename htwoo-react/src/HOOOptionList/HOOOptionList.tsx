@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOOCSSCustomProperties, HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOCheckbox from "../HOOCheckbox";
 import { getRandomString, isEqual } from "../common/Common";
 import HOORadioButton from "../HOORadioButton";
@@ -33,9 +33,13 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
   */
   value: string | number | string[] | number[];
   /**
-   * Change event handler that receives the key and checked status of the option changed
+   * (Optional) Change event handler that receives the key and checked status of the option changed
   */
-  onChange: (key: string | number, checked: boolean) => void;
+  onChange?: (key: string | number, checked: boolean) => void;
+  /**
+   * (Optional) Blur event handler that receives the key of the option blurred
+  */
+  onBlur?: (key: string | number) => void;
   /**
    * (Optional) Is option list disabled
   */
@@ -64,24 +68,24 @@ export interface IHOOOptionListProps extends IHOOStandardProps {
    * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-button {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement> & HOODataAttributes;
 }
 
 export interface IHOOOptionListState {
-  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement>;
-  styleblock: React.CSSProperties;
+  rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement> | undefined;
+  styleblock: HOOCSSCustomProperties | undefined;
 }
 
 export class HOOOptionListState implements IHOOOptionListState {
   constructor(
-    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement> = undefined,
-    public styleblock: React.CSSProperties = {}
+    public rea: React.DetailedHTMLProps<React.HTMLAttributes<HTMLMenuElement>, HTMLMenuElement> | undefined = undefined,
+    public styleblock: HOOCSSCustomProperties | undefined = {}
   ) { }
 }
 
 export default class HOOOptionList extends React.Component<IHOOOptionListProps, IHOOOptionListState> {
   private LOG_SOURCE: string = "💦HOOOptionList";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-button";
   private _optionListName: string = "hoo-options-";
   private _optionListId: string = "hoo-options-";
@@ -97,7 +101,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     this._optionListId = props.forId || `${this._optionListId}${getRandomString(10)}`;
     this._componentClass = (props.type === HOOOptionListType.Checkbox) ? "hoo-checkbox-group" : "hoo-radiobutton-group";
     this._valid = (props.value === null) || ((props.type === HOOOptionListType.Checkbox) ? Array.isArray(props.value) : !Array.isArray(props.value));
-    let styleblock: React.CSSProperties = undefined;
+    let styleblock: HOOCSSCustomProperties | undefined = undefined;
     if (this.props.rootElementAttributes?.style) {
       styleblock = { ...this.props.rootElementAttributes?.style };
     }
@@ -137,7 +141,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     try {
       if (this._updateStyle) {
         this._updateStyle = false;
-        let styleblock: React.CSSProperties = undefined;
+        let styleblock: HOOCSSCustomProperties | undefined = undefined;
         if (this.props.rootElementAttributes?.style) {
           styleblock = { ...this.props.rootElementAttributes?.style };
         }
@@ -164,12 +168,20 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     }
   }
 
-  private _onChange = (event, key: string | number) => {
+  private _onChange = (event: React.ChangeEvent<HTMLInputElement>, key: string | number) => {
     try {
       const checked = event.target.checked;
-      this.props.onChange(key, checked);
+      this.props.onChange?.(key, checked);
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (_onChange) - ${err}`);
+    }
+  }
+
+  private _onBlur = (event: React.FocusEvent<HTMLInputElement>, key: string | number) => {
+    try {
+      this.props.onBlur?.(key);
+    } catch (err) {
+      console.error(`${this.LOG_SOURCE} (_onBlur) - ${err}`);
     }
   }
 
@@ -181,11 +193,11 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       switch (this.props.type) {
         case HOOOptionListType.Checkbox:
           checked = (this.props.value as Array<string | number>)?.indexOf(option.key) > -1;
-          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />;
+          retVal = <HOOCheckbox checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} onBlur={(e) => { this._onBlur(e, option.key); }} rootElementAttributes={elementAttributes} />;
           break;
         case HOOOptionListType.RadioButton:
           checked = this.props.value === option.key;
-          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} rootElementAttributes={elementAttributes} />
+          retVal = <HOORadioButton checked={checked} disabled={this.props.disabled || false} readonly={this.props.readonly || false} value={option.key} label={option.text} onChange={(e) => { this._onChange(e, option.key); }} onBlur={(e) => { this._onBlur(e, option.key); }} rootElementAttributes={elementAttributes} />
           break;
       }
     } catch (err) {
@@ -194,7 +206,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
     return retVal;
   }
 
-  public render(): React.ReactElement<IHOOOptionListProps> {
+  public render(): React.ReactElement<IHOOOptionListProps> | undefined {
     try {     
       let className = `${this._componentClass} ${(this._direction === HOOOptionListDirection.Horizontal ? "is-horizontal" : "")}`;
       className = (this.props.rootElementAttributes?.className) ? `${className} ${this.props.rootElementAttributes?.className}` : className;
@@ -215,7 +227,7 @@ export default class HOOOptionList extends React.Component<IHOOOptionListProps, 
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

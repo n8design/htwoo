@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export enum HOONotifyType {
   "Success",
@@ -12,7 +12,7 @@ export interface IHOONotifyLabelProps extends IHOOStandardProps {
    * (Optional) HTMLSpanElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-success/hoo-error {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & HOODataAttributes;
 }
 
 export interface IHOONotifyLabelState {
@@ -24,7 +24,7 @@ export class HOONotifyLabelState implements IHOONotifyLabelState {
 
 export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelProps, IHOONotifyLabelState> {
   private LOG_SOURCE: string = "💦HOONotifyLabel";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo";
 
   constructor(props: IHOONotifyLabelProps) {
@@ -41,7 +41,7 @@ export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelP
     this.state = new HOONotifyLabelState();
   }
 
-  public render(): React.ReactElement<IHOONotifyLabelProps> {
+  public render(): React.ReactElement<IHOONotifyLabelProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -52,7 +52,7 @@ export default class HOONotifyLabel extends React.PureComponent<IHOONotifyLabelP
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

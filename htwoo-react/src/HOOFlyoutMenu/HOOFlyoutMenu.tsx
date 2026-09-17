@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOAction, { HOOActionType } from "../HOOAction/HOOAction";
 
 export interface IHOOFlyoutMenuItem {
@@ -20,7 +20,7 @@ export interface IHOOFlyoutMenuProps extends IHOOStandardProps {
    * (Optional) MenuHTMLAttributes attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonflyout {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.MenuHTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.MenuHTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOFlyoutMenuState {
@@ -32,7 +32,7 @@ export class HOOFlyoutMenuState implements IHOOFlyoutMenuState {
 
 export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuProps, IHOOFlyoutMenuState> {
   private LOG_SOURCE: string = "💦HOOFlyoutMenu";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonflyout";
 
   constructor(props: IHOOFlyoutMenuProps) {
@@ -41,7 +41,7 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
     this.state = new HOOFlyoutMenuState();
   }
 
-  public render(): React.ReactElement<IHOOFlyoutMenuProps> {
+  public render(): React.ReactElement<IHOOFlyoutMenuProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -58,7 +58,7 @@ export default class HOOFlyoutMenu extends React.PureComponent<IHOOFlyoutMenuPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

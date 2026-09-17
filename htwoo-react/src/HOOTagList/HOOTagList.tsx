@@ -1,6 +1,6 @@
 import * as React from "react";
 import HOOTag, { HOOTagStyle, HOOTagType } from "../HOOTag";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOTag {
   text: string;
@@ -26,7 +26,7 @@ export interface IHOOTagListProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-meta-list {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOTagListState {
@@ -38,7 +38,7 @@ export class HOOTagListState implements IHOOTagListState {
 
 export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IHOOTagListState> {
   private LOG_SOURCE: string = "💦HOOTagList";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-meta-list";
 
   constructor(props: IHOOTagListProps) {
@@ -62,7 +62,7 @@ export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IH
     }
   }
 
-  public render(): React.ReactElement<IHOOTagListProps> {
+  public render(): React.ReactElement<IHOOTagListProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -80,7 +80,7 @@ export default class HOOTagList extends React.PureComponent<IHOOTagListProps, IH
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

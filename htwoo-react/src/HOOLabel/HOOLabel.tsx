@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOLabelProps extends IHOOStandardProps {
   /**
@@ -18,7 +18,7 @@ export interface IHOOLabelProps extends IHOOStandardProps {
    * (Optional) HTMLLabelElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-label {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> & HOODataAttributes;
 }
 
 export interface IHOOLabelState {
@@ -30,7 +30,7 @@ export class HOOLabelState implements IHOOLabelState {
 
 export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLabelState> {
   private LOG_SOURCE: string = "💦HOOLabel";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-label";
 
   constructor(props: IHOOLabelProps) {
@@ -39,7 +39,7 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
     this.state = new HOOLabelState();
   }
 
-  public render(): React.ReactElement<IHOOLabelProps> {
+  public render(): React.ReactElement<IHOOLabelProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const isRequired = (this.props.required) ? "is-required" : "";
@@ -57,7 +57,7 @@ export default class HOOLabel extends React.PureComponent<IHOOLabelProps, IHOOLa
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOButton, { HOOButtonType } from "../HOOButton/HOOButton";
 import { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu";
 import HOOAction, { HOOActionType } from "../HOOAction";
@@ -26,7 +26,7 @@ export interface IHOOButtonMenuProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonicon-overflow {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOButtonMenuState {
@@ -35,7 +35,7 @@ export interface IHOOButtonMenuState {
 
 export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuProps, IHOOButtonMenuState> {
   private LOG_SOURCE: string = "💦HOOButtonMenu";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonmenu";
 
   constructor(props: IHOOButtonMenuProps) {
@@ -61,11 +61,11 @@ export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuPro
     }
   }
 
-  public render(): React.ReactElement<IHOOButtonMenuProps> {
+  public render(): React.ReactElement<IHOOButtonMenuProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
-      const buttonREA:React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> = { className: "hoo-buttonicon-flyout", "aria-haspopup": "true" };
+      const buttonREA:React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & HOODataAttributes = { className: "hoo-buttonicon-flyout", "aria-haspopup": "true" };
       if (this.state.showMenu) {
         className += " show-flyout";
         buttonREA["aria-pressed"] = "true";
@@ -93,7 +93,7 @@ export default class HOOButtonMenu extends React.PureComponent<IHOOButtonMenuPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

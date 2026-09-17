@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon from "../HOOIcon/HOOIcon";
 import HOOFlyoutMenu, { IHOOFlyoutMenuItem } from "../HOOFlyoutMenu/HOOFlyoutMenu";
 
@@ -32,7 +32,7 @@ export interface IHOOActionProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-buttonaction {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & HOODataAttributes;
   /**
      * (Optional) HTMLSpanElement attributes that will be applied to the label element of the component.
      * Class names will be appended to the end of the default class string - hoo-button-label {rootElementAttributes.class}
@@ -45,7 +45,7 @@ export interface IHOOActionState {
 
 export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOOActionState> {
   private LOG_SOURCE: string = "💦HOOAction";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-buttonaction";
   private _labelClass: string = "hoo-button-label";
 
@@ -55,7 +55,7 @@ export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOO
     this.state = {};
   }
 
-  public render(): React.ReactElement<IHOOActionProps> {
+  public render(): React.ReactElement<IHOOActionProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -69,7 +69,7 @@ export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOO
                   <HOOIcon iconName={this.props.iconName} />
                 </span>
                 <span {...this.props.labelElementAttributes} className={labelClass}>{this.props.label}</span>
-                {this.props.type !== HOOActionType.Action && this.props.flyoutContextItems?.length > 0 &&
+                {this.props.type !== HOOActionType.Action && (this.props.flyoutContextItems?.length ?? 0) > 0 &&
                   <span className="hoo-button-icon hoo-buttonchevron">
                     <HOOIcon iconName="hoo-icon-arrow-down" />
                   </span>
@@ -87,7 +87,7 @@ export default class HOOAction extends React.PureComponent<IHOOActionProps, IHOO
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

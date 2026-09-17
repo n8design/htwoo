@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIcon, { IHOOIconProps } from "../HOOIcon";
 import HOOButton, { HOOButtonType } from "../HOOButton";
 
@@ -28,7 +28,7 @@ export interface IHOODialogHeaderProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-dlgheader {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOODialogHeaderState {
@@ -40,7 +40,7 @@ export class HOODialogHeaderState implements IHOODialogHeaderState {
 
 export default class HOODialogHeader extends React.PureComponent<IHOODialogHeaderProps, IHOODialogHeaderState> {
   private LOG_SOURCE: string = "💦HOODialogHeader";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-dlgheader";
 
   constructor(props: IHOODialogHeaderProps) {
@@ -49,7 +49,7 @@ export default class HOODialogHeader extends React.PureComponent<IHOODialogHeade
     this.state = new HOODialogHeaderState();
   }
 
-  public render(): React.ReactElement<IHOODialogHeaderProps> {
+  public render(): React.ReactElement<IHOODialogHeaderProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -71,7 +71,7 @@ export default class HOODialogHeader extends React.PureComponent<IHOODialogHeade
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

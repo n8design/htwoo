@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 import HOOIcon from "../HOOIcon";
 
@@ -29,7 +29,7 @@ export interface IHOOFileProps extends IHOOStandardProps {
    * (Optional) HTMLElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-file {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HOODataAttributes;
 }
 
 export interface IHOOFileState {
@@ -44,7 +44,7 @@ export class HOOFileState implements IHOOFileState {
 
 export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFileState> {
   private LOG_SOURCE: string = "💦HOOFile";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-file";
   private _fileId: string = "hoo-file-";
 
@@ -58,17 +58,17 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
     this._fileLabel = React.createRef<HTMLLabelElement>();
   }
 
-  private _dragOver = (event): void => {
+  private _dragOver = (event: React.DragEvent<HTMLElement>): void => {
     event.preventDefault();
     this._fileLabel?.current?.classList.add('drag-over');
   }
 
-  private _dragLeave = (event): void => {
+  private _dragLeave = (event: React.DragEvent<HTMLElement>): void => {
     event.preventDefault();
     this._fileLabel?.current?.classList.remove('drag-over');
   };
 
-  private _dragDrop = (event): void => {
+  private _dragDrop = (event: React.DragEvent<HTMLElement>): void => {
     event.preventDefault();
     this._fileLabel?.current?.classList.remove('drag-over');
 
@@ -79,9 +79,9 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
     }
   }
 
-  private _fileChangedEvent = (event): void => {
+  private _fileChangedEvent = (event: any): void => {
     try {
-      const files: File[] = event.target.files;
+      const files: File[] = Array.from(event.target.files);
       this.setState({ files }, () => {
         this.props.onChanged(files);
       });
@@ -90,7 +90,7 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
     }
   }
 
-  public render(): React.ReactElement<IHOOFileProps> {
+  public render(): React.ReactElement<IHOOFileProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -117,11 +117,11 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
           </label>
           <input type="file" id={this._fileId} {...this.props.inputElementAttributes} className={inputClassName} multiple aria-describedby={`${this._fileId}-content`} onChange={this._fileChangedEvent} />
           <output className="hoo-infile-output" id={`${this._fileId}-content`} aria-live="polite" title="Current selection">
-            {this.state.files && this.state.files.length > 0 &&
+            {this.state.files && this.state.files?.length > 0 &&
               <>
                 <div className='hoo-infile-selection'>Files Selected</div>
                 <ul className="hoo-infile-list">
-                  {this.state.files.map((file) => {
+                  {this.state.files?.map((file) => {
                     return <li>{file.name}</li>
                   })}
                 </ul>
@@ -132,7 +132,7 @@ export default class HOOFile extends React.PureComponent<IHOOFileProps, IHOOFile
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

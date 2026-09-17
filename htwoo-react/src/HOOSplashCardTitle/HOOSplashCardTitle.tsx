@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 
 export interface IHOOSplashCardTitleProps extends IHOOStandardProps {
   /**
@@ -10,7 +10,7 @@ export interface IHOOSplashCardTitleProps extends IHOOStandardProps {
    * (Optional) HTMLHeadingElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-splashcard-title {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> & HOODataAttributes;
 }
 
 export interface IHOOSplashCardTitleState {
@@ -22,7 +22,7 @@ export class HOOSplashCardTitleState implements IHOOSplashCardTitleState {
 
 export default class HOOSplashCardTitle extends React.PureComponent<IHOOSplashCardTitleProps, IHOOSplashCardTitleState> {
   private LOG_SOURCE: string = "💦HOOSplashCardTitle";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-splashcard-title";
 
   constructor(props: IHOOSplashCardTitleProps) {
@@ -31,7 +31,7 @@ export default class HOOSplashCardTitle extends React.PureComponent<IHOOSplashCa
     this.state = new HOOSplashCardTitleState();
   }
 
-  public render(): React.ReactElement<IHOOSplashCardTitleProps> {
+  public render(): React.ReactElement<IHOOSplashCardTitleProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -47,7 +47,7 @@ export default class HOOSplashCardTitle extends React.PureComponent<IHOOSplashCa
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import HOOIconOverflow from "../HOOIconOverflow";
 import { IOverflowResizer, OverflowResizer } from "../common/OverflowObserver";
 import { getRandomString } from "../common/Common";
@@ -21,7 +21,7 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
   /**
    * Command Item click event handler.
    */
-  onClick: (ev: React.MouseEvent<HTMLElement>, commandKey: number | string, flyoutItem: IHOOFlyoutMenuItem) => void;
+  onClick: (ev: React.MouseEvent<HTMLElement>, commandKey: number | string, flyoutItem: IHOOFlyoutMenuItem | null) => void;
   /**
    * (Optional) Overflow enabled - default false
    */
@@ -30,12 +30,12 @@ export interface IHOOCommandBarProps extends IHOOStandardProps {
    * (Optional) HTMLButtonElement attributes that will be applied to all Command Buttons.
    * Class names will be appended to the end of the default class string - hoo-button-command {rootElementAttributes.class}
   */
-  commandButtonAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  commandButtonAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
   /**
    * (Optional) HTMLMenuElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-cmdbar {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOCommandBarState {
@@ -44,7 +44,7 @@ export interface IHOOCommandBarState {
 
 export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarProps, IHOOCommandBarState> {
   private LOG_SOURCE: string = "💦HOOCommandBar";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-cmdbar";
   private _overflowResizer: IOverflowResizer;
   private _overflowContainer: React.RefObject<HTMLDivElement>;
@@ -52,6 +52,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
   constructor(props: IHOOCommandBarProps) {
     super(props);
     this.LOG_SOURCE = props.dataComponent || "💦HOOCommandBar";
+    props.hasOverflow = (props.hasOverflow == undefined)?false:props.hasOverflow;
     this.state = { showOverflow: false };
     this._overflowResizer = new OverflowResizer(`HOOCommandBarOR_${getRandomString(10)}`);
     this._overflowResizer.OverflowChangedEvent = this._toggleOverflow;
@@ -80,8 +81,8 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
           return (
             <HOOButtonCommand
               key={pi.key}
-              label={pi.text || null}
-              leftIconName={pi.iconName || null}
+              label={pi.text || undefined}
+              leftIconName={pi.iconName || undefined}
               onClick={(ev) => { this.props.onClick(ev, pi.key, null); }}
               flyoutMenuItems={pi.flyoutMenuItems}
               flyoutMenuItemClicked={(ev, fmi: IHOOFlyoutMenuItem) => { this.props.onClick(ev, pi.key, fmi); }}
@@ -95,7 +96,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
     return retVal;
   }
 
-  public render(): React.ReactElement<IHOOCommandBarProps> {
+  public render(): React.ReactElement<IHOOCommandBarProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       let className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -120,7 +121,7 @@ export default class HOOCommandBar extends React.PureComponent<IHOOCommandBarPro
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

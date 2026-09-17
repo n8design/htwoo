@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { HOOAvatarSize } from "../HOOAvatar";
 
 export interface IHOOPersonaProps extends IHOOStandardProps {
@@ -31,7 +31,7 @@ export interface IHOOPersonaProps extends IHOOStandardProps {
    * (Optional) HTMLDivElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-persona {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & HOODataAttributes;
 }
 
 export interface IHOOPersonaState {
@@ -43,7 +43,7 @@ export class HOOPersonaState implements IHOOPersonaState {
 
 export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IHOOPersonaState> {
   private LOG_SOURCE: string = "💦HOOPersona";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-persona-";
   private _showData: boolean = true;
 
@@ -57,7 +57,7 @@ export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IH
     }
   }
 
-  public render(): React.ReactElement<IHOOPersonaProps> {
+  public render(): React.ReactElement<IHOOPersonaProps> | undefined {
     try {
       if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
       const className = (this.props.rootElementAttributes?.className) ? `${this._componentClass} ${this.props.rootElementAttributes?.className}` : this._componentClass;
@@ -76,7 +76,7 @@ export default class HOOPersona extends React.PureComponent<IHOOPersonaProps, IH
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }

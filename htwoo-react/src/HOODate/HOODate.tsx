@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IHOOStandardProps } from "../common/IHOOStandardProps";
+import { HOODataAttributes, IHOOStandardProps } from "../common/IHOOStandardProps";
 import { getRandomString } from "../common/Common";
 
 export interface IHOODateProps extends IHOOStandardProps {
@@ -32,14 +32,18 @@ export interface IHOODateProps extends IHOOStandardProps {
   */
   supportTime?: boolean;
   /**
-   * Change event handler
+   * (Optional) Change event handler
   */
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  /**
+   * (Optional) Blur event handler
+  */
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   /**
    * (Optional) HTMLInputElement attributes that will be applied to the root element of the component.
    * Class names will be appended to the end of the default class string - hoo-input-date {rootElementAttributes.class}
   */
-  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  rootElementAttributes?: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & HOODataAttributes;
 }
 
 export interface IHOODateState {
@@ -51,7 +55,7 @@ export class HOODateState implements IHOODateState {
 
 export default class HOODate extends React.PureComponent<IHOODateProps, IHOODateState> {
   private LOG_SOURCE: string = "💦HOODate";
-  private _rootProps = { "data-component": this.LOG_SOURCE };
+  private _rootProps: { [key: string]: unknown } = { "data-component": this.LOG_SOURCE };
   private _componentClass: string = "hoo-input-date";
   private _minValue: Date = new Date();
   private _maxValue: Date = new Date();
@@ -64,7 +68,7 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
     this.state = new HOODateState();
   }
 
-  public render(): React.ReactElement<IHOODateProps> {
+  public render(): React.ReactElement<IHOODateProps> | undefined {
     if (this.props.reactKey) { this._rootProps["key"] = this.props.reactKey }
     if (!this.props.maxValue && this._maxValue != new Date()) {
       this._maxValue.setFullYear(this._maxValue.getFullYear() + 10);
@@ -88,11 +92,12 @@ export default class HOODate extends React.PureComponent<IHOODateProps, IHOODate
           max={maxValue}
           disabled={this.props.disabled || false}
           readOnly={this.props.readonly || false}
-          onChange={this.props.onChange} />
+          onChange={this.props.onChange}
+          onBlur={this.props.onBlur} />
       );
     } catch (err) {
       console.error(`${this.LOG_SOURCE} (render) - ${err}`);
-      return null;
+      return;
     }
   }
 }
