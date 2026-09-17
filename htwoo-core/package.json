@@ -28,7 +28,7 @@
     "clean:package": "shx rm -rf ../packages/htwoo-core/lib ../packages/htwoo-core/dist ../packages/htwoo-core/themes",
     "build:css-prod": "ice-build build",
     "copy:css": "shx mkdir -p ../packages/htwoo-core/dist/css && shx cp -r public/css/htwoo.min.css ../packages/htwoo-core/dist/css/",
-    "copy:scss": "shx mkdir -p ../packages/htwoo-core/lib/sass && shx cp -r src/styles/* ../packages/htwoo-core/lib/sass/ && shx rm -rf ../packages/htwoo-core/lib/sass/00-base/fonts",
+    "copy:scss": "shx mkdir -p ../packages/htwoo-core/lib/sass && shx cp -r src/styles/* ../packages/htwoo-core/lib/sass/",
     "copy:components": "shx mkdir -p ../packages/htwoo-core/lib/components && shx cp -r src/components/* ../packages/htwoo-core/lib/components/",
     "copy:ts": "shx mkdir -p ../packages/htwoo-core/lib/ts && shx cp -r src/ts/* ../packages/htwoo-core/lib/ts/",
     "copy:themes": "shx mkdir -p ../packages/htwoo-core/themes && shx cp -r themes/* ../packages/htwoo-core/themes/",

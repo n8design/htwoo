@@ -46,8 +46,8 @@ describe('CSS compilation', () => {
     // Check for core directories
     expect(fs.existsSync(path.join(sassDir, '00-base'))).toBe(true);
     
-    // Check that no font files are included
-    expect(!fs.existsSync(path.join(sassDir, '00-base/fonts'))).toBe(true);
+    // Deprecated font SCSS still ships in 2.x (removal postponed to 3.0)
+    expect(fs.existsSync(path.join(sassDir, '00-base/fonts'))).toBe(true);
   });
   
   test('_htwoo-core.scss should not import fonts', () => {

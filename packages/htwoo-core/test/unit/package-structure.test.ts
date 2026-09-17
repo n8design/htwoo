@@ -71,9 +71,9 @@ describe('Package structure', () => {
     expect(fs.existsSync(path.join(packageRoot, 'index.d.ts'))).toBe(true);
   });
   
-  test('should not have font files', () => {
-    // Should not have fonts directory
-    expect(!fs.existsSync(path.join(packageRoot, 'lib/sass/00-base/fonts'))).toBe(true);
+  test('should still ship the deprecated font SCSS', () => {
+    // Deprecated, removal postponed to 3.0
+    expect(fs.existsSync(path.join(packageRoot, 'lib/sass/00-base/fonts'))).toBe(true);
   });
   
   test('should have required package metadata', () => {
