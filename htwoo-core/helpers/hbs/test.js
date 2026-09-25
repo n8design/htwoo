@@ -33,7 +33,7 @@ module.exports = function (Handlebars) {
   });
   Handlebars.registerHelper('getId', function (value) {
     lastId = `${value}-${Math.floor(Math.random(100) * 100)}`;
-    lastIdClean = parseInt(lastId.split('-')[1]);
+    lastIdClean = parseInt(lastId.split('-').pop());
     return lastId;
   });
   Handlebars.registerHelper('getLastId', function (value) {
