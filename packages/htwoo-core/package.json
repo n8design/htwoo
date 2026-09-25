@@ -41,7 +41,8 @@
         "htwoo-document.scss"
       ],
       "documentBase": [
-        "00-base"
+        "00-base",
+        "01-atoms/typography"
       ]
     },
     "themes": {
