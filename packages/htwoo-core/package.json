@@ -57,7 +57,8 @@
       "pivot",
       "overflow",
       "select",
-      "table"
+      "table",
+      "main"
     ]
   },
   "author": "Stefan Bauer (@stfbauer)",
