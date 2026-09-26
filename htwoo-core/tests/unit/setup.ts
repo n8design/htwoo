@@ -67,17 +67,19 @@ beforeAll(() => {
   }
   
   // Mock browser APIs
-  global.ResizeObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
-    unobserve: vi.fn(),
-    disconnect: vi.fn()
-  })) as unknown as typeof ResizeObserver;
+  // A class, not vi.fn(): an arrow implementation cannot be used with `new` (Vitest 4)
+  global.ResizeObserver = class {
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
+  } as unknown as typeof ResizeObserver;
   
-  global.MutationObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
-    unobserve: vi.fn(),
-    disconnect: vi.fn()
-  })) as unknown as typeof MutationObserver;
+  // A class, not vi.fn(): an arrow implementation cannot be used with `new` (Vitest 4)
+  global.MutationObserver = class {
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
+  } as unknown as typeof MutationObserver;
   
   // Mock console methods to keep test output clean
   global.console = {
