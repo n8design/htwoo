@@ -1,4 +1,4 @@
-## 2.9.2 (unreleased)
+## 2.9.2 (2026-09-26)
 
 Fixes found by comparing a Pattern Dump style guide with the same components in Pattern Lab.
 
