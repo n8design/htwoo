@@ -26,11 +26,8 @@ export default defineConfig({
         singleThread: true
       }
     },
-    // Setup specific environments for different test types
-    environmentMatchGlobs: [
-      // Use the JSDOM setup for component tests
-      ['tests/unit/components/**', 'jsdom']
-    ],
+    // Per-file environments: each test file that needs a DOM declares
+    // `// @vitest-environment jsdom` (environmentMatchGlobs was removed in Vitest 4).
     // Setup files
     setupFiles: ['tests/unit/setup.ts']
   }
