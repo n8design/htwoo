@@ -1,4 +1,30 @@
-## 2.9.1 (unreleased)
+## 2.9.2 (unreleased)
+
+Fixes found by comparing a Pattern Dump style guide with the same components in Pattern Lab.
+
+
+### @n8d/htwoo-core
+
+#### Fixed
+
+* `getLastNumericId` returned `NaN` for ids whose prefix contains a dash: `getId("file-upload")` produced `file-upload-47`, and the helper then parsed `"upload"`. Templates rendered `id="NaN-content"`. It now reads the trailing segment.
+* `patternDump.styles.documentBase` also lists `01-atoms/typography`. The `h1`–`h3`, `p`, `pre` and link rules carry no class, so nothing outside their own pattern linked them and headings got the wrong line height everywhere. These are the only class-less rules outside `00-base`.
+* `patternDump.globalScripts` also lists `main`. The other modules do not initialise themselves; `main.ts` wires up split buttons, overflow, pivots, tables, selects and file inputs on load.
+
+
+### @n8d/htwoo-patterns
+
+#### Fixed
+
+* Two data files did not parse and were dropped silently, so their patterns rendered without data: `organism/dialogs/generic-dialog.json` (single-quoted strings) and `molecules/menus/pivotbar-overflow.json` (trailing comma).
+* `organism/dialogs/dialog-sidebar..json` (double dot) is now `dialog-sidebar.json`, so the template finds its data.
+
+#### Removed
+
+* Data files that were empty or had no template: `atoms/avatar/avatar-tmp.json`, `atoms/input/select-drop-down-debug.json`, `atoms/table/table-new.json`, `atoms/table/table-optimized.json`, `organism/form-sample/details-item.json`, `organism/form-sample/new-item.json`
+
+
+## 2.9.1 (2026-09-17)
 
 
 ### @n8d/htwoo-core

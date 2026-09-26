@@ -1,6 +1,6 @@
 {
   "name": "@n8d/htwoo-core",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "hTWOo is a Fluent Design Framework purely in HTML and CSS",
   "main": "dist/js/cjs/htwoo.js",
   "types": "lib/js/main.d.ts",
@@ -41,7 +41,8 @@
         "htwoo-document.scss"
       ],
       "documentBase": [
-        "00-base"
+        "00-base",
+        "01-atoms/typography"
       ]
     },
     "themes": {
@@ -56,7 +57,8 @@
       "pivot",
       "overflow",
       "select",
-      "table"
+      "table",
+      "main"
     ]
   },
   "author": "Stefan Bauer (@stfbauer)",
