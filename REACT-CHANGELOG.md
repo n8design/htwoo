@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.11.1 - 2026-Sep-30
+
+- HOOButton - The button element did not have a default type set and therefore when the button is inside a form it would default to type="submit", this also broke HOODropdown.
+
 ## 2.11.0 - 2026-Sep-09
 
 - HOOFile - add an optional property for `accept` to make it easier to set on the input element, still backward compatible for anyone setting via the `inputElementAttributes`.

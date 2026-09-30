@@ -125,6 +125,7 @@ export default class HOOButton extends React.PureComponent<IHOOButtonProps, IHOO
           }
           {!this._hyperlinkType &&
             <button {...this._rootProps}
+              type="button"
               {...this.props.rootElementAttributes as React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>}
               className={className}
               disabled={this.props.disabled || false}
