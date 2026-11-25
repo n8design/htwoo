@@ -54,26 +54,6 @@
         ],
         "parallel": false
       }
-    },
-    "hugo:build": {
-      "executor": "nx:run-commands",
-      "dependsOn": ["build"],
-      "options": {
-        "commands": [
-          "hugo --minify --baseURL 'https://lab.n8d.studio/htwoo/'"
-        ],
-        "cwd": "."
-      },
-      "outputs": [
-        "{workspaceRoot}/public"
-      ]
-    },
-    "hugo:serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "hugo serve",
-        "cwd": "."
-      }
     }
   },
   "tags": ["scope:docs", "type:application"]

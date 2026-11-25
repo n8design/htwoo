@@ -77,8 +77,6 @@
     "docs:react": "nx run htwoo-react:docs",
     "docs:react:serve": "nx run htwoo-react:docs:serve",
     "docs:react:build": "nx run htwoo-react:docs:build",
-    "docs:hugo:build": "nx run docs:hugo:build",
-    "docs:hugo:serve": "nx run docs:hugo:serve",
     "// Commit & Git Workflows": "======== Conventional Commits & Git ========",
     "commit:check": "commitlint --from HEAD~1 --to HEAD",
     "commit:validate": "commitlint --edit",
