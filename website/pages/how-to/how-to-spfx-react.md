@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Use hTWOo in your ReactJS SPFx web part
+title: Use hTWOo Core in your ReactJS SPFx web part
 nav-title: SPFx with ReactJS
 description: This article describes the requirements to enable hTWOo in your custom web part
 group: how-to
 ---
+
+This documentation covers using the hTWOo-core html/css only implementation in your ReactJS project. We also have a component library implemented for ReactJS that you can alternatively use called `hTWOo React`, check out the [documentation](/htwoo-react/).
 
 ## Install hTWOo UI
 
@@ -145,6 +147,8 @@ The `hTWOoSample` will still get replaces with a custom string like this.
 First import the base elements from hTWOo core.
 
 ```css
+@use 'sass:meta';
+
 @import 'node_modules/@n8d/htwoo-core/lib/components/base';
 
 .hTWOoReactSpFx{
@@ -156,42 +160,51 @@ First import the base elements from hTWOo core.
 From there you can use now all other comments in the main block of your web part using `globals`. The full list of features may look like this.
 
 ```scss
-  // Imports all base mixin
-  @import 'node_modules/@n8d/htwoo-core/lib/components/base';
+    // Imports all base mixin
+  @use 'sass:meta'
 
   .hTWOoSample {
 
     :global {
       
+      // For Accordions
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/accordion');
+
       // For Avatar and Person selector components
-      @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/avatar');
 
       // Various types of buttons
-      @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/buttons');
 
       // Various types of cards
-      @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/cards');
 
       // Various types of dialogs
-      @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/dialogs');
 
       // Various types of forms
-      @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/forms');
 
       // Various types of icons controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/icon');
 
       // Various types of menus controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/menus');
+
+      // Various meta tags
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/meta-tags');
 
       // Various types of tables
-      @import 'node_modules/@n8d/htwoo-core/lib/components/table';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/table');
+
+      // Various types of quicklinks
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/quicklinks');
 
       // Various types of typography
-      @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/typography');
 
       // Various types of web part utilities
-      @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/webparts');
 
     }
   }
@@ -268,7 +281,7 @@ export default class HooButton extends React.Component<IButtonProps, IButtonStat
 }
 ```
 
-Now you have a basic reusable [hTWOo Standard button](https://lab.n8d.studio/htwoo/htwoo-core/?p=atoms-button-standard) in your solution.
+Now you have a basic reusable [hTWOo Standard button](https://htwoo.io/htwoo-core/?p=atoms-button-standard) in your solution.
 
 ## Add button to the web part.
 
@@ -294,9 +307,9 @@ export default class HTwOoReactSpFx extends React.Component<IHTwOoReactSpFxProps
 
 Now the webpart shows the button. The same method also works with the primary button.
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
-## H2O and theming
+## HTWOO and theming
 
 The way hTWOo handles theming and theme slots also allow you to change the theme without any extra effort and coding.
 
@@ -320,7 +333,7 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
   
 
 
-[button]: ./how-to-spfx-html-button.png "Standard Button"
-[button-primary]: ./how-to-spfx-html-button-primary.png "Primary Button"
-[button-theming]: ./how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ./how-to-spfx-html-dark-themed-button.png "Theming"
+[button]: ../how-to-spfx-html-button.png "Standard Button"
+[button-primary]: ../how-to-spfx-html-button-primary.png "Primary Button"
+[button-theming]: ../how-to-spfx-html-theming-1.png "Theming"
+[button-dark-themed]: ../how-to-spfx-html-dark-themed-button.png "Theming"

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Use hTWOo in your Angular Elements web part
+title: Use hTWOo Core in your Angular Elements web part
 nav-title: SPFx with Angular Elements
 description: Learn how to use hTWOo in an Angular Elements based based SPFx web part
 group: how-to
@@ -132,40 +132,56 @@ Move to the `src/style.scss` inside `angular project folder`. And add following 
 
 First import the base elements from hTWOo core.
 
-```css
+```scss
 /* You can add global styles to this file, and also import other style files */
-@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+  // Imports all base mixin
+  @use 'sass:meta'
 
-@import 'node_modules/@n8d/htwoo-core/lib/sass/style';
+  .hTWOoSample {
 
-@import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+    :global {
+      
+      // For Accordions
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/accordion');
 
-// Various types of buttons
-@import 'node_modules/@n8d/htwoo-core/lib/components/button';
+      // For Avatar and Person selector components
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/avatar');
 
-// Various types of cards
-@import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+      // Various types of buttons
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/buttons');
 
-// Various types of dialogs
-@import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+      // Various types of cards
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/cards');
 
-// Various types of forms
-@import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+      // Various types of dialogs
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/dialogs');
 
-// Various types of icons controls
- @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+      // Various types of forms
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/forms');
 
-// Various types of menus controls
-@import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+      // Various types of icons controls
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/icon');
 
-// Various types of tables
-@import 'node_modules/@n8d/htwoo-core/lib/components/table';
+      // Various types of menus controls
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/menus');
 
-// Various types of typography
-@import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+      // Various meta tags
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/meta-tags');
 
-// Various types of web part utilities
-@import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+      // Various types of tables
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/table');
+
+      // Various types of quicklinks
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/quicklinks');
+
+      // Various types of typography
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/typography');
+
+      // Various types of web part utilities
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/webparts');
+
+    }
+  }
 
 ```
 
@@ -209,9 +225,9 @@ Move to the `src/app/{webpartname-web-part}/{webpartname-web-part.componenent.ht
     <hr>
 ```
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
-## H2O and theming
+## HTWOO and theming
 
 The way hTWOo handles theming and theme slots also allow you to change the theme without any extra effort and coding.
 
@@ -230,4 +246,4 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
 * [How to make CSS Variables work in every web part context](https://n8d.at/how-to-make-css-variables-work-in-every-web-part-context/)
   
 
-[controls-theming]: ./how-to-spfx-angular-elements-theme.png "Theming"
+[controls-theming]: ../how-to-spfx-angular-elements-theme.png "Theming"

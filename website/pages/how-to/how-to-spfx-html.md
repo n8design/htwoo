@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Use hTWOo in your No-Framework SPFx web part
+title: Use hTWOo Core in your No-Framework SPFx web part
 nav-title: SPFx with No-framework
 description: Learn how to use hTWOo in a no-framework based SPFx web part
 group: how-to
@@ -145,7 +145,9 @@ The `hTWOoSample` will still get replaces with a custom string like this.
 First import the base elements from hTWOo core.
 
 ```css
-@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+@use 'sass:meta';
+
+@include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/base');
 
 .hTWOoSample{
   
@@ -157,41 +159,50 @@ From there you can use now all other comments in the main block of your web part
 
 ```scss
   // Imports all base mixin
-  @import 'node_modules/@n8d/htwoo-core/lib/components/base';
+  @use 'sass:meta'
 
   .hTWOoSample {
 
     :global {
       
-      // For Avatar and Person selector components
-      @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+      // For Accordions
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/accordion');
+
+// For Avatar and Person selector components
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/avatar');
 
       // Various types of buttons
-      @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/buttons');
 
       // Various types of cards
-      @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/cards');
 
       // Various types of dialogs
-      @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/dialogs');
 
       // Various types of forms
-      @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/forms');
 
       // Various types of icons controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/icon');
 
       // Various types of menus controls
-      @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/menus');
+
+      // Various meta tags
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/meta-tags');
 
       // Various types of tables
-      @import 'node_modules/@n8d/htwoo-core/lib/components/table';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/table');
+
+      // Various types of quicklinks
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/quicklinks');
 
       // Various types of typography
-      @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/typography');
 
       // Various types of web part utilities
-      @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+      @include meta.load-css('node_modules/@n8d/htwoo-core/lib/components/webparts');
 
     }
   }
@@ -220,9 +231,9 @@ This should give you the following result in your browser.
 
 You can now add additional functionalities and other buttons to your code or just simply change it to a primary button by toggle only the style sheet class from `.hoo-button` to `.hoo-primary`.
 
-A complete reference of all components can be found in the [style guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+A complete reference of all components can be found in the [style guide](https://htwoo.io/htwoo-core/?p=all).
 
-## H2O and theming
+## HTWOO and theming
 
 The way hTWOo handles theming and theme slots also allow you to change the theme without any extra effort and coding.
 
@@ -246,7 +257,7 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
   
 
 
-[button]: ./how-to-spfx-html-button.png "Standard Button"
-[button-primary]: ./how-to-spfx-html-button-primary.png "Primary Button"
-[button-theming]: ./how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ./how-to-spfx-html-dark-themed-button.png "Theming"
+[button]: ../how-to-spfx-html-button.png "Standard Button"
+[button-primary]: ../how-to-spfx-html-button-primary.png "Primary Button"
+[button-theming]: ../how-to-spfx-html-theming-1.png "Theming"
+[button-dark-themed]: ../how-to-spfx-html-dark-themed-button.png "Theming"
