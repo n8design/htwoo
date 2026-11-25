@@ -3,7 +3,11 @@ title: Concepts
 description: hTWOo UI is an open source Fluent UI alternative offering HTML and CSS implementations for multiple frameworks.
 ---
 
-[![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
+<pd-components-badges>
+  <pd-components-badge src="https://img.shields.io/badge/Fluent-blue" alt="100% Fluent Design" width="45" height="20" link="https://www.youtube.com/watch?v=cJMwBwFj5nQ"></pd-components-badge>
+  <pd-components-badge src="https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange" alt="DOM manipulation free" width="180" height="20"></pd-components-badge>
+  <pd-components-badge src="https://img.shields.io/github/license/n8design/liquid" alt="license" width="78" height="20"></pd-components-badge>
+</pd-components-badges>
 
 ## hTWOo is built with HTML and CSS first
 
