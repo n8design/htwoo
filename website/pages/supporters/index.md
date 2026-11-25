@@ -1,4 +1,5 @@
 ---
+layout: supporters
 title: "Supporters"
 ---
 

@@ -1,9 +1,7 @@
 ---
 layout: page
 title: Use hTWOo Core in your No-Framework SPFx web part
-nav-title: SPFx with No-framework
 description: Learn how to use hTWOo in a no-framework based SPFx web part
-group: how-to
 ---
 
 ## Install hTWOo UI
@@ -257,7 +255,7 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
   
 
 
-[button]: ../how-to-spfx-html-button.png "Standard Button"
-[button-primary]: ../how-to-spfx-html-button-primary.png "Primary Button"
-[button-theming]: ../how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ../how-to-spfx-html-dark-themed-button.png "Theming"
+[button]: /assets/images/how-to/how-to-spfx-html-button.png "Standard Button"
+[button-primary]: /assets/images/how-to/how-to-spfx-html-button-primary.png "Primary Button"
+[button-theming]: /assets/images/how-to/how-to-spfx-html-theming-1.png "Theming"
+[button-dark-themed]: /assets/images/how-to/how-to-spfx-html-dark-themed-button.png "Theming"

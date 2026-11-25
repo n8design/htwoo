@@ -1,9 +1,7 @@
 ---
 layout: page
 title: Use hTWOo Core in your Angular Elements web part
-nav-title: SPFx with Angular Elements
 description: Learn how to use hTWOo in an Angular Elements based based SPFx web part
-group: how-to
 ---
 
 First of all create SPFx web part with Angular elements using PnP Generator. For more information refer to [this](https://pnp.github.io/generator-spfx/) link.
@@ -246,4 +244,4 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
 * [How to make CSS Variables work in every web part context](https://n8d.at/how-to-make-css-variables-work-in-every-web-part-context/)
   
 
-[controls-theming]: ../how-to-spfx-angular-elements-theme.png "Theming"
+[controls-theming]: /assets/images/how-to/how-to-spfx-angular-elements-theme.png "Theming"

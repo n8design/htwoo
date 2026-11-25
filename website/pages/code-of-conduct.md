@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Contributor Covenant Code of Conduct
-description:
 ---
 
 ## Our Pledge

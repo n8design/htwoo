@@ -1,13 +1,9 @@
 ---
 title: Why hTWOo?
 description: ""
-date: 2023-04-02T16:30:43.519Z
-preview: ""
-nodate: true
+date: 2023-04-02
 draft: false
-tags: ""
-categories: ""
-robots: "noindex, nofollow"
+index: false
 ---
 
 hTWOo is 

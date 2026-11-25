@@ -1,9 +1,7 @@
 ---
 layout: page
 title: Use hTWOo Core in your ReactJS SPFx web part
-nav-title: SPFx with ReactJS
 description: This article describes the requirements to enable hTWOo in your custom web part
-group: how-to
 ---
 
 This documentation covers using the hTWOo-core html/css only implementation in your ReactJS project. We also have a component library implemented for ReactJS that you can alternatively use called `hTWOo React`, check out the [documentation](/htwoo-react/).
@@ -333,7 +331,7 @@ You will find all sample in the [hTWOo Sample](https://github.com/n8design/htwoo
   
 
 
-[button]: ../how-to-spfx-html-button.png "Standard Button"
-[button-primary]: ../how-to-spfx-html-button-primary.png "Primary Button"
-[button-theming]: ../how-to-spfx-html-theming-1.png "Theming"
-[button-dark-themed]: ../how-to-spfx-html-dark-themed-button.png "Theming"
+[button]: /assets/images/how-to/how-to-spfx-html-button.png "Standard Button"
+[button-primary]: /assets/images/how-to/how-to-spfx-html-button-primary.png "Primary Button"
+[button-theming]: /assets/images/how-to/how-to-spfx-html-theming-1.png "Theming"
+[button-dark-themed]: /assets/images/how-to/how-to-spfx-html-dark-themed-button.png "Theming"

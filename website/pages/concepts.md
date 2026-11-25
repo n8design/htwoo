@@ -1,7 +1,6 @@
 ---
 title: Concepts
 description: hTWOo UI is an open source Fluent UI alternative offering HTML and CSS implementations for multiple frameworks.
-preview: /launch-img.jpg
 ---
 
 [![100% Fluent Design](https://img.shields.io/badge/Fluent-blue)](https://www.youtube.com/watch?v=cJMwBwFj5nQ) ![DOM manipulation free](https://img.shields.io/badge/100%25-DOM%20manipulation%20free-orange) ![license](https://img.shields.io/github/license/n8design/liquid)
@@ -21,7 +20,9 @@ Creating a versatile framework is one of the essential concepts of HTWOo. Inclus
 
 With ReactJS in 2022 and possibly 2003 as a dominant web development framework, There are other frameworks and technology decisions made by companies that like to implement the Fluent Design System into their technology stack.
 
-{{< figure src="../images/front_end_frameworks_experience_ranking.png" caption="[State of Javascript 2022 - Result](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/#front_end_frameworks_experience_linechart)" >}}
+<pd-components-figure src="/assets/images/front_end_frameworks_experience_ranking.png" alt="State of Javascript 2022 - Result">
+[State of Javascript 2022 - Result](https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/#front_end_frameworks_experience_linechart)
+</pd-components-figure>
 
 
 hTWOo closes this gap that [Fluent UI Web](https://developer.microsoft.com/en-us/fluentui#/) has; instead of being React JS-only implementation, hTWOo can get adopted in any framework, now and in the future.
@@ -58,5 +59,5 @@ Please feel free to [ask](https://github.com/n8design/htwoo/discussions) any que
 
 
 
-[frameworks]: /images/front_end_frameworks_experience_ranking.png "Frameworks over time"
-[logo]: /images/header-img.jpg "Be like water and adopt fast"
+[frameworks]: /assets/images/front_end_frameworks_experience_ranking.png "Frameworks over time"
+[logo]: /assets/images/header-img.jpg "Be like water and adopt fast"

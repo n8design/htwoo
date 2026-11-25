@@ -1,4 +1,4 @@
 ---
 title: About
-robots: "noindex, nofollow"
+index: false
 ---

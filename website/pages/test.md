@@ -1,12 +1,10 @@
 ---
 title: Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aperiam doloremque dolore quis consequatur natus, voluptatem sit eos aliquam alias.
 description: ""
-date: 2023-04-01T20:28:24.885Z
-preview: ""
+date: 2023-04-01
 draft: true
-tags: ""
-categories: ""
 ---
+
 ## Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aperiam doloremque dolore quis consequatur natus, voluptatem sit eos aliquam alias.
 ### Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aperiam doloremque dolore quis consequatur natus, voluptatem sit eos aliquam alias.
 #### Lorem ipsum dolor sit amet consectetur adipisicing elit. Non aperiam doloremque dolore quis consequatur natus, voluptatem sit eos aliquam alias.

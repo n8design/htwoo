@@ -1,4 +1,4 @@
 ---
 title: Flavor
-robots: "noindex, nofollow"
+index: false
 ---
