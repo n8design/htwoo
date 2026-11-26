@@ -23,8 +23,6 @@ export default defineConfig({
     outDir: "./site",
     // The site's address. The deploy workflow sets SITE_URL from the Pages setup (a fork serves under a path).
     url: process.env.SITE_URL ?? "https://htwoo.io/",
-    // htwoo-core's style guide, where its workbench will be once htwoo-core is on Pattern Dump.
-    workbenchUrl: "/htwoo-core/",
     image: "/assets/images/launch-img.jpg",
     head: analytics ? "./head.hbs" : undefined,
     tagPages: false,
