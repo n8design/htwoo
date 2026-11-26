@@ -27,6 +27,22 @@ export default defineConfig({
     head: analytics ? "./head.hbs" : undefined,
     tagPages: false,
     categoryPages: false,
+    // The other tools' finished files, published as they are. The two builds run before `pd build`
+    // (htwoo-core's `pl:publish-docs`, htwoo-react's `build-storybook`); `pd build` stops if either is missing.
+    mounts: [
+      { from: "../docs/htwoo-core", to: "/htwoo-core/" },
+      { from: "../docs/htwoo-react", to: "/htwoo-react/" },
+      // The component docs as the Hugo site built them, with the files their pages load (frozen/README.md).
+      // One mount per folder: two mounts can't share a route, and the theme's files have `/`.
+      // In the sitemap, as on the Hugo site; Pattern Lab's and Storybook's pages weren't.
+      { from: "./frozen/components", to: "/components/", sitemap: true },
+      { from: "./frozen/htwoo-components", to: "/htwoo-components/" },
+      { from: "./frozen/assets/css", to: "/assets/css/" },
+      { from: "./frozen/js", to: "/js/" },
+      { from: "./frozen/images", to: "/images/" },
+      // The favicons, the web manifest and the font provider's stylesheet, at the root.
+      { from: "./theme/site-root", to: "/" },
+    ],
     globals: {
       title: "hTWOo by N8D",
       // The main navigation, as the Hugo menu (config/_default/menus.yaml on the docs branch) had it. Written
