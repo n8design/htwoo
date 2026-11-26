@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Icons on hTWOo</title><link>https://htwoo.io/components/atoms/icons/</link><description>Recent content in Icons on hTWOo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://htwoo.io/components/atoms/icons/index.xml" rel="self" type="application/rss+xml"/><item><title>Standard Icon</title><link>https://htwoo.io/components/atoms/icons/icon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/icons/icon/</guid><description>Standard icons in HTWOO UI are SVG-based icons used throughout the interface for consistent visual representation. These icons are highly flexible, can be styled with CSS, and scale without loss of quality.
+Description Standard icons use SVG sprites for optimal performance and consistent styling. They inherit their color from the parent element and can be sized through CSS.
+SCSS Imports Main Component
+@n8d/htwoo-core/components/icons
+SCSS Partial Location
+/src/styles/01-atoms/icons/_index.scss
+CSS Classes Base Classes</description></item><item><title>Quick Links Icons</title><link>https://htwoo.io/components/atoms/icons/ql-icon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/icons/ql-icon/</guid><description>Quick Link Icons provide image-based icons optimized for use within quick link components. These components typically display a visual representation alongside link text.
+Description Quick Link Icons use the &amp;lt;figure&amp;gt; element with an &amp;lt;img&amp;gt; tag to display raster-based images. They&amp;rsquo;re designed to work seamlessly within quick link components while maintaining proper aspect ratios.
+SCSS Imports Main Component
+@n8d/htwoo-core/components/icons
+SCSS Partial Location
+/src/styles/01-atoms/icons/_index.scss
+CSS Classes Base Classes
+.hoo-ql-media - Container for the icon or image .</description></item><item><title>Quick Links Icons - SVG</title><link>https://htwoo.io/components/atoms/icons/ql-icon-svg/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/icons/ql-icon-svg/</guid><description>Quick Link SVG Icons provide vector-based icons optimized for use within quick link components. They combine the flexibility of SVG with the proper structure for quick link components.
+Description Quick Link SVG Icons use the &amp;lt;figure&amp;gt; element with an SVG element to display vector-based icons. They&amp;rsquo;re designed specifically for quick link components and inherit their color from the parent element.
+SCSS Imports Main Component
+@n8d/htwoo-core/components/icons
+SCSS Partial Location
+/src/styles/01-atoms/icons/_index.scss
+CSS Classes Base Classes</description></item></channel></rss>

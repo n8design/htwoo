@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grid on hTWOo</title><link>https://htwoo.io/components/atoms/grid/</link><description>Recent content in Grid on hTWOo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://htwoo.io/components/atoms/grid/index.xml" rel="self" type="application/rss+xml"/><item><title>Liquid UI Grid System</title><link>https://htwoo.io/components/atoms/grid/grid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/grid/grid/</guid><description>Use Grid System with CSS classes hoo-grid - defines the base CSS Grid on any container
+Use Grid System with SCSS Through a mixing you can turn any container into a grid system.
+Placing elements on the grid The placement of elements can be accomplished with the following SASS mixin.
+The SASS mixing has the following input:
+@include gridSpan([grid span], [Starting column], [Starting row]);
+SCSS Imports Main Component
+@n8d/htwoo-core/components/base</description></item></channel></rss>
