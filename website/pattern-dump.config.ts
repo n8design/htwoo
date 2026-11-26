@@ -74,10 +74,10 @@ export default defineConfig({
           { href: "https://github.com/n8design/htwoo/", label: "Engage on GitHub" },
           {
             label: "Changelogs",
-            // Links until the changelog pages are built from the packages' own files (finding F-02).
+            // The packages' own changelogs on GitHub, until the site builds pages from them (finding F-02).
             children: [
-              { href: "/changelog/htwoo-core-cl/", label: "hTWOo Core - Change Log" },
-              { href: "/changelog/htwoo-react-cl/", label: "hTWOo React - Change Log" },
+              { href: "https://github.com/n8design/htwoo/blob/main/htwoo-core/CHANGELOG.md", label: "hTWOo Core - Change Log" },
+              { href: "https://github.com/n8design/htwoo/blob/main/REACT-CHANGELOG.md", label: "hTWOo React - Change Log" },
             ],
           },
           { page: "case-studies/index.md", label: "Case Studies" },
