@@ -1,0 +1,115 @@
+# Builds and deploys htwoo.io. htwoo-core's style guide and htwoo-react's Storybook build with their own
+# commands, then Pattern Dump builds the website, whose site config (website/pattern-dump.config.ts) declares
+# every part of the deployment. Its output is uploaded as it is.
+name: Deploy the website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - "htwoo-core/**"
+      - "htwoo-react/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".gitmodules"
+      - ".github/workflows/deploy.yml"
+  # htwoo-theme's notify workflow runs this with bump-theme after every theme change. Run by hand, it
+  # redeploys.
+  workflow_dispatch:
+    inputs:
+      bump-theme:
+        description: Pin the theme submodule to its branch's newest commit first (bump commit)
+        type: boolean
+        default: false
+      theme-sha:
+        description: The theme commit that asked for the bump (log only; the newest commit is pinned)
+        type: string
+        default: ""
+
+# One run at a time, in order. A newer trigger replaces a run still waiting, so the last one wins.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # the theme bump commit
+      pages: read # configure-pages reads the site's address
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      # Builds on the branch's newest commit, so a push since the dispatch doesn't block the bump commit.
+      # The commit is pushed with GITHUB_TOKEN, which starts no new run: the theme change deploys once.
+      - name: Bump the theme
+        if: inputs.bump-theme
+        env:
+          THEME_SHA: ${{ inputs.theme-sha }}
+        run: |
+          git fetch --no-tags origin "$GITHUB_REF_NAME"
+          git checkout -q --detach FETCH_HEAD
+          git submodule update --init --remote website/theme
+          pinned=$(git -C website/theme rev-parse --short=7 HEAD)
+          echo "Theme commit asked for: ${THEME_SHA:-none}; branch tip: $pinned"
+          if git diff --quiet -- website/theme; then
+            echo "The theme is already pinned to $pinned"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "chore(deps): Bump htwoo-theme to $pinned" -- website/theme
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - id: pages
+        uses: actions/configure-pages@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            website/package-lock.json
+
+      - name: Install the workspace
+        run: npm ci --no-audit --no-fund
+
+      - name: Build the hTWOo Core style guide
+        run: npm run pl:publish-docs -w htwoo-core
+
+      - name: Build the hTWOo React Storybook
+        run: npm run build-storybook -w htwoo-react
+
+      - name: Install the website
+        working-directory: website
+        run: npm ci --no-audit --no-fund
+
+      - name: Build the website
+        working-directory: website
+        env:
+          # The address the site is served at; a fork serves under a path.
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: website/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
