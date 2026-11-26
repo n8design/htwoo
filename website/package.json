@@ -19,6 +19,6 @@
   },
   "devDependencies": {
     "@n8d/htwoo-theme": "file:theme",
-    "pattern-dump": "0.9.0"
+    "pattern-dump": "0.10.0"
   }
 }
