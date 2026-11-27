@@ -48,6 +48,9 @@ export default defineConfig({
       { from: "./frozen/assets/css", to: "/assets/css/" },
       { from: "./frozen/js", to: "/js/" },
       { from: "./frozen/images", to: "/images/" },
+      // PD-WORKAROUND: F-49. Redirect pages for old URLs ending in .html, which redirectFrom can't take
+      // (legacy/README.md).
+      { from: "./legacy/how-to", to: "/how-to/" },
       // The favicons, the web manifest and the font provider's stylesheet, at the root.
       { from: "./theme/site-root", to: "/" },
     ],
