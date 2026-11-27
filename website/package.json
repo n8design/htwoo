@@ -1,0 +1,24 @@
+{
+  "name": "htwoo-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The htwoo.io website: content and config, rendered by Pattern Dump with the htwoo theme.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pd dev",
+    "build": "pd build",
+    "watch:theme-helpers": "npm run watch:helpers --prefix theme"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@parcel/watcher": true
+  },
+  "devDependencies": {
+    "@n8d/htwoo-theme": "file:theme",
+    "pattern-dump": "0.10.1"
+  }
+}

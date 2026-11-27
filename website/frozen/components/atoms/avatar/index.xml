@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avatar on hTWOo</title><link>https://htwoo.io/components/atoms/avatar/</link><description>Recent content in Avatar on hTWOo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://htwoo.io/components/atoms/avatar/index.xml" rel="self" type="application/rss+xml"/><item><title>Avatar</title><link>https://htwoo.io/components/atoms/avatar/avatar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/avatar/avatar/</guid><description>This avatar is show with a size of 64px and round borders. If you construct other avatars based on this please pass it a mugshot url and a size parameter.
+Supported Sizes: 8px - .hoo-avatar-8 16px - .hoo-avatar-16 24px - .hoo-avatar-24 32px - .hoo-avatar-32 40px - .hoo-avatar-40 48px - .hoo-avatar-48 64px - .hoo-avatar-64 72px - .hoo-avatar-72 96px - .hoo-avatar-96 SCSS Imports Main Component
+@n8d/htwoo-core/components/avatar
+SCSS Partial Location
+/src/styles/01-atoms/avatar/_avatar.scss
+CSS Classes Element Classes</description></item><item><title>Presence</title><link>https://htwoo.io/components/atoms/avatar/presence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/avatar/presence/</guid><description>This prescence bubble is used to indicate a persons availability status expecially on avatars. The following status are defined:
+away - Away dnd - Do not disturbe online - Online invisible - Invisible off - Out of Office For visual appearance check out Presence All,
+SCSS Imports Main Component
+@n8d/htwoo-core/components/avatar</description></item><item><title>Presence all</title><link>https://htwoo.io/components/atoms/avatar/presence-all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://htwoo.io/components/atoms/avatar/presence-all/</guid><description>Show the presence information in the following order:
+away - Away dnd - Do not disturbe online - Online invisible - Invisible off - Out of Office SCSS Imports Main Component
+@n8d/htwoo-core/components/avatar</description></item></channel></rss>
