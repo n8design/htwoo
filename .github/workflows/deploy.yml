@@ -69,6 +69,13 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
         run: npm run build
 
+      # IndexNow (Bing, Yandex and others) checks that the site owns its key by fetching /<key>.txt, which holds
+      # the key and nothing else. The key is public by design.
+      - name: Add the IndexNow key
+        env:
+          INDEXNOW_KEY: cxm2gk8e3xhmfeev4x2pvwcq1wxtcmd2
+        run: printf '%s' "$INDEXNOW_KEY" > "website/site/$INDEXNOW_KEY.txt"
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: website/site
