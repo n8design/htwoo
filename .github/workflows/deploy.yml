@@ -14,18 +14,9 @@ on:
       - "package-lock.json"
       - ".gitmodules"
       - ".github/workflows/deploy.yml"
-  # htwoo-theme's notify workflow runs this with bump-theme after every theme change. Run by hand, it
-  # redeploys.
+  # A theme change goes live with its pin bump in htwoo ("chore(deps): Bump htwoo-theme to <sha>"), which
+  # changes website/theme. Run by hand, this redeploys.
   workflow_dispatch:
-    inputs:
-      bump-theme:
-        description: Pin the theme submodule to its branch's newest commit first (bump commit)
-        type: boolean
-        default: false
-      theme-sha:
-        description: The theme commit that asked for the bump (log only; the newest commit is pinned)
-        type: string
-        default: ""
 
 # One run at a time, in order. A newer trigger replaces a run still waiting, so the last one wins.
 concurrency:
@@ -38,33 +29,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # the theme bump commit
+      contents: read
       pages: read # configure-pages reads the site's address
     steps:
       - uses: actions/checkout@v7
         with:
           submodules: true
-
-      # Builds on the branch's newest commit, so a push since the dispatch doesn't block the bump commit.
-      # The commit is pushed with GITHUB_TOKEN, which starts no new run: the theme change deploys once.
-      - name: Bump the theme
-        if: inputs.bump-theme
-        env:
-          THEME_SHA: ${{ inputs.theme-sha }}
-        run: |
-          git fetch --no-tags origin "$GITHUB_REF_NAME"
-          git checkout -q --detach FETCH_HEAD
-          git submodule update --init --remote website/theme
-          pinned=$(git -C website/theme rev-parse --short=7 HEAD)
-          echo "Theme commit asked for: ${THEME_SHA:-none}; branch tip: $pinned"
-          if git diff --quiet -- website/theme; then
-            echo "The theme is already pinned to $pinned"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -m "chore(deps): Bump htwoo-theme to $pinned" -- website/theme
-          git push origin "HEAD:$GITHUB_REF_NAME"
 
       - id: pages
         uses: actions/configure-pages@v6
