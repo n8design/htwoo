@@ -2,6 +2,10 @@
 title: Changelogs
 layout: page
 description: The change logs of hTWOo Core and hTWOo React, kept with each package on GitHub.
+redirectFrom:
+  - /changelog/htwoo-react-cl/
+  - /changelog/htwoo-core-cl/
+  - /changelog-core/
 ---
 
 Each package keeps its change log in the hTWOo repository on GitHub:
