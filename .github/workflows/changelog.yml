@@ -118,5 +118,4 @@ jobs:
           path: |
             htwoo-core/CHANGELOG.md
             htwoo-core/LATEST-CHANGES.md
-            docs/change-log/htwoo-core.md
           retention-days: 30
