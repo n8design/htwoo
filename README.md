@@ -10,13 +10,13 @@ HTWOO UI is an open source alternative for Microsoft's Fluent UI Web Design syst
 
 ## HTWOO-Core
 
-You will find a complete list of assets in the [Style Guide](https://lab.n8d.studio/htwoo/htwoo-core/?p=all).
+You will find a complete list of assets in the [Style Guide](https://htwoo.io/htwoo-core/?p=all).
 
 ### How To Use HTWOO-CORE
 
-* [hTWOo usage in 'No framework' web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-html/)
-* [hTWOo usage in React web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-react/) 
-* [hTWOo usage in Angular Elements web part with SPFx](https://lab.n8d.studio/htwoo/how-to/how-to-spfx-angular-elements/)
+* [hTWOo usage in 'No framework' web part with SPFx](https://htwoo.io/how-to/how-to-spfx-html/)
+* [hTWOo usage in React web part with SPFx](https://htwoo.io/how-to/how-to-spfx-react/) 
+* [hTWOo usage in Angular Elements web part with SPFx](https://htwoo.io/how-to/how-to-spfx-angular-elements/)
 * more to come
 
 ### Why just HTML and CSS
@@ -29,7 +29,7 @@ HTML/CSS UI components can also be more easily optimized, refactored, or visuall
 
 For ReactJS developers, we have an implementation of the htwoo-core library where we have provided a set of components compatible with Versions >=16 of [ReactJS](https://reactjs.org/).
 
-A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://lab.n8d.studio/htwoo/htwoo-react/)
+A complete getting stared guide plus full documentation on all the ReactJS components available can be found on our [StoryBook Documentation](https://htwoo.io/htwoo-react/)
 
 ## Concepts
 
@@ -37,9 +37,14 @@ The hTWOo style guide, documentation and building platform is based on [patternl
 
 > We're tasked with making interfaces for more users in more contexts using more browsers on more devices with more screen sizes and more capabilities than ever before. That's a daunting task indeed. Thankfully, design systems are here to help. - [Brad Frost](https://atomicdesign.bradfrost.com/)
 
-## Project Configuration
+## Website
 
-See the full [project configuration](./project.conf.md).
+[htwoo.io](https://htwoo.io/) is built from this repository: its pages are in [`website/`](./website/) on `main`,
+written in markdown and rendered by [Pattern Dump](https://www.npmjs.com/package/pattern-dump), together with
+hTWOo Core's style guide and hTWOo React's Storybook. Its look is the
+[htwoo-theme](https://github.com/n8design/htwoo-theme) repository, a git submodule at `website/theme`. A push to
+`main` that changes the website, htwoo-core or htwoo-react deploys it. How to run it locally and how a theme change
+reaches the site: [CONTRIBUTING.md](./CONTRIBUTING.md#website).
 
 ## Engage
 
@@ -52,4 +57,4 @@ Follow us on Twitter [@htwooui](https://twitter.com/htwooui).
 This project is tested with BrowserStack
 
 
-[logo]: https://lab.n8d.studio/htwoo/images/launch-img.jpg "Be like water and adapt fast"
+[logo]: https://htwoo.io/assets/images/launch-img.jpg "Be like water and adapt fast"
