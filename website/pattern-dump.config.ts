@@ -9,6 +9,14 @@ const analytics = process.env.HTWOO_ANALYTICS
   ? process.env.HTWOO_ANALYTICS === "1"
   : process.argv.includes("build");
 
+// The site's address. The deploy workflow sets SITE_URL from the Pages setup: https://htwoo.io/ on n8design/htwoo
+// (its custom domain), the fork's github.io address on a fork (served under a path).
+const siteUrl = process.env.SITE_URL ?? "https://htwoo.io/";
+// Only htwoo.io is indexed. Any other address (a fork, a preview) gets Pattern Dump's staging mode: every page
+// noindex, robots.txt disallowing everything, no sitemap, no llms.txt. So a fork's deploy never competes with
+// htwoo.io, and nothing fork-specific is in the code: the switch is the address the build is for.
+const indexed = new URL(siteUrl).href === "https://htwoo.io/";
+
 export default defineConfig({
   sourceDir: "./src",
   patternsDir: "./src/patterns",
@@ -21,8 +29,8 @@ export default defineConfig({
   site: {
     pagesDir: "./pages",
     outDir: "./site",
-    // The site's address. The deploy workflow sets SITE_URL from the Pages setup (a fork serves under a path).
-    url: process.env.SITE_URL ?? "https://htwoo.io/",
+    url: siteUrl,
+    index: indexed,
     image: "/assets/images/launch-img.jpg",
     head: analytics ? "./head.hbs" : undefined,
     tagPages: false,
