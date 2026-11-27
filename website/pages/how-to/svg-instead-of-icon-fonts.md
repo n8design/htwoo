@@ -1,6 +1,7 @@
 ---
 layout: page
 title: SVG instead of icon fonts
+description: Why hTWOo uses SVG icons instead of icon fonts, and where to get the Fluent System Icons as SVG.
 ---
 
 Fonts are for text, not for images or icons. Whenever an image is needed, use an image. In this regards, hTWOo is 100% icon font free.

@@ -1,5 +1,6 @@
 ---
 title: License
+description: hTWOo is open source under the MIT License.
 ---
 
 MIT License

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Contributor Covenant Code of Conduct
+description: The Contributor Covenant code of conduct for everyone taking part in the hTWOo community.
 ---
 
 ## Our Pledge

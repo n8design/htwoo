@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Release History
+description: Release notes of the early hTWOo Core versions, from v0.4.1 back.
 ---
 
 ## v0.4.1
