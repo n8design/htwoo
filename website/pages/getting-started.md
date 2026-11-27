@@ -28,20 +28,22 @@ Once installed you can import the SASS files from your node_modules folder.
 ### CDN Support
 
 To use hTWOo from CDN use the following URLs. The CDN version only offer limited capabilities but contain all styling.
+The examples load version 2.9.2; replace it with the version you use.
 
 **For CSS**
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/browse/@n8d/htwoo-core@<version>/dist/css/htwoo.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@n8d/htwoo-core@2.9.2/dist/css/htwoo.min.css">
 ```
 
 **For JavaScript**
 
 ```html
-<script src="https://unpkg.com/browse/@n8d/htwoo-core@<version>/dist/js/"></script>
+<script src="https://unpkg.com/@n8d/htwoo-core@2.9.2/dist/js/umd/htwoo.min.js"></script>
 ```
 
-Check out the package on [unpkg](https://unpkg.com/browse/@n8d/htwoo-core@0.4.0-beta2/).
+`dist/js/umd/` also has each script on its own, such as `htwoo.dialog.min.js`. Browse the package's files on
+[unpkg](https://unpkg.com/browse/@n8d/htwoo-core@2.9.2/).
 
 ## File Structure of npm package
 
